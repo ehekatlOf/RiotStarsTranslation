@@ -15,6 +15,25 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
+## ⚠️ OWED: wave-1 audit findings — dispatch as a follow-up unit
+**`audits/wave-1-audit.md`** (committed `aee737a`) is the independent post-merge reading review of
+wave 1, run because wave 1's coordinator had no `Task` tool and reviewed its own four PRs.
+
+**Verdict: no must-fix on any translated line.** The translations are sound — nothing invented,
+nothing dropped, gates clean, no regressions from the rework rounds, zero unspaced `，` left in
+`tl/`, zero divergent duplicate keys.
+
+**But 1 must-fix and 6 should-fix are outstanding**, and they are owed by a wave session as a
+follow-up unit — translator → PR → reviewer like anything else. The doc corrections (findings 1,
+2, 6, 7) are reviewer/integrator work and can ride an integration commit; the line edits (3, 4, 5)
+need a translator and a PR. Do not apply them from a session that is not running a wave.
+
+The sharpest one, because it shows what self-review costs: **`FLAGS.md` §J1 justified accepting
+batch 004's 2.23× compression with arithmetic that PR #4's own Flag 3 contradicted on the same
+page.** True cost of restoring the dropped clause is 192 bytes, not 252; bank 40 would land at
+**317 free, not negative**; **nothing would have been parked**. The "seven Japanese holes in a
+table" justification was false, and §J1 also wrongly states the PR failed to flag the departure.
+
 ## NEXT ACTION — always current, always a literal instruction
 > **Wave 2 is IN FLIGHT. Its session — `session_01JDoA8KzwUVk3ZjiBw8Qkf3`, "Riot Stars — wave 2" —
 > owns the repository and is the active driver. Preflight passed 2026-09-08: `check` green, zero
