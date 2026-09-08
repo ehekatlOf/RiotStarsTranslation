@@ -58,37 +58,42 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | **PR open** — 3,849 / 8,192, **4,343 slack**, widest row 23 col, tag stream byte-identical (zero `{FFFE}` changed) |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **PR open** — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
-| script batch 005 | `tl/script-005` | 26 lines / 26 inst, 1,770 JP ch | 1 | — | translator running |
+| script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
-**BARRIER STATE at 15:15Z: 3 of 4 — NOT MET. Nothing is reviewed yet.** Chunks 4 (#6), 6 (#7)
-and 9 (#5) have PRs. **Only script batch 005 remains**; its translator was alive at the last
-`ListAgents`, so it is waited on, not re-dispatched. Review order once it lands:
-chunk 4 (#6) → chunk 6 (#7) → chunk 9 (#5) → script 005.
+**BARRIER MET at 15:15Z — 4 of 4. REVIEW HAS STARTED.** PRs: chunk 4 **#6**, chunk 6 **#7**,
+chunk 9 **#5**, script 005 **#8**. Review order, one reviewer at a time, foreground:
+**#6 → #7 → #5 → #8**. HANDOFF is pushed before each reviewer and pulled after it.
 
-**Cheap barrier check — use this, not `list_pull_requests`** (which returns full PR bodies and
-burns context): `git ls-remote --heads origin 'tl/*'`. The barrier is met when
-`refs/heads/tl/script-005` appears.
+**Cheap barrier/status check — use this, not `list_pull_requests`** (full PR bodies burn context):
+`git ls-remote --heads origin 'tl/*'`.
 
-**Three decisions PR #7 forces, on top of the ones already listed below:**
-- **`弓使い` → `ｂｏｗｍａｎ`**, chosen deliberately over the §9 seed's `archer`, which is
-  already spent on 弓兵 (§4). The §17.1 species test splits them: 弓兵 is a class label,
-  `弓使い` here is an epithet on an individual. Binds every later chunk — **ratify or reverse
-  now**, while only two lines carry it.
-- **`ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ`** extends the 様 → title convention to a new station
-  (priest). New pattern; needs ratification.
-- **`{FC03}` is undocumented** — absent from `findings.md`, `FLAGS.md` and `tools/`. Chunk 6's
-  lines 9 and 21 carry **no `{FC50}`/`{FC51}`/`{FCC0}`/`{FC30}` speaker channels at all**, so
-  whether those segments are one conversation or an independently-selected message pool is
-  unknown. Translated segment-for-segment, safe under either reading. Wants an in-game look and a
-  `findings.md` entry; it decides whether the inherited >4-row reports on those lines matter.
+**⚠️ A SURVEY DEFECT THIS COORDINATOR INTRODUCED, corrected by PR #8 — carries into every future
+wave.** This coordinator measured batch 005 at **1,770 JP characters** using the regex
+`[぀-ヿ一-鿿]`, which counts kana and kanji only. The translator's count over every non-tag
+character (`re.sub(r'\{[^}]*\}','',jp)`) is **1,980** — a **210-character, 12% gap**, entirely
+full-width spaces and punctuation. Those characters cost bytes and columns like any other, so the
+kana/kanji-only count **under-models growth on any line with heavy spacing**. Use the non-tag
+count. Worth checking whether `tools/queue.py` has the same bug; if it does, every ratio in
+Remaining is optimistic.
 
-**A third `メルザリオ`-kind classification correction arrived with PR #5:** `クリミア` is a
-**PERSON** — Doctor Crimea, designer of the machine soldiers — not the region `glossary.md` §2
-files it as. Evidence the translator measured: `このクリミアに` / `このクリミアの` in the battle
-dump is **self-reference**, and shipped `batch_003` lines 85, 86, 94 already render
-`クリミアの量産型機械兵２号機` as `Ｃｒｉｍｅａ’ｓ …`. The rendering `Ｃｒｉｍｅａ` is correct
-everywhere it already stands, so **no shipped line needs re-cutting** — the §2 row moves to §1.
-That makes three this wave: `ファリーナ`, `クリミア`, and `メルザリオ` before them.
+**PR #8's other decisions for the reviewer:**
+- **`将軍` → `Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ`** as instructed, settling §10.2. Note the translator's
+  refinement: line 992 says bare `２軍`, not `宮廷第２軍`, so it is `２ｎｄ　Ａｒｍｙ` and **not**
+  §20.1's `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`.
+- **`リース文明` ≠ `古代ハイランド`** — the §9 seed asked; the translator checked and says keep
+  them distinct. Highland is a technological civilisation whose works survive and still function
+  (the floating island, the sky fortress, Helfer's machines in ch.43); Reese is known only from
+  documents at Farina, died `同種族の戦いによって`, and is remembered by the church. Merging them
+  would invent a plot fact. **Record as a finding, do not merge the rows.**
+- **Tutorial register** (Flag 10): the dispatch said match `batch_002`, but §15.3 records that
+  speaker as explicitly *not* a §7 box, with light contractions; §7's じゃ rule says **no**
+  contractions. The translator applied §7. ⚠️ These five boxes carry `{FB01}`, not
+  `{=FA1000300030}`, so neither existing register row covers them — a new §7 row is probably
+  wanted. **This is the ruling most worth the reviewer's attention.**
+- **`アップミーズ` → `Ａｐｕｍｉｚｕ`** is genuinely new (5 script occurrences, none in `tl/` yet) —
+  fix it now so the later four do not drift.
+- Line 987 page 2 **ends mid-sentence**, predicate arriving after the `{FCC0}`; preserved because
+  a translator cannot move a `{FCC0}`. Worth an in-game look beside `FLAGS.md` §D2.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
