@@ -44,7 +44,7 @@ Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔍 **IN REVIEW** (reviewer 2 of 4) |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ⚠️ **CHANGES round 1** — rework sent to the same translator; re-review after its push |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | PR open — queued, reviewer 3 |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
@@ -165,6 +165,34 @@ Reviewer also to rule on: `Ｃａｎｙｏｎ` vs `Ｇｏｒｇｅ` for `バー�
 and whether chunk 4's dying girl is Femina. ⚠️ Its gate-6 comparison against `chunk_034.txt` will
 show a divergence on the village line **that resolves when PR #9 merges** — #9 is first in the
 review order for that reason.
+
+**PR #11 (chunk 8) — CHANGES round 1, 2026-09-08.** All eight gates pass and **every figure the
+PR claimed is true when re-derived**; gate 6 was run as positional pairing at four granularities,
+extended across PR #10's and #12's branches — **624 page keys, zero divergent renderings anywhere**.
+The reviewer records that the translator was **right on every contested measurement it made**,
+including the `{FCC0}` conflict, the 26-column `ｒｅｔｒｅａｔ　ａｎｄ　ｓｕｐｐｌｙ　ｒｏｕｔｅｓ．`, and the
+glossary's 18-column figure for `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ` (it is **17** — a §4.3 correction the
+integration commit owes). What holds the merge is **one reading defect the gates cannot see**:
+- **Finding 1 (blocking):** L10's `{FCC0}` clears the box **between `ｔｈｅ` and `ｆｏｒｅｓｔ`**. Of the
+  10 mid-sentence English page breaks in `tl/`, nine are inherited; this is the only one where the
+  source's break follows a sentence-final `。` and the English carries a phrase across it, and the
+  only one splitting a determiner from its head noun. Measured fix costs ~2 bytes of 755.
+- **Finding 2:** L4's `南から、帝国軍よ！` reverses source clause order, unforced and unflagged;
+  source order is the same 33 characters in the same two rows. Restore **or** flag as a fourth
+  step-6 reorder — the translator picks, with reasons.
+- **Finding 3 (record only):** Flag 2's L9 breakdown is +2/−5, not +1/−4 (net −3 is right).
+
+**Rulings the reviewer made rather than deferring** (this is the §25.3 gap being closed properly):
+`Ｒｉｇｈｔ，　ｕｎｄｅｒｓｔｏｏｄ．` **stands** for chunk 8 — chunk 8 has no `了解`, so §25.3's test is met.
+But **chunk 19 contains both**, so the reserve is fixed **now, before a unit needs it**: `了解` keeps
+`Ｕｎｄｅｒｓｔｏｏｄ`, a co-occurring `わかった` takes **`Ａｇｒｅｅｄ．`** (7 columns, verified free —
+`Ｉ　ｓｅｅ．` and `Ｖｅｒｙ　ｗｅｌｌ` are spent, `Ｅｘａｃｔｌｙ．` reserved). Goes into §28.
+`大減棒` ruled a source typo (hapax; `減俸` is the word) — rendering stands, `FLAGS.md` note.
+Two findings **withdrawn after measuring** and recorded so they are not re-raised: rows ending on
+`ｔｈｅ` (29 shipped instances) and on a lone `Ｉ` (1) are settled house practice.
+
+**No integration commit** — glossary §28, the FLAGS entries and the two §4.3 corrections are drafted
+and held until the rework lands and the same reviewer re-reviews.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
