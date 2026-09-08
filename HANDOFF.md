@@ -75,7 +75,7 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | ✅ **MERGED round 2** — squash `dd406d0`, integrated by the commit that carries this row. 5,899 / 8,192, **2,293 slack**, 151 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 on lines 6, 17, 18, 21, all flagged; both `> 4`-row pages (9 at 15, 21 at 12) are **inherited** — measured on the pristine extraction at 15 and 11. All 8 gates re-run on the new head. All 6 round-1 findings fixed; **finding 3 was withdrawn — the translator's replacement was right and the reviewer's was wrong** (`chunk_033` L20 holds the byte-identical bare `さあ、` and ships `Ｎｏｗ，`; `chunk_003` L4's row carries a name insert). Rulings integrated: `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`, `よし、`→`Ｒｉｇｈｔ，`, §18.2 corrected, `リオン`→`Ｌｅｏｎ` promoted (**§10.1 discharged**). Nothing left on this unit |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | **2** | **#5** | ✅ **MERGED round 2** — squash `5f3e714`, integrated by the commit that carries this row. 3,973 / 8,192, **4,219 slack**, 95 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 line 8, +2 line 9, both flagged; only those two page shapes change and no page exceeds 4 text rows; **no `{FCC0}` added or moved** (proved by tag parity). All 8 gates re-run on the new head, round-1 evidence discarded. Both findings fixed, no new findings. **Finding 1 withdrawn — the translator's three-row `Ｈｏｗｅｖｅｒ，` split is right and the reviewer's two-row wording was wrong**: all four 2-row splits either sit at exactly 24 or end a row on the article `ａ`, at identical bytes (§M2). Rulings integrated: `クリミア` → **§1 People** (§K6's deferred call, §M7), `ディール帝国`/`ワーウィック` promoted, `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` collision **kept** (§25.3), `Ｆａｔｈｅｒ` two senses **confirmed** (§25.4), `甘くない` → `ｈａｒｄｅｒ　ｔｈａｎ`, `それでも` → `Ｅｖｅｎ　ｓｏ，` added (was missing from the PR). Nothing left on this unit |
-| script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | **2** | **#8** | 🔄 **CHANGES round 1, rework sent 18:30Z** — every mechanical gate passed and **every PR figure was confirmed by independent re-derivation** (unit removed, re-merged, re-measured). Gate 7 failed on 4 findings: 2 from the moved base (§23.3 `しかし`, §24.1 `様`), 1 new (`砦`→`ｆｏｒｔｒｅｓｓ` collapsing into `要塞`), 1 documentation-only |
+| script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | **2** | **#8** | **REWORK PUSHED `19769cf`, re-review round 2 dispatched 18:45Z** — 4,040 B (net +4), banks 29/30/31 → 25,589 / 35,119 / 34,827 free, ratio 2.02×, widest row 23, `{FFFE}` delta unchanged. All 4 findings fixed |
 
 **BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 3 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
 chunk 6 **#7 ✅ MERGED**, chunk 9 **#5 ✅ MERGED**, script 005 **#8**. Review order, one reviewer at
@@ -241,6 +241,13 @@ render `隊長`, so nothing shipped changes) · bare `２軍` → `２ｎｄ　�
 `chunk_002` L3) · `リース文明` ≠ `古代ハイランド` **confirmed** (zero lines in either dump contain
 both; Highland ties to the dark elves and the floating island, Reese to gods, a mirror temple and
 the church) · `アップミーズ` → `Ａｐｕｍｉｚｕ`, and it is a town — `ホアグ王子がつくった街`.
+
+**🔧 ENVIRONMENT DEFECT FOR FUTURE WAVES: the session scratchpad is SHARED between a wave's
+translators, not per-agent.** Chunk 9's translator overwrote script batch 005's `measure.py` and
+`dupes.py` with its own same-named scripts mid-task. **Nothing shipped was affected** — batch
+005's translator noticed because the output was visibly chunk 9's, and re-ran both checks under
+unique filenames. **Future dispatches must tell translators to namespace scratch filenames per
+unit** (e.g. `b005_dupes.py`, not `dupes.py`). Add to the dispatch template in SKILL.md §3.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
