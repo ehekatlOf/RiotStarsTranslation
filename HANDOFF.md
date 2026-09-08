@@ -57,10 +57,27 @@ queue: **fresh (survey ran 2026-09-08)**
 ## In flight
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **CHANGES round 1** — every gate passed; 2 findings, both cross-PR rulings against it (11 respellings, no re-flow) | 1 | **translator-1 (rework)** |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **PR open** — 5,837 / 8,192, 2,355 slack; promotes 4 seeds | 1 | reviewer |
+| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **reworked, awaiting round 2** — 3,517 / 8,192, slack 4,675 (head `8e22dd3`); both findings done, figure matches the reviewer's prediction exactly | 2 | reviewer |
+| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **CHANGES r1** — all 8 gates passed; 2 reading findings sent back (`ぬぬッ`→`Ｗｈｙ，`; `我々は城に戻るぞ` → `Ｗｅ　ｒｅｔｕｒｎ{FFFE}ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．`) | 1 → 2 | translator |
 | battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | reviewer |
 | script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
+
+> ## ⏰ A WATCHDOG TIMER MUST BE ARMED AT ALL TIMES
+> The main session wakes only on a notification or a human message. Wave 1 stalled once because a
+> turn ended with nothing scheduled. **Before ending any turn with work in flight, arm a
+> `send_later` watchdog (10–15 min) and re-arm it on every wake** — CLAUDE.md's second banner and
+> SKILL.md §6b. Handing the wave to an `orchestrator` subagent is *additional* to the timer, never
+> instead of it. A subagent whose notification never arrives is **lost, not finished**:
+> `ListAgents` is the authority, silence is not evidence.
+
+### Two tooling facts established by the wave-1 reviewers — carry these into every future wave
+1. **`REQUEST_CHANGES` is impossible on these PRs.** GitHub refuses it on a PR opened by the same
+   account, which is every PR in this project. Reviewers must post CHANGES as a **COMMENT** review.
+   Not a defect and not worth retrying — the decision text is what counts, not the GitHub state.
+2. **`translation_prompt.md` §3.2's "add a `{FCC0}`" escape does not exist for a translator.**
+   The PR #3 reviewer tested it by planting one: `assemble.py check` fails with `tag stream
+   changed`, because `tag_parity` exempts only `{FFFE}`. The prompt misstates an available lever.
+   A translator at the 4-row wall has re-flow and §2.1 only.
 
 **Barrier: 4 of 4 — MET.** Review order is unit order: PR #2 (chunk 1), #3 (chunk 2), #1
 (chunk 3), #4 (batch 004), one reviewer at a time, foreground.
