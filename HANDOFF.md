@@ -38,9 +38,27 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 | script batch 004 | — | translator-4 | `tl/script-004` | — | dispatched | 1 | translator |
 
 ## Next up (wave 2, provisional)
-battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + script batch 005 (the rest of the weapon
-description table: unique lines 185–225 minus those already shipped — clubs, axes, bows,
-machine-soldier arms; ~40 lines / ~840 instances; bank 40 is the ceiling, see Blocked §2).
+battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + **script batch 005 = unique lines 1035–1100**
+(66 lines, one scene, resident in **bank 31 alone**, 1,372 JP chars, 35,581 bytes free — no bank
+pressure at all).
+
+**Correction to the wave-1 note: batch 005 must NOT be more of the description table.** Batch 004
+spends about 1,028 of bank 40's 1,771 free bytes; with the 500-byte reserve that leaves roughly
+240 bytes, i.e. ~8 more table lines. The item-description table is effectively finished for this
+run once batch 004 merges.
+
+Script batches after that, each a single scene resident in a single roomy bank (`queue.py`
+groups them; tightest bank free in brackets):
+
+| lines | count | JP chars | bank |
+|---|---|---|---|
+| 984–1034 | 51 | 1,098 | 30 [36,671] |
+| 888–922 | 35 | 2,034 | 28 [34,841] |
+| 815–838 | 24 | 1,173 | 21 [36,819] |
+| 747–814 | 68 | 3,671 | 20 [29,489] — split into two batches |
+| 923–983 | 61 | 4,977 | 29 [27,323] — split into two batches |
+| 582–632 | 51 | 1,323 | 12 [11,621] |
+| 1104–1138 | 35 | 1,925 | 33 [10,615] — watch bank 33 |
 
 ## Remaining (dispatchable) — measured by `python3 tools/queue.py battle`, 2026-09-08
 Battle, **30 chunks / 32,709 JP characters**, in chapter order (tier, budget ratio):
@@ -77,9 +95,19 @@ instance yield first. After that the pool is the 1-instance story text in the ro
    +30,534 bytes in bank 41 (353 free), +20,924 in bank 40 (1,771), +14,720 in bank 5 (4,681),
    +12,798 in bank 2 (8,805) and +11,492 in bank 33 (10,615) — about **66 KB short**. Every
    other bank has room. 376 unique lines / 3,001 instances are therefore unshippable until a
-   MAIN1.EXE repoint or bank-spill scheme exists. **Policy this run:** bank 40's and bank 41's
-   budgets are spent on the 21-instance item-description table rather than on 1-instance story
-   lines, because instances are what the player reads. Reversible — it is a choice, not a fact.
+   MAIN1.EXE repoint or bank-spill scheme exists.
+
+   **The two worst cases are whole late chapters, and they are the clearest statement of the
+   problem yet:** unique lines **1160–1354** (195 lines, 4,836 JP chars) are resident in **bank 40
+   alone**, which has 1,771 bytes free and would need about 19,000; unique lines **1355–1387**
+   (33 lines, **14,607 JP chars**) are resident in **bank 41 alone**, which has 353 bytes free and
+   would need about 29,000. Neither chapter can be shipped even partially in a way worth playing.
+
+   **Policy this run, with the numbers that decide it:** bank 40's spendable budget goes to the
+   21-instance item-description table (~40 lines ≈ 840 instances) rather than to bank 40's own
+   story text (~25 of 195 lines ≈ 25 instances, leaving that chapter 90% Japanese). A complete,
+   coherent table beats a tenth of a chapter. Reversible — it is a choice, not a fact — but the
+   arithmetic is not close.
 3. **Main-script box not yet widened** (MAIN1.EXE side). Translate to 24 columns anyway;
    `riotfont.py rewrap` re-flows later.
 4. **In-game checks**: FLAGS §D2/§D3 (pages over 4 rows), §D4 (is line 1234 reachable), §F6
