@@ -46,10 +46,28 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 ## In flight
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | — | dispatched | 1 | translator |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | — | dispatched | 1 | translator |
-| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | — | dispatched | 1 | translator |
-| script batch 004 | — | translator-4 | `tl/script-004` | — | dispatched | 1 | translator |
+| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **PR open** — 3,499 / 8,192, 4,693 slack | 1 | barrier |
+| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | — | translating | 1 | translator |
+| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack | 1 | barrier |
+| script batch 004 | — | translator-4 | `tl/script-004` | — | translating | 1 | translator |
+
+**Barrier: 2 of 4.** Waiting on battle chunk 2 and script batch 004; both translators are alive
+and working, so neither is re-dispatched (CLAUDE.md §4 step 4 — never dispatch over a live agent).
+No review starts until all four PRs are open.
+
+Chunk 1's report carried first renderings for strings that recur in chunks 2 and 3 — ノロ →
+`，ｎｙｏｒｏ．`, おお → `Ｏｈｏ`, ううっ → `Ｕｇｈ`, それにしても → `Ｓｔｉｌｌ，`, いやいや →
+`Ｗｅｌｌ　ｎｏｗ，`, 謹慎 → `ｃｏｎｆｉｎｅｄ` — and these were sent to both translators while
+they still had the drafts open, rather than left for the reviewer to raise as CHANGES.
+
+**Two corrections chunk 1 raised for the reviewer, both on already-shipped `tl/battle/chunk_000.txt`
+and neither touched by a translator (CLAUDE.md §3):**
+1. `ああ。` — glossary §6 fixes `Ｙｅａｈ`; chunk 0 line 2 renders `Ｙｅｓ．`. `Ｙｅａｈ` also
+   stands in `tl/script/batch_002.tsv`, so chunk 0 is the lone outlier. Same width, no re-flow.
+2. `くっ` — glossary §11.5 fixes `Ｔｃｈ`; chunk 0 line 18 renders `Ｕｇｈ．．．`. This one matters
+   now, because chunk 1 has taken `Ｕｇｈ` for ううっ — a different source string. Until it is
+   fixed, `Ｕｇｈ` is doing two jobs.
+Either edit chunk 0 or amend the glossary, but the reviewer must settle both at integration.
 
 ## Next up (wave 2, provisional)
 battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + **script batch 005 = unique lines 1035–1100**
