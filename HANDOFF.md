@@ -53,7 +53,7 @@ of the wave; after it the wave closes.
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | **2** | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ✅ **MERGED round 2** — squash `2957d80`, **7,437 / 8,192 (755 slack)**, byte-neutral rework; integration = the commit immediately after it, `integrate: chunk 008 (PR #11)`. All 8 gates green at both rounds; round 1 was CHANGES on two reading findings, both applied. Glossary **§29**, `FLAGS.md` **§Q**. ⚠️ `ルート`'s §9 row is **deliberately left live for #12 to strike**. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | ✅ **MERGED round 1** — squash `7a37181`, **5,417 / 8,192 (2,775 slack)**; integration = the commit immediately after it, `integrate: chunk 013 (PR #10)`. All 8 gates green, 0 blocking findings. Branch not deleted (proxy 403 — harmless) |
-| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | 🔍 **IN REVIEW** (reviewer 4 of 4, LAST UNIT) — PARK proposed; takes §30 / §R and strikes `ルート` |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | ⚠️ **CHANGES round 1 — PARK UPHELD**; rework sent. Round 2 = straight `park:` merge, §30 / §R, strike `ルート` |
 
 **PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
 Twelve edits across five files (the dispatch's eleven and HANDOFF's eleven were *different*
@@ -255,6 +255,35 @@ the re-flow saves a character. `{FCC0}` unchanged, per-line page counts unchange
   step-6 reorders to two**, both forced.
 - **Finding 3 confirmed against the translator's own re-derivation**: +2/−5, net −3, and the two
   missed turns are exactly the two the reviewer named.
+
+**PR #12 (chunk 17) — CHANGES round 1, but the PARK IS UPHELD.** The reviewer re-derived the
+artifact from the dump rather than inheriting it: `入` is the unique character encoding to `93 FC`;
+chunk 39 msg 8 is the same shape with `向` = `8C FC`; **24 occurrences across 10 chunks**; all four
+candidate encodings produce the byte-identical stream `FC70 0093 FCA3 00020000`; and run through
+`assemble.tag_parity` / `validate_body`, the dump form **passes parity, fails charset** while every
+re-tokenised form **passes charset, fails parity** — unsatisfiable. Every figure re-derived
+identical (5,873 / 8,192, slack 2,319, 2.17× vs 3.19×, widest 23, `{FCC0}` 12 → 12, 0 parity
+mismatches on 30 messages).
+
+**Why it was not simply merged as parked:** a parked unit ships **unchanged** after a `git mv`, and
+nobody re-reads `pending/` later — so two reading defects had to be fixed now, not inherited into
+`tl/` months from now. Both are single-row, zero-or-negative bytes, no re-flow:
+`Ｉ　ｒｅａｄ　ｔｈｅｍ　ｔｏｏ　ｓｏｆｔｌｙ．` is not English and its glossary justification was false
+(**`ｓｏｆｔ` occurs nowhere in `tl/`**; `chunk_009` ships `ｈａｒｄｅｒ`), and `いや、` → `Ｎｏ．`
+breaks §25.2 where the unit itself renders `いえ、` → `Ｎｏ，` twice. **Coordinator re-checked both
+against the corpus before relaying: both hold** — and the single shipped `Ｎｏ．` is `Ｎｏ．．．`, an
+ellipsis, so it is no counterexample.
+
+**Two corrections to the PR's own account, for `FLAGS.md` §R:** the "five of those ten" list has
+**eight** entries and eight is right; and the swallowed byte is **`FA` in chunks 15/27/32, not
+always `FC`** — so the dumper fix must address argument lengths in general, not one byte value.
+
+**⭐ THE UNPARK, for a human — now the highest-leverage item in the project.** Fix
+`riotbattle.tokenise` so an argument byte can never start a Shift-JIS text run (teach it the
+argument lengths of `{FC70}` and `{FCA8}`), re-dump, then `git mv pending/chunk_017.txt
+tl/battle/chunk_017.txt` and re-tokenise that one tail — **a 0-byte edit**. That single fix
+**unblocks nine other chunks**. Chunk 17 is finished work — 1,144 JP chars, 2,319 bytes under its
+slot — held up by one character.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
