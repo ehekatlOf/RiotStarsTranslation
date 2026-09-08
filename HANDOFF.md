@@ -11,30 +11,30 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 3 IS CLOSED — 3 merged, 1 parked (translated, blocked on tooling). `check` green.**
-> The next act is to **OPEN WAVE 4'S SESSION**, which wave 3's coordinator does in the same turn.
+> **WAVE 4 IS RUNNING.** Coordinator: `session_013mqnLaJCts7hGduLSmsuak`. Glossary seeded
+> (`e324d6c`, 15 rows in §9). Four units dispatched — see **In flight**.
+>
+> **If that session died mid-wave:** do NOT restart the wave. Run preflight, reconcile the open
+> PR list against **In flight** below, re-dispatch only units with no PR and no live translator
+> (`ListAgents` first — silence is not death), then review behind the barrier as usual.
+>
+> **When wave 4 closes**, its coordinator opens wave 5's session in the same turn:
 >
 > ```
 > create_session(                                        # claude-code-remote MCP
->   title:           "Riot Stars — wave 4",
->   tags:            ["riotstars-translation", "wave-4"],
+>   title:           "Riot Stars — wave 5",
+>   tags:            ["riotstars-translation", "wave-5"],
 >   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
 >   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-4 seed, per SKILL.md §6a>
+>   prompt:          <the wave-5 seed, per SKILL.md §6a>
 > )
 > ```
-> Omit `environment_id` and `model` so both inherit. Units: **battle chunks 18, 19, 20 + script
-> batch 2** — see **Next up**. ⚠️ **NOT chunk 15**: it carries the §D1 artifact (Blocked item 0)
-> and would park exactly as chunk 17 did.
->
-> ✅ **DONE 2026-09-08 22:19Z — wave 4's session is OPEN: `session_013mqnLaJCts7hGduLSmsuak`.**
-> Wave 3's coordinator is finished; the chain is live and needs no human.
->
-> If that session never ran, the chain broke here: open a replacement the same way.
+> Omit `environment_id` and `model` so both inherit. Wave 5's units are in **Next up**.
 
 ## Last updated
-2026-09-08 · by: **wave-3 coordinator** (`session_0126mzDCZDEoby12pU5qXegc`) ·
-wave: **3 CLOSED — 3 merged, 1 parked** · queue: **fresh**
+2026-09-08 · by: **wave-4 coordinator** (`session_013mqnLaJCts7hGduLSmsuak`) ·
+wave: **4 IN FLIGHT — 4 dispatched** · queue: **fresh**
+
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -48,36 +48,47 @@ wave: **3 CLOSED — 3 merged, 1 parked** · queue: **fresh**
 40 → 471, 5 → 3,381**, 2 → 7,505, 33 → 9,315. Bank 40 lost 38 bytes to PR #9's item-table edits.
 Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifact).
 
-## In flight
-**Nothing. Wave 3 is closed.** Wave 4's session dispatches its own units.
+## In flight — WAVE 4 (dispatched 2026-09-08)
+Barrier: **review nothing until all four have an open PR.** Base branch for every unit and PR is
+`claude/workflow-translation-iterate-uzlkns`.
 
-## Next up — WAVE 4
+| Unit | Branch | File | Budget | PR | Status |
+|---|---|---|---|---|---|
+| battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 544 JP, tier D (6.28) — roomy | — | dispatched |
+| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,567 JP, tier B (**1.94 — tight**) | — | dispatched |
+| battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 636 JP, tier D (4.75) | — | dispatched |
+| script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,147 JP, banks 12–15 | — | dispatched |
 
-**1. Battle chunks 18 (D 6.28), 19 (B 1.94), 20 (D 4.75)** — chapter order, all three artifact-free.
-⚠️ **Chunk 19 inherits two rulings already made, at cost, in wave 3** — do not re-litigate them:
-- It carries **both `了解` and `わかった`**, the co-occurrence §25.3 had no reserve for. `glossary.md`
-  §29.4 fixed it: `了解` keeps `Ｕｎｄｅｒｓｔｏｏｄ`, a co-occurring `わかった` takes **`Ａｇｒｅｅｄ．`**.
-- Its **three `指揮下` instances take `ｃｏｍｍａｎｄ`**, not `ｓｅｒｖｅ　ｕｎｄｅｒ` (§28) — two are
-  already shipped that way in chunks 7 and 14.
+⚠️ **The script unit is `queue.py` batch POSITION 2, written to `batch_006.tsv`** — `batch_002.tsv`
+already exists and is merged. Do not let the position number become the filename.
 
-**2. One script batch — batch 2, already vetted clean**: unique lines **319, 335, 599–646**
-(50 lines / 53 instances, 1,332 JP chars, banks 12–15, all roomy). Shop and merchant dialogue.
-The full vetting table is below; batch 3 is **28/50 debug scaffolding and must not be dispatched**.
+⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
+translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
+byte-identical English. The seed row is struck by the **second** of the two reviewers to merge.
 
-**3. Seed the glossary BEFORE dispatching.** It moved **four times** during wave 3 (§27, §28, §29,
-§30) and every reviewer had to weigh "translator error" against "a ruling that did not exist yet".
+## Next up — WAVE 5
+**Battle chunks 21 (D 4.28), 22 (D 4.59), 24 (C 2.99)** — chapter order, all artifact-free.
+⚠️ **Skip 23** as well as 15: both carry the §D1 dump artifact (Blocked item 0).
 
-| `queue.py script` batch | Lines | Banks | Verdict |
+**One script batch — `queue.py script` position 1**, unique lines **318, 421–469** (50 lines /
+52 instances, 3,056 JP chars, banks 2–3): recruitment and shop dialogue, vetted clean by wave 3.
+⚠️ **Write it as `tl/script/batch_007.tsv`** — the position number is not the filename; wave 4
+took `batch_006.tsv`.
+
+| `queue.py script` position | Lines | Banks | Verdict |
 |---|---|---|---|
-| batch 1 — 318, 421–469 | 50 / 52 inst, 3,056 JP | 2, 3 | ✅ clean — recruitment & shop dialogue |
-| **batch 2** — 319, 335, 599–646 | 50 / 53 inst, 1,332 JP | 12–15 | ✅ **clean, the pick** |
-| ~~batch 3~~ — 320, 1073–1121 | 50 / 52 inst | 31–34 | ⛔ **28/50 DEBUG SCAFFOLDING** — BGM sound-test menu (`５０：新曲１`, `１６：バトル（ザコ戦）`) and a flag screen (`どのフラグを操作しますか？`). **Do not dispatch.** |
-| batch 4 — 326–328, 470–516 | 50 / 53 inst, 1,638 JP | 4, 5, 7 | ✅ clean — ノロ village + towns. ⚠️ bank 5 has 3,381 free |
+| **1** — 318, 421–469 | 50 / 52 inst, 3,056 JP | 2, 3 | ✅ **clean — wave 5's pick** |
+| ~~2~~ — 319, 335, 599–646 | 50 / 53 inst | 12–15 | ⏳ taken by wave 4 → `batch_006.tsv` |
+| ~~3~~ — 320, 1073–1121 | 50 / 52 inst | 31–34 | ⛔ **28/50 DEBUG SCAFFOLDING** — BGM sound-test menu (`５０：新曲１`) and a flag screen (`どのフラグを操作しますか？`). **Never dispatch.** |
+| 4 — 326–328, 470–516 | 50 / 53 inst, 1,638 JP | 4, 5, 7 | ✅ clean — ノロ village + towns. ⚠️ bank 5 has 3,381 free |
 
 ⚠️ **Vetting method, or the check silently passes everything:** `script_unique.txt` rows are
-`<instance count>\t<text>`, so the scaffolding regex `フラグ|：新曲|^[０-９]{2}：|鑑賞モード` must match
-the **text field**. Against the raw line the anchored `^[０-９]{2}：` never fires and batch 3 scores
-18/50 instead of its true 28/50 — a vet that looks like it passed.
+`<instance count>\t<text>`, so the scaffolding regex `フラグ|：新曲|^[０-９]{2}：|鑑賞モード` must
+match the **text field**. Against the raw line the anchored `^[０-９]{2}：` never fires and position
+3 scores 18/50 instead of its true 28/50 — a vet that looks like it passed.
+
+**Seed the glossary BEFORE dispatching.** It moved four times during wave 3; wave 4 seeded 15 rows
+up front and told every reviewer to re-run gate 7 against the *current* glossary.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **21 open chunks** after wave 3, but ⚠️ **6 of them carry the §D1 dump artifact (Blocked
@@ -119,17 +130,14 @@ banks (518–1,413) is what remains dispatchable; `queue.py script` offers batch
    other bank has room. 376 unique lines / 3,001 instances are therefore unshippable until a
    MAIN1.EXE repoint or bank-spill scheme exists.
 
-   **The two worst cases are whole late chapters, and they are the clearest statement of the
-   problem yet:** unique lines **1160–1354** (195 lines, 4,836 JP chars) are resident in **bank 40
-   alone**, which has 471 bytes free and would need about 19,000; unique lines **1355–1387**
-   (33 lines, **14,607 JP chars**) are resident in **bank 41 alone**, which has 353 bytes free and
-   would need about 29,000. Neither chapter can be shipped even partially in a way worth playing.
+   **Worst cases:** unique 1160–1354 (195 lines) are resident in **bank 40 alone** (471 free,
+   needs ~19,000); unique 1355–1387 (33 lines, 14,607 JP chars) in **bank 41 alone** (353 free,
+   needs ~29,000). Neither late chapter can be shipped even partially in a way worth playing.
 
-   **Policy this run, with the numbers that decide it:** bank 40's spendable budget goes to the
-   21-instance item-description table (~40 lines ≈ 840 instances) rather than to bank 40's own
-   story text (~25 of 195 lines ≈ 25 instances, leaving that chapter 90% Japanese). A complete,
-   coherent table beats a tenth of a chapter. Reversible — it is a choice, not a fact — but the
-   arithmetic is not close.
+   **Policy this run:** bank 40's spendable budget goes to the 21-instance item-description table
+   (~40 lines ≈ 840 instances), not to bank 40's own story text (~25 of 195 lines ≈ 25 instances,
+   leaving that chapter 90% Japanese). Reversible — a choice, not a fact — but the arithmetic is
+   not close.
 3. **Main-script box not yet widened** (MAIN1.EXE side). Translate to 24 columns anyway;
    `riotfont.py rewrap` re-flows later.
 4. **In-game checks**: FLAGS §D2/§D3 (pages over 4 rows), §D4 (is line 1234 reachable), §F6
@@ -160,6 +168,15 @@ banks (518–1,413) is what remains dispatchable; `queue.py script` offers batch
 - 2026-09-08: **a parked unit gets the full reading review before it is parked** (PR #12). It ships
   *unchanged* after a `git mv` and nobody re-reads `pending/`, so defects found later are inherited.
 
+- 2026-09-08 (wave 4 preflight): ⚠️ **a fresh container clones SHALLOW and carries a STALE local
+  `claude/workflow-translation-iterate-uzlkns` ref** (wave-1 state, *no merge base* with origin).
+  The container starts detached at the right commit, so `git checkout <branch>` silently moves you
+  backwards 51 commits and `git pull --ff-only` then aborts. Fix: `git reset --hard
+  origin/claude/workflow-translation-iterate-uzlkns` after fetching. Verify with `git log -1`
+  before trusting the tree — no work is lost, the local ref is a container artifact.
+- 2026-09-08: **the `queue.py` batch POSITION is not the filename.** Wave 4's unit was position 2
+  and became `batch_006.tsv`; `batch_002.tsv` has been merged since wave 1.
+
 **Rulings live in their homes, not here**: `glossary.md` §23–§30, `FLAGS.md` §K–§R,
 `findings.md` §24, `pending/README.md`. Wave 3 added §27–§30 and §O–§R.
 
@@ -170,19 +187,15 @@ banks (518–1,413) is what remains dispatchable; `queue.py script` offers batch
 | 2 | battle 4, 6, 9 + script 005 | **4** | 0 | battle 16/44 (26.3%); script 211 lines (50.9%) |
 | 3 | corrections/audit-wave1 + battle 8, 13, 17 | **3** | **1** | battle **18/44 (32.2%)**; script unchanged |
 
-**Wave 3 detail.** Full three-role split; PRs #9–#12. `#9` corrections — 12 edits across 5 files,
-round 1, **closing the live CLAUDE.md §3 violation**: `tl/battle/` now holds **0 divergent duplicate
-renderings** (was 1). `#11` chunk 8 — 7,437 / 8,192, round 2. `#10` chunk 13 — 5,417 / 8,192,
-round 1, zero blocking findings. `#12` chunk 17 — **PARKED**, translated and 2,335 bytes under its
-slot, blocked solely by the §D1 dump artifact (Blocked item 0).
-**The wave's pattern was findings being verified rather than obeyed, in both directions:** a
-translator disproved a finding's premise before applying it (the mid-sentence break could not be
-removed — 118 columns against a 92 ceiling); another improved on a proposed fix
-(`Ｉ　ｍｉｓｒｅａｄ　ｔｈｅｍ．` over `ｕｎｄｅｒｅｓｔｉｍａｔｅｄ`, reserving that word for the three dump
-lines that own it) and the reviewer withdrew its own proposal; a reviewer **demoted a binding ruling
-it had been asked to ratify** (`指揮下に入る` occurs once, not six times); two reviewers withdrew
-findings after measuring; and translators corrected three coordinator errors — a wrong line number,
-a wrong column figure, and an over-warning generalised from another chunk's geometry.
+**Wave 3 detail.** PRs #9–#12, full three-role split. `#9` corrections (12 edits, 5 files) closed
+the live CLAUDE.md §3 violation — `tl/battle/` now holds 0 divergent duplicate renderings. `#11`
+chunk 8 — 7,437 / 8,192, round 2. `#10` chunk 13 — 5,417 / 8,192, round 1, zero blocking findings.
+`#12` chunk 17 — **PARKED**, translated and 2,335 bytes under its slot, blocked solely by the §D1
+dump artifact. **The wave's pattern was findings being verified rather than obeyed, in both
+directions** — translators disproved a finding's premise and improved on a proposed fix, two
+reviewers withdrew findings after measuring, one demoted a ruling it had been asked to ratify, and
+translators corrected three coordinator errors. Detail lives in `glossary.md` §27–§30 and
+`FLAGS.md` §O–§R.
 
 ## How to resume
 1. `git checkout claude/workflow-translation-iterate-uzlkns && git pull --ff-only && python3 tools/assemble.py check`
