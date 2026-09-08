@@ -24,7 +24,14 @@ says how the work is split, gated, merged and handed over.
 > boundary — which is exactly what §7 already requires them to be sufficient for.
 >
 > Within a wave, translators and the reviewer remain **subagents** of that wave's session; that is
-> where parallelism belongs. It is only the wave boundary that gets a new session. The dispatch
+> where parallelism belongs. It is only the wave boundary that gets a new session.
+>
+> **This is load-bearing for quality, not only for context. A coordinator running as a subagent
+> has no `Task` tool** — subagents cannot spawn subagents — **so it cannot spawn a reviewer, and
+> the three-role split silently collapses into one agent that dispatches, judges and merges its
+> own wave.** That happened in wave 1 and cost the independence of four merges. A wave running in
+> its own session has the full tool surface and can keep the roles apart. If you are coordinating
+> a wave and you do not have `Task`, you are in the wrong container: see §8. The dispatch
 > template is in `.claude/skills/translate/SKILL.md` §6a and `.claude/agents/orchestrator.md` §7.
 > `HANDOFF.md` → **NEXT ACTION** always names the literal next spawn; if a wave has just closed and
 > that line does not name one, the wave is not finished — write it and open the session.
@@ -256,6 +263,14 @@ planned, unit dispatched, PR opened, review decided, rework sent, wave closed, r
   binaries, in-game checks); no amount of retranslation unblocks them.
 - `check` red on `main` → stop dispatching; revert the breaking merge if needed; fix; resume.
 - Cannot push or open PRs after retries → record it in HANDOFF and stop.
+- **No `Task` tool → you cannot spawn a reviewer.** This is not one of the four stop conditions, so
+  do not stall: run the wave, run every §6 gate yourself, and merge. But you are then judging your
+  own work, so you **must** (a) say so in your report, in plain words, (b) mark every unit you
+  merge **SELF-REVIEWED** in `HANDOFF.md`, and (c) write into NEXT ACTION that the next session
+  owes those units an **independent post-merge audit of the reading review** before it dispatches
+  its own wave. Silently absorbing the loss of independence is the one unacceptable response.
+  The cause is structural — you are a subagent, and subagents cannot spawn subagents — so the
+  real fix is that waves run as sessions (top banner), not as subagents.
 - A subagent that returns nothing, or whose notification never arrives, is **lost, not finished**:
   check `ListAgents` first, and only if it is gone remove its worktree and re-run its unit. Never
   conclude a wave is done from the absence of a message.

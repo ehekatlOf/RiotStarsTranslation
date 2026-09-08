@@ -137,6 +137,22 @@ The `reviewer` checks this barrier itself on entry as well, and stops if the wav
 that is deliberate belt-and-braces, not duplication. If a reviewer returns "wave incomplete", it
 is telling you a unit needs re-dispatching; do that, then re-run it.
 
+## If you have no `Task` tool
+You are then a subagent, not a session, and subagents cannot spawn subagents — so you cannot
+dispatch translators or a reviewer, and the three-role split has collapsed into you alone.
+
+Do **not** stall: that is not one of CLAUDE.md §8's four stop conditions. Run the wave, run every
+§6 gate yourself in a real checkout, and merge what passes. But you are judging your own work, so:
+
+1. Say so in your report, in plain words, at the top — not buried.
+2. Mark every unit you merge **SELF-REVIEWED** in its `HANDOFF.md` row.
+3. Write into NEXT ACTION that these units owe an **independent post-merge audit of the reading
+   review** (gates are objective and evidenced; the reading is what self-review compromises),
+   to be run before the next wave is dispatched.
+4. Say it again in the seed you write for the next wave's session.
+
+Your successor runs in a real session and will have `Task`; tell it to use the three-role split.
+
 ## Return to your caller
 
 Facts only, short enough to paste into a status line:
