@@ -60,7 +60,7 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
-| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | 🔄 **CHANGES round 1, rework sent 16:20Z** — 5,897 / 8,192, 2,295 slack. Seven gates green; **gate 7 (glossary) failed** because `4899c93` added §23 *after* this PR was drafted, and §23.1 / §23.3 name chunk 6's own lines. Six findings, all ≤ 23 col replacements. Reviewer ratified `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`; cleared Flag 14; queued `{FC03}` for `findings.md` at merge |
+| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | **REWORK PUSHED `e6ca6b2`, re-review round 2 dispatched 16:40Z** — 5,899 / 8,192, 2,293 slack, widest row 23, `{FFFE}` delta unchanged (no fix added re-flow). All 6 findings fixed; finding 3 fixed with a **different** replacement, backed by evidence and verified by this coordinator |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
@@ -126,6 +126,30 @@ following the glossary. #8's reviewer decides, but must decide *knowing this*.
 `ほう` / `おや` / `おお` / `あ、` by punctuation, but `おお、` → `Ｏｈ，` **collides with**
 `ほう、` → `Ｏｈ，`. The dumps hold 4 `ほう、`/`ほお、` against 40 `おお、`, so the four-way split
 does not actually hold as written.
+
+### 🔴 A METHODOLOGICAL DEFECT IN EVERY BATTLE UNIT'S GATE 6, disclosed by chunk 6's translator
+
+**Battle `tl/*.txt` files contain ZERO Japanese characters** — verified by this coordinator:
+chunks 0, 1, 2, 3 all measure 0 JP chars, while `tl/script/batch_001.tsv` measures 964 (script
+TSVs keep Japanese in column 2). **So a battle translator that checks duplicates by grepping the
+Japanese against `tl/` runs a null check that returns "no duplicates" every time, no matter what
+is shipped.** It works for script batches and fails silently for every battle chunk.
+
+Chunk 6's translator disclosed this against its own round-1 work rather than letting it stand,
+and it is why findings 3 and 4 got past it. **The correct check is positional row-pairing** —
+walk the dump rows and the translated rows together per file and compare English for identical
+Japanese segments. Re-run correctly, chunk 6 now agrees with every shipped file.
+
+**Why nothing shipped is known to be wrong because of it:** the reviewers re-derive gate 6 from
+the dumps independently (both #6's and #7's did), and both wave-1 audits ran a proper positional
+scan across all 13 shipped chunks. Defence in depth caught it. But the translator-side claim was
+worthless, so **`translator.md`'s "grep `tl/` and both dumps" instruction should be corrected** —
+queued for wave 3.
+
+**Two parked-file divergences chunk 6's rework leaves, with measured adopt-on-re-cut costs:**
+`pending/chunk_005` L13 `Ｔｈｉｓ　ｃａｎ’ｔ　ｂｅ．．．` → `Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．`
+(16 → 17 col, **+2 B**) and `pending/chunk_043` L14 `Ｗ‐ｗａｉｔ！` → `Ｗ，　Ｗａｉｔ！`
+(9 → 8 col, **−2 B**). Both are due when the slot patch lands; add to `pending/README.md`.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
