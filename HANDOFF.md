@@ -17,8 +17,11 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 
 ## NEXT ACTION — always current, always a literal instruction
 > **Wave 1 is in flight** (battle chunks 1, 2, 3 + script batch 004; four translators dispatched
-> 2026-09-08). As each translator returns: record its PR here, commit, push, then run the
-> `reviewer` subagent on that PR in the foreground, one at a time.
+> 2026-09-08). As each translator returns: record its PR here, commit, push — then **check the
+> whole wave against the open PR list. Review nothing until all four units have an open PR**
+> (CLAUDE.md §4 step 4, the wave barrier). A unit whose translator returned, died or could not
+> push gets a fresh translator for that unit and the barrier waits again; two re-dispatches, then
+> park it. Once the barrier is met, run the `reviewer` subagent one PR at a time, in unit order.
 >
 > **When wave 1 closes, spawn the wave-2 `orchestrator` subagent immediately**
 > (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4, 6, 9 +
