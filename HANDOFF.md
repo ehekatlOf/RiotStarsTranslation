@@ -101,27 +101,42 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 - **`リオン` → `Ｌｅｏｎ`** (§9 wave-2 seed) settles **§10.1**, and also makes the stale
   "unresolved — Lion or Leon" row in §1 wrong. Chunk 6's PR flags both for the reviewer.
 
-### ⚠️ OUTSTANDING: wave 1's four merged units owe an independent reading-review audit
+### ✅ DONE: the wave-1 reading-review audit — **the four units stand as merged**
 
-Commit `16c179e` (pushed by **wave 1's session**, `session_018YepyHo7ky7emoUMicnUcL`, at 13:59 —
-*after* it had handed on) amends `CLAUDE.md` §8 and `orchestrator.md`: a coordinator with no
-`Task` tool must mark its merges **SELF-REVIEWED** and the units owe an **independent post-merge
-audit of the reading review** before the next wave dispatches. Wave 1 was exactly that case —
-chunks 1, 2, 3 and script batch 004 were dispatched, judged and merged by one agent.
+`CLAUDE.md` §8, as amended by wave 1's session in commit `16c179e`, required an **independent
+post-merge audit of the reading review** for wave 1's four self-reviewed units before the next
+wave dispatches. **Wave 2 ran it** — a read-only subagent, in parallel with the wave, writing
+nothing to the repo and returning findings. Full report: **`audits/wave1-reading-review.md`**.
 
-**Wave 2's ruling: the audit runs inside wave 2, in parallel, and does not block dispatch.**
-- Wave 1's session claims an audit is "running now", but it is **IDLE**, and any subagent of it
-  reports into *its* context, not this one. Silence there is not evidence of completion.
-- So wave 2 spawned its **own** auditor as a background subagent, **read-only**: it writes
-  nothing to the repo and returns findings, which this coordinator integrates at wave close.
-  That removes any write collision with the reviewer's integration commits.
-- Dispatch was not blocked on it. "An audit is pending" is not one of CLAUDE.md §8's four stop
-  conditions, the audited units are already merged, and the four wave-2 units are disjoint files.
-- The requirement is satisfied **before wave 3 dispatches**, which is what the amendment asks.
+**Verdict: chunks 1, 2, 3 and script batch 004 stand as merged. No correction commit is required
+before wave 3 dispatches. The requirement is satisfied.** Nothing found changes a plot fact, drops
+a clause, mixes a tic, breaks a gate, or renders identical Japanese two ways. Gates were re-run
+independently and all pass. The audit's duplicate scan across all 13 shipped battle chunks found
+**zero divergences inside the audited units**.
 
-**Guard against a stale glossary mid-wave:** the reviewer `git pull --ff-only`s before every
-review and re-runs gate 7 in a real checkout, so any audit correction that lands first is
-automatically binding on the wave-2 units still under review.
+Wave 1's session claimed an audit was "running" but was IDLE, and any subagent of it reports into
+*its* context, not this one — so wave 2 ran its own rather than trusting silence as evidence.
+
+**Backlog this created — housekeeping, none of it blocking:**
+- **8 proposed file edits** (MINOR: one pragmatic mistranslation, two dropped modifiers, a
+  garden-path break, a compound-noun split, three idiom fixes). All verified to fit — every row
+  ≤ 23 columns; the four `batch_004` edits cost 38 bytes total in bank 40 (509 → **471** free).
+- **6 glossary/FLAGS rulings that are the durable half.** Three are **live in wave 2 right now**:
+  `しかし` (no entry, two shipped forms, one of which — `Ｓｔｉｌｌ，` — is §19.1's fixed form for
+  それにしても; **chunk 6 ×1 and chunk 9 ×2, verified by this coordinator**), `助かった`
+  (chunk 4 ×1), and `愛用` (13 instances still untranslated, three shapes shipped).
+- **One live `CLAUDE.md` §3 violation in *earlier* shipped work**, independently verified:
+  `村が襲われました。` (13 dump instances) is `ｉｓ　ｕｎｄｅｒ　ａｔｔａｃｋ` in `chunk_007` but
+  `ｈａｓ　ｂｅｅｎ　ａｔｔａｃｋｅｄ` in `chunk_034`. Predates wave 1. Cheap fix: change
+  chunk 34 (6,601 slack) to chunk 7's wording; chunk 7 has only 399 slack, leave it alone.
+
+**Who acts:** the **reviewer** rules on the glossary items in its integration commits — `しかし` in
+particular is a genuine tradeoff (chunk 3 also ships でも → `Ｂｕｔ`, and chunks 4/6/9 each carry
+でも ×2, so collapsing them is a deliberate choice), which is the reviewer's call under §6, not the
+coordinator's. **The coordinator deliberately did NOT interrupt the four live translators over it**
+— the risk of destabilising four healthy mid-draft units outweighed pre-empting a divergence the
+reviewer catches anyway, and rework rounds exist for exactly this. The 8 file edits and the
+chunk-34 fix ride in one housekeeping commit at wave close or later.
 
 > ## ⏰ A WATCHDOG TIMER MUST BE ARMED AT ALL TIMES
 > The main session wakes only on a notification or a human message. Wave 1 stalled once because a
