@@ -10,7 +10,12 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions), 984–1001 and 1040–1047 (batch 005), and `battle_dump.txt`
-chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–5 + all of tier E).
+chunks **0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 33, 34, 35, 40** (prologue + chapters
+2–5 + all of tier E), plus the parked **5, 17, 43**. ⚠️ **This line was stale and is corrected
+2026-09-08 (PR #13 review): it omitted chunks 6, 8, 9, 13 and 17, all merged or parked in waves
+2–3.** It is a coverage note, not a fixed entry — no rendering changes and nothing needs
+revisiting; §4.3 applies to entries, and the correction is recorded here and in `FLAGS.md` §S so
+it is not silent.
 
 ---
 
@@ -2041,3 +2046,181 @@ unit by unit:**
 | The villager (portrait 04) | Warm, worn and civilian, contractions throughout — `Ｉ’ｍ　ｃｏｕｎｔｉｎｇ　ｏｎ　ｙｏｕ，`, `Ｉ　ｄｏｎ’ｔ　ｋｎｏｗ　ｉｆ　ｉｔ’ｌｌ`. His `兵隊さん` is carried in that warmth, not in an added word |
 | The 9th Army (portrait 00) | §7 unchanged — `Ｒｉｇｈｔ，　ｗｅ　ｓｔｏｒｍ　ｔｈｅ{FFFE}ｆｏｒｔｒｅｓｓ！！` |
 | Tutorial box (`{=FA1000300030}`, message line 20) | §7 unchanged — plain instructional second person, **byte-identical to §27.2** |
+
+---
+
+## 31. Added by chunk 018 (PR #13, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_018.txt` — chapter 18, the betrayal at the fortress. Five messages:
+Guilford stops Rimul and relays what he says is Commander Krippen's order, sending her and the
+Crimson Knights to Doctor Crimea in Crossley over her objection that the defence here will fall;
+they part with `死ぬなよ` / `貴官もな`; alone, Guilford notes his pieces are secured and settles in
+to watch Krippen's struggle. Then the fortress commander (portrait 08, unnamed) storms in looking
+for Rimul, learns Guilford sent her out, works out the betrayal and swears revenge; the battle-open
+taunt; his death line; and a coda in which Rimul confronts Guilford and he tells her all goes to
+the script. **3,035 / 8,192 bytes, slack 5,157 — 78 text rows, widest 23, none at 24**, no page
+over 4 text rows. Merged at **round 1**, with zero blocking findings.
+
+⚠️ **Line numbers in this section are `tl/` FILE lines** — the `=== CHUNK` header counted as line
+1, so the five text-bearing messages are file lines 5, 7, 8, 10 and 12. That is the `rowcheck`
+convention of §29 shifted by one and the **fourth** numbering convention in this repo
+(`FLAGS.md` §O8, §P; glossary §28, §29, §30). **Locate by content.**
+
+⚠️ **The PR's "60 text rows" is wrong; the figure is 78** — recounted twice at review by
+independent walks of the `{FFFE}`/`{FCC0}`/`{FC30}`/`{FC50}`/`{FC51}` boundaries (line 5 = 43,
+line 7 = 22, line 8 = 4, line 10 = 2, line 12 = 7). Every substantive claim attached to it —
+widest 23, none at 24, no page over 4 rows — was verified true.
+
+`Ｇｕｉｌｆｏｒｄ` / `Ｌａｄｙ　Ｒｉｍｕｌ` (§1), `Ｄｏｃｔｏｒ　Ｃｒｉｍｅａ` / `Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ`
+(§25.1), `Ｃｒｏｓｓｌｅｙ` (§30.1), `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2),
+`Ｇｅｎｅｒａｌ` for 将軍 (§26.2), `Ｈｏｗｅｖｅｒ，` (§23.3 — its **seventh** use), `Ｎｏ` for いや
+(§25.2), `Ｈｍｐｈ，` (§6), `Ｔｃｈ，` (§11.5), `Ｅｎｏｕｇｈ！` (§14.5), `Ｗｈａｔ！？` (§28.3),
+`Ｙｏｕ　ｆｏｏｌ．` (§28.3), `Ｒｉｇｈｔ` (§6), `Ｕｎｉｔ　１` (§11.2, §17.2) and `ｒａｔｓ` (§30.1) are
+used unchanged. **`Ｇｉｌｆｏｒｄ` occurs nowhere in `tl/` or `pending/`** — verified at review.
+**No §9 PROVISIONAL row is promoted here**: none of the fifteen wave-4 seeds occurs in this chunk,
+so the cross-unit rows held for chunks 19 and 20 are untouched.
+
+`了解` is **absent** from this chunk and `わかった` occurs **once**, so §29.4's `Ａｇｒｅｅｄ．`
+reserve is **not** engaged and §6's `Ｒｉｇｈｔ` governs — confirmed at review by counting the dump
+body, not taken on report. ⚠️ **Chunk 19 does engage it**; the two rulings must not blur.
+
+### 31.1 People, ranks and machines
+
+| Japanese | English | Note |
+|---|---|---|
+| クリッペン司令 | `Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ` | ⚠️ **17 columns, not the PR's 18** — remeasured at review; 18 is the form with a following stop, which is §25.1's own figure for `クリッペン司令官`. The source's **shorter** spelling: one English form for both, the documented same-meaning/two-spellings collapse (§17.2 鬼 / オーガ, §11.5 くっ / クッ). §11.2's 司令官 / 指令官 → Commander is unchanged. **2 occurrences, both this chunk**; `クリッペン司令官` is chunks 9 and 17 |
+| １号機 (bare) | `Ｕｎｉｔ　１` | 6 columns, digit full-width. The bare form of §17.2's `オリジナルＮ号機` → `Ｏｒｉｇｉｎａｌ　Ｕｎｉｔ　Ｎ` and §11.2's `４号機` → `Ｕｎｉｔ　４`. Verified at review against `batch_003` L77/L82/L83/L87/L88 and `pending/chunk_017` msg 6's `オリジナル１号機` → `Ｏｒｉｇｉｎａｌ　Ｕｎｉｔ　１`. **4 battle** (chunks 16, 17, 18 ×2) **+ 84 script**, most of them the item-description table §17.2 already governs |
+
+**Portrait 08 is deliberately unnamed.** He commands the fortress, holds Unit 1, is addressed by a
+subordinate who calls Rimul `リムル様` and Guilford `ギルフォード将軍`, and is the map boss. The
+evidence points to **Commander Krippen** — Guilford's soliloquy is
+`クリッペン司令のご奮闘を拝見させてもらうとしよう`, i.e. he stays to watch Krippen fight — but **no line
+in the chunk names him**, so no row of his carries a name, on the §28.7 / `FLAGS.md` §P practice
+for chunk 13's King. Portraits 06 = Rimul and 07 = Guilford **were verified from the tag stream at
+review**, not assumed: file line 5 opens `{FCB0}{=00070000}{FC50}待て、リムル。` answered by
+`{FCB0}{=00060001}{FC51}ギルフォード！`, and file line 12 repeats the pair with the channels swapped.
+
+### 31.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| シナリオ | **`ｓｃｒｉｐｔ`** | 6 columns. **Ruled 2026-09-08, PR #13 review — see §31.5.** `全てはシナリオ通りだ。` → `Ａｌｌ　ｇｏｅｓ　ｔｏ　ｔｈｅ　ｓｃｒｉｐｔ．` ⚠️ **NOT a hapax as the PR believed: 3 battle occurrences — this chunk ×1 and chunk 23 ×2 — 0 script.** The **word** is fixed; the frame is not, so chunk 23's `このシナリオ` takes `ｔｈｉｓ　ｓｃｒｉｐｔ` |
+| 守備 (bare noun) | `ｔｈｅ　ｄｅｆｅｎｃｅ` | ⚠️ **11 columns, not the PR's 12.** British per §4. `ここの守備が・・・` → `ｔｈｅ　ｄｅｆｅｎｃｅ　ｈｅｒｅ．．．` Held **distinct** from §2's 守備兵 → *garrison* (shipped `chunk_000` ×2, and **chunk 19 carries it four times**), 守備隊 → *garrison* (`chunk_017`), and chunk 2's verbal 守備につく → *guard*. ⚠️ `ｄｅｆｅｎｃｅ` was already in `tl/` inside two compounds of **other** words — `ｄｅｆｅｎｃｅ　ｐｏｗｅｒ` for 防御力 (`batch_001` L12/L13, `batch_003`) and `ｓｅｌｆ‐ｄｅｆｅｎｃｅ` for 正当防衛 (`chunk_011` msg 8); recorded at review, no collision. **3 bare 守備 in battle** (chunks 2, 18, 23) **+ 6 script** |
+| 配備につく | `ｄｅｐｌｏｙ` (verb) | 6 columns. `早速、貴官の隊も配備についてくれ。` → `Ｄｅｐｌｏｙ　ｙｏｕｒ　ｓｑｕａｄ　ｔｏｏ，` / `ａｔ　ｏｎｃｅ．` The same word as `pending/chunk_017` msg 6's noun 配備 → `ｄｅｐｌｏｙｍｅｎｔ` (×2, verified at review); one word, two grammatical shapes the source itself varies — the §27.1 `愛用` / §30.2 `油断` pattern. *Take up its deployment* is not English. **3 battle** (chunk 17 ×2, this chunk ×1) **+ 3 script**. ⚠️ **Recorded at review and omitted by the PR: `ｄｅｐｌｏｙ` already renders a second Japanese word** — `chunk_033` msg 2's 配置する / 配置して下さい. §3 is not engaged (different messages) and §25.3's test is met: 配置 is battle chunk 33 only (+2 script), 配備 is chunks 17 and 18 only, **disjoint** |
+| 手駒 | `ｐｉｅｃｅｓ` | 6 columns. Guilford's board-game metaphor for the people he has moved. Not *pawns* — 駒 is the neutral piece and the contempt is his, not the word's. ⚠️ **Reach recorded at review; the PR gave none: 1 battle + 3 script**, so the form will be reached again. `ｐｉｅｃｅｓ` also stands in parked `chunk_043` msg 4 as `ｂｌｏｗｎ　ｔｏ　ｐｉｅｃｅｓ` (吹き飛ぶ) — an unrelated English idiom in a parked file, no collision |
+| ご奮闘 | `ｓｔｒｕｇｇｌｅ` | 8 columns. The honorific ご is sardonic and is carried by `Ｉ　ｓｈａｌｌ　ｂｅ　ｐｅｒｍｉｔｔｅｄ　ｔｏ　ｗａｔｃｈ` (拝見させてもらう, humble-causative), not by an added word — §2's politeness rule. ⚠️ **Reach recorded at review: 2 battle, this chunk and chunk 28** |
+| ただならぬ | `ｅｘｔｒａｏｒｄｉｎａｒｙ` | 13 columns. `ただならぬ損失` → `ａｎ　ｅｘｔｒａｏｒｄｉｎａｒｙ　ｌｏｓｓ`. Hapax — 1 battle / 0 script, confirmed |
+| 不服そうだな | `Ｙｏｕ　ｓｅｅｍ　ｄｉｓｓａｔｉｓｆｉｅｄ．` | 22 columns. Hapax — 1 battle / 0 script, confirmed |
+| 心強い | `Ｉ　ａｍ　ｒｅａｓｓｕｒｅｄ．` | 15 columns. Hapax — 1 battle / 0 script, confirmed |
+| 〜め (contempt, on a personal name) | `Ｔｈａｔ　〜` | `ギルフォードめ。` → `Ｔｈａｔ　Ｇｕｉｌｆｏｒｄ．` (14 columns) and `ギルフォードめ・・・` → `Ｔｈａｔ　Ｇｕｉｌｆｏｒｄ．．．` — §5's mechanism, the word fixed and the stops from the source. Takes the contempt into the demonstrative exactly as §20.3's バカ者 → `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ` already does. ⚠️ Distinct from `chunk_006`'s `フェルナンドめが`, which **drops** め and carries the contempt elsewhere in a longer sentence — a different message, so §3 is not engaged. Recurs as `この裏切り者め。` in chunk 21 |
+
+### 31.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| さて、 | `Ｎｏｗ　ｔｈｅｎ，` | ⚠️ **9 columns, not the PR's 10.** ⚠️ **Not a new rendering — recording one already shipped, and verified at review**: `tl/battle/chunk_033.txt` msg 6 ships `さて、果たして、` → `Ｎｏｗ　ｔｈｅｎ，` and had no glossary row. Held **distinct** from §28.8's さあ、 → `Ｎｏｗ，`, and that distinction is **proven, not theoretical**: `chunk_033` contains both source strings and ships them apart. ⚠️ **`Ｎｏｗ　ｔｈｅｎ` already serves two further source strings the PR did not name** — `それじゃ、` (`chunk_003` msg 4) and `おっと。` (`chunk_007` msg 11, as `Ｎｏｗ　ｔｈｅｎ．`). §25.3's test run at review: `さて、` is in chunks 18, 26, 33; `それじゃ` in 3, 7, 15, 32, 43; `おっと` in 7, 25, 43 — **no chunk holds `さて、` with either**. **3 battle + 5 script.** Recurs in chunk 26 |
+| かかってくるがいい。 | `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．` | 19 columns. Deliberately **not** `Ｃｏｍｅ　ａｔ　ｍｅ．`, which `chunk_033` msg 20 already ships for the polite imperative `かかってきなさい。` The 〜がいい is condescending permission, not an imperative, so *You may* keeps them apart **and leaves the plain imperative かかってこい。 (chunks 16 ×2, 30) free to take chunk 33's shipped form.** ⚠️ **Binds chunk 23 L15**, which carries this string byte-identically — verified at review in `battle_dump.txt`, in the line `まさか、お前たち９軍と剣を交えることになろうとはな。かかってくるがいい。骨は拾ってやる。` **2 battle + 0 script** |
+| ネズミども (bare vocative) | `ｙｏｕ　ｒａｔｓ` | 8 columns. §30.1 fixes ネズミども → `ｒａｔｓ` from `pending/chunk_017`'s attributive `カーラインのネズミども` → `ｔｈｅ　Ｃａｒｌｉｎｅ　ｒａｔｓ`; this is the bare vocative, so the ども plural-contempt takes `ｙｏｕ`. **Word unchanged.** §30.1 predicted five more uses — this is the first. `ネズミども` is **6 battle occurrences in chunks 17, 18, 41 and 42** |
+| まさか、 | `Ｓｕｒｅｌｙ` | 6 columns. ⚠️ **Fixed here 2026-09-08 (PR #13 review) — it had never been in this glossary despite being shipped.** `pending/chunk_017.txt` msg 4 renders `まさか、奴らは` → `Ｓｕｒｅｌｙ　ｔｈｅｙ　ｄｉｄ　ｎｏｔ`, and this chunk renders `まさか、裏切る気か？` → `Ｓｕｒｅｌｙ　ｈｅ　ｄｏｅｓ　ｎｏｔ` / `ｍｅａｎ　ｔｏ　ｂｅｔｒａｙ　ｍｅ？`. This is §24.3's `よし、` shape — a form shipped repeatedly that the glossary never fixed. **18 battle occurrences across 13 chunks (0, 17, 18, 19, 23, 24, 25, 26, 27, 30, 32, 39, 43) + 10 script**, so it is the largest single drift risk this unit leaves behind. `Ｓｕｒｅｌｙ` is otherwise free across `tl/` |
+| ええい、 | `Ｅｎｏｕｇｈ！` | ⚠️ **Recorded at review so it is not "corrected" later.** §14.5's entry carries the `！` **as part of the fixed form**, and the source has `、` in every instance — so this is *not* §5's punctuation mechanism, and the `！` must not be re-derived from the source. `chunk_007` msg 2 ships `ええい、全軍　迎えうてッ！！` → `Ｅｎｏｕｇｈ！` / `Ａｌｌ　ｕｎｉｔｓ，　ｉｎｔｅｒｃｅｐｔ！！`, and this chunk's `ええい、この非常時に。` → `Ｅｎｏｕｇｈ！　Ｉｎ　ｔｈｉｓ　ｃｒｉｓｉｓ．` (23 columns) matches it byte-for-byte. Chunk 24 carries a third instance, untranslated |
+
+### 31.4 Ruling — the source's comma yields to English sentence grammar, and §30.3 is unaffected
+
+`いや、わかった。` → **`Ｎｏ．　Ｒｉｇｈｔ．`** (10 columns). Both words are the fixed ones — `Ｎｏ` for
+いや (§25.2), `Ｒｉｇｈｔ` for わかった (§6). What departs is §5's punctuation mechanism, by one
+character.
+
+**This is not a new departure. It is already shipped.** `tl/battle/chunk_014.txt` message 10
+renders `よし、ここまで来たら、一気に行こう。` as `Ｒｉｇｈｔ．　Ｗｅ’ｖｅ　ｃｏｍｅ　ｔｈｉｓ` /
+`ｆａｒ，　ｓｏ　ｌｅｔ’ｓ　ｐｕｓｈ　ｏｎ．` — the source's comma after the fixed assent word promoted to
+a full stop, for exactly this reason. The PR reasoned it out from first principles and was right;
+the precedent settles it.
+
+**The rule, written down because §30.3 looks like it says the opposite and does not:**
+
+> **§5's punctuation mechanism governs whenever the source's own stop is renderable, and yields to
+> English sentence grammar only where the material after the source's comma is a complete
+> independent clause.**
+
+- `pending/chunk_017.txt` — `いや、クロスリーまで伝令を送っていては、間にあわん。` is one sentence with a
+  continuing clause, so `Ｎｏ，` is right and §30.3's round-2 correction of a `Ｎｏ．` there stands
+  **unamended**.
+- Chunk 18 — `いや、わかった。` is two complete utterances. `Ｎｏ，　Ｒｉｇｈｔ．` is a comma splice
+  capitalised, and lowercased (`Ｎｏ，　ｒｉｇｈｔ．`) it inverts the sense into agreement, when Rimul
+  is denying the imputation of dissatisfaction and *then* accepting the order.
+
+Every avoiding reserve was checked and is spent: `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` on わかりました (§21.2),
+`Ｕｎｄｅｒｓｔｏｏｄ` on 了解 (§21.2), `Ｉ　ｋｎｏｗ．．．` on 分かってる (§28.3), `Ａｇｒｅｅｄ．`
+reserved by §29.4 for a case this chunk does not present, `Ｖｅｒｙ　ｗｅｌｌ` and `Ｉ　ｓｅｅ．` named
+by §29.4 as not free. Both forms measure **10**, so nothing rode on width.
+
+⚠️ **This chunk renders `いや、` both ways inside ONE message.** File line 5 has `Ｎｏ，` on
+`いや、私は…来たのだ。` and `Ｎｏ．` on `いや、わかった。`, four pages apart in the same scene. That is
+correct under the rule above — the *word* is `Ｎｏ` in both — but a positional duplicate check run
+by eye will read it as a divergence. It is not one. Same trap as §24.5's `さあ、` / `よし、` before a
+`{FC00}` and §27.4's spaced / unspaced village line. **Lines this affects: none.**
+
+### 31.5 Ruling — `シナリオ` takes `ｓｃｒｉｐｔ`, because `ｐｌａｎ` is already spent on 作戦
+
+`全てはシナリオ通りだ。全ては、な・・・。` is Guilford's reveal, and the source chose the katakana
+loanword over 計画 (which is **absent** from the chunk). Rendered
+`Ａｌｌ　ｇｏｅｓ　ｔｏ　ｔｈｅ　ｓｃｒｉｐｔ．` / `Ａｌｌ　ｏｆ　ｉｔ．．．．`, the echo of `全ては` preserved by
+opening both rows with `Ａｌｌ`. Three reasons, in order of weight:
+
+1. **`ｐｌａｎ` is not free.** §19.2 fixes bare 作戦 → `Ｔｈｅ　ｐｌａｎ？`, shipped in `chunk_001`;
+   `ｐｌａｎｓ` also stands in `pending/chunk_017` msg 4. Spending it on シナリオ would collapse two
+   distinct source words — the §25.3 / §29.4 / §30.4 trap this glossary keeps writing reserves to
+   avoid.
+2. **The transliteration-of-a-loanword precedent.** §30.2's `ハードウェア` → `ｈａｒｄｗａｒｅ`:
+   English has the same word and the same slightly clinical register, so nothing is imported.
+   *Script* also keeps the staged-drama sense Guilford's whole scheme turns on, where *plan* is
+   merely administrative.
+3. ⚠️ **`シナリオ` is NOT a hapax, and this is the argument the PR could not make.** Counted in the
+   dumps at review: **3 battle occurrences — this chunk ×1 and chunk 23 ×2 — and 0 script.**
+   Chunk 23's are `俺には、このシナリオがフェルナンドひとりの手で仕組まれたとは思えない。`, the party
+   working out that the whole affair was staged. That is the **same metaphor**, five chapters
+   later, and `ｓｃｒｉｐｔ` carries it in both places where `ｐｌａｎ` would flatten both. **The
+   ruling binds chunk 23.**
+
+⚠️ **Width does not decide this, and the PR's Flag 6 implied it did.** Remeasured at review:
+`Ｅｖｅｒｙｔｈｉｎｇ　ｇｏｅｓ　ｔｏ　ｐｌａｎ．` is indeed **24** — but `Ａｌｌ　ｇｏｅｓ　ｔｏ　ｐｌａｎ．` is
+**17** and would have fitted comfortably. Reason 1 carries it alone.
+
+⚠️ **The article is recorded, not closed.** `Ａｌｌ　ｇｏｅｓ　ｔｏ　ｔｈｅ　ｓｃｒｉｐｔ．` is **23**;
+`Ａｌｌ　ｇｏｅｓ　ｔｏ　ｓｃｒｉｐｔ．` is **19** and is the tighter English idiom, by analogy with *going
+to plan*. Both are legal and both are §3.1-clean. This is the §30.1 `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` /
+`Ｇｏｒｇｅ` treatment: reversible at **−8 bytes with no re-flow** against 5,157 bytes of slack.
+**The word is what is fixed; the frame is chunk 18's row only.**
+
+### 31.6 The four-row wall, and the one `この` that is dropped
+
+File line 7's revenge speech is the only §2.1 step 5 departure in the unit:
+`この私を裏切ったことを、` → `Ｆｏｒ　ｂｅｔｒａｙｉｎｇ　ｍｅ，` (17 columns), dropping the `この私`
+self-importance of §25.1's `このクリミアに` and §30.1's `このマムー様が`.
+
+**Verified at review rather than accepted on report.** That page carries **a leading blank *and* a
+trailing blank** around 3 text rows, and `translation_prompt.md` §3.2 states that a page with both
+plus four text rows is the one shape that has never appeared in the source — so no fourth row is
+available. `Ｆｏｒ　ｂｅｔｒａｙｉｎｇ　ｍｅ，　ｏｆ　ａｌｌ` measures exactly **24**, which §25.1 has twice
+rejected and §29.1 once. The swagger survives two rows earlier in `Ｙｏｕ　ｆｏｏｌ．` and
+`Ｗｈｉｌｅ　Ｕｎｉｔ　１　ｒｅｍａｉｎｓ，` / `Ｉ　ｓｈａｌｌ　ｎｏｔ　ｂｅ　ｂｅａｔｅｎ` / `ｓｏ　ｅａｓｉｌｙ．`
+
+The **single** `{FFFE}` this unit adds (file line 7, 19 → 20) is inside
+`まさか、裏切る気か？` → `Ｓｕｒｅｌｙ　ｈｅ　ｄｏｅｓ　ｎｏｔ` / `ｍｅａｎ　ｔｏ　ｂｅｔｒａｙ　ｍｅ？` (18 / 18);
+one row would be 37 columns. That page goes 2 → 3 text rows, still under the wall. **No `{FCC0}`
+was added** — `FLAGS.md` §Q2's documented gate defect was not rediscovered.
+
+### 31.7 Register
+
+| Who | Register |
+|---|---|
+| **Guilford (portrait 07)** | ⚠️ **His first full scene, and the row §25.5 could not write from one segment.** Cold, formal and unhurried, **no contraction anywhere** — `Ｗａｉｔ，　Ｒｉｍｕｌ．`, `Ｎｏ，　Ｉ　ｈａｖｅ　ｃｏｍｅ　ｔｏ`, `Ｓｏ　Ｉ　ａｍ　ｔｏｌｄ．`, `ｗｅ　ｓｈａｌｌ　ｍａｎａｇｅ．`, `Ｙｏｕ　ｓｅｅｍ　ｄｉｓｓａｔｉｓｆｉｅｄ．`, `Ｈｍｐｈ，　ｄｏ　ｎｏｔ　ｗｏｒｒｙ．` §25.5's `Ｓｉｒ．．．．` is unchanged and reads as the same man. What makes him sinister is that he never raises his register: the betrayal is delivered in the same flat courtesies as the order, and `Ｉ　ｓｈａｌｌ　ｂｅ　ｐｅｒｍｉｔｔｅｄ　ｔｏ　ｗａｔｃｈ` is the whole character |
+| Rimul (portrait 06) | §7 and §30.7 unchanged and held across **every** one of her segments — `Ｓｏ　ｙｏｕ　ｈａｄ　ｒｅｔｕｒｎｅｄ．`, `Ｉ　ａｍ　ｒｅａｓｓｕｒｅｄ．`, `Ｃｒｏｓｓｌｅｙ，　ｙｏｕ　ｓａｙ？`, `Ｉ　ｓｈａｌｌ　ｈｅａｄ　ｆｏｒ`, `ｄｏ　ｎｏｔ　ｄｉｅ．`, `Ｗｈａｔ　ｉｓ　ｔｈｅ　ｍｅａｎｉｎｇ　ｏｆ　ｔｈｉｓ！` **Zero contractions**, which is the written rule §30.7 chose over shipped `chunk_000`'s contracted Rimul. Two independent units have now followed it; `chunk_000` stays recorded and not re-cut |
+| The fortress commander (portrait 08, unnamed) | Blustering, then vengeful; **no contractions** — `Ｗｈｅｒｅ　ｈａｓ　Ｒｉｍｕｌ　ｇｏｎｅ！`, `Ｅｎｏｕｇｈ！`, `Ｗｈａｔ　ｄｏｅｓ　ｈｅ　ｉｎｔｅｎｄ．`, `Ｉ　ｓｈａｌｌ　ｎｏｔ　ｂｅ　ｂｅａｔｅｎ`, `Ｉ　ｓｈａｌｌ　ｎｏｔ　ｆｏｒｇｉｖｅ．．．` §14.6 / §20.5 / §25.5 / §28.6's Imperial officers, unchanged. ⚠️ His rhetorical questions keep the source's own declarative stop (`どういうつもりだ。` → `Ｗｈａｔ　ｄｏｅｓ　ｈｅ　ｉｎｔｅｎｄ．`), which is §5 and matches shipped `chunk_013`'s `ｗａｓ　ｉｔ　ｎｏｔ．` / `ａｒｅ　ｙｏｕ　ｎｏｔ．` |
+| His subordinate (portrait 05) | Deferential, no contractions — `Ｌａｄｙ　Ｒｉｍｕｌ　ｗａｓ　ｕｒｇｅｄ` / `ａ　ｓｈｏｒｔ　ｗｈｉｌｅ　ａｇｏ` / `ｂｙ　Ｇｅｎｅｒａｌ　Ｇｕｉｌｆｏｒｄ，` / `ａｎｄ　ｗｅｎｔ　ｏｕｔｓｉｄｅ．．．．` Albert's shape (§20.5), the same column §28.6 and §29.6 put Irvine's and the escort captain's men in |
+
+⚠️ **`貴官` appears three times and is carried in register, never in an added word** (§2, §26.7,
+§29.2): `貴官の隊` → `ｙｏｕｒ　ｓｑｕａｄ`, `貴官には、` → `Ｙｏｕ　ａｒｅ　ｔｏ　ｐｒｏｔｅｃｔ`,
+`貴官もな。` → `Ｙｏｕ　ｔｏｏ．` Rimul uses the informal `お前` to Guilford in one breath
+(`お前がいてくれれば`) and the formal `貴官` in the next; English has one *you* and the shift is not
+renderable. Recorded, not acted on.

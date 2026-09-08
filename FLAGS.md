@@ -2146,3 +2146,132 @@ zero Japanese — and row granularity mispairs on a re-flowed unit (§P3). `村�
 byte-identical **as a whole message** between chunk 17 and `chunk_034.txt`, and the §27.2 wording
 matches chunks 7 ×2, 13 and 34 byte-for-byte. After this park: 4 shipped, **1 written and parked
 (chunk 17)**, and **8 instances across 7 chunks still to write** (5, 15, 16 ×2, 21, 23, 38, 39).
+
+---
+
+## S. Wave 4 review — battle chunk 18 / PR #13 (2026-09-08)
+
+**MERGED at round 1**, zero blocking findings. `tl/battle/chunk_018.txt` — **3,035 / 8,192 bytes,
+slack 5,157; 78 text rows, widest 23, none at 24**, no page over 4 text rows, one `{FFFE}` added
+(file line 7, 19 → 20), no `{FCC0}` touched. Every §6 gate re-run in a real checkout and pasted in
+the PR review. Rulings live in `glossary.md` **§31**; this section carries what a human should look
+at.
+
+### S1. Two judgement calls the translator deliberately left open, both ruled in its favour
+
+Recorded because the PR chose to *ask* rather than decide, and both answers turned on evidence the
+PR did not have. See glossary §31.4 and §31.5 for the rulings in full.
+
+1. **`いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．`** — the source's comma promoted to a full stop.
+   **Already shipped**: `tl/battle/chunk_014.txt` msg 10 renders `よし、ここまで来たら、` as
+   `Ｒｉｇｈｔ．　Ｗｅ’ｖｅ　ｃｏｍｅ　ｔｈｉｓ`, the same promotion for the same reason. The rule written
+   at §31.4 — *§5's punctuation mechanism yields to English sentence grammar only where the
+   material after the source's comma is a complete independent clause* — is what keeps this from
+   contradicting §R / glossary §30.3, which corrected a `Ｎｏ．` to `Ｎｏ，` on a **continuing**
+   clause at chunk 17's round 2. **§30.3 is unamended.**
+2. **`シナリオ` → `ｓｃｒｉｐｔ`, not `ｐｌａｎ`** — because `ｐｌａｎ` is already spent on 作戦
+   (§19.2, shipped in `chunk_001`). ⚠️ **Width does not decide it and the PR implied it did**:
+   `Ｅｖｅｒｙｔｈｉｎｇ　ｇｏｅｓ　ｔｏ　ｐｌａｎ．` is 24, but `Ａｌｌ　ｇｏｅｓ　ｔｏ　ｐｌａｎ．` is 17 and
+   would have fitted.
+
+### S2. Five figures in the PR body are wrong; every rendering is right
+
+Same class as §P / §Q / §R's remeasurements. Nothing was re-cut.
+
+| PR said | Actual | Where |
+|---|---|---|
+| 60 text rows | **78** | recounted twice by independent boundary walks: lines 5/7/8/10/12 = 43/22/4/2/7 |
+| `Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ` 18 columns | **17** | 18 is the form with a following stop — §25.1's own figure |
+| `ｔｈｅ　ｄｅｆｅｎｃｅ` 12 columns | **11** | |
+| `Ｎｏｗ　ｔｈｅｎ，` 10 columns | **9** | |
+| `シナリオ` "hapax — 1 battle / 0 script" | **3 battle** (c18 ×1, **c23 ×2**), 0 script | see S3 |
+
+### S3. Three strings this unit now binds in still-untranslated chunks
+
+Whoever takes these chunks must copy, not re-invent. All three counted in `dumps/battle_dump.txt`
+at review.
+
+- **`かかってくるがいい。` → `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．`** is byte-identical at **chunk 23
+  L15**. 2 battle / 0 script. The sibling `かかってこい。` (chunks 16 ×2, 30) is deliberately left
+  free to take `chunk_033`'s shipped `Ｃｏｍｅ　ａｔ　ｍｅ．`, and `かかってきなさい。` (chunk 33) already
+  holds it.
+- **`シナリオ` → `ｓｃｒｉｐｔ`** reaches **chunk 23 ×2**
+  (`俺には、このシナリオがフェルナンドひとりの手で仕組まれたとは思えない。`) — the same staged-affair
+  metaphor five chapters later. The **word** is fixed; chunk 23's `このシナリオ` is a different
+  construction and takes `ｔｈｉｓ　ｓｃｒｉｐｔ`, not chunk 18's frame.
+- **`まさか、` → `Ｓｕｒｅｌｙ`** — see S4.
+
+Two more forms will be reached again and had no stated reach in the PR: **`手駒` → `ｐｉｅｃｅｓ`**
+(1 battle + **3 script**) and **`ご奮闘` → `ｓｔｒｕｇｇｌｅ`** (2 battle — this chunk and **chunk 28**).
+
+### S4. `まさか` had been shipped for a whole wave with no glossary row — 28 occurrences riding on it
+
+⚠️ **The largest single drift risk this unit leaves behind, and neither the PR nor wave 3 raised
+it.** `pending/chunk_017.txt` msg 4 ships `まさか、奴らは` → `Ｓｕｒｅｌｙ　ｔｈｅｙ　ｄｉｄ　ｎｏｔ`;
+chunk 18 uses the same word; **`glossary.md` fixed neither.** Counted at this review: **18 battle
+occurrences across 13 chunks (0, 17, 18, 19, 23, 24, 25, 26, 27, 30, 32, 39, 43) + 10 script.**
+Fixed now at glossary §31.3 — the §24.3 `よし、` shape, a form shipped repeatedly that the glossary
+never wrote down.
+
+⚠️ **Chunks 19 and 23 both carry it, and chunk 19 is live in this wave (PR #16).**
+
+### S5. Three English forms now serve more than one Japanese word, all safe, all recorded
+
+The PR's additions table named none of these. §3 is not engaged in any of them (different
+messages), and §25.3's co-occurrence test was run for each.
+
+| English | Japanese words it serves | Test |
+|---|---|---|
+| `Ｎｏｗ　ｔｈｅｎ` | `さて、` (c33 shipped, c18), `それじゃ、` (c3), `おっと。` (c7, as `Ｎｏｗ　ｔｈｅｎ．`) | `さて、` c18/26/33 · `それじゃ` c3/7/15/32/43 · `おっと` c7/25/43 — **no chunk holds `さて、` with either** ✓ |
+| `ｄｅｐｌｏｙ` | 配備につく (c17 noun, c18 verb), 配置する (c33) | 配置 = battle c33 only (+2 script); 配備 = c17, c18 only (+3 script) — **disjoint** ✓ |
+| `ｄｅｆｅｎｃｅ` | 守備 bare (c18), 防御力 → *defence power* (`batch_001`, `batch_003`), 正当防衛 → *self‐defence* (`chunk_011`) | compounds of different words; 守備兵 → *garrison* (§2) stays separate ✓ |
+
+⚠️ **`それじゃ` and `おっと` DO co-occur — chunks 7 and 43** — and `chunk_007` ships `おっと。` →
+`Ｎｏｗ　ｔｈｅｎ．`. That belongs to the **`おっと` ruling `HANDOFF.md` hands to another reviewer**
+(batch_006 / PR #15 raised it, with a second divergent rendering `Ａｈ　ａｈ，` in parked
+`chunk_043`), not to this unit. Recorded here so that reviewer inherits the count instead of
+recomputing it.
+
+### S6. `ええい、` → `Ｅｎｏｕｇｈ！` is NOT §5's punctuation mechanism — do not "fix" it
+
+⚠️ **A trap for a future duplicate check.** §14.5's entry carries the `！` **as part of the fixed
+form**, and the Japanese has `、` in every instance. `chunk_007` msg 2 ships
+`ええい、全軍　迎えうてッ！！` → `Ｅｎｏｕｇｈ！` / `Ａｌｌ　ｕｎｉｔｓ，　ｉｎｔｅｒｃｅｐｔ！！`; chunk 18's
+`ええい、この非常時に。` → `Ｅｎｏｕｇｈ！　Ｉｎ　ｔｈｉｓ　ｃｒｉｓｉｓ．` matches it byte-for-byte. Anyone
+applying §5's *word-plus-source-punctuation* rule mechanically will "correct" both to `Ｅｎｏｕｇｈ，`
+and break two shipped files. **Chunk 24 carries a third instance, untranslated.**
+
+Same shape: **chunk 18 renders `いや、` as `Ｎｏ，` and `Ｎｏ．` inside one message** (file line 5,
+four pages apart). Correct per §31.4; a positional check will read it as a divergence and it is
+not one. Cf. §O8 / §P on numbering, glossary §24.5 and §27.4 on the other two such traps.
+
+### S7. Numbering — a FOURTH convention is now in play in one repo
+
+`glossary.md` §31's line numbers are **`tl/` FILE lines** (the `=== CHUNK` header counted as line
+1). §28 and §30 use **message** lines (file line − 1); §29 uses **`rowcheck` lines** (header as
+line 0). `HANDOFF.md` has used yet another. **Locate by content, never by number.** This is §O8 and
+§P restated because it has now bitten four sections running; a human tidying this repo should pick
+one convention and migrate all four.
+
+### S8. Glossary coverage line corrected (not an entry, but recorded anyway)
+
+`glossary.md`'s Status header listed battle chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35,
+40** — omitting **6, 8, 9, 13 and 17**, all merged or parked in waves 2–3, and it had gone
+uncorrected through five integrations. Updated at this integration to the true list plus chunk 18
+and the parked 5 / 17 / 43. **No rendering changes and nothing needs revisiting** — it is a
+coverage note, not a fixed entry, so §4.3's revisit obligation does not arise. Recorded here
+because CLAUDE.md §6.7 forbids silent changes to `glossary.md` of any kind.
+
+### S9. Nothing for a human to unblock in this unit
+
+No `{FCC0}` was attempted (`FLAGS.md` §Q2's documented gate defect was not rediscovered), no
+`{FFEC}` / `{FC00}` / `{FFDA}` inserts, no menu options, no `{FC70}` / `{FCA8}` dump artifact
+(Blocked item 0 does **not** touch chunk 18), no suspected source typo, no tag whose meaning had to
+be guessed. `assemble.py build` and `riotbattle.py checkedit` remain unrun because `original/` is
+absent, which CLAUDE.md §2 records as expected.
+
+⚠️ **Portrait 08 is unnamed and the English commits to nothing.** He commands the fortress, holds
+Unit 1, and Guilford's soliloquy (`クリッペン司令のご奮闘を拝見させてもらうとしよう`) points hard at
+**Commander Krippen** — but no line names him, so no row of his carries a name, per §P's practice
+for chunk 13's King. If a later chunk settles it, only his register wants re-checking, not the
+text.

@@ -32,15 +32,15 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > Omit `environment_id` and `model` so both inherit. Wave 5's units are in **Next up**.
 
 ## Last updated
-2026-09-08 · by: **wave-4 coordinator** (`session_013mqnLaJCts7hGduLSmsuak`) ·
-wave: **4 IN FLIGHT — 4 dispatched** · queue: **fresh**
+2026-09-08 · by: **chunk-18 reviewer** (PR #13 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
+wave: **4 IN FLIGHT — 1 of 4 merged, 3 awaiting review** · queue: **fresh**
 
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **18** | 44 | 0, 1, 2, 3, 4, 6, 7, **8**, 9, 10, 11, 12, **13**, 14, 33, 34, 35, 40 |
-| Battle JP characters | **13,914** | 43,161 | **32.2%** (was 26.3% at wave-3 start) |
+| Battle chunks | **19** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, 33, 34, 35, 40 |
+| Battle JP characters | **14,525** | 43,161 | **33.7%** (was 32.2% at wave-4 start) |
 | Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
 | Script message instances | 4,039 | 7,931 | **50.9%** |
 
@@ -49,13 +49,14 @@ wave: **4 IN FLIGHT — 4 dispatched** · queue: **fresh**
 Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifact).
 
 ## In flight — WAVE 4 (dispatched 2026-09-08)
-✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review may start, one reviewer at a time, in
+✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
 unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
+**Reviewer 1 of 4 is DONE — chunk 18 MERGED. Reviewer 2 (chunk 19, PR #16) is next.**
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
-| battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **PR open** — 3,035 / 8,192 (5,157 slack); 14 glossary rows proposed, none changing an existing entry; 2 judgement calls left for the reviewer (Flags 4 and 6) |
+| battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | ✅ **PR open** — 8,067 / 8,192 (**125 slack**), 1.91× against a 1.94 ceiling; re-cut once as tier B prescribes |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
@@ -88,6 +89,36 @@ tier B and holds the casting vote on width, and chunk 20 can be moved to match a
 ⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
 translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
 byte-identical English. The seed row is struck by the **second** of the two reviewers to merge.
+⚠️ Chunk 18 rendered **none** of the fifteen wave-4 seeds (verified, all zero), so PR #13's merge
+left every one of those rows live — the cross-unit rule is untouched by it.
+
+### ⚠️ WHAT REVIEWERS 2–4 INHERIT FROM PR #13 (chunk 18, merged 2026-09-08)
+Detail in `glossary.md` §31 and `FLAGS.md` §S. Section numbers were taken at commit time:
+**glossary now ends at §31, `FLAGS.md` at §S** — reviewers 2–4 take §32/§T, §33/§U, §34/§V in
+merge order, re-reading both files first.
+
+- **Chunk 19 (PR #16) — three direct inheritances.** (a) It carries **`守備兵` four times** (msgs
+  3, 6, 7, 19); §2 fixes *garrison* / *garrison men* and `chunk_000` ships it, and it must stay
+  distinct from chunk 18's new bare 守備 → `ｔｈｅ　ｄｅｆｅｎｃｅ` (glossary §31.2). (b) It carries
+  **`了解。` and `わかった。` together**, which is exactly the case §29.4 wrote the `Ａｇｒｅｅｄ．`
+  reserve for — chunk 18 did **not** engage it (verified: 了解 0, わかった 1) so the two rulings
+  must not blur. (c) **`まさか` → `Ｓｕｒｅｌｙ` is now a fixed row** (glossary §31.3); chunk 19
+  carries it twice.
+- **`ｐｌａｎ` is spent.** §19.2's 作戦 → `Ｔｈｅ　ｐｌａｎ？` is what ruled `シナリオ` → `ｓｃｒｉｐｔ`
+  (§31.5). Do not spend it again.
+- **batch_006 (PR #15) — the `おっと` ruling it raised now has its counts.** `Ｎｏｗ　ｔｈｅｎ`
+  already serves **three** source strings: `さて、` (chunk 33 shipped, chunk 18), `それじゃ、`
+  (chunk 3) and `おっと。` (chunk 7). ⚠️ **`それじゃ` and `おっと` DO co-occur — chunks 7 and 43** —
+  so §25.3's test *fails* for that pair and the `おっと` ruling has to name a reserve, not just a
+  form. `さて、` is safe (chunks 18/26/33, disjoint from both). `FLAGS.md` §S5.
+- **Two traps for any positional duplicate check** (`FLAGS.md` §S6): `ええい、` → `Ｅｎｏｕｇｈ！`
+  is **not** §5's punctuation mechanism — §14.5 fixes the `！` as part of the form and the source
+  has `、` in all three instances, so "correcting" it to `Ｅｎｏｕｇｈ，` would break two shipped
+  files. And chunk 18 renders `いや、` as **both** `Ｎｏ，` and `Ｎｏ．` inside one message; that is
+  correct per glossary §31.4 and is not a divergence.
+- **Chunk 23 is now bound in three places** by this merge (`FLAGS.md` §S3): `かかってくるがいい。`
+  → `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．` (byte-identical, L15), `シナリオ` → `ｓｃｒｉｐｔ` (×2) and
+  bare `守備` → `ｔｈｅ　ｄｅｆｅｎｃｅ`.
 
 ### ⚠️ TWO COORDINATOR ERRORS, both caught by translators and both verified before recording
 
@@ -177,8 +208,9 @@ up front and told every reviewer to re-run gate 7 against the *current* glossary
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **21 open chunks** after wave 3, but ⚠️ **6 of them carry the §D1 dump artifact (Blocked
 item 0) and will park exactly as chunk 17 did — 15, 23, 27, 28, 29, 39.** Until a human fixes
-`riotbattle.tokenise`, only **15 chunks are truly dispatchable**, in chapter order (tier, ratio):
-18 (D 6.28), 19 (B 1.94), 20 (D 4.75), 21 (D 4.28), 22 (D 4.59), 24 (C 2.99), 25 (C 3.48),
+`riotbattle.tokenise`, only **15 chunks are truly dispatchable**, in chapter order (tier, ratio) —
+**~~18~~ ✅ merged 2026-09-08 (PR #13), 14 left; 19 and 20 are in flight in this wave**:
+~~18 (D 6.28)~~, 19 (B 1.94), 20 (D 4.75), 21 (D 4.28), 22 (D 4.59), 24 (C 2.99), 25 (C 3.48),
 26 (C 3.36), 30 (B 2.43), 31 (C 3.46), 36 (C 3.92), 37 (C 3.69), 38 (C 3.37), 41 (E 6.54),
 42 (D 5.46).
 
@@ -262,7 +294,10 @@ banks (518–1,413) is what remains dispatchable; `queue.py script` offers batch
   and became `batch_006.tsv`; `batch_002.tsv` has been merged since wave 1.
 
 **Rulings live in their homes, not here**: `glossary.md` §23–§30, `FLAGS.md` §K–§R,
-`findings.md` §24, `pending/README.md`. Wave 3 added §27–§30 and §O–§R.
+`findings.md` §24, `pending/README.md`. Wave 3 added §27–§30 and §O–§R; **wave 4 has added
+glossary §31 and `FLAGS.md` §S so far (chunk 18, PR #13)**. ⚠️ **Section numbers are taken by
+reading both files at commit time, never reserved in advance** — reviewers 2–4 take the next free
+ones in merge order.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
