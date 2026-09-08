@@ -673,17 +673,35 @@ final `{FFFE}`:
 Batch 004 is about **14% tighter** than the shipped standard, and the tightness is concentrated in
 one repeated frame rather than spread: **six rows sit at 1.40×** —
 `持つ者に炎の守護をもたらす剣／槍。` → `Ａ　ｆｉｒｅ‐ｗａｒｄｉｎｇ　ｓｗｏｒｄ／ｓｐｅａｒ．`, which drops
-`持つ者に` ("to the one who bears it") entirely. That is a **§2.1 step 5 departure and the PR did
-not flag it**; recorded here instead.
+`持つ者に` ("to the one who bears it") entirely. It is a **§2.1 step 5 departure**.
+
+> ⚠️ **CORRECTED 2026-09-08 by the PR #6 reviewer, verified against PR #4's body. Two statements
+> in the original text of this flag were false and are struck below.**
+>
+> 1. ~~"the PR did not flag it; recorded here instead"~~ — **PR #4 flagged it explicitly.** Its
+>    **Flag 3** reads: *"§2.1 step 5 — 持つ者に…をもたらす implied, lines 146–148 and 170–172…
+>    Fits one row, which is what makes the six of them affordable (12 bytes each instead of 44)."*
+>    By rule number and by line number. Two independent audits reached this conclusion; the PR
+>    body was re-read to confirm it.
+> 2. ~~"+42 bytes per entry × 6 = +252 bytes" … "parking about 7 of the 34 lines" … "seven
+>    Japanese holes in a table"~~ — **the arithmetic is wrong.** PR #4's Flag 3 gives the one-row
+>    form as **12 bytes each instead of 44**, so the restore delta is **32 bytes/entry × 6 =
+>    192 bytes**, not 252. Bank 40 would land at **509 − 192 = 317 free**, and at §J2's measured
+>    ~37 bytes/line net growth that is **~5 lines** of parking, not seven.
+>
+> **The conclusion survives both corrections and is NOT reopened.** 317 free is still 183 bytes
+> below the project's 500-byte reserve, so the restore remains unaffordable without parking real
+> lines, and the departure stays accepted. What changes is the record: PR #4 did its job, and the
+> cost of the alternative is smaller than this flag claimed.
 
 **Accepted deliberately at review, with this arithmetic.** The row is 21 columns, so columns are
-not the constraint — bank 40 is. Restoring `持つ者に` needs a second row, about **+42 bytes per
-entry × 6 = +252 bytes**. Bank 40 has **509 free against the project's 500-byte reserve — 9 bytes
-of margin** — and net growth in bank 40 runs 1,262 ÷ 34 ≈ **37 bytes per line**, so 252 bytes means
-parking **about 7 of the 34 lines**. Seven weapon descriptions left in Japanese, visible as holes
-in a table the player reads side by side, to lengthen six entries. The partial option is worse:
-~3 parked lines buys ~111 bytes, enough for two or three of the six, which would break the seed's
-requirement that all six be identical.
+not the constraint — bank 40 is. Restoring `持つ者に` needs a second row, **+32 bytes per
+entry × 6 = +192 bytes** (corrected above). Bank 40 has **509 free against the project's 500-byte
+reserve — 9 bytes of margin** — and net growth in bank 40 runs 1,262 ÷ 34 ≈ **37 bytes per line**,
+so 192 bytes means parking **about 5 of the 34 lines**. Five weapon descriptions left in Japanese,
+visible as holes in a table the player reads side by side, to lengthen six entries. The partial
+option is worse: ~3 parked lines buys ~111 bytes, enough for three or four of the six, which would
+break the seed's requirement that all six be identical.
 
 **What is actually lost** is not accuracy — every distinguishing feature survives on every row
 (fire, cold, thunder god, Tyr, Odin, blue dragon scales, moonlight, meteors, jet-black, rusted),
@@ -716,3 +734,135 @@ Two consequences for planning, both measured rather than projected:
 2. **Bank 5 lost 27% of its remaining headroom to one batch** and is now the third-tightest bank
    at 3,419 free. It is not yet blocking, but any future batch resident in bank 5 needs
    `bankmeasure` run before dispatch, not after.
+
+---
+
+## K. Wave 2 review — battle chunk 4 / PR #6 (2026-09-08)
+
+Merged round 1, MERGE, all eight gates green. Rulings and glossary additions in `glossary.md` §23.
+
+### K1. The byte figure, and the first zero-re-flow unit in the project
+
+**chunk 4: 3,849 / 8,192 bytes — 4,343 bytes slack.** Widest run **23 columns**, nothing at 24; no
+page over 4 text rows *at all*, not merely none beyond the source's own. No `{FC00}` name insert in
+this chunk.
+
+**The tag stream is byte-identical to `dumps/battle_dump.txt` on all 25 lines, including every
+`{FFFE}`** — verified at review by extracting the pristine chunk and diffing per-line tag lists
+(`lines with ANY tag diff: 0`). **Zero breaks added, deleted or moved; no `{FCC0}` touched; no
+insert repositioned.** This is the first unit to ship that way, and it is worth recording as an
+existence proof: at ratio 5.08 the source's own 12-column break structure was already right for a
+24-column box, segment for segment, exactly as `translation_prompt.md` §3.2 predicts. The source's
+`{FCC0}{FFFE}` leading-blank pages (lines 3, 10, 13, 21) and trailing empty segments (lines 4, 7,
+10 ×2, 21) are preserved untouched, per §3.2 and glossary §10.4.
+
+Punctuation was measured rather than asserted: `？` 11 → 12 (**+1**, the one flagged `。` → `？` on
+`どうして…解隊されちゃうんだろ。`), `！` 15 → 15 (**+0**), and all **10** ellipsis runs match the
+source dot for dot (`[3, 3, 3, 4, 5, 4, 4, 3, 3, 4]` both sides).
+
+### K2. `辺境` → *frontier*, and why `chunk_000.txt` is deliberately left alone
+
+Ruled at review; the entry and the full reasoning are in `glossary.md` §23.1. Recorded here because
+it is the second instance of the §20.4 pattern and the pattern is now a rule rather than a one-off:
+
+> A **phrase-level** rendering in an earlier shipped file does not bind a later unit's **word-level**
+> choice, provided the Japanese *messages* differ. Record the variant; do not re-cut.
+
+`chunk_000.txt` line 4 carries `こんな辺境` **twice**, both `ｓｕｃｈ　ａ　ｒｅｍｏｔｅ　ｐｌａｃｅ`.
+Chunk 4 uses *frontier* three times. Nothing is re-cut. Note for anyone tempted later: chunk 0 has
+**27 bytes of slack** (§G1) and §18.3 records that the next correction there forces a full re-cut,
+so this file is now effectively frozen against non-mandatory edits.
+
+### K3. In-game check — is the portrait-`04` girl Princess Cavia?
+
+Chapter 5's rescued girl. She is alone, hunting the fairy forest, refuses an escort and says
+`また会いましょ`. Chunk 5's parked text has the party thanked for saving `王女様とフェイ` at that
+forest, and glossary §14.1 dates the Princess's name to ch.5. **Plausibly Cavia travelling
+incognito.**
+
+**No glossary entry was made and no §14.1 cross-reference was added** — deliberately. §14.1 is a
+table of decided entries; writing an inference into it is how §9's `メルザリオ` row came to be
+wrong. The English is safe either way: all 13 of her segments are contraction-free §14.6 Cavia
+register, verified at review.
+
+**What would settle it:** an in-game look at whether portrait `04` in chunk 4 is the same portrait
+the Princess uses in ch.5/ch.7. If confirmed, §14.1 gains the cross-reference and **no line in
+`chunk_004.txt` needs to change**.
+
+### K4. In-game check — the portrait-`06` map, and the line-21 watcher
+
+Chunk 4's coda (line 21) is a lone speaker weighing whether to keep tailing the 9th Army: he had
+*heard about* them, and he goes hungry unless they slip up. The `{FCB0}` arguments:
+
+```
+line  3 {FCB0} args: ['00060001', '00080000']    <- Ridge speaks on portrait 0006, channel 1
+line 21 {FCB0} args: ['00060000']                <- the watcher is portrait 0006, channel 0
+```
+
+**Same portrait id 06**, differing only in the channel byte — so the portrait table points at
+Ridge. And that agrees with, rather than contradicts, the "hired outsider" reading: glossary §9's
+wave-2 seed records `リオン`/`Ｌｅｏｎ` as *"a man who sent Ridge to help and wants to stay
+anonymous"* (ch.6). A Ridge hired to attach himself to the squad is exactly the speaker of line 21,
+and it explains why he is the one telling everyone in line 3 to relax about being disbanded.
+
+The English names nobody and works under either reading, so **nothing needs to change**. This is
+recorded beside §H1 (the `{FCB0}` portrait-id map is still guesswork) because chunk 4 gives §H1 its
+first case where the id map would actually decide a reading.
+
+### K5. Two shipped lines need a translator, both from rulings made at this review
+
+Neither is applied here: the reviewer's remit is `glossary.md`, `FLAGS.md`, `pending/README.md` and
+`HANDOFF.md`, and `HANDOFF.md` already queues line edits of this kind in the wave-3
+`corrections/audit-wave1` unit. Both are measured so nobody re-derives them.
+
+| File | Line | Was | Becomes | Cost |
+|---|---|---|---|---|
+| `tl/battle/chunk_003.txt` | 5 | `Ｓｔｉｌｌ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` | `Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` | 19 → 21 cols, **+4 bytes**; chunk 3 slack 3,591 → 3,587 |
+| `tl/battle/chunk_001.txt` | 14 | `ｙｏｕ　ｓａｖｅｄ　ｕｓ，　ｎｙｏｒｏ．` | `ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ．` | 20 → 20 cols, **0 bytes** |
+
+The first is the `しかし` ruling (glossary §23.3) — `Ｓｔｉｌｌ，` is §19.1's fixed form for
+`それにしても` and cannot also serve `しかし`. It was already queued for wave 3 by both wave-1
+audits; the ruling now names the replacement.
+
+**The second is new and neither wave-1 audit caught it** (glossary §23.4): `chunk_001:14`
+`いやいや、助かったノロ。` is active while `chunk_003:7` `助かったノロ、` is passive — two hobbits
+thanking the party, in source strings that differ only in their final mark, which §5's mechanism
+says should be the *only* difference. Zero-byte fix.
+
+### K6. `ファリーナ` reclassified — moved once, for the whole wave
+
+Moved from `glossary.md` §1 (People) to §2 (places), with the dump evidence recorded in the row.
+Verified against both dumps before moving, not taken from a report: `ファリーナという国も昔は
+栄えとった`, `ファリーナ城`, `ファリーナの南、カペラの村`, `ファリーナを占領した`, `ファリーナ出身`,
+and three people identified *by* it (`ファリーナの司教、クレウス`, `ファリーナの衛兵隊長、ウルフ`,
+`ファリーナの自治官フェリクス`). **No instance in either dump uses it as a personal name.**
+
+`Ｆａｒｉｎａ` is unchanged, so **nothing translated needs revisiting.** PRs #7 and #8 both flag
+this; it is done, and their reviewers must not move it again.
+
+⚠️ **`クリミア` (PR #5 Flag 4) is the same shape and was deliberately NOT moved here.** Chunk 4
+does not touch it and this reviewer has not seen the evidence; moving a fixed row on an unverified
+claim is precisely what §4.3 forbids. **PR #5's reviewer makes that call.**
+
+### K7. PR-body verification claims need to name real source strings
+
+Not blocking, and PR #6's *conclusion* was correct — but four of the nine citations in its Flag 8
+duplicate list do not survive checking, and were caught only because the gate was re-run from the
+dumps rather than read off the PR:
+
+- `助けて` attributed to chunk 0. **Chunk 0 contains no `助けて`** — its `Ｈｅｌｐ　ｍｅ．．．` renders
+  `たすけて・・・`, the kana spelling, a different source string.
+- `あのまま` attributed to `pending/chunk_043`. **`あのまま` occurs only in chunk 4**, in the whole
+  battle dump.
+- `マズい` attributed to `pending/chunk_043`. Chunk 43 has `マズい、自爆装置だ！！`; chunk 4 has
+  `マズいな。` — different strings.
+- `いえ、` attributed to `pending/chunk_005`. Chunk 5 has `いえ、これくらいは`; the bare `いえ、`
+  segment belongs to chunks 4 and 26.
+
+Chunk 0's two `何` renderings were also quoted without their stutters (`な、何事だ！？` →
+`Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？`, not `Ｗｈａｔ　ｉｓ　ｔｈｉｓ！？`), and `こんな辺境` in chunk 0 was
+reported once where it occurs twice.
+
+**For future units:** a duplicate-check claim should name the exact source string and the file and
+line it was aligned against. Segment-count alignment against the non-`{FFFE}` tag skeleton is the
+cheap way to do it and is what this review used.
