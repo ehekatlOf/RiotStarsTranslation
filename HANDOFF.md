@@ -45,7 +45,7 @@ Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ⚠️ **CHANGES round 1** — rework sent to the same translator; re-review after its push |
-| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | PR open — queued, reviewer 3 |
+| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | 🔍 **IN REVIEW** (reviewer 3 of 4) — runs alongside chunk 8's rework; still one reviewer at a time |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
 **PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
@@ -193,6 +193,12 @@ Two findings **withdrawn after measuring** and recorded so they are not re-raise
 
 **No integration commit** — glossary §28, the FLAGS entries and the two §4.3 corrections are drafted
 and held until the rework lands and the same reviewer re-reviews.
+
+⚠️ **Glossary section numbering — two reviewers now hold drafts.** `glossary.md` ends at **§27**
+(PR #9). PR #11's reviewer has **§28 drafted but unpushed**, held until chunk 8's rework lands. PR
+#10's reviewer is told to take **the next free number at the moment it commits** — so if #10
+integrates first it takes §28 and PR #11's held draft becomes §29 on its round-2 pass. Whichever
+commits second must re-read the file rather than trusting a number reserved earlier.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
