@@ -54,7 +54,7 @@ Barrier: **review nothing until all four have an open PR.** Base branch for ever
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
-| battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 544 JP, tier D (6.28) — roomy | — | dispatched |
+| battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **PR open** — 3,035 / 8,192 (5,157 slack); 14 glossary rows proposed, none changing an existing entry; 2 judgement calls left for the reviewer (Flags 4 and 6) |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,567 JP, tier B (**1.94 — tight**) | — | dispatched |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 636 JP, tier D (4.75) | — | dispatched |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,147 JP, banks 12–15 | — | dispatched |
