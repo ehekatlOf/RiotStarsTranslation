@@ -53,7 +53,7 @@ of the wave; after it the wave closes.
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | **2** | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ✅ **MERGED round 2** — squash `2957d80`, **7,437 / 8,192 (755 slack)**, byte-neutral rework; integration = the commit immediately after it, `integrate: chunk 008 (PR #11)`. All 8 gates green at both rounds; round 1 was CHANGES on two reading findings, both applied. Glossary **§29**, `FLAGS.md` **§Q**. ⚠️ `ルート`'s §9 row is **deliberately left live for #12 to strike**. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | ✅ **MERGED round 1** — squash `7a37181`, **5,417 / 8,192 (2,775 slack)**; integration = the commit immediately after it, `integrate: chunk 013 (PR #10)`. All 8 gates green, 0 blocking findings. Branch not deleted (proxy 403 — harmless) |
-| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | ⚠️ **CHANGES round 1 — PARK UPHELD**; rework sent. Round 2 = straight `park:` merge, §30 / §R, strike `ルート` |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | 🔍 **ROUND 2 IN REVIEW** — rework `e933ae7`, **5,857 / 8,192 (2,335 slack, −16)**; same reviewer resumed; park merge owes §30 / §R + `ルート` strike |
 
 **PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
 Twelve edits across five files (the dispatch's eleven and HANDOFF's eleven were *different*
@@ -284,6 +284,20 @@ argument lengths of `{FC70}` and `{FCA8}`), re-dump, then `git mv pending/chunk_
 tl/battle/chunk_017.txt` and re-tokenise that one tail — **a 0-byte edit**. That single fix
 **unblocks nine other chunks**. Chunk 17 is finished work — 1,144 JP chars, 2,319 bytes under its
 slot — held up by one character.
+
+**PR #12 rework `e933ae7` — 5,857 / 8,192, 2,335 slack (−16 bytes).** Both blocking findings
+applied; finding 3 confirmed wrong by the translator's own re-measure (both rows are 22 columns,
+not 24 — it had counted `ｓｕｒｐｒｉｓｅ` as 9 and `Ｒｉｍｕｌ，` as 7), so `ａ　ｒａｉｄ！` stands as a
+dictionary equivalent rather than a width-forced compression, and Flag 6's step-6 claim is void.
+- ⚠️ **Finding 1 applied with a DIFFERENT word than proposed, and the substitution is better.**
+  `Ｉ　ｍｉｓｒｅａｄ　ｔｈｅｍ．` (15 cols, **−16 B**) rather than `Ｉ　ｕｎｄｅｒｅｓｔｉｍａｔｅｄ　ｔｈｅｍ．`
+  (22), because it keeps 読み — which the source phrase is built on — and because the dumps hold
+  **three lines that actually mean *underestimate*** (`甘く見ない方`, `見くびっていた`, `見くびって`).
+  Spending the word here would collapse two distinct source words before the lines that own it are
+  translated. **Coordinator verified: those three occurrences exist (1 + 1 battle, 1 script) and
+  `ｕｎｄｅｒｅｓｔｉｍａｔ*` is unspent in `tl/`.** Reversible at +14 B if the reviewer disagrees.
+- **The translator conceded the figure dispute against itself**: `{FFFE}` is **120 → 127**, not
+  132 → 139. The +7 delta and per-line table were always right; the totals were not.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
