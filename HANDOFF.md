@@ -46,14 +46,18 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 ## In flight
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **PR open** — 3,499 / 8,192, 4,693 slack | 1 | barrier |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **PR open** — 5,837 / 8,192, 2,355 slack; promotes 4 seeds | 1 | barrier |
-| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | barrier |
-| script batch 004 | — | translator-4 | `tl/script-004` | — | translating | 1 | translator |
+| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **PR open** — 3,499 / 8,192, 4,693 slack | 1 | reviewer |
+| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **PR open** — 5,837 / 8,192, 2,355 slack; promotes 4 seeds | 1 | reviewer |
+| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | reviewer |
+| script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
 
-**Barrier: 3 of 4.** Waiting on script batch 004 only; its translator is alive and working, so it
-is not re-dispatched (CLAUDE.md §4 step 4 — never dispatch over a live agent). No review starts
-until all four PRs are open.
+**Barrier: 4 of 4 — MET.** Review order is unit order: PR #2 (chunk 1), #3 (chunk 2), #1
+(chunk 3), #4 (batch 004), one reviewer at a time, foreground.
+
+Batch 004's figures were re-measured in this checkout rather than taken from its report:
+`merge` prints no "never matched the dump"; script instances 3,299 → **4,013** (+714) and unique
+forms 151 → 185 (+34), matching the claim exactly; `bankmeasure` gives **bank 40 = 509 free**
+against the 500 floor, bank 41 untouched at 353; `rowcheck script` clean.
 
 ### Cross-PR conflicts the reviewer must settle before ANY of these three merge
 Measured in the pushed files, not taken from the reports:
@@ -74,6 +78,21 @@ and the reviewer is the only writer of `glossary.md`.
 village-chief's son". Chunk 2 shows it is a **place** — `息子がメルザリオに住んでる` (his son lives
 *in* Melzario), `メルザリオの森` (the forest *of* Melzario). Rendered `Ｍｅｌｚａｒｉｏ`. The §9 row
 must be corrected, not just promoted.
+
+### Two planning facts from batch 004 that change the next survey
+1. **Bank 40 is now spent: 509 bytes free.** The item/equipment description table is finished for
+   this run, exactly as the corrected wave-2 note predicted — and now measured rather than
+   projected. Any further table lines (185–225: clubs, axes, bows, machine-soldier arms) land in
+   the same 21 banks and must be parked in `pending/script/` until bank 40 is repointed. **Wave 2's
+   script unit is unique lines 1035–1100 (bank 31 alone, 35,581 free), not more of the table.**
+2. **The growth figure for *description-clause* text is 2.5×, not 2.1×.** Measured: `batch_003`'s
+   weapon rows run **2.66×** on the description clause and `batch_003` as a whole **2.41×**; batch
+   004 had to be squeezed to **2.28×** to clear bank 40's floor, which is below the shipped
+   standard. 2.10× remains right for whole messages (it is the aggregate over all shipped lines,
+   including stat rows that cost nothing — `攻撃力＋ＮＮ` → `Ａｔｋ＋ＮＮ` is a character shorter).
+   Use 2.5× when sizing description tables specifically, or the queue will over-promise.
+   Batch 004 is therefore tighter than the shipped standard: the reviewer should decide whether
+   that is acceptable or whether ~3 lines should be parked to buy back ~150 bytes of prose.
 
 ### Also raised by chunk 3, for the reviewer
 - `アイテムを{FFFE}奪われました。` → `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` is the
