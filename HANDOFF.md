@@ -44,9 +44,9 @@ Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | **PR open**, awaiting barrier |
-| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | **PR open**, awaiting barrier |
-| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔍 **IN REVIEW** (reviewer 2 of 4) |
+| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | PR open — queued, reviewer 3 |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
 **PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
 Twelve edits across five files (the dispatch's eleven and HANDOFF's eleven were *different*
