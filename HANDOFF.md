@@ -52,7 +52,10 @@ Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifac
 ✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
 unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
-**Reviewer 1 of 4 is DONE — chunk 18 MERGED. Reviewer 2 (chunk 19, PR #16) is next.**
+**Reviewer 1 of 4 DONE — chunk 18 MERGED (round 1, zero blocking findings).
+Reviewer 2 of 4 is RUNNING on PR #16 (chunk 19).** Sections stood at **glossary §31 / FLAGS §S**
+when it was dispatched; it takes §32/§T after re-reading. Reviewers 3 and 4 (chunk 20 PR #14, then
+script batch_006 PR #15) follow, one at a time, never two.
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
