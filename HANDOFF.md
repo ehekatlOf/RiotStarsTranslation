@@ -11,22 +11,22 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 2 IS CLOSED — 4 of 4 merged, 0 parked. `check` green. The next act is to OPEN WAVE 3'S
-> SESSION**, which wave 2's coordinator does in the same turn it closes the wave.
+> **WAVE 2 IS CLOSED — 4 of 4 merged, 0 parked, `check` green. WAVE 3'S SESSION IS OPEN and is
+> the active driver: `session_0126mzDCZDEoby12pU5qXegc`, "Riot Stars — wave 3", opened
+> 2026-09-08 18:52Z via `create_session` on this branch.**
 >
-> ```
-> create_session(                                        # claude-code-remote MCP
->   title:           "Riot Stars — wave 3",
->   tags:            ["riotstars-translation", "wave-3"],
->   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-3 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both are inherited. Units: **the
-> `corrections/audit-wave1` unit + battle chunks 8, 13, 17 + one script batch** — see **Next up**.
+> **Wave 3 owns the repository now. Wave 2's session is done and stays out.**
 >
-> If this line still says "open wave 3" and no wave-3 session exists, the chain broke: open it.
+> Wave 3's units: **the `corrections/audit-wave1` unit + battle chunks 8, 13, 17**, and optionally
+> one script batch *after* grepping it for debug scaffolding — see **Next up** for per-line figures.
+>
+> **If wave 3's session is dead, stalled, or never started work** — check by listing open PRs
+> against this branch and reading In flight — the chain is broken and whoever notices should
+> re-open it exactly as above (SKILL.md §6a; `create_session` needs **both** `source_url` and
+> `source_revision`). Do not run wave 3 from wave 2's session.
+>
+> When wave 3 closes it opens wave 4's session itself. The chain ends only on one of CLAUDE.md
+> §8's four conditions.
 
 ## Last updated
 2026-09-08 · by: **wave-2 coordinator** (`session_01JDoA8KzwUVk3ZjiBw8Qkf3`) ·
