@@ -5,6 +5,33 @@ then read `HANDOFF.md` (the live board), before doing anything else. The transla
 themselves live in `translation_prompt.md` and `glossary.md`; this file does not repeat them. It
 says how the work is split, gated, merged and handed over.
 
+> ## ⛔ THE LOOP IS RECURSIVE AND UNATTENDED — READ THIS FIRST
+>
+> **Closing a wave is not the end of your turn. Spawning the next wave's orchestrator is.**
+>
+> Every wave is run by an `orchestrator` subagent, and **the last act of every wave is for that
+> orchestrator to spawn the next wave's orchestrator itself** (`subagent_type: "orchestrator"`,
+> `run_in_background: true`), automatically, in the same turn, without being asked, without
+> reporting back first, and without waiting for a human to say "continue". The chain must keep
+> running when nothing above it is alive; that is the entire point. The dispatch template is in
+> `.claude/skills/translate/SKILL.md` §6a and `.claude/agents/orchestrator.md` §7. `HANDOFF.md`
+> → **NEXT ACTION** always names the literal next spawn; if a wave has just closed and that line
+> does not name one, the wave is not finished — write it and spawn.
+>
+> Quality control is not what gets skipped to keep the chain moving, and the chain is not what
+> gets skipped to keep quality: **every** unit still goes translator → PR → reviewer → merge,
+> one reviewer at a time, every gate in §6 run and pasted. An orchestrator that merges its own
+> units, or waves a gate through to close a wave faster, has broken the run more thoroughly than
+> one that stalls.
+>
+> The **only** permitted reasons to end a turn without spawning the next orchestrator are the four
+> stop conditions in §8: nothing dispatchable remains, `check` is red on the integration branch,
+> pushes or PRs keep failing, or the human said stop. "The wave went well", "I'll report progress
+> first", "the user may want to review" and "my context is getting long" are **not** stop
+> conditions — a long context is precisely why the next wave belongs to a fresh agent.
+>
+> This binds every Opus agent in this repo, at every level, in every session.
+
 ## 1. The repo in one screen
 
 Text is dumped from two game files, translated in pieces, and spliced back by `tools/assemble.py`.
@@ -64,15 +91,27 @@ are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt fo
 - After every step, update `HANDOFF.md` per §7. If you cannot (you are a translator on a
   branch), put the same content in your PR body and in your return message.
 - Do not read whole dumps into context; grep or use Python. Context is a budget too.
+- **Never end a turn on a closed wave with dispatchable work left.** Spawn the next wave's
+  orchestrator first (banner above, §4 step 7, SKILL.md §6a). Handing off is the work, not an
+  optional courtesy after it.
 
 ## 4. The autonomous workflow
 
-Three roles, all Opus at maximum effort (`.claude/settings.json`, agent frontmatter). Start the
-loop with `/translate` in the main session; that session is the orchestrator.
+Four roles, all Opus at maximum effort (`.claude/settings.json`, agent frontmatter). Start the
+loop with `/translate` in the main session.
+
+**Every wave is run by a fresh `orchestrator` subagent seeded with nothing but `HANDOFF.md` and
+the wave number, and each one spawns the next before it returns.** One wave, one orchestrator, one
+context: no single context carries the whole run, a dead agent costs one wave rather than the run,
+and the chain needs no human between waves. Successors are spawned in the background and the
+parent returns at once, so the chain stays flat instead of nesting a dozen agents deep. Exactly
+one orchestrator *works the repo* at a time: a successor is spawned only after `handoff: wave N
+closed` is pushed, and the main session does not touch the repository while a wave is running.
 
 | Role | Runs as | Does | Never does |
 |---|---|---|---|
-| **Orchestrator** | main session, `.claude/skills/translate/SKILL.md` | survey, queue, glossary seeds, dispatch, review routing, wave close, HANDOFF | translate, merge, edit `tl/` |
+| **Runner** | main session, `.claude/skills/translate/SKILL.md` | preflight, survey, spawn the **first** wave orchestrator, then relay reports and re-spawn only if the chain breaks | translate, review, merge, work the repo while a wave orchestrator is alive |
+| **Orchestrator** | subagent `orchestrator`, **main checkout, no worktree**, one working at a time | one wave: seeds, dispatch, review routing, rework, wave close, HANDOFF — **then spawns the next wave's orchestrator** | translate, merge, edit `tl/`, run a second wave itself, end a wave without spawning its successor |
 | **Translator** | subagent `translator`, own worktree, several in parallel | one unit → one branch → one PR | touch other files, merge, edit HANDOFF/glossary/FLAGS |
 | **Reviewer** | subagent `reviewer`, own worktree, **one at a time** | gates + line-by-line reading → MERGE / CHANGES / PARK; integrates glossary, flags, HANDOFF | translate, waive a gate, merge from a diff read alone |
 
@@ -96,16 +135,32 @@ loop with `/translate` in the main session; that session is the orchestrator.
 3. **Dispatch** 3–4 units in parallel, one translator each (`run_in_background: true`), with the
    dispatch template from the skill. Battle units in chunk order (chapter order: voices and names
    accumulate); one script batch per wave. Record each unit in HANDOFF → In flight. Commit, push.
-4. **Review**, one PR at a time, reviewer in the foreground (`run_in_background: false`). HANDOFF
-   is committed and pushed before the reviewer starts; after it returns, `git pull --ff-only` (it
-   pushed an integration commit to `main`). Record the decision.
+4. **Review — behind the wave barrier.** Nothing is reviewed until **every** unit of the wave has
+   an open PR: re-check the whole wave each time a translator returns, and if a unit has no PR
+   because its translator returned, died or could not push, dispatch a **fresh translator for that
+   unit** and wait again (two re-dispatches per unit, then park it and let the wave close without
+   it). A translator that is merely still working is not a failure — wait, do not re-dispatch over
+   a live agent. Once the barrier is met: one PR at a time, reviewer in the foreground
+   (`run_in_background: false`), in unit order. HANDOFF is committed and pushed before the
+   reviewer starts; after it returns, `git pull --ff-only` (it pushed an integration commit).
+   Record the decision. The reviewer re-checks the barrier itself and stops with `WAVE INCOMPLETE`
+   if it is not met.
 5. **Rework**: on CHANGES, send the reviewer's numbered findings verbatim to the **same**
    translator (SendMessage keeps its context), wait for its push, review again. Three rounds
    maximum; then PARK with the reason, or hand the unit once to a fresh translator.
 6. **Wave close**: all wave units merged or parked → `check` on `main`; `merge` and commit
    `build/*_dump_merged.txt` if changed; refresh the README status table from `status`; prune
-   worktrees; HANDOFF gets the wave summary and the next wave. Commit, push. Back to step 2.
-7. **Stop** when no dispatchable unit remains. Final HANDOFF: done, parked and why, and exactly
+   worktrees; HANDOFF gets the wave summary and the next wave. Commit, push. The wave
+   orchestrator **returns here** — it does not start step 2 again.
+7. **Next wave — automatic, not discretionary.** The moment step 6 pushes `handoff: wave N
+   closed`, the **wave orchestrator itself MUST**, in that same turn, spawn a fresh `orchestrator`
+   subagent for wave N+1 (`run_in_background: true`) with the wave number, the integration branch
+   and the unit list — nothing else; `HANDOFF.md` carries the rest — and then return. Do not stop
+   to summarise, do not ask permission, do not wait to be prompted, do not hand the decision back
+   up. Update `HANDOFF.md` → NEXT ACTION to name the spawn *before* you make it, so a session that
+   dies between the two resumes correctly. Back to step 2, in a clean context.
+   The runner re-spawns only if a chain link is missing — it is the backstop, not the driver.
+8. **Stop** when no dispatchable unit remains. Final HANDOFF: done, parked and why, and exactly
    what the human must do next with pointers. Never loop on blocked items.
 
 ## 5. Branch and PR contract
@@ -163,6 +218,8 @@ planned, unit dispatched, PR opened, review decided, rework sent, wave closed, r
 - Every row says what was done, what is left on that unit, and who acts next.
 
 ## 8. Stop and safety conditions
+
+**These four are the only reasons to stop. Anything else means spawn the next orchestrator.**
 
 - No dispatchable unit left → final handoff, stop. Blocked units need a human (engine patches,
   binaries, in-game checks); no amount of retranslation unblocks them.

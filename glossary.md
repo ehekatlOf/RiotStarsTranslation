@@ -156,7 +156,7 @@ chunks **0, 10, 11, 12, 14, 34, 35, 40** (prologue + all of tier E).
 
 | Japanese | English | Note |
 |---|---|---|
-| ノロ (sentence-final) | trailing **`，ｎｙｏｒｏ．`** | hobbit shopkeeper. Appended to the final clause of each sentence, replacing that sentence's own full stop. Mechanical by design, so duplicated lines stay byte-identical |
+| ノロ (sentence-final) | trailing **`，　ｎｙｏｒｏ．`** | hobbit shopkeeper. Appended to the final clause of each sentence, replacing that sentence's own full stop. Mechanical by design, so duplicated lines stay byte-identical. ⚠️ **Corrected 2026-09-08 (§4.3) — the space after the comma is required; the entry previously read `，ｎｙｏｒｏ．`. See §18.1.** The stop still follows the source: `，　ｎｙｏｒｏ，` on a clause the source ends in `、` |
 | ゲロゲロ | **`Ｒｉｂｂｉｔ`** + the source's own punctuation | **not only the frog merchant** — the ch.10 lizardmen use it too, and the punchline of that chunk turns on it. The *word* is fixed; the stop that follows is whatever the source has (`。` → `．`, `！` → `！`), and inside the ch.10 joke it is quoted: `“Ｒｉｂｂｉｔ”` |
 | katakana speech (lizardmen, frog merchant) | blunt, article-dropping English | `オ前タチ、強イカラ` → `Ｙｏｕ　ｓｔｒｏｎｇ，　ｓｏ`. Drop articles always; drop the copula in short predicative statements; keep the verb where a negation needs it (`Ｗｅ　ａｒｅ　ｎｏｔ　ｌｉｚａｒｄｓ．`) |
 
@@ -172,7 +172,8 @@ chunks **0, 10, 11, 12, 14, 34, 35, 40** (prologue + all of tier E).
 | ・・・・！？ | ．．．．！？ | ch.10 and ch.11, 2 occurrences |
 | ムムッ | Ｈｍｐｈ | grunt |
 | ふっ / フンッ | Ｈｍｐｈ | both scoffs collapse to the same English — deliberate |
-| ほう / ほお | **Ｏｈ** | impressed grunt; **distinct** from the Ｈｍｐｈ pair. Was `Ｈｏｈ`; **§10.6 is now resolved in favour of chunk 0's `Ｏｈ`** — ch.35 line 13 still needs the edit |
+| ほう / ほお | **Ｏｈ** | impressed grunt; **distinct** from the Ｈｍｐｈ pair. Was `Ｈｏｈ`; **§10.6 is now resolved in favour of chunk 0's `Ｏｈ`** — ch.35 line 13 still needs the edit. Always carries `．．．` or `，` |
+| おお | **Ｏｈ** + the source's own punctuation | Hearty exclamation of pleased recognition (`おお！` → `Ｏｈ！`). **Decided 2026-09-08, see §18.2.** Not `Ｏｈｏ` — §10.6 already rejected a transliterated grunt (`Ｈｏｈ`) for the neighbouring ほう, and none remains in `tl/`. The four members of this set are held apart by their punctuation, not by four different words: ほう / ほお → `Ｏｈ` (with `．．．` or `，`), おや → `Ｏｈ？`, **おお → `Ｏｈ！`**, あ、 → `Ａｈ，` |
 | む | Ｈｍ | shorter, more sceptical grunt (ch.12) |
 | まったく | Ｒｅａｌｌｙ， | exasperation / contempt |
 | ふう | Ｐｈｅｗ， | relief |
@@ -180,7 +181,7 @@ chunks **0, 10, 11, 12, 14, 34, 35, 40** (prologue + all of tier E).
 | はっ (military assent) | Ｓｉｒ | a recruit answering an officer |
 | いいな！！ / わかったなっ！！ | Ｇｏｔ　ｉｔ！！ / Ｇｏｔ　ｔｈａｔ！！ | keep the two distinct, they are different source strings. **Do not** use either for a plain 分かった — that is `Ｒｉｇｈｔ，` |
 | 行くぞ！ | Ｍｏｖｅ　ｏｕｔ！ | |
-| ああ (assent) | Ｙｅａｈ | Casual agreement from a rough speaker. **Distinct** from はっ → Ｓｉｒ (military assent) and from 分かった → `Ｒｉｇｈｔ，` |
+| ああ (assent) | Ｙｅａｈ | Casual agreement from a rough speaker. **Distinct** from はっ → Ｓｉｒ (military assent) and from 分かった → `Ｒｉｇｈｔ，`. ✅ **`tl/battle/chunk_000.txt` line 4 is now fixed** (2026-09-08): it rendered `ああ。` as `Ｙｅｓ．`. 4 → 5 columns, +2 bytes, standalone row so nothing re-flows. **No `Ｙｅｓ` for ああ remains in `tl/`.** See §18.3 |
 | 何だと？ / なんだと？ | Ｗｈａｔ　ｗａｓ　ｔｈａｔ？ | Incredulous. The kanji and kana spellings are different source strings but take the same English; `何だと！？` keeps its own `！？` |
 | だまれ | Ｓｉｌｅｎｃｅ | An officer cutting a subordinate off. Not "shut up" — the register is command, not brawl |
 
@@ -341,7 +342,7 @@ epilogue.
 
 | Japanese | English | Note |
 |---|---|---|
-| くっ / クッ | Ｔｃｈ | vexation. **Distinct** from ムムッ / ふっ / フンッ → Ｈｍｐｈ and from ほう → Ｈｏｈ |
+| くっ / クッ | Ｔｃｈ | vexation. **Distinct** from ムムッ / ふっ / フンッ → Ｈｍｐｈ and from ほう → Ｏｈ (§10.6). ✅ **`tl/battle/chunk_000.txt` line 20 is now fixed** (2026-09-08): it rendered `くっ・・・` as `Ｕｇｈ．．．` against `chunk_007.txt` line 12's `Ｔｃｈ．．．` — identical Japanese, divergent English. Same 6 columns, no byte change. **No `Ｕｇｈ` for くっ remains anywhere in `tl/`**, which frees `Ｕｇｈ` for ううっ. See §18.3 |
 | グワアアアァァ | Ｇｗａａａａａｈ | death cry; extends the existing ぐわっ → Ｇｗａｈ |
 | フハハハ… | Ｆｕｈａｈａｈａ… | Helfer's laugh; length tracks the source's kana count |
 | 雑草ども | weeds | Helfer's contemptuous term for the 9th Army; recurs, keep it |
@@ -660,3 +661,84 @@ There is none: this table is a reference list the player reads while choosing a 
 voice is the same flat catalogue voice as `batch_001` — noun phrase, one clause, full stop. The
 only entries with any personality are the three unfinished dev slots (`自走砲１です！`), which
 keep the `Ｔｈｉｓ　ｉｓ` frame of `ダミーぶきです` and their `！`.
+
+---
+
+## 18. Reviewer rulings — wave 1 (2026-09-08, reviewing PR #2, battle chunk 1)
+
+Three cross-PR conflicts and two corrections to shipped work, settled together because battle
+chunks 1, 2 and 3 were drafted in parallel and reached review before any of them merged. Recorded
+here so the rulings bind the reviewers of PRs #3, #1 and #4, and every later unit.
+
+### 18.1 The ノロ tic takes a space after the comma — `，　ｎｙｏｒｏ．`
+
+**Ruling: §5 was wrong and is corrected.** The entry read `，ｎｙｏｒｏ．`; the correct form is
+`，　ｎｙｏｒｏ．` with a full-width space. Three independent reasons, in order of weight:
+
+1. **The font settles it.** `tools/riotfont.py` maps SJIS `0x8143` (`，`) through `SJIS_TO_ASCII`
+   to the plain ASCII `,` of the 8×8 IBM VGA bitmap. Every permitted character renders as an
+   8-pixel Latin glyph, so `，` is a Latin comma in an 8-pixel cell — it does **not** carry the
+   built-in right-hand whitespace a real Japanese full-width comma has. Unspaced,
+   `ｃａｍｅ，ｎｙｏｒｏ．` renders on screen as `came,nyoro.`.
+2. **The corpus is unanimous.** Measured across every shipped file in `tl/`: a full-width comma is
+   followed by a full-width space **153** times and by a tag **138** times. Before this ruling it
+   was followed by a letter **exactly 10 times, all 10 of them the draft of chunk 1**. §5's
+   spelling was the outlier in the corpus, not the drafts that spaced it.
+3. **§5's own sibling entry is spaced.** The ゲロゲロ worked example in `translation_prompt.md` §5
+   reads `ｎｏｔ　ｆｏｒｇｉｖｅｎ．　Ｒｉｂｂｉｔ！`.
+
+**Lines this affects (§4.3).** The tic had not been rendered anywhere in `tl/` when this was
+decided, so nothing shipped needs revisiting. Within wave 1: battle chunk 1 (PR #2) carried the
+unspaced form ×10 and must change; battle chunk 2 (PR #3, ×2) and battle chunk 3 (PR #1, ×11)
+already carry the spaced form and stand. Forward: about **70 further `ノロ` lines in
+`script_unique.txt` and 7 more in `battle_dump.txt`** take the spaced form.
+
+The respelling is a pure substitution — measured on chunk 1, the ten rows go 20→21, 21→22, 17→18,
+19→20, 22→23, 20→21, 19→20, 19→20, 19→20, 15→16. **Widest 23, no re-flow, no page grows.** It
+costs 2 bytes per instance.
+
+### 18.2 `おお` → `Ｏｈ` plus the source's own punctuation
+
+**Ruling: `Ｏｈ！`, not `Ｏｈｏ！`.** Chunk 1 argued that a fourth string on "Oh"/"Ah" flattens the
+set; chunk 3 argued the punctuation keeps them apart. Chunk 3 is right, on the glossary's own
+precedents:
+
+- **§10.6 has already decided this exact question.** ほう / ほお was `Ｈｏｈ` and was resolved in
+  favour of chunk 0's plain `Ｏｈ`; §10.6 records that **no `Ｈｏｈ` remains anywhere in `tl/`**.
+  `Ｏｈｏ` is `Ｈｏｈ` reborn for the neighbouring interjection.
+- **§5 states the mechanism that keeps them apart**: the *word* is fixed and the punctuation
+  follows the source. So ほう / ほお → `Ｏｈ` (which always carries `．．．` or `，`),
+  おや → `Ｏｈ？`, おお → `Ｏｈ！`, あ、 → `Ａｈ，` — four source strings, four distinct renderings,
+  one word. That is the same deliberate collapse §6 already applies to ふっ / フンッ → `Ｈｍｐｈ`
+  and §17.2 applies to 鬼 / オーガ → *ogre*.
+- In English "Oho" carries a note of mock-triumph that a hobbit chief's warm greeting does not.
+
+**Lines this affects.** One instance in battle chunk 1 (PR #2, must change), one in battle chunk 3
+(PR #1, already `Ｏｈ！`, stands). Nothing shipped.
+
+### 18.3 Two corrections to already-shipped `tl/battle/chunk_000.txt`
+
+Both were raised by chunk 1's translator, who correctly did not touch files outside its unit
+(CLAUDE.md §3). In both cases chunk 0 was the lone outlier against the glossary **and** against
+other shipped work, so the fix is to chunk 0, not to the glossary. Applied in this commit.
+
+| Line | Japanese | Was | Now | Cost |
+|---|---|---|---|---|
+| `chunk_000.txt` line 20 | `くっ・・・` | `Ｕｇｈ．．．` | **`Ｔｃｈ．．．`** (§11.5) | same 6 columns, 0 bytes |
+| `chunk_000.txt` line 4 | `ああ。` | `Ｙｅｓ．` | **`Ｙｅａｈ．`** (§6) | 4 → 5 columns, +2 bytes |
+
+The first was not merely a glossary divergence but a **CLAUDE.md §3 violation**: `chunk_007.txt`
+line 12 already shipped `くっ・・・` → `Ｔｃｈ．．．`, so identical Japanese carried divergent
+English across two shipped files. Fixing it also frees `Ｕｇｈ`, which chunks 1 and 2 both take for
+**ううっ** — a different source string — so the form no longer does two jobs.
+
+For the second, `Ｙｅａｈ` already stood in `tl/script/batch_002.tsv`. Note the widths are **not**
+equal, as the PR assumed: `Ｙｅｓ．` is 4 columns and `Ｙｅａｈ．` is 5. It is a standalone row, so
+nothing re-flows, but chunk 0 is the tightest file in the project and this spends 2 of its 29 spare
+bytes: **8,163 → 8,165 / 8,192, slack 29 → 27.** `assemble.py check` passes. Chunk 0 has no room
+left for another correction of this kind — the next one will need a re-cut.
+
+### 18.4 `サイクス` → `Ｓｙｋｅｓ`
+
+Reconciled between PRs #1 and #3 before review and verified in both pushed files. Promote out of
+§9 PROVISIONAL when the first of those two merges.
