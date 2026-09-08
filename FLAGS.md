@@ -656,3 +656,63 @@ Recorded in glossary §21.3. Later translators must copy it byte-for-byte, not r
 Chunk 1 read `謹慎処分を受けてる` as singular and masculine (`ｓｏ　ｈｅ’ｓ　ｃｏｎｆｉｎｅｄ．`) and
 flagged a 2-byte edit if a later chunk disagreed. Chunk 3 names the man — **Shasta**, who
 self-references with `僕`. No edit needed. Closed.
+
+## J. Wave 1 review — script batch 004 / PR #4 (2026-09-08)
+
+### J1. The description table now ships at two registers of tightness — 2.60× and 2.23×
+
+Re-measured on the merged files, taking the description clause as the text before each entry's
+final `{FFFE}`:
+
+| | description clause | |
+|---|---|---|
+| `batch_003`, weapon rows | 198 JP → 515 EN | **2.60×** |
+| `batch_003`, whole batch | 1,478 JP → 3,647 EN | 2.47× |
+| **`batch_004`** | 491 JP → 1,095 EN | **2.23×** |
+
+Batch 004 is about **14% tighter** than the shipped standard, and the tightness is concentrated in
+one repeated frame rather than spread: **six rows sit at 1.40×** —
+`持つ者に炎の守護をもたらす剣／槍。` → `Ａ　ｆｉｒｅ‐ｗａｒｄｉｎｇ　ｓｗｏｒｄ／ｓｐｅａｒ．`, which drops
+`持つ者に` ("to the one who bears it") entirely. That is a **§2.1 step 5 departure and the PR did
+not flag it**; recorded here instead.
+
+**Accepted deliberately at review, with this arithmetic.** The row is 21 columns, so columns are
+not the constraint — bank 40 is. Restoring `持つ者に` needs a second row, about **+42 bytes per
+entry × 6 = +252 bytes**. Bank 40 has **509 free against the project's 500-byte reserve — 9 bytes
+of margin** — and net growth in bank 40 runs 1,262 ÷ 34 ≈ **37 bytes per line**, so 252 bytes means
+parking **about 7 of the 34 lines**. Seven weapon descriptions left in Japanese, visible as holes
+in a table the player reads side by side, to lengthen six entries. The partial option is worse:
+~3 parked lines buys ~111 bytes, enough for two or three of the six, which would break the seed's
+requirement that all six be identical.
+
+**What is actually lost** is not accuracy — every distinguishing feature survives on every row
+(fire, cold, thunder god, Tyr, Odin, blue dragon scales, moonlight, meteors, jet-black, rusted),
+and a player can tell all 34 weapons apart. What is lost is **uniformity across the table**: a
+batch-003 sword and a batch-004 sword read at noticeably different lengths side by side.
+
+**If bank 40 is ever repointed**, these six entries are the first thing to loosen — they are
+cheap, self-contained, and the seed already fixes what the fuller form must say.
+
+### J2. Bank 40 is spent, and bank 5 is now the one to watch
+
+Measured before/after by removing `batch_004.tsv` and re-merging. Every affected bank spends
+**exactly 1,262 bytes** — the 21-map-bank replication:
+
+| bank | before | after |
+|---|---|---|
+| **40** | 1,771 | **509** |
+| 5 | 4,681 | **3,419** |
+| 2 | 8,805 | 7,543 |
+| 33 | 10,615 | 9,353 |
+| 12 | 11,621 | 10,359 |
+| 3 | 11,891 | 10,629 |
+| 41 | 353 | **353 — untouched**, the table does not land there |
+
+Two consequences for planning, both measured rather than projected:
+
+1. **The item/equipment description table is finished for this run.** Lines 185–225 (clubs, axes,
+   bows, machine-soldier arms) land in the same 21 banks and must go to `pending/script/` until
+   bank 40 is repointed. This confirms §F2's projection exactly.
+2. **Bank 5 lost 27% of its remaining headroom to one batch** and is now the third-tightest bank
+   at 3,419 free. It is not yet blocking, but any future batch resident in bank 5 needs
+   `bankmeasure` run before dispatch, not after.

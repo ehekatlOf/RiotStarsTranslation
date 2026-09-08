@@ -16,54 +16,52 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **Wave 1, review phase. Orchestrator: wave-1 orchestrator subagent.** Barrier met 4 of 4 and it
-> stays met — a rework round does not reopen it.
+> **Wave 1 is CLOSED — all four units merged, none parked. `check` is green on the integration
+> branch. The next act is to OPEN WAVE 2'S SESSION.**
 >
-> ⚠️ **This orchestrator has no `Task` tool: subagent spawning is disabled in its session.** It
-> therefore runs the reviews itself, under the identical CLAUDE.md §6 contract — every gate run in
-> a real checkout at `/home/user/rs-review`, evidence pasted into the PR review, one PR at a time.
-> See "The spawn constraint" below; this is the one deviation from CLAUDE.md §4's role split and it
-> is deliberate, disclosed, and forced.
+> Do exactly this, and nothing else first:
 >
-> Review queue, in unit order, one at a time:
-> 1. ✅ **PR #2 (chunk 1) — MERGED** round 2, squash `dddf0ae`. 3,517 / 8,192, slack 4,675.
-> 2. ✅ **PR #3 (chunk 2) — MERGED** round 2, squash `f298fe1`. 5,839 / 8,192, slack 2,353.
-> 3. ✅ **PR #1 (chunk 3) — MERGED** round 1, squash `1491ccd`. 4,601 / 8,192, slack 3,591.
-> 4. **PR #4 (batch 004)** — never reviewed. ← **next, and the last unit of wave 1**. 34 lines / 714 instances; bank 40 → 509 free. The
->    reviewer must decide explicitly whether 2.28× compression is acceptable or ~3 lines should be
->    parked to buy back ~150 bytes. That is a quality judgement, not a gate.
+> ```
+> create_session(                                  # claude-code-remote MCP
+>   title:           "Riot Stars — wave 2",
+>   tags:            ["riotstars-translation", "wave-2"],
+>   source_revision: "claude/workflow-translation-iterate-uzlkns",
+>   prompt:          <the wave-2 seed, per SKILL.md §6a>
+> )
+> ```
+> Omit `environment_id` and `model` so both are inherited. Units: **battle chunks 4 (D 5.08),
+> 6 (C 3.09), 9 (D 4.93) + script batch 005 = unique lines 984–1001 and 1040–1047** — see
+> **Next up**, which corrects the surveyed range: 89 of the lines originally queued for batch 005
+> are a developer debug menu and must not be translated.
 >
-> The wave-1 rulings in `glossary.md` §18 are **already made** — check conformance, do not
-> re-litigate. ノロ → `，　ｎｙｏｒｏ．` (spaced), おお → `Ｏｈ！`, サイクス → `Ｓｙｋｅｓ`.
-> §18.4: promote サイクス out of §9 when the first of PR #1 / #3 merges.
+> **Wave 2's glossary seeds are ALREADY DONE** — `glossary.md` §9, "Wave 2 seeds", committed by
+> wave 1's session. Wave 2 should *use* them, not re-seed. That is the one deviation from
+> SKILL.md's per-wave order; everything else about wave 2 is the standard loop.
 >
-> **When wave 1 closes: seed the glossary for wave 2, then spawn the wave-2 orchestrator** — units
-> battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + script batch 005 (unique lines 1035–1100,
-> bank 31 alone). If spawning is still unavailable, say so plainly in the final handoff and name
-> the reason; do not pretend the chain continued.
+> If `create_session` is unavailable, fall back to an `orchestrator` subagent
+> (`run_in_background: true`) and say so here — the run then costs context in the calling session
+> and a human should know. If **neither** is available, the chain cannot continue: write the final
+> handoff and say plainly that a human must open wave 2.
 
 ## Last updated
-2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, **3 of 4 merged** ·
+2026-09-08 · by: **wave-1 orchestrator** · wave: **1 CLOSED, 4 of 4 merged, 0 parked** ·
 queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | 13 | 44 | 0, **1**, **2**, **3**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
-| Battle JP characters | 8,692 | 43,161 | 20.1% |
-| Script unique lines | 151 | 1,430 | `tl/script/batch_001–003.tsv` |
-| Script message instances | 3,299 | 7,931 | 41.6% |
+| Battle JP characters | 8,692 | 43,161 | **20.1%** |
+| Script unique lines | 185 | 1,430 | `tl/script/batch_001–004.tsv` |
+| Script message instances | 4,013 | 7,931 | **50.6%** |
 
-`check`: All checks passed. Tightest banks (`bankmeasure`): 41 → 353 free, 40 → 1,771,
-5 → 4,681, 2 → 8,805; every other bank ≥ 8,800.
+`check`: **All checks passed** on the integration branch. Tightest banks (`bankmeasure`, measured
+after batch 004): **41 → 353 free, 40 → 509, 5 → 3,419**, 2 → 7,543, 33 → 9,353; every other bank
+≥ 10,300. Bank 40 is spent — see `FLAGS.md` §J2.
 
 ## In flight
-| Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
-|---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | ✅ **MERGED** round 2, squash `dddf0ae` — 3,517 / 8,192, slack 4,675; max column 23, no page over 4 rows; all 8 gates re-run on the moved base | 2 | done |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | ✅ **MERGED** round 2, squash `f298fe1` — 5,839 / 8,192, slack 2,353; max column 23, no page over 4 rows; both coda variants byte-identical where the JP is | 2 | done |
-| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | ✅ **MERGED** round 1, squash `1491ccd` — 4,601 / 8,192, slack 3,591; 5 seeds promoted; establishes the stolen-item string for 7 instances | 1 | done |
-| script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
+**Nothing. Wave 1 is closed — all four units merged, none parked.** Wave 2 has not been dispatched
+by this session; its own session does that.
 
 > ## ⏰ A WATCHDOG TIMER MUST BE ARMED AT ALL TIMES
 > The main session wakes only on a notification or a human message. Wave 1 stalled once because a
@@ -75,140 +73,78 @@ queue: **fresh (survey ran 2026-09-08)**
 
 ### ⚠️ The spawn constraint — read before planning any wave
 
-The session running the wave-1 orchestrator has **no `Task` tool** (`Task is disabled for this
-session, in subagents as well as here`), and no `ListAgents`. It cannot spawn a `translator`, a
-`reviewer`, or its successor `orchestrator`. This was discovered mid-wave, after the first
-reviewer dispatch was refused.
+The session that ran wave 1 had **no `Task` tool** and no `ListAgents`: it could not spawn a
+translator, a reviewer, or a successor orchestrator. Discovered mid-wave, when the first reviewer
+dispatch was refused.
 
-**What was done about it, and why.** CLAUDE.md §8 lists exactly four stop conditions and "cannot
-spawn subagents" is not one of them; the top banner forbids stalling. So the orchestrator ran the
-reviews itself under the identical §6 contract — a real checkout at `/home/user/rs-review`, every
-mechanical gate executed and its output pasted into the PR review, the full line-by-line reading
-against the Japanese, one PR at a time, integration commits serialised. What is lost is
-**reviewer independence**, not gate coverage: the same agent that routes the wave also judges it.
-That is a real weakening of CLAUDE.md §4's role split and it is recorded here rather than
-quietly absorbed.
+**What was done, and why.** CLAUDE.md §8 lists four stop conditions and "cannot spawn subagents"
+is not one of them. So that session ran all four reviews itself under the identical §6 contract —
+a real checkout, every mechanical gate executed and its output pasted into the PR review, the full
+line-by-line reading against the Japanese, one PR at a time, integration commits serialised. **What
+was lost is reviewer independence, not gate coverage**: the agent that routed the wave also judged
+it. Recorded rather than quietly absorbed.
 
-**For whoever resumes.** If your session *does* have `Task`, go back to the three-role split
-immediately — it is the better arrangement. If it does not, the fallback above is the precedent,
-and the chain cannot be continued by spawning; a human has to start the next wave.
+**If your session has `Task`, go back to the three-role split** — it is the better arrangement and
+wave 2's session should use it. The wave-boundary chain does *not* depend on `Task`: it uses
+`create_session` (SKILL.md §6a).
 
-### Two tooling facts established by the wave-1 reviewers — carry these into every future wave
-1. **`REQUEST_CHANGES` is impossible on these PRs.** GitHub refuses it on a PR opened by the same
-   account, which is every PR in this project. Reviewers must post CHANGES as a **COMMENT** review.
-   Not a defect and not worth retrying — the decision text is what counts, not the GitHub state.
-2. **`translation_prompt.md` §3.2's "add a `{FCC0}`" escape does not exist for a translator.**
-   The PR #3 reviewer tested it by planting one: `assemble.py check` fails with `tag stream
-   changed`, because `tag_parity` exempts only `{FFFE}`. The prompt misstates an available lever.
-   A translator at the 4-row wall has re-flow and §2.1 only.
-3. **`APPROVE` is impossible too, for the same reason.** GitHub refuses `APPROVE` as well as
-   `REQUEST_CHANGES` on a PR opened by the same account (`Can not approve your own pull request`).
-   **Every** review decision on this project — MERGE, CHANGES and PARK alike — goes as a
-   **COMMENT** review. Established on PR #2, 2026-09-08. Do not retry either event.
-4. **Squash-merging via the GitHub MCP works and is the merge path.** `merge_pull_request` with
-   `merge_method: "squash"` and `expectedHeadSha` set merged PR #2 cleanly. Pass the true post-
-   rework figure in `commit_title`: a PR title written before a rework is stale, and the squash
-   title is what lands in the history.
+### Four tooling facts established in wave 1 — carry these into every future wave
+1. **Neither `REQUEST_CHANGES` nor `APPROVE` is possible on these PRs.** GitHub refuses both on a
+   PR opened by the same account (`Can not approve your own pull request`), which is every PR here.
+   **Every** decision — MERGE, CHANGES, PARK — goes as a **COMMENT** review. Do not retry either.
+2. **Squash-merging via the GitHub MCP works** — `merge_pull_request`, `merge_method: "squash"`,
+   with `expectedHeadSha`. Put the true post-rework figure in `commit_title`: a PR title written
+   before a rework is stale, and the squash title is what lands in history.
+3. **The proxy blocks branch deletion** (`git push origin --delete` → HTTP 403). Normal pushes are
+   unaffected. The four wave-1 branches are merged but still exist on the remote; harmless, and a
+   human can delete them in the GitHub UI. **Do not treat this as the §8 "cannot push" condition.**
+4. **`translation_prompt.md` §3.2's "add a `{FCC0}`" escape does not exist for a translator.**
+   `assemble.py check` fails with `tag stream changed` — `tag_parity` exempts only `{FFFE}`. A
+   translator at the 4-row wall has re-flow and §2.1 only.
 
-**Barrier: 4 of 4 — MET**, and it stays met; a rework round does not reopen it. Review order is
-unit order: ~~#2~~ ✅ ~~#3~~ ✅ ~~#1~~ ✅ merged; **#4 (batch 004) is the last unit of wave 1.**
+## Next up — WAVE 2, ready to dispatch
 
-Batch 004's figures were re-measured in this checkout rather than taken from its report:
-`merge` prints no "never matched the dump"; script instances 3,299 → **4,013** (+714) and unique
-forms 151 → 185 (+34), matching the claim exactly; `bankmeasure` gives **bank 40 = 509 free**
-against the 500 floor, bank 41 untouched at 353; `rowcheck script` clean.
+**Battle: chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93).** Chapter order, all tier C/D, no byte
+pressure. Glossary seeds for all three are already in **§9, "Wave 2 seeds"** — `Ｌｅｏｎ`
+(which settles §10.1), `Ｃａｐｅｌｌａ`, `Ｋａｚａｒｏｖ`, `Ｍａｒｔｉｎ`, `Ｐｅｒｃｉｖａｌ`,
+`Ｄｉｅｌ` Empire, `Ｗａｒｗｉｃｋ`, 弓使い.
 
-### Cross-PR conflicts — ALL THREE SETTLED 2026-09-08 by the PR #2 reviewer
-Rulings and full reasoning are in **`glossary.md` §18**, which is binding. Summary:
+**⚠️ Script batch 005 — the surveyed range was wrong and is CORRECTED here.**
 
-| String | Ruling | Who changes |
+`Next up` previously read "unique lines 1035–1100 (66 lines, one scene, bank 31)". **It is not one
+scene.** Measured line by line: of lines 984–1100, **89 are developer debug scaffolding** — a
+sound-test / music-appreciation menu (`０１：インターミッション`, `０７：マップの音楽１`,
+`５０：新曲１`…) and a flag editor (`フラグ４をＯＮにします。２章でキエーザ城に入れるように
+なります。`) — and only **28 are player-facing**.
+
+**Batch 005 is therefore: unique lines 984–1001 and 1040–1047 — 26–28 player-facing lines,
+~1,777 JP characters.** Two coherent groups:
+
+| lines | what | bank |
 |---|---|---|
-| ノロ tic | **`，　ｎｙｏｒｏ．` — spaced**; glossary §5 corrected (§18.1). Decided on the font: `riotfont.py` maps `，` to the plain ASCII `,` glyph, so it carries **no** built-in whitespace — unspaced it renders `came,nyoro.`. Corpus: `，` + space 153×, + tag 138×, + letter exactly 10×, all 10 of them PR #2 | **PR #2 only** (10 respellings, widest row 23, no re-flow). #1 and #3 already correct |
-| `おお！` | **`Ｏｈ！`** — the word is fixed, the punctuation follows the source (§18.2). §10.6 already rejected `Ｈｏｈ` for the neighbouring ほう. Set: ほう/ほお → `Ｏｈ`, おや → `Ｏｈ？`, おお → `Ｏｈ！`, あ、 → `Ａｈ，` | **PR #2 only** (1 edit). #1 already correct |
-| `サイクス` | **`Ｓｙｋｅｓ`**; promote out of §9 when the first of #1 / #3 merges (§18.4) | nobody |
+| 984–988 | five tutorial boxes: ZOC, front/rear unit composition, `『ＧＵＥＳＴ　ＵＮＩＴ』`, `「ＥＮＴＥＲ」` points, neutral units and `『説得』` | 30 |
+| 989–1001 | fortress-guard and rumour dialogue: the Princess's disappearance, Bernard's church, the Carline–Empire alliance, Helfer's plot | 30 |
+| 1040–1047 | the church scene — the priest Batou, Farina's reconstruction, the legend of the **Reese civilisation** and Bishop Creus | 31 |
 
-**Also settled: the two `tl/battle/chunk_000.txt` corrections (§18.3) are DONE**, applied in the
-reviewer's integration commit — `くっ・・・` → `Ｔｃｈ．．．` (line 20) and `ああ。` → `Ｙｅａｈ．`
-(line 4). The first was a CLAUDE.md §3 violation, not just a glossary divergence: `chunk_007.txt`
-already shipped `Ｔｃｈ．．．` for the same Japanese. **`Ｕｇｈ` is now free for ううっ, so PRs #2 and
-#3 both keep it.** Chunk 0 is now **8,165 / 8,192, slack 27** — see `FLAGS.md` §G1, it is the
-tightest file in the project and has no room for another non-width-neutral correction.
+Both banks are roomy (30 → 36,671 free, 31 → 35,581), so there is no bank pressure either way.
 
-**Reviewers of PRs #3, #1 and #4: these rulings are already in `glossary.md`. Do not re-litigate
-them; check conformance against §18.**
+**Do NOT queue the 89 debug lines.** The player never reaches them, they are 1-instance each, and
+they would spend bank 30/31 on a sound test. If someone later wants them for completeness they are
+a deliberate, separate decision — not wave 2's.
 
-Chunk 2 was given `Ｓｙｋｅｓ` and the **spaced** ノロ form with the corpus evidence while it was
-still drafting, and shipped both — verified in the pushed file, not taken from its report. So the
-reviewer's ruling now lands on **one** PR instead of three. Recorded here rather than in
-`glossary.md`: the orchestrator gets one glossary write per wave (SKILL.md §2) and has used it,
-and the reviewer is the only writer of `glossary.md`.
+**Do NOT queue more of the item-description table**: bank 40 is spent at 509 free, measured
+(`FLAGS.md` §J2). Lines 185–225 must be parked until bank 40 is repointed.
 
-**§9 PROVISIONAL correction — ✅ DONE 2026-09-08 in chunk 2's integration commit (glossary §20.1):** §9 describes **メルザリオ** as the "hobbit
-village-chief's son". Chunk 2 shows it is a **place** — `息子がメルザリオに住んでる` (his son lives
-*in* Melzario), `メルザリオの森` (the forest *of* Melzario). Rendered `Ｍｅｌｚａｒｉｏ`. The §9 row
-must be corrected, not just promoted.
-
-### Two planning facts from batch 004 that change the next survey
-1. **Bank 40 is now spent: 509 bytes free.** The item/equipment description table is finished for
-   this run, exactly as the corrected wave-2 note predicted — and now measured rather than
-   projected. Any further table lines (185–225: clubs, axes, bows, machine-soldier arms) land in
-   the same 21 banks and must be parked in `pending/script/` until bank 40 is repointed. **Wave 2's
-   script unit is unique lines 1035–1100 (bank 31 alone, 35,581 free), not more of the table.**
-2. **The growth figure for *description-clause* text is 2.5×, not 2.1×.** Measured: `batch_003`'s
-   weapon rows run **2.66×** on the description clause and `batch_003` as a whole **2.41×**; batch
-   004 had to be squeezed to **2.28×** to clear bank 40's floor, which is below the shipped
-   standard. 2.10× remains right for whole messages (it is the aggregate over all shipped lines,
-   including stat rows that cost nothing — `攻撃力＋ＮＮ` → `Ａｔｋ＋ＮＮ` is a character shorter).
-   Use 2.5× when sizing description tables specifically, or the queue will over-promise.
-   Batch 004 is therefore tighter than the shipped standard: the reviewer should decide whether
-   that is acceptable or whether ~3 lines should be parked to buy back ~150 bytes of prose.
-
-### Also raised by chunk 3, for the reviewer
-- `アイテムを{FFFE}奪われました。` → `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` is the
-  **first** rendering of a string that recurs untranslated in chunks 9, 28, 29, 30, 38, 39 and 41
-  (battle dump lines 253–255, 680, 720, 748, 938, 951, 974, 976). Whatever merges here binds those.
-- `探検家` → explorer (chunk 3) vs `冒険者` → adventurer (`script_unique` 1001) — same man, Korneff,
-  two different source words, deliberately kept distinct. Not a contradiction of the seed.
-- Portrait 02 in chunk 3 is an unnamed female party member who carries the tutorial voice; if a
-  later chunk names her, her register needs re-checking (cf. glossary §13.13 / §10.11).
-
-Chunk 1's report carried first renderings for strings that recur in chunks 2 and 3 — ノロ, おお,
-ううっ → `Ｕｇｈ`, それにしても → `Ｓｔｉｌｌ，`, いやいや → `Ｗｅｌｌ　ｎｏｗ，`, 謹慎 →
-`ｃｏｎｆｉｎｅｄ` — and these were sent to both translators while they still had the drafts open.
-The reviewer confirmed chunk 2 carries `Ｕｇｈ．．．` and `Ｓｔｉｌｌ，` identically; ノロ and おお
-went the other way and are ruled above.
-
-**The two `tl/battle/chunk_000.txt` corrections chunk 1 raised are DONE** — see the ruling table
-above and `glossary.md` §18.3. (For the record, the PR's line numbers were off by two: the lines
-are 4 and 20, not 2 and 18, and `Ｙｅｓ．` → `Ｙｅａｈ．` is **not** width-neutral — 4 → 5 columns,
-+2 bytes.)
-
-## Next up (wave 2, provisional)
-battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + **script batch 005 = unique lines 1035–1100**
-(66 lines, one scene, resident in **bank 31 alone**, 1,372 JP chars, 35,581 bytes free — no bank
-pressure at all).
-
-**Correction to the wave-1 note: batch 005 must NOT be more of the description table.** Batch 004
-spends about 1,028 of bank 40's 1,771 free bytes; with the 500-byte reserve that leaves roughly
-240 bytes, i.e. ~8 more table lines. The item-description table is effectively finished for this
-run once batch 004 merges.
-
-Script batches after that, each a single scene resident in a single roomy bank (`queue.py`
-groups them; tightest bank free in brackets):
-
-| lines | count | JP chars | bank |
-|---|---|---|---|
-| 984–1034 | 51 | 1,098 | 30 [36,671] |
-| 888–922 | 35 | 2,034 | 28 [34,841] |
-| 815–838 | 24 | 1,173 | 21 [36,819] |
-| 747–814 | 68 | 3,671 | 20 [29,489] — split into two batches |
-| 923–983 | 61 | 4,977 | 29 [27,323] — split into two batches |
-| 582–632 | 51 | 1,323 | 12 [11,621] |
-| 1104–1138 | 35 | 1,925 | 33 [10,615] — watch bank 33 |
+### ⚠️ A survey defect this exposed, which affects every future script wave
+`tools/queue.py` groups script lines by **bank residency and adjacency only**. It has no notion of
+whether a line is player-facing, so a contiguous run of debug menu text looks exactly like a scene
+and is 76% of this neighbourhood. **Every future script batch must be eyeballed for debug
+scaffolding before dispatch** — grep the candidate range for `フラグ`, `：新曲`, `^[０-９]{2}：`
+and `鑑賞モード`. Worth fixing in `queue.py` as a filter; recorded in `FLAGS.md`.
 
 ## Remaining (dispatchable) — measured by `python3 tools/queue.py battle`, 2026-09-08
-Battle, **30 chunks / 32,709 JP characters**, in chapter order (tier, budget ratio):
-1 (D 5.28), 2 (C 3.15), 3 (D 4.23), 4 (D 5.08), 6 (C 3.09), 8 (B 2.32), 9 (D 4.93), 13 (C 3.41),
+Battle, **27 chunks / 29,980 JP characters** after wave 1, in chapter order (tier, budget ratio):
+4 (D 5.08), 6 (C 3.09), 8 (B 2.32), 9 (D 4.93), 13 (C 3.41),
 15 (D 6.13), 17 (C 3.19), 18 (D 6.28), 19 (B 1.94), 20 (D 4.75), 21 (D 4.28), 22 (D 4.59),
 23 (C 2.80), 24 (C 2.99), 25 (C 3.48), 26 (C 3.36), 27 (D 5.54), 28 (D 4.76), 29 (D 6.04),
 30 (B 2.43), 31 (C 3.46), 36 (C 3.92), 37 (C 3.69), 38 (C 3.37), 39 (D 6.20), 41 (E 6.54),
@@ -287,7 +223,15 @@ instance yield first. After that the pool is the 1-instance story text in the ro
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
 |---|---|---|---|---|
-| 1 | battle 1, 2, 3 + script 004 | — | — | in flight |
+| 1 | battle 1, 2, 3 + script 004 | **4** | 0 | battle 10 → 13 / 44 (13.8% → 20.1% of JP chars); script 151 → 185 unique lines, 3,299 → 4,013 instances (41.6% → **50.6%**) |
+
+**Wave 1 detail.** All four merged, none parked, no unit past round 2.
+`#2` battle chunk 1 — 3,517 / 8,192, slack 4,675, round 2 (`dddf0ae`).
+`#3` battle chunk 2 — 5,839 / 8,192, slack 2,353, round 2 (`f298fe1`).
+`#1` battle chunk 3 — 4,601 / 8,192, slack 3,591, round 1 (`1491ccd`).
+`#4` script batch 004 — 34 lines / 714 instances, bank 40 → 509 free, round 1 (`b3b2abb`).
+Glossary grew by four sections (§19–§22) and 13 seeds were promoted out of §9. `FLAGS.md` grew by
+three sections (§H, §I, §J). Every unit's gates were re-run in a real checkout on the moved base.
 
 ## How to resume
 1. `git checkout claude/workflow-translation-iterate-uzlkns && git pull --ff-only && python3 tools/assemble.py check`

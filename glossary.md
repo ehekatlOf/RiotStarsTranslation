@@ -9,7 +9,7 @@ translated line that must be revisited.
 Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in the dumps but not yet
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
-Status: covers `script_unique.txt` lines 1–52 (unit/class descriptions) and `battle_dump.txt`
+Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions) and `battle_dump.txt`
 chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4 + all of tier E).
 
 ---
@@ -249,11 +249,48 @@ batch 003 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `ア�
 | ~~ファイバー~~ | ✅ **PROMOTED to §21.1** — `Ｆｉｂｅｒ` | battle chunk 3 (PR #1) | — |
 | ~~コーネフ~~ | ✅ **PROMOTED to §21.1** — `Ｋｏｒｎｅｆｆ` | battle chunk 3 (PR #1) | — |
 | ~~探検家~~ | ✅ **PROMOTED to §21.1** — `explorer` | battle chunk 3 (PR #1) | — |
-| 魔神ティール | the demon god Ｔｙｒ | script batch 004, line 163 `魔神ティールの力を秘めた暗黒剣` | Ｔｉｅｌ, Ｔｈｉｅｌ — Ｔｙｒ is the Norse reading the pantheon around it (Thor, Odin, Athena, Apollo, Artemis, Hermes) points at |
-| 軍神オーディン | the war god Ｏｄｉｎ | script batch 004, line 178 | — |
-| 雷神 | the thunder god | script batch 004, lines 154–156, 173–175 — `雷神の雷`, `雷神の電磁場` | — |
-| 守護をもたらす | grants … guardianship / warded by | script batch 004, lines 146–148, 170–172; six entries, must be identical in all six | — |
+| ~~魔神ティール~~ | ✅ **PROMOTED to §22.1** — `the demon god Ｔｙｒ` | script batch 004 (PR #4) | — |
+| ~~軍神オーディン~~ | ✅ **PROMOTED to §22.1** — `the war god Ｏｄｉｎ` | script batch 004 (PR #4) | — |
+| ~~雷神~~ | ✅ **PROMOTED to §22.1** — `the thunder god`, 6 entries identical | script batch 004 (PR #4) | — |
+| ~~守護をもたらす~~ | ✅ **PROMOTED to §22.1** — `〜‐ｗａｒｄｉｎｇ`, byte-identical in all six | script batch 004 (PR #4) | — |
 | ~~ブヒ / ブヒィィィィ~~ | ✅ **PROMOTED to §19.1** — rendered `Ｏｉｎｋ` / `Ｏｉｎｋｋｋｋ` in `tl/battle/chunk_001.txt` (PR #2, merged 2026-09-08) | battle chunk 1 | — |
+
+**Wave 2 seeds (2026-09-08) — battle chunks 4, 6, 9 and script batch 005.** Proposed forms follow
+the European-reading convention (§11.4, §14, §17.3) and the species test (§17.1).
+
+| Japanese | Proposed English | Where seen | Alternatives if the reading is open |
+|---|---|---|---|
+| **リオン** | **`Ｌｅｏｎ`** | battle chunk 6 — `匿名希望のリオンっておっさん`, a man who sent Ridge to help and wants to stay anonymous | **This settles §10.1**, which has been open since the glossary was written and says to decide before the character appears. He appears here. `Ｌｅｏｎ` over `Ｌｉｏｎ`: every other name in the game takes a European reading (Bauer, Carline, Helfer, Albert, Fernando, Anselmo), and `Ｌｉｏｎ` would read in English as the animal — the same failure §17.2 avoided for Ｎｅｒｇａｌｉ |
+| カペラ | `Ｃａｐｅｌｌａ` | battle chunk 6 — `ファリーナの南、カペラの村`, a **village** | Ｋａｐｅｒａ. Capella is a star name and reads as European |
+| カザロフ | `Ｋａｚａｒｏｖ` | battle chunk 6 — `カザロフ隊長`, an Imperial officer the Black Knights report to | Ｃａｓａｌｏｆ. The `‐ov` ending is the plainest reading |
+| マーティン | `Ｍａｒｔｉｎ` | battle chunk 6 — a Black Knight, retreating with Percival | — |
+| パーシバル | `Ｐｅｒｃｉｖａｌ` | battle chunk 6 — the other Black Knight | Ｐａｒｃｉｖａｌ; the Arthurian spelling is the obvious one |
+| ディール帝国 | the `Ｄｉｅｌ` Empire | battle chunk 9 — `ディール帝国、万歳！！！`, **the Empire's actual name**, revealed for the first time | Ｄｉｅｈｌ, Ｄｉｒ, Ｔｈｉｅｌ. ⚠️ One voicing from 魔神ティール → `Ｔｙｒ` (§22.1) — keep them visibly distinct. Does **not** replace 帝国 → the Empire (§2); this is the proper name |
+| ワーウィック | `Ｗａｒｗｉｃｋ` | battle chunk 9 — `ワーウィックまでは気が抜けないぜ`, a destination | — |
+| 弓使い | `archer` | battle chunk 6 — `王国一の弓使い`, `カーラインきっての弓使い`, both of Ridge | A **third** bow word beside 弓兵 → archer and 弓の戦士 → bow warrior (§4). ⚠️ 使い → *tamer* (§14.3) does **not** apply — that rule is for 氷龍使い / 獣使い, creature handlers. Consider `bowman` to keep it distinct from 弓兵 |
+| バトウ | `Ｂａｔｏｕ` | script 1041 — `神父のバトウ`, the priest of Bernard's church. Referred to posthumously as `バトウ様` in 1045 | Ｂａｔｏｗ, Ｂａｔｈｏｕ |
+| リース文明 | the `Ｒｅｅｓｅ` civilisation | script 1047 — `伝説のリース文明`, a vanished people destroyed by war among their own kind | Ｒｉｅｓｅ, Ｌｉｅｓ. ⚠️ Probably the same vanished civilisation as 古代ハイランド → ancient Highland (§11.2) — check before fixing either |
+| クレウス司教 | Bishop `Ｃｒｅｕｓ` | script 1047 | Ｋｒｅｕｓ. 司教 → **Bishop**, a new rank |
+| キエーザ | `Ｋｉｅｓａ` | script 1090, 1092 — `キエーザ城`, a castle | Ｃｈｉｅｓａ — which is Italian for *church*, so the name may be deliberate; check whether the castle is a religious site before fixing |
+| ルクレール | `Ｌｅｃｌｅｒｃ` | script 1090, 1096 — `ルクレール城`, a castle | Ｌｕｃｌｅｒｅ. The French reading matches the European naming |
+| ＺＯＣ（支配地域） | `ＺＯＣ　（ｚｏｎｅ　ｏｆ　ｃｏｎｔｒｏｌ）` | script 984 | The gloss is **not** redundant here as `待ち時間（Ｗａｉｔ）` was (§3) — ZOC is opaque in English too |
+| 中立ユニット | neutral unit | script 988 | |
+| 前衛 / 後衛 | front line / rear line | script 985 | |
+| 『説得』 / 『ＧＵＥＳＴ　ＵＮＩＴ』 / 「ＥＮＴＥＲ」 | `“Ｐｅｒｓｕａｄｅ”` / `“ＧＵＥＳＴ　ＵＮＩＴ”` / `“ＥＮＴＥＲ”` | script 986–988 | The last two are **already full-width Latin in the source** — reproduce them, do not re-case. ⚠️ These are the quoted-UI-token case `FLAGS.md` §I1 is open on; whatever settles §I1 settles `“Ｐｅｒｓｕａｄｅ”` |
+| 司教 | Bishop | script 1047 | |
+| 報奨金 | reward | script 991 | |
+| 同盟 | alliance | script 999–1001 — `カーラインと帝国との同盟` | |
+
+⚠️ **Two corrections the wave-2 units force, both of the メルザリオ kind (§20.1):**
+
+1. **`ファリーナ` is a PLACE, not only a person.** §1 lists it under People with no gloss. Battle
+   chunk 6 has `ファリーナの南、カペラの村` (the village of Capella, *south of* Farina) and script
+   1046–1047 have `ファリーナの復興` (Farina's reconstruction) and `ファリーナで発見された`
+   (discovered *in* Farina). Whoever renders it first must correct the §1 row, not just use it.
+2. **Fernando is `隊長` in the battle script but `将軍` in the main script** — script 992 reads
+   `２軍のフェルナンド将軍`. `隊長` → captain is fixed (§2) and chunk 2 shipped
+   `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ`. Either 将軍 → **General** and the man holds two titles, or one
+   of them is loose usage. Decide before script 992 is rendered; do not silently pick.
 
 ---
 
@@ -914,3 +951,44 @@ room in every chunk that inherits it. **Copy it; do not re-invent it.**
 | Korneff (portrait 0006) | Rough, warm, self-amused; contractions. Approves of “odd sorts” |
 | The Melzario hobbits (portraits 0007, 0008) | The `ノロ` tic on every sentence, grateful and eager |
 | Portrait 0002 | An **unnamed female** party member (`わ`) who also carries the map tutorial. If a later chunk names her, re-check her register — cf. §10.11, §13.13, FLAGS §G4 / §H1 |
+
+---
+
+## 22. Added by script batch 004 (PR #4, merged 2026-09-08)
+
+Rendered in `tl/script/batch_004.tsv` — `script_unique.txt` lines 142–184: the sword and spear
+entries of the equipment description table, every line ending `攻撃力＋ＮＮ` with no
+`ジェムタイプ` suffix. 34 unique lines × 21 instances = **714 message instances**. The vocabulary
+sits in §4 and §17.3; this section carries what is new.
+
+**All four wave-1 script seeds promoted, used exactly as seeded.**
+
+### 22.1 Gods, materials and weapon words first rendered here
+
+| Japanese | English | Note |
+|---|---|---|
+| 魔神ティール | the demon god Ｔｙｒ | **Promoted from §9.** Follows the pantheon pattern of §17.3 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `アポロン神` → *the god Ａｐｏｌｌｏ*). Ｔｙｒ is the Norse reading the surrounding pantheon points at. Alt *Tiel*, *Thiel* |
+| 軍神オーディン | the war god Ｏｄｉｎ | **Promoted from §9.** Same pattern |
+| 雷神 | the thunder god | **Promoted from §9.** Six entries — `雷神の雷` → *the thunder god’s bolt*, `雷神の電磁場` → *the thunder god’s field*. Identical in all six |
+| 守護をもたらす | **`〜‐ｗａｒｄｉｎｇ`** | **Promoted from §9.** `持つ者に炎の守護をもたらす剣` → `Ａ　ｆｉｒｅ‐ｗａｒｄｉｎｇ　ｓｗｏｒｄ．` **Six entries, byte-identical in all six** as the seed required. ⚠️ `持つ者に` (“to the one who bears it”) is dropped — a §2.1 step 5 implication, accepted under bank 40's ceiling; see `FLAGS.md` §J1 |
+| 冷気の剣 | a cold sword | `触れる者を凍らせる` → *freezing at a touch* |
+| 火炎剣 | flame sword | `すべてを焼き尽くす` → *burning all up* |
+| 電気の剣 / 電気の槍 | (rendered through the 雷神 clause) | The `電気` is carried by the thunder god's bolt/field rather than stated twice |
+| 暗黒剣 / 暗黒の剣 / 暗黒の槍 | dark sword / dark spear | Consistent with 暗黒 → *dark* (§4) and 暗黒剣士 → *dark swordsman* (§17.2) |
+| 闇の力 | shadow power | Kept **distinct** from 暗黒 → *dark*; both occur in one entry (`闇の力を秘めた暗黒の剣` → `Ａ　ｄａｒｋ　ｓｗｏｒｄ　ｈｉｄｉｎｇ　ｓｈａｄｏｗ　ｐｏｗｅｒ．`) and collapsing them would lose the distinction the source draws |
+| 漆黒 | jet‐black | Distinct from both of the above. Uses ‐ (U+2010) |
+| 黒騎士たち | black knights | Lowercase, per the §17.1 species test and matching `batch_003`'s shipped `暗黒騎士` → *dark knight’s*. **A different string** from §14.2's named order 黒の騎士団 → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ`, which is unaffected |
+| 名槍 | a famed spear | Extends §17.3's 東洋の名刀 → *a famed Eastern sword* |
+| 伝説の名刀 | a legendary blade | `名` is absorbed into `伝説の` — *a legendary famed blade* is redundant in English (§2.1 step 3). The `名` survives wherever no competing adjective displaces it, as in 名槍 above |
+| 三つ又の槍 | three‐pronged spear | Uses ‐ (U+2010) |
+| 石に変える | turning foes to stone | Cf. 石化能力 → petrifying power / petrification (§4) |
+| 月光 | moonlight | `神聖なる月光の光に守られた` → *guarded by holy moonlight* |
+| 流星のごとくなぎ倒す | felling foes like meteors | なぎ倒す → *fell* here where §19.2 has *mow down*; the simile takes the shorter verb |
+
+### 22.2 The frame this batch runs on
+
+Every entry is **`Ａ　<adjective> <weapon> <participial clause>．{FFFE}Ａｔｋ＋ＮＮ`** — one noun
+phrase, one clause, a full stop, then the stat row. It is the same flat catalogue voice as
+`batch_001` and `batch_003` (§17.5), and every entry holds to **at most 2 description rows plus
+the `Ａｔｋ` row**, so this batch adds none of the four-row entries glossary §10.3 flags in
+`batch_001`.
