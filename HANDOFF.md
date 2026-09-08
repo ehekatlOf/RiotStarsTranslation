@@ -56,14 +56,31 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | **PR open** — 3,849 / 8,192, **4,343 slack**, widest row 23 col, tag stream byte-identical (zero `{FFFE}` changed) |
-| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | — | translator running |
+| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **PR open** — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, 1,770 JP ch | 1 | — | translator running |
 
-**BARRIER STATE at 14:31Z: 2 of 4 — NOT MET. Nothing is reviewed yet.** Chunks 4 (#6) and 9 (#5)
-have PRs; chunk 6 and script 005 are still drafting and both translators are **alive** in
-`ListAgents`, so they are waited on, not re-dispatched. Review order once all four land:
-chunk 4 → 6 → 9 → script 005.
+**BARRIER STATE at 15:15Z: 3 of 4 — NOT MET. Nothing is reviewed yet.** Chunks 4 (#6), 6 (#7)
+and 9 (#5) have PRs. **Only script batch 005 remains**; its translator was alive at the last
+`ListAgents`, so it is waited on, not re-dispatched. Review order once it lands:
+chunk 4 (#6) → chunk 6 (#7) → chunk 9 (#5) → script 005.
+
+**Cheap barrier check — use this, not `list_pull_requests`** (which returns full PR bodies and
+burns context): `git ls-remote --heads origin 'tl/*'`. The barrier is met when
+`refs/heads/tl/script-005` appears.
+
+**Three decisions PR #7 forces, on top of the ones already listed below:**
+- **`弓使い` → `ｂｏｗｍａｎ`**, chosen deliberately over the §9 seed's `archer`, which is
+  already spent on 弓兵 (§4). The §17.1 species test splits them: 弓兵 is a class label,
+  `弓使い` here is an epithet on an individual. Binds every later chunk — **ratify or reverse
+  now**, while only two lines carry it.
+- **`ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ`** extends the 様 → title convention to a new station
+  (priest). New pattern; needs ratification.
+- **`{FC03}` is undocumented** — absent from `findings.md`, `FLAGS.md` and `tools/`. Chunk 6's
+  lines 9 and 21 carry **no `{FC50}`/`{FC51}`/`{FCC0}`/`{FC30}` speaker channels at all**, so
+  whether those segments are one conversation or an independently-selected message pool is
+  unknown. Translated segment-for-segment, safe under either reading. Wants an in-game look and a
+  `findings.md` entry; it decides whether the inherited >4-row reports on those lines matter.
 
 **A third `メルザリオ`-kind classification correction arrived with PR #5:** `クリミア` is a
 **PERSON** — Doctor Crimea, designer of the machine soldiers — not the region `glossary.md` §2
