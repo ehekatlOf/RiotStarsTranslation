@@ -866,3 +866,129 @@ reported once where it occurs twice.
 **For future units:** a duplicate-check claim should name the exact source string and the file and
 line it was aligned against. Segment-count alignment against the non-`{FFFE}` tag skeleton is the
 cheap way to do it and is what this review used.
+
+---
+
+## L. Wave 2 review — battle chunk 6 / PR #7 (2026-09-08)
+
+Merged at round 2, squash `dd406d0`. Round-1 findings 1–6 all verified fixed against the file;
+finding 3 was fixed with a **different and better replacement than the reviewer proposed**, and
+the finding was withdrawn (see §L5).
+
+### L1. The byte figure
+
+**chunk 6: 5,899 / 8,192 — 2,293 bytes slack.** Ratio 3.09 (tier C); the slot never bound.
+Geometry was the constraint, as the dispatch predicted: **151 rows, widest 23, 0 rows at exactly
+24, 0 over.** `{FFFE}` changed on four lines — 6, 17, 18 (each 1 → 2, tutorial boxes that will not
+hold `Ｅｎｅｍｙ　ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` / `Ｙｏｕ　ｈａｖｅ　ｎｏｔ　ｄｅｆｅａｔｅｄ` on one row) and 21
+(11 → 12, from a single 23-character source segment). No `{FCC0}` added anywhere. No bank is
+touched — this is a battle unit, and `FLAGS.md` §F2's bank figures are unchanged.
+
+⚠️ **The PR title and body still carry the round-1 figure (5,897 / 2,295).** The true round-2
+figure is in the rework comment and in the squash commit. Not blocking, but a stale PR body is
+what a later audit will read first.
+
+### L2. `{FC03}`, and eight lines in the dump with no speaker channel at all — needs an in-game look
+
+Raised as the unit's Flag 7/8 and **measured at review rather than left as a guess.** This is the
+highest-value in-game check outstanding on the battle script, because it decides whether the
+`> 4 text rows` warnings on eight lines mean anything at all.
+
+`{FC03}` occurs **32 times in `battle_dump.txt` and zero times in `script_dump.txt`** — it is
+battle-only. It carries a small argument (`{=0000}` … `{=003F}`), sometimes with an `FA10…` /
+`FA11…` blob appended, and appears in 11 chunks: 0 (×2), 2, 5, **6 (×6)**, 12 (×3), 16 (×10),
+25 (×2), 26 (×2), 28 (×2), 29 (×2), 42.
+
+The related and more important shape: **eight lines in the whole dump carry no `{FC50}` or
+`{FC51}` anywhere and still exceed four text rows.**
+
+| Chunk | Line | Text rows | `{FC03}` | Status |
+|---|---|---|---|---|
+| 6 | 9 | 15 | 2 | shipped (PR #7); every segment given exactly one English row |
+| 6 | 21 | 11 → 12 | 0 | shipped (PR #7); tags are **only** `{FFFE}` and `{FFFF}` |
+| 7 | 23 | 5 | 0 | shipped — see §D3 |
+| 7 | 24 | 6 → 8 | 0 | shipped — **§D3 already asks for eyes on this one** |
+| 30 | 23 | 8 | 0 | not yet translated |
+| 32 | 31 | **59** | 0 | not yet translated (tier A, blocked) |
+| 37 | 14 | 8 | 0 | not yet translated |
+| 42 | 11 | 16 | 0 | not yet translated |
+
+**Chunk 32 line 31 is 59 text rows.** No 24×4 box displays 59 rows, and no conversation is 59
+rows without a single page break or speaker change. That is strong evidence these lines are
+**pools of independently-selected messages** — the engine picking one string per event — rather
+than one long page. If that is right, then the `> 4 rows` warning on all eight is meaningless and
+`rowcheck` should learn to recognise the shape; if it is wrong, chunk 7 line 24 is already broken
+in shipped work and chunk 6 lines 9 and 21 would be too.
+
+**What to check in game:** enter chapter 5 (church map) and chapter 6, and see whether the
+line-9 and line-21 strings appear one at a time (pool) or run on as a single scrolling exchange
+(page). §D3's chunk 7 line 24 is the same question and the same visit can settle both.
+Recorded in `findings.md` §24 with the measurement method.
+
+### L3. Two parked files owe an adopt-on-re-cut, both from rulings made at this review
+
+Neither ships today; both would **create** a CLAUDE.md §3 violation the day the slot patch lands
+if they are re-cut without adopting the shipped form. Rows added to `pending/README.md`.
+
+| File | Line | Now | Must become | Cost |
+|---|---|---|---|---|
+| `pending/chunk_005.txt` | 13 | `Ｔｈｉｓ　ｃａｎ’ｔ　ｂｅ．．．` | `Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．` | 16 → 17 columns, **+2 bytes** |
+| `pending/chunk_043.txt` | 14 | `Ｗ‐ｗａｉｔ！` | `Ｗ，　Ｗａｉｔ！` | 9 → 8 columns, **−2 bytes** |
+
+`chunk_005` is 487 bytes over its slot already, so the +2 makes a bad number marginally worse and
+changes nothing about its feasibility. This joins glossary §23.2's `そうそう。` row on the same
+list — three lines chunk 5's eventual re-cut must adopt.
+
+### L4. `glossary.md` §18.2 was factually wrong about the mechanism, and is corrected
+
+§18.2 held that `おお`, `ほう`/`ほお`, `おや` and `あ、` are kept apart **by their punctuation**
+rather than by four different words. Counted across both dumps at this review: `おお、` occurs
+**40** times against `おお！` **7**, and `ほう、`/`ほお、` **5** — so the majority form of おお takes
+`Ｏｈ，`, which is exactly what `ほう、` takes. The split separates おや and あ、 and does **not**
+separate おお from ほう. It only looked as though it did because chunk 1's single instance was
+`おお！`.
+
+Corrected in glossary §24.4 as a deliberate, accepted collapse on the ふっ/フンッ → `Ｈｍｐｈ`
+principle. **No shipped byte changes** — every instance in `tl/` already renders `Ｏｈ` plus the
+source's own stop. What changed is a sentence that would have misled the next translator into
+thinking `Ｏｈ，` was reserved.
+
+### L5. A null duplicate check ran on every battle unit before this review — and what replaces it
+
+Disclosed by chunk 6's translator against its own round-1 work, and confirmed here. **Battle
+`tl/*.txt` files contain zero Japanese characters** (measured: chunks 0, 1, 2, 3 = 0 each;
+`tl/script/batch_001.tsv` = 964, because script TSVs keep the Japanese in column 2). So the gate-6
+method of *grepping the unit's Japanese against `tl/`* **could never match for a battle unit** and
+silently returned “no hits” every time. It worked only on the script side. That is why two of
+chunk 6's round-1 findings existed at all.
+
+**The method that works** — and that this review used — is **positional row-pairing**: split both
+the dump line and the rendered line on the non-`{FFFE}` tag skeleton, pair the `{FFFE}`-separated
+rows inside each cell by index, and compare the English every Japanese row receives. Applied
+across all 15 rendered battle files, both `pending/` files and the four script TSVs, that is 2,181
+paired rows and it runs in under a second.
+
+⚠️ **Two traps it must be used with**, both hit during this review:
+
+1. **A row containing a `{FC00}{=0000}` name insert is not the bare row.** `chunk_003.txt` line 4
+   is `さあ、{FC00}{=0000}、` → `Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`, and `chunk_000.txt` line 3 is
+   `よし、{FC00}{=0000}。` → `Ｇｏｏｄ，　{FC00}{=0000}．`. A splitter that breaks at tags reports
+   both as bare-segment divergences against chunk 6. **Neither is one**, and the round-1 finding
+   that rested on the first of them was withdrawn.
+2. **An added `{FFFE}` shifts every later row index inside its cell.** Chunk 6 line 21 goes
+   11 → 12 rows, so its `・・・` → `．．．` pair reports as a mismatch until the shift is accounted
+   for. Compare per cell, and treat an index shift as “re-flowed”, not “divergent”.
+
+This is now written into `.claude/agents/translator.md` gate 6 (commit `06353c7`). §K7 asked for
+duplicate claims to name the exact source string, file and line; this is the mechanism that makes
+that cheap.
+
+### L6. Speakers on chunk 6 lines 9 and 21 are inference, not tags
+
+A consequence of §L2: neither line carries a portrait or channel tag, so who speaks is read from
+content. Line 9 is taken as a Ridge/Sykes reunion; line 21 as the Black Knight leader retreating
+from Sykes, then a warning about Ridge, then a party member asking Sykes who he is. The reading is
+internally consistent with the named cast, but `甘く見ない方がいいぞ。` / `あいつが本気になったら、`
+/ `こんなもんじゃない。` could be Ridge boasting about himself **or** Sykes warning the Knights,
+and the English is deliberately neutral between the two. Same in-game visit as §L2 settles it.
+Cf. §G4 and §H1, which are the same class of problem on portrait ids.

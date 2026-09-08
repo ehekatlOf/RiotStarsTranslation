@@ -1433,6 +1433,74 @@ input silently should say what it skipped. `find_script_bounds` should log every
 
 ---
 
+## 24. `{FC03}`, and eight battle lines with no speaker channel (2026-09-08, PR #7 review)
+
+Opened by battle chunk 6, whose lines 9 and 21 are 15 and 12 text rows against a four-row box.
+Measured from `dumps/` at review; **not yet traced in code**, so this is an observation with a
+falsifiable prediction, not a finding of the §23 kind.
+
+### 24.1 `{FC03}` is battle-only and carries a small index
+
+**32 occurrences in `battle_dump.txt`; zero in `script_dump.txt`.** It appears in 11 chunks —
+0 (×2), 2, 5, 6 (×6), 12 (×3), 16 (×10), 25 (×2), 26 (×2), 28 (×2), 29 (×2), 42 — and takes a
+one- or two-byte argument in the range `{=0000}`–`{=003F}`, sometimes with an `FA10…` / `FA11…`
+blob appended (the same marker family that carries tutorial-box and portrait state elsewhere).
+
+In chunk 6 it brackets two lines: `{FC03}{=000F}…{FC03}{=0000}` on line 9 and
+`{FC03}{=000D…}…{FC03}{=0000}` on line 13, i.e. a **non-zero index opens and `{=0000}` closes**.
+That is the shape of a *select this string set* / *end selection* pair, but no code has been read
+for it. It appears nowhere in `tools/`, and `riotbattle.py` treats it as an opaque 2-byte code.
+
+### 24.2 The real anomaly — eight lines carry no `{FC50}`/`{FC51}` and still exceed four rows
+
+| Chunk | Line | Text rows | `{FC03}` | Tags present |
+|---|---|---|---|---|
+| 6 | 9 | 15 | 2 | `{FC03}` pair, `{FFFE}`, `{FFFF}` |
+| 6 | 21 | 11 | 0 | **`{FFFE}` and `{FFFF}` only** |
+| 7 | 23 | 5 | 0 | — |
+| 7 | 24 | 6 | 0 | — (shipped at 8 rows; `FLAGS.md` §D3) |
+| 30 | 23 | 8 | 0 | — |
+| 32 | 31 | **59** | 0 | — |
+| 37 | 14 | 8 | 0 | — |
+| 42 | 11 | 16 | 0 | — |
+
+**Chunk 32 line 31 is 59 text rows with no page break and no speaker change.** No 24×4 box
+displays that, and no authored conversation runs 59 rows without one `{FCC0}` or one `{FC5x}`.
+
+**Prediction:** these lines are **pools of independently-selected strings** — the engine indexes
+one `{FFFE}`-separated entry per event (a villager barks, a random battle taunt, a per-unit
+response) — rather than pages of running dialogue. `{FC03}`'s index argument is the obvious
+selector, and it is present on exactly the chunk-6 line where the pool is largest and absent where
+the pool is a plain run.
+
+**Consequences if the prediction holds:** `rowcheck`'s `> 4 text rows` warning is meaningless on
+all eight, `FLAGS.md` §D3's worry about chunk 7 line 24 dissolves, and a translator may re-flow
+inside such a line freely as long as each entry stays within 24 columns — but must **never merge
+two entries**, because that would delete a selectable string. If it does **not** hold, chunk 7
+line 24 is already broken in shipped work and chunk 6 lines 9 and 21 are too.
+
+**Chunk 6 was translated safely under either reading**: every one of line 9's 15 segments received
+exactly one English row, so the source's entry boundaries survive whatever the engine does with
+them, and line 21's single added break splits one 23-character source segment rather than merging
+any.
+
+### 24.3 How to settle it
+
+Cheapest first: **in game.** Enter chapter 5's church map and chapter 6 and watch whether those
+strings appear one at a time or run on. One visit also settles `FLAGS.md` §D3.
+
+In code: find the `{FC03}` handler in `KOUSEI.EXE`'s message interpreter — §23.1 has the chunk
+layout and §23.2 the 8,192-byte RAM buffer at `0x80154F40` where the script lands — and see
+whether its argument indexes forward past `{FFFE}` boundaries. A selector will compare the
+argument against a counter and skip; a formatting code will not.
+
+**Method note, for whoever repeats this.** Both tables above come from pairing the dump against
+`rowcheck.row_problems` over the pristine extraction, not from reading a PR. Measuring the
+*pristine* row counts is what separates inherited breakage from breakage a translation caused —
+chunk 6's line 9 is 15 rows **in the source** and unchanged in the translation.
+
+---
+
 ## Appendix A — Savestate forensics (reproducible method)
 
 DuckStation `.sav` for this game:
