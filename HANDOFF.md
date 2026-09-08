@@ -60,7 +60,7 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
-| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **UNDER REVIEW (reviewer 2 of 4 dispatched 15:50Z)** — PR open, — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
+| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | 🔄 **CHANGES round 1, rework sent 16:20Z** — 5,897 / 8,192, 2,295 slack. Seven gates green; **gate 7 (glossary) failed** because `4899c93` added §23 *after* this PR was drafted, and §23.1 / §23.3 name chunk 6's own lines. Six findings, all ≤ 23 col replacements. Reviewer ratified `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`; cleared Flag 14; queued `{FC03}` for `findings.md` at merge |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
@@ -113,6 +113,19 @@ Remaining is optimistic.
   fix it now so the later four do not drift.
 - Line 987 page 2 **ends mid-sentence**, predicate arriving after the `{FCC0}`; preserved because
   a translator cannot move a `{FCC0}`. Worth an in-game look beside `FLAGS.md` §D2.
+
+**⚠️ A ruling conflict the reviewer of #7 identified and handed to #8's reviewer, with its
+decision attached — do NOT let #8 settle it the other way by default.** PR #8 proposes
+`バトウ様` → bare `Ｂａｔｏｕ`, honorific carried in register, on the §21.2 precedent. #7's
+reviewer rules that **inconsistent**: §21.2's "dropped, carried in register" governs `〜さん` on a
+personal name **only**; `様` has its own settled pattern in §1/§14.1 (Lady Rimul, Lord Helfer,
+Lady Phyllis, Lady Cavia) and must not be collapsed into the `さん` rule. Chunk 6 is the one
+following the glossary. #8's reviewer decides, but must decide *knowing this*.
+
+**⚠️ A glossary defect found by #7's reviewer, to be recorded at merge:** §18.2 separates
+`ほう` / `おや` / `おお` / `あ、` by punctuation, but `おお、` → `Ｏｈ，` **collides with**
+`ほう、` → `Ｏｈ，`. The dumps hold 4 `ほう、`/`ほお、` against 40 `おお、`, so the four-way split
+does not actually hold as written.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
