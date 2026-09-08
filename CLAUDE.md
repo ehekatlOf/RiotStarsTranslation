@@ -30,14 +30,22 @@ says how the work is split, gated, merged and handed over.
 > first", "the user may want to review" and "my context is getting long" are **not** stop
 > conditions — a long context is precisely why the next wave belongs to a fresh agent.
 >
-> **The runner is not exempt.** The main session only wakes on a notification or a human message,
-> so a loop that depends on the main session to advance it is a loop that dies the first time a
-> notification is missed, late, or swallowed. Therefore the runner **MUST NOT** end a turn with the
-> run's continuation resting on an inbound event alone. Before ending any turn with work in flight,
-> it does one of two things: hand the wave to an `orchestrator` subagent (preferred — it takes the
-> main session off the critical path entirely), or schedule a watchdog with the `send_later` tool
-> that re-checks and restarts the loop regardless of notifications. Running a wave from the main
-> session "just this once" is how the chain never gets exercised.
+> ## ⏰ THE TIMER IS ALWAYS ARMED
+>
+> The main session wakes only on a notification or a human message, so a loop that depends on it
+> to advance dies the first time a notification is missed, late, or swallowed. **The fix is a
+> timer, and it is not optional and not a fallback.**
+>
+> **Before ending ANY turn with work in flight, the runner arms a `send_later` watchdog** (10–15
+> minutes, claude-code-remote MCP). Every time. Even when a wave orchestrator is running, even when
+> subagents are mid-flight, even when a notification is "obviously" about to arrive — those are the
+> exact cases where silence has already cost a run once. The watchdog message tells the next turn
+> to `ListAgents`, reconcile open PRs against `HANDOFF.md`, restart anything lost, and **re-arm
+> before ending the turn**. The chain of timers ends only when the run ends.
+>
+> Handing the wave to an `orchestrator` subagent is still right and still preferred — it takes the
+> main session off the critical path — but it is *in addition to* the timer, never instead of it.
+> An orchestrator can die too, and nothing but the timer notices.
 >
 > This binds every Opus agent in this repo, at every level, in every session.
 
@@ -103,10 +111,9 @@ are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt fo
 - **Never end a turn on a closed wave with dispatchable work left.** Spawn the next wave's
   orchestrator first (banner above, §4 step 7, SKILL.md §6a). Handing off is the work, not an
   optional courtesy after it.
-- **Never end a turn with the loop's only means of resuming being a notification.** If work is in
-  flight and you are the main session, either hand the wave to an `orchestrator` subagent or arm a
-  `send_later` watchdog that re-checks the state and restarts the loop. Silence is a failure mode,
-  not a waiting state.
+- **Arm the `send_later` watchdog before ending any turn with work in flight — always, and
+  re-arm it on every wake.** Handing the wave to an `orchestrator` subagent is additional to this,
+  never a substitute. Silence is a failure mode, not a waiting state.
 
 ## 4. The autonomous workflow
 

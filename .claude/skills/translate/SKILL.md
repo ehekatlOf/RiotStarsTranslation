@@ -137,17 +137,23 @@ reviewer → merge, one reviewer at a time, every gate in CLAUDE.md §6 run in a
 its evidence pasted into the review. A wave that closes faster by merging without a reviewer, or
 by waiving a gate, has broken the run more thoroughly than a wave that stalls.
 
-## 6b. Never let the loop rest on a notification
-You wake only on a notification or a human message. So before you end any turn with work in
-flight, do one of these — not neither:
-- **Preferred: be off the critical path.** Hand the wave to an `orchestrator` subagent. Then the
-  loop advances inside that agent and its successors, not inside your turns.
-- **Otherwise: arm a watchdog.** `send_later` (claude-code-remote MCP), 10–15 minutes, with a
-  message that tells you to `ListAgents`, reconcile the open PRs against `HANDOFF.md`, restart
-  anything lost, and re-arm if work is still in flight.
+## 6b. Arm the timer — every turn, without exception
+You wake only on a notification or a human message, so **the timer is what actually keeps this
+run alive.** Before ending any turn with work in flight, call `send_later` (claude-code-remote
+MCP), 10–15 minutes out, with a message telling the next turn to:
 
-A subagent whose notification never arrives is **lost, not finished**. `ListAgents` is the
-authority on whether it is still running; the absence of a message is not evidence of anything.
+1. `ListAgents` — anything still running? If yes, re-arm and stop.
+2. Otherwise `git pull --ff-only` and list open PRs; reconcile against `HANDOFF.md` → In flight.
+3. Restart whatever is lost — a subagent whose notification never arrived is **lost, not
+   finished**; `ListAgents` is the authority and silence is not evidence. Remove its worktree
+   (`git worktree remove --force`) and re-run its unit.
+4. Hand the wave to an `orchestrator` subagent if one is not already driving it.
+5. **Re-arm the watchdog before ending the turn.**
+
+Arm it even when a wave orchestrator is running and even when a notification looks imminent —
+those are the cases that have already cost this run once. Handing off to an orchestrator is right
+and preferred, but it is *in addition to* the timer: an orchestrator can die too, and nothing but
+the timer notices. The chain of timers ends only when the run ends.
 
 ## 7. Stop
 When Remaining is empty: final HANDOFF — Progress, everything parked with the measured reason,
