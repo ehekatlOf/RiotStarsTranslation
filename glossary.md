@@ -283,11 +283,11 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~同盟~~ | ✅ **PROMOTED to §26.3** — alliance (PR #8) | script 999–1001 | — |
 | ホアグ王子 | Prince `Ｈｏａｇ` | **New seed, 2026-09-08 (PR #8 review)** — surfaced while verifying `アップミーズ`, and **not batch 005's business**: that batch does not render it. Carline's first prince, Cavia's elder brother (`私の兄でもあるホアグ王子`), the man who built Apumizu (`ホアグ王子がつくった街`), and a target of Helfer's (`奴らにはホアグとともに舞台から下りてもらう`). **6 battle + 16 script occurrences.** 10 columns with the title, 4 bare | Ｈｏａｇｕ, Ｈｏｇ. Promote in the wave that first renders it |
 | トリフ | `Ｔｏｒｉｆ` | **New seed, 2026-09-08 (PR #8 review)**, same sweep. Hoag's younger brother (`弟のトリフ`), whom Helfer prefers as the more pliable heir. **9 battle + 6 script occurrences.** 5 columns | Ｔｒｉｆ, Ｔｏｌｉｆ. Promote in the wave that first renders it |
-| シェルビー | `Ｓｈｅｌｂｙ` | **Wave-3 seed** — a **PLACE**, a town, on the §2 evidence test: `シェルビーから逃げ出して来た` (fled *from* it), `シェルビーに帝国軍がいるのか？` (is the Imperial army *in* it), and the script's `シェルビーって何のへんてつもない田舎の街だった` (*an unremarkable country town*). The Empire built a weapons plant there. **4 battle (all chunk 8 L9) + 1 script.** 6 columns | Ｓｈｅｌｂｅｙ, Ｓｈｅｒｂｉｅ. Rendered by chunk 8 — promote on merge |
-| カーゴ | `Ｃａｒｇｏ` | **Wave-3 seed. A PROPER NAME — a machine, not the common noun "cargo".** ⚠️ This is the trap: `カーゴの動力が止まりました` (its *motive power* stopped), `カーゴの機構を知っているのは、ほんの一部の技術者だけ` (only a few engineers know its *mechanism*), and the script's party rule `カーゴは、他のキャラクターとの混在はできません。` (**Cargo cannot be mixed with other characters**) — a deployable unit with its own entry in the formation system. It is carrying the prisoner Seneca (`セネカの護送中に`) when it breaks down. **2 battle (chunk 8 L10) + 1 script.** 5 columns | Never `ｔｈｅ　ｃａｒｇｏ`. Rendered by chunk 8 — promote on merge |
-| プロキオン | `Ｐｒｏｃｙｏｎ` | **Wave-3 seed** — same family as `カーゴ`: a named deployable unit, not a person. `いざとなったら、プロキオンを出してもいい` (*if it comes to it, you may send Procyon out*), spoken by the same officer in the same breath as the battle plan. **1 battle (chunk 8 L10) + 0 script.** 7 columns | Ｐｕｒｏｋｉｏｎ. Rendered by chunk 8 — promote on merge |
-| ルート | `ｒｏｕｔｅ` | **Wave-3 seed — CROSS-UNIT (chunks 8 and 17), lowercase common noun** per the バジリスク → basilisk precedent (§17.1 species test): `敵は別のルートから来たようです` (chunk 17 L3) and `ここへ抜けるルートは、バージェス峡谷か南の砂漠` (chunk 17 L4). **4 battle (ch8 L9 ×2, ch17 L3, L4) + 8 script.** 5 columns | Not `Ｒｏｕｔｅ`; not `ｐａｔｈ` where the source says ルート |
-| スパイ | `ｓｐｙ` | **Wave-3 seed** — lowercase common noun, same test. **2 battle (chunk 8 L9) + 0 script.** 3 columns | — |
+| ~~シェルビー~~ | ✅ **PROMOTED to §29.1** — `Ｓｈｅｌｂｙ`, a PLACE, rendered four times in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
+| ~~カーゴ~~ | ✅ **PROMOTED to §29.1** — `Ｃａｒｇｏ`, the proper name of a machine, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded; the `ｔｈｅ　ｃａｒｇｏ` trap was avoided** | battle chunk 8 | — |
+| ~~プロキオン~~ | ✅ **PROMOTED to §29.1** — `Ｐｒｏｃｙｏｎ`, rendered in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
+| ルート | `ｒｏｕｔｅ` | **Wave-3 seed — CROSS-UNIT (chunks 8 and 17), lowercase common noun** per the バジリスク → basilisk precedent (§17.1 species test): `敵は別のルートから来たようです` (chunk 17 L3) and `ここへ抜けるルートは、バージェス峡谷か南の砂漠` (chunk 17 L4). **4 battle (ch8 L9 ×2, ch17 L3, L4) + 8 script.** 5 columns | Not `Ｒｏｕｔｅ`; not `ｐａｔｈ` where the source says ルート | ⚠️ **RENDERED by chunk 8 (PR #11, merged) as `ｒｏｕｔｅ`, twice, exactly as seeded — this row is DELIBERATELY LEFT LIVE.** Chunk 17 (PR #12) renders it too and merges second; per the wave's cross-unit rule it is struck once, by that reviewer. See §29.1
+| ~~スパイ~~ | ✅ **PROMOTED to §29.1** — `ｓｐｙ`, lowercase, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
 | ~~アーバイン様~~ | ✅ **PROMOTED to §28.1** — `Ｌｏｒｄ　Ｉｒｖｉｎｅ`, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's widths were both one too many** — `Ｉｒｖｉｎｅ` is **6** columns and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11**, not 7 and 12. The seed was mine and it was wrong; the translator caught it and I remeasured on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the mark). The rendering is unchanged | **Wave-3 seed** — an enemy commander (chunk 13 L2, `アーバイン様！敵襲です！！`), addressed 様 by a subordinate; masculine, authoritative register (`まあよい`, `叩き潰してやれ！！`). 様 → Lord on the `リムル` / `フィリス様` precedent (§14.1), **not** §21.2's さん rule. **1 battle + 0 script.** ~~7 columns bare, 12 with the title~~ | Ｕｒｂａｉｎ, Ｅｒｂｉｎｅ |
 | バージェス | `Ｂｕｒｇｅｓｓ`; `バージェス峡谷` → `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` | **Wave-3 seed** — a **PLACE**, on the §2 test: `バージェス峡谷か南の砂漠` (a route out, chunk 17 L4) and `バージェスからの定期連絡` (regular reports *from* it, chunk 17 L5). Capitalised as a place name on the `バジリスクの砂漠` → *the Basilisk Desert* precedent (§2). **2 battle (chunk 17) + 5 script.** 8 columns bare, 15 with Ｃａｎｙｏｎ | `Ｂｕｒｇｅｓｓ　Ｇｏｒｇｅ` also 15 — 峡谷 is literally a gorge; either fits. Rendered by chunk 17 — promote on merge |
 | イフリート | `Ｉｆｒｉｔ` | **Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
@@ -1708,3 +1708,133 @@ shipped in `tl/`; these rows record the shipped form, they do not change it.
 **§O7 is now DISCHARGED.** Bare `隊` → squad is the one entry not written: it has **no** shipped
 rendering and **no** occurrence to point at (§O7's own row lists neither), so there is nothing to
 fix, and the rejection is recorded here in terms, as §O7 asked.
+
+---
+
+## 29. Added by chunk 008 (PR #11, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_008.txt` — chapter 8, five scenes: Alfred hands the 9th Army the
+rearguard while the 7th and 5th Armies move out ahead, over Second Lieutenant Cress's doubts; the
+battle opens; on the Imperial side the transport **Cargo** loses motive power while escorting the
+prisoner **Seneca**, and its captain gives the battle plan; Seneca escapes and the captain counts
+his pay cut; afterwards the squad takes stock of the cart-monster, Seneca returns, and they agree
+to take him to Westbury. **7,437 / 8,192 bytes, slack 755 — 185 rows, widest 23, none at 24**, no
+page over 4 text rows. Merged at **round 2**; both round-1 findings were reading findings, and the
+rework was **byte-neutral**.
+
+⚠️ **Line numbers in this section are `rowcheck` line numbers** — the index into the `tl/` file
+counting the `=== CHUNK` header as line 0, which is what `rowcheck.py 8` prints. That is a
+*fourth* numbering convention in this repo (`FLAGS.md` §O8, §P): it is the chunk-13 section's
+message line **plus one**. Locate by content.
+
+`Ｉ　ａｍ　ｓａｖｅｄ` (§23.4's stated default, and §23.4 named chunk 8 as one of the chunks the family
+would reach), `Ｈｏｗｅｖｅｒ，` (§23.3), `Ｒｉｇｈｔ，` for `よし、` (§24.3), `Ｌｉｓｔｅｎ．` (prompt §5),
+`Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ` (§24.3), `Ｐｈｅｗ，` / `Ｓｉｒ！` / `Ｙｅａｈ．` / `Ｅｈ？` (§6, §21.2),
+`Ｎｏ，` (§25.2), `Ｇａｈ` (§21.2), `Ｔｃｈ` (§11.5), `ｍｏｎｓｔｅｒ` (§25.1), `ｃｏｍｂａｔ　ｐｏｗｅｒ` /
+`ｍｏｂｉｌｉｔｙ` (§4), `Ｃａｐｔａｉｎ` / `ｔｈｅ　ｍａｉｎ　ｆｏｒｃｅ` / `Ｒｏｙａｌ　Ａｒｍｙ` (§2) and
+`ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` (§20.4's default, used for **all four** `帝国軍`) are used unchanged.
+`Ｗ，　Ｗｅｌｌ，` is the third use of §24.3's comma-stutter.
+
+### 29.1 People and places — four promotions out of §9, and one row deliberately left live
+
+| Japanese | English | Note |
+|---|---|---|
+| シェルビー | `Ｓｈｅｌｂｙ` | **Promoted from §9 (wave-3 seed), used exactly as seeded.** 6 columns. A **place** — the country town where the Empire built a weapons plant, which Seneca fled. **4 battle (all this chunk) + 1 script.** Alt *Shelbey*, *Sherbie* |
+| カーゴ | `Ｃａｒｇｏ` | **Promoted from §9, used exactly as seeded.** 5 columns. ⚠️ **A proper name — the Imperial transport machine, never `ｔｈｅ　ｃａｒｇｏ`.** The trap §9 warned about was avoided: both renderings are possessive (`Ｃａｒｇｏ’ｓ　ｍｏｔｉｖｅ　ｐｏｗｅｒ`, `Ｃａｒｇｏ’ｓ　ｍｅｃｈａｎｉｓｍ`), which is only grammatical for a name. It is the `荷車のバケモノ` the squad picks apart afterwards, and the party rule `カーゴは、他のキャラクターとの混在はできません。` makes it a deployable unit. **2 battle + 1 script** |
+| プロキオン | `Ｐｒｏｃｙｏｎ` | **Promoted from §9, used exactly as seeded.** 7 columns. A named deployable unit, not a person — `いざとなったら、プロキオンを出してもいい` → `Ｉｆ　ｎｅｅｄ　ｂｅ，　ｙｏｕ{FFFE}ｍａｙ　ｓｅｎｄ　ｏｕｔ　Ｐｒｏｃｙｏｎ．` **1 battle + 0 script** |
+| スパイ | `ｓｐｙ` | **Promoted from §9, used exactly as seeded.** 3 columns, lowercase common noun per the §17.1 species test. Twice in one scene, both this chunk |
+| ルート | `ｒｏｕｔｅ` | ⚠️ **RENDERED here twice — `進攻ルート` → `ａｄｖａｎｃｅ　ｒｏｕｔｅ`, `本来のルート` → `ｐｒｏｐｅｒ　ｒｏｕｔｅ` — exactly as seeded, and its §9 row is DELIBERATELY NOT STRUCK.** Chunk 17 (PR #12) renders it as well and merges second; the wave's cross-unit rule strikes such a row once, at the second merge, so that reviewer owns it. Lowercase confirmed in both units at this review |
+| 兵器工場 | `ｗｅａｐｏｎｓ　ｐｌａｎｔ` | 14 columns. ⚠️ **Recorded with its measured reason, which the PR body left resting on the seed's wording.** `ａ　ｗｅａｐｏｎｓ　ｆａｃｔｏｒｙ　ｔｈｅｒｅ．` measures **exactly 24** — remeasured at review — which §25.1 has twice rejected, so `ｐｌａｎｔ` is a §2.1 step 4 shortening, not a free choice. Held **distinct** from bare `工場` → *factory* (`chunk_009.txt`, twice): different source strings, and counted at review `兵器工場` is **1 battle / 0 script** against bare `工場`'s 3, so the two can never collide in one line |
+| 先発隊 | `ａｄｖａｎｃｅ　ｐａｒｔｙ` | 14 columns. A **fourth** unit word, kept distinct from 本隊 → *the main force* (§2, and both occur in this one speech), 主力部隊 → *the main body* (§20.1) and 精鋭部隊 → *elite corps* (§2) |
+| 動力 | `ｍｏｔｉｖｅ　ｐｏｗｅｒ` | 12 columns. Kept distinct from 戦闘力 → *combat power* and 機動力 → *mobility* (§4) — **all three occur in this chunk**, which is why none may collapse |
+| 機構 | `ｍｅｃｈａｎｉｓｍ` | 9 columns. `カーゴの機構` — the §9 seed's own gloss |
+
+### 29.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 夢のまた夢 | `ａ　ｄｒｅａｍ　ｗｉｔｈｉｎ　ａ　ｄｒｅａｍ` | Literal, and a real English phrase, so §2's ban on importing an unrelated idiom is not engaged. `ａ　ｐｉｐｅ　ｄｒｅａｍ` was rejected by the translator on exactly that rule |
+| 覚悟はしてる | `Ｉ’ｍ　ｒｅａｄｙ　ｆｏｒ　ｉｔ` | Seneca accepting the danger of travelling with the squad |
+| 貴官らの隊 | `ｙｏｕｒ　ｓｑｕａｄ` | `貴官` is carried in **register**, not in an added word — Cress's contraction-free speech does the work, per §2 and the treatment §26.7 records for script 993's `貴官ら`. Does not disturb §19.2's 部隊 → *squad* |
+| 大減棒 (＝ 大減俸) | `ａ　ｂｉｇ　ｐａｙ　ｃｕｔ` | ⚠️ **A source typo, ruled at review: `減棒` is not a word and `減俸` (a cut in pay) is.** Counted: **1 occurrence in `battle_dump.txt`** (this line) and **0 in `script_unique.txt`** — a hapax, so nothing else is affected. Rendered for the meaning the scene requires of an officer who has just lost his prisoner. `FLAGS.md` §Q4 |
+| ついてねえぜ。 | `Ｊｕｓｔ　ｍｙ　ｌｕｃｋ．` | 13 columns. Twice, byte-identical (L7 and L14), one speaker — which is what the escort captain's two death/failure beats need. The related `ほんとについてねえなあ。` is a **different string** and keeps its intensifier: `Ｉ　ｒｅａｌｌｙ　ｈａｖｅ　ｎｏ　ｌｕｃｋ　ｅｉｔｈｅｒ．`, with `ｅｉｔｈｅｒ` rendering `俺も` |
+
+### 29.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| やれやれ、 | `Ｇｏｏｄ　ｇｒｉｅｆ，` | 12 columns. Weary exasperation. **Distinct** from §6's まったく → `Ｒｅａｌｌｙ，` (contempt), ふう → `Ｐｈｅｗ，` (relief) and ふっ / フンッ → `Ｈｍｐｈ` (scoff). Free across `tl/` |
+| くーっ、 / く〜っ、 | `Ｔｃｈｈ，` | 5 columns. The **lengthened** `くっ` → `Ｔｃｈ` (§11.5), the extra beat taking an extra letter as §26.5's ふーむ → `Ｈｍｍ` extends む → `Ｈｍ`. The two source spellings (`ー` and `〜`) take one English form per §17.2's 鬼 / オーガ; both are the same speaker, L10 and L14 |
+| うーん、 | `Ｈｍｍ，` | 4 columns. The musing hum. Shares §26.5's ふーむ → `Ｈｍｍ，` deliberately — same length, same act — and §25.3's test is met: `ふーむ` is in script bank 31, `うーん` in battle chunk 8, so no scene shows both |
+| あの・・・ | `Ｕｍ．．．` | 5 columns. Seneca's hesitant opener, twice (L9, L15), byte-identical. Held apart from §24.3's すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` and ちょっと、 → `Ｈｏｌｄ　ｏｎ，`, exactly as §24.3 holds those two apart |
+| それに、 | `Ｂｅｓｉｄｅｓ，` | 9 columns. **Additive, not adversative**, and that is why it does not join the four already fixed: でも → `Ｂｕｔ`, それにしても → `Ｓｔｉｌｌ，` (§19.1), しかし / しかしながら → `Ｈｏｗｅｖｅｒ，` (§23.3), それでも → `Ｅｖｅｎ　ｓｏ，` (§25.2). Twice here, byte-identical. ⚠️ Note for duplicate checks: this chunk also contains `それでもいいかい？`, which is それ + でも and **not** §25.2's それでも — correctly not rendered `Ｅｖｅｎ　ｓｏ` |
+| うん、 | `Ｙｅｓ，` | 5 columns. Seneca's soft assent. ⚠️ **Recorded with the licence that actually applies, not the PR body's.** §18.3 freed `Ｙｅｓ` from `ああ` **only**; `Ｙｅｓ` already carries `ええ。` → `Ｙｅｓ．` (`chunk_007` L19), `そうだ、` → `Ｙｅｓ，` (`chunk_000` L3) and now `ははっ！` → `Ｙｅｓ，　ｓｉｒ！` (§28.3). What licenses a fourth is §25.3's co-occurrence test, counted across `battle_dump.txt` at this review: `うん` in chunks 8, 20, 43; `ええ` in 7, 19, 32; `そうだ、` in 0, 5, 24, 39; `ははっ` in 13, 16, 37, 38, 42 — **no chunk contains うん with any of the other three.** Distinct from §6's ああ → `Ｙｅａｈ`, which this chunk also carries three times |
+| げッ！？ | `Ｇａｈ！？` | §21.2's げっ → `Ｇａｈ` carrying the source's own punctuation — §5's mechanism, not a second entry |
+| そ、それが、 | `Ｗ，　Ｗｅｌｌ，` | 8 columns. §24.3's comma-stutter form, after `ま、待て！` → `Ｗ，　Ｗａｉｔ！` and `chunk_007`'s `バ、バカな・・・` → `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` (§19.1) |
+| 仕方ねえだろ。 | `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` | A **third** member of §24.3's family beside しかたねえ。 and 仕方ない、 (both shipped in `chunk_006`, and 仕方ない、 also here at L10). The fixed word plus the source's own stop, which is §5's mechanism. `だろ` is carried in register: the tag question `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ，　ｉｓ　ｔｈｅｒｅ．` measures **25** and does not fit |
+
+### 29.4 Ruling — `よし、わかった。` collides `Ｒｉｇｈｔ，` with itself, and the reserve is fixed now
+
+§24.3 fixes `よし、` → `Ｒｉｇｈｔ，` and §6 fixes `分かった` / `わかった` → `Ｒｉｇｈｔ，`; §25.3 ratifies
+that sharing as deliberate. **Chunk 8 puts both words in one segment** — the first genuine
+co-occurrence in the project — which §25.3 says forces a split but for which it names no reserve.
+
+**Ruled: `よし、` keeps its fixed `Ｒｉｇｈｔ，` and `わかった` takes the reserve, giving
+`Ｒｉｇｈｔ，　ｕｎｄｅｒｓｔｏｏｄ．` (18 columns).** §25.3's own test is met for this unit — counted
+across `battle_dump.txt` at review, `了解` occurs in chunks **3, 17 and 19** and `わかった` in
+**0, 5, 8, 13, 16, 18, 19, 22, 24, 27, 38 and 43**, so chunk 8 carries `わかった` and no `了解` and
+the collision with §21.2's 了解 → `Ｕｎｄｅｒｓｔｏｏｄ` can never be visible in one scene. The wave
+corroborates it three ways: `pending/chunk_017.txt` L6 (PR #12) renders `了解！よし、` as
+`Ｕｎｄｅｒｓｔｏｏｄ！Ｒｉｇｈｔ，`, `tl/battle/chunk_013.txt` L8 (PR #10) keeps bare `わかった・・・・。`
+as `Ｒｉｇｈｔ．．．．．` per §6, and this chunk splits the collided pair.
+
+⚠️ **The test FAILS in chunk 19, which is why the reserve is written now rather than invented
+later.** Chunk 19 contains **both** — bare `了解。` at message line 19 and `・・・わかった。` at line 24,
+two lines of one map, both visible to a player.
+
+> **A `わかった` standing beside `了解` takes `Ａｇｒｅｅｄ．` (7 columns).** `了解` keeps
+> `Ｕｎｄｅｒｓｔｏｏｄ` — it is the older fixed entry (§21.2), is shipped in `chunk_003.txt` and ships
+> again in chunk 17. `Ａｇｒｅｅｄ` is **verified free across all of `tl/`** at this review, checked
+> again after PR #10 merged. The near neighbours are not free: `Ｉ　ｓｅｅ．` is spent in chunks 3, 4,
+> 7 and 33, `Ｖｅｒｙ　ｗｅｌｌ` in 33 and 35, `Ｉ　ｋｎｏｗ．．．` in chunk 13 (§28.3), and §25.3 has
+> already reserved `Ｅｘａｃｔｌｙ．` for `そのとおり` / `そうそう`.
+
+**This makes the わかる family eight English forms wide**, extending §28.3's enumeration of six:
+いいな！！ → `Ｇｏｔ　ｉｔ！！`, わかったなっ！！ → `Ｇｏｔ　ｔｈａｔ！！`, 分かった / わかった / よし、 →
+`Ｒｉｇｈｔ，` (§6, §24.3), わかっておるな！ → `Ｉｓ　ｔｈａｔ　ｃｌｅａｒ！` (§20.3), わかりました。 →
+`Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2), 了解 → `Ｕｎｄｅｒｓｔｏｏｄ` (§21.2), 分かってる・・・ →
+`Ｉ　ｋｎｏｗ．．．` (§28.3), and **わかった-beside-了解 → `Ａｇｒｅｅｄ．` (here)**.
+**Lines this affects: none.** Nothing shipped is re-cut; the reserve applies only to a future unit.
+
+### 29.5 CORRECTION to §1 and §2 (§4.3) — `少尉` is 17 columns, and "never on one row" is not quite true
+
+§1's Cress row says `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ` is “18+5 columns, never on one row”,
+and §2's 少尉 row says “18 columns”. **Both figures are one over.** Measured at this review:
+`Ｓｅｃｏｎｄ` is 6, the space 1, `Ｌｉｅｕｔｅｎａｎｔ` 10, so `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ` is **17**
+and `Ｃｒｅｓｓ` is **5**. The translator caught this in the PR's Flag 4 and it is right.
+
+The consequence is sharper than the note admits, so it is recorded rather than quietly patched:
+**`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ` is 23 columns and *would* fit one row**, so §1's blanket
+“never on one row” is false as written. What makes it not fit here is the **vocative comma** —
+`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ，` is **24** — and the vocative is the only shape either
+dump renders so far, so chunk 8's split across two rows stands and **no shipped line changes.**
+
+**Read §1's row as:** 17 + 5 columns; 23 as a bare name, **24 with a following mark**, so it will
+not share a row in the vocative, which is the only form yet seen.
+
+⚠️ **§2's 中尉 → `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ` “17 columns” is the same arithmetic error** —
+`Ｆｉｒｓｔ` is 5, so it is **16**, and `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` would be 25 and still
+will not share a row. Flagged, not changed: nothing renders it yet, and the ruling it supports is
+unaffected. Whoever first renders 中尉 should correct the figure in place.
+
+### 29.6 Register
+
+| Who | Register |
+|---|---|
+| Alfred (portrait 0005, `{FC50}`) | Senior and easy, the officer handing out an unwelcome job pleasantly — `Ｗｅｌｌ　ｔｈｅｎ，`, `Ａｎｄ　ｓｏ，`, `ｔｈｅ　ｒｅａｒｇｕａｒｄ　ｉｓ　ｙｏｕｒｓ．` Fixed by the next speaker naming him. §1's `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ａｌｆｒｅｄ` is **not** used — the source writes the bare `アルフレッド` everywhere in this chunk |
+| Cress (portrait 0006, `{FC51}`) | Crisply formal, **no contraction anywhere** — `ｉｓ　ｔｈｉｓ　ａｌｌ　ｒｉｇｈｔ？`, `Ｄｏ　ｎｏｔ　ｐｕｓｈ　ｔｏｏ　ｈａｒｄ．`, and the `貴官` of §29.2 carried there rather than in a word. §28.7's reading of her — the no-contraction military column beside Beatrice — is confirmed independently here, in her first scene under her own name |
+| The escort captain (portrait 0008) | Rough, unlucky and profane-adjacent; contractions (`Ｗｈａｔ’ｓ　ｗｒｏｎｇ．`, `ｉｔ’ｓ　ｆｉｘｅｄ？`, `ｗｅ’ｌｌ　ｉｎｔｅｒｃｅｐｔ`). **One voice across four separate messages** — he asks what is wrong (L10), gives the battle plan, dies (L7) and curses the escape (L14) — which is why `ついてねえぜ。` is byte-identical in L7 and L14. Commands in the bare imperative, like §25.5's Krippen, but complains like Ridge |
+| His subordinate (portrait 0003) | Deferential and rattled, **no contractions** — `Ｗ，　Ｗｅｌｌ，`, `Ｉ　ｄｏ　ｎｏｔ　ｋｎｏｗ．`, `ｙｏｕ　ｓｅｅ．．．`. Albert's shape (§20.5), and the same column §28.6 puts Irvine's man in |
+| Seneca (portrait 0007) | §25.5 unchanged and confirmed three chapters earlier than it was written: quiet, hesitant, contractions (`Ｉ’ｍ　Ｓｅｎｅｃａ．`, `Ｉ　ｗｏｎ’ｔ　ｇｅｔ　ｉｎ`), opening twice with `Ｕｍ．．．`. His one formal row is `Ｉ　ａｍ　ｓａｖｅｄ．．．`, which is §23.4's fixed form and not a register slip |
+| The 9th Army squad (portraits 0000, 0001, 0002, 0009, 000A) | §7, §21.4 and §25.5 unchanged — casual, contractions throughout, tag questions from the women (`ｄｏｅｓｎ’ｔ　ｉｔ．`, `ｄｏｅｓｎ’ｔ　ｉｔ？`, `ｄｉｄｎ’ｔ　ｔｈｅｙ．`). Portrait 0001 is the Ridge-shaped blunt one who needles about the spy and concedes `．．．Ｗｅｌｌ，　ｆｉｎｅ．`; his `Ｈｏｗｅｖｅｒ，` is §23.3 binding **over** register, as chunk 9 already does |
+| The young companion (portrait 0002) | Her `てーこく` (a clipped, childish `帝国`) and `バケモノ` are carried in register, not spelled out — §2's rule — and her register is already doing it through contractions and tag questions |

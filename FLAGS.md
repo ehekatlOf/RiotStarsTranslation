@@ -1748,3 +1748,215 @@ headroom 5269` header are byte-identical to the dump; every message ends with `{
 ellipsis run matches the source's own mark count, paired run by run rather than by totals — L1
 3→3, L2 3,3→3,3, L4 7,4,3,5→7,4,3,5, L5 5→5, L8 5→5. Zero characters outside §3.1, zero ASCII,
 no `…` `・` `○` `'` `"`. No menu options in this chunk, so no `　` gutter to preserve.
+
+---
+
+## Q. Wave 3 review — battle chunk 8 / PR #11 (2026-09-08)
+
+Merged at **round 2**, **MERGE**, all eight gates green on evidence re-derived at review rather
+than inherited from the PR body. Round 1 was **CHANGES** on two reading findings, both applied;
+the rework was **byte-neutral**. Glossary rows, the `Ｒｉｇｈｔ，` collision ruling, four §9
+promotions and a §4.3 column correction are in `glossary.md` **§29**.
+
+⚠️ **Line numbers below are `rowcheck` line numbers** — the `tl/` file index counting the
+`=== CHUNK` header as line 0, i.e. the convention `rowcheck.py 8` prints. That is a **fourth**
+numbering scheme in this repo (§O8, §P): chunk 13's message lines are this minus one. Locate by
+content, not by number.
+
+### Q1. The byte figure
+
+**chunk 8: 7,437 / 8,192 — 755 slack**, unchanged across the rework. 185 text rows, **widest 23,
+twenty at 23, none at 24**, no page over 4 text rows. Ratio 2.32 (tier B), so §3.3's ≥ 50-byte
+floor was never in play; **every compression in this unit was forced by 24 columns × 4 rows, not
+by the slot** — which is the same verdict tier E reached and the reason §0.2's warning about high
+ratios applies here too.
+
+The rework cost nothing: the added `{FFFE}` on L10 is +2 bytes and the inter-sentence space that
+became a row boundary is −2. `{FCC0}` is **unchanged on every line** (L4 3, L9 4, L10 4, L14 1,
+L15 3; whole-chunk total 15 → 15); `{FFFE}` moved on five lines only — L4 35→34, L5 3→4,
+L9 54→51, L10 29→30, L15 25→24. Every non-`{FFFE}` tag is identical element for element on all
+20 lines.
+
+### Q2. ⚠️ TOOLING DEFECT FOR A HUMAN — `translation_prompt.md` tells translators to add a `{FCC0}`, and both gates reject it
+
+**This is the finding that outlives the PR, and it is not a defect in the PR.** Verified
+independently at review against the source, not taken from the PR body.
+
+The prompt licenses adding a page break in **four** places:
+
+- **line 248** — “`{FCC0}` … You may add one when English overruns the visible rows”;
+- **line 361** — “If English needs a fifth line, insert a `{FCC0}` page break”;
+- **line 373** — “Four rows is the wall. When four rows of 23 will not hold the page, add a
+  `{FCC0}` rather than cutting sense”;
+- **line 520** — the FLAGS template asks the translator to report “lines that needed an added
+  `{FCC0}`”.
+
+**Both gates reject it.** `tools/assemble.py:125-126` and `tools/rowcheck.py:93-94` build the tag
+parity list as
+
+```python
+ta = [t for t in re.findall(r'\{[^}]*\}', a) if t != '{FFFE}']
+```
+
+— **only `{FFFE}` is exempt**, so any added `{FCC0}` fails as “tag stream changed”. Chunk 8's
+first draft added two (the Alfred briefing on L4, the battle plan on L10), `check` failed on
+exactly those two lines, and the translator **re-cut both speeches to the source's page structure
+instead of touching the tools** (CLAUDE.md §3). That was the right call and the shipped file adds
+none.
+
+**The consequence is the part that matters for the rest of the project:** every battle chunk is
+silently constrained to the source's own page count, which is a **tighter constraint than the
+prompt describes**, and in this unit it changed two speeches and forced the §2.1 step-5
+compression in Q3. Someone with authority over both files has to decide which is wrong — widen the
+exemption to `{FCC0}`, or delete the licence from the prompt's four places. Until then translators
+will keep hitting it. Related: §C, and the several existing notes that a unit “preserved the source
+structure rather than inserting `{FCC0}`” (§D4, §M) were each hitting this same wall without
+naming it.
+
+### Q3. The one §2.1 step-5 compression, and why it is forced
+
+`退路・補給路の確保だ。` → `ｏｕｒ　ｒｅｔｒｅａｔ　ａｎｄ　ｓｕｐｐｌｙ．` (L4) — the `路`
+(“routes / lines”) is implicit. Flagged by the translator; **verified forced at review, twice
+over**:
+
+- `ｒｅｔｒｅａｔ　ａｎｄ　ｓｕｐｐｌｙ　ｒｏｕｔｅｓ．` measures **26** and cannot be a row;
+- the whole sentence with `ｌｉｎｅｓ` restored measures **93 characters against the 92 that four
+  rows of 23 can hold**, so it does not fit at *any* split, and `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ`
+  occupies a whole row on its own (17 columns, see glossary §29.5).
+
+A fifth row needs the `{FCC0}` **Q2 forbids**. Both nouns survive and “secure our retreat and
+supply” is ordinary military English.
+
+### Q4. ⚠️ SOURCE DEFECT — `大減棒` is a typo for `大減俸`
+
+`く〜っ、こりゃ、{FFFE}大減棒ものだな。` (L14). **`減棒` is not a word; `減俸` (げんぽう, a cut in
+pay or stipend) is**, they are homophonous, and a pay cut is what the scene requires — an escort
+officer who has just lost the prisoner he was guarding. Counted at review: **1 occurrence in
+`dumps/battle_dump.txt`** (this line) and **0 in `dumps/script_unique.txt`**, so it is a hapax and
+no other line is affected. Rendered for the meaning as `ａ　ｂｉｇ　ｐａｙ　ｃｕｔ`; **no translation
+change is wanted.** Filed here with §D's other source defects so nobody “fixes” the dump. Glossary
+§29.2 carries the row.
+
+### Q5. Round-1 findings, and how they were settled
+
+**Finding 1 — the `{FCC0}` cleared the box between `ｔｈｅ` and `ｆｏｒｅｓｔ` (L10). Applied.**
+The evidence that made it a finding rather than a preference, counted across the whole shipped
+corpus at review: **`tl/` holds 10 English page breaks that fall mid-sentence, and nine of them are
+inherited** — the source's own `{FCC0}` there follows a `、`, so the English had no choice (chunk 0
+L10 ×4, chunk 1 L8 ×2, chunk 3 L5 ×2, chunk 12 L16), and every one lands after a comma or a
+coordinating `and` / `but` / `so`. **Chunk 8 L10 was the only case in the project where the source's
+`{FCC0}` follows a sentence-final `。` and the English carried a phrase across it**, and the only one
+that split a determiner from its head noun.
+
+The translator tested the finding's premise before applying it — checking whether the break could be
+*removed* rather than moved — and the answer is no: the two order-sentences measure **118 columns
+against the 92** that page B's four rows hold, and the first two need **5 rows against 4**. **Exactly
+one mid-sentence page break is unavoidable here without the `{FCC0}` Q2 forbids**, so only its
+*site* was ever open. The re-cut moved two rows back into the preceding page (which had two free
+rows) and now breaks after `ｔｈｅ　ｆｏｒｅｓｔ　ａｎｄ` — a coordinating conjunction, the shape chunks
+0 and 1 already ship — and after `ｈｉｔｓ　ｔｈｅｉｒ　ｆｌａｎｋ．`, a **full sentence boundary**, which
+is better than the reviewer's own proposal and puts the Procyon sentence whole on its own page.
+
+**Finding 2 — `南から、帝国軍よ！` reversed the source's clause order, unforced and unflagged.
+Reverted.** Both orders measure identically — `Ｆｒｏｍ　ｔｈｅ　ｓｏｕｔｈ，` (15) /
+`ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ！` (18) against `Ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ，` (18) /
+`ｆｒｏｍ　ｔｈｅ　ｓｏｕｔｈ！` (15), same 33 characters, same two rows — so the reorder bought nothing
+and §2's literal default governs. The PR's step-6 reorder count drops from three to two, and both
+survivors were verified forced (`ｃｏｍｐｏｓｉｔｉｏｎ　ａｎｄ　ｍｏｂｉｌｉｔｙ` is **exactly 24**;
+`ｆｏｒｅｓｔ，　Ｃａｒｌｉｎｅ’ｓ　ａｒｍｙ！` in source order is **25**).
+
+**Finding 3 — the PR's own L9 break accounting was incomplete.** Re-derived per turn: **+2 / −5**,
+not +1 / −4 (net −3 either way, which is what 54→51 says). The missing addition is
+`一緒に行こう、セネカ。`, which needs two rows because one would be 26; the missing deletion is
+`挟撃を受ける` + `危険性があるぞ。` merging into `ｃａｕｇｈｔ　ｉｎ　ａ　ｐｉｎｃｅｒ．`. Corrected in the
+PR body at round 2. **Not a gate failure** — the per-line figures were always right and complete.
+
+### Q6. Two candidate findings WITHDRAWN at review, and why they are recorded
+
+Both were raised, then measured against the corpus and dropped. They are written down so the next
+reviewer does not spend the round re-deriving them:
+
+- **`Ｈｅｒｅ　ｔｈｅｙ　ｃｏｍｅ，　ｔｈｅ` / `Ｉｍｐｅｒｉａｌ　ａｒｍｙ！` (L5)** ends a row on an article
+  and splits a noun phrase, and a free alternative exists.
+- **`Ｗｅｓｔｂｕｒｙ．　Ｂｕｔ　ａｌｏｎｅ　Ｉ` (L9)** ends a row on a lone one-letter word, which
+  prompt §3.2 names explicitly, and a free alternative exists.
+
+**Counted across all shipped `tl/battle/`: 29 rows end on `ｔｈｅ`, 17 on `ｉｓ`, 13 on `ｔｏ`, 8 each
+on `ａ` / `ｉｎ` / `ｓｏ` / `ｂｅ`, 7 on `ｏｆ`, and `chunk_007.txt` L19 already ships a row ending on a
+lone `Ｉ`.** That is settled house practice across sixteen chunks and four reviewers, so holding one
+unit to a stricter standard would be the reviewer imposing taste. **Both withdrawn.** If the project
+ever wants the stricter rule, it is a project-wide decision and a re-cut of thirty-odd shipped rows,
+not a PR finding.
+
+### Q7. Cross-PR and duplicate verification
+
+Gate 6 by **positional pairing against `dumps/battle_dump.txt`**, not by grepping Japanese against
+`tl/` — battle files hold zero Japanese, so that grep is a null check (`translator.md` `06353c7`
+already records this). Four granularities: whole message with tags, whole message text-only, turns
+split at `{FC30}`, pages split at `{FC30}`/`{FCC0}`/`{FC50}`/`{FC51}`. Run at round 2 over **19
+chunks** — the 17 shipped, including chunk 13 which merged between the rounds, plus PR #12's
+`pending/chunk_017.txt`:
+
+```
+A whole message (tags incl)  keys=163  divergent=0
+B whole message (text only)  keys=154  divergent=0
+C turns @FC30                keys=457  divergent=0
+D pages                      keys=624  divergent=0
+```
+
+**Zero divergent renderings**, so `tl/battle/` remains free of divergent duplicates (the state §O
+first reached) and chunk 8 does not disturb it. Cross-PR spot checks: `ルート` → `ｒｏｕｔｅ`
+lowercase in both chunk 8 and chunk 17 L3/L4; chunk 13 L8 keeps bare `わかった・・・・。` as
+`Ｒｉｇｈｔ．．．．．`; chunk 17 L6 renders `了解！よし、` as `Ｕｎｄｅｒｓｔｏｏｄ！Ｒｉｇｈｔ，` — three
+units, three source strings, no clash. See glossary §29.4.
+
+### Q8. Forward list — 12 segments that recur in chunks nobody has translated yet
+
+Not §3 violations today, since nothing is shipped on the other side. **Whoever takes these chunks
+must match chunk 8 rather than reinvent**, and the renderings are in `glossary.md` §29:
+
+| Segment | Recurs in |
+|---|---|
+| `アルフレッド、` | ch.16 |
+| `よりによって、` | ch.19 |
+| `よさそうだな。` | ch.19, ch.27 |
+| `こんなところで` | ch.24 |
+| `何がなんでも、` | ch.24 |
+| `そ、それが、` | ch.24 |
+| `それでは、` | ch.5, ch.43 |
+| `俺たちは、` | ch.21 |
+| `どうした。` | ch.43 |
+| `それに、` | ch.43 |
+| `何？` | ch.17 |
+| `君、` | ch.24 |
+
+⚠️ **`ルート` is live this wave**: chunk 17 (PR #12) renders it too. Its §9 PROVISIONAL row is
+**deliberately left unstruck** at this integration — the wave's rule is that a cross-unit seed is
+struck once, by whichever unit merges second, and that is #12. Glossary §29.1 says so on the row.
+
+### Q9. Two glossary figures corrected under §4.3, with nothing re-cut
+
+Written out in `glossary.md` §29.5 rather than patched in place, per §4.3 and CLAUDE.md §6.7:
+
+1. **`少尉` → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ` is 17 columns, not §1/§2's 18** (Second 6 + space +
+   Lieutenant 10). Caught by the translator in Flag 4, remeasured at review. The knock-on is that
+   **`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ` is 23 and would fit one row**, so §1's “never on one
+   row” is false as written — it is the vocative comma that makes it **24**, and the vocative is
+   the only shape either dump renders. Chunk 8's split stands; **no shipped line changes.** §2's
+   `中尉` → `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ` “17” is the same error (it is **16**), flagged not changed
+   because nothing renders it yet. **This is the third seeding/measurement figure this wave to be
+   one or two columns out** — after §M's three remeasurements and §P's `アーバイン様` 7/12 → 6/11.
+   Column figures in seeds and PR bodies should be treated as claims to check, not data.
+2. **`うん、` → `Ｙｅｓ，` is right, but the PR's stated licence is not.** §18.3 freed `Ｙｅｓ` from
+   `ああ` **only**. `Ｙｅｓ` already carries `ええ。` (`chunk_007` L19), `そうだ、` (`chunk_000` L3)
+   and, since PR #10, `ははっ！` → `Ｙｅｓ，　ｓｉｒ！` (glossary §28.3). What licenses a fourth is
+   §25.3's co-occurrence test, and it passes: `うん` in chunks 8, 20, 43; `ええ` in 7, 19, 32;
+   `そうだ、` in 0, 5, 24, 39; `ははっ` in 13, 16, 37, 38, 42 — **no chunk contains うん with any of
+   the other three.** Recorded with that reason in §29.3.
+
+### Q10. Bank figures at this integration
+
+Unmoved by a battle unit, recorded because gate 5 requires naming any bank under 2,000 free:
+**bank 41 → 353 free**, **bank 40 → 471 free**, then 5 → 3,381, 2 → 7,505, 33 → 9,315. No bank
+negative. `merge` prints no “never matched the dump”; `rowcheck script` reports only the two known
+INHERITED over-4-row pages (lines 1234 and 8194). §F2 and §O1 are unchanged.

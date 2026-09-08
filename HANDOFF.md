@@ -12,10 +12,12 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 
 ## NEXT ACTION — always current, always a literal instruction
 > **WAVE 3 IS RUNNING** in `session_0126mzDCZDEoby12pU5qXegc`. Glossary seeded (`19a0391`),
-> four units dispatched. **#9 and #10 are MERGED; two units remain: #11 round 2, then #12.**
-> Dispatch **reviewer 2 (re-review) on PR #11** next — its rework is pushed at `c5a8b3c` and it
-> holds a §28 draft that **must be renumbered to §29 / §Q**, because PR #10 took §28 / §P. Then
-> reviewer 4 on **#12** (§30 / §R). The coordinator closes the wave and then opens wave 4's session.
+> four units dispatched. **#9, #10 and #11 are MERGED; one unit remains: #12.**
+> Dispatch **reviewer 4 on PR #12** (battle chunk 17, PARK proposed) — the last unit of wave 3.
+> PR #11 merged at round 2 (squash `2957d80`); PRs #9, #10 and #11 are all in. #12's reviewer
+> takes `glossary.md` **§30** and `FLAGS.md` **§R** — #11 took §29 / §Q — and **owns striking
+> `ルート`'s §9 PROVISIONAL row**, which chunk 8 rendered and deliberately left live because
+> chunk 17 renders it too and merges second. After #12, close the wave and open wave 4's session.
 >
 > If this line still says "wave 3 is running" and no agent is alive (`ListAgents`) and no PR has
 > moved for an hour, the chain broke: reconcile open PRs against **In flight**, re-dispatch what
@@ -23,14 +25,14 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > `source_revision` = `claude/workflow-translation-iterate-uzlkns`).
 
 ## Last updated
-2026-09-08 · by: **wave-3 reviewer** (integration commit for PR #10) ·
-wave: **3 running — 2 of 4 merged, 1 in rework, 1 queued** · queue: **fresh**
+2026-09-08 · by: **wave-3 reviewer** (integration commit for PR #11) ·
+wave: **3 running — 3 of 4 merged, 1 queued (#12)** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **17** | 44 | 0, 1, 2, 3, **4**, **6**, 7, **9**, 10, 11, 12, **13**, 14, 33, 34, 35, 40 |
-| Battle JP characters | **12,443** | 43,161 | **28.8%** (was 20.1% at wave-2 start, 26.3% before PR #10) |
+| Battle chunks | **18** | 44 | 0, 1, 2, 3, **4**, **6**, 7, **8**, **9**, 10, 11, 12, **13**, 14, 33, 34, 35, 40 |
+| Battle JP characters | **13,914** | 43,161 | **32.2%** (was 20.1% at wave-2 start, 26.3% before PR #10, 28.8% before PR #11) |
 | Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
 | Script message instances | 4,039 | 7,931 | **50.9%** |
 
@@ -43,12 +45,13 @@ PR #9 edits already-shipped files, so no Done count above moves; what changed is
 
 ## In flight — WAVE 3 (4 units, dispatched 2026-09-08)
 Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order: **#9, #11, #10, #12**.
-Reviewer 3 (#10) is **done and merged**. Reviewer acts next: **#11 round 2**, then **#12**.
+Reviewers 2 (#11) and 3 (#10) are **done and merged**. Reviewer acts next: **#12**, the last unit
+of the wave; after it the wave closes.
 
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔍 **IN REVIEW round 2** — same reviewer resumed (holds its integration draft); must renumber to §29 / §Q |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | **2** | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ✅ **MERGED round 2** — squash `2957d80`, **7,437 / 8,192 (755 slack)**, byte-neutral rework; integration = the commit immediately after it, `integrate: chunk 008 (PR #11)`. All 8 gates green at both rounds; round 1 was CHANGES on two reading findings, both applied. Glossary **§29**, `FLAGS.md` **§Q**. ⚠️ `ルート`'s §9 row is **deliberately left live for #12 to strike**. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | ✅ **MERGED round 1** — squash `7a37181`, **5,417 / 8,192 (2,775 slack)**; integration = the commit immediately after it, `integrate: chunk 013 (PR #10)`. All 8 gates green, 0 blocking findings. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
@@ -200,6 +203,9 @@ and whether chunk 4's dying girl is Femina. ⚠️ Its gate-6 comparison against
 show a divergence on the village line **that resolves when PR #9 merges** — #9 is first in the
 review order for that reason.
 
+**PR #11 (chunk 8) — ✅ NOW MERGED at round 2 (squash `2957d80`); the two blocks below are the
+round-1 and rework record, kept for the wave summary, not live state.**
+
 **PR #11 (chunk 8) — CHANGES round 1, 2026-09-08.** All eight gates pass and **every figure the
 PR claimed is true when re-derived**; gate 6 was run as positional pairing at four granularities,
 extended across PR #10's and #12's branches — **624 page keys, zero divergent renderings anywhere**.
@@ -230,9 +236,10 @@ and held until the rework lands and the same reviewer re-reviews.
 
 ⚠️ **Glossary section numbering — RESOLVED for #10, still live for #11.** **PR #10 integrated first
 and took §28** (read from the file at commit time, as instructed). `glossary.md` now ends at
-**§28**, and `FLAGS.md` at **§P**. **PR #11's reviewer must therefore renumber its held draft to
-§29 / §Q on its round-2 pass**, and must re-read both files rather than trusting any number
-reserved earlier — #12 comes after it and will take §30 / §R.
+**§28**, and `FLAGS.md` at **§P**. ✅ **PR #11's reviewer renumbered as instructed and has landed
+§29 / §Q**, having re-read both files rather than trusting the numbers it reserved — which also
+caught two things §28 had moved under its draft (§28.3 re-enumerated the わかる family, and added
+`ははっ！` → `Ｙｅｓ，　ｓｉｒ！`, widening the `Ｙｅｓ` family its own row joins). **#12 takes §30 / §R.**
 
 **PR #11 rework pushed `c5a8b3c` (round 2 queued).** All three findings addressed; **byte-neutral
 at 7,437 / 8,192, 755 slack** — not the ~2 bytes estimated, because L10's added `{FFFE}` costs 2 and
