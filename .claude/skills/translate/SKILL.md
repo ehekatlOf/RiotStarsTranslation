@@ -88,7 +88,39 @@ unit; never a fourth round with the same agent.
 `git pull --ff-only`; `check` must pass. `merge`; commit `build/*_dump_merged.txt` if changed.
 Refresh the README status table from `status`. Prune worktrees. HANDOFF: move the wave to Wave
 history (one line), refresh Progress, write the next wave into Next up, set Last updated. Commit
-`handoff: wave N closed`, push. Then step 2 for the next wave.
+`handoff: wave N closed`, push.
+
+## 6a. The chain — every wave spawns the next one
+
+**This loop is meant to run to the end without a human between waves.** Waves are run by
+`orchestrator` subagents, and each one spawns its successor as the last act of its wave. You (the
+main session) are the **runner**: you spawn the *first* orchestrator and then stay out of the
+repository. You are the backstop, not the driver.
+
+Spawn (`subagent_type: "orchestrator"`, `run_in_background: true` — background, so the chain stays
+flat rather than nesting a dozen agents deep). The dispatch is short by design; `HANDOFF.md`
+carries everything else:
+
+```
+WAVE: N
+INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>
+UNITS: <the Next up rows — e.g. battle chunks 4, 6, 9 + script batch 005 (unique lines 1035–1100)>
+Read HANDOFF.md first; it is the board and your memory. Run exactly this one wave —
+CLAUDE.md §4 and .claude/agents/orchestrator.md — close it, then spawn the wave after it
+exactly as this message spawned you. `gh` is not installed: use the GitHub MCP tools,
+owner ehekatlOf, repo RiotStarsTranslation.
+```
+
+When an orchestrator returns, record nothing yourself — it has already pushed `HANDOFF.md`. Read
+its report for one thing above all: **did it spawn its successor?** If it did, relay the wave
+summary and stop; the run continues without you. If it did not, and none of §7's stop conditions
+holds, the chain has broken: re-run preflight and spawn the missing wave yourself. That is the
+runner's whole job between waves.
+
+Quality control is never what gets traded for momentum. Every unit still goes translator → PR →
+reviewer → merge, one reviewer at a time, every gate in CLAUDE.md §6 run in a real checkout and
+its evidence pasted into the review. A wave that closes faster by merging without a reviewer, or
+by waiving a gate, has broken the run more thoroughly than a wave that stalls.
 
 ## 7. Stop
 When Remaining is empty: final HANDOFF — Progress, everything parked with the measured reason,

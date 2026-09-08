@@ -15,6 +15,17 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
+## NEXT ACTION — always current, always a literal instruction
+> **Wave 1 is in flight** (battle chunks 1, 2, 3 + script batch 004; four translators dispatched
+> 2026-09-08). As each translator returns: record its PR here, commit, push, then run the
+> `reviewer` subagent on that PR in the foreground, one at a time.
+>
+> **When wave 1 closes, spawn the wave-2 `orchestrator` subagent immediately**
+> (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4, 6, 9 +
+> script batch 005 (unique lines 1035–1100, bank 31). Template: `.claude/skills/translate/SKILL.md`
+> §6a. Do not stop to ask; CLAUDE.md's top banner and §8 list the only four reasons to stop.
+> Every wave orchestrator spawns the next one itself — this line must always name the next spawn.
+
 ## Last updated
 2026-09-08 · by: orchestrator · wave: 1 dispatched · queue: **fresh (survey ran 2026-09-08)**
 
@@ -136,5 +147,10 @@ instance yield first. After that the pool is the 1-instance story text in the ro
 
 ## How to resume
 1. `git checkout claude/workflow-translation-iterate-uzlkns && git pull --ff-only && python3 tools/assemble.py check`
-2. Read this file; list open PRs; reconcile the In flight table with reality.
-3. `/translate` — preflight, then the loop. The queue is fresh; go straight to the next wave.
+2. Read this file — **NEXT ACTION at the top says literally what to do next**; list open PRs and
+   reconcile the In flight table with reality.
+3. `/translate` — preflight, then do what NEXT ACTION says. The queue is fresh.
+4. The run is recursive: each wave's `orchestrator` subagent spawns the next wave's orchestrator
+   before it returns, so it continues unattended. If NEXT ACTION names a spawn that never
+   happened, the chain broke — spawn it yourself and carry on. The only four reasons to stop are
+   in CLAUDE.md §8.
