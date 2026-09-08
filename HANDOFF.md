@@ -49,13 +49,14 @@ wave: **4 IN FLIGHT — 4 dispatched** · queue: **fresh**
 Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifact).
 
 ## In flight — WAVE 4 (dispatched 2026-09-08)
-Barrier: **review nothing until all four have an open PR.** Base branch for every unit and PR is
+✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review may start, one reviewer at a time, in
+unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **PR open** — 3,035 / 8,192 (5,157 slack); 14 glossary rows proposed, none changing an existing entry; 2 judgement calls left for the reviewer (Flags 4 and 6) |
-| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,567 JP, tier B (**1.94 — tight**) | — | dispatched |
+| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | ✅ **PR open** — 8,067 / 8,192 (**125 slack**), 1.91× against a 1.94 ceiling; re-cut once as tier B prescribes |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 
@@ -87,6 +88,26 @@ tier B and holds the casting vote on width, and chunk 20 can be moved to match a
 ⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
 translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
 byte-identical English. The seed row is struck by the **second** of the two reviewers to merge.
+
+### ⚠️ TWO COORDINATOR ERRORS, both caught by translators and both verified before recording
+
+**1. I told chunk 19's translator that `フェリクス`, `ウルフ`, `自治官` and `衛兵隊長` were "already
+in the glossary". They are not.** All four appear in `glossary.md` **only as Japanese quotations
+inside §2's ファリーナ evidence note** (`ファリーナの衛兵隊長、ウルフ`, `ファリーナの自治官フェリクス`)
+— quoted to prove Farina is a place. **No English form is fixed for any of them.** My preflight
+check was `grep -c` for the Japanese string, and a substring hit is **not** a ruled rendering.
+➡️ **Method for every future seed: a term is "in the glossary" only if a row FIXES an English
+form for it.** Chunk 19 proposes `Ｆｅｌｉｘ`, `Ｗｏｌｆ` (alt `Ｕｌｆ`), `ｇｏｖｅｒｎｏｒ`,
+`ｇｕａｒｄ　ｃａｐｔａｉｎ`; these are genuinely new and need ruling, not matching.
+
+**2. My cross-unit note on `宝石` was incomplete in the other direction.** `宝石` → **`ｇｅｍ`
+(lowercase) is ALREADY SHIPPED** — `tl/script/batch_003.tsv` L36, `額に宝石のはまった謎の生物。` →
+`ｗｉｔｈ　ａ　ｇｅｍ　ｉｎ　ｉｔｓ　ｂｒｏｗ．`, one unique line carrying **21 instances**. Verified.
+So `宝石` now has **three** English forms in play: shipped `ｇｅｍ`, chunk 20's `ｇｅｍｓｔｏｎｅｓ`
+(PR #14), chunk 19's `ｇｅｍｓｔｏｎｅ` (PR #16). §3 is not engaged — all different messages — but
+this is exactly the divergent-duplicate class wave 3's PR #9 existed to clean up. ⚠️ Note the
+existing deliberate split it must not break: capitalised `Ｇｅｍ` (147×) renders **ジェム**, a
+different Japanese word. **Chunk 31 inherits whatever is decided.**
 
 ### ⚠️ TWO INDEPENDENT UNITS CONVERGED ON THE SAME UNSETTLED RULING — `あら`
 Battle chunk 20 (PR #14) and script batch_006 (PR #15) raised this separately, from opposite ends
