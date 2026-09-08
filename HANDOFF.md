@@ -16,31 +16,30 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **Wave 1 is in review. Barrier met 4 of 4; PR #2 (chunk 1) is decided — CHANGES, round 1.**
+> **Wave 1, review phase. Orchestrator: wave-1 orchestrator subagent (taking over mid-flight).**
+> Barrier met 4 of 4 and it stays met — a rework round does not reopen it.
 >
-> Do these two things, in this order:
-> 1. **Rework PR #2.** `git pull --ff-only` first (the reviewer pushed an integration commit).
->    Send the two numbered findings from the PR #2 review **verbatim** to translator-1 via
->    SendMessage, which keeps its context. Both are pure respellings in
->    `tl/battle/chunk_001.txt`, no re-flow: (a) all 10 `，ｎｙｏｒｏ` → `，　ｎｙｏｒｏ`;
->    (b) line 2 `Ｏｈｏ！` → `Ｏｈ！`. Expected result 3,517 / 8,192, slack 4,675, widest row 23.
->    Wait for its push, then re-review PR #2 (round 2).
-> 2. **Continue the review queue in unit order** — PR #3 (chunk 2), PR #1 (chunk 3), PR #4
->    (batch 004), one reviewer at a time, foreground. Rework does not block them: the three
->    cross-PR conflicts are all settled (`glossary.md` §18) and none of the remaining three PRs
->    needs to change on account of them.
+> Review queue, one reviewer at a time, `run_in_background: false`, push HANDOFF before each and
+> `git pull --ff-only` after each:
+> 1. **PR #2 (chunk 1), round 2** — reworked and pushed, head `8e22dd3`, 3,517 / 8,192, slack
+>    4,675. Both round-1 findings applied. ← **reviewer running now**
+> 2. **PR #1 (chunk 3)** — never reviewed. 4,601 / 8,192, slack 3,591.
+> 3. **PR #4 (batch 004)** — never reviewed. 34 lines / 714 instances; bank 40 → 509 free.
+> 4. **PR #3 (chunk 2), round 2** — translator-2 has merged the base into `tl/battle-002` locally
+>    (`b5d0eb1`) but has **not pushed the two reading findings yet**; remote head is still the
+>    round-1 commit `1340be6`. It is still working — wait, do not re-dispatch over a live agent.
 >
-> Tell each remaining reviewer: **the wave-1 rulings are already in `glossary.md` §18 — check
-> conformance against it, do not re-litigate.**
+> Tell every reviewer: **the wave-1 rulings in `glossary.md` §18 are already made — check
+> conformance, do not re-litigate.** ノロ → `，　ｎｙｏｒｏ．` (spaced), おお → `Ｏｈ！`,
+> サイクス → `Ｓｙｋｅｓ`.
 >
-> **When wave 1 closes, spawn the wave-2 `orchestrator` subagent immediately**
-> (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4, 6, 9 +
-> script batch 005 (unique lines 1035–1100, bank 31). Template: `.claude/skills/translate/SKILL.md`
-> §6a. Do not stop to ask; CLAUDE.md's top banner and §8 list the only four reasons to stop.
-> Every wave orchestrator spawns the next one itself — this line must always name the next spawn.
+> **When wave 1 closes, this orchestrator spawns the wave-2 `orchestrator` subagent itself**
+> (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4 (D 5.08),
+> 6 (C 3.09), 9 (D 4.93) + script batch 005 (unique lines 1035–1100, bank 31 alone). Seed the
+> glossary for wave 2 first. Do not stop to ask; CLAUDE.md §8 lists the only four reasons to stop.
 
 ## Last updated
-2026-09-08 · by: **reviewer (PR #2, chunk 1 — CHANGES)** · wave: 1 in review, 1 of 4 decided ·
+2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, 0 of 4 merged ·
 queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
