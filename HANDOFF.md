@@ -11,26 +11,17 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 2 IS CLOSED — 4 of 4 merged, 0 parked, `check` green. WAVE 3'S SESSION IS OPEN and is
-> the active driver: `session_0126mzDCZDEoby12pU5qXegc`, "Riot Stars — wave 3", opened
-> 2026-09-08 18:52Z via `create_session` on this branch.**
+> **WAVE 3 IS RUNNING** in `session_0126mzDCZDEoby12pU5qXegc`. Glossary seeded (`19a0391`),
+> four units dispatched. The coordinator closes the wave and then opens wave 4's session.
 >
-> **Wave 3 owns the repository now. Wave 2's session is done and stays out.**
->
-> Wave 3's units: **the `corrections/audit-wave1` unit + battle chunks 8, 13, 17**, and optionally
-> one script batch *after* grepping it for debug scaffolding — see **Next up** for per-line figures.
->
-> **If wave 3's session is dead, stalled, or never started work** — check by listing open PRs
-> against this branch and reading In flight — the chain is broken and whoever notices should
-> re-open it exactly as above (SKILL.md §6a; `create_session` needs **both** `source_url` and
-> `source_revision`). Do not run wave 3 from wave 2's session.
->
-> When wave 3 closes it opens wave 4's session itself. The chain ends only on one of CLAUDE.md
-> §8's four conditions.
+> If this line still says "wave 3 is running" and no agent is alive (`ListAgents`) and no PR has
+> moved for an hour, the chain broke: reconcile open PRs against **In flight**, re-dispatch what
+> is lost, finish the wave, then open wave 4 with `create_session` (BOTH `source_url` and
+> `source_revision` = `claude/workflow-translation-iterate-uzlkns`).
 
 ## Last updated
-2026-09-08 · by: **wave-2 coordinator** (`session_01JDoA8KzwUVk3ZjiBw8Qkf3`) ·
-wave: **2 CLOSED, 4 of 4 merged, 0 parked** · queue: **fresh**
+2026-09-08 · by: **wave-3 coordinator** (`session_0126mzDCZDEoby12pU5qXegc`) ·
+wave: **3 dispatched, 4 units in flight** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -44,45 +35,39 @@ wave: **2 CLOSED, 4 of 4 merged, 0 parked** · queue: **fresh**
 40 → 509, 5 → 3,419**, 2 → 7,543, 33 → 9,353. Bank 40 is spent (`FLAGS.md` §J2). Wave 2's units
 touched banks 29/30/31 only, which remain roomy (25,589 / 35,119 / 34,827 free).
 
-## In flight
-**Nothing. Wave 2 is closed.** Wave 3's session dispatches its own units.
+## In flight — WAVE 3 (4 units, dispatched 2026-09-08)
+Barrier: **review nothing until all four have an open PR** (CLAUDE.md §4a).
 
-## Next up — WAVE 3
+| Unit | Branch | Round | PR | State |
+|---|---|---|---|---|
+| corrections/audit-wave1 (11 edits) | `tl/corrections-audit-wave1` | 1 | — | dispatched |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | — | dispatched |
+| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | — | dispatched |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | — | dispatched |
 
-**1. `corrections/audit-wave1` — a translator + PR like any other unit.** Wave 1's independent
-audit is explicit that these must **not** be applied by whoever ordered the audit. **Eight measured
-edits**, every replacement row ≤ 23 columns:
+**No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
+unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
 
-| file / line | what | cost |
-|---|---|---|
-| `tl/script/batch_004.tsv:12` | `多くの兵士が愛用する一般的な剣。` drops 一般的な and promotes 多くの to "most" → `Ａ　ｃｏｍｍｏｎ　ｓｗｏｒｄ　ｍａｎｙ{FFFE}ｓｏｌｄｉｅｒｓ　ｆａｖｏｕｒ．` **Both wave-1 audits proposed this same fix independently.** | +14 B/bank |
-| `tl/battle/chunk_003.txt:5` | `しかし` → `Ｓｔｉｌｌ，` violates §23.3 (`Ｓｔｉｌｌ，` is それにしても's) | +4 B |
-| `tl/battle/chunk_003.txt:5` | `“ｅｎｔｅｒ”` → `“ＥＮＴＥＲ”` — the settled §I1 / `FLAGS.md` §N2 rule. **Same line as the row above; do both in one pass.** | 0 B |
-| `tl/battle/chunk_003.txt:16` | breaks split `Ｒｏｙａｌ`/`Ａｒｍｙ` and `ｓａｖｅｄ`/`ｕｓ．`; also `Ｅｖｅｒｙｏｎｅ　ｏｆ` → `ｉｎ` | 0 B |
-| `tl/battle/chunk_002.txt:14` | `すみません。` → `Ｗｅ　ａｒｅ　ｓｏｒｒｙ．` reads as an apology for wrongdoing; it is apologetic *thanks* → `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` | +16 B |
-| `tl/battle/chunk_001.txt:2` | break splits the compound "food store" | +2 B |
-| `tl/battle/chunk_001.txt:14` | `助かった` active where §23.4 makes passive the default | 0 B |
-| `tl/battle/chunk_034.txt:8` | **a live CLAUDE.md §3 violation**: `村が襲われました。` (13 dump instances) is `ｉｓ　ｕｎｄｅｒ　ａｔｔａｃｋ` in `chunk_007` L25/26 but `ｈａｓ　ｂｅｅｎ　ａｔｔａｃｋｅｄ` here. Fix **chunk 34** (6,601 slack), not chunk 7 (399). `chunk_006` L14 is a **different** source string (internal space) and stands. Both directions in `FLAGS.md` §M3. | −4 B |
+## Next up
 
-⚠️ `chunk_000.txt` has **27 bytes of slack** — the tightest file in the project (`FLAGS.md` §G1).
-Nothing above touches it; keep it that way.
+**Wave 3's unit specs live in the dispatch messages and in `audits/`** — enough to re-dispatch any
+unit from here:
 
-**2. Battle chunks 8 (B 2.32), 13 (C 3.41), 17 (C 3.19)** — chapter order, from Remaining below.
-Chunk 8 is tier B, so it needs a tight first draft and one re-cut pass (§0.2).
+- **corrections/audit-wave1** — apply the wave-1 audit's measured edits to already-shipped files.
+  `audits/wave1-reading-review.md` §"table of 8" (**file** line numbers) + `audits/wave-1-audit.md`
+  items 3–5 (**message** line numbers — the two docs number differently and mean the same lines),
+  plus the §3 violation in that doc's §9. **Eleven** translated-line edits: `batch_004` L12/L17/
+  L29/L42, `chunk_003` L6 (×2) and L17, `chunk_002` L15, `chunk_001` L2 and msg-L14, `chunk_034` L8.
+  ⚠️ The audit's proposed `しかし` → `Ｂｕｔ` is **superseded** by §23.3 (`Ｂｕｔ` is でも's) → use
+  `Ｈｏｗｅｖｅｒ，` and re-measure. ⚠️ `chunk_000.txt` (27 B slack) is **out of scope**.
+- **battle chunks 8 / 13 / 17** — `python3 tools/queue.py battle` for figures; seeds in glossary §9.
 
-**3. One script batch**, chosen from the 1-instance story text in the roomy banks. ⚠️ **Grep the
-candidate range for debug scaffolding before dispatching** — `フラグ|：新曲|^[０-９]{2}：|鑑賞モード`.
-`queue.py` groups by bank and adjacency and cannot tell a sound-test menu from a scene; 89 of the
-117 lines around wave 2's batch were exactly that.
-
-**4. Three §9 seed candidates found while verifying other things**, none yet rendered:
-`クロスリー` (8 battle occurrences), `ホアグ王子` → Prince `Ｈｏａｇ` (6+16), `トリフ` → `Ｔｏｒｉｆ` (9+6).
-
-**Already done — do NOT re-queue:** `translator.md`'s gate-6 fix (`06353c7`), scratch-file
-namespacing (`1195d28`), the §18.2 interjection correction (§24.4), `pending/README.md`'s re-cut
-rows, and the **`queue.py` count check — discharged**: `queue.py` strips tags correctly and returns
-1,980; the 1,770 figure came from wave 2's coordinator's own ad-hoc regex, not from the tool. No
-ratio in Remaining is optimistic.
+**Wave 4 candidates**, in this order:
+1. Any wave-3 unit that parked.
+2. Battle chunks **15 (D 6.13), 18 (D 6.28), 19 (B 1.94)** — next in chapter order.
+3. **One script batch.** ⚠️ Grep the candidate range for debug scaffolding first —
+   `フラグ|：新曲|^[０-９]{2}：|鑑賞モード`. `queue.py` groups by bank and adjacency and cannot tell a
+   sound-test menu from a scene; 89 of the 117 lines around wave 2's batch were exactly that.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle, **24 dispatchable chunks** after wave 2 (`queue.py` reports 26 open — the other two are
@@ -142,31 +127,16 @@ roomy banks (518–1,413, ~53,000 JP chars) is what remains dispatchable.
 
 ## Decisions this run
 - 2026-09-08: integration branch is `claude/workflow-translation-iterate-uzlkns`; `main` untouched.
-- 2026-09-08: script growth for planning is **2.10×** measured, not the 2.0× the skill assumed.
-- 2026-09-08: **bank 40's remaining budget goes to the 21-instance item table**, not to bank 40's
-  own story text (~40 lines ≈ 840 instances vs ~25 of 195 lines ≈ 25 instances). Reversible.
-- 2026-09-08: **`しかし` → `Ｈｏｗｅｖｅｒ，`** (§23.3). `Ｂｕｔ` is `でも`'s and `Ｓｔｉｌｌ，` is
-  それにしても's; two distinct connectives are not collapsed.
-- 2026-09-08: **`クリミア` is a PERSON** (§2 → §1), on 5 battle / 64 script occurrences, none a
-  place, plus a vocative and `クロスリーにいるクリミア博士`. Third correction of the `メルザリオ`
-  kind, after `ファリーナ`. No shipped line re-cut.
-- 2026-09-08: **`将軍` → `Ｇｅｎｅｒａｌ`**, §9 correction 2 discharged — `フェルナンド将軍` 17× vs
-  `フェルナンド隊長` 2×, and all three shipped `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ` render `隊長`.
-- 2026-09-08: **`FLAGS.md` §I1 settled** (§N2): quoted tokens naming a command, menu option, map
-  label, item or skill the game **displays** are capitalised — verbatim where the source supplies
-  Latin, capitalised where it supplies Japanese; descriptive quoted phrases stay lowercase. The
-  tie-breaker is that chunk 3's source reads `「入る」` while script 987's reads `「ＥＮＴＥＲ」`.
-- 2026-09-08: **`様` does not collapse into §21.2's `さん` rule** — `様` has its own pattern
-  (§1/§14.1), so `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` and `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`.
-- 2026-09-08: **`弓使い` → `ｂｏｗｍａｎ`**, not the §9 seed's `archer`, which 弓兵 already spends.
-- 2026-09-08: **`FLAGS.md` §J1 corrected** — it falsely stated PR #4 did not flag the `持つ者に`
-  departure (Flag 3 does), and its arithmetic was wrong: 32 B/entry not 42, so 192 not 252, bank 40
-  landing at 317 free rather than negative. The accept decision survives; the record did not.
-- 2026-09-08: **`{FB01}` is not a tutorial marker** (666 script / 148 battle occurrences; only 47
-  of 342 opened lines carry `じゃ`). The §7 register row keys on the speech.
-- 2026-09-08: **battle `tl/*.txt` hold zero Japanese**, so a translator grepping JP against `tl/`
-  ran a null duplicate check. Fixed in `translator.md` (`06353c7`); the correct method is positional
-  row-pairing. Nothing shipped was wrong — reviewers re-derive gate 6 independently.
+- 2026-09-08: script growth for planning is **2.10×** measured, not the skill's assumed 2.0×.
+- 2026-09-08: **bank 40's remaining budget goes to the 21-instance item table**, not bank 40's own
+  story text (~40 lines ≈ 840 instances vs ~25 of 195 lines ≈ 25 instances). Reversible.
+- 2026-09-08: **wave 3 seeds the glossary BEFORE dispatch** (`19a0391`, 10 §9 rows). Wave 2's three
+  round-1 CHANGES all came from the glossary moving under a draft mid-wave.
+
+**Wave-2 rulings are no longer duplicated here** — they are written into their homes and that is
+where they bind: `glossary.md` §23–§26 (`しかし`→`Ｈｏｗｅｖｅｒ，`, `クリミア` is a person, 将軍→General,
+`様`≠さん, 弓使い→bowman), `FLAGS.md` §K–§N (§I1/§N2 quoted-token capitalisation, §J1's corrected
+arithmetic), `findings.md` §24 (`{FC03}`), `translator.md` `06353c7` (the null gate-6 grep).
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
