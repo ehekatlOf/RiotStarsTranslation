@@ -30,8 +30,20 @@ file other than your unit file, and you do not delegate.
 - Glossary first: every name and term already in `glossary.md` (including §9 PROVISIONAL seeds
   added for your wave) is used exactly as written. Anything new goes in your PR body under
   Glossary additions, never into `glossary.md` itself.
-- Duplicates: for every Japanese message in your unit, grep `tl/` and both dumps. Already
-  translated anywhere → reuse that English byte-for-byte. Recurs untranslated → say so in Flags.
+- Duplicates — **and read this before you run the check, because the obvious method is broken for
+  battle units.** A battle `tl/battle/chunk_NNN.txt` contains **zero Japanese characters**: the
+  Japanese was replaced by your English. So grepping your unit's Japanese against `tl/` is a
+  **null check that returns "no duplicates" every time, no matter what you shipped.** It works only
+  for script batches, whose TSVs keep the Japanese in column 2. Disclosed by chunk 6's translator
+  against its own round-1 work (`HANDOFF.md`, 2026-09-08).
+  - **Battle: pair positionally.** Walk `dumps/battle_dump.txt` and each shipped
+    `tl/battle/chunk_NNN.txt` row by row — they have the same line count by construction — and
+    compare the English wherever the Japanese segments are identical. That is the only check that
+    means anything for a battle unit.
+  - **Script: grep is fine** — `tl/script/*.tsv` really does hold the Japanese key.
+  - Either way: already translated anywhere → reuse that English byte-for-byte. Recurs
+    untranslated → say so in Flags. Never claim gate 6 passed on a grep of `tl/` alone for a
+    battle chunk; say which method you used.
 - Never cut by deleting a sentence, speaker turn or plot fact. If §2.1 steps 1–6 leave you over
   budget, stop compressing: save the best faithful version under `pending/` (battle
   `pending/chunk_NNN.txt`, script `pending/script/batch_NNN.tsv`), and open the PR as `park:`

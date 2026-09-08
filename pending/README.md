@@ -7,6 +7,23 @@ buildable with those chapters falling through to Japanese (prompt §0.5).
 
 Move a file into `tl/battle/` only once the slot constraint for that chunk has been lifted.
 
+## ⚠️ Lines these files must adopt on re-cut
+
+Parked files do not ship, so a divergence from shipped work is not a CLAUDE.md §3 violation
+**today** — but it becomes one the moment the slot patch lands and the file moves into
+`tl/battle/`. Every line below was ruled on at review against a form that has already shipped.
+**Re-cutting one of these files without applying its rows creates the violation.**
+
+| File | Line | Now | Must become | Cost | Ruled |
+|---|---|---|---|---|---|
+| `chunk_005.txt` | 13 | `Ｔｈｉｓ　ｃａｎ’ｔ　ｂｅ．．．` | `Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．` | 16 → 17 cols, **+2 B** | PR #7 review; `そんな・・・` now shipped in chunk 6, and Cavia takes no contractions (§14.6) |
+| `chunk_005.txt` | 32 | `Ｑｕｉｔｅ　ｓｏ．` | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | 9 → 13 cols, **+8 B** | PR #6 review, glossary §23.2; `そうそう。` shipped in chunk 4 |
+| `chunk_043.txt` | 14 | `Ｗ‐ｗａｉｔ！` | `Ｗ，　Ｗａｉｔ！` | 9 → 8 cols, **−2 B** | PR #7 review, glossary §24.3; the comma form follows shipped `chunk_007`'s `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` |
+
+Net effect on `chunk_005.txt`: **+10 bytes**, so 8,679 → 8,689 against its 8,192-byte slot. It is
+487 over already; this does not change its feasibility, and it must not be traded against the
+budget — the file needs the slot extension either way. `chunk_043.txt` gains 2 bytes back.
+
 | File | Bytes | Slot | Notes |
 |---|---|---|---|
 | `chunk_043.txt` | 11,181 | 8,192 | faithful translation, 1.86x. Needs a ~12 KB slot. **Ship this one.** |

@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions) and `battle_dump.txt`
-chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4 + all of tier E).
+chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–5 + all of tier E).
 
 ---
 
@@ -23,7 +23,6 @@ chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4
 | ドースン | Dawson | enemy officer, defeated before/around chunk 0 |
 | レンドル | Rendol | Rimul's subordinate |
 | セネカ | Seneca | craftsman |
-| ファリーナ | Farina | |
 | フィリス | Phyllis | |
 | フェルナンド | Fernando | commander of the 2nd Royal Army |
 | ギルフォード | Guilford | |
@@ -35,7 +34,7 @@ chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4
 | ベアトリス | Beatrice | captain, Carline 7th Army 3rd Squad; joins in ch.14 |
 | カシム | Kasim | ch.34 boss, portrait 7 — speaks first |
 | タシム | Tasim | ch.34 boss, portrait 8 — his brother. The near-identical names are the joke; keep them near-identical |
-| リオン | **unresolved — Lion or Leon** | pick on first use and record here |
+| リオン | Ｌｅｏｎ | ⚠️ **DECIDED 2026-09-08 (PR #7 review) — this row previously read “unresolved — Lion or Leon”, and §10.1 is discharged with it.** Rendered twice in battle chunk 6 (`匿名希望のリオンって`, `リオンが？`): the man who sent Ridge to the 9th Army and wants to stay anonymous. `Ｌｅｏｎ` over `Ｌｉｏｎ` on the European-reading convention every other name follows (Bauer, Carline, Helfer, Albert, Fernando, Anselmo) — `Ｌｉｏｎ` would read as the animal, the failure §17.2 avoided for Ｎｅｒｇａｌｉ. **Promoted from §9's wave-2 seed, used exactly as seeded.** 4 columns. See §24.1 |
 | 王女様 | the Princess | |
 | 神父 | priest | the fairy's ring-bearer |
 | 妖精 | fairy | lowercase, common noun; referred to as *she* |
@@ -44,6 +43,7 @@ chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4
 | アンゼルモ | Ａｎｓｅｌｍｏ | 中尉 → **Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ**. **Promoted from §14.6**, which already used this form for his register but never fixed the name. 8 columns |
 | ゼファー・クリッペン | Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ | 帝国の司令官 → Commander of the Empire. `・` has no glyph in §3.1 and becomes `　`. 14 columns. Alt *Zepher*, *Crippen*, *Klippen* |
 | ヘルファー様 | Ｌｏｒｄ　Ｈｅｌｆｅｒ | 様 → **Lord** for a male superior, paralleling 様 → Lady (Rimul §1, Phyllis §14.1). 11 columns. Does not change the §11.1 bare-name entry |
+| クリミア | Ｃｒｉｍｅａ | ⚠️ **CORRECTED 2026-09-08 (§4.3, PR #5 review): a PERSON — `クリミア博士`, the designer of the Empire's machine soldiers — not the region §2 filed him as.** Verified in both dumps before moving, not taken from the PR: **5 battle + 64 script occurrences, not one of them a place.** He self-refers in the third person (`この砦は、このクリミアにお任せ下さい。` — *leave this fort to Crimea*, i.e. to me; `またこのクリミアの新型機械兵` — *this Crimea's new machine soldier*), is addressed vocatively twice (`クリミア博士、反乱軍です・・・！！`, `クリミア博士、事は計画通り進んで`), is located **inside** a place (`クロスリーにいるクリミア博士`), and the script's machine-soldier table credits him as their maker (`クリミアの量産型機械兵２号機`). **Already-shipped work agrees**: `tl/script/batch_003.tsv` lines 85, 86 and 94 render that table as `Ｃｒｉｍｅａ’ｓ　ｍａｓｓ‐ｐｒｏｄｕｃｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｉｍｐｒｏｖｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｆｉｎａｌ　ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ．` — a person's possessive, written before anyone noticed the §2 row was wrong. The rendering `Ｃｒｉｍｅａ` is unchanged, so **no translated line needs revisiting** — only the classification was wrong. This is the メルザリオ / ファリーナ shape (§20.1, §2); `FLAGS.md` §K6 deliberately deferred it to this reviewer. 6 columns. See §25.1 |
 
 ## 2. Factions, places, ranks
 
@@ -61,10 +61,10 @@ chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4
 | 帝国 | the Empire | 帝国軍 → the Empire's men where 24 columns will not take "the Imperial army" |
 | 精鋭部隊 | elite corps | the Crimson Knights' formation |
 | 本隊 | the main force | distinct from 精鋭部隊 |
+| ファリーナ | Ｆａｒｉｎａ | ⚠️ **CORRECTED 2026-09-08 (§4.3, PR #6 review): a PLACE — a country and its castle — not a person.** §1 listed it under People with no gloss. Verified in the dumps before moving: `ファリーナという国も昔は栄えとった` (*the country called Farina prospered once*), `ファリーナ城`, `ファリーナの南、カペラの村`, `ファリーナを占領した`, `ファリーナ出身`, and three people identified **by** it — `ファリーナの司教、クレウス`, `ファリーナの衛兵隊長、ウルフ`, `ファリーナの自治官フェリクス`. **Not one instance in either dump uses it as a personal name.** The rendering `Ｆａｒｉｎａ` is unchanged, so **no translated line needs revisiting** — only the classification was wrong. Flagged by PRs #7 and #8; moved once, here, so the wave does not move it three times. 6 columns |
 | カーライン | Carline | home castle/territory |
 | カーライン王国 | Kingdom of Carline | |
 | カーライン城 | Carline Castle | |
-| クリミア | Crimea | region |
 | コーカサス | Caucasus | town of martial artists; Shiron's dojo is here |
 | バウワーの砦 | Bauer's fort | ch.40. Alt *Bower*; Bauer chosen as the likelier source reading |
 | バジリスクの砂漠 | the Basilisk Desert | ch.14 map. Capitalised only as the place name — the monster stays lowercase |
@@ -225,7 +225,7 @@ Do not treat these as decisions. Promote on first use.
 | Japanese | Likely English | Where seen |
 |---|---|---|
 | ~~メルザリオ~~ | ✅ **PROMOTED to §20.1** — `Ｍｅｌｚａｒｉｏ`, and it is a **PLACE**, not the chief's son; this row's original description was wrong | battle chunk 2 (PR #3) |
-| ティミー | Timmy | battle script, chunk with Fernando |
+| ~~ティミー~~ | ✅ **PROMOTED to §11.1** — `Ｔｉｍｍｙ`, rendered in ch.43 and again in `tl/battle/chunk_004.txt` (PR #6). This row was stale; struck 2026-09-08 | battle chunk 4, ch.43 |
 | ~~サイクス~~ | ✅ **PROMOTED to §20.1** — `Ｓｙｋｅｓ` (§18.4) | battle chunk 2 (PR #3) |
 | ~~宮廷第２軍~~ | ✅ **PROMOTED to §20.1** — `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`, both source spellings | battle chunk 2 (PR #3) |
 | リザードマン | Lizardman | `script_unique` 1297; the ch.10 dragonfolk are presumably this class |
@@ -260,14 +260,15 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| **リオン** | **`Ｌｅｏｎ`** | battle chunk 6 — `匿名希望のリオンっておっさん`, a man who sent Ridge to help and wants to stay anonymous | **This settles §10.1**, which has been open since the glossary was written and says to decide before the character appears. He appears here. `Ｌｅｏｎ` over `Ｌｉｏｎ`: every other name in the game takes a European reading (Bauer, Carline, Helfer, Albert, Fernando, Anselmo), and `Ｌｉｏｎ` would read in English as the animal — the same failure §17.2 avoided for Ｎｅｒｇａｌｉ |
-| カペラ | `Ｃａｐｅｌｌａ` | battle chunk 6 — `ファリーナの南、カペラの村`, a **village** | Ｋａｐｅｒａ. Capella is a star name and reads as European |
-| カザロフ | `Ｋａｚａｒｏｖ` | battle chunk 6 — `カザロフ隊長`, an Imperial officer the Black Knights report to | Ｃａｓａｌｏｆ. The `‐ov` ending is the plainest reading |
-| マーティン | `Ｍａｒｔｉｎ` | battle chunk 6 — a Black Knight, retreating with Percival | — |
-| パーシバル | `Ｐｅｒｃｉｖａｌ` | battle chunk 6 — the other Black Knight | Ｐａｒｃｉｖａｌ; the Arthurian spelling is the obvious one |
-| ディール帝国 | the `Ｄｉｅｌ` Empire | battle chunk 9 — `ディール帝国、万歳！！！`, **the Empire's actual name**, revealed for the first time | Ｄｉｅｈｌ, Ｄｉｒ, Ｔｈｉｅｌ. ⚠️ One voicing from 魔神ティール → `Ｔｙｒ` (§22.1) — keep them visibly distinct. Does **not** replace 帝国 → the Empire (§2); this is the proper name |
-| ワーウィック | `Ｗａｒｗｉｃｋ` | battle chunk 9 — `ワーウィックまでは気が抜けないぜ`, a destination | — |
-| 弓使い | `archer` | battle chunk 6 — `王国一の弓使い`, `カーラインきっての弓使い`, both of Ridge | A **third** bow word beside 弓兵 → archer and 弓の戦士 → bow warrior (§4). ⚠️ 使い → *tamer* (§14.3) does **not** apply — that rule is for 氷龍使い / 獣使い, creature handlers. Consider `bowman` to keep it distinct from 弓兵 |
+| ~~リオン~~ | ✅ **PROMOTED to §1** — `Ｌｅｏｎ`, rendered in `tl/battle/chunk_006.txt` (PR #7). **Discharges §10.1** | battle chunk 6 | — |
+| ~~カペラ~~ | ✅ **PROMOTED to §24.1** — `Ｃａｐｅｌｌａ` | battle chunk 6 (PR #7) | — |
+| ~~カザロフ~~ | ✅ **PROMOTED to §24.1** — `Ｋａｚａｒｏｖ` | battle chunk 6 (PR #7) | — |
+| ~~マーティン~~ | ✅ **PROMOTED to §24.1** — `Ｍａｒｔｉｎ` | battle chunk 6 (PR #7) | — |
+| ~~パーシバル~~ | ✅ **PROMOTED to §24.1** — `Ｐｅｒｃｉｖａｌ` | battle chunk 6 (PR #7) | — |
+| ~~ディール帝国~~ | ✅ **PROMOTED to §25.1** — the `Ｄｉｅｌ` Empire, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
+| ~~ワーウィック~~ | ✅ **PROMOTED to §25.1** — `Ｗａｒｗｉｃｋ`, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
+| クロスリー | `Ｃｒｏｓｓｌｅｙ` | **New seed, 2026-09-08 (PR #5 review)** — surfaced while verifying `クリミア`, and **not chunk 9's business**: chunk 9 does not render it. A **place**, on the same evidence test §2 applied to ファリーナ — `クロスリーの守備隊` (its garrison), `クロスリーの丘` (its hills), `クロスリーを通らずに` (without passing through it), `クロスリーまで伝令を送って` (send a messenger *to* it), `クロスリーに向かう` (head *to* it), and `クロスリーにいるクリミア博士` (Doctor Crimea, who is *in* it). **8 battle + 2 script occurrences, none a person.** 8 columns | Ｃｒｏｓｌｅｙ, Ｋｕｒｏｓｕｒｉ. Promote in the wave that first renders it |
+| ~~弓使い~~ | ✅ **PROMOTED to §24.2 as `ｂｏｗｍａｎ`**, not the seed's `archer` — the seed's own “consider `bowman`” note was taken, and ratified at review | battle chunk 6 (PR #7) | — |
 | バトウ | `Ｂａｔｏｕ` | script 1041 — `神父のバトウ`, the priest of Bernard's church. Referred to posthumously as `バトウ様` in 1045 | Ｂａｔｏｗ, Ｂａｔｈｏｕ |
 | リース文明 | the `Ｒｅｅｓｅ` civilisation | script 1047 — `伝説のリース文明`, a vanished people destroyed by war among their own kind | Ｒｉｅｓｅ, Ｌｉｅｓ. ⚠️ Probably the same vanished civilisation as 古代ハイランド → ancient Highland (§11.2) — check before fixing either |
 | クレウス司教 | Bishop `Ｃｒｅｕｓ` | script 1047 | Ｋｒｅｕｓ. 司教 → **Bishop**, a new rank |
@@ -278,15 +279,16 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | 前衛 / 後衛 | front line / rear line | script 985 | |
 | 『説得』 / 『ＧＵＥＳＴ　ＵＮＩＴ』 / 「ＥＮＴＥＲ」 | `“Ｐｅｒｓｕａｄｅ”` / `“ＧＵＥＳＴ　ＵＮＩＴ”` / `“ＥＮＴＥＲ”` | script 986–988 | The last two are **already full-width Latin in the source** — reproduce them, do not re-case. ⚠️ These are the quoted-UI-token case `FLAGS.md` §I1 is open on; whatever settles §I1 settles `“Ｐｅｒｓｕａｄｅ”` |
 | 司教 | Bishop | script 1047 | |
-| 報奨金 | reward | script 991 | |
+| ~~報奨金~~ | ✅ **PROMOTED to §24.2** — `ｒｅｗａｒｄ`, rendered in battle chunk 6 (PR #7) before script 991 reached a batch | script 991, battle chunk 6 | — |
 | 同盟 | alliance | script 999–1001 — `カーラインと帝国との同盟` | |
 
 ⚠️ **Two corrections the wave-2 units force, both of the メルザリオ kind (§20.1):**
 
-1. **`ファリーナ` is a PLACE, not only a person.** §1 lists it under People with no gloss. Battle
-   chunk 6 has `ファリーナの南、カペラの村` (the village of Capella, *south of* Farina) and script
-   1046–1047 have `ファリーナの復興` (Farina's reconstruction) and `ファリーナで発見された`
-   (discovered *in* Farina). Whoever renders it first must correct the §1 row, not just use it.
+1. ~~**`ファリーナ` is a PLACE, not only a person.**~~ ✅ **DISCHARGED 2026-09-08 (PR #6 review).**
+   The row is moved from §1 (People) to §2 (Factions, places, ranks) with the dump evidence
+   recorded there. It is a place **only** — no instance in either dump uses it as a personal
+   name. `Ｆａｒｉｎａ` is unchanged, so nothing translated needs revisiting. **Moved once; PRs #7
+   and #8 flagged it and must not move it again.**
 2. **Fernando is `隊長` in the battle script but `将軍` in the main script** — script 992 reads
    `２軍のフェルナンド将軍`. `隊長` → captain is fixed (§2) and chunk 2 shipped
    `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ`. Either 将軍 → **General** and the man holds two titles, or one
@@ -296,7 +298,9 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 
 ## 10. Open questions
 
-1. **リオン — Lion or Leon.** Unresolved. Decide before the character appears.
+1. ~~**リオン — Lion or Leon.**~~ ✅ **RESOLVED 2026-09-08 (PR #7 review).** The character appears
+   in battle chunk 6 and is rendered **`Ｌｅｏｎ`**; §1's row now carries the decided form instead
+   of the placeholder. This question had been open since the glossary was written. See §24.1.
 2. ~~**Class/unit name table.**~~ **PROSE FORMS RESOLVED 2026-08-06 (§17.1); the table itself is
    still untouched.** The ≤ 20-character label forms still need fixing, but the rule that decides
    their capitalisation — and every prose mention of a class in the description table — is now
@@ -992,3 +996,328 @@ phrase, one clause, a full stop, then the stat row. It is the same flat catalogu
 `batch_001` and `batch_003` (§17.5), and every entry holds to **at most 2 description rows plus
 the `Ａｔｋ` row**, so this batch adds none of the four-row entries glossary §10.3 flags in
 `batch_001`.
+
+---
+
+## 23. Added by chunk 004 (PR #6, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_004.txt` — chapter 5's lead-in, five scenes: the 9th Army grumbling
+about being disbanded (Timmy, Ridge); a dragon attack on a girl who screams for help; her rescue
+and her exit south toward the fairy forest; the enemy girl sent after the ring, and her death; and
+a coda in which a watcher weighs whether to keep tailing the squad. 3,849 / 8,192 bytes, slack
+4,343 — **the tag stream is byte-identical to the dump on all 25 lines, including every `{FFFE}`**,
+the first unit in the project to ship with zero re-flow.
+
+`ティミー` → `Ｔｉｍｍｙ` (§11.1) and `リッジ` → `Ｒｉｄｇｅ` (§1) are used unchanged; the stale §9
+`ティミー` row is struck in this commit.
+
+### 23.1 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 辺境 | ｆｒｏｎｔｉｅｒ | **Ruled 2026-09-08, PR #6 review.** Three occurrences here (`辺境の警備にきてる`, `辺境の警備兵`, `こんな辺境で`), one word in all three. ⚠️ Shipped `chunk_000.txt` line 4 renders the *phrase* `こんな辺境` — **twice** — as `ｓｕｃｈ　ａ　ｒｅｍｏｔｅ　ｐｌａｃｅ`. That is **recorded, not re-cut**, on the §20.4 precedent exactly: the Japanese *messages* differ, so CLAUDE.md §3's identical-JP rule is not engaged. Two further reasons the re-cut would be wrong rather than merely unnecessary — **no single word serves both** (`辺境の警備兵` cannot become *remote-place guards*, so "one word project-wide" could only mean editing chunk 0), and chunk 0 has **27 bytes of slack** (`FLAGS.md` §G1) with §18.3 recording that the next correction there needs a full re-cut |
+| 警備兵 | ｇｕａｒｄｓ | `辺境の警備兵` → `Ｆｒｏｎｔｉｅｒ　ｇｕａｒｄｓ`. Kept **distinct** from §2's 守備兵 → garrison / garrison men — different source word, and the contempt in `なんて` wants the plainer noun |
+| ガラクタ (as an insult) | ｊｕｎｋ | `ガラクタ部隊` → `ｊｕｎｋ　ｓｑｕａｄ`. A **fourth** contempt word, held apart from ゴミ → rubbish (§14.4), 雑草ども → weeds (§11.5) and 穀潰し → freeloaders (§2) |
+| 解隊 | ｄｉｓｂａｎｄ | 4 occurrences, one word in all four |
+| 気が早い | ｒｕｓｈ　ａｈｅａｄ | `気が早いな、ティミーは。` → `ｙｏｕ　ｒｕｓｈ　ａｈｅａｄ，　Ｔｉｍｍｙ．` |
+| 群れ (of dragons) | ｈｏｒｄｅ | *Flock* rejected (bird-like), *swarm* rejected (insect-like) |
+| 見殺しにする | ｌｅｔ　(someone)　ｄｉｅ | `見殺しにするつもり！？` → `Ｗｉｌｌ　ｙｏｕ　ｌｅｔ　ｈｅｒ　ｄｉｅ！？` |
+| ボロを出す | ｓｌｉｐ　ｕｐ | |
+| 食いっぱぐれる | ｇｏ　ｈｕｎｇｒｙ | He loses his meal ticket, not one meal |
+| なかなかどうして | `Ｂｕｔ　ｗｈａｔ　ｄｏ　ｙｏｕ　ｋｎｏｗ，` | The "better than I was told" pivot, not a plain *quite* |
+| 私の相手じゃない | ｂｅｎｅａｔｈ　ｍｅ | 私の相手 is *worth my time*; `ｎｏ　ｍａｔｃｈ　ｆｏｒ　ｍｅ` will not share the row with the `けど` clause |
+| きっての | the superlative — `〜’ｓ　ｗｏｒｓｔ` / `〜’ｓ　ｆｉｎｅｓｔ`, polarity from the noun | `宮廷軍きってのガラクタ部隊` → `Ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ’ｓ　ｗｏｒｓｔ　ｊｕｎｋ　ｓｑｕａｄ`. Recurs on Ridge in chunk 6 (`カーラインきっての弓使い`), where the noun is complimentary |
+
+### 23.2 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| あーあ | `Ａａｈ，` | Dejected sigh, twice in this chunk, byte-identical in both. **Distinct** from あ、 → `Ａｈ，`, ほう → `Ｏｈ`, おお → `Ｏｈ！`, おや → `Ｏｈ？` (§6, §18.2). The doubled `ａ` tracks the long vowel, as §11.5 tracks laugh beats |
+| そうそう。 | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | Casual agreement. ⚠️ **`pending/chunk_005.txt` line 32 renders the byte-identical `そうそう。` as `Ｑｕｉｔｅ　ｓｏ．`** — verified. Accepted at review because `pending/` does not ship and the speaker here is Ridge, whose §7 register has no *Quite so*. **But chunk 4 has now shipped, so this form binds**: chunk 5's re-cut must adopt it or it *creates* a §3 violation the day the slot patch lands. Measured for that re-cut: 9 → 13 columns, **+8 bytes** |
+| 何だ！？ | `Ｗｈａｔ　ｉｓ　ｉｔ！？` | A fifth member of the 何 family, all held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), and chunk 0's shipped `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` and `こ、今度は何だ！？` → `Ｎ‐ｎｏｗ　ｗｈａｔ！？` (both carry the source's stutter) |
+| 気にしない、気にしない。 | `Ｎｅｖｅｒ　ｍｉｎｄ，　ｎｅｖｅｒ　ｍｉｎｄ．` | The source's doubling is kept; 23 columns exactly. Same treatment as `早く、早く！！` → `Ｑｕｉｃｋ，　ｑｕｉｃｋ！！` in this chunk |
+| 〜って (quotative, echoing back) | the echoed clause in `“　”` | `どうする？って` → `“Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？”`. The quotes carry the particle; `“ ”` is §3.1-legal and already the `『…』` form (§3) |
+
+### 23.3 Ruling — `しかし` → `Ｈｏｗｅｖｅｒ，`
+
+**Chunk 4 carries zero `しかし`.** This is ruled here so PRs #7 and #5 inherit a decision instead of
+each inventing one, exactly as §18 bound wave 1's later reviewers.
+
+| Japanese | English | Status |
+|---|---|---|
+| でも | `Ｂｕｔ，` | shipped — `chunk_007` line 19, and chunk 4 line 10. `Ｂｕｔ` is taken |
+| それにしても | `Ｓｔｉｌｌ，` | fixed at §19.1; shipped `chunk_001` ×2, `chunk_002` ×1. `Ｓｔｉｌｌ` is taken |
+| **しかし / しかしながら** | **`Ｈｏｗｅｖｅｒ，`** | **new, this ruling** |
+
+Every collapse the glossary already records — ふっ/フンッ → `Ｈｍｐｈ`, 鬼/オーガ → *ogre*,
+む/ん → `Ｈｍ` — is a **same-meaning, different-spelling** pair. `しかし` (plain adversative) and
+`それにしても` (§19.1's own gloss: "pivot to a new thought") are **different connectives**, so
+collapsing them is not that move and must not be recorded as one. `Ｈｏｗｅｖｅｒ，` is free and
+suits the corpus, which skews formal: `しかし、残念ながら、` (ch.6), `しかしながら、` (ch.9 — the
+explicitly formal variant), `しかし、リムル様・・・` (ch.30). **`しかしながら` takes the same
+English** — *that* one is a same-meaning collapse of the documented kind.
+
+**Lines this affects (§4.3).** One: **`tl/battle/chunk_003.txt` line 5**,
+`しかし、敵は` → `Ｓｔｉｌｌ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` must become
+`Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` — measured **19 → 21 columns, +4 bytes**, chunk 3 slack
+3,591 → 3,587. Not applied at review: `HANDOFF.md` queues `chunk_003:5` in the wave-3
+`corrections/audit-wave1` unit, and the reviewer's remit is this file, `FLAGS.md`,
+`pending/README.md` and `HANDOFF.md` — not `tl/`.
+
+**Chunk 0's `はっ、しかし・・・` → `Ｓｉｒ，　ｂｕｔ．．．` is NOT an outlier and is not to be touched.**
+It is a phrase-level rendering of a subordinate's interrupted protest, not a lexical choice about
+`しかし` — the same distinction §20.4 draws, and the same one that leaves chunk 0's `こんな辺境`
+alone in §23.1. Chunk 0's 27 bytes stay put.
+
+### 23.4 Ruling — the `助かった` family
+
+| Japanese | English | Note |
+|---|---|---|
+| 助かった (of one's own condition) | `Ｉ　ａｍ　ｓａｖｅｄ` / `Ｗｅ　ａｒｅ　ｓａｖｅｄ` | **The default.** `ありがとう、助かったわ。` → `Ｔｈａｎｋ　ｙｏｕ，　Ｉ　ａｍ　ｓａｖｅｄ．` (chunk 4), `助かったノロ、` → `Ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ，` (chunk 3, shipped) |
+| 助かった (turning to address the rescuer) | `Ｙｏｕ　ｓａｖｅｄ　…` | **Only where the source turns.** `助かったぜ、あんちゃん！` → `Ｙｏｕ　ｓａｖｅｄ　ｍｅ，　ｌａｄ！` (chunk 12, shipped) — the vocative `あんちゃん` plus `ぜ` is what licenses the active |
+
+Every source string in the family genuinely differs, so CLAUDE.md §3 is not engaged and nothing
+was forced. The rule exists because the family is about to spread (chunks 1, 3, 8, 12, 15, 23, 43).
+
+⚠️ **One shipped line is already the wrong side of it, and neither wave-1 audit caught it.**
+`tl/battle/chunk_001.txt` line 14 renders `いやいや、助かったノロ。` as
+`ｙｏｕ　ｓａｖｅｄ　ｕｓ，　ｎｙｏｒｏ．` — active, with no vocative and no second-person address in
+the source, while `chunk_003.txt` line 7 renders the near-identical `助かったノロ、` as
+`Ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ，`. Two hobbits thanking the party, in strings that differ only
+in their final mark — and §5's mechanism says the stop is the *only* thing that should differ.
+Correction: `ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ．`, measured **20 → 20 columns, 0 bytes**. Added to
+the wave-3 corrections unit; not applied at review, same reason as §23.3.
+
+### 23.5 Register
+
+| Who | Register |
+|---|---|
+| Timmy (portrait 0007) | Young and complaining; contractions, `Ａａｈ，`, open questions rather than statements |
+| Ridge (portrait 0006) | §7 unchanged — blunt, needling, casual. Chunk 4 is his fullest scene so far and confirms it: `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `ｔｈｅｎ　ｓｏ　ｂｅ　ｉｔ．`, `Ｌｅｔ’ｓ　ｔａｋｅ　ｉｔ　ｅａｓｙ．` |
+| The rescued girl (portrait 0004, unnamed) | Warm, direct, **no contractions** — written to §14.6's Cavia register across all 13 of her segments, which is also the safe reading if she is someone else. Nothing names her, so **no entry is proposed**; see `FLAGS.md` §K3 |
+| The enemy girl (portrait 0005, unnamed) | Smug and bored; contractions (`Ｉ’ｌｌ`), contempt carried by `ｂｅｎｅａｔｈ　ｍｅ` and `Ｗｅａｋ，　ｙｅｔ　ｓｕｃｈ　ａｉｒｓ．`. Her `姉さん` is read as a literal sister — she cries it again as she dies — and rendered `Ｍｙ　ｓｉｓｔｅｒ` / `Ｓｉｓｔｅｒ，` |
+| The line-21 watcher (portrait 0006) | Rough and self-amused. **Portrait 06 is Ridge's** — same id as line 3, differing only in the channel byte — and that agrees with §9's wave-2 seed, in which `リオン`/`Ｌｅｏｎ` sent Ridge and wants to stay anonymous. The English commits to neither reading; see `FLAGS.md` §K4 |
+
+---
+
+## 24. Added by chunk 006 (PR #7, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_006.txt` — chapter 5 proper, five scenes: the orcs at Bernard's
+church; Ridge attaching himself to the squad at Leon's request; Cavia reaching the church only to
+learn Nacol has been moved to Capella; Fernando arriving to take her home, and her flight with the
+9th Army; and the Black Knights overhearing where she is bound and carrying it to Kazarov.
+5,899 / 8,192 bytes, slack 2,293 — 151 rows, widest 23, none at 24. Merged at round 2.
+
+`しかし、残念ながら、` → `Ｈｏｗｅｖｅｒ，` is the first use of §23.3, and
+`カーラインきっての弓使い` → `Ｃａｒｌｉｎｅ’ｓ　ｆｉｎｅｓｔ　ｂｏｗｍａｎ` the first use of §23.1's
+`きっての`, exactly as that entry anticipated for this chunk.
+
+### 24.1 People and places — five promotions out of §9 (wave-2 seeds)
+
+`リオン` → `Ｌｅｏｎ` is promoted to **§1**, not here, because it replaces that table's stale
+placeholder row and discharges §10.1.
+
+| Japanese | English | Note |
+|---|---|---|
+| カペラ / カペラの村 | Ｃａｐｅｌｌａ / Ｃａｐｅｌｌａ　ｖｉｌｌａｇｅ | **Promoted from §9.** The village south of Farina where Nacol is convalescing. 8 columns. Alt *Kapera* rejected — Capella is a star name and reads as European |
+| カザロフ | Ｋａｚａｒｏｖ | **Promoted from §9.** `カザロフ隊長` → `Ｃａｐｔａｉｎ　Ｋａｚａｒｏｖ`, the Imperial officer the Black Knights report to. 8 columns; 隊長 → captain per §2 |
+| マーティン | Ｍａｒｔｉｎ | **Promoted from §9.** A Black Knight, ordered to pull back beside Percival. 6 columns |
+| パーシバル | Ｐｅｒｃｉｖａｌ | **Promoted from §9.** The other Black Knight. 9 columns |
+| 神父様 (vocative) | Ｆａｔｈｅｒ！ | Cavia calling into the church. Follows ナコール様 → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` below; §1's bare 神父 → *priest* is unchanged and still the noun form |
+| ナコール様 | Ｆａｔｈｅｒ　Ｎａｃｏｌ | **Ruled 2026-09-08, PR #7 review.** 12 columns. 様 rendered as the English title of the man's station, exactly as 様 → **Lady** / **Lord** already does (リムル様, ヘルファー様, フィリス様, キャビア様 — §1, §14.1). `Ｌｏｒｄ　Ｎａｃｏｌ` is wrong in English for a cleric, and this chunk establishes the station: `先代の神父様です`. **The source's own split is preserved** — the priest and a 9th Army member say ナコール様 (→ `Ｆａｔｈｅｒ　Ｎａｃｏｌ`), Cavia says the bare ナコール (→ `Ｎａｃｏｌ`), which is also what shipped `chunk_007.txt` has from her. ⚠️ This is a **様** entry and stays clear of §21.2's `〜さん` rule, which drops the honorific — the two patterns are separate and must not be merged |
+
+### 24.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 弓使い | ｂｏｗｍａｎ | **Promoted from §9, taking the seed's own alternative rather than its proposal.** Ratified at review. `archer` is already spent on 弓兵, and 弓の戦士 → *bow warrior* (§4); reusing it would collapse three source words into two, against the practice of §17.2 and §20.3. The §17.1 species test splits them: 弓兵 names *what a unit is*, a class label in the roster, while both occurrences here are an epithet on a named individual (`王国一の弓使い` is Ridge's own boast, `カーラインきっての弓使い` is Sykes recalling his renown). Width does not decide it — both are 6 columns. §14.3's 使い → *tamer* does not apply (creature handlers only) |
+| 王国一の | Ｋｉｎｇｄｏｍ’ｓ　ｂｅｓｔ | Ridge's boast, 22 columns with `ｂｏｗｍａｎ，`. **Kept distinct from §23.1's きっての → `〜’ｓ　ｆｉｎｅｓｔ`**, which renders `カーラインきっての` in the very same chunk. Two source superlatives, two English superlatives, both on `ｂｏｗｍａｎ`; collapsing them would lose a distinction the source draws nine segments apart |
+| おっさん | ｇｅｅｚｅｒ | 6 columns. Mildly dismissive “middle-aged bloke”. Twice, byte-identical: `匿名希望のリオンっておっさん` and `サイクスのおっさんか。` |
+| 先代の神父 | ｍｙ　ｐｒｅｄｅｃｅｓｓｏｒ | 21 columns. The current priest on Nacol. 先代 is “the previous holder of this office”; the office was named one row earlier, so restating 神父 is the redundancy §2.1 step 3 covers |
+| 世話役 | ｔｈｅ　ｏｎｅ　ｗｈｏ　ｃａｒｅｄ　ｆｏｒ　ｈｅｒ | Nacol's role to the child Cavia. Kept **distinct** from 嘘ツキ先生 → *the lying teacher* (§14.4) — same man, different source word |
+| 恥さらしの (attributive) | ｓｈａｍｅｆｕｌ | 8 columns. **Does not change** §15.2's 恥さらし → `ａ　ｄｉｓｇｒａｃｅ`, which renders the bare noun standing alone as a fragment. Two forms of one word, as 石化能力 → *petrifying power* / *petrification* already is (§4). `ｄｉｓｇｒａｃｅｆｕｌ` is 12 and will not share the row with `Ｔｈｅ` and `９ｔｈ` |
+| 札付きの悪党 | ｍａｒｋｅｄ　ｖｉｌｌａｉｎｓ | 札付き is literally “with a tag on it” — *marked* keeps the image where *notorious* (10 columns) does not fit the row |
+| 無鉄砲な | ｒａｓｈ | 4 columns. `ｒｅｃｋｌｅｓｓ` (8) puts the row at 26 beside `Ｐｒｉｎｃｅｓｓ` |
+| 増援 | ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ | Tutorial box, `敵の増援が　現れました。` **A different source word from 援軍** (§2) and from 救援 (§20.3); §2's “use *aid* only where 24 columns will not take the full word” governs 援軍 and does not reach here. A second row was the cheaper fix than a shorter word |
+| 報奨金 | ｒｅｗａｒｄ | **Promoted from §9** — rendered here (`報奨金　どかーんがぁ・・`) before script 991 reached a batch |
+| ヤバい (mild) | ｄｉｃｅｙ | Ridge on the Black Knights, `ちょっとヤバいぜ` → `ｉｓ　ａ　ｂｉｔ　ｄｉｃｅｙ` |
+| とてつもなくヤバい | ｔｒｕｌｙ　ａｗｆｕｌ | The same adjective under a different intensifier, on a different speaker. Deliberately not collapsed with *dicey* — the source escalates and the English follows |
+
+### 24.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| よし、 | Ｒｉｇｈｔ， | ⚠️ **Fixed here 2026-09-08 (PR #7 review) — it had never been in this glossary despite six shipped rows.** Byte-identical in `chunk_010` L14, `chunk_011` L9/L10/L11 and twice in chunk 6. Shares its English with §6's 分かった → `Ｒｉｇｈｔ，`, deliberately, on the ふっ/フンッ → `Ｈｍｐｈ` principle. See §24.5 for chunk 0's variant, which is a **different row** and is not re-cut |
+| くくく | Ｋｕｋｕｋｕ， | Three kana beats → three `ku`, per §14.5's クックックッ → `Ｋｕｋｕｋｕ`. Same laugh, hiragana spelling; one English form, as 鬼 / オーガ → *ogre* already does (§17.2) |
+| あ〜ん | Ａａａｈ， | The drawn-out wail of a man watching his reward evaporate. The `〜` lengthener becomes a repeated vowel, per the kana-beat convention (§11.5, §14.5). **Distinct** from §23.2's あーあ → `Ａａｈ，` and §6's あ、 → `Ａｈ，` — three source strings, three lengths |
+| ちょっと、(protest) | Ｈｏｌｄ　ｏｎ， | An interruption. Kept **distinct** from this chunk's own すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` — two source strings, one an interruption and one an apology |
+| ・・・聞いたな？ | ．．．Ｙｏｕ　ｈｅａｒｄ　ｔｈａｔ？ | **Distinct** from §6's 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` and §21.2's あれ・・・？ → `Ｗｈａｔ．．．？` |
+| ま、待て！ | Ｗ，　Ｗａｉｔ！ | 8 columns. **Ruled 2026-09-08, PR #7 review.** The comma form, following shipped `chunk_007`'s `バ、バカな・・・` → `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` (§19.1). ⚠️ `pending/chunk_043.txt` line 14 renders the byte-identical string as `Ｗ‐ｗａｉｔ！`; it is parked, so §3 is not engaged today, and the re-cut is queued in `pending/README.md`. Chunk 0's `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` (§23.2) is a **different source string** and stays as it is |
+| しかたねえ。 | Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ． | Twice here, byte-identical. **The same words as `pending/chunk_005`'s 仕方ない、 → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ，`** — which chunk 6 also carries, byte-identical — with the stop following the source, `．` against `，`. That is §5's stated mechanism for a fixed form under punctuation that is not its own, not a divergence |
+
+### 24.4 Ruling — §18.2's four-way punctuation split does not hold, and `おお、` collides with `ほう、`
+
+**§18.2 is corrected. It is right about the word and wrong about the mechanism.**
+
+§18.2 records that four source strings are held apart “by their punctuation, not by four different
+words”: ほう / ほお → `Ｏｈ` (with `．．．` or `，`), おや → `Ｏｈ？`, **おお → `Ｏｈ！`**,
+あ、 → `Ａｈ，`. Counted across both dumps at this review, that is not what the corpus contains:
+
+| Source | battle | script | total | Takes |
+|---|---|---|---|---|
+| `おお、` | 6 | 34 | **40** | `Ｏｈ，` |
+| `おお！` | 3 | 4 | 7 | `Ｏｈ！` |
+| `ほう、` / `ほお、` | 3 | 2 | **5** | `Ｏｈ，` |
+| `おや` | 6 | 23 | 29 | `Ｏｈ？` |
+
+**`おお、` is the majority form of おお by 40 to 7, and it renders `Ｏｈ，` — the same string `ほう、`
+renders.** §18.2's split therefore separates おや and あ、 cleanly and does **not** separate おお
+from ほう at all; it only appeared to because chunk 1's single instance happened to be `おお！`.
+
+**Resolution: the collapse is real, wider than §18.2 admitted, and is accepted as deliberate** —
+おお and ほう / ほお are one English word, `Ｏｈ`, plus the source's own punctuation, on exactly the
+principle §6 already applies to ふっ / フンッ → `Ｈｍｐｈ` and §17.2 to 鬼 / オーガ → *ogre*. The
+two alternatives were both already rejected on their merits: §10.6 rejected `Ｈｏｈ` for ほう and
+§18.2 rejected `Ｏｈｏ` for おお, and reopening either would restyle shipped work in three files.
+
+**Lines this affects (§4.3): none.** Every shipped instance already renders `Ｏｈ` plus the source's
+stop — chunk 0 line 14 `ほう・・・。` → `Ｏｈ．．．．`, chunk 35 line 13 `Ｏｈ，`, chunk 1's `おお！`
+→ `Ｏｈ！`, chunk 6's `おお、キャビア王女！！` → `Ｏｈ，　Ｐｒｉｎｃｅｓｓ　Ｃａｖｉａ！！`. **Nothing is
+re-cut; what changes is the sentence in §18.2 that told future translators the punctuation was
+keeping おお and ほう apart, when it is not.**
+
+### 24.5 Recorded, not re-cut — two row-level variations that §3 does not reach
+
+Both are the shape §20.4 (`帝国軍`) and §23.1 (`辺境`) already settled: **CLAUDE.md §3's
+identical-JP rule engages on the message, not on the row**, because propagation and the dedupe
+work on whole messages.
+
+| Where | Japanese | The two renderings | Why it stands |
+|---|---|---|---|
+| chunk 6, lines 12 and 20 | `ファリーナの南、` | `ａｎｄ　ｓｏｕｔｈ　ｏｆ　Ｆａｒｉｎａ，` / `Ｓｏｕｔｈ　ｏｆ　Ｆａｒｉｎａ，` | Byte-identical **rows** in two entirely different messages. Line 12 is the priest's one continuous `病を患わされて、…静養しておられます。` sentence, where the て-form requires the English conjunction; line 20 is the Black Knight's bare fragment. Dropping the `ａｎｄ` would make line 12 ungrammatical, which §2 forbids |
+| `chunk_000.txt` line 3 | `よし、` | `Ｇｏｏｄ，　{FC00}{=0000}．` there / `Ｒｉｇｈｔ，` in chunks 6, 10, 11 | Chunk 0's **row is `よし、{FC00}{=0000}。`** — the name insert is inside it, so it is not the same row and not the same message. Chunk 0 also has 27 bytes of slack (`FLAGS.md` §G1) and §18.3 records that its next correction needs a full re-cut. §24.3 fixes the bare form so nothing drifts forward |
+
+⚠️ Note for future duplicate checks: a `さあ、` or `よし、` immediately followed by `{FC00}{=0000}`
+is **not** the bare segment. `chunk_003.txt` line 4 (`さあ、{FC00}{=0000}、` →
+`Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`) and `chunk_000.txt` line 3 both look like bare-segment
+divergences to a checker that splits on tags, and neither is one. The byte-identical bare `さあ、`
+is `chunk_033.txt` line 20, which ships `Ｎｏｗ，` — the form chunk 6 correctly matches.
+
+### 24.6 Register
+
+| Who | Register |
+|---|---|
+| The Bernard's-church priest | Formal, humble, deferential, **no contractions** — `Ｈｅ　ｉｓ　ｍｙ　ｐｒｅｄｅｃｅｓｓｏｒ．`, `Ｉ　ｈａｄ　ｈｅａｒｄ　ｙｏｕ　ｒａｎ　ａｗａｙ`, `Ｈｏｗｅｖｅｒ，　Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ`. Matches Nacol's own register in chunk 7 |
+| Cavia | §14.6 unchanged and held across every one of her segments — `Ｉ　ｗｉｌｌ　ｎｏｔ！`, `Ｗｈｅｒｅ　ｉｓ　Ｎａｃｏｌ？`, `Ｍｙ　ｅｒｒａｎｄ　ｈｅｒｅ　ｉｓ　ｎｏｔ　ｆｉｎｉｓｈｅｄ　ｙｅｔ．`, `Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．`. No contraction anywhere |
+| Fernando | §20.5 unchanged, nine segments, **no contraction anywhere** — `Ｉ　ｈａｖｅ　ｓｏｕｇｈｔ　ｙｏｕ．`, `Ｙｏｕ　ｍｕｓｔ　ｎｏｔ　ｋｅｅｐ　ｃｏｍｐａｎｙ　ｗｉｔｈ　ｓｕｃｈ　ｍｅｎ．`, `Ｓｏ　ｉｔ　ｉｓ　ｙｏｕ　ｍｅｎ　ｗｈｏ`. His `さ、` → `Ｃｏｍｅ，` and `さあ、` → `Ｎｏｗ，` are two source strings kept apart |
+| Ridge and Sykes | §7 and §21.4 unchanged — blunt, needling, contractions throughout: `Ｈｅｙ，　Ｓｙｋｅｓ．`, `Ｉｔ’ｓ　ｂｅｅｎ　ａ　ｗｈｉｌｅ．`, `Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．` |
+| The Black Knights (portraits 0009, 000A, 000C) | ⚠️ **Not the ch.7 commander of §14.6, and they read differently.** These are the rank and file — `だぜ` / `ぞ` / `じゃねえか` — so they take contractions (`ｌｅｔ’ｓ　ｒｅｐｏｒｔ`, `ｔｈｅｙ’ｒｅ`, `ｗｅ’ｒｅ　ｐｕｌｌｉｎｇ　ｂａｃｋ`) where the commander takes none. The `くくく` speaker keeps the flatness: `ｗｈａｔ　ａ　ｒａｓｈ　Ｐｒｉｎｃｅｓｓ．`, `ｓｏ　ｋｉｎｄ　Ｉ　ｃｏｕｌｄ　ｗｅｅｐ．` |
+| Tutorial boxes (`{=FA1000300030}`, lines 6, 14, 17, 18) | §7 unchanged — plain instructional second person, no personality, and the passive of §21.3's shipped `村が襲われました。` → `Ａ　ｖｉｌｌａｇｅ　ｗａｓ　ａｔｔａｃｋｅｄ．` |
+
+---
+
+## 25. Added by chunk 009 (PR #5, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_009.txt` — chapter 9, the Empire's machine-soldier factory: Commander
+Zephyr Krippen orders the place burned over his officer's objection that villagers are still
+inside, then leaves with Guilford for Doctor Crimea in Westbury; the officer left in charge rallies
+the garrison, boasts of the machine soldier and dies crying `ディール帝国、万歳！！！`; afterwards
+the 9th Army takes stock, Seneca finds his father is not there, and two enslaved workers hand over
+items. 3,973 / 8,192 bytes, slack 4,219 — 95 rows, widest 23, **none at 24**. Merged at round 2.
+
+`しかし` and `しかしながら` → `Ｈｏｗｅｖｅｒ，` is §23.3's second and third use; `クッ` → `Ｔｃｈ`
+(§11.5), `フン` → `Ｈｍｐｈ` (§6), `はっ` → `Ｓｉｒ` (§6), `行くぞ` → `Ｍｏｖｅ　ｏｕｔ` (§6) and
+`よいか、` → `Ｌｉｓｔｅｎ　ｗｅｌｌ，` (§20.3) are used unchanged. The stolen-item message is copied
+byte-for-byte from §21.3, three times.
+
+### 25.1 People, places and ranks — two promotions out of §9, and one correction
+
+`クリミア` is corrected **in §1**, not here, because it moves a fixed row out of §2.
+
+| Japanese | English | Note |
+|---|---|---|
+| ディール帝国 | the `Ｄｉｅｌ` Empire | **Promoted from §9 (wave-2 seeds), used exactly as seeded.** 15 columns. The Empire's proper name, revealed for the first time in `ディール帝国、万歳！！！`. 2 battle occurrences, 0 script; the other is `ディール帝国紅の騎士団の将`, which agrees. Does **not** replace 帝国 → the Empire (§2) — that stays the common noun, and this chunk uses both. One voicing from 魔神ティール → `Ｔｙｒ` (§22.1) and deliberately spelled to stay visibly distinct from it |
+| ワーウィック | `Ｗａｒｗｉｃｋ` | **Promoted from §9, used exactly as seeded.** 7 columns. A **place**, not a person: 2 battle + 6 script occurrences, all locational — `ワーウィックの要塞`, `ワーウィックの大要塞`, `ワーウィック攻略の拠点`, `ワーウィックという一大拠点`, `ワーウィック遠征` |
+| クリミア博士 | `Ｄｏｃｔｏｒ　Ｃｒｉｍｅａ` | 13 columns. Built on §1's corrected `Ｃｒｉｍｅａ` row; only the title is new |
+| 博士 | Ｄｏｃｔｏｒ | New rank word, spelled out like `Ｃｏｍｍａｎｄｅｒ` / `Ｃａｐｔａｉｎ` / `Ｂｉｓｈｏｐ` and never abbreviated `Ｄｒ．` — `．` is the full stop in this charset, so an abbreviating point would read as one |
+| クリッペン司令官 (address) | `Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ．` | **18** columns (the PR body's 19 is one over — remeasured here). The direct-address form of §1's `Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ`, built like chunk 2's `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ`. 司令官 → Commander already stands (§11.2, and `batch_002`'s shipped `Ｃｏｍｍａｎｄｅｒ　ｏｆ　ｔｈｅ　Ｅｍｐｉｒｅ`) |
+| 帝国兵 | `Ｉｍｐｅｒｉａｌ　ｓｏｌｄｉｅｒ` | 16 columns. Extends §20.4's default `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` for 帝国軍. Kept **distinct** from 帝国 → the Empire (§2); all three occur in this chunk |
+| 全軍 | `Ａｌｌ　ｕｎｉｔｓ` | 9 columns. The form shipped in `chunk_007.txt` (`全軍　迎えうてッ！！` → `Ａｌｌ　ｕｎｉｔｓ，　ｉｎｔｅｒｃｅｐｔ！！`); recorded here because chunk 9 is the second use and it must not drift |
+| 戦闘態勢に入れ | `ｔａｋｅ　ｂａｔｔｌｅ　ｓｔａｔｉｏｎｓ` | **20** columns (the PR body's 22 is two over — remeasured here). The military English for entering combat readiness; it still will not share a row with 全軍, which is why line 4 breaks mid-phrase |
+| 化けモン | monster | Colloquial 化け物. `トカゲの化けモン` → *a lizard monster*, keeping §2's トカゲ → lizard |
+| えじき | prey | `この兵器のえじきになりたいか` → *want … to become prey for this weapon* |
+| 一片たりとも | `ｎｏｔ　ｏｎｅ　ｓｃｒａｐ` | 13 columns. Emphatic “not one fragment” |
+| 逃げ遅れた者 | `ｔｈｏｓｅ　ｌｅｆｔ　ｂｅｈｉｎｄ` | 17 columns, a §2.1 step 4 shortening. The literal `ｔｈｏｓｅ　ｔｏｏ　ｌａｔｅ　ｔｏ　ｆｌｅｅ！！` measures **exactly 24** columns on a page already at the 4-row wall — verified at review |
+| 浮かない顔して | `Ｙｏｕ　ｌｏｏｋ　ｄｏｗｎｃａｓｔ．` | **18** columns (the PR body's 19 is one over — remeasured here) |
+| 気が抜けない | `ｃａｎ’ｔ　ｒｅｌａｘ` | Kept **distinct** from 油断は出来ない → `ｃａｎ’ｔ　ｌｅｔ　ｏｕｒ　ｇｕａｒｄ　ｄｏｗｎ`, which is two speaker turns earlier in the same scene — the source draws the distinction itself, so the English must |
+| 甘くない (of an institution) | `ｈａｒｄｅｒ　ｔｈａｎ　…　ｔｈｉｎｋ` | 甘い of an institution is *soft / a soft touch*, whose exact antonym is *hard*, so a negated comparison and a positive one carry the same proposition — `softness < expected` and `hardness > expected` are one statement. **Ruled 2026-09-08, PR #5 round 2**: every literal split of `帝国は君たちが思うほど甘くない` either ends a row on `ａｓ` / `ｓｏ` or measures exactly 24, on a page at the 4-row wall, so the comparative is the only defect-free rendering. −4 bytes |
+
+### 25.2 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| それでも | `Ｅｖｅｎ　ｓｏ，` | ⚠️ **Fixed here — it was missing from the glossary and from the PR's own additions table.** A **fourth** adversative, held apart from the three already fixed: でも → `Ｂｕｔ，`, それにしても → `Ｓｔｉｌｌ，` (§19.1), しかし / しかしながら → `Ｈｏｗｅｖｅｒ，` (§23.3). `Ｅｖｅｎ　ｓｏ` occurs nowhere else in `tl/`, so the form is free. `batch_002`'s `お前はそれでも、` is a **different source string** and is unaffected |
+| 万歳！！！ | `Ｌｏｎｇ　ｌｉｖｅ　．．．！！！` | The salute, not a transliterated *banzai*. Punctuation follows the source per §5's word/punctuation rule |
+| はっ・・・。 | `Ｓｉｒ．．．．` | §6's はっ → `Ｓｉｒ` carrying the source's own four stops — Guilford's flat assent. Distinct **in effect** from Albert's `Ｓｉｒ！` in chunk 2: one word, different punctuation, which is §5's mechanism, not a second entry |
+| いや (deflection) | `Ｎｏ` + the source's punctuation | Seneca brushing a question aside. **Distinct** from §6's ああ → `Ｙｅａｈ` (assent) and はっ → `Ｓｉｒ` (military assent) |
+| そのとおりだ。 | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | 13 columns. Firm agreement with a stated proposition. ⚠️ **Shares its English with §23.2's そうそう。 — ruled deliberate, see §25.3.** Held apart from 分かった / よし、 → `Ｒｉｇｈｔ，` (§6, §24.3), わかりました。 → `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2) and まったくだっ！ → `Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！` (§20.3) |
+| そうね。 | `Ｔｈａｔ’ｓ　ｔｒｕｅ．` | 12 columns. The female companion's softer agreement, one turn before そのとおりだ in the same scene. **Deliberately not collapsed into it** — this is the co-occurrence case, and it is exactly why §25.3 can leave the other one alone |
+| ウワサ (`〜ってウワサだ`) | `ｔｈｅｙ　ｓａｙ` | The construction, not the noun — `襲われたってウワサだ` → *they say … got them*. `ｒｕｍｏｕｒ　ｉｓ　ａ　ｌｉｚａｒｄ　ｂｅａｓｔ` is 24 columns on a page at the 4-row wall. If a later unit needs the noun, *rumour* is still free |
+
+### 25.3 Ruling — `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` renders two source strings, and that is accepted
+
+`そうそう。` → `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` is fixed at §23.2 and shipped in `chunk_004.txt`; chunk 9
+renders `そのとおりだ。` the same way. **Not a CLAUDE.md §3 violation** — §3 binds identical
+Japanese. The question is whether house practice should split them anyway, and the answer is no.
+
+**What decides it is a corpus fact, counted at this review across both dumps.** `そのとおり` occurs
+**once in the entire project** — chunk 9, this line. `そうそう` occurs in battle chunks 4, 5, 17 and
+43 and in 4 script lines. **No chunk and no bank contains both.** The collision can never be visible
+to a player in one scene, and no future unit is forced into a re-cut by it.
+
+With that, §24.3 governs, and it was ratified one PR earlier: `よし、` and `分かった` are two
+genuinely different assent words that deliberately share `Ｒｉｇｈｔ，`, on the ふっ / フンッ →
+`Ｈｍｐｈ` principle. §23.3's prohibition does **not** reach here — that ruling was about
+*connectives*, and it turned on `Ｓｔｉｌｌ，` already being spent on `それにしても`, so collapsing
+would have destroyed a live distinction. Nothing is spent here.
+
+The practice of holding near-synonyms apart (§20.3, §21.2, §23.2) is stated for strings that
+co-occur **in one scene**. Chunk 9 contains that case too, one turn away — `そのとおりだ` against
+`そうね` — and it **is** held apart, as `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` / `Ｔｈａｔ’ｓ　ｔｒｕｅ．`.
+
+**Lines this affects: none.** Reserve forms, both verified free across the whole corpus, if a later
+chunk ever puts the two strings in one scene: **`Ｅｘａｃｔｌｙ．` (8 columns)** or
+`Ｑｕｉｔｅ　ｒｉｇｈｔ．` (12). Prefer `Ｅｘａｃｔｌｙ．` — the speaker is a 9th Army companion who
+contracts freely, `Ｑｕｉｔｅ　…` reads stiffer than his register, and it would sit awkwardly beside
+`pending/chunk_005`'s `Ｑｕｉｔｅ　ｓｏ．`, which §23.2 is already retiring.
+
+### 25.4 Ruling — `Ｆａｔｈｅｒ` carries both the priest and the parent, and English wants it to
+
+§24.1 fixes `神父様` → `Ｆａｔｈｅｒ！` and `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` for the cleric.
+Chunk 9 renders Seneca's `父さん・・・・` as `Ｆａｔｈｅｒ．．．．`, his actual parent. Different
+source words, different messages, different scenes — and English has one word for both senses,
+disambiguated by context in every instance (Seneca alone in a factory naming his missing parent;
+Cavia calling into a church).
+
+**Chunk 9 introduces nothing.** The parent sense is already the project's form, drafted
+independently three times before this unit: `pending/chunk_005.txt` line 13 renders `お父様・・・・`
+as `Ｆａｔｈｅｒ．．．．` — byte-identical to chunk 9's row — and `pending/chunk_043_abridged.txt`
+lines 41–42 render a parent's notes as `Ｆａｔｈｅｒ’ｓ　ｎｏｔｅｓ　ｍｅｎｔｉｏｎ`. Splitting would
+mean inventing a non-English form for one of the two senses.
+
+⚠️ **Noted forward, not acted on.** `父さん` and `お父様` are now two source words sharing
+`Ｆａｔｈｅｒ` — legitimate under §17.2's 鬼 / オーガ → *ogre*, but `お父様` is the formal one and is
+the row to move if a chunk ever needs the distinction. `父さん・・・・` recurs untranslated in
+chunks 16 and 39.
+
+### 25.5 Register
+
+| Who | Register |
+|---|---|
+| Zephyr Krippen (portrait 04) | Grandiose and absolute, **no contraction anywhere** — `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ！！`, `Ｉ　ｓｈａｌｌ　ｈｅａｄ　ｔｏ`, `Ｌｉｓｔｅｎ　ｗｅｌｌ，`. Commands in the bare imperative and never explains |
+| Guilford (portrait 07) | One segment, flat assent — `Ｓｉｒ．．．．`. The four stops are the character: he does not object, and does not agree either |
+| The officer left in command (portrait 08) | The same voice objects (line 2), rallies (line 4), boasts (line 7) and dies (line 8). Deferential upward (`Ｈｏｗｅｖｅｒ，　Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ．`), contemptuous downward (`ｔｏ　ｔｈｅ　ｌｉｋｅｓ　ｏｆ　ｙｏｕ，`), **no contractions** — §14.6 / §20.5's Imperial officers, unchanged |
+| Seneca (portrait 05) | Quiet and deflecting; contractions (`Ｉｔ’ｓ　ｎｏｔｈｉｎｇ．．．．`, `ｗｅ　ｃａｎ’ｔ`). His one unguarded line is `Ｆａｔｈｅｒ．．．．`, and the chunk never explains it |
+| The unnamed female companion (portrait 02) | Casual, contractions, the one who notices — `Ｗｈａｔ’ｓ　ｗｒｏｎｇ，　Ｓｅｎｅｃａ？`. Same portrait id as §21.4's unnamed female party member; if a later chunk names her, re-check both |
+| The two enslaved factory workers (portraits 03, 09) | Beaten down and plain-spoken, contractions throughout — `Ｎｏｂｏｄｙ’ｓ　ｃｏｍｉｎｇ　ｔｏ　ｈｅｌｐ　ｕｓ．`, `Ｂｅｓｔ　ｎｏｔ　ｔｏ　ｒｅｓｉｓｔ．`. 09 is the blunter of the two and gives the party an item anyway |
+| Tutorial boxes (`{=FA1000300030}`, lines 13–15) | §7 unchanged — plain instructional second person, the source's passive kept, byte-identical to §21.3 |
