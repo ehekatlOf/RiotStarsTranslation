@@ -12,18 +12,21 @@ file says only what is different about being a per-wave agent rather than the ma
 
 ## What is different
 
-1. **You run one wave, and you spawn the wave after it.** You do not translate wave N+1 and you
-   do not orchestrate it — but the last act of your wave is to **spawn a fresh `orchestrator`
-   subagent for wave N+1, `run_in_background: true`, and then return.** That is what makes this
-   run recursive: the chain continues whether or not anything above you is still alive. An
-   orchestrator that closes its wave and returns without spawning its successor has **failed its
-   wave**, however good the translations were.
+1. **You run one wave, and you open a NEW SESSION for the wave after it.** You do not translate
+   wave N+1 and you do not coordinate it — but the last act of your wave is to **open a fresh
+   Claude Code Remote session for wave N+1 with `create_session`, and then end.** That is what
+   makes this run recursive: the chain continues whether or not anything above you is still alive.
+   A coordinator that closes its wave without opening its successor has **failed its wave**,
+   however good the translations were.
 
-   You spawn in the background and return immediately, so the chain stays flat rather than
-   nesting a dozen agents deep. There is no overlap: your successor's first act is preflight
-   against the integration branch, and your wave close is already committed and pushed by then.
-   **One orchestrator works the repo at a time — never spawn your successor before
-   `handoff: wave N closed` is pushed.**
+   **A session, not a subagent.** Your subagents' reports land in *your* context; if the whole run
+   were driven from one session it would accumulate every wave's reviews and findings until it was
+   exhausted. A session per wave is what bounds that. Your own translators and reviewer remain
+   subagents of you — that is where parallelism belongs; only the wave boundary is a new session.
+
+   There is no overlap: your successor's first act is preflight against the integration branch, and
+   your wave close is already committed and pushed by then. **One coordinator works the repo at a
+   time — never open your successor before `handoff: wave N closed` is pushed.**
 2. **You work in the main checkout, on the integration branch named in `HANDOFF.md` →
    "Run configuration".** You get no worktree, because you must commit and push `HANDOFF.md` on
    that branch and git will not check the same branch out twice. Your caller does not touch the
@@ -66,24 +69,31 @@ file says only what is different about being a per-wave agent rather than the ma
    `status`; prune worktrees; `HANDOFF.md` gets the wave summary in Wave history, refreshed
    Progress, and **the next wave written into Next up**. Commit `handoff: wave N closed`, push.
 
-## 7. Spawn your successor — the step that is not optional
+## 7. Open your successor's session — the step that is not optional
 
 After `handoff: wave N closed` is pushed, and **before** you return:
 
 1. Write `HANDOFF.md` → **NEXT ACTION** so it names the literal spawn you are about to make, and
    push it. A session that dies between this line and the spawn resumes correctly; one that dies
    without it strands the run.
-2. Spawn the next wave — `subagent_type: "orchestrator"`, `run_in_background: true`:
+2. Open the next wave's **session** — `create_session` (claude-code-remote MCP), with
+   `title: "Riot Stars — wave N+1"`, `tags: ["riotstars-translation", "wave-N+1"]`,
+   `source_revision:` the integration branch, no `environment_id` and no `model` so both are
+   inherited, and this prompt:
 
 ```
 WAVE: N+1
-INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>
+INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>  (NOT main)
 UNITS: <the Next up rows you just wrote>
-Read HANDOFF.md first; it is the board and your memory. Run exactly this one wave —
-CLAUDE.md §4 and .claude/agents/orchestrator.md — close it, then spawn the wave after
-it exactly as this message spawned you. `gh` is not installed: use the GitHub MCP tools,
-owner ehekatlOf, repo RiotStarsTranslation.
+You are this wave's coordinator. Read CLAUDE.md and HANDOFF.md first; HANDOFF is the board
+and your memory. Follow .claude/agents/orchestrator.md as your role. Run exactly this one
+wave, close it, then open the session for the wave after it exactly as this message opened
+yours, and end. `gh` is not installed: use the GitHub MCP tools, owner ehekatlOf, repo
+RiotStarsTranslation. Arm a send_later watchdog before ending any turn with work in flight.
 ```
+
+   If `create_session` is unavailable or fails, fall back to an `orchestrator` subagent
+   (`run_in_background: true`) so the chain survives, and record the fallback in NEXT ACTION.
 
 **If `subagent_type: "orchestrator"` is rejected** — an agent definition added during a running
 session is not registered until the session restarts — do not stop and do not hand the decision

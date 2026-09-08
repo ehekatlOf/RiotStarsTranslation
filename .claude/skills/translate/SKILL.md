@@ -98,44 +98,56 @@ Refresh the README status table from `status`. Prune worktrees. HANDOFF: move th
 history (one line), refresh Progress, write the next wave into Next up, set Last updated. Commit
 `handoff: wave N closed`, push.
 
-## 6a. The chain — every wave spawns the next one
+## 6a. The chain — every wave gets its OWN NEW SESSION
 
-**This loop is meant to run to the end without a human between waves.** Waves are run by
-`orchestrator` subagents, and each one spawns its successor as the last act of its wave. You (the
-main session) are the **runner**: you spawn the *first* orchestrator and then stay out of the
+**This loop runs to the end without a human between waves, and each wave runs in a session of its
+own.** Not a subagent: a subagent's reports all land back in whichever session spawned it, so a
+run driven from one session accumulates every wave's reviews, figures and findings until that
+context is exhausted. A session per wave is what actually bounds the cost. You (the session that
+started the run) are the **runner**: you open the *first* wave session and then stay out of the
 repository. You are the backstop, not the driver.
 
-Spawn (`subagent_type: "orchestrator"`, `run_in_background: true` — background, so the chain stays
-flat rather than nesting a dozen agents deep). The dispatch is short by design; `HANDOFF.md`
-carries everything else:
+Open it with `create_session` (claude-code-remote MCP):
+
+```
+create_session(
+  title:            "Riot Stars — wave N",
+  tags:             ["riotstars-translation", "wave-N"],
+  source_revision:  "claude/workflow-translation-iterate-uzlkns",   # the integration branch
+  prompt:           <the seed below>
+)
+```
+Omit `environment_id` so it inherits this environment, and omit `model` so it inherits Opus. Seed:
 
 ```
 WAVE: N
-INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>
-UNITS: <the Next up rows — e.g. battle chunks 4, 6, 9 + script batch 005 (unique lines 1035–1100)>
-Read HANDOFF.md first; it is the board and your memory. Run exactly this one wave —
-CLAUDE.md §4 and .claude/agents/orchestrator.md — close it, then spawn the wave after it
-exactly as this message spawned you. `gh` is not installed: use the GitHub MCP tools,
-owner ehekatlOf, repo RiotStarsTranslation.
+INTEGRATION BRANCH: claude/workflow-translation-iterate-uzlkns  (NOT main — everywhere the docs
+say `main`, read this branch; reviewer integration pushes go to integrate:<that branch>)
+UNITS: <the Next up rows from HANDOFF.md>
+You are this wave's coordinator. Read CLAUDE.md and HANDOFF.md first — HANDOFF is the board and
+your memory. Follow .claude/agents/orchestrator.md as your role. Run exactly this one wave:
+glossary seeds, dispatch translators as subagents, route every PR through the reviewer subagent
+one at a time behind the wave barrier, rework, close the wave. Then open the NEXT wave's session
+exactly as this message opened yours, and end. `gh` is not installed — use the GitHub MCP tools,
+owner ehekatlOf, repo RiotStarsTranslation. Arm a send_later watchdog before ending any turn with
+work in flight.
 ```
 
-**If `subagent_type: "orchestrator"` is rejected** — an agent definition added during a running
-session is not registered until the session restarts — do not stop and do not hand the decision
-to a human. Spawn `subagent_type: "general-purpose"` instead and make the first line of the
-prompt: `Read .claude/agents/orchestrator.md and follow it as your role definition — you are a
-wave orchestrator.` Everything else about the dispatch is unchanged. Note which one you used in
-your report so the next link knows.
+Within a wave, translators and the reviewer stay **subagents** of that wave's session — that is
+where the parallelism belongs. Only the wave boundary gets a new session.
 
-When an orchestrator returns, record nothing yourself — it has already pushed `HANDOFF.md`. Read
-its report for one thing above all: **did it spawn its successor?** If it did, relay the wave
-summary and stop; the run continues without you. If it did not, and none of §7's stop conditions
-holds, the chain has broken: re-run preflight and spawn the missing wave yourself. That is the
-runner's whole job between waves.
+`HANDOFF.md` plus the open PR list is the only state that crosses the boundary, which is exactly
+what CLAUDE.md §7 already requires them to be sufficient for. If that is ever untrue, the bug is
+in HANDOFF, not in the chain.
 
 Quality control is never what gets traded for momentum. Every unit still goes translator → PR →
 reviewer → merge, one reviewer at a time, every gate in CLAUDE.md §6 run in a real checkout and
 its evidence pasted into the review. A wave that closes faster by merging without a reviewer, or
 by waiving a gate, has broken the run more thoroughly than a wave that stalls.
+
+**If `create_session` is unavailable or fails**, fall back to an `orchestrator` subagent
+(`run_in_background: true`) so the chain survives, and say so in `HANDOFF.md` → NEXT ACTION —
+the run then costs context in this session and a human should know.
 
 ## 6b. Arm the timer — every turn, without exception
 You wake only on a notification or a human message, so **the timer is what actually keeps this
