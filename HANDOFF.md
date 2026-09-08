@@ -20,8 +20,8 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > `source_revision` = `claude/workflow-translation-iterate-uzlkns`).
 
 ## Last updated
-2026-09-08 · by: **wave-3 coordinator** (`session_0126mzDCZDEoby12pU5qXegc`) ·
-wave: **3 dispatched, 4 units in flight** · queue: **fresh**
+2026-09-08 · by: **wave-3 reviewer** (integration commit for PR #9) ·
+wave: **3 running — 1 of 4 merged, 3 in review** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -31,47 +31,52 @@ wave: **3 dispatched, 4 units in flight** · queue: **fresh**
 | Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
 | Script message instances | 4,039 | 7,931 | **50.9%** |
 
-`check`: **All checks passed** on the integration branch. Tightest banks: **41 → 353 free,
-40 → 509, 5 → 3,419**, 2 → 7,543, 33 → 9,353. Bank 40 is spent (`FLAGS.md` §J2). Wave 2's units
-touched banks 29/30/31 only, which remain roomy (25,589 / 35,119 / 34,827 free).
+`check`: **All checks passed** on the integration branch. Tightest banks after PR #9: **41 → 353
+free (unchanged), 40 → 471, 5 → 3,381**, 2 → 7,505, 33 → 9,315. Bank 40 is spent (`FLAGS.md` §J2,
+**superseded on these figures by §O1** — make the next bank-40 decision against **471, not 509**).
+Wave 2's units touched banks 29/30/31 only, which remain roomy (25,589 / 35,119 / 34,827 free).
+
+PR #9 edits already-shipped files, so no Done count above moves; what changed is byte figures.
 
 ## In flight — WAVE 3 (4 units, dispatched 2026-09-08)
 Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order: **#9, #11, #10, #12**.
 
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
-| corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | **PR open**, awaiting barrier |
+| corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | **PR open**, awaiting barrier |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | **PR open**, awaiting barrier |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) |
 
-**PR #9 (corrections) — key facts for the reviewer.**
-- **Twelve** edits, not eleven: the dispatch's eleven and HANDOFF's eleven were *different* elevens
-  and the translator applied the union. Edits 2/3/4 (`batch_004` L17/L29/L42) are **parkable
-  alone**, leaving `batch_004` at +14 B/bank; edit 12 (`chunk_001` file L15, §23.4 `助かった`) is
-  **revertible alone**. Both were reported, not slipped in.
-- **Five files** — gate 1 expects five paths, not one (CLAUDE.md §5's one exception, agreed at
-  dispatch).
-- Bytes: chunk 1 3,519 · chunk 2 5,855 · chunk 3 4,605 · chunk 34 **1,587 (−4)**. Chunks 0 and 7
-  byte-for-byte untouched. `batch_004` +38 B/bank → **bank 40 at 471 free** (bank 41 unchanged at
-  353 — this batch does not reach it). No bank negative.
-- **Tag stream unchanged on every line of all four chunks** — no re-flow, no `{FFFE}`/`{FCC0}` change.
-- ⚠️ It **declined** the dispatch's re-flow instruction for edit 5 with a measurement:
-  `Ｈｏｗｅｖｅｒ，` lands at 19 → **21 columns**, inside the ≤ 23 preference, page still 4 rows, so
-  re-flowing would churn the tag stream for nothing. **I checked this and it is right** — my
-  dispatch over-warned from wave 2's chunk-9 case. Findings are proposals to verify (wave 2 §2).
-- It also found a wrong line number in my dispatch: edit 9 is `chunk_002` **file L14**, not L15.
-  Located by content, as instructed. No other target was off.
+**PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
+Twelve edits across five files (the dispatch's eleven and HANDOFF's eleven were *different*
+elevens; the unit applied the union and reported it). Every figure re-derived at review: chunk 1
+**3,519** · chunk 2 **5,855** · chunk 3 **4,605** · chunk 34 **1,587 (−4)**; chunks 0 and 7
+byte-for-byte untouched (identical blob hashes); `batch_004` **+38 B in each of 21 banks**, bank
+40 **471** free, bank 41 unchanged at 353, no bank negative; **tag stream byte-identical to the
+base on every line of all four chunks**. Two dispatch errors the unit caught were both correct
+(the declined edit-5 re-flow, and `chunk_002` file **L14** not L15) — `FLAGS.md` §O8.
 
-**⚠️ Flag 6 (deadline) — HANDLED 2026-09-08.** PR #9 makes `村が襲われました。` binding as
-`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` (13 dump instances). **Chunk 13 L7 and chunk 17
-L20 both carry it** — verified against the dump by the coordinator — and both translators were sent
-the binding wording while still live. The reviewer must confirm it landed in both units (gate 6).
+**✅ The live CLAUDE.md §3 violation is closed. `tl/battle/` now has ZERO divergent duplicate
+renderings** — verified independently at review by positional pairing against the dump at two
+granularities: 1 divergent before, 0 after. `村が襲われました。` is binding as
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` (`glossary.md` **§27.2**), 13 dump
+instances, **ten still untranslated** (chunks 5, 13, 15, 16 ×2, 17, 21, 23, 38, 39).
+**Flag 6's deadline is discharged**: `tl/battle/chunk_013.txt` L8 (#10) and
+`pending/chunk_017.txt` L21 (#12) were checked on their branches and both carry it byte-for-word.
 
-**Still open from PR #9, for the reviewer's integration commit:** 7 glossary rows; `glossary.md`
-§24.6 wrongly calls `村が　襲われました。` (spaced, chunk 6 L15, 1 occurrence) the same string as the
-unspaced one — it is not; bank 40 to be recorded at 471; and wave-1 audit **finding 7** (five §21
-entries dropped at integration with no note of rejection) is still genuinely open.
+**Integrated at review** (`glossary.md` §27, `FLAGS.md` §O): the 7 glossary rows, with the `愛用`
+count corrected to **9 unique lines remaining, not 13**; a §4.3 correction to **§22.1**'s 火炎剣
+gloss, which edit 2 superseded (§27.3); the §24.6 correction, which is **worse than reported** —
+the spaced/unspaced conflation is one of *three* errors in that clause (§27.4); bank 40 recorded
+at 471 in §O1, with §J1/§J2 marked superseded.
+
+⚠️ **Wave-1 audit finding 7 is STILL OPEN and is carried forward, not discharged** — `FLAGS.md`
+**§O7** now lists all five entries with their shipped renderings and corpus counts. Four and a
+half are genuinely unfixed (`ヘビー`, `洞窟`/`赤い屋根`, bare `隊`, the `謹慎` noun forms; `さあ`
+only partially, via §24.5/§24.6 with no table row — **16 battle + 10 script occurrences**). It has
+survived two waves. **Whoever owns the next glossary integration writes these rows or records the
+rejection in terms.**
 
 **PR #10 (chunk 13) — key facts for the reviewer.** 5,417 / 8,192, **2,775 slack**; 132 rows,
 widest 23, no page over 4 text rows. The binding `村が襲われました。` wording was verified against the

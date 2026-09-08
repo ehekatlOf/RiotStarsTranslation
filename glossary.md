@@ -1462,3 +1462,102 @@ different message. It is recorded so it cannot drift:
 | Japanese | English | Note |
 |---|---|---|
 | 助かりました (polite, of a past rescue) | `Ｙｏｕ　ｓａｖｅｄ　…` | **Ruled 2026-09-08, PR #8 round 1; the active stands.** `この前は　助かりました。ありがとうございます。` → `Ｙｏｕ　ｓａｖｅｄ　ｕｓ　ｔｈｅ　ｏｔｈｅｒ　ｄａｙ．　Ｔｈａｎｋ　ｙｏｕ．` The polite past form under `この前は` is a speaker **turning to thank his rescuer**, which is §23.4's own licence for the active, and the following `ありがとうございます` makes the address explicit where chunk 12's `あんちゃん` did. **A third row in §23.4, not an exception to it**: the plain 助かった of one's own condition still takes `Ｉ／Ｗｅ　ａｍ／ａｒｅ　ｓａｖｅｄ`, and `chunk_001` line 14's correction (§23.4) is unaffected. 9 occurrences of 助かりました across both dumps — this rule now governs them |
+
+---
+
+## 27. Added by the wave-1 corrections unit (PR #9, merged 2026-09-08)
+
+Not a new unit of text: PR #9 applies `audits/wave1-reading-review.md` (its table of 8, **raw file**
+line numbers) and `audits/wave-1-audit.md` items 3–5 and §9 (**message** line numbers = file
+line − 1) to already-shipped work, plus three rulings made after those audits were written —
+§23.3 (`しかし`), §23.4 (`助かった`) and `FLAGS.md` §N2 (`“ＥＮＴＥＲ”`). **Twelve edits across five
+files**: `tl/script/batch_004.tsv` L12/L17/L29/L42, `tl/battle/chunk_001.txt` file L2/L15,
+`chunk_002.txt` file L14, `chunk_003.txt` file L6 ×2 and L17 ×2, `chunk_034.txt` file L8.
+
+Verified at review, re-derived rather than inherited: chunk 1 **3,519** · chunk 2 **5,855** ·
+chunk 3 **4,605** · chunk 34 **1,587 (−4)**. `batch_004` **+38 bytes in each of 21 banks**; bank
+40 **509 → 471** free, bank 41 **unchanged at 353**, no bank negative. `chunk_000.txt` (27 B
+slack) and `chunk_007.txt` (399 B) are **byte-for-byte untouched** — identical blob hashes on both
+sides. **The tag stream is byte-identical to the base on every line of all four chunks**: no
+re-flow, no break added, moved or deleted, no `{FCC0}` touched. Widest row in the unit **23**,
+none at 24. **No §9 PROVISIONAL row is promoted here — this unit renders no new name.**
+
+### 27.1 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| 愛用 | **`ｆａｖｏｕｒ`** — voice and tense follow the source | The wave-1 reading review's glossary finding 2: three shapes were shipped and the word had no entry. **After PR #9 all four shipped instances share the verb**, and what varies is grammar the source itself varies: `オーガの愛用するハンマー` → `ｆａｖｏｕｒｅｄ　ｂｙ　ｏｇｒｅｓ` and `女神アルテミスの愛用した光の弓` → `ｆａｖｏｕｒｅｄ　ｂｙ　ｔｈｅ　ｇｏｄｄｅｓｓ　Ａｒｔｅｍｉｓ` (`batch_003` 105, 109 — passive, the word modifying the weapon); `多くの兵士が愛用する一般的な剣` → `ｍａｎｙ　ｓｏｌｄｉｅｒｓ　ｆａｖｏｕｒ` (present) and `黒騎士たちの愛用した漆黒の槍` → `ｔｈｅ　ｂｌａｃｋ　ｋｎｉｇｈｔｓ　ｆａｖｏｕｒｅｄ` (past — contact relative clauses, the weapon being the object). ⚠️ **Counted at this review: `script_unique.txt` holds 13 unique lines containing 愛用 (273 dump instances ÷ 21), of which 4 are now rendered, so 9 remain untranslated — 189 message instances**, not the "13 remain" that both PR #9's body and the audit wrote. The nine are 雷神トール, 巨人の, 水の妖精, 天使, 魔術師, 伝説の聖者, 妖精フィリス, 軍神ヘルメス, 風の精. §22.2's stated frame (“a participial clause”) describes neither `batch_004` form and is widened by this row |
+| 一般的な / もっとも一般的な | `ｃｏｍｍｏｎ` / `Ｔｈｅ　ｃｏｍｍｏｎｅｓｔ` | The positive and its superlative, now visibly a pair two rows apart in one table (`batch_004` L12 and L31). 一般的な had been dropped from L12 entirely and 多くの strengthened to *most*; both are restored. 126 script occurrences (6 unique lines × 21), so 4 unique lines still to come |
+| 焼き尽くす | **`ｂｕｒｎ　…　ｔｏ　ａｓｈ`** | Burn-to-nothing, not *burn up*. Distinct from 燃やす. ⚠️ **This supersedes §22.1's 火炎剣 note — see §27.3.** Recurs in §9's `Ｉｆｒｉｔ` gloss (`紅蓮の炎で焼き尽くしてくれるわっ！`, chunk 15), so **any chunk 15 unit and wave 3's chunk 17 unit inherit this form** |
+| すみません。 (as apologetic thanks) | `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` | 21 columns. Not an apology for wrongdoing: the speaker has just been rescued and says `ありがとうございます` in the next breath. Held **distinct** from §24.3's すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` (chunk 6) and from ちょっと、 → `Ｈｏｌｄ　ｏｎ，` — three source strings, three jobs. Counted at this review: `すみません。` **3 battle / 0 script**, one now rendered (`chunk_002` file L14), two still to come |
+| 宮廷軍のみなさん | `Ｅｖｅｒｙｏｎｅ　ｉｎ　ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ` | の for membership is *in*, not *of*. A hapax — **1 battle / 0 script**, `chunk_003` file L17. Does **not** disturb §26.7's shipped `９軍のみなさん` → `ｇｏｏｄ　ｐｅｏｐｌｅ　ｏｆ　ｔｈｅ　９ｔｈ　Ａｒｍｙ`: that is the *citizens-of-Rome* vocative, idiomatic with *of*, and a different source string |
+
+### 27.2 The village-attack message — one rendering binds thirteen instances
+
+| Japanese | English |
+|---|---|
+| `村が襲われました。` | **`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`** |
+
+A §21.3-style binding entry, which the wave-1 reading review's §9 asked for. Its marker is
+`{=FA1000300030}`, the personality-free tutorial box of §7, so the register is plain instructional
+second person. Rows measure **14 and 13**, so it fits anywhere.
+
+**Counted in `dumps/battle_dump.txt` at this review, not taken from a report: 13 instances, 0 in
+the script dump** — chunks 5, 7 ×2, 13, 15, 16 ×2, 17, 21, 23, 34, 38, 39. Three are now shipped
+byte-identically (`chunk_007` L26 and L27, `chunk_034` L8) and **ten are still untranslated**.
+**Copy it; do not re-invent it.**
+
+This closes a **live CLAUDE.md §3 violation** that predates wave 1: `chunk_034` L8 shipped
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｈａｓ　ｂｅｅｎ{FFFE}ａｔｔａｃｋｅｄ．` against chunk 7's wording. Chunk 34 moved
+and chunk 7 was left alone because chunk 34 has 6,601 bytes of slack and chunk 7 only 399.
+Verified at review by a positional duplicate scan at two granularities: **1 divergent rendering
+before, 0 after — `tl/battle/` is free of divergent duplicate renderings for the first time in the
+project.**
+
+✅ **Already inherited correctly by both wave-3 siblings**, checked on their branches at this
+review rather than taken on report: `tl/battle/chunk_013.txt` L8 (PR #10) and
+`pending/chunk_017.txt` L21 (PR #12) both carry the wording byte-for-byte.
+
+### 27.3 CORRECTION to §22.1 (§4.3) — the 火炎剣 row's gloss is superseded
+
+§22.1's `火炎剣` row reads `すべてを焼き尽くす` → *burning all up*. **That is superseded by §27.1's
+`焼き尽くす` → `ｂｕｒｎ　…　ｔｏ　ａｓｈ`.** `ｂｕｒｎｉｎｇ　ａｌｌ　ｕｐ` is not idiomatic English as a
+participial modifier, and 焼き尽くす is burn-to-nothing rather than burn-up.
+
+**Lines this affects: exactly one, and it is already applied.** `tl/script/batch_004.tsv` **L17**,
+`すべてを焼き尽くす強力な火炎剣。` → `Ａ　ｐｏｗｅｒｆｕｌ　ｆｌａｍｅ　ｓｗｏｒｄ{FFFE}ｂｕｒｎｉｎｇ　ａｌｌ　ｔｏ　ａｓｈ．`
+— 22 / 19 / 6 columns, **+8 bytes per bank**. Verified affordable and complete at this review:
+`焼き尽く` occurs **1 battle (chunk 15, the Ifrit line, untranslated) and 21 script (this one
+unique line × 21)**, so L17 is the only rendering anywhere in `tl/` and nothing else needs
+revisiting. The `火炎剣` → *flame sword* half of §22.1's row is unchanged.
+
+Recorded here rather than patched into §22.1 in place, per §4.3 and CLAUDE.md §6.7: an existing
+entry is never altered silently. PR #9's Glossary-additions table proposed the new form with its
+reason but stated “Nothing existing was changed” — something was, and this is the correction.
+
+### 27.4 CORRECTION to §24.6 (§4.3) — the spaced and unspaced village lines are DIFFERENT strings
+
+§24.6's register table (the `Tutorial boxes ({=FA1000300030}, lines 6, 14, 17, 18)` row) ends:
+*“the passive of §21.3's shipped `村が襲われました。` → `Ａ　ｖｉｌｌａｇｅ　ｗａｓ　ａｔｔａｃｋｅｄ．`”*.
+**Three things in that clause are wrong. No rendering changes; only the note does.**
+
+1. **The source string in chunk 6 is `村が　襲われました。` — with a full-width space between `村が`
+   and `襲われました` — and it is NOT the string §27.2 governs.** Counted across both dumps at this
+   review: the **unspaced** form occurs **13** times, the **spaced** form **once**, at
+   `chunk_006.txt` file line 15. They are different lookup keys, so CLAUDE.md §3 is **not**
+   engaged, chunk 6 is **not** re-cut, and the positional duplicate scan agrees — it reports zero
+   divergences with both forms present. This is the メルザリオ / ファリーナ / クリミア shape
+   (§20.1, §2, §1): the classification was wrong, the rendering was not.
+2. **§21.3 is the stolen-item message** (`アイテムを{FFFE}奪われました。` →
+   `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．`). It does not contain `村が襲われました。`
+   at all. The binding entry for the village line is **§27.2**, not §21.3.
+3. **The row's line list omits line 15**, which is the very line it is describing.
+
+**Read that row as:** tutorial boxes at `{=FA1000300030}`, `chunk_006.txt` **lines 6, 14, 15, 17,
+18** — §7 unchanged, plain instructional second person, no personality; **line 15 renders the
+hapax `村が　襲われました。` (spaced) as `Ａ　ｖｉｌｌａｇｅ　ｗａｓ　ａｔｔａｃｋｅｄ．` and stands.**
+
+⚠️ **Recorded because the two strings are one full-width space apart.** A future duplicate check
+run by eye — or any tool that normalises whitespace — will read chunk 6 as a fourth violation of
+§27.2 and try to “fix” it. It is not one. Same trap as §24.5's `さあ、` / `よし、` followed by
+`{FC00}{=0000}`.

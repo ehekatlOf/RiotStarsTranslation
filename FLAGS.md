@@ -705,7 +705,8 @@ one repeated frame rather than spread: **six rows sit at 1.40×** —
 **Accepted deliberately at review, with this arithmetic.** The row is 21 columns, so columns are
 not the constraint — bank 40 is. Restoring `持つ者に` needs a second row, **+32 bytes per
 entry × 6 = +192 bytes** (corrected above). Bank 40 has **509 free against the project's 500-byte
-reserve — 9 bytes of margin** — and net growth in bank 40 runs 1,262 ÷ 34 ≈ **37 bytes per line**,
+reserve — 9 bytes of margin** (⚠️ **now 471, see §O1** — the restore lands at **279**, and the
+margin against the 500-byte reserve is gone) — and net growth in bank 40 runs 1,262 ÷ 34 ≈ **37 bytes per line**,
 so 192 bytes means parking **about 5 of the 34 lines**. Five weapon descriptions left in Japanese,
 visible as holes in a table the player reads side by side, to lengthen six entries. The partial
 option is worse: ~3 parked lines buys ~111 bytes, enough for three or four of the six, which would
@@ -733,6 +734,12 @@ Measured before/after by removing `batch_004.tsv` and re-merging. Every affected
 | 12 | 11,621 | 10,359 |
 | 3 | 11,891 | 10,629 |
 | 41 | 353 | **353 — untouched**, the table does not land there |
+
+> ⚠️ **SUPERSEDED for banks 40, 5, 2 and 33 by §O1 (PR #9, 2026-09-08).** The wave-1 corrections
+> unit spends a further **38 bytes in each of these 21 banks**: **bank 40 is now 471 free, not
+> 509**; bank 5 **3,381**; bank 2 **7,505**; bank 33 **9,315**. Bank 41 is still 353 and still
+> untouched. **Make the next bank-40 decision against 471.** §J1's corrected 192-byte restore
+> therefore lands at **279 free, not 317** — still affordable, with a thinner margin.
 
 Two consequences for planning, both measured rather than projected:
 
@@ -1356,3 +1363,162 @@ for `〜ってウワサだ`; `Ｗｏｒｄ　ｉｓ` is the sentence-initial var
    §K6's "moved once, for the whole wave" held for all three units that flagged it.
 8. **glossary §11.2's `フェリスランド` note was factually wrong** and is corrected in place —
    13 occurrences, not zero. Rendering unchanged, nothing revisited.
+
+---
+
+## O. Wave 3 review — corrections/audit-wave1 / PR #9 (2026-09-08)
+
+Merged round 1, **MERGE**, all eight gates green on evidence re-derived at review rather than
+inherited from the PR body. Glossary rows and two §4.3 corrections in `glossary.md` §27.
+
+### O1. The byte figures, and the banks
+
+**chunk 1: 3,519 / 8,192 — 4,673 slack. chunk 2: 5,855 / 8,192 — 2,337. chunk 3: 4,605 / 8,192 —
+3,587. chunk 34: 1,587 / 8,192 — 6,605 (−4).** Widest row in the unit **23**, none at 24.
+
+**`chunk_000.txt` and `chunk_007.txt` are byte-for-byte untouched** — identical blob hashes on
+both sides of the diff (`845870f…`, `6aff068…`). Chunk 0 stays at **27 bytes of slack** (§G1) and
+chunk 7 at **399**.
+
+**⚠️ `batch_004` spends 38 bytes in each of 21 banks. Bank 40 is now at 471 free, not 509.**
+Verified by diffing `bankmeasure` between the base tree and the merged tree: exactly 21 banks
+moved (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43), each by
+exactly **−38**, no bank negative.
+
+| bank | §J2 recorded | **now** |
+|---|---|---|
+| **40** | 509 | **471** |
+| 41 | 353 | **353 — still untouched**, the table does not land there |
+| 5 | 3,419 | **3,381** |
+| 2 | 7,543 | 7,505 |
+| 33 | 9,353 | 9,315 |
+
+**§J2's table is superseded by this one** for banks 40, 5, 2 and 33. **§J1's corrected arithmetic
+still fits, with a thinner margin:** restoring `持つ者に` on all six `〜守護をもたらす` entries
+costs 192 bytes at the corrected 32 B/entry, leaving bank 40 at **279 free** rather than 317.
+Both this PR and that restoration remain affordable together, but little else is, and §J2 already
+declares bank 40 closed to further batches. **The next bank-40 decision must be made against 471.**
+
+### O2. The tag stream did not move, and this is the second zero-re-flow unit
+
+`rowcheck` run against the working tree and against the base blobs prints **identical
+`{FFFE} changed:` lists** for all four chunks, differing only in the byte figure. No break was
+added, deleted or moved; no `{FCC0}` was touched; no insert repositioned. Gate 4's
+`{FFFE}`/`{FCC0}` clause is genuinely vacuous for this unit, which is what makes a twelve-edit
+correction pass across four merged files cheap to verify.
+
+### O3. `tl/battle/` is free of divergent duplicate renderings for the first time
+
+The live CLAUDE.md §3 violation the wave-1 reading review found in §9 is **closed**. Method and
+figures, re-derived at review by pairing each shipped chunk positionally against
+`dumps/battle_dump.txt` (equal line counts by construction, split at `{FC30}`, tags stripped), run
+at two granularities as a cross-check:
+
+```
+BEFORE  [{FC30}-turn] distinct=354 recurring=13 DIVERGENT=1
+        [whole-line ] distinct=123 recurring=6  DIVERGENT=1
+           JP: 村が襲われました。
+             chunk 007 L26 / L27  Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ // ｕｎｄｅｒ　ａｔｔａｃｋ．
+             chunk 034 L8         Ｔｈｅ　ｖｉｌｌａｇｅ　ｈａｓ　ｂｅｅｎ // ａｔｔａｃｋｅｄ．
+AFTER   [{FC30}-turn] distinct=354 recurring=13 DIVERGENT=0
+        [whole-line ] distinct=123 recurring=6  DIVERGENT=0
+```
+
+Script side: **211 unique JP keys across all five TSVs, 0 duplicated keys, 0 divergent.**
+
+The binding rendering is `glossary.md` **§27.2** — `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　
+ａｔｔａｃｋ．`, 13 dump instances, **ten still untranslated** (chunks 5, 13, 15, 16 ×2, 17, 21, 23,
+38, 39). ✅ Both wave-3 siblings already carry it byte-for-byte, checked on their branches at this
+review: `tl/battle/chunk_013.txt` L8 (PR #10) and `pending/chunk_017.txt` L21 (PR #12).
+
+⚠️ **`chunk_006.txt` L15 is NOT a fourth instance** — its source is `村が　襲われました。` with a
+full-width space, a hapax, and `glossary.md` §24.6 wrongly called it the same string. Corrected in
+**§27.4**; no rendering changes. Anyone re-running a duplicate check by eye, or with a tool that
+normalises whitespace, will hit this.
+
+### O4. Gate 6's method note, restated because §L5 is still recent
+
+A battle `tl/chunk_NNN.txt` holds **zero Japanese**, so grepping a unit's Japanese against `tl/`
+returns "clean" unconditionally — that is the null check §L5 records. Positional pairing against
+the dump is the replacement and is what ran here. The script check *is* a key comparison, which is
+valid only because the TSVs keep the Japanese in column 2.
+
+### O5. `glossary.md` §22.1's 火炎剣 gloss was superseded, and the PR said nothing was
+
+PR #9's Glossary-additions table proposed `焼き尽くす` → `ｂｕｒｎ　…　ｔｏ　ａｓｈ` with its reason,
+so the change was not silent and gate 7 passes — but the body's "Nothing existing was changed" is
+inaccurate: §22.1's `火炎剣` row documents `すべてを焼き尽くす` → *burning all up*, which edit 2
+replaces. Written out as a §4.3 correction in **§27.3**, with the single affected line named.
+Verified complete at review: `焼き尽く` occurs **1 battle (chunk 15, untranslated) / 21 script
+(one unique line × 21)**, so `batch_004` L17 is the only rendering in `tl/`.
+
+Related, and corrected when copying the row into the glossary: the PR body and
+`audits/wave1-reading-review.md` both say "**13 occurrences** of 愛用 remain untranslated". 13 is
+the **total** number of unique lines containing 愛用 (273 dump instances ÷ 21); four are now
+rendered, so **9 remain — 189 message instances**. §27.1 carries the corrected figure and names
+the nine.
+
+### O6. A break placement in `batch_004` L12 — a proposal, deliberately NOT applied
+
+`Ａ　ｃｏｍｍｏｎ　ｓｗｏｒｄ　ｍａｎｙ{FFFE}ｓｏｌｄｉｅｒｓ　ｆａｖｏｕｒ．` (19 / 16) splits the noun
+phrase `ｍａｎｙ　ｓｏｌｄｉｅｒｓ`, so row 1 ends on a bare quantifier. That is the same class of
+defect edits 4, 7+8 and 10 of this very unit exist to remove, and
+`Ａ　ｃｏｍｍｏｎ　ｓｗｏｒｄ{FFFE}ｍａｎｙ　ｓｏｌｄｉｅｒｓ　ｆａｖｏｕｒ．` is **14 / 21 at identical
+bytes**.
+
+**Not applied, and not asked of the translator.** The shipped form is
+`audits/wave1-reading-review.md` item 3's own verbatim proposal; §3.2's two *hard* rules (break at
+a word boundary; no row ending in a lone one- or two-letter word) are both satisfied, and only the
+"prefer clause boundaries" preference is at stake; and §J2 closes bank 40 to further batches, so
+the row will not be reopened soon. Recorded here for whoever next touches `batch_004` — if the
+column-width table is ever re-cut after a bank-40 repoint, take this with it.
+
+For contrast, the dangling `ｔｈｅ` at the end of row 1 on L29 and L42 is **forced, not a choice**:
+moving it down puts row 2 at 26 columns. Those two stand as shipped.
+
+### O7. ⚠️ Wave-1 audit finding 7 is STILL OPEN — carried forward with evidence, not discharged
+
+`audits/wave-1-audit.md` finding 7: five entries PR #1 proposed for glossary §21 were dropped at
+integration with no note of rejection. **Checked against the current `glossary.md` at this review.
+Four and a half are still open**; all five are rendered in shipped work and fixed nowhere.
+
+| Entry | Status | Shipped as | Corpus |
+|---|---|---|---|
+| `ヘビー` → `ｈｅａｖｙ` | **absent** | `ａ　ｂｉｔ　ｈｅａｖｙ`, `chunk_003` file L6 | 1 battle / 0 script |
+| `洞窟` / `赤い屋根の家` / `赤い屋根の建物` | **absent** | `ｃａｖｅｓ` / `ｒｅｄ‐ｒｏｏｆｅｄ　ｈｏｕｓｅｓ` / `ｒｅｄ‐ｒｏｏｆｅｄ　ｂｕｉｌｄｉｎｇｓ`, all `chunk_003` file L6 | 洞窟 5 battle, 赤い屋根 2 battle |
+| bare `隊` → squad | **absent** | — | — |
+| `謹慎中` → `ｕｎｄｅｒ　ｃｏｎｆｉｎｅｍｅｎｔ`, `謹慎がとける` → `ｃｏｎｆｉｎｅｍｅｎｔ　ｅｎｄｅｄ` | **half open** — §19.2 records only the adjective `ｃｏｎｆｉｎｅｄ` | `ｕｎｄｅｒ　ｃｏｎｆｉｎｅｍｅｎｔ` and `ｍｙ　ｃｏｎｆｉｎｅｍｅｎｔ｜ｅｎｄｅｄ`, `chunk_003` file L5; `ｃｏｎｆｉｎｅｄ`, `chunk_001` L6/L7 | 4 battle / 1 script |
+| `さあ` → `Ｃｏｍｅ　ｏｎ，` | **partially discharged**, by §24.5's note and §24.6's Fernando row (`さあ、` → `Ｎｏｗ，`), but with **no table entry** | `Ｎｏｗ，` in `chunk_006` L13 and `chunk_033` L21; `Ｃｏｍｅ　ｏｎ，` still on `chunk_003` L4's `さあ、{FC00}{=0000}、` row | **16 battle / 10 script** |
+
+**Not this unit's remit and not a defect in it** — PR #9 flagged the item explicitly (its Flag 9)
+rather than letting it lapse, which is why it is still visible. **Whoever owns the next glossary
+integration should either write these five rows or record the rejection in terms.** It has now
+survived two waves; the third time it disappears it will be gone for good, and `さあ、` alone is
+26 occurrences of drift risk.
+
+### O8. Two dispatch errors the translator caught, both correctly
+
+Recorded because both are the shape §M2 and CLAUDE.md's "findings are proposals" rule exist for.
+
+1. **The dispatch's re-flow instruction for edit 5 was wrong and was declined with a
+   measurement.** `Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` lands at **21 columns** (from 19), inside
+   the ≤ 23 preference, page still 4 rows (21 / 20 / 22 / 12). Re-measured at review: correct.
+   Re-flowing would have churned the tag stream for nothing and forfeited §O2. The dispatch
+   generalised from wave 2's chunk 9, where the word landed on a page already at the 4-row wall.
+2. **A line number in the dispatch was wrong.** Edit 9 is `chunk_002` **file line 14**, not 15 —
+   file line 14 is the one carrying `すみません。{FFFE}ありがとうございます。`, and
+   `audits/wave1-reading-review.md` item 1 says L14 too. Located by content, as instructed. No
+   other target was off. ⚠️ **The two audits and the glossary number these lines three different
+   ways** (raw file lines, message lines = file − 1, and glossary §23.3/§23.4's message lines).
+   Any future unit acting on them must locate by content.
+
+### O9. Scope was widened by one edit and it was reported, not slipped in
+
+The dispatch's eleven and `HANDOFF.md`'s eleven were **different elevens**; PR #9 applied the
+**union, twelve**, and said so in its own body before anyone asked. The twelfth is
+`chunk_001.txt` file L15 (glossary §23.4's `助かった` correction, **0 bytes**), whose warrant is
+§23.4's own sentence *"Added to the wave-3 corrections unit; not applied at review"* rather than
+the dispatch. Accepted at review: it is in a file the unit already opens, gate 1's five-path list
+is unchanged either way, and the alternative was to leave a glossary ruling unapplied with no
+owner. The unit also offered edits 2/3/4 as separately parkable (leaving `batch_004` at +14 B/bank)
+and edit 12 as separately revertible; neither lever was used.
