@@ -27,9 +27,8 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 >
 > Review queue, in unit order, one at a time:
 > 1. ✅ **PR #2 (chunk 1) — MERGED** round 2, squash `dddf0ae`. 3,517 / 8,192, slack 4,675.
-> 2. **PR #3 (chunk 2), round 2** — reworked and pushed, head `54063b3`, 5,839 / 8,192, slack
->    2,353. ← **next**
-> 3. **PR #1 (chunk 3)** — never reviewed. 4,601 / 8,192, slack 3,591.
+> 2. ✅ **PR #3 (chunk 2) — MERGED** round 2, squash `f298fe1`. 5,839 / 8,192, slack 2,353.
+> 3. **PR #1 (chunk 3)** — never reviewed. 4,601 / 8,192, slack 3,591. ← **next**
 > 4. **PR #4 (batch 004)** — never reviewed. 34 lines / 714 instances; bank 40 → 509 free. The
 >    reviewer must decide explicitly whether 2.28× compression is acceptable or ~3 lines should be
 >    parked to buy back ~150 bytes. That is a quality judgement, not a gate.
@@ -44,14 +43,14 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > the reason; do not pretend the chain continued.
 
 ## Last updated
-2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, **1 of 4 merged** ·
+2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, **2 of 4 merged** ·
 queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | 11 | 44 | 0, **1**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
-| Battle JP characters | 6,682 | 43,161 | 15.5% |
+| Battle chunks | 12 | 44 | 0, **1**, **2**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
+| Battle JP characters | 7,822 | 43,161 | 18.1% |
 | Script unique lines | 151 | 1,430 | `tl/script/batch_001–003.tsv` |
 | Script message instances | 3,299 | 7,931 | 41.6% |
 
@@ -62,7 +61,7 @@ queue: **fresh (survey ran 2026-09-08)**
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
 | battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | ✅ **MERGED** round 2, squash `dddf0ae` — 3,517 / 8,192, slack 4,675; max column 23, no page over 4 rows; all 8 gates re-run on the moved base | 2 | done |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **reworked and pushed, head `54063b3`** — 5,839 / 8,192, slack 2,353 (+2 bytes, exactly as finding 2 predicted). Both r1 findings applied verbatim; translator now idle | 2 | reviewer |
+| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | ✅ **MERGED** round 2, squash `f298fe1` — 5,839 / 8,192, slack 2,353; max column 23, no page over 4 rows; both coda variants byte-identical where the JP is | 2 | done |
 | battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | reviewer |
 | script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
 
@@ -112,8 +111,8 @@ and the chain cannot be continued by spawning; a human has to start the next wav
    title is what lands in the history.
 
 **Barrier: 4 of 4 — MET**, and it stays met; a rework round does not reopen it. Review order is
-unit order: ~~#2 (chunk 1)~~ ✅ merged, then #3 (chunk 2), #1 (chunk 3), #4 (batch 004), one at a
-time, integration commits serialised.
+unit order: ~~#2 (chunk 1)~~ ✅ ~~#3 (chunk 2)~~ ✅ merged, then #1 (chunk 3), #4 (batch 004), one at
+a time, integration commits serialised.
 
 Batch 004's figures were re-measured in this checkout rather than taken from its report:
 `merge` prints no "never matched the dump"; script instances 3,299 → **4,013** (+714) and unique
@@ -145,7 +144,7 @@ reviewer's ruling now lands on **one** PR instead of three. Recorded here rather
 `glossary.md`: the orchestrator gets one glossary write per wave (SKILL.md §2) and has used it,
 and the reviewer is the only writer of `glossary.md`.
 
-**§9 PROVISIONAL correction the reviewer must make:** §9 describes **メルザリオ** as the "hobbit
+**§9 PROVISIONAL correction — ✅ DONE 2026-09-08 in chunk 2's integration commit (glossary §20.1):** §9 describes **メルザリオ** as the "hobbit
 village-chief's son". Chunk 2 shows it is a **place** — `息子がメルザリオに住んでる` (his son lives
 *in* Melzario), `メルザリオの森` (the forest *of* Melzario). Rendered `Ｍｅｌｚａｒｉｏ`. The §9 row
 must be corrected, not just promoted.

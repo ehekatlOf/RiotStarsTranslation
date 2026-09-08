@@ -570,3 +570,40 @@ Glossary §10.8 is still open. Chunk 1 spells `あと１隊` and `１人でも` 
 the racing table: **digits stay full-width where they are data, prose spells small numbers out.**
 Three sessions have now independently landed on it. Someone should promote it from an open question
 to a rule in §3 rather than leave each translator to rediscover it.
+
+## H. Wave 1 review — battle chunk 2 / PR #3 (2026-09-08)
+
+### H1. The `{FCB0}` portrait-id → character map is still guesswork, and chunk 2 is where it bites
+
+Chunk 2 names only **Fernando** (self-identified, id 5), **Albert** (addressed by name, id 6),
+**Timmy** and **Sykes** (addressed together by id 10). Ids 0, 1, 2, 3 and 9 are unnamed:
+
+- **id 1** is the casual, tactically-minded speaker who addresses the player by name. He is written
+  to §7's Kain register — contractions throughout — but the chunk never names him. **If an in-game
+  check shows id 1 is not Kain, his contractions need revisiting.**
+- **id 3** is the young voice that calls Fernando `いばってる` and is addressed in the same breath as
+  `ティミー、サイクス` by id 10, so id 3 is probably Timmy or Sykes — the chunk never says which.
+- **id 9** is the 重剣士 who speaks with `僕`.
+- **id 0B is a second Melzario hobbit who does NOT use the `ノロ` tic** and speaks plain polite
+  Japanese. That is the source's own distinction and it was preserved. Do not "fix" it later.
+
+Same species of question as §G4 (chunk 1) and glossary §10.11 / §13.13. Only settleable in-game.
+
+### H2. `帝国軍` — chunk 7 took the width fallback where the default would have fitted
+
+Glossary §2 makes `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` the default and `ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ` the
+fallback for when 24 columns will not take it. Chunk 2 uses the default twice, at 21 columns.
+Shipped `chunk_007.txt` uses the fallback in a row that measures 22 columns with the default —
+i.e. it would have fitted.
+
+**Not to be acted on.** The Japanese messages differ, so CLAUDE.md §3's identical-JP rule is not
+engaged, and `chunk_007.txt` has only **399 bytes of slack**: swapping in the longer form costs
+bytes for no correctness gain. Recorded so nobody "discovers" the divergence later and re-cuts a
+tight file over it. Glossary §20.4 states the default explicitly so later units do not drift.
+
+### H3. In-game check requested by chunk 2
+
+The two coda variants (file lines 14 and 20) are mutually exclusive — the player sees one. Both
+were translated and both are gated, but **which one fires, and on what condition, is unknown**.
+Worth confirming that the line-20 variant is reachable at all; cf. §D4, the same question about
+script line 1234.

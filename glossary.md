@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–52 (unit/class descriptions) and `battle_dump.txt`
-chunks **0, 1, 10, 11, 12, 14, 34, 35, 40** (prologue + chapter 2 + all of tier E).
+chunks **0, 1, 2, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–3 + all of tier E).
 
 ---
 
@@ -224,10 +224,10 @@ Do not treat these as decisions. Promote on first use.
 
 | Japanese | Likely English | Where seen |
 |---|---|---|
-| メルザリオ | Melzario / Merzario | battle script, hobbit village-chief's son |
+| ~~メルザリオ~~ | ✅ **PROMOTED to §20.1** — `Ｍｅｌｚａｒｉｏ`, and it is a **PLACE**, not the chief's son; this row's original description was wrong | battle chunk 2 (PR #3) |
 | ティミー | Timmy | battle script, chunk with Fernando |
-| サイクス | Sykes / Cyx | same scene as ティミー |
-| 宮廷第２軍 | 2nd Royal Army | Fernando's unit |
+| ~~サイクス~~ | ✅ **PROMOTED to §20.1** — `Ｓｙｋｅｓ` (§18.4) | battle chunk 2 (PR #3) |
+| ~~宮廷第２軍~~ | ✅ **PROMOTED to §20.1** — `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`, both source spellings | battle chunk 2 (PR #3) |
 | リザードマン | Lizardman | `script_unique` 1297; the ch.10 dragonfolk are presumably this class |
 | レバーク | Leverk / Rebark | `script_unique` 1350, a castle Maya has left |
 | オーク | Orc | monster class |
@@ -242,7 +242,7 @@ batch 003 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `ア�
 
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| アルベール | Ａｌｂｅｒｔ | battle chunk 2, in the captain's unit | Ａｌｂｅｒｔｏ; *Albel* is not a European reading |
+| ~~アルベール~~ | ✅ **PROMOTED to §20.1** — `Ａｌｂｅｒｔ`, Fernando's subordinate | battle chunk 2 (PR #3) | — |
 | シャスタ | Ｓｈａｓｔａ | battle chunk 2/3, addressed `シャスタさん` by Marvel and informally by the rogue | — |
 | マーベル | Ｍａｒｖｅｌ | battle chunk 3, a **person** (`マーベルさん`); also in `script_unique` | Ｍａｒｖｅｌｌ, Ｍａｒｂｅｌ |
 | マーベラス | Ｍａｒｖｅｌｌｏｕｓ | battle chunk 3 + script, a **town** (`マーベラスの街`, `マーベラスの広場`) — must stay visibly distinct from マーベル the person | Ｍａｒｂｅｌｌａｓ |
@@ -741,7 +741,8 @@ left for another correction of this kind — the next one will need a re-cut.
 ### 18.4 `サイクス` → `Ｓｙｋｅｓ`
 
 Reconciled between PRs #1 and #3 before review and verified in both pushed files. Promote out of
-§9 PROVISIONAL when the first of those two merges.
+§9 PROVISIONAL when the first of those two merges. ✅ **Discharged 2026-09-08** — PR #3
+(chunk 2) merged first, so the promotion is recorded in §20.1.
 
 ---
 
@@ -789,3 +790,70 @@ rule, not an exception, and it is the pattern every later `ノロ` line follows.
 | The 9th Army rank and file (portraits 0000–0002, 0004) | Grumbling and clipped; contractions throughout. The veteran (0001) is flat and unimpressed, the newcomer (0000) asks the questions, the anxious one (0004) carries `ううっ`, the sarcastic one (0002) gets `Ｑｕｉｔｅ　ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ．．．` |
 | The pig‐faced fiend (portrait 0006) | Self-important and contemptuous, bracketed by `Ｏｉｎｋ`. `俺様` is flattened to `ｍｅ` for width — the swagger is carried by `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ．` and the squeal |
 | The chunk 1 tutorial speaker (portrait 0003) | **Not** a §7 tutorial box. Its marker is `{=FA1000000000}`, not `{=FA1000300030}`, so it is a character explaining the rules: friendly and plain, light contractions, as §15.3's racetrack guide. The marker is what decides this |
+
+---
+
+## 20. Added by chunk 002 (PR #3, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_002.txt` — chapter 3: Fernando's briefing on the south road, the 9th
+Army's banter about army rankings, the cavalry and heavy-swordsman tactical boxes, the Melzario
+hobbits' plea, and the Fernando/Albert coda, which exists as **two mutually exclusive variants**
+(file lines 14 and 20). 5,839 / 8,192 bytes, slack 2,353.
+
+### 20.1 People and places — four promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| アルベール | Ａｌｂｅｒｔ | **Promoted from §9 (wave-1 seeds).** Fernando's subordinate; deferential and formal, no contractions, answers `はっ！` → `Ｓｉｒ！`. 6 columns |
+| サイクス | Ｓｙｋｅｓ | **Promoted from §9 PROVISIONAL** per §18.4 — chunk 2 is the first of PRs #1/#3 to merge, so the promotion lands here. 5 columns. Alt *Cyx* rejected |
+| メルザリオ | Ｍｅｌｚａｒｉｏ | **Promoted from §9 PROVISIONAL, and §9's description corrected: it is a PLACE, not a person.** `息子がメルザリオに住んでる` (his son lives *in* Melzario) and `メルザリオの森` → `Ｍｅｌｚａｒｉｏ　ｆｏｒｅｓｔ` both settle it. 8 columns. Alt *Merzario* |
+| 宮廷第２軍 / 宮廷２軍 | ２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ | **Promoted from §9 PROVISIONAL.** Both source spellings take one English form — they are the same unit spelled two ways nine segments apart. 16 columns, so it never shares a row with a verb |
+| 村長 (ホビットの村の) | village chief | The hobbit village's head — the `ノロ` speaker of chunk 1. Kept **distinct** from 妖精の村の長 → village elder (§14.2) and 市長 → the mayor (§1); three different source words |
+| 集落 | settlement | The northern hamlet the villagers come from. **Distinct** from 村 → village |
+| 主力部隊 | ｔｈｅ　ｍａｉｎ　ｂｏｄｙ | Standard military English. Kept **distinct** from 本隊 → the main force (§2) and 精鋭部隊 → elite corps, on the principle those two already follow |
+
+### 20.2 Classes
+
+| Japanese | English | Note |
+|---|---|---|
+| 重剣士 | heavy swordsman / heavy swordsmen | Extends §4's 剣士 → swordsman. Lowercase in prose per the §17.1 species test. `ｈｅａｖｙ　ｓｗｏｒｄｓｍｅｎ` is 16 columns; the ≤ 20 class-table label form is still open (§10.2) |
+| 騎兵 | cavalry | Bare form. Extends §4's 軽騎兵 → light cavalry |
+
+### 20.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| ぬぬッ | **`Ｗｈｙ，`** | Fernando's grunt of indignant surprise. **Ruled 2026-09-08 (PR #3 round 1): `Ｗｈｙ，`, not `Ｇｒｒ，`** — the speaker is a blustering senior officer, so the word wanted is an officer's, not a growl, and English `Why，` carries exactly the affronted double-take of `ぬぬッ`. Held apart from all five fixed grunts: `Ｈｍｐｈ` (ムムッ/ふっ/フンッ), `Ｔｃｈ` (くっ), `Ｈｍ` (む/ん), `Ｏｈ` (ほう), `Ｏｈ？` (おや). Occurs twice, byte-identical in both coda variants |
+| ん？ | `Ｈｍ？` | Same English as §6's む → `Ｈｍ`, **deliberately** — one short noticing grunt, two spellings, as 鬼 / オーガ → *ogre* already does (§17.2) |
+| えーっ | `Ｅｈｈ，` | Drawn-out dismayed protest. Alt *Whaaat* |
+| よいか、 | `Ｌｉｓｔｅｎ　ｗｅｌｌ，` | Fernando's stiffer form. Kept **distinct** from いいか、 → `Ｌｉｓｔｅｎ，` (`translation_prompt.md` §5 worked example) — different source strings, different register |
+| わかっておるな！ | `Ｉｓ　ｔｈａｔ　ｃｌｅａｒ！` | **Distinct** from §6's わかったなっ！！ → `Ｇｏｔ　ｔｈａｔ！！` and いいな！！ → `Ｇｏｔ　ｉｔ！！`. §6 forbids reusing those for a different string; the `おる` form is a senior officer's, not a sergeant's bark |
+| まったくだっ！ | `Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！` | Emphatic **agreement**, answering Albert. **Distinct** from §6's bare まったく → `Ｒｅａｌｌｙ，` (exasperation). The elided predicate is supplied per §2 |
+| 当たり前だ！ / 当然だ！ / 当然だっ。 | `Ｏｆ　ｃｏｕｒｓｅ！` / `Ｎａｔｕｒａｌｌｙ！` / `Ｎａｔｕｒａｌｌｙ．` | Three source strings in one scene; the first two must not collapse. Punctuation follows the source |
+| バカ者 (of a named officer) | `ｆｏｏｌ` — `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ，` | **A third バカ register.** Deliberately not chunk 1's そんなバカな → `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` or バカなやつら → `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ` (§19.1) — different source strings, different speakers |
+| ガセネタ | `ａ　ｆａｌｓｅ　ｌｅａｄ` | A bum steer. 12 columns, and it keeps the sense without importing an unrelated English idiom (§2). Alt *a false report* |
+| 貧乏クジをひく | `ｄｒｅｗ　…　ａ　ｓｈｏｒｔ　ｓｔｒａｗ` | A genuine equivalent idiom — both are drawing the losing lot — not a substitution |
+| カタがつく | `ｓｅｔｔｌｅ` — `ｈａｓ　ｓｅｔｔｌｅｄ　ｔｈｅｉｒｓ` | “Matters are concluded” |
+| おいしい思いをする | `ｈａｖｅ　…　ｔｈｅ　ｓｐｏｉｌｓ` | To get the sweet part of it |
+| 体中ドロだらけ | `ａｌｌ　ｍｕｄ，　ｈｅａｄ　ｔｏ　ｆｏｏｔ` | 体中 → *head to foot*, ドロだらけ → *all mud* |
+| 敵を通してはならん | `ｌｅｔ　ｎｏ　ｅｎｅｍｙ　ｔｈｒｏｕｇｈ` | The literal “the enemy must not pass” is 25 columns; this is the ≤ 23 form |
+| 救援に向かう / 救援に来る | `ｇｏ　ｔｏ　…　ａｉｄ` / `ｃｏｍｅ　ｔｏ　…　ａｉｄ` | **Distinct** from 援軍 → reinforcements / aid (§2). 救援 is the act of relieving, 援軍 the troops sent; §2's “use *aid* only where 24 columns will not take the full word” governs 援軍 only and does not apply here |
+
+### 20.4 `帝国軍` — the two forms, and which is the default
+
+§2 already reads `帝国軍` → *the Empire's men where 24 columns will not take “the Imperial army”*.
+Chunk 2 is the first unit to make that choice with room to spare, so the rule is worth stating
+plainly: **`ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` (21 columns) is the default and `ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ`
+is the width fallback.** Chunk 2 uses the full form twice. Shipped `chunk_007.txt` uses the
+fallback where the default would have fitted at 22 columns — recorded, **not** to be re-cut: that
+file has 399 bytes of slack and the Japanese messages differ, so CLAUDE.md §3's identical-JP rule
+is not engaged.
+
+### 20.5 Register
+
+| Who | Register |
+|---|---|
+| Fernando (portrait 0005) | Senior, stiff, self-important; **no contractions anywhere** — `Ｉ　ａｍ`, `ｗｅ　ａｒｅ`, `Ｉ　ｗｉｌｌ　ｎｏｔ`, `ａｒｅ　ｔｈｅｙ　ｎｏｔ`. Commands in the imperative (`ｈｏｌｄ　ｔｈｉｓ　ｒｏａｄ　ｔｏ　ｔｈｅ　ｄｅａｔｈ`), and his affront is `Ｗｈｙ，` |
+| Albert (portrait 0006) | Deferential and formal, no contractions; reports rather than opines; `Ｓｉｒ！` |
+| The 9th Army companions (portraits 0000–0003, 0009, 000A) | Casual, contractions throughout — the deliberate contrast that makes Fernando's flatness read as rank. Portrait 0009, the 重剣士, speaks with `僕` |
+| The Melzario hobbits (portraits 0007, 000B) | 0007 carries the `ノロ` tic and the alarm; **0B is a second hobbit who does *not* use the tic** and speaks in plain polite Japanese (`お願いします`, `ありがとうございます`). Do not add the tic to 0B — the source withholds it |
