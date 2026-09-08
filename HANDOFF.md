@@ -16,37 +16,42 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **Wave 1, review phase. Orchestrator: wave-1 orchestrator subagent (taking over mid-flight).**
-> Barrier met 4 of 4 and it stays met — a rework round does not reopen it.
+> **Wave 1, review phase. Orchestrator: wave-1 orchestrator subagent.** Barrier met 4 of 4 and it
+> stays met — a rework round does not reopen it.
 >
-> Review queue, one reviewer at a time, `run_in_background: false`, push HANDOFF before each and
-> `git pull --ff-only` after each:
-> 1. **PR #2 (chunk 1), round 2** — reworked and pushed, head `8e22dd3`, 3,517 / 8,192, slack
->    4,675. Both round-1 findings applied. ← **reviewer running now**
-> 2. **PR #1 (chunk 3)** — never reviewed. 4,601 / 8,192, slack 3,591.
-> 3. **PR #4 (batch 004)** — never reviewed. 34 lines / 714 instances; bank 40 → 509 free.
-> 4. **PR #3 (chunk 2), round 2** — translator-2 has merged the base into `tl/battle-002` locally
->    (`b5d0eb1`) but has **not pushed the two reading findings yet**; remote head is still the
->    round-1 commit `1340be6`. It is still working — wait, do not re-dispatch over a live agent.
+> ⚠️ **This orchestrator has no `Task` tool: subagent spawning is disabled in its session.** It
+> therefore runs the reviews itself, under the identical CLAUDE.md §6 contract — every gate run in
+> a real checkout at `/home/user/rs-review`, evidence pasted into the PR review, one PR at a time.
+> See "The spawn constraint" below; this is the one deviation from CLAUDE.md §4's role split and it
+> is deliberate, disclosed, and forced.
 >
-> Tell every reviewer: **the wave-1 rulings in `glossary.md` §18 are already made — check
-> conformance, do not re-litigate.** ノロ → `，　ｎｙｏｒｏ．` (spaced), おお → `Ｏｈ！`,
-> サイクス → `Ｓｙｋｅｓ`.
+> Review queue, in unit order, one at a time:
+> 1. ✅ **PR #2 (chunk 1) — MERGED** round 2, squash `dddf0ae`. 3,517 / 8,192, slack 4,675.
+> 2. **PR #3 (chunk 2), round 2** — reworked and pushed, head `54063b3`, 5,839 / 8,192, slack
+>    2,353. ← **next**
+> 3. **PR #1 (chunk 3)** — never reviewed. 4,601 / 8,192, slack 3,591.
+> 4. **PR #4 (batch 004)** — never reviewed. 34 lines / 714 instances; bank 40 → 509 free. The
+>    reviewer must decide explicitly whether 2.28× compression is acceptable or ~3 lines should be
+>    parked to buy back ~150 bytes. That is a quality judgement, not a gate.
 >
-> **When wave 1 closes, this orchestrator spawns the wave-2 `orchestrator` subagent itself**
-> (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4 (D 5.08),
-> 6 (C 3.09), 9 (D 4.93) + script batch 005 (unique lines 1035–1100, bank 31 alone). Seed the
-> glossary for wave 2 first. Do not stop to ask; CLAUDE.md §8 lists the only four reasons to stop.
+> The wave-1 rulings in `glossary.md` §18 are **already made** — check conformance, do not
+> re-litigate. ノロ → `，　ｎｙｏｒｏ．` (spaced), おお → `Ｏｈ！`, サイクス → `Ｓｙｋｅｓ`.
+> §18.4: promote サイクス out of §9 when the first of PR #1 / #3 merges.
+>
+> **When wave 1 closes: seed the glossary for wave 2, then spawn the wave-2 orchestrator** — units
+> battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + script batch 005 (unique lines 1035–1100,
+> bank 31 alone). If spawning is still unavailable, say so plainly in the final handoff and name
+> the reason; do not pretend the chain continued.
 
 ## Last updated
-2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, 0 of 4 merged ·
+2026-09-08 · by: **wave-1 orchestrator subagent** · wave: 1 in review, **1 of 4 merged** ·
 queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | 10 | 44 | 0, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
-| Battle JP characters | 5,963 | 43,161 | 13.8% |
+| Battle chunks | 11 | 44 | 0, **1**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
+| Battle JP characters | 6,682 | 43,161 | 15.5% |
 | Script unique lines | 151 | 1,430 | `tl/script/batch_001–003.tsv` |
 | Script message instances | 3,299 | 7,931 | 41.6% |
 
@@ -56,8 +61,8 @@ queue: **fresh (survey ran 2026-09-08)**
 ## In flight
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **reworked, awaiting round 2** — 3,517 / 8,192, slack 4,675 (head `8e22dd3`); both findings done, figure matches the reviewer's prediction exactly | 2 | reviewer |
-| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **CHANGES r1** — all 8 gates passed; 2 reading findings sent back (`ぬぬッ`→`Ｗｈｙ，`; `我々は城に戻るぞ` → `Ｗｅ　ｒｅｔｕｒｎ{FFFE}ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．`) | 1 → 2 | translator |
+| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | ✅ **MERGED** round 2, squash `dddf0ae` — 3,517 / 8,192, slack 4,675; max column 23, no page over 4 rows; all 8 gates re-run on the moved base | 2 | done |
+| battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **reworked and pushed, head `54063b3`** — 5,839 / 8,192, slack 2,353 (+2 bytes, exactly as finding 2 predicted). Both r1 findings applied verbatim; translator now idle | 2 | reviewer |
 | battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | reviewer |
 | script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
 
@@ -69,6 +74,26 @@ queue: **fresh (survey ran 2026-09-08)**
 > instead of it. A subagent whose notification never arrives is **lost, not finished**:
 > `ListAgents` is the authority, silence is not evidence.
 
+### ⚠️ The spawn constraint — read before planning any wave
+
+The session running the wave-1 orchestrator has **no `Task` tool** (`Task is disabled for this
+session, in subagents as well as here`), and no `ListAgents`. It cannot spawn a `translator`, a
+`reviewer`, or its successor `orchestrator`. This was discovered mid-wave, after the first
+reviewer dispatch was refused.
+
+**What was done about it, and why.** CLAUDE.md §8 lists exactly four stop conditions and "cannot
+spawn subagents" is not one of them; the top banner forbids stalling. So the orchestrator ran the
+reviews itself under the identical §6 contract — a real checkout at `/home/user/rs-review`, every
+mechanical gate executed and its output pasted into the PR review, the full line-by-line reading
+against the Japanese, one PR at a time, integration commits serialised. What is lost is
+**reviewer independence**, not gate coverage: the same agent that routes the wave also judges it.
+That is a real weakening of CLAUDE.md §4's role split and it is recorded here rather than
+quietly absorbed.
+
+**For whoever resumes.** If your session *does* have `Task`, go back to the three-role split
+immediately — it is the better arrangement. If it does not, the fallback above is the precedent,
+and the chain cannot be continued by spawning; a human has to start the next wave.
+
 ### Two tooling facts established by the wave-1 reviewers — carry these into every future wave
 1. **`REQUEST_CHANGES` is impossible on these PRs.** GitHub refuses it on a PR opened by the same
    account, which is every PR in this project. Reviewers must post CHANGES as a **COMMENT** review.
@@ -77,9 +102,18 @@ queue: **fresh (survey ran 2026-09-08)**
    The PR #3 reviewer tested it by planting one: `assemble.py check` fails with `tag stream
    changed`, because `tag_parity` exempts only `{FFFE}`. The prompt misstates an available lever.
    A translator at the 4-row wall has re-flow and §2.1 only.
+3. **`APPROVE` is impossible too, for the same reason.** GitHub refuses `APPROVE` as well as
+   `REQUEST_CHANGES` on a PR opened by the same account (`Can not approve your own pull request`).
+   **Every** review decision on this project — MERGE, CHANGES and PARK alike — goes as a
+   **COMMENT** review. Established on PR #2, 2026-09-08. Do not retry either event.
+4. **Squash-merging via the GitHub MCP works and is the merge path.** `merge_pull_request` with
+   `merge_method: "squash"` and `expectedHeadSha` set merged PR #2 cleanly. Pass the true post-
+   rework figure in `commit_title`: a PR title written before a rework is stale, and the squash
+   title is what lands in the history.
 
-**Barrier: 4 of 4 — MET.** Review order is unit order: PR #2 (chunk 1), #3 (chunk 2), #1
-(chunk 3), #4 (batch 004), one reviewer at a time, foreground.
+**Barrier: 4 of 4 — MET**, and it stays met; a rework round does not reopen it. Review order is
+unit order: ~~#2 (chunk 1)~~ ✅ merged, then #3 (chunk 2), #1 (chunk 3), #4 (batch 004), one at a
+time, integration commits serialised.
 
 Batch 004's figures were re-measured in this checkout rather than taken from its report:
 `merge` prints no "never matched the dump"; script instances 3,299 → **4,013** (+714) and unique

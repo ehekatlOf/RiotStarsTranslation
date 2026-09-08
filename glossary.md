@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–52 (unit/class descriptions) and `battle_dump.txt`
-chunks **0, 10, 11, 12, 14, 34, 35, 40** (prologue + all of tier E).
+chunks **0, 1, 10, 11, 12, 14, 34, 35, 40** (prologue + chapter 2 + all of tier E).
 
 ---
 
@@ -253,7 +253,7 @@ batch 003 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `ア�
 | 軍神オーディン | the war god Ｏｄｉｎ | script batch 004, line 178 | — |
 | 雷神 | the thunder god | script batch 004, lines 154–156, 173–175 — `雷神の雷`, `雷神の電磁場` | — |
 | 守護をもたらす | grants … guardianship / warded by | script batch 004, lines 146–148, 170–172; six entries, must be identical in all six | — |
-| ブヒ / ブヒィィィィ | *Ｏｉｎｋ* / *Ｏｉｎｋｋｋｋ* | battle chunk 1, a pig‐faced fiend's squeal — a tic, so fix it once (§5) | — |
+| ~~ブヒ / ブヒィィィィ~~ | ✅ **PROMOTED to §19.1** — rendered `Ｏｉｎｋ` / `Ｏｉｎｋｋｋｋ` in `tl/battle/chunk_001.txt` (PR #2, merged 2026-09-08) | battle chunk 1 | — |
 
 ---
 
@@ -742,3 +742,50 @@ left for another correction of this kind — the next one will need a re-cut.
 
 Reconciled between PRs #1 and #3 before review and verified in both pushed files. Promote out of
 §9 PROVISIONAL when the first of those two merges.
+
+---
+
+## 19. Added by chunk 001 (PR #2, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_001.txt` — chapter 2: the hobbit village chief hires the 9th Army to
+guard his food store, the party grumbles, an in-character tutorial on HP / villages / losing a
+character, the pig-faced fiend boss, and the chief's thanks. 3,517 / 8,192 bytes, slack 4,675.
+
+**This is the first chunk in which the `ノロ` tic is actually rendered.** §5 and §18.1 fix the form;
+chunk 1 is where it first reaches `tl/`, ten times, in the spaced form `，　ｎｙｏｒｏ．` — and once
+as `，　ｎｙｏｒｏ，` on `さっそくノロが、`, where the source clause ends in `、`. That is §5's stated
+rule, not an exception, and it is the pattern every later `ノロ` line follows.
+
+### 19.1 Tics and interjections
+
+| Japanese | English | Note |
+|---|---|---|
+| ブヒ / ブヒィィィィ | `Ｏｉｎｋ` / `Ｏｉｎｋｋｋｋ` | **Promoted from §9 PROVISIONAL (wave-1 seeds).** The pig‐faced fiend's squeal, used with the source's own stop per the ゲロゲロ precedent (§5). The four `ィ` become four `ｋ` — kana beats tracked, as with フハハハ → Ｆｕｈａｈａｈａ (§11.5) |
+| ううっ | `Ｕｇｈ` + the source's own punctuation | Groan of dismay. **Distinct** from くっ / クッ → `Ｔｃｈ` (§11.5) and from ぐふっ → `Ｇｕｆｆ` (§14.5). Free to take `Ｕｇｈ` only because §18.3 moved chunk 0's くっ to `Ｔｃｈ`; the form no longer does two jobs. Also in battle chunk 2 |
+| それにしても | `Ｓｔｉｌｌ，` | Pivot to a new thought. Also in battle chunk 2, byte-identical |
+| いやいや (before thanks) | `Ｗｅｌｌ　ｎｏｗ，` | The chief's opener at `いやいや、助かったノロ。` — deprecating warmth, **not** a refusal, so never “No, no” |
+| そんなバカな | `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` | Follows chunk 7's shipped `バ、バカな・・・` → `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．`. Dot count follows the source |
+| バカなやつら | `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ` | The other バカ — contemptuous plural address. **Distinct** from そんなバカな above; both are the fiend's in this chunk |
+| たかが〜 | `Ｔｈｅｙ’ｒｅ　ｏｎｌｙ　．．．` | Dismissive. `たかがオーク。` → `Ｔｈｅｙ’ｒｅ　ｏｎｌｙ　ｏｒｃｓ．` |
+
+### 19.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 謹慎処分を受ける / 謹慎中 | `ｃｏｎｆｉｎｅｄ` | The mages' squad leader struck a superior and is confined. Read as **singular** — the subject is 分隊長 — so `ｓｏ　ｈｅ’ｓ　ｃｏｎｆｉｎｅｄ．`. Recurs as 謹慎中 in battle chunk 3 (Shasta) |
+| 上官 | superior officer | |
+| 部隊 (魔術師の部隊) | squad | Matches 第３分隊 → 3rd Squad and 分隊長 → squad leader (§2); rendered `ａ　ｍａｇｅｓ’　ｓｑｕａｄ` |
+| 作戦 (bare, “what's the plan?”) | `Ｔｈｅ　ｐｌａｎ？` | Kept **distinct** from 作戦会議 → war council (§2) |
+| なぎ倒す | mow down | |
+| キャラクター | character | Plain noun; no §17.1 species question arises |
+| ＨＰ | `ＨＰ` | Left as the source's full-width caps — a genuine stat abbreviation the UI also shows. **Distinct from** ＨＩＴ → `ｈｉｔｓ` (§3), where the caps are only Japanese emphasis on a loanword |
+| 「村」 / 「待機」 (map/menu labels) | `“Ｖｉｌｌａｇｅ”` / `“Ｗａｉｔ”` | `「…」` → `“…”` per the `『…』` precedent (§3, §15.1); capitalised as labels, like `“Ｇｅｍｓ”`. **Bare 村 in the same message stays lowercase `ｖｉｌｌａｇｅ`** — the source draws that distinction itself and the translation preserves it |
+
+### 19.3 Register
+
+| Who | Register |
+|---|---|
+| The hobbit village chief (portrait 0005) | Warm, fussy, grateful; the `ノロ` tic on every sentence. Deferential to the party without being servile |
+| The 9th Army rank and file (portraits 0000–0002, 0004) | Grumbling and clipped; contractions throughout. The veteran (0001) is flat and unimpressed, the newcomer (0000) asks the questions, the anxious one (0004) carries `ううっ`, the sarcastic one (0002) gets `Ｑｕｉｔｅ　ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ．．．` |
+| The pig‐faced fiend (portrait 0006) | Self-important and contemptuous, bracketed by `Ｏｉｎｋ`. `俺様` is flattened to `ｍｅ` for width — the swagger is carried by `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ．` and the squeal |
+| The chunk 1 tutorial speaker (portrait 0003) | **Not** a §7 tutorial box. Its marker is `{=FA1000000000}`, not `{=FA1000300030}`, so it is a character explaining the rules: friendly and plain, light contractions, as §15.3's racetrack guide. The marker is what decides this |

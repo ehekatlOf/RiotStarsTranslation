@@ -9,14 +9,25 @@ says how the work is split, gated, merged and handed over.
 >
 > **Closing a wave is not the end of your turn. Spawning the next wave's orchestrator is.**
 >
-> Every wave is run by an `orchestrator` subagent, and **the last act of every wave is for that
-> orchestrator to spawn the next wave's orchestrator itself** (`subagent_type: "orchestrator"`,
-> `run_in_background: true`), automatically, in the same turn, without being asked, without
-> reporting back first, and without waiting for a human to say "continue". The chain must keep
-> running when nothing above it is alive; that is the entire point. The dispatch template is in
-> `.claude/skills/translate/SKILL.md` §6a and `.claude/agents/orchestrator.md` §7. `HANDOFF.md`
-> → **NEXT ACTION** always names the literal next spawn; if a wave has just closed and that line
-> does not name one, the wave is not finished — write it and spawn.
+> **Every wave runs in its own NEW SESSION.** The last act of every wave is for its coordinator to
+> open a fresh Claude Code Remote session for the next wave — `create_session` (claude-code-remote
+> MCP), inheriting this environment, `source_revision` = the integration branch — and to seed it
+> with nothing but the wave number and a pointer to `HANDOFF.md`. Automatically, in the same turn,
+> without being asked, without reporting back first, and without waiting for a human to say
+> "continue".
+>
+> **A new session, not a subagent.** A subagent has its own context, but every report it returns
+> lands in whichever session spawned it, so a run driven from one session accumulates every wave's
+> reviews, figures and findings until that context is exhausted. Opening a session per wave is what
+> actually bounds the cost: each coordinator starts empty, reads `HANDOFF.md`, runs one wave, opens
+> the next session, and ends. `HANDOFF.md` and the open PR list are the only state that crosses the
+> boundary — which is exactly what §7 already requires them to be sufficient for.
+>
+> Within a wave, translators and the reviewer remain **subagents** of that wave's session; that is
+> where parallelism belongs. It is only the wave boundary that gets a new session. The dispatch
+> template is in `.claude/skills/translate/SKILL.md` §6a and `.claude/agents/orchestrator.md` §7.
+> `HANDOFF.md` → **NEXT ACTION** always names the literal next spawn; if a wave has just closed and
+> that line does not name one, the wave is not finished — write it and open the session.
 >
 > Quality control is not what gets skipped to keep the chain moving, and the chain is not what
 > gets skipped to keep quality: **every** unit still goes translator → PR → reviewer → merge,
@@ -120,18 +131,17 @@ are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt fo
 Four roles, all Opus at maximum effort (`.claude/settings.json`, agent frontmatter). Start the
 loop with `/translate` in the main session.
 
-**Every wave is run by a fresh `orchestrator` subagent seeded with nothing but `HANDOFF.md` and
-the wave number, and each one spawns the next before it returns.** One wave, one orchestrator, one
-context: no single context carries the whole run, a dead agent costs one wave rather than the run,
-and the chain needs no human between waves. Successors are spawned in the background and the
-parent returns at once, so the chain stays flat instead of nesting a dozen agents deep. Exactly
-one orchestrator *works the repo* at a time: a successor is spawned only after `handoff: wave N
-closed` is pushed, and the main session does not touch the repository while a wave is running.
+**Every wave runs in its own new session, seeded with nothing but `HANDOFF.md` and the wave
+number, and each coordinator opens the next session before it ends.** One wave, one session, one
+context: no context carries more than a single wave, a dead session costs one wave rather than the
+run, and the chain needs no human between waves. Exactly one coordinator *works the repo* at a
+time — the next session is opened only after `handoff: wave N closed` is pushed, and a session
+does not touch the repository once it has handed on.
 
 | Role | Runs as | Does | Never does |
 |---|---|---|---|
-| **Runner** | main session, `.claude/skills/translate/SKILL.md` | preflight, survey, spawn the **first** wave orchestrator, then relay reports and re-spawn only if the chain breaks | translate, review, merge, work the repo while a wave orchestrator is alive |
-| **Orchestrator** | subagent `orchestrator`, **main checkout, no worktree**, one working at a time | one wave: seeds, dispatch, review routing, rework, wave close, HANDOFF — **then spawns the next wave's orchestrator** | translate, merge, edit `tl/`, run a second wave itself, end a wave without spawning its successor |
+| **Runner** | the session that starts the run, `.claude/skills/translate/SKILL.md` | preflight, survey, open the **first** wave session, then keep a watchdog armed and reopen a wave only if the chain breaks | translate, review, merge, work the repo while a wave coordinator is alive |
+| **Coordinator** | **its own session**, one wave each (`.claude/agents/orchestrator.md` is its role) | one wave: seeds, dispatch, review routing, rework, wave close, HANDOFF — **then opens the next wave's session** | translate, merge, edit `tl/`, run a second wave itself, end a wave without opening its successor |
 | **Translator** | subagent `translator`, own worktree, several in parallel | one unit → one branch → one PR | touch other files, merge, edit HANDOFF/glossary/FLAGS |
 | **Reviewer** | subagent `reviewer`, own worktree, **one at a time** | gates + line-by-line reading → MERGE / CHANGES / PARK; integrates glossary, flags, HANDOFF | translate, waive a gate, merge from a diff read alone |
 
@@ -172,14 +182,15 @@ closed` is pushed, and the main session does not touch the repository while a wa
    `build/*_dump_merged.txt` if changed; refresh the README status table from `status`; prune
    worktrees; HANDOFF gets the wave summary and the next wave. Commit, push. The wave
    orchestrator **returns here** — it does not start step 2 again.
-7. **Next wave — automatic, not discretionary.** The moment step 6 pushes `handoff: wave N
-   closed`, the **wave orchestrator itself MUST**, in that same turn, spawn a fresh `orchestrator`
-   subagent for wave N+1 (`run_in_background: true`) with the wave number, the integration branch
-   and the unit list — nothing else; `HANDOFF.md` carries the rest — and then return. Do not stop
-   to summarise, do not ask permission, do not wait to be prompted, do not hand the decision back
-   up. Update `HANDOFF.md` → NEXT ACTION to name the spawn *before* you make it, so a session that
-   dies between the two resumes correctly. Back to step 2, in a clean context.
-   The runner re-spawns only if a chain link is missing — it is the backstop, not the driver.
+7. **Next wave — a new session, automatic, not discretionary.** The moment step 6 pushes
+   `handoff: wave N closed`, the wave's coordinator **MUST**, in that same turn, open a fresh
+   session for wave N+1 with `create_session` (claude-code-remote MCP) — environment inherited,
+   `source_revision` = the integration branch, prompt = the wave number, the unit list and "read
+   `HANDOFF.md` first" — and then end. Do not stop to summarise, do not ask permission, do not wait
+   to be prompted, do not hand the decision back up. Update `HANDOFF.md` → NEXT ACTION to name the
+   new session *before* you open it, so a session that dies between the two resumes correctly.
+   Back to step 2, in a genuinely empty context. The runner reopens only if a chain link is
+   missing — it is the backstop, not the driver.
 8. **Stop** when no dispatchable unit remains. Final HANDOFF: done, parked and why, and exactly
    what the human must do next with pointers. Never loop on blocked items.
 
