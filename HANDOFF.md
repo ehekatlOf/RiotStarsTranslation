@@ -55,10 +55,23 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
-| battle chunk 4 | `tl/battle-004` | D, 642 JP ch, ratio 5.08 | 1 | — | dispatched |
-| battle chunk 6 | `tl/battle-006` | C, 1,014 JP ch, ratio 3.09 | 1 | — | dispatched |
-| battle chunk 9 | `tl/battle-009` | D, 686 JP ch, ratio 4.93 | 1 | — | dispatched |
-| script batch 005 | `tl/script-005` | 26 lines / 26 inst, 1,770 JP ch | 1 | — | dispatched |
+| battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | **PR open** — 3,849 / 8,192, **4,343 slack**, widest row 23 col, tag stream byte-identical (zero `{FFFE}` changed) |
+| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | — | translator running |
+| battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
+| script batch 005 | `tl/script-005` | 26 lines / 26 inst, 1,770 JP ch | 1 | — | translator running |
+
+**BARRIER STATE at 14:31Z: 2 of 4 — NOT MET. Nothing is reviewed yet.** Chunks 4 (#6) and 9 (#5)
+have PRs; chunk 6 and script 005 are still drafting and both translators are **alive** in
+`ListAgents`, so they are waited on, not re-dispatched. Review order once all four land:
+chunk 4 → 6 → 9 → script 005.
+
+**A third `メルザリオ`-kind classification correction arrived with PR #5:** `クリミア` is a
+**PERSON** — Doctor Crimea, designer of the machine soldiers — not the region `glossary.md` §2
+files it as. Evidence the translator measured: `このクリミアに` / `このクリミアの` in the battle
+dump is **self-reference**, and shipped `batch_003` lines 85, 86, 94 already render
+`クリミアの量産型機械兵２号機` as `Ｃｒｉｍｅａ’ｓ …`. The rendering `Ｃｒｉｍｅａ` is correct
+everywhere it already stands, so **no shipped line needs re-cutting** — the §2 row moves to §1.
+That makes three this wave: `ファリーナ`, `クリミア`, and `メルザリオ` before them.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
