@@ -48,7 +48,7 @@ Reviewer 3 (#10) is **done and merged**. Reviewer acts next: **#11 round 2**, th
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔁 **REWORK PUSHED `c5a8b3c`** — round 2 re-review queued behind reviewer 3 (never two reviewers at once) |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔍 **IN REVIEW round 2** — same reviewer resumed (holds its integration draft); must renumber to §29 / §Q |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | ✅ **MERGED round 1** — squash `7a37181`, **5,417 / 8,192 (2,775 slack)**; integration = the commit immediately after it, `integrate: chunk 013 (PR #10)`. All 8 gates green, 0 blocking findings. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
