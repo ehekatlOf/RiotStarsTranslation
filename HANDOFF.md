@@ -48,12 +48,35 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 |---|---|---|---|---|---|---|---|
 | battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **PR open** — 3,499 / 8,192, 4,693 slack | 1 | barrier |
 | battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | — | translating | 1 | translator |
-| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack | 1 | barrier |
+| battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | barrier |
 | script batch 004 | — | translator-4 | `tl/script-004` | — | translating | 1 | translator |
 
 **Barrier: 2 of 4.** Waiting on battle chunk 2 and script batch 004; both translators are alive
 and working, so neither is re-dispatched (CLAUDE.md §4 step 4 — never dispatch over a live agent).
 No review starts until all four PRs are open.
+
+### Cross-PR conflicts the reviewer must settle before ANY of these three merge
+Measured in the pushed files, not taken from the reports:
+
+| String | PR #2 (chunk 1) | PR #1 (chunk 3) | Evidence |
+|---|---|---|---|
+| ノロ tic | `，ｎｙｏｒｏ．` ×10 | `，　ｎｙｏｒｏ．` ×11 | glossary §5 spells it **unspaced**; the corpus does not. Across all shipped `tl/`, a full-width comma is followed by a full-width space **146** times and by a tag **121** times, and **never once by a letter**. §5's spelling is the outlier. This is the tic's first appearance in `tl/`, so whichever form wins sets it for ~70 further `ノロ` lines in `script_unique` and 7 more in the battle dump |
+| `おお！` | `Ｏｈｏ！` | `Ｏｈ！` | Same source string, both in hobbit scenes. `Ｏｈ` already renders ほう/ほお (§6), which always carries `．．．` or `，`; chunk 3 argues the punctuation keeps them apart on the ふっ/フンッ → `Ｈｍｐｈ` precedent, chunk 1 argues a fourth string on "Oh"/"Ah" flattens the set |
+| `サイクス` | not present | `Ｓｙｋｅｓ` (promoted from §9's open *Sykes / Cyx*) | **also in chunk 2**, still in flight. I missed it in the wave-1 seeds |
+
+Chunk 2's translator has been given `Ｓｙｋｅｓ` and the **spaced** ノロ form with the corpus
+evidence, so the reviewer's ruling lands on at most one PR rather than three. Recorded here rather
+than in `glossary.md`: the orchestrator gets one glossary write per wave (SKILL.md §2) and has
+used it, and the reviewer is the only writer of `glossary.md`.
+
+### Also raised by chunk 3, for the reviewer
+- `アイテムを{FFFE}奪われました。` → `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` is the
+  **first** rendering of a string that recurs untranslated in chunks 9, 28, 29, 30, 38, 39 and 41
+  (battle dump lines 253–255, 680, 720, 748, 938, 951, 974, 976). Whatever merges here binds those.
+- `探検家` → explorer (chunk 3) vs `冒険者` → adventurer (`script_unique` 1001) — same man, Korneff,
+  two different source words, deliberately kept distinct. Not a contradiction of the seed.
+- Portrait 02 in chunk 3 is an unnamed female party member who carries the tutorial voice; if a
+  later chunk names her, her register needs re-checking (cf. glossary §13.13 / §10.11).
 
 Chunk 1's report carried first renderings for strings that recur in chunks 2 and 3 — ノロ →
 `，ｎｙｏｒｏ．`, おお → `Ｏｈｏ`, ううっ → `Ｕｇｈ`, それにしても → `Ｓｔｉｌｌ，`, いやいや →
