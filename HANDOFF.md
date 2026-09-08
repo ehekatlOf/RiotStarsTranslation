@@ -65,9 +65,20 @@ unit from here:
 **Wave 4 candidates**, in this order:
 1. Any wave-3 unit that parked.
 2. Battle chunks **15 (D 6.13), 18 (D 6.28), 19 (B 1.94)** — next in chapter order.
-3. **One script batch.** ⚠️ Grep the candidate range for debug scaffolding first —
-   `フラグ|：新曲|^[０-９]{2}：|鑑賞モード`. `queue.py` groups by bank and adjacency and cannot tell a
-   sound-test menu from a scene; 89 of the 117 lines around wave 2's batch were exactly that.
+3. **One script batch — ALREADY VETTED by the wave-3 coordinator, take one of these:**
+
+   | `queue.py script` batch | Lines | Banks | Verdict |
+   |---|---|---|---|
+   | **batch 1** — 318, 421–469 | 50 / 52 inst, 3,056 JP | 2, 3 | ✅ **CLEAN** — recruitment & shop dialogue |
+   | **batch 2** — 319, 335, 599–646 | 50 / 53 inst, 1,332 JP | 12–15 | ✅ **CLEAN** — shop lines, roomy banks |
+   | ~~batch 3~~ — 320, 1073–1121 | 50 / 52 inst | 31–34 | ⛔ **28 of 50 are DEBUG SCAFFOLDING** — a BGM sound-test menu (`５０：新曲１`, `１６：バトル（ザコ戦）`) and a flag-manipulation screen (`どのフラグを操作しますか？`). **Do not dispatch.** |
+   | **batch 4** — 326–328, 470–516 | 50 / 53 inst, 1,638 JP | 4, 5, 7 | ✅ **CLEAN** — ノロ village + town descriptions. ⚠️ bank 5 has only 3,419 free |
+
+   **Batch 2 is the pick** — cleanest, roomiest banks, lowest JP count.
+   ⚠️ **Method note, or the vet silently passes everything:** `script_unique.txt` lines are
+   `<instance count>\t<text>`, so the scaffolding regex `フラグ|：新曲|^[０-９]{2}：|鑑賞モード` must be
+   matched against the **text field**, not the raw line — anchored `^[０-９]{2}：` never fires on the
+   raw line and batch 3 scores 18/50 instead of its true 28/50.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle, **24 dispatchable chunks** after wave 2 (`queue.py` reports 26 open — the other two are
