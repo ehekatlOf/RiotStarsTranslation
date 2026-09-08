@@ -234,6 +234,26 @@ Do not treat these as decisions. Promote on first use.
 | 鬼 / 悪鬼 | ogre / fiend | monster classes; 悪鬼 glossed as 豚顔 (pig-faced) |
 | 巨人 | giant | monster class |
 
+**Wave 1 seeds (2026-09-08) — battle chunks 1, 2, 3 and script batch 004.** Proposed forms follow
+the conventions already fixed: European readings (§11.4, §14), the divine-name pattern set in
+batch 003 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `アポロン神` → *the god Ａｐｏｌｌｏ*,
+`女神アルテミス` → *the goddess Ａｒｔｅｍｉｓ*), and the species test (§17.1).
+
+| Japanese | Proposed English | Where seen | Alternatives if the reading is open |
+|---|---|---|---|
+| アルベール | Ａｌｂｅｒｔ | battle chunk 2, in the captain's unit | Ａｌｂｅｒｔｏ; *Albel* is not a European reading |
+| シャスタ | Ｓｈａｓｔａ | battle chunk 2/3, addressed `シャスタさん` by Marvel and informally by the rogue | — |
+| マーベル | Ｍａｒｖｅｌ | battle chunk 3, a **person** (`マーベルさん`); also in `script_unique` | Ｍａｒｖｅｌｌ, Ｍａｒｂｅｌ |
+| マーベラス | Ｍａｒｖｅｌｌｏｕｓ | battle chunk 3 + script, a **town** (`マーベラスの街`, `マーベラスの広場`) — must stay visibly distinct from マーベル the person | Ｍａｒｂｅｌｌａｓ |
+| ファイバー | Ｆｉｂｅｒ | battle chunk 3, a person thanked beside Marvel (`ファイバーも、ご苦労様`) | Ｆａｉｂｅｒ, Ｐｈｅｉｂｅｒ |
+| コーネフ | Ｋｏｒｎｅｆｆ | battle chunk 3, `探検家` — an explorer, house in Marvellous | Ｋｏｒｎｅｖ |
+| 探検家 | explorer | Korneff's trade; species test §17.1 → lowercase | — |
+| 魔神ティール | the demon god Ｔｙｒ | script batch 004, line 163 `魔神ティールの力を秘めた暗黒剣` | Ｔｉｅｌ, Ｔｈｉｅｌ — Ｔｙｒ is the Norse reading the pantheon around it (Thor, Odin, Athena, Apollo, Artemis, Hermes) points at |
+| 軍神オーディン | the war god Ｏｄｉｎ | script batch 004, line 178 | — |
+| 雷神 | the thunder god | script batch 004, lines 154–156, 173–175 — `雷神の雷`, `雷神の電磁場` | — |
+| 守護をもたらす | grants … guardianship / warded by | script batch 004, lines 146–148, 170–172; six entries, must be identical in all six | — |
+| ブヒ / ブヒィィィィ | *Ｏｉｎｋ* / *Ｏｉｎｋｋｋｋ* | battle chunk 1, a pig‐faced fiend's squeal — a tic, so fix it once (§5) | — |
+
 ---
 
 ## 10. Open questions
