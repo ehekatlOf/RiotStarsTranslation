@@ -137,6 +137,18 @@ reviewer → merge, one reviewer at a time, every gate in CLAUDE.md §6 run in a
 its evidence pasted into the review. A wave that closes faster by merging without a reviewer, or
 by waiving a gate, has broken the run more thoroughly than a wave that stalls.
 
+## 6b. Never let the loop rest on a notification
+You wake only on a notification or a human message. So before you end any turn with work in
+flight, do one of these — not neither:
+- **Preferred: be off the critical path.** Hand the wave to an `orchestrator` subagent. Then the
+  loop advances inside that agent and its successors, not inside your turns.
+- **Otherwise: arm a watchdog.** `send_later` (claude-code-remote MCP), 10–15 minutes, with a
+  message that tells you to `ListAgents`, reconcile the open PRs against `HANDOFF.md`, restart
+  anything lost, and re-arm if work is still in flight.
+
+A subagent whose notification never arrives is **lost, not finished**. `ListAgents` is the
+authority on whether it is still running; the absence of a message is not evidence of anything.
+
 ## 7. Stop
 When Remaining is empty: final HANDOFF — Progress, everything parked with the measured reason,
 the Blocked list with exactly what the human must do (engine patches per

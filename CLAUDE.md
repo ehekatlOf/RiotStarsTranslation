@@ -30,6 +30,15 @@ says how the work is split, gated, merged and handed over.
 > first", "the user may want to review" and "my context is getting long" are **not** stop
 > conditions — a long context is precisely why the next wave belongs to a fresh agent.
 >
+> **The runner is not exempt.** The main session only wakes on a notification or a human message,
+> so a loop that depends on the main session to advance it is a loop that dies the first time a
+> notification is missed, late, or swallowed. Therefore the runner **MUST NOT** end a turn with the
+> run's continuation resting on an inbound event alone. Before ending any turn with work in flight,
+> it does one of two things: hand the wave to an `orchestrator` subagent (preferred — it takes the
+> main session off the critical path entirely), or schedule a watchdog with the `send_later` tool
+> that re-checks and restarts the loop regardless of notifications. Running a wave from the main
+> session "just this once" is how the chain never gets exercised.
+>
 > This binds every Opus agent in this repo, at every level, in every session.
 
 ## 1. The repo in one screen
@@ -94,6 +103,10 @@ are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt fo
 - **Never end a turn on a closed wave with dispatchable work left.** Spawn the next wave's
   orchestrator first (banner above, §4 step 7, SKILL.md §6a). Handing off is the work, not an
   optional courtesy after it.
+- **Never end a turn with the loop's only means of resuming being a notification.** If work is in
+  flight and you are the main session, either hand the wave to an `orchestrator` subagent or arm a
+  `send_later` watchdog that re-checks the state and restarts the loop. Silence is a failure mode,
+  not a waiting state.
 
 ## 4. The autonomous workflow
 
@@ -225,6 +238,9 @@ planned, unit dispatched, PR opened, review decided, rework sent, wave closed, r
   binaries, in-game checks); no amount of retranslation unblocks them.
 - `check` red on `main` → stop dispatching; revert the breaking merge if needed; fix; resume.
 - Cannot push or open PRs after retries → record it in HANDOFF and stop.
+- A subagent that returns nothing, or whose notification never arrives, is **lost, not finished**:
+  check `ListAgents` first, and only if it is gone remove its worktree and re-run its unit. Never
+  conclude a wave is done from the absence of a message.
 - A unit fails three review rounds → PARK with the measured reason; move on.
 - Unattended runs rely on the allowlist in `.claude/settings.json` (or `--permission-mode
   acceptEdits`). Nothing here ever needs credentials, the disc image or network beyond GitHub.
