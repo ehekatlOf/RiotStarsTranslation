@@ -43,6 +43,7 @@ chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters
 | アンゼルモ | Ａｎｓｅｌｍｏ | 中尉 → **Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ**. **Promoted from §14.6**, which already used this form for his register but never fixed the name. 8 columns |
 | ゼファー・クリッペン | Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ | 帝国の司令官 → Commander of the Empire. `・` has no glyph in §3.1 and becomes `　`. 14 columns. Alt *Zepher*, *Crippen*, *Klippen* |
 | ヘルファー様 | Ｌｏｒｄ　Ｈｅｌｆｅｒ | 様 → **Lord** for a male superior, paralleling 様 → Lady (Rimul §1, Phyllis §14.1). 11 columns. Does not change the §11.1 bare-name entry |
+| クリミア | Ｃｒｉｍｅａ | ⚠️ **CORRECTED 2026-09-08 (§4.3, PR #5 review): a PERSON — `クリミア博士`, the designer of the Empire's machine soldiers — not the region §2 filed him as.** Verified in both dumps before moving, not taken from the PR: **5 battle + 64 script occurrences, not one of them a place.** He self-refers in the third person (`この砦は、このクリミアにお任せ下さい。` — *leave this fort to Crimea*, i.e. to me; `またこのクリミアの新型機械兵` — *this Crimea's new machine soldier*), is addressed vocatively twice (`クリミア博士、反乱軍です・・・！！`, `クリミア博士、事は計画通り進んで`), is located **inside** a place (`クロスリーにいるクリミア博士`), and the script's machine-soldier table credits him as their maker (`クリミアの量産型機械兵２号機`). **Already-shipped work agrees**: `tl/script/batch_003.tsv` lines 85, 86 and 94 render that table as `Ｃｒｉｍｅａ’ｓ　ｍａｓｓ‐ｐｒｏｄｕｃｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｉｍｐｒｏｖｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｆｉｎａｌ　ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ．` — a person's possessive, written before anyone noticed the §2 row was wrong. The rendering `Ｃｒｉｍｅａ` is unchanged, so **no translated line needs revisiting** — only the classification was wrong. This is the メルザリオ / ファリーナ shape (§20.1, §2); `FLAGS.md` §K6 deliberately deferred it to this reviewer. 6 columns. See §25.1 |
 
 ## 2. Factions, places, ranks
 
@@ -64,7 +65,6 @@ chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters
 | カーライン | Carline | home castle/territory |
 | カーライン王国 | Kingdom of Carline | |
 | カーライン城 | Carline Castle | |
-| クリミア | Crimea | region |
 | コーカサス | Caucasus | town of martial artists; Shiron's dojo is here |
 | バウワーの砦 | Bauer's fort | ch.40. Alt *Bower*; Bauer chosen as the likelier source reading |
 | バジリスクの砂漠 | the Basilisk Desert | ch.14 map. Capitalised only as the place name — the monster stays lowercase |
@@ -265,8 +265,9 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~カザロフ~~ | ✅ **PROMOTED to §24.1** — `Ｋａｚａｒｏｖ` | battle chunk 6 (PR #7) | — |
 | ~~マーティン~~ | ✅ **PROMOTED to §24.1** — `Ｍａｒｔｉｎ` | battle chunk 6 (PR #7) | — |
 | ~~パーシバル~~ | ✅ **PROMOTED to §24.1** — `Ｐｅｒｃｉｖａｌ` | battle chunk 6 (PR #7) | — |
-| ディール帝国 | the `Ｄｉｅｌ` Empire | battle chunk 9 — `ディール帝国、万歳！！！`, **the Empire's actual name**, revealed for the first time | Ｄｉｅｈｌ, Ｄｉｒ, Ｔｈｉｅｌ. ⚠️ One voicing from 魔神ティール → `Ｔｙｒ` (§22.1) — keep them visibly distinct. Does **not** replace 帝国 → the Empire (§2); this is the proper name |
-| ワーウィック | `Ｗａｒｗｉｃｋ` | battle chunk 9 — `ワーウィックまでは気が抜けないぜ`, a destination | — |
+| ~~ディール帝国~~ | ✅ **PROMOTED to §25.1** — the `Ｄｉｅｌ` Empire, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
+| ~~ワーウィック~~ | ✅ **PROMOTED to §25.1** — `Ｗａｒｗｉｃｋ`, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
+| クロスリー | `Ｃｒｏｓｓｌｅｙ` | **New seed, 2026-09-08 (PR #5 review)** — surfaced while verifying `クリミア`, and **not chunk 9's business**: chunk 9 does not render it. A **place**, on the same evidence test §2 applied to ファリーナ — `クロスリーの守備隊` (its garrison), `クロスリーの丘` (its hills), `クロスリーを通らずに` (without passing through it), `クロスリーまで伝令を送って` (send a messenger *to* it), `クロスリーに向かう` (head *to* it), and `クロスリーにいるクリミア博士` (Doctor Crimea, who is *in* it). **8 battle + 2 script occurrences, none a person.** 8 columns | Ｃｒｏｓｌｅｙ, Ｋｕｒｏｓｕｒｉ. Promote in the wave that first renders it |
 | ~~弓使い~~ | ✅ **PROMOTED to §24.2 as `ｂｏｗｍａｎ`**, not the seed's `archer` — the seed's own “consider `bowman`” note was taken, and ratified at review | battle chunk 6 (PR #7) | — |
 | バトウ | `Ｂａｔｏｕ` | script 1041 — `神父のバトウ`, the priest of Bernard's church. Referred to posthumously as `バトウ様` in 1045 | Ｂａｔｏｗ, Ｂａｔｈｏｕ |
 | リース文明 | the `Ｒｅｅｓｅ` civilisation | script 1047 — `伝説のリース文明`, a vanished people destroyed by war among their own kind | Ｒｉｅｓｅ, Ｌｉｅｓ. ⚠️ Probably the same vanished civilisation as 古代ハイランド → ancient Highland (§11.2) — check before fixing either |
@@ -1212,3 +1213,111 @@ is `chunk_033.txt` line 20, which ships `Ｎｏｗ，` — the form chunk 6 corr
 | Ridge and Sykes | §7 and §21.4 unchanged — blunt, needling, contractions throughout: `Ｈｅｙ，　Ｓｙｋｅｓ．`, `Ｉｔ’ｓ　ｂｅｅｎ　ａ　ｗｈｉｌｅ．`, `Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．` |
 | The Black Knights (portraits 0009, 000A, 000C) | ⚠️ **Not the ch.7 commander of §14.6, and they read differently.** These are the rank and file — `だぜ` / `ぞ` / `じゃねえか` — so they take contractions (`ｌｅｔ’ｓ　ｒｅｐｏｒｔ`, `ｔｈｅｙ’ｒｅ`, `ｗｅ’ｒｅ　ｐｕｌｌｉｎｇ　ｂａｃｋ`) where the commander takes none. The `くくく` speaker keeps the flatness: `ｗｈａｔ　ａ　ｒａｓｈ　Ｐｒｉｎｃｅｓｓ．`, `ｓｏ　ｋｉｎｄ　Ｉ　ｃｏｕｌｄ　ｗｅｅｐ．` |
 | Tutorial boxes (`{=FA1000300030}`, lines 6, 14, 17, 18) | §7 unchanged — plain instructional second person, no personality, and the passive of §21.3's shipped `村が襲われました。` → `Ａ　ｖｉｌｌａｇｅ　ｗａｓ　ａｔｔａｃｋｅｄ．` |
+
+---
+
+## 25. Added by chunk 009 (PR #5, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_009.txt` — chapter 9, the Empire's machine-soldier factory: Commander
+Zephyr Krippen orders the place burned over his officer's objection that villagers are still
+inside, then leaves with Guilford for Doctor Crimea in Westbury; the officer left in charge rallies
+the garrison, boasts of the machine soldier and dies crying `ディール帝国、万歳！！！`; afterwards
+the 9th Army takes stock, Seneca finds his father is not there, and two enslaved workers hand over
+items. 3,973 / 8,192 bytes, slack 4,219 — 95 rows, widest 23, **none at 24**. Merged at round 2.
+
+`しかし` and `しかしながら` → `Ｈｏｗｅｖｅｒ，` is §23.3's second and third use; `クッ` → `Ｔｃｈ`
+(§11.5), `フン` → `Ｈｍｐｈ` (§6), `はっ` → `Ｓｉｒ` (§6), `行くぞ` → `Ｍｏｖｅ　ｏｕｔ` (§6) and
+`よいか、` → `Ｌｉｓｔｅｎ　ｗｅｌｌ，` (§20.3) are used unchanged. The stolen-item message is copied
+byte-for-byte from §21.3, three times.
+
+### 25.1 People, places and ranks — two promotions out of §9, and one correction
+
+`クリミア` is corrected **in §1**, not here, because it moves a fixed row out of §2.
+
+| Japanese | English | Note |
+|---|---|---|
+| ディール帝国 | the `Ｄｉｅｌ` Empire | **Promoted from §9 (wave-2 seeds), used exactly as seeded.** 15 columns. The Empire's proper name, revealed for the first time in `ディール帝国、万歳！！！`. 2 battle occurrences, 0 script; the other is `ディール帝国紅の騎士団の将`, which agrees. Does **not** replace 帝国 → the Empire (§2) — that stays the common noun, and this chunk uses both. One voicing from 魔神ティール → `Ｔｙｒ` (§22.1) and deliberately spelled to stay visibly distinct from it |
+| ワーウィック | `Ｗａｒｗｉｃｋ` | **Promoted from §9, used exactly as seeded.** 7 columns. A **place**, not a person: 2 battle + 6 script occurrences, all locational — `ワーウィックの要塞`, `ワーウィックの大要塞`, `ワーウィック攻略の拠点`, `ワーウィックという一大拠点`, `ワーウィック遠征` |
+| クリミア博士 | `Ｄｏｃｔｏｒ　Ｃｒｉｍｅａ` | 13 columns. Built on §1's corrected `Ｃｒｉｍｅａ` row; only the title is new |
+| 博士 | Ｄｏｃｔｏｒ | New rank word, spelled out like `Ｃｏｍｍａｎｄｅｒ` / `Ｃａｐｔａｉｎ` / `Ｂｉｓｈｏｐ` and never abbreviated `Ｄｒ．` — `．` is the full stop in this charset, so an abbreviating point would read as one |
+| クリッペン司令官 (address) | `Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ．` | **18** columns (the PR body's 19 is one over — remeasured here). The direct-address form of §1's `Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ`, built like chunk 2's `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ`. 司令官 → Commander already stands (§11.2, and `batch_002`'s shipped `Ｃｏｍｍａｎｄｅｒ　ｏｆ　ｔｈｅ　Ｅｍｐｉｒｅ`) |
+| 帝国兵 | `Ｉｍｐｅｒｉａｌ　ｓｏｌｄｉｅｒ` | 16 columns. Extends §20.4's default `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` for 帝国軍. Kept **distinct** from 帝国 → the Empire (§2); all three occur in this chunk |
+| 全軍 | `Ａｌｌ　ｕｎｉｔｓ` | 9 columns. The form shipped in `chunk_007.txt` (`全軍　迎えうてッ！！` → `Ａｌｌ　ｕｎｉｔｓ，　ｉｎｔｅｒｃｅｐｔ！！`); recorded here because chunk 9 is the second use and it must not drift |
+| 戦闘態勢に入れ | `ｔａｋｅ　ｂａｔｔｌｅ　ｓｔａｔｉｏｎｓ` | **20** columns (the PR body's 22 is two over — remeasured here). The military English for entering combat readiness; it still will not share a row with 全軍, which is why line 4 breaks mid-phrase |
+| 化けモン | monster | Colloquial 化け物. `トカゲの化けモン` → *a lizard monster*, keeping §2's トカゲ → lizard |
+| えじき | prey | `この兵器のえじきになりたいか` → *want … to become prey for this weapon* |
+| 一片たりとも | `ｎｏｔ　ｏｎｅ　ｓｃｒａｐ` | 13 columns. Emphatic “not one fragment” |
+| 逃げ遅れた者 | `ｔｈｏｓｅ　ｌｅｆｔ　ｂｅｈｉｎｄ` | 17 columns, a §2.1 step 4 shortening. The literal `ｔｈｏｓｅ　ｔｏｏ　ｌａｔｅ　ｔｏ　ｆｌｅｅ！！` measures **exactly 24** columns on a page already at the 4-row wall — verified at review |
+| 浮かない顔して | `Ｙｏｕ　ｌｏｏｋ　ｄｏｗｎｃａｓｔ．` | **18** columns (the PR body's 19 is one over — remeasured here) |
+| 気が抜けない | `ｃａｎ’ｔ　ｒｅｌａｘ` | Kept **distinct** from 油断は出来ない → `ｃａｎ’ｔ　ｌｅｔ　ｏｕｒ　ｇｕａｒｄ　ｄｏｗｎ`, which is two speaker turns earlier in the same scene — the source draws the distinction itself, so the English must |
+| 甘くない (of an institution) | `ｈａｒｄｅｒ　ｔｈａｎ　…　ｔｈｉｎｋ` | 甘い of an institution is *soft / a soft touch*, whose exact antonym is *hard*, so a negated comparison and a positive one carry the same proposition — `softness < expected` and `hardness > expected` are one statement. **Ruled 2026-09-08, PR #5 round 2**: every literal split of `帝国は君たちが思うほど甘くない` either ends a row on `ａｓ` / `ｓｏ` or measures exactly 24, on a page at the 4-row wall, so the comparative is the only defect-free rendering. −4 bytes |
+
+### 25.2 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| それでも | `Ｅｖｅｎ　ｓｏ，` | ⚠️ **Fixed here — it was missing from the glossary and from the PR's own additions table.** A **fourth** adversative, held apart from the three already fixed: でも → `Ｂｕｔ，`, それにしても → `Ｓｔｉｌｌ，` (§19.1), しかし / しかしながら → `Ｈｏｗｅｖｅｒ，` (§23.3). `Ｅｖｅｎ　ｓｏ` occurs nowhere else in `tl/`, so the form is free. `batch_002`'s `お前はそれでも、` is a **different source string** and is unaffected |
+| 万歳！！！ | `Ｌｏｎｇ　ｌｉｖｅ　．．．！！！` | The salute, not a transliterated *banzai*. Punctuation follows the source per §5's word/punctuation rule |
+| はっ・・・。 | `Ｓｉｒ．．．．` | §6's はっ → `Ｓｉｒ` carrying the source's own four stops — Guilford's flat assent. Distinct **in effect** from Albert's `Ｓｉｒ！` in chunk 2: one word, different punctuation, which is §5's mechanism, not a second entry |
+| いや (deflection) | `Ｎｏ` + the source's punctuation | Seneca brushing a question aside. **Distinct** from §6's ああ → `Ｙｅａｈ` (assent) and はっ → `Ｓｉｒ` (military assent) |
+| そのとおりだ。 | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | 13 columns. Firm agreement with a stated proposition. ⚠️ **Shares its English with §23.2's そうそう。 — ruled deliberate, see §25.3.** Held apart from 分かった / よし、 → `Ｒｉｇｈｔ，` (§6, §24.3), わかりました。 → `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2) and まったくだっ！ → `Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！` (§20.3) |
+| そうね。 | `Ｔｈａｔ’ｓ　ｔｒｕｅ．` | 12 columns. The female companion's softer agreement, one turn before そのとおりだ in the same scene. **Deliberately not collapsed into it** — this is the co-occurrence case, and it is exactly why §25.3 can leave the other one alone |
+| ウワサ (`〜ってウワサだ`) | `ｔｈｅｙ　ｓａｙ` | The construction, not the noun — `襲われたってウワサだ` → *they say … got them*. `ｒｕｍｏｕｒ　ｉｓ　ａ　ｌｉｚａｒｄ　ｂｅａｓｔ` is 24 columns on a page at the 4-row wall. If a later unit needs the noun, *rumour* is still free |
+
+### 25.3 Ruling — `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` renders two source strings, and that is accepted
+
+`そうそう。` → `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` is fixed at §23.2 and shipped in `chunk_004.txt`; chunk 9
+renders `そのとおりだ。` the same way. **Not a CLAUDE.md §3 violation** — §3 binds identical
+Japanese. The question is whether house practice should split them anyway, and the answer is no.
+
+**What decides it is a corpus fact, counted at this review across both dumps.** `そのとおり` occurs
+**once in the entire project** — chunk 9, this line. `そうそう` occurs in battle chunks 4, 5, 17 and
+43 and in 4 script lines. **No chunk and no bank contains both.** The collision can never be visible
+to a player in one scene, and no future unit is forced into a re-cut by it.
+
+With that, §24.3 governs, and it was ratified one PR earlier: `よし、` and `分かった` are two
+genuinely different assent words that deliberately share `Ｒｉｇｈｔ，`, on the ふっ / フンッ →
+`Ｈｍｐｈ` principle. §23.3's prohibition does **not** reach here — that ruling was about
+*connectives*, and it turned on `Ｓｔｉｌｌ，` already being spent on `それにしても`, so collapsing
+would have destroyed a live distinction. Nothing is spent here.
+
+The practice of holding near-synonyms apart (§20.3, §21.2, §23.2) is stated for strings that
+co-occur **in one scene**. Chunk 9 contains that case too, one turn away — `そのとおりだ` against
+`そうね` — and it **is** held apart, as `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` / `Ｔｈａｔ’ｓ　ｔｒｕｅ．`.
+
+**Lines this affects: none.** Reserve forms, both verified free across the whole corpus, if a later
+chunk ever puts the two strings in one scene: **`Ｅｘａｃｔｌｙ．` (8 columns)** or
+`Ｑｕｉｔｅ　ｒｉｇｈｔ．` (12). Prefer `Ｅｘａｃｔｌｙ．` — the speaker is a 9th Army companion who
+contracts freely, `Ｑｕｉｔｅ　…` reads stiffer than his register, and it would sit awkwardly beside
+`pending/chunk_005`'s `Ｑｕｉｔｅ　ｓｏ．`, which §23.2 is already retiring.
+
+### 25.4 Ruling — `Ｆａｔｈｅｒ` carries both the priest and the parent, and English wants it to
+
+§24.1 fixes `神父様` → `Ｆａｔｈｅｒ！` and `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` for the cleric.
+Chunk 9 renders Seneca's `父さん・・・・` as `Ｆａｔｈｅｒ．．．．`, his actual parent. Different
+source words, different messages, different scenes — and English has one word for both senses,
+disambiguated by context in every instance (Seneca alone in a factory naming his missing parent;
+Cavia calling into a church).
+
+**Chunk 9 introduces nothing.** The parent sense is already the project's form, drafted
+independently three times before this unit: `pending/chunk_005.txt` line 13 renders `お父様・・・・`
+as `Ｆａｔｈｅｒ．．．．` — byte-identical to chunk 9's row — and `pending/chunk_043_abridged.txt`
+lines 41–42 render a parent's notes as `Ｆａｔｈｅｒ’ｓ　ｎｏｔｅｓ　ｍｅｎｔｉｏｎ`. Splitting would
+mean inventing a non-English form for one of the two senses.
+
+⚠️ **Noted forward, not acted on.** `父さん` and `お父様` are now two source words sharing
+`Ｆａｔｈｅｒ` — legitimate under §17.2's 鬼 / オーガ → *ogre*, but `お父様` is the formal one and is
+the row to move if a chunk ever needs the distinction. `父さん・・・・` recurs untranslated in
+chunks 16 and 39.
+
+### 25.5 Register
+
+| Who | Register |
+|---|---|
+| Zephyr Krippen (portrait 04) | Grandiose and absolute, **no contraction anywhere** — `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ！！`, `Ｉ　ｓｈａｌｌ　ｈｅａｄ　ｔｏ`, `Ｌｉｓｔｅｎ　ｗｅｌｌ，`. Commands in the bare imperative and never explains |
+| Guilford (portrait 07) | One segment, flat assent — `Ｓｉｒ．．．．`. The four stops are the character: he does not object, and does not agree either |
+| The officer left in command (portrait 08) | The same voice objects (line 2), rallies (line 4), boasts (line 7) and dies (line 8). Deferential upward (`Ｈｏｗｅｖｅｒ，　Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ．`), contemptuous downward (`ｔｏ　ｔｈｅ　ｌｉｋｅｓ　ｏｆ　ｙｏｕ，`), **no contractions** — §14.6 / §20.5's Imperial officers, unchanged |
+| Seneca (portrait 05) | Quiet and deflecting; contractions (`Ｉｔ’ｓ　ｎｏｔｈｉｎｇ．．．．`, `ｗｅ　ｃａｎ’ｔ`). His one unguarded line is `Ｆａｔｈｅｒ．．．．`, and the chunk never explains it |
+| The unnamed female companion (portrait 02) | Casual, contractions, the one who notices — `Ｗｈａｔ’ｓ　ｗｒｏｎｇ，　Ｓｅｎｅｃａ？`. Same portrait id as §21.4's unnamed female party member; if a later chunk names her, re-check both |
+| The two enslaved factory workers (portraits 03, 09) | Beaten down and plain-spoken, contractions throughout — `Ｎｏｂｏｄｙ’ｓ　ｃｏｍｉｎｇ　ｔｏ　ｈｅｌｐ　ｕｓ．`, `Ｂｅｓｔ　ｎｏｔ　ｔｏ　ｒｅｓｉｓｔ．`. 09 is the blunter of the two and gives the party an item anyway |
+| Tutorial boxes (`{=FA1000300030}`, lines 13–15) | §7 unchanged — plain instructional second person, the source's passive kept, byte-identical to §21.3 |

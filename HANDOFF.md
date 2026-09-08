@@ -20,12 +20,17 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > owns the repository and is the active driver. Preflight passed 2026-09-08: `check` green, zero
 > open PRs, zero stale worktrees.**
 >
-> The literal next act is: **dispatch the reviewer for PR #5 (battle chunk 9), in the foreground,
-> one at a time.** The barrier is met and **two units are MERGED** — #6 (chunk 4) squash
-> `e08bee8`, **#7 (chunk 6) squash `dd406d0`**, both integrated on this branch. Remaining review
-> order: **#5 → #8**. Pull `--ff-only` before dispatching (#7's integration commit is already
-> pushed), and pass the reviewer the rulings listed under **In flight** — `しかし` binds #5, and
-> **`クリミア` is #5's reviewer's call and nobody else's**.
+> The literal next act is: **dispatch the reviewer for PR #8 (script batch 005), in the foreground,
+> one at a time. It is the last unit of wave 2.** The barrier is met and **three units are
+> MERGED** — #6 (chunk 4) squash `e08bee8`, #7 (chunk 6) squash `dd406d0`, **#5 (chunk 9) squash
+> `5f3e714`** — all three integrated on this branch. Pull `--ff-only` before dispatching (#5's
+> integration commit is already pushed), and pass the reviewer the rulings listed under **In
+> flight**: `クリミア` is **settled and must not be moved again**, glossary **§25.3** and **§25.4**
+> are new and binding, and `FLAGS.md` **§M3** queues a §3 violation in merged work that belongs to
+> wave 3's corrections unit and **not** to #8.
+>
+> **When #8 is decided, wave 2 closes** — then step 6 (check, merge, README, prune, collapse this
+> file) and step 7 (open wave 3's session) in the same turn.
 >
 > Wave 2 has `Task`: it is running the proper three-role split (translator / reviewer subagents),
 > so wave 1's spawn constraint below does **not** apply to it.
@@ -43,15 +48,15 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > notices should re-open the wave. The chain ends only on one of CLAUDE.md §8's four conditions.
 
 ## Last updated
-2026-09-08 · by: **the PR #7 reviewer** (integration commit) ·
-wave: **2 IN REVIEW — 4 units, 2 MERGED (#6 chunk 4, #7 chunk 6), 2 open (#5, #8)** ·
+2026-09-08 · by: **the PR #5 reviewer** (integration commit) ·
+wave: **2 IN REVIEW — 4 units, 3 MERGED (#6 chunk 4, #7 chunk 6, #5 chunk 9), 1 open (#8)** ·
 queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | 15 | 44 | 0, **1**, **2**, **3**, **4**, **6**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
-| Battle JP characters | 10,591 | 43,161 | **24.5%** |
+| Battle chunks | 16 | 44 | 0, **1**, **2**, **3**, **4**, **6**, 7, **9**, 10, 11, 12, 14, 33, 34, 35, 40 |
+| Battle JP characters | 11,351 | 43,161 | **26.3%** |
 | Script unique lines | 185 | 1,430 | `tl/script/batch_001–004.tsv` |
 | Script message instances | 4,013 | 7,931 | **50.6%** |
 
@@ -69,13 +74,21 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | ✅ **MERGED round 2** — squash `dd406d0`, integrated by the commit that carries this row. 5,899 / 8,192, **2,293 slack**, 151 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 on lines 6, 17, 18, 21, all flagged; both `> 4`-row pages (9 at 15, 21 at 12) are **inherited** — measured on the pristine extraction at 15 and 11. All 8 gates re-run on the new head. All 6 round-1 findings fixed; **finding 3 was withdrawn — the translator's replacement was right and the reviewer's was wrong** (`chunk_033` L20 holds the byte-identical bare `さあ、` and ships `Ｎｏｗ，`; `chunk_003` L4's row carries a name insert). Rulings integrated: `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`, `よし、`→`Ｒｉｇｈｔ，`, §18.2 corrected, `リオン`→`Ｌｅｏｎ` promoted (**§10.1 discharged**). Nothing left on this unit |
-| battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | **2** | **#5** | **REWORK PUSHED `3fe6cb4`, re-review round 2 dispatched 17:35Z** — 3,973 / 8,192, 4,219 slack, widest row 23. Both findings fixed; finding 1 fixed with a **third** wording at identical byte cost, verified correct by this coordinator. Short-word row-ends 5 → 3 |
+| battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | **2** | **#5** | ✅ **MERGED round 2** — squash `5f3e714`, integrated by the commit that carries this row. 3,973 / 8,192, **4,219 slack**, 95 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 line 8, +2 line 9, both flagged; only those two page shapes change and no page exceeds 4 text rows; **no `{FCC0}` added or moved** (proved by tag parity). All 8 gates re-run on the new head, round-1 evidence discarded. Both findings fixed, no new findings. **Finding 1 withdrawn — the translator's three-row `Ｈｏｗｅｖｅｒ，` split is right and the reviewer's two-row wording was wrong**: all four 2-row splits either sit at exactly 24 or end a row on the article `ａ`, at identical bytes (§M2). Rulings integrated: `クリミア` → **§1 People** (§K6's deferred call, §M7), `ディール帝国`/`ワーウィック` promoted, `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` collision **kept** (§25.3), `Ｆａｔｈｅｒ` two senses **confirmed** (§25.4), `甘くない` → `ｈａｒｄｅｒ　ｔｈａｎ`, `それでも` → `Ｅｖｅｎ　ｓｏ，` added (was missing from the PR). Nothing left on this unit |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
-**BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 2 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
-chunk 6 **#7 ✅ MERGED**, chunk 9 **#5**, script 005 **#8**. Review order, one reviewer at a time,
-foreground: ~~#6~~ → ~~#7~~ → **#5 next** → #8. HANDOFF is pushed before each reviewer and pulled
-after it.
+**BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 3 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
+chunk 6 **#7 ✅ MERGED**, chunk 9 **#5 ✅ MERGED**, script 005 **#8**. Review order, one reviewer at
+a time, foreground: ~~#6~~ → ~~#7~~ → ~~#5~~ → **#8 next**. HANDOFF is pushed before each reviewer
+and pulled after it.
+
+⚠️ **#8's reviewer inherits three things from #5's review.** (1) **`クリミア` is done** — moved to
+glossary §1 People on verified dump evidence; do not move it again, exactly as §K6 said of
+`ファリーナ`. (2) **A §3 violation in already-merged work is queued, not fixed**: `村が襲われました。`
+renders two ways across `chunk_007` (lines 25, 26) and `chunk_034` (line 7) — `FLAGS.md` §M3 has
+both directions measured, and it belongs to the wave-3 corrections unit, not to #8. (3) Glossary
+**§25.3** and **§25.4** are new rulings that bind: `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` may serve two source
+strings, and `Ｆａｔｈｅｒ` carries both the priest and the parent.
 
 ⚠️ **Branch deletion returns 403 in this run** — `tl/battle-004` and `tl/battle-006` are merged but
 still present on the remote. Not a defect; do not retry, and do not treat a live merged branch as
@@ -191,9 +204,18 @@ line is re-cut.** Third correction of the `メルザリオ` kind, after `ファ�
 **A new §9 seed candidate surfaced while verifying it:** `クロスリー` — an unrendered place name
 with **8 battle occurrences**. Not wave 2's business; for whoever draws the Crossley chunk.
 
-**Gate 6 re-derived properly on chunk 9** (the translator's method was the null check): 2,643
-paired rows, 811 paired messages, **zero message-level divergence**. Flag 7's numbers confirmed
-exactly — `アイテムを{FFFE}奪われました。` at chunk 3 ×1, chunk 9 ×3, chunks 28/29/30 ×1 = 7.
+**Gate 6, re-run at round 2 over all 16 shipped battle chunks** (round 1's figures are superseded;
+they counted a wider, looser pairing): **873 paired rows, 132 paired messages.** Chunk 9 is clean —
+its only recurring message, `アイテムを{FFFE}奪われました。` (×3), is byte-identical to
+`chunk_003.txt`'s §21.3 form, and **zero message-level divergences involve chunk 9**. Dump total for
+that message is 7 (chunk 3 ×1, chunk 9 ×3, chunks 28/29/30 ×1), as Flag 7 says. The script side was
+checked too: 10 of chunk 9's 88 Japanese segments occur in `script_unique.txt`, only `それでも` is
+in translated work, and there it is the different string `お前はそれでも、`.
+
+⚠️ **The same run found a §3 violation in already-merged work — `村が襲われました。` renders two
+ways across `chunk_007` (L25, L26) and `chunk_034` (L7).** Not chunk 9's; not fixed here. Both
+directions are measured in `FLAGS.md` **§M3**, and it belongs to wave 3's corrections unit alongside
+`chunk_003:5` and `chunk_001:14`.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
