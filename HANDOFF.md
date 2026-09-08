@@ -16,12 +16,22 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **Wave 1 is in flight** (battle chunks 1, 2, 3 + script batch 004; four translators dispatched
-> 2026-09-08). As each translator returns: record its PR here, commit, push — then **check the
-> whole wave against the open PR list. Review nothing until all four units have an open PR**
-> (CLAUDE.md §4 step 4, the wave barrier). A unit whose translator returned, died or could not
-> push gets a fresh translator for that unit and the barrier waits again; two re-dispatches, then
-> park it. Once the barrier is met, run the `reviewer` subagent one PR at a time, in unit order.
+> **Wave 1 is in review. Barrier met 4 of 4; PR #2 (chunk 1) is decided — CHANGES, round 1.**
+>
+> Do these two things, in this order:
+> 1. **Rework PR #2.** `git pull --ff-only` first (the reviewer pushed an integration commit).
+>    Send the two numbered findings from the PR #2 review **verbatim** to translator-1 via
+>    SendMessage, which keeps its context. Both are pure respellings in
+>    `tl/battle/chunk_001.txt`, no re-flow: (a) all 10 `，ｎｙｏｒｏ` → `，　ｎｙｏｒｏ`;
+>    (b) line 2 `Ｏｈｏ！` → `Ｏｈ！`. Expected result 3,517 / 8,192, slack 4,675, widest row 23.
+>    Wait for its push, then re-review PR #2 (round 2).
+> 2. **Continue the review queue in unit order** — PR #3 (chunk 2), PR #1 (chunk 3), PR #4
+>    (batch 004), one reviewer at a time, foreground. Rework does not block them: the three
+>    cross-PR conflicts are all settled (`glossary.md` §18) and none of the remaining three PRs
+>    needs to change on account of them.
+>
+> Tell each remaining reviewer: **the wave-1 rulings are already in `glossary.md` §18 — check
+> conformance against it, do not re-litigate.**
 >
 > **When wave 1 closes, spawn the wave-2 `orchestrator` subagent immediately**
 > (`subagent_type: "orchestrator"`, `run_in_background: true`) — units: battle chunks 4, 6, 9 +
@@ -30,7 +40,8 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > Every wave orchestrator spawns the next one itself — this line must always name the next spawn.
 
 ## Last updated
-2026-09-08 · by: orchestrator · wave: 1 dispatched · queue: **fresh (survey ran 2026-09-08)**
+2026-09-08 · by: **reviewer (PR #2, chunk 1 — CHANGES)** · wave: 1 in review, 1 of 4 decided ·
+queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -46,7 +57,7 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 ## In flight
 | Unit | Tier / ratio | Agent | Branch | PR | Status | Round | Next actor |
 |---|---|---|---|---|---|---|---|
-| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **PR open** — 3,499 / 8,192, 4,693 slack | 1 | reviewer |
+| battle chunk 1 | D 5.28 | translator-1 | `tl/battle-001` | [#2](https://github.com/ehekatlOf/RiotStarsTranslation/pull/2) | **CHANGES round 1** — every gate passed; 2 findings, both cross-PR rulings against it (11 respellings, no re-flow) | 1 | **translator-1 (rework)** |
 | battle chunk 2 | C 3.15 | translator-2 | `tl/battle-002` | [#3](https://github.com/ehekatlOf/RiotStarsTranslation/pull/3) | **PR open** — 5,837 / 8,192, 2,355 slack; promotes 4 seeds | 1 | reviewer |
 | battle chunk 3 | D 4.23 | translator-3 | `tl/battle-003` | [#1](https://github.com/ehekatlOf/RiotStarsTranslation/pull/1) | **PR open** — 4,601 / 8,192, 3,591 slack; promotes 5 wave-1 seeds + サイクス | 1 | reviewer |
 | script batch 004 | — | translator-4 | `tl/script-004` | [#4](https://github.com/ehekatlOf/RiotStarsTranslation/pull/4) | **PR open** — 34 lines / 714 instances; bank 40 1,771 → **509** free | 1 | reviewer |
@@ -59,14 +70,24 @@ Batch 004's figures were re-measured in this checkout rather than taken from its
 forms 151 → 185 (+34), matching the claim exactly; `bankmeasure` gives **bank 40 = 509 free**
 against the 500 floor, bank 41 untouched at 353; `rowcheck script` clean.
 
-### Cross-PR conflicts the reviewer must settle before ANY of these three merge
-Measured in the pushed files, not taken from the reports:
+### Cross-PR conflicts — ALL THREE SETTLED 2026-09-08 by the PR #2 reviewer
+Rulings and full reasoning are in **`glossary.md` §18**, which is binding. Summary:
 
-| String | PR #2 (chunk 1) | PR #1 (chunk 3) | Evidence |
-|---|---|---|---|
-| ノロ tic | #2: `，ｎｙｏｒｏ．` ×10 — **lone outlier** | #1 `，　ｎｙｏｒｏ．` ×11, #3 `，　ｎｙｏｒｏ！` ×2 | glossary §5 spells it **unspaced**; the corpus does not. Across all shipped `tl/`, a full-width comma is followed by a full-width space **146** times and by a tag **121** times, and **never once by a letter**. §5's spelling is the outlier. First appearance of the tic in `tl/`, so the ruling sets it for ~70 further `ノロ` lines in `script_unique` and 7 more in the battle dump. **Cheapest fix: 10 edits in PR #2**, which needs no re-flow either way |
-| `おお！` | #2: `Ｏｈｏ！` | #1: `Ｏｈ！`; #3 does not contain it | Same source string, both hobbit scenes. `Ｏｈ` already renders ほう/ほお (§6), which always carries `．．．` or `，`; #1 argues the punctuation keeps them apart on the ふっ/フンッ → `Ｈｍｐｈ` precedent, #2 argues a fourth string on "Oh"/"Ah" flattens the set. One instance each — a two-line ruling |
-| `サイクス` | — | #1 and #3 both `Ｓｙｋｅｓ` | **Resolved before it cost anything.** Promoted from §9's open *Sykes / Cyx*; I missed it in the wave-1 seeds and sent it to chunk 2 mid-draft. Verified in both pushed files: 1 × `Ｓｙｋｅｓ`, 0 × `Ｃｙｘ` |
+| String | Ruling | Who changes |
+|---|---|---|
+| ノロ tic | **`，　ｎｙｏｒｏ．` — spaced**; glossary §5 corrected (§18.1). Decided on the font: `riotfont.py` maps `，` to the plain ASCII `,` glyph, so it carries **no** built-in whitespace — unspaced it renders `came,nyoro.`. Corpus: `，` + space 153×, + tag 138×, + letter exactly 10×, all 10 of them PR #2 | **PR #2 only** (10 respellings, widest row 23, no re-flow). #1 and #3 already correct |
+| `おお！` | **`Ｏｈ！`** — the word is fixed, the punctuation follows the source (§18.2). §10.6 already rejected `Ｈｏｈ` for the neighbouring ほう. Set: ほう/ほお → `Ｏｈ`, おや → `Ｏｈ？`, おお → `Ｏｈ！`, あ、 → `Ａｈ，` | **PR #2 only** (1 edit). #1 already correct |
+| `サイクス` | **`Ｓｙｋｅｓ`**; promote out of §9 when the first of #1 / #3 merges (§18.4) | nobody |
+
+**Also settled: the two `tl/battle/chunk_000.txt` corrections (§18.3) are DONE**, applied in the
+reviewer's integration commit — `くっ・・・` → `Ｔｃｈ．．．` (line 20) and `ああ。` → `Ｙｅａｈ．`
+(line 4). The first was a CLAUDE.md §3 violation, not just a glossary divergence: `chunk_007.txt`
+already shipped `Ｔｃｈ．．．` for the same Japanese. **`Ｕｇｈ` is now free for ううっ, so PRs #2 and
+#3 both keep it.** Chunk 0 is now **8,165 / 8,192, slack 27** — see `FLAGS.md` §G1, it is the
+tightest file in the project and has no room for another non-width-neutral correction.
+
+**Reviewers of PRs #3, #1 and #4: these rulings are already in `glossary.md`. Do not re-litigate
+them; check conformance against §18.**
 
 Chunk 2 was given `Ｓｙｋｅｓ` and the **spaced** ノロ form with the corpus evidence while it was
 still drafting, and shipped both — verified in the pushed file, not taken from its report. So the
@@ -103,19 +124,16 @@ must be corrected, not just promoted.
 - Portrait 02 in chunk 3 is an unnamed female party member who carries the tutorial voice; if a
   later chunk names her, her register needs re-checking (cf. glossary §13.13 / §10.11).
 
-Chunk 1's report carried first renderings for strings that recur in chunks 2 and 3 — ノロ →
-`，ｎｙｏｒｏ．`, おお → `Ｏｈｏ`, ううっ → `Ｕｇｈ`, それにしても → `Ｓｔｉｌｌ，`, いやいや →
-`Ｗｅｌｌ　ｎｏｗ，`, 謹慎 → `ｃｏｎｆｉｎｅｄ` — and these were sent to both translators while
-they still had the drafts open, rather than left for the reviewer to raise as CHANGES.
+Chunk 1's report carried first renderings for strings that recur in chunks 2 and 3 — ノロ, おお,
+ううっ → `Ｕｇｈ`, それにしても → `Ｓｔｉｌｌ，`, いやいや → `Ｗｅｌｌ　ｎｏｗ，`, 謹慎 →
+`ｃｏｎｆｉｎｅｄ` — and these were sent to both translators while they still had the drafts open.
+The reviewer confirmed chunk 2 carries `Ｕｇｈ．．．` and `Ｓｔｉｌｌ，` identically; ノロ and おお
+went the other way and are ruled above.
 
-**Two corrections chunk 1 raised for the reviewer, both on already-shipped `tl/battle/chunk_000.txt`
-and neither touched by a translator (CLAUDE.md §3):**
-1. `ああ。` — glossary §6 fixes `Ｙｅａｈ`; chunk 0 line 2 renders `Ｙｅｓ．`. `Ｙｅａｈ` also
-   stands in `tl/script/batch_002.tsv`, so chunk 0 is the lone outlier. Same width, no re-flow.
-2. `くっ` — glossary §11.5 fixes `Ｔｃｈ`; chunk 0 line 18 renders `Ｕｇｈ．．．`. This one matters
-   now, because chunk 1 has taken `Ｕｇｈ` for ううっ — a different source string. Until it is
-   fixed, `Ｕｇｈ` is doing two jobs.
-Either edit chunk 0 or amend the glossary, but the reviewer must settle both at integration.
+**The two `tl/battle/chunk_000.txt` corrections chunk 1 raised are DONE** — see the ruling table
+above and `glossary.md` §18.3. (For the record, the PR's line numbers were off by two: the lines
+are 4 and 20, not 2 and 18, and `Ｙｅｓ．` → `Ｙｅａｈ．` is **not** width-neutral — 4 → 5 columns,
++2 bytes.)
 
 ## Next up (wave 2, provisional)
 battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + **script batch 005 = unique lines 1035–1100**
@@ -208,6 +226,15 @@ instance yield first. After that the pool is the 1-instance story text in the ro
   545 shippable instances.
 - 2026-09-08: growth factor for script planning set to **2.10×**, measured on shipped work, not
   the 2.0× assumed in the skill. 2.0× was optimistic.
+- 2026-09-08: **all three wave-1 cross-PR conflicts settled by the PR #2 reviewer** — ノロ →
+  `，　ｎｙｏｒｏ．` (glossary §5 corrected, decided on `riotfont.py`'s comma glyph), おお →
+  `Ｏｈ！`, サイクス → `Ｓｙｋｅｓ`. Full reasoning in `glossary.md` §18; it binds every later unit.
+- 2026-09-08: **`tl/battle/chunk_000.txt` corrected twice** (`Ｕｇｈ．．．` → `Ｔｃｈ．．．`,
+  `Ｙｅｓ．` → `Ｙｅａｈ．`). The first closed a live CLAUDE.md §3 violation against shipped
+  `chunk_007.txt`. Chunk 0 is now 8,165 / 8,192 — **27 bytes of slack, the tightest file in the
+  project**; see `FLAGS.md` §G1 before any further correction lands on it.
+- 2026-09-08: **PR #2 decided CHANGES** (round 1). All eight gates passed; the two findings are
+  the two rulings above landing on that PR. 11 respellings, no re-flow.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
