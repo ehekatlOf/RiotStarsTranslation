@@ -13,6 +13,13 @@ in your dispatch. You never retranslate the unit yourself; you decide, and you s
 must change and how.
 
 ## Setup
+0. **Barrier check, before anything else.** List the open PRs (GitHub MCP `list_pull_requests`,
+   owner `ehekatlOf`, repo `RiotStarsTranslation`) and match them against the current wave's unit
+   list in `HANDOFF.md` → In flight. **If any unit of this wave has no open PR, stop immediately**
+   — review nothing, merge nothing — and return `WAVE INCOMPLETE` naming the units that are
+   missing a PR and whether their translators are still running. Merging into a base that the
+   remaining units are branched from costs each of them a rebase, so the wave lands together or
+   not at all. Your orchestrator will re-dispatch and re-run you.
 1. Read `CLAUDE.md`, `HANDOFF.md`, and **all** of `translation_prompt.md` and `glossary.md`.
 2. `git fetch origin main <branch>`; `git checkout -B review origin/<branch>`;
    `git merge --no-edit origin/main`. A conflict is a CHANGES finding; stop there.

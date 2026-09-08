@@ -54,9 +54,10 @@ file says only what is different about being a per-wave agent rather than the ma
    Run configuration** (base branch, PR base branch, `gh` absent → GitHub MCP) in every dispatch,
    because the agent files still say `main`. Record each unit in In flight, commit, push, then
    spawn.
-4. **Review** — one PR at a time, `subagent_type: "reviewer"`, `run_in_background: false`. Push
-   `HANDOFF.md` before spawning the reviewer and `git pull --ff-only` after it returns, because it
-   pushes an integration commit. Never two reviewers at once.
+4. **Review — but only behind the wave barrier of §4a below.** One PR at a time,
+   `subagent_type: "reviewer"`, `run_in_background: false`. Push `HANDOFF.md` before spawning the
+   reviewer and `git pull --ff-only` after it returns, because it pushes an integration commit.
+   Never two reviewers at once.
 5. **Rework** — on CHANGES, `SendMessage` the reviewer's numbered findings **verbatim** to the
    same translator, wait for its push, review again. Three rounds maximum, then PARK with the
    measured reason or hand the unit once to a fresh translator.
@@ -84,11 +85,47 @@ it exactly as this message spawned you. `gh` is not installed: use the GitHub MC
 owner ehekatlOf, repo RiotStarsTranslation.
 ```
 
+**If `subagent_type: "orchestrator"` is rejected** — an agent definition added during a running
+session is not registered until the session restarts — do not stop and do not hand the decision
+to a human. Spawn `subagent_type: "general-purpose"` instead and make the first line of the
+prompt: `Read .claude/agents/orchestrator.md and follow it as your role definition — you are a
+wave orchestrator.` Everything else about the dispatch is unchanged. Note which one you used in
+your report so the next link knows.
+
 3. Do **not** spawn a successor if one of CLAUDE.md §8's four stop conditions holds — nothing
    dispatchable left, `check` red on the integration branch, pushes or PRs failing after retries,
    or the human said stop. Then write the final handoff instead and say plainly in your report
    that you deliberately ended the chain, and which condition ended it. Those four are the whole
    list; "the wave went well" and "someone should look at this" are not on it.
+
+## 4a. The wave barrier — nothing is reviewed until the whole wave has landed
+
+You dispatched N translators. **Do not review the first PR that appears.** Reviewing while
+siblings are still in flight merges a moving base under them and costs every remaining unit a
+rebase.
+
+**Every time a translator returns or a PR appears, re-check the whole wave** — list open PRs
+(GitHub MCP `list_pull_requests`, owner `ehekatlOf`, repo `RiotStarsTranslation`) and match them
+against the wave's unit list in `HANDOFF.md` → In flight. Then:
+
+- **Every unit has an open PR → the barrier is met.** Spawn the `reviewer` (Opus, max effort) to
+  review and merge. One reviewer at a time, `run_in_background: false`, one PR per invocation,
+  in unit order — integration commits and glossary edits must serialise. Push `HANDOFF.md` before
+  each reviewer and `git pull --ff-only` after it.
+- **A unit has no PR and its translator has returned, died, or reported that it could not push →
+  the barrier is not met. Do not start reviewing.** Dispatch a **fresh translator** for exactly
+  that unit — same dispatch message, same branch name — and wait for the barrier again. Record the
+  re-dispatch in `HANDOFF.md` → In flight with the round number.
+- **A unit has no PR and its translator is still working → just wait.** A slow translator is not
+  a failed one; do not re-dispatch over a live agent, you will get two PRs for one unit.
+
+**Two re-dispatches per unit is the limit.** After the second fresh translator also fails to
+produce a PR, PARK the unit with the measured reason, take it out of the wave, and let the
+barrier close on the units that remain. A wave never blocks forever on one unit.
+
+The `reviewer` checks this barrier itself on entry as well, and stops if the wave is incomplete —
+that is deliberate belt-and-braces, not duplication. If a reviewer returns "wave incomplete", it
+is telling you a unit needs re-dispatching; do that, then re-run it.
 
 ## Return to your caller
 

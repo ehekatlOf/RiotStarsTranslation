@@ -135,9 +135,16 @@ closed` is pushed, and the main session does not touch the repository while a wa
 3. **Dispatch** 3–4 units in parallel, one translator each (`run_in_background: true`), with the
    dispatch template from the skill. Battle units in chunk order (chapter order: voices and names
    accumulate); one script batch per wave. Record each unit in HANDOFF → In flight. Commit, push.
-4. **Review**, one PR at a time, reviewer in the foreground (`run_in_background: false`). HANDOFF
-   is committed and pushed before the reviewer starts; after it returns, `git pull --ff-only` (it
-   pushed an integration commit to `main`). Record the decision.
+4. **Review — behind the wave barrier.** Nothing is reviewed until **every** unit of the wave has
+   an open PR: re-check the whole wave each time a translator returns, and if a unit has no PR
+   because its translator returned, died or could not push, dispatch a **fresh translator for that
+   unit** and wait again (two re-dispatches per unit, then park it and let the wave close without
+   it). A translator that is merely still working is not a failure — wait, do not re-dispatch over
+   a live agent. Once the barrier is met: one PR at a time, reviewer in the foreground
+   (`run_in_background: false`), in unit order. HANDOFF is committed and pushed before the
+   reviewer starts; after it returns, `git pull --ff-only` (it pushed an integration commit).
+   Record the decision. The reviewer re-checks the barrier itself and stops with `WAVE INCOMPLETE`
+   if it is not met.
 5. **Rework**: on CHANGES, send the reviewer's numbered findings verbatim to the **same**
    translator (SendMessage keeps its context), wait for its push, review again. Three rounds
    maximum; then PARK with the reason, or hand the unit once to a fresh translator.

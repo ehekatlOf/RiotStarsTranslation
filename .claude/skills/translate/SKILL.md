@@ -71,9 +71,17 @@ DELIVER: one PR filled per .github/pull_request_template.md; return PR URL + Fig
 ```
 
 ## 4. Review routing (`subagent_type: "reviewer"`, `run_in_background: false`, one at a time)
-When a translator returns: record its PR, figures and Handoff text in HANDOFF, commit
-`handoff: PR #k opened`, push. Then spawn the reviewer with the PR URL, branch, unit and the
-translator's report. After it returns: `git pull --ff-only` (it pushed `integrate:main`), record
+**The wave barrier comes first.** When a translator returns: record its PR, figures and Handoff
+text in HANDOFF, commit `handoff: PR #k opened`, push — then list the open PRs and match them
+against the whole wave. Review nothing until **every** unit of the wave has one. A unit whose
+translator has returned, died or failed to push gets a **fresh translator** dispatched for it
+(same branch name, same dispatch message, recorded as a new round in In flight) and the barrier
+waits again; two re-dispatches per unit, then park it and close the barrier on the rest. A
+translator still working is not a failure — wait.
+Once the barrier is met, spawn the reviewer with the PR URL, branch, unit and the
+translator's report, one PR per invocation, in unit order. The reviewer checks the barrier itself
+on entry and returns `WAVE INCOMPLETE` rather than merging into a base the other units are
+branched from. After it returns: `git pull --ff-only` (it pushed `integrate:main`), record
 the decision in HANDOFF if the reviewer did not, commit, push. Never run two reviewers at once;
 integration commits and glossary edits must serialise.
 
@@ -110,6 +118,13 @@ CLAUDE.md §4 and .claude/agents/orchestrator.md — close it, then spawn the wa
 exactly as this message spawned you. `gh` is not installed: use the GitHub MCP tools,
 owner ehekatlOf, repo RiotStarsTranslation.
 ```
+
+**If `subagent_type: "orchestrator"` is rejected** — an agent definition added during a running
+session is not registered until the session restarts — do not stop and do not hand the decision
+to a human. Spawn `subagent_type: "general-purpose"` instead and make the first line of the
+prompt: `Read .claude/agents/orchestrator.md and follow it as your role definition — you are a
+wave orchestrator.` Everything else about the dispatch is unchanged. Note which one you used in
+your report so the next link knows.
 
 When an orchestrator returns, record nothing yourself — it has already pushed `HANDOFF.md`. Read
 its report for one thing above all: **did it spawn its successor?** If it did, relay the wave
