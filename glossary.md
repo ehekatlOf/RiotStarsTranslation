@@ -9,7 +9,7 @@ translated line that must be revisited.
 Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in the dumps but not yet
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
-Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions) and `battle_dump.txt`
+Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions), 984–1001 and 1040–1047 (batch 005), and `battle_dump.txt`
 chunks **0, 1, 2, 3, 4, 7, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–5 + all of tier E).
 
 ---
@@ -269,18 +269,20 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~ワーウィック~~ | ✅ **PROMOTED to §25.1** — `Ｗａｒｗｉｃｋ`, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
 | クロスリー | `Ｃｒｏｓｓｌｅｙ` | **New seed, 2026-09-08 (PR #5 review)** — surfaced while verifying `クリミア`, and **not chunk 9's business**: chunk 9 does not render it. A **place**, on the same evidence test §2 applied to ファリーナ — `クロスリーの守備隊` (its garrison), `クロスリーの丘` (its hills), `クロスリーを通らずに` (without passing through it), `クロスリーまで伝令を送って` (send a messenger *to* it), `クロスリーに向かう` (head *to* it), and `クロスリーにいるクリミア博士` (Doctor Crimea, who is *in* it). **8 battle + 2 script occurrences, none a person.** 8 columns | Ｃｒｏｓｌｅｙ, Ｋｕｒｏｓｕｒｉ. Promote in the wave that first renders it |
 | ~~弓使い~~ | ✅ **PROMOTED to §24.2 as `ｂｏｗｍａｎ`**, not the seed's `archer` — the seed's own “consider `bowman`” note was taken, and ratified at review | battle chunk 6 (PR #7) | — |
-| バトウ | `Ｂａｔｏｕ` | script 1041 — `神父のバトウ`, the priest of Bernard's church. Referred to posthumously as `バトウ様` in 1045 | Ｂａｔｏｗ, Ｂａｔｈｏｕ |
-| リース文明 | the `Ｒｅｅｓｅ` civilisation | script 1047 — `伝説のリース文明`, a vanished people destroyed by war among their own kind | Ｒｉｅｓｅ, Ｌｉｅｓ. ⚠️ Probably the same vanished civilisation as 古代ハイランド → ancient Highland (§11.2) — check before fixing either |
-| クレウス司教 | Bishop `Ｃｒｅｕｓ` | script 1047 | Ｋｒｅｕｓ. 司教 → **Bishop**, a new rank |
+| ~~バトウ~~ | ✅ **PROMOTED to §26.1** — `Ｂａｔｏｕ`, and `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ` per §24.1, rendered in `tl/script/batch_005.tsv` (PR #8). Used exactly as seeded | script 1041, 1045 | — |
+| ~~リース文明~~ | ✅ **PROMOTED to §26.1** — the `Ｒｅｅｓｅ` civilisation, used exactly as seeded (PR #8). ⚠️ **The 古代ハイランド warning is DISCHARGED: they are NOT the same.** Counted at that review — `リース` 8 script / 0 battle, `ハイランド` 2 script / 9 battle, **zero lines in either dump contain both**. §11.2's ancient Highland row is untouched and stays | script 1047 | — |
+| ~~クレウス司教~~ | ✅ **PROMOTED to §26.1** — Bishop `Ｃｒｅｕｓ` (PR #8) | script 1047 | — |
 | キエーザ | `Ｋｉｅｓａ` | script 1090, 1092 — `キエーザ城`, a castle | Ｃｈｉｅｓａ — which is Italian for *church*, so the name may be deliberate; check whether the castle is a religious site before fixing |
 | ルクレール | `Ｌｅｃｌｅｒｃ` | script 1090, 1096 — `ルクレール城`, a castle | Ｌｕｃｌｅｒｅ. The French reading matches the European naming |
-| ＺＯＣ（支配地域） | `ＺＯＣ　（ｚｏｎｅ　ｏｆ　ｃｏｎｔｒｏｌ）` | script 984 | The gloss is **not** redundant here as `待ち時間（Ｗａｉｔ）` was (§3) — ZOC is opaque in English too |
-| 中立ユニット | neutral unit | script 988 | |
-| 前衛 / 後衛 | front line / rear line | script 985 | |
-| 『説得』 / 『ＧＵＥＳＴ　ＵＮＩＴ』 / 「ＥＮＴＥＲ」 | `“Ｐｅｒｓｕａｄｅ”` / `“ＧＵＥＳＴ　ＵＮＩＴ”` / `“ＥＮＴＥＲ”` | script 986–988 | The last two are **already full-width Latin in the source** — reproduce them, do not re-case. ⚠️ These are the quoted-UI-token case `FLAGS.md` §I1 is open on; whatever settles §I1 settles `“Ｐｅｒｓｕａｄｅ”` |
-| 司教 | Bishop | script 1047 | |
+| ~~ＺＯＣ（支配地域）~~ | ✅ **PROMOTED to §26.3** — used exactly as seeded (PR #8) | script 984 | — |
+| ~~中立ユニット~~ | ✅ **PROMOTED to §26.3** (PR #8) | script 988 | — |
+| ~~前衛 / 後衛~~ | ✅ **PROMOTED to §26.3** — front line / rear line, with one width variant `ｉｎ　ｆｒｏｎｔ` / `ｂｅｈｉｎｄ` flagged (PR #8) | script 985 | — |
+| ~~『説得』 / 『ＧＵＥＳＴ　ＵＮＩＴ』 / 「ＥＮＴＥＲ」~~ | ✅ **PROMOTED to §26.3** — used exactly as seeded (PR #8), the last two reproduced not re-cased. ⚠️ **`FLAGS.md` §I1 is now SETTLED** by that review, and these three are the rows that settled it | script 986–988 | — |
+| ~~司教~~ | ✅ **PROMOTED to §26.1** — Bishop, spelled out like Commander / Captain / Doctor (PR #8) | script 1047 | — |
 | ~~報奨金~~ | ✅ **PROMOTED to §24.2** — `ｒｅｗａｒｄ`, rendered in battle chunk 6 (PR #7) before script 991 reached a batch | script 991, battle chunk 6 | — |
-| 同盟 | alliance | script 999–1001 — `カーラインと帝国との同盟` | |
+| ~~同盟~~ | ✅ **PROMOTED to §26.3** — alliance (PR #8) | script 999–1001 | — |
+| ホアグ王子 | Prince `Ｈｏａｇ` | **New seed, 2026-09-08 (PR #8 review)** — surfaced while verifying `アップミーズ`, and **not batch 005's business**: that batch does not render it. Carline's first prince, Cavia's elder brother (`私の兄でもあるホアグ王子`), the man who built Apumizu (`ホアグ王子がつくった街`), and a target of Helfer's (`奴らにはホアグとともに舞台から下りてもらう`). **6 battle + 16 script occurrences.** 10 columns with the title, 4 bare | Ｈｏａｇｕ, Ｈｏｇ. Promote in the wave that first renders it |
+| トリフ | `Ｔｏｒｉｆ` | **New seed, 2026-09-08 (PR #8 review)**, same sweep. Hoag's younger brother (`弟のトリフ`), whom Helfer prefers as the more pliable heir. **9 battle + 6 script occurrences.** 5 columns | Ｔｒｉｆ, Ｔｏｌｉｆ. Promote in the wave that first renders it |
 
 ⚠️ **Two corrections the wave-2 units force, both of the メルザリオ kind (§20.1):**
 
@@ -289,10 +291,15 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
    recorded there. It is a place **only** — no instance in either dump uses it as a personal
    name. `Ｆａｒｉｎａ` is unchanged, so nothing translated needs revisiting. **Moved once; PRs #7
    and #8 flagged it and must not move it again.**
-2. **Fernando is `隊長` in the battle script but `将軍` in the main script** — script 992 reads
-   `２軍のフェルナンド将軍`. `隊長` → captain is fixed (§2) and chunk 2 shipped
-   `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ`. Either 将軍 → **General** and the man holds two titles, or one
-   of them is loose usage. Decide before script 992 is rendered; do not silently pick.
+2. ~~**Fernando is `隊長` in the battle script but `将軍` in the main script.**~~
+   ✅ **DISCHARGED 2026-09-08 (PR #8 review).** **将軍 → `Ｇｅｎｅｒａｌ`, and the man holds two
+   titles** — recorded in §26.2. Decided on a corpus count, not a guess: `フェルナンド将軍` occurs
+   **17 times** (6 battle + 11 script) against `フェルナンド隊長`'s **2** (2 battle + 0 script).
+   §2's 隊長 → *captain* is untouched, and **nothing shipped is re-cut**: all three shipped
+   `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ` were traced to their sources at that review — `chunk_002` ×2
+   render `フェルナンド隊長`, `chunk_006` ×1 renders `この宮廷第２軍隊長、フェルナンドめが` — and
+   **neither chunk contains a single `将軍`**. Note this discharges *this* item; **§10 question 2,
+   the class/unit name table, is a different item and remains open**.
 
 ---
 
@@ -357,7 +364,7 @@ epilogue.
 
 | Japanese | English | Note |
 |---|---|---|
-| フェリスランド | Ferisland | the land the island's lasers threaten. Alt *Felisland*, *Ferrisland*. Appears nowhere else in either dump — see FLAGS |
+| フェリスランド | Ferisland | the land the island's lasers threaten. Alt *Felisland*, *Ferrisland*. ⚠️ **CORRECTED 2026-09-08 (§4.3, PR #8 review): this row said “appears nowhere else in either dump”, and that is false** — **2 battle + 11 script occurrences**, including script 1001 (`フェリスランドへ行ったんだが` → `Ｉ　ｗｅｎｔ　ｔｏ　Ｆｅｒｉｓｌａｎｄ`, now shipped in `batch_005`) and `ホアグ王子はフェリスランドだ`. **The rendering `Ｆｅｒｉｓｌａｎｄ` is unchanged, so no translated line needs revisiting** — only the note was wrong. See §26.1 |
 | ハイランド / 古代ハイランド | Highland / ancient Highland | the vanished civilisation that built the fortress |
 | 浮遊島 | the floating island | |
 | 空中要塞 | sky fortress | keep distinct from 要塞 → fortress |
@@ -1321,3 +1328,127 @@ chunks 16 and 39.
 | The unnamed female companion (portrait 02) | Casual, contractions, the one who notices — `Ｗｈａｔ’ｓ　ｗｒｏｎｇ，　Ｓｅｎｅｃａ？`. Same portrait id as §21.4's unnamed female party member; if a later chunk names her, re-check both |
 | The two enslaved factory workers (portraits 03, 09) | Beaten down and plain-spoken, contractions throughout — `Ｎｏｂｏｄｙ’ｓ　ｃｏｍｉｎｇ　ｔｏ　ｈｅｌｐ　ｕｓ．`, `Ｂｅｓｔ　ｎｏｔ　ｔｏ　ｒｅｓｉｓｔ．`. 09 is the blunter of the two and gives the party an item anyway |
 | Tutorial boxes (`{=FA1000300030}`, lines 13–15) | §7 unchanged — plain instructional second person, the source's passive kept, byte-identical to §21.3 |
+
+---
+
+## 26. Added by script batch 005 (PR #8, merged 2026-09-08)
+
+Rendered in `tl/script/batch_005.tsv` — `script_unique.txt` lines **984–1001 and 1040–1047**, 26
+unique lines, 1 instance each. Three groups: the old tutor's five tutorial boxes (984–988, bank
+29), the fortress-guard and rumour dialogue (989–1001, bank 30), the Bernard's-church scene
+(1040–1047, bank 31). 1,980 JP → 4,004 EN characters, **2.02×**; 4,040 bytes; banks 29 / 30 / 31
+left with 25,589 / 35,119 / 34,827 free. Widest row 23, **none at 24**, no page over 4 text rows.
+Merged at round 2. Lines 1002–1039 and 1048–1100 are the developer debug menu and are deliberately
+not in this batch.
+
+`しかし、` → `Ｈｏｗｅｖｅｒ，` is §23.3's fourth use; `それにしても` → `Ｓｔｉｌｌ，` (§19.1),
+`全く` → `Ｒｅａｌｌｙ，` (§6), `おお、` → `Ｏｈ，` (§24.4), `Ｂｅｒｎａｒｄ’ｓ　ｃｈｕｒｃｈ` (§14.2),
+`Ｋｏｒｎｅｆｆ` / `adventurer` (§21.1), `Ｆｅｒｉｓｌａｎｄ` (§11.2), `Ｈｅｌｆｅｒ` (§11.1),
+`Ｓｑｕａｒｅ　ｂｕｔｔｏｎ` (§3), `heavy swordsman` (§20.2) and `garrison` (§2) are used unchanged.
+Script 1001 is the very line §21.1's `探検家` note pointed at, and it holds 冒険者 → *adventurer*
+distinct from 探検家 → *explorer*, exactly as that note required.
+
+### 26.1 People and places — three promotions out of §9, and one new name
+
+| Japanese | English | Note |
+|---|---|---|
+| バトウ | `Ｂａｔｏｕ` | **Promoted from §9 (wave-2 seeds), used exactly as seeded.** 6 columns. The priest of Bernard's church, dead before the church scene. `神父のバトウと申します` → `Ｉ　ａｍ　ｔｈｅ　ｐｒｉｅｓｔ　Ｂａｔｏｕ．`; §1's bare 神父 → *priest* is unchanged. 3 battle + 8 script occurrences. Alt *Batow*, *Bathou* |
+| バトウ様 | `Ｆａｔｈｅｒ　Ｂａｔｏｕ` | **Ruled 2026-09-08, PR #8 round 1; applied at round 2.** 15 columns with the possessive. 様 takes the English title of the man's station, exactly as §24.1 fixed `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` and as §1 / §14.1 fix Lady Rimul, Lord Helfer, Lady Phyllis, Lady Cavia. Line 1041 establishes the station in the same scene. ⚠️ **§21.2's drop-the-honorific rule reaches `〜さん` on a personal name and nothing else** — the `様` and `さん` patterns are separate and must never be merged. §24.1 is **unamended** by this entry; it is applied, not extended |
+| クレウス司教 / 司教 | Bishop `Ｃｒｅｕｓ` / Bishop | **Both promoted from §9.** 13 columns; the possessive is `Ｃｒｅｕｓ’`. 司教 → **Bishop**, spelled out like `Ｃｏｍｍａｎｄｅｒ` / `Ｃａｐｔａｉｎ` / `Ｄｏｃｔｏｒ` (§25.1). Alt *Kreus* |
+| リース文明 | the `Ｒｅｅｓｅ` civilisation | **Promoted from §9, used exactly as seeded.** British *‐isation*, per the defence / armour policy (§4). 20 columns, so it never shares a row. ⚠️ **§9's warning is discharged: `リース文明` is NOT `古代ハイランド`.** Counted at this review across both dumps — `リース` 8 script / 0 battle, `ハイランド` 2 script / 9 battle, and **zero lines in either dump contain both**. Script 1047 ties Reese to a legend, to documents found in Farina, to war among its own kind and to Bishop Creus's ancestors; §11.2 ties Highland to the floating island and the sky fortress. **Both the §9 row and the §11.2 row stay.** Alt *Riese*, *Lies* |
+| アップミーズ | `Ａｐｕｍｉｚｕ` | **New — never in §9 at all**, surfaced by this batch. 8 columns. A **town**, not a person: 5 script + 0 battle occurrences, and `ホアグ王子がつくった街、アップミーズよ！` (*Apumizu, the town Prince Hoag built*) settles it outright, with `「アップミーズの街」` and `新しくできた街` agreeing. `Ａｐｕｍｉｚｕ` occurs nowhere else in `tl/`. Alt *Upmeeze*, *Apmiz* |
+| 神殿 | temple | `謎の神殿` → `ａ　ｍｙｓｔｅｒｉｏｕｓ　ｔｅｍｐｌｅ`. Kept **distinct** from 教会 → church (§14.2) and 聖堂 → sanctuary (§12.1) — three source words, three English words |
+
+⚠️ **A factual correction to §11.2 (§4.3).** That entry says `フェリスランド` "appears nowhere else
+in either dump". **It does** — counted at this review, **2 battle + 11 script occurrences**, one of
+them script 1001 in this very unit (`フェリスランドへ行ったんだが` →
+`Ｉ　ｗｅｎｔ　ｔｏ　Ｆｅｒｉｓｌａｎｄ`), another `ホアグ王子はフェリスランドだ`. **The rendering
+`Ｆｅｒｉｓｌａｎｄ` is unchanged and no translated line needs revisiting** — only the note was wrong.
+The name is now shipped rather than parked; `pending/chunk_043.txt` and its abridgement also carry
+it, byte-identically.
+
+### 26.2 Ranks — `将軍` → `Ｇｅｎｅｒａｌ`, and §10 question 2 is CLOSED
+
+| Japanese | English | Note |
+|---|---|---|
+| 将軍 | Ｇｅｎｅｒａｌ | **RATIFIED 2026-09-08, PR #8 review. This closes §10 question 2 and §9's correction 2.** `２軍のフェルナンド将軍` → `Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ　ｏｆ　ｔｈｅ　２ｎｄ　Ａｒｍｙ` (23 columns). Fernando holds two titles; it is the source that varies, not the translation |
+| ２軍 (bare) | ２ｎｄ　Ａｒｍｙ | Line 992 writes the bare `２軍`, not `宮廷第２軍`, so §20.1's `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ` does **not** apply — already shipped practice in `chunk_002` line 3. Two source spellings, two English forms, deliberately |
+
+**The corpus decides it, counted at this review across both dumps.** `フェルナンド将軍` occurs **17
+times** (6 battle + 11 script); `フェルナンド隊長` occurs **2 times** (2 battle + 0 script). §2's
+隊長 → *captain* is untouched. **Nothing shipped is re-cut, and this was verified rather than
+assumed**: all three shipped `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ` were traced back to their source
+strings — `chunk_002.txt` ×2 render `フェルナンド隊長`, `chunk_006.txt` ×1 renders
+`この宮廷第２軍隊長、フェルナンドめが` — and **neither chunk contains a single `将軍`**.
+`Ｇｅｎｅｒａｌ` appears nowhere else in `tl/`.
+
+### 26.3 Tutorial and mechanics vocabulary — six promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| ＺＯＣ（支配地域） | `ＺＯＣ　（ｚｏｎｅ　ｏｆ　ｃｏｎｔｒｏｌ）` | **Promoted from §9, used exactly as seeded.** 21 columns, so it breaks across two rows at `ｏｆ`. The gloss is **not** the redundancy §3 struck from `待ち時間（Ｗａｉｔ）` — ZOC is opaque in English too |
+| 中立ユニット | neutral unit | **Promoted from §9** |
+| 前衛 / 後衛 | front line / rear line | **Promoted from §9.** ⚠️ One instance renders them `ｉｎ　ｆｒｏｎｔ` / `ｂｅｈｉｎｄ` for width — 985 page 3, where `ａ　ｍａｇｅ　ｔｏ　ｔｈｅ　ｒｅａｒ　ｃｏｖｅｒｓ` is 25 columns. Flagged; the full forms are used on page 1 of the same box |
+| 『説得』 / 説得する | `“Ｐｅｒｓｕａｄｅ”` / persuade | **Promoted from §9.** Quoted and capitalised as the command (988 p2), bare lowercase verb where the source itself drops the quotes (988 p3). That is §I1's rule, settled at this review |
+| 『ＧＵＥＳＴ　ＵＮＩＴ』 / 「ＥＮＴＥＲ」 | `“ＧＵＥＳＴ　ＵＮＩＴ”` / `“ＥＮＴＥＲ”` | **Promoted from §9.** Already full-width Latin in the source: **reproduced, not re-cased.** Bare `ＥＮＴＥＲ地点` → `ＥＮＴＥＲ　ｐｏｉｎｔ`, unquoted, because the source drops the quotes there too |
+| 同盟 | alliance | **Promoted from §9.** `カーラインと帝国との同盟祝賀会` → `Ｔｈｅ　Ｃａｒｌｉｎｅ‐Ｅｍｐｉｒｅ　ａｌｌｉａｎｃｅ　ｂａｎｑｕｅｔ`, using `‐` (U+2010) |
+| 『支援効果』 | `“Ｓｕｐｐｏｒｔ　Ｅｆｆｅｃｔ”` | Quoted **and** capitalised, because the source quotes it |
+| 包囲効果 / 包囲される | the encircling effect / be encircled | **Unquoted and lowercase**, because the source leaves it unquoted where it quotes 『支援効果』 two sentences later in the same box. **The source's own quoting distinction is preserved deliberately** — that is the whole of §I1's rule inside one message. *Encircling*, not *encirclement*: 23 columns against 25 |
+| 『ビーストテイム』 | `“Ｂｅａｓｔ　Ｔａｍｅ”` | Skill name, 13 columns. Capitalised to match ビーストマスター → `Ｂｅａｓｔ　Ｍａｓｔｅｒ` (§4), a coined conferred name under §17.1 |
+| ヘクス | hex | The map cell. `隣接するヘクス` → `ａｎ　ａｄｊａｃｅｎｔ　ｈｅｘ` |
+| クラスの相性 | class matchups | *Compatibility* is 13 columns and will not share a row |
+| 戦士系 / 遠隔系 | warrior types / ranged ones | `〜系` → *types*; the second instance is `ｒａｎｇｅｄ　ｏｎｅｓ` to avoid *types* twice in one sentence |
+| 編成 | form (your units) | Verbal. Kept **distinct** from 部隊 → squad (§19.2) and 分隊 → 3rd Squad (§2) |
+| ゲスト / ゲームオーバー | guest / the game is over | Lowercase *guest* in prose (§17.1 species test) where the displayed label is `“ＧＵＥＳＴ　ＵＮＩＴ”`. The batch draws that line itself, unprompted, and it is exactly §I1's rule |
+
+### 26.4 Words, phrases and proverbs
+
+| Japanese | English | Note |
+|---|---|---|
+| 砦 | ｆｏｒｔ | **Ruled 2026-09-08, PR #8 round 1; applied at round 2.** Kept **distinct** from 要塞 → fortress, 大要塞 → great fortress (§2) and 空中要塞 → sky fortress (§11.2) — four source words, four English forms. It is also §2's own shipped form: `tl/battle/chunk_040.txt` line 2 ships `バウワーの砦` → `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` **and** `「砦の戦い　再び」` → `“Ｔｈｅ　Ｂａｔｔｌｅ　ｏｆ　ｔｈｅ　Ｆｏｒｔ，　Ａｇａｉｎ．”`. Verified at review: `ｆｏｒｔｒｅｓｓ` occurs in `tl/` only for 要塞 |
+| 犯人 | the culprit | |
+| 反乱軍 | the rebels / the rebel army | Kept **distinct** from 帝国 → the Empire (§2), 本隊 → the main force and 主力部隊 → the main body (§20.1). The bare plural is the width form: `Ａｒｍｉｅｓ　ｆｅｌｌ　ｔｏ　ｔｈｅ　ｒｅｂｅｌｓ．` is 28 columns |
+| 派の連中 | faction | `フェルナンド派の連中` → `Ｆｅｒｎａｎｄｏ’ｓ　ｆａｃｔｉｏｎ` |
+| 復興 | rebuilding / rebuild | Used of both the church (1045) and Farina (1046) |
+| 冒険者 | adventurer | **First actual rendering** — §21.1 fixed the word but nothing had used it. `冒険者のコーネフって男` → `ａ　ｍａｎ　ｃａｌｌｅｄ　Ｋｏｒｎｅｆｆ，　ａｎ　ａｄｖｅｎｔｕｒｅｒ`. Kept distinct from 探検家 → explorer, exactly as §21.1 required |
+| うわさ (the noun) | rumours | **Takes up the reservation §25.2 left open** (“if a later unit needs the noun, *rumour* is still free”). Verified at review to be no collision: `〜ってウワサだ` occurs **once** in the whole project (battle chunk 9, → `ｔｈｅｙ　ｓａｙ`) and `うわさ` **once** (script 1044); two different source strings that never meet, and `ｒｕｍｏｕｒ` occurs nowhere else in `tl/`. `ご活躍の　うわさは聞いております` → `Ｉ　ｈａｖｅ　ｈｅａｒｄ　ｔｈｅ　ｒｕｍｏｕｒｓ　ｏｆ　ｙｏｕｒ　ｅｘｐｌｏｉｔｓ．` |
+| 油を売る | ｌｏａｆ | `こんな所で油売ってないで` → `Ｒａｔｈｅｒ　ｔｈａｎ　ｌｏａｆ　ｈｅｒｅ`. A genuine equivalent, not a substituted idiom |
+| 急がば回れ | `Ｍｏｒｅ　ｈａｓｔｅ，　ｌｅｓｓ　ｓｐｅｅｄ，　ｔｈｅｙ　ｓａｙ．` | English proverb carrying the same point, on the §20.3 貧乏クジをひく precedent |
+| 石橋を叩いて渡る | `ｌｏｏｋ　ｂｅｆｏｒｅ　ｙｏｕ　ｌｅａｐ` | The genuine English equivalent — same act, same caution |
+| バカとハサミは使いよう | `Ｉｔ　ｉｓ　ａ　ｐｏｏｒ　ｗｏｒｋｍａｎ　ｔｈａｔ　ｂｌａｍｅｓ　ｈｉｓ　ｔｏｏｌｓ，　ｔｈｅｙ　ｓａｙ．` | A **fourth** バカ register, beside §19.1's そんなバカな → `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` and バカなやつら → `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ`, and §20.3's バカ者 → `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ`. ⚠️ **The loosest of this batch's three proverbs, accepted at review with the shift recorded**: the two share the premise *the outcome is in the user, not the tool*, but the Japanese is encouraging where the English chides. It stands because the page is at the 4-row wall (21 / 23 / 20 / 23) so no fuller rendering fits, and because the very next sentence, `Ｕｓｅｆｕｌ　ｏｒ　ｕｓｅｌｅｓｓ　ｉｓ　ｕｐ　ｔｏ　ｙｏｕ．`, restores the constructive sense. See `FLAGS.md` §N4 |
+
+### 26.5 Interjections
+
+| Japanese | English | Note |
+|---|---|---|
+| ふーむ | `Ｈｍｍ，` | Extends §6's む / ん → `Ｈｍ`; the lengthened kana takes the extra `ｍ`, per the kana-beat convention (§11.5, §14.5, §24.3). **Distinct** from `Ｈｍｐｈ` (ムムッ / ふっ / フンッ), `Ｔｃｈ` (くっ) and `Ｏｈ` (ほう / おお) |
+
+### 26.6 Hearsay frames — `ｔｈｅｙ　ｓａｙ` and `Ｗｏｒｄ　ｉｓ` both render `らしい`
+
+⚠️ **Recorded at review; the PR did not raise it.** This unit renders `らしい` two ways —
+`ｔｈｅｙ　ｓａｙ` in 991 and 992, `Ｗｏｒｄ　ｉｓ` in 995 and 1000 — and also gives `ｔｈｅｙ　ｓａｙ` to
+`〜って話だ`, `〜そうです`, `〜だってよ` and `と言うじゃろ`. **This is not a CLAUDE.md §3 violation**:
+§3 engages on the **message**, not the row (§20.4, §23.1, §24.5), and every one of these sits in a
+different message. It is recorded so it cannot drift:
+
+- **`ｔｈｅｙ　ｓａｙ` is the default** for every hearsay evidential — it is also §25.2's fixed form
+  for `〜ってウワサだ`, and one English hedge serving several Japanese ones is the deliberate
+  collapse §17.2 makes for 鬼 / オーガ and §25.3 ratified for `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`.
+- **`Ｗｏｒｄ　ｉｓ` is the sentence-initial variant**, taken where the hedge leads the sentence and a
+  trailing `ｔｈｅｙ　ｓａｙ` would be the third in as many rows. Both forms are free elsewhere in `tl/`.
+- §25.3's test is met: no two of these source strings appear in one scene, so no player can see
+  the collapse.
+
+### 26.7 Register — the tutorial row keys on the speech, not on a marker
+
+| Who | Register |
+|---|---|
+| The old tutor (`じゃ` / `のじゃ` / `じゃろ`, script 984–988) | **New row, 2026-09-08, PR #8.** Plain, old-fashioned instructional English, **no contractions anywhere** — verified across all five boxes at review. The old-fashioned tinge sits in word choice (`ｔｈｅｙ　ｓａｙ`, `Ｂｅａｒ　ｉｔ　ｉｎ　ｍｉｎｄ`, `ｄｏ　ｔａｋｅ　ｃａｒｅ`), never in archaic spelling — the same rule §7 already gives "Village elders (じゃ / のう)". ⚠️ **This row keys on the SPEECH, not on any message marker.** An earlier draft keyed it on `{FB01}`; that premise was disproved at review (666 script + 148 battle occurrences of `{FB01}`, and only 47 of 342 opened lines carry `じゃ`) and has been removed. §7's `{=FA1000300030}` tutorial-box row is a **different** thing and is unchanged |
+| The fortress guards and rank-and-file soldiers (script 989–1001) | Casual and grumbling, **contractions throughout** — `Ｔｈｅｒｅ’ｓ`, `Ｉ’ｖｅ`, `Ｗｅ’ｒｅ`, `Ｔｈｅｙ’ｖｅ`. §20.5 / §24.6's soldiers, unchanged. The one officer who says `貴官ら` (993) takes none — `Ｉｓ　ｉｔ　ｔｒｕｅ　ｔｈａｔ　ｙｏｕ`, `ｉｓ　ｎｏｔ　ｈａｌｆ　ｂａｄ` |
+| The Bernard's-church clergy (script 1040–1047) | Formal, humble, **no contractions** — `Ｉ　ａｍ　ｔｈｅ　ｐｒｉｅｓｔ　Ｂａｔｏｕ．`, `Ｍａｙ　ｔｈｅ　ｂｌｅｓｓｉｎｇ　ｏｆ　Ｇｏｄ　ｂｅ　ｕｐｏｎ　ｙｏｕ．`, `Ｈｏｗ　ｐｏｗｅｒｌｅｓｓ　ａ　ｔｈｉｎｇ　ｍａｎ　ｉｓ．`, `Ｈｉｓｔｏｒｙ　ｄｏｅｓ　ｒｅｐｅａｔ　ｉｔｓｅｌｆ，　ｄｏｅｓ　ｉｔ　ｎｏｔ．` §24.6's Bernard's-church priest, unchanged and extended to his successors. `９軍のみなさん` → `ｇｏｏｄ　ｐｅｏｐｌｅ　ｏｆ　ｔｈｅ　９ｔｈ　Ａｒｍｙ` carries the polite plural vocative in word choice, per §2's politeness rule |
+
+### 26.8 `助かりました` — a third member of the §23.4 family
+
+| Japanese | English | Note |
+|---|---|---|
+| 助かりました (polite, of a past rescue) | `Ｙｏｕ　ｓａｖｅｄ　…` | **Ruled 2026-09-08, PR #8 round 1; the active stands.** `この前は　助かりました。ありがとうございます。` → `Ｙｏｕ　ｓａｖｅｄ　ｕｓ　ｔｈｅ　ｏｔｈｅｒ　ｄａｙ．　Ｔｈａｎｋ　ｙｏｕ．` The polite past form under `この前は` is a speaker **turning to thank his rescuer**, which is §23.4's own licence for the active, and the following `ありがとうございます` makes the address explicit where chunk 12's `あんちゃん` did. **A third row in §23.4, not an exception to it**: the plain 助かった of one's own condition still takes `Ｉ／Ｗｅ　ａｍ／ａｒｅ　ｓａｖｅｄ`, and `chunk_001` line 14's correction (§23.4) is unaffected. 9 occurrences of 助かりました across both dumps — this rule now governs them |

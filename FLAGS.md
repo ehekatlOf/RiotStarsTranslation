@@ -610,7 +610,15 @@ script line 1234.
 
 ## I. Wave 1 review — battle chunk 3 / PR #1 (2026-09-08)
 
-### I1. Quoted UI tokens: capitalised or not? The corpus holds both, and nothing decides it
+### I1. ~~Quoted UI tokens: capitalised or not?~~ ✅ **RESOLVED 2026-09-08 (PR #8 review) — see §N2**
+
+> **Settled: a quoted token naming something the game DISPLAYS — a command, menu option, map
+> label, item or skill — is capitalised (verbatim where the source already supplies full-width
+> Latin); a quoted phrase that merely describes stays lowercase.** The tie-breaker §I1 lacked is
+> that chunk 3's source is `「入る」` (Japanese) while script 987's is `「ＥＮＴＥＲ」` (already
+> Latin, i.e. a quotation of what is on screen). **One shipped line moves** — `chunk_003.txt` L5,
+> `“ｅｎｔｅｒ”` → `“ＥＮＴＥＲ”`, 0 bytes, queued on the wave-3 corrections unit's existing
+> `chunk_003:5` row. The analysis below is kept as the record of why it stayed open so long.
 
 `「…」` → `“…”` is settled (§3, §15.1). **Whether the quoted text is capitalised is not.** Measured
 across every quoted token in `tl/` as of chunk 3's merge:
@@ -1169,3 +1177,182 @@ battle / 6 script, every occurrence locational, which is the seed's own figure.
 3. **`甘くない` of an institution → `ｈａｒｄｅｒ　ｔｈａｎ　…　ｔｈｉｎｋ`** — glossary §25.1. A negated
    comparison rendered as a positive one, accepted because the two are the same proposition on one
    scale and every literal split either ends a row on `ａｓ` / `ｓｏ` or measures exactly 24.
+
+## N. Wave 2 review — script batch 005 / PR #8 (2026-09-08)
+
+Merged at **round 2**, squash `38c18bc`. All eight §6 gates re-run on head `19769cf` with round-1
+evidence discarded, and every figure in the PR body re-derived rather than read off it.
+
+### N1. The byte figure, and the banks
+
+**4,040 bytes**, net **+4** on round 1's 4,036 (finding 1 +8, finding 2 +12, finding 3 −16). 26
+unique lines, 1 instance each, **26 message instances**. 1,980 JP → 4,004 EN characters, **2.02×**.
+
+| bank | before | after | spent |
+|---|---|---|---|
+| 29 (984–988) | 27,323 free | **25,589 free** | 1,734 |
+| 30 (989–1001) | 36,671 free | **35,119 free** | 1,552 |
+| 31 (1040–1047) | 35,581 free | **34,827 free** | 754 |
+
+**The two banks under 2,000 free are 41 (353) and 40 (509), and this unit touches neither** — not
+asserted, proved: `merge` + `bankmeasure` were run twice, once with `batch_005.tsv` in place and
+once with it moved aside, and the diff between the two runs is exactly three lines, banks 29/30/31.
+Bank 5 (3,419) is likewise untouched. Every bank in this unit has 25,000+ free, so **any later
+correction to `batch_005` is free**.
+
+Geometry, re-measured independently of `rowcheck`: **widest row 23, none at 24, none over 24, no
+page over 4 text rows**; 72 rows sit at 22–23. `{FFFE}` changed on 13 lines, net **−4**; `{FCC0}`
+counts identical to the source on all 26 lines, none added or moved; excluding `{FFFE}`, the tag
+stream is byte-identical to the source on all 26 lines. `rowcheck.py script` warns only on the two
+pre-existing INHERITED pages (1234 page 0, 8194 page 26), neither of which is in this unit.
+
+Gate 6 was run positionally, the §L5 method: each of the 26 Japanese messages occurs **once** in
+`script_dump.txt`, **zero** times in `battle_dump.txt`, and **zero** times in any of the other 23
+files under `tl/` and `pending/`. The one internal repeat, `あなた方に　神の恵みの{FFFE}あらんことを。`
+in 1040 and 1041, is byte-identical in both.
+
+### N2. §I1 IS SETTLED — quoted UI tokens are capitalised, descriptive quoted phrases are not
+
+**§I1 has been open since chunk 3's review and is closed here.** The rule:
+
+> **A quoted token that names something the game itself displays — a command, a menu option, a map
+> label, an item, a skill — is CAPITALISED.** Where the source already supplies full-width Latin,
+> reproduce it verbatim and do not re-case it. Where the source supplies Japanese, capitalise the
+> English. **A quoted phrase that merely describes rather than names stays lowercase.**
+
+**What settles it is a source fact §I1 did not have.** §I1 got stuck because chunk 1's `“Ｗａｉｔ”`
+and chunk 3's `“ｅｎｔｅｒ”` are both menu verbs shipped on opposite sides, so "names vs
+descriptions" and "sentence-initial vs mid-sentence" both failed. The tie-breaker is that **the two
+source strings are not alike at all**: chunk 3's is `「入る」` — Japanese, one occurrence in
+`battle_dump.txt` — while script 987's is `「ＥＮＴＥＲ」`, **already full-width Latin**, two
+occurrences in `script_dump.txt`. The game displays `ＥＮＴＥＲ` on the map in Latin caps. So
+`“ＥＮＴＥＲ”` is not a translator's casing choice at all; it is a quotation of what is on screen,
+and chunk 3's `“ｅｎｔｅｒ”` is the one row that has to move.
+
+Every previously-shipped row the rule now explains, with no other change: `“Ｇｅｍｓ”`,
+`“Ｐｏｗｅｒ　Ｓｔｏｎｅ”` (chunk 0), `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` (chunk 33),
+`“Ｖｉｌｌａｇｅ”` / `“Ｗａｉｔ”` (chunk 1) — all displayed names, capitalised ✅.
+`“ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”`, `“ｐａｓｔ　ｐｌａｃｉｎｇｓ”`, `“ｆｏｒｍ　ｔｏｄａｙ”`, `“ｆｏｒｍ”`
+(`batch_002`) — descriptive column headings the guide is explaining, lowercase ✅.
+`“ｄｅｍｏｎ　ｂｌａｄｅ”` (`batch_003`, the 妖刀 epithet) and `“Ｒｉｂｂｉｔ”` (chunk 10, a quoted
+utterance) are neither, and are unaffected. `batch_002`'s own two-way
+`“Ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”` / `“ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”` is the heading versus the running text and
+is left as shipped.
+
+**batch 005 already obeys it, unprompted, and is the strongest evidence for it** — the source draws
+the same line inside a single message and the translation preserves it: `『支援効果』` →
+`“Ｓｕｐｐｏｒｔ　Ｅｆｆｅｃｔ”` against unquoted 包囲効果 → `ｔｈｅ　ｅｎｃｉｒｃｌｉｎｇ　ｅｆｆｅｃｔ`
+two sentences later; `『説得』` → `“Ｐｅｒｓｕａｄｅ”` against the bare verb 説得する → `ｐｅｒｓｕａｄｅ`;
+`「ＥＮＴＥＲ」` → `“ＥＮＴＥＲ”` against `ＥＮＴＥＲ地点` → `ＥＮＴＥＲ　ｐｏｉｎｔ`; the label
+`“ＧＵＥＳＴ　ＵＮＩＴ”` against prose `ゲスト` → `ｇｕｅｓｔ`.
+
+**Lines this affects (§4.3): exactly one.** `tl/battle/chunk_003.txt` **L5**, `“ｅｎｔｅｒ”　ｃａｖｅｓ`
+→ `“ＥＮＴＥＲ”　ｃａｖｅｓ`. A case change costs **0 bytes and 0 columns**. **Not applied at this
+review** — a reviewer's remit is `glossary.md`, `FLAGS.md`, `pending/README.md` and `HANDOFF.md`,
+not `tl/`. ⚠️ **It lands on the row the wave-3 corrections unit is already editing**: that unit
+carries `chunk_003:5` for glossary §23.3's `しかし` → `Ｈｏｗｅｖｅｒ，` (+4 B). **Both edits are on
+the same message line and must be made in one pass**; combined cost +4 B, chunk 3 slack
+3,591 → 3,587.
+
+### N3. The JP-char-count defect is the coordinator's regex ONLY — `tools/queue.py` is CLEAN
+
+`HANDOFF.md` asked whether `tools/queue.py` shares the count defect, and warned that if it does,
+"every ratio in Remaining is optimistic". **Checked at this review. It does not, and they are not.**
+
+- The coordinator's figure is reproducible: a kana+kanji-only regex `[぀-ヿ一-鿿]` over this
+  batch's 26 keys returns **exactly 1,770**, against the true **1,980** — a 210-character, **10.6%**
+  under-count, and it is **entirely** 66 `。`, 53 `、`, 40 `　` and the full-width Latin and digits
+  (`ＺＯＣ`, `ＥＮＴＥＲ`, `９`), every one of which costs 2 bytes and 1 column like any other
+  character.
+- **`tools/queue.py` uses `len(re.sub(r'\{[^}]*\}', '', …))` at lines 46, 124, 199 and 219** — the
+  strip-tags-and-count method, which returns 1,980. Every JP-char figure and every budget ratio
+  `queue.py` prints, for both the battle queue and the script batching, is computed the correct way.
+
+**Wave 3 does not owe this check — it is discharged here.** The Remaining table is sound. The
+lesson that survives is narrower and still worth keeping: **never count Japanese characters with a
+kana/kanji class.** Full-width punctuation and layout spaces are 8–12% of a typical line and cost
+exactly what letters cost.
+
+### N4. Deviations from literal (§2.1 steps 5–6) — the complete list
+
+Flag 6 lists three step-6 clause reorders (988 p3, 999, 984 p3) and they are correct as written.
+Flag 7 lists eight step-5 implications. **Two more of the same pattern were found at review and are
+recorded here rather than sent back for a third round**, on the §M5 / §M6 practice — the
+translations are right and the rule is already stated in Flag 7 item 5; only the itemisation was
+short. **Ten in total:**
+
+| Line | Japanese | English | What is elided |
+|---|---|---|---|
+| 985 p3 | `キャラを有用にするも無用にするも使い方次第じゃな` | `Ｕｓｅｆｕｌ　ｏｒ　ｕｓｅｌｅｓｓ　ｉｓ　ｕｐ　ｔｏ　ｙｏｕ．` | the subject *a character*, established two pages earlier |
+| 985 p2 | `前衛に重剣士、後衛に魔術師` | `ａ　ｈｅａｖｙ　ｓｗｏｒｄｓｍａｎ　ｉｎ　ｆｒｏｎｔ　ａｎｄ　ａ　ｍａｇｅ　ｂｅｈｉｎｄ` | the fixed *front line* / *rear line*; `ａ　ｍａｇｅ　ｔｏ　ｔｈｅ　ｒｅａｒ　ｃｏｖｅｒｓ` is 25 columns |
+| 985 p2 | `魔術師の弓に弱いという欠点` | `ｉｔｓ　ｗｅａｋｎｅｓｓ　ｔｏ　ｂｏｗｓ` | the repeated *the mage's* → *its*; 欠点 carried by *weakness* |
+| 990 | `さっさと任務についたらどうだ？` | `ｗｈｙ　ｎｏｔ　ｒｅｐｏｒｔ　ｔｏ　ｙｏｕｒ　ｐｏｓｔｓ？` | さっさと, carried by the brusque question |
+| 994 p3 | `どうやら…らしい` | `ｉｔ　ｓｅｅｍｓ` | one of two stacked hedges — English has one slot |
+| 994 p4 | `今のうちに、早く　逃げよう。` | `Ｌｅｔ’ｓ　ｇｅｔ　ｏｕｔ　ｗｈｉｌｅ　ｗｅ　ｃａｎ．` | 早く, carried by *while we can* |
+| 995 | `全滅させられたらしい` | `ｆｅｌｌ　ｔｏ　ｔｈｅ　ｒｅｂｅｌｓ` | 全滅 and the causative-passive compressed; the page is 2.18× at the 4-row wall |
+| 995 | `全く、イヤな話だよ。` | `Ｒｅａｌｌｙ，　ｆｏｕｌ．` | 話; §6's まったく → `Ｒｅａｌｌｙ，` kept in full |
+| **1000** | **`何でも、…らしいぜ`** | **`Ｗｏｒｄ　ｉｓ　…`** | **ADDED AT REVIEW.** The same stacked sentence-initial adverb + sentence-final evidential as 994 p3, collapsed into one hedge |
+| **1001** | **`何でも、…だとか言ってたから`** | **`Ｈｅ　ｓａｉｄ　…`** | **ADDED AT REVIEW.** Same collapse, with the reported-speech frame doing the work |
+
+Two further judgements accepted at review without a flag, recorded so nobody re-opens them:
+**992's `誘拐した` → `ｔｏｏｋ`** (the crime is carried by `ｃｕｌｐｒｉｔ` and `ｈｏｌｅｄ　ｕｐ`;
+`ａｂｄｕｃｔｅｄ` would in fact have fitted at 17 / 21 / 19, so this is a choice, not a forced cut —
+it is idiomatic English for an abduction and drops no plot fact), and **987's `逆もしかりじゃ、` →
+`Ｔｈｅ　ｒｅｖｅｒｓｅ　ｈｏｌｄｓ　ｔｏｏ：`** (a `、` rendered as `：`, which is §3.1-legal; the
+source's punctuation is otherwise followed throughout, and the dot-count rule governs ellipses).
+
+### N5. One arithmetic claim in the PR body is wrong — the rendering is not
+
+Same shape as §M5. The finding-2 row says `ａｎｄ　ｒｅｂｕｉｌｄ` "would put row 3 at exactly 24".
+Re-measured: `Ｆａｔｈｅｒ　Ｂａｔｏｕ’ｓ　ｗｉｌｌ　ａｎｄ` is **23** and `ｒｅｂｕｉｌｄ　ｔｈｉｓ　ｃｈｕｒｃｈ．`
+is **21**, so `ａｎｄ` would have fitted. **The `ｂｙ` stands on its merits regardless**: `ついで` is a
+て-form of means, and `ｂｙ　ｒｅｂｕｉｌｄｉｎｇ` renders that subordination where the coordinate
+`ａｎｄ` would flatten it. Only the justification is corrected. Every other figure in the PR body was
+re-derived and is exact, including the two corrections the translator made to this reviewer's own
+round-1 estimates (+10 → **+8**, +14 → **+12**), which are right.
+
+### N6. Two English hearsay frames for one Japanese evidential
+
+Recorded in glossary §26.6; not a §3 violation, because §3 engages on the message and all four
+messages differ (§20.4, §23.1, §24.5). `ｔｈｅｙ　ｓａｙ` is the default and is also §25.2's fixed form
+for `〜ってウワサだ`; `Ｗｏｒｄ　ｉｓ` is the sentence-initial variant. Fixed now so it cannot drift.
+
+### N7. In-game checks requested by this unit
+
+1. **Script 987 page 2 ends mid-sentence** (`…ユニットには、`) with the predicate arriving on page 3
+   after the `{FCC0}`. Preserved verbatim — a translator cannot move a `{FCC0}` — but it looks like
+   a source authoring slip. Worth an eye alongside §D2.
+2. **`バカとハサミは使いよう` → `Ｉｔ　ｉｓ　ａ　ｐｏｏｒ　ｗｏｒｋｍａｎ　ｔｈａｔ　ｂｌａｍｅｓ　ｈｉｓ　ｔｏｏｌｓ`**
+   (glossary §26.4) is the loosest of this batch's three proverbs: both locate the outcome in the
+   user rather than the tool, but the Japanese encourages where the English chides. Accepted
+   because the page is at the 4-row wall (21 / 23 / 20 / 23) and the following sentence restores
+   the constructive sense. If it reads wrong on screen, the fix needs a re-cut of the page, not a
+   word swap.
+3. **The old tutor (984–988) is never named or given a portrait in these five messages.** The
+   register row in glossary §26.7 keys on his speech (`じゃ` / `のじゃ` / `じゃろ`). If a later unit
+   names him, re-check it — cf. §G4, §H1, §L6.
+
+### N8. Rulings this review makes that bind later units
+
+1. **`将軍` → `Ｇｅｎｅｒａｌ`** (glossary §26.2). Discharges §9's correction 2 on a corpus count of
+   17 against 2, with all three shipped `Ｃａｐｔａｉｎ　Ｆｅｒｎａｎｄｏ` traced to `隊長` sources.
+   Bare `２軍` → `２ｎｄ　Ａｒｍｙ`, not §20.1's `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`. **Note: §10 question 2,
+   the class/unit name table, is a different item and is still open.**
+2. **`バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`** (glossary §26.1). §24.1 is **applied, not amended**;
+   §21.2's drop-the-honorific rule reaches `〜さん` on a personal name and nothing else. The `様`
+   and `さん` patterns stay separate.
+3. **`砦` → `ｆｏｒｔ`** (glossary §26.4), leaving 要塞 / 大要塞 / 空中要塞 as three other words.
+   `tl/battle/chunk_040.txt` already ships both `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` and `ｔｈｅ　Ｆｏｒｔ`.
+4. **`助かりました` → `Ｙｏｕ　ｓａｖｅｄ　…`** as a third row of §23.4 (glossary §26.8), governing
+   9 occurrences across both dumps. `chunk_001` line 14's queued correction is unaffected.
+5. **`リース文明` ≠ `古代ハイランド`** — zero lines in either dump contain both. Both rows stay.
+6. **`アップミーズ` → `Ａｐｕｍｉｚｕ`, a town.** Two new §9 seeds fell out of verifying it, on the
+   `クロスリー` precedent: **`ホアグ王子` → Prince `Ｈｏａｇ`** (6 battle + 16 script; Cavia's elder
+   brother, who built Apumizu) and **`トリフ` → `Ｔｏｒｉｆ`** (9 battle + 6 script; his younger
+   brother, Helfer's preferred heir). Neither was in `glossary.md` at all; neither is rendered yet.
+7. **`ファリーナ` was NOT moved again.** Flag 2 asked for it; §9's correction 1 is already struck
+   ✅ DISCHARGED by PR #6's review, with the standing instruction that PRs #7 and #8 must not move
+   it a second time. The row sits in §2, `Ｆａｒｉｎａ` is unchanged, and this unit uses it correctly.
+   §K6's "moved once, for the whole wave" held for all three units that flagged it.
+8. **glossary §11.2's `フェリスランド` note was factually wrong** and is corrected in place —
+   13 occurrences, not zero. Rendering unchanged, nothing revisited.

@@ -20,17 +20,21 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > owns the repository and is the active driver. Preflight passed 2026-09-08: `check` green, zero
 > open PRs, zero stale worktrees.**
 >
-> The literal next act is: **dispatch the reviewer for PR #8 (script batch 005), in the foreground,
-> one at a time. It is the last unit of wave 2.** The barrier is met and **three units are
-> MERGED** — #6 (chunk 4) squash `e08bee8`, #7 (chunk 6) squash `dd406d0`, **#5 (chunk 9) squash
-> `5f3e714`** — all three integrated on this branch. Pull `--ff-only` before dispatching (#5's
-> integration commit is already pushed), and pass the reviewer the rulings listed under **In
-> flight**: `クリミア` is **settled and must not be moved again**, glossary **§25.3** and **§25.4**
-> are new and binding, and `FLAGS.md` **§M3** queues a §3 violation in merged work that belongs to
-> wave 3's corrections unit and **not** to #8.
+> **ALL FOUR WAVE-2 UNITS ARE MERGED. Zero open PRs on this branch.** #6 (chunk 4) squash
+> `e08bee8`, #7 (chunk 6) squash `dd406d0`, #5 (chunk 9) squash `5f3e714`, **#8 (script batch 005)
+> squash `38c18bc`** — all four integrated on this branch. **Review is finished; nothing remains to
+> dispatch for wave 2.**
 >
-> **When #8 is decided, wave 2 closes** — then step 6 (check, merge, README, prune, collapse this
-> file) and step 7 (open wave 3's session) in the same turn.
+> The literal next act is the coordinator's, in one turn: **`git pull --ff-only` (#8's integration
+> commit is pushed), then CLAUDE.md §4 step 6 — `check` on this branch, `merge` and commit
+> `build/*_dump_merged.txt` if changed, refresh the README status table from `status`, prune
+> worktrees, COLLAPSE THIS FILE per the warning below, and push `handoff: wave 2 closed` — then
+> step 7, `create_session` for wave 3, in the same turn, before ending.**
+>
+> Carry into wave 3: `FLAGS.md` **§I1 is now SETTLED** (§N2) and its one shipped edit is queued on
+> the corrections unit's existing `chunk_003:5` row; **`tools/queue.py`'s char count is verified
+> correct** (§N3), so the Remaining table needs no re-survey; **§M3's `村が襲われました。` §3
+> violation is still open** and belongs to the corrections unit.
 >
 > Wave 2 has `Task`: it is running the proper three-role split (translator / reviewer subagents),
 > so wave 1's spawn constraint below does **not** apply to it.
@@ -48,21 +52,24 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > notices should re-open the wave. The chain ends only on one of CLAUDE.md §8's four conditions.
 
 ## Last updated
-2026-09-08 · by: **the PR #5 reviewer** (integration commit) ·
-wave: **2 IN REVIEW — 4 units, 3 MERGED (#6 chunk 4, #7 chunk 6, #5 chunk 9), 1 open (#8)** ·
-queue: **fresh (survey ran 2026-09-08)**
+2026-09-08 · by: **the PR #8 reviewer** (integration commit) ·
+wave: **2 REVIEW COMPLETE — 4 units, ALL 4 MERGED (#6 chunk 4, #7 chunk 6, #5 chunk 9, #8 script
+005). Zero open PRs. Wave 2 is ready to CLOSE.** ·
+queue: **fresh (survey ran 2026-09-08; `queue.py`'s figures verified sound — see `FLAGS.md` §N3)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | 16 | 44 | 0, **1**, **2**, **3**, **4**, **6**, 7, **9**, 10, 11, 12, 14, 33, 34, 35, 40 |
 | Battle JP characters | 11,351 | 43,161 | **26.3%** |
-| Script unique lines | 185 | 1,430 | `tl/script/batch_001–004.tsv` |
-| Script message instances | 4,013 | 7,931 | **50.6%** |
+| Script unique lines | **211** | 1,430 | `tl/script/batch_001–005.tsv` |
+| Script message instances | **4,039** | 7,931 | **50.9%** |
 
 `check`: **All checks passed** on the integration branch. Tightest banks (`bankmeasure`, measured
-after batch 004): **41 → 353 free, 40 → 509, 5 → 3,419**, 2 → 7,543, 33 → 9,353; every other bank
-≥ 10,300. Bank 40 is spent — see `FLAGS.md` §J2.
+after batch 005): **41 → 353 free, 40 → 509, 5 → 3,419**, 2 → 7,543, 33 → 9,353; every other bank
+≥ 10,300. Bank 40 is spent — see `FLAGS.md` §J2. **Batch 005 touched only banks 29 / 30 / 31**
+(→ 25,589 / 35,119 / 34,827 free), proved by a control `bankmeasure` run with the file removed, so
+the three tightest banks are byte-identical before and after it.
 
 ## In flight — WAVE 2, dispatched 2026-09-08
 
@@ -75,12 +82,12 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | ✅ **MERGED round 2** — squash `dd406d0`, integrated by the commit that carries this row. 5,899 / 8,192, **2,293 slack**, 151 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 on lines 6, 17, 18, 21, all flagged; both `> 4`-row pages (9 at 15, 21 at 12) are **inherited** — measured on the pristine extraction at 15 and 11. All 8 gates re-run on the new head. All 6 round-1 findings fixed; **finding 3 was withdrawn — the translator's replacement was right and the reviewer's was wrong** (`chunk_033` L20 holds the byte-identical bare `さあ、` and ships `Ｎｏｗ，`; `chunk_003` L4's row carries a name insert). Rulings integrated: `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`, `よし、`→`Ｒｉｇｈｔ，`, §18.2 corrected, `リオン`→`Ｌｅｏｎ` promoted (**§10.1 discharged**). Nothing left on this unit |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | **2** | **#5** | ✅ **MERGED round 2** — squash `5f3e714`, integrated by the commit that carries this row. 3,973 / 8,192, **4,219 slack**, 95 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 line 8, +2 line 9, both flagged; only those two page shapes change and no page exceeds 4 text rows; **no `{FCC0}` added or moved** (proved by tag parity). All 8 gates re-run on the new head, round-1 evidence discarded. Both findings fixed, no new findings. **Finding 1 withdrawn — the translator's three-row `Ｈｏｗｅｖｅｒ，` split is right and the reviewer's two-row wording was wrong**: all four 2-row splits either sit at exactly 24 or end a row on the article `ａ`, at identical bytes (§M2). Rulings integrated: `クリミア` → **§1 People** (§K6's deferred call, §M7), `ディール帝国`/`ワーウィック` promoted, `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` collision **kept** (§25.3), `Ｆａｔｈｅｒ` two senses **confirmed** (§25.4), `甘くない` → `ｈａｒｄｅｒ　ｔｈａｎ`, `それでも` → `Ｅｖｅｎ　ｓｏ，` added (was missing from the PR). Nothing left on this unit |
-| script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | **2** | **#8** | **REWORK PUSHED `19769cf`, re-review round 2 dispatched 18:45Z** — 4,040 B (net +4), banks 29/30/31 → 25,589 / 35,119 / 34,827 free, ratio 2.02×, widest row 23, `{FFFE}` delta unchanged. All 4 findings fixed |
+| script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | **2** | **#8** | ✅ **MERGED round 2** — squash `38c18bc`, integrated by the commit that carries this row. **4,040 B (net +4 on 4,036)**, banks 29 / 30 / 31 → **25,589 / 35,119 / 34,827 free**, ratio **2.02×**, widest row **23**, **0 rows at 24**, no page over 4 text rows; `{FFFE}` changed on 13 lines, net **−4**; **no `{FCC0}` added or moved** and, excluding `{FFFE}`, the tag stream is byte-identical to the source on all 26 lines. All 8 gates re-run on head `19769cf`, round-1 evidence discarded and **every PR figure re-derived**; banks 40/41 proved untouched by a control run with the file removed. **All 4 round-1 findings fixed and verified to the byte** (986 `Ｈｏｗｅｖｅｒ，` +8 at 22/19/19/6; 1045 `Ｆａｔｈｅｒ　Ｂａｔｏｕ’ｓ` +12 at 21/22/23; 989/991 `ｆｏｒｔ` −8 each), **no new findings**. Rulings integrated: `将軍` → `Ｇｅｎｅｒａｌ` (**§9 correction 2 discharged**), `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, `砦` → `ｆｏｒｔ`, `助かりました` → third row of §23.4, `リース文明` ≠ `古代ハイランド`, `アップミーズ` → `Ａｐｕｍｉｚｕ` (a town), nine §9 rows promoted, glossary §11.2's false `フェリスランド` note corrected, `FLAGS.md` **§I1 SETTLED**. Nothing left on this unit |
 
-**BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 3 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
-chunk 6 **#7 ✅ MERGED**, chunk 9 **#5 ✅ MERGED**, script 005 **#8**. Review order, one reviewer at
-a time, foreground: ~~#6~~ → ~~#7~~ → ~~#5~~ → **#8 next**. HANDOFF is pushed before each reviewer
-and pulled after it.
+**BARRIER MET at 15:15Z — 4 of 4. REVIEW COMPLETE: 4 of 4 done, all MERGED.** PRs: chunk 4
+**#6 ✅**, chunk 6 **#7 ✅**, chunk 9 **#5 ✅**, script 005 **#8 ✅**. Review order, one reviewer at a
+time, foreground: ~~#6~~ → ~~#7~~ → ~~#5~~ → ~~#8~~ — **all done. Zero open PRs on this branch.**
+HANDOFF was pushed before each reviewer and pulled after it.
 
 ⚠️ **#8's reviewer inherits three things from #5's review.** (1) **`クリミア` is done** — moved to
 glossary §1 People on verified dump evidence; do not move it again, exactly as §K6 said of
@@ -114,11 +121,16 @@ an open unit. The PR state is the truth.
 **⚠️ A SURVEY DEFECT THIS COORDINATOR INTRODUCED, corrected by PR #8 — carries into every future
 wave.** This coordinator measured batch 005 at **1,770 JP characters** using the regex
 `[぀-ヿ一-鿿]`, which counts kana and kanji only. The translator's count over every non-tag
-character (`re.sub(r'\{[^}]*\}','',jp)`) is **1,980** — a **210-character, 12% gap**, entirely
-full-width spaces and punctuation. Those characters cost bytes and columns like any other, so the
-kana/kanji-only count **under-models growth on any line with heavy spacing**. Use the non-tag
-count. Worth checking whether `tools/queue.py` has the same bug; if it does, every ratio in
-Remaining is optimistic.
+character (`re.sub(r'\{[^}]*\}','',jp)`) is **1,980** — a **210-character, 10.6% gap**, entirely
+full-width spaces, punctuation and full-width Latin. Those characters cost bytes and columns like
+any other, so the kana/kanji-only count **under-models growth on any line with heavy spacing**.
+Use the non-tag count.
+
+✅ **DISCHARGED 2026-09-08 by PR #8's reviewer — `tools/queue.py` does NOT share the bug, so no
+ratio in Remaining is optimistic and wave 3 owes no re-survey.** `queue.py` counts with
+`len(re.sub(r'\{[^}]*\}', '', …))` at lines 46, 124, 199 and 219 — the correct non-tag method,
+which returns 1,980. The defect was the coordinator's ad-hoc regex alone. Evidence and the
+reproduction (`[぀-ヿ一-鿿]` over batch 005's keys returns exactly 1,770) are in `FLAGS.md` §N3.
 
 **PR #8's other decisions for the reviewer:**
 - **`将軍` → `Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ`** as instructed, settling §10.2. Note the translator's
@@ -367,11 +379,15 @@ wave 2's session should use it. The wave-boundary chain does *not* depend on `Ta
 
 ### WAVE 3 — one unit already queued: the audit-corrections unit
 `corrections/audit-wave1` — a **translator + PR like any other unit**, because wave 1's audit is
-explicit that its line edits must not be applied by whoever ordered the audit. **Seven** line
-edits, all verified to fit (every proposed row ≤ 23 columns):
-`batch_004:12` (+14 B/bank, both audits agree on the same fix) · **`chunk_003:5` (`しかし` →
-`Ｈｏｗｅｖｅｒ，` — the PR #6 reviewer's ruling, glossary §23.3; `Ｓｔｉｌｌ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ`
-→ `Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ`, **19 → 21 cols, +4 B**)** · `chunk_003:16` (0 B,
+explicit that its line edits must not be applied by whoever ordered the audit. **Seven lines,
+eight edits** — `chunk_003:5` now carries two — all verified to fit (every proposed row ≤ 23
+columns):
+`batch_004:12` (+14 B/bank, both audits agree on the same fix) · ⚠️ **`chunk_003:5` — TWO edits on
+this one line, to be made in a single pass**: (a) `しかし` → `Ｈｏｗｅｖｅｒ，` (the PR #6
+reviewer's ruling, glossary §23.3; `Ｓｔｉｌｌ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ` →
+`Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ`, 19 → 21 cols, **+4 B**), and (b) **NEW, from PR #8's
+review** — `“ｅｎｔｅｒ”` → `“ＥＮＴＥＲ”` (`FLAGS.md` §I1, now settled, §N2; 7 → 7 cols,
+**0 B**). Combined **+4 B**, chunk 3 slack 3,591 → 3,587 · `chunk_003:16` (0 B,
 re-flow) · `chunk_002:14` (`すみません`, +16 B) · `chunk_001:2` (+2 B) · **`chunk_001:14` (NEW,
 found at PR #6's review — `助かったノロ。`: `ｙｏｕ　ｓａｖｅｄ　ｕｓ，　ｎｙｏｒｏ．` →
 `ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ．`, glossary §23.4, **20 → 20 cols, 0 B**)** ·
