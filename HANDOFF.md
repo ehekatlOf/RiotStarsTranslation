@@ -41,7 +41,7 @@ Barrier: **review nothing until all four have an open PR** (CLAUDE.md §4a).
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | **PR open**, awaiting barrier |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | — | dispatched |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | **PR open**, awaiting barrier |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | **PR open**, awaiting barrier |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | — | dispatched |
 
@@ -96,6 +96,43 @@ L4 −1, L7 +1, L8 −1), no `{FCC0}` added or removed anywhere.
   If that read is wrong her four pages need **re-registering, not re-cutting**.
 - Flag 11 declares, rather than hides, that `さんざんいたぶった後` / `上玉` is a threat of sexual
   menace rendered at the source's own temperature.
+
+**PR #11 (chunk 8) — key facts for the reviewer.** 7,437 / 8,192, **755 slack**; 20 lines, widest
+row 23, no page over 4 text rows. All five wave-3 §9 seeds used **exactly as seeded**. Four lines
+re-flowed (L4 −1, L5 +1, L9 −3, L15 −1); `{FCC0}` count unchanged on every line. 19 glossary rows
+proposed.
+
+⚠️ **Flag 3 is the finding that outlives this PR, and it is REAL — verified independently by the
+coordinator against the source, not taken from the PR.** `translation_prompt.md` tells a translator
+to add a `{FCC0}` page break in **four** places — line 248 ("You may add one when English overruns
+the visible rows"), 361 ("If English needs a fifth line, insert a `{FCC0}`"), 373 ("Four rows is the
+wall… add a `{FCC0}` rather than cutting sense") and 520, which asks the translator to *report*
+"lines that needed an added `{FCC0}`". **Both gates reject it**: `tools/assemble.py:125-126` and
+`tools/rowcheck.py:93-94` build the parity list as
+`[t for t in re.findall(r'\{[^}]*\}', a) if t != '{FFFE}']` — only `{FFFE}` is exempt, so an added
+`{FCC0}` fails as "tag stream changed". This translator's first draft added two, `check` failed on
+exactly those lines, and it **re-cut to the source's page structure instead of touching the tools**
+(CLAUDE.md §3) — the right call.
+
+**Consequence, which is the part that matters:** every battle chunk is silently constrained to the
+source's own page count, a tighter constraint than the prompt describes, and it changed two
+speeches in this unit. This is a **documentation/tooling defect for a human** — `FLAGS.md` and the
+prompt, not a translator's problem, and **not grounds for a finding against any PR**. The
+run-configuration briefing already knew the escape does not exist; what is new is the measurement of
+what it costs and that the prompt still asks for it in four places.
+
+Also from PR #11, for the reviewer to rule on rather than inherit:
+- **Flag 5 — the first genuine `Ｒｉｇｈｔ，` collision in one segment.** §24.3 fixes `よし、` →
+  `Ｒｉｇｈｔ，` and §6 fixes `分かった` → `Ｒｉｇｈｔ，`; chunk 8 has **both in one segment**, which
+  §25.3 says forces a split but names no reserve form for. The translator took
+  `Ｒｉｇｈｔ，　ｕｎｄｅｒｓｔｏｏｄ．` (18 of 23 columns — the row has room if the reviewer prefers
+  another form, and nothing re-flows). Whatever is decided belongs in §24.3 or §25.3.
+- **Flag 9 — a source typo:** `大減棒` (L14) is almost certainly `大減俸`, a pay cut. Rendered for
+  the meaning; a `FLAGS.md` note, not a translation change.
+- **Flag 11 lists 12 segments that recur in chunks nobody has translated yet** — not §3 violations
+  today, but whoever takes chunks 5, 16, 17, 19, 21, 24, 27 and 43 must match rather than reinvent.
+- `ルート`'s §9 row is rendered by **both** chunk 8 and chunk 17 this wave — strike it once, at
+  whichever merges second.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
