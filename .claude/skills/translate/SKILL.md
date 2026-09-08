@@ -71,9 +71,17 @@ DELIVER: one PR filled per .github/pull_request_template.md; return PR URL + Fig
 ```
 
 ## 4. Review routing (`subagent_type: "reviewer"`, `run_in_background: false`, one at a time)
-When a translator returns: record its PR, figures and Handoff text in HANDOFF, commit
-`handoff: PR #k opened`, push. Then spawn the reviewer with the PR URL, branch, unit and the
-translator's report. After it returns: `git pull --ff-only` (it pushed `integrate:main`), record
+**The wave barrier comes first.** When a translator returns: record its PR, figures and Handoff
+text in HANDOFF, commit `handoff: PR #k opened`, push — then list the open PRs and match them
+against the whole wave. Review nothing until **every** unit of the wave has one. A unit whose
+translator has returned, died or failed to push gets a **fresh translator** dispatched for it
+(same branch name, same dispatch message, recorded as a new round in In flight) and the barrier
+waits again; two re-dispatches per unit, then park it and close the barrier on the rest. A
+translator still working is not a failure — wait.
+Once the barrier is met, spawn the reviewer with the PR URL, branch, unit and the
+translator's report, one PR per invocation, in unit order. The reviewer checks the barrier itself
+on entry and returns `WAVE INCOMPLETE` rather than merging into a base the other units are
+branched from. After it returns: `git pull --ff-only` (it pushed `integrate:main`), record
 the decision in HANDOFF if the reviewer did not, commit, push. Never run two reviewers at once;
 integration commits and glossary edits must serialise.
 
@@ -88,7 +96,64 @@ unit; never a fourth round with the same agent.
 `git pull --ff-only`; `check` must pass. `merge`; commit `build/*_dump_merged.txt` if changed.
 Refresh the README status table from `status`. Prune worktrees. HANDOFF: move the wave to Wave
 history (one line), refresh Progress, write the next wave into Next up, set Last updated. Commit
-`handoff: wave N closed`, push. Then step 2 for the next wave.
+`handoff: wave N closed`, push.
+
+## 6a. The chain — every wave spawns the next one
+
+**This loop is meant to run to the end without a human between waves.** Waves are run by
+`orchestrator` subagents, and each one spawns its successor as the last act of its wave. You (the
+main session) are the **runner**: you spawn the *first* orchestrator and then stay out of the
+repository. You are the backstop, not the driver.
+
+Spawn (`subagent_type: "orchestrator"`, `run_in_background: true` — background, so the chain stays
+flat rather than nesting a dozen agents deep). The dispatch is short by design; `HANDOFF.md`
+carries everything else:
+
+```
+WAVE: N
+INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>
+UNITS: <the Next up rows — e.g. battle chunks 4, 6, 9 + script batch 005 (unique lines 1035–1100)>
+Read HANDOFF.md first; it is the board and your memory. Run exactly this one wave —
+CLAUDE.md §4 and .claude/agents/orchestrator.md — close it, then spawn the wave after it
+exactly as this message spawned you. `gh` is not installed: use the GitHub MCP tools,
+owner ehekatlOf, repo RiotStarsTranslation.
+```
+
+**If `subagent_type: "orchestrator"` is rejected** — an agent definition added during a running
+session is not registered until the session restarts — do not stop and do not hand the decision
+to a human. Spawn `subagent_type: "general-purpose"` instead and make the first line of the
+prompt: `Read .claude/agents/orchestrator.md and follow it as your role definition — you are a
+wave orchestrator.` Everything else about the dispatch is unchanged. Note which one you used in
+your report so the next link knows.
+
+When an orchestrator returns, record nothing yourself — it has already pushed `HANDOFF.md`. Read
+its report for one thing above all: **did it spawn its successor?** If it did, relay the wave
+summary and stop; the run continues without you. If it did not, and none of §7's stop conditions
+holds, the chain has broken: re-run preflight and spawn the missing wave yourself. That is the
+runner's whole job between waves.
+
+Quality control is never what gets traded for momentum. Every unit still goes translator → PR →
+reviewer → merge, one reviewer at a time, every gate in CLAUDE.md §6 run in a real checkout and
+its evidence pasted into the review. A wave that closes faster by merging without a reviewer, or
+by waiving a gate, has broken the run more thoroughly than a wave that stalls.
+
+## 6b. Arm the timer — every turn, without exception
+You wake only on a notification or a human message, so **the timer is what actually keeps this
+run alive.** Before ending any turn with work in flight, call `send_later` (claude-code-remote
+MCP), 10–15 minutes out, with a message telling the next turn to:
+
+1. `ListAgents` — anything still running? If yes, re-arm and stop.
+2. Otherwise `git pull --ff-only` and list open PRs; reconcile against `HANDOFF.md` → In flight.
+3. Restart whatever is lost — a subagent whose notification never arrived is **lost, not
+   finished**; `ListAgents` is the authority and silence is not evidence. Remove its worktree
+   (`git worktree remove --force`) and re-run its unit.
+4. Hand the wave to an `orchestrator` subagent if one is not already driving it.
+5. **Re-arm the watchdog before ending the turn.**
+
+Arm it even when a wave orchestrator is running and even when a notification looks imminent —
+those are the cases that have already cost this run once. Handing off to an orchestrator is right
+and preferred, but it is *in addition to* the timer: an orchestrator can die too, and nothing but
+the timer notices. The chain of timers ends only when the run ends.
 
 ## 7. Stop
 When Remaining is empty: final HANDOFF — Progress, everything parked with the measured reason,

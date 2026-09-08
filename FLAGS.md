@@ -507,3 +507,66 @@ or if a reviewer would rather have the full word and accept 24 columns on the si
   and are translated the same way rather than tidied into the table's voice.
 - **`量産型機械兵１号機。`** has no owner where its neighbours name the Empire, Crimea or Seneca.
   Left as it is.
+
+---
+
+## G. Wave 1 review — battle chunk 1 / PR #2 (2026-09-08)
+
+Raised by the reviewer of PR #2. The rulings themselves are in `glossary.md` §18; only the items
+that still need a human or a later check are recorded here.
+
+### G1. `tl/battle/chunk_000.txt` now has 27 bytes of slack — the tightest file in the project
+
+Two corrections were applied to chunk 0 this session (glossary §18.3): `くっ・・・` `Ｕｇｈ．．．` →
+`Ｔｃｈ．．．` (0 bytes) and `ああ。` `Ｙｅｓ．` → `Ｙｅａｈ．` (**+2 bytes**). Chunk 0 goes
+**8,163 → 8,165 / 8,192, slack 29 → 27**. `assemble.py check` passes.
+
+`translation_prompt.md` §3.3 already called 29 "uncomfortably close". At 27 there is effectively no
+room left: **the next glossary correction that lands on chunk 0 and is not width-neutral will force
+a re-cut of the chunk**, not a one-line edit. Chunk 0's ratio is 1.74 (tier B), so a re-cut is real
+work. Worth a deliberate decision by a human: either re-cut chunk 0 once now to buy back ~200 bytes
+of headroom, or accept that it is frozen.
+
+### G2. The ノロ tic now costs 2 bytes per instance, ~77 instances still to come
+
+Glossary §18.1 corrects the tic to the spaced form `，　ｎｙｏｒｏ．`. That is +1 full-width
+character = **+2 bytes per occurrence** against the unspaced spelling. Roughly **70 further `ノロ`
+lines in `script_unique.txt` and 7 more in `battle_dump.txt`** carry it, so about **150 bytes**
+project-wide. Immaterial in the roomy banks; **worth watching if a `ノロ` line ever lands in bank 41
+(353 free) or bank 40 (509 free after batch 004)**. No shipped file is affected — the tic had never
+been rendered when the ruling was made.
+
+### G3. In-game checks requested by chunk 1
+
+- Five pages sit at exactly 4 text rows on dump lines 2, 6, 7, 9 and 15 — the same shape §D2/§D3
+  already ask about. Chunk 1 introduces no page the source did not already fill.
+- Two sentences run across a `{FCC0}` page break and keep a lowercase first word on the far side
+  (`ｂａｔｔｌｅ，　ｂｕｔ` → break → `ｉｆ　ｅｖｅｎ　ｏｎｅ　ｓｕｒｖｉｖｅｓ`, and
+  `ｒｅａｃｈｅｄ　０　ＨＰ，` → break → `ｙｏｕ　ｃａｎ　ｎｏ　ｌｏｎｇｅｒ　ｓａｖｅ`). This follows
+  chunk 0's shipped tutorial. If glossary §10.4's leading `{FCC0}{FFFE}` blank row turns out to be
+  wasted, these two joins are where it will read worst.
+- Does the pig-faced fiend's `Ｏｉｎｋｋｋｋ．` read as intended in the box?
+
+### G4. Speakers in chunk 1 are inferred from portrait ids, and no name appears
+
+`{FCB0}` portraits: 0005 the hobbit chief (the `ノロ` speaker), 0001 the veteran, 0000 the newcomer,
+0004 the anxious one, 0002 the sarcastic one, 0006 the fiend, 0003 the tutorial speaker. Battle
+chunk 2 carries the same anxious voice and names ティミー and サイクス, and chunk 3 identifies the
+confined 9th Army member as シャスタ, but **nothing in chunk 1 names anyone**, so no name is
+asserted there. Worth an in-game look; if a later chunk names these portraits, chunk 1's registers
+want re-checking (cf. §10.11, §13.13).
+
+### G5. Suspected source typo — `９軍ってのは` vs `９軍てのは`
+
+Dump lines 6 and 7 are two alternate takes of one scene, of which the player sees only one. They
+differ by a single `っ` in the same clause. Both take `ｔｈｅ　９ｔｈ　Ａｒｍｙ，`. Same species of
+authoring slip as `訊ねたい` / `尋ねたい` in chunk 0 (glossary §10.10). Nothing to do; recorded so
+it is not "fixed".
+
+### G6. `Ｎｕｍｅｒａｌｓ` — the ch.12 precedent held again, and is now consistent enough to fix
+
+Glossary §10.8 is still open. Chunk 1 spells `あと１隊` and `１人でも` as *one* while keeping `９`
+(`９ｔｈ　Ａｒｍｙ`, fixed by §2) and `０` (an HP value). That is exactly the split §15.1 drew for
+the racing table: **digits stay full-width where they are data, prose spells small numbers out.**
+Three sessions have now independently landed on it. Someone should promote it from an open question
+to a rule in §3 rather than leave each translator to rediscover it.
