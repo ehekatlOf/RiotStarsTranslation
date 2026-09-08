@@ -7,3 +7,6 @@ build/*.BIN
 # python
 __pycache__/
 *.pyc
+
+# subagent worktrees created by the /translate loop
+.claude/worktrees/

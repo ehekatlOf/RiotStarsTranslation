@@ -71,9 +71,18 @@ See `translation_prompt.md` §0 for the session schedule and §3 for the full fo
 
 | | Done | Total |
 |---|---|---|
-| Battle chunks | 1 (chunk 0) | 43 |
-| Battle Japanese characters | 1,914 | 42,763 (4.5%) |
-| Script unique lines | 47 | 1,430 |
-| Script message instances | 1,155 | 7,931 (14.6%) |
+| Battle chunks | 10 (0, 7, 10, 11, 12, 14, 33, 34, 35, 40) | 44 |
+| Battle Japanese characters | 5,963 | 43,161 (13.8%) |
+| Script unique lines | 151 | 1,430 |
+| Script message instances | 3,299 | 7,931 (41.6%) |
 
-`assemble.py status` prints the current figures.
+`assemble.py status` prints the current figures. Live state, in-flight units and what is blocked:
+`HANDOFF.md`.
+
+## Autonomous workflow (Claude Code)
+
+`CLAUDE.md` defines a three-role loop — an orchestrator session, parallel translator subagents
+that each open one PR, and a single reviewer that gates and merges — all on Opus at maximum
+effort. Start it with `/translate`; it resumes from `HANDOFF.md`, which every step updates.
+Anything that needs the disc image, the EXEs or an in-game look is listed there under
+"Blocked — needs a human".
