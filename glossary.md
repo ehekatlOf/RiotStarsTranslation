@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–52 (unit/class descriptions) and `battle_dump.txt`
-chunks **0, 1, 2, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–3 + all of tier E).
+chunks **0, 1, 2, 3, 10, 11, 12, 14, 33, 34, 35, 40** (prologue + chapters 2–4 + all of tier E).
 
 ---
 
@@ -243,12 +243,12 @@ batch 003 (`魔神ルシファ` → *the demon god Ｌｕｃｉｆｅｒ*, `ア�
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
 | ~~アルベール~~ | ✅ **PROMOTED to §20.1** — `Ａｌｂｅｒｔ`, Fernando's subordinate | battle chunk 2 (PR #3) | — |
-| シャスタ | Ｓｈａｓｔａ | battle chunk 2/3, addressed `シャスタさん` by Marvel and informally by the rogue | — |
-| マーベル | Ｍａｒｖｅｌ | battle chunk 3, a **person** (`マーベルさん`); also in `script_unique` | Ｍａｒｖｅｌｌ, Ｍａｒｂｅｌ |
-| マーベラス | Ｍａｒｖｅｌｌｏｕｓ | battle chunk 3 + script, a **town** (`マーベラスの街`, `マーベラスの広場`) — must stay visibly distinct from マーベル the person | Ｍａｒｂｅｌｌａｓ |
-| ファイバー | Ｆｉｂｅｒ | battle chunk 3, a person thanked beside Marvel (`ファイバーも、ご苦労様`) | Ｆａｉｂｅｒ, Ｐｈｅｉｂｅｒ |
-| コーネフ | Ｋｏｒｎｅｆｆ | battle chunk 3, `探検家` — an explorer, house in Marvellous | Ｋｏｒｎｅｖ |
-| 探検家 | explorer | Korneff's trade; species test §17.1 → lowercase | — |
+| ~~シャスタ~~ | ✅ **PROMOTED to §21.1** — `Ｓｈａｓｔａ` | battle chunk 3 (PR #1) | — |
+| ~~マーベル~~ | ✅ **PROMOTED to §21.1** — `Ｍａｒｖｅｌ (person)` | battle chunk 3 (PR #1) | — |
+| ~~マーベラス~~ | ✅ **PROMOTED to §21.1** — `Ｍａｒｖｅｌｌｏｕｓ (town)` | battle chunk 3 (PR #1) | — |
+| ~~ファイバー~~ | ✅ **PROMOTED to §21.1** — `Ｆｉｂｅｒ` | battle chunk 3 (PR #1) | — |
+| ~~コーネフ~~ | ✅ **PROMOTED to §21.1** — `Ｋｏｒｎｅｆｆ` | battle chunk 3 (PR #1) | — |
+| ~~探検家~~ | ✅ **PROMOTED to §21.1** — `explorer` | battle chunk 3 (PR #1) | — |
 | 魔神ティール | the demon god Ｔｙｒ | script batch 004, line 163 `魔神ティールの力を秘めた暗黒剣` | Ｔｉｅｌ, Ｔｈｉｅｌ — Ｔｙｒ is the Norse reading the pantheon around it (Thor, Odin, Athena, Apollo, Artemis, Hermes) points at |
 | 軍神オーディン | the war god Ｏｄｉｎ | script batch 004, line 178 | — |
 | 雷神 | the thunder god | script batch 004, lines 154–156, 173–175 — `雷神の雷`, `雷神の電磁場` | — |
@@ -780,7 +780,7 @@ rule, not an exception, and it is the pattern every later `ノロ` line follows.
 | なぎ倒す | mow down | |
 | キャラクター | character | Plain noun; no §17.1 species question arises |
 | ＨＰ | `ＨＰ` | Left as the source's full-width caps — a genuine stat abbreviation the UI also shows. **Distinct from** ＨＩＴ → `ｈｉｔｓ` (§3), where the caps are only Japanese emphasis on a loanword |
-| 「村」 / 「待機」 (map/menu labels) | `“Ｖｉｌｌａｇｅ”` / `“Ｗａｉｔ”` | `「…」` → `“…”` per the `『…』` precedent (§3, §15.1); capitalised as labels, like `“Ｇｅｍｓ”`. **Bare 村 in the same message stays lowercase `ｖｉｌｌａｇｅ`** — the source draws that distinction itself and the translation preserves it |
+| 「村」 / 「待機」 (map/menu labels) | `“Ｖｉｌｌａｇｅ”` / `“Ｗａｉｔ”` | `「…」` → `“…”` per the `『…』` precedent (§3, §15.1). Capitalised **in these two entries**; ⚠️ this is *not* a general rule for quoted tokens — the corpus holds both cases and the question is open, see `FLAGS.md` §I1. **Bare 村 in the same message stays lowercase `ｖｉｌｌａｇｅ`** — the source draws that distinction itself and the translation preserves it |
 
 ### 19.3 Register
 
@@ -857,3 +857,60 @@ is not engaged.
 | Albert (portrait 0006) | Deferential and formal, no contractions; reports rather than opines; `Ｓｉｒ！` |
 | The 9th Army companions (portraits 0000–0003, 0009, 000A) | Casual, contractions throughout — the deliberate contrast that makes Fernando's flatness read as rank. Portrait 0009, the 重剣士, speaks with `僕` |
 | The Melzario hobbits (portraits 0007, 000B) | 0007 carries the `ノロ` tic and the alarm; **0B is a second hobbit who does *not* use the tic** and speaks in plain polite Japanese (`お願いします`, `ありがとうございます`). Do not add the tic to 0B — the source withholds it |
+
+---
+
+## 21. Added by chunk 003 (PR #1, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_003.txt` — chapter 4: Shasta rejoins the 9th Army from confinement
+at Marvel's side, Sykes recognises him, the Melzario hobbits under Fiber attach themselves to the
+squad, Korneff the explorer hands over a present, and the village sees the party off.
+4,601 / 8,192 bytes, slack 3,591. **Eleven `ノロ` instances — the largest concentration shipped.**
+
+### 21.1 People and places — five promotions out of §9 (wave-1 seeds)
+
+| Japanese | English | Note |
+|---|---|---|
+| シャスタ | Ｓｈａｓｔａ | **Promoted from §9.** The 9th Army member confined for striking a superior (chunk 1), released here. **Male**, self-references with `僕`; casual, contractions. 7 columns |
+| マーベル | Ｍａｒｖｅｌ | **Promoted from §9.** A **person** — the woman Shasta escorts. Formal, no contractions. 6 columns |
+| マーベラス | Ｍａｒｖｅｌｌｏｕｓ | **Promoted from §9.** A **town** — Korneff's house is there. Deliberately kept visibly distinct from Ｍａｒｖｅｌ the person; both occur in this one chunk. 11 columns |
+| ファイバー | Ｆｉｂｅｒ | **Promoted from §9.** The Melzario hobbit who leads the group that joins the squad. `ファイバーたち` → `Ｆｉｂｅｒ　ａｎｄ　ｔｈｅ　ｏｔｈｅｒｓ`. 5 columns |
+| コーネフ | Ｋｏｒｎｅｆｆ | **Promoted from §9.** The 探検家 with a house in Marvellous. 7 columns |
+| 探検家 | explorer | **Promoted from §9.** Lowercase — a trade, per the §17.1 species test. Kept **distinct** from 冒険者 → adventurer (`script_unique` 1001); the same man, two different source words, deliberately not merged |
+
+### 21.2 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| げっ | `Ｇａｈ，` | Dismayed recoil. **Distinct** from グッ → `Ｇｕｈ`, ぐわっ → `Ｇｗａｈ` (§11.5) and ぐふっ → `Ｇｕｆｆ` (§14.5) |
+| えっ？ | `Ｅｈ？` | Short startled query. Same family as chunk 2's えーっ → `Ｅｈｈ，` (§20.3); the length tracks the source |
+| あれ・・・？ | `Ｗｈａｔ．．．？` | Puzzled double-take. **Distinct** from 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6) — that one is incredulous, this one is merely confused |
+| わかりました。 | `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` | Polite assent. **A fourth member of the わかる family, all held apart**: いいな！！ → `Ｇｏｔ　ｉｔ！！`, わかったなっ！！ → `Ｇｏｔ　ｔｈａｔ！！`, 分かった → `Ｒｉｇｈｔ，` (§6), わかっておるな！ → `Ｉｓ　ｔｈａｔ　ｃｌｅａｒ！` (§20.3) |
+| 了解ノロ！ | `Ｕｎｄｅｒｓｔｏｏｄ，　ｎｙｏｒｏ！` | 了解 → `Ｕｎｄｅｒｓｔｏｏｄ`, a fifth and distinct form |
+| よろしく / よろしくね | `Ｇｏｏｄ　ｔｏ　ｍｅｅｔ　ｙｏｕ` | On first introduction. Rendered identically in both halves of the exchange so the greeting reads as one returned |
+| よろしくお願いします | `Ｉ　ａｍ　ｉｎ　ｙｏｕｒ　ｈａｎｄｓ` | The formal request form — **distinct** from the greeting above, which is the same words doing a different job |
+| 物好き | `ｏｄｄ　ｓｏｒｔｓ` | Korneff on the Royal Army. Used twice in two sentences and identical in both |
+| 〜さん (on a personal name) | **dropped; carried in register** | `シャスタさん` → `Ｓｈａｓｔａ`, `マーベルさん` → `Ｍａｒｖｅｌ`. §2's rule for politeness levels with no English lexical equivalent: carry it in word choice, not in added words. Marvel's deference is in `Ｉ　ａｍ`, `Ｉ　ｄｏ　ｎｏｔ`, `Ｉ　ａｍ　ｉｎ　ｙｏｕｒ　ｈａｎｄｓ`. **Does not affect** トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ` (§2), which is a comic address to an animal, not a name |
+
+### 21.3 The stolen-item message — one rendering binds seven instances
+
+| Japanese | English |
+|---|---|
+| `アイテムを{FFFE}奪われました。` | **`Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．`** |
+
+Recurs **byte-identically seven times across chunks 3, 9 (×3), 28, 29 and 30** — counted in
+`battle_dump.txt`, not taken from a report. Merging chunk 3 fixes all seven. Its marker is
+`{=FA1000300030}`, the personality-free tutorial box of §7, so the register is plain instructional
+second person and the English keeps the source's passive. Rows measure 17 and 20 columns, leaving
+room in every chunk that inherits it. **Copy it; do not re-invent it.**
+
+### 21.4 Register
+
+| Who | Register |
+|---|---|
+| Shasta (portrait 0003) | Easy and apologetic; contractions throughout (`Ｉ’ｍ`, `ｃｏｕｌｄｎ’ｔ`, `ｙｏｕ’ｒｅ`). Self-references with `僕`. The one who cannot refuse a girl's request |
+| Marvel (portrait 0004) | Formal and grateful, **no contractions** — `Ｉ　ａｍ`, `Ｉ　ｄｏ　ｎｏｔ　ｋｎｏｗ`. The `さん` she attaches to every name is carried here, not transliterated |
+| Sykes (portrait 0001) | Blunt and needling, like Ridge (§7): `Ｋｎｏｗ　ｈｉｍ？　Ｏｆ　ｃｏｕｒｓｅ．`, `Ｉｓｎ’ｔ　ｔｈａｔ　Ｓｈａｓｔａ．` |
+| Korneff (portrait 0006) | Rough, warm, self-amused; contractions. Approves of “odd sorts” |
+| The Melzario hobbits (portraits 0007, 0008) | The `ノロ` tic on every sentence, grateful and eager |
+| Portrait 0002 | An **unnamed female** party member (`わ`) who also carries the map tutorial. If a later chunk names her, re-check her register — cf. §10.11, §13.13, FLAGS §G4 / §H1 |

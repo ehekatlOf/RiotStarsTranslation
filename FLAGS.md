@@ -607,3 +607,52 @@ The two coda variants (file lines 14 and 20) are mutually exclusive — the play
 were translated and both are gated, but **which one fires, and on what condition, is unknown**.
 Worth confirming that the line-20 variant is reachable at all; cf. §D4, the same question about
 script line 1234.
+
+## I. Wave 1 review — battle chunk 3 / PR #1 (2026-09-08)
+
+### I1. Quoted UI tokens: capitalised or not? The corpus holds both, and nothing decides it
+
+`「…」` → `“…”` is settled (§3, §15.1). **Whether the quoted text is capitalised is not.** Measured
+across every quoted token in `tl/` as of chunk 3's merge:
+
+| Capitalised | Lowercase |
+|---|---|
+| `“Ｇｅｍｓ”`, `“Ｐｏｗｅｒ　Ｓｔｏｎｅ”` (chunk 0) | `“ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”`, `“ｐａｓｔ　ｐｌａｃｉｎｇｓ”`, `“ｆｏｒｍ　ｔｏｄａｙ”`, `“ｆｏｒｍ”` (`batch_002`) |
+| `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` (chunk 33) | `“ｄｅｍｏｎ　ｂｌａｄｅ”` (`batch_003`) |
+| `“Ｒｉｂｂｉｔ”` (chunk 10) | `“ｅｎｔｅｒ”` (chunk 3) |
+| `“Ｖｉｌｌａｇｅ”`, `“Ｗａｉｔ”` (chunk 1) | |
+
+**Two candidate rules, and neither survives the corpus:**
+
+- *"Names capitalised, descriptions lowercase"* — plausible, and it explains most rows, but it puts
+  chunk 1's `“Ｗａｉｔ”` (a menu verb) and chunk 3's `“ｅｎｔｅｒ”` (a menu verb) on the same side,
+  and they are shipped on opposite sides.
+- *"Sentence-initial capitalised, mid-sentence lowercase"* — fails too: `batch_002` ships
+  `ｈｏｒｓｅ’ｓ{FFFE}“ｆｏｒｍ”` lowercase mid-sentence while chunk 1 ships `ｃｈｏｏｓｅ　“Ｗａｉｔ”`
+  capitalised mid-sentence. `batch_002` even carries the same token both ways
+  (`“Ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”` and `“ｒｕｎｎｉｎｇ　ｓｔｙｌｅ”`).
+
+**Not treated as a defect in chunk 3, deliberately.** `“ｅｎｔｅｒ”` matches `batch_002`'s shipped
+practice as squarely as `“Ｗａｉｔ”` matches chunk 0's, so there was no decided rule to enforce, and
+deciding it by holding one PR would have set project-wide policy from a two-entry sample written
+during the same wave. Glossary §19.2's note has been narrowed accordingly so it no longer reads as
+a general rule.
+
+**To settle it**, someone should pick one rule and sweep all of `tl/` in a single §4.3 correction,
+the way the `×` button was settled in glossary §16. Every candidate fix is width-neutral (a case
+change costs 0 bytes and 0 columns), so this can be done at any time and is **not** blocking. The
+one place it is *not* free is `chunk_000.txt`, which has 27 bytes of slack (§G1) — but a case
+change costs nothing there either.
+
+### I2. `アイテムを{FFFE}奪われました。` is now fixed for seven instances
+
+Chunk 3 establishes `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．`. Recounted against
+`battle_dump.txt`: the string occurs in **chunks 3, 9 (×3), 28, 29 and 30** — seven instances, five
+chunks. (The earlier note listing chunks 38, 39 and 41 was wrong; they do not carry this string.)
+Recorded in glossary §21.3. Later translators must copy it byte-for-byte, not re-render it.
+
+### I3. Chunk 3 discharges chunk 1's Flag 12
+
+Chunk 1 read `謹慎処分を受けてる` as singular and masculine (`ｓｏ　ｈｅ’ｓ　ｃｏｎｆｉｎｅｄ．`) and
+flagged a 2-byte edit if a later chunk disagreed. Chunk 3 names the man — **Shasta**, who
+self-references with `僕`. No edit needed. Closed.
