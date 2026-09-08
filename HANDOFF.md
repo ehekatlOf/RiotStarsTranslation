@@ -60,7 +60,7 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
-| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **PR open** — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
+| battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **UNDER REVIEW (reviewer 2 of 4 dispatched 15:50Z)** — PR open, — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
