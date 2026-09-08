@@ -40,10 +40,38 @@ Barrier: **review nothing until all four have an open PR** (CLAUDE.md §4a).
 
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
-| corrections/audit-wave1 (11 edits) | `tl/corrections-audit-wave1` | 1 | — | dispatched |
+| corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | **PR open**, awaiting barrier |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | — | dispatched |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | — | dispatched |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | — | dispatched |
+
+**PR #9 (corrections) — key facts for the reviewer.**
+- **Twelve** edits, not eleven: the dispatch's eleven and HANDOFF's eleven were *different* elevens
+  and the translator applied the union. Edits 2/3/4 (`batch_004` L17/L29/L42) are **parkable
+  alone**, leaving `batch_004` at +14 B/bank; edit 12 (`chunk_001` file L15, §23.4 `助かった`) is
+  **revertible alone**. Both were reported, not slipped in.
+- **Five files** — gate 1 expects five paths, not one (CLAUDE.md §5's one exception, agreed at
+  dispatch).
+- Bytes: chunk 1 3,519 · chunk 2 5,855 · chunk 3 4,605 · chunk 34 **1,587 (−4)**. Chunks 0 and 7
+  byte-for-byte untouched. `batch_004` +38 B/bank → **bank 40 at 471 free** (bank 41 unchanged at
+  353 — this batch does not reach it). No bank negative.
+- **Tag stream unchanged on every line of all four chunks** — no re-flow, no `{FFFE}`/`{FCC0}` change.
+- ⚠️ It **declined** the dispatch's re-flow instruction for edit 5 with a measurement:
+  `Ｈｏｗｅｖｅｒ，` lands at 19 → **21 columns**, inside the ≤ 23 preference, page still 4 rows, so
+  re-flowing would churn the tag stream for nothing. **I checked this and it is right** — my
+  dispatch over-warned from wave 2's chunk-9 case. Findings are proposals to verify (wave 2 §2).
+- It also found a wrong line number in my dispatch: edit 9 is `chunk_002` **file L14**, not L15.
+  Located by content, as instructed. No other target was off.
+
+**⚠️ Flag 6 (deadline) — HANDLED 2026-09-08.** PR #9 makes `村が襲われました。` binding as
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` (13 dump instances). **Chunk 13 L7 and chunk 17
+L20 both carry it** — verified against the dump by the coordinator — and both translators were sent
+the binding wording while still live. The reviewer must confirm it landed in both units (gate 6).
+
+**Still open from PR #9, for the reviewer's integration commit:** 7 glossary rows; `glossary.md`
+§24.6 wrongly calls `村が　襲われました。` (spaced, chunk 6 L15, 1 occurrence) the same string as the
+unspaced one — it is not; bank 40 to be recorded at 471; and wave-1 audit **finding 7** (five §21
+entries dropped at integration with no note of rejection) is still genuinely open.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
