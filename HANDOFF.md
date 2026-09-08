@@ -42,7 +42,7 @@ Barrier: **review nothing until all four have an open PR** (CLAUDE.md §4a).
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | **PR open**, awaiting barrier |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | — | dispatched |
-| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | — | dispatched |
+| battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | **PR open**, awaiting barrier |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | — | dispatched |
 
 **PR #9 (corrections) — key facts for the reviewer.**
@@ -72,6 +72,30 @@ the binding wording while still live. The reviewer must confirm it landed in bot
 §24.6 wrongly calls `村が　襲われました。` (spaced, chunk 6 L15, 1 occurrence) the same string as the
 unspaced one — it is not; bank 40 to be recorded at 471; and wave-1 audit **finding 7** (five §21
 entries dropped at integration with no note of rejection) is still genuinely open.
+
+**PR #10 (chunk 13) — key facts for the reviewer.** 5,417 / 8,192, **2,775 slack**; 132 rows,
+widest 23, no page over 4 text rows. The binding `村が襲われました。` wording was verified against the
+dump and applied (L7), byte-identical to chunk 7's break placement. Four lines re-flowed (L1 +1,
+L4 −1, L7 +1, L8 −1), no `{FCC0}` added or removed anywhere.
+- ⚠️ **My seed's column figure for `アーバイン様` was wrong and the translator caught it.**
+  `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11** columns and `Ｉｒｖｉｎｅ` **6**, not the seed's 12 and 7 —
+  re-measured and confirmed. The reviewer should fix the §9 row at integration. The rendering
+  itself is unchanged, so nothing translated is affected.
+- **Two more §9 descriptions are wrong, same shape as the メルザリオ / ファリーナ corrections:**
+  `ルクレール` and `レバーク` are **kingdoms**, not "a castle" and "a castle Maya has left" — each
+  has a king (`我がルクレール国王`, `予は　レバーク王`), its own soldiers and a *castle*
+  (`ルクレール城`, `レバーク城`), plus `誉れ高き国、ルクレールよ！` and `東南の王国、レバークを解放した`.
+  **Neither rendering changes**; only the notes.
+- **24 glossary additions** — the largest set of the wave. Three bind well beyond this unit and
+  want deliberate ratification rather than inheritance: `レバーク` → `Ｌｅｖｅｒｋ` (a first-use
+  promotion of a §9 row that offered two readings, **10 script occurrences** in a later scene —
+  after this merges it is a §4.3 correction); `あら、` → `Ｍｙ，` (**16 further occurrences**, chosen
+  only because §24.4 has spent `Ｏｈ` on おお / ほう / おや); `指揮下に入る` → `ｓｅｒｖｅ　ｕｎｄｅｒ`
+  (**6 battle occurrences**, all squad members joining the player).
+- Flag 8 asks the reviewer to sanity-check one speaker read: portrait 09 as Cress across L1/L2/L4.
+  If that read is wrong her four pages need **re-registering, not re-cutting**.
+- Flag 11 declares, rather than hides, that `さんざんいたぶった後` / `上玉` is a threat of sexual
+  menace rendered at the source's own temperature.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
