@@ -20,8 +20,11 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > owns the repository and is the active driver. Preflight passed 2026-09-08: `check` green, zero
 > open PRs, zero stale worktrees.**
 >
-> The literal next act is: **wait for the four translators, hold the wave barrier, then review one
-> PR at a time in unit order** (chunk 4 → 6 → 9 → script 005). See **In flight** for live state.
+> The literal next act is: **dispatch the reviewer for PR #7 (battle chunk 6), in the foreground,
+> one at a time.** The barrier is met and **#6 (chunk 4) is MERGED** — squash `e08bee8`,
+> integration commit on this branch. Remaining review order: **#7 → #5 → #8**. Pull
+> `--ff-only` before dispatching (this integration commit is already pushed), and pass the
+> reviewer the five rulings listed under **In flight** — `しかし` in particular binds #7 and #5.
 >
 > Wave 2 has `Task`: it is running the proper three-role split (translator / reviewer subagents),
 > so wave 1's spawn constraint below does **not** apply to it.
@@ -32,14 +35,15 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > notices should re-open the wave. The chain ends only on one of CLAUDE.md §8's four conditions.
 
 ## Last updated
-2026-09-08 · by: **wave-2 coordinator** (`session_01JDoA8KzwUVk3ZjiBw8Qkf3`) ·
-wave: **2 DISPATCHED, 4 units, 0 returned** · queue: **fresh (survey ran 2026-09-08)**
+2026-09-08 · by: **the PR #6 reviewer** (integration commit) ·
+wave: **2 IN REVIEW — 4 units, 4 PRs open, 1 MERGED (#6, chunk 4)** ·
+queue: **fresh (survey ran 2026-09-08)**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | 13 | 44 | 0, **1**, **2**, **3**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
-| Battle JP characters | 8,692 | 43,161 | **20.1%** |
+| Battle chunks | 14 | 44 | 0, **1**, **2**, **3**, **4**, 7, 10, 11, 12, 14, 33, 34, 35, 40 |
+| Battle JP characters | 9,426 | 43,161 | **21.8%** |
 | Script unique lines | 185 | 1,430 | `tl/script/batch_001–004.tsv` |
 | Script message instances | 4,013 | 7,931 | **50.6%** |
 
@@ -55,14 +59,29 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 
 | Unit | Branch | Tier / budget | Round | PR | State |
 |---|---|---|---|---|---|
-| battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | **PR open** — 3,849 / 8,192, **4,343 slack**, widest row 23 col, tag stream byte-identical (zero `{FFFE}` changed) |
+| battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | 1 | **#7** | **PR open** — 5,897 / 8,192, **2,295 slack**, widest row 23 col, `{FFFE}` +1 on lines 6, 17, 18, 21 (all flagged); lines 9 and 21 over 4 rows are **inherited** (source 15 and 11) |
 | battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **PR open** — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
-**BARRIER MET at 15:15Z — 4 of 4. REVIEW HAS STARTED.** PRs: chunk 4 **#6**, chunk 6 **#7**,
-chunk 9 **#5**, script 005 **#8**. Review order, one reviewer at a time, foreground:
-**#6 → #7 → #5 → #8**. HANDOFF is pushed before each reviewer and pulled after it.
+**BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 1 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
+chunk 6 **#7**, chunk 9 **#5**, script 005 **#8**. Review order, one reviewer at a time,
+foreground: ~~#6~~ → **#7 next** → #5 → #8. HANDOFF is pushed before each reviewer and pulled
+after it.
+
+**⚠️ RULINGS FROM #6's REVIEW THAT BIND THE REMAINING THREE — do not re-decide these:**
+- **`しかし` / `しかしながら` → `Ｈｏｗｅｖｅｒ，`** (glossary §23.3). Chunk 4 had none; **#7 has 1
+  and #5 has 2.** `Ｂｕｔ，` is taken by `でも` (shipped chunks 7 and 4); `Ｓｔｉｌｌ，` is §19.1's
+  fixed form for `それにしても` (shipped chunks 1 ×2, 2 ×1). Chunk 0's `はっ、しかし・・・` →
+  `Ｓｉｒ，　ｂｕｔ．．．` is phrase-level and is **not** an outlier — leave it.
+- **`助かった` → passive `Ｉ／Ｗｅ　ａｍ／ａｒｅ　ｓａｖｅｄ` by default**, active `Ｙｏｕ　ｓａｖｅｄ　…`
+  only where the source turns to address the rescuer (glossary §23.4).
+- **`ファリーナ` is MOVED** — §1 → §2, done in #6's integration commit, verified against both
+  dumps. **#7 and #8 must not move it again.**
+- **`クリミア` is deliberately NOT moved.** #6's reviewer had no evidence for it and would not
+  touch a fixed row on an unverified claim. **#5's reviewer owns that call.**
+- **`辺境` → frontier** ratified, and `chunk_000.txt` is **not** re-cut (§20.4 pattern, now a
+  stated rule at `FLAGS.md` §K2). Chunk 0 is effectively frozen at 27 bytes of slack.
 
 **Cheap barrier/status check — use this, not `list_pull_requests`** (full PR bodies burn context):
 `git ls-remote --heads origin 'tl/*'`.
@@ -213,13 +232,21 @@ wave 2's session should use it. The wave-boundary chain does *not* depend on `Ta
 
 ### WAVE 3 — one unit already queued: the audit-corrections unit
 `corrections/audit-wave1` — a **translator + PR like any other unit**, because wave 1's audit is
-explicit that its line edits must not be applied by whoever ordered the audit. Six line edits, all
-verified to fit (every proposed row ≤ 23 columns):
-`batch_004:12` (+14 B/bank, both audits agree on the same fix) · `chunk_003:5` (`しかし`, take the
-reviewer's ruling) · `chunk_003:16` (0 B, re-flow) · `chunk_002:14` (`すみません`, +16 B) ·
-`chunk_001:2` (+2 B) · `chunk_034:8` (the `村が襲われました。` §3 fix, −4 chars, do **not** touch
-`chunk_007` at 399 slack). Total bank-40 cost of the script edits: 38 B → **471 free**.
+explicit that its line edits must not be applied by whoever ordered the audit. **Seven** line
+edits, all verified to fit (every proposed row ≤ 23 columns):
+`batch_004:12` (+14 B/bank, both audits agree on the same fix) · **`chunk_003:5` (`しかし` →
+`Ｈｏｗｅｖｅｒ，` — the PR #6 reviewer's ruling, glossary §23.3; `Ｓｔｉｌｌ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ`
+→ `Ｈｏｗｅｖｅｒ，　ｔｈｅ　ｅｎｅｍｙ　ｉｓ`, **19 → 21 cols, +4 B**)** · `chunk_003:16` (0 B,
+re-flow) · `chunk_002:14` (`すみません`, +16 B) · `chunk_001:2` (+2 B) · **`chunk_001:14` (NEW,
+found at PR #6's review — `助かったノロ。`: `ｙｏｕ　ｓａｖｅｄ　ｕｓ，　ｎｙｏｒｏ．` →
+`ｗｅ　ａｒｅ　ｓａｖｅｄ，　ｎｙｏｒｏ．`, glossary §23.4, **20 → 20 cols, 0 B**)** ·
+`chunk_034:8` (the `村が襲われました。` §3 fix, −4 chars, do **not** touch `chunk_007` at 399
+slack). Total bank-40 cost of the script edits: 38 B → **471 free**.
 Wave 3's other units come from Remaining below.
+
+**Also for wave 3, when the slot patch lands:** `pending/chunk_005.txt` line 32's `そうそう。` →
+`Ｑｕｉｔｅ　ｓｏ．` must become `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` (**+4 cols, +8 B**) or the re-cut creates
+a CLAUDE.md §3 violation against shipped `chunk_004.txt`. Recorded at `glossary.md` §23.2.
 
 ### The wave-2 queue as dispatched (kept for reference — all four are IN FLIGHT, see In flight)
 
@@ -262,8 +289,9 @@ scaffolding before dispatch** — grep the candidate range for `フラグ`, `：
 and `鑑賞モード`. Worth fixing in `queue.py` as a filter; recorded in `FLAGS.md`.
 
 ## Remaining (dispatchable) — measured by `python3 tools/queue.py battle`, 2026-09-08
-Battle, **27 chunks / 29,980 JP characters** after wave 1, in chapter order (tier, budget ratio):
-4 (D 5.08), 6 (C 3.09), 8 (B 2.32), 9 (D 4.93), 13 (C 3.41),
+Battle, **26 chunks / 29,246 JP characters** after chunk 4 merged (was 27 / 29,980), in chapter
+order (tier, budget ratio). ~~4 (D 5.08)~~ **merged, PR #6**; 6 and 9 are in review now:
+6 (C 3.09), 8 (B 2.32), 9 (D 4.93), 13 (C 3.41),
 15 (D 6.13), 17 (C 3.19), 18 (D 6.28), 19 (B 1.94), 20 (D 4.75), 21 (D 4.28), 22 (D 4.59),
 23 (C 2.80), 24 (C 2.99), 25 (C 3.48), 26 (C 3.36), 27 (D 5.54), 28 (D 4.76), 29 (D 6.04),
 30 (B 2.43), 31 (C 3.46), 36 (C 3.92), 37 (C 3.69), 38 (C 3.37), 39 (D 6.20), 41 (E 6.54),
@@ -338,6 +366,23 @@ instance yield first. After that the pool is the 1-instance story text in the ro
   project**; see `FLAGS.md` §G1 before any further correction lands on it.
 - 2026-09-08: **PR #2 decided CHANGES** (round 1). All eight gates passed; the two findings are
   the two rulings above landing on that PR. 11 respellings, no re-flow.
+- 2026-09-08: **PR #6 (battle chunk 4) decided MERGE, round 1, zero findings** — the first unit in
+  the project to ship with a **byte-identical tag stream, every `{FFFE}` included**. Squash
+  `e08bee8`. Wave 2's first review, and the first genuinely independent review of the run.
+- 2026-09-08: **five rulings by the PR #6 reviewer**, all in `glossary.md` §23 and `FLAGS.md` §K:
+  `辺境` → *frontier* with `chunk_000.txt` recorded and **not** re-cut (§20.4 pattern, now stated
+  as a rule at §K2); `そうそう。` → `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, which now **binds
+  `pending/chunk_005.txt`'s re-cut** (+8 bytes, measured); **`しかし` → `Ｈｏｗｅｖｅｒ，`** —
+  binds PRs #7 and #5; the **`助かった`** family pinned to a passive default; `ファリーナ` moved
+  §1 → §2, **once, for the whole wave**. `クリミア` deliberately deferred to PR #5's reviewer.
+- 2026-09-08: **`FLAGS.md` §J1 corrected** by the PR #6 reviewer, verified against PR #4's body.
+  Two statements were false: PR #4's **Flag 3 did flag** the `持つ者に` departure by rule and line
+  number, and the restore costs **32 bytes/entry → 192 total, not 42 → 252** (bank 40 → **317
+  free**, ~**5** lines of parking, not seven). **The accept decision survives unchanged** — 317 is
+  still 183 below the 500-byte reserve — so the correction is to the record, not to the trade.
+- 2026-09-08: **a second shipped inconsistency found at review that neither wave-1 audit caught** —
+  `chunk_001:14` renders `助かったノロ。` active while `chunk_003:7` renders `助かったノロ、`
+  passive. **0-byte fix**, added to the wave-3 corrections unit.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
