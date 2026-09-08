@@ -11,13 +11,22 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 3 IS RUNNING** in `session_0126mzDCZDEoby12pU5qXegc`. Glossary seeded (`19a0391`),
-> four units dispatched. **#9, #10 and #11 are MERGED; one unit remains: #12.**
-> Dispatch **reviewer 4 on PR #12** (battle chunk 17, PARK proposed) — the last unit of wave 3.
-> PR #11 merged at round 2 (squash `2957d80`); PRs #9, #10 and #11 are all in. #12's reviewer
-> takes `glossary.md` **§30** and `FLAGS.md` **§R** — #11 took §29 / §Q — and **owns striking
-> `ルート`'s §9 PROVISIONAL row**, which chunk 8 rendered and deliberately left live because
-> chunk 17 renders it too and merges second. After #12, close the wave and open wave 4's session.
+> ✅ **ALL FOUR WAVE-3 UNITS ARE IN — #9, #10, #11 MERGED and #12 PARKED-AND-MERGED.**
+> **The wave is ready to CLOSE.** Coordinator acts next, in `session_0126mzDCZDEoby12pU5qXegc`:
+> run `check` on the integration branch, `merge` and commit `build/*_dump_merged.txt` if changed,
+> refresh the README status table, prune worktrees, collapse this file to a wave-history line —
+> **then open wave 4's session with `create_session`** (BOTH `source_url` and `source_revision`
+> = `claude/workflow-translation-iterate-uzlkns`), per CLAUDE.md §4 step 7.
+>
+> ⚠️ **For wave 4's planner, before it dispatches:** `FLAGS.md` **§R3** — **chunk 15 is on the
+> wave-4 list and carries the same §D1 dump artifact** (message line 11, `諦` = `92FA`). It will
+> translate cleanly and then be unable to ship, exactly as chunk 17 did. Either get the dumper
+> fixed first or dispatch it knowing it parks. Chunks 16, 23, 27, 28, 29, 32 and 39 are in the
+> same position. **The dumper fix is now the highest-leverage item on the human's list —
+> `FLAGS.md` §R4 has the one-paragraph recipe, and it unblocks ten chunks at once.**
+>
+> #12's reviewer took `glossary.md` **§30** and `FLAGS.md` **§R**, and **struck `ルート`'s §9
+> PROVISIONAL row** — the cross-unit rule with chunk 8 is discharged.
 >
 > If this line still says "wave 3 is running" and no agent is alive (`ListAgents`) and no PR has
 > moved for an hour, the chain broke: reconcile open PRs against **In flight**, re-dispatch what
@@ -25,8 +34,8 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > `source_revision` = `claude/workflow-translation-iterate-uzlkns`).
 
 ## Last updated
-2026-09-08 · by: **wave-3 reviewer** (integration commit for PR #11) ·
-wave: **3 running — 3 of 4 merged, 1 queued (#12)** · queue: **fresh**
+2026-09-08 · by: **wave-3 reviewer** (integration commit for PR #12, the wave's last unit) ·
+wave: **3 — ALL 4 UNITS IN (3 merged, 1 parked); ready to close** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -42,6 +51,9 @@ free (unchanged), 40 → 471, 5 → 3,381**, 2 → 7,505, 33 → 9,315. Bank 40 
 Wave 2's units touched banks 29/30/31 only, which remain roomy (25,589 / 35,119 / 34,827 free).
 
 PR #9 edits already-shipped files, so no Done count above moves; what changed is byte figures.
+**PR #12 does not move them either — chunk 17 is PARKED, not shipped** (`pending/chunk_017.txt`),
+so its 1,144 JP characters are translated but are deliberately not counted as Done. They become
+Done, with no further translation work, the moment the dumper fix lands (`FLAGS.md` §R4).
 
 ## In flight — WAVE 3 (4 units, dispatched 2026-09-08)
 Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order: **#9, #11, #10, #12**.
@@ -53,7 +65,7 @@ of the wave; after it the wave closes.
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | **2** | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ✅ **MERGED round 2** — squash `2957d80`, **7,437 / 8,192 (755 slack)**, byte-neutral rework; integration = the commit immediately after it, `integrate: chunk 008 (PR #11)`. All 8 gates green at both rounds; round 1 was CHANGES on two reading findings, both applied. Glossary **§29**, `FLAGS.md` **§Q**. ⚠️ `ルート`'s §9 row is **deliberately left live for #12 to strike**. Branch not deleted (proxy 403 — harmless) |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | ✅ **MERGED round 1** — squash `7a37181`, **5,417 / 8,192 (2,775 slack)**; integration = the commit immediately after it, `integrate: chunk 013 (PR #10)`. All 8 gates green, 0 blocking findings. Branch not deleted (proxy 403 — harmless) |
-| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | 🔍 **ROUND 2 IN REVIEW** — rework `e933ae7`, **5,857 / 8,192 (2,335 slack, −16)**; same reviewer resumed; park merge owes §30 / §R + `ルート` strike |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | **2** | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | 📦 **PARKED + MERGED round 2** — squash `2e0790d`, **5,857 / 8,192 (2,335 slack)**; integration = the commit immediately after it, `integrate: chunk 017 (PR #12)`. All 8 gates green. ⚠️ **The park is NOT for budget** — the unit is 2,335 bytes *under* slot at 2.16× and is blocked only by the `FLAGS.md` §D1 dump artifact, re-derived at review. Round 1 was CHANGES on two reading findings, both applied, rework **−16 bytes**. Glossary **§30**, `FLAGS.md` **§R**; `ルート`'s §9 row **struck**, cross-unit rule discharged. File is `pending/chunk_017.txt`. Branch not deleted (proxy 403 — harmless) |
 
 **PR #9 (corrections) — ✅ MERGED round 1, all eight gates green, findings were proposals only.**
 Twelve edits across five files (the dispatch's eleven and HANDOFF's eleven were *different*
@@ -348,6 +360,20 @@ Script: 1,219 unique lines / ~4,606 instances untranslated. The item/equipment d
 roomy banks (518–1,413, ~53,000 JP chars) is what remains dispatchable.
 
 ## Blocked — needs a human
+0. 🔧 **THE `riotbattle.tokenise` DUMP ARTIFACT — new 2026-09-08 (PR #12), and it is now the
+   highest-leverage item on this list.** `FLAGS.md` **§D1, §R**. The dumper prefers a Shift-JIS
+   text run over a control tag whenever an argument byte happens to be a valid lead byte, so an
+   item id plus the *next tag's* lead byte decodes as a kanji. **24 occurrences across 10 chunks**
+   — `{FC70}` in 5, 16, 17, 23, 39 and `{FCA8}` in 15, 27, 28, 29, 32 — and every one of them makes
+   `assemble.py check` unsatisfiable for that chunk: the dump form passes tag parity and fails
+   charset, and every re-tokenised form does the reverse. **Chunk 17 is already finished, faithful,
+   format-clean and 2,335 bytes UNDER its slot, and is parked for this reason alone.**
+   Fix: teach `tokenise` the argument lengths of `{FC70}` and `{FCA8}` (or stop an argument byte
+   from ever starting a text run), then `assemble.py refresh`. Chunk 17 then unparks with a
+   `git mv` plus a **0-byte** re-tokenisation of one tail. ⚠️ **This needs no disc, no EXE and no
+   emulator — unlike everything else on this list — and it unblocks ten chunks at once.**
+   ⚠️ **Chunk 15 is on wave 4's list and carries it at message line 11**, so it will park the same
+   way unless this is done first (`FLAGS.md` §R3).
 1. **Tier A battle chunks 5, 16, 32, 43.** Measured budget ratios 1.53 / 1.59 / 1.61 / 1.23, all
    below the **1.64× floor measured in FLAGS §B2**; no faithful translation fits 8,192 bytes.
    5 and 43 are translated and parked in `pending/`. Fix: the engine patch in

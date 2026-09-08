@@ -1960,3 +1960,189 @@ Unmoved by a battle unit, recorded because gate 5 requires naming any bank under
 **bank 41 → 353 free**, **bank 40 → 471 free**, then 5 → 3,381, 2 → 7,505, 33 → 9,315. No bank
 negative. `merge` prints no “never matched the dump”; `rowcheck script` reports only the two known
 INHERITED over-4-row pages (lines 1234 and 8194). §F2 and §O1 are unchanged.
+
+---
+
+## R. Wave 3 review — battle chunk 17 / PR #12 (2026-09-08)
+
+**PARKED at round 2, squash `2e0790d`.** `pending/chunk_017.txt` — **5,857 / 8,192 bytes, slack
+2,335**; JP 1,144 → EN 2,472 = **2.16×** against a 3.19× ceiling; 154 rows, widest **23**, none at
+24; no page over 4 text rows; tag stream identical to the dump but for **7 added `{FFFE}` (120 →
+127, none deleted)**; **`{FCC0}` 12 → 12, untouched**; header and `{PAD 5005}` byte-identical.
+Every figure re-derived at review with **both** `cost()` and the true Shift-JIS encoder
+`riotbattle.bytes_from_body`, which agree to the byte. Glossary §30.
+
+**No script bank is touched** (battle unit), so `bankmeasure` was correctly not run and the
+standing tightest banks are unchanged: **41 → 353 free, 40 → 471, 5 → 3,381**, 2 → 7,505
+(`FLAGS.md` §O1). No bank under 2,000 free is newly at risk from this unit.
+
+### R1. ⚠️ THE PARK REASON — the §D1 dump artifact, and it is the highest-leverage item on the human's list
+
+**This is not a budget park.** The unit is 2,335 bytes *under* its slot and needed no compression
+at all. It cannot ship because **`assemble.py`'s charset and tag-parity gates are unsatisfiable
+together** on message line 19's item-grant tail. Re-derived from `dumps/battle_dump.txt` at review
+rather than taken from the PR:
+
+- The dump reads `…{FC30}{FC70}{=00}入{=A300020000}{FFFF}`. Every clean `{FC70}` reads
+  `{FC70}{=00XX}{FCA3}{=00NN0000}`. Here the item id is **0x93**, and `93 FC` — the id byte plus
+  the **lead byte of the following tag** — is a valid Shift-JIS sequence, so `riotbattle.tokenise`
+  decoded it as the character **入**.
+- **`入` is the only character in the Shift-JIS repertoire encoding to `93 FC`** — enumerated over
+  the BMP at review, not argued. Chunk 39 message 8 is the identical shape with id `0x8C` → `向`
+  (`8C FC`), which confirms the diagnosis outright.
+- **All four candidate encodings produce the byte-identical stream `FC70 0093 FCA3 00020000`**, so
+  **parking costs nothing** — the game output is the same whichever form is written. Verified:
+
+| Form | `tag_parity` | charset |
+|---|---|---|
+| `{FC70}{=00}入{=A300020000}` (the dump form) | **PASS** | **FAIL** — illegal char 入 |
+| `{FC70}{=0093}{FCA3}{=00020000}` | **FAIL** — tag stream changed | PASS |
+| `{FC70}{=00}{=93FC}{=A300020000}` | **FAIL** | PASS |
+| `{FC70}{=0093FC}{=A300020000}` | **FAIL** | PASS |
+
+  Each was run through `assemble.tag_parity` and `assemble.validate_body` at review. **There is no
+  fifth form**: keeping the dump's three tags in order with no text between them loses the `93 FC`
+  bytes, and widening the charset means editing `assemble.py`, which CLAUDE.md §3 forbids.
+- **The artifact is inherent to the chunk, not introduced by the translation.** The pristine dump
+  chunk placed in `tl/battle/` raises 998 charset problems, three of them `入`. **No chunk 17 file
+  of any kind can pass `check` today**, translated or not.
+- Shipped, the reworked file gives exactly one problem:
+  `!! chunk 17 line 18: illegal char '入' (U+5165)`. Nothing else in the project fails.
+
+**Chunk 17 is the first chunk whose ONLY blocker is this**, which is what makes the dumper fix
+worth a human's time now: 1,144 JP characters — **2.7% of the battle script** — finished, faithful,
+format-clean and 2,335 bytes under its slot, held up by one character.
+
+### R2. Scope — 24 occurrences, 10 chunks, and the swallowed byte is NOT always `0xFC`
+
+Enumerated across the whole dump at review. Two corrections to PR #12's account, both accepted by
+the translator:
+
+- The PR's prose says *"Five of those ten (15, 16, 23, 27, 28, 29, 32, 39)"*. That list has **eight**
+  entries, and **eight is the right number**: of the ten chunks, 5 is already parked and 17 is this
+  unit, so **eight chunks still meet this the moment they are translated**.
+- ⚠️ **The swallowed lead byte is `0xFA` in ten of the twenty-four cases, not always `0xFC`.** The
+  character's *trail* byte is whatever the next tag's lead byte happens to be. **This widens the
+  diagnosis and it changes the fix**: the dumper repair must be about **argument lengths in
+  general**, not about `{FCA3}` or about `0xFC`.
+
+| Chunk | Msg line(s) | Tag | Char | SJIS | Swallowed lead |
+|---|---|---|---|---|---|
+| **5** | 17 | `{FC70}` | `逓` | `92FC` | `0xFC` |
+| **15** | 11 | `{FCA8}` | `諦` | `92FA` | `0xFA` |
+| **16** | 5 | `{FC70}` | `改` | `89FC` | `0xFC` |
+| **17** | 19 | `{FC70}` | `入` | `93FC` | `0xFC` |
+| **23** | 7 | `{FC70}` | `蔭` | `88FC` | `0xFC` |
+| **27** | 3, 4 ×2, 5 ×2 | `{FCA8}` | `奧` | `9AFA` | `0xFA` |
+| **27** | 4, 6, 7 ×2 | `{FCA8}` | `哄` | `99FA` | `0xFA` |
+| **28** | 18, 23 | `{FCA8}` | `咨` | `99FC` | `0xFC` |
+| **29** | 10 | `{FCA8}` | `奩` | `9AFC` | `0xFC` |
+| **29** | 20 | `{FCA8}` | `奧` | `9AFA` | `0xFA` |
+| **32** | 12, 14 ×2 | `{FCA8}` | `哄` | `99FA` | `0xFA` |
+| **32** | 13, 14 | `{FCA8}` | `奧` | `9AFA` | `0xFA` |
+| **39** | 8 | `{FC70}` | `向` | `8CFC` | `0xFC` |
+
+Totals: **24 occurrences, 10 chunks; trail `FC` ×8, trail `FA` ×16.** `{FC70}` in **5, 16, 17, 23,
+39**; `{FCA8}` in **15, 27, 28, 29, 32**. Note the `FC`/`FA` split does **not** line up with the
+`{FC70}`/`{FCA8}` split — chunk 29 has one of each — which is further evidence the cause is
+argument length, not a particular tag pair.
+
+### R3. ⚠️ FOR WAVE 4 — chunk 15 carries this and will park the same way
+
+**Chunk 15 is on wave 4's list and its artifact is at message line 11 (file line 12):**
+`{FCA8}{=01}諦{=1000000000}`, `諦` = **`92 FA`** — one of the `FA` cases. Tier D, ratio 6.13, so it
+is otherwise an easy chunk. **Unless the dumper is fixed first, chunk 15 will translate cleanly and
+then be unable to ship, exactly as chunk 17 was.** Whoever plans wave 4 should either fix the dumper
+first or dispatch chunk 15 knowing it parks. Chunks 16, 23, 27, 28, 29, 32 and 39 are in the same
+position whenever they are reached.
+
+### R4. The unpark recipe — one tooling change, ten chunks
+
+**Not proposed as a translator change** (CLAUDE.md §3 — a tool bug is a human's call), but the cause
+is narrow and the fix is small:
+
+> `riotbattle.tokenise` prefers a Shift-JIS text run over a control tag whenever an argument byte
+> happens to be a valid Shift-JIS lead byte. Teach it the **argument lengths** of `{FC70}` and
+> `{FCA8}` — or, more generally, stop an argument byte from ever starting a text run — then
+> `assemble.py refresh` to re-dump.
+
+Afterwards, chunk 17 unparks with **`git mv pending/chunk_017.txt tl/battle/chunk_017.txt`** plus a
+**0-byte** re-tokenisation of that one tail to match whatever the new dump emits. Nothing else in
+the file changes; every other gate already passes. **The same fix unblocks the other nine chunks at
+once.** This belongs beside §D1 and in `HANDOFF.md` → "Blocked — needs a human".
+
+### R5. CORRECTION to `pending/README.md` (§4.3 style — written out, not patched silently)
+
+`pending/README.md` records chunk 5's instance of this artifact and says the dumper *"decoded
+argument bytes **0x9276** as text"*. **That value is wrong.** `逓` encodes to **`92 FC`**, not
+`0x9276` — checked at this review. The line number it gives (chunk 5 line 17) **is** right, and the
+diagnosis is right; only the byte pair was mistyped. Corrected in that file in this commit, with
+this note as the record.
+
+### R6. Flag 6's §2.1 claim is VOID — the line stands on a different reason
+
+PR #12's Flag 6 justified `リムル様、奇襲です！` → `Ｌａｄｙ　Ｒｉｍｕｌ，　ａ　ｒａｉｄ！` as a §2.1
+step-6 departure, on the ground that `Ｌａｄｙ　Ｒｉｍｕｌ，　ａ　ｓｕｒｐｒｉｓｅ` and
+`ｕｎｄｅｒ　ｓｕｒｐｒｉｓｅ　ａｔｔａｃｋ！` *"measure exactly 24"*. **Both are 22** — remeasured at
+review and confirmed by the translator, which had counted `ｓｕｒｐｒｉｓｅ` as 9 and `Ｒｉｍｕｌ，` as 7.
+A 4-row layout carrying the full 奇襲 exists (22 / 22 / 20 / 9).
+
+**The line is unchanged and correct**, but for a better reason: 奇襲 *is* "surprise attack; raid",
+so `ａ　ｒａｉｄ！` is a dictionary equivalent and **not a §2.1 departure at all**; and the priced
+alternative breaks the sentence mid-clause where the shipped form maps the source's four clauses
+1:1, which `translation_prompt.md` §3.2 prefers. **Recorded so no later unit inherits a width
+constraint that does not exist.** This is the fourth width-miscount in three waves (§28.1, §29.5,
+§25.1) — **measure with a tool, never by eye.**
+
+### R7. Other width corrections made at this review
+
+Six figures in PR #12's glossary table were one or more columns out; all are corrected in glossary
+§30 and none changes a rendering. `Ｂｕｒｇｅｓｓ` **7** (not 8) · `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` **14**
+(not 15, and §9's seed said 15 too) · `Ｉｎｔｅｒｃｅｐｔ　ｓｔａｔｉｏｎｓ` **18** (not 19) ·
+`ｓｏｒｔｉｅ！` **7** (not 8) · `ｈａｒｄｗａｒｅ` **8** (not 9) · `ｔｉｍｅ　ｔｏ　ｗｉｔｈｄｒａｗ` **16**
+(not 20).
+
+Also corrected: the PR's `{FFFE}` **total** of 132 → 139. The real figures are **120 → 127**;
+the +7 delta and the per-line table were always right. Conceded by the translator at round 2.
+
+### R8. Rimul takes no contractions here, and shipped `chunk_000.txt` does not — recorded, not re-cut
+
+Glossary §7 is explicit that Rimul takes no contractions in her own lines, and chunk 17 holds that
+across every one of her segments. **Shipped `chunk_000.txt` L14/L18 nevertheless give her `ｃａｎ’ｔ`,
+`ｄｏｎ’ｔ`, `ｗｏｎ’ｔ`, `Ｉ’ｌｌ`.** The unit followed the written rule and correctly did **not**
+propose a re-cut: different messages, so CLAUDE.md §3 is not engaged (§20.4 / §23.1 / §24.5 shape),
+chunk 0 has **27 bytes of slack** (§G1), and §18.3 records that its next correction needs a full
+re-cut. **Left alone deliberately.** If chunk 0 is ever re-cut for another reason, these two lines
+should be brought into line at the same time.
+
+### R9. Reading findings raised and resolved (round 1 → round 2)
+
+Two rows changed, **−16 bytes**, no re-flow, nothing else touched:
+
+1. `読みが甘かったか。` → `Ｉ　ｒｅａｄ　ｔｈｅｍ　ｔｏｏ　ｓｏｆｔｌｙ．` was not English, and its stated
+   parallel with §25.1's 甘くない was false (`chunk_009` ships `ｈａｒｄｅｒ`; `ｓｏｆｔ` was nowhere in
+   `tl/`). Now **`Ｉ　ｍｉｓｒｅａｄ　ｔｈｅｍ．`** — and the translator **overturned the reviewer's
+   proposed `ｕｎｄｅｒｅｓｔｉｍａｔｅｄ`, correctly**, because three source phrases (`甘く見ない方`,
+   `見くびっていた`, `見くびって`) genuinely mean *underestimate*. That word is now **reserved**;
+   glossary §30.4.
+2. `いや、` → `Ｎｏ．` where §25.2 fixes `Ｎｏ` **plus the source's own punctuation**. Now `Ｎｏ，`,
+   23 columns, **0 bytes**. The unit had already used `Ｎｏ，` for `いえ、` twice, so it was an
+   outlier against itself as well as against `chunk_004` and `chunk_009`.
+
+### R10. Three sisters in one chunk, all left uncommitted
+
+Femina is confirmed as portrait 02's **妹**, from the tag stream (glossary §30.5). Two further
+threads are **deliberately not resolved and no glossary row is proposed for either**: chunk 4's
+dying enemy girl cries for her 姉さん (§23.5) and the halves fit, but nothing names her; and the
+unnamed enemy of message lines 22–23 has *a third* sword-wielding sister. **A chunk that names any
+of them should re-check all three together.**
+
+### R11. Duplicate check — method note for later units
+
+Gate 6 was run by **positional pairing against the dump at message and page granularity across all
+19 translated units** (18 shipped + this branch): **15 repeated JP messages / 18 repeated JP pages,
+0 divergent.** Grepping Japanese against `tl/battle/*.txt` is a **null check** — those files hold
+zero Japanese — and row granularity mispairs on a re-flowed unit (§P3). `村が襲われました。` is
+byte-identical **as a whole message** between chunk 17 and `chunk_034.txt`, and the §27.2 wording
+matches chunks 7 ×2, 13 and 34 byte-for-byte. After this park: 4 shipped, **1 written and parked
+(chunk 17)**, and **8 instances across 7 chunks still to write** (5, 15, 16 ×2, 21, 23, 38, 39).

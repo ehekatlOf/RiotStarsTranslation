@@ -267,7 +267,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~パーシバル~~ | ✅ **PROMOTED to §24.1** — `Ｐｅｒｃｉｖａｌ` | battle chunk 6 (PR #7) | — |
 | ~~ディール帝国~~ | ✅ **PROMOTED to §25.1** — the `Ｄｉｅｌ` Empire, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
 | ~~ワーウィック~~ | ✅ **PROMOTED to §25.1** — `Ｗａｒｗｉｃｋ`, rendered in `tl/battle/chunk_009.txt` (PR #5), used exactly as seeded | battle chunk 9 | — |
-| クロスリー | `Ｃｒｏｓｓｌｅｙ` | **New seed, 2026-09-08 (PR #5 review)** — surfaced while verifying `クリミア`, and **not chunk 9's business**: chunk 9 does not render it. A **place**, on the same evidence test §2 applied to ファリーナ — `クロスリーの守備隊` (its garrison), `クロスリーの丘` (its hills), `クロスリーを通らずに` (without passing through it), `クロスリーまで伝令を送って` (send a messenger *to* it), `クロスリーに向かう` (head *to* it), and `クロスリーにいるクリミア博士` (Doctor Crimea, who is *in* it). **8 battle + 2 script occurrences, none a person.** 8 columns | Ｃｒｏｓｌｅｙ, Ｋｕｒｏｓｕｒｉ. Promote in the wave that first renders it |
+| ~~クロスリー~~ | ✅ **PROMOTED to §30.1** — `Ｃｒｏｓｓｌｅｙ`, rendered **5 times** in `pending/chunk_017.txt` (PR #12), **used exactly as seeded**; 8 columns confirmed at review | ~~**New seed, 2026-09-08 (PR #5 review)** — surfaced while verifying `クリミア`, and **not chunk 9's business**: chunk 9 does not render it. A **place**, on the same evidence test §2 applied to ファリーナ — `クロスリーの守備隊` (its garrison), `クロスリーの丘` (its hills), `クロスリーを通らずに` (without passing through it), `クロスリーまで伝令を送って` (send a messenger *to* it), `クロスリーに向かう` (head *to* it), and `クロスリーにいるクリミア博士` (Doctor Crimea, who is *in* it). **8 battle + 2 script occurrences, none a person.** 8 columns | Ｃｒｏｓｌｅｙ, Ｋｕｒｏｓｕｒｉ. Promote in the wave that first renders it |
 | ~~弓使い~~ | ✅ **PROMOTED to §24.2 as `ｂｏｗｍａｎ`**, not the seed's `archer` — the seed's own “consider `bowman`” note was taken, and ratified at review | battle chunk 6 (PR #7) | — |
 | ~~バトウ~~ | ✅ **PROMOTED to §26.1** — `Ｂａｔｏｕ`, and `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ` per §24.1, rendered in `tl/script/batch_005.tsv` (PR #8). Used exactly as seeded | script 1041, 1045 | — |
 | ~~リース文明~~ | ✅ **PROMOTED to §26.1** — the `Ｒｅｅｓｅ` civilisation, used exactly as seeded (PR #8). ⚠️ **The 古代ハイランド warning is DISCHARGED: they are NOT the same.** Counted at that review — `リース` 8 script / 0 battle, `ハイランド` 2 script / 9 battle, **zero lines in either dump contain both**. §11.2's ancient Highland row is untouched and stays | script 1047 | — |
@@ -286,13 +286,13 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~シェルビー~~ | ✅ **PROMOTED to §29.1** — `Ｓｈｅｌｂｙ`, a PLACE, rendered four times in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
 | ~~カーゴ~~ | ✅ **PROMOTED to §29.1** — `Ｃａｒｇｏ`, the proper name of a machine, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded; the `ｔｈｅ　ｃａｒｇｏ` trap was avoided** | battle chunk 8 | — |
 | ~~プロキオン~~ | ✅ **PROMOTED to §29.1** — `Ｐｒｏｃｙｏｎ`, rendered in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
-| ルート | `ｒｏｕｔｅ` | **Wave-3 seed — CROSS-UNIT (chunks 8 and 17), lowercase common noun** per the バジリスク → basilisk precedent (§17.1 species test): `敵は別のルートから来たようです` (chunk 17 L3) and `ここへ抜けるルートは、バージェス峡谷か南の砂漠` (chunk 17 L4). **4 battle (ch8 L9 ×2, ch17 L3, L4) + 8 script.** 5 columns | Not `Ｒｏｕｔｅ`; not `ｐａｔｈ` where the source says ルート | ⚠️ **RENDERED by chunk 8 (PR #11, merged) as `ｒｏｕｔｅ`, twice, exactly as seeded — this row is DELIBERATELY LEFT LIVE.** Chunk 17 (PR #12) renders it too and merges second; per the wave's cross-unit rule it is struck once, by that reviewer. See §29.1
+| ~~ルート~~ | ✅ **PROMOTED to §29.1 (chunk 8) and STRUCK HERE at chunk 17's merge (PR #12).** `ｒｏｕｔｅ`, lowercase, rendered twice in **each** of the two units, exactly as seeded. **The cross-unit rule is discharged**: chunk 8 merged first and deliberately left this row live, chunk 17 merged second and strikes it, which is the whole of what that rule prescribes. See §30.1 | ~~**Wave-3 seed — CROSS-UNIT (chunks 8 and 17), lowercase common noun** per the バジリスク → basilisk precedent (§17.1 species test): `敵は別のルートから来たようです` (chunk 17 L3) and `ここへ抜けるルートは、バージェス峡谷か南の砂漠` (chunk 17 L4). **4 battle (ch8 L9 ×2, ch17 L3, L4) + 8 script.** 5 columns | Not `Ｒｏｕｔｅ`; not `ｐａｔｈ` where the source says ルート | ⚠️ **RENDERED by chunk 8 (PR #11, merged) as `ｒｏｕｔｅ`, twice, exactly as seeded — this row is DELIBERATELY LEFT LIVE.** Chunk 17 (PR #12) renders it too and merges second; per the wave's cross-unit rule it is struck once, by that reviewer. See §29.1
 | ~~スパイ~~ | ✅ **PROMOTED to §29.1** — `ｓｐｙ`, lowercase, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
 | ~~アーバイン様~~ | ✅ **PROMOTED to §28.1** — `Ｌｏｒｄ　Ｉｒｖｉｎｅ`, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's widths were both one too many** — `Ｉｒｖｉｎｅ` is **6** columns and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11**, not 7 and 12. The seed was mine and it was wrong; the translator caught it and I remeasured on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the mark). The rendering is unchanged | **Wave-3 seed** — an enemy commander (chunk 13 L2, `アーバイン様！敵襲です！！`), addressed 様 by a subordinate; masculine, authoritative register (`まあよい`, `叩き潰してやれ！！`). 様 → Lord on the `リムル` / `フィリス様` precedent (§14.1), **not** §21.2's さん rule. **1 battle + 0 script.** ~~7 columns bare, 12 with the title~~ | Ｕｒｂａｉｎ, Ｅｒｂｉｎｅ |
-| バージェス | `Ｂｕｒｇｅｓｓ`; `バージェス峡谷` → `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` | **Wave-3 seed** — a **PLACE**, on the §2 test: `バージェス峡谷か南の砂漠` (a route out, chunk 17 L4) and `バージェスからの定期連絡` (regular reports *from* it, chunk 17 L5). Capitalised as a place name on the `バジリスクの砂漠` → *the Basilisk Desert* precedent (§2). **2 battle (chunk 17) + 5 script.** 8 columns bare, 15 with Ｃａｎｙｏｎ | `Ｂｕｒｇｅｓｓ　Ｇｏｒｇｅ` also 15 — 峡谷 is literally a gorge; either fits. Rendered by chunk 17 — promote on merge |
-| イフリート | `Ｉｆｒｉｔ` | **Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
-| マムー | `Ｍａｍｕ` | **Wave-3 seed** — a **PERSON**, male. ⚠️ **`このマムー様が` (chunk 17 L7) is boastful SELF-reference, not an honorific from a subordinate** — the `このクリミアに` pattern (§25.1) — so it takes **no** `Ｌｏｒｄ`; put the swagger in the verb (`ぜ`, §7), not in a title. `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` is **chunk 41's** line, not chunk 17's. **2 battle (ch17 L7, ch41 L5) + 0 script.** 4 columns | Ｍａｍｍｏｏ, Ｍａｍｕｕ. Rendered by chunk 17 — promote on merge |
-| フェミナ | `Ｆｅｍｉｎａ` | **Wave-3 seed** — a **PERSON**, female, already dead when named: `フェミナ、ごめんね。あんたの仇、とれなかったよ・・・` (chunk 17 L24 — *sorry, I could not avenge you*). Almost certainly the murdered sister of chunk 17 L6–7's `あんたの妹を殺した奴ら` / `カーライン第９軍・・・まちがいない`; chunk 17's translator should confirm the relation from the full chunk before leaning on it. **1 battle + 0 script.** 6 columns | Ｆｅｍｉｎａｈ. Rendered by chunk 17 — promote on merge |
+| ~~バージェス~~ | ✅ **PROMOTED to §30.1** — `Ｂｕｒｇｅｓｓ` / `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ`, rendered in `pending/chunk_017.txt` (PR #12), used exactly as seeded. ⚠️ **This row's widths are both one too many** — `Ｂｕｒｇｅｓｓ` is **7** columns and `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` is **14**, not 8 and 15; remeasured at review. Rendering unchanged | ~~**Wave-3 seed** — a **PLACE**, on the §2 test: `バージェス峡谷か南の砂漠` (a route out, chunk 17 L4) and `バージェスからの定期連絡` (regular reports *from* it, chunk 17 L5). Capitalised as a place name on the `バジリスクの砂漠` → *the Basilisk Desert* precedent (§2). **2 battle (chunk 17) + 5 script.** 8 columns bare, 15 with Ｃａｎｙｏｎ | `Ｂｕｒｇｅｓｓ　Ｇｏｒｇｅ` also 15 — 峡谷 is literally a gorge; either fits. Rendered by chunk 17 — promote on merge |
+| ~~イフリート~~ | ✅ **PROMOTED to §30.1** — `Ｉｆｒｉｔ`, capitalised, rendered in `pending/chunk_017.txt` (PR #12), **used exactly as seeded**; 5 columns confirmed. ⚠️ **The chunk-15 gloss warning stays live for whoever takes chunk 15** | ~~**Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
+| ~~マムー~~ | ✅ **PROMOTED to §30.1** — `Ｍａｍｕ`, **with no `Ｌｏｒｄ`**, rendered in `pending/chunk_017.txt` (PR #12); 4 columns confirmed. The self-reference warning was heeded exactly, and the `マムー兄さん` note stays live for chunk 41 | ~~**Wave-3 seed** — a **PERSON**, male. ⚠️ **`このマムー様が` (chunk 17 L7) is boastful SELF-reference, not an honorific from a subordinate** — the `このクリミアに` pattern (§25.1) — so it takes **no** `Ｌｏｒｄ`; put the swagger in the verb (`ぜ`, §7), not in a title. `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` is **chunk 41's** line, not chunk 17's. **2 battle (ch17 L7, ch41 L5) + 0 script.** 4 columns | Ｍａｍｍｏｏ, Ｍａｍｕｕ. Rendered by chunk 17 — promote on merge |
+| ~~フェミナ~~ | ✅ **PROMOTED to §30.1** — `Ｆｅｍｉｎａ`, rendered in `pending/chunk_017.txt` (PR #12); 6 columns confirmed. **The relation this row asked to be confirmed IS confirmed from inside the chunk** — see §30.5 | ~~**Wave-3 seed** — a **PERSON**, female, already dead when named: `フェミナ、ごめんね。あんたの仇、とれなかったよ・・・` (chunk 17 L24 — *sorry, I could not avenge you*). Almost certainly the murdered sister of chunk 17 L6–7's `あんたの妹を殺した奴ら` / `カーライン第９軍・・・まちがいない`; chunk 17's translator should confirm the relation from the full chunk before leaning on it. **1 battle + 0 script.** 6 columns | Ｆｅｍｉｎａｈ. Rendered by chunk 17 — promote on merge |
 
 ⚠️ **Two corrections the wave-2 units force, both of the メルザリオ kind (§20.1):**
 
@@ -1838,3 +1838,174 @@ unaffected. Whoever first renders 中尉 should correct the figure in place.
 | Seneca (portrait 0007) | §25.5 unchanged and confirmed three chapters earlier than it was written: quiet, hesitant, contractions (`Ｉ’ｍ　Ｓｅｎｅｃａ．`, `Ｉ　ｗｏｎ’ｔ　ｇｅｔ　ｉｎ`), opening twice with `Ｕｍ．．．`. His one formal row is `Ｉ　ａｍ　ｓａｖｅｄ．．．`, which is §23.4's fixed form and not a register slip |
 | The 9th Army squad (portraits 0000, 0001, 0002, 0009, 000A) | §7, §21.4 and §25.5 unchanged — casual, contractions throughout, tag questions from the women (`ｄｏｅｓｎ’ｔ　ｉｔ．`, `ｄｏｅｓｎ’ｔ　ｉｔ？`, `ｄｉｄｎ’ｔ　ｔｈｅｙ．`). Portrait 0001 is the Ridge-shaped blunt one who needles about the spy and concedes `．．．Ｗｅｌｌ，　ｆｉｎｅ．`; his `Ｈｏｗｅｖｅｒ，` is §23.3 binding **over** register, as chunk 9 already does |
 | The young companion (portrait 0002) | Her `てーこく` (a clipped, childish `帝国`) and `バケモノ` are carried in register, not spelled out — §2's rule — and her register is already doing it through contractions and tag questions |
+
+---
+
+## 30. Added by chunk 017 (PR #12, PARKED 2026-09-08)
+
+Rendered in **`pending/chunk_017.txt`** — chapter 17, the defence of the fortress. Five scenes:
+Rendol reports a Carline raid from the west and Rimul works out they crossed the Basilisk Desert;
+Burgess falls silent and she reads it as Ifrit taken; she refuses to recall the Crossley garrison,
+calls on Commander Krippen and wakes Original Unit 1; Mamu promises a grieving woman he will avenge
+her sister; three alternative withdrawal outcomes; a villager's gift; and the death/spare lines.
+**5,857 / 8,192 bytes, slack 2,335 — 154 rows, widest 23, none at 24**, no page over 4 text rows.
+Merged at **round 2**; both round-1 findings were reading findings and the rework was **−16 bytes**.
+
+⚠️ **THIS UNIT IS PARKED, AND NOT FOR BUDGET.** It is 2,335 bytes under its slot at 2.16× against a
+3.19× ceiling. It cannot ship because message 19's item-grant tail carries the `FLAGS.md` §D1 dump
+artifact and the charset and tag-parity gates are unsatisfiable together — `FLAGS.md` §R has the
+proof, the scope and the unpark recipe. **The rows below are decided and binding now**, exactly as
+if the file were in `tl/`: it will move with a `git mv` and a 0-byte re-tokenisation, and nobody
+will re-read it when that happens.
+
+⚠️ **Line numbers in this section are MESSAGE lines** (dump body index, 1-based) = the `tl/` file
+line **minus one**, the §28 convention. That is the third of the four numbering conventions in this
+repo (`FLAGS.md` §O8, §P, glossary §29). **Locate by content.**
+
+`Ｌａｄｙ　Ｒｉｍｕｌ` / `Ｒｅｎｄｏｌ` (§1), `Ｃａｒｌｉｎｅ` / `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` / `ｆｏｒｔｒｅｓｓ` /
+`ｇａｒｒｉｓｏｎ` / `９ｔｈ　Ａｒｍｙ` / `ｔｈｅ　Ｂａｓｉｌｉｓｋ　Ｄｅｓｅｒｔ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2),
+`Ｃｏｍｍａｎｄｅｒ　Ｋｒｉｐｐｅｎ` / `Ａｌｌ　ｕｎｉｔｓ` (§25.1), `Ｏｒｉｇｉｎａｌ　Ｕｎｉｔ　１` (§17.2),
+`Ｒｉｇｈｔ，` (§24.3), `Ｕｎｄｅｒｓｔｏｏｄ！` (§21.2), `Ｓｉｒ` / `Ｈｍｐｈ` / `Ａｈ，` (§6), `Ｔｃｈ`
+(§11.5), `Ｇｕｆｆ` (§14.5), `Ｈｏｗｅｖｅｒ，` (§23.3 — its **sixth** use), `ｏｄｄ　ｓｏｒｔｓ` (§24.2),
+`ｒｅｃｋｌｅｓｓ` (shipped `batch_002`) and `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` (§27.2)
+are used unchanged. `了解！よし、` → `Ｕｎｄｅｒｓｔｏｏｄ！Ｒｉｇｈｔ，` is the case **§29.4 anticipated**,
+and `わかった` is confirmed absent from this chunk, so §29.4's `Ａｇｒｅｅｄ．` reserve is not engaged.
+
+### 30.1 People and places — six promotions out of §9, and the cross-unit row struck
+
+| Japanese | English | Note |
+|---|---|---|
+| クロスリー | `Ｃｒｏｓｓｌｅｙ` | **Promoted from §9, used exactly as seeded.** 8 columns. A **place**, used only locationally here — 5 renderings, across message lines 3, 4 ×2 and 6 ×2. **8 battle + 2 script.** Alt *Crosley* rejected |
+| バージェス | `Ｂｕｒｇｅｓｓ` | **Promoted from §9, used exactly as seeded.** ⚠️ **7 columns, not §9's 8** — remeasured at review. **2 battle (this chunk) + 5 script** |
+| バージェス峡谷 | `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` | **Promoted from §9.** ⚠️ **14 columns, not §9's 15.** §9 offered `Ｃａｎｙｏｎ` or `Ｇｏｒｇｅ`; the seed's own first form was taken, and the sole occurrence sits beside `ｔｈｅ　ｓｏｕｔｈｅｒｎ　ｄｅｓｅｒｔ` in a list of map routes, where the plainer map word reads better. **Both forms are 14, so this stays reversible at zero cost** while chunk 17 is the only unit rendering it — recorded rather than closed |
+| イフリート | `Ｉｆｒｉｔ` | **Promoted from §9, used exactly as seeded.** 5 columns, **capitalised** — a named fortress gun, so §17.1's species test does not apply. `・・・イフリートが落とされたか。` → `．．．Ｓｏ　Ｉｆｒｉｔ　ｈａｓ{FFFE}ｂｅｅｎ　ｂｒｏｕｇｈｔ　ｄｏｗｎ．`; 落とされた is passive, so *brought down*, not *fell*. ⚠️ **§9's warning that the gloss lives in chunk 15, not here, stays live for chunk 15's translator** |
+| マムー | `Ｍａｍｕ` | **Promoted from §9, used exactly as seeded.** 4 columns, **no `Ｌｏｒｄ`**. `あんたの妹の仇は、このマムー様がとってやるぜ。` → `Ｉ，　Ｍａｍｕ，　ｗｉｌｌ　ａｖｅｎｇｅ{FFFE}ｙｏｕｒ　ｓｉｓｔｅｒ{FFFE}ｆｏｒ　ｙｏｕ．` — the **appositive** carries the `この…様が` self-aggrandisement, which is §25.1's `このクリミアに` pattern applied exactly. **2 battle (this chunk, ch41) + 0 script**; `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` is still chunk 41's to render |
+| フェミナ | `Ｆｅｍｉｎａ` | **Promoted from §9, used exactly as seeded.** 6 columns. A **person**, female, dead before the chunk opens. **1 battle + 0 script.** The relation §9 left open is settled at §30.5 |
+| ルート | `ｒｏｕｔｅ` | **§9 row STRUCK HERE.** Lowercase common noun per §17.1's species test, rendered twice — `敵は別のルートから` → `ｂｙ　ａｎｏｔｈｅｒ　ｒｏｕｔｅ`, `ここへ抜けるルートは、` → `Ｔｈｅ　ｒｏｕｔｅｓ　ｔｏ　ｈｅｒｅ`. 5 columns. ⚠️ **This is the cross-unit row §29.1 deliberately left live**: chunk 8 (PR #11) rendered it first and merged first, chunk 17 renders it second and merges second, and the rule is that the *second* merge strikes the row. Both units were re-checked at this review and both are lowercase. **The plural `ｒｏｕｔｅｓ` is not a variant** — Japanese does not mark number and that sentence lists two |
+| ネズミども | `ｒａｔｓ` | ⚠️ **Recorded at review; the PR's additions table omitted it, and it is the omission that mattered.** 4 columns. `カーラインのネズミどもを迎え撃て！！` → `Ｉｎｔｅｒｃｅｐｔ　ｔｈｅ{FFFE}Ｃａｒｌｉｎｅ　ｒａｔｓ！！` A **fifth** contempt word, held apart from 雑草ども → *weeds* (§11.5), ゴミ → *rubbish* (§14.4), ガラクタ → *junk* (§23.1) and 穀潰し → *freeloaders* (§2). Counted at review: **`ネズミ` occurs in battle chunks 17, 18, 25, 27, 41 and 42**, so this form will be reached five more times and had to be fixed now. `ｒａｔｓ` occurs nowhere else in `tl/` |
+
+### 30.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 迎撃態勢 | `Ｉｎｔｅｒｃｅｐｔ　ｓｔａｔｉｏｎｓ` | ⚠️ **18 columns, not the PR's 19** — remeasured. Built on §25.1's 戦闘態勢に入れ → *take battle stations*: 態勢 → **stations**. Used in all three variant lines (message 11, 12, 13) so the three outcomes read as one phrase. Held **distinct** from 迎え撃つ → *intercept*, the verb, below |
+| 迎え撃つ / 迎え撃て | `ｉｎｔｅｒｃｅｐｔ` | 9 columns. **Not a new form** — shipped `chunk_007.txt` already has `全軍　迎えうてッ！！` → `Ａｌｌ　ｕｎｉｔｓ，　ｉｎｔｅｒｃｅｐｔ！！`. Recorded because chunk 17 uses it **five** times and it must not fork |
+| 出撃！ | `ｓｏｒｔｉｅ！` | ⚠️ **7 columns, not the PR's 8** (bare `ｓｏｒｔｉｅ` is 6). `紅の騎士団、出撃！` → `Ｒｉｇｈｔ，　Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ，{FFFE}ｓｏｒｔｉｅ！` A sortie is literally a sally by a besieged garrison, which is exactly this scene. Held **distinct** from §6's 行くぞ！ → `Ｍｏｖｅ　ｏｕｔ！`. Free across `tl/` |
+| 連絡員 | `ｃｏｕｒｉｅｒ` | 7 columns. Held **distinct** from 伝令 → *messenger* — **both occur in this chunk** (message lines 5 and 6) and the source draws the distinction itself |
+| 伝令 | `ｍｅｓｓｅｎｇｅｒ` | 9 columns. See above |
+| 定期連絡 | `ｒｅｇｕｌａｒ　ｒｅｐｏｒｔｓ` | 15 columns |
+| 退き時 | `ｔｉｍｅ　ｔｏ　ｗｉｔｈｄｒａｗ` | ⚠️ **16 columns, not the PR's 20.** `そろそろ、退き時か。` → `Ｉｔ　ｉｓ　ａｂｏｕｔ　ｔｉｍｅ{FFFE}ｔｏ　ｗｉｔｈｄｒａｗ．` — the break is added because Rimul takes no contraction and `Ａｂｏｕｔ　ｔｉｍｅ　ｔｏ　ｗｉｔｈｄｒａｗ．` is 24 |
+| 立て直す | `Ｒａｌｌｙ` | 5 columns. See the note in §30.4 on the one line where 迎撃態勢 collapses into it |
+| ハードウェア | `ｈａｒｄｗａｒｅ` | ⚠️ **8 columns, not the PR's 9.** Rimul on Ifrit: `なまじ強力なハードウェアがあっては` → `Ｗｈｅｎ　ｈａｒｄｗａｒｅ{FFFE}ｉｓ　ｔｏｏ　ｐｏｗｅｒｆｕｌ，`. The source's own katakana loanword; English has the same word and the same slightly clinical register, so nothing is imported |
+| 油断が生じる | `ｃａｒｅｌｅｓｓｎｅｓｓ　ｓｅｔｓ　ｉｎ` | The **noun** form of §28.2's 油断 → *careless*, which took its word from shipped `chunk_000.txt` L19. One word, two grammatical shapes the source itself varies — the §27.1 `愛用` and §4 石化能力 pattern. Arrived at independently: §28.2 merged **after** this unit was drafted |
+| 兵隊さん | `ｓｏｌｄｉｅｒｓ` | 8 columns. The villager's polite civilian address, carried in **register**, not in an added word (§2). ⚠️ Deliberately **not** §2's トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ` (a comic address to an animal) and **not** §21.2's `〜さん`-on-a-personal-name rule — this is `さん` on a **common noun**, a third pattern |
+| 剣の使い手 | `ｓｋｉｌｌｅｄ　ｗｉｔｈ　ａ　ｂｌａｄｅ` | 20 columns. ⚠️ **Recorded at review; the PR omitted it.** `そいつも剣の使い手だ。` → `Ｓｈｅ　ｔｏｏ　ｉｓ　ｓｋｉｌｌｅｄ{FFFE}ｗｉｔｈ　ａ　ｂｌａｄｅ．` **§14.3's 使い → *tamer* does not reach here** — that rule is for creature handlers (獣使い, 氷龍使い) — and 剣士 → *swordsman* / 女剣士 → *swordswoman* (§4) are class labels, not this predicate. Same shape as §24.2's 弓使い → *bowman*: an epithet on an individual |
+| 城内の様子 (two forms) | `ｈｏｗ　ｄｏ　ｔｈｉｎｇｓ　ｓｔａｎｄ` / `ｗｈａｔ　ｉｓ　ｔｈｅ　ｓｔａｔｅ` | **Two English forms, deliberately**, because the source has two strings four scenes apart: `城内の様子はどうだ？` (message 10) and `城内の様子はどうなっている。` (message 15). The English tracks the source's own punctuation too (`？` against `．`). §3 is not engaged — different messages (§20.4, §24.5, §27.4) |
+
+### 30.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| ちッ | `Ｔｓｋ` + the source's own punctuation | 3 columns. A tongue click of contempt aimed at someone else. Held **distinct** from §11.5's くっ / クッ → `Ｔｃｈ`, which **this chunk also uses three times** — a strangled grunt of self-vexation is a different gesture, so §23.3's rule applies: a collapse is legitimate only for same-meaning, different-spelling pairs. `Ｔｓｋ` verified free across `tl/` |
+| なるほど、 | `Ｉ　ｓｅｅ．` | 6 columns. **Not a new form** — shipped `chunk_033.txt` message 21 already renders `なるほど、この腕なら、` as `Ｉ　ｓｅｅ．　Ｗｉｔｈ　ｓｋｉｌｌ　ｌｉｋｅ`, and chunk 17 matches it, **stop included**, so the `、`→`．` is house practice and not a §5 departure. ⚠️ `Ｉ　ｓｅｅ．` now renders **three** source strings across `tl/` — `そうか` (chunks 4, 7), `そうですか` (chunk 3) and `なるほど` (chunks 33, 17). §25.3's test is met and was **counted at this review**: `そうか` is in chunks 4, 7, 23, 27, 30, 32 and **not in 17 or 33**, so no scene shows two of them |
+| いえ、 | `Ｎｏ，` | 3 columns. The polite negation. Same English as §25.2's いや → `Ｎｏ` **plus the source's own punctuation**, which is §5's mechanism and the documented one-word/two-spellings collapse (§17.2 鬼 / オーガ). Shipped `chunk_004.txt` message 10 already has it. ⚠️ **This unit carries both** — `いや、` ×1 and `いえ、` ×2, all three `Ｎｏ，`; `chunk_009.txt`'s `いや・・・` → `Ｎｏ．．．` is the same rule with three stops. **Round 1 caught a `Ｎｏ．` on the `いや、`; it was corrected at round 2** |
+| 何？ | `Ｗｈａｔ？` | 5 columns. ⚠️ **Byte-identical to shipped `chunk_008.txt`'s row**, verified at review — matched without obligation, since §3 engages on the message. A **seventh** member of the 何 family, all still held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), 何っ／ッ！？ → `Ｗｈａｔ！？` (§28.3), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), chunk 7's `何？！` → `Ｗｈａｔ？！` (the same word under §5's punctuation rule) and chunk 0's two stuttered forms |
+| そうよ。 | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | 13 columns. **A third source string on §23.2's form** — see §30.6, where the co-occurrence is ruled rather than assumed |
+| ごめんね。 (standalone) | `Ｉ’ｍ　ｓｏｒｒｙ．` | 10 columns. ⚠️ **Recorded at review; the PR omitted it.** `フェミナ、ごめんね。` → `Ｆｅｍｉｎａ，　Ｉ’ｍ　ｓｏｒｒｙ．` — the vocative leads and the apology is a complete sentence. **A second English form for ごめんね beside shipped `chunk_010.txt` L10/L12's `ごめんね、トカゲさん。` → `Ｓｏｒｒｙ，　Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ．`**, where it is a comma-led hedge before a vocative. Different messages, so §3 is not engaged; recorded so the split does not drift into a third form. §28.3's あいにく → `Ｓｏｒｒｙ，` is unaffected |
+| ダメです！ | `Ｉｔ　ｉｓ　ｎｏ　ｕｓｅ！` | 13 columns. ⚠️ **Recorded at review; the PR omitted it.** Rendol's despairing report, in his no-contraction register. **Recurs in chunk 16**, so the form is fixed now rather than re-invented there |
+| せいぜい、 | (carried, not a standing row) | `せいぜい、時間をかせいでくれよ。` → `Ｂｕｙ　ｕｓ　ａｌｌ　ｔｈｅ　ｔｉｍｅ{FFFE}ｙｏｕ　ｃａｎ．` — せいぜい is absorbed into *all … you can* rather than given its own word, and the source's two rows stay two English rows. **Recurs in chunk 28**; noted so that unit knows the phrase was rendered whole and there is no bare-segment form to copy |
+| グフッ | `Ｇｕｆｆ` | 4 columns. §14.5's ぐふっ in **katakana** — one word, two kana spellings, per §17.2's 鬼 / オーガ, exactly as §11.5 handles くっ / クッ and §29.3 handles くーっ / く〜っ. ⚠️ **The source is `グフッ・・・・・。` — five `・` plus `。` = six stops — and the English carries six.** That is `translation_prompt.md` §3.1's dot rule at the one place in this chunk where it is not three |
+
+### 30.4 Ruling — `読みが甘い` takes `ｍｉｓｒｅａｄ`, and `ｕｎｄｅｒｅｓｔｉｍａｔｅ` is reserved
+
+Message line 13, `読みが甘かったか。` → **`Ｉ　ｍｉｓｒｅａｄ　ｔｈｅｍ．`** (15 columns). Settled at
+round 2, and worth writing out because **both parties changed position**.
+
+The round-1 draft read `Ｉ　ｒｅａｄ　ｔｈｅｍ　ｔｏｏ　ｓｏｆｔｌｙ．` on the stated ground that it kept
+甘い's *soft* in parallel with §25.1's 甘くない. **That parallel does not exist** — counted at review,
+`chunk_009.txt` ships `ｈａｒｄｅｒ` and `ｓｏｆｔ` occurred **nowhere in `tl/`** — and *read someone
+softly* is not English: *read* + *softly* collocates only with reading aloud, so the sense is
+unrecoverable. `translation_prompt.md` §2 requires a departure exactly there.
+
+The reviewer proposed `Ｉ　ｕｎｄｅｒｅｓｔｉｍａｔｅｄ　ｔｈｅｍ．` (22 columns) and **the translator
+overturned it, correctly.** Counted in the dumps at round 2 and verified at review, three source
+phrases genuinely mean *underestimate*:
+
+| Japanese | Where | |
+|---|---|---|
+| `甘く見ない方がいいぞ。` | battle ×1 | |
+| `彼らの力を{FFFE}見くびっていたようだ。` | battle ×1 | **the same speech act as this line** — a commander conceding they rated the enemy too low |
+| `将軍、見くびってもらっては困る` | script-unique ×1 | |
+
+Spending *underestimate* on 読みが甘かった would collapse two distinct source words the moment the
+second of those is translated — the §25.3 / §29.4 trap this glossary keeps writing reserves to
+avoid. **`ｕｎｄｅｒｅｓｔｉｍａｔｅ` is therefore RESERVED for 甘く見る / 見くびる** and is verified
+unspent across `tl/`. `ｍｉｓｒｅａｄ` keeps 読み, which the source phrase is built on, is free across
+`tl/`, and suits Rimul's contraction-free register; the *direction* of the error survives in her
+next row, `Ｈｏｗｅｖｅｒ，　ｔｈａｔ　ｔｈｅｉｒ{FFFE}ｐｏｗｅｒ　ｗａｓ　ｓｏ　ｇｒｅａｔ．．．`.
+
+Held **distinct** from §25.1's 甘くない (of an institution) → `ｈａｒｄｅｒ　ｔｈａｎ　…　ｔｈｉｎｋ`:
+different construction, different subject, and neither now claims to keep *soft*. **`ｓｏｆｔ` is free
+across `tl/` again.** −16 bytes; **lines this affects: none but this one.**
+
+### 30.5 The three sisters, and what the chunk actually settles
+
+§9's フェミナ row asked chunk 17's translator to confirm the relation from the full chunk rather
+than lean on the seed. **Confirmed, from the tag stream and not from the prose:**
+
+- Message line 7 page 1 is `{FCB0}{=00030000}` — portrait **03**, Mamu — asking
+  `あんたの妹を殺した奴らってのは。`
+- Page 2 is `{FCB0}{=00020000}` — portrait **02** — answering `そうよ。カーライン第９軍・・・`
+  in feminine speech.
+- Message line 24 is **the same portrait 02**: `フェミナ、ごめんね。あんたの仇、とれなかったよ・・・`
+
+So **Femina is portrait 02's 妹 (younger sister)**, and portrait 02 is the elder sister, who dies
+without avenging her. Rendered **plain `ｓｉｓｔｅｒ`**, unmarked for seniority: English does not
+mark it, and shipped `chunk_004.txt` already renders the dying enemy girl's `姉さん` as
+`Ｍｙ　ｓｉｓｔｅｒ` / `Ｓｉｓｔｅｒ，`. `仇をとる` → **`ａｖｅｎｇｅ`** in both halves of the thread
+(message 7 `ｗｉｌｌ　ａｖｅｎｇｅ`, message 24 `Ｉ　ｃｏｕｌｄｎ’ｔ　ａｖｅｎｇｅ`), which is what makes
+the echo audible.
+
+⚠️ **Two threads left deliberately uncommitted, and they should stay that way until a chunk names
+someone.** (a) §23.5 records that **chunk 4's dying enemy girl cries for her 姉さん**, an elder
+sister; chunk 17 has an elder sister mourning a 妹 killed by the Carline 9th Army. The halves fit,
+but nothing in either chunk names the chunk-4 girl, so **no glossary row is proposed for her** and
+the English commits to nothing. (b) The unnamed enemy of message lines 22–23 says
+`俺には妹がいる。そいつも剣の使い手だ。` — a **third** sister in one chunk, and possibly a fourth
+thread. Recorded, not resolved. `FLAGS.md` §R.
+
+### 30.6 Ruling — `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` renders a third source string, and it stands
+
+`そうそう。` → `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` is fixed at §23.2 and shipped in `chunk_004.txt`; §25.3
+ratified `そのとおりだ。` on the same form. Chunk 17 adds `そうよ。` (message 7) — **and the chunk
+also contains `そうそう`** (message 19, `あ、そうそう`). §25.3 named `Ｅｘａｃｔｌｙ．` as the reserve
+for exactly this. **It is not taken, and the reasoning is recorded so the question is not reopened
+unit by unit:**
+
+1. **The two surface forms differ.** Message 7 is `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`; message 19 is
+   `Ａｈ，　ｔｈａｔ’ｓ　ｒｉｇｈｔ，` — §6's あ、 → `Ａｈ，` in front, and a comma. No player sees the
+   same row twice, and no two rows in `tl/` are byte-identical here.
+2. **They are two scenes and two acts.** Message 7 is the grieving sister confirming her sister's
+   killers on the east side; message 19 is a villager's *"oh, by the way"* recall marker four
+   scenes later. English "that's right" carries both senses natively — this is not a flattening.
+   §25.3's stated test is **scene**-level, and it is met.
+3. **`そうね。` → `Ｔｈａｔ’ｓ　ｔｒｕｅ．` (§25.2) never meets either.** Counted at this review:
+   `そうね` is in battle chunks 9, 27 and 32 and **not in 17**.
+4. **`Ｅｘａｃｔｌｙ．` would be wrong here even if a split were wanted.** §25.3 reserved it for *"a
+   9th Army companion who contracts freely"*; on a woman confirming who killed her sister it reads
+   cold. It **remains reserved and free** for the `そのとおり` / `そうそう` collision §25.3 describes.
+
+**Lines this affects: none.**
+
+### 30.7 Register
+
+| Who | Register |
+|---|---|
+| Rimul (portrait 05, `{FC50}`) | §7 unchanged and held across **every** one of her segments — `Ｉｔ　ｉｓ`, `ｗｅ　ｓｈａｌｌ`, `Ｉ　ａｍ　ｇｒａｔｅｆｕｌ．`, `ｗｅ　ｃａｎｎｏｔ`, `Ｄｏ　ｎｏｔ`. ⚠️ **This departs from shipped `chunk_000.txt` L14/L18, which give her `ｃａｎ’ｔ`, `ｄｏｎ’ｔ`, `ｗｏｎ’ｔ`, `Ｉ’ｌｌ`.** The written rule is followed here and chunk 0 is **recorded, not re-cut** — §18.3 says its next correction needs a full re-cut and `FLAGS.md` §G1 leaves it 27 bytes. `FLAGS.md` §R |
+| Rendol (portrait 06, `{FC51}`) | Formal, deferential, **no contractions** — `Ｓｉｒ，`, `Ｉｔ　ｉｓ　ｎｏ　ｕｓｅ！`, `ｗｅ　ｃａｎｎｏｔ　ｈｏｌｄ`, `Ｉｎｔｅｒｃｅｐｔ　ｓｔａｔｉｏｎｓ　ａｒｅ　ｆｕｌｌｙ　ｒｅａｄｙ．` Albert's shape (§20.5). ⚠️ **Portrait 06 on channel 1 is Rendol; portrait 06 on channel 0 is a different, unnamed enemy** (message lines 22–23) — the same id/channel distinction §23.5 records for chunk 4's Ridge and §28.7 for chunk 13's Cress |
+| Mamu (portrait 03) | Rough and swaggering, contractions — `Ｉｓ　ｔｈａｔ　ｔｈｅｍ？`, `Ｒｅｓｔ　ｅａｓｙ．`, `Ｙｏｕ’ｒｅ　ｎｏｔ　ｂａｄ．．．`, and `Ｔｓｋ．．．` His boast is the appositive `Ｉ，　Ｍａｍｕ，`, not a title |
+| The grieving elder sister (portrait 02, unnamed) | Casual, contractions — `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `Ｎｏ　ｍｉｓｔａｋｅ．`, `Ｉ’ｍ　ｓｏｒｒｙ．`, `Ｉ　ｃｏｕｌｄｎ’ｔ　ａｖｅｎｇｅ`. **Nothing names her**; see §30.5 |
+| The unnamed enemy (portrait 06, `{FC50}`) | **No contractions in either of his two lines** — `Ｉ　ｈａｖｅ　ａ　ｓｉｓｔｅｒ．`, `Ｓｈｅ　ｔｏｏ　ｉｓ　ｓｋｉｌｌｅｄ`, `Ｉ　ｗｉｌｌ　ｎｏｔ　ｔｈａｎｋ　ｙｏｕ．` Internally consistent; verified at review because message 21's `ちッ` looks like his and is Mamu's |
+| The villager (portrait 04) | Warm, worn and civilian, contractions throughout — `Ｉ’ｍ　ｃｏｕｎｔｉｎｇ　ｏｎ　ｙｏｕ，`, `Ｉ　ｄｏｎ’ｔ　ｋｎｏｗ　ｉｆ　ｉｔ’ｌｌ`. His `兵隊さん` is carried in that warmth, not in an added word |
+| The 9th Army (portrait 00) | §7 unchanged — `Ｒｉｇｈｔ，　ｗｅ　ｓｔｏｒｍ　ｔｈｅ{FFFE}ｆｏｒｔｒｅｓｓ！！` |
+| Tutorial box (`{=FA1000300030}`, message line 20) | §7 unchanged — plain instructional second person, **byte-identical to §27.2** |
