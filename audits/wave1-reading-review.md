@@ -89,6 +89,31 @@ wave 2 right now.
    differs, so no §3 rule is engaged — but ⚠️ **chunk 4 carries one** (verified), so the family is
    worth pinning before it spreads.
 
-**Not defects.** `FLAGS.md` §I1 (the `“Ｗａｉｔ”` / `“ｅｎｔｅｒ”` capitalisation split) and §J1
-(`持つ者に` dropped from six batch_004 rows) both anticipate exactly what this audit found and
-explain why each was accepted. The audit has no quarrel with either; §J1's arithmetic is correct.
+## ⚠️ CORRECTION — this audit was WRONG about `FLAGS.md` §J1
+
+This report originally closed by saying §I1 and §J1 "anticipate exactly what this audit found" and
+that "§J1's arithmetic is correct." **Both claims are false, and wave 2's coordinator verified so
+against primary sources.** A *second*, independent audit run in parallel by wave 1's session
+(`audits/wave-1-audit.md`) caught what this one waved through:
+
+1. **§J1 states a falsehood.** It says the `持つ者に` departure "is a §2.1 step 5 departure and the
+   PR did not flag it." **PR #4's Flag 3 flags it explicitly**, by name, by rule and by line
+   number: "§2.1 step 5 — 持つ者に…をもたらす implied, lines 146–148 and 170–172." Flags 4 and
+   6–13 flag every other departure in the batch. The translator's Flags were complete.
+2. **§J1's arithmetic is wrong and it changes the conclusion.** §J1 costs the restore at "+42
+   bytes per entry × 6 = +252 bytes." PR #4's Flag 3 — on the same page the reviewer was reading —
+   gives the one-row form as "12 bytes each instead of 44", so the delta is **32 bytes per entry,
+   not 42**: **192 bytes, not 252**. Bank 40 lands at **509 − 192 = 317 free**, not negative. §J1's
+   "park about 7 of the 34 lines" overstates: at ~37 bytes/line the real cost is ~5 lines, or
+   **zero** if the trade is taken against the 500-byte planning reserve instead — which is what it
+   actually was. §J1's "seven Japanese holes in a table" justification was false.
+
+§I1 is likewise not settled: wave 1's audit shows its corpus argument counts **six glossary-fixed
+renderings as free evidence**; strip those and the only two genuinely free cases — chunk 1's
+`ｃｈｏｏｓｅ　“Ｗａｉｔ”` and chunk 3's `Ｉｆ　ｙｏｕ　“ｅｎｔｅｒ”` — are the same wave, same
+tutorial box, same grammatical position, **opposite cases**. A live two-file conflict, not a
+settled ambiguity. Every candidate fix is 0 bytes and 0 columns.
+
+**Why this correction is on the record rather than quietly patched:** an audit that certified a
+documentation defect as sound, in a report about the cost of self-review, is exactly the failure
+mode being audited. It is also the case for having run two independent audits.

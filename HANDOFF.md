@@ -15,25 +15,6 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
-## ⚠️ OWED: wave-1 audit findings — dispatch as a follow-up unit
-**`audits/wave-1-audit.md`** (committed `aee737a`) is the independent post-merge reading review of
-wave 1, run because wave 1's coordinator had no `Task` tool and reviewed its own four PRs.
-
-**Verdict: no must-fix on any translated line.** The translations are sound — nothing invented,
-nothing dropped, gates clean, no regressions from the rework rounds, zero unspaced `，` left in
-`tl/`, zero divergent duplicate keys.
-
-**But 1 must-fix and 6 should-fix are outstanding**, and they are owed by a wave session as a
-follow-up unit — translator → PR → reviewer like anything else. The doc corrections (findings 1,
-2, 6, 7) are reviewer/integrator work and can ride an integration commit; the line edits (3, 4, 5)
-need a translator and a PR. Do not apply them from a session that is not running a wave.
-
-The sharpest one, because it shows what self-review costs: **`FLAGS.md` §J1 justified accepting
-batch 004's 2.23× compression with arithmetic that PR #4's own Flag 3 contradicted on the same
-page.** True cost of restoring the dropped clause is 192 bytes, not 252; bank 40 would land at
-**317 free, not negative**; **nothing would have been parked**. The "seven Japanese holes in a
-table" justification was false, and §J1 also wrongly states the PR failed to flag the departure.
-
 ## NEXT ACTION — always current, always a literal instruction
 > **Wave 2 is IN FLIGHT. Its session — `session_01JDoA8KzwUVk3ZjiBw8Qkf3`, "Riot Stars — wave 2" —
 > owns the repository and is the active driver. Preflight passed 2026-09-08: `check` green, zero
@@ -101,50 +82,66 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 - **`リオン` → `Ｌｅｏｎ`** (§9 wave-2 seed) settles **§10.1**, and also makes the stale
   "unresolved — Lion or Leon" row in §1 wrong. Chunk 6's PR flags both for the reviewer.
 
-### ✅ DONE: the wave-1 reading-review audit — **the four units stand as merged**
+### ✅ DONE: the wave-1 reading-review audit — **TWO independent audits, reconciled**
 
-`CLAUDE.md` §8, as amended by wave 1's session in commit `16c179e`, required an **independent
-post-merge audit of the reading review** for wave 1's four self-reviewed units before the next
-wave dispatches. **Wave 2 ran it** — a read-only subagent, in parallel with the wave, writing
-nothing to the repo and returning findings. Full report: **`audits/wave1-reading-review.md`**.
+`CLAUDE.md` §8, as amended in `16c179e`, required an independent post-merge reading audit of wave
+1's four self-reviewed units. **Two ran, in parallel and unaware of each other** — wave 1's session
+(`audits/wave-1-audit.md`) and wave 2's read-only subagent (`audits/wave1-reading-review.md`).
+Duplicated effort, but a far stronger result: they cross-validate, and each caught what the other
+missed. **Read both.**
 
-**Verdict: chunks 1, 2, 3 and script batch 004 stand as merged. No correction commit is required
-before wave 3 dispatches. The requirement is satisfied.** Nothing found changes a plot fact, drops
-a clause, mixes a tic, breaks a gate, or renders identical Japanese two ways. Gates were re-run
-independently and all pass. The audit's duplicate scan across all 13 shipped battle chunks found
-**zero divergences inside the audited units**.
+**Both agree, independently: no must-fix on any translated line. The four units stand as merged.**
+Nothing invented, nothing dropped, no plot fact or speaker turn lost, no verbal tic mixed, gates
+green on re-run, zero unspaced `，` left in `tl/`, zero divergent duplicate JP keys across the four
+script batches, no regressions from the rework rounds. They converged *independently on the same
+fix* for `batch_004:12` and both caught `chunk_003`'s `しかし` → `Ｓｔｉｌｌ，` collision.
 
-Wave 1's session claimed an audit was "running" but was IDLE, and any subagent of it reports into
-*its* context, not this one — so wave 2 ran its own rather than trusting silence as evidence.
+**The one contradiction, adjudicated by this coordinator against primary sources — wave 1's audit
+was right, wave 2's was wrong:**
+- Wave 2's auditor certified `FLAGS.md` §J1 as sound. It is not. **§J1 says the `持つ者に`
+  departure was "not flagged" by PR #4. PR #4's Flag 3 flags it explicitly**, by rule and line
+  number. Verified in the PR body.
+- **§J1's arithmetic is wrong and it changes the conclusion.** §J1 costs the restore at 42
+  bytes/entry × 6 = 252. PR #4's Flag 3 gives the one-row form as "12 bytes each instead of 44" →
+  delta **32/entry = 192 bytes, not 252**. Bank 40 lands at **317 free, not negative**; the "park
+  ~7 lines" claim is really ~5, or **zero** if taken against the 500-byte planning reserve — which
+  is what the trade actually was. **§J1's "seven Japanese holes in a table" justification is false.**
+- **`FLAGS.md` §I1 is not settled either.** Its corpus argument counts six *glossary-fixed*
+  renderings as free evidence; strip them and the only two free cases (chunk 1 `“Ｗａｉｔ”`,
+  chunk 3 `“ｅｎｔｅｒ”`) are same wave, same tutorial box, same position, **opposite cases**.
+  Every candidate fix is 0 bytes, 0 columns. ⚠️ This binds **script batch 005**, in flight now,
+  which carries `“Ｐｅｒｓｕａｄｅ”`.
+- Wave 2's audit file carries this correction on its own face rather than being quietly patched.
 
-**Backlog this created — housekeeping, none of it blocking:**
-- **8 proposed file edits** (MINOR: one pragmatic mistranslation, two dropped modifiers, a
-  garden-path break, a compound-noun split, three idiom fixes). All verified to fit — every row
-  ≤ 23 columns; the four `batch_004` edits cost 38 bytes total in bank 40 (509 → **471** free).
-- **6 glossary/FLAGS rulings that are the durable half.** Three are **live in wave 2 right now**:
-  `しかし` (no entry, two shipped forms, one of which — `Ｓｔｉｌｌ，` — is §19.1's fixed form for
-  それにしても; **chunk 6 ×1 and chunk 9 ×2, verified by this coordinator**), `助かった`
-  (chunk 4 ×1), and `愛用` (13 instances still untranslated, three shapes shipped).
-- **One live `CLAUDE.md` §3 violation in *earlier* shipped work**, independently verified:
-  `村が襲われました。` (13 dump instances) is `ｉｓ　ｕｎｄｅｒ　ａｔｔａｃｋ` in `chunk_007` but
-  `ｈａｓ　ｂｅｅｎ　ａｔｔａｃｋｅｄ` in `chunk_034`. Predates wave 1. Cheap fix: change
-  chunk 34 (6,601 slack) to chunk 7's wording; chunk 7 has only 399 slack, leave it alone.
+**Unique to wave 2's audit** (wave 1's missed): `chunk_002:14` `すみません。` → `Ｗｅ　ａｒｅ
+ｓｏｒｒｙ．` reads as an apology for wrongdoing where it is apologetic *thanks* — the one line a
+player is likeliest to stop at; three more `batch_004` idiom/parallelism fixes; and **a live
+`CLAUDE.md` §3 violation in earlier shipped work**: `村が襲われました。` (13 dump instances) is
+`ｉｓ　ｕｎｄｅｒ　ａｔｔａｃｋ` in `chunk_007` but `ｈａｓ　ｂｅｅｎ　ａｔｔａｃｋｅｄ` in
+`chunk_034` — **independently verified by this coordinator**. Predates wave 1. Cheap fix: change
+chunk 34 (6,601 slack), not chunk 7 (399 slack).
 
-**Who acts:** the **reviewer** rules on the glossary items in its integration commits — `しかし` in
-particular is a genuine tradeoff (chunk 3 also ships でも → `Ｂｕｔ`, and chunks 4/6/9 each carry
-でも ×2, so collapsing them is a deliberate choice), which is the reviewer's call under §6, not the
-coordinator's. **The coordinator deliberately did NOT interrupt the four live translators over it**
-— the risk of destabilising four healthy mid-draft units outweighed pre-empting a divergence the
-reviewer catches anyway, and rework rounds exist for exactly this. The 8 file edits and the
-chunk-34 fix ride in one housekeeping commit at wave close or later.
+**Unique to wave 1's audit** (wave 2's missed): the §J1 must-fix and arithmetic above; the §I1
+corpus flaw; `chunk_003:16` breaks splitting `Ｒｏｙａｌ`/`Ａｒｍｙ` and `ｓａｖｅｄ`/`ｕｓ．`
+(0-byte fix); and **`glossary.md` §21 dropped five entries PR #1 proposed with no note of
+rejection** (`ヘビー`, `洞窟`/`赤い屋根の家`, `さあ→Ｃｏｍｅ　ｏｎ，`, bare `隊→squad`,
+`謹慎中`) — all rendered in shipped work but fixed nowhere; `さあ、` recurs 26 more times.
 
-> ## ⏰ A WATCHDOG TIMER MUST BE ARMED AT ALL TIMES
-> The main session wakes only on a notification or a human message. Wave 1 stalled once because a
-> turn ended with nothing scheduled. **Before ending any turn with work in flight, arm a
-> `send_later` watchdog (10–15 min) and re-arm it on every wake** — CLAUDE.md's second banner and
-> SKILL.md §6b. Handing the wave to an `orchestrator` subagent is *additional* to the timer, never
-> instead of it. A subagent whose notification never arrives is **lost, not finished**:
-> `ListAgents` is the authority, silence is not evidence.
+**Who acts, and when — nothing here blocks wave 2:**
+- **Doc corrections** (§J1 must-fix + arithmetic, §I1, glossary §21's five, the stale §9
+  `ティミー` row) are integration work: the **reviewer** does them in its integration commits this
+  wave, or they ride a housekeeping commit at wave close.
+- **Line edits** (`batch_004:12`, `chunk_003:5` and `:16`, `chunk_002:14`, `chunk_001:2`, and the
+  `chunk_034` §3 fix) need a translator and a PR like anything else — wave 1's audit is explicit
+  that they must not be applied by whoever ordered the audit. **Queued as a wave 3 unit** (see
+  Next up).
+- **Three rulings are live in wave 2 right now**: `しかし` (chunk 6 ×1, chunk 9 ×2, verified),
+  `助かった` (chunk 4 ×1), and §I1's quoted-UI-token case (batch 005). The **reviewer** rules on
+  these under §6. This coordinator deliberately did **not** interrupt four live mid-draft
+  translators to pre-empt them — `しかし` is a genuine tradeoff (chunk 3 also ships `でも` →
+  `Ｂｕｔ`, and chunks 4/6/9 each carry `でも` ×2, so collapsing them is a deliberate choice;
+  wave 1's audit proposes `Ｈｏｗｅｖｅｒ，` at +4 bytes to avoid both collisions) and rework
+  rounds exist for exactly this.
 
 ### ⚠️ The spawn constraint — read before planning any wave
 
@@ -177,7 +174,19 @@ wave 2's session should use it. The wave-boundary chain does *not* depend on `Ta
    `assemble.py check` fails with `tag stream changed` — `tag_parity` exempts only `{FFFE}`. A
    translator at the 4-row wall has re-flow and §2.1 only.
 
-## Next up — WAVE 2, ready to dispatch
+## Next up
+
+### WAVE 3 — one unit already queued: the audit-corrections unit
+`corrections/audit-wave1` — a **translator + PR like any other unit**, because wave 1's audit is
+explicit that its line edits must not be applied by whoever ordered the audit. Six line edits, all
+verified to fit (every proposed row ≤ 23 columns):
+`batch_004:12` (+14 B/bank, both audits agree on the same fix) · `chunk_003:5` (`しかし`, take the
+reviewer's ruling) · `chunk_003:16` (0 B, re-flow) · `chunk_002:14` (`すみません`, +16 B) ·
+`chunk_001:2` (+2 B) · `chunk_034:8` (the `村が襲われました。` §3 fix, −4 chars, do **not** touch
+`chunk_007` at 399 slack). Total bank-40 cost of the script edits: 38 B → **471 free**.
+Wave 3's other units come from Remaining below.
+
+### The wave-2 queue as dispatched (kept for reference — all four are IN FLIGHT, see In flight)
 
 **Battle: chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93).** Chapter order, all tier C/D, no byte
 pressure. Glossary seeds for all three are already in **§9, "Wave 2 seeds"** — `Ｌｅｏｎ`
