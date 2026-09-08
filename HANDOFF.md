@@ -16,32 +16,23 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **Wave 1 is CLOSED — all four units merged, none parked. `check` is green on the integration
-> branch. The next act is to OPEN WAVE 2'S SESSION.**
+> **Wave 1 is CLOSED — 4 of 4 merged, 0 parked. `check` is green. Wave 2's session is OPEN and
+> is the active driver: `session_01JDoA8KzwUVk3ZjiBw8Qkf3`, "Riot Stars — wave 2", opened
+> 2026-09-08 via `create_session` on this branch.**
 >
-> Do exactly this, and nothing else first:
+> **Wave 2 owns the repository now. Wave 1's session is done and stays out.**
 >
-> ```
-> create_session(                                  # claude-code-remote MCP
->   title:           "Riot Stars — wave 2",
->   tags:            ["riotstars-translation", "wave-2"],
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-2 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both are inherited. Units: **battle chunks 4 (D 5.08),
-> 6 (C 3.09), 9 (D 4.93) + script batch 005 = unique lines 984–1001 and 1040–1047** — see
-> **Next up**, which corrects the surveyed range: 89 of the lines originally queued for batch 005
-> are a developer debug menu and must not be translated.
+> Wave 2's units: **battle chunks 4 (D 5.08), 6 (C 3.09), 9 (D 4.93) + script batch 005 = unique
+> lines 984–1001 and 1040–1047.** Its glossary seeds are already in `glossary.md` §9 ("Wave 2
+> seeds") — it should use them, not re-seed.
 >
-> **Wave 2's glossary seeds are ALREADY DONE** — `glossary.md` §9, "Wave 2 seeds", committed by
-> wave 1's session. Wave 2 should *use* them, not re-seed. That is the one deviation from
-> SKILL.md's per-wave order; everything else about wave 2 is the standard loop.
+> **If wave 2's session is dead, stalled, or never started work** — check by listing open PRs
+> against this branch and reading the In flight table below — then the chain is broken and whoever
+> notices should re-open it exactly as above (SKILL.md §6a; `create_session` needs **both**
+> `source_url` and `source_revision`). Do not run wave 2 from wave 1's session.
 >
-> If `create_session` is unavailable, fall back to an `orchestrator` subagent
-> (`run_in_background: true`) and say so here — the run then costs context in the calling session
-> and a human should know. If **neither** is available, the chain cannot continue: write the final
-> handoff and say plainly that a human must open wave 2.
+> When wave 2 closes it opens wave 3's session itself. The chain ends only on one of CLAUDE.md
+> §8's four conditions.
 
 ## Last updated
 2026-09-08 · by: **wave-1 orchestrator** · wave: **1 CLOSED, 4 of 4 merged, 0 parked** ·
