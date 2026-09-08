@@ -69,7 +69,7 @@ an open PR.** Review order when the barrier is met: chunk 4 → chunk 6 → chun
 |---|---|---|---|---|---|
 | battle chunk 4 | `tl/battle-004` | D, 734 JP ch, ratio 5.08 | 1 | **#6** | ✅ **MERGED round 1** — squash `e08bee8`, integrated by the commit that carries this row. 3,849 / 8,192, **4,343 slack**, widest row 23 col, **tag stream byte-identical on all 25 lines including every `{FFFE}` — the first zero-re-flow unit in the project**. All 8 gates green, no findings. Rulings: `辺境`→frontier, `そうそう。`→`Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`, `しかし`→`Ｈｏｗｅｖｅｒ，`, `助かった` pinned, `ファリーナ` moved. Nothing left on this unit |
 | battle chunk 6 | `tl/battle-006` | C, 1,165 JP ch, ratio 3.09 | **2** | **#7** | ✅ **MERGED round 2** — squash `dd406d0`, integrated by the commit that carries this row. 5,899 / 8,192, **2,293 slack**, 151 rows, widest 23, **0 rows at 24**. `{FFFE}` +1 on lines 6, 17, 18, 21, all flagged; both `> 4`-row pages (9 at 15, 21 at 12) are **inherited** — measured on the pristine extraction at 15 and 11. All 8 gates re-run on the new head. All 6 round-1 findings fixed; **finding 3 was withdrawn — the translator's replacement was right and the reviewer's was wrong** (`chunk_033` L20 holds the byte-identical bare `さあ、` and ships `Ｎｏｗ，`; `chunk_003` L4's row carries a name insert). Rulings integrated: `弓使い`→`ｂｏｗｍａｎ`, `ナコール様`→`Ｆａｔｈｅｒ　Ｎａｃｏｌ`, `ま、待て！`→`Ｗ，　Ｗａｉｔ！`, `よし、`→`Ｒｉｇｈｔ，`, §18.2 corrected, `リオン`→`Ｌｅｏｎ` promoted (**§10.1 discharged**). Nothing left on this unit |
-| battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | 1 | **#5** | **UNDER REVIEW (reviewer 3 of 4, dispatched 17:00Z)** — PR open, — 3,971 / 8,192, **4,221 slack**, widest row 23 col, `{FFFE}` +1 on lines 8 and 9 (both flagged) |
+| battle chunk 9 | `tl/battle-009` | D, 760 JP ch, ratio 4.93 | **2** | **#5** | 🔄 **CHANGES round 1, rework sent 17:20Z** — 3,971 / 8,192, 4,221 slack. Eight gates green, **gate 7 (glossary) failed**: §23.3's `しかし` ruling landed after this draft and line 9 renders `Ｂｕｔ`. Two findings (L9 +6 B; L10 a zero-cost re-split). Reviewer re-measured and **upheld** the line-7 reorder and both step-4/5 compressions |
 | script batch 005 | `tl/script-005` | 26 lines / 26 inst, **1,980** JP ch | 1 | **#8** | **PR open** — 4,036 B across banks 29/30/31 → 25,597 / 35,103 / 34,839 free; ratio 2.02×; widest row 23 col |
 
 **BARRIER MET at 15:15Z — 4 of 4. REVIEW IN PROGRESS: 2 of 4 done.** PRs: chunk 4 **#6 ✅ MERGED**,
@@ -178,6 +178,22 @@ re-cut”** table with all three queued rows, not just chunk 6's two: `chunk_005
 from #6's review), `chunk_043` L14 → `Ｗ，　Ｗａｉｔ！` (**−2 B**). Net on `chunk_005`: 8,679 →
 8,689 against its 8,192 slot — it is 487 over already, so feasibility is unchanged. Also
 `FLAGS.md` §L3.
+
+**✅ `クリミア` IS SETTLED — §2 → §1 People, at #5's merge.** #5's reviewer derived its own
+evidence rather than accepting the PR's: **5 occurrences in `battle_dump.txt`, 64 in
+`script_dump.txt`, none of them a place.** Two the PR never cited are decisive —
+`{FC50}クリミア博士、{FFFE}反乱軍です・・・！！` is a **vocative**, and
+`クロスリーにいる{FFFE}クリミア博士を{FFFE}守ってほしい` places Doctor Crimea *inside* Crossley,
+which is itself the place (8 occurrences, its own 守備隊). All 64 script instances are the designer
+possessive, already shipped as `Ｃｒｉｍｅａ’ｓ　…` in `batch_003.tsv` L85/86/94. **No shipped
+line is re-cut.** Third correction of the `メルザリオ` kind, after `ファリーナ`.
+
+**A new §9 seed candidate surfaced while verifying it:** `クロスリー` — an unrendered place name
+with **8 battle occurrences**. Not wave 2's business; for whoever draws the Crossley chunk.
+
+**Gate 6 re-derived properly on chunk 9** (the translator's method was the null check): 2,643
+paired rows, 811 paired messages, **zero message-level divergence**. Flag 7's numbers confirmed
+exactly — `アイテムを{FFFE}奪われました。` at chunk 3 ×1, chunk 9 ×3, chunks 28/29/30 ×1 = 7.
 
 **Measured at dispatch (corrections to the wave-2 plan as written by wave 1):**
 1. **Batch 005 spans banks 29, 30 and 31 — not 30 and 31.** Lines 984–988 (the five tutorial
