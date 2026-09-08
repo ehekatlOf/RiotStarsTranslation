@@ -57,7 +57,7 @@ Barrier: **review nothing until all four have an open PR.** Base branch for ever
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **PR open** — 3,035 / 8,192 (5,157 slack); 14 glossary rows proposed, none changing an existing entry; 2 judgement calls left for the reviewer (Flags 4 and 6) |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,567 JP, tier B (**1.94 — tight**) | — | dispatched |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
-| script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,147 JP, banks 12–15 | — | dispatched |
+| script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 
 ⚠️ **The script unit is `queue.py` batch POSITION 2, written to `batch_006.tsv`** — `batch_002.tsv`
 already exists and is merged. Do not let the position number become the filename.
@@ -87,6 +87,47 @@ tier B and holds the casting vote on width, and chunk 20 can be moved to match a
 ⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
 translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
 byte-identical English. The seed row is struck by the **second** of the two reviewers to merge.
+
+### ⚠️ TWO INDEPENDENT UNITS CONVERGED ON THE SAME UNSETTLED RULING — `あら`
+Battle chunk 20 (PR #14) and script batch_006 (PR #15) raised this separately, from opposite ends
+of the corpus, neither knowing the other had. **It needs ONE written ruling, and `あら` has 16
+further occurrences riding on it.**
+
+`glossary.md` §28.3 (line 1654) ratified `あら、` → `Ｍｙ，` and argued `Ｏｈ` was already spent
+(§24.4 gave おお、/ ほう、 → `Ｏｈ，` and おや → `Ｏｈ？`). **But §28.3 also asserts "The alternative
+`Ｏｈ　ｍｙ，` is also free" — and that is FALSE.** Verified independently by this coordinator:
+`Ｏｈ　ｍｙ，` is already shipped in `tl/battle/chunk_011.txt`. The reviewer who rules should correct
+that sentence as well as decide the form.
+
+The five segment-checked data points batch_006 assembled:
+
+| Where | Japanese | English |
+|---|---|---|
+| `chunk_011.txt` L3 | `あら、お客様？` | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` |
+| `chunk_014.txt` L3 | `あら？` | `Ｏｈ？` |
+| `chunk_007.txt` L19 | `あら・・・・？` | `Ｏｈ．．．．？` |
+| `chunk_013.txt` L4 | `あら、` | `Ｍｙ，` (§28.3's ratified form) |
+| `chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (line-level only) |
+
+⚠️ **`chunk_014.txt` L3 and chunk 20's instances are the SAME SPEAKER** (portrait 02). §3 is not
+engaged anywhere — all are different messages — so **nothing shipped needs re-cutting** whichever
+way it goes. Batch_006 follows the glossary and ships `Ｍｙ，`; chunk 20 ships `Ｍｙ？`.
+
+### batch_006's other open items
+- ⚠️ **`{FFEC}` insert widths — needs the disc, not a reviewer** (`FLAGS.md` §C4). **Both gates strip
+  these inserts to 0 columns**, so the column gate is *blind* to twelve rows in this batch. The
+  translator bounded every one at insert+8 against the Japanese's insert+0..+7 and did not spend a
+  `{FFFE}` it could not justify. Four further copies of the same shop skeleton queue behind this.
+- `おっと` has **no glossary entry and two divergent shipped renderings** (`chunk_007` `Ｎｏｗ　ｔｈｅｎ．`,
+  parked `chunk_043` `Ａｈ　ａｈ，`); batch_006 took `Ｏｏｐｓ，` and flagged rather than silently adding
+  a third. `そうだ、` gets a second form (`Ｓａｙ，`) on a grammatical argument — recall marker, not
+  agreement. Both want ratifying or overturning, not drifting.
+- `ノロ？` standing alone → `Ｎｙｏｒｏ？` is the tic's first non-suffixed rendering; a ruling binds the
+  frog shop's `ゲロゲロ？`.
+- **FORWARD-BINDING for later waves:** unique **598** must reuse this batch's menu strings
+  byte-for-byte (`　Ｂｕｙ　ａｎ　ｉｔｅｍ` / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` / `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ`), and
+  unique **592–597, 647–655** are the other two copies of the same shop skeleton — they inherit
+  `Ｗｅｌｃｏｍｅ`, `Ｍａｎｙ　ｔｈａｎｋｓ`, `ａｒｔｉｃｌｅ`, `　Ｌｅａｖｅ　ｉｔ` and the notice wording.
 
 ## Next up — WAVE 5
 **Battle chunks 21 (D 4.28), 22 (D 4.59), 24 (C 2.99)** — chapter order, all artifact-free.
