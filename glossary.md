@@ -229,7 +229,7 @@ Do not treat these as decisions. Promote on first use.
 | ~~サイクス~~ | ✅ **PROMOTED to §20.1** — `Ｓｙｋｅｓ` (§18.4) | battle chunk 2 (PR #3) |
 | ~~宮廷第２軍~~ | ✅ **PROMOTED to §20.1** — `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`, both source spellings | battle chunk 2 (PR #3) |
 | リザードマン | Lizardman | `script_unique` 1297; the ch.10 dragonfolk are presumably this class |
-| レバーク | Leverk / Rebark | `script_unique` 1350, a castle Maya has left |
+| ~~レバーク~~ | ✅ **PROMOTED to §28.1** — `Ｌｅｖｅｒｋ`, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's description was wrong: it is a KINGDOM, not "a castle Maya has left"** — corrected at §28.1 with the dump evidence. `Ｒｅｂａｒｋ` rejected at review | `script_unique` 1350, ~~a castle Maya has left~~ |
 | オーク | Orc | monster class |
 | ブラウニー | Brownie | monster class |
 | 鬼 / 悪鬼 | ogre / fiend | monster classes; 悪鬼 glossed as 豚顔 (pig-faced) |
@@ -273,7 +273,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~リース文明~~ | ✅ **PROMOTED to §26.1** — the `Ｒｅｅｓｅ` civilisation, used exactly as seeded (PR #8). ⚠️ **The 古代ハイランド warning is DISCHARGED: they are NOT the same.** Counted at that review — `リース` 8 script / 0 battle, `ハイランド` 2 script / 9 battle, **zero lines in either dump contain both**. §11.2's ancient Highland row is untouched and stays | script 1047 | — |
 | ~~クレウス司教~~ | ✅ **PROMOTED to §26.1** — Bishop `Ｃｒｅｕｓ` (PR #8) | script 1047 | — |
 | キエーザ | `Ｋｉｅｓａ` | script 1090, 1092 — `キエーザ城`, a castle | Ｃｈｉｅｓａ — which is Italian for *church*, so the name may be deliberate; check whether the castle is a religious site before fixing |
-| ルクレール | `Ｌｅｃｌｅｒｃ` | script 1090, 1096 — `ルクレール城`, a castle | Ｌｕｃｌｅｒｅ. The French reading matches the European naming |
+| ~~ルクレール~~ | ✅ **PROMOTED to §28.1** — `Ｌｅｃｌｅｒｃ`, used exactly as seeded, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's description was wrong: it is a KINGDOM, not "a castle"** — corrected at §28.1 with the dump evidence | script 1090, 1096 — `ルクレール城`, ~~a castle~~ | Ｌｕｃｌｅｒｅ. The French reading matches the European naming |
 | ~~ＺＯＣ（支配地域）~~ | ✅ **PROMOTED to §26.3** — used exactly as seeded (PR #8) | script 984 | — |
 | ~~中立ユニット~~ | ✅ **PROMOTED to §26.3** (PR #8) | script 988 | — |
 | ~~前衛 / 後衛~~ | ✅ **PROMOTED to §26.3** — front line / rear line, with one width variant `ｉｎ　ｆｒｏｎｔ` / `ｂｅｈｉｎｄ` flagged (PR #8) | script 985 | — |
@@ -288,7 +288,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | プロキオン | `Ｐｒｏｃｙｏｎ` | **Wave-3 seed** — same family as `カーゴ`: a named deployable unit, not a person. `いざとなったら、プロキオンを出してもいい` (*if it comes to it, you may send Procyon out*), spoken by the same officer in the same breath as the battle plan. **1 battle (chunk 8 L10) + 0 script.** 7 columns | Ｐｕｒｏｋｉｏｎ. Rendered by chunk 8 — promote on merge |
 | ルート | `ｒｏｕｔｅ` | **Wave-3 seed — CROSS-UNIT (chunks 8 and 17), lowercase common noun** per the バジリスク → basilisk precedent (§17.1 species test): `敵は別のルートから来たようです` (chunk 17 L3) and `ここへ抜けるルートは、バージェス峡谷か南の砂漠` (chunk 17 L4). **4 battle (ch8 L9 ×2, ch17 L3, L4) + 8 script.** 5 columns | Not `Ｒｏｕｔｅ`; not `ｐａｔｈ` where the source says ルート |
 | スパイ | `ｓｐｙ` | **Wave-3 seed** — lowercase common noun, same test. **2 battle (chunk 8 L9) + 0 script.** 3 columns | — |
-| アーバイン様 | `Ｌｏｒｄ　Ｉｒｖｉｎｅ` | **Wave-3 seed** — an enemy commander (chunk 13 L2, `アーバイン様！敵襲です！！`), addressed 様 by a subordinate; masculine, authoritative register (`まあよい`, `叩き潰してやれ！！`). 様 → Lord on the `リムル` / `フィリス様` precedent (§14.1), **not** §21.2's さん rule. **1 battle + 0 script.** 7 columns bare, 12 with the title | Ｕｒｂａｉｎ, Ｅｒｂｉｎｅ. Rendered by chunk 13 — promote on merge |
+| ~~アーバイン様~~ | ✅ **PROMOTED to §28.1** — `Ｌｏｒｄ　Ｉｒｖｉｎｅ`, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's widths were both one too many** — `Ｉｒｖｉｎｅ` is **6** columns and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11**, not 7 and 12. The seed was mine and it was wrong; the translator caught it and I remeasured on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the mark). The rendering is unchanged | **Wave-3 seed** — an enemy commander (chunk 13 L2, `アーバイン様！敵襲です！！`), addressed 様 by a subordinate; masculine, authoritative register (`まあよい`, `叩き潰してやれ！！`). 様 → Lord on the `リムル` / `フィリス様` precedent (§14.1), **not** §21.2's さん rule. **1 battle + 0 script.** ~~7 columns bare, 12 with the title~~ | Ｕｒｂａｉｎ, Ｅｒｂｉｎｅ |
 | バージェス | `Ｂｕｒｇｅｓｓ`; `バージェス峡谷` → `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` | **Wave-3 seed** — a **PLACE**, on the §2 test: `バージェス峡谷か南の砂漠` (a route out, chunk 17 L4) and `バージェスからの定期連絡` (regular reports *from* it, chunk 17 L5). Capitalised as a place name on the `バジリスクの砂漠` → *the Basilisk Desert* precedent (§2). **2 battle (chunk 17) + 5 script.** 8 columns bare, 15 with Ｃａｎｙｏｎ | `Ｂｕｒｇｅｓｓ　Ｇｏｒｇｅ` also 15 — 峡谷 is literally a gorge; either fits. Rendered by chunk 17 — promote on merge |
 | イフリート | `Ｉｆｒｉｔ` | **Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
 | マムー | `Ｍａｍｕ` | **Wave-3 seed** — a **PERSON**, male. ⚠️ **`このマムー様が` (chunk 17 L7) is boastful SELF-reference, not an honorific from a subordinate** — the `このクリミアに` pattern (§25.1) — so it takes **no** `Ｌｏｒｄ`; put the swagger in the verb (`ぜ`, §7), not in a title. `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` is **chunk 41's** line, not chunk 17's. **2 battle (ch17 L7, ch41 L5) + 0 script.** 4 columns | Ｍａｍｍｏｏ, Ｍａｍｕｕ. Rendered by chunk 17 — promote on merge |
@@ -1561,3 +1561,150 @@ hapax `村が　襲われました。` (spaced) as `Ａ　ｖｉｌｌａｇｅ�
 run by eye — or any tool that normalises whitespace — will read chunk 6 as a fourth violation of
 §27.2 and try to “fix” it. It is not one. Same trap as §24.5's `さあ、` / `よし、` followed by
 `{FC00}{=0000}`.
+
+---
+
+## 28. Added by chunk 013 (PR #10, merged 2026-09-08)
+
+Rendered in `tl/battle/chunk_013.txt` — chapter 14's lead-in, seven scenes: Lord Irvine taunting
+the captured Cress and promising her to General Guilford; the alarm as the 9th Army arrives; Cress
+berating the player for disobeying orders, then thanking him and leaving for Leverk; the rescued
+King's speech (**two mutually exclusive variants, message lines 4 and 5, verified byte-identical in
+English — 365 characters including tags**, as chunk 2's coda variants already are); a boy who gives
+the party an item; the village-attacked box; and the Leclerc soldier who is argued out of a fight
+and joins the squad. **5,417 / 8,192 bytes, slack 2,775 — 132 rows, widest 23, none at 24**, no
+page over 4 text rows. Merged at round 1.
+
+⚠️ **Line numbers in this section are MESSAGE lines** (dump body index, 1-based), which is one less
+than the `tl/` file line because the `=== CHUNK` header is kept. `HANDOFF.md` called the
+village-attack line L8; it is **message line 7**. Same row. This is the third numbering convention
+in play in this repo (`FLAGS.md` §O8) — locate by content.
+
+`Ｔｃｈ` (§11.5), `Ｓｉｒ！` (§6), `Ｈｏｗｅｖｅｒ，` (§23.3 — its fifth use), `Ｌｉｓｔｅｎ，` (prompt §5),
+`Ｎｏｗ，` (§24.5), `Ｉｎ　ａｎｙ　ｃａｓｅ，` (`chunk_012` L16), `Ｒｉｇｈｔ` (§6), `ｔｈｅ　Ｉｍｐｅｒｉａｌ
+ａｒｍｙ` (§20.4 default), `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` (§2 full form), `Ｇｅｎｅｒａｌ　Ｇｕｉｌｆｏｒｄ`
+(§26.2 + §1), `Ｍｉｓｔｅｒ` (§2), `Ｃｒｅｓｓ` / `Ｃａｒｌｉｎｅ` / `Ｃａｕｃａｓｕｓ` (§1–§2) are used
+unchanged. `助かりました！！` → `Ｙｏｕ　ｓａｖｅｄ　ｕｓ！！` is the **first battle-side application of
+§26.8**, exactly as that ruling says it governs all nine occurrences; `助けてもらった` →
+`ｄｉｄ　ｈｅｌｐ　ｍｅ` correctly stays out of the §23.4 family, being a different construction.
+`村が襲われました。` is copied byte-for-byte from **§27.2** (message line 7), verified at review.
+
+### 28.1 People and places — three promotions out of §9, and two description corrections
+
+| Japanese | English | Note |
+|---|---|---|
+| アーバイン様 | `Ｌｏｒｄ　Ｉｒｖｉｎｅ` | **Promoted from §9 (wave-3 seed).** The enemy commander of message lines 1–2; his subordinate addresses him 様 and he answers `まあよい` / `叩き潰してやれ！！`. 様 → Lord per §14.1, held clear of §21.2's さん rule. ⚠️ **`Ｉｒｖｉｎｅ` is 6 columns and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is 11** — §9's seed said 7 and 12 and was wrong on both. The seed was the orchestrator's; the translator caught it and it was remeasured at review on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the mark). Rendering unchanged. **1 battle + 0 script** |
+| ルクレール | `Ｌｅｃｌｅｒｃ` | **Promoted from §9, used exactly as seeded — but §9's description is CORRECTED (§4.3): it is a KINGDOM, not "a castle".** 8 columns. Evidence counted across both dumps at review: `ルクレールの兵士` (its soldiers) and `我がルクレール国王` (**our King of** Leclerc), both this chunk; and in the script dump `我ら　ルクレールの民は` (its people), `誉れ高き国、ルクレールよ！` (*Leclerc, the honoured country*), `ルクレール城` (its castle). **2 battle** (both this chunk — §9's "1" undercounts) **+ 4 script-unique.** The rendering is unchanged, so **no translated line needs revisiting** — the メルザリオ / ファリーナ / クリミア shape (§20.1, §2, §1). Alt *Luclere* |
+| レバーク | `Ｌｅｖｅｒｋ` | **Promoted from §9 PROVISIONAL, taking the first of the two listed readings — and §9's description is CORRECTED the same way: a KINGDOM, not "a castle Maya has left".** 6 columns. Script-dump evidence: `予は　レバーク王` (*I am the King of Leverk*), `数百人のレバーク兵`, `東南の王国、レバークを解放した` (*liberated Leverk, the southeastern kingdom*), `レバーク城`, `レバークの広場`. **1 battle** (`レバークへ戻る`, this chunk) **+ 13 script-unique lines** — the PR body's 10 undercounts, which strengthens rather than weakens the case for settling it now. **`Ｒｅｂａｒｋ` rejected at review**, see §28.5. Alt *Leberk* |
+| 国王 | `ｔｈｅ　Ｋｉｎｇ` | Capitalised on §2's 王女様 → *the Princess* precedent — a title an individual holds, per the §17.1 species test. 4 columns bare, 8 with the article. `私は、この国の国王です` → `Ｉ　ａｍ　ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｉｓ　ｌａｎｄ．`; `我がルクレール国王` → `ｏｕｒ　Ｋｉｎｇ　ｏｆ　Ｌｅｃｌｅｒｃ`. **6 battle** (4 of them this chunk, 2 in chunk 24) **+ 21 script-unique** — remeasured at review; the PR body's 4 + 10 counts only this chunk's own |
+| 騎士団 (bare, of a kingdom's own) | `ｋｎｉｇｈｔｓ` | Lowercase common noun per the species test. `我が国の騎士団` → `Ｏｕｒ　ｋｎｉｇｈｔｓ`. **Distinct** from the named orders 紅の騎士団 → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§2) and 黒の騎士団 → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§14.2), which are unaffected. Lowercase `ｋｎｉｇｈｔｓ` occurs nowhere else in `tl/` |
+| 女隊長 | `ａ　ｗｏｍａｎ　ｃａｐｔａｉｎ` | Built on §2's 隊長 → captain; 女 marks the female form as it does for the classes in §4. Irvine on the captive Cress — and the line is also what fixes her sex |
+
+### 28.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 指揮下 | **`ｃｏｍｍａｎｄ`** is the default; **`ｓｅｒｖｅ　ｕｎｄｅｒ`** is the possessive/width variant | ⚠️ **Recorded this way at review; the PR proposed `ｓｅｒｖｅ　ｕｎｄｅｒ` as the binding form and that would have forked a word already shipped twice.** Counted at review: `指揮下` occurs **6** times in `dumps/battle_dump.txt`, of which `指揮下に入る` is **one** — this chunk's own line. **Two of the six are already shipped and both render `ｃｏｍｍａｎｄ`**: `chunk_007.txt` L11 `黒の騎士団の指揮下だ。` → `ｕｎｄｅｒ　ｏｕｒ　ｃｏｍｍａｎｄ．` (and that one is the **enemy's** chain of command, not a squad member joining) and `chunk_014.txt` L3 `第９軍の指揮下に` / `入ります。` → `ｕｎｄｅｒ　ｔｈｅ　ｃｏｍｍａｎｄ　ｏｆ` / `ｔｈｅ　９ｔｈ　Ａｒｍｙ．` The remaining three are chunk 19's `では、俺たちの指揮下に入ってもらう`, untranslated. **CLAUDE.md §3 is not engaged** — three different source strings in three different messages (§20.4, §23.1, §24.5, §27.4) — so nothing is re-cut. `君の指揮下に入ろう。` → **`Ｉ　ｗｉｌｌ　ｓｅｒｖｅ　ｕｎｄｅｒ　ｙｏｕ．`** (23 columns) stands because the possessive form `ｃｏｍｅ　ｕｎｄｅｒ　ｙｏｕｒ　ｃｏｍｍａｎｄ．` measures **24** — remeasured at review, the PR body's 26 is two over — on a page already at 10 / 22 / 11 / 23. All three renderings share `ｕｎｄｅｒ`, so the family reads as one. **This is the §26.6 `らしい` shape: one default, one stated variant, recorded so it cannot drift.** Chunk 19 has room for `ｃｏｍｍａｎｄ` and should use it |
+| 味方 | `ａｌｌｉｅｓ` | 6 columns. The boy's `だったら、味方だね。` → `Ｔｈｅｎ　ｙｏｕ’ｒｅ　ａｌｌｉｅｓ．` Kept **distinct** from 同盟 → *alliance* (§26.3) and 仲間 → *comrades* below |
+| 仲間 | `ｃｏｍｒａｄｅｓ` | 8 columns. Four occurrences here across two speakers. Kept **distinct** from 部隊 → *squad* (§19.2) and 味方 → *allies*; `仲間同士で争う` → `ｆｉｇｈｔ　ｏｕｒ　ｏｗｎ` where the row will not take the noun. `ｃｏｍｒａｄｅｓ` occurs nowhere else in `tl/` |
+| 解放 | `ｆｒｅｅ` (verb) | `この国の解放のために戦ってる` → `Ｗｅ’ｒｅ　ｆｉｇｈｔｉｎｇ　ｔｏ　ｆｒｅｅ　ｔｈｉｓ　ｌａｎｄ．` The noun *liberation* is 10 columns and will not share the row; the verb keeps the sense whole. 1 battle + 2 script |
+| 他愛もない | `Ｈｏｗ　ｔｒｉｆｌｉｎｇ．` | Irvine on the 5th Army. 1 battle + 0 script |
+| 上玉 (of a woman) | `ｔｈｅ　ｐｒｉｚｅ` | `なかなかの上玉ではないか。` → `Ｑｕｉｔｅ{FFFE}ｔｈｅ　ｐｒｉｚｅ，　ａｒｅ　ｙｏｕ　ｎｏｔ．` Objectifying, as the source is, and it sets up 献上 → *offer* two rows later. See §28.4. 1 battle + 0 script |
+| 献上する | `ｏｆｆｅｒ` | 5 columns. Presenting as tribute to a superior — `ギルフォード将軍に献上してやる` → `Ｉ　ｓｈａｌｌ{FFFE}ｏｆｆｅｒ　ｙｏｕ　ｔｏ　Ｇｅｎｅｒａｌ{FFFE}Ｇｕｉｌｆｏｒｄ．` *Present* (8) does not fit the row |
+| つべこべ言わず | `ｎｏ　ｍｏｒｅ　ｔａｌｋ` | Held clear of §14.5's ええい → `Ｅｎｏｕｇｈ！`, a different source string |
+| 油断はするな | `Ｄｏ　ｎｏｔ　ｇｒｏｗ　ｃａｒｅｌｅｓｓ．` | 21 columns. Takes 油断 → *careless* from shipped `chunk_000.txt` L19 (`油断したか・・・` → `Ｗａｓ　Ｉ　ｃａｒｅｌｅｓｓ．．．`), so the word does not fork |
+| お兄ちゃんたち (a child to a group) | `Ｍｉｓｔｅｒ，` (vocative) | The childish address has no English lexical equivalent, so §2's rule applies: carry it in word choice, once, as a vocative. The same solution §2 uses for トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ`. The plural survives in the next row's `Ｔｈｅｎ　ｙｏｕ’ｒｅ　ａｌｌｉｅｓ．` **Does not** touch §21.2's 〜さん-on-a-name rule |
+
+### 28.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| あら、 | **`Ｍｙ，`** | 3 columns. A woman's mild, arch surprise. **Ratified at review, deliberately, because it binds 16 further occurrences (5 battle + 11 script-unique — both figures confirmed).** Deliberately **not** in the `Ｏｈ` family: §24.4 collapsed おお、/ ほう、 onto `Ｏｈ，` and おや onto `Ｏｈ？` outright, so `Ｏｈ` is spent and a fourth string cannot join them. `Ｍｙ` occurs **0** times elsewhere in `tl/`. The alternative `Ｏｈ　ｍｙ，` is also free but is 6 columns to `Ｍｙ，`'s 3, and あら is the milder of the pair |
+| 馬鹿者！ (direct address) | `Ｙｏｕ　ｆｏｏｌ！` | **A fifth バカ register**, held apart from §19.1's そんなバカな → `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` and バカなやつら → `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ`, §20.3's **バカ者** → `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ` (katakana, and *of* a third party) and §26.4's proverb. Same English root as §20.3 — this one is the vocative, and the kanji spelling is a different source string |
+| ははっ！ | `Ｙｅｓ，　ｓｉｒ！` | 9 columns. The doubled, more emphatic military assent. **Distinct** from §6's はっ → `Ｓｉｒ`, which this chunk uses byte-identically **two segments earlier in the same message** — they genuinely stand side by side, so they must not collapse. 5 battle + 1 script-unique **as a tic**, under §5's word-plus-source-punctuation mechanism (`ははっ・・・・！！` ch 16, `ははっ！！` ch 37, `はははっっ！！` ch 38, `ははっ・・・・` ch 42); the exact string `ははっ！` is 2 battle |
+| まあよい、 | `Ｎｏ　ｍａｔｔｅｒ．` | 10 columns. A senior officer waving an objection aside. **Distinct** from §24.3's しかたねえ。 → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (resignation) and §6's まったく → `Ｒｅａｌｌｙ，`. 2 battle + 0 script |
+| 何っ！？ / 何ッ！？ | `Ｗｈａｔ！？` | 6 columns. ⚠️ **Corrected at review: the PR called this "a sixth member of the 何 family, all held apart", and it is not — `chunk_007.txt` L2 already ships the KATAKANA `何ッ！？` as `Ｗｈａｔ！？`.** The two are one full-width character apart, so they are different lookup keys and **CLAUDE.md §3 is not engaged** (the §24.5 / §27.4 shape). The collapse is the **documented** kind — one word, two kana spellings — which is exactly what §6 already does for 何だと？ / なんだと？, §6 for ふっ / フンッ and §17.2 for 鬼 / オーガ. §25.3's co-occurrence test is met: `何ッ！？` is chunk 7 only, `何っ！？` is chunks 13 and 18, and **no chunk holds both**. Chunk 7 has first use. The rest of the 何 family is still held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), and chunk 0's two stuttered forms (§23.2) |
+| 分かってる・・・ | `Ｉ　ｋｎｏｗ．．．` | 9 columns. The **progressive** form — a sixth member of the わかる family: いいな！！ → `Ｇｏｔ　ｉｔ！！`, わかったなっ！！ → `Ｇｏｔ　ｔｈａｔ！！`, 分かった / よし、 → `Ｒｉｇｈｔ，` (§6, §24.3), わかりました。 → `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2), 了解 → `Ｕｎｄｅｒｓｔｏｏｄ` (§21.2). This chunk's `わかった・・・・。` takes §6's `Ｒｉｇｈｔ` with the source's own five stops, per §5 |
+| 確かに、 | `Ｔｒｕｌｙ，` | 6 columns. Conceding a point. **Distinct** from §20.3's まったくだっ！ → `Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！` and §25.2's そのとおりだ。 → `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．`; `Ｃｅｒｔａｉｎｌｙ` is 10 and puts the row at 26 |
+| あいにく | `Ｓｏｒｒｙ，` | 6 columns. The Leclerc soldier's hedge before refusing to fight. **Distinct** from 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (chunk 6, formal register). ⚠️ **Recorded at review, and the PR did not raise it: this shares its English with shipped `ごめんね、`** — `chunk_010.txt` L10 and L12 both render `ごめんね、トカゲさん。` as `Ｓｏｒｒｙ，　Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ．` Two different source words on one English hedge. §3 is not engaged and §25.3's test is met (chunks 10 and 13 never meet); the alternative is width-blocked — `Ｕｎｆｏｒｔｕｎａｔｅｌｙ，` is 16 and puts that row at 28. Recorded so it cannot drift |
+
+### 28.4 The `さんざんいたぶった後` / `上玉` scene — translated at the source's own temperature
+
+Message line 1 page 4 is a threat of sexual menace: Irvine tells the captive he will hand her to
+General Guilford `さんざんいたぶった後`, having called her `なかなかの上玉`. It is rendered
+`Ａｆｔｅｒ　Ｉ　ｈａｖｅ　ｔｏｒｍｅｎｔｅｄ{FFFE}ｙｏｕ　ｗｅｌｌ，` and `Ｑｕｉｔｅ{FFFE}ｔｈｅ　ｐｒｉｚｅ，
+ａｒｅ　ｙｏｕ　ｎｏｔ．` — **neither softened nor sharpened**, and `ｔｈｅ　ｐｒｉｚｅ` is chosen to keep
+the objectification the scene turns on. The PR raised this itself rather than leaving it silent
+(its Flag 11) and the decision is ratified at review. Recorded here so it reads as a decision, not
+an oversight, to anyone who meets the line later.
+
+### 28.5 Ruling — `レバーク` takes `Ｌｅｖｅｒｋ`, and `Ｒｅｂａｒｋ` is rejected
+
+§9 offered two readings and this is the first-use promotion, so it is settled here rather than
+drifting. **`Ｌｅｖｅｒｋ`.** Three reasons, in order of weight:
+
+1. **`Ｒｅｂａｒｋ` reads as an English common word**, which is the failure mode §17.2 avoided for
+   `Ｎｅｒｇａｌｉ` (not *Nergal*) and §1 avoided for `Ｌｅｏｎ` (not *Lion*, "would read as the
+   animal"). This is a **kingdom whose king announces himself** — `予は　レバーク王` — which is the
+   worst possible place for a name that reads as a verb.
+2. **The European-reading convention** every other name in this project follows (§11.4, §14,
+   §17.3): Bauer, Carline, Helfer, Albert, Fernando, Anselmo, Korneff, Kazarov, Percival, Creus.
+   `Ｌｅｖｅｒｋ` sits in that set; `Ｒｅｂａｒｋ` does not.
+3. It sits beside `Ｌｅｃｌｅｒｃ` in this very chunk — Cress leaves one kingdom for the other in
+   consecutive scenes — and the two must read as peers.
+
+**Reach, remeasured at review: 1 battle + 13 script-unique lines**, including a whole later scene
+with its own King (`予は　レバーク王`, `レバーク城`, `レバークの広場`, `東南の王国、レバークを解放した`).
+After this merge, changing it is a §4.3 correction. Alt *Leberk* recorded and not taken.
+
+### 28.6 Register
+
+| Who | Register |
+|---|---|
+| Lord Irvine (portrait 07) | Haughty, archaic, **no contractions** — `その方` / `〜しておれ` / `おったから` carried by `Ｙｏｕ　ｔｈｅｒｅ．`, `Ａｗａｉｔ　ｉｔ．`, `ｗａｓ　ｉｔ　ｎｏｔ．`, `ａｒｅ　ｙｏｕ　ｎｏｔ．` His only apostrophe in the chunk is the possessive `Ｃａｒｌｉｎｅ’ｓ`. §14.6 / §20.5 / §25.5's Imperial officers, unchanged, with the added cruelty of §28.4 |
+| His subordinate (portrait 08) | Deferential, no contractions — `Ｓｉｒ！`, `Ｈｏｗｅｖｅｒ，`, `ｔｈｅｙ　ａｒｅ　ｒｉｇｈｔ　ｔｈｅｒｅ．．．`, `Ｙｅｓ，　ｓｉｒ！`. Albert's shape (§20.5) |
+| **Cress (portrait 09)** | ⚠️ **Crisply formal and military, no contractions — §7's Beatrice column.** `Ｉ　ｓｈａｌｌ　ｒｅｔｕｒｎ`, `Ｄｏ　ｎｏｔ　ｇｒｏｗ　ｃａｒｅｌｅｓｓ．`, `Ｗｅｌｌ　ｔｈｅｎ，　ｆａｒｅｗｅｌｌ．`, `Ｌｅｔ　ｍｅ　ｓａｙ　ｏｎｅ　ｗｏｒｄ　ｏｆ　ｔｈａｎｋｓ．` **The speaker identification was verified from the tag stream at review, not assumed** — see §28.7 |
+| The King (portrait 04) | Old-fashioned and grateful, **no contractions** — `おった` / `のです` carried by `Ｉ　ａｍ　ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｉｓ　ｌａｎｄ．`, `Ｉ　ｈａｄ　ｇｉｖｅｎ　ｕｐ，`, `Ｏｕｒ　ｌａｎｄ　ｗｉｌｌ　ｗｅｌｃｏｍｅ　ｙｏｕ`. §7's "Village elders (じゃ / のう)" row: plain and old-fashioned, never archaic spelling |
+| The Leclerc soldier (portrait 02) | Formal and stiff at first, **no contractions** — `Ｗｈｏｓｅ　ｓｏｌｄｉｅｒ　Ｉ　ａｍ　ｉｓ　ｎｏ　ｃｏｎｃｅｒｎ　ｏｆ　ｙｏｕｒｓ．` — and unchanged when he yields: `Ｔｒｕｌｙ，`, `Ｉ　ｗｉｌｌ　ｓｅｒｖｅ　ｕｎｄｅｒ　ｙｏｕ．` The concession is in what he says, not in how he says it |
+| The boy (portrait 03) | Childish and eager, contractions throughout — `Ｉ’ｌｌ　ｒｉｄｅ　ａ　ｈｏｒｓｅ`, `ｙｏｕ’ｒｅ　ａｌｌｉｅｓ`, `Ｈｅｒｅ，　ｔｈｉｓ　ｉｓ　ｆｏｒ　ｙｏｕ．` `Ｍｉｓｔｅｒ，` is his |
+| The 9th Army (portraits 00, 05, and message line 8's `{FC50}` side) | §7 unchanged — casual, contractions throughout: `Ｉ　ｃｏｕｌｄｎ’ｔ`, `Ｓｈｅ’ｓ　ｇｏｔ　ａ　ｃｕｔｅ　ｓｉｄｅ，　ｈａｓｎ’ｔ　ｓｈｅ．`, `Ａｒｅｎ’ｔ`, `ｗｏｎ’ｔ`, `Ｗｅ’ｒｅ`, `Ｉ’ｖｅ`. The deliberate contrast that makes Irvine's and Cress's flatness read as rank. `Ｗｅ　ｗｉｌｌ　ｓａｖｅ　ｔｈｅ　Ｋｉｎｇ，` is uncontracted **for the emphatic 必ず**, not a slip |
+| The unnamed female companion (portrait 06) | Casual and arch — `Ｍｙ，　ｗｈａｔ　ａ　ｈａｒｓｈ　ｔｈｉｎｇ　ｔｏ　ｓａｙ．` Same shape as §21.4's and §25.5's unnamed female party member. **If a later chunk names her, all three want re-checking together** |
+| Tutorial box (`{=FA1000300030}`, message line 7) | §7 unchanged — plain instructional second person, byte-identical to §27.2 |
+
+### 28.7 The portrait-09 reading, verified from the tag stream
+
+Flag 8 asked the reviewer to sanity-check this, and it decides four pages of register, so the
+check is recorded rather than left implicit. **Portrait 09 is Cress on both channels**, the §23.5
+same-id / opposite-channel-byte pattern already recorded for chunk 4's Ridge:
+
+- Irvine names the captive in message line 1 page 2 — `その方、クレスと申したな。` — and the reply
+  `くっ・・・` comes on `{FCB0}{=00090001}{FC51}`. Message line 2's `あれは、９軍？` is the same id
+  and the same channel.
+- Message line 4 opens `{FCB0}{=00090000}{FC50}`, and **portrait 09 then holds the `{FC50}` channel
+  for the whole farewell**: pages 3, 5, 6, 7 and 8 carry no new `{FCB0}`, so they revert to 09.
+- Irvine's `女隊長と聞いておったから` independently fixes the captive as female, which agrees with
+  §1's Cress row (少尉, court-martialled alongside Alfred).
+
+So Cress speaks line 1 page 5, line 2 page 6, and all of line 4's farewell — which is what puts her
+in the no-contraction military column beside Beatrice. **Nothing in the chunk names the King or
+states his kingdom** (`私は、この国の国王です` only), and the English deliberately commits to
+neither: `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｉｓ　ｌａｎｄ` and `ｏｕｒ　Ｋｉｎｇ　ｏｆ　Ｌｅｃｌｅｒｃ` each render
+exactly what their own line says. See `FLAGS.md` §P.
+
+### 28.8 `FLAGS.md` §O7's five dropped wave-1 rows — written, not lapsed a third time
+
+`FLAGS.md` §O7 hands these to "whoever owns the next glossary integration". That is this
+integration, and **chunk 13 renders one of them**, which is what settles it. All five are already
+shipped in `tl/`; these rows record the shipped form, they do not change it.
+
+| Japanese | English | Note |
+|---|---|---|
+| さあ、 | **`Ｎｏｗ，`** | ⚠️ **Settled here. Chunk 13 is the THIRD shipped file to agree** — `さあ、つべこべ言わず` → `Ｎｏｗ，　ｎｏ　ｍｏｒｅ　ｔａｌｋ．`, beside `chunk_006` L12 and `chunk_033` L20, which ship the bare segment as `Ｎｏｗ，`. **16 battle + 10 script-unique occurrences**, so this is the largest single drift risk §O7 listed. Two row-level variants stand and are **not** re-cut: `chunk_011` L3's `さあ、私のかわいい` → `Ｎｏｗ　ｔｈｅｎ，　ｍｙ　ｄａｒｌｉｎｇ` (a longer vocative follows), and `chunk_003` L4's `さあ、{FC00}{=0000}、` → `Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`, which **§24.5 already rules is a different row** because the name insert is inside it. Held **distinct** from Fernando's `さ、` → `Ｃｏｍｅ，` (§24.6) |
+| ヘビー | `ｈｅａｖｙ` | Shipped `ちょっとヘビーだぜ。` → `ａ　ｂｉｔ　ｈｅａｖｙ．`, `chunk_003` file L6. **1 battle / 0 script.** A hapax; the row exists so the loanword cannot be re-invented |
+| 洞窟 | `ｃａｖｅ` / `ｃａｖｅｓ` | Shipped in `chunk_003` file L6. **5 battle / 0 script** |
+| 赤い屋根の家 / 赤い屋根の建物 | `ｒｅｄ‐ｒｏｏｆｅｄ　ｈｏｕｓｅｓ` / `ｒｅｄ‐ｒｏｏｆｅｄ　ｂｕｉｌｄｉｎｇｓ` | Shipped in `chunk_003` file L6, both forms. Uses `‐` (U+2010). **2 battle / 0 script.** The two are kept apart because the source keeps them apart |
+| 謹慎中 / 謹慎がとける | `ｕｎｄｅｒ　ｃｏｎｆｉｎｅｍｅｎｔ` / `ｃｏｎｆｉｎｅｍｅｎｔ　ｅｎｄｅｄ` | The **noun** forms, shipped in `chunk_003` file L5. §19.2 records only the adjective `謹慎処分を受ける` → `ｃｏｎｆｉｎｅｄ` (`chunk_001`), which is unchanged. One word, three grammatical shapes the source itself varies — the §27.1 `愛用` pattern. **4 battle / 1 script** |
+
+**§O7 is now DISCHARGED.** Bare `隊` → squad is the one entry not written: it has **no** shipped
+rendering and **no** occurrence to point at (§O7's own row lists neither), so there is nothing to
+fix, and the rejection is recorded here in terms, as §O7 asked.

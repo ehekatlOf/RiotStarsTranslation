@@ -1522,3 +1522,229 @@ the dispatch. Accepted at review: it is in a file the unit already opens, gate 1
 is unchanged either way, and the alternative was to leave a glossary ruling unapplied with no
 owner. The unit also offered edits 2/3/4 as separately parkable (leaving `batch_004` at +14 B/bank)
 and edit 12 as separately revertible; neither lever was used.
+
+---
+
+## P. Wave 3 review — battle chunk 13 / PR #10 (2026-09-08)
+
+Merged **round 1**, **MERGE**, all eight gates green on evidence re-derived at review rather than
+inherited from the PR body. Glossary rows, three §9 description/width corrections and the
+discharge of §O7 are in `glossary.md` **§28**.
+
+⚠️ **Line numbers below are MESSAGE lines** (dump body index, 1-based) = `tl/` file line − 1,
+because the `=== CHUNK` header is kept. `HANDOFF.md` called the village-attack line L8; it is
+message line **7**. Same row. Third numbering convention in this repo (§O8) — locate by content.
+
+### P1. The byte figure
+
+**chunk 13: 5,417 / 8,192 — 2,775 slack.** 132 text rows, **widest 23, none at 24**, no page over
+4 text rows. Ratio 3.41, so §3.3's ≥ 50-byte floor is never in play; the binding constraint was
+geometry, and the PR is right about that — 1,092 JP characters became 2,353 English columns,
+**2.15×** against a 3.41 ceiling.
+
+Column and row figures were re-derived independently of `rowcheck`, splitting rows at `{FFFE}`
+**and** at `{FCC0}`/`{FC30}`/`{FC51}`/`{FC50}`/`{FFFF}` with the name insert counted as 7:
+
+```
+TOTAL TEXT ROWS: 132   widths 4..23   max 23   rows at 23: 11   rows at 24+: 0
+```
+
+### P2. The tag stream — and a correction to the PR's own Flag 2
+
+`{FCC0}`: **dump 19 → file 19, unchanged.** No page break added or removed anywhere, as claimed.
+The four `{FFFE}` deltas are exactly as flagged (L1 12→13, L4 37→36, L7 0→1, L8 24→23), and each
+is justified by geometry I could reproduce.
+
+⚠️ **Flag 2 says "L2, L5 and L6 are byte-for-byte unchanged in their tag streams". That is right
+for L5 and L6 and wrong for L2.** L2's `{FFFE}` **count** is unchanged at 12 — which is all
+`rowcheck` reports, since it diffs counts — but one break moved **out of** page 2 (`情報では、
+カーライン軍は…` goes 4 rows → 3) and one moved **into** page 6 (`あれは、９軍？…` goes 2 → 3), so
+its full tag *order* differs from the dump. Comparing complete tag sequences line by line, the
+lines genuinely byte-identical to the dump are **L3, L5, L6, L9, L10, L11**.
+
+**The re-flow itself is correct and legal; only the claim is off.** Recorded because §27.2's
+reviewer verified this branch by reading it and the next auditor will too — and because a
+count-only check cannot see a moved break. A reviewer who wants position identity must compare
+the whole tag list, not `rowcheck`'s `{FFFE} changed:` line.
+
+### P3. Gate 6 — the method, and the §27.4 trap sprung in practice
+
+Battle `tl/` files hold **zero** Japanese, so grepping a JP string against `tl/` is a null check,
+not a pass. Each shipped chunk was paired positionally against `dumps/battle_dump.txt` (equal line
+counts by construction) at two granularities:
+
+```
+MESSAGE granularity: 129 distinct JP keys, 0 divergent
+PAGE    granularity: 517 distinct JP keys, 0 divergent
+```
+
+**Page granularity is the load-bearing one for this unit**, because it is stable under `{FFFE}`
+re-flow and sub-page granularity is not: chunk 13 re-flows L1, L4, L7 and L8, and a segment-level
+scan mispairs every row after a moved break. It produced a spurious `はっ！` → `Ｈｏｗｅｖｅｒ，`
+mapping on L2 before the method was corrected. **Any future duplicate check on a re-flowed unit
+must split at page boundaries, or skip the re-flowed lines and say so.**
+
+⚠️ **§27.4's predicted false positive occurred, exactly as written.** The first page-level pass
+normalised `　` out of the JP key and reported one divergence — chunk 6's **spaced**
+`村が　襲われました。` collapsing onto the unspaced string that §27.2 governs. With exact keys the
+count is **0**. §27.4 is correct, chunk 6 stands, and the warning has now been vindicated by an
+actual tool rather than anticipated.
+
+Chunk 13's two recurring pages, both byte-identical to shipped work:
+
+| JP | EN | where |
+|---|---|---|
+| `村が襲われました。` | `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` | c7 L25, c7 L26, **c13 L7**, c34 L7 |
+| `くっ・・・` | `Ｔｃｈ．．．` | c0 L19, c7 L11, **c13 L1** |
+
+All five sub-page reuses in the PR's own gate-6 table verified true, including the one that looked
+false: `いいか、` **is** in `chunk_000.txt` L3 and **does** ship `Ｌｉｓｔｅｎ，`; the segments
+mispair there because chunk 0 L3 is itself re-flowed.
+
+**Cross-PR**, against the live sibling branches `tl/battle-008` (#11) and `tl/battle-017` (#12) at
+page granularity: **0 divergences.** `村が襲われました。` matches c17 L20; `はっ！` → `Ｓｉｒ！`
+matches c8 L10 and c17 L6. None of chunk 13's 24 new terms collides with anything either sibling
+renders, and `ｒｏｕｔｅ` (the shared wave-3 seed) does not occur in chunk 13 at all.
+
+**Both King's-speech variants are byte-identical** — 365 characters including tags, and the JP
+source is identical too. (The PR body's "383 characters" is the only figure in it I could not
+reproduce; the substance holds.)
+
+### P4. ⚠️ `指揮下` — the one proposal that would have caused real drift
+
+`glossary.md` §28.2 carries the corrected entry. In short: the PR proposed
+`指揮下に入る` → `ｓｅｒｖｅ　ｕｎｄｅｒ` with "**6 battle occurrences** … this binds forward".
+Counted at review, `指揮下` is 6 but `指揮下に入る` is **one** — chunk 13's own line — and **two of
+the six are already shipped, both rendering `ｃｏｍｍａｎｄ`**:
+
+| where | JP | shipped EN |
+|---|---|---|
+| `chunk_007.txt` L11 | `黒の騎士団の指揮下だ。` | `ｕｎｄｅｒ　ｏｕｒ　ｃｏｍｍａｎｄ．` |
+| `chunk_014.txt` L3 | `第９軍の指揮下に` / `入ります。` | `ｕｎｄｅｒ　ｔｈｅ　ｃｏｍｍａｎｄ　ｏｆ` / `ｔｈｅ　９ｔｈ　Ａｒｍｙ．` |
+| **`chunk_013.txt` L8** | `君の指揮下に入ろう。` | `Ｉ　ｗｉｌｌ　ｓｅｒｖｅ　ｕｎｄｅｒ　ｙｏｕ．` |
+
+Chunk 7's is also the **enemy's** chain of command, not "a squad member joining the player".
+**CLAUDE.md §3 is not engaged** — three different source strings in three different messages
+(§20.4, §23.1, §24.5, §27.4) — so **nothing is re-cut**, and chunk 13's rendering is width-forced:
+`ｃｏｍｅ　ｕｎｄｅｒ　ｙｏｕｒ　ｃｏｍｍａｎｄ．` measures **24** columns (the PR body's 26 is two over,
+remeasured here) on a page already at 10 / 22 / 11 / 23. All three share `ｕｎｄｅｒ`, so the family
+reads as one.
+
+**Recorded as one default plus one stated variant, the §26.6 `らしい` shape.** Left as the PR wrote
+it, chunk 19's translator would read "this binds forward", render `ｓｅｒｖｅ　ｕｎｄｅｒ` three times
+for `では、俺たちの指揮下に入ってもらう`, and fork the word against two shipped files in a chunk
+that has room for `ｃｏｍｍａｎｄ`. **Chunk 19 should use `ｃｏｍｍａｎｄ`.**
+
+### P5. Two English forms shared with shipped work, both accepted under §25.3
+
+Neither is a CLAUDE.md §3 violation and neither changes a rendering; both are recorded so they
+cannot drift, because in each case the PR's own note asserted a distinctness that does not hold.
+
+| chunk 13 | shares its English with | verdict |
+|---|---|---|
+| `何っ！？` → `Ｗｈａｔ！？` | `chunk_007.txt` L2's **katakana** `何ッ！？` → `Ｗｈａｔ！？` | **Accepted.** One full-width character apart, so different lookup keys — the §24.5 / §27.4 shape. And it is the *documented* collapse: one word, two kana spellings, which §6 already does for 何だと？ / なんだと？. §25.3's test is met — `何ッ！？` is chunk 7 only, `何っ！？` is chunks 13 and 18, **no chunk holds both**. The PR's "a sixth member … all held apart" is corrected in §28.3; chunk 7 has first use |
+| `あいにく` → `Ｓｏｒｒｙ，` | `chunk_010.txt` L10 and L12's `ごめんね、トカゲさん。` → `Ｓｏｒｒｙ，　Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ．` | **Accepted.** Two different source words, §25.3's test met (chunks 10 and 13 never meet), and the alternative is width-blocked: `Ｕｎｆｏｒｔｕｎａｔｅｌｙ，` is 16 and puts that row at 28. The PR's note held `あいにく` apart only from 残念ながら; recorded in §28.3 |
+
+### P6. Corpus counts remeasured — five slips, none affecting a rendering
+
+| entry | PR body | remeasured at review |
+|---|---|---|
+| `指揮下に入る` | 6 battle | **1** battle (`指揮下` is 6) — §P4 |
+| `レバーク` | 1 battle + 10 script | 1 battle + **13** script-unique |
+| `ルクレール` | 1 battle + 4 script | **2** battle + 4 script-unique |
+| `国王` | 4 battle + 10 script | **6** battle + **21** script-unique |
+| `アーバイン様` (§9 seed, not the PR) | 7 bare / 12 with title | **6** bare / **11** with title |
+
+`ははっ` at 5 battle + 1 script-unique is **correct as written** when read as the tic under §5's
+word-plus-source-punctuation mechanism (`ははっ・・・・！！` ch 16, `ははっ！！` ch 37,
+`はははっっ！！` ch 38, `ははっ・・・・` ch 42); the exact string `ははっ！` is 2 battle. Counts
+matter here because two of them (`レバーク`, `指揮下`) are the reach figures a future translator
+would act on, and in both cases the true figure argues *more* strongly for the decision taken.
+
+### P7. ⚠️ The `アーバイン様` seed was the orchestrator's and it was wrong
+
+`glossary.md` §9's wave-3 seed said "**7 columns bare, 12 with the title**". Both are one too many:
+`Ｉｒｖｉｎｅ` is **6** and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11**. The translator caught it in its own
+additions table; remeasured at review on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the
+mark) and confirmed. **The rendering is unchanged and nothing is re-cut** — only the width figure
+was wrong, and it would have mattered the first time someone tried to put the title on a shared
+row. §9's row is struck and corrected; §28.1 carries the right figures.
+
+**This is the second wave-3 seed error the translator caught** (`ルクレール` and `レバーク`
+described as castles when both are kingdoms — §28.1). Seeds are written fast by the orchestrator
+against a grep; treat their *widths and descriptions* as provisional even where the *form* is
+sound, which is what §9's own preamble already says.
+
+### P8. Ten pages carry a leading blank plus four text rows — glossary §10.4 again
+
+Chunk 13 has **ten** pages shaped `{FCC0}{FFFE}` + 4 text rows. `glossary.md` §10.4 records that
+whether the leading break wastes a top row is unconfirmed, and §3.2 of the prompt says a page with
+a leading blank *and* four text rows *and* a trailing blank "has never appeared in the source and
+may not fit". None of chunk 13's ten has a trailing blank as well, so none is the untested shape —
+but ten instances in one chunk is the largest concentration so far, and **this chunk is a good
+candidate for the in-game check §10.4 has been waiting for.** Every one of the ten is inherited
+from the source's own page division: gate 3's tag parity excludes only `{FFFE}`, so a `{FCC0}`
+cannot be added even where §3.2 invites one, and every page had to fit the division the dump
+already had. Message line 8 pages 3, 5 and 6 (41, 43 and 40 JP characters in four rows) set the
+tightness of the whole unit.
+
+### P9. The King is unnamed and his kingdom unstated — the English commits to neither
+
+The rescued King says only `私は、この国の国王です`. Message line 8 establishes that the map is
+Leclerc and that its King is a captive, so the likeliest reading is that this is the same King
+after the rescue — **but the chunk never says so, and Cress leaves for `Ｌｅｖｅｒｋ`, a different
+kingdom.** `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｉｓ　ｌａｎｄ` and `ｏｕｒ　Ｋｉｎｇ　ｏｆ　Ｌｅｃｌｅｒｃ` each render
+exactly what their own line says and nothing more, which is the right call for an ambiguity the
+source declines to resolve. **Worth an in-game look on the same pass as §P8 and the other map
+checks.** If a later chunk names him, the two lines are 21 and 20 columns and both have room.
+
+### P10. `さんざんいたぶった後` / `上玉` — sexual menace, rendered at the source's temperature
+
+Message line 1 page 4. Recorded in `glossary.md` §28.4. The PR raised it itself rather than
+leaving the decision silent, and the decision is ratified: neither softened nor sharpened, with
+`上玉` → `ｔｈｅ　ｐｒｉｚｅ` chosen to keep the objectification the scene turns on. Flagged here so
+that anyone who meets the line later finds a decision rather than an accident.
+
+### P11. One line of finding withdrawn on measurement
+
+The review opened a finding on rows ending in a short function word — `Ｗｈｏｓｅ　ｓｏｌｄｉｅｒ　Ｉ
+ａｍ　ｉｓ`, `ｈｅｌｄ　ｃａｐｔｉｖｅ，　ｗｉｌｌ　ｂｅ`, `Ｔｒｕｌｙ，　ｗｈａｔ　ｙｏｕ　ｓａｙ　ｉｓ` — against
+§3.2's "do not leave a line ending in a lone one- or two-letter word if it can be avoided". Each
+had a free zero-byte re-split. **Withdrawn after counting the corpus**: it is unanimous house
+practice, not a chunk-13 defect.
+
+```
+short (<=3 letter) row-final words, per shipped chunk
+  c0 68   c7 55   c6 47   c13 44   c2 43   c1 30   c3 30   c4 30   c9 29
+  c14 18  c10 14  c33 12  c12 10   c11 7   c34 7   c35 3   c40 1
+```
+
+31–33% of rows in **every** substantial file, and §27.2's own binding message
+(`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`) ends a row on `ｉｓ`. Chunk 13's 44 in 132 is
+mid-distribution. **§3.2's "if it can be avoided" is read in this project as "where it does not
+cost a worse break", and that reading is now recorded** so the next reviewer does not re-open it
+per-chunk. A finding here would have put one file out of step with sixteen.
+
+### P12. §O7 is DISCHARGED
+
+`FLAGS.md` §O7 handed five dropped wave-1 glossary rows to "whoever owns the next glossary
+integration". That was this integration, and chunk 13 renders one of them, which is what settled
+it. Four rows are written in `glossary.md` **§28.8** (`さあ、` → `Ｎｏｗ，`; `ヘビー`; `洞窟`;
+`赤い屋根の家` / `赤い屋根の建物`; `謹慎中` / `謹慎がとける`), and the fifth — bare `隊` → squad —
+is **rejected in terms**, as §O7 allowed: it has no shipped rendering and no occurrence to point
+at, so there is nothing to fix.
+
+**`さあ、` → `Ｎｏｗ，` is the one that mattered**: 16 battle + 10 script-unique occurrences, and
+chunk 13 is the **third** shipped file to agree (`chunk_006` L12, `chunk_033` L20). The two
+row-level variants stand and are **not** re-cut — `chunk_011` L3's `さあ、私のかわいい` →
+`Ｎｏｗ　ｔｈｅｎ，　ｍｙ　ｄａｒｌｉｎｇ`, and `chunk_003` L4's `さあ、{FC00}{=0000}、` →
+`Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`, which §24.5 already rules is a different row.
+
+### P13. No source typos
+
+The PR checked this programmatically per segment rather than by eye and reports none; re-derived
+at review. `{PAD 5269}`, `{=FF}` and the `=== CHUNK 13 @ 0x228800  script 0x24D800..0x24E36B
+headroom 5269` header are byte-identical to the dump; every message ends with `{FFFF}`; every
+ellipsis run matches the source's own mark count, paired run by run rather than by totals — L1
+3→3, L2 3,3→3,3, L4 7,4,3,5→7,4,3,5, L5 5→5, L8 5→5. Zero characters outside §3.1, zero ASCII,
+no `…` `・` `○` `'` `"`. No menu options in this chunk, so no `　` gutter to preserve.
