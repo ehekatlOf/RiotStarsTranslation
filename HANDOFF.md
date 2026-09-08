@@ -36,14 +36,14 @@ wave: **3 dispatched, 4 units in flight** · queue: **fresh**
 touched banks 29/30/31 only, which remain roomy (25,589 / 35,119 / 34,827 free).
 
 ## In flight — WAVE 3 (4 units, dispatched 2026-09-08)
-Barrier: **review nothing until all four have an open PR** (CLAUDE.md §4a).
+Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order: **#9, #11, #10, #12**.
 
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | **PR open**, awaiting barrier |
 | battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | **PR open**, awaiting barrier |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | **PR open**, awaiting barrier |
-| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | — | dispatched |
+| battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) |
 
 **PR #9 (corrections) — key facts for the reviewer.**
 - **Twelve** edits, not eleven: the dispatch's eleven and HANDOFF's eleven were *different* elevens
@@ -133,6 +133,33 @@ Also from PR #11, for the reviewer to rule on rather than inherit:
   today, but whoever takes chunks 5, 16, 17, 19, 21, 24, 27 and 43 must match rather than reinvent.
 - `ルート`'s §9 row is rendered by **both** chunk 8 and chunk 17 this wave — strike it once, at
   whichever merges second.
+
+**PR #12 (chunk 17) — PARK proposed, and the reason is NOT budget.** The translation is complete
+at **5,873 / 8,192 (2,319 slack)**, widest row 23, no page over 4 rows, all seven §9 seeds used
+exactly as seeded (`クロスリー` promoted — this is the wave that first renders it). It is parked to
+`pending/chunk_017.txt` because message **L19** carries the `FLAGS.md` §D1 dump artifact.
+
+**Verified independently by the coordinator against `dumps/battle_dump.txt`, not taken from the
+PR — the translator's mechanism and its scope figures are both exactly right.** The dump contains
+`{FC70}{=00}入{=A300020000}`: that `入` is not text, it is **item id 0x93 followed by 0xFC, the lead
+byte of the next `{FCA3}` tag**, decoded as Shift-JIS (`入` = 93 FC, and it is the *only* character
+that encodes to those bytes). Chunk 39 L8 has the identical shape with id 0x8C → `向` (8C FC).
+A full scan confirms **24 occurrences across 10 chunks**: `{FC70}` in **5, 16, 17, 23, 39** and
+`{FCA8}` in **15, 27, 28, 29, 32**.
+
+**Why it cannot ship to `tl/`:** the two gates are unsatisfiable together. Left as dumped, the file
+contains a Japanese character and fails the charset gate; re-tokenised into the true byte run, the
+tag stream changes and fails tag parity (`assemble.py:125`). All candidate forms produce
+byte-identical game output, so nothing is lost by parking. Chunk 17 is the **first chunk where this
+artifact is the only blocker** — the others are also budget-blocked or untranslated.
+
+**For a human:** fixing the dumper unblocks 10 chunks and unparks this one with a `git mv` plus one
+0-byte re-tokenisation. Needs `original/`. This is `FLAGS.md` §D1 and Blocked item 6.
+
+Reviewer also to rule on: `Ｃａｎｙｏｎ` vs `Ｇｏｒｇｅ` for `バージェス峡谷` (reversible at no cost),
+and whether chunk 4's dying girl is Femina. ⚠️ Its gate-6 comparison against `chunk_034.txt` will
+show a divergence on the village line **that resolves when PR #9 merges** — #9 is first in the
+review order for that reason.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
