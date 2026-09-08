@@ -56,11 +56,33 @@ Barrier: **review nothing until all four have an open PR.** Base branch for ever
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **PR open** — 3,035 / 8,192 (5,157 slack); 14 glossary rows proposed, none changing an existing entry; 2 judgement calls left for the reviewer (Flags 4 and 6) |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,567 JP, tier B (**1.94 — tight**) | — | dispatched |
-| battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); translator still finalising its report |
+| battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,147 JP, banks 12–15 | — | dispatched |
 
 ⚠️ **The script unit is `queue.py` batch POSITION 2, written to `batch_006.tsv`** — `batch_002.tsv`
 already exists and is merged. Do not let the position number become the filename.
+
+⚠️ **A FIFTH CROSS-UNIT TERM, missed by the wave-4 seed and found by chunk 20's translator:
+`宝石` / `宝`.** Re-counted in the dump and confirmed: c19 has 宝石 ×1 and 宝 ×4 (incl. 財宝 ×1),
+c20 has 宝石 ×4 and 宝 ×7 (incl. お宝 ×2); c31 ×1 is untranslated. **Chunk 20 ships `宝石` →
+`ｇｅｍｓｔｏｎｅｓ`, `宝`/`お宝` → `ｔｒｅａｓｕｒｅ`/`ｔｈｅ　ｔｒｅａｓｕｒｅ`**, rejecting lowercase
+`ｊｅｗｅｌｓ` because §3 fixes ジュエル → `Ｊｅｗｅｌ` and ジェム → `Ｇｅｍ` and `Ｇｅｍ` already appears
+**147×** across `tl/`. Relayed to chunk 19's translator mid-flight with the counts; chunk 19 is
+tier B and holds the casting vote on width, and chunk 20 can be moved to match at no cost.
+
+**Chunk 20's five open questions for its reviewer** (from PR #14, in its priority order):
+1. `あら？` → `Ｍｙ？` (§28.3, the later ratified rule) **vs shipped `chunk_014.txt` L3's `Ｏｈ？`** —
+   and it is the **same speaker** (portrait 02) in both. §28.3 exists precisely because `Ｏｈ` was
+   already spent on おや (§24.4). §3 is not engaged (different messages), so nothing shipped needs
+   re-cutting either way — but `あら` has **16 further occurrences**, so this needs one written
+   ruling rather than a third drift.
+2. `宝石` / `宝` reconciliation with chunk 19 (above).
+3. `火の水晶`: chunk 20 took the long `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ`; −6 bytes and no re-flow to
+   follow chunk 19 to the short form.
+4. `おかしらぁ！` → `Ｂｏｓｓｓ！` or `Ｂｏｓｓ！！`. 0 bytes either way.
+5. `勲章` → `ｍｅｄａｌ` now **shares its English with §3's racetrack `メダル`** → `ｍｅｄａｌ`, shipped
+   in `batch_002.tsv`. The seed did not mention it; ruled acceptable on §25.3's co-occurrence test
+   (never in one scene), but it should be recorded rather than rediscovered.
 
 ⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
 translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
