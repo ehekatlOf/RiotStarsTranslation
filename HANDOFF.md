@@ -27,7 +27,10 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > batch 2** — see **Next up**. ⚠️ **NOT chunk 15**: it carries the §D1 artifact (Blocked item 0)
 > and would park exactly as chunk 17 did.
 >
-> If this line still says "open wave 4" and no wave-4 session exists, the chain broke: open it.
+> ✅ **DONE 2026-09-08 22:19Z — wave 4's session is OPEN: `session_013mqnLaJCts7hGduLSmsuak`.**
+> Wave 3's coordinator is finished; the chain is live and needs no human.
+>
+> If that session never ran, the chain broke here: open a replacement the same way.
 
 ## Last updated
 2026-09-08 · by: **wave-3 coordinator** (`session_0126mzDCZDEoby12pU5qXegc`) ·
