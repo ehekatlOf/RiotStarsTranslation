@@ -49,6 +49,16 @@ file other than your unit file, and you do not delegate.
   `pending/chunk_NNN.txt`, script `pending/script/batch_NNN.tsv`), and open the PR as `park:`
   with the measured figure and the ratio floor you reached.
 
+## Scratch files — namespace them, always
+**The session scratchpad is shared between all of a wave's translators, not per-agent.** If you
+write `dupes.py` or `measure.py`, a sibling translator working in parallel can overwrite it
+mid-task, and you may then paste *its* figures into *your* PR as gate evidence. This happened in
+wave 2 and was caught only because the output was visibly the wrong unit's.
+
+Prefix every scratch filename with your unit: `c019_measure.py`, `b005_dupes.py`. If a script's
+output looks wrong for your unit, assume collision before assuming a bug, and re-run under a
+unique name.
+
 ## Verifying — never from memory
 ```
 python3 tools/assemble.py check

@@ -66,9 +66,19 @@ BUDGET: 1,745 JP chars, headroom 3,269, ratio 1.94 → tier B: write tight from 
 BRANCH: tl/battle-019     FILE: tl/battle/chunk_019.txt
 GLOSSARY SEEDS: <the §9 entries added for this unit>
 RELATED SHIPPED WORK: <chunks/batches sharing characters or recurring lines — read them first>
+SCRATCH: **namespace every scratch filename with your unit** — `b005_dupes.py`, `c019_measure.py`,
+         never `dupes.py` or `measure.py`. The session scratchpad is SHARED between a wave's
+         translators, not per-agent (wave 2, 2026-09-08).
 DELIVER: one PR filled per .github/pull_request_template.md; return PR URL + Figures + Glossary
          additions + Flags + Handoff verbatim. Rules: CLAUDE.md §3 and §5.
 ```
+
+**Why the SCRATCH line is not optional.** In wave 2, chunk 9's translator overwrote script batch
+005's `measure.py` and `dupes.py` mid-task with its own same-named scripts. Nothing shipped was
+affected only because batch 005's translator noticed the output was visibly chunk 9's and re-ran
+under unique names. The failure mode if it had not: **one unit's measurements pasted into another
+unit's PR as gate evidence.** Parallel translators share a scratchpad; give every one of them a
+per-unit prefix.
 
 ## 4. Review routing (`subagent_type: "reviewer"`, `run_in_background: false`, one at a time)
 **The wave barrier comes first.** When a translator returns: record its PR, figures and Handoff
