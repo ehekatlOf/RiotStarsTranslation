@@ -44,7 +44,7 @@ Barrier: ✅ **MET 2026-09-08** — all four units have an open PR. Review order
 | Unit | Branch | Round | PR | State |
 |---|---|---|---|---|
 | corrections/audit-wave1 (**12** edits) | `tl/corrections-audit-wave1` | 1 | **[#9](https://github.com/ehekatlOf/RiotStarsTranslation/pull/9)** | ✅ **MERGED round 1** — squash `9965c64`; integration = the commit immediately after it, `integrate: corrections/audit-wave1 (PR #9)`. Reviewer acts next: **#11** |
-| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | ⚠️ **CHANGES round 1** — rework sent to the same translator; re-review after its push |
+| battle chunk 8 (B 2.32) | `tl/battle-008` | 1 | **[#11](https://github.com/ehekatlOf/RiotStarsTranslation/pull/11)** | 🔁 **REWORK PUSHED `c5a8b3c`** — round 2 re-review queued behind reviewer 3 (never two reviewers at once) |
 | battle chunk 13 (C 3.41) | `tl/battle-013` | 1 | **[#10](https://github.com/ehekatlOf/RiotStarsTranslation/pull/10)** | 🔍 **IN REVIEW** (reviewer 3 of 4) — runs alongside chunk 8's rework; still one reviewer at a time |
 | battle chunk 17 (C 3.19) | `tl/battle-017` | 1 | **[#12](https://github.com/ehekatlOf/RiotStarsTranslation/pull/12)** | **PR open — PARK proposed** (dump artifact, not budget) — queued, reviewer 4 |
 
@@ -199,6 +199,21 @@ and held until the rework lands and the same reviewer re-reviews.
 #10's reviewer is told to take **the next free number at the moment it commits** — so if #10
 integrates first it takes §28 and PR #11's held draft becomes §29 on its round-2 pass. Whichever
 commits second must re-read the file rather than trusting a number reserved earlier.
+
+**PR #11 rework pushed `c5a8b3c` (round 2 queued).** All three findings addressed; **byte-neutral
+at 7,437 / 8,192, 755 slack** — not the ~2 bytes estimated, because L10's added `{FFFE}` costs 2 and
+the re-flow saves a character. `{FCC0}` unchanged, per-line page counts unchanged, widest row 23.
+- **Finding 1 applied — and the translator first tested the finding's premise**, checking whether
+  the mid-sentence break could be *removed* rather than moved. It cannot: S2+S3 measure **118
+  columns** against the page's 4×23 = 92 ceiling, and S1+S2 need **5 rows** against 4. So exactly
+  one mid-sentence break is unavoidable without a `{FCC0}` the gate rejects, and only its *site*
+  was ever open. The move buys **two** improvements: the first break now lands after a coordinating
+  `ａｎｄ`, the second after a **sentence boundary**, and the Procyon sentence is whole.
+- **Finding 2 applied as a revert, not a flag** — both orders measure identically (33 columns, same
+  two rows), so the reorder bought nothing and §2 prefers the literal. **Flag 6 drops from three
+  step-6 reorders to two**, both forced.
+- **Finding 3 confirmed against the translator's own re-derivation**: +2/−5, net −3, and the two
+  missed turns are exactly the two the reviewer named.
 
 **No script batch this wave.** Four units is CLAUDE.md §4 step 3's ceiling and the corrections
 unit takes the fourth slot. A vetted script range for wave 4 is in **Next up**.
