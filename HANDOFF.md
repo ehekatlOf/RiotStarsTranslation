@@ -41,7 +41,7 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 |---|---|---|---|---|
 | battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | dispatched |
 | battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | dispatched |
-| battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | dispatched |
+| battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **PR #22 OPEN** — **5,325 / 8,192 (2,867 slack)**, 1.84× growth, max run 23 cols, +3 `{FFFE}`. All six seed reach figures and widths re-measured **exact**. Awaiting the barrier |
 | script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
 **Review nothing until all four have an open PR** (CLAUDE.md §4 barrier).
@@ -59,6 +59,24 @@ errors, not the unit's.
    `あら` list (478/479/482/489/490/499/500) and the menu group (472/483/493/504) are all correct.**
 2. ⚠️ **"~26 distinct translations" is wrong — it is 32.** 47 lines − 22 in groups + 7 groups = 32.
    Re-measured independently. The seven groups themselves are named correctly.
+### Findings from PR #22 (chunk 26) the reviewer must carry forward
+- ⚠️ **`大歓迎` has TWO shipped English forms — CONFIRMED by me.** `glossary.md` §38.2 fixes
+  `Ｍｏｓｔ　ｗｅｌｃｏｍｅ`, but `tl/battle/chunk_007.txt` L5 already ships
+  `Ｓｕｃｈ　ａ　ｗａｒｍ　ｗｅｌｃｏｍｅ` for chunk 7's instance, and §38.2 did not notice. The strings
+  differ so gate 6 is not engaged and chunk 7 need not be re-cut — but **chunk 15 carries two more
+  untranslated instances (dump lines 10 and 11)**, so a ruling is cheap NOW and expensive after
+  chunk 15 is dispatched.
+- **Seti is female, Yuiti is male**, established from the tag stream and sentence-final forms.
+  Chunks 27, 29, 32 and 38 need those pronouns; **PR #22 is the file that fixes them.**
+- **Treize is probably the L10/L11 dark elf** (same portrait 06 on `{FC51}`, same `{FCA7}{=0006}`
+  scene tag, and Seti's L15 line presupposes his L11 defeat). Not proven — chunk 26 has no
+  `{FB00}` portrait tag. If it holds, chunks 27/28/29 inherit a haughty, uncontracted Treize.
+- `Ｃａｐｔａｉｎ` now renders both `船長` and `隊長`; §25.3's test is met on chunks but **not on
+  banks** — banks 28 and 41 hold both. Nothing shipped is affected yet.
+- ⚠️ **`魔族` and `末えい` §9 rows stay LIVE until the SECOND of each cross-unit pair merges.**
+  Both PRs (#21 batch 008, #22 chunk 26) are now open and both render `魔族`. **Check which
+  actually merged — never assume the order** (wave 5, `FLAGS.md` §Y2).
+
 3. **`残念だけど` is NOT a byte-identity violation across the two units.** `Ｉ’ｍ　ａｆｒａｉｄ` is
    shipped in `chunk_011` L8 and `chunk_020` L49; batch 008 uses the uncontracted `Ｉ　ａｍ　ａｆｒａｉｄ`
    because its speaker is **Phyllis**, whose §14.6 row reads "Formal, warm, maternal, **no
