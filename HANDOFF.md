@@ -42,9 +42,28 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 | battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | dispatched |
 | battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | dispatched |
 | battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | dispatched |
-| script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | dispatched |
+| script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
 **Review nothing until all four have an open PR** (CLAUDE.md §4 barrier).
+
+### ⚠️ Three coordinator errors caught by batch 008's translator — all three verified and CONFIRMED
+Recorded here because the reviewer must apply the first two to `glossary.md` §9 in its integration
+commit (the run's 2026-09-09 "patch in place" decision), and because they are the *coordinator's*
+errors, not the unit's.
+1. ⚠️ **§9's wave-6 block cites LIST INDICES as unique line numbers for `batch_008`.** `古代文明` is
+   at unique **488** (seed says 473), `魔族`/`末えい`/`司教様` at **498** (seed says 483), and
+   `ウェストバリー` at **515** (seed says 505). Each wrong figure is exactly `unique − 470`. The
+   block therefore **contradicts itself** — its own FACT 1 correctly lists 483 as a *menu* line.
+   Cause: the term-context script printed `enumerate()` indices while the duplicate-group and `あら`
+   scripts used real unique numbers; only the former reached the seed. **The duplicate groups, the
+   `あら` list (478/479/482/489/490/499/500) and the menu group (472/483/493/504) are all correct.**
+2. ⚠️ **"~26 distinct translations" is wrong — it is 32.** 47 lines − 22 in groups + 7 groups = 32.
+   Re-measured independently. The seven groups themselves are named correctly.
+3. **`残念だけど` is NOT a byte-identity violation across the two units.** `Ｉ’ｍ　ａｆｒａｉｄ` is
+   shipped in `chunk_011` L8 and `chunk_020` L49; batch 008 uses the uncontracted `Ｉ　ａｍ　ａｆｒａｉｄ`
+   because its speaker is **Phyllis**, whose §14.6 row reads "Formal, warm, maternal, **no
+   contractions**". CLAUDE.md §3 engages on the message, not the phrase, and these are three
+   different messages. Verified and relayed to chunk 24's translator.
 
 ### ⚠️ Wave-6 seed errors, measured and corrected at preflight
 The wave-5 handoff's script-batch arithmetic was wrong in three ways. The **unit is still sound**
