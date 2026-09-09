@@ -186,7 +186,7 @@ it is not silent.
 | はっ (military assent) | Ｓｉｒ | a recruit answering an officer |
 | いいな！！ / わかったなっ！！ | Ｇｏｔ　ｉｔ！！ / Ｇｏｔ　ｔｈａｔ！！ | keep the two distinct, they are different source strings. **Do not** use either for a plain 分かった — that is `Ｒｉｇｈｔ，` |
 | 行くぞ！ | Ｍｏｖｅ　ｏｕｔ！ | |
-| ああ (assent) | Ｙｅａｈ | Casual agreement from a rough speaker. **Distinct** from はっ → Ｓｉｒ (military assent) and from 分かった → `Ｒｉｇｈｔ，`. ✅ **`tl/battle/chunk_000.txt` line 4 is now fixed** (2026-09-08): it rendered `ああ。` as `Ｙｅｓ．`. 4 → 5 columns, +2 bytes, standalone row so nothing re-flows. **No `Ｙｅｓ` for ああ remains in `tl/`.** See §18.3 |
+| ああ (assent) | **Ｙｅａｈ　from a casual, contraction-taking speaker; a register-appropriate formal assent from a contraction-free one** | ⚠️ **CONDITION ADDED IN PLACE 2026-09-09 (§4.3, PR #27 review) — the row already said "casual agreement from a rough speaker", and that scope is now binding rather than descriptive; see §43.1.** `Ｙｅａｈ` is unchanged for every speaker it already covers. **Distinct** from はっ → Ｓｉｒ (military assent) and from 分かった → `Ｒｉｇｈｔ，`. ✅ **`tl/battle/chunk_000.txt` line 4 is now fixed** (2026-09-08): it rendered `ああ。` as `Ｙｅｓ．`. 4 → 5 columns, +2 bytes, standalone row so nothing re-flows. **No `Ｙｅｓ` for ああ remains in `tl/`, and none is reintroduced** — Rimul's formal assent is `Ｉ　ｄｏ．` (§43.1), not `Ｙｅｓ．`. See §18.3 and §43.1 |
 | 何だと？ / なんだと？ | Ｗｈａｔ　ｗａｓ　ｔｈａｔ？ | Incredulous. The kanji and kana spellings are different source strings but take the same English; `何だと！？` keeps its own `！？` |
 | だまれ | Ｓｉｌｅｎｃｅ | An officer cutting a subordinate off. Not "shut up" — the register is command, not brawl |
 
@@ -534,19 +534,19 @@ this block and never had one** — confirmed a third time; the dispatch's pairin
 | ~~古代文明~~ | ✅ **PROMOTED to §42.1 and STRUCK** — `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ`, **20 columns as seeded** (re-measured with `len()`), rendered in `tl/script/batch_008.tsv` (DATA 488), **used exactly as seeded** including the British `‑ｓａｔｉｏｎ`. The battle instance is in chunk 16, which is tier-A blocked, so this unit is the only shipper for now. Original seed note follows: | `batch_008` (**DATA line 488** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 473") — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
 | ~~司教様~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `ｔｈｅ　ｌａｔｅ　Ｂｉｓｈｏｐ` / `ｏｆ　Ｆａｒｉｎａ．`, and STRUCK — `Ｂｉｓｈｏｐ` is §26.1's, only the appellation is new.** `亡くなられた` is carried by *the late*, matching the massacre `tl/battle/chunk_021.txt` L10 already ships. See §42.1 | `batch_008` (**DATA line 498** — ⚠️ corrected in place 2026-09-09, PR #21 review; this read "unique 483", a *menu* line, and it is the **fourth** row of this block to carry a list index. PR #24's reviewer patched the `魔族`, `末えい`, `古代文明` and `ウェストバリー` rows and left this one; PR #21's Flag 5 named it correctly and it is now applied) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
 | ~~ウェストバリー~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `Ｉｎ　Ｗｅｓｔｂｕｒｙ，　ｔｈｅｙ　ｓａｙ，` and STRUCK.** `Ｗｅｓｔｂｕｒｙ`, 8 columns, byte-identical to the five shipped `ウエストバリー` (large エ) instances that a gate-6 grep on the exact Japanese cannot pair with it — §2's corrected row records both spellings. Original seed note follows: | `batch_008` (**DATA line 515** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 505") | ⚠️ **NOT a new term — a SOURCE SPELLING VARIANT** of `ウエストバリー` (large エ), which is shipped 5× as `Ｗｅｓｔｂｕｒｙ`. See the corrected §2 row. 8 columns |
-| クロイツェル | `Ｋｒｅｕｔｚｅｌ` | **Wave-7 seed.** **8 columns**; `リムル・クロイツェル` → `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` = **14**. Rimul's surname, first spoken in battle chunk 30's name-and-title challenge (`ディール帝国紅の騎士団の将、リムル・クロイツェルが相手になろう！`). German/European spelling per `Ｄｉｅｌ` (§25.1), `Ｈｅｌｆｅｒ`, `Ｂａｕｅｒ`. Does **not** disturb §1's `リムル` → `Ｒｉｍｕｌ` or `リムル様` → `Ｌａｄｙ　Ｒｉｍｕｌ` | battle chunk 30 | Alt *Kreutzell*, *Creutzel*, *Cruzel* |
+| クロイツェル | `Ｋｒｅｕｔｚｅｌ` | ✅ **RENDERED in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded — but the row STAYS LIVE.** ⚠️ **CORRECTED 2026-09-09 (PR #27 review): PR #27 called it "1 battle + 0 script, a hapax, struck outright" and the dispatch repeated it. Counted at review over BOTH dumps: 1 battle (chunk 30) + **1 script — bank 41, `script_unique` line 1391** — and the script instance is the SAME construction (`紅の騎士団の将、リムル・クロイツェルだな？`).** A later script batch renders it and must match `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` byte-for-byte, so the row is struck by **that** unit, not by chunk 30. **8 columns**; `リムル・クロイツェル` → `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` = **14** — both re-measured with `len()` and confirmed. German/European spelling per `Ｄｉｅｌ` (§25.1), `Ｈｅｌｆｅｒ`, `Ｂａｕｅｒ`. Does **not** disturb §1's `リムル` → `Ｒｉｍｕｌ` or `リムル様` → `Ｌａｄｙ　Ｒｉｍｕｌ`. See §43.5 | battle chunk 30 ✅; **script bank 41 (unique 1391) OUTSTANDING** | Alt *Kreutzell*, *Creutzel*, *Cruzel* |
 | カイザード | `Ｋａｉｚａｒｄ` | **Wave-7 seed.** **7 columns.** The imperial officer running the summoning in battle chunk 31; addressed `カイザード様` by his own men → `Ｌｏｒｄ　Ｋａｉｚａｒｄ` (**12**) on the §14.1 / §28.1 様 → **Lord** precedent, *not* §21.2's さん rule | battle chunk 31 | Alt *Kaisard*, *Kaiserd* |
 | ジュエルビースト | `Ｊｅｗｅｌ　Ｂｅａｓｔ` | **Wave-7 seed.** **11 columns.** A named monster whose forehead gem sells high; `ジュエル` → `Ｊｅｗｅｌ` is already fixed, so only the compound is new. Capitalised as a creature **name** here, not a class | battle chunk 31 | Alt *Jewelbeast* |
 | カーバンクル | `Ｃａｒｂｕｎｃｌｅ` | **Wave-7 seed.** **9 columns.** The standard RPG gem-browed beast; chunk 31 distinguishes it from the Jewel Beast (`カーバンクルとは少し違うようだが`), so the two forms must stay visibly distinct | battle chunk 31 | — |
 | 『闇の紋章』 | `“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”` | **Wave-7 seed.** **18 columns bare, 20 with the §12 quotes** (`『…』` → `“…”`). 紋章 appears nowhere else in the glossary | battle chunk 31 | Alt *Dark Emblem* (11) if the row will not carry 20 |
 | 冥界の王 | `ｔｈｅ　Ｎｅｔｈｅｒｗｏｒｌｄ　Ｋｉｎｇ` | **Wave-7 seed.** **20 columns**, so it fits one row; `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｅ　Ｕｎｄｅｒｗｏｒｌｄ` is **26** and cannot. Capitalised per §2's 王女様 → *the Princess* and §28.1's 国王 → *the King* | battle chunk 31 ×3 | Alt *the Underworld King* |
 | リッチ | `Ｌｉｃｈ` | **Wave-7 seed.** **4 columns.** ⚠️ **The game spells it itself** — chunk 31's incantation ends `ＥＬＡＧＬＡ・ＬｉＣＨ！` in full-width Latin, so this is a transcription, not a choice. Capitalised: chunk 31 uses it as the creature's name (`冥界の王、リッチよ！`) | battle chunk 31 | — |
-| 石版 | `ｔａｂｌｅｔ` | **Wave-7 seed. ⚠️ CROSS-UNIT — battle chunks 30 and 36 AND script 569/571 all render it; they must agree byte-for-byte.** **6 columns.** The plot object the whole wave turns on | battle 30, 36; script 569, 571 | Alt *stone tablet* (12) |
+| 石版 | `ｔａｂｌｅｔ` | ✅ **RENDERED ×3 in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded; 6 columns confirmed. ⚠️ THE ROW STAYS LIVE — do not strike it on chunk 30.** CROSS-UNIT: reach re-counted at the PR #27 review over both dumps and PR #27's figures are **exact** — **5 battle (chunks 30, 36) + 25 script instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43). Per the `ルート` precedent (§29.1 / §30.1) it is struck by the **last** of chunk 36 and the script units to land. ⚠️ **Unique-line ids corrected here: the instances are `script_unique` 305, 574 and 576** — this row said "569, 571" and PR #27's own Handoff repeated it, while its glossary row said "574/576"; 574/576 is right, and **305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third that neither named. The plot object the whole wave turns on | battle 30 ✅, 36 OUTSTANDING; script unique **305, 574, 576** OUTSTANDING | Alt *stone tablet* (12) |
 | 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Wave-7 seed. ⚠️ CROSS-UNIT — battle chunk 36 AND script 569.** **13 columns bare, 15 with the §12 quotes.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new | battle chunk 36; script 569 | Alt *Tablet of Shadow* (16) |
 | 鏡の神殿 | `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ` | **Wave-7 seed.** **13 columns.** 神殿 → *temple* is already fixed and held distinct from 教会 → *church* and 聖堂 → *sanctuary*; this only names the building | script 569, 571 | Alt *the Temple of the Mirror* (24 — fills a whole row) |
 | リースの化身 | `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **24 columns — exactly one full row, so it cannot take a mark or a particle on that row.** Bare 化身 → `ｉｎｃａｒｎａｔｉｏｎ` (**11**). `リース` → `Ｒｅｅｓｅ` is fixed at §26.1; ⚠️ the **maximal-run blind spot** (§Y2) means a search for `リース文明` never matches this — search bare `リース` | script 569, 571 | Alt *Reese's incarnation* |
 | リースの神々 | `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **17 columns.** Lower-case *gods* as a plural common noun (contrast §17.1's species test); the town's blessing formula `リースの神々よ、この者たちに祝福あれ！` | script 560, 567 | — |
-| 遠征軍 | `ｅｘｐｅｄｉｔｉｏｎａｒｙ　ｆｏｒｃｅ` | **Wave-7 seed.** **19 columns** — chunk 30 is tier B (ratio 2.43), so `ｅｘｐｅｄｉｔｉｏｎ` (**10**) is the licensed short form under budget pressure, not a different reading | battle chunk 30 | Alt *expedition* |
+| ~~遠征軍~~ | ✅ **PROMOTED to §43.2** — `ｅｘｐｅｄｉｔｉｏｎａｒｙ　ｆｏｒｃｅ`, rendered in `tl/battle/chunk_030.txt` (PR #27) in the **long** form; 19 columns confirmed with `len()`. **Exhausted: 1 battle (chunk 30) + 0 script, re-counted at review — this is the one wave-7 seed that is genuinely spent, and it is struck.** The licensed short `ｅｘｐｅｄｉｔｉｏｎ` (10) was **never needed** and is not spent: the chunk landed 577 bytes under and the long form fits the source's own four rows | battle chunk 30 ✅ | Alt *expedition* — unspent |
 | 選ばれし者 | `ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ` | **Wave-7 seed.** **14 columns.** Archaic-flavoured; the elder's register in script 570 is uncontracted throughout | script 570 | — |
 | 召喚の儀式 | `ｓｕｍｍｏｎｉｎｇ　ｒｉｔｕａｌ` | **Wave-7 seed.** **16 columns** | battle chunk 31 | Alt *summoning rite* (14) |
 | ビーストショップ / アイテムショップ | `Ｂｅａｓｔ　Ｓｈｏｐ` / `Ｉｔｅｍ　Ｓｈｏｐ` | **Wave-7 seed.** **10 and 9 columns.** ⚠️ These are the two **menu options** of script 555's choice and keep the leading `　` per CLAUDE.md §6.8. Check §34.1 shop vocabulary before rendering — the shop nouns may already be fixed there | script 555 | — |
@@ -4914,3 +4914,134 @@ and every wrong one was a table cell typed rather than measured.** The PR itself
 own before pushing (Flag 17's `ｄｅｓｅｒｔ`), which is the practice that should generalise.
 
 ❌ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns and was not reopened.** Five parties have now measured it.
+
+---
+
+## 43. Added by chunk 030 (PR #27, merged 2026-09-09)
+
+Rimul's Crimson Knights recover the tablet from the temple; Rendol is sent ahead while Rimul holds
+off the 9th Army. Victory / defeat / surrender branches, plus the pig-voiced (`ブヒ`) interloper.
+**7,615 / 8,192, 577 bytes slack.** Three wave-7 seeds promoted, all three used exactly as seeded;
+**only one of them (`遠征軍`) is exhausted** — see §43.5.
+
+### 43.1 RULING — `ああ` splits on REGISTER, and Rimul's assent is `Ｉ　ｄｏ．`
+
+PR #27 renders `ああ。貴官とは決着をつけねばならん。` (Rimul, answering Kain's
+`じゃあ、どうあっても戦うんだな？`) as **`Ｉ　ｄｏ．`**, departing from §6's fixed `Ｙｅａｈ`, and
+flagged it. **The departure is upheld and §6's row is conditioned in place (§4.3).**
+
+- **§6's row already scoped itself** — "Casual agreement from a rough speaker." Rimul is neither.
+  Her contraction-free register is fixed at §7, §30.7 and §41.3, and §30.7 chose the written rule
+  **over** shipped `chunk_000`'s contracted Rimul.
+- **Every shipped `Ｙｅａｈ` is a casual, contraction-taking speaker — 13 of 13, counted
+  positionally at this review.** ⚠️ **PR #27's own count was low, in its own favour**: it listed
+  eight and called them six. The three it missed are `chunk_002:b7`
+  (`…城へ戻らせてもらうとしようぜ。`, renders `ｌｅｔ’ｓ`), `chunk_019:b0` (`…知恵だな。`) and
+  `chunk_020:b47` (`ああ、残念だけど、`). All three are casual, so **the conclusion is stronger
+  than the PR argued it**: register predicts 13 of 13 with no exceptions.
+- **This is the §41.4 shape exactly** — a form fixed from casual mouths that does not reach a
+  contraction-free one — and §41.4's precedent is that the translator who deviates and says so is
+  upheld. §36.2 (`とにかく`) and §36.3 are the same pattern.
+- **`Ｙｅｓ．` was correctly avoided.** §18.3 removed exactly that string from `tl/` for ああ;
+  reintroducing it would restore the divergence that correction erased. `Ｉ　ｄｏ．` is **5
+  columns**, identical in cost to `Ｙｅａｈ．`, sits on a standalone row, and was verified free
+  across `tl/` and `pending/` (this file's only occurrence). It also answers the question's own
+  verb, which is better English than either alternative.
+
+**Lines this affects: none.** `Ｙｅａｈ` is unchanged everywhere it already stands.
+
+### 43.2 New terms
+
+| Japanese | English | Note |
+|---|---|---|
+| 遠征軍 | `ｅｘｐｅｄｉｔｉｏｎａｒｙ　ｆｏｒｃｅ` | **Promoted from §9's wave-7 seed, used exactly as seeded — the LONG form.** 19 columns, `len()`-confirmed. **1 battle + 0 script — exhausted, and the §9 row is struck.** The licensed short `ｅｘｐｅｄｉｔｉｏｎ` (10) was not needed and is **unspent**: the row is `Ｏｆ　ｔｈｅ　ｅｘｐｅｄｉｔｉｏｎａｒｙ` (20) / `ｆｏｒｃｅ，　ｔｈｉｓ　ｉｓ　ａｌｌ．．．．` (22), keeping the source's four rows |
+| 石版 | `ｔａｂｌｅｔ` | **Promoted from §9's wave-7 seed, used exactly as seeded**; 6 columns confirmed. ×3 here. ⚠️ **The §9 row STAYS LIVE** — reach re-counted at review and PR #27's figures are exact: **5 battle (30, 36) + 25 script across 21 banks**. Struck by the last unit to land, per §29.1 / §30.1 |
+| クロイツェル / リムル・クロイツェル | `Ｋｒｅｕｔｚｅｌ` / `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` | **Promoted from §9's wave-7 seed, used exactly as seeded**; 8 / 14 columns confirmed. ⚠️ **NOT a hapax — the §9 row STAYS LIVE; see §43.5.** Does not disturb §1's `リムル` → `Ｒｉｍｕｌ` or `リムル様` → `Ｌａｄｙ　Ｒｉｍｕｌ`, both used unchanged ×8 here |
+| 隠れ里 | `ｈｉｄｄｅｎ　ｖｉｌｌａｇｅ` | 14 columns, **lowercase** (§17.1 species/common-noun test — it is what the place *is*, not a name). **4 battle (27, 29, 30, 32) + 2 script (bank 41, unique 1384 and 1386)** — re-counted at review, exact. Reaches three further battle chunks, so it is fixed now rather than invented three times. Verified free across `tl/` and `pending/` |
+| 本国 | `ｈｏｍｅｌａｎｄ` | 8 columns. ×2 here. ⚠️ **Shares its English with 祖国 → `ｈｏｍｅｌａｎｄ`, shipped in `batch_002.tsv`.** §25.3's test was **re-counted at review and is MET**: 本国 = **5 battle [23, 30, 42] + 1 script [bank 20]**; 祖国 = **0 battle + 1 script [bank 5]**. No shared chunk, no shared bank, no shared message |
+| 回収 | `ｒｅｃｏｖｅｒ` / `ｒｅｃｏｖｅｒｅｄ` | ×4 here. ⚠️ **Shares its English with 回復 → `ｒｅｃｏｖｅｒ`, shipped in `chunk_001` (an HP tutorial box).** §25.3's test **re-counted and MET**: 回収 = **4 battle [chunk 30 only] + 0 script**; 回復 = **2 battle [chunk 1] + 24 script [banks 21, 29, 40]**. Disjoint in both dimensions. *Recover the tablet* is the natural military phrasing; not forked to `ｒｅｔｒｉｅｖｅ` |
+| 完敗 | `ｃｏｍｐｌｅｔｅ　ｄｅｆｅａｔ` | 15 columns. **3 battle (chunk 30 only) + 0 script** — exhausted. Verified free elsewhere |
+| 敗軍の将 | `ａ　ｂｅａｔｅｎ　ｇｅｎｅｒａｌ` | 16 columns. Hapax — 1 battle + 0 script |
+| 将 (in `紅の騎士団の将`) | `ｇｅｎｅｒａｌ` — **lowercase** | 7 columns. A descriptive appositive inside a self-introduction, not a title before a name, so it is held **distinct** from §26.2's 将軍 → `Ｇｅｎｅｒａｌ`. ✅ **Confirmed at review as the §32.4a pattern applied**: that gag already splits 将校 → lowercase `ｏｆｆｉｃｅｒ` from 将軍 → capitalised `Ｇｅｎｅｒａｌ` on exactly this test. Lowercase `ｇｅｎｅｒａｌ` occurs **only** in `chunk_030` (×2); capitalised `Ｇｅｎｅｒａｌ` occurs in 8 other files and is **always** a title before a name. No collision |
+| ブヒ — **sentence-FINAL tic** | trailing `，　ｏｉｎｋ．` — **lowercase**, with the source's own stop | ⚠️ **A new SHAPE, not a new word — see §43.3** |
+| ブヒィ (sentence-final) | `ｏｉｎｋｋ` | 5 columns. §19.1's rule is "the four `ィ` become four `ｋ`"; one `ィ` gives one `ｋ`. Lowercase per the row above; the source's `！` is kept |
+| とばっちり | `ｃａｕｇｈｔ　ｉｎ　ｔｈｅ　ｃｒｏｓｓｆｉｒｅ` | `ｃｒｏｓｓｆｉｒｅ` 9 columns, verified free. Hapax. The pig is hit by a blow meant for someone else, which is exactly とばっちり |
+| 心配は無用だ | `Ｎｏ　ｎｅｅｄ　ｆｏｒ　ｃｏｎｃｅｒｎ．` | 20 columns. ×2 here, byte-identical. Contraction-free per Rimul's §7 / §30.7 register. `ｃｏｎｃｅｒｎ` occurs once elsewhere (`chunk_013`, `ｎｏ　ｃｏｎｃｅｒｎ　ｏｆ　ｙｏｕｒｓ．`) — a different word in a different message |
+| 好きにしろ | `Ｄｏ　ａｓ　ｙｏｕ　ｌｉｋｅ．` | 15 columns. ×2 here, byte-identical. **Recurs in chunk 27**, so the form is fixed now. Free across `tl/` |
+| どうかご無事で | `ｐｌｅａｓｅ　ｂｅ　ｓａｆｅ．` | 15 columns. ×4 here, byte-identical. Held **distinct** from the past-tense enquiry `ご無事でしたか` (`pending/chunk_005` L23, and chunk 23's `フェルナンド将軍、ご無事でしたか。`) — a different construction; the shared word is `ｓａｆｅ`. ⚠️ **CORRECTED at integration: PR #27's row said "Recurs in chunk 23", and it does NOT.** Counted at review: `どうかご無事で` is **battle chunk 30 only, 4 instances, 0 script**. What chunks 5 and 23 carry is `ご無事でしたか` — the very construction this row excludes. **Chunk 23 must NOT take `ｐｌｅａｓｅ　ｂｅ　ｓａｆｅ．`**; the row as written would have pushed it there |
+
+### 43.3 RULING — `ブヒ` sentence-final is a new SHAPE of §19.1's tic, not a new word
+
+§19.1 fixes ブヒ → `Ｏｉｎｋ` / ブヒィィィィ → `Ｏｉｎｋｋｋｋ`, "used with the source's own stop per
+the ゲロゲロ precedent (§5)". **Verified from the source at review: chunk 1's two instances are
+BOTH sentence-initial** (`ブヒ。`, `ブヒィィィィ。`). Chunk 30 is the first unit where ブヒ rides the
+**end** of a clause, six times (`騒がしいブヒ。`, `無かったはずブヒが。`, `石版ブヒ。`,
+`ちがいないブヒ。`, `いただくブヒ。`, `渡さんブヒ。`).
+
+> **Ruled: sentence-INITIAL `ブヒ、` / `ブヒ！` keep §19.1's capitalised `Ｏｉｎｋ` plus the source's
+> own punctuation. Sentence-FINAL ブヒ takes §5's ノロ mechanism — appended to the final clause,
+> lowercase, comma-prefixed, replacing that sentence's own stop, mechanical so repeats stay
+> byte-identical.** 4 columns either way.
+
+This composes §19.1's *word* with §5's *placement*; it does not compete with either.
+`translation_prompt.md` §5's ゲロゲロ worked example states the principle in as many words — "what
+is fixed is the **word**; the punctuation follows the source … the two rules compose, they do not
+compete." Chunk 30 renders 3 initial (capitalised) and 6 final (lowercase), correctly split.
+**Chunk 1 is untouched and needs no revisiting.**
+
+### 43.4 RULING — `争い` takes `ｓｔｒｉｆｅ`; `ｃｏｎｆｌｉｃｔ` is refused, and `batch_008` diverges
+
+PR #27 offered `ｃｏｎｆｌｉｃｔ` as a third, scale-selected form and asked for a ruling. **Refused,
+and the PR under-stated its own case.** This is not a choice between two shipped forms:
+
+- **`争い` → `ｓｔｒｉｆｅ` is a FIXED ENTRY at §38**, which holds it distinct from 戦乱 → *war* and
+  戦闘 → *battle* explicitly, and it ships at `batch_007.tsv` L67 (`Ｓｔｒｉｆｅ　ｉｓ　ｏｖｅｒ　ｆｏｒ　ｎｏｗ`)
+  and `chunk_024` L14. Minting a third form would be a silent change to a fixed entry, which §4.3
+  forbids. `ｃｏｎｆｌｉｃｔ` occurs nowhere in `tl/` or `pending/` and stays unspent.
+- Reach re-counted at review, and PR #27's figures are exact: **4 battle (23, 24, 30, 32) + 10
+  script across 7 banks (1, 3, 4, 21, 23, 33, 41)**.
+
+⚠️ **A pre-existing divergence, recorded and NOT charged to PR #27.** `tl/script/batch_008.tsv`
+L55 renders `知に長けた者と力に長けた者の　争いは` as `Ｔｈｅ　ｗａｒ　ｏｆ　ｔｈｅ　ｗｉｓｅ　ａｎｄ`
+`ｔｈｅ　ｓｔｒｏｎｇ` — `ｗａｒ` for 争い, against §38's fixed entry, and §42 registers no row for it.
+It is **live rather than harmless**: counted at this review, **争い and 戦乱 co-occur in bank 3**,
+which is precisely the collision §38 held them apart to avoid. A corrections unit owes `batch_008`
+L55 the re-cut; `FLAGS.md` §AE carries it.
+
+### 43.5 CORRECTION (§4.3) — `クロイツェル` is NOT exhausted and its §9 row stays live
+
+PR #27's glossary row read "Hapax — 1 battle (this chunk) + 0 script, so the row is struck
+outright", and the reviewer's own dispatch repeated it. **Both are wrong.** Counted at review over
+**both** dumps: **1 battle (chunk 30) + 1 script — bank 41, `script_unique` line 1391** — and the
+script instance is the same construction chunk 30 renders:
+`紅の騎士団の将、リムル・クロイツェルだな？`. A later script batch will render `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ`
+and must match byte-for-byte, so the §9 row is struck by **that** unit.
+
+**No rendering changes** — `Ｋｒｅｕｔｚｅｌ` / `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` are correct as shipped and both
+widths (8 / 14) were re-measured and confirmed. Only the *exhaustion* claim was wrong.
+
+⚠️ **The pattern is §41.4's item 1 in a new place: a reach count that looks at the battle dump and
+not at the script one.** The wave's other two seeds were counted correctly over both — `遠征軍`
+genuinely is 1 battle + 0 script and **is** struck, and `石版`'s 5 battle + 25 script / 21 banks is
+exact. **`石版`'s unique-line ids are corrected in §9**: they are `script_unique` **305, 574 and
+576**, not the "569/571" the §9 row and PR #27's Handoff both carried; **305**
+(`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) was named by neither.
+
+### 43.6 Confirmed without change
+
+- **`どうやら` per §41.4**: all four instances in this chunk are Rimul's and all four take a `seem`
+  clause. In `どうやら〜ようだ` the source has **one** evidential frame and English takes **one**
+  `seems`; doubling it would read as two hedges. Correct.
+- **`お前は・・・` → `Ｙｏｕ　ａｒｅ．．．`, not `chunk_006` L08's `Ｙｏｕ’ｒｅ．．．`.** Same segment,
+  different speaker, different message — §3 is not engaged and §30.7's register is. Confirmed at
+  review, and it is one of only **two** cross-file row-level exposures this unit has (the other is
+  §43.1's ああ); both are declared in the PR.
+- **`我々は、` is a row-initial fragment of four different sentences** here (`敵国の兵同士だぞ！`,
+  `後から必ず戻る！` ×2, `カーライン第９軍に投降する。`). All open `Ｗｅ`; the predicates differ
+  because the sentences do. The two that ARE the same sentence get byte-identical English. **Not a
+  §3 violation** — §3 engages on the message.
+- **`王子たち` → `Ｔｈｅ　Ｐｒｉｎｃｅｓ`** matches §41.6, which names chunk 25's referential form.
+- **`FLAGS.md` §L2 confirmed from inside the chunk and not "fixed"** — file line 23 carries no
+  `{FC50}`/`{FC51}` at all and 8 text rows; file line 21 has 5 rows with no channel tag after its
+  `{FC30}`. Both inherited exactly (8 in / 8 out, 5 in / 5 out), verified against a pristine
+  extraction. Still needs the in-game visit §L2 asks for.

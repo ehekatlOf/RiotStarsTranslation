@@ -4111,3 +4111,107 @@ direction and gives no religious evidence either way. The question actually live
 (script 1090 / 1092), still unrendered**. Whoever takes it should look at whether the castle is a
 religious site before treating `Ｋｉｅｓａ` as settled for the compound; changing it afterwards is a
 §4.3 correction reaching this unit's two rows. Glossary §42.1.
+
+---
+
+## AE. Wave 7 review — battle chunk 30 / PR #27 (2026-09-09)
+
+**MERGED.** `tl/battle/chunk_030.txt`, **7,615 / 8,192 — 577 bytes slack**. Squash `9548e73`.
+183 text rows, widest 23, none at 24, none over. Every gate in CLAUDE.md §6 run in a real
+checkout; every width re-measured with `len()`.
+
+### AE1. Byte and geometry figures — all confirmed, none corrected
+
+`assemble.py check` → `chunk 30   7615 / 8192 bytes   slack   577`, "All checks passed".
+`rowcheck` reports the two over-4 pages at file lines 21 (5 rows) and 23 (8 rows) and **both are
+inherited**: a pristine extraction of chunk 30, run through the same tool at review, gives the
+same two lines at the same counts (5 in / 5 out, 8 in / 8 out) and `{FFFE} unchanged on every
+line`. Nothing introduced. Width histogram reproduced independently and matches the PR exactly:
+`{5:4, 6:5, 7:4, 8:5, 9:3, 10:2, 11:11, 12:5, 13:11, 14:3, 15:11, 16:14, 17:6, 18:12, 19:18,
+20:24, 21:16, 22:21, 23:8}`.
+
+Tag accounting over the whole chunk: `{FCC0}` 12 → 12 (**no page break added**), `{FFFF}` 26 → 26,
+`{FC30}` 53 → 53, `{FC50}` 44 → 44, `{FC51}` 17 → 17, `{FC00}` 4 → 4; **0 lines** with a changed
+non-`{FFFE}` tag stream. `{FFFE}` 162 → 166, net **+4**, which is exactly the sum of the seven
+per-line deltas the PR itemises. Dots: source `。`+`・` = **132**, translation `．` = **132**, and
+the per-line ellipsis-run multisets match on every line (17 runs each side). Zero ASCII, zero
+illegal characters, no gutter space lost.
+
+### AE2. ⚠️ `batch_008.tsv` L55 renders 争い as `ｗａｒ`, against §38's fixed entry — A HUMAN / CORRECTIONS UNIT OWES THIS
+
+Found while ruling on PR #27's `争い` question, and **not chargeable to PR #27**, which is correct.
+
+- **`争い` → `ｓｔｒｉｆｅ` is a fixed glossary entry at §38**, which holds it distinct from
+  戦乱 → *war* and 戦闘 → *battle* in as many words. It ships at `batch_007.tsv` L67 and
+  `chunk_024` L14, and now `chunk_030` L24.
+- `tl/script/batch_008.tsv` **L55** renders `知に長けた者と力に長けた者の　争いは` as
+  `Ｔｈｅ　ｗａｒ　ｏｆ　ｔｈｅ　ｗｉｓｅ　ａｎｄ` / `ｔｈｅ　ｓｔｒｏｎｇ`. §42 (batch 008's own glossary
+  section) registers **no** row for it, so this went in unnoticed.
+- ⚠️ **It is live, not harmless.** Counted at this review: **`争い` and `戦乱` co-occur in bank 3**
+  — precisely the collision §38 held them apart to avoid. §25.3's disjointness test **FAILS** for
+  this pair, so a player can see both in one scene with one English word doing both jobs.
+- **Fix:** re-cut `batch_008.tsv` L55 to `ｓｔｒｉｆｅ`. It is a script batch, so there is no byte
+  pressure. Not done here — a reviewer does not edit a unit outside the PR in front of him.
+
+### AE3. ⚠️ §9's `クロイツェル` row was going to be struck on a wrong count — CORRECTED, row kept live
+
+PR #27's glossary row said "Hapax — 1 battle (this chunk) + 0 script, so the row is struck
+outright". **The reviewer's own dispatch briefing repeated the claim.** Counted at review over
+**both** dumps: **1 battle (chunk 30) + 1 script — bank 41, `script_unique` line 1391**, and the
+script instance is the same construction (`紅の騎士団の将、リムル・クロイツェルだな？`). The §9 row
+**stays live**; it is struck by whichever script unit takes bank 41. Glossary §43.5.
+
+**No rendering is wrong** — `Ｋｒｅｕｔｚｅｌ` (8) and `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` (14) are correct as
+shipped and both widths were re-measured. Only the exhaustion claim was wrong. **This is §41.4's
+item 1 in a new place: a reach count that looked at the battle dump and not at the script one.**
+The wave's other two seeds were counted over both dumps and are exact.
+
+### AE4. ⚠️ PR #27's `どうかご無事で` row said "recurs in chunk 23" and it does not — CORRECTED
+
+`どうかご無事で` is **battle chunk 30 only, 4 instances, 0 script**. Chunks 5 and 23 carry
+`ご無事でしたか` — the **past-tense enquiry** the same row explicitly holds distinct
+(`フェルナンド将軍、ご無事でしたか。`, chunk 23). The row contradicted itself and, left as written,
+would have pushed chunk 23's translator onto `ｐｌｅａｓｅ　ｂｅ　ｓａｆｅ．` for a construction that is
+not the same one. Rewritten at integration; glossary §43.2.
+
+### AE5. `石版` unique-line ids were wrong in two places — corrected, reach confirmed exact
+
+The §9 seed row and PR #27's Handoff both said the script instances are "569 / 571"; PR #27's own
+glossary row said "574 / 576". Measured: they are `script_unique` **305, 574 and 576** — 574/576
+right, 569/571 wrong, and **305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) named by
+neither. The **reach itself is exact as the PR states**: 5 battle (chunks 30, 36) + **25 script
+instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40,
+42, 43). Row stays live per §29.1 / §30.1.
+
+### AE6. §L2 is confirmed from inside chunk 30 and still needs its in-game visit
+
+`chunk_030.txt` **file line 23** (dump body 22) carries **no `{FC50}`/`{FC51}` anywhere** and eight
+text rows; **file line 21** (body 20) has a page of five with no channel tag after its `{FC30}`,
+which puts `リムル・・・。` — plainly the player's line — on Rimul's own channel beside her reply.
+Both are inherited exactly and neither was re-flowed to flatter the count. **Nothing here is
+translatable-away.** §L2's prediction of independently-selected string pools is consistent with
+what the tag stream shows, and chunk 30 is one of the eight lines that question is about. **Still
+a human job.**
+
+### AE7. Method notes worth keeping
+
+1. **Gate 6 needs a positive control AND a planted violation, every time.** This reviewer's first
+   duplicate checker keyed on tag-bearing messages; portrait and `{FCB0}` tags differ per
+   occurrence, so **nothing ever matched and it reported a clean pass**. It was caught only
+   because a positive control asserted `recurrences seen > 0`. The working version keys on
+   **readable text**, checks at `{FC30}`-utterance and row level, and was proved live by planting
+   two corruptions and confirming detection. Corpus size is the cheap sanity check: **911 distinct
+   JP utterances / 977 instances, 1,658 distinct rows** across 30 aligned files.
+2. **A row-level checker silently drops every line whose `{FFFE}` count changed** — chunk 30
+   changed seven. The hole was closed by looking every JP row of those seven lines up in a corpus
+   built from the other 29 files. **Exposure was exactly two rows, both already declared in the
+   PR** (`ああ。` and `お前は・・・`). Do this explicitly, and say so; a checker that skips a line
+   and prints nothing is indistinguishable from one that passes it.
+3. **§AC3 holds a third wave running, and it now cuts both ways.** Every width figure in PR #27
+   was exact — the translator measured with `len()` and caught one of its own hand-counts
+   (`Ｉ　ｗａｎｔ　ｔｏ　ａｓｋ　ｙｏｕ．` = 24, not 23) before pushing. **The two errors this review
+   found were both *reach counts*, not widths**, and both came from counting one dump instead of
+   two. The discipline has migrated: widths are now measured, reaches still are not always.
+4. **A PR can under-count in its own favour.** PR #27 said six shipped `Ｙｅａｈ` instances and
+   listed eight; there are **13**, and all 13 are casual speakers, so the argument it was making
+   was stronger than it claimed. Verify the evidence even when the conclusion is right.

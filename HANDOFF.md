@@ -12,8 +12,10 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 7 IS RUNNING.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`. Seeds pushed (`f62dadb`).
-> Units: **battle 30, 31, 36 + script `batch_009` (unique 534–583)** — dispatched, see **In flight**.
+> **WAVE 7 IS RUNNING — REVIEWING, 1 of 4 decided.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
+> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 31, 36 (park), script `batch_009`**.
+> **Next reviewer: PR #26, battle chunk 31.** Then #25 (chunk 36 park), then #28 (script batch_009).
+> `git pull --ff-only` before dispatching it — PR #27's integration commit is on the branch.
 >
 > If this line still says "running" and `ListAgents` shows nothing alive: the wave died mid-flight.
 > Reconcile open PRs (`git ls-remote --heads origin 'tl/*'`) against In flight, re-dispatch what is
@@ -24,14 +26,15 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `source_revision` — SKILL.md §6a).
 
 ## Last updated
-2026-09-09 · by: **wave-7 coordinator** (`session_01N1VxX55Vw79fxNr6nTELcs`) ·
-wave: **7 DISPATCHED — 4 units in flight** · queue: **fresh; wave-7 batch re-verified, see Decisions**
+2026-09-09 · by: **wave-7 reviewer, PR #27 integration** ·
+wave: **7 REVIEWING — 1 of 4 decided (chunk 30 MERGED); 31, 36, script batch_009 still to review** ·
+queue: **fresh; wave-7 batch re-verified, see Decisions**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **26** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 33, 34, 35, 40 |
-| Battle JP characters | **21,998** | 43,161 | **51.0%** (was 43.2% at wave-6 start) |
+| Battle chunks | **27** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, **30**, 33, 34, 35, 40 |
+| Battle JP characters | **23,356** | 43,161 | **54.1%** (was 51.0% before chunk 30) |
 | Script unique lines | **358** | 1,430 | `tl/script/batch_001–008.tsv` |
 | Script message instances | **4,209** | 7,931 | **53.1%** |
 
@@ -43,7 +46,7 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 ## In flight
 | Unit | Branch / file | PR | State |
 |---|---|---|---|
-| battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | **#27** | **delivered — awaiting reviewer** (7,615 / 8,192, slack 577) |
+| ~~battle chunk 30~~ | `tl/battle/chunk_030.txt` | **#27** | ✅ **MERGED 2026-09-09 — squash `9548e73`; integration commit `integrate: chunk 030 — glossary §43, FLAGS §AE, handoff`.** 7,615 / 8,192, **slack 577**; 183 rows, widest 23, none at 24; both over-4 pages verified inherited against a pristine extraction; `{FFFE}` changed on 7 lines, all itemised. All 8 gates passed, no findings. Glossary **§43** (12 terms + 4 rulings), FLAGS **§AE** |
 | battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | **#26** | **delivered — awaiting reviewer** (5,355 / 8,192, slack 2,837) |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
@@ -150,8 +153,21 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-**Rulings live in their homes**: `glossary.md` §23–§43, `FLAGS.md` §K–§AD, `findings.md` §24,
+**Rulings live in their homes**: `glossary.md` §23–**§43**, `FLAGS.md` §K–**§AE**, `findings.md` §24,
 `pending/README.md`. ⚠️ **Section numbers are taken by READING both files at commit time.**
+- 2026-09-09 (wave 7, PR #27 review): **`ああ` splits on REGISTER** — §6's `Ｙｅａｈ` is conditioned
+  to casual, contraction-taking speakers; Rimul's assent is `Ｉ　ｄｏ．` (glossary §43.1; 13 of 13
+  shipped `Ｙｅａｈ` verified casual, the §41.4 precedent extended to a second interjection).
+  **`争い` → `ｓｔｒｉｆｅ` is §38's FIXED entry, `ｃｏｎｆｌｉｃｔ` refused** (§43.4) — and
+  **`batch_008.tsv` L55's `ｗａｒ` diverges from it and owes a re-cut** (`FLAGS.md` §AE2; 争い and
+  戦乱 **co-occur in bank 3**, so §25.3 FAILS for that pair). **Sentence-final `ブヒ` takes §5's
+  ノロ mechanism**, sentence-initial keeps §19.1's capital (§43.3). ⚠️ **Two reach counts in the PR
+  were wrong and BOTH came from counting the battle dump only**: `クロイツェル` is **not** a hapax
+  (bank 41 / unique 1391) so its §9 row **stays live** (§43.5), and `どうかご無事で` does **not**
+  recur in chunk 23 (§43.2). **Widths were exact everywhere** — §AC3's discipline has reached
+  widths but not yet reaches. **Gate 6 needs a positive control and a planted violation every
+  time**: this reviewer's first checker keyed on tag-bearing messages, matched nothing, and read as
+  a clean pass (`FLAGS.md` §AE7).
 - 2026-09-08: integration branch is `claude/workflow-translation-iterate-uzlkns`; `main` untouched.
 - 2026-09-08: script growth for planning is **2.10×**; **bank 40's budget goes to the 21-instance
   item table**, not its story text; **seed the glossary BEFORE dispatching**; **a parked unit still
