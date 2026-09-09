@@ -56,7 +56,29 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
-| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances** / 2,477 JP chars | dispatched |
+| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
+
+**THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
+1. ⚠️ **`軍神ヘルメス` is NOT exhausted and its §9 row must stay LIVE.** My seed implied DATA 300
+   closed it. **DATA 281** (`軍神ヘルメスの愛用したブーツ。{FFFE}防御力＋１　魔法防御＋１`) is a
+   second untranslated **21-instance** line. ⚠️ It also needs a **`魔法防御`** form, which nothing
+   fixes yet — and it lands in **bank 40**, which has only **75 bytes** left after this wave, so it
+   may now be effectively unshippable. (The `石版` row **does** discharge: DATA 300 was its last
+   untranslated instance — verified.)
+2. **My dispatch said the prose window lands in "banks 20–29 with 25,000–40,000 free each". Wrong
+   twice**: it lands in banks **25–28**, and **bank 25 has 12,891 free**, not 25,000+. No
+   consequence — 12,891 still absorbs 41 prose lines — but the figure was wrong.
+3. **My bank-40 estimate was 358; the true spend is 372** (still inside the 380 cap I set, leaving
+   75 of 447). ⚠️ **The cause is a modelling lesson for wave 9's batch computation:** DATA 193/194's
+   description clause is **already shipped in `batch_003`** as a two-row rendering, so CLAUDE.md §3
+   forces that byte-identical English (+40 each) instead of a fresh, shorter one (~+24). **A line
+   whose clause already exists elsewhere costs what the shipped form costs, not what an optimal new
+   rendering would.** My growth model does not know this; a future batch estimate should check
+   whether each line's clause is already rendered.
+
+⚠️ **BANK 40 (75 free) AND BANK 5 (1,635) ARE EFFECTIVELY CLOSED after this wave.** Every remaining
+count-21 item line spends its growth in **all 21** of its banks, bank 40 included. That is what
+holds the 117 remaining item lines (2,457 instances) — see the run-status section above.
 
 **CROSS-UNIT TERMS THE REVIEWER MUST CROSS-CHECK BETWEEN OPEN PRs** (all measured by me over the
 pristine dump, tags stripped — the source *messages* differ in every case, so **CLAUDE.md §3 is NOT
