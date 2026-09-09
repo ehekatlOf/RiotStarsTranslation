@@ -143,6 +143,22 @@ is bank-feasible by **INSTANCES not lines**, and verify scaffolding and already-
 ⚠️ **`石版` (DATA 300, count 21, 21 banks) and `ビーストショップ／アイテムショップ` (DATA 899, bank 28)
 are both still untranslated and both keep a §9 row live** — a batch containing either discharges it.
 
+## ⚠️ THE RUN IS **NOT** COMPLETE AFTER WAVE 8 — MEASURED 2026-09-09, WAVE 8
+**"Wave 8 is the last BATTLE wave" is TRUE. "Wave 8 is the FINAL wave" is FALSE.** The two are
+being conflated, and acting on the second would end the run with ~12 waves of shippable work left.
+
+Measured by simulating `queue.py`'s own allocator with batch_010 removed from the pool:
+| After batch_010 merges | lines | instances |
+|---|---|---|
+| Untranslated unique | 969 | 3,379 |
+| **Bank-FEASIBLE — dispatchable now** | **603** | **628** |
+| Bank-blocked (needs a human) | 366 | 2,751 |
+
+**603 feasible unique lines ≈ 12 more script batches at 40–60 lines each.** So CLAUDE.md §8's
+"no dispatchable unit left" does **NOT** hold, and **wave 9 MUST be opened — script-only.**
+Of the 366 blocked, **117 are 21-instance item-table lines (2,457 instances) held solely by bank
+40**, which will have ~89 of its 447 bytes left after this wave. Those need Blocked 2's repoint.
+
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **15 open chunks.** ⚠️ **6 carry the §D1 dump artifact and will park exactly as chunk 17 did
 — 15, 23, 27, 28, 29, 39**; **16 and 32 are tier-A blocked**. So only **4 are dispatchable** now
