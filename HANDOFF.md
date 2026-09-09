@@ -46,10 +46,12 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 | battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | **#27** | **delivered — awaiting reviewer** (7,615 / 8,192, slack 577) |
 | battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | **#26** | **delivered — awaiting reviewer** (5,355 / 8,192, slack 2,837) |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
-| script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | — | translator round 1, running |
+| script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
 
-**Wave barrier NOT yet met — 3 of 4 PRs open (#25 chunk 36, #26 chunk 31, #27 chunk 30). Review
-nothing until `batch_009` has a PR too.** A translator still working is not a
+✅ **WAVE BARRIER MET — 4 of 4 PRs open: #27 chunk 30, #26 chunk 31, #25 chunk 36 (park), #28
+script batch_009.** Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
+→ script. Push HANDOFF before each reviewer; `git pull --ff-only` after each (it pushes an
+integration commit). Never two reviewers at once. A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
 fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
 
@@ -207,6 +209,27 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   across 21 banks**, including unique 574/576. Chunk 36 being PARKED does not discharge it —
   script 569/571 still render it. `クロイツェル` and `遠征軍` ARE exhausted by chunk 30 and may be
   struck outright.
+
+- 2026-09-09 (wave 7): ⚠️ **A FOURTH COORDINATOR ERROR, caught by `batch_009` and verified here.**
+  My dispatch told it `Ｉ　ｓｅｅ．` renders "`そうかい` (batch 008)". **Both halves are wrong**:
+  `そうかい` is in **`batch_007.tsv:27`** (§38.2, banks 2/3), and **`batch_008` L64/L67 render
+  `そうか。`**. The correction *strengthens* the §25.3 ruling rather than weakening it, because it
+  puts a shipped `そうか` → `Ｉ　ｓｅｅ．` one bank over in the same town skeleton.
+  **Running total this wave: four coordinator figures/claims wrong, every one found by an agent
+  measuring.** The dispatch line "your measurement wins and my cell is the error" is doing real
+  work — keep writing it, and keep meaning it.
+- 2026-09-09 (wave 7): **§25.3 COLLISION RULED by `batch_009` (reviewer must test it):
+  `なるほど` → `Ｉｎｄｅｅｄ．` where it shares a bank with `そうか`; `そうか` keeps `Ｉ　ｓｅｅ．`.**
+  Census: the two share banks **5, 8 and 33**, and this unit translates bank 8's instances of both.
+  `なるほど` moves because it is the 2-row side, because `そうか` → `Ｉ　ｓｅｅ．` is shipped one bank
+  over in the same skeleton, and because `なるほど`'s only shipped instances are chunk 33 and parked
+  chunk 17. **`Ｅｘａｃｔｌｙ．` re-verified free and left reserved**; next reserve named as
+  `Ｑｕｉｔｅ　ｒｉｇｈｔ．`
+- 2026-09-09 (wave 7): **all six of my projected bank figures were CONSERVATIVE by 27–330 bytes** —
+  measured by moving the file aside, re-merging and re-running `bankmeasure` rather than projecting.
+  Actual: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559. **None of the
+  four tight banks moved by a byte** (41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365). Erring
+  conservative is the right direction, but the projection is not the measurement.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
