@@ -50,8 +50,8 @@ in the same order and the same count, then `{PAD n}` — with only the readable 
 
 The Japanese column is the lookup key and must be copied byte-for-byte out of
 `script_unique.txt`, tags included. The count column is optional and ignored. `#` starts a comment.
-One translated line replaces every occurrence — the script is 82% duplicated, so 211 lines already
-cover 50.9% of all message instances.
+One translated line replaces every occurrence — the script is 82% duplicated, so 261 lines already
+cover 51.6% of all message instances.
 
 ## Constraints that will bite
 
@@ -71,10 +71,10 @@ See `translation_prompt.md` §0 for the session schedule and §3 for the full fo
 
 | | Done | Total |
 |---|---|---|
-| Battle chunks | 18 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,33,34,35,40) | 44 |
-| Battle Japanese characters | 13,914 | 43,161 (32.2%) |
-| Script unique lines | 211 | 1,430 |
-| Script message instances | 4,039 | 7,931 (50.9%) |
+| Battle chunks | 21 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,18,19,20,33,34,35,40) | 44 |
+| Battle Japanese characters | 17,002 | 43,161 (39.4%) |
+| Script unique lines | 261 | 1,430 |
+| Script message instances | 4,092 | 7,931 (51.6%) |
 
 `assemble.py status` prints the current figures. Live state, in-flight units and what is blocked:
 `HANDOFF.md`.

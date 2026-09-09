@@ -3185,40 +3185,40 @@
 {FC51}{FB01}毎度あり！！{FFFE}また　どうぞ！{FFFE}{FC30}{FFF5}{FFFF}
 {FB00}{=01}{=54}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}いらっしゃいませ。{FCC0}{FB01}どんな　ご用でしょうか。{FFFE}{FFF8}{=00}{=13}{FFFF}
 {FFFA}{=00}{=00}　アイテムを買う{FFFE}　アイテムを売る{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=14}{FFF6}{=00}{=01}{=00}{=1A}{FFF6}{=00}{=02}{=00}{=21}{FFFF}
-{FFE6}{FFF6}{=00}{=00}{=00}{=19}{FC51}{FB01}どれに　なさいますか？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=20}{FFF8}{=00}{=15}{FFFF}
-{FFD5}{=00}{=18}{FC51}{FB01}{FFEC}{=00}{=03}ですね？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエル{FFFE}になりますが？{FFFE}{FFFA}{=00}{=00}{FFE5}　買う{FFFE}　やめておく{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFFF}
-{FC51}{FB01}{FFE4}{FFE8}{FFEB}お買い上げ{FFFE}ありがとうございます。{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FC51}{FB01}そうですか。{FFFE}それは　残念です。{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FB01}お客様、失礼ですが{FFFE}少々　ジュエルが{FFFE}たりないようです。{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FB01}おや？　お荷物が{FFFE}いっぱいのようですね。{FCC0}{FFFE}いらないものを{FFFE}売るか捨てるかして、{FFFE}また　お越しください。{FFFE}{FC30}{FFF8}{=00}{=20}{FFFF}
-{FFE6}{FFF6}{=00}{=C8}{=00}{=1F}{FC51}{FB01}どの品を{FFFE}売ってもらえますか？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=20}{FFC0}{=00}{=01}{=00}{=1E}{FFF8}{=00}{=1B}{FFFF}
-{FC51}{FB01}{FFEC}{=00}{=03}{FFFE}ですか？{FFFE}{FCC0}それなら、{FFFE}{FFEC}{=00}{=01}ジュエルで{FFFE}引き取りましょう。{FFFE}{FFFA}{=00}{=00}{FFE5}　引き取ってもらう{FFFE}　やめておく{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=1C}{FFF6}{=00}{=01}{=00}{=1D}{FFFF}
-{FC51}{FB01}{FFE4}{FFE7}{FFEA}それでは、{FFFE}確かに　引き取らせて{FFFE}いただきます。{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FC51}{FB01}そうですか。{FFFE}誠に　残念です。{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FC51}{FB01}その品は　売らない方が{FFFE}よろしいかと{FFFE}存じますが。{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FB01}失礼ですが、{FFFE}お客様は　売れるものを{FFFE}お持ちではないようです。{FCC0}{FFF8}{=00}{=20}{FFFF}
-{FC51}{FB01}他にご用はございますか？{FFFE}{FFF8}{=00}{=13}{FFFF}
-{FC51}{FB01}ありがとうございました。{FFFE}またの　お越しを{FFFE}お待ちしております。{FC30}{FFF5}{FFFF}
-{FFF3}{=00}{=31}{=00}{=02}{FB00}{=01}{=61}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}いらっしゃいませ！{FFFE}お父さんが　風邪をひいて{FFFE}寝込んでいるので、{FFFE}今日は私が店番なんです。{FCC0}{FB01}ご用は　何ですか？{FFFE}{FFF8}{=00}{=23}{FFFF}
-{FFFA}{=00}{=00}　アイテムを買う{FFFE}　アイテムを売る{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=24}{FFF6}{=00}{=01}{=00}{=2A}{FFF6}{=00}{=02}{=00}{=31}{FFFF}
-{FFE6}{FFF6}{=00}{=00}{=00}{=29}{FC51}{FB01}どれが　いいですか？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=30}{FFF8}{=00}{=25}{FFFF}
-{FFD5}{=00}{=28}{FC51}{FB01}{FFEC}{=00}{=03}ですね？{FFFE}{FCC0}えーと、それなら{FFFE}{FFEC}{=00}{=01}ジュエルです。{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=26}{FFF6}{=00}{=01}{=00}{=27}{FFFF}
-{FC51}{FB01}{FFE4}{FFE8}{FFEB}お買いあげ、{FFFE}ありがとうございます！{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FC51}{FB01}そうですか・・・{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FB01}お客さん、{FFFE}お金が　たりない{FFFE}みたいですよ。{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FB01}でも、{FFFE}これ以上は　アイテムを{FFFE}持ちきれない{FFFE}みたいですね。{FC30}{FFFE}{FFF8}{=00}{=30}{FFFF}
-{FFE6}{FFF6}{=00}{=C8}{=00}{=2F}{FC51}{FB01}どのアイテムですか？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=30}{FFC0}{=00}{=01}{=00}{=2E}{FFF8}{=00}{=2B}{FFFF}
-{FC51}{FB01}{FFEC}{=00}{=03}{FFFE}ですね？{FFFE}えーと、それなら・・・{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルで{FFFE}引き取ります。{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=2C}{FFF6}{=00}{=01}{=00}{=2D}{FFFF}
-{FC51}{FB01}{FFE4}{FFE7}{FFEA}{FFE0}{=00}{=B4}{=00}{=33}それでは、{FFFE}引き取らせて{FFFE}いただきます。{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FC51}{FB01}そうですか。{FFFE}確かに、{FFFE}ちょっと　安いかも{FFFE}しれないですね。{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FC51}{FB01}ごめんなさい。{FFFE}それは　買い取り金額が{FFFE}わからないです・・・。{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FB01}あれ？{FFFE}でも、お客さん、{FFFE}アイテムを持ってない{FFFE}みたいだけど・・・{FCC0}{FFF8}{=00}{=30}{FFFF}
-{FC51}{FB01}他にも　用はありますか？{FFFE}{FFF8}{=00}{=23}{FFFF}
-{FC51}{FB01}ありがとうございました！{FFFE}また　来て下さいね。{FFFE}{FC30}{FFF5}{FFFF}
-{FB01}おっと、悪いな！{FFFE}それは　売約済みなんだ。{FFFE}他のに　してくれないか？{FFFE}{FCC0}{FFF8}{=00}{=04}{FFFF}
-{FB01}あら、かぜぐすり・・・{FFFE}ありがとうございます。{FFFE}これで、お父さん{FFFE}治るかもしれません。{FCC0}{FFF2}{=00}{=30}{FFF8}{=00}{=30}{FFFF}
-{FFF3}{=00}{=31}{=00}{=02}{FB00}{=01}{=53}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}おお、これは、これは！{FFFE}この前もらった{FFFE}かぜ薬のおかげで{FFFE}すっかり良くなったよ！{FCC0}{FFFE}お礼と言っちゃ{FFFE}なんだが、{FFFE}これを　もらってくれ！{FFFE}デビルズラックだ！！{FCC0}{FFFE}なあに、{FFFE}感謝のしるしだよ！！{FFFE}{FFDA}{=00}{=15}{FFF2}{=00}{=31}{FCC0}{FFF5}{FB01}ところで、用は　何だい？{FFFE}{FFF8}{=00}{=03}{FFFF}
-{FFE6}{FFF6}{=00}{=00}{=00}{=12}{FFF3}{=00}{=2E}{=00}{=02}{FB00}{=01}{=54}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}いらっしゃい！！{FFFE}よう、いつかの兄さん。{FFFE}その後どうだい？{FFFE}ハッピーかい？{FCC0}{FFFE}オイラは、{FFFE}見てのとおりハッピーさ！{FFFE}オイラ、ここで{FFFE}下働きしてるのさ！{FCC0}{FFFE}そうだ、オイラ{FFFE}あそこの屋敷で{FFFE}珍しい　武器を{FFFE}手に入れたんだ。{FCC0}{FFFE}オイラと兄さんの仲だ。{FFFE}持ってってくれ！{FFFE}だけど、親方には{FFFE}内緒だぜ。{FCC0}{FFFE}なんたって{FFFE}下働きの身だからな。{FFFE}おっと　親方が来た！{FFFE}じゃあな！{FFDA}{=00}{=07}{FFF2}{=00}{=2E}{FC30}{FFF8}{=00}{=12}{FFFF}
+{FFE6}{FFF6}{=00}{=00}{=00}{=19}{FC51}{FB01}Ｗｈｉｃｈ　ｗｉｌｌ　ｙｏｕ　ｈａｖｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=20}{FFF8}{=00}{=15}{FFFF}
+{FFD5}{=00}{=18}{FC51}{FB01}{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？{FFFE}{FCC0}Ｔｈａｔ　ｉｓ　{FFEC}{=00}{=01}{FFFE}Ｊｅｗｅｌｓ．　Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｂｕｙ{FFFE}　Ｌｅａｖｅ　ｉｔ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFFF}
+{FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｙｏｕｒ{FFFE}ｐｕｒｃｈａｓｅ．{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｔｈａｔ　ｉｓ　ａ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FB01}Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ{FFFE}ｙｏｕ　ｓｅｅｍ　ａ　ｌｉｔｔｌｅ　ｓｈｏｒｔ{FFFE}ｏｆ　Ｊｅｗｅｌｓ．{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FB01}Ｏｈ？　Ｙｏｕｒ　ｐａｃｋ　ｓｅｅｍｓ{FFFE}ｔｏ　ｂｅ　ｆｕｌｌ．{FCC0}{FFFE}Ｓｅｌｌ　ｏｒ　ｄｉｓｃａｒｄ　ｗｈａｔ{FFFE}ｙｏｕ　ｄｏ　ｎｏｔ　ｎｅｅｄ，　ａｎｄ{FFFE}ｐｌｅａｓｅ　ｃｏｍｅ　ａｇａｉｎ．{FFFE}{FC30}{FFF8}{=00}{=20}{FFFF}
+{FFE6}{FFF6}{=00}{=C8}{=00}{=1F}{FC51}{FB01}Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｏｕｌｄ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=20}{FFC0}{=00}{=01}{=00}{=1E}{FFF8}{=00}{=1B}{FFFF}
+{FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｉｓ　ｉｔ？{FFFE}{FCC0}Ｉｎ　ｔｈａｔ　ｃａｓｅ，{FFFE}Ｉ　ｓｈａｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｓｅｌｌ　ｉｔ{FFFE}　Ｌｅａｖｅ　ｉｔ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=1C}{FFF6}{=00}{=01}{=00}{=1D}{FFFF}
+{FC51}{FB01}{FFE4}{FFE7}{FFEA}Ｗｅｌｌ　ｔｈｅｎ，{FFFE}Ｉ　ｓｈａｌｌ　ｄｕｌｙ　ｒｅｃｅｉｖｅ{FFFE}ｉｔ　ｆｒｏｍ　ｙｏｕ．{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ａ　ｇｒｅａｔ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FC51}{FB01}Ｉ　ｂｅｌｉｅｖｅ　ｉｔ　ｗｏｕｌｄ　ｂｅ{FFFE}ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ{FFFE}ｔｈａｔ　ａｒｔｉｃｌｅ．{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FB01}Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，{FFFE}ｂｕｔ　ｙｏｕ　ｃａｒｒｙ　ｎｏｔｈｉｎｇ{FFFE}ｔｏ　ｓｅｌｌ，　ｉｔ　ｓｅｅｍｓ．{FCC0}{FFF8}{=00}{=20}{FFFF}
+{FC51}{FB01}Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？{FFFE}{FFF8}{=00}{=13}{FFFF}
+{FC51}{FB01}Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ．{FFFE}Ｉ　ｓｈａｌｌ　ａｗａｉｔ　ｙｏｕｒ{FFFE}ｎｅｘｔ　ｖｉｓｉｔ．{FC30}{FFF5}{FFFF}
+{FFF3}{=00}{=31}{=00}{=02}{FB00}{=01}{=61}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ！{FFFE}Ｆａｔｈｅｒ　ｉｓ　ｌａｉｄ　ｕｐ　ｗｉｔｈ{FFFE}ａ　ｃｏｌｄ，　ｓｏ　ｔｏｄａｙ{FFFE}Ｉ’ｍ　ｍｉｎｄｉｎｇ　ｔｈｅ　ｓｈｏｐ．{FCC0}{FB01}Ｗｈａｔ　ｍａｙ　Ｉ　ｄｏ　ｆｏｒ　ｙｏｕ？{FFFE}{FFF8}{=00}{=23}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=24}{FFF6}{=00}{=01}{=00}{=2A}{FFF6}{=00}{=02}{=00}{=31}{FFFF}
+{FFE6}{FFF6}{=00}{=00}{=00}{=29}{FC51}{FB01}Ｗｈｉｃｈ　ｗｏｕｌｄ　ｙｏｕ　ｌｉｋｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=30}{FFF8}{=00}{=25}{FFFF}
+{FFD5}{=00}{=28}{FC51}{FB01}{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？{FFFE}{FCC0}Ｅｒｍ，　ｉｎ　ｔｈａｔ　ｃａｓｅ　ｉｔ’ｓ{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=26}{FFF6}{=00}{=01}{=00}{=27}{FFFF}
+{FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｙｏｕｒ{FFFE}ｐｕｒｃｈａｓｅ！{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．．．{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FB01}Ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ{FFFE}ｙｏｕ　ｄｏｎ’ｔ　ｈａｖｅ　ｅｎｏｕｇｈ{FFFE}ｍｏｎｅｙ．{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FB01}Ｂｕｔ，{FFFE}ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ　ｃａｎ’ｔ{FFFE}ｃａｒｒｙ　ａｎｙ　ｍｏｒｅ{FFFE}ｉｔｅｍｓ．{FC30}{FFFE}{FFF8}{=00}{=30}{FFFF}
+{FFE6}{FFF6}{=00}{=C8}{=00}{=2F}{FC51}{FB01}Ｗｈｉｃｈ　ｉｔｅｍ　ｉｓ　ｉｔ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=30}{FFC0}{=00}{=01}{=00}{=2E}{FFF8}{=00}{=2B}{FFFF}
+{FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｉｓ　ｉｔ？{FFFE}Ｅｒｍ，　ｉｎ　ｔｈａｔ　ｃａｓｅ．．．{FFFE}{FCC0}Ｉ’ｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=2C}{FFF6}{=00}{=01}{=00}{=2D}{FFFF}
+{FC51}{FB01}{FFE4}{FFE7}{FFEA}{FFE0}{=00}{=B4}{=00}{=33}Ｗｅｌｌ　ｔｈｅｎ，{FFFE}Ｉ’ｌｌ　ｔａｋｅ　ｉｔ{FFFE}ｆｒｏｍ　ｙｏｕ．{FFFE}{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｔｒｕｌｙ，{FFFE}ｉｔ　ｍｉｇｈｔ　ｂｅ{FFFE}ａ　ｌｉｔｔｌｅ　ｃｈｅａｐ．{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FC51}{FB01}Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．{FFFE}Ｉ　ｄｏｎ’ｔ　ｋｎｏｗ　ｗｈａｔ　ｔｈａｔ{FFFE}ｉｓ　ｗｏｒｔｈ．．．．{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FB01}Ｗｈａｔ？{FFFE}Ｂｕｔ，　ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ{FFFE}ｄｏｎ’ｔ　ｈａｖｅ　ａｎｙ　ｉｔｅｍｓ，{FFFE}ｔｈｏｕｇｈ．．．{FCC0}{FFF8}{=00}{=30}{FFFF}
+{FC51}{FB01}Ａｎｙｔｈｉｎｇ　ｅｌｓｅ　ｆｏｒ　ｙｏｕ？{FFFE}{FFF8}{=00}{=23}{FFFF}
+{FC51}{FB01}Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ！{FFFE}Ｄｏ　ｃｏｍｅ　ａｇａｉｎ．{FFFE}{FC30}{FFF5}{FFFF}
+{FB01}Ｏｏｐｓ，　ｓｏｒｒｙ！{FFFE}Ｔｈａｔ　ｏｎｅ’ｓ　ｓｐｏｋｅｎ　ｆｏｒ．{FFFE}Ｃｏｕｌｄ　ｙｏｕ　ｐｉｃｋ　ａｎｏｔｈｅｒ？{FFFE}{FCC0}{FFF8}{=00}{=04}{FFFF}
+{FB01}Ｍｙ，　ｃｏｌｄ　ｍｅｄｉｃｉｎｅ．．．{FFFE}Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ．{FFFE}Ｗｉｔｈ　ｔｈｉｓ，　Ｆａｔｈｅｒ　ｍａｙ{FFFE}ｇｅｔ　ｂｅｔｔｅｒ．{FCC0}{FFF2}{=00}{=30}{FFF8}{=00}{=30}{FFFF}
+{FFF3}{=00}{=31}{=00}{=02}{FB00}{=01}{=53}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ，　ｗｅｌｌ，　ｗｅｌｌ！{FFFE}Ｔｈａｔ　ｃｏｌｄ　ｍｅｄｉｃｉｎｅ　ｙｏｕ{FFFE}ｇａｖｅ　ｍｅ　ｔｈｅ　ｏｔｈｅｒ　ｄａｙ{FFFE}ｈａｓ　ｍｅ　ｑｕｉｔｅ　ｂｅｔｔｅｒ！{FCC0}{FFFE}Ｉｔ’ｓ　ｎｏｔ　ｍｕｃｈ　ｏｆ　ａ{FFFE}ｔｈａｎｋ‐ｙｏｕ，　ｂｕｔ{FFFE}ｔａｋｅ　ｔｈｉｓ！{FFFE}Ｉｔ’ｓ　Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ！！{FCC0}{FFFE}Ｎｏｗ　ｎｏｗ，　ｉｔ’ｓ{FFFE}ａ　ｔｏｋｅｎ　ｏｆ　ｍｙ　ｔｈａｎｋｓ！！{FFFE}{FFDA}{=00}{=15}{FFF2}{=00}{=31}{FCC0}{FFF5}{FB01}Ｂｙ　ｔｈｅ　ｗａｙ，{FFFE}ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ　ｆｏｒ　ｙｏｕ？{FFFE}{FFF8}{=00}{=03}{FFFF}
+{FFE6}{FFF6}{=00}{=00}{=00}{=12}{FFF3}{=00}{=2E}{=00}{=02}{FB00}{=01}{=54}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｅｌｃｏｍｅ！！{FFFE}Ｈｅｙ，　ｉｔ’ｓ　ｙｏｕ　ａｇａｉｎ．{FFFE}Ｈｏｗ’ｖｅ　ｙｏｕ　ｂｅｅｎ？{FFFE}Ａｒｅ　ｙｏｕ　ｈａｐｐｙ？{FCC0}{FFFE}Ａｓ　ｙｏｕ　ｃａｎ　ｓｅｅ，{FFFE}Ｉ’ｍ　ｈａｐｐｙ！{FFFE}Ｉ’ｍ　ｔｈｅ　ｄｏｇｓｂｏｄｙ{FFFE}ａｒｏｕｎｄ　ｈｅｒｅ！{FCC0}{FFFE}Ｓａｙ，　ａｔ　ｔｈａｔ　ｍａｎｓｉｏｎ{FFFE}ｏｖｅｒ　ｔｈｅｒｅ，　Ｉ　ｇｏｔ{FFFE}ｈｏｌｄ　ｏｆ　ａ　ｒａｒｅ{FFFE}ｗｅａｐｏｎ．{FCC0}{FFFE}Ｙｏｕ　ａｎｄ　ｍｅ　ｇｏ　ｂａｃｋ．{FFFE}Ｔａｋｅ　ｉｔ！{FFFE}Ｂｕｔ　ｋｅｅｐ　ｉｔ　ｓｅｃｒｅｔ{FFFE}ｆｒｏｍ　ｔｈｅ　ｂｏｓｓ．{FCC0}{FFFE}Ａｆｔｅｒ　ａｌｌ，{FFFE}Ｉ’ｍ　ｏｎｌｙ　ｔｈｅ　ｄｏｇｓｂｏｄｙ．{FFFE}Ｏｏｐｓ，　ｈｅｒｅ’ｓ　ｔｈｅ　ｂｏｓｓ！{FFFE}Ｓｅｅ　ｙｏｕ！{FFDA}{=00}{=07}{FFF2}{=00}{=2E}{FC30}{FFF8}{=00}{=12}{FFFF}
 {FFFF}
 {FFFF}
 {FFFF}
@@ -3551,23 +3551,23 @@
 
 === BANK 13 @ 0x082000  hdr=yes
 {HDR:fffc00000000ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、棚卸しのため{FFFE}　　休業いたしますノロ」{FC30}{FFFF}
-{FB00}{=01}{=5D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}いらっしゃいノロ！！{FFFE}{FCC0}{FB01}どんな　用ノロか？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　アイテムを買う{FFFE}　アイテムを売る{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
-{FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}どれに　するノロ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
-{FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}{FFFE}ノロね？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエル{FFFE}になるが、いいノロか？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
-{FC51}{FB01}{FFE4}{FFE8}{FFEB}大事にするノロよ！！{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}そうノロか。{FFFE}そりゃ、残念ノロ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FB01}ノロ？{FFFE}お金が{FFFE}たりないみたいノロよ。{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FB01}でも、荷物が{FFFE}いっぱい　みたいノロ。{FFFE}これ以上の　買い物は{FFFE}あきらめた方がいいノロ。{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FFE6}{FFF6}{=00}{=C8}{=00}{=0E}{FC51}{FB01}どの品を{FFFE}売ってくれるノロ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=0F}{FFC0}{=00}{=01}{=00}{=0D}{FFF8}{=00}{=0A}{FFFF}
-{FC51}{FB01}{FFEC}{=00}{=03}{FFFE}ノロか？{FFFE}{FCC0}そいつなら、{FFFE}{FFEC}{=00}{=01}ジュエルで{FFFE}引き取るけど{FFFE}いいノロか？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0B}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
-{FC51}{FB01}{FFE4}{FFE7}{FFEA}毎度ありノロ！！{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}そうノロか。{FFFE}そりゃ、残念ノロ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}そいつは　売らない方が{FFFE}いいノロよ。{FFFE}やめといた方が{FFFE}いいノロ。{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FB01}ノロ？{FFFE}売れるものを　持ってない{FFFE}みたいノロよ？{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}他にも　用はあるノロか？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FC51}{FB01}毎度ありノロ！！{FFFE}また　来るノロ！{FFFE}{FC30}{FFF5}{FFFF}
+{FC51}Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．{FCC0}{FB01}{FFFE}“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”{FC30}{FFFF}
+{FB00}{=01}{=5D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ，　ｎｙｏｒｏ！！{FFFE}{FCC0}{FB01}Ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=02}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
+{FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}Ｗｈｉｃｈ　ｏｎｅ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
+{FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｉｓ　ｉｔ，　ｎｙｏｒｏ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ａｌｌ　ｒｉｇｈｔ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
+{FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｌｏｏｋ　ａｆｔｅｒ　ｉｔ，　ｎｙｏｒｏ！！{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ，　ｎｙｏｒｏ．{FFFE}Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ，　ｎｙｏｒｏ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FB01}Ｎｙｏｒｏ？{FFFE}Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}ｍｏｎｅｙ，　ｎｙｏｒｏ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FB01}Ｂｕｔ，　ｙｏｕｒ　ｐａｃｋ{FFFE}ｌｏｏｋｓ　ｆｕｌｌ，　ｎｙｏｒｏ．{FFFE}Ｂｅｔｔｅｒ　ｇｉｖｅ　ｕｐ　ｏｎ{FFFE}ｍｏｒｅ　ｓｈｏｐｐｉｎｇ，　ｎｙｏｒｏ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FFE6}{FFF6}{=00}{=C8}{=00}{=0E}{FC51}{FB01}Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｉｌｌ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=0F}{FFC0}{=00}{=01}{=00}{=0D}{FFF8}{=00}{=0A}{FFFF}
+{FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｉｓ　ｉｔ，　ｎｙｏｒｏ？{FFFE}{FCC0}Ｆｏｒ　ｔｈａｔ　ｏｎｅ，{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ{FFFE}ｉｓ　ｗｈａｔ　Ｉ’ｄ　ｇｉｖｅ，{FFFE}ａｌｌ　ｒｉｇｈｔ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0B}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
+{FC51}{FB01}{FFE4}{FFE7}{FFEA}Ｍａｎｙ　ｔｈａｎｋｓ，　ｎｙｏｒｏ！！{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ，　ｎｙｏｒｏ．{FFFE}Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ，　ｎｙｏｒｏ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ　ｔｈａｔ{FFFE}ｏｎｅ，　ｎｙｏｒｏ．{FFFE}Ｂｅｔｔｅｒ　ｔｏ　ｌｅａｖｅ　ｉｔ{FFFE}ａｌｏｎｅ，　ｎｙｏｒｏ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FB01}Ｎｙｏｒｏ？{FFFE}Ｙｏｕ’ｖｅ　ｎｏｔｈｉｎｇ　ｔｏ　ｓｅｌｌ，{FFFE}ｉｔ　ｓｅｅｍｓ，　ｎｙｏｒｏ？{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ａｎｙｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=02}{FFFF}
+{FC51}{FB01}Ｍａｎｙ　ｔｈａｎｋｓ，　ｎｙｏｒｏ！！{FFFE}Ｃｏｍｅ　ａｇａｉｎ，　ｎｙｏｒｏ！{FFFE}{FC30}{FFF5}{FFFF}
 {FFFF}
 {FFFF}
 {FFFF}
@@ -3939,7 +3939,7 @@
 {HDR:fffc00000000ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
 {FC51}貼り紙がしてある・・・{FCC0}{FB01}「本日、棚卸しのため{FFFE}　　　　休業いたします。{FFFE}　　　　　　　ゲロゲロ」{FC30}{FFFF}
 {FB00}{=00}{=B0}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}イラッシャイ。{FFFE}{FCC0}{FB01}ドンナ　用ダ？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　アイテムを買う{FFFE}　アイテムを売る{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}ドレニ　スル？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
 {FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}{FFFE}ダナ？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエル　ニ{FFFE}ナルガ、イイカ？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FC51}{FB01}{FFE4}{FFE8}{FFEB}毎度アリ、ゲロゲロ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
@@ -4325,7 +4325,7 @@
 {HDR:fffc00000000ffff0001ffff00b3ffff0001fffcffffffffffffffffffffffffffff0011fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
 {FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、棚卸しのため{FFFE}　　　　休業いたします」{FC30}{FFFF}
 {FB00}{=01}{=56}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}いらっしゃいませ。{FFFE}{FCC0}{FB01}どんな　ご用かしら？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　アイテムを買う{FFFE}　アイテムを売る{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}どれに　するの？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
 {FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}ね？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルに{FFFE}なるけど、いい？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FC51}{FB01}{FFE4}{FFE8}{FFEB}ありがとう。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
