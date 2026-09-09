@@ -51,8 +51,8 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
 
-✅ **WAVE BARRIER MET — 4 of 4 PRs open: #27 chunk 30, #26 chunk 31, #25 chunk 36 (park), #28
-script batch_009.** Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
+✅ **BARRIER MET. 1 of 4 DECIDED — chunk 30 MERGED.** Remaining: #26 chunk 31, #25 chunk 36
+(park), #28 script batch_009. Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
 → script. Push HANDOFF before each reviewer; `git pull --ff-only` after each (it pushes an
 integration commit). Never two reviewers at once. A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
@@ -246,6 +246,29 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   Actual: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559. **None of the
   four tight banks moved by a byte** (41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365). Erring
   conservative is the right direction, but the projection is not the measurement.
+
+- 2026-09-09 (wave 7): ⚠️ **A FIFTH COORDINATOR ERROR — `クロイツェル` IS NOT A HAPAX AND ITS §9 ROW
+  STAYS LIVE.** My reviewer briefing repeated PR #27's "1 battle + 0 script, struck outright". The
+  reviewer measured **1 battle + 1 script (bank 41, `script_unique` DATA 1386 / FILE 1391)** and
+  kept the row. **Only `遠征軍` was genuinely exhausted and struck.** A wrong figure travels: it was
+  the translator's, I repeated it without measuring, and only the third party caught it.
+- 2026-09-09 (wave 7): ⚠️ **THE SEVEN-NUMBERING-CONVENTIONS TRAP FIRED, AND IT LOOKED LIKE A
+  FACTUAL CORRECTION.** PR #27's reviewer reported the `石版` unique ids as "**305, 574, 576**, not
+  569/571". **Both are right — FILE = DATA + 5, confirmed here** (the first data line of
+  `script_unique.txt` is file line 6). My dispatch specified DATA numbering explicitly and was
+  internally consistent. ⚠️ **A convention difference stated as a correction is worse than either
+  convention**: a wave-8 agent that inherits "574/576" and resolves it with `script_rows()` lands
+  on the WRONG ROWS. **Every line-number claim must name its convention** — that is now twice this
+  wave that numbering has cost real attention.
+- 2026-09-09 (wave 7): **the reviewer's substantive `石版` catch is REAL and neither I nor the PR
+  had it.** There is a **third** row — **DATA 300 / FILE 305, 21 instances across 21 banks** — the
+  big item-table row, which is why the reach is 21 banks rather than one. Full set: DATA **300,
+  569, 571**. §9's `石版` row stays live until the last of them lands.
+- 2026-09-09 (wave 7): ⚠️ **A GATE-6 CHECKER THAT MATCHES NOTHING REPORTS A CLEAN PASS.** PR #27's
+  reviewer's first checker keyed on tag-bearing messages, matched zero, and passed. **Only a
+  positive control caught it.** Its working version keys on readable text and was proved live with
+  two planted corruptions. `FLAGS.md` §AE7. **Every gate-6 checker needs a positive control before
+  its output is evidence** — this is the sixth recorded quiet-failure trap in this repo.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
