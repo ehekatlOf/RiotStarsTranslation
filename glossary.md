@@ -82,7 +82,7 @@ it is not silent.
 | 援軍 | reinforcements / **aid** | use "aid" only where 24 columns will not take the full word; flag each time |
 | 要塞 | fortress | 8 columns |
 | 旗印 | banner | |
-| ウエストバリー | Ｗｅｓｔｂｕｒｙ | Town taken by the 9th Army. 9 columns. Alt *Westbarry* |
+| ウエストバリー | Ｗｅｓｔｂｕｒｙ | Town taken by the 9th Army. **8 columns** (⚠️ corrected in place 2026-09-09, wave-6 seed: this row said 9; `Ｗｅｓｔｂｕｒｙ` is eight characters, measured with `len()`, and it is shipped 5× in `chunk_008`, `chunk_009` and `batch_002`). ⚠️ **The dumps spell it TWO ways** — `ウエストバリー` (large エ; 4 battle + 3 script) and `ウェストバリー` (small ェ; 0 battle + **1 script, in `batch_008`/unique 505**). **Both render `Ｗｅｓｔｂｕｒｙ`.** A gate-6 grep on the exact Japanese will not pair them. Alt *Westbarry* |
 | 大要塞 | ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ | 14 columns. Keep **distinct** from 要塞 → fortress and 空中要塞 → sky fortress (§11.2) |
 | 作戦会議 | ｗａｒ　ｃｏｕｎｃｉｌ | 11 columns |
 | 穀潰し | ｆｒｅｅｌｏａｄｅｒｓ | Contemptuous — one who eats but does not work. 12 columns. **Distinct** from 雑草ども → weeds (§11.5) and ゴミ → rubbish (§14.4). Recurs in script 1236 |
@@ -495,6 +495,60 @@ every name yet tested**: `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　
 (CLAUDE.md §6). **This is an orchestrator's measurement, and §2 is not an orchestrator's to
 edit: it is a proposal for the reviewer to rule on, and chunk 21's translator should re-measure
 it independently before leaning on it.**
+
+**Wave 6 seeds (2026-09-09) — battle chunks 24, 25, 26 and script batch 008 (unique 470–516).**
+Proposed forms follow the European-reading convention (§11.4, §14, §17.3) and the species test
+(§17.1). ⚠️ **Reach figures below are measured with `str.count()` over both dumps and are counted
+in INSTANCES, not lines** (the wave-5 error at `FLAGS.md` §Y3/§Z). ⚠️ **The cross-unit set was
+computed mechanically per `FLAGS.md` §Y2 — and the kanji-run intersection MISSED `末えい`, which is
+mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana terms need their own pass.
+
+| Japanese | Proposed English | Where seen | Alternatives if the reading is open |
+|---|---|---|---|
+| 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ⚠️ **CROSS-UNIT: `batch_008` (unique 483) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** |
+| 魔物 | `ｍｏｎｓｔｅｒ` | `batch_008` ×1; 6 script | Holds the 魔族 / 魔物 distinction apart. 7 columns |
+| 末えい | `ｄｅｓｃｅｎｄａｎｔ` | ⚠️ **CROSS-UNIT: `batch_008` (unique 483, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** 1 instance each | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
+| ライトエルフ | `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ` — **lowercase** | chunk 25 (L11) ×2 — Trif's bloodline (`ライトエルフの末えい`) and `ライトエルフの封印`, the seal Gilford intends to break. 2 battle + 0 script | Lowercase per §17.1 and the `ホビット` → hobbit precedent — a people, in prose. ⚠️ **Genuinely open**: `Ｌｉｇｈｔ　Ｅｌｆ` / `Ｌｉｇｈｔ　Ｅｌｖｅｓ` if the reviewer reads it as a named people rather than a kind. **Both instances must agree whichever way it goes.** 9 / 11 columns lowercase |
+| アネット | `Ａｎｎｅｔｔｅ` | chunk 26 (L14) ×5 — **Dolgan's daughter**, the survivor who guides the party to the mountain settlement. 5 battle + 4 script | European reading. 7 columns |
+| ドルガン | `Ｄｏｌｇａｎ` | chunk 26 (L14) ×2 — Annette's father, alive among the survivors. **Also battle chunk 32 + 8 script instances**; 4 battle + 8 script | Alt *Durgan*, *Dorgan*. 6 columns |
+| セティ | `Ｓｅｔｉ` | chunk 26 (L14, L15) — one of the **two ruling 魔族**, `恐ろしく強大で、驚くほど頭が回り、極めて残忍`. **Reaches battle chunks 26, 27, 28, 29, 38** — 6 battle instances | ⚠️ **A matched pair with ユイティ**: the Japanese rhymes them (‑ティ / ‑ティ) and the English should keep that. Alt *Sethi*, *Sety* — but pair the choice. 4 columns |
+| ユイティ | `Ｙｕｉｔｉ` | chunk 26 (L14, L15) — the other ruling 魔族. **Reaches battle chunks 26, 27, 29, 32, 38** — 7 battle instances | Pair with `Ｓｅｔｉ`. Alt *Yuity*, *Uiti*. 5 columns |
+| トレーズ | `Ｔｒｅｉｚｅ` | chunk 26 (L15) — a wounded demon who begs Seti for help. **Reaches battle chunks 26, 27, 28, 29** — 6 battle instances | `トレーズ` is the standard katakana for French *Treize*, so this is the European reading. Alt *Traize*, *Trays*. 6 columns |
+| カッフィ | `Ｃａｆｆｉ` | chunk 24 (L14) ×3 — ⚠️ **a PORT, not a person**: `カッフィの港`, `カッフィへ来てくれ`. 3 battle + 3 script | Alt *Kaffi*, *Caffy*. 5 columns |
+| ゴードン | `Ｇｏｒｄｏｎ` (→ `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ`) | chunk 24 (L15) — `ファリーナのゴードン将軍`, one of the three who plotted the killing. 1 battle | **`将軍` → `Ｇｅｎｅｒａｌ` is ALREADY FIXED** (§32.1, and the §10 discharge at PR #8) — only the name is new here. 6 columns bare, 15 with the rank |
+| オーラスマッシャー | `Ａｕｒａ　Ｓｍａｓｈｅｒ` | chunk 25 (L11) — Trif's spell, which fails against Gilford. 1 battle | 12 columns |
+| ホアグ王子派 / トリフ王子派 | `Ｐｒｉｎｃｅ　Ｈｏａｇ’ｓ　ｆａｃｔｉｏｎ` / `Ｐｒｉｎｃｅ　Ｔｒｉｆ’ｓ　ｆａｃｔｉｏｎ` | chunk 24 (L14) — `ホアグ王子派とトリフ王子派との間で、争いが起こるのだ` | ⚠️ **The two appear in ONE sentence and must be parallel.** 21 / 21 columns is long for a 24-column box: `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` (16) is the tight alternative, but then both must shorten together. Note `’` not `'` (CLAUDE.md §3) |
+| 古代文明 | `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` | `batch_008` (unique 473) — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
+| 司教様 | `Ｂｉｓｈｏｐ` — **already fixed, §26.1** | `batch_008` (unique 483) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
+| ウェストバリー | `Ｗｅｓｔｂｕｒｙ` — **already fixed, §2** | `batch_008` (unique 505) | ⚠️ **NOT a new term — a SOURCE SPELLING VARIANT** of `ウエストバリー` (large エ), which is shipped 5× as `Ｗｅｓｔｂｕｒｙ`. See the corrected §2 row. 8 columns |
+
+⚠️ **THREE BINDING FACTS FOR `batch_008` THAT ARE NOT GLOSSARY TERMS**, recorded here because the
+unit cannot be translated correctly without them:
+
+1. **The menu line is ALREADY SHIPPED and gate 6 binds it byte-for-byte.** Unique **472, 483, 493
+   and 504** all carry the visible text `　兵士を　補充したい　情報を　聞きたい　何でもない`, and
+   `tl/script/batch_007.tsv` already ships it three times (L41, L51, L62) as
+   `　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ　Ｎｏｔｈｉｎｇ`.
+   **All four lines must reuse that exact string** — leading ideographic space included
+   (CLAUDE.md §6.8) — not a fresh translation.
+2. **`batch_008` is 47 lines but only ~26 distinct translations.** Seven groups share identical
+   visible text and each group must be byte-identical in English:
+   **[472, 483, 493, 504]**, **[473, 484, 494]**, **[474, 485, 495]**, **[476, 487, 497]**,
+   **[478, 489, 499]**, **[479, 490, 500]**, **[480, 491, 501]** — 22 of the 47 lines.
+   The keys differ only in their trailing `{FFF8}` argument, so they are separate unique rows.
+3. **`あら` is RULED, and seven of these lines carry it.** §32.4 / §35: `あら` → `Ｍｙ` plus the
+   source's own punctuation. Unique **478, 479, 482, 489, 490, 499, 500**. Wave 5 spent a whole
+   corrections unit enforcing this across four shipped files — do not re-litigate it here.
+
+⚠️ **AND ONE FOR CHUNK 24.** L15 turns on gender and must not be smoothed over:
+`ファリーナの司教、クレウスの孫だ` → `えっ、でも、クレウス司教の孫って男だったんじゃ・・・` →
+`・・・・・そうだ、僕は男だ。` — Aries is asked whether Bishop Creus's grandchild was not *a boy*,
+and answers in male-coded `僕` that he is. **The exchange is the point; keep the question and the
+answer both explicit.** It is the same massacre `tl/battle/chunk_021.txt` L10 already ships as
+`ｔｅｎ　ｙｅａｒｓ　ａｇｏ　ａｌｌ　ｔｈｅ　Ｂｉｓｈｏｐ’ｓ　ｋｉｎ　ｗｅｒｅ　ｓｌａｕｇｈｔｅｒｅｄ`
+(`一族` → `ｋｉｎ`, `皆殺し` → `ｓｌａｕｇｈｔｅｒｅｄ`) — read chunk 21 before rendering it.
+This is adjacent to but **distinct from** `FLAGS.md` §Y6, which is about **クレス** (Cress), a
+different character; §Y6 stays open and unaffected.
 
 ---
 
