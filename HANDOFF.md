@@ -44,11 +44,11 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 | Unit | Branch / file | PR | State |
 |---|---|---|---|
 | battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | — | translator round 1, running |
-| battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | — | translator round 1, running |
+| battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | **#26** | **delivered — awaiting reviewer** (5,355 / 8,192, slack 2,837) |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | — | translator round 1, running |
 
-**Wave barrier NOT yet met — 1 of 4 PRs open. Review nothing.** A translator still working is not a
+**Wave barrier NOT yet met — 2 of 4 PRs open (#25 chunk 36, #26 chunk 31). Review nothing.** A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
 fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
 
@@ -179,6 +179,22 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   AND `なるほど` (556, 557) BOTH IN BANK 8** — §25.3's "no chunk and no bank holds two" fails
   outright, exactly as §42.4 predicted. It is the batch-009 translator's ruling to make and the
   reviewer's to test; `Ｅｘａｃｔｌｙ．` stays reserved for `そのとおり`/`そうそう`.
+
+- 2026-09-09 (wave 7): ⚠️ **A COORDINATOR DISPATCH INSTRUCTION WAS IMPOSSIBLE, AND THE TRANSLATOR
+  WAS RIGHT TO REFUSE IT.** I told chunk 31 to reproduce its two Latin incantations "EXACTLY,
+  character for character". **`・` (U+30FB) is not in `assemble.py:ALLOWED` and is not in the
+  full-width Latin/digit ranges, so it is rejected outright** — verified here. The instruction was
+  unsatisfiable as written. The translator mapped the three `・` by existing rules instead
+  (separator → `　` per §1's `ゼファー・クリッペン`; trailing `・・` → `．．` per §3.1) and kept every
+  letter and its case byte-identical. **Third wave running that an agent has correctly refused a
+  coordinator instruction on measurement.** ⚠️ The same trap applies to chunk 36's preserved machine
+  text and to any future unit carrying source Latin — **`・` can never be "preserved verbatim".**
+- 2026-09-09 (wave 7): **two glossary figures corrected by measurement, both confirmed here.**
+  (a) **`ｇｅｍｓｔｏｎｅ` is 8 columns and `ｇｅｍｓｔｏｎｅｓ` 9** — §32.1 states "9 / 10" and §33.5
+  states "9"; both are one too high. No rendering changes; the form is 1 column *cheaper* than the
+  glossary believes. (b) **§32.7's `ふふ` census counts SUBSTRINGS, not laughs** — chunk 31 has
+  **3** ふ-runs (`ふふふ`, `ふふふふ`, `ふふふふふ`), whose non-overlapping `ふふ` substring count is
+  **5**, which is the "31 ×5" the row records. The §35.2 shape in a new place.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
