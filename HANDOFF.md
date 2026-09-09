@@ -12,10 +12,15 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 7 IS RUNNING — REVIEWING, 1 of 4 decided.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
-> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 31, 36 (park), script `batch_009`**.
-> **Next reviewer: PR #26, battle chunk 31.** Then #25 (chunk 36 park), then #28 (script batch_009).
-> `git pull --ff-only` before dispatching it — PR #27's integration commit is on the branch.
+> **WAVE 7 IS RUNNING — REVIEWING, 2 of 4 decided.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
+> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 36 ✅ PARKED, 31 in rework, script `batch_009`**.
+> **Next reviewers: PR #26 round 2 (battle chunk 31, same reviewer `a06a61f091fcf274c`) and PR #28
+> (script `batch_009`).** ⚠️ **#28's reviewer owns the `石版` / `『かげの石版』` §9 rows** — chunk 36
+> was the SECOND of three to land and both rows were **deliberately LEFT LIVE**; #28 is the third
+> and last, so it strikes them, **after reading the merged `tl/battle/chunk_030.txt` and
+> `pending/chunk_036.txt` rather than assuming**. Chunk 30 uses bare lowercase `ｔａｂｌｅｔ`, chunk 36
+> uses `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` for the proper name only; #28 must match both.
+> `git pull --ff-only` before dispatching either — PR #25's integration commit is on the branch.
 >
 > If this line still says "running" and `ListAgents` shows nothing alive: the wave died mid-flight.
 > Reconcile open PRs (`git ls-remote --heads origin 'tl/*'`) against In flight, re-dispatch what is
@@ -26,8 +31,9 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `source_revision` — SKILL.md §6a).
 
 ## Last updated
-2026-09-09 · by: **wave-7 reviewer, PR #27 integration** ·
-wave: **7 REVIEWING — 1 of 4 decided (chunk 30 MERGED); 31, 36, script batch_009 still to review** ·
+2026-09-09 · by: **wave-7 reviewer, PR #25 integration** ·
+wave: **7 REVIEWING — 2 of 4 decided (chunk 30 MERGED, chunk 36 PARKED); 31 in rework round 1
+awaiting round-2 re-review, script batch_009 (#28) still to review** ·
 queue: **fresh; wave-7 batch re-verified, see Decisions**
 
 ## Progress (`python3 tools/assemble.py status`)
@@ -40,7 +46,11 @@ queue: **fresh; wave-7 batch re-verified, see Decisions**
 
 `check`: **All checks passed** at `2bac521`. ⚠️ **Tightest banks: 41 → 353, 40 → 447, 5 → 2,007
 (was 3,357 — batch 008 spent 1,350), 2 → 3,365**, 3 → 8,113, 33 → 9,291. Parked and translated:
-chunks **5, 43** (tier-A budget) and **17** (dump artifact). ⭐ **The dumper is STILL unfixed** —
+chunks **5, 43** (tier-A budget), **17** (§D1 dump artifact) and ⭐ **36** (⚠️ **§AF1 charset gate on
+preserved source — a NEW and DIFFERENT blocker, and the cheapest on the Blocked list**).
+⚠️ **The Progress figures above are UNCHANGED by chunk 36 and that is correct** — a park writes to
+`pending/`, which `assemble.py` never reads (`grep -n "pending" tools/assemble.py` returns nothing),
+so `status` cannot count it. **986 finished JP characters (2.3 %) sit outside the 54.1 %.** ⭐ **The dumper is STILL unfixed** —
 re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` returns nothing.
 
 ## In flight
@@ -48,18 +58,29 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 |---|---|---|---|
 | ~~battle chunk 30~~ | `tl/battle/chunk_030.txt` | **#27** | ✅ **MERGED 2026-09-09 — squash `9548e73`; integration commit `integrate: chunk 030 — glossary §43, FLAGS §AE, handoff`.** 7,615 / 8,192, **slack 577**; 183 rows, widest 23, none at 24; both over-4 pages verified inherited against a pristine extraction; `{FFFE}` changed on 7 lines, all itemised. All 8 gates passed, no findings. Glossary **§43** (12 terms + 4 rulings), FLAGS **§AE** |
 | battle chunk 31 | `tl/battle/chunk_031.txt` | #26 | **rework round 1 PUSHED** `89f5d60` — 5,399 / 8,192 (slack 2,793), +44 as predicted. **Awaiting round-2 re-review by the SAME reviewer** (a06a61f091fcf274c), queued behind chunk 36 |
-| battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
+| ~~battle chunk 36~~ | **`pending/chunk_036.txt`** | **#25** | ✅ **PARKED 2026-09-09 — squash `018af11`; integration commit `integrate: chunk 036 — glossary §44, FLAGS §AF, pending README, handoff`.** All 8 gates passed, **no findings, no rework**. **2,887 / 8,192, slack 5,305** (31.4 % of budget); widest run 22, none at 23/24, 0 column problems; `{FFFE}` 104 → 107 all on body line 5, `{FCC0}` 2 → 2; both `>4`-row pages byte-identical to a pristine extraction. **Preservation verified, not accepted**: 9 of 10 body lines byte-identical incl. the 884-char MIPS listing, 23 replaced runs on the tenth, **every one Japanese on the source side**, 1,154 chars carried through. ⚠️ **Parked for a TOOLING reason, not budget — `FLAGS.md` §AF1, a NEW blocker kept distinct from §D1**; see Blocked item **0a**. Glossary **§44** (8 terms + 3 rulings + the §9 convention correction), FLAGS **§AF**, `pending/README.md` row added. **Nothing left on this unit but a human's one-function `assemble.py` fix; then `git mv`.** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
 
-✅ **BARRIER MET. 1 of 4 decided (chunk 30 MERGED), chunk 31 in REWORK round 1.** ⚠️ **A rework
-does NOT occupy the reviewer slot** — chunk 36 (#25) is being reviewed in parallel. Then #28. Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
+✅ **BARRIER MET. 2 of 4 decided (chunk 30 MERGED, chunk 36 PARKED), chunk 31 in REWORK round 1.**
+⚠️ **A rework does NOT occupy the reviewer slot.** **Remaining: PR #26 round 2 and PR #28.**
+Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
 → script. Push HANDOFF before each reviewer; `git pull --ff-only` after each (it pushes an
 integration commit). Never two reviewers at once. A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
 fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
 
-**PR #25 (chunk 36) is a PARK, and its reason is a NEW tooling blocker — verified by this
-coordinator, not taken on trust.** 2,887 / 8,192 bytes, slack 5,305; translation finished, faithful
+✅ **PR #25 (chunk 36) IS DECIDED — PARKED, squash `018af11`, no findings.** The park reason was
+**re-measured independently by the reviewer in a real checkout** and every figure below reproduced
+exactly. Three corrections were made **to the record, none to any file**: (1) ⚠️ **`FLAGS.md` §AE5's
+`石版` "correction" is WITHDRAWN — 569/571 and 574/576 are the SAME two lines in two conventions**
+(FILE = DATA + 5; the first data row of `script_unique.txt` is FILE 6), so neither was wrong; §AE5's
+real finding, the third instance at DATA 300 / FILE 305, stands, and glossary §9's rows now carry
+explicit convention labels (§AF3, glossary §44.5). ⚠️ **§AD5 flagged this exact clash one wave
+earlier and it recurred in the very next review** — state the convention on every line-number claim.
+(2) `riotbattle.bytes_from_body` **raises** on a battle body containing `{PAD}`, so PR #25's Flag 1
+overstated its cross-check; the byte figure itself is right and comes from `check` (§AF4).
+(3) `Ｆｏｒ　ｎｏｗ，` also renders `ここは、ひとまず` in `chunk_024`, which Flag 6 did not name;
+nothing collides (glossary §44.2). **The original coordinator note follows and was confirmed:** 2,887 / 8,192 bytes, slack 5,305; translation finished, faithful
 and format-clean; 0 column problems. It cannot enter `tl/` because **`assemble.py:validate_body`
 applies its charset whitelist to preserved SOURCE machine text**: chunk 36 is largely a full-width
 MIPS listing, and with `jp_ok=False` (the mode for translated files) **38 characters are rejected —
@@ -71,6 +92,11 @@ function. Reviewer: record it as its own `FLAGS.md` entry, a Blocked row and a `
 row. Fix is one function in `assemble.py` (skip charset on runs byte-identical to the dump; merely
 widening `ALLOWED` is **insufficient** — the garbage block contains kana). **Needs no disc, no EXE
 and no dumper change, and after it unparking is a `git mv` and nothing else.**
+✅ **All three of those records are now WRITTEN** — `FLAGS.md` **§AF1** (its own entry, explicitly
+contrasted with §D1 in a side-by-side table), Blocked item **0a** above, and the
+`pending/README.md` reason table (now **three** reasons) plus a per-file row. Glossary **§44**
+carries the 8 terms, 3 rulings and the register. **Nothing on this unit is outstanding but the
+human's one-function `assemble.py` fix.**
 
 ## Next up — WAVE 7 (in flight; figures RE-VERIFIED by this coordinator)
 **Battle 30** (tier B, 1,358 JP, headroom 3,897, ratio **2.43** — tightest, expect a re-cut pass),
@@ -94,6 +120,22 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
 `FLAGS.md` §Y6**: Cress's gender is fixed nowhere and rendered nowhere in `tl/`.
 
 ## Blocked — needs a human
+0a. 🔧 **NEW 2026-09-09 — THE CHEAPEST ITEM ON THIS LIST, AND IT IS NOT ITEM 0.** `FLAGS.md`
+   **§AF1**. `assemble.py:validate_body` applies its charset whitelist to **preserved SOURCE
+   machine text**. Battle chunk 36 is mostly a full-width MIPS assembly listing, English machine
+   output and a garbage block, all of which must survive byte-for-byte; **38 characters of it are
+   rejected** (`＄`×14 `＞`×10 `＿`×4 `＃`×4 `｜`×3 `ケ` `あ` `「`) and **not one is on a translated
+   run**. Measured at the PR #25 review: the pristine chunk raises **193** problems, the delivered
+   translation **38**, all charset, **0 tag-parity / 0 column / 0 byte**, and **0** with
+   `jp_ok=True`. `pending/chunk_036.txt` is finished, faithful and **5,305 bytes UNDER its slot**.
+   ⚠️ **This is NOT item 0 / §D1** — §D1 is `{FC70}`/`{FCA8}` mis-tokenisation in `riotbattle` and
+   needs a re-dump; this is the charset whitelist in `assemble.validate_body` and needs **one
+   function**: skip the charset check on runs byte-identical to the dump. ⚠️ **Widening `ALLOWED`
+   alone is INSUFFICIENT — the garbage block contains kana** (`ケ`, `あ`), and blanket-allowing kana
+   would disable the gate that catches untranslated Japanese. **Needs no disc, no EXE, no emulator
+   and no dumper change.** Afterwards, unparking is `git mv pending/chunk_036.txt
+   tl/battle/chunk_036.txt` and nothing else. **986 JP characters — 2.3 % of the battle script —
+   are finished and waiting on it.**
 0. 🔧 **THE `riotbattle.tokenise` DUMP ARTIFACT — the highest-leverage item here.** `FLAGS.md`
    **§D1, §R**. The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte
    is a valid lead byte, so an item id plus the *next tag's* lead byte decodes as a kanji.

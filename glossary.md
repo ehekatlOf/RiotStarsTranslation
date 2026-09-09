@@ -541,8 +541,8 @@ this block and never had one** — confirmed a third time; the dispatch's pairin
 | 『闇の紋章』 | `“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”` | **Wave-7 seed.** **18 columns bare, 20 with the §12 quotes** (`『…』` → `“…”`). 紋章 appears nowhere else in the glossary | battle chunk 31 | Alt *Dark Emblem* (11) if the row will not carry 20 |
 | 冥界の王 | `ｔｈｅ　Ｎｅｔｈｅｒｗｏｒｌｄ　Ｋｉｎｇ` | **Wave-7 seed.** **20 columns**, so it fits one row; `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｅ　Ｕｎｄｅｒｗｏｒｌｄ` is **26** and cannot. Capitalised per §2's 王女様 → *the Princess* and §28.1's 国王 → *the King* | battle chunk 31 ×3 | Alt *the Underworld King* |
 | リッチ | `Ｌｉｃｈ` | **Wave-7 seed.** **4 columns.** ⚠️ **The game spells it itself** — chunk 31's incantation ends `ＥＬＡＧＬＡ・ＬｉＣＨ！` in full-width Latin, so this is a transcription, not a choice. Capitalised: chunk 31 uses it as the creature's name (`冥界の王、リッチよ！`) | battle chunk 31 | — |
-| 石版 | `ｔａｂｌｅｔ` | ✅ **RENDERED ×3 in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded; 6 columns confirmed. ⚠️ THE ROW STAYS LIVE — do not strike it on chunk 30.** CROSS-UNIT: reach re-counted at the PR #27 review over both dumps and PR #27's figures are **exact** — **5 battle (chunks 30, 36) + 25 script instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43). Per the `ルート` precedent (§29.1 / §30.1) it is struck by the **last** of chunk 36 and the script units to land. ⚠️ **Unique-line ids corrected here: the instances are `script_unique` 305, 574 and 576** — this row said "569, 571" and PR #27's own Handoff repeated it, while its glossary row said "574/576"; 574/576 is right, and **305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third that neither named. The plot object the whole wave turns on | battle 30 ✅, 36 OUTSTANDING; script unique **305, 574, 576** OUTSTANDING | Alt *stone tablet* (12) |
-| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Wave-7 seed. ⚠️ CROSS-UNIT — battle chunk 36 AND script 569.** **13 columns bare, 15 with the §12 quotes.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new | battle chunk 36; script 569 | Alt *Tablet of Shadow* (16) |
+| 石版 | `ｔａｂｌｅｔ` | ✅ **RENDERED ×3 in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded; 6 columns confirmed. ⚠️ THE ROW STAYS LIVE — do not strike it on chunk 30.** CROSS-UNIT: reach re-counted at the PR #27 review over both dumps and PR #27's figures are **exact** — **5 battle (chunks 30, 36) + 25 script instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43). Per the `ルート` precedent (§29.1 / §30.1) it is struck by the **last** of chunk 36 and the script units to land. ⚠️ **Unique-line ids, with the convention named — CORRECTED 2026-09-09 (§4.3, PR #25 review, §44.5).** The instances are **DATA 300 / 569 / 571 = FILE 305 / 574 / 576** (FILE = DATA + 5; the first data row of `script_unique.txt` is FILE 6). This row previously said "574/576 right, 569/571 wrong": **they are the same two lines in two conventions and neither was wrong.** What PR #27's review genuinely found, and it stands, is that **DATA 300 / FILE 305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third instance no row had named. Reach unchanged and exact; no rendering changes. The plot object the whole wave turns on | battle 30 ✅, **36 ✅ (PR #25, inside the proper name only — the bare noun is untouched there)**; script **DATA 300, 569, 571** OUTSTANDING | Alt *stone tablet* (12) |
+| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Wave-7 seed. ✅ RENDERED in `pending/chunk_036.txt` (PR #25) exactly as seeded; 13 bare / 15 quoted re-measured with `len()`, both exact. ⚠️ THE ROW STAYS LIVE — `tl/script/batch_009.tsv` (PR #28) is the third unit and is unreviewed; struck by the last to land (§29.1 / §30.1).** ⚠️ **CROSS-UNIT — battle chunk 36 AND script DATA 569 (= FILE 574); convention named per §44.5.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new. **That check was done at the PR #25 review and is clean**: `かげ` = *shadow* is battle chunk 36 and script DATA 569 only; every other battle `かげ` is `おかげ` (chunk 8), `影` is 0 battle, and all 4 battle `カゲ` are `トカゲ` | battle chunk 36 ✅; script **DATA 569** OUTSTANDING | Alt *Tablet of Shadow* (16) |
 | 鏡の神殿 | `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ` | **Wave-7 seed.** **13 columns.** 神殿 → *temple* is already fixed and held distinct from 教会 → *church* and 聖堂 → *sanctuary*; this only names the building | script 569, 571 | Alt *the Temple of the Mirror* (24 — fills a whole row) |
 | リースの化身 | `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **24 columns — exactly one full row, so it cannot take a mark or a particle on that row.** Bare 化身 → `ｉｎｃａｒｎａｔｉｏｎ` (**11**). `リース` → `Ｒｅｅｓｅ` is fixed at §26.1; ⚠️ the **maximal-run blind spot** (§Y2) means a search for `リース文明` never matches this — search bare `リース` | script 569, 571 | Alt *Reese's incarnation* |
 | リースの神々 | `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **17 columns.** Lower-case *gods* as a plural common noun (contrast §17.1's species test); the town's blessing formula `リースの神々よ、この者たちに祝福あれ！` | script 560, 567 | — |
@@ -5045,3 +5045,139 @@ exact. **`石版`'s unique-line ids are corrected in §9**: they are `script_uni
   `{FC50}`/`{FC51}` at all and 8 text rows; file line 21 has 5 rows with no channel tag after its
   `{FC30}`. Both inherited exactly (8 in / 8 out, 5 in / 5 out), verified against a pristine
   extraction. Still needs the in-game visit §L2 asks for.
+
+---
+
+## 44. Added by chunk 036 (PR #25, PARKED 2026-09-09)
+
+⚠️ **The unit is PARKED, and the entries below are still binding.** `pending/chunk_036.txt` is a
+finished, faithful, format-clean translation blocked by a tooling defect (`FLAGS.md` §AF), not by
+anything in its own text. Every rendering here was reviewed line by line against the Japanese and
+every term below is fixed from now on, exactly as if the file had shipped — a park is a placement
+decision, not a lower standard.
+
+**What chunk 36 is.** Of 986 source characters only **174 are dialogue**. The rest is a full-width
+MIPS assembly listing, already-English machine output (`＞ＴＡＲＧＥＴ　ＲＥＣＯＧＮＩＺＥＤ`,
+`＞ＳＥＣＲＥＴ　ＣＯＤＥ　ＣＯＮＦＩＲＭＥＤ`, `＞ＯＫ`) and a deliberate garbage block, **all of it
+preserved byte-for-byte** — verified at review by diffing against a pristine `split_battle`
+extraction: 9 of 10 body lines identical (including the 884-character MIPS listing), 23 replaced
+runs on the tenth, **every one Japanese on the source side**, 1,154 characters carried through
+unchanged, and the only residual Japanese anywhere in the file is `ケ` and `あ` inside the garbage
+block.
+
+### 44.1 New terms
+
+| Japanese | English | Note |
+|---|---|---|
+| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Promoted from §9's wave-7 seed, used exactly as seeded. 13 columns bare, 15 with the §12 quotes** — both re-measured with `len()` at review, both exact. ⚠️ **THE §9 ROW STAYS LIVE**: `tl/script/batch_009.tsv` (PR #28) is the third unit of this wave to render it and is unreviewed. Struck by the **last** to land, per the `ルート` precedent (§29.1 / §30.1). §Y2's mixed-script check was done and is clean — `かげ` = *shadow* is battle chunk 36 and script DATA 569 **only**; every other battle `かげ` is `おかげ` (chunk 8), `影` is 0 battle, and all 4 battle `カゲ` are `トカゲ` → `ｌｉｚａｒｄ` (§2) |
+| 石版 (inside the proper name) | `Ｔａｂｌｅｔ` | **Seed used exactly**; bare `ｔａｂｌｅｔ` = **6 columns**. ⚠️ **Chunk 36 renders 石版 ONLY inside `『かげの石版』`**, so the bare lowercase form is untouched here. ✅ **Cross-unit check done against the MERGED tree, not a report**: `tl/battle/chunk_030.txt` (merged `9548e73`) renders bare `石版` as lowercase `ｔａｂｌｅｔ` in all four places (`ｔｈｅ　ｔａｂｌｅｔ　ｅｎｓｈｒｉｎｅｄ`, `ｒｅｃｏｖｅｒｅｄ　ｔｈｅ　ｔａｂｌｅｔ！`, `ｔｈｅ　ｔｒｕｔｈ　ｏｆ　ｔｈａｔ　ｔａｂｌｅｔ`) and **never renders the proper name**. The two units are complementary, not divergent. **§9's row STAYS LIVE for PR #28** |
+| 主人 (of a servant to the one it serves) | `ｍａｓｔｅｒｓ` | 8 columns. **First rendering in the project** — 主人 is battle chunks **32 and 36**, and 32 is tier-A blocked. ⚠️ **`ｍａｓｔｅｒ` is NOT free and the PR did not claim it was**: `chunk_012` ships 師範 → `ａ　ｍｅｒｅ　ｍａｓｔｅｒ　ｏｆ　ａ　ｔｏｗｎ　ｄｏｊｏ`, `batch_001` ships 騎士 → `ｍａｓｔｅｒ　ｏｆ　ｒｉｄｉｎｇ　ａｎｄ　ｃｏｍｂａｔ` and the §4 class name `Ｂｅａｓｔ　Ｍａｓｔｅｒ`, `chunk_000` has `ｍａｓｔｅｒｐｉｅｃｅ`. **§25.3's chunk test is met** (師範 is chunk 12 only). Four distinct source words on one English head word in four visibly different phrases; no distinction the source draws is flattened. ⚠️ **FORWARD BINDING, added at review — the PR did not name it**: script `ご主人様は　ただいま外出しておられます。` and `ご主人様がいなくなって` are the **same sense** and should take `ｍａｓｔｅｒ` when a batch reaches them |
+| 認める (X を Y と) | `ｒｅｃｏｇｎｉｓｅ　Ｘ　ａｓ　Ｙ` | 9 columns. **Verified free across `tl/` and `pending/` at review** — 0 prior occurrences. British `‑ｓ‑` per §4. ⚠️ **The source's own preserved `＞ＴＡＲＧＥＴ　ＲＥＣＯＧＮＩＺＥＤ` two screens earlier is almost certainly the joke** (認める / RECOGNIZED, 仲間にしてほしい / ACCEPTED). The echo survives in the **word**; the spelling cannot match, because the American form is preserved source and §4 fixes translation as British. **Do not "fix" either side.** 1 battle + 2 script |
+| だって (causal, sentence‑initial) | `Ｂｅｃａｕｓｅ` | 8 columns, **verified free**. Held apart from the **quotative** `だって`, already shipped as `ｔｈｅｙ　ｓａｉｄ` (`chunk_004`, `〜だって話だが`) and `ｔｈｅｙ　ｓａｙ．` (`batch_005`, `〜だってよ`). **This one chunk carries both senses**, so they could not have collapsed |
+| ・・・だって。 (quotative report tag) | `．．．ｏｒ　ｓｏ　ｉｔ　ｓａｙｓ．` | 17 columns. Keeps §26.6's family verb *say* with the singular subject the scene requires — the reporter is a machine, not people — so it sits beside `ｔｈｅｙ　ｓａｙ` rather than colliding with it. Dot count 3 = 3 |
+| そういうもんかな | `Ｉｓ　ｔｈａｔ　ｈｏｗ　ｉｔ　ｉｓ` | 17 bare, 21 with the source's four stops. A **new そう‑ form**, deliberately held apart from all five already fixed: `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` (§23.2 / §25.2 / §30.3), `Ｔｈａｔ’ｓ　ｔｒｕｅ．` (§25.2), `Ｙｏｕ’ｒｅ　ｒｉｇｈｔ．` (§32.2), `Ｉ　ｓｅｅ．` (§30.3, §34.1, §38.2, §42.4), `Ｙｅｓ，` (§34.2). **Hapax — 1 battle, 0 script.** Interrogative syntax under the source's `。` per §36.8 / §37.7 |
+| 目の光 | `ｔｈｅ　ｌｉｇｈｔ　ｉｎ　（ｉｔｓ）　ｅｙｅｓ` | Hapax — 1 battle, 0 script |
+
+**Reuses, recorded not claimed as new** — `ティミー` → `Ｔｉｍｍｙ` (§11.1) · `ごめんなさい。` →
+`Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．` (§34.1, byte-exact) · `あ、` → `Ａｈ，` (§6) · `でも、` → `Ｂｕｔ，`
+(§23.3) · `きっと` → `ｓｕｒｅｌｙ` (§33.6) · `仲間` → `ｃｏｍｒａｄｅ` (§28.2) · `やさしい` →
+`ｇｅｎｔｌｅ`, matching `chunk_007`'s `そのやさしい心` → `ｔｈａｔ　ｇｅｎｔｌｅ　ｈｅａｒｔ` ·
+`『…』` → `“…”` (§12) · `とりあえず` → `Ｆｏｒ　ｎｏｗ` (§44.2).
+
+### 44.2 RULING — `とりあえず` takes bare `Ｆｏｒ　ｎｏｗ` here, and the comma is the SOURCE's to give
+
+`tl/battle/chunk_004.txt` and `chunk_025.txt` both ship `とりあえず、` → `Ｆｏｒ　ｎｏｗ，`, and
+`chunk_019.txt` ships `よし、とりあえず、` → `Ｒｉｇｈｔ，　ｆｏｒ　ｎｏｗ，`. Chunk 36 ships bare
+`Ｆｏｒ　ｎｏｗ` and **that is not a divergence.**
+
+**Census re-run over the whole battle dump at review — 13 occurrences in 9 chunks:**
+
+| Shape | Count | Chunks |
+|---|---|---|
+| `とりあえず、` — ends its row with the source's comma | **7** | 4, 19, 25, 28 ×3, 31 |
+| `とりあえず…` — runs straight on into its clause on the same row | **5** | 18 (`手駒は`), 23 ×2 (`王子を`), 43 ×2 (`動いたから、`) |
+| **`とりあえず{FFFE}` — ends its row with NO comma** | **1** | **36 only** |
+
+`translation_prompt.md` §5's worked example (`ゲロゲロ` under `！`) fixes the **word** and takes the
+punctuation **from the source**; the two rules compose, they do not compete. Adding a comma the
+source does not have would be the error. **Lines this affects: none.**
+
+⚠️ **`Ｆｏｒ　ｎｏｗ，` is not exclusively `とりあえず、`'s** — `chunk_024` renders `ここは、ひとまず`
+as `Ｆｏｒ　ｎｏｗ，　ｉｔ　ｗｏｕｌｄ　ｂｅ`. Chunk 24 holds no `とりあえず`, so §25.3's chunk test is
+met, and chunk 36's bare form collides with neither. Recorded at review — the PR's Flag 6 did not
+name chunk 24 — so it cannot drift.
+
+### 44.3 The speaker reading, and the portrait-id trap chunk 36 sets
+
+Derived **inside the chunk from the tag stream**, per `FLAGS.md` §W5 and §41.2:
+
+| Tag | Who | Register |
+|---|---|---|
+| `{FCB0}{=00020001}` on `{FC51}` | **Timmy** — named vocatively by the other speaker on the very next turn (`ティミー、`), and the one who translates and then confesses | §23.5: young, contractions (`ｉｔ’ｓ`, `Ｉ’ｍ`), `Ａｈ，` |
+| `{FCB0}{=00000001}` on `{FC51}` | an unnamed 9th Army companion | §7 casual, contractions |
+| `{FCB0}{=00070000}` on `{FC50}` | **the machine** | preserved source; no register |
+
+⚠️ **§23.5 fixes Timmy on portrait 0007, and in chunk 36 portrait 0007 is the MACHINE.** Carrying
+§23.5's id across chunks would have attributed the garbage block and the MIPS listing to Timmy.
+The channel and the vocative decide, not the id — §41.2's ruling, and chunk 36 is its sharpest
+instance yet. **This reading is scoped to chunk 36 and is not carried elsewhere.**
+
+**The quoted fake translation is the one uncontracted passage in the chunk**
+(`“Ｉ　ｒｅｃｏｇｎｉｓｅ　ｙｏｕ　ａｓ　ｍｙ　ｍａｓｔｅｒｓ．　Ｉ　ｗｉｓｈ　ｔｏ　ｂｅ　ｙｏｕｒ　ｃｏｍｒａｄｅ．”`)
+— Timmy performing a machine, which is what makes it read as a quotation rather than as her own
+voice. Deliberate, correct, and **not** a register inconsistency.
+
+### 44.4 Recorded, not re-cut — checked at review and not defects
+
+- **`今のは、ウソだけど。` → `Ｗｈａｔ　Ｉ　ｊｕｓｔ　ｓａｉｄ` / `ｗａｓ　ａ　ｌｉｅ，　ｔｈｏｕｇｈ．`**
+  moves the comma: the source's topic `、` is dropped and a `，` appears before `ｔｈｏｕｇｈ`. Counts
+  are 1 comma + 1 stop either way. English cannot put a comma between subject and verb, and §2
+  names **topic-comment inversion** as a licensed departure. **§31.4 is not engaged** — that ruling
+  governs the comma after a *fixed assent word*. `今のは` is rendered (*what I just said*), not
+  dropped to a bare demonstrative.
+- **`さっきより` moves to the end** (`ｇｅｎｔｌｅｒ　ｔｈａｎ　ｂｅｆｏｒｅ．`) — the English
+  comparative's own word order, a §2 grammatical necessity, **not** a §2.1 step-6 reorder. §40.6's
+  `さっきの奴ら` → `Ｔｈｅ　ｏｎｅｓ　ｆｒｏｍ　ｊｕｓｔ　ｎｏｗ` is a different construction and is
+  undisturbed.
+- **`ｓｈａｄｏｗ` is not free lowercase.** `batch_003` and `batch_004` spend it on 闇 / 暗黒
+  (`ａ　ｄｒａｇｏｎ　ｏｆ　ｓｈａｄｏｗ`, `ｓｈａｄｏｗ　ｐｏｗｅｒ`, `ａ　ｓｈａｄｏｗ　ｂｏｗ`). Chunk 36's is
+  **capitalised inside a quoted proper name** for `かげ`. Different source words, different case,
+  different store, no shared chunk or bank. Recorded at review; the PR did not raise it.
+- **Two rows end in a lone two-letter word** (`…ｗｈａｔ　ｗｅ`, `“Ｉ　ｒｅｃｏｇｎｉｓｅ　ｙｏｕ　ａｓ`),
+  which §3.2 cautions against "if it can be avoided", and both **are** avoidable at zero byte cost
+  (`ｂｕｔ　Ｉ　ｗｏｎｄｅｒ　ｗｈａｔ` 17 / `ｗｅ　ｄｏ　ａｆｔｅｒ　ｔｈｉｓ．` 17). **Raised at review and
+  withdrawn on a census: 170 such rows exist across 24 of the 27 shipped battle chunks**,
+  `chunk_030` included. Requiring it of chunk 36 would hold one unit to a standard no merged unit
+  has met. **If the project wants the tighter rule it is a corrections-unit decision, not a single
+  reviewer's on a single PR.**
+- **Ellipsis dot counts are exact**: source `・・・` ×3 → `．．．`, `．．．`, `．．．．`. The four is
+  `・・・。`, which **§3.1 spells out as four**. Zero `・`, `…`, `○` or ASCII in the delivered file.
+- **Both `>4`-row pages are inherited**, byte-identical to a pristine extraction (45 and 33 rows),
+  and are already enumerated in `FLAGS.md` §D2, which lists chunk 36 by name.
+
+### 44.5 CORRECTION to §9 and §43.2 (§4.3) — the `石版` line ids are a CONVENTION difference, not an error
+
+`FLAGS.md` §AE5 and §9's `石版` row both record that the script instances are "**305, 574 and 576**
+— 574/576 right, 569/571 wrong". **Measured directly on `dumps/script_unique.txt` at this review:
+the first data row is FILE 6, so FILE = DATA + 5**, and `石版` occurs at
+
+> **DATA 300 / 569 / 571  =  FILE 305 / 574 / 576**
+
+**569/571 and 574/576 are the same two lines in two conventions. Neither was wrong.** The substance
+of §AE5 stands and is valuable — there genuinely is a **third** instance (DATA 300 / FILE 305,
+`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) that no row had named. Only the "wrong"
+verdict is withdrawn. `FLAGS.md` §AD5 flagged this exact convention clash one wave earlier and it
+recurred immediately.
+
+**§9's two rows were internally inconsistent** — the `石版` row listed FILE numbers while the
+`『かげの石版』` row directly beneath it listed DATA 569 for the same physical line. Both now carry
+an explicit convention label. **The reach itself is unchanged and exact: 5 battle (chunks 30, 36)
++ 25 script instances across 21 banks. No rendering changes; no translated line needs revisiting.**
+
+### 44.6 Register
+
+| Who | Register |
+|---|---|
+| Timmy (chunk 36, `{FCB0}{=00020001}`) | §23.5 confirmed in a second chunk: young, contracts freely, reasons from what she sees (`Ｂｅｃａｕｓｅ　ｔｈｅ　ｌｉｇｈｔ　ｉｎ　ｉｔｓ　ｅｙｅｓ　ｈａｓ　ｇｒｏｗｎ　ｇｅｎｔｌｅｒ`). **Drops contractions only inside the quoted machine voice** |
+| The 9th Army companion (chunk 36, `{FCB0}{=00000001}`) | §7 unchanged — casual, contractions (`ｉｔ’ｓ　ｇｏｏｄ　ｗｅ　ｂｅａｔ　ｉｔ`, `Ｗｈａｔ’ｓ　ｉｔ　ｓａｙｉｎｇ`), musings under the source's `。` rather than questions |
+| The machine (`{FC50}`) | preserved source. **Not translated, not translatable, and not to be "tidied"** |

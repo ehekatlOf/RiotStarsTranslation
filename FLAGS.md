@@ -4215,3 +4215,143 @@ a human job.**
 4. **A PR can under-count in its own favour.** PR #27 said six shipped `Ｙｅａｈ` instances and
    listed eight; there are **13**, and all 13 are casual speakers, so the argument it was making
    was stronger than it claimed. Verify the evidence even when the conclusion is right.
+
+---
+
+## AF. Wave 7 review — battle chunk 36 / PR #25, PARKED (2026-09-09)
+
+### AF1. ⚠️ NEW BLOCKER — `assemble.py:validate_body` charset-checks PRESERVED SOURCE TEXT
+
+**THIS IS NOT §D1 AND MUST NOT BE FILED UNDER IT.** The two are different functions, different
+causes, different fixes and wildly different costs; conflating them buries a cheap fix inside an
+expensive one.
+
+| | **§D1 / §R** (chunks 5, 15, 16, 17, 23, 27, 28, 29, 32, 39) | **§AF1** (chunk 36) |
+|---|---|---|
+| Where | `riotbattle.tokenise` | `assemble.validate_body` |
+| What | argument bytes mis-decoded as Shift-JIS (`{FC70}{=00}逓{=20000E}`, `{FC70}{=00}入{=A300020000}`) | the charset whitelist applied to text the translator never wrote |
+| The characters | **should never have existed** — a dumper artifact | **genuine authored source bytes that render correctly today** from the ROM font; the player already sees them in the Japanese game |
+| Fix | a `tokenise` fix **plus a re-dump** | **one function in `assemble.py`; no re-dump, no disc, no EXE, no dumper change** |
+| After the fix | re-dump, re-verify 10 chunks | `git mv pending/chunk_036.txt tl/battle/chunk_036.txt` and nothing else |
+
+**Measured at the PR #25 review, in a real checkout, not taken from the PR:**
+
+| file placed in `tl/battle/` | `check` problems | breakdown |
+|---|---|---|
+| the **pristine** chunk 36 straight from the dump | **193** | all charset |
+| the **delivered translation** | **38** | **all charset — 0 tag-parity, 0 column, 0 byte** |
+| the delivered translation with `jp_ok=True` | **0** | — |
+
+**The 38, counted:** `＄`(U+FF04)×14 · `＞`(U+FF1E)×10 · `＿`(U+FF3F)×4 · `＃`(U+FF03)×4 ·
+`｜`(U+FF5C)×3 · `ケ`(U+30B1)×1 · `あ`(U+3042)×1 · `「`(U+300C)×1. They sit on body lines 2 (15)
+and 5 (23) and **not one of them is on a translated run.** Chunk 36 is largely a full-width MIPS
+assembly listing (`ｌｈｕ　ｔ５，＄１８`, `ｊａｌ　ａｉｍ＿ｅｎｅ`, `ｊｒ　ｒａ`), machine output
+(`＞ＴＡＲＧＥＴ　ＲＥＣＯＧＮＩＺＥＤ`, `＞ＯＫ`) and a deliberate garbage block.
+
+`assemble.py:192` calls `validate_body(new, 'chunk %d' % idx)` with the default `jp_ok=False` for
+every battle chunk; line 280 passes `jp_ok=True` for the main script. **The translation removes
+155 of the 193 problems and cannot remove the last 38, because they are not its text. No chunk 36
+file of any kind — translated, partially translated or pristine — can pass `check` today.**
+
+**Why the specification did not see this coming.** `translation_prompt.md` §3.1 bans `#`, `$`,
+`>`, `|`, `_` as a rule for **what a translator writes**, and Appendix A describes the charset gate
+as checking translation. Neither document contemplates a chunk whose *source* is full-width Latin
+machine text. The gate is doing exactly what it was specified to do, to text the specification
+never had in view.
+
+**Fixes, cheapest first. All are `assemble.py` edits, which CLAUDE.md §3 puts outside a
+translator's and a reviewer's remit — this needs a human.**
+
+- **(a) RECOMMENDED — fixes the class, not the case.** Charset-check only the text the translator
+  actually changed: diff each translated line's readable runs against the corresponding dump line
+  and skip runs that are byte-identical. Preserved source is then never charset-checked, in any
+  chunk, and no rule is loosened for real translation. The same diff already exists in the review
+  tooling and is cheap.
+- **(b) ⚠️ INSUFFICIENT ALONE.** Adding `＄ ＞ ＿ ＃ ｜ 「` (U+FF04, FF1E, FF3F, FF03, FF5C, U+300C)
+  to `assemble.ALLOWED` and `rowcheck.ALLOWED` **does not close it** — `ケ` and `あ` are kana inside
+  the garbage block, and blanket-allowing kana would disable the very gate that catches
+  untranslated Japanese. (b) needs (a), or a per-chunk verbatim allowance beside it.
+- **Rejected: legal look-alikes** (`％１８`, `＝ＴＡＲＧＥＴ`, `ａｉｍ‐ｅｎｅ`). They would corrupt a
+  MIPS listing the player reads, rewrite source text the unit was told not to touch, and still
+  cannot fix `ケ` / `あ`. The `{=8190}` byte-tag route was tested by the translator and fails
+  `tag_parity` instead — **the two gates are unsatisfiable together**, the §R1 shape exactly.
+
+**986 Japanese characters — 2.3 % of the battle script — are finished and waiting on this.**
+
+### AF2. Figures — all confirmed, none corrected
+
+`pending/chunk_036.txt`: **2,887 / 8,192 bytes, slack 5,305** (pristine 2,427, +460); widest run
+**22**, none at 23 or 24, **0 column problems**; `{FFFE}` **104 → 107**, all three on body line 5
+and each itemised in the PR; `{FCC0}` **2 → 2**, none added or moved; `assemble.tag_parity` returns
+**no problems**, the only multiset delta anywhere being `{FFFE}: 59 → 62`. Both `>4`-row pages
+(45 and 33) are **byte-identical to a pristine `split_battle` extraction** — already enumerated in
+§D2, which lists chunk 36 by name.
+
+**The preservation claim was verified, not accepted.** 9 of 10 body lines byte-identical (including
+body line 2, the 884-character MIPS listing, in full); body line 5 the only line touched; **23
+replaced runs, and the source side of every one contains Japanese** — changed runs with no Japanese
+on the source side: **0**; 1,154 characters carried through unchanged on that line; residual
+Japanese anywhere in the file: `ケ` and `あ` only.
+
+### AF3. ⚠️ §AE5's `石版` "correction" was a FILE-vs-DATA convention difference — WITHDRAWN
+
+§AE5 recorded that the `石版` script instances are "305, 574 and 576 — 574/576 right, 569/571
+wrong". Measured on `dumps/script_unique.txt` at this review: **the first data row is FILE 6, so
+FILE = DATA + 5**, and `石版` occurs at **DATA 300 / 569 / 571 = FILE 305 / 574 / 576**.
+
+**569/571 and 574/576 are the same two lines in two conventions. Neither was wrong.** §AE5's real
+finding survives and is valuable — **DATA 300 / FILE 305**
+(`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third instance no row had named. Only
+the "wrong" verdict is withdrawn. The reach is unchanged and exact: **5 battle (chunks 30, 36) +
+25 script instances across 21 banks**. Glossary §9's two rows now carry explicit convention labels;
+see glossary §44.5.
+
+⚠️ **§AD5 flagged this exact convention clash one wave earlier and it recurred immediately, in the
+next review.** The rule this file has now earned: **state the convention on every line-number
+claim, and never call a numbering difference an error without checking the offset.**
+
+### AF4. ⚠️ `riotbattle.bytes_from_body` cannot cross-check a battle body, and PR #25's Flag 1 overstated
+
+Its signature is `bytes_from_body(body, idx)` and it **raises**
+`ValueError: bad tag {PAD 5765} in chunk 36` on this chunk's body — for the pristine chunk and the
+translation alike. It cannot be run over a battle body that still contains its `{PAD}` line; the
+structural lines must be stripped first, which is what `assemble.py` itself does
+(`cost(''.join(l for l in new if not is_structural(l)))`).
+
+**The byte figure is right** — 2,887 / 8,192 is `assemble.py check`'s own arithmetic, which is the
+gate. Only the claim that the two implementations "agree to the byte" as run is unsupported as
+written. **Nothing in any file changes.** Recorded so the next unit does not repeat the
+cross-check and conclude the tool is broken.
+
+### AF5. Method notes worth keeping
+
+1. **A green `check` on a parked unit proves nothing.** `grep -n "pending" tools/assemble.py`
+   returns **nothing** — `assemble.py` never reads `pending/`. Any review of a park must say so
+   explicitly and must re-run the gate with the file placed in `tl/battle/`, or the tick is
+   mistaken for clearance. Done here; the same file that passes in `pending/` raises 38 problems
+   in `tl/battle/`.
+2. **Numbering conventions differ BETWEEN TOOLS, not only between documents.**
+   `rowcheck.py:load_chunk` returns `lines[a:b]` **including** the `=== CHUNK` header, so
+   **rowcheck line N = `assemble.validate_body` body line N−1**. rowcheck's "line 3"/"line 6" and
+   the charset block's "line 2"/"line 5" name the same two lines. Both sets in PR #25 are correct;
+   neither is wrong; a reviewer who does not know the offset will "find" a contradiction.
+3. **§AE7's positive control was run again and earned its place.** A synthetic clean/corrupted pair
+   was checked **first**: the checker extracted 2 pairs from each and distinguished them, excluding
+   the matched-nothing-and-passed failure. Only then was the 3,685-pair, 30-file corpus trusted.
+   ⚠️ **`pending/chunk_043_abridged.txt` was excluded** — it is a second translation of chunk 43 and
+   would have doubled every chunk-43 row in the corpus.
+4. **A reviewer's own finding can be wrong, and a census is how you find out.** Two rows in chunk 36
+   end in a lone two-letter word, which §3.2 cautions against and which is avoidable at zero cost.
+   The census killed it: **170 such rows exist across 24 of the 27 shipped battle chunks**,
+   `chunk_030` included. Holding one PR to a standard no merged unit meets is not review, it is
+   inconsistency. **Raised, measured, withdrawn — and recorded so the next reviewer does not
+   re-raise it.**
+5. **Portrait ids do not survive chunk boundaries, and chunk 36 is the sharpest proof yet.**
+   Glossary §23.5 fixes Timmy on **portrait 0007**; in chunk 36 portrait 0007 is **the machine**.
+   Carrying the id across would have handed the MIPS listing to Timmy. §41.2 / §AC4's channel test
+   is what decides. See glossary §44.3.
+
+### AF6. Bank pressure — unchanged by this unit
+
+Battle unit, nothing under `tl/script/`. Tightest banks are unchanged: **41 → 353, 40 → 447,
+5 → 2,007, 2 → 3,365.** No bank is under 2,000 free that was not already.
