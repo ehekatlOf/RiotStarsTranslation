@@ -48,7 +48,7 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 |---|---|---|---|---|
 | **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | **PR OPEN**, awaiting barrier |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | **PR OPEN** — 4,431 / 8,192, **3,761 slack**, 2.10× vs 4.28 ceiling, widest row 23 |
-| **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | — | dispatched |
+| **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | **PR OPEN** — 4,153 / 8,192, **4,039 slack**, 2.06× vs 4.59 ceiling, widest row 23, 22 glossary rows |
 | **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | — | dispatched |
 
 **Cross-unit this wave (struck by the SECOND of the pair to MERGE — check which actually merged,
@@ -60,6 +60,18 @@ never assume the order):**
   does **not** bite a battle chunk.
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
+
+✅ **The `２軍` relay landed — PR #19 Flag 21 confirms it.** Chunk 22's shipped file carries
+`２ｎｄ　Ａｒｍｙ` ×1 and `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ` ×0; **no follow-up commit was needed**, and the
+translator independently reconfirmed the corpus counts (bare `２軍` 4 battle + 7 script) after
+subtracting the prefixed forms a naive grep overcounts. **Both battle units agree on `ライアン`**
+and neither diverged from the seed.
+
+⚠️ **PR #19 raises a PROJECT-FIRST for the reviewer (its Flag 9): a possessive on the `{FC00}` name
+insert** — `{FC00}{=0000}’ｓ　ｓｔｏｒｙ　ｆｉｔｓ`. It exists in **no other file in the project**. The
+insert's rendered width is unknown, and a possessive binds an apostrophe directly to text the engine
+substitutes. A zero-cost alternative is supplied in the PR. **This is a reviewer decision, and if it
+is accepted it is worth a `FLAGS.md` entry** — it is the same family as §C4's `{FFEC}` blindness.
 
 ⚠️ **PR #18 CORRECTED MY DISPATCH, AND THE FIX WAS RELAYED TO CHUNK 22 IN FLIGHT.**
 My dispatch's "already fixed" list paired `２軍` with `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`. **Wrong for the
