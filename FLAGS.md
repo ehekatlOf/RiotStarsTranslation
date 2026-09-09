@@ -3611,3 +3611,170 @@ unchecked — and it is cheap to catch: one grep of `tl/` and `pending/` per cla
 No `{FCA8}` §D1 artifact tag. `check` green on the integration branch after integration. Chunk 24
 is complete and shippable. The one item left open on purpose is **AA3**, the `様` gender commitment,
 which needs a later chunk to name Fernando's patron — not a human, and not a blocker.
+
+## AB. Wave 6 review — battle chunk 26 / PR #22 (2026-09-09)
+
+### AB1. Decision and gates
+
+**MERGE**, squash `e96b259`, integration commit `integrate: chunk 026 — glossary, flags, handoff`.
+Reviewed at `b3c07da` merged onto `b720967` — i.e. **after chunk 24 landed**, so every corpus claim
+in a PR opened against `3ec89d0` was re-measured rather than accepted (§Y3's staleness-by-time).
+
+```
+paths ✓   exactly tl/battle/chunk_026.txt (A), nothing else
+merge ✓   clean, 'ort', no conflict
+check ✓   All checks passed.
+figures ✓ 5,325 / 8,192, slack 2,867 — 139 text runs, MAX 23 columns, 0 at 24, 0 over
+rows   ✓  0 pages over 4 text rows; {FFFE} +3 (body L11 1→2, L14 58→60), both declared
+banks  n.a. (battle unit)
+dupes  ✓  positional, 28 files, 0 misaligned; 279 JP messages → 0 divergent
+glossary ✓ every term conforms; 12 new rows + register table; no entry changed by the PR
+structure ✓ {FFFF} last on all; header/{=FF}/{PAD 5115} verbatim; 0 charset violations;
+            18/18 ellipsis dot counts exact; single trailing newline, no CRLF
+```
+
+**This is the first unit of the run whose PR figures needed NO correction at merge.** Every reach
+count, bank list and column width in the PR body was re-measured and is exact — including the two
+that are easy to get wrong: `len('Ｈｕｍａｎｓ　ａｒｅ　ｎｏｔ　ｆｏｒｇｉｖｅｎ！')` = **24** and
+`len('Ｈｕｍａｎｓ　ｗｅ　ｎｏｔ　ｆｏｒｇｉｖｅ！')` = **22**, both as claimed.
+
+### AB2. ⚠️ RULING — the `そして、` → `Ａｎｄ，` rule is POSITIONAL, and was briefed too broadly
+
+**This is the finding most likely to cost a later unit a round, and it is a correction to the
+dispatch, not to the PR.** Every wave-6 agent was briefed that "`そして、` → `Ａｎｄ，` IS RULED, and
+chunk 26 carries it". Chunk 26 carries a `そして`, but **not the construction the rule covers**, and
+applying the rule mechanically would have damaged the line.
+
+Measured across every `そして` in the battle dump — the reach figure is otherwise **exact as
+briefed**, 10 battle (chunks 5, 16, 24, 25, 26, 39, 43) + 9 script (banks 1, 9, 32, 41):
+
+| Where | Source | Shipped English | Shape |
+|---|---|---|---|
+| `chunk_024` L15 seg15 | `そして、` **alone on its row** | `Ａｎｄ，` | opens a new sentence |
+| `chunk_043` L13 seg2 | `そして、` **alone on its row** | `Ａｎｄ，` | own coordinating row |
+| `chunk_005` L15 seg10 | `そして　くれぐれも` | `Ａｎｄ　ａｂｏｖｅ　ａｌｌ，` | **no comma** |
+| `chunk_043` L3 seg7 | `そして　ここは、` | `Ａｎｄ　ｔｈｉｓ　ｉｓ　ｔｈｅｉｒ` | **no comma** |
+| `chunk_043` L32/33 seg0 | `そして、空に移り住んだ` | `Ａｎｄ　ｔｈｅ　ｌｅａｄｅｒｓ　ｗｈｏ` | **no comma** |
+| `chunk_026` L14 row3 | `そして、極めて残忍です。` | `ａｎｄ　ｕｔｔｅｒｌｙ　ｃｒｕｅｌ．` | **list-final, lowercase** |
+
+**The comma in `Ａｎｄ，` is not part of the word — it is the row ending where the source's `、`
+ends it.** Chunk 26's `そして、` is the final conjunct of a three-item predicate list opened three
+rows earlier by `彼らは、`; `Ａｎｄ，　ｕｔｔｅｒｌｙ　ｃｒｕｅｌ．` would capitalise a conjunction
+mid-sentence and put a comma after "And" that no English style permits. Ruling written up at
+**glossary §40.4**: alone on its row → `Ａｎｄ，`; continuing into its own clause → lowercase `ａｎｄ`,
+no comma. `Ａｎｄ　ｔｈｅｎ` stays reserved for `それから`. **Five of the six shipped instances already
+agreed with this;** only the two that stand alone on a row carry the comma.
+
+### AB3. ⚠️ The stutter convention is `Ｘ，　`, measured 8 : 1 — and two shipped/parked outliers
+
+PR #22's gate-6 row table declares **one** row divergence (`まさか、`). There are **two**: the
+byte-identical source row `な、何をするっ！？` is rendered two ways.
+
+```
+tl/battle/chunk_026.txt L15   Ｗ，　ｗｈａｔ　ａｒｅ　ｙｏｕ　ｄｏｉｎｇ！？   23 cols
+pending/chunk_043.txt   L27   Ｗ‐ｗｈａｔ　ａｒｅ　ｙｏｕ　ｄｏｉｎｇ！？    22 cols  (PARKED)
+```
+
+All **12** stutter rows in the corpus were surveyed before ruling. `Ｘ，　` is the shipped
+convention **8 to 1**: `Ａｈ，　`(c00), `Ｉｍ，　`(c07), `Ｗ，　`(c07), `Ｙ，　`(c07), `Ｗ，　`(c08),
+`Ｌ，　`(c14), `Ｗ，　`(c24), `Ｎ，　`(c24), plus chunk 26's own `Ｓ，　Ｓｅｔｉ．．．` and this row.
+**The `Ｘ‐` outliers are three: `chunk_000` L2's `Ｔｈ‐ｔｈｉｓ．．．` — which is internally
+inconsistent with its own `Ａｈ，　` on the SAME line — and the two in parked `chunk_043`**, which
+`assemble.py` never reads. **Chunk 26 was not changed.** ⚠️ **Left OPEN for whoever next touches
+`chunk_000` or unparks chunk 43:** align them to `Ｘ，　`, or rule the other way and re-cut the
+nine. Not urgent — `chunk_043` is parked and `chunk_000` is one row — but it will keep resurfacing
+until someone rules, and the row is not gate-bound because the containing messages differ.
+
+### AB4. ⚠️ RULING — `大歓迎` is context-sensitive; §38.2 CORRECTED IN PLACE; chunk 15 unblocked
+
+PR #22's Flag 7 is **confirmed on both halves**. `glossary.md` §38.2 fixed one form and its own
+reach note lists chunk 7, yet **`tl/battle/chunk_007.txt` body L3 (file line 5) already ships
+`Ｓｕｃｈ　ａ　ｗａｒｍ　ｗｅｌｃｏｍｅ！`**. Both were verified at review. Reach re-measured: **4 battle
+(chunks 7, 15, 26) + 6 script (banks 0, 3)** — exactly as the PR states.
+
+Ruled at **glossary §40.3** and §38.2 **patched in place** (§4.3, dated, with the PR number):
+`大歓迎` is ordinary vocabulary, not a coined term, and takes the English its clause needs. The
+binding precedent is this run's own `残念だけど` decision — **CLAUDE.md §3 engages on the MESSAGE,
+not the phrase** — and the three source messages differ, so **gate 6 is not engaged and neither
+chunk 7 nor chunk 26 is re-cut**. Ironic (chunks 7, 26) → a *warm / most welcome* phrasing fitting
+the row; sincere (chunk 15) → `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` (12).
+
+⚠️ **For chunk 15's dispatch, and this is the part that would have been expensive later: its two
+`大歓迎` instances are ONE sentence.** Dump L11's text is a strict **suffix** of L10's (a scene with
+two entry points — measured, not inferred: `len(L10)=547`, `len(L11)=232`, `L10.endswith(L11)` is
+true). The two are **not** byte-identical messages, so gate 6 does not bind them, but the shared
+sentence `そう言うことなら大歓迎だ！！` must be rendered **byte-identically in both**. Suggested:
+`Ｉｎ　ｔｈａｔ　ｃａｓｅ，` (13) / `ｙｏｕ’ｒｅ　ｍｏｓｔ　ｗｅｌｃｏｍｅ！！` (21).
+
+### AB5. ⚠️ `Ｃａｐｔａｉｎ` renders two source words and §25.3 is only HALF met — banks 28 and 41
+
+Re-measured at review, both figures exactly as PR #22 Flag 6 claims:
+
+```
+船長  1 battle [26]  + 3 script, banks [23, 28, 41]
+隊長  24 battle [1,2,3,6,7,8,13,14,16,19,22,23]  + 10 script, banks [2, 10, 28, 32, 34, 41]
+```
+
+**Chunks are disjoint — chunk 26 carries no 隊長 — so nothing shipped is affected and nothing was
+re-cut.** But **banks 28 and 41 hold both**, so whoever translates them gets a ship's captain and a
+squad captain in one bank. English has no second word that is not a register slip (`ｓｋｉｐｐｅｒ` is
+far too colloquial for the scene). **A decision for those banks' translator, recorded now so it is
+not a discovery then.** Bank 41 is already one of the four nearly-full banks (§F2).
+
+### AB6. Treize is the L10/L11 dark elf — CONFIRMED on the channel, and portrait ids are SCENE-LOCAL
+
+PR #22's Flag 2 proposed it from the portrait id and called it unproven. Re-tested at review on the
+**`{FC50}`/`{FC51}` channel**, as PR #23's ruling requires, and it **strengthens rather than
+breaks**: the triple **(id 0006, channel `{FC51}`, selector `FA11`) is constant across L3, L10, L11
+and L15**, and in L15 Seti addresses that exact speaker with the vocative `トレーズ、` and it answers
+`セ、セティ・・・助けてくれ。` The content chains independently — L11's `この私が、人間などに・・`
+is a defeat by humans; L15's `傷だらけになって` / `新しく来た人間どもだ` / `油断して、不覚をとった`
+each presuppose it. **Consequence: chunks 27, 28 and 29 inherit a haughty, uncontracted,
+human-despising Treize** (glossary §40.2, §40.5).
+
+⚠️ **A general finding that outlives this PR: `{FCB0}` portrait ids are SCENE-LOCAL, not global.**
+Chunk 26 proves it internally — **id 0007 on `{FC50}` is the katakana-pidgin mook in L7's scene and
+Seti in L15's**, which is coherent with Annette's `あれは魔族の中でも下級の者たち` and is why the two
+demon registers are correctly *not* levelled. **This extends §Y2 and PR #23's "portraits are not
+speakers" ruling: an id is only comparable within one scene, so identifications must be made on the
+(id, channel, scene) triple.** Residual caveat: chunk 26 contains **no `{FB00}` tag at all**, so no
+id is tied to an image here; chunks 27–29 can still overturn the identification.
+
+### AB7. Two briefing claims corrected against the tree — measured pushback
+
+Both were checked before acting, and **neither was applied**:
+
+1. **`場所` has NO §9 row.** The dispatch stated that "`魔族` and `場所` pair chunk 26 with batch
+   008" and to leave both live. `grep -c 場所 glossary.md` = **0**; `場所` appears nowhere in
+   `glossary.md` or `FLAGS.md`. Only `魔族` has a row. **Nothing to strike or leave live for
+   `場所`**, and PR #21's reviewer should not hunt for one. Recorded at glossary §40.7.
+2. **§Q2 does NOT record the wrong cause, and was NOT patched.** The dispatch asked for §Q2 to be
+   patched "if it records the wrong cause". Read at review, §Q2 says: *"Both gates reject it.
+   `tools/assemble.py:125-126` and `tools/rowcheck.py:93-94` build the tag parity list as … only
+   `{FFFE}` is exempt, so any added `{FCC0}` fails as 'tag stream changed'."* **All four line
+   numbers are exactly the `tag_parity` lines in both files** (verified: `assemble.py:125-126`,
+   `rowcheck.py:93-94`), and both tools do reject an added `{FCC0}` there. §Q2 never claimed the
+   row or column checks reject it — the conflation was in the **briefing**, and **§AA7 (PR #24)
+   already records the correction**. Patching §Q2 would have introduced an error. **§Q2 stands
+   unchanged; §AA7 remains the place the nuance is recorded.**
+
+### AB8. Cross-unit — chunk 26 is the FIRST of its pair to merge, verified by reading the tree
+
+At merge time `tl/battle/chunk_025.txt` and `tl/script/batch_008.tsv` are both **absent** from
+`claude/workflow-translation-iterate-uzlkns` (checked twice: before review, and again after chunk
+25's rework commit `8177dbd` landed on the branch, which does **not** merge the unit).
+
+- ⚠️ **`魔族`'s §9 row is LEFT LIVE** and annotated in place. It pairs this unit with `batch_008`
+  (PR #21, open). **PR #21's reviewer strikes it**, per the `ルート` precedent (§29.1 / §30.1).
+- **`末えい`, `フフ`/`ふふ`, `それから`, `魔物` and `ｄｅｓｃｅｎｄａｎｔ` do not occur in chunk 26.**
+  Nothing here propagated PR #23's Flag 15 miscount (`ｄｅｓｃｅｎｄａｎｔ` is **10** columns, and §9
+  already carries the measurement), and §12.3 / §32.7's `Ｆｕｆｕ` is not engaged.
+- **Bank check: none.** Battle unit; no bank moved. No bank crossed under 2,000 free at this merge.
+
+### AB9. Nothing here needs a human, and nothing is blocked
+
+No source typos found, no tag meanings guessed, no `{FCC0}` added or removed, no byte over budget,
+2,867 bytes of slack left in the chunk. `check` passes on the integration branch after this commit.
+The three items left open for later units — the `Ｘ，　`/`Ｘ‐` stutter outliers (§AB3), the
+`Ｃａｐｔａｉｎ` collision in banks 28 and 41 (§AB5), and confirming Treize's identity from chunk 27
+(§AB6) — are all decisions for a translator or reviewer, not for the human.

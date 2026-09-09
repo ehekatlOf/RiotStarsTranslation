@@ -505,15 +505,15 @@ mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana ter
 
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498 — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 483", which is a *menu* line, as this block's own FACT 1 says) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** |
+| 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498 — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 483", which is a *menu* line, as this block's own FACT 1 says) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** ⚠️ **STAYS LIVE after PR #22 merged 2026-09-09: chunk 26 was the FIRST of this pair to merge — `tl/script/batch_008.tsv` is still ABSENT from the tree (verified by reading it). Per the `ルート` precedent (§29.1 / §30.1) **PR #21's reviewer strikes this row.** Chunk 26 used it exactly as seeded and every reach figure re-measured EXACT; see §40.1.** |
 | 魔物 | `ｍｏｎｓｔｅｒ` | `batch_008` ×1; 6 script | Holds the 魔族 / 魔物 distinction apart. 7 columns |
 | 末えい | `ｄｅｓｃｅｎｄａｎｔ` | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** ⚠️⚠️ **NOT "1 instance each", and NOT a new form — corrected in place 2026-09-09 (§4.3, PR #24 review): `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED.** `tl/battle/chunk_010.txt` 12.2 renders `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ` / `ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．` — the same word in the lizardmen's **full-katakana** register (§5), which is why neither a kanji-run nor a kanji+kana search found it. **The choice is CONFIRMED by shipped work; only the novelty and reach claims were wrong.** Gate 6 is not engaged (different source strings), but both wave-6 units must match `ｄｅｓｃｅｎｄａｎｔ`. ✅ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns, measured `len()` — PR #23's Flag 15 says 11 and is a hand-count one high; the seed was right and the "correction" is NOT applied** | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
 | ライトエルフ | `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ` — **lowercase** | chunk 25 (L11) ×2 — ⚠️ **ARIES's bloodline, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's bloodline"). Gilford says `なるほど、確かにライトエルフの末えいのようだな` **to Aries**, who then finds his own spell useless — coherent with Aries being Bishop Creus's grandchild (chunk 24 L15). `ライトエルフの封印` is separately the seal Gilford intends to break. **The renderings are unaffected; only the note was wrong.** 2 battle + 0 script | ⚠️ **NOT open after all — corrected in this same seed before dispatch.** The sibling term `ダークエルフ` is ALREADY FIXED at **§17 as `ｄａｒｋ　ｅｌｆ`, lowercase**, and is already shipped lowercase in `tl/script/batch_003.tsv` L20 (`ａｎｃｉｅｎｔ　ｄａｒｋ　ｅｌｖｅｓ`). `ライトエルフ` is the same construction and takes the same case: **`ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, not a reviewer question.** Consistent with §17.1 and the `ホビット` → hobbit precedent. **Both instances must agree.** 9 / 11 columns |
-| アネット | `Ａｎｎｅｔｔｅ` | chunk 26 (L14) ×5 — **Dolgan's daughter**, the survivor who guides the party to the mountain settlement. 5 battle + 4 script | European reading. 7 columns |
-| ドルガン | `Ｄｏｌｇａｎ` | chunk 26 (L14) ×2 — Annette's father, alive among the survivors. **Also battle chunk 32 + 8 script instances**; 4 battle + 8 script | Alt *Durgan*, *Dorgan*. 6 columns |
-| セティ | `Ｓｅｔｉ` | chunk 26 (L14, L15) — one of the **two ruling 魔族**, `恐ろしく強大で、驚くほど頭が回り、極めて残忍`. **Reaches battle chunks 26, 27, 28, 29, 38** — 6 battle instances | ⚠️ **A matched pair with ユイティ**: the Japanese rhymes them (‑ティ / ‑ティ) and the English should keep that. Alt *Sethi*, *Sety* — but pair the choice. 4 columns |
-| ユイティ | `Ｙｕｉｔｉ` | chunk 26 (L14, L15) — the other ruling 魔族. **Reaches battle chunks 26, 27, 29, 32, 38** — 7 battle instances | Pair with `Ｓｅｔｉ`. Alt *Yuity*, *Uiti*. 5 columns |
-| トレーズ | `Ｔｒｅｉｚｅ` | chunk 26 (L15) — a wounded demon who begs Seti for help. **Reaches battle chunks 26, 27, 28, 29** — 6 battle instances | `トレーズ` is the standard katakana for French *Treize*, so this is the European reading. Alt *Traize*, *Trays*. 6 columns |
+| ~~アネット~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ａｎｎｅｔｔｅ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×5 — **Dolgan's daughter**, the survivor who guides the party to the mountain settlement. 5 battle + 4 script | European reading. 7 columns |
+| ~~ドルガン~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｄｏｌｇａｎ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×2 — Annette's father, alive among the survivors. **Also battle chunk 32 + 8 script instances**; 4 battle + 8 script | Alt *Durgan*, *Dorgan*. 6 columns |
+| ~~セティ~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｓｅｔｉ`, used exactly as seeded, and FIXED AS FEMALE (§40.2).** Original seed note follows: | chunk 26 (L14, L15) — one of the **two ruling 魔族**, `恐ろしく強大で、驚くほど頭が回り、極めて残忍`. **Reaches battle chunks 26, 27, 28, 29, 38** — 6 battle instances | ⚠️ **A matched pair with ユイティ**: the Japanese rhymes them (‑ティ / ‑ティ) and the English should keep that. Alt *Sethi*, *Sety* — but pair the choice. 4 columns |
+| ~~ユイティ~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｙｕｉｔｉ`, used exactly as seeded, and FIXED AS MALE (§40.2).** Original seed note follows: | chunk 26 (L14, L15) — the other ruling 魔族. **Reaches battle chunks 26, 27, 29, 32, 38** — 7 battle instances | Pair with `Ｓｅｔｉ`. Alt *Yuity*, *Uiti*. 5 columns |
+| ~~トレーズ~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｔｒｅｉｚｅ`, used exactly as seeded. He is ALSO the dark elf of L10/L11, confirmed on the channel test (§40.5).** Original seed note follows: | chunk 26 (L15) — a wounded demon who begs Seti for help. **Reaches battle chunks 26, 27, 28, 29** — 6 battle instances | `トレーズ` is the standard katakana for French *Treize*, so this is the European reading. Alt *Traize*, *Trays*. 6 columns |
 | ~~カッフィ~~ | ✅ **PROMOTED to §39.1** — `Ｃａｆｆｉ` / `Ｃａｆｆｉ　Ｐｏｒｔ`, used exactly as seeded (PR #24) | chunk 24 (L14) ×3 — ⚠️ **a PORT, not a person**: `カッフィの港`, `カッフィへ来てくれ`. 3 battle + 3 script | Alt *Kaffi*, *Caffy*. 5 columns |
 | ~~ゴードン~~ | ✅ **PROMOTED to §39.1** — `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ`, used exactly as seeded (PR #24) | chunk 24 (L15) — `ファリーナのゴードン将軍`, one of the three who plotted the killing. 1 battle | **`将軍` → `Ｇｅｎｅｒａｌ` is ALREADY FIXED** (§32.1, and the §10 discharge at PR #8) — only the name is new here. 6 columns bare, 15 with the rank |
 | オーラスマッシャー | `Ａｕｒａ　Ｓｍａｓｈｅｒ` | chunk 25 (L11) — ⚠️ **ARIES's spell, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's spell"). Aries casts it at Gilford and it fails: `オーラスマッシャーがきかない・・・？`. 1 battle | 12 columns. **The rendering is unaffected; only the note was wrong** |
@@ -3865,7 +3865,7 @@ alternative is not taken and stays on record.
 | まったく (as an intensifier) | `Ｒｅａｌｌｙ` + the source's own punctuation | `まったく　恐ろしいぜ。` → `Ｒｅａｌｌｙ　ｔｅｒｒｉｆｙｉｎｇ．` (18). §5's mechanism: §6 fixes the **word** and the punctuation follows the source — no comma here because まったく modifies the adjective directly, so §6's `Ｒｅａｌｌｙ，` (exasperation, standing alone) is untouched |
 | 争い | `ｓｔｒｉｆｅ` | 6 columns, verified free. Held distinct from 戦乱 → *war* (unique 460) and 戦闘 → *battle* (unique 437) — **all three occur in this unit** |
 | おたずね者 | `ｗａｎｔｅｄ　ｍｅｎ` | 10 columns, verified free |
-| 大歓迎 | `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` / `ｍｏｓｔ　ｗｅｌｃｏｍｅ　ｈｅｒｅ` | 12 / 17 columns, built on `translation_prompt.md` §2's own worked example `歓迎しますぞ！` → `Ｙｏｕ　ａｒｅ　ｍｏｓｔ　ｗｅｌｃｏｍｅ！`. Held **distinct** from §34.1's いらっしゃい〜 → `Ｗｅｌｃｏｍｅ` (`batch_006` L58). §25.3's test MET and counted: 大歓迎 banks [0, 3] chunks [7, 15, 26] against いらっしゃい banks [12, 13, 15–19, 22, 25, 26, 43] chunks [5, 6, 33] — **disjoint** |
+| 大歓迎 | ⚠️ **NOT a single fixed string — CORRECTED IN PLACE 2026-09-09 (§4.3, PR #22 review); see the RULING at §40.3.** Ironic use takes a *warm / most welcome* phrasing that fits its row; sincere use takes `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` | 12 / 17 columns, built on `translation_prompt.md` §2's own worked example `歓迎しますぞ！` → `Ｙｏｕ　ａｒｅ　ｍｏｓｔ　ｗｅｌｃｏｍｅ！`. Held **distinct** from §34.1's いらっしゃい〜 → `Ｗｅｌｃｏｍｅ` (`batch_006` L58). §25.3's test MET and counted: 大歓迎 banks [0, 3] chunks [7, 15, 26] against いらっしゃい banks [12, 13, 15–19, 22, 25, 26, 43] chunks [5, 6, 33] — **disjoint**. ⚠️ **This row fixed ONE form and its own chunk list names chunk 7, but `tl/battle/chunk_007.txt` body L3 (file line 5) ALREADY SHIPS `Ｓｕｃｈ　ａ　ｗａｒｍ　ｗｅｌｃｏｍｅ！` (19 columns) — verified at the PR #22 review.** The three source messages differ, so CLAUDE.md §3 (which engages on the message, not the phrase) is not violated and **nothing is re-cut**: chunk 7 and chunk 26 both stand. Chunk 15's two remaining instances are **sincere** and take `Ｍｏｓｔ　ｗｅｌｃｏｍｅ`; reach re-measured **4 battle (7, 15, 26) + 6 script (banks 0, 3)** |
 | 他に　用はないノロか？ | `Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？` | 20 columns. **A fourth "anything else?" form, keeping the source's own negative**, held apart from `batch_006`'s three (L35 `Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？`, L51 `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ　ｆｏｒ　ｙｏｕ？`, L69 `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？`). The rough human's `他にも用はあるかい？` takes bare `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` (14), a fifth. ⚠️ **Binds unique 470** — see `FLAGS.md` §Z2 |
 | 兵の数が　いっぱい | `Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ` | 19 columns, `ｒａｎｋｓ` verified free. Deliberately **not** §34.1's 荷物 → `ｐａｃｋ`, which is the inventory; this is the unit roster |
 | 念のため忠告しておくが、 | `Ａ　ｗｏｒｄ　ｏｆ　ｃａｕｔｉｏｎ：` | 18 columns; `：` is §3.1-legal |
@@ -4183,3 +4183,188 @@ contractions throughout (`Ｉ　ｗｏｎ’ｔ`, `ｈｅ’ｌｌ`, `Ｔｈａ�
 officers' flatness read as rank. **`残念だけど` → `ａｆｒａｉｄ` is the fixed WORD; the contraction
 follows the speaker** — `chunk_011` 6.1 and `chunk_020` 47.3 both contract, Aries does not, so this
 unit's `Ｉ　ａｍ　ａｆｒａｉｄ` is right. §34.1's `残念です` → `ａ　ｓｈａｍｅ` is a different source string.
+
+## 40. Added by chunk 026 (PR #22, merged 2026-09-09)
+
+Chapter 26, the landing on the demon island: the party makes shore at the wrong-looking village and
+finds it long dead; low-rank demons ambush them; a proud dark elf declares his blood and is killed;
+the survivor **Annette**, Dolgan's daughter, recognises Prince Hoag and tells what happened to the
+island; and the scene closes on **Seti** and **Yuiti** murdering the wounded **Treize** and setting
+off to hunt the party.
+
+**5,325 / 8,192, 2,867 slack** — 1,085 JP → 1,999 EN readable characters, **1.84×** against a
+**3.357×** ceiling. 139 text runs, widest **23**, **none at 24**, no page over 4 text rows.
+`{FFFE}` +3 on two lines (body L11 1→2, L14 58→60); `{FCC0}` unchanged, **none added**; the
+non-`{FFFE}` tag stream byte-identical on all 18 lines. 18 / 18 ellipsis dot counts exact.
+**Every measured figure in the PR body was re-measured at review and is exact** — all reach counts,
+all bank lists, all column widths. Nothing was corrected at merge, the first unit this run for
+which that is true.
+
+### 40.1 People and words first rendered here — six promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| アネット | `Ａｎｎｅｔｔｅ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** **7 columns.** Dolgan's daughter; the survivor who guides the party to the mountain settlement. Reach re-measured at review: **5 battle (chunk 26 only) + 4 script (banks 10, 41)** — the seed is exact |
+| ドルガン | `Ｄｏｌｇａｎ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** **6 columns.** Annette's father, alive among the survivors; never on screen here. **4 battle (chunks 26, 32) + 8 script (banks 10, 40, 41)** — seed exact. ⚠️ **Chunk 32 addresses him as `ドルガンさん`**, so §21.2's `〜さん`-on-a-personal-name rule applies there: bare `Ｄｏｌｇａｎ` |
+| セティ | `Ｓｅｔｉ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** **4 columns. FEMALE — see §40.2.** The matched pair with `Ｙｕｉｔｉ` is preserved (`‑ｉ` / `‑ｉ`), as §9 directs. **6 battle (chunks 26, 27, 28, 29, 38) + 0 script** — seed exact |
+| ユイティ | `Ｙｕｉｔｉ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** **5 columns. MALE — see §40.2.** **7 battle (chunks 26, 27, 29, 32, 38) + 0 script** — seed exact |
+| トレーズ | `Ｔｒｅｉｚｅ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** **6 columns.** The standard katakana for French *Treize*, so the European reading. **6 battle (chunks 26, 27, 28, 29) + 0 script** — seed exact. **He is also the dark elf of L10/L11 — confirmed at this review, §40.5** |
+| 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | **Used exactly as §9 seeds it**, 4× in this chunk. Lowercase by the §17.1 species test, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. **5 / 6 columns.** Reach re-measured: **13 battle (chunks 26, 27, 28, 29, 30, 32) + 21 script (banks 4, 10, 21, 30, 31, 40, 41)** — seed exact. Kept distinct from 魔物 → `ｍｏｎｓｔｅｒ` (chunk 26 carries no 魔物, verified). ⚠️ **The §9 row STAYS LIVE — see §40.7** |
+| キャハハハハ | `Ｋｙａｈａｈａｈａｈａ` + the source's own punctuation | Seti's laugh as she kills Treize. **11 columns**, free across `tl/` and `pending/`. Kana beats tracked per §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ`: キャ+ハ×4 → `Ｋｙａ`+`ｈａ`×4. ⚠️ **Binds chunk 32**, whose `キャハハハハハハ` (six ハ) becomes `Ｋｙａｈａｈａｈａｈａｈａｈａ` (15 columns) under the same rule. 2 battle (26, 32), 0 script |
+| オッケー | `Ｏｋａｙ` + the source's own punctuation | Seti's assent. **4 columns**, free. Spelled out rather than `ＯＫ` on §3's `ＨＩＴ` → *hits* rule: full-width caps are Japanese emphasis on a loanword and English needs none. Held **distinct** from よし、/ 分かった → `Ｒｉｇｈｔ，` (§6, §24.3) and わかりました。 → `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2). ⚠️ **Binds chunk 38** (`オッケー！` → `Ｏｋａｙ！`). 2 battle (26, 38), 0 script |
+| 船長 (address) | `Ｃａｐｔａｉｎ，` | The ship's captain, addressed by a party member. `さん` on a **common noun** — §30.2's third pattern (`兵隊さん` → `ｓｏｌｄｉｅｒｓ`), so neither §21.2's name rule nor §2's comic `トカゲさん` → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ`. ⚠️ **Shares its English with §2's 隊長 → captain and §25.3's test is only HALF met** — re-measured at review: 船長 **1 battle [26] + 3 script banks [23, 28, 41]**; 隊長 **24 battle [1, 2, 3, 6, 7, 8, 13, 14, 16, 19, 22, 23] + 10 script banks [2, 10, 28, 32, 34, 41]**. Chunks disjoint, so **nothing shipped is affected**; **banks 28 and 41 hold both**. FLAGS §AB5 |
+| 無様だな。 | `Ｈｏｗ　ｐａｔｈｅｔｉｃ．` | Yuiti over the dying Treize. **13 columns**, `ｐａｔｈｅｔｉｃ` verified free. Hapax: 1 battle, 0 script |
+| ただものじゃない | `ａｒｅ　ｎｏ　ｏｒｄｉｎａｒｙ　ｆｏｅｓ` | Treize on the party. **20 columns.** Hapax: 1 battle, 0 script |
+| 獲物 | `ｑｕａｒｒｙ` | Yuiti's last line. **6 columns**, free. Deliberately **not** `ｐｒｅｙ`, which `chunk_009.txt` L4 ships for `えじき` — two source words, two English forms, on the 伝令 / 連絡員 / 使いの者 pattern (§30.2, §33.1). Both are hapaxes, so §25.3 would have permitted the collapse; held apart anyway |
+| うっ・・・ | `Ｕｇｈ．．．` | **6 columns.** Shares its English with §19.1's `ううっ`, and §25.3's test is **MET in both dimensions**, verified positionally at review: the raw `うっ・・・` count of 3 battle is **2 substring hits inside `ううっ・・・`** (chunks 1, 2) plus this one, and **all 6 script hits are likewise inside `ううっ`** (banks 18, 41), so bare `うっ・・・` is **chunk 26 only, 0 script**. Disjoint. The documented one-word/two-spellings collapse (§17.2, §38.3) |
+
+**Reuses recorded, not new forms** — 集落 → `ｓｅｔｔｌｅｍｅｎｔ` (§11.2, also `chunk_002` ×2; first
+use here for a *different* settlement), 伝令 → `ｍｅｓｓｅｎｇｅｒｓ` (§30.2, plural here), 仇をとる →
+`ａｖｅｎｇｅ` (§30.5, also `pending/chunk_017` ×2), ダークエルフ → `ｄａｒｋ　ｅｌｆ` **lowercase**
+(§17, shipped in `batch_003.tsv` L20), ホアグ王子 → `Ｐｒｉｎｃｅ　Ｈｏａｇ` (§39.1).
+
+### 40.2 Register — verified from the tag stream, and Seti's and Yuiti's genders fixed here
+
+Every attribution below is taken from the `{FCB0}` id **paired with the `{FC50}`/`{FC51}` channel
+byte**, per PR #23's ruling that portraits are not speakers — never from the prose. Note the ids are
+**scene-local**: id 0007 on `{FC50}` is the pidgin mook in L7's scene and **Seti** in L15's, which
+is itself the proof, and matches Annette's `あれは魔族の中でも下級の者たち`.
+
+| id · channel | Who | Register |
+|---|---|---|
+| 05 · FC50 | **Annette** | Polite, frightened, formal — `です`/`ます` throughout, **no contraction anywhere**: `Ｉｔ　ｉｓ　ｍｅ！`, `Ｔｈｅ　ｄｅｍｏｎｓ　ｄｉｄ　ｔｈｉｓ．`, `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` §24.6 / §26.7's clergy column, on a civilian |
+| 04 · FC51 | **Prince Hoag** | Warm and courteous, **no contractions** — `Ｓｏ　ｉｔ　ｉｓ　ｙｏｕ．`, `Ｅｈ？　Ｙｏｕ　ａｒｅ．．．` Uses `君` to Annette |
+| 02 · FC50/51 | **the ship's captain** | Rough and casual, contracts — `Ｔｈａｔ’ｓ　ｏｄｄ．`, `Ｓｅｅｍｓ　ｌｉｋｅ　ｗｅ’ｒｅ`, `Ｓｏ　ｔｈｅｎ，`. `俺たち`, `〜だぜ` |
+| 03 · FC50/51 | a female party member | Warm, contracts — `Ｗｅ　ｒｅａｌｌｙ　ｈａｖｅ` / `ｎｏ　ｌｕｃｋ，　ｄｏ　ｗｅ．`, `ｉｔ’ｓ　ａｌｌ　ｒｉｇｈｔ　ｎｏｗ．` |
+| 07 · FC50 | **Seti — FEMALE** | Casually rough and gleefully cruel, contracts — `Ｄｏｎ’ｔ　ｔｅｌｌ　ｍｅ　ｙｏｕ`, `Ｒｅｓｔ　ｅａｓｙ．`, `Ｏｋａｙ．` Fixed by `あんた`, **`〜の？`**, **`〜わけ？`**, **`〜ね`** and `キャハハハハ` |
+| 08 · FC50/51 | **Yuiti — MALE** | Laconic and blunt, **no contractions** — `Ｈｏｗ　ｐａｔｈｅｔｉｃ．`, `Ｎｏｗ　ｔｈｅｎ，　ｓｈａｌｌ　ｗｅ　ｇｏ．`, `Ｙｅａｈ．` Fixed by **`〜んだ`**, **`〜だな`**, **`行くか`**, **`〜がな`**, and Treize's vocative `ユイティ、気をつけろ` on that channel |
+| 06 · FC51 | **Treize**, and the dark elf of L10/L11 (§40.5) | Haughty, archaic, contemptuous of humans, **no contractions even while begging** — `Ｗｅ　ａｒｅ　ｔｈｅｙ　ｉｎ　ｗｈｏｓｅ`, `Ｙｏｕ　ｌｏｗｌｙ　ｈｕｍａｎｓ，`, `Ｃａｒｅｌｅｓｓｎｅｓｓ　ｕｎｄｉｄ　ｍｅ．` |
+| 07 · FC50 (L7's scene) | the low-rank demon | §5's broken-katakana register — dropped articles, dropped copula: `Ｈｕｍａｎｓ　ｗｅ　ｎｏｔ　ｆｏｒｇｉｖｅ！`, `Ｓｏ，　ｙｏｕ　ｏｕｒ　ｅｎｅｍｙ！` |
+
+**The two demon registers are deliberately different and were confirmed not levelled at review.**
+L7 is a low-rank mook in katakana pidgin; L10 is a high-born dark elf in formal archaic contempt
+(`我々`, the attributive `誇り高き`, `〜者`, and the imperious `消え去るがいい` →
+`ｙｏｕ　ｗｏｕｌｄ　ｄｏ　ｗｅｌｌ　ｔｏ　ｖａｎｉｓｈ`). **Chunks 27, 29, 32 and 38 inherit Seti's and
+Yuiti's pronouns from this file.**
+
+### 40.3 RULING — `大歓迎` is CONTEXT-SENSITIVE, not a fixed string. §38.2 is corrected; no line changes
+
+PR #22's Flag 7 is **confirmed on both halves**, verified at review against the tree. §38.2 fixes
+`大歓迎` → `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` / `ｍｏｓｔ　ｗｅｌｃｏｍｅ　ｈｅｒｅ` (12 / 17 columns) and its own
+reach note lists chunk 7 — but **`tl/battle/chunk_007.txt` body L3 (file line 5) already ships
+`Ｓｕｃｈ　ａ　ｗａｒｍ　ｗｅｌｃｏｍｅ！`** (19 columns) and §38.2 did not notice. Reach re-measured:
+**4 battle (chunks 7, 15, 26) + 6 script (banks 0, 3)**.
+
+**The ruling.** `大歓迎` is ordinary vocabulary, not a coined term, and it takes the English its
+clause needs. The binding precedent is this run's own `残念だけど` decision (§39.7): **CLAUDE.md §3
+engages on the MESSAGE, not the phrase.** The three source messages are distinct
+(`大歓迎してくれてるよ！` / `大歓迎されてるようだぜ！` / `そう言うことなら大歓迎だ！！`), so **gate 6 is
+not engaged, chunk 7 is not re-cut, and chunk 26 is not re-cut.** The sense splits cleanly:
+
+| Sense | Instances | Takes |
+|---|---|---|
+| **ironic** — enemies "welcoming" you with weapons | chunk 7 L3 (shipped `Ｓｕｃｈ　ａ　ｗａｒｍ　ｗｅｌｃｏｍｅ！`), chunk 26 L5 (shipped `ｍｏｓｔ　ｗｅｌｃｏｍｅ　ｈｅｒｅ！`) | a *warm / most welcome* phrasing that fits the row; **both shipped forms stand** |
+| **sincere** — welcoming a person in | chunk 15, twice, **untranslated** | `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` (12) |
+
+**For chunk 15, whose dispatch this unblocks:** `そう言うことなら大歓迎だ！！` →
+`Ｉｎ　ｔｈａｔ　ｃａｓｅ，` (13) / `ｙｏｕ’ｒｅ　ｍｏｓｔ　ｗｅｌｃｏｍｅ！！` (21). ⚠️ **Chunk 15's two
+instances are ONE sentence: its dump L11 text is a strict SUFFIX of its L10 text** (a scene with two
+entry points, measured at review), so the sentence **must be rendered byte-identically in both** —
+they are different messages, but the shared sentence is not a place to vary.
+
+### 40.4 RULING — `そして、` → `Ａｎｄ，` is conditioned on POSITION, and does not reach a list-final `そして`
+
+The wave-6 ruling records `そして、` → `Ａｎｄ，` from `chunk_024` and `pending/chunk_043`. Measured at
+this review, **both ruled instances have `そして、` standing ALONE on its own display row**, and that
+is what licenses keeping the comma:
+
+```
+chunk_024 L15 seg15  |そして、|             → |Ａｎｄ，|   opens a NEW sentence (僕は素性を隠すため…)
+chunk_043 L13 seg2   |そして、|             → |Ａｎｄ，|   own row, between two noun phrases
+chunk_026 L14 row3   |そして、極めて残忍です。|  → |ａｎｄ　ｕｔｔｅｒｌｙ　ｃｒｕｅｌ．|
+```
+
+Chunk 26's is the **final conjunct of a three-item predicate list** opened three rows earlier by
+`彼らは、` — `恐ろしく強大で、` / `驚くほど頭が回り、` / `そして、極めて残忍です。` → `Ｔｈｅｙ　ａｒｅ`
+/ `ｆｅａｒｓｏｍｅｌｙ　ｍｉｇｈｔｙ，` / `ａｓｔｏｎｉｓｈｉｎｇｌｙ　ｃｌｅｖｅｒ，` /
+`ａｎｄ　ｕｔｔｅｒｌｙ　ｃｒｕｅｌ．` The English is a matching tricolon whose row breaks fall on the
+source's own commas. `Ａｎｄ，　ｕｔｔｅｒｌｙ　ｃｒｕｅｌ．` would capitalise a conjunction mid-sentence,
+put a comma after "And" that no English style permits, and break a list the source explicitly
+builds.
+
+**The rule, stated with its condition:** `そして、` **alone on its display row** (equivalently:
+opening a new sentence, or standing as its own coordinating row) takes `Ａｎｄ，`. `そして`
+**continuing into its own clause** takes lowercase `ａｎｄ` with no comma. `Ａｎｄ　ｔｈｅｎ` stays
+reserved for `それから` (absent from chunk 26). Shipped work already agrees with the second half:
+`pending/chunk_005` 15.10 `そして　くれぐれも` → `Ａｎｄ　ａｂｏｖｅ　ａｌｌ，` and
+`pending/chunk_043` 3.7 / 32.0 → `Ａｎｄ　ｔｈｉｓ　ｉｓ　ｔｈｅｉｒ` / `Ａｎｄ　ｔｈｅ　ｌｅａｄｅｒｓ　ｗｈｏ`,
+all three with **no comma after `Ａｎｄ`**. Reach re-measured and **exact as briefed**: **10 battle
+(chunks 5, 16, 24, 25, 26, 39, 43) + 9 script (banks 1, 9, 32, 41)**.
+
+### 40.5 Treize IS the dark elf of L10/L11 — confirmed on the channel test, not the portrait id
+
+PR #22's Flag 2 proposed it from the portrait id. Re-tested at review on the **channel**, as PR #23
+requires, and it **strengthens**: the triple **(id 0006, channel `{FC51}`, selector `FA11`) is
+constant across L3, L10, L11 and L15**, and in L15 Seti addresses that exact speaker by the vocative
+`トレーズ、` and it answers `セ、セティ・・・助けてくれ。` The content chains independently: L11's
+`この私が、人間などに・・` is a defeat by humans, and L15's `傷だらけになって` /
+`新しく来た人間どもだ` / `油断して、不覚をとった` each presuppose that defeat. One voice throughout.
+
+**Consequence:** Treize is not a grovelling minion but a proud dark elf whose hauteur survives his
+defeat, and **chunks 27, 28 and 29 inherit that voice.** ⚠️ **Residual caveat, unchanged:** chunk 26
+contains **no `{FB00}` portrait-graphic tag at all**, so no id is tied to an image here, and
+L10/L11 carry different `{FCE0}` arguments. Chunks 27–29 can still overturn it.
+
+Note the corollary the chunk establishes: **dark elves are a kind of `魔族`.** Treize is called a
+`ダークエルフ` at L10 and is one of the demons Annette describes; L5's `魔族とやらの歓迎` covers the
+same enemies. The two terms are not exclusive, and both stay lowercase (§17, §17.1).
+
+### 40.6 Recorded, not re-cut — checked at review and not defects
+
+- **`まさか、` diverges from `chunk_000`'s `Ｉｔ　ｃａｎ’ｔ　ｂｅ，` and is PRE-AUTHORISED.** §33.6's
+  exclamative row **names chunk 26 by number** and rules that `〜とは` "takes the English that fits
+  its own clause". L14's `まさか、こんな形で会えるとは・・` is the exclamative →
+  `Ｔｏ　ｔｈｉｎｋ　ｗｅ　ｗｏｕｌｄ` / `ｍｅｅｔ　ｉｎ　ｓｕｃｈ　ａ　ｗａｙ．．`; chunk 0 sits in §33.6's
+  *incredulous* row. Nothing to reconcile.
+- **`な、何をするっ！？` — a SECOND row divergence the PR did not declare, and chunk 26 is right.**
+  `pending/chunk_043` L27 ships `Ｗ‐ｗｈａｔ…` (22) against this unit's `Ｗ，　ｗｈａｔ…` (23). All 12
+  stutter rows in the corpus were surveyed: the `Ｘ，　` form is the shipped convention **8 to 1**
+  and the `Ｘ‐` outliers are one line of `chunk_000` (internally inconsistent with its own
+  `Ａｈ，　`) and two in **parked** chunk 43, which `assemble.py` never reads. FLAGS §AB3.
+- **`はい。` → `Ｙｅｓ．` shares its English with `ええ。`; §25.3 MET.** Re-measured: `はい。` battle
+  [26, 29] + bank [5]; `ええ。` battle [7, 19] + banks [33, 41] — disjoint in both dimensions.
+- **`許サナイ` keeps chunk 10's word and changes its voice.** `chunk_010` renders
+  `沼ヲオカス者、許サナイ、` passively; L7's `人間許サナイ！` is active with 人間 as object, and
+  `Ｈｕｍａｎｓ　ａｒｅ　ｎｏｔ　ｆｏｒｇｉｖｅｎ！` measures **exactly 24** (verified). Rendered
+  `Ｈｕｍａｎｓ　ｗｅ　ｎｏｔ　ｆｏｒｇｉｖｅ！` (**22**, verified) — object-fronted as the Japanese is,
+  dropping the auxiliary *do* rather than the negated verb, which is §5 read precisely.
+- **`恐ろしい` takes two English forms one sentence apart, deliberately** — `本当に恐ろしいのは` →
+  `Ｔｈｅ　ｔｒｕｌｙ　ｄｒｅａｄｆｕｌ　ｏｎｅｓ`, adverbial `恐ろしく強大で` → `ｆｅａｒｓｏｍｅｌｙ　ｍｉｇｈｔｙ，`.
+  No glossary row fixes 恐ろしい, so the "one word, two grammatical shapes" pattern (which governs
+  *fixed terms*) is not engaged. `ｄｒｅａｄｆｕｌｌｙ　ｍｉｇｈｔｙ` reads as a bare intensifier and loses
+  the fear the sentence is about.
+- **`奴ら` / `やつら` are rendered per row**, as §32.8 shapes it — the project has never fixed them
+  and shipped work varies widely. L15's `やつら` (humans) → `Ｔｈｏｓｅ　ｍｅｎ`, matching `chunk_006`
+  L11; L14's `さっきの奴ら` (**demons**, so *men* would be wrong) → `Ｔｈｅ　ｏｎｅｓ　ｆｒｏｍ　ｊｕｓｔ
+  ｎｏｗ，`.
+- **`Ｔｈｅｓｅ　ｓｏ‐ｃａｌｌｅｄ　ｄｅｍｏｎｓ’` / `ｗｅｌｃｏｍｅ，`** breaks between possessive and head
+  noun where the source breaks after `歓迎、`. §34.9 ruled this shape acceptable; no lone one- or
+  two-letter word is stranded. `‐` is U+2010, in the allowed set.
+- **37 short EN rows were checked for orphaning and none is orphaned** — each answers an equally
+  short source row (`はい。`→`Ｙｅｓ．`, `いえ、`→`Ｎｏ，`, `トレーズ、`→`Ｔｒｅｉｚｅ，`).
+
+### 40.7 Cross-unit rows LEFT LIVE — chunk 26 is the FIRST of its pair to merge
+
+Verified **by reading the integration branch's tree** at merge time, not assumed (the wave-5 lesson,
+FLAGS §Y2): `tl/battle/chunk_025.txt` and `tl/script/batch_008.tsv` are both **absent**.
+
+- ⚠️ **`魔族`'s §9 row STAYS LIVE.** It pairs this unit with `batch_008` (PR #21), which has **not**
+  merged. Per the `ルート` precedent (§29.1 / §30.1) **PR #21's reviewer strikes it**, having
+  verified the merged chunk 26 rather than assuming.
+- **`場所` has NO §9 row at all** — `grep -c 場所 glossary.md` = **0**. It was briefed as a
+  cross-unit pair with `batch_008`; there is nothing to strike or leave live. Recorded so the next
+  reviewer does not hunt for it.
+- **`末えい` does not occur in chunk 26** and is untouched by this unit.
+- **`フフ` / `ふふ` do not occur in chunk 26**, so §12.3 / §32.7's `Ｆｕｆｕ` is not engaged here.
+- **`ｄｅｓｃｅｎｄａｎｔ` does not occur in chunk 26**, so nothing propagated PR #23's Flag 15
+  miscount (it is **10** columns; §9 already carries the measurement).
