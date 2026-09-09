@@ -70,7 +70,7 @@ commits first takes §32 and the other takes §33. **Read at commit time; never 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
-| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | 🔄 **CHANGES round 1 — rework sent to the same translator.** All mechanical gates re-verified by recomputation and clean (8,067 / 8,192; five `{FFFE}`; `{FCC0}` 24→24; gate 6 clean). **Fails gate 7 only**: `ウルフ` → `Ｗｏｌｆ` collides with `ｗｏｌｆ` already shipped 3× in `batch_003.tsv` for 狼 (21 instances) — the §28.5 “reads as an English common word” failure, worst where the character announces himself by name. 4 findings, all byte-neutral or byte-positive → 8,065 / 8,192 (slack 127) |
+| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | 🔄 **REWORK PUSHED `e14811d` — 8,065 / 8,192 (127 slack), all 4 findings accepted, none contested. Round-2 re-review QUEUED behind reviewer 3** (same reviewer `a7e69858f22822022`, which holds an unpushed §32). Round 1 was: All mechanical gates re-verified by recomputation and clean (8,067 / 8,192; five `{FFFE}`; `{FCC0}` 24→24; gate 6 clean). **Fails gate 7 only**: `ウルフ` → `Ｗｏｌｆ` collides with `ｗｏｌｆ` already shipped 3× in `batch_003.tsv` for 狼 (21 instances) — the §28.5 “reads as an English common word” failure, worst where the character announces himself by name. 4 findings, all byte-neutral or byte-positive → 8,065 / 8,192 (slack 127) |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 
@@ -132,6 +132,21 @@ merge order, re-reading both files first.
 - **Chunk 23 is now bound in three places** by this merge (`FLAGS.md` §S3): `かかってくるがいい。`
   → `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．` (byte-identical, L15), `シナリオ` → `ｓｃｒｉｐｔ` (×2) and
   bare `守備` → `ｔｈｅ　ｄｅｆｅｎｃｅ`.
+
+### ✅ ROUND-2 EVIDENCE: the translator STRENGTHENED the finding against itself
+Chunk 19's translator accepted all four findings and, re-counting rather than trusting the
+finding's own parenthetical, found the case for `Ｕｌｆ` is **stronger** than the reviewer stated:
+`ｗｏｌｆ` is shipped across **2 unique lines** of `batch_003` (L39, L40) at 21 instances each —
+**42 message instances, not 21**. And the decisive point neither the reviewer nor the seed made:
+**L40's source is `キラーウルフが進化した狼の怪物。`, so the KATAKANA `ウルフ` already maps to
+`ｗｏｌｆ` in shipped work**, not merely the kanji 狼. `Ｗｏｌｆ` would make one katakana string yield
+the same English for a monster class and for a man announcing himself by name.
+
+It also declined the invitation to contest finding 4 — the reviewer had named it as the one it
+thought the translator could win — after checking and concluding the premise was true. Two of the
+repacks fixed defects neither party had claimed: an orphaned `ａｍ` (§3.2), and a page that was
+leading-blank + 4 text rows = 5, now 4 and inside the box. **No round-1 edit touches a cross-unit
+term, so chunk 20 still needs no re-cut.**
 
 ### ⚠️ A REVIEWER CORRECTED THE PREVIOUS REVIEWER'S RULING — same wave, one hour apart
 Reviewer 1 added **glossary §31.3** (`まさか` → `Ｓｕｒｅｌｙ`) while merging chunk 18. Reviewer 2,
