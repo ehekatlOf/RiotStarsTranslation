@@ -2855,3 +2855,164 @@ Every chunk keeps far more than the 50-byte floor: chunk 7 **399**, chunk 8 **75
 **6,631**, chunk 14 **5,989**. The project is **6 bytes lighter**. **No bank moved** — this unit
 touches no script file — so §F2's table is unchanged and banks 41 (353) and 40 (471) are
 byte-for-byte as they were.
+
+## X. Wave 5 review — battle chunk 21 / PR #18 (2026-09-09)
+
+**DECISION: MERGE at round 1**, squash-merged as **`6276b4b`**. Every CLAUDE.md §6 gate run in a
+real checkout and pasted in the PR review; **no finding required a change to the unit**. Reviewer 2
+of wave 5. Three PR-body figures were wrong and are corrected here and in glossary §36.7 — none of
+them touches the file, and the per-line `{FFFE}` table that gate 4 actually turns on is complete and
+correct.
+
+**Figures, all re-derived here rather than taken from the PR.** `tl/battle/chunk_021.txt`
+**4,431 / 8,192, slack 3,761** — 45× the 50-byte floor. 863 JP → 1,809 EN readable characters =
+**2.096×** against the **4.280** tier-D ceiling (`tag_bytes` 803, `english_budget` 3,694), **49.0 %**
+of the budget spent; 863 / 5,663 / 4.28 all match `translation_prompt.md` §0.3's own table.
+`assemble.py check` → "All checks passed". `rowcheck.py 21` prints no `!!` at all — no column over
+24, no page over 4 text rows, tag parity clean — and the four `{FFFE} changed` lines it names are
+exactly the four in the PR's Flag 2 with exactly the right before → after figures. **105 text rows**
+(source 100), widest **23**, none at 24, ten at 23. `{FCC0}` **7 → 7** and none added, so `§Q2` was
+not re-discovered. Duplicate sweep: **0 unpairable lines, 246 message keys, 1 divergence** (the
+pre-existing `pending/chunk_005` village line, §X2) and chunk 21 on the conforming side of it.
+`bankmeasure` not required (nothing under `tl/script/` changed) but run: **no bank negative**; banks
+under 2,000 free are **41 → 353** and **40 → 471**, both byte-for-byte untouched, and bank 5 → 3,381.
+`rowcheck.py script` → columns OK, only the three INHERITED over-4-row pages.
+
+### X1. ⚠️ NEW — a PR figure that contradicts its own evidence table, and cannot be reproduced
+
+The PR states "**`{FFFE}` 55 → 59 (+4)**". Measured against the dump the totals are **81 → 86, delta
++5**, and **the PR's own per-line table sums to +5** (7→8, 17→19, 0→1, 2→3). Five counting
+definitions were probed at review, in case 55 was a defensible alternative measure:
+
+```
+definition                              JP     EN   delta
+raw {FFFE}                              81     86      +5
+text rows (rowcheck's own definition)  100    105      +5
+row-separating breaks (rows - pages)    61     66      +5
+breaks with text on both sides          61     66      +5
+{FFFE} minus trailing-empty             61     66      +5
+```
+
+**Every definition gives +5, and no chunk in the battle dump has a source total of 55**, so this is
+not §W3's scratch-file mix-up either. The figure is simply wrong and is corrected rather than
+rationalised. **Two further figures in the same block are also wrong**: "57 text rows" is **105**,
+and "nine rows at 23" is **10**. "Widest 23, none at 24" — the figure the column gate turns on — is
+correct.
+
+**Why this was a MERGE and not CHANGES.** Gate 4's requirement is that *every `{FFFE}`/`{FCC0}`
+change appears in the PR's Flags*; all four do, per line, with the right numbers, and the required
+byte figure is present and correct. What is wrong is a summary line that the gate does not rest on
+and that `rowcheck` refutes in one command. Rework would have changed no byte of the unit. This is
+the §S / §T / §U precedent — a reviewer correcting a PR's figures while ratifying its calls — and it
+is recorded rather than waved through.
+
+**Standing recommendation for future battle PRs:** state the `{FFFE}` total as `rowcheck` reports the
+per-line diff, or omit the summary and give only the table. A summary that disagrees with its own
+table is worse than no summary, because the table is right and the summary is what gets copied into
+`HANDOFF.md`.
+
+### X2. `pending/chunk_005.txt` L19 diverges from §27.2 — pre-existing, now queued in `pending/README.md`
+
+Raised as the PR's Flag 12 and **reproduced independently at review** by the positional sweep:
+`pending/chunk_005.txt` file line 19 renders `村が襲われました。` as
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` against §27.2's binding
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`, which chunks 7 ×2, 13, 17, 34 and now 21 all carry
+byte-identically. **It is the only message-level divergence in the whole corpus** (246 JP keys) and
+**chunk 21 is on the conforming side of it.**
+
+**Not introduced by this unit and not live today** — chunk 5 is parked for the tier-A budget and
+`assemble.py` reads only `tl/` — but it becomes a live CLAUDE.md §3 violation the day the slot patch
+lands, which is exactly the §23.2 `Ｑｕｉｔｅ　ｓｏ．` shape. **Row added to `pending/README.md`'s
+"Lines these files must adopt on re-cut" table**, measured at review: the current row is **24 columns
+on one row** (at the hard limit, legal), the replacement is **14 / 13** — matching §27.2's own stated
+figures — and it costs **+8 bytes**, taking chunk 5's re-cut total from +10 to **+18** (8,679 →
+8,697 against 8,192). It does not change that file's feasibility; it needs the slot extension either
+way.
+
+⚠️ **§27.2's sentence "`tl/battle/` is free of divergent duplicate renderings for the first time in
+the project" is TRUE and stays** — the claim is scoped to `tl/`, and `tl/` is still free. What was
+missing is that the sweep behind it never covered `pending/`. §27.2's instance list does name chunk
+5 among the thirteen; it simply does not say chunk 5 is already translated and disagrees.
+
+### X3. ⚠️ `pending/` is a blind spot in BOTH directions, and this unit shows the good direction
+
+§W3 and §W4 recorded `pending/` traps that lose information. This unit adds the mirror case, which is
+worth having beside them because it looks like a defect and is not:
+
+- **The bad direction** is §X2 — a `tl/`-scoped duplicate sweep does not see a parked divergence.
+- **The good direction** is the PR's `相変わらず` row, which says "Free across `tl/`" — literally true
+  — when `pending/chunk_005.txt` L29 **already renders the same phrase, and renders it identically**
+  (`Ｓａｍｅ　ａｓ　ｅｖｅｒ，`). The row reads as if the form were being coined; it is being matched.
+  Likewise `ええっ` → `Ｅｈｈ`, already drafted in `pending/chunk_043.txt` L43 — which that row *does*
+  say.
+
+**Both directions have the same fix: sweep `tl/` and `pending/` together and say which tree a hit is
+in.** A "free across `tl/`" claim is not a freshness claim. Recorded in glossary §36.7.3.
+
+### X4. Two glossary questions ruled, and one two-wave-old correction finally applied
+
+- **§31.2's `〜め` re-scoped to third-person reference** (glossary §36.3). Its "Recurs as
+  `この裏切り者め。` in chunk 21" clause is struck; direct address takes `Ｙｏｕ　〜` on §28.3's
+  `馬鹿者！` model. `Ｙｏｕ　ｔｒａｉｔｏｒｓ．` ratified, with evidence the PR did not have — **two
+  distinct 9th Army portraits (0000 and 0009) speak on `{FC51}` inside that one message**, so Ryan is
+  not addressing one man. Reserve `Ｙｏｕ　ｔｒａｉｔｏｒ．` recorded. **No line changes.**
+- **`とにかく` ruled register-selected** (glossary §36.2), on a five-instance trace the PR did not
+  run: register predicts 5 of 5 renderings, the source comma predicts 2 of 5. **No line changes**;
+  five further battle chunks inherit the row.
+- **§1 and §2's rank widths patched IN PLACE** (glossary §36.4): 少尉 **17** not 18, 中尉 **16** not
+  17, `Ａｎｓｅｌｍｏ` **7** not 8, `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` **24** not 25.
+  ⚠️ **§29.5 measured this in wave 3 and deliberately recorded rather than patched; the wrong figure
+  then travelled two waves and was restated in the wave-5 §9 seed as a new discovery.** Three
+  independent measurements now agree, so it is applied rather than deferred a third time. **PR #20 is
+  the project's first 中尉 rendering and now inherits a correct §2 instead of the trap.** The blanket
+  "will not share a line with a name" is false — `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ，` is 23 and
+  ships as one row; §29.5's contrary conclusion was reasoned on Cress (5 columns) and holds for
+  Cress only. **No rendering anywhere changes.**
+- **Glossary §10 question 8 (numerals in prose) CLOSED** (glossary §36.6): cardinals in running prose
+  are spelled out; full-width digits stay in fixed names (§2's army numbers) and in tables of numbers
+  (§15.1). Chunk 21 carries both sides on adjacent rows, which is why the rule had to be stated in
+  that shape.
+
+### X5. ⚠️ A correction against the wave-5 dispatch — four of five "cross-unit" terms are not in chunk 21
+
+The dispatch told this reviewer that chunks 21 and 22 share five seeded terms — `ライアン`,
+`クレス隊長`, `リオン将軍`, `ジェイク`, `５軍`. **Counted in chunk 21's source at review:**
+
+```
+ライアン 1   ２軍 1   クレス 0   リオン 0   ジェイク 0   ５軍 0   勲章 0   モンスター 0
+```
+
+**Only `ライアン` is cross-unit between #18 and #19.** `クレス` is battle chunks 8, 13, 22, 37;
+`リオン` is 6, 22, 23; `ジェイク` is 22 only; `５軍` is 8, 13, 22 — none of them in chunk 21, which
+therefore renders none of them and promotes none of them. The PR's Glossary-additions table promotes
+exactly `ライアン` and `バトウ神父` and is right; the dispatch was wrong. **Consequence:** #18 merged
+first, so **only the `ライアン` §9 row is left live** for #19's reviewer to strike, and `バトウ神父` is
+promoted and struck here (`バトウ` is battle chunk 21 only, so it is not shared). There was never
+anything for this merge to leave live on the other four.
+
+### X6. Confirmed, not defects — recorded so they are not re-raised
+
+- **`か。` rendered with interrogative syntax and a full stop is established practice.** Swept across
+  every `か。` in `tl/battle/`: `chunk_002` L15/L21 and `chunk_006` L3/L4 already do it, and chunk 21
+  L20's `Ｉｓ　ｔｈｉｓ，　ｔｏｏ，　ｔｈｅ　ｗｉｌｌ　ｏｆ　Ｇｏｄ．` is the fifth instance. The chunk's other
+  two `か。` go declarative because they are realisations, not questions — a principled split, and the
+  punctuation follows the source in all three. Glossary §36.8.
+- **`ｕｎｄｅｒ　ａｔｔａｃｋ` twice in one chunk** — §27.2's village line (L11) and `攻撃を受けてる` (L5).
+  Different source strings, §3 not engaged; recorded so a later sweep does not read L5 as a
+  fourteenth §27.2 instance.
+- **`{FCA8}` appears in this chunk** (L22, `{FCA8}{=01D3}`) but chunk 21 is **not** one of §D1's ten
+  affected chunks and `check` passes. Coincidence, recorded so it is not mistaken for the artifact.
+- **§Q2 not re-discovered.** No `{FCC0}` was added anywhere; the documented prompt/gate contradiction
+  remains a documentation defect for a human and was not grounds for any finding.
+- **Branch `tl/battle-021` not deleted** — `git push origin --delete` is blocked by the proxy (HTTP
+  403). Harmless; not CLAUDE.md §8's "cannot push" condition.
+- **Cross-PR:** #19 (chunk 22) and #20 (script 007) were both still open at this merge, verified in
+  the PR list rather than assumed. Chunk 21 contains no `勲章`, no `モンスター`, and its one bare
+  `２軍` takes the same `２ｎｄ　Ａｒｍｙ` the mid-wave relay sent to chunk 22, so nothing here
+  constrains either.
+
+### X7. Bytes and banks after this merge
+
+Chunk 21 ships at **4,431 / 8,192, 3,761 slack**. The project's tightest battle chunk is still
+chunk 19 at **127**. **No bank moved** — this unit touches no script file — so `FLAGS.md` §F2's table
+is unchanged and banks 41 (353) and 40 (471) are byte-for-byte as they were.

@@ -27,10 +27,17 @@ Parked files do not ship, so a divergence from shipped work is not a CLAUDE.md �
 | `chunk_005.txt` | 13 | `Ｔｈｉｓ　ｃａｎ’ｔ　ｂｅ．．．` | `Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．` | 16 → 17 cols, **+2 B** | PR #7 review; `そんな・・・` now shipped in chunk 6, and Cavia takes no contractions (§14.6) |
 | `chunk_005.txt` | 32 | `Ｑｕｉｔｅ　ｓｏ．` | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | 9 → 13 cols, **+8 B** | PR #6 review, glossary §23.2; `そうそう。` shipped in chunk 4 |
 | `chunk_043.txt` | 14 | `Ｗ‐ｗａｉｔ！` | `Ｗ，　Ｗａｉｔ！` | 9 → 8 cols, **−2 B** | PR #7 review, glossary §24.3; the comma form follows shipped `chunk_007`'s `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` |
+| `chunk_005.txt` | 19 | `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` | `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` | 24 cols on one row → **14 / 13**, **+8 B** (+1 `{FFFE}`) | PR #18 review, `FLAGS.md` §X2; glossary **§27.2** is the binding entry and chunks 7 ×2, 13, 17, 21 and 34 all carry it byte-identically. ⚠️ **The only message-level divergence in the whole corpus**, found by the positional sweep at that review |
 
-Net effect on `chunk_005.txt`: **+10 bytes**, so 8,679 → 8,689 against its 8,192-byte slot. It is
+Net effect on `chunk_005.txt`: **+18 bytes**, so 8,679 → 8,697 against its 8,192-byte slot. It is
 487 over already; this does not change its feasibility, and it must not be traded against the
 budget — the file needs the slot extension either way. `chunk_043.txt` gains 2 bytes back.
+
+⚠️ **The village row above is the reason this table matters.** `assemble.py` reads only `tl/`, so a
+divergence parked here is invisible to `check`, to `rowcheck` and to any duplicate sweep scoped to
+`tl/` — which is exactly how glossary §27.2 came to say "`tl/battle/` is free of divergent duplicate
+renderings" (true, and true only of `tl/`) while this row sat in `pending/`. **Sweep both trees and
+say which one a hit is in** (`FLAGS.md` §X3).
 
 | File | Bytes | Slot | Notes |
 |---|---|---|---|
