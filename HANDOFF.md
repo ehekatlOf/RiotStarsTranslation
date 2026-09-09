@@ -53,7 +53,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** (r2 @ `dfa9771`) | **PR #29 — rework PUSHED**, awaiting re-review by the SAME reviewer |
-| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,565 / 8,192 — 2,627 slack** | **PR #33 OPEN**, awaiting reviewer |
+| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | 5,565 → **5,577 / 8,192** after fixes | **PR #33 — CHANGES r1**, rework sent |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
@@ -146,6 +146,26 @@ euphemism); the **battle** sense ships as `ｆｉｎｉｓｈ` (merged c9, c19).
 was reading a scoped row as general. **Same error class as the `全滅` finding: censusing the ENGLISH
 and never the Japanese** (§Y2/§AC1).
 
+### Review 2 of 5 — PR #33 (chunk 38): **CHANGES**, round 1. Rework sent.
+Eight of nine gates pass, independently re-derived (byte cost reimplemented from scratch; full tag
+stream diffed; gates 4, 6 and 8 positive-controlled). **Gate 7 fails**: `帝国軍` shipped without the
+article, where §20.4 fixes two forms and **11 of 11** shipped instances carry it. Fix
+`ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ` (23 cols, +6 bytes). Post-fix simulated: **5,577 / 8,192, 2,615 slack.**
+
+⚠️ **RULING — `反旗を翻す`: THE BANNER FORM WINS. PR #33 MOVES; PR #31 DOES NOT. CHUNK 38 IS NOT
+PARKED.** ⚠️ **Chunk 38's geometric argument was REFUTED BY MEASUREMENT — and this is the payoff for
+telling the reviewer to verify it rather than accept it.** #33 measured six wordings and concluded
+"every one needs a fifth row"; **it only ever tested orderings where `ｔｈｅ　ｂａｎｎｅｒ　ｏｆ`
+precedes `ｒｅｖｏｌｔ．．．．．` on the same row.** Moving `ｂａｎｎｅｒ　ｏｆ` down gives
+`Ａ　ｆｅｗ　ｒｅｍｎａｎｔｓ　ｏｆ　ｔｈｅ` / `ｏｌｄ　Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ` /
+`ｏｐｐｏｓｅｄ　ｉｔ，　ｒａｉｓｉｎｇ　ｔｈｅ` / `ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ．．．．．` — **four rows
+≤23, all four content elements kept, 王国 intact, +6 bytes.** A "no wording fits" claim is a claim
+about a **search**, not a measurement, and §AG6 says nothing ever checks the rejected option.
+**Binding on PR #30 (chunk 41):** the unbroken `アイテムを奪われました。` is genuinely a different key
+— broken form exactly 7 (c3, c9×3, c28, c29, c30, matching §21.3), unbroken form 4 (c38 L22, c39 L9,
+**c41 L10 and L12**). Chunk 41 must render it byte-identically to chunk 38's, with the one forced
+`{FFFE}` (28 columns unbroken).
+
 ### Review 1 of 5 — PR #29 (chunk 37): **CHANGES**, round 1. Rework sent to the same translator.
 All nine gates passed and were **independently re-measured** (gate 6 positive-controlled with two
 planted corruptions; L14's 8 rows proved inherited from a pristine extraction). Two reading
@@ -199,9 +219,14 @@ corpus does not carry.
 **PR #33 also raises three corrections to EXISTING glossary/FLAGS rows** (reviewer to integrate):
 §28.3's `ははっ` list wrongly counts chunk 38 — that instance is `はははっっ`, a **laugh** by Marana
 answering no one, caught as a **substring** false positive; the four genuine assents stand.
-§37.1's bare `反乱` "closed" claim is wrong (**3 battle + 4 script**, not 2 + 0) and collides with
-§38.3's `ｒｅｂｅｌｌｉｏｎ`. And `pending/chunk_005.txt` L18 diverges from §27.2's village line —
-parked, so nothing is broken today.
+⚠️ ~~§37.1's bare `反乱` "closed" claim is wrong~~ — **STRUCK. I PROPAGATED A MISQUOTE.** PR #33's
+Flag 4 attributed the "2 battle / 0 script — closed" clause to the `反乱 (bare)` row and I recorded
+it here without reading the row. **Verified by me now: `glossary.md` line 3639 is the `鎮圧` row and
+carries that clause; line 3640, `反乱 (bare)`, carries NO count at all — and 鎮圧's own claim is
+TRUE (chunks 22, 43). Nothing in the glossary needs correcting.** PR #33's underlying measurement of
+`反乱` goes in as an addition, not a §4.3 correction. ⚠️ **This is the SECOND figure I passed on
+unverified this wave** (after "chunk 41 L7"), and both were caught by the next role.
+`pending/chunk_005.txt` L18 does diverge from §27.2's village line — parked, nothing broken today.
 
 **PR #29 (chunk 37) carries three things the reviewer must integrate, not just merge:**
 1. ⚠️ **`FLAGS.md` §Y6 is SETTLED — Cress is FEMALE — and §Y6's own premise is REFUTED.** §Y6 says
