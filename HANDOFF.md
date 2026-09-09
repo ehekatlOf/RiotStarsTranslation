@@ -40,7 +40,7 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 | Unit | Branch / file | Budget | Round | State |
 |---|---|---|---|---|
 | battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | dispatched |
-| battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | dispatched |
+| battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | ✅ **PR #23 OPEN** — **5,419 / 8,192 (2,773 slack)**, 2.14× growth, widest row 23, +5 `{FFFE}`, `{FCC0}` untouched. Awaiting the barrier |
 | battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **PR #22 OPEN** — **5,325 / 8,192 (2,867 slack)**, 1.84× growth, max run 23 cols, +3 `{FFFE}`. All six seed reach figures and widths re-measured **exact**. Awaiting the barrier |
 | script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
@@ -59,6 +59,34 @@ errors, not the unit's.
    `あら` list (478/479/482/489/490/499/500) and the menu group (472/483/493/504) are all correct.**
 2. ⚠️ **"~26 distinct translations" is wrong — it is 32.** 47 lines − 22 in groups + 7 groups = 32.
    Re-measured independently. The seven groups themselves are named correctly.
+### ⚠️ PR #23 (chunk 25) caught a FOURTH coordinator error — `Ｔｒｉｆ` should be `Ｔｏｒｉｆ`
+**CONFIRMED and relayed to chunk 24 mid-flight.** `glossary.md` §9's wave-6 block (line 520) renders
+`トリフ王子派` as `Ｐｒｉｎｃｅ　Ｔｒｉｆ’ｓ　ｆａｃｔｉｏｎ`. **`トリフ` → `Ｔｏｒｉｆ` is FIXED** at
+glossary line 290 and **promoted at §38.1**, and is **shipped** in `tl/script/batch_007.tsv` L56 as
+`Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`. `Ｔｒｉｆ` appears nowhere in `tl/` or `pending/`. A main-table entry beats a
+provisional §9 row. **The reviewer must patch §9 line 520 in place** and check chunk 24's PR renders
+`Ｔｏｒｉｆ` — chunks 24 and 25 share a scene and chunk 25 has shipped four `Ｔｏｒｉｆ`.
+Correct form: `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ’ｓ　ｆａｃｔｉｏｎ`, **22 columns**.
+
+### Other PR #23 findings — two confirmed, one REFUTED
+- ✅ **CONFIRMED: `王位` and `恨み` are cross-unit with chunk 24 and my computed list missed both.**
+  `王位` = chunks 24, 25 only; `恨み` = chunks 24, 25, 43. Cause: my intersection takes **maximal**
+  kanji runs, so chunk 24's `王位継承` never matched chunk 25's `王位` — the same failure that hid
+  `司教様` vs `司教`; and `恨み` is kanji+kana, the `末えい` class. Chunk 25 ships `ｔｈｅ　ｔｈｒｏｎｅ`
+  and `ｇｒｕｄｇｅ` (the latter matching parked `chunk_043` L13). Relayed to chunk 24.
+- ✅ **CONFIRMED: §9's `ライトエルフ` / `オーラスマッシャー` note misattributes them to Torif — they
+  are ARIES's.** Traced through the `{FCB0}` portrait stream. **The renderings are unaffected**;
+  only the note is wrong. Coherent with Aries being Bishop Creus's grandchild (chunk 24 L15).
+- ❌ **REFUTED — do NOT "fix" this: `末えい` → `ｄｅｓｃｅｎｄａｎｔ` is 10 columns, not 11.**
+  PR #23 Flag 15 says the seed's "10 columns" is wrong and should be 11. Measured
+  `len('ｄｅｓｃｅｎｄａｎｔ')` = **10** (d-e-s-c-e-n-d-a-n-t). **The seed was right and Flag 15 is a
+  hand-count one high** — the exact failure mode that PR warns about elsewhere. Nothing depends on
+  it in either unit, but the reviewer must not propagate the correction into §9.
+- Open for the reviewer to rule: `王子様` (vocative `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ` rendered; 8 script
+  instances read referential, wanting `ｔｈｅ　Ｐｒｉｎｃｅ` on §1's `王女様` precedent) and `王家`
+  (`ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` proposed; parked `chunk_005` L27 has `ｔｈｅ　ｃｒｏｗｎ`, not gate-bound
+  because chunk 5 is parked).
+
 ### Findings from PR #22 (chunk 26) the reviewer must carry forward
 - ⚠️ **`大歓迎` has TWO shipped English forms — CONFIRMED by me.** `glossary.md` §38.2 fixes
   `Ｍｏｓｔ　ｗｅｌｃｏｍｅ`, but `tl/battle/chunk_007.txt` L5 already ships
