@@ -16,30 +16,37 @@ container artifact.
 > **WAVE 5 IS RUNNING** in `session_0126GVzUTXdEP5VpVWWJXBCU`. Seeds are committed (`9e595ff`);
 > all four PRs are open (barrier met) and **PR #17 is merged**. The coordinator's next acts, in
 > order:
-> 1. ✅ Barrier met — all four PRs open. ✅ **#17 merged** (`f25ff14`) and ✅ **#18 merged**
->    (`6276b4b`), both with integration pushed. `git pull --ff-only` before the next reviewer.
+> 1. ✅ Barrier met — all four PRs open. ✅ **#17 merged** (`f25ff14`), ✅ **#18 merged**
+>    (`6276b4b`) and ✅ **#19 merged** (`6423083`), all three with integration pushed.
+>    `git pull --ff-only` before the next reviewer.
 > 2. Reviewer subagent, **one at a time, foreground**, in unit order: ~~corrections~~ →
->    ~~#18 battle 21~~ → **#19 battle 22** → #20 script 007.
->    ⚠️ **#19's reviewer owes the `ライアン` §9 strike** — #18 merged first and deliberately left
->    that row live. It is the **only** cross-unit row between 21 and 22; see the correction below.
+>    ~~#18 battle 21~~ → ~~#19 battle 22~~ → **#20 script 007 — the last unit of the wave.**
+>    ✅ **The `ライアン` §9 strike is DONE** (#19's merge, glossary §37) and the cross-unit rule
+>    between 21 and 22 is discharged with **zero divergent renderings across eight shared terms**.
 >    ⚠️ **#20's reviewer inherits a CORRECTED §2** — the 中尉 width is patched in place, so there is
 >    nothing left to fix there (glossary §36.4).
+>    ⚠️ **#20 is unconstrained by chunk 22**: it touches no `tl/script/` file, and `５軍`'s two
+>    script lines (unique 524, 995) are outside batch 007's 318 / 421–469. Verified at that merge.
 > 3. Close the wave, then **open wave 6's session** with `create_session` (BOTH `source_url` and
 >    `source_revision`), units: **battle chunk 24 (C 2.99), 25 (C 3.48), 26 (C 3.36) + one script
 >    batch** — see Next up.
+>    ⚠️ **At wave close, this file is 435 lines against §7's ~150 target** and was already 384
+>    before #19's integration. Wave 5's four units collapse to **one line in Wave history**, and the
+>    per-PR correction blocks belong in `glossary.md` §35–§37 and `FLAGS.md` §W–§Y, where they
+>    already are. Trimming is the coordinator's job at close, not a reviewer's mid-wave.
 >
 > If this session died mid-wave: `ListAgents`, reconcile open PRs against **In flight** below,
 > re-dispatch anything lost, and carry on from the step it reached. Do **not** restart the wave.
 
 ## Last updated
-2026-09-09 · by: **wave-5 reviewer 2** (PR #18 integration) ·
-wave: **5 REVIEWING — 2 of 4 merged (#17, #18), 2 PRs open** · queue: **fresh**
+2026-09-09 · by: **wave-5 reviewer 3** (PR #19 integration) ·
+wave: **5 REVIEWING — 3 of 4 merged (#17, #18, #19), 1 PR open (#20)** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **22** | 44 | 0–4, 6–14, 18, 19, 20, **21**, 33, 34, 35, 40 |
-| Battle JP characters | **17,865** | 43,161 | **41.4%** (was 32.2% at wave-4 start) |
+| Battle chunks | **23** | 44 | 0–4, 6–14, 18, 19, 20, 21, **22**, 33, 34, 35, 40 |
+| Battle JP characters | **18,664** | 43,161 | **43.2%** (was 32.2% at wave-4 start) |
 | Script unique lines | **261** | 1,430 | `tl/script/batch_001–006.tsv` |
 | Script message instances | **4,092** | 7,931 | **51.6%** |
 
@@ -58,14 +65,29 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 |---|---|---|---|---|
 | **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | ✅ **MERGED round 1** as `f25ff14`. 7,793 (399) / 7,437 (755) / 1,561 (6,631, −6) / 2,203 (5,989); net **−6 bytes**, **0 `{FFFE}`, 0 `{FCC0}`**, tag stream byte-identical on every line. Every gate run and pasted; **every PR figure correct as stated**. Integration = the `integrate: chunk corrections/あら (PR #17)` commit immediately after `f25ff14` — glossary **§35**, `FLAGS.md` **§W**, §T1 **DISCHARGED**. Nothing left on this unit |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | ✅ **MERGED round 1** as `6276b4b`. 4,431 / 8,192, **3,761 slack**; 863 JP → 1,809 EN = **2.096×** vs the 4.280 ceiling, 49.0 % of budget; **105 text rows** (source 100), widest 23, none at 24, no page over 4. `{FFFE}` **81 → 86 (+5)** on four lines, `{FCC0}` 7 → 7. Every gate run and pasted; **no finding required a change to the unit**. Integration = the `integrate: chunk 021 (PR #18)` commit — glossary **§36**, `FLAGS.md` **§X**, a `pending/README.md` row, §10.8 **CLOSED**, §1/§2 rank widths **patched in place**. ⚠️ **Three PR figures were wrong** (`{FFFE}` "55→59(+4)", "57 text rows", "nine at 23") — all corrected in §36.7 / §X1, **none touching the file**. Nothing left on this unit |
-| **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | **PR OPEN** — 4,153 / 8,192, **4,039 slack**, 2.06× vs 4.59 ceiling, widest row 23, 22 glossary rows |
+| **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | ✅ **MERGED round 1** as `6423083`. 4,153 / 8,192, **4,039 slack**; 799 JP → 1,643 EN = **2.056×** vs the 4.586 ceiling, 44.8 % of budget; **108 text rows** (source 104), widest 23, eight at 23, none at 24, no page over 4. `{FFFE}` **87 → 89 (+2)** on L05 only, `{FCC0}` **11 → 11**. Every gate run and pasted; **no finding required a change to the unit**. Integration = the `integrate: chunk 022 (PR #19)` commit — glossary **§37**, `FLAGS.md` **§Y**, `ライアン` §9 row **STRUCK**, four §9 seeds promoted. ⚠️ **Four PR figures corrected** (`{FCC0}` "at 8" → 11; two rejected splits "= 24" → 23; `ａ ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ` 16 → 18; a "three-way" echo → two-way) and **two justifications replaced while the renderings stand** — none touching the file. Nothing left on this unit |
 | **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | **[#20](https://github.com/ehekatlOf/RiotStarsTranslation/pull/20)** | **PR OPEN** — 50 lines / **70 instances**, 2.092×, bank 2 → **3,365**, bank 41 untouched |
 
 **Cross-unit this wave (struck by the SECOND of the pair to MERGE — check which actually merged,
 never assume the order):**
-- **`ライアン`** → chunks **21** (`ライアン少尉`) and **22** (`ライアン隊長`). ✅ **#18 merged FIRST
-  and left the §9 row LIVE**, exactly as the `ルート` precedent prescribes; **#19's reviewer strikes
-  it.** Both translators used the seeded form and neither diverged.
+- **`ライアン`** → chunks **21** (`ライアン少尉`) and **22** (`ライアン隊長`). ✅ **DISCHARGED.** #18
+  merged first and left the §9 row live; **#19 merged second (`6423083`) and struck it**, exactly as
+  the `ルート` precedent prescribes. Both translators used the seeded form and neither diverged.
+  ⚠️ **The seed's PROMOTION reading is NOT ratified** (glossary §37.4): chunk 21's `少尉` comes from
+  an outsider (portrait 0000, a 9th Army soldier) and chunk 22's `隊長` from Ryan's **own
+  subordinate** (portrait 0006), which accounts for both with no promotion. Renderings correct under
+  either reading, so the question is left **open** and costs nothing.
+- ⚠️ **A SECOND CORRECTION TO THE CROSS-UNIT LIST — from #19's review, and §X5 was short too.**
+  The real 21↔22 shared set is **eight** terms, not five and not one: `フェルナンド`, `ライアン`,
+  `宮廷軍`, `将軍`, `帝国`, **`つるむ`**, **`フン、`** and the **`〜つもりはない`** frame. All eight
+  agree; **`つるむ` → `ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ` is byte-identical in both.**
+  The three the machinery missed are ordinary vocabulary, which **no seed list will ever contain** —
+  so the defence is the reviewer's own lexical sweep, not a better dispatch. **`FLAGS.md` §Y2 has
+  the recipe: at the SECOND merge of any wave shipping two battle chunks, intersect the
+  ≥2-character kanji/katakana runs of the two sources and compare the English on every hit.**
+  Also: a translator's "verified free" is only ever a **snapshot** — `つるむ`'s was true at 02:37Z
+  and false by the time it was reviewed, because its sibling merged in between. §X3's blind spot,
+  failing on **time** instead of on tree.
 - ⚠️ **CORRECTION (PR #18 review): `ライアン` is the ONLY cross-unit term between 21 and 22.** The
   wave-5 dispatch named five — `ライアン`, `クレス隊長`, `リオン将軍`, `ジェイク`, `５軍`. Counted in
   chunk 21's source: `ライアン` **1**, `２軍` **1**, and `クレス` / `リオン` / `ジェイク` / `５軍`
@@ -73,9 +95,10 @@ never assume the order):**
   is 8, 13, 22 — **none in chunk 21**, which renders and promotes none of them. #18 promoted exactly
   `ライアン` and `バトウ神父` and was right; the dispatch was wrong. `バトウ神父` is **not** shared
   (`バトウ` is battle chunk 21 only) and is promoted and struck at #18's merge. `FLAGS.md` §X5.
-- **`勲章`** → chunk **22** ×2 (`偽の勲章` / `本物の勲章`), already fixed `ｍｅｄａｌ` (§32.1), and
-  it is the plot item `獅子の勲章`. FLAGS §T2's live `メダル` collision is in banks **42–43** and
-  does **not** bite a battle chunk.
+- **`勲章`** → chunk **22** ×2 (`偽の勲章` / `本物の勲章`). ✅ **DONE — both ship as `ｍｅｄａｌ`**
+  (§32.1), matching `chunk_020` L47/L48, and it is the plot item `獅子の勲章`. FLAGS §T2's live
+  `メダル` collision is in banks **42–43**, which a battle chunk never reaches, so it is **neither
+  worsened nor discharged** and the `ｔｏｋｅｎ` reserve is unspent.
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
 
@@ -129,11 +152,15 @@ translator independently reconfirmed the corpus counts (bare `２軍` 4 battle +
 subtracting the prefixed forms a naive grep overcounts. **Both battle units agree on `ライアン`**
 and neither diverged from the seed.
 
-⚠️ **PR #19 raises a PROJECT-FIRST for the reviewer (its Flag 9): a possessive on the `{FC00}` name
-insert** — `{FC00}{=0000}’ｓ　ｓｔｏｒｙ　ｆｉｔｓ`. It exists in **no other file in the project**. The
-insert's rendered width is unknown, and a possessive binds an apostrophe directly to text the engine
-substitutes. A zero-cost alternative is supplied in the PR. **This is a reviewer decision, and if it
-is accepted it is worth a `FLAGS.md` entry** — it is the same family as §C4's `{FFEC}` blindness.
+✅ **PR #19's PROJECT-FIRST is RULED: a possessive on the `{FC00}` name insert is ACCEPTED**
+(`FLAGS.md` **§Y1**). `{FC00}{=0000}’ｓ　ｓｔｏｒｙ　ｆｉｔｓ` (20 columns) ships. The decisive fact is
+that the risk is **not new**: counted at review, **48 rows in 14 files already bind a character
+directly to the insert** — `，` mostly, and also `．`, `？`, `！` and a bare `　` — and
+`translation_prompt.md` §5's own worked example is `Ｉ’ｍ　{FC00}{=0000}．`, while §3.1 gives
+`Ｒｉｍｕｌ’ｓ` as its example of correct apostrophe use. `’` is a mapped glyph, both gates count the
+insert at its 7-column maximum, and if the engine pads the name then all 48 shipped rows are already
+wrong in the same way. **Precedent set: text may bind directly to `{FC00}{=0000}`.** The unchecked
+part is §C4's, not this unit's — see Blocked item 4.
 
 ⚠️ **PR #18 CORRECTED MY DISPATCH, AND THE FIX WAS RELAYED TO CHUNK 22 IN FLIGHT.**
 My dispatch's "already fixed" list paired `２軍` with `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`. **Wrong for the
@@ -220,11 +247,15 @@ that looks like it passed. **Position 3 (unique 320, 1073–1121) is 28/50 debug
 dispatch it.** Position 4 (326–328, 470–516) is clean but ⚠️ bank 5 has only 3,381 free.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
-Battle: **23 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
-exactly as chunk 17 did — 15, 23, 27, 28, 29, 39.** Until a human fixes `riotbattle.tokenise`, only
-**12 are truly dispatchable**, in chapter order (tier, ratio): 21 (D 4.28), 22 (D 4.59),
+Battle: **21 open chunks** (21 and 22 shipped this wave), but ⚠️ **6 carry the §D1 dump artifact
+(Blocked item 0) and will park exactly as chunk 17 did — 15, 23, 27, 28, 29, 39.** Until a human
+fixes `riotbattle.tokenise`, only **10 are truly dispatchable**, in chapter order (tier, ratio):
 24 (C 2.99), 25 (C 3.48), 26 (C 3.36), 30 (B 2.43), 31 (C 3.46), 36 (C 3.92), 37 (C 3.69),
 38 (C 3.37), 41 (E 6.54), 42 (D 5.46).
+⚠️ **Chunk 37 carries `クレス` and inherits an open question — `FLAGS.md` §Y6**: Cress's gender is
+stated nowhere in `glossary.md` and rendered nowhere in `tl/` (chunks 8, 13 and 22 are all
+first-person, vocative or subject-less). A third-person line in 37 forces the pronoun, and getting
+it wrong is a §4.3 correction reaching three shipped files. Settle it there, with the evidence.
 
 Script: **1,169 unique lines / 3,839 instances untranslated.** The item/equipment description table
 (unique 127–330, 21 instances each) is the highest-yield pool but **bank 40 is down to 471 free** —
@@ -276,6 +307,11 @@ banks (518–1,413) is what remains dispatchable.
    copies of that shop skeleton. Its translator bounded every row at insert+8 against the
    Japanese's insert+0..+7 — the right response to an unmeasurable gate, but a bound, not a
    measurement. **One visit to any shop with the game's longest item name settles it.**
+   ⚠️ **Rider added by PR #19 (`FLAGS.md` §Y1), no extra trip needed:** while that shop is on
+   screen, look at **what the `{FC00}` player-name insert actually renders as — in particular
+   whether it is padded to 7 characters.** **49 rows across 15 files** now put a character directly
+   after it (`，` mostly, plus `．` `？` `！` `　` and, new in chunk 22, `’ｓ`), so one look settles
+   all 49 at once. Enter the **longest legal 7-character name** to see it.
 5. **Binaries**: put `SCRIPT.BIN` and `HEXMAP.BIN` in `original/`, run
    `python3 tools/assemble.py all` (real `checkedit`), rebuild the disc, play-test after each wave.
 6. 📄 **`SKILL.md` §3 edit (small, and wave 4 earned it): scratch-file namespacing must bind EVERY
@@ -338,6 +374,25 @@ banks (518–1,413) is what remains dispatchable.
   `pending/README.md`) and it also misses a parked **agreement**, reporting a form as newly coined
   when `pending/` already renders it identically (`相変わらず` → `Ｓａｍｅ　ａｓ　ｅｖｅｒ，`). Sweep both
   trees and say which one a hit is in. `FLAGS.md` §X3, beside §W3/§W4's traps in the same family.
+- 2026-09-09 (PR #19 review): **a translator's "verified free" is a SNAPSHOT, and a sibling PR
+  invalidates it between drafting and review.** `つるむ` → `ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ` was genuinely
+  free across `tl/` when chunk 22's PR was written; chunk 21 merged an hour later carrying the same
+  phrase. **Outcome was agreement**, byte-for-byte — but the row read as a coinage. §X3 recorded
+  this blind spot failing on **tree** (`pending/` unswept); this is the same claim failing on
+  **time**. Re-running gate 7 against the tree as it stands **at merge** is the reviewer's job and
+  cannot be pushed upward into a better dispatch.
+- 2026-09-09 (PR #19 review): **cross-unit coordination cannot be done from a seed list, because
+  the terms that collide are ordinary vocabulary.** The wave-5 dispatch named five shared terms and
+  §X5 cut it to one; the real 21↔22 set is **eight**, and the three both missed (`つるむ`, `フン、`,
+  the `〜つもりはない` frame) are words no seed list would ever hold. All eight agreed anyway.
+  **The cheap defence is mechanical**: at the second merge of a two-battle-chunk wave, intersect the
+  ≥2-character kanji/katakana runs of the two sources and compare the English on every hit
+  (`FLAGS.md` §Y2).
+- 2026-09-09 (PR #19 review): **a reviewer may ratify a rendering and refuse the reading behind
+  it.** §9's seed and the PR both read `ライアン少尉` → `ライアン隊長` as a promotion between
+  chapters. The renderings are right under §26.2 either way, but **who is speaking points the other
+  way** — an outsider uses the substantive rank, his own subordinate uses the functional address —
+  so the reading is left open rather than hardened into a fact nothing depended on (glossary §37.4).
 - 2026-09-09 (PR #18 review): **a summary figure that contradicts its own evidence table is worse
   than no summary.** The PR's `{FFFE}` total ("55 → 59, +4") disagreed with its own correct per-line
   table (+5) and with the file (81 → 86); five counting definitions were probed and all give +5. The

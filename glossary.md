@@ -393,18 +393,24 @@ of 17 against 2. **None of these three has a majority**, so the count does not s
 | リオン | `リオン将軍` 1 battle | `リオン隊長` 1 battle + 1 script, `第１軍隊長` 1 script | 7 battle / 14 script | script 427 (**this batch**) has him introduce himself as `第１軍隊長のリオン` |
 
 **Proposal for all three: render each occurrence with the rank the source gives it**, as §26.2
-already permits, and do **not** collapse them to one rank. A promotion between chapters is the
-likelier reading for ライアン (21 → 22) and is consistent either way. **Do not re-cut shipped
+already permits, and do **not** collapse them to one rank. ~~A promotion between chapters is the
+likelier reading for ライアン (21 → 22) and is consistent either way.~~ **Do not re-cut shipped
 work**; if a shipped file disagrees, record it and leave it to a corrections unit (§4.3).
+
+✅ **RULED 2026-09-09 (PR #19 review), and the struck sentence is why.** The *rendering* proposal is
+correct and both units followed it. **The promotion reading is NOT ratified** — chunk 21's `少尉`
+comes from an outsider and chunk 22's `隊長` from Ryan's own subordinate, which accounts for both
+with no promotion at all. See **§37.4**. Nothing follows from leaving it open, because §26.2's
+source-rank rule is correct under either reading.
 
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| ライアン | `Ｒｙａｎ` | ⚠️ **RENDERED by chunk 21 (PR #18, merged `6276b4b`) as `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ`, exactly as seeded — this row is DELIBERATELY LEFT LIVE.** Chunk 22 (PR #19) renders `ライアン隊長` and merges second; per the `ルート` precedent (§29.1 / §30.1) it is struck once, by that reviewer. See §36.1. — **4 columns.** A **PERSON**, male — a Royal Army officer hostile to the 9th; takes Batou prisoner (ch.21) and leads the assault (ch.22). **2 battle / 0 script, both in THIS wave. ⚠️ CROSS-UNIT (21 + 22).** `ライアン少尉` → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` (**22 bare, 23 with the vocative comma — it FITS one row, measured on the shipped row**); `ライアン隊長` → `Ｃａｐｔａｉｎ　Ｒｙａｎ` (12) | `Ｌｉａｎ`, `Ｒｉａｎ` |
-| ジェイク | `Ｊａｋｅ` | **4 columns.** A **PERSON**, male — Cress's subordinate, ordered to open the fort (`ジェイク、砦を開けてやれ`). **2 battle / 0 script, both in chunk 22** | `Ｊｅｉｋｕ` |
-| クレス隊長 | `Ｃａｐｔａｉｎ　Ｃｒｅｓｓ` | **13 columns.** §1 fixes クレス → `Ｃｒｅｓｓ`; §2 fixes 隊長 → captain. New **appellation**, not a new reading. See the two-title table above | — |
-| リオン将軍 | `Ｇｅｎｅｒａｌ　Ｌｅｏｎ` | **12 columns.** §1 fixes リオン → `Ｌｅｏｎ`; §2 将軍 → `Ｇｅｎｅｒａｌ` (§26.2). New appellation | — |
+| ~~ライアン~~ | ✅ **PROMOTED to §36.1 (chunk 21) and STRUCK HERE at chunk 22's merge (PR #19, `6423083`).** `Ｒｙａｎ`, 4 columns, rendered in **both** units exactly as seeded — `ライアン少尉` → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` in chunk 21 (22 bare, 23 in the vocative, one row) and `ライアン隊長` → `Ｃａｐｔａｉｎ　Ｒｙａｎ` (12) in chunk 22. **The cross-unit rule is discharged**: #18 merged first and deliberately left this row live, #19 merged second and strikes it, which is the whole of what the `ルート` precedent (§29.1 / §30.1) prescribes. ⚠️ **The seed's promotion reading is NOT ratified — see §37.4**; both renderings are correct under either reading, so nothing follows from leaving it open | ~~battle chunks 21 + 22, CROSS-UNIT~~ | ~~`Ｌｉａｎ`, `Ｒｉａｎ`~~ |
+| ~~ジェイク~~ | ✅ **PROMOTED to §37.1** — `Ｊａｋｅ`, rendered ×2 in `tl/battle/chunk_022.txt` (PR #19), **used exactly as seeded**; 4 columns confirmed at review. **Not cross-unit**: `ジェイク` is battle chunk 22 only, so nothing is left live | ~~battle chunk 22, 2 battle / 0 script~~ | — |
+| ~~クレス隊長~~ | ✅ **PROMOTED to §37.1** — `Ｃａｐｔａｉｎ　Ｃｒｅｓｓ`, **used exactly as seeded**; 13 columns confirmed at review. **Not cross-unit**: `クレス隊長` is battle chunk 22 only | ~~battle chunk 22~~ | — |
+| ~~リオン将軍~~ | ✅ **PROMOTED to §37.1** — `Ｇｅｎｅｒａｌ　Ｌｅｏｎ`, **used exactly as seeded**; 12 columns confirmed at review. **Not cross-unit**: `リオン将軍` is battle chunk 22 only | ~~battle chunk 22~~ | — |
 | ~~バトウ神父~~ | ✅ **PROMOTED to §36.1** — `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, rendered ×3 in `tl/battle/chunk_021.txt` (PR #18), **used exactly as seeded**; 12 columns confirmed at review. **Not cross-unit**: all 3 battle occurrences are in chunk 21 (counted at review — `バトウ` is battle chunk 21 only), so nothing is left live | ~~battle chunk 21, 3 battle / 2 script~~ | — |
-| ５軍 / 第５軍 | `５ｔｈ　Ａｒｍｙ` | **8 columns**, on §2's `第９軍 / ９軍` → `9th Army`; `５` full-width, same rule. ⚠️ **5 battle / 3 script — reach well beyond this wave**, and `tl/script/batch_005.tsv` already carries a `５軍` line, so **grep it before writing** | — |
+| ~~５軍 / 第５軍~~ | ✅ **PROMOTED to §37.1** — `５ｔｈ　Ａｒｍｙ`, 8 columns confirmed. ⚠️ **NOT a first rendering, and this row's own advice pointed at the wrong tree**: `tl/battle/chunk_013.txt` L2 already ships the bare form as `ｔｈｅ　５ｔｈ　Ａｒｍｙ` and chunk 22 **matches it byte-for-byte**. The row said "grep `batch_005`", which the translator did and reported honestly; the reach that mattered was in `tl/battle/`. See §37.3 | ~~5 battle / 3 script~~ | — |
 | 第１軍 | `１ｓｔ　Ａｒｍｙ` | **8 columns**, same series. **0 battle / 3 script**, one of them unique 427 in this batch (`第１軍隊長のリオン`) | — |
 | リムローズ | `Ｌｉｍｒｏｓｅ` | **7 columns.** A **TOWN**, with a 市長 (§1 市長 → the mayor) and a forest nearby. ⚠️ **2 battle / 12 unique script lines — one of the widest-reaching names in this seed set**, so the reading is worth getting right first time | `Ｒｉｍｒｏｓｅ`, `Ｌｉｍｒｏｓｅ` (European reading per §11.4) |
 | イートン / イートンの森 | `Ｅａｔｏｎ` / `Ｅａｔｏｎ　Ｆｏｒｅｓｔ` | **5 / 12 columns.** A **PLACE**; the fairy village and Kel's birth village lie in it. Proper name, so capitalised `Ｆｏｒｅｓｔ` on §2's `カーライン城` → `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` and §33.1's `ファリーナ城` → `Ｆａｒｉｎａ　Ｃａｓｔｌｅ` — ⚠️ deliberately **unlike** §14.2's 妖精の森 → `the fairy forest`, which is lowercase because 妖精 is a common noun. **0 battle / 4 script** | `Ｅｔｏｎ`, `Ｉｔｏｎ` |
@@ -3253,7 +3259,7 @@ complete and correct.**
 
 | Japanese | English | Note |
 |---|---|---|
-| ライアン | `Ｒｙａｎ` | 4 columns. `ライアン少尉` → **`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ`**, 22 bare and **23 with the vocative comma — one row**, measured on the shipped row. **Used exactly as seeded.** ⚠️ **CROSS-UNIT with chunk 22 (PR #19), which is still open — so §9's row is DELIBERATELY LEFT LIVE** for that reviewer to strike, per the `ルート` precedent (§29.1 / §30.1). **2 battle (21, 22) / 0 script**, counted at review |
+| ライアン | `Ｒｙａｎ` | 4 columns. `ライアン少尉` → **`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ`**, 22 bare and **23 with the vocative comma — one row**, measured on the shipped row. **Used exactly as seeded.** ⚠️ **CROSS-UNIT with chunk 22 (PR #19), which is still open — so §9's row is DELIBERATELY LEFT LIVE** for that reviewer to strike, per the `ルート` precedent (§29.1 / §30.1). **2 battle (21, 22) / 0 script**, counted at review. ✅ **DISCHARGED 2026-09-09: PR #19 merged (`6423083`) with `ライアン隊長` → `Ｃａｐｔａｉｎ　Ｒｙａｎ`, and §9's row is struck there.** ⚠️ **The promotion reading behind "21 → 22" is NOT ratified — see §37.4**; both renderings are correct either way |
 | バトウ神父 | `Ｆａｔｈｅｒ　Ｂａｔｏｕ` | 12 columns. **Promoted from §9; not a new reading** — §26.1 already fixes `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, and this is the 〜神父 appellation taking the same English on §24.1's `ナコール様` pattern. Rendered ×3. **Not cross-unit**: `バトウ` is battle chunk **21 only** (+8 script), so §9's row is struck. The bare vocative `神父、` → **`Ｆａｔｈｅｒ，`** and the attributive `ファリーナ出身の神父` keeps §1's common noun `ｐｒｉｅｓｔ` — all three forms occur in this one chunk and are held apart correctly |
 | 追っ手 | `ｐｕｒｓｕｅｒｓ` | 9 columns. `追っ手は？` → `Ｐｕｒｓｕｅｒｓ？`, keeping the source's 5-character clip. Hapax — 1 battle / 0 script |
 | うろつく | `ｐｒｏｗｌ` | `オークがうろついてやがる` → `ｔｈｅ　ｏｒｃｓ　ａｒｅ　ｏｕｔ　ｐｒｏｗｌｉｎｇ`; the やがる contempt is carried by `ｏｕｔ`, not by an added word (§2). Free |
@@ -3439,3 +3445,268 @@ forward into the wave-5 summary.
 | The old villager (portrait 05) | §7's "Village elders (じゃ / のう)" column — old-fashioned diction, **no contractions, no archaic spelling**: `Ｆａｒｉｎａ，　ｔｏｏ，　ｗａｓ　ｏｎｃｅ　ａ　ｐｒｏｓｐｅｒｏｕｓ　ｌａｎｄ．．．．`, and `死んだように静かに` carried as `ａｌｌ　ｉｓ　ｄｅａｄ　ｑｕｉｅｔ．` rather than glossed |
 | The 9th Army squad (portraits 00, 01, 02, 09, 0A) | §7 and §21.4 unchanged — contractions throughout (`Ｔｈｅｙ’ｒｅ`, `ｗｅ’ｖｅ`, `Ｉ’ｄ`, `ｉｔ’ｓ`, `ｌｅｔ’ｓ`). Portrait **02** is §21.4 / §25.5 / §28.6 / §32.9's unnamed female companion and again "the one who notices" — `{FC00}，　ｌｏｏｋ！` is hers. ⚠️ Per §W5, **portrait ids are per-chunk**; this attribution is made from within chunk 21 and is not carried from another chunk |
 | The soldier pleading with Ryan (portrait 00, `{FC51}`) | Polite ます/ません to a superior, carried by **no contractions** (`Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ　ｗｈａｔｅｖｅｒ　ｏｆ　ｆｉｇｈｔｉｎｇ！`) — the same soldier contracts freely elsewhere in the chunk, so the shift is the source's, not a slip |
+
+---
+
+## 37. Added by chunk 022 (PR #19, merged 2026-09-09)
+
+Rendered in `tl/battle/chunk_022.txt`, squash-merged as **`6423083`**. Chapter 22 — the fort parley.
+Jake reports the 9th Army's arrival to Captain Cress; Captain Ryan, told the 5th Army is holding
+back, decides Cress is friendly with the 9th and orders the assault so the credit is his alone
+(L01). **L05 and L06 are the two mutually exclusive outcomes of the same parley** and L07 is the
+battle-open line after the hostile one: in L05 the player explains Fernando's forged medal, the real
+one falling into the squad's hands and the frame-up, Cress believes him over Jake's objection, a
+messenger brings word that Carline Castle has fallen, and Cress splits the work; in L06 Cress does
+not believe him.
+
+**Figures, all re-derived at review rather than taken from the PR.** **4,153 / 8,192, slack 4,039**
+— 81× the 50-byte floor. 799 JP → 1,643 EN readable characters = **2.0563×** against the **4.5857**
+tier-D ceiling (`tag_bytes` 863, `english_budget` 3,664 characters), **44.8 %** of the English budget
+spent; 799 / 5,731 / 4.59 all match `translation_prompt.md` §0.3's own table. **108 text rows**
+(source 104), widest **23**, **eight at 23**, none at 24, **no page over 4 text rows** and none the
+source did not already have. `{FFFE}` **87 → 89 (+2)**, on **L05 only** (52 → 54); `{FCC0}` **11 →
+11**, unchanged on every line and none added. Per-line bytes L01 448→786 · L05 1,482→2,544 ·
+L06 290→528 · L07 142→196; L05 alone JP 518 → EN 1,047 = **2.0212×**. `assemble.py check` → "All
+checks passed"; `rowcheck.py 22` prints **no `!!` at all**. `bankmeasure` not required (nothing under
+`tl/script/` changed) but run: no bank negative, banks 41 (353) and 40 (471) byte-for-byte untouched.
+**Every figure above except one matches the PR exactly** — the exception is `{FCC0}` "untouched at
+8", where *untouched* is right and the count is 11 (§37.6.1).
+
+### 37.1 People, ranks and words first rendered here — four promotions out of §9, one row struck
+
+| Japanese | English | Note |
+|---|---|---|
+| ジェイク | `Ｊａｋｅ` | 4 columns. **Promoted from §9 (wave-5 seed), used exactly as seeded.** Cress's subordinate: he reports the 9th Army's arrival (L01), questions the order to open the fort (`隊長！よいのですか？` → `Ｃａｐｔａｉｎ！` / `Ａｒｅ　ｙｏｕ　ｓｕｒｅ？`), objects once more (`しかし・・・`) and answers `はっ！`. **2 battle / 0 script, both in this chunk** — counted at review. **Not cross-unit**, so §9's row is struck |
+| クレス隊長 | `Ｃａｐｔａｉｎ　Ｃｒｅｓｓ` | **13 columns, 14 with the vocative comma** — the seed's 13 confirmed. **Promoted from §9.** §1 fixes クレス → `Ｃｒｅｓｓ` and §2 隊長 → captain; a new **appellation**, not a new reading, so §1's `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ` for `クレス少尉` (shipped in `chunk_008`) is untouched. `クレス隊長` is battle chunk **22 only**. See §37.4 |
+| リオン将軍 | `Ｇｅｎｅｒａｌ　Ｌｅｏｎ` | **12 columns.** **Promoted from §9, used exactly as seeded.** §1 fixes リオン → `Ｌｅｏｎ` (rendered in `chunk_006`), §26.2 将軍 → `Ｇｅｎｅｒａｌ` — matching the shipped `Ｇｅｎｅｒａｌ　Ｇｕｉｌｆｏｒｄ` (chunks 13, 18) and `Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ` (chunk 21 ×2, this chunk). `リオン将軍` is battle chunk **22 only** |
+| ５軍 / 第５軍 | `５ｔｈ　Ａｒｍｙ` | 8 columns, on §2's `第９軍 / ９軍` series; `５` full-width. **Promoted from §9.** ⚠️ **NOT a new form — see §37.3.** `chunk_013` L2 already ships bare `５軍` → `ｔｈｅ　５ｔｈ　Ａｒｍｙ` and this unit **matches it byte-for-byte**; `chunk_008` L4/L9 ship the coordinated plural `７ｔｈ　ａｎｄ　５ｔｈ　Ａｒｍｉｅｓ` / `ｔｈｅ　５ｔｈ　ａｎｄ　７ｔｈ　Ａｒｍｉｅｓ’`, and `chunk_013` L1 ships `宮廷５軍` → `ｔｈｅ　５ｔｈ　Ｒｏｙａｌ　Ａｒｍｙ` on §20.1's prefixed series. **5 battle (8 ×2, 13 ×2, 22 ×1) + 3 script** (unique 524, 995); `batch_005` renders 995 as a coordinated plural. **All five battle instances are now rendered** |
+| 実権 | `ｒｅａｌ　ｐｏｗｅｒ` | 10 columns. `宮廷軍の実権を握っていたんだ。` → `ａ　ｆｏｒｇｅｄ　ｍｅｄａｌ　ｔｏ　ｈｏｌｄ` / `ｔｈｅ　ｒｅａｌ　ｐｏｗｅｒ　ｉｎ　ｔｈｅ` / `Ｒｏｙａｌ　Ａｒｍｙ．` Political power, held **distinct** from §4's 攻撃力 / 防御力 / 戦闘力 → attack / defence / combat *power*, §29.1's 動力 → *motive power* and §12.1's 魔道の力 → *the power of magic* — a different collocation each time. **1 battle + 2 script-unique** (`宮廷軍の実権を握った。`, `当時、ファリーナの実権を`), so the form will be reached again. Verified free at review |
+| 誤解 | `ｍｉｓｕｎｄｅｒｓｔｏｏｄ` (the verb) | 13 columns. `それは誤解だ。` → `Ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L05) and `クレス、誤解だ。` → `Ｃｒｅｓｓ，` / `ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L06) — **one form, both instances, the two branches of one scene**, so the player says the same thing whichever way the parley goes. The noun is 18 columns, not the PR's 16 (§37.6.3), and `Ｔｈａｔ’ｓ　ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ．` is **26** — it cannot share a row on a page already at four. `ｍｉｓｔａｋｅ` was rejected because `pending/chunk_017` spends it on `まちがいない` → `Ｎｏ　ｍｉｓｔａｋｅ．`. **2 battle / 0 script, both here.** Verified free across `tl/` **and** `pending/` |
+| 見損なう | `ｍｉｓｊｕｄｇｅ` | 9 columns. `私はお前を見損なっていたようだ。` → `ｉｔ　ｓｅｅｍｓ　Ｉ　ｈａｖｅ` / `ｍｉｓｊｕｄｇｅｄ　ｙｏｕ．` Deliberately **not** §30.4's reserved `ｕｎｄｅｒｅｓｔｉｍａｔｅ` (held for 甘く見る / 見くびる) and not its `ｍｉｓｒｅａｄ` (読みが甘い) — three source words, three English forms, which is what §30.4 wrote that reserve to protect. ⚠️ **Stronger than the PR argued, and confirmed at review**: 見損なう here is the *disappointment* sense — Cress thought too **well** of the player — so `ｕｎｄｅｒｅｓｔｉｍａｔｅ` would invert the direction of the error, not merely spend a reserve. **1 battle / 0 script.** Verified free |
+| 鎮圧 | `ｐｕｔ　…　ｄｏｗｎ` | 8 columns. **Not a new form — recording one already rendered.** `pending/chunk_043.txt` L4 ships `地上の反乱を鎮圧するための` → `ｌａｓｅｒ　ｗｅａｐｏｎｓ　ｔｏ　ｐｕｔ` / `ｄｏｗｎ　ｒｅｖｏｌｔ　ｏｎ　ｔｈｅ` / `ｇｒｏｕｎｄ　ｂｅｌｏｗ．`, and this chunk's `ここで鎮圧させてもらう。` → `ｐｕｔ　ｙｏｕ　ｄｏｗｎ　ｈｅｒｅ．` matches it. **2 battle / 0 script — both now rendered, so the word is closed** |
+| 反乱 (bare) | `ｒｅｖｏｌｔ` | 6 columns. Same source as above: `pending/chunk_043` already ships `ｒｅｖｏｌｔ` for bare 反乱, and `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` / `ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` matches. Held **distinct** from §26.4's 反乱軍 → *the rebels*, which this chunk also carries (`反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ`) — **both words appear in one message**, so they could never have collapsed |
+| 責任をとる | `ａｎｓｗｅｒ　ｆｏｒ　…` | `責任は、私がとる。` → `Ｉ　ｗｉｌｌ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` (21 columns). **Not a new form**: §15.2 fixes `責任はどうとるつもりだ` → `ｈｏｗ　ｄｏ　ｙｏｕ　ｉｎｔｅｎｄ　ｔｏ　ａｎｓｗｅｒ　ｆｏｒ　ｔｈｉｓ` (shipped, `batch_002` L9) and `pending/chunk_005` L28 ships `私が責任を持ちます。` → `Ｉ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` This is the third member and it matches both. **3 battle + 4 script-unique** |
+| 犠牲者 | `ｃａｓｕａｌｔｉｅｓ` | 10 columns. `これだけの犠牲者を出しておきながら、` → `Ａｆｔｅｒ　ｃａｕｓｉｎｇ　ｔｈｉｓ　ｍａｎｙ` / `ｃａｓｕａｌｔｉｅｓ，`. Military English for battle dead; *victims* would read as civilians, which is not what Cress means. **1 battle + related 犠牲 forms elsewhere** (`かなりの犠牲を` battle, `甚大な兵力を犠牲にした` script), so the noun is fixed here. Verified free |
+| 援護する | `ｓｕｐｐｏｒｔ` | 7 columns, **lowercase**. `リオン将軍とアルフレッドを援護してくれ。` → `９ｔｈ　Ａｒｍｙ，　ｓｕｐｐｏｒｔ` / `Ｇｅｎｅｒａｌ　Ｌｅｏｎ　ａｎｄ` / `Ａｌｆｒｅｄ，　ｗｈｏ　ｒｅｍａｉｎ` / `ｉｎ　ｔｈｅ　ｃａｓｔｌｅ．` A hapax — **1 battle / 0 script** — but fixed so it cannot drift. Held **distinct** from §2's 援軍 → *reinforcements / aid*, §20.3's 救援 → *go to … aid* and §24.2's 増援 → *reinforcements*: four source words, four English forms. ⚠️ Lowercase `ｓｕｐｐｏｒｔ` verified free at review; §26.3's `“Ｓｕｐｐｏｒｔ　Ｅｆｆｅｃｔ”` (支援効果) is capitalised, quoted and script-only, and §25.3's test is met (支援 script-only, 援護 battle chunk 22 only) |
+| 取り巻きの連中 | `ｈａｎｇｅｒｓ‐ｏｎ` | 10 columns, uses `‐` (U+2010). Fernando's circle of followers. **1 battle / 0 script.** Verified free |
+| 招集をかける | `ｓｕｍｍｏｎ` | `取り巻きの連中に招集をかけているだろう。` → `Ｈｅ　ｗｉｌｌ　ｂｅ　ｓｕｍｍｏｎｉｎｇ` / `ｈｉｓ　ｈａｎｇｅｒｓ‐ｏｎ．` **2 battle / 0 script** — the other is `兵士の招集と配備を`, untranslated, and it takes the noun; `ｄｅｐｌｏｙ` for 配備 is already fixed at §31.2. Verified free |
+| 血祭りにあげる | `ｐｕｔ　…　ｔｏ　ｔｈｅ　ｓｗｏｒｄ` | `奴らを血祭りにあげるのだ！！` → `Ｗｅ　ｓｈａｌｌ　ｐｕｔ　ｔｈｅｍ` / `ｔｏ　ｔｈｅ　ｓｗｏｒｄ！！` A **genuine English equivalent** — both phrases mean *slaughter them* — so §2's ban on importing an unrelated idiom is not engaged, on the §20.3 貧乏クジをひく and §26.4 石橋を叩いて渡る precedent. A hapax, 1 battle / 0 script |
+| つるむ | `ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ` | 14 columns. ⚠️ **NOT a new form and CROSS-UNIT with chunk 21 — see §37.2, which is this section's most consequential entry.** `chunk_021` L13 already ships `帝国とつるんでいたと聞けば、` → `ｗｅｒｅ　ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ` / `Ｅｍｐｉｒｅ　ａｌｌ　ａｌｏｎｇ，`, and this unit's `お前が帝国とつるんでいる` → `ａｒｅ　ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ` / `ｔｈｅ　Ｅｍｐｉｒｅ？` **agrees byte-for-byte on the phrase**, tensed to its own source (`〜ていた` past, `〜ている` present). The PR's "`ｌｅａｇｕｅ` verified free" was **true when written** and is stale. **2 battle (21, 22) + 1 script-unique** (`俺たちが帝国とつるんで`) — all three the same accusation, so the form is fixed now |
+| 仕立て上げる | `ｂｒａｎｄ　…　ａｓ` | `反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ，`. A hapax. `ｂｒａｎｄ` verified free |
+| 始末する | `ｄｏ　ａｗａｙ　ｗｉｔｈ` | The euphemism kept as a euphemism, not flattened to *kill*: `始末しようとしたんだ。` → `ｔｏ　ｄｏ　ａｗａｙ　ｗｉｔｈ　ｕｓ．` A hapax in this sense. Verified free |
+| いくらなんでも | `Ｂｅｙｏｎｄ　ａｌｌ　ｂｅｌｉｅｆ，` | 18 columns. **A §2 departure, ratified at review — see §37.5.** A hapax; `ｂｅｙｏｎｄ` verified free in both cases |
+| やはり、 | `ｊｕｓｔ　ａｓ　Ｉ　ｔｈｏｕｇｈｔ` | **Not a new form.** `pending/chunk_043` L12 ships `やはりな。` → `Ｊｕｓｔ　ａｓ　Ｉ　ｔｈｏｕｇｈｔ．` and this unit's L07 `くっ、やはり、` → `Ｔｃｈ，　ｊｕｓｔ　ａｓ　Ｉ　ｔｈｏｕｇｈｔ，` matches it, with the source's own `、` per §5. **5 battle / 0 script** (`くっ、やはり、`, `やはり反乱軍の`, `・・・やはり、`, `やはり本当だっ`, `やはりな。`), so the form is fixed now rather than re-invented four more times |
+| フン、 | `Ｈｍｐｈ，` | ⚠️ **Recorded here only because it is the second half of a cross-unit pair.** §36.1 fixed this same third kana spelling **one merge earlier**, from chunk 21; chunk 22 renders it independently and identically. No new decision — see §37.2's table |
+
+### 37.2 ⚠️ A SECOND cross-unit term between chunks 21 and 22 — `つるむ` — and the units agree
+
+The wave-5 dispatch named five cross-unit terms; §X5 corrected it to one (`ライアン`). **Both counts
+are wrong, and the reason is that both looked only at seeded proper nouns.** Swept at this review
+over every kanji/katakana run of ≥2 characters shared by the two chunk sources, plus the kana-bearing
+phrase families that filter cannot see:
+
+| term | c21 | c22 | c21 English | c22 English | |
+|---|---|---|---|---|---|
+| `フェルナンド` | 2 | 7 | `Ｆｅｒｎａｎｄｏ` | `Ｆｅｒｎａｎｄｏ` | ✓ §1 |
+| `ライアン` | 1 | 1 | `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` | `Ｃａｐｔａｉｎ　Ｒｙａｎ` | ✓ each with its own source rank |
+| `宮廷軍` | 4 | 2 | `Ｒｏｙａｌ　Ａｒｍｙ` | `Ｒｏｙａｌ　Ａｒｍｙ` | ✓ §2 |
+| `将軍` | 2 | 2 | `Ｇｅｎｅｒａｌ` | `Ｇｅｎｅｒａｌ` | ✓ §26.2 |
+| `帝国` | 1 | 1 | `ｔｈｅ　Ｅｍｐｉｒｅ` | `ｔｈｅ　Ｅｍｐｉｒｅ` | ✓ §2 |
+| **`つるむ`** | **1** | **1** | `ｗｅｒｅ　ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ` | `ａｒｅ　ｉｎ　ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ` | ✓ **byte-identical on the phrase** |
+| `フン、` | 1 | 1 | `Ｈｍｐｈ，` | `Ｈｍｐｈ，` | ✓ §6 / §36.1 |
+| `〜つもり(は/なんて)ない` | 1 | 1 | `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ　ｗｈａｔｅｖｅｒ　ｏｆ　ｆｉｇｈｔｉｎｇ！` | `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ　ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` | ✓ same frame, independently |
+
+**Eight shared terms, zero divergences, no re-cut.** Two units drafted in parallel by different
+agents agreed on every one, including three the coordination machinery never mentioned.
+
+> **The lesson, and it is not "count better": a translator's freshness sweep can only ever be a
+> snapshot.** `つるむ`'s row says "`ｌｅａｇｕｅ` verified free", which was **true at 02:37Z** when both
+> PRs were open and neither was in `tl/`. It became false when #18 merged, before #19 was reviewed.
+> **A sibling PR's forms enter `tl/` between drafting and review, so re-running gate 7 against the
+> tree as it stands at merge is the reviewer's job and cannot be delegated upward to a better
+> dispatch.** §X3 recorded `pending/` as the blind spot in a freshness claim; this is the same claim
+> failing on **time** instead of on tree. Both have the same fix — say *what* the sweep covered and
+> *when*.
+
+**What the dispatch could reasonably have caught** is narrower and worth stating: it listed only
+seeded proper nouns. `つるむ`, `フン` and the `つもり` frame are ordinary vocabulary, and no seed list
+will ever contain them. The general defence is the one that worked here — both translators reached
+for the same English — plus the reviewer's own lexical sweep of the sibling pair, which took one
+script. **Recommended for every future wave that ships two battle chunks: run the ≥2-character
+run intersection between them at the second merge.**
+
+### 37.3 `５軍` and `ありがとう。` — two more reach figures that pointed at the wrong tree
+
+Neither changes a rendering; both agree with shipped work. Recorded together because they are one
+mistake made twice, and it is §35.3's "a substring grep is not a census" seen from the other side —
+the counts were fine, the **trees searched** were not.
+
+- **`５軍`.** The §9 seed said "**`tl/script/batch_005.tsv` already carries a `５軍` line, so grep it
+  before writing**". The translator did exactly that, found `５軍と６軍が、反乱軍に` →
+  `Ｗｏｒｄ　ｉｓ　ｔｈｅ　５ｔｈ　ａｎｄ　６ｔｈ` / `Ａｒｍｉｅｓ　ｆｅｌｌ　ｔｏ　ｒｅｂｅｌｓ．`, reported no
+  conflict, and was right. **But `５軍`'s five battle occurrences are chunks 8, 13 and 22, and two of
+  those were already shipped**: `chunk_013` L2 ships the bare form as `ｔｈｅ　５ｔｈ　Ａｒｍｙ` — the
+  exact string this unit uses. The row records a **match**, not a coinage.
+- **`ありがとう。`** The PR's Flag 12 names `chunk_004` L10 as the shipped `Ｔｈａｎｋ　ｙｏｕ．` its
+  lowercase continuation differs from. There are **seven**: `chunk_004` L10, `chunk_007` L19,
+  `pending/chunk_005` L28, `pending/chunk_043` L41 + L42 and `pending/chunk_043_abridged` L41 + L42.
+  The ruling is unchanged and correct — `わかった。` / `クレス、` / `ありがとう。` →
+  `Ｒｉｇｈｔ．` / `Ｃｒｅｓｓ，` / `ｔｈａｎｋ　ｙｏｕ．` is a vocative with its clause, and §31.4's
+  comma-to-stop promotion does not reach a vocative — only the number was short, and four of the
+  seven are in `pending/`.
+
+Same shape in the duplicate table, where every named match is right and several are partial:
+`まったく、` → `Ｒｅａｌｌｙ，` also `chunk_012`; `・・・・・` also `chunk_010`; `・・・・` also
+`chunk_018`; `はっ！` → `Ｓｉｒ！` also `chunk_013`.
+
+### 37.4 The `ライアン` two-title question — the RENDERINGS are ratified, the PROMOTION READING is not
+
+§9's seed proposed rendering each occurrence with its own source rank (correct, and §26.2 already
+permits it) **and** that "a promotion between chapters is the likelier reading for ライアン (21 →
+22)"; the PR agreed. **The first half is ratified. The second is not, on evidence neither had.**
+
+| | who is speaking | what they call him |
+|---|---|---|
+| `chunk_021` L13 | portrait **0000** on `{FC51}` — a 9th Army soldier pleading with an officer over him (§36.9: "Polite ます/ません to a superior") | `ライアン少尉` |
+| `chunk_022` L01 | portrait **0006** on `{FC50}` — **Ryan's own subordinate**, reporting to him | `ライアン隊長` |
+
+**An outsider using the substantive rank and his own man using the functional address accounts for
+both with no promotion at all**, and §2's own 隊長 row says in its own words that 隊長 is a function
+("how the player character is addressed"). Chapter order supports promotion; speaker relationship
+supports function; neither is decisive. The PR's third support — that commanding the assault fits a
+captaincy — is weak: `全軍、攻撃開始！` takes §25.1's `Ａｌｌ　ｕｎｉｔｓ`, a field command.
+
+> **Ruled: both renderings stand, and the reading behind them is left OPEN.** Nothing rides on it —
+> §26.2's source-rank rule is correct either way, which is precisely why the record must not harden
+> a guess into a fact. **The test**: a chunk that puts `ライアン少尉` and `ライアン隊長` in one scene,
+> or one that gives him a third rank. `ライアン` is battle chunks 21 and 22 only, so unless the
+> script dump yields one, the question stays open permanently and harmlessly.
+
+The same caution applies to `クレス隊長` beside §1's `クレス少尉`: chunk 22 is the first 隊長 for
+Cress, both forms are rendered per source, and no reading of the rank is asserted.
+
+### 37.5 `いくらなんでも、` → `Ｂｅｙｏｎｄ　ａｌｌ　ｂｅｌｉｅｆ，` — §2 departure RATIFIED
+
+`いくらなんでも、正面から乗り込んでくるとは・・・。` →
+`Ｂｅｙｏｎｄ　ａｌｌ　ｂｅｌｉｅｆ，` / `ｔｏ　ｃｏｍｅ　ｍａｒｃｈｉｎｇ　ｉｎ` / `ｆｒｏｍ　ｔｈｅ　ｆｒｏｎｔ．．．．`
+(18 / 19 / 18) — the source's three rows, its four stops and its trailing-off astonishment, all kept.
+
+The literal ("no matter how much", "even allowing for anything") is not idiomatic English standing
+before an exclamative 〜とは, which is `translation_prompt.md` §2's own licence. **§33.6 governs the
+construction and puts it outside `Ｓｕｒｅｌｙ`'s scope**: the 〜とは exclamative "takes the English
+that fits its own clause", and `Ｓｕｒｅｌｙ` is §31.3's まさか form. The alternatives are spent or
+worse — `Ｅｖｅｎ　ｓｏ` on それでも (§25.2, verified at review), `ｏｆ　ａｌｌ　ｔｈｉｎｇｓ` on chunk
+19's まさか…とはな (§33.6).
+
+⚠️ **One correction to the PR's own mitigation, which does not change the ruling.** It says the faint
+`belief` / `believed` echo with L06's `ｃａｎ　ｂｅ　ｂｅｌｉｅｖｅｄ．` is "four scenes away **and in the
+other branch of the parley**". L01 is not in either branch — **it plays before the L05/L06 fork**, so
+a player on the hostile path sees both in one run and the echo is real, not hypothetical. It is
+benign: the Japanese words differ (`いくらなんでも` / `信じられる`), §3 is not engaged, and whether
+Cress believes the 9th Army is the whole subject of the chapter.
+
+### 37.6 Four PR figures corrected, and one under-described mechanism
+
+**None of them touches the file**, and the per-line `{FFFE}` table that CLAUDE.md §6 gate 4 actually
+turns on is complete and correct. This is §X1's shape a second time, and the standing recommendation
+there — state a summary as the tool reports it or omit it — is repeated with a second instance behind
+it.
+
+1. **`{FCC0}` "untouched at 8" — the count is 11** (L01 3, L05 6, L06 2), identical in source and
+   translation. *Untouched* is right and verified line by line; only the number is wrong. It is the
+   figure that gets copied into `HANDOFF.md`.
+2. **Flag 2's two rejected three-row splits measure 23, not 24**, because `Ｅｍｐｉｒｅ` is 6 columns:
+   `ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ？` = **23** and `ｔｈｅ　Ｅｍｐｉｒｅ？　Ｉｓ　ｉｔ　ｔｒｕｅ？` =
+   **23**. A legal three-row split therefore exists —
+   `{FC00}{=0000}，` (8) / `ｉｓ　ｉｔ　ｔｒｕｅ　ｙｏｕ　ａｒｅ　ｉｎ` (21) /
+   `ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ？` (23) — so the added `{FFFE}` was **elective, not
+   forced**. **It stands**: §3.2 says a break is cheap above ratio 2.5 and to spend free bytes on
+   breaks rather than longer words, and the shipped 8 / 19 / 18 / 11 has headroom on every row where
+   the alternative sits on the 23 ceiling. The choice is right; the reason given for it was not.
+3. **`ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ` is 18 columns, not 16.** Conclusion unaffected —
+   `Ｔｈａｔ’ｓ　ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ．` is 26.
+4. **Flag 9's "three-way echo of 話" is a two-way echo.** L05 p01's `という話は` correctly dissolves
+   into `ｉｓ　ｉｔ　ｔｒｕｅ　ｔｈａｔ…` and renders no *story*; only p16 (`Ｔｈａｔ　ｓｔｏｒｙ　ｏｆ　ｙｏｕｒｓ．`)
+   and p26 (`{FC00}{=0000}’ｓ　ｓｔｏｒｙ`) carry the word. Dissolving it is right, but it is one of the
+   two supports the possessive was chosen on, so that support is weaker than stated. The possessive
+   is accepted on other grounds (`FLAGS.md` §Y1).
+
+**Flag 7's `ｌｅｄ　ｂｙ　Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ！` = 24 is CORRECT** — but the departure to
+`ｕｎｄｅｒ` was **not forced**, as the Flag claims. A four-row recut of the same page keeps the
+literal inside 23: `Ｉ，　Ｉｔ　ｉｓ　ｔｅｒｒｉｂｌｅ！` (18) /
+`Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ　ｉｓ　ｔａｋｅｎ` (23) / `ｂｙ　ｔｈｅ　２ｎｄ　Ａｒｍｙ，　ｌｅｄ　ｂｙ` (23) /
+`Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ！` (17) — same four rows, no new `{FFFE}`, no `{FCC0}`. **`ｕｎｄｅｒ`
+stands**: it is standard military English for the identical relation, the plot fact is intact, and
+the alternative ends a row on the two-letter `ｂｙ`, which §3.2 asks you to avoid. It is a choice
+between two soft constraints, not a forced §2.1 step 4, and is recorded as the former.
+
+**Flag 10's speaker attributions are all correct; its mechanism is under-described.**
+`{FCB0}{=00PP00SS}` assigns portrait **PP** to **slot SS**, and `{FC50}` / `{FC51}` speak from slot
+**0** / slot **1**. "Same id on both channels" restates Cress's two rows; the slot model *predicts*
+them — Cress holds slot 0 until Jake takes it at L05 p24, moves to slot 1 for p26–p31, and returns to
+slot 0 at p42 the moment Jake is done — and it is the only reading that covers **L05 p06**
+(`フェルナンドを？どういうことだ。`), which carries **no `{FCB0}` at all** and is Cress purely because
+slot 0 still holds him. ⚠️ Per §W5 this is derived inside chunk 22 and is **not** carried to any
+other chunk; it is an observation consistent with §23.5 / §28.7 / §30.7, not a settled engine fact,
+and belongs to `findings.md` if a later chunk corroborates it.
+
+### 37.7 Recorded, not re-cut — checked and not defects
+
+- **The two branches keep Cress's register apart correctly.** L05 (he believes) and L06 (he does not)
+  are mutually exclusive, and Cress is contraction-free in both — `Ｉｔ　ｉｓ　ａｌｌ　ｒｉｇｈｔ．`,
+  `Ｉ　ｗｉｌｌ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．`, `Ｉ　ｓｈａｌｌ　ｈｏｌｄ　ｂａｃｋ．` against
+  `ｄｏ　ｙｏｕ　ｔｈｉｎｋ　ｓｕｃｈ　ｗｏｒｄｓ　ｃａｎ　ｂｅ　ｂｅｌｉｅｖｅｄ．`,
+  `ｉｔ　ｓｅｅｍｓ　Ｉ　ｈａｖｅ　ｍｉｓｊｕｄｇｅｄ　ｙｏｕ．`, `Ｉ　ｓｈａｌｌ　ｐｕｔ　ｙｏｕ　ｄｏｗｎ　ｈｅｒｅ．`
+  **One man's register carrying two outcomes**, with the difference in content, not in voice. The
+  player contracts throughout in both, so the channels read as two voices.
+- **L07 is Cress**, on its own `{FCB0}{=00050000}` (slot 0, portrait 05) — Flag 10 does not name it.
+  `Ｔｃｈ，　ｊｕｓｔ　ａｓ　Ｉ　ｔｈｏｕｇｈｔ，` / `ｍｕｓｔ　ｉｔ　ｃｏｍｅ　ｔｏ` / `ｆｉｇｈｔｉｎｇ．．．` is
+  contraction-free with a formal inversion, so his register holds into the battle-open line.
+- **Rhetorical questions ending `。` stay declarative**: `どういうことだ。` →
+  `Ｗｈａｔ　ｄｏ　ｙｏｕ　ｍｅａｎ．` and `信じられると思うのか。` → `…ｃａｎ　ｂｅ　ｂｅｌｉｅｖｅｄ．` The
+  punctuation follows the source, which is §5's mechanism and §36.8's `か。` sweep.
+- **All six vocatives take a lowercase continuation** and are consistent with each other:
+  `Ｃａｐｔａｉｎ　Ｃｒｅｓｓ，` / `ｔｈｅｙ`, `Ｃａｐｔａｉｎ　Ｒｙａｎ，` / `ｔｈｅ`, `Ｊａｋｅ，` / `ｏｐｅｎ`,
+  `Ｃｒｅｓｓ，` / `ｙｏｕ’ｖｅ` and / `ｔｈａｎｋ`, and all four `{FC00}{=0000}，` rows. §31.4's
+  comma-to-stop promotion is scoped to a fixed assent word followed by an independent clause and does
+  not reach a vocative, which is not a clause.
+- **`ｄｏ　ｎｏｔ　ｐｕｓｈ　ｔｏｏ　ｈａｒｄ．` differs from `chunk_008` L4's by one capital, and §3 is not
+  engaged in either direction** — the source strings genuinely differ (`あまりムチャはするなよ。` here,
+  `あまり無理はするなよ。` there), verified in the dump. `chunk_013` L4's third form for the same act
+  (`くれぐれも無理はするなよ。` → `ｐｕｓｈ　ｙｏｕｒｓｅｌｆ　ｔｏｏ　ｆａｒ．`) is correctly untouched.
+- **`１人占め` against `chunk_020`'s `独り占め`** is one idiom in two spellings, and both ship
+  §32.2's `ｋｅｅｐ　ｔｈｅ　ｃｒｅｄｉｔ　ｔｏ　ｍｙｓｅｌｆ` — byte-identical, verified at review.
+- **`勲章` ×2 → `ｍｅｄａｌ`** (§32.1), matching `chunk_020` L47/L48. This chunk is the first place the
+  plot explains the item, but it reaches **no bank**, so §32.5 / `FLAGS.md` §T2's live `メダル`
+  collision in banks 42–43 is neither worsened nor discharged.
+- **`了解` 0, `わかった` 1, `まさか` 0** — counted in the source at review, so §29.4's `Ａｇｒｅｅｄ．`
+  reserve is correctly not engaged (`わかった。` → `Ｒｉｇｈｔ．` per §6, matching `pending/chunk_005`
+  L10) and §31.3 / §33.6's `まさか` is neither applied nor tested by this unit.
+- **`{FCA8}` appears once** (L07, `{FCA8}{=01C9…}`) but chunk 22 is **not** one of §D1's ten affected
+  chunks and `check` passes — the same coincidence §36.8 recorded for chunk 21.
+- **§Q2 not re-discovered.** No `{FCC0}` was added; the three pages at the four-row wall (L01 p12,
+  L05 p34, L05 p44) were solved inside the source's own page structure.
+
+### 37.8 ⚠️ Cress's gender is unfixed, unrendered, and chunk 37 will reach it
+
+§1's `クレス` row does not state a gender. This PR's own prose uses **both** — "he holds Fernando's
+circle" in the Unit summary, "the first 隊長 for **her**" in the `クレス隊長` row. **No shipped
+English anywhere genders Cress**: not `chunk_008` L4, not `chunk_013` L1/L2, not this unit, whose
+Cress lines are all first-person or vocative. So there is no defect and nothing to change today.
+
+Recorded because **battle chunk 37 carries `クレス` and is untranslated** (the term appears in battle
+chunks 8, 13, 22 and 37), and a third-person line there would force the pronoun. What the corpus
+offers so far: Cress's speech in this chunk is `私` / `お前` / `〜のか` / `〜てくれ` / `よい` — the
+neutral-to-masculine register of §7's officer column, with nothing feminine-marked. **Not enough to
+fix it**, which is why it is a flag and not an entry. Whoever takes chunk 37 settles it, and a wrong
+choice there would be a §4.3 correction reaching three shipped files.
+
+### 37.9 Register
+
+| Who | Register |
+|---|---|
+| Cress (portrait 05, both slots) | The §14.6 / §20.5 / §25.5 / §28.6 / §31.7 / §36.9 officer column — **zero contractions in either branch**, `Ｉ　ｓｈａｌｌ` / `Ｉ　ｗｉｌｌ` / `Ｉｔ　ｉｓ` / `ｄｏ　ｎｏｔ`. Warmer than Fernando or Ryan: he takes responsibility (`Ｉ　ｗｉｌｌ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．`), overrides his own subordinate gently, and closes with `ｄｏ　ｎｏｔ　ｐｕｓｈ　ｔｏｏ　ｈａｒｄ．` The hostile branch changes **what he says, not how he says it** |
+| Ryan (portrait 03) | §36.9's Ryan, unchanged and confirmed from a second chunk — no contractions, contempt carried by `Ｈｍｐｈ，` and `ｔｈｅｙ　ａｒｅ　ｆｏｏｌｓ` / `ｐａｓｔ　ａｌｌ　ｓａｖｉｎｇ．` rather than by added words, and the self-interest stated plainly (`Ｉ　ｃａｎ　ｋｅｅｐ　ｔｈｅ　ｃｒｅｄｉｔ` / `ｔｏ　ｍｙｓｅｌｆ．`) |
+| Jake (portrait 07) | Deferential and clipped, **no contractions** — `Ｃａｐｔａｉｎ！` / `Ａｒｅ　ｙｏｕ　ｓｕｒｅ？`, `Ｈｏｗｅｖｅｒ．．．`, `Ｓｉｒ！` (§6). The §20.5 Albert column: he reports and objects, he does not opine |
+| Portrait 06 — **two men in one chunk** | In L01 he is Ryan's subordinate (`ライアン隊長、５軍は手を…`); in L05 he is the messenger from Carline Castle, on Cress's side of the map. Both are deferential です / ます and take the same contraction-free register, so nothing rides on the identification — but ⚠️ **per §W5, portrait ids are per-chunk, and here one id is two people inside a single chunk.** Recorded so a later reader does not merge them |
+| The player's side (portrait 00) | §7's Kain column unchanged — contractions throughout in **both** branches (`ｙｏｕ’ｖｅ`, `ｗｅ　ｄｏｎ’ｔ`, `Ｉｔ’ｓ　ｔｒｕｅ．`, `Ｉ’ｍ　ａｓｋｉｎｇ　ｙｏｕ．`), which is the contrast that makes Cress's flatness read as rank |

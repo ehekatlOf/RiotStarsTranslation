@@ -3016,3 +3016,206 @@ anything for this merge to leave live on the other four.
 Chunk 21 ships at **4,431 / 8,192, 3,761 slack**. The project's tightest battle chunk is still
 chunk 19 at **127**. **No bank moved** — this unit touches no script file — so `FLAGS.md` §F2's table
 is unchanged and banks 41 (353) and 40 (471) are byte-for-byte as they were.
+
+---
+
+## Y. Wave 5 review — battle chunk 22 / PR #19 (2026-09-09)
+
+**DECISION: MERGE at round 1**, squash-merged as **`6423083`**. Every CLAUDE.md §6 gate run in a real
+checkout and pasted in the PR review; **no finding required a change to the unit.** Reviewer 3 of
+wave 5. Four PR-body figures and four justifications are corrected here and in glossary §37 — none of
+them touches the file, and the per-line `{FFFE}` table that gate 4 actually turns on is complete and
+correct.
+
+**Figures, all re-derived here rather than taken from the PR.** `tl/battle/chunk_022.txt`
+**4,153 / 8,192, slack 4,039** — 81× the 50-byte floor. 799 JP → 1,643 EN readable characters =
+**2.0563×** against the **4.5857** tier-D ceiling (`tag_bytes` 863, `english_budget` 3,664),
+**44.8 %** of the budget spent; 799 / 5,731 / 4.59 all match `translation_prompt.md` §0.3's own
+table. `assemble.py check` → "All checks passed". `rowcheck.py 22` prints **no `!!` at all** — no
+column over 24, no page over 4 text rows, tag parity clean — and the one `{FFFE} changed` line it
+names (L05, 52 → 54) is exactly the one in the PR's Flag 2 with the right figures. **108 text rows**
+(source 104), widest **23**, **eight at 23**, none at 24. `{FFFE}` **87 → 89 (+2)**, L05 only;
+`{FCC0}` **11 → 11**, none added, so §Q2 was not re-discovered. Per-line bytes L01 448→786 ·
+L05 1,482→2,544 · L06 290→528 · L07 142→196 — all four exact as stated. Duplicate sweep by the
+positional method, 27 files indexed, 0 skipped: **0 whole-message divergences**, 0 page divergences,
+7 byte-identical row reuses, 3 row-level differences all in different messages, **0 whole-message
+hits in `tl/script/`**. `bankmeasure` **not required** (nothing under `tl/script/` changed) but run:
+no bank negative; banks under 2,000 free are **41 → 353** and **40 → 471**, both byte-for-byte
+untouched, bank 5 → 3,381. `rowcheck.py script` → columns OK, only the four **INHERITED**
+over-4-row pages. `merge` prints **0** "never matched the dump"; `build/` reverted afterwards.
+
+### Y1. ⭐ RULED — a possessive on the `{FC00}` player-name insert is ACCEPTED, and here is what it does and does not settle
+
+`tl/battle/chunk_022.txt` L05 page 27 renders `{FC00}の話、` as
+**`{FC00}{=0000}’ｓ　ｓｔｏｒｙ　ｆｉｔｓ`** (20 columns with the insert at 7). The PR raised it as a
+project first and supplied a zero-cost alternative; **the possessive ships.** The reasoning, because
+this is the same family as §C4 and the next unit will want it:
+
+1. **`translation_prompt.md` §3.1 gives `Ｒｉｍｕｌ’ｓ` — a possessive on a proper name — as its own
+   example of correct apostrophe usage.** A possessive on a name is contemplated by the contract.
+2. **The only novelty is that the name is engine-substituted, and binding text directly to the
+   insert's output is long-established.** Counted at review across `tl/` **and** `pending/`: **48
+   rows in 14 files** put a character immediately after `{FC00}{=0000}` — `，` overwhelmingly, and
+   also `．` (chunks 0, 2, 3, 8), `？` (chunk 2), `！` (chunks 14, 43) and a bare full-width space
+   `　` (chunks 14, 21). `translation_prompt.md` §5's own worked example is `Ｉ’ｍ　{FC00}{=0000}．`
+   Chunk 22 adds `’` as the **sixth** following glyph, 43 shipped rows after the first.
+3. **`’` (U+2019) is a mapped glyph** — in §3.1's permitted set and in `rowcheck.ALLOWED`, already
+   shipping in every contraction in the project — so nothing new is asked of the font hook.
+4. **Both gates count the insert at its 7-character maximum** (`assemble.py` and `rowcheck.py`, via
+   the `{FC00}{=0000}` → 7-column substitution), so a shorter player name only shortens the row.
+   20 columns is the worst case, three under the ≤23 preferred limit.
+5. **The one residual risk is not new to this unit.** If the engine pads the substituted name to 7
+   characters, `Ｒｉｍｕｌ　　’ｓ` renders badly — **but so do all 48 of those shipped rows**
+   (`Ｒｉｍｕｌ　　，`). The possessive therefore introduces **no new risk class**, only a new
+   following character.
+
+> **The precedent, for the next unit that wants one:** a possessive, or any other text, may bind
+> directly to `{FC00}{=0000}`. **What is still unchecked is the same thing §C4 leaves unchecked** —
+> what the insert actually renders as on screen, and in particular whether it is padded. **One visit
+> to any map after name entry settles it, and it settles all 49 rows at once, not just this one.**
+> Added to "Blocked — needs a human" item 4 as a rider on §C4's shop visit, not as a new trip.
+
+The zero-cost alternative `Ｗｈａｔ　{FC00}{=0000}　ｓａｙｓ　ｆｉｔｓ` (22 columns — measured, the PR's
+figure correct) is **not** taken: it costs 2 columns and one of the two `ｓｔｏｒｙ` echoes for no
+reduction in risk, since risk 5 is shared with the comma rows either way.
+
+### Y2. ⚠️ NEW — a SECOND cross-unit term between chunks 21 and 22, and why no dispatch would have caught it
+
+The wave-5 dispatch named five cross-unit terms; §X5 corrected it to one (`ライアン`). **Both are
+wrong: there are eight**, and the three the machinery missed are ordinary vocabulary rather than
+seeded proper nouns. Swept at this review over every kanji/katakana run of ≥2 characters shared by
+the two chunk sources, plus the kana-bearing phrase families that filter cannot see:
+
+```
+フェルナンド  c21 2  c22 7   Ｆｅｒｎａｎｄｏ            = Ｆｅｒｎａｎｄｏ                    ✓ §1
+ライアン     c21 1  c22 1   Ｓｅｃｏｎｄ Ｌｉｅｕｔｅｎａｎｔ Ｒｙａｎ / Ｃａｐｔａｉｎ Ｒｙａｎ   ✓ source rank each
+宮廷軍       c21 4  c22 2   Ｒｏｙａｌ Ａｒｍｙ           = Ｒｏｙａｌ Ａｒｍｙ                ✓ §2
+将軍         c21 2  c22 2   Ｇｅｎｅｒａｌ               = Ｇｅｎｅｒａｌ                    ✓ §26.2
+帝国         c21 1  c22 1   ｔｈｅ Ｅｍｐｉｒｅ            = ｔｈｅ Ｅｍｐｉｒｅ                 ✓ §2
+つるむ    ★  c21 1  c22 1   ｉｎ ｌｅａｇｕｅ ｗｉｔｈ ｔｈｅ Ｅｍｐｉｒｅ  (both)               ✓ byte-identical
+フン、    ★  c21 1  c22 1   Ｈｍｐｈ，                  = Ｈｍｐｈ，                       ✓ §6 / §36.1
+つもりない ★ c21 1  c22 1   Ｗｅ ｈａｖｅ ｎｏ ｉｎｔｅｎｔｉｏｎ …  (same frame)              ✓ independently
+```
+
+**Eight shared terms, zero divergences, no re-cut.** Two units drafted in parallel by different
+agents agreed on every one.
+
+**The `つるむ` row's "`ｌｅａｇｕｅ` verified free" was TRUE when written** — at 02:37Z both PRs were
+open and neither was in `tl/` — and became false when #18 merged an hour before this review.
+
+> **This is §X3's blind spot failing on TIME instead of on tree, and it is structural.** §X3 recorded
+> that a `tl/`-scoped freshness claim cannot see `pending/`. This one could not see the **future**: a
+> sibling PR's forms enter `tl/` between drafting and review, so **a translator's freshness sweep can
+> only ever be a snapshot, and re-running gate 7 against the tree as it stands at merge is the
+> reviewer's job.** It cannot be delegated upward to a better dispatch, because no seed list will
+> ever contain `つるむ`, `フン` or a `〜つもりはない` frame.
+>
+> **Recommended, and it cost one script: at the SECOND merge of any wave that ships two battle
+> chunks, intersect the ≥2-character kanji/katakana runs of the two sources and compare the English
+> on every hit.** It catches exactly the class the seed list cannot.
+
+### Y3. Three reach figures that searched the wrong tree — all three agree anyway
+
+Same mistake three times, and it is §35.3's "a substring grep is not a census" from the other side:
+the counts were right, the **trees** were not. **No rendering changes.**
+
+- **`５軍`.** §9's seed said "`tl/script/batch_005.tsv` already carries a `５軍` line, so **grep it
+  before writing**". The translator did exactly that and reported honestly. But `５軍`'s five battle
+  occurrences are chunks **8, 13 and 22**, and two were already shipped: **`chunk_013` L2 ships bare
+  `５軍` → `ｔｈｅ　５ｔｈ　Ａｒｍｙ`, the exact string this unit uses.** A match recorded as a coinage.
+- **`ありがとう。`** Flag 12 names `chunk_004` L10 as the one shipped `Ｔｈａｎｋ　ｙｏｕ．` it differs
+  from by a capital. There are **seven** — `chunk_004` L10, `chunk_007` L19, `pending/chunk_005` L28,
+  `pending/chunk_043` L41+L42, `pending/chunk_043_abridged` L41+L42 — four of them in `pending/`.
+- **The duplicate table** names one file per row where several have two: `まったく、` also
+  `chunk_012`, `・・・・・` also `chunk_010`, `・・・・` also `chunk_018`, `はっ！` also `chunk_013`.
+
+### Y4. Four PR figures corrected, and one justification replaced while the rendering stands
+
+**None touches the file.** §X1's shape a second time, so its standing recommendation now has two
+instances behind it: state a summary as the tool reports it, or omit it and give only the table.
+
+1. **`{FCC0}` "untouched at 8" — the count is 11** (L01 3, L05 6, L06 2). *Untouched* is correct and
+   verified per line; only the number is wrong, and it is the number that reaches `HANDOFF.md`.
+2. **Flag 2's two rejected three-row splits are 23, not 24** (`Ｅｍｐｉｒｅ` is 6 columns):
+   `ｌｅａｇｕｅ　ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ？` = 23, `ｔｈｅ　Ｅｍｐｉｒｅ？　Ｉｓ　ｉｔ　ｔｒｕｅ？` = 23.
+   A legal three-row split exists (8 / 21 / 23), so the added `{FFFE}` was **elective, not forced**.
+   **It stands** on §3.2's own advice to spend free bytes on breaks at high ratio; the shipped
+   8 / 19 / 18 / 11 has headroom where the alternative sits on the 23 ceiling.
+3. **`ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ` is 18 columns, not 16.** Conclusion unaffected.
+4. **Flag 9's "three-way echo of 話" is two-way** — L05 p01's `という話は` correctly dissolves and
+   renders no *story*.
+
+**Flag 7's `ｌｅｄ　ｂｙ　Ｇｅｎｅｒａｌ　Ｆｅｒｎａｎｄｏ！` = 24 is CORRECT, but `ｕｎｄｅｒ` was not
+forced.** A four-row recut of the same page keeps the literal inside 23 (18 / 23 / 23 / 17, no new
+`{FFFE}`, no `{FCC0}`). `ｕｎｄｅｒ` **stands** — standard military English for the identical relation,
+plot fact intact, and the alternative ends a row on the two-letter `ｂｙ` against §3.2. It is a choice
+between two soft constraints, not a forced §2.1 step 4, and glossary §37.6 records it as such.
+**Flag 4's `Ｂｅｙｏｎｄ　ａｌｌ　ｂｅｌｉｅｆ，` ratified** (glossary §37.5) with one correction: L01
+plays **before** the L05/L06 fork, not "in the other branch", so the `belief` / `believed` echo is
+visible in one playthrough — benign, different Japanese, §3 not engaged.
+
+### Y5. ⚠️ Two readings left OPEN rather than hardened into facts
+
+- **The `ライアン` two-title question** (glossary §37.4). §9's seed proposed the promotion reading as
+  "likelier" and the PR agreed. **The renderings are ratified; the reading is not.** In chunk 21
+  `ライアン少尉` is spoken by **portrait 0000, a 9th Army soldier addressing an officer over him**; in
+  chunk 22 `ライアン隊長` is spoken by **portrait 0006, Ryan's own subordinate**. An outsider using
+  the substantive rank and his own man using the functional address accounts for both **with no
+  promotion at all** — and §2's own 隊長 row already calls 隊長 a function. Neither reading is
+  decisive and **nothing rides on it**, because §26.2's source-rank rule is correct either way. The
+  test: a scene holding `ライアン少尉` and `ライアン隊長` together, or a third rank. `ライアン` is
+  battle 21 and 22 only, so the question may stay open permanently and harmlessly.
+- **Flag 10's portrait mechanism.** Every attribution in it is correct. `{FCB0}{=00PP00SS}` assigns
+  portrait **PP** to **slot SS**, and `{FC50}` / `{FC51}` speak from slot 0 / slot 1 — which
+  *predicts* Cress's move to slot 1 exactly when Jake takes slot 0, and is the only reading that
+  covers **L05 p06** (`フェルナンドを？どういうことだ。`), a page carrying **no `{FCB0}` at all**.
+  ⚠️ Consistent with §23.5 / §28.7 / §30.7 but **derived inside chunk 22 only** and, per §W5, not
+  carried to any other chunk. It is an observation for `findings.md` if a later chunk corroborates
+  it, **not** a settled engine fact, and no reviewer should lean on it across a chunk boundary yet.
+
+### Y6. ⚠️ NEW — Cress's gender is unfixed, unrendered, and battle chunk 37 will force it
+
+Glossary §1's `クレス` row states no gender. **This PR's own body uses both** — "he" in the Unit
+summary, "her" in the `クレス隊長` glossary row. **No shipped English anywhere genders Cress** —
+`chunk_008` L4, `chunk_013` L1/L2 and this unit are all first-person, vocative or subject-less — so
+there is **no defect today and nothing to re-cut.**
+
+Raised because **`クレス` occurs in battle chunks 8, 13, 22 and 37**, and 37 is untranslated. A
+third-person line there forces the pronoun, and a wrong choice would be a §4.3 correction reaching
+three shipped files. What the corpus offers: Cress's speech here is `私` / `お前` / `〜のか` /
+`〜てくれ` / `よい`, the neutral-to-masculine officer register of §7 with nothing feminine-marked —
+**not enough to fix it.** Whoever takes chunk 37 (or the script lines at `クレス少尉`) settles it and
+records the evidence.
+
+### Y7. Confirmed, not defects — recorded so they are not re-raised
+
+- **§Q2 not re-discovered.** No `{FCC0}` was added anywhere; the three pages at the four-row wall
+  (L01 p12, L05 p34, L05 p44) were solved inside the source's own page structure. The documented
+  prompt/gate contradiction remains a documentation defect for a human and was grounds for nothing.
+- **§T2's `メダル` collision untouched.** `勲章` ×2 ships as `ｍｅｄａｌ` (§32.1), matching
+  `chunk_020` L47/L48. This chunk is the first place the plot explains the item, but it is a battle
+  chunk and reaches **no bank**, so the live banks 42–43 collision is neither worsened nor discharged
+  and the `ｔｏｋｅｎ` reserve is unspent.
+- **`{FCA8}` appears once** (L07) and chunk 22 is **not** one of §D1's ten affected chunks; `check`
+  passes. Same coincidence §36.8 recorded for chunk 21.
+- **`ｄｏ　ｎｏｔ　ｐｕｓｈ　ｔｏｏ　ｈａｒｄ．` vs `chunk_008`'s capitalised form**: the source strings
+  genuinely differ (`ムチャ` here, `無理` there — verified in the dump), so §3 is not engaged in
+  either direction, and `chunk_013`'s third form is correctly untouched.
+- **Gate 6's own trap, hit and fixed at this review.** A positional row index that strips
+  `{FC00}{=0000}` to nothing rather than to a placeholder **manufactures** a divergence: it paired
+  chunk 14 L3's `{FC00}隊長！` → `Ｃａｐｔａｉｎ　{FC00}！` against this chunk's `隊長！` →
+  `Ｃａｐｔａｉｎ！` and reported a stray space in shipped work that is not there. **Substitute the
+  insert on both sides before comparing**, exactly as `assemble.py` and `rowcheck.py` already do.
+  Third entry in the §W3 / §W4 / §X3 checker-trap family.
+- **Branch `tl/battle-022` not deleted** — `git push origin --delete` is blocked by the proxy (HTTP
+  403). Harmless; not CLAUDE.md §8's "cannot push" condition.
+- **Cross-PR:** #20 (script batch 007) was still open at this merge, verified in the PR list rather
+  than assumed. Chunk 22 touches no `tl/script/` file and none of its terms is in unique 318 or
+  421–469 (`５軍`'s two script lines are 524 and 995, both outside that batch), so nothing here
+  constrains #20.
+
+### Y8. Bytes and banks after this merge
+
+Chunk 22 ships at **4,153 / 8,192, 4,039 slack**. The project's tightest battle chunk is still
+chunk 19 at **127**. **No bank moved** — this unit touches no script file — so §F2's table is
+unchanged and banks 41 (353) and 40 (471) are byte-for-byte as they were.
