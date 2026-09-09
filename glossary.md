@@ -277,7 +277,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~バトウ~~ | ✅ **PROMOTED to §26.1** — `Ｂａｔｏｕ`, and `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ` per §24.1, rendered in `tl/script/batch_005.tsv` (PR #8). Used exactly as seeded | script 1041, 1045 | — |
 | ~~リース文明~~ | ✅ **PROMOTED to §26.1** — the `Ｒｅｅｓｅ` civilisation, used exactly as seeded (PR #8). ⚠️ **The 古代ハイランド warning is DISCHARGED: they are NOT the same.** Counted at that review — `リース` 8 script / 0 battle, `ハイランド` 2 script / 9 battle, **zero lines in either dump contain both**. §11.2's ancient Highland row is untouched and stays | script 1047 | — |
 | ~~クレウス司教~~ | ✅ **PROMOTED to §26.1** — Bishop `Ｃｒｅｕｓ` (PR #8) | script 1047 | — |
-| キエーザ | `Ｋｉｅｓａ` | script 1090, 1092 — `キエーザ城`, a castle | Ｃｈｉｅｓａ — which is Italian for *church*, so the name may be deliberate; check whether the castle is a religious site before fixing |
+| ~~キエーザ~~ | ✅ **PROMOTED to §42.1** — `Ｋｉｅｓａ`, 5 columns, rendered **twice** in `tl/script/batch_008.tsv` (DATA 512) as `ｔｈｅ　ｓｗａｍｐ` / `ｏｆ　Ｋｉｅｓａ．` and `ｓｏｕｔｈ　ｏｆ` / `Ｋｉｅｓａ．`, **used exactly as seeded** and the first rendering anywhere. ⚠️ **This row's question is answered only in the negative and stays open for `キエーザ城`**: the unit names a swamp and a direction and gives **no** religious evidence, so `Ｃｈｉｅｓａ` is not taken — but nothing here rules it out either. See §42.1 | ~~script 1090, 1092 — `キエーザ城`, a castle~~ | Ｃｈｉｅｓａ — which is Italian for *church*, so the name may be deliberate; check whether the castle is a religious site before fixing |
 | ~~ルクレール~~ | ✅ **PROMOTED to §28.1** — `Ｌｅｃｌｅｒｃ`, used exactly as seeded, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's description was wrong: it is a KINGDOM, not "a castle"** — corrected at §28.1 with the dump evidence | script 1090, 1096 — `ルクレール城`, ~~a castle~~ | Ｌｕｃｌｅｒｅ. The French reading matches the European naming |
 | ~~ＺＯＣ（支配地域）~~ | ✅ **PROMOTED to §26.3** — used exactly as seeded (PR #8) | script 984 | — |
 | ~~中立ユニット~~ | ✅ **PROMOTED to §26.3** (PR #8) | script 988 | — |
@@ -503,11 +503,24 @@ in INSTANCES, not lines** (the wave-5 error at `FLAGS.md` §Y3/§Z). ⚠️ **Th
 computed mechanically per `FLAGS.md` §Y2 — and the kanji-run intersection MISSED `末えい`, which is
 mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana terms need their own pass.
 
+✅ **STATUS 2026-09-09, FINAL — the wave-6 block is now CLEAR and every row in it is struck.**
+`batch_008.tsv` (PR #21) merged **last** of the four and renders six of the seeds — `魔族`, `魔物`,
+`末えい`, `古代文明`, `司教様`, `ウェストバリー` — **every one exactly as seeded, not one improved on
+unilaterally**, plus `キエーザ` from the wave-2 block. The two cross-unit rows this wave deliberately
+left live (`魔族`, paired with chunk 26; `末えい`, paired with chunk 25) are struck **here**, by the
+second of each pair, which is the whole of what the `ルート` precedent (§29.1 / §30.1) prescribes —
+and both merged siblings were **verified by reading the tree**, not assumed. Promoted to **§42**.
+⚠️ **A fourth line-citation error survived PR #24's sweep**: the `司教様` row still read "unique 483",
+a *menu* line. PR #21's Flag 5 named it and it is corrected in place above. ⚠️ **`場所` has no row in
+this block and never had one** — confirmed a third time; the dispatch's pairing was wrong (§AB7).
+⚠️ **`大陸` also has no row**: it is cross-unit between chunk 25 and `batch_008` and is recorded at
+§41.1 and §42.1 instead, where the two units' **determiners differ because their sources do**.
+
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498 — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 483", which is a *menu* line, as this block's own FACT 1 says) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** ⚠️ **STAYS LIVE after PR #22 merged 2026-09-09: chunk 26 was the FIRST of this pair to merge — `tl/script/batch_008.tsv` is still ABSENT from the tree (verified by reading it). Per the `ルート` precedent (§29.1 / §30.1) **PR #21's reviewer strikes this row.** Chunk 26 used it exactly as seeded and every reach figure re-measured EXACT; see §40.1.** |
-| 魔物 | `ｍｏｎｓｔｅｒ` | `batch_008` ×1; 6 script | Holds the 魔族 / 魔物 distinction apart. 7 columns |
-| 末えい | `ｄｅｓｃｅｎｄａｎｔ` | ⚠️ **RENDERED by chunk 25 (PR #23, merged 2026-09-09) as `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` / `ｌｉｇｈｔ　ｅｌｖｅｓ，　ｉｔ　ｓｅｅｍｓ．`, exactly as seeded — and THIS ROW IS DELIBERATELY LEFT LIVE.** `batch_008` (PR #21) is still open and renders it too; per the `ルート` precedent (§29.1 / §30.1) the row is struck once, by the **second** of the pair, so **PR #21's reviewer strikes it** after verifying the merged chunk 25 rather than assuming. Promoted to §41.1. ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** ⚠️⚠️ **NOT "1 instance each", and NOT a new form — corrected in place 2026-09-09 (§4.3, PR #24 review): `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED.** `tl/battle/chunk_010.txt` 12.2 renders `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ` / `ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．` — the same word in the lizardmen's **full-katakana** register (§5), which is why neither a kanji-run nor a kanji+kana search found it. **The choice is CONFIRMED by shipped work; only the novelty and reach claims were wrong.** Gate 6 is not engaged (different source strings), but both wave-6 units must match `ｄｅｓｃｅｎｄａｎｔ`. ✅ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns, measured `len()` — PR #23's Flag 15 says 11 and is a hand-count one high; the seed was right and the "correction" is NOT applied** | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
+| ~~魔族~~ | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ✅ **PROMOTED to §40.1 (chunk 26, PR #22) and STRUCK HERE at `batch_008`'s merge (PR #21, 2026-09-09).** `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase**, rendered **4×** in `tl/script/batch_008.tsv` (DATA 498) exactly as seeded, and `tl/battle/chunk_026.txt` L5's `Ｔｈｅｓｅ　ｓｏ‐ｃａｌｌｅｄ　ｄｅｍｏｎｓ’` was **verified in the merged tree** rather than assumed. **The cross-unit rule is discharged**: chunk 26 merged first and deliberately left this row live, `batch_008` merged second and strikes it — the whole of what the `ルート` precedent (§29.1 / §30.1) prescribes. See §42.1. Original seed note follows: ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498 — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 483", which is a *menu* line, as this block's own FACT 1 says) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** ⚠️ **STAYS LIVE after PR #22 merged 2026-09-09: chunk 26 was the FIRST of this pair to merge — `tl/script/batch_008.tsv` is still ABSENT from the tree (verified by reading it). Per the `ルート` precedent (§29.1 / §30.1) **PR #21's reviewer strikes this row.** Chunk 26 used it exactly as seeded and every reach figure re-measured EXACT; see §40.1.** |
+| ~~魔物~~ | ✅ **PROMOTED to §42.1 and STRUCK** — `ｍｏｎｓｔｅｒｓ`, rendered once in `tl/script/batch_008.tsv` (DATA 512), **used exactly as seeded**. Not cross-unit: chunk 26 carries no `魔物` (verified at §40.1), so no row is left live. ⚠️ **The 魔族 / 魔物 distinction it was written to hold IS held — but `ｍｏｎｓｔｅｒ` now renders `魔物` AND `モンスター` in one bank and one speaker's gossip; see §42.3** | ~~`batch_008` ×1; 6 script~~ | Holds the 魔族 / 魔物 distinction apart. 7 columns |
+| ~~末えい~~ | `ｄｅｓｃｅｎｄａｎｔ` | ✅ **PROMOTED to §41.1 (chunk 25, PR #23) and STRUCK HERE at `batch_008`'s merge (PR #21, 2026-09-09).** `ｄｅｓｃｅｎｄａｎｔ`, **10 columns**, rendered in `tl/script/batch_008.tsv` (DATA 498) as `Ｔｈｅ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` / `ｗｉｓｅ` exactly as seeded, and `tl/battle/chunk_025.txt` L13's `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` / `ｌｉｇｈｔ　ｅｌｖｅｓ，　ｉｔ　ｓｅｅｍｓ．` was **verified in the merged tree** rather than assumed. **The cross-unit rule is discharged**: chunk 25 merged first and left this row live, `batch_008` merged second and strikes it (§29.1 / §30.1). See §42.1. Original seed note follows: ⚠️ **RENDERED by chunk 25 (PR #23, merged 2026-09-09) as `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` / `ｌｉｇｈｔ　ｅｌｖｅｓ，　ｉｔ　ｓｅｅｍｓ．`, exactly as seeded — and THIS ROW IS DELIBERATELY LEFT LIVE.** `batch_008` (PR #21) is still open and renders it too; per the `ルート` precedent (§29.1 / §30.1) the row is struck once, by the **second** of the pair, so **PR #21's reviewer strikes it** after verifying the merged chunk 25 rather than assuming. Promoted to §41.1. ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** ⚠️⚠️ **NOT "1 instance each", and NOT a new form — corrected in place 2026-09-09 (§4.3, PR #24 review): `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED.** `tl/battle/chunk_010.txt` 12.2 renders `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ` / `ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．` — the same word in the lizardmen's **full-katakana** register (§5), which is why neither a kanji-run nor a kanji+kana search found it. **The choice is CONFIRMED by shipped work; only the novelty and reach claims were wrong.** Gate 6 is not engaged (different source strings), but both wave-6 units must match `ｄｅｓｃｅｎｄａｎｔ`. ✅ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns, measured `len()` — PR #23's Flag 15 says 11 and is a hand-count one high; the seed was right and the "correction" is NOT applied** | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
 | ~~ライトエルフ~~ | ✅ **PROMOTED to §41.1 and STRUCK HERE (PR #23, merged 2026-09-09)** — `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, **used exactly as seeded**, 9 / 11 columns confirmed. Chunk 25 renders **both** battle instances, so the term is **exhausted** and this row is struck outright rather than left live — the `ルート` cross-unit procedure (§29.1 / §30.1) does not apply where one unit carries every occurrence. The ARIES attribution below is **confirmed independently at PR #23's review from the `{FC50}`/`{FC51}` CHANNEL byte, not the portrait id** — the whole Guilford/Aries duel runs under one `{FCB0}{=00060000}` and the channel is what separates the speakers; see §41.2 | ~~chunk 25 (L11) ×2 — ⚠️ **ARIES's bloodline, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's bloodline"). Gilford says `なるほど、確かにライトエルフの末えいのようだな` **to Aries**, who then finds his own spell useless — coherent with Aries being Bishop Creus's grandchild (chunk 24 L15). `ライトエルフの封印` is separately the seal Gilford intends to break. **The renderings are unaffected; only the note was wrong.** 2 battle + 0 script~~ | ~~⚠️ **NOT open after all — corrected in this same seed before dispatch.** The sibling term `ダークエルフ` is ALREADY FIXED at **§17 as `ｄａｒｋ　ｅｌｆ`, lowercase**, and is already shipped lowercase in `tl/script/batch_003.tsv` L20 (`ａｎｃｉｅｎｔ　ｄａｒｋ　ｅｌｖｅｓ`). `ライトエルフ` is the same construction and takes the same case: **`ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, not a reviewer question.** Consistent with §17.1 and the `ホビット` → hobbit precedent. **Both instances must agree.** 9 / 11 columns~~ |
 | ~~アネット~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ａｎｎｅｔｔｅ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×5 — **Dolgan's daughter**, the survivor who guides the party to the mountain settlement. 5 battle + 4 script | European reading. 7 columns |
 | ~~ドルガン~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｄｏｌｇａｎ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×2 — Annette's father, alive among the survivors. **Also battle chunk 32 + 8 script instances**; 4 battle + 8 script | Alt *Durgan*, *Dorgan*. 6 columns |
@@ -518,9 +531,9 @@ mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana ter
 | ~~ゴードン~~ | ✅ **PROMOTED to §39.1** — `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ`, used exactly as seeded (PR #24) | chunk 24 (L15) — `ファリーナのゴードン将軍`, one of the three who plotted the killing. 1 battle | **`将軍` → `Ｇｅｎｅｒａｌ` is ALREADY FIXED** (§32.1, and the §10 discharge at PR #8) — only the name is new here. 6 columns bare, 15 with the rank |
 | ~~オーラスマッシャー~~ | ✅ **PROMOTED to §41.1 and STRUCK HERE (PR #23, merged 2026-09-09)** — `Ａｕｒａ　Ｓｍａｓｈｅｒ`, **used exactly as seeded**, 12 columns confirmed. A hapax carried entirely by chunk 25, so struck outright. ⚠️ **ARIES's spell, NOT Torif's — re-confirmed at PR #23's review on the CHANNEL byte**: the caster is `{FCB0}{=00060000}` **channel 1**, the same channel that then says `そ、そんな・・・オーラスマッシャーがきかない・・・？`; channel 0 is Guilford throughout. See §41.2 | ~~chunk 25 (L11) — Aries casts it at Gilford and it fails: `オーラスマッシャーがきかない・・・？`. 1 battle | 12 columns~~ |
 | ~~ホアグ王子派 / トリフ王子派~~ | ✅ **PROMOTED to §39.1** — `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ`, rendered in `tl/battle/chunk_024.txt` (PR #24) | chunk 24 (L14) — `ホアグ王子派とトリフ王子派との間で、争いが起こるのだ` | ⚠️⚠️ **THIS ROW CARRIED TWO ERRORS, BOTH CORRECTED IN PLACE 2026-09-09 (§4.3, PR #24 review). It is kept, struck through, rather than deleted, because a provisional row contradicting a main-table entry cost two translators a round this wave and the record of how should survive.** (1) It read **`Ｐｒｉｎｃｅ　Ｔｒｉｆ’ｓ　ｆａｃｔｉｏｎ`**. `トリフ` → **`Ｔｏｒｉｆ`** is fixed at §9 line 290, **promoted at §38.1**, and **shipped** at `tl/script/batch_007.tsv` L56 as `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`; `Ｔｒｉｆ` occurs **nowhere** in `tl/` or `pending/` — grepped at review. A main-table entry beats a provisional §9 row. Chunk 24's translator reached `Ｔｏｒｉｆ` independently, before the correction arrived. (2) It read "**21 / 21 columns**". Measured with `len()`: `Ｐｒｉｎｃｅ　Ｈｏａｇ’ｓ　ｆａｃｔｉｏｎ` is **21** and `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ’ｓ　ｆａｃｔｉｏｎ` is **22** — `Ｔｏｒｉｆ` is 5 columns to `Ｈｏａｇ`'s 4. **No rendering changes**: the long forms were never used, because they do not fit (§39.3). The two appear in ONE sentence and must be parallel; both shortened together, as this row directed. Note `’` not `'` (CLAUDE.md §3) |
-| 古代文明 | `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` | `batch_008` (**DATA line 488** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 473") — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
-| 司教様 | `Ｂｉｓｈｏｐ` — **already fixed, §26.1** | `batch_008` (unique 483) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
-| ウェストバリー | `Ｗｅｓｔｂｕｒｙ` — **already fixed, §2** | `batch_008` (**DATA line 515** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 505") | ⚠️ **NOT a new term — a SOURCE SPELLING VARIANT** of `ウエストバリー` (large エ), which is shipped 5× as `Ｗｅｓｔｂｕｒｙ`. See the corrected §2 row. 8 columns |
+| ~~古代文明~~ | ✅ **PROMOTED to §42.1 and STRUCK** — `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ`, **20 columns as seeded** (re-measured with `len()`), rendered in `tl/script/batch_008.tsv` (DATA 488), **used exactly as seeded** including the British `‑ｓａｔｉｏｎ`. The battle instance is in chunk 16, which is tier-A blocked, so this unit is the only shipper for now. Original seed note follows: | `batch_008` (**DATA line 488** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 473") — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
+| ~~司教様~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `ｔｈｅ　ｌａｔｅ　Ｂｉｓｈｏｐ` / `ｏｆ　Ｆａｒｉｎａ．`, and STRUCK — `Ｂｉｓｈｏｐ` is §26.1's, only the appellation is new.** `亡くなられた` is carried by *the late*, matching the massacre `tl/battle/chunk_021.txt` L10 already ships. See §42.1 | `batch_008` (**DATA line 498** — ⚠️ corrected in place 2026-09-09, PR #21 review; this read "unique 483", a *menu* line, and it is the **fourth** row of this block to carry a list index. PR #24's reviewer patched the `魔族`, `末えい`, `古代文明` and `ウェストバリー` rows and left this one; PR #21's Flag 5 named it correctly and it is now applied) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
+| ~~ウェストバリー~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `Ｉｎ　Ｗｅｓｔｂｕｒｙ，　ｔｈｅｙ　ｓａｙ，` and STRUCK.** `Ｗｅｓｔｂｕｒｙ`, 8 columns, byte-identical to the five shipped `ウエストバリー` (large エ) instances that a gate-6 grep on the exact Japanese cannot pair with it — §2's corrected row records both spellings. Original seed note follows: | `batch_008` (**DATA line 515** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 505") | ⚠️ **NOT a new term — a SOURCE SPELLING VARIANT** of `ウエストバリー` (large エ), which is shipped 5× as `Ｗｅｓｔｂｕｒｙ`. See the corrected §2 row. 8 columns |
 
 ⚠️ **THREE BINDING FACTS FOR `batch_008` THAT ARE NOT GLOSSARY TERMS**, recorded here because the
 unit cannot be translated correctly without them:
@@ -4659,3 +4672,211 @@ Verified **by reading the integration branch's tree** at merge time, not assumed
   chunk 25 at all — counted: battle chunks 26, 27, 28, 29, 30, 32.
 - **`場所` has no §9 row** — confirmed again here after §40.7 recorded the same thing. Nothing to
   strike; the wave briefing's pairing was wrong.
+
+---
+
+## 42. Added by script batch 008 (PR #21, merged 2026-09-09)
+
+Rendered in `tl/script/batch_008.tsv` — `script_unique.txt` **DATA lines 470–516**, 47 unique lines
+/ **47 message instances**, all count 1, banks **4 (32) and 5 (15) only**. Two recruit-and-gossip
+interfaces sharing one skeleton: the fairy camp in the fairy forest (470–501, **Phyllis**) and the
+court of Leverk (502, a retainer; 503–516, **King Leverk**), plus the nine world-gossip lines the
+two speakers give under "Ask for information".
+
+**Figures, all re-derived at review rather than taken from the PR.** Bank 4 **11,781 → 10,179**
+free (+1,602 used), bank 5 **3,357 → 2,007** (+1,350), banks 3 and 40 **byte-for-byte untouched**,
+no bank negative — measured by moving the file aside, re-merging and re-running `bankmeasure`.
+**1,577 JP → 3,052 EN visible characters = 1.9353×** (⚠️ the PR body's 2,932 / 1.86× are wrong;
+the true figure closes exactly on the bank deltas — `(3052−1577)×2 + 2 = 2,952 = 1,602 + 1,350`).
+47 lines, **32 distinct translations**, **190 text rows, widest 23 with 20 rows there and none at
+24**, no page over 4 text rows the source did not already exceed. `{FFFE}` **+1, on DATA 470 only**;
+`{FCC0}` **19 → 19, none added**; the non-`{FFFE}` tag stream **byte-identical on all 47 lines**.
+`{FC50}` 0 / `{FC51}` 9 in both columns. Zero `・` in the unit, so §3.1's dot rule is vacuous.
+Merged at **round 1**, with zero findings requiring a change to the unit.
+
+⚠️ **Numbering here is `script_unique.txt` DATA index** (file line = data + 5), the §34 convention.
+⚠️ **`FLAGS.md` §Z2 numbers the same lines in FILE index and the two differ by exactly 5** — see
+§42.5. **Locate by content.**
+
+`Ｉ　ｓｅｅ．` (§30.3, §38.2), `Ｍｙ？` / `Ｍｙ，` for あら (§32.4), `Ｈｏｗｅｖｅｒ，` for しかし and
+しかしながら (§23.3 — its tenth and eleventh uses), `Ｗｅｌｃｏｍｅ` for ようこそ (§34.5),
+`Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (§24.3), `　Ｙｅｓ` / `　Ｎｏ` (§34.1), `Ｊｅｗｅｌｓ` (§34.1),
+`ｒｅｃｒｕｉｔ` and `Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ` (§38.2), `ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ` /
+`ｆｏｒｔｒｅｓｓ` / `ｅｌｉｔｅ　ｃｏｒｐｓ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2), `ｔｈｅ　Ｋｉｎｇ` (§28.1),
+`〜’ｓ　ｆｉｎｅｓｔ` for きっての (§23.1), `ｆｒｅｅ` for 解放 (§28.2), `ｍｏｎｓｔｅｒ` for モンスター
+(`batch_001` L33), `ｓｕｒｅｌｙ` for きっと (§33.6), `ｒｕｍｏｕｒ` (§26.4), `ｔｈｅｙ　ｓａｙ` for
+らしい / と聞きます (§26.6), `ｄｅｓｃｅｎｄａｎｔ` (§41.1), `ｄｅｍｏｎｓ` (§40.1) and `ａｆｒａｉｄ`
+(§39.7) are used unchanged.
+
+### 42.1 People, places and words first rendered here — seven promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| キエーザ | `Ｋｉｅｓａ` | **Promoted from §9's wave-2 seed, used exactly as seeded.** **5 columns.** The first rendering anywhere; rendered twice in DATA 512 (`キエーザの沼` → `ｔｈｅ　ｓｗａｍｐ` / `ｏｆ　Ｋｉｅｓａ．`, `キエーザの南` → `ｓｏｕｔｈ　ｏｆ` / `Ｋｉｅｓａ．`). `Ｋｉｅｓａ` verified **free** across `tl/` and `pending/` at review. ⚠️ **The `Ｃｈｉｅｓａ` (Italian *church*) reading is NOT ruled out, only unsupported here**: this unit names a swamp and a direction and gives no religious evidence either way. `キエーザ城` (script 1090/1092) is still unrendered and is where the question actually lives — §9's row is struck, but the question is carried forward in `FLAGS.md` §AD |
+| レバーク王 | `Ｋｉｎｇ　ｏｆ　Ｌｅｖｅｒｋ` | **14 columns.** Built on two fixed entries, not invented: §28.1's レバーク → `Ｌｅｖｅｒｋ` (a **kingdom**, as §28.1 corrected) and the **form** already shipped in `tl/battle/chunk_013.txt` L8 for `我がルクレール国王` → `ｏｕｒ　Ｋｉｎｇ　ｏｆ　Ｌｅｃｌｅｒｃ`. `予は　レバーク王。` → `Ｉ　ａｍ　Ｋｉｎｇ　ｏｆ　Ｌｅｖｅｒｋ．` (20), articleless as that precedent is. Bare `王は` → `Ｔｈｅ　Ｋｉｎｇ` (8) on §28.1's 国王 row — the speaker of DATA 502 is a **retainer** in honorific third person (`おられる`), not the King |
+| 砲台 (prose) | `ｂａｔｔｅｒｙ` | **7 columns.** DATA 514, `炎の雨を　降らせる砲台`. **First prose rendering.** §4's `無人砲台` → `turret` is a *class-label* row and is **untouched** — the class-vs-prose split §17.1 makes for ウィザード / 魔導師 and §24.2 for 弓兵 / 弓使い. ⚠️ **The two do share banks 4 and 5**, because the 21-instance item table is replicated everywhere and `batch_003` L91/L92 ship `ｔｕｒｒｅｔ`; that is the split working as designed, not a collision. ⚠️⚠️ **CORRECTED AT MERGE, and this one changes an inherited decision:** the PR's row tells chunk 15's translator that `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` is **25** columns and does not fit. Measured with `len()` it is **23**, and `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ` is **17**, not 20. **It fits** — inside the box, at the ≤23 preferred limit. Chunk 15 is not steered away from the full form |
+| 暗礁 | `ｒｅｅｆ` / `ｒｅｅｆｓ` | 4 / 5 columns. DATA 488, `かたい暗礁に　守られた` → `ｇｕａｒｄｅｄ　ｂｙ　ｈａｒｄ　ｒｅｅｆｓ，`. Verified **free** at review |
+| 財産 | `ａｓｓｅｔ` | 5 columns. DATA 506, `兵士は　立派な財産` → `ｓｏｌｄｉｅｒｓ` / `ａｒｅ　ａ　ｆｉｎｅ　ａｓｓｅｔ．` Kept **distinct** from お宝 / 宝 → `ｔｒｅａｓｕｒｅ` (§32.1), 宝石 → `ｇｅｍｓｔｏｎｅ` (§33.5), 財宝 → `ｈｏａｒｄ` (§33.1) and ジュエル → `Ｊｅｗｅｌ` (§3). Verified free |
+| 立派な | `ｆｉｎｅ` | 4 columns. Two instances, two messages, **one word deliberately**: DATA 506 `立派な財産` → `ａ　ｆｉｎｅ　ａｓｓｅｔ`, DATA 513 `立派な国` → `ｍａｎｙ　ｆｉｎｅ　ｃｏｕｎｔｒｉｅｓ`. Held **distinct** from 素晴らしい → `ｓｐｌｅｎｄｉｄ` (chunk 7) |
+| 大陸 | `ｃｏｎｔｉｎｅｎｔ` | **9 columns.** DATA 488 and 498, both `この大陸` → **`ｔｈｉｓ　ｃｏｎｔｉｎｅｎｔ`** (14). ⚠️ **CROSS-UNIT with chunk 25, and byte-identity is NOT owed — the determiner follows the source.** `tl/battle/chunk_025.txt` L13 renders the **bare** `大陸` as `ｅｖｅｒｙ　ｐｏｒｔ　ｏｎ　ｔｈｅ` / `ｃｏｎｔｉｎｅｎｔ　ｉｓ　ｓｅａｌｅｄ．` (§41.1's 13-column `ｔｈｅ　ｃｏｎｔｉｎｅｎｔ`); this unit's two are demonstrative. **The fixed word matches in all three**, which is what §3 — engaging on the message — actually requires. Verified against the merged tree at this review. **1 battle + 6 script (banks 4, 5, 41)**; no §9 row exists, so there is nothing to strike |
+| 場所 | `ｐｌａｃｅ` / `ｐｌａｃｅｓ` | 5 / 6 columns. DATA 512 `危険な場所` → `Ｂｏｔｈ　ｐｌａｃｅｓ　ａｒｅ` / `ｐｅｒｉｌｏｕｓ．`, DATA 514 `危険な場所です` → `ｉｓ　ａ　ｄａｎｇｅｒｏｕｓ　ｏｎｅ，` — **the second is carried anaphorically so the word does not repeat inside one message**, that same row also rendering 所 → `Ｔｈｅ　ｐｌａｃｅ　ｙｏｕ　ａｒｅ　ｂｏｕｎｄ`. Agrees with `tl/battle/chunk_026.txt` L1's `ｇｏｔ　ｔｈｅ　ｗｒｏｎｇ　ｐｌａｃｅ？`, verified in the merged tree. Already the shipped form for 所 (`chunk_014` L2) and inside a phrase for 辺境 (`chunk_000` L3, §23.1 — recorded, not re-cut). ⚠️ **No §9 row, and there never was one** (§AB7) |
+| 司教様 | `ｔｈｅ　ｌａｔｅ　Ｂｉｓｈｏｐ　ｏｆ　Ｆａｒｉｎａ` | **Not a new reading** — §26.1 fixes 司教 → `Ｂｉｓｈｏｐ` and the man is Creus. DATA 498, `亡くなられたファリーナの司教様` → `ｔｈｅ　ｌａｔｅ　Ｂｉｓｈｏｐ` (15) / `ｏｆ　Ｆａｒｉｎａ．` (10); `亡くなられた` is carried by *the late*, which is the massacre `tl/battle/chunk_021.txt` L10 already ships (`一族` → `ｋｉｎ`, `皆殺し` → `ｓｌａｕｇｈｔｅｒｅｄ`) and chunk 24 L15 turns on |
+| 宝庫 | `ｔｒｅａｓｕｒｅ‐ｈｏｕｓｅ` | 14 columns, `‐` is U+2010. **Recorded at review; the PR rendered it and proposed no row.** DATA 488, `古代文明の　宝庫` → `ａ　ｔｒｅａｓｕｒｅ‐ｈｏｕｓｅ　ｏｆ` / `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ．` **A true hapax — 1 occurrence in the whole `script_dump.txt`, bank 4, this line, and 0 battle** (counted at review). Held **distinct** from 宝 / お宝 → `ｔｒｅａｓｕｒｅ` (§32.1, battle chunk 20 only) and 財宝 → `ｈｏａｒｄ` (§33.1, battle chunk 19 only); **all three sets are disjoint in both chunks and banks**, so §25.3 is met three ways |
+| 亡霊 | `ｇｈｏｓｔｓ` | 7 columns, verified free. **Recorded at review.** DATA 512, `亡霊が出る` → `ｇｈｏｓｔｓ　ｗａｌｋ` — a §2.1 **step 4** shortening the PR flags (`ａｐｐｅａｒ` is 6 and pushes the row to 25). Held distinct from 魔物 → `ｍｏｎｓｔｅｒ` and 魔族 → `ｄｅｍｏｎ` |
+| 軍隊 | `ａｒｍｙ` | **Recorded at review.** DATA 506, `軍隊にとって` → `Ｔｏ　ａｎ　ａｒｍｙ，`. The generic noun, lowercase; §2's `９ｔｈ　Ａｒｍｙ` series and §20.4's `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` are untouched |
+| しょうがない | `ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ` | **Recorded at review.** DATA 476/487/497, `じゃ、しょうがないわね。` → `Ｗｅｌｌ，　ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (21). **A fifth source spelling on §24.3 / §29.3 / §32.2's family** (しかたねえ。, 仕方ない、, 仕方ねえだろ。, 仕方ないな。) — one word, several spellings, the §17.2 鬼 / オーガ shape. §25.3 counted at review: `しょうがない` banks [4, 41]; 仕方ない banks [3, 19, 20, 23] + chunks [2, 5, 6, 8, 20]; しかたねえ bank [23] + chunk [6]; 仕方ねえ bank [2] + chunk [8] — **bank 4 holds none of the others.** `じゃ、` → `Ｗｅｌｌ，` |
+| 噂 (kanji) | `ｒｕｍｏｕｒ` | **Recorded at review.** DATA 512, `との噂` → `ｒｕｍｏｕｒ　ｈａｓ　ｉｔ`. §26.4 fixes the kana `うわさ` → `ｒｕｍｏｕｒｓ` (`batch_005` L43); one word, two spellings. §25.3 counted: `うわさ` is bank 31 only, `ウワサ` battle chunk 9 only, kanji `噂` banks [0,1,2,**5**,8,20,23,28,29,33,40,41] + chunk 19 — **disjoint from bank 31 and from chunk 9** |
+| で、 | `Ｎｏｗ，` | **Recorded at review.** DATA 482 `で、どんな　用かしら？` → `Ｎｏｗ，　ｗｈａｔ　ｄｏ　ｙｏｕ　ｎｅｅｄ？` (22) and DATA 492 `で、どんな　ご用かしら？` → `Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？` (23) — **two source strings held apart, the ご‐ politeness carried by the stiffer clause.** `Ｎｏｗ，` is §28.8's さあ、; §25.3 counted at review — `で、どんな` is **bank 4 only** and `さあ、` is banks [1, **5**, 16, 23, 24, 41, 42, 43], **so bank 4 holds neither collision.** Held distinct from さて、 → `Ｎｏｗ　ｔｈｅｎ，` (§31.3) |
+
+### 42.2 The four `ご用` questions, and the three blessings — held apart on purpose
+
+Four "what do you want?" openers, four different source strings, four renderings, and the register
+climbs with the politeness of each: `今日は　どんなご用？` → `Ｗｈａｔ　ｂｒｉｎｇｓ　ｙｏｕ　ｔｏｄａｙ？`
+(471), `で、どんな　用かしら？` → `Ｎｏｗ，　ｗｈａｔ　ｄｏ　ｙｏｕ　ｎｅｅｄ？` (482),
+`で、どんな　ご用かしら？` → `Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？` (492),
+`今日は　何のご用か？` → `Ｙｏｕｒ　ｅｒｒａｎｄ　ｔｏｄａｙ？` (503, the King's).
+
+Likewise the three fairy blessings, all optative `Ｍａｙ　…`, none collapsed:
+`力に　なりますように！` → `Ｍａｙ　ｔｈｅｓｅ　ｆａｉｒｉｅｓ` / `ｂｅ　ｏｆ　ｈｅｌｐ` / `ｔｏ　ｙｏｕ　ａｌｌ！`
+(475), `いやして　くれますように！` → `Ｍａｙ　ｔｈｅｙ　ｈｅａｌ` / … (486),
+`幸運を　もたらしますように！` → `Ｍａｙ　ｓｈｅ` / `ｂｒｉｎｇ　ｌｕｃｋ` / `ｔｏ　ｙｏｕ　ａｌｌ！` (496).
+And the two recruit prompts: `どの妖精が　いいかしら？` → `Ｗｈｉｃｈ　ｆａｉｒｙ　ｗｉｌｌ　ｉｔ　ｂｅ？` (23)
+against the King's `どれが　よろしいかな？` → `Ｗｈｉｃｈ　ｗｏｕｌｄ　ｓｕｉｔ　ｙｏｕ？` (21).
+
+### 42.3 ⚠️ `ｍｏｎｓｔｅｒｓ` renders 魔物 AND モンスター in ONE bank and ONE speaker's gossip
+
+**Recorded at review; the PR did not raise it. The rendering stands and nothing is re-cut.**
+Measured: `魔物` is banks **[5, 40]**, 0 battle; `モンスター` is **24 banks including 4 and 5** plus
+battle chunk 31, **214 script instances**. This unit renders **both**, in bank 5, from **King
+Leverk**, two gossip messages apart — DATA 512 `キエーザの沼には魔物が住む` →
+`Ｍｏｎｓｔｅｒｓ　ａｒｅ　ｓａｉｄ` / `ｔｏ　ｄｗｅｌｌ…` and DATA 514 `西にはモンスターの砂漠` →
+`ａ　ｄｅｓｅｒｔ　ｏｆ` / `ｍｏｎｓｔｅｒｓ．` **§25.3's test therefore fails outright and visibly**, which
+is sharper than any previous instance of it.
+
+> **Ruled: the collapse stands, and it is the documented kind.** §9's wave-6 seed fixed
+> `魔物` → `ｍｏｎｓｔｅｒ` *knowing* `モンスター` → `ｍｏｎｓｔｅｒ` was already shipped
+> (`batch_001` L33, and §9's own wave-5 note "**`モンスター` is NOT a seed — it is already
+> SHIPPED**"), and the unit used the seed exactly. One native word and one loanword for one
+> concept is precisely §17.2's 鬼 / オーガ shape — a deliberate collapse, not the flattening of a
+> distinction the source draws; a player reading both lines loses nothing, because the Japanese
+> draws none either. **The distinction the seed was written to protect — 魔族 / 魔物 — IS held**:
+> `ｄｅｍｏｎｓ` and `ｍｏｎｓｔｅｒｓ` never meet.
+>
+> ⚠️ **`モンスター` cannot move** (214 instances, 24 banks, byte-bound by `batch_001`), so if a later
+> unit ever needs the split it is **`魔物` that moves**, and only banks 5 and 40 are affected.
+> `ｃｒｅａｔｕｒｅ` (9 columns) is verified free across `tl/` and `pending/` and is the reserve.
+> **Lines this affects: none.** `FLAGS.md` §AD.
+
+### 42.4 ⚠️ `Ｉ　ｓｅｅ．` reaches FIVE source strings, and the bank test is not what discharged it
+
+`そう。` (DATA 481, Phyllis, **bank 4**) is a **new fifth** string on §30.3's form, beside
+`なるほど` (§30.3), `そうか` (`chunk_004` L11, shipped), `そうですか` (§34.1) and `そうかい` (§38.2).
+Counted at review with this unit's own keys excluded, §25.3's stated standard — *no chunk and no
+bank contains both* — is **met for `そう。`**: `そうか。` banks [5, 8, 9, 29, 33, 41], `そうですか`
+[0, 7, 12, 16, 41], `そうかい` [2, 12, 17, 20, 23, 24], `なるほど` [1, 5, 8, 33, 36, 40] — **not one
+of them is bank 4.**
+
+⚠️ **But bank 5 is a different matter, and the PR's "different banks, different scenes, no message
+holds both" applied the wrong grain.** This unit puts `そうか。` → `Ｉ　ｓｅｅ．` into bank 5 (DATA
+507, 510) and **bank 5 also holds an untranslated `なるほど`** — inside two of the big pooled strings.
+The pairing is **pre-existing**, not created here: §30.3 fixed `なるほど`, `chunk_004` shipped
+`そうか`, and §30.3's discharge counted **chunks only, never banks**. Nothing shipped is affected and
+no line changes; it is recorded LIVE for whoever translates that pool, on the §32.5 / §34.2 / §34.5
+pattern. **§25.3's reserve `Ｅｘａｃｔｌｙ．` stays reserved for `そのとおり` / `そうそう` and is not
+spent here.**
+
+### 42.5 FORWARD BINDING — four of this unit's messages have sibling unique rows outside it
+
+Measured mechanically over all 1,430 unique lines, comparing **visible text** rather than keys.
+Different `{FFF6}` / `{FFF8}` arguments make them different keys, so CLAUDE.md §3 does not *force*
+reuse — but the player meets one line, which is §34.9's reasoning for unique 598.
+
+| This unit | Japanese | Siblings outside the unit |
+|---|---|---|
+| **472 / 483 / 493 / 504** | the recruiter menu | **5 untranslated: DATA 329, 330, 394, 400, 412**; 3 shipped identically in `batch_007` (DATA 435, 445, 456) |
+| **481** | `そう。疲れたときはいつでもよってね。` | **DATA 326, count 2, untranslated** |
+| **505** | `どれが　よろしいかな？` | **DATA 535, untranslated** |
+| **506** | `軍隊にとって兵士は　立派な財産。大切にされよ。` | **DATA 403, untranslated** |
+
+⚠️ **`FLAGS.md` §Z2 numbers the same menu lines in `script_unique.txt` FILE index, exactly +5 on
+these** — its 440/450/461 are these 435/445/456, and four of its "nine untranslated"
+(477, 488, 498, 509) are this unit's own 472, 483, 493, 504. **§Z2 is updated at this merge.**
+`HANDOFF.md` already warned that `batch_007` and `batch_008` number differently; the same clash is
+now shown to reach `FLAGS.md`, so **read the header before citing any line number** binds FLAGS
+entries too.
+
+### 42.6 Register — verified line by line, not assumed
+
+| Who | Register |
+|---|---|
+| **Phyllis (DATA 470–501, portrait `{=01}{=79}`)** | §14.6 unchanged and held across **all 32 lines** — formal, warm, maternal, **no contraction anywhere**: `Ｉ　ａｍ　ａｆｒａｉｄ，`, `Ｉ　ｃａｎｎｏｔ　ｒｅｃｒｕｉｔ`, `Ｗｅ　ｆａｉｒｉｅｓ　ｃａｎ　ｕｓｅ`, `ｗｅ　ｓｈａｌｌ　ｇｌａｄｌｙ　ｈｅｌｐ`, `Ｗｅｌｌ，　ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` **Bank 4 contains not one apostrophe.** The source's `かしら` / `〜わ` / `〜のよ` lightness is carried in word choice, never in a contraction — §2's politeness rule. She is the same character as `pending/chunk_005.txt` L22's `Ｌａｄｙ　Ｐｈｙｌｌｉｓ` (§14.1) and is contraction-free in both |
+| **King Leverk (DATA 503–516, portrait `{=01}{=7B}`)** | `予` / `おりますぞ` / `来られよ` / `よろしかろう` / `いたす` carried as plain, old-fashioned English with **no contractions and no archaic spelling** — §7's "Village elders (じゃ / のう)" column, the same one §28.6 gives chunk 13's King. `Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．`, `Ｔｒｅａｔ　ｔｈｅｍ　ｗｅｌｌ．`, `Ｄｏ　ｔａｋｅ　ｃａｒｅ．`, `Ｉ　ｅｘｐｅｃｔ　ｇｒｅａｔ　ｔｈｉｎｇｓ！` His `貴官の隊` → `ｙｏｕｒ　ｓｑｕａｄ` carries 貴官 in register, per §2 / §26.7 / §29.2 / §31.7 |
+| **The Leverk retainer (DATA 502)** | Correctly **not** the King: `おられる` is honorific *about* him, so `Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ａｗａｙ` / `ａｔ　ｐｒｅｓｅｎｔ．` Deferential, no contractions |
+
+### 42.7 Recorded, not re-cut — checked at review and not defects
+
+- **`ｙｏｕ　ｗｏｕｌｄ　ｄｏ　ｗｅｌｌ　ｔｏ　ｆｏｒｇｏ`** (DATA 509, `見送られるがよろしかろう`) reaches
+  **independently** the exact frame `tl/battle/chunk_026.txt` shipped for `消え去るがいい` (§40.2's
+  `ｙｏｕ　ｗｏｕｌｄ　ｄｏ　ｗｅｌｌ　ｔｏ　ｖａｎｉｓｈ`). Two units, two agents, no coordination, one
+  English shape for the condescending-permission 〜がいい / 〜がよろしかろう — beside §31.3's
+  `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．` for かかってくるがいい。 **Extra agreement, not a collision.**
+- **`ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ．`** (478/489/499) matches `batch_007` L24/47/58/69's
+  `Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ` **lowercased**, because it continues the sentence after
+  `Ｉ　ａｍ　ａｆｒａｉｄ，`. That is §39.3 item 3's `ｍｙ　ａｐｏｌｏｇｉｅｓ．` pattern, correct.
+- **`Ｄｏ　ｔａｋｅ　ｃａｒｅ．` / `！`** (512, 515) agrees with `pending/chunk_005.txt` L17 and with
+  §26.7's `ｄｏ　ｔａｋｅ　ｃａｒｅ`; the `なさい` is carried by the `Ｄｏ`, not by an added word. Held
+  apart from `batch_007` L27's `Ｔａｋｅ　ｃａｒｅ，　ｔｈｅｎ！` (`じゃ、気を付けてな！`, a different key
+  in a different bank).
+- **`Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ．`** (479/490/500) reuses `batch_007` L25's phrase with this
+  line's own stop — exactly what `FLAGS.md` §Z2 anticipated ("`Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ`
+  appears in both").
+- **`ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ　Ｊｅｗｅｌｓ`** matches `batch_007` L24/47's frame, and
+  **`Ｎｏｔｈｉｎｇ　ｅｌｓｅ？`** holds §38.2's negative/affirmative split without the `ノロ` tic —
+  this unit contains **no ノロ at all**, correctly.
+- **`残念だけど` → `Ｉ　ａｍ　ａｆｒａｉｄ，` stands and the PR's offer to force `Ｉ’ｍ　ａｆｒａｉｄ` is
+  DECLINED**, on §39.7 rather than on the reviewer's judgement: `ａｆｒａｉｄ` is the fixed **word** and
+  the contraction follows the speaker. `tl/battle/chunk_024.txt` L14 renders it
+  `Ｉ　ａｍ　ａｆｒａｉｄ　Ｉ　ｃｏｕｌｄ` for Aries, verified in the merged tree; `chunk_011` 6.1 and
+  `chunk_020` 47.3 contract because their speakers do. ⚠️ **`Ｉ’ｍ　ａｆｒａｉｄ，` is 11 columns, not
+  the PR's 10** — the −6-byte cost it quotes is nevertheless right.
+- **Two §2.1 departures the PR's Flag 10 did not list**, both faithful and both width-forced:
+  DATA 514's `北は…砲台に守られておると聞く` → `ａ　ｂａｔｔｅｒｙ　ｒａｉｎｉｎｇ　ｆｉｒｅ` /
+  `ｇｕａｒｄｓ　ｉｔ，　Ｉ　ｈｅａｒ．` flips the source's passive to an active (`ｉｔ　ｉｓ　ｇｕａｒｄｅｄ
+  ｂｙ　ａ　ｂａｔｔｅｒｙ` measures **24**, which §25.1 has twice rejected); and DATA 511's fronting
+  folds `中心に`'s *as its centre* into `Ｆｒｏｍ　…`, a step-5 implication as well as the step-6
+  flagged (`ｔｈｅ　ｎｏｒｔｈｅｒｎ　ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ` is **28**, so the fronting is genuinely
+  forced).
+- **Two rows end on a two-letter word** — DATA 512 row 5 (`…ｓｏｕｔｈ　ｏｆ`) and DATA 514 rows 0/1
+  (`…ｂｏｕｎｄ` / `ｆｏｒ…`). Both pages already carry **four** text rows against the source's four,
+  and every alternative overflows (`Ｍｅａｎｗｈｉｌｅ，　ｒｕｍｏｕｒ　ｈａｓ　ｉｔ` = 26,
+  `ｏｆ　Ｋｉｅｓａ．　Ｂｏｔｈ　ｐｌａｃｅｓ　ａｒｅ` = 26); a fifth row means adding a `{FCC0}`, which
+  `assemble.py:tag_parity` forbids. **Forced; they stand**, on §33.8's disposition.
+- **`ｔｈｅｙ　ｓａｙ` twice in one message** (DATA 498, for `と聞きます` and `らしいわ`) is §26.6's
+  stated default for every hearsay evidential, ten rows apart and in different sentences.
+  `Ｗｏｒｄ　ｉｓ` was not needed.
+- **Three EN-only leading `　`** (474/485/495) are the price-insert word-space §34.9 trap 3 records
+  for `batch_006` L60; **18 source cursor gutters, 18 kept, 0 lost.**
+- **`ｇｌａｄｌｙ` is not free** (`chunk_019` L24) and neither are `Ｎｏｗ，`, `ｅｒｒａｎｄ`, `ｐｕｓｈ`,
+  `ｅｘｐｅｄｉｔｉｏｎ` or `ｔｒｕｌｙ`; all are different words in different messages, §3 not engaged,
+  §25.3 met. **Genuinely free, re-measured at review**: `ｂａｔｔｅｒｙ`, `ｒｅｅｆ`, `ａｓｓｅｔ`,
+  `ｇｈｏｓｔｓ`, `Ｋｉｅｓａ`, `ｐｅｒｉｌｏｕｓ`, `ｓｕｉｔ`, `ｗｅａｒｉｎｅｓｓ`, `ｗｅａｒｙ`, `Ｍｅａｎｗｈｉｌｅ`.
+
+### 42.8 Corrections to this PR's own figures (§4.3) — five, none touching a line of the file
+
+**Every headline figure is correct as stated** — banks, byte deltas, 47/47, 32 distinct, widest 23,
+none at 24, `{FFFE}` +1 on one line, `{FCC0}` untouched — and all three of Flag 5's line-citation
+corrections were re-derived independently and confirmed.
+
+| # | Claim | Measured |
+|---|---|---|
+| 1 | "2,932 EN visible chars … growth **1.86×**" | **3,052 and 1.9353×.** Closes exactly on the PR's own bank deltas: `(3052−1577)×2 + 2 = 2,952 = 1,602 + 1,350` |
+| 2 | `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` **25**, `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ` **20** | **23 and 17.** ⚠️ **The only correction that changes an inherited decision** — chunk 15's full form *does* fit; see the 砲台 row |
+| 3 | `Ｗｅｓｔｗａｒｄ，　ａ　ｄｅｓｅｒｔ　ｏｆ` **22** (Flag 17) | **21.** The *rejected* `Ｔｏ　ｔｈｅ　ｗｅｓｔ，　ａ　ｄｅｓｅｒｔ　ｏｆ` is **24**, exactly as stated |
+| 4 | `Ｉ’ｍ　ａｆｒａｉｄ，` **10** (Flag 2) | **11.** The −6-byte figure is right |
+| 5 | `ｔｈｏｓｅ　ｇｉｆｔｅｄ　ｉｎ　ｗｉｓｄｏｍ` **20** (Flag 10) | **22**; `…ｉｎ　ｍｉｇｈｔ` is 21 as stated. Conclusion strengthened |
+
+⚠️ **§AC3's pattern holds a second wave running: every figure either party argued from was exact,
+and every wrong one was a table cell typed rather than measured.** The PR itself caught one of its
+own before pushing (Flag 17's `ｄｅｓｅｒｔ`), which is the practice that should generalise.
+
+❌ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns and was not reopened.** Five parties have now measured it.

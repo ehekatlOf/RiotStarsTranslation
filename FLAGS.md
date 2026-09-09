@@ -3261,6 +3261,21 @@ own split.
 
 ### Z2. FORWARD BINDING — this unit fixes the recruiter menu for TEN untranslated lines
 
+⚠️⚠️ **UPDATED 2026-09-09 at `batch_008`'s merge (PR #21), on two counts.**
+**(a) Four of the nine are now shipped.** `tl/script/batch_008.tsv` renders this menu **four times**
+— its DATA 472, 483, 493, 504, which are **this entry's 477, 488, 498, 509** — byte-for-byte
+identical to `batch_007`, gutter included, verified mechanically. **Five remain untranslated:
+this entry's 334, 335, 399, 405, 417** (= DATA 329, 330, 394, 400, 412), and **unique 417 is still
+the head of the rough human recruiter whose tail `batch_007` renders**. Seven of the twelve rows now
+carry the string.
+**(b) ⚠️ THE NUMBERS IN THIS ENTRY ARE `script_unique.txt` FILE LINES, and the wave-6 documents
+count DATA lines — the two differ by exactly 5.** This entry's 440/450/461 are DATA 435/445/456;
+its 334/335/399/405/417/477/488/498/509 are DATA 329/330/394/400/412/472/483/493/504. `HANDOFF.md`
+warned that `batch_007` and `batch_008` number differently and glossary §9's wave-6 citations were
+corrected to DATA twice; **this is the same clash reaching FLAGS**. Neither convention is wrong —
+what is wrong is citing one without saying which. **State the convention beside any line number.**
+See glossary §42.5.
+
 Counted mechanically at review across `script_unique.txt`, not taken from the PR.
 
 **The three-option recruiter menu** ` 兵士を　補充したい` / ` 情報を　聞きたい` / ` 何でもない`
@@ -3940,3 +3955,159 @@ bank moved. The tightest banks are as §Z6 / §AB left them: **41 → 353, 40 �
    forward obligation this unit creates. `ｆｉｅｌｄ　ｍｉｃｅ` binds chunks 41 and 42 and bank 41;
    `小娘` reaches chunk 31; `封印` reaches chunk 32 and bank 41; `駒` reaches bank 41; `追手` reaches
    chunk 29; `あの世` reaches chunk 41.
+
+---
+
+## AD. Wave 6 review — script batch 008 / PR #21 (2026-09-09)
+
+**DECISION: MERGE at round 1**, squashed as `e8ad8c6`. All nine gates re-run in a real checkout on
+the merged tree; **nothing in the file needed to change**, and **five subsidiary figures in the PR
+body are wrong and were corrected at merge**, none of them touching a line. The last unit of wave 6.
+
+### AD1. The figures, as the reviewer measured them
+
+`check` → "All checks passed", 4,209 script lines / 358 unique forms. `merge` prints **no** "never
+matched the dump". `rowcheck.py script` reports only the four **inherited** pool/shop lines — and
+none is this unit's, proven mechanically rather than by eye: its 47 messages occupy **merged-dump
+lines 830–1233**, so the flagged line 1234 sits immediately after the last of them.
+
+| | Measured | PR |
+|---|---|---|
+| bank 4 free | 11,781 → **10,179** (+1,602 used) | exact |
+| bank 5 free | 3,357 → **2,007** (+1,350 used) | exact |
+| banks 3 / 40 | **byte-for-byte untouched** (8,113 / 447) | exact |
+| unique lines / instances | 47 / 47, banks 4 (32) and 5 (15) only, no key elsewhere | exact |
+| distinct translations | **32** (47 − 22 + 7) | exact |
+| EN visible characters | **3,052** | ❌ 2,932 |
+| growth | **1.9353×** | ❌ 1.86× |
+| text rows / widest | **190 rows, widest 23, 20 rows at 23, none at 24** | exact |
+| `{FFFE}` | **+1, DATA 470 only** | exact |
+| `{FCC0}` | **19 → 19, none added** | exact |
+| charset | 0 characters outside §3.1 | exact |
+
+Bank movement was measured by **moving the file aside, re-running `merge` and `bankmeasure`, then
+restoring it** — not by trusting the PR. ⚠️ The EN-character figure is checkable against those bank
+deltas and closes exactly: `(3052 − 1577) × 2 + 2` (the added `{FFFE}`) `= 2,952 = 1,602 + 1,350`.
+
+⚠️ **Banks under 2,000 free, named as CLAUDE.md §6.5 requires: 41 (353) and 40 (447)**, both
+pre-existing and untouched here. ⚠️ **Bank 5 now stands at 2,007 — seven bytes above the
+threshold, and the third-tightest bank in the project.** The next script unit that touches bank 5
+has effectively no room; treat it as full when planning.
+
+### AD2. ⚠️ `ｍｏｎｓｔｅｒｓ` renders 魔物 AND モンスター in one bank, one speaker, two messages apart
+
+**The PR did not raise it; the rendering stands and nothing is re-cut.** Full reasoning and the
+reserve are at glossary **§42.3**. Short form: `魔物` is banks [5, 40]; `モンスター` is 24 banks
+including 4 and 5, 214 script instances, byte-bound by `batch_001` L33. This unit renders both in
+**bank 5, from King Leverk, two gossip lines apart**, so §25.3's test fails *visibly* — the sharpest
+instance the project has had. §9's wave-6 seed nevertheless fixed `魔物` → `ｍｏｎｓｔｅｒ` knowing
+`モンスター` was already shipped, and one native word plus one loanword for one concept is exactly
+§17.2's 鬼 / オーガ collapse. **If a later unit needs the split, `モンスター` cannot move and `魔物`
+must; the reserve is `ｃｒｅａｔｕｒｅ` (9 columns), verified free.** Only banks 5 and 40 are affected.
+
+### AD3. ⚠️ LIVE — `Ｉ　ｓｅｅ．` and `なるほど` share bank 5, and §30.3's discharge never tested banks
+
+`Ｉ　ｓｅｅ．` now renders **five** source strings. The **new** one, `そう。` (DATA 481, bank 4),
+passes §25.3's stated bank test cleanly — none of `そうか。` [5, 8, 9, 29, 33, 41], `そうですか`
+[0, 7, 12, 16, 41], `そうかい` [2, 12, 17, 20, 23, 24] or `なるほど` [1, 5, 8, 33, 36, 40] is in
+bank 4. **But this unit puts `そうか。` → `Ｉ　ｓｅｅ．` into bank 5 (DATA 507, 510), and bank 5 also
+holds an untranslated `なるほど`** inside two of the big pooled strings.
+
+**The pairing is pre-existing, not created here** — §30.3 fixed `なるほど` and `chunk_004` L11
+shipped `そうか` → `Ｉ　ｓｅｅ．` long before — and **§30.3's discharge counted chunks only, never
+banks**, which is the gap this merge exposes. Nothing shipped is affected and no line changes. Left
+LIVE for whoever translates that pool, on the §T2 / §32.5 pattern. §25.3's `Ｅｘａｃｔｌｙ．` stays
+reserved for `そのとおり` / `そうそう`. See glossary §42.4.
+
+### AD4. FORWARD BINDING — four messages have sibling unique rows outside the unit
+
+Measured over all 1,430 unique lines by **visible text** rather than key. Different `{FFF6}` /
+`{FFF8}` arguments make them different keys, so §3 does not force reuse — but the player meets one
+line, which is §34.9's reasoning for unique 598.
+
+| Shipped here | Japanese | Untranslated siblings (DATA) |
+|---|---|---|
+| 472 / 483 / 493 / 504 | the recruiter menu | **329, 330, 394, 400, 412** |
+| 481 | `そう。疲れたときはいつでもよってね。` | **326** (count 2) |
+| 505 | `どれが　よろしいかな？` | **535** |
+| 506 | `軍隊にとって兵士は　立派な財産。大切にされよ。` | **403** |
+
+**Copy the English byte-for-byte; do not re-invent it.** ⚠️ DATA 326 is one of the three lines the
+wave-6 preflight already had to correct the wave-5 handoff about (`HANDOFF.md`: 326/327/328 are
+count-2 shop lines in banks 4 and 5, not count-3 bank-40 gossip). The two records now agree.
+
+### AD5. ⚠️ §Z2 counts FILE lines where the wave-6 documents count DATA lines — a third convention clash
+
+`FLAGS.md` §Z2's menu line numbers are `script_unique.txt` **FILE** lines; `batch_008.tsv`'s header,
+glossary §9's corrected wave-6 citations and §34's convention are **DATA** lines, and the two differ
+by exactly **5**. §Z2's 440/450/461 are DATA 435/445/456, and four of its "nine untranslated" —
+477, 488, 498, 509 — are this unit's own 472, 483, 493, 504. **§Z2 is updated in place at this
+merge.** `HANDOFF.md` item 10 already warned that `batch_007` and `batch_008` number differently;
+this is the same clash reaching FLAGS, and it is the **seventh** numbering convention now in play in
+this repo (§O8, §P; glossary §28, §29, §30, §31, §32, §33, §34). **Neither convention is wrong —
+what is wrong is citing one without saying which. State the convention beside any line number.**
+
+### AD6. Five PR figures corrected, and one of them changes an inherited decision
+
+**Every headline figure was exact**, and all three of Flag 5's line-citation corrections were
+re-derived independently and confirmed (`古代文明` DATA 488, `魔族`/`末えい`/`司教様` DATA 498,
+`ウェストバリー` DATA 515), as was Flag 3's "32, not ~26".
+
+| # | Claim | Measured with `len()` |
+|---|---|---|
+| 1 | 2,932 EN chars / 1.86× | **3,052 / 1.9353×** |
+| 2 | `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` 25, `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ` 20 | **23 and 17** |
+| 3 | `Ｗｅｓｔｗａｒｄ，　ａ　ｄｅｓｅｒｔ　ｏｆ` 22 | **21** |
+| 4 | `Ｉ’ｍ　ａｆｒａｉｄ，` 10 | **11** (its −6-byte figure is right) |
+| 5 | `ｔｈｏｓｅ　ｇｉｆｔｅｄ　ｉｎ　ｗｉｓｄｏｍ` 20 | **22** |
+
+⚠️ **#2 is the one that matters beyond the record.** The PR's `砲台` row tells chunk 15's translator
+that the full `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` does not fit. **At 23 it does** — inside the
+box, at the ≤23 preferred limit. Corrected in glossary §42.1 so that chunk is not steered away from
+it. A wrong width in a *forward* note is worse than a wrong width in a summary, because the next
+unit budgets from it.
+
+⚠️ **§AC3's pattern holds a second wave running: every figure either party argued from was exact,
+and every wrong one was a table cell typed rather than measured.** The PR caught one of its own
+before pushing (Flag 17's `ｄｅｓｅｒｔ` at 24). ❌ **`ｄｅｓｃｅｎｄａｎｔ` is 10 and was not reopened** —
+five parties have now measured it.
+
+### AD7. ⚠️ Three dispatch claims that did not survive measurement
+
+Recorded because two of them would have cost a round if acted on.
+
+1. ❌ **`大陸` does NOT owe byte-identity with chunk 25.** The dispatch said "batch 008 must match
+   `ｔｈｅ　ｃｏｎｔｉｎｅｎｔ` byte-for-byte". Chunk 25's source is **bare** `大陸`; both of this unit's
+   are **`この大陸`** and take `ｔｈｉｓ　ｃｏｎｔｉｎｅｎｔ`. **The fixed word matches; the determiner is
+   the source's**, and §3 engages on the message. Forcing `ｔｈｅ` would have put a definite article
+   on a demonstrative. Glossary §42.1.
+2. ❌ **`王子様` referential is NOT this unit's to rule.** Measured: `王子様` is banks [1, 20, 40, 41]
+   + battle chunk 25; `王子` banks [1, 3, 8, 10, 20, 23, 40, 41]. **This unit is banks 4 and 5 and
+   contains no `王子` in any form.** §41.6's own standard — "a reviewer does not rule on lines that
+   are not in front of him" — applies; the question stays open for a batch in banks 1/20/40/41.
+3. ❌ **§AB5's `Ｃａｐｔａｉｎ` question is not engaged either**: `船長` is banks [23, 28, 41], `隊長`
+   banks [2, 10, 28, 32, 34, 41]; this unit touches neither term nor either bank.
+
+✅ **Two dispatch claims that were right and were acted on**: the two §9 cross-unit rows (`魔族` from
+chunk 26, `末えい` from chunk 25) really were live and are struck here, **after reading the merged
+tree** for each; and `場所` really has no §9 row (confirmed a third time).
+
+### AD8. The blind-insert bound grows to 24 rows — §C4 / §Y1 unchanged
+
+Six more rows join it: DATA 474/485/495 each carry `{FFEC}{=00}{=04}` (unit name) and
+`{FFEC}{=00}{=01}` (price), neither of which `assemble.py:validate_body` or `rowcheck.py` substitute
+— only `{FFEC}{=00}{=00}` (7 columns) and `{FC00}{=0000}` are counted, and **this unit contains
+neither**, so the player-name question does not arise here. Measured: each of the six is
+**insert + 8** (`，　ｉｓ　ｉｔ？` ×3, `　Ｊｅｗｅｌｓ，` ×3) against the Japanese's insert+2 and
+insert+5, so at the §8 unit-name cap the row lands at 16 and overflows only if an insert renders
+wider than 16. **`batch_006`'s 12 + `batch_007`'s 6 + these 6 = 24 rows now ride on one shop visit.**
+The PR states the mechanism correctly and does **not** claim the blindness is uniform.
+
+### AD9. `キエーザ城` — the promotion answers the reading only in the negative
+
+`キエーザ` → `Ｋｉｅｓａ` is promoted and §9's row struck, but ⚠️ **the `Ｃｈｉｅｓａ` (Italian *church*)
+reading is not ruled out — it is merely unsupported by this unit**, which names a swamp and a
+direction and gives no religious evidence either way. The question actually lives in **`キエーザ城`
+(script 1090 / 1092), still unrendered**. Whoever takes it should look at whether the castle is a
+religious site before treating `Ｋｉｅｓａ` as settled for the compound; changing it afterwards is a
+§4.3 correction reaching this unit's two rows. Glossary §42.1.

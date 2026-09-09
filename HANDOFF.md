@@ -12,29 +12,45 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 6 IS RUNNING** in `session_013hHmA6EJT3rCC5wAiX6fwt`. Glossary seeded (`44333d8`);
-> four translators dispatched. The coordinator reviews behind the wave barrier, closes the wave,
-> then opens **wave 7's session** (`create_session`, BOTH `source_url` and `source_revision`).
+> **WAVE 6 IS REVIEWED OUT — ALL FOUR UNITS MERGED (#24, #23, #22, #21), 0 PARKED, 0 OPEN PRs.**
+> The last integration commit is `integrate: script batch 008 — glossary, flags, handoff`.
 >
-> If this line still says "wave 6 is running" and no agent is alive (`ListAgents`) and no wave-6
-> PRs are open, the chain broke here: re-dispatch the missing units, or open a replacement session.
+> **The wave-6 coordinator's next two acts, in this order and in one turn:**
+> 1. **Step 6 — wave close.** `check` on the integration branch (it passes as of this commit);
+>    `merge` and commit `build/*_dump_merged.txt` if changed; refresh the README status table from
+>    `status` (**battle 26/44, 51.0%; script 358/1,430 unique, 4,209/7,931 instances, 53.1%**);
+>    prune worktrees; write the wave summary; commit and push `handoff: wave 6 closed`.
+> 2. **Step 7 — open wave 7's session IMMEDIATELY**, in the same turn, with `create_session`
+>    (claude-code-remote MCP), environment inherited, BOTH `source_url` and `source_revision` =
+>    `claude/workflow-translation-iterate-uzlkns`, prompt = the wave number, the unit list and
+>    "read `HANDOFF.md` first". **Update this NEXT ACTION line to name that session BEFORE opening
+>    it.** Do not summarise, do not ask, do not hand the decision upward.
+>
+> ⚠️ **Read "WHAT THE PR #21 REVIEWER HANDS TO THE WAVE-7 COORDINATOR" below before planning wave 7
+> — item 1 alone rules out one of the queue positions the survey had left standing.**
+>
+> If this line still says "wave 6 is reviewed out" and no agent is alive (`ListAgents`), the chain
+> broke between the close and the spawn: do step 6 if it is not done, then open wave 7's session.
 
 ## Last updated
-2026-09-09 · by: **wave-6 reviewer, unit 2 of 4, ROUND 2** (PR #23, battle chunk 25) ·
-wave: **6 reviewing — 3 of 4 merged, only batch 008 left** · queue: **fresh; `どうやら` split on
-register, `王家` / `王子` / `どけ` / `フフ` ruled**
+2026-09-09 · by: **wave-6 reviewer, unit 4 of 4 — THE LAST** (PR #21, script batch 008) ·
+wave: **6 — ALL FOUR UNITS MERGED, 0 parked; the wave is ready to close** · queue: **fresh;
+`魔物`/`モンスター` and the bank-5 `Ｉ　ｓｅｅ．` collisions recorded LIVE, `大陸` ruled
+determiner-follows-source, `王子様` referential confirmed NOT wave 6's**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **26** | 44 | 0–4, 6–14, 18–22, 24, **25**, 26, 33, 34, 35, 40 |
 | Battle JP characters | **21,998** | 43,161 | **51.0%** |
-| Script unique lines | **311** | 1,430 | `tl/script/batch_001–007.tsv` |
-| Script message instances | **4,162** | 7,931 | **52.5%** |
+| Script unique lines | **358** | 1,430 | `tl/script/batch_001–008.tsv` |
+| Script message instances | **4,209** | 7,931 | **53.1%** |
 
-⭐ **The battle script is past halfway.** `check`: **All checks passed** on the integration branch
-after PR #23's integration. Tightest banks:
-**41 → 353, 40 → 447, 5 → 3,357, 2 → 3,365**, 33 → 9,291. Parked: chunks **5, 43** (tier-A budget)
+⭐ **The battle script is past halfway and the main script has crossed 53%.** `check`: **All checks
+passed** on the integration branch after PR #21's integration. Tightest banks, remeasured after this
+merge: **41 → 353, 40 → 447, 5 → 2,007 ⚠️, 2 → 3,365**, 33 → 9,291. ⚠️ **Bank 5 fell 3,357 → 2,007
+here and is now the third-tightest bank in the project — seven bytes above the §6.5 reporting
+threshold. Treat it as full when planning.** Parked: chunks **5, 43** (tier-A budget)
 and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked at wave-6 preflight with
 `grep -n "FC70\|FCA8" tools/riotbattle.py`: no match. Chunk 17 stays parked.
 
@@ -44,11 +60,43 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 | battle chunk 24 | ~~`tl/battle-024`~~ → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | ✅ **MERGED — PR #24, decision MERGE, squash `f1d1581`, integration commit `integrate: chunk 024 — glossary, flags, handoff`.** All 9 gates passed, every figure re-measured exact: **5,913 / 8,192 (2,279 slack)**, 2.0479× against a 2.9913× ceiling, 157 text rows (src 155), widest 23, **none at 24**, `{FFFE}` 132→134, `{FCC0}` 14→14. Gate 6 by the positional method over 28 files: **zero new divergences**. Glossary **§39**, FLAGS **§AA**. Nothing sent back — 6 PR figures corrected at merge (§39.3), no line changed |
 | battle chunk 25 | ~~`tl/battle-025`~~ → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | **2** | ✅ **MERGED — PR #23, decision MERGE at round 2, squash `68ba7f4`, integration commit `integrate: chunk 025 — glossary, flags, handoff`.** Round 1 = CHANGES, **2 findings, both fixed in ONE line and one commit, both accepted without counter-argument** and both re-verified by the translator against the tree. All 8 applicable gates re-run on `dacd7ab`: **5,403 / 8,192 (2,789 slack)** — the reviewer's predicted figure exactly, −16 B; 2.1367× against a 3.4837× ceiling; 129 text rows (src 124), widest **23**, ten at 23, **none at 24**, no page over 4; `{FFFE}` 101→106, `{FCC0}` 11→11, every other tag unchanged. Gate 6 positional over **29 files / 1,256 runs** with a live self-test: **0 obligations**. Glossary **§41**, FLAGS **§AC**. **14 PR figures corrected at merge, no line changed** |
 | battle chunk 26 | ~~`tl/battle-026`~~ → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **MERGED — PR #22, decision MERGE, squash `e96b259`, integration commit `integrate: chunk 026 — glossary, flags, handoff`.** All 8 applicable gates passed at round 1, nothing sent back. Figures re-measured **exact**: **5,325 / 8,192 (2,867 slack)**, 1.84× against a 3.357× ceiling, 139 text runs, widest **23**, **none at 24**, 0 pages over 4 rows, `{FFFE}` +3 (body L11, L14), `{FCC0}` unchanged, 18/18 ellipses exact. Gate 6 positional over 28 files: 279 JP messages, **0 divergences**; row grain 133 rows fully covered, 2 divergences both resolved in the unit's favour. ⭐ **The FIRST unit of the run needing NO figure correction at merge.** Glossary **§40**, FLAGS **§AB** |
-| script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
+| script batch 008 | ~~`tl/script-008`~~ → `tl/script/batch_008.tsv` | DATA **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **MERGED — PR #21, decision MERGE at round 1, squash `e8ad8c6`, integration commit `integrate: script batch 008 — glossary, flags, handoff`.** All 9 applicable gates passed, nothing sent back. Figures re-derived at review by moving the file aside and re-merging: bank 4 **11,781 → 10,179** (+1,602), bank 5 **3,357 → 2,007** (+1,350), banks 3/40 **byte-for-byte untouched**, no bank negative; **190 text rows, widest 23, twenty at 23, none at 24**; `{FFFE}` +1 on DATA 470 only, `{FCC0}` 19→19, non-`{FFFE}` tag stream byte-identical on all 47 lines. Gate 6 by column-2 grep **plus** a 2,282-pair segment scan over `tl/script`, `tl/battle` and `pending`: **0 exact-key collisions, 3 same-visible-text hits (the menu, all identical), 0 real divergences.** The three binding facts all hold: menu reused byte-for-byte, all 7 duplicate groups internally identical, all 7 `あら` → `Ｍｙ`. **Both §9 cross-unit rows struck here after reading the merged tree.** Glossary **§42**, FLAGS **§AD**. ⚠️ **5 PR figures corrected at merge, no line changed** — including one that changes an inherited decision (§AD6 #2) |
 
-✅ **BARRIER MET 2026-09-09 — all four units have open PRs (#21, #22, #23, #24).** Reviewing
-proceeds ONE reviewer at a time, in unit order: **~~24 (#24)~~ ✅ → ~~25 (#23)~~ ✅ MERGED at round 2
-→ ~~26 (#22)~~ ✅ → batch 008 (#21)**. **Next and LAST reviewer of wave 6: PR #21, script batch 008.**
+✅ **BARRIER MET 2026-09-09 — all four units had open PRs (#21, #22, #23, #24).** Reviewed ONE at a
+time, in unit order: **~~24 (#24)~~ ✅ → ~~25 (#23)~~ ✅ at round 2 → ~~26 (#22)~~ ✅ →
+~~batch 008 (#21)~~ ✅**. ⭐ **ALL FOUR MERGED, 0 PARKED. Wave 6 is complete and the coordinator's
+next act is step 6 (wave close) and then step 7 — open wave 7's session.**
+
+### ⚠️ WHAT THE PR #21 REVIEWER HANDS TO THE WAVE-7 COORDINATOR
+1. ⚠️ **BANK 5 IS NOW EFFECTIVELY FULL — 2,007 free, down from 3,357.** It joins 41 (353) and
+   40 (447) as a hard constraint, and it is **7 bytes** above the §6.5 reporting threshold.
+   ⚠️ **The wave-6 preflight already ruled out queue position 4 (329–332, 521–566) because it puts
+   ~3,351 JP chars into bank 5** — that was measured against 3,357 free and is now **doubly**
+   impossible. Re-verify every candidate batch's bank load **by instances** before dispatch.
+2. ⚠️ **Both §9 cross-unit rows are struck and the whole wave-6 §9 block is CLEAR.** Nothing is left
+   live from wave 6. Wave 7 seeds a fresh block.
+3. ⚠️ **A SEVENTH numbering convention surfaced, and this one is inside `FLAGS.md`.** §Z2 counts
+   `script_unique.txt` **FILE** lines; `batch_008.tsv`'s header, glossary §9's corrected wave-6
+   citations and §34 count **DATA** lines; the two differ by exactly **5**. Four of §Z2's "nine
+   untranslated" were this unit's own. §Z2 is patched. **State the convention beside any line
+   number** — in dispatches, in seeds and in FLAGS. See FLAGS §AD5.
+4. ⚠️ **A forward binding worth putting in the next dispatch**: four of this unit's messages have
+   **sibling unique rows with byte-identical visible Japanese and different keys** — the recruiter
+   menu (DATA 329, 330, 394, 400, 412 still untranslated), and DATA **326**, **535**, **403**.
+   Whoever takes them must copy the English byte-for-byte. FLAGS §AD4, glossary §42.5.
+5. ⚠️ **Two collisions recorded LIVE, neither re-cut**: `ｍｏｎｓｔｅｒｓ` on 魔物 **and** モンスター
+   inside one bank-5 scene (reserve `ｃｒｅａｔｕｒｅ`, and it is `魔物` that must move), and
+   `Ｉ　ｓｅｅ．` on `そうか。` **and** an untranslated bank-5 `なるほど` — the latter pre-existing,
+   because §30.3's discharge tested **chunks only, never banks**. FLAGS §AD2, §AD3.
+6. ❌ **Three of the wave-6 dispatch's claims did not survive measurement** and are recorded at
+   FLAGS §AD7: `大陸` does **not** owe byte-identity (the determiner follows the source, and chunk
+   25's is bare where this unit's are `この大陸`); **`王子様` referential is not this unit's** — it
+   is banks 1/20/40/41 and this unit is banks 4/5 with no `王子` at all; and §AB5's `Ｃａｐｔａｉｎ`
+   question is likewise not engaged. **Two of the three would have cost a round if acted on.**
+7. ⚠️ **A wrong width in a FORWARD note is worse than one in a summary.** The PR told chunk 15's
+   translator that `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` is 25 columns and does not fit; it is
+   **23** and it does. Corrected in glossary §42.1 before chunk 15 is dispatched. §AC3's method rule
+   held again on both sides: **every figure either party argued from was exact.**
 
 ### ⚠️ WHAT THE PR #23 REVIEWER HANDS TO PR #21's — read before reviewing batch 008
 1. ⚠️ **`末えい`'s §9 row is LEFT LIVE and is YOURS to strike.** Chunk 25 merged first of that pair
@@ -289,8 +337,11 @@ Battle: **18 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked
 exactly as chunk 17 did — 15, 23, 27, 28, 29, 39**; 16 and 32 are tier-A blocked. Dispatchable after
 wave 6: **30, 31, 36, 37, 38, 41, 42** — about **two more waves**.
 
-Script: **1,072 unique lines / 3,722 instances** untranslated after wave 6. ⚠️ **Banks 40 (447),
-41 (353), 2 (3,365) and 5 (1,866 after this wave) are the binding constraint**, not the queue.
+Script: **1,072 unique lines / 3,722 instances** untranslated after wave 6 (confirmed by `status`).
+⚠️ **Banks 40 (447), 41 (353), 2 (3,365) and 5 (⚠️ **2,007** — measured after PR #21's merge, not
+the 1,866 predicted) are the binding constraint**, not the queue. ⚠️ **Queue position 4 (329–332,
+521–566) was already excluded for putting ~3,351 JP chars into bank 5 against 3,357 free; against
+2,007 it is now impossible by a wider margin. Re-verify every candidate's bank load BY INSTANCES.**
 ⚠️ **Chunk 37 (a later wave) inherits `FLAGS.md` §Y6:** Cress's gender is fixed nowhere in
 `glossary.md` and rendered nowhere in `tl/`. A third-person line forces the pronoun.
 
@@ -389,6 +440,21 @@ and says so.
   "rather than letting four units each invent one" while three shipped renderings already disagreed
   with it. This is the other half of §Y3: a claim goes stale because the tree moved forward, **or**
   because it never looked backward.
+- 2026-09-09 (PR #21): **a co-occurrence discharge that tested CHUNKS is not a discharge.** §25.3's
+  stated standard is *no chunk **and no bank** contains both*, and §30.3's `Ｉ　ｓｅｅ．` discharge
+  counted chunks only — which is why bank 5 now holds two members of that family. Same shape as
+  §32.5's `メダル`. **Count both dimensions, and say which you counted.** `FLAGS.md` §AD3.
+- 2026-09-09 (PR #21): **a cross-unit term binds the fixed WORD, not the whole row.** `大陸` is
+  `ｃｏｎｔｉｎｅｎｔ` in both units and the determiner follows each source (`この大陸` → *this*, bare
+  `大陸` → *the*). A dispatch that demands byte-identity across two different source strings is
+  demanding a defect. §AD7.
+- 2026-09-09 (PR #21): **state the numbering convention beside every line number.** A **seventh**
+  convention surfaced — `FLAGS.md` §Z2 counts `script_unique.txt` FILE lines where the wave-6
+  documents count DATA lines, exactly +5 apart, and four of §Z2's "untranslated" lines were the
+  reviewed unit's own. `FLAGS.md` §AD5.
+- 2026-09-09 (PR #21): **a wrong width in a FORWARD note costs more than one in a summary**, because
+  the next unit budgets from it. `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` was written as 25 (does not
+  fit) and is **23** (does). Corrected before chunk 15 is dispatched. §AD6.
 - 2026-09-09 (PR #23): **every column figure that reaches a PR body, a glossary row or a FLAGS entry
   goes through `len()`.** `FLAGS.md` §AC3. Across two rounds and two agents, **every figure either
   party argued from was exact and every wrong one was a table cell typed rather than measured** —
