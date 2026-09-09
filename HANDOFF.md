@@ -181,6 +181,26 @@ repacks fixed defects neither party had claimed: an orphaned `ａｍ` (§3.2), a
 leading-blank + 4 text rows = 5, now 4 and inside the box. **No round-1 edit touches a cross-unit
 term, so chunk 20 still needs no re-cut.**
 
+### ✅ `あら` IS RULED (chunk 20's review, PR #14) — and §28.3 is corrected
+→ **`Ｍｙ` + the source's own punctuation.** §24.4 already spent `Ｏｈ？` on おや across **29
+occurrences**, so `Ｏｈ` cannot take a fourth string. §28.3's claim that "the alternative
+`Ｏｈ　ｍｙ，` is also free" is **struck as false** — `chunk_011` L3 ships it for `あら、` itself —
+with a full 12-row census recorded. This settles the question **both** chunk 20 and batch_006
+raised independently, and it binds batch_006's review (PR #15).
+
+⚠️ **OWED WORK, deliberately deferred to a §27-style corrections unit — put it in wave 5's queue:**
+the `あら` re-cut of four shipped rows — `chunk_007` L19 and L24, `chunk_011` L3, `chunk_014` L3 —
+all width-neutral or −6 bytes. It was not applied now because PR #15 is open on the same question
+and chunk 19 was mid-rework. **Nothing shipped is wrong in a way that breaks a gate; this is
+consistency debt with a known, measured fix.**
+
+⚠️ **`勲章`'s §25.3 discharge was WITHDRAWN at that review.** Chunk 20's PR claimed the
+co-occurrence test passed (never in one scene); the reviewer measured its true reach — **4 battle +
+59 script-dump / 39 script-unique**, the plot item `獅子の勲章` — and found **banks 42 and 43 hold
+both `勲章` and `メダル`**, so the test **fails**. Recorded as a live collision, with `ｔｏｋｅｎ`
+reserved on the racetrack side. The merge stands; the collision is now documented rather than
+believed discharged.
+
 ### ⚠️ A REVIEWER CORRECTED THE PREVIOUS REVIEWER'S RULING — same wave, one hour apart
 Reviewer 1 added **glossary §31.3** (`まさか` → `Ｓｕｒｅｌｙ`) while merging chunk 18. Reviewer 2,
 reviewing chunk 19, found it **over-broad, and chunk 19's non-conforming rendering to be the
