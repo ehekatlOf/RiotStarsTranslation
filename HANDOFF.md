@@ -32,15 +32,16 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > Omit `environment_id` and `model` so both inherit. Wave 5's units are in **Next up**.
 
 ## Last updated
-2026-09-08 · by: **chunk-18 reviewer** (PR #13 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
-wave: **4 IN FLIGHT — 1 of 4 merged, 3 awaiting review** · queue: **fresh**
+2026-09-09 · by: **chunk-20 reviewer** (PR #14 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
+wave: **4 IN FLIGHT — 2 of 4 merged (18, 20); 19 in rework awaiting round 2; script 006 unreviewed**
+· queue: **fresh**
 
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **19** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, 33, 34, 35, 40 |
-| Battle JP characters | **14,525** | 43,161 | **33.7%** (was 32.2% at wave-4 start) |
+| Battle chunks | **20** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, **20**, 33, 34, 35, 40 |
+| Battle JP characters | **15,257** | 43,161 | **35.3%** (was 32.2% at wave-4 start) |
 | Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
 | Script message instances | 4,039 | 7,931 | **50.9%** |
 
@@ -52,26 +53,31 @@ Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifac
 ✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
 unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
-**Reviewer 1 DONE — chunk 18 MERGED. Reviewer 2 DONE — chunk 19 CHANGES round 1, rework in
-flight. Reviewer 3 dispatched on PR #14 (chunk 20).** A translator *reworking* does not occupy the
-reviewer slot, so a sibling PR may be reviewed meanwhile — but never two reviewers at once.
+**Reviewer 1 DONE — chunk 18 MERGED. Reviewer 2 DONE — chunk 19 CHANGES round 1, rework pushed.
+Reviewer 3 DONE — chunk 20 MERGED round 1 (`46b728a`), integrated.** A translator *reworking* does
+not occupy the reviewer slot, so a sibling PR may be reviewed meanwhile — but never two reviewers
+at once. **The reviewer slot is now FREE.** Two units remain: **PR #16 round 2** (chunk 19, rework
+`e14811d` pushed and waiting) and **PR #15** (script batch 006, never reviewed). Review them one at
+a time; #16 round 2 should go to the same reviewer if it is still alive, since it holds that
+unit's context.
 
-⚠️ **THE MERGE ORDER OF THE TWO CROSS-UNIT CHUNKS HAS FLIPPED.** Reviewer 2 assumed chunk 19 would
-merge first and therefore **left the §9 wave-4 seed rows LIVE**. Chunk 19 is now in rework, so
-**chunk 20 will very likely merge FIRST** — which makes chunk 20 the *first* of the two, so its
-reviewer must **also leave the rows live**, and **chunk 19's re-review strikes them as the second**
-(the `ルート` precedent, §29.1/§30.1). Whoever merges second strikes; it is not chunk-20's-job by
-name.
+✅ **THE CROSS-UNIT MERGE ORDER IS SETTLED: chunk 20 merged FIRST (2026-09-09), so it LEFT THE §9
+SEED ROWS LIVE — and CHUNK 19 STRIKES THEM as the second** (the `ルート` precedent, §29.1/§30.1).
+Chunk 20's reviewer verified in the file that all four cross-unit terms were used **exactly as
+seeded** (`Ａｒｉｅｓ` ×3, `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ`, `Ｈｕｇｏ`, the long
+`Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ`) and annotated the §9 block with that status. **Chunk 19's round-2
+reviewer owns the strike** — including the fifth term `宝石`, which the seed missed.
 
-⚠️ **SECTION NUMBERS: reviewer 2 holds an UNPUSHED §32** (narrowing `まさか`, below) that it will
-write at its post-rework integration. It re-reads before writing, and so must reviewer 3 — whoever
-commits first takes §32 and the other takes §33. **Read at commit time; never reserve.**
+✅ **SECTION NUMBERS ARE SETTLED FOR THIS PAIR: chunk 20's integration committed first and took
+§32 / `FLAGS.md` §T. Chunk 19's round-2 integration takes §33 / §U**, and PR #15's takes §34 / §V.
+Reviewer 2's unpushed draft (narrowing `まさか`, below) must be renumbered to **§33** before it is
+written. **Still: read the last heading at commit time; never reserve.**
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | 🔄 **REWORK PUSHED `e14811d` — 8,065 / 8,192 (127 slack), all 4 findings accepted, none contested. Round-2 re-review QUEUED behind reviewer 3** (same reviewer `a7e69858f22822022`, which holds an unpushed §32). Round 1 was: All mechanical gates re-verified by recomputation and clean (8,067 / 8,192; five `{FFFE}`; `{FCC0}` 24→24; gate 6 clean). **Fails gate 7 only**: `ウルフ` → `Ｗｏｌｆ` collides with `ｗｏｌｆ` already shipped 3× in `batch_003.tsv` for 狼 (21 instances) — the §28.5 “reads as an English common word” failure, worst where the character announces himself by name. 4 findings, all byte-neutral or byte-positive → 8,065 / 8,192 (slack 127) |
-| battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
+| battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **MERGED round 1** (squash `46b728a`), integrated by `integrate: chunk 020 — glossary, flags, handoff (PR #14)`. **4,265 / 8,192 (3,927 slack); 94 text rows, widest 23, none at 24**; three `{FFFE}` added on two lines, none deleted, **no `{FCC0}`**; all 48 other body lines byte-identical to the dump. All §6 gates run in a real checkout and pasted; **every figure in the PR was correct as stated** and **no finding required a change to the unit**. **All five open questions ruled** (see below). 24 rows integrated as **glossary §32**; **`FLAGS.md` §T**. ⚠️ **Two items of owed work left behind, both in `FLAGS.md` §T1/§T2** — the `あら` re-cut of chunks 7, 11, 14, and the live `勲章`/`メダル` collision in banks 42–43 |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 
 ⚠️ **The script unit is `queue.py` batch POSITION 2, written to `batch_006.tsv`** — `batch_002.tsv`
@@ -85,19 +91,37 @@ c20 has 宝石 ×4 and 宝 ×7 (incl. お宝 ×2); c31 ×1 is untranslated. **Ch
 **147×** across `tl/`. Relayed to chunk 19's translator mid-flight with the counts; chunk 19 is
 tier B and holds the casting vote on width, and chunk 20 can be moved to match at no cost.
 
-**Chunk 20's five open questions for its reviewer** (from PR #14, in its priority order):
-1. `あら？` → `Ｍｙ？` (§28.3, the later ratified rule) **vs shipped `chunk_014.txt` L3's `Ｏｈ？`** —
-   and it is the **same speaker** (portrait 02) in both. §28.3 exists precisely because `Ｏｈ` was
-   already spent on おや (§24.4). §3 is not engaged (different messages), so nothing shipped needs
-   re-cutting either way — but `あら` has **16 further occurrences**, so this needs one written
-   ruling rather than a third drift.
-2. `宝石` / `宝` reconciliation with chunk 19 (above).
-3. `火の水晶`: chunk 20 took the long `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ`; −6 bytes and no re-flow to
-   follow chunk 19 to the short form.
-4. `おかしらぁ！` → `Ｂｏｓｓｓ！` or `Ｂｏｓｓ！！`. 0 bytes either way.
-5. `勲章` → `ｍｅｄａｌ` now **shares its English with §3's racetrack `メダル`** → `ｍｅｄａｌ`, shipped
-   in `batch_002.tsv`. The seed did not mention it; ruled acceptable on §25.3's co-occurrence test
-   (never in one scene), but it should be recorded rather than rediscovered.
+**Chunk 20's five open questions — ALL RULED at PR #14's review, 2026-09-09.** Detail in
+`glossary.md` §32.4–§32.6 and `FLAGS.md` §T. **The unit changed on none of them.**
+1. ✅ **`あら` takes `Ｍｙ` + the source's own punctuation (§32.4).** §28.3 upheld and extended;
+   chunk 20's `Ｍｙ？` / `Ｍｙ．．．？` stand. Decided on the corpus, not the five sample points: the
+   full census is **12 `あら` rows in the battle dump (chunks 7, 8, 11, 13, 14, 16, 20 ×2, 27, 29)
+   + ~30 script** — larger than §28.3's "16". The same-speaker argument (portrait 02) is real but
+   argues only for *one* form; **§24.4 settles which, because it already spent `Ｏｈ？` on おや
+   outright across 29 occurrences**, so `chunk_014`'s `あら？` → `Ｏｈ？` is byte-identical to a
+   different fixed source word. ⚠️ **§28.3's "the alternative `Ｏｈ　ｍｙ，` is also free" is FALSE
+   and is struck** — `chunk_011` L3 ships it **for `あら、` itself**. ⚠️ **OWED: four rows in three
+   shipped files must move (`chunk_007` L19 + L24, `chunk_011` L3, `chunk_014` L3), all
+   width-neutral or −6 bytes — `FLAGS.md` §T1 carries the table.** Deliberately not done inside a
+   battle-chunk merge with PR #15 open on the same question and chunk 19 in rework; it is a §27
+   corrections-unit job. **This ruling binds PR #15 and chunk 19 from now.**
+2. ✅ **`宝石` → `ｇｅｍｓｔｏｎｅ(ｓ)` conforms** to chunk 19's reviewer's ruling; `ｇｅｍｓｔｏｎｅ`
+   verified free across `tl/`, `ｇｅｍ` only in `batch_003` (§4's lowercase brow-gem), `Ｇｅｍ` the
+   pickup — no collision. `宝`/`お宝` → `ｔｒｅａｓｕｒｅ` free and held distinct.
+3. ✅ **`Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` (15), the long form, stands.** Still reversible: if chunk 19
+   (tier B) is forced to `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` (12), chunk 20 follows at −6 bytes on a standalone
+   row with 3,927 bytes of slack. **Chunk 19's re-reviewer must check this.**
+4. ✅ **`Ｂｏｓｓｓ！` stands; `Ｂｏｓｓ！！` rejected (§32.6).** Not on width — both are 6 — but on §5:
+   the source has **one** `！` and carries the lengthening in the kana `ぁ`, so `Ｂｏｓｓ！！` would
+   invent a mark the source lacks *and* discard the beat it has.
+5. ⚠️ **`勲章`/`メダル` — the rendering stands, the discharge does NOT (§32.5, `FLAGS.md` §T2).**
+   The PR and the §9 seed both said "**2 battle**"; it is **4 battle (20, 22) + 59 `script_dump` /
+   39 `script_unique`**, and `勲章` is the plot item **`獅子の勲章`** — the King's decoration and
+   Fernando's forged coup. §25.3's test as this project states it ("no chunk and **no bank**
+   contains both") is **NOT met**: `メダル` is in banks 42–43 and `勲章` is in 42–43 among many.
+   **0 messages hold both**, so nothing is unreadable and nothing is re-cut — but the collision is
+   **live** for whoever takes banks 42–43. Reserve: **`ｔｏｋｅｎ`** (5 columns, free), moving the
+   **racetrack** side under §4.3 with `batch_002.tsv` named.
 
 ⚠️ **Chunks 19 and 20 share four terms** (`火の水晶`, `アリエス`, `カバラ`, `ヒューゴー`). Both
 translators were seeded with the same forms (`glossary.md` §9, wave-4 block); CLAUDE.md §3 requires
@@ -105,10 +129,19 @@ byte-identical English. The seed row is struck by the **second** of the two revi
 ⚠️ Chunk 18 rendered **none** of the fifteen wave-4 seeds (verified, all zero), so PR #13's merge
 left every one of those rows live — the cross-unit rule is untouched by it.
 
-### ⚠️ WHAT REVIEWERS 2–4 INHERIT FROM PR #13 (chunk 18, merged 2026-09-08)
-Detail in `glossary.md` §31 and `FLAGS.md` §S. Section numbers were taken at commit time:
-**glossary now ends at §31, `FLAGS.md` at §S** — reviewers 2–4 take §32/§T, §33/§U, §34/§V in
-merge order, re-reading both files first.
+### ⚠️ WHAT THE REMAINING REVIEWERS INHERIT FROM PRs #13 AND #14
+Detail in `glossary.md` §31 (chunk 18) and **§32 (chunk 20)**, `FLAGS.md` §S and **§T**. Section
+numbers were taken at commit time: **glossary now ends at §32, `FLAGS.md` at §T** — chunk 19's
+round 2 takes **§33/§U** and PR #15 takes **§34/§V**, re-reading both files first.
+
+**From PR #14 (chunk 20), binding on both remaining units:** `あら` → **`Ｍｙ`** + the source's own
+punctuation (§32.4) — batch_006 already conforms; the `勲章`/`メダル` collision is **live in banks
+42–43**, reserve `ｔｏｋｅｎ` on the racetrack side (§32.5); `何だ、` is **not** a fixed form (§32.8);
+`ふふ` is not feminine-only and `ふふっ` joins it (§32.7); new fixed forms `Ｏｉ，` for おい、,
+`Ｓａｙ，` for ねえ、, `Ｙｏｕ’ｒｅ　ｒｉｇｈｔ．` for そうだな (**7 battle + 10 script — chunk 19 has
+one**), `Ｎｗｏｈ` for ぬおっ, `Ａｇｈ！` for ああっ！, `ｓｃａｒｐｅｒ` for ずらかる, `ｃｒｅｄｉｔ` for 手柄.
+**Chunk 19 also owns the strike of the five §9 cross-unit rows** — chunk 20 merged first and left
+them live.
 
 - **Chunk 19 (PR #16) — three direct inheritances.** (a) It carries **`守備兵` four times** (msgs
   3, 6, 7, 19); §2 fixes *garrison* / *garrison men* and `chunk_000` ships it, and it must stay
@@ -183,16 +216,31 @@ this is exactly the divergent-duplicate class wave 3's PR #9 existed to clean up
 existing deliberate split it must not break: capitalised `Ｇｅｍ` (147×) renders **ジェム**, a
 different Japanese word. **Chunk 31 inherits whatever is decided.**
 
-### ⚠️ TWO INDEPENDENT UNITS CONVERGED ON THE SAME UNSETTLED RULING — `あら`
+### ✅ RULED 2026-09-09 — `あら` takes `Ｍｙ` + the source's own punctuation
 Battle chunk 20 (PR #14) and script batch_006 (PR #15) raised this separately, from opposite ends
-of the corpus, neither knowing the other had. **It needs ONE written ruling, and `あら` has 16
-further occurrences riding on it.**
+of the corpus, neither knowing the other had. **Chunk 20's reviewer ruled it at that merge:
+`glossary.md` §32.4 and `FLAGS.md` §T1.** `Ｍｙ？` (3) / `Ｍｙ．．．？` (6) / `Ｍｙ，` (3).
 
-`glossary.md` §28.3 (line 1654) ratified `あら、` → `Ｍｙ，` and argued `Ｏｈ` was already spent
-(§24.4 gave おお、/ ほう、 → `Ｏｈ，` and おや → `Ｏｈ？`). **But §28.3 also asserts "The alternative
-`Ｏｈ　ｍｙ，` is also free" — and that is FALSE.** Verified independently by this coordinator:
-`Ｏｈ　ｍｙ，` is already shipped in `tl/battle/chunk_011.txt`. The reviewer who rules should correct
-that sentence as well as decide the form.
+**§28.3 is upheld and extended.** What decided it was not the count but that **§24.4 already spent
+`Ｏｈ？` on おや outright, across 29 occurrences (6 battle + 23 script)** — so `chunk_014`'s
+`あら？` → `Ｏｈ？` is byte-identical to a *different* fixed source word, and matching it would
+delete a member of §24.4's set. The same-speaker fact (portrait 02) is real and argues for making
+*one* form consistent; it does not choose which form.
+
+**The census, gathered at that review — larger than §28.3's "16 further occurrences":** **12 `あら`
+rows in the battle dump (chunks 7, 8, 11, 13, 14, 16, 20 ×2, 27, 29) + ~30 in the script.**
+
+✅ **§28.3's "The alternative `Ｏｈ　ｍｙ，` is also free" is FALSE and has been STRUCK** — and it is
+worse than recorded here: `Ｏｈ　ｍｙ，` is shipped in `chunk_011` L3 **for `あら、` itself**.
+
+⚠️ **OWED WORK — four rows in three shipped files, NOT yet applied.** `FLAGS.md` §T1 carries the
+table: `chunk_007` L19 (`Ｏｈ．．．．？`→`Ｍｙ．．．．？`, 0 bytes), `chunk_007` L24
+(`Ｏｈ，　ｓｎｏｗ．．．？`→`Ｍｙ，　ｓｎｏｗ．．．？`, 0), `chunk_011` L3
+(`Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？`→`Ｍｙ，　ｖｉｓｉｔｏｒｓ？`, −6), `chunk_014` L3 (`Ｏｈ？`→`Ｍｙ？`, 0).
+All width-neutral or shorter; both files have ample slack (chunk 7: 399, chunk 11: 6,625). Left to
+a §27-style corrections unit rather than done inside a battle-chunk merge while PR #15 was open on
+the same question and chunk 19 was in rework. **Re-run `check` and `rowcheck` on 7, 11, 14 after.**
+**PR #15's reviewer: batch_006 already ships `Ｍｙ，`, so it conforms — merge on this point.**
 
 The five segment-checked data points batch_006 assembled:
 
@@ -204,9 +252,11 @@ The five segment-checked data points batch_006 assembled:
 | `chunk_013.txt` L4 | `あら、` | `Ｍｙ，` (§28.3's ratified form) |
 | `chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (line-level only) |
 
-⚠️ **`chunk_014.txt` L3 and chunk 20's instances are the SAME SPEAKER** (portrait 02). §3 is not
-engaged anywhere — all are different messages — so **nothing shipped needs re-cutting** whichever
-way it goes. Batch_006 follows the glossary and ships `Ｍｙ，`; chunk 20 ships `Ｍｙ？`.
+⚠️ **`chunk_014.txt` L3 and chunk 20's instances are the SAME SPEAKER** (portrait 02) — §21.4 /
+§25.5's unnamed female companion, "the one who notices", and both `あら` lines in chunk 20 are
+hers. §3 is not engaged anywhere — all are different messages — so **no re-cut is forced**; the
+four rows above move for house consistency under §4.3, not because a gate demands it. Batch_006
+ships `Ｍｙ，` and chunk 20 ships `Ｍｙ？` / `Ｍｙ．．．？`: **both already conform to the ruling.**
 
 ### batch_006's other open items
 - ⚠️ **`{FFEC}` insert widths — needs the disc, not a reviewer** (`FLAGS.md` §C4). **Both gates strip
@@ -336,11 +386,22 @@ banks (518–1,413) is what remains dispatchable; `queue.py script` offers batch
 - 2026-09-08: **the `queue.py` batch POSITION is not the filename.** Wave 4's unit was position 2
   and became `batch_006.tsv`; `batch_002.tsv` has been merged since wave 1.
 
-**Rulings live in their homes, not here**: `glossary.md` §23–§30, `FLAGS.md` §K–§R,
+- 2026-09-09 (chunk 20, PR #14): **a co-occurrence discharge is only as good as its counts.** The
+  §9 seed said `勲章` was "2 battle"; it is **4 battle + 59 script-dump** and a named plot item, and
+  §25.3's test — *no chunk and no bank* — **fails** on banks 42–43. The rendering was still right.
+  Count the corpus before writing "never in one scene"; a wrong reach figure turns a live collision
+  into a closed one on paper (`FLAGS.md` §T2).
+- 2026-09-09 (chunk 20, PR #14): **a reviewer may rule a cross-file question without re-cutting the
+  outliers in the same commit.** The `あら` ruling binds immediately; the four shipped rows it
+  invalidates are recorded with lines and measured costs and left to a §27-style corrections unit,
+  because two sibling PRs were in flight on the same question. Recording with the lines named is
+  what §4.3 requires; applying them mid-wave is not.
+
+**Rulings live in their homes, not here**: `glossary.md` §23–§32, `FLAGS.md` §K–§T,
 `findings.md` §24, `pending/README.md`. Wave 3 added §27–§30 and §O–§R; **wave 4 has added
-glossary §31 and `FLAGS.md` §S so far (chunk 18, PR #13)**. ⚠️ **Section numbers are taken by
-reading both files at commit time, never reserved in advance** — reviewers 2–4 take the next free
-ones in merge order.
+glossary §31 / `FLAGS.md` §S (chunk 18, PR #13) and glossary §32 / `FLAGS.md` §T (chunk 20,
+PR #14)**. ⚠️ **Section numbers are taken by reading both files at commit time, never reserved in
+advance** — chunk 19's round-2 integration takes **§33 / §U** and PR #15's takes **§34 / §V**.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |

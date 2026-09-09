@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions), 984–1001 and 1040–1047 (batch 005), and `battle_dump.txt`
-chunks **0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 33, 34, 35, 40** (prologue + chapters
+chunks **0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 20, 33, 34, 35, 40** (prologue + chapters
 2–5 + all of tier E), plus the parked **5, 17, 43**. ⚠️ **This line was stale and is corrected
 2026-09-08 (PR #13 review): it omitted chunks 6, 8, 9, 13 and 17, all merged or parked in waves
 2–3.** It is a coverage note, not a fixed entry — no rendering changes and nothing needs
@@ -313,6 +313,18 @@ across files, so **both translators must render these exactly as seeded here** r
 choosing. Per the `ルート` precedent (§29.1/§30.1) the row is struck once, by the **second** of the
 two reviewers to merge — the first deliberately leaves it live.
 
+⚠️ **STATUS 2026-09-09 — chunk 20 (PR #14) merged FIRST, so all four rows below are DELIBERATELY
+LEFT LIVE.** Verified at that review, in the file: `アリエス` → `Ａｒｉｅｓ` ×3, `盗賊カバラ` →
+`ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` ×1, `ヒューゴー` → `Ｈｕｇｏ` ×1, `火の水晶` →
+`Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` ×1 (**the long form**) — **all four used exactly as seeded, none improved
+on unilaterally.** Chunk 19 (PR #16) was still open and in rework when this merged; **it merges
+second and strikes these four rows.** ⚠️ **A FIFTH term belongs on this list and the seed missed
+it: `宝石`** (c19 ×1, c20 ×4, c31 ×1), with `宝` / `お宝` beside it — ruled `ｇｅｍｓｔｏｎｅ` by chunk
+19's reviewer and shipped consistently by chunk 20; see §32.1. ⚠️ **If chunk 19 (tier B, 1.94)
+cannot fit `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` (15) and takes `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` (12), chunk 20 must follow
+it** — that row is standalone with 3,927 bytes of slack behind it, so the change is −6 bytes and
+re-flows nothing.
+
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
 | アリエス | `Ａｒｉｅｓ` | **CROSS-UNIT — chunk 19 L1, chunk 20 L47/L48 (×3).** A **PERSON**, female, and a travelling performer: asked `アリエスさんは、ファリーナは初めて？` she answers `いいえ。旅の巡業で何度か来たことが。` (*no — I have come a few times, touring*). Polite です/ます register. **11 battle + 9 script occurrences — the most-used new name in this wave.** 5 columns | Ａｒｉｅｓｕ, Ａｌｉｅｓ. The zodiac reading is the plain one and matches the European convention |
@@ -321,11 +333,11 @@ two reviewers to merge — the first deliberately leaves it live.
 | ノーマン | `Ｎｏｒｍａｎ` | chunk 19 ×1 (`ほう。ノーマン、よければ、話して差し…`). A **PERSON**, male, of Farina; the main script has him leading the rebuilding afterwards (`今は、ノーマンさんたちがふっこーにはげん…`). **1 battle + 3 script.** 6 columns | Ｎｏｒｍａｎｎ |
 | カバラ | `Ｋａｂａｌａ` | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** A **PERSON**, male, a **dead bandit** whose hoard is this chapter's object: `カバラという盗賊の手に渡ったと聞きます`, `そのカバラも帝国に追われて、もうこの世に…`, `このカバラの財宝を捜しているトレジャーハンター`, `これも、盗賊カバラのお宝のひとつか。` `盗賊カバラ` → `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` (17 columns). **5 battle + 0 script.** 6 columns bare | Ｃａｂａｌａ, Ｋａｂｂａｌａ. ⚠️ カバラ is also the standard Japanese for *Kabbalah*; the `ネルガリ` → `Ｎｅｒｇａｌｉ` precedent (§17.4) chose the plain transliteration over the mythological source, and this row follows it |
 | 火の水晶 / 『火の水晶』 | `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”` | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** The chapter's plot object, and **an inventory item whose description line is a 21-instance row of the untranslated description table**: `ファリーナに伝わる伝説の水晶。炎のような美しい光を放つ。` (*a legendary crystal handed down in Farina; it gives off a beautiful light like flame*). Chunk 19 carries one instance in `『』` and the rest bare. `『…』` → `“…”` per `『知識の書』` (§12). **5 battle + 22 script.** 15 columns bare, **17 quoted** | `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` (12 bare / 14 quoted) if width bites — but chunk 20 is tier D (ratio 4.75) and chunk 19 tier B (1.94), so ⚠️ **chunk 19 is the one that may need the short form; if it takes it, chunk 20 must take it too.** The `Ｘ　ｏｆ　Ｙ` form matches the `Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ` precedent for `〜の〜` |
-| バーストウーズ | `ｂｕｒｓｔ　ｏｏｚｅ` | chunk 20 L2 — a monster that has just killed a soldier (`バーストウーズに仲間がやられました！`). **Lowercase** by the §17.1 species test, and derived from the already-fixed `グレイウーズ` → `ｇｒｅｙ　ｏｏｚｅ` (§17.4) — same ウーズ class, same treatment. **1 battle + 0 script.** 10 columns | Not `Ｂｕｒｓｔ　Ｏｏｚｅ`; not *bursting*. If the reviewer prefers, `ｂｕｒｓｔｉｎｇ　ｏｏｚｅ` (14) — but バースト is the noun-form loanword |
+| ~~バーストウーズ~~ | ✅ **PROMOTED to §32.1** — `ｂｕｒｓｔ　ｏｏｚｅ`, lowercase, rendered in `tl/battle/chunk_020.txt` (PR #14), **used exactly as seeded**; 10 columns confirmed at review. ⚠️ **This row's citation was wrong: the `グレイウーズ` → `ｇｒｅｙ　ｏｏｚｅ` precedent is at §17.2, not §17.4.** The derivation is unaffected | battle chunk 20 | — |
 | トレジャーハンター | `ｔｒｅａｓｕｒｅ　ｈｕｎｔｅｒ` | chunk 19 ×1 — the people hunting Kabala's hoard in Marvellous. **Lowercase**: a trade, by the §17.1 species test and the `探検家` → `ｅｘｐｌｏｒｅｒ` precedent (§21.1). ⚠️ **In the dump it is SPLIT across a line break** — `トレジャー|ハンター` — so a naive grep for the whole word finds zero. **1 battle + 0 script.** 15 columns | — |
 | 傭兵団 | `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ` | chunk 19 L3 ×2 — `どうやら、傭兵団のようだな。` **2 battle + 0 script.** 14 columns | `ｍｅｒｃｅｎａｒｙ　ｃｏｍｐａｎｙ` (17), `ｍｅｒｃｅｎａｒｉｅｓ` (12) where the 団 is not doing work |
-| おかしら (vs 将校 / 将軍) | `Ｂｏｓｓ` — **and the gag must survive** | chunk 20 L2. A running joke: the subordinate calls him `おかしら` (×5 in the chunk), and he explodes — `バカもん、わしは帝国の将校だぞ！将軍とよばんか、将軍と！！` **The joke is that three different words must stay three different words.** `将軍` → `Ｇｅｎｅｒａｌ` is already fixed (§26.2, 7 columns); `将校` → `ｏｆｆｉｃｅｒ` (7); `おかしら` → `Ｂｏｓｓ` (4). ⚠️ If `おかしら` is rendered *Chief* or *General* the exchange collapses into nonsense. **c18 ×1 / c20 ×2 for 将軍.** | `Ｃｈｉｅｆ` (5) for おかしら — equally good, but then check it against nothing else in the chunk |
-| 勲章 | `ｍｅｄａｌ` | chunk 20 L47/L48 ×2 — dug up beside the jewels, `勲章のようだな。` **2 battle.** 5 columns | `ｄｅｃｏｒａｔｉｏｎ` (12) is the formal sense but too long and too vague here |
+| ~~おかしら (vs 将校 / 将軍)~~ | ✅ **PROMOTED to §32.1** — `Ｂｏｓｓ` (4) and `将校` → `ｏｆｆｉｃｅｒ` (7), rendered in `tl/battle/chunk_020.txt` (PR #14), **the seed's primary form taken over its `Ｃｈｉｅｆ` alternative**. ⚠️ **The gag SURVIVED and was read against the source at review** — `Ｙｏｕ　ｆｏｏｌ，` / `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ` / `Ｅｍｐｉｒｅ！　Ｃａｌｌ　ｍｅ` / `Ｇｅｎｅｒａｌ！　Ｇｅｎｅｒａｌ！！`, three words still three words, the doubled repeat kept. See §32.4a | battle chunk 20 | — |
+| ~~勲章~~ | ✅ **PROMOTED to §32.1** — `ｍｅｄａｌ`, rendered ×2 in `tl/battle/chunk_020.txt` (PR #14); 5 columns confirmed. ⚠️ **This row's reach was badly wrong and its silence on `メダル` cost a review: it is 4 battle (chunks 20 and 22) + 59 `script_dump` / 39 `script_unique`, not "2 battle", and it is the plot item `獅子の勲章` / `『獅子の勲章』`.** The clash with §3's racetrack `メダル` → `ｍｅｄａｌ` is **LIVE in banks 42 and 43** and is NOT discharged — see §32.5 | ~~chunk 20 L47/L48 ×2 — dug up beside the jewels~~ | `ｄｅｃｏｒａｔｉｏｎ` (12) rejected as too vague; `ｔｏｋｅｎ` (5) is the reserve, on the **racetrack** side |
 | デビルズラック | `“Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ”` | **script batch 002, unique 631** — an item pressed on the player by a grateful NPC (`これを　もらってくれ！デビルズラックだ！！`). A coined item name, so capitalised. ⚠️ **`’` not `'`** (§3.1). **0 battle + 1 script.** 14 columns quoted, 12 bare | `Ｄｅｖｉｌｓ　Ｌｕｃｋ` (11) if the apostrophe proves awkward at width; the source has no `『』`, so the quotes are optional — **prefer bare `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ`** unless the line reads as a title |
 | オイラ | first person, **rustic register — not a word to translate** | **script batch 002, unique 632 ×4** — a cheerful odd-job lad: `オイラは、見てのとおりハッピーさ！オイラ、ここで下働きしてるのさ！` Carry it as §7 register (dropped subjects, `ｓａ`-ish breeziness, contractions), **not** as a rendered pronoun or an accent spelling. Compare §21.2's さん rule: politeness with no English lexical equivalent goes into word choice | Do **not** write dialect spelling (`Ｏｉ’ｍ`, `Ａｈ`); §2 forbids inventing |
 | ハッピー | `ｈａｐｐｙ` | **script batch 002, unique 632 ×2** — `その後どうだい？ハッピーかい？` … `見てのとおりハッピーさ！` The speaker is using the **English loanword** as slang, and the joke is that he keeps saying it. Render it *happy* both times so the repetition survives. **0 battle + 4 script.** 5 columns | — |
@@ -2224,3 +2236,234 @@ was added** — `FLAGS.md` §Q2's documented gate defect was not rediscovered.
 `貴官もな。` → `Ｙｏｕ　ｔｏｏ．` Rimul uses the informal `お前` to Guilford in one breath
 (`お前がいてくれれば`) and the formal `貴官` in the next; English has one *you* and the shift is not
 renderable. Recorded, not acted on.
+
+---
+
+## 32. Added by chunk 020 (PR #14, merged 2026-09-09)
+
+Rendered in `tl/battle/chunk_020.txt` — chapter 20, the treasure dig at Farina, in six scenes: a
+self-important would-be Imperial officer gloats that his rival Hugo is searching in the wrong
+place; a burst ooze kills one of his men and he explodes at being called *Boss*; the 9th Army
+arrives and he orders them scattered; the party finds the Crystal of Fire first and runs; the
+bandits reach the site to find their chief dead (or alive, in the alternative outcome) and scarper
+with the hoard; and in the two closing variants the party — or the enemy — digs a medal out of the
+ground beside the gemstones, one of the bandit Kabala's treasures. **4,265 / 8,192 bytes, slack
+3,927 — 94 text rows, widest 23, none at 24**, no page over 4 text rows the source did not already
+exceed. Merged at **round 1**, with zero findings requiring a change to the unit.
+
+⚠️ **This section claimed §32 at commit time.** Chunk 19's reviewer held an unpushed draft for the
+same number; this commit landed first, so **chunk 19 takes §33**. Read the last heading immediately
+before writing, never reserve — wave 3 lost work to two reviewers both holding §28.
+
+⚠️ **Line numbers below are `tl/` FILE lines** (the `=== CHUNK` header is line 1), so the ten
+text-bearing messages are file lines 2, 3, 4, 29, 31, 32, 34, 47, 48 and 49. That is §31's
+convention and the **fifth** numbering convention in this repo. **Locate by content.**
+
+`Ｆａｒｉｎａ` / `Ｃａｒｌｉｎｅ` / `Ｒｏｙａｌ　Ａｒｍｙ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2), `Ｇｕｉｌｆｏｒｄ` (§1),
+`Ｇｅｎｅｒａｌ` (§26.2), `Ｔｒｕｌｙ，` (§28.3), `Ｒｉｇｈｔ，` (§6, §24.3), `Ｙｅａｈ` for ああ (§6),
+`Ｙｅｓ，` for うん (§29.3), `Ｗｈａｔ．．．？` for あれ (§21.2), `Ａａｈ，` (§23.2), `Ｆｕｆｕ，` (§12.3),
+`Ｈｍ？` (§6) and `Ｙｏｕ　ｆｏｏｌ` for the バカ vocative (§28.3) are used unchanged.
+**`まさか` is absent from this chunk** (counted in the dump body), so §31.3's known-over-broad
+`Ｓｕｒｅｌｙ` ruling is not engaged here and this unit neither applies nor tests it.
+
+### 32.1 People, ranks, creatures and items — four promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| おかしら | `Ｂｏｓｓ` | 4 columns. **Promoted from §9 (wave-4 seed), taking the seed's primary form over its `Ｃｈｉｅｆ` (5) alternative.** The bandit crew's address to their chief, **×5 in this chunk** (file lines 3, 31 ×3, 32), byte-identical every time; **0 script occurrences**, confirmed at review. Held clear of §9's `親方` → `ｔｈｅ　ｂｏｓｓ`: verified at review that lowercase `ｂｏｓｓ` occurs **nowhere** in `tl/` or `pending/`, and that `親方` is **not** in shipped `batch_002.tsv` — it belongs to a future batch, so the two forms have never met |
+| おかしらぁ！ | `Ｂｏｓｓｓ！` | 6 columns. The drawn-out cry to a chief who does not answer (file line 31). **Ruled at review — see §32.6.** The extra kana beat takes an extra letter, per §29.3's くーっ → `Ｔｃｈｈ` and §26.5's ふーむ → `Ｈｍｍ` |
+| 将校 | `ｏｆｆｉｃｅｒ` | 7 columns. **Promoted from §9.** `わしは帝国の将校だぞ！` → `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ` / `Ｅｍｐｉｒｅ！`. **1 battle + 0 script.** Held apart from §26.2's 将軍 → `Ｇｅｎｅｒａｌ` and §2's 隊長 / 少尉 / 中尉 — the gag depends on it (§32.4a). ⚠️ **Recorded at review and omitted by the PR: `ｏｆｆｉｃｅｒ` is not free** — `chunk_001` already ships `ａ　ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ，` for a different source word. Different collocation, different message, no collision; recorded so it cannot drift |
+| 勲章 | `ｍｅｄａｌ` | 5 columns. **Promoted from §9.** `勲章のようだな。` → `Ｌｏｏｋｓ　ｌｉｋｅ　ａ　ｍｅｄａｌ．` ×2, byte-identical. ⚠️ **Both the seed's and the PR's reach figure ("2 battle") are wrong, and the メダル collision is LIVE, not discharged — see §32.5** |
+| バーストウーズ | `ｂｕｒｓｔ　ｏｏｚｅ` | 10 columns. **Promoted from §9, used exactly as seeded, lowercase** by the §17.1 species test, derived from `グレイウーズ` → `ｇｒｅｙ　ｏｏｚｅ`. ⚠️ **That precedent is at §17.2, not §17.4** — the seed mis-cited it and the PR inherited the citation; the derivation is unaffected. **1 battle + 0 script** |
+| ギルフォード様 | `Ｌｏｒｄ　Ｇｕｉｌｆｏｒｄ` | 13 columns. 様 → **Lord** for a male superior, per §1's ヘルファー様 → `Ｌｏｒｄ　Ｈｅｌｆｅｒ` and §28.1's アーバイン様 → `Ｌｏｒｄ　Ｉｒｖｉｎｅ`. **Does not disturb** §26.2's `ギルフォード将軍` → `Ｇｅｎｅｒａｌ　Ｇｕｉｌｆｏｒｄ` (shipped, `chunk_018`): the man holds two titles and it is the source that varies — the Fernando shape §26.2 already ruled. **1 battle + 0 script.** ⚠️ **Confirmed at review against a shipped frame the PR did not cite**: `batch_002.tsv` L9 renders `ヘルファー様に何と報告すれば・・・` as `ｗｈａｔ　ａｍ　Ｉ` / `ｔｏ　ｒｅｐｏｒｔ　ｔｏ　Ｌｏｒｄ` / `Ｈｅｌｆｅｒ．．．`, and this unit's `ギルフォード様に何と報告すれば・・・` → `ｗｈａｔ　ａｍ　Ｉ　ｔｏ　ｒｅｐｏｒｔ` / `ｔｏ　Ｌｏｒｄ　Ｇｕｉｌｆｏｒｄ．．．` matches it frame for frame and stop for stop, arrived at independently |
+| 宝石 | `ｇｅｍｓｔｏｎｅ` / `ｇｅｍｓｔｏｎｅｓ` | 9 / 10 columns. **A fifth cross-unit term the wave-4 seed missed** — see the §9 note. Ruled `ｇｅｍｓｔｏｎｅ` by chunk 19's reviewer; this unit's plural is consistent. Deliberately **not** `ｊｅｗｅｌｓ`: §3 fixes ジュエル → `Ｊｅｗｅｌ` (the currency, "do not translate as gem") and ジェム → `Ｇｅｍ` (the pickup). Verified at review: `ｇｅｍｓｔｏｎｅ` is **free** across `tl/` and `pending/`; `ｇｅｍ` occurs once (`batch_003`, §4's lowercase *a gem in its brow*) and `Ｇｅｍ` is the capitalised pickup — no collision either way. **6 battle (19 ×1, 20 ×4, 31 ×1) + 5 script-unique** |
+| 宝 / お宝 | `ｔｒｅａｓｕｒｅ` / `ｔｈｅ　ｔｒｅａｓｕｒｅ` | 8 / 12 columns. Kept **distinct** from 宝石 → gemstone; the source draws the distinction itself inside file line 31. `お宝のひとつ` → `ｏｎｅ　ｏｆ　…　ｔｒｅａｓｕｒｅｓ`. `ｔｒｅａｓｕｒｅ` verified free. ⚠️ **3 in this chunk, not the PR's 2** (one bare `宝`, two `お宝`); **15 battle rows containing 宝 (16 ×3, 19 ×4, 20 ×7 of which 4 are 宝石, 31 ×1) + 12 script-unique.** Also in chunk 19 — cross-unit, see §9 |
+
+### 32.2 Words and phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 手柄 | `ｃｒｅｄｉｔ` | 6 columns. `今回の手柄` → `Ｔｈｅ　ｃｒｅｄｉｔ　ｔｈｉｓ　ｔｉｍｅ`, `手柄を独り占め` → `ｋｅｅｐ　ｔｈｅ　ｃｒｅｄｉｔ　ｔｏ　ｍｙｓｅｌｆ`. **3 battle (this chunk ×2, chunk 22 ×1) + 1 script.** Free across `tl/` |
+| ずらかる | `ｓｃａｒｐｅｒ` | 7 columns. Thieves' cant, which is what the register wants; British, consistent with the defence / armour / grey policy. **The officer's `ずらかるぞ！` → `Ｌｅｔ　ｕｓ　ｓｃａｒｐｅｒ！` keeps the cant but drops the contraction** his men take (`ｌｅｔ’ｓ　ｓｃａｒｐｅｒ`) — a bandit's word in an officer's mouth, which is the joke. **1 battle + 0 script.** Free |
+| 蹴散らす | `ｓｃａｔｔｅｒ` | 7 columns. `蹴散らせ！` → `ｓｃａｔｔｅｒ　ｔｈｅｍ！`. Free across `tl/` |
+| 先客 | `ｓｏｍｅｏｎｅ　ｇｏｔ　ｈｅｒｅ　ｆｉｒｓｔ` | 23 columns as the full row. Rendered as a clause, not a noun — bare *an earlier guest* has no English use here. The §15.2 黒幕 precedent |
+| 記念品 | `ａ　ｋｅｅｐｓａｋｅ` | 11 columns. Free across `tl/` |
+| 見劣りする | `ｄｒａｂ`, with the comparison in the neighbouring row | `宝石に比べたら、ちょっと見劣りするけど、` → `Ｎｅｘｔ　ｔｏ　ｔｈｅ　ｇｅｍｓｔｏｎｅｓ` / `ｉｔ’ｓ　ａ　ｂｉｔ　ｄｒａｂ，　ｂｕｔ`. 見劣り is *to compare unfavourably*; `Ｎｅｘｔ　ｔｏ　…` carries the comparison so the adjective need only carry *inferior-looking*. ×2, byte-identical. `ｄｒａｂ` free |
+| 決まってら、 | `Ｉｔ’ｓ　ｏｂｖｉｏｕｓ，` | 13 columns. The rough contracted 決まっている. Shares *obvious* with shipped `chunk_004`'s `決まってるでしょ！！` → `Ｉｓｎ’ｔ　ｉｔ　ｏｂｖｉｏｕｓ！！` so the family reads as one; different source strings, different messages |
+| かまわん、 | `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ，` | 19 columns. **Not a new form** — `chunk_009` L2 ships the kanji `構わんっ！！` as `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ！！`. One word, two spellings, one English form (§17.2 鬼 / オーガ, §28.3 何っ／ッ), with the source's own punctuation per §5. Held **distinct** from §28.3's まあよい、 → `Ｎｏ　ｍａｔｔｅｒ．` |
+| 何だろう・・・ | `Ｗｈａｔ　ｃｏｕｌｄ　ｔｈｉｓ　ｂｅ．．．` | 21 columns. A further member of the 何 family, held apart from 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), 何っ／ッ！？ → `Ｗｈａｔ！？` (§28.3), 何？ → `Ｗｈａｔ？` (§30.3) and あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2). This chunk carries three of the family and all three are visibly distinct |
+| そうだな | `Ｙｏｕ’ｒｅ　ｒｉｇｈｔ．` | 13 columns. Deliberately **not** a fourth string on `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` (§23.2 そうそう, §25.2 そのとおりだ, §30.3 そうよ). そうだな's な expresses *shared assessment with the addressee*, which `Ｙｏｕ’ｒｅ　…` renders and `Ｔｈａｔ’ｓ　…` does not — the distinction §25.2 already draws against そうね → `Ｔｈａｔ’ｓ　ｔｒｕｅ．`. Chunk 20 contains **none** of そうそう / そのとおり / そうよ / そうね, so §25.3's test is met and §25.3's reserved `Ｅｘａｃｔｌｙ．` is **not** spent. **7 battle (8, 18, 19, 20 ×2, 23, 27, 28) + 10 script-unique.** Verified free |
+| 仕方ないな。 | `ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` | A fourth member of §24.3 / §29.3's family beside しかたねえ。, 仕方ない、 and 仕方ねえだろ。 Here it is a subordinate clause under `ああ、残念だけど、`, so English grammar requires the expletive: `ｔｈｅｒｅ’ｓ　ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (23 columns). The fixed words are intact and contiguous; this is grammar, not addition — the §31.4 shape |
+| 〜の奴 / 〜の奴ら | `ｔｈａｔ　〜　ｆｅｌｌｏｗ` / `ｍｅｎ` / `ｌｏｔ`, **register-selected** | ⚠️ **Recorded at review; the PR proposed no row and the word had none.** `奴ら` is **56 battle + 22 script** and already carried three English forms before this unit: `Ｔｈｏｓｅ　９ｔｈ　Ａｒｍｙ　ｆｅｌｌｏｗｓ` (`chunk_002` ×2), `Ｃａｒｌｉｎｅ’ｓ　ｍｅｎ` (`chunk_009`), `ｔｈｏｓｅ　Ｅｍｐｉｒｅ　ｍｅｎ` (`chunk_013`). This unit's singular `ヒューゴーの奴` → `ｔｈａｔ　ｆｅｌｌｏｗ　Ｈｕｇｏ` **matches `chunk_002`**; its plural `宮廷軍の奴ら` → `ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ　ｌｏｔ` is a fourth form and is **accepted as register-selected** — *lot* is a bandit's word where *Carline's men* is an officer's. **The word is not fixed; the register is.** Distinct from §31.2's 〜め → `Ｔｈａｔ　〜`, a different source string this unit does not carry |
+
+### 32.3 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| ぬおっ | `Ｎｗｏｈ` + the source's own punctuation | 4 columns. A grunt of dismayed shock — `ぬおっ・・・・・！` → `Ｎｗｏｈ．．．．．！` (five stops) and `ぬおっ、しまった！` → `Ｎｗｏｈ，　ｄａｍｎ　ｉｔ！`. Transliterated, per グッ → `Ｇｕｈ` / ぐわっ → `Ｇｗａｈ` / ぐふっ → `Ｇｕｆｆ` (§11.5, §14.5). Held **distinct** from §20.3's ぬぬッ → `Ｗｈｙ，`. **3 battle (this chunk ×2, chunk 23 ×1) + 0 script.** Free |
+| ああっ！ | `Ａｇｈ！` | 4 columns. A startled cry of alarm, built on §19.1's ううっ → `Ｕｇｈ` (the small っ takes `ｇｈ`). Held **distinct** from §6's ああ (assent) → `Ｙｅａｈ` — **which this chunk also carries**, in file line 49 — and from §23.2's あーあ → `Ａａｈ，`, **also in this chunk**, so none of the three could have been collapsed. **1 battle + 0 script.** Free |
+| あ〜あ | `Ａａｈ，` | 4 columns. **Not a new form** — §23.2 fixes `あーあ` → `Ａａｈ，`, shipped ×2 in `chunk_004`. `ー` and `〜` are one word in two spellings, exactly as §29.3 handles くーっ / く〜っ → `Ｔｃｈｈ` |
+| ねえ、 | `Ｓａｙ，` | 4 columns. A friendly call for attention. **`Ｈｅｙ，` is spent** — `chunk_006` L9 ships `よう、サイクスか。` → `Ｈｅｙ，　Ｓｙｋｅｓ．` — and §24.3's ちょっと、 → `Ｈｏｌｄ　ｏｎ，` is an interruption, a different act. **4 battle (5, 15, 20, 32) + 16 script.** `Ｓａｙ，` verified free |
+| おい、 | `Ｏｉ，` | 3 columns. ⚠️ **Recorded at review; the PR rendered it and proposed no row.** **14 battle (0 ×3, 8, 16, 20, 23 ×2, …) + 10 script.** `Ｏｉ，` exists in `tl/` / `pending/` only in parked `chunk_043`, so this is its **first shipping use** and the form is fixed from here |
+| ようし、 | `Ｒｉｇｈｔ，` | ⚠️ **Recorded at review; the PR collapsed it onto §6 / §24.3's `よし、` without a row.** The collapse is correct — one assent word, two spellings, the §11.5 くっ / クッ and §17.2 鬼 / オーガ shape — and the risk is small: **`ようし、` is 1 battle occurrence, this chunk, + 2 script**, against `よし、`'s 52 battle + 20 script. Written down so a later unit cannot "correct" it into a fourth assent string |
+| ・・・あれ？ | `．．．Ｗｈａｔ？` | The **dots lead** here where §21.2's `あれ・・・？` → `Ｗｈａｔ．．．？` has them trail. §5's mechanism exactly: the word is fixed, the punctuation sits where the source puts it. Both forms are now shipped and neither corrects the other |
+
+### 32.4 Ruling — `あら` takes `Ｍｙ` plus the source's punctuation, and three shipped files are outliers
+
+**§28.3 stands and is extended: `あら？` → `Ｍｙ？` (3), `あら・・・？` → `Ｍｙ．．．？` (6).** The unit
+ships both and is unchanged. But the question was live because shipped work disagrees, so the whole
+corpus was gathered at review rather than the five data points the dispatch supplied:
+
+| Chunk | Source | Portrait | Shipped English |
+|---|---|---|---|
+| 7 L19 | `あら・・・・？` | **02** | `Ｏｈ．．．．？` |
+| 7 L24 | `あら、雪・・・？` | — | `Ｏｈ，　ｓｎｏｗ．．．？` |
+| 11 L3 | `あら、お客様？` | 08 | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` |
+| 13 L4 | `あら、` | 06 | **`Ｍｙ，`** (§28.3's own instance) |
+| 14 L3 | `あら？` | **02** | `Ｏｈ？` |
+
+**12 `あら` rows in the battle dump across chunks 7, 8, 11, 13, 14, 16, 20 ×2, 27 and 29, plus ~30
+in the script** — larger than §28.3's "16 further occurrences".
+
+**What decides it is not the count but what `Ｏｈ？` already is.** §24.4 collapsed おや → `Ｏｈ？`
+*outright*, on **29 occurrences (6 battle + 23 script)**. `chunk_014` L3's `あら？` → `Ｏｈ？` is
+therefore byte-identical to a **different fixed source word**, and matching it would delete a member
+of §24.4's set. `Ｍｙ` plus the source's own stop is the systematic move §5 prescribes and §28.3
+already ratified. The same-speaker argument (portrait 02 in chunks 7, 14 and 20) is real and is what
+made this worth ruling rather than assuming — but it argues for making *one* form consistent, not
+for which form, and §24.4 settles which.
+
+⚠️ **CORRECTION to §28.3 (§4.3).** Its sentence *"The alternative `Ｏｈ　ｍｙ，` is also free"* is
+**false**, and in a way that matters more than it looks: `Ｏｈ　ｍｙ，` is shipped in `chunk_011` L3
+**for `あら、` itself**. §28.3 was ratified on the true observation that `Ｍｙ` was free, while `あら`
+had already been rendered three times in the `Ｏｈ` family. The ruling survives — it is the right one
+— but its "the alternative is free" reasoning does not, and is struck.
+
+**Lines this affects (§4.3) — four rows in three shipped files, all width-neutral or shorter:**
+
+| File | Row | Now | Must become | Cost |
+|---|---|---|---|---|
+| `tl/battle/chunk_007.txt` L19 | `あら・・・・？` | `Ｏｈ．．．．？` (7) | `Ｍｙ．．．．？` (7) | 0 bytes |
+| `tl/battle/chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (12) | `Ｍｙ，　ｓｎｏｗ．．．？` (12) | 0 bytes |
+| `tl/battle/chunk_011.txt` L3 | `あら、お客様？` | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` (16) | `Ｍｙ，　ｖｉｓｉｔｏｒｓ？` (13) | −6 bytes |
+| `tl/battle/chunk_014.txt` L3 | `あら？` | `Ｏｈ？` (3) | `Ｍｙ？` (3) | 0 bytes |
+
+⚠️ **Deliberately NOT applied in this commit, and the reason is on the record rather than implied.**
+PR #15 (script batch 006) is open and unreviewed and reaches this same question from the script side
+with ~30 more instances; chunk 19 is mid-rework. Re-cutting three shipped files inside a
+battle-chunk merge while two siblings are in flight is the wrong blast radius. This is the §27
+corrections-unit shape: the **ruling** binds PR #15, chunk 19 and every later unit from now; the
+**re-cut** is owed work, carried in `FLAGS.md` §T and `HANDOFF.md` with the lines and costs above.
+
+#### 32.4a The `おかしら` / `将校` / `将軍` gag — three words, and they stayed three words
+
+`Ｓｏｒｒｙ，　Ｂｏｓｓ！` → `Ｙｏｕ　ｆｏｏｌ，` / `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ` /
+`Ｅｍｐｉｒｅ！　Ｃａｌｌ　ｍｅ` / `Ｇｅｎｅｒａｌ！　Ｇｅｎｅｒａｌ！！` (9 / 22 / 15 / 18). *Boss* is
+unmistakably informal where *Chief* reads as a near-rank in English and would sit too close to
+*General*; it is also 4 columns to *Chief*'s 5. The source's doubled `将軍と！！` is kept as the bare
+repeat, because the repetition **is** the punchline. The one row ending on a two-letter word
+(`Ｃａｌｌ　ｍｅ`) is forced — every alternative either overflows
+(`Ｃａｌｌ　ｍｅ　Ｇｅｎｅｒａｌ！　Ｇｅｎｅｒａｌ！！` is 26) or drops the repeat — and *Call me / General!* is
+idiomatic across a break.
+
+### 32.5 Ruling — `勲章` → `ｍｅｄａｌ` stands, and the `メダル` collision is LIVE in banks 42–43
+
+**The rendering is correct and unchanged. The justification under it is not, and is replaced.**
+
+The PR discharged the collision with §3's racetrack `メダル` → `ｍｅｄａｌ` (shipped in
+`batch_002.tsv`) on §25.3's co-occurrence test, reasoning from "**2 battle**" occurrences. Both
+halves fail on measurement at review:
+
+1. **The reach is 4 battle (chunk 20 ×2, chunk 22 ×2) and 59 in `script_dump.txt` / 39 in
+   `script_unique.txt`.** The §9 seed said "2 battle" and the PR repeated it; neither mentions the
+   script at all.
+2. **`勲章` is a major plot item, not a trinket.** It is **`獅子の勲章`** (9×) and **`『獅子の勲章』`**
+   (2×) — a royal decoration entrusted by the King, of which Fernando flies a forgery to stage a
+   coup: `将軍は今、この勲章の偽物を掲げてクーデタ…`, `フェルナンド将軍の勲章は、偽物だ。`,
+   `国王から、その勲章を託された指揮官は…`, and, bearing directly on this chapter,
+   `…リーナを襲撃し、勲章を奪っていっただろう。` The medal this chunk's party digs up beside the
+   gemstones **is that object**. `ｍｅｄａｌ` is the right base word and
+   `Ｌｏｏｋｓ　ｌｉｋｅ　ａ　ｍｅｄａｌ．` is exactly right for characters who do not yet know what they
+   hold. For whoever renders the full name: the `『』` takes `“…”` per §12, and 獅子 is the animal,
+   which does **not** disturb §1's rejection of `Ｌｉｏｎ` for the katakana name リオン.
+3. **§25.3's test, applied as this glossary actually states it, is NOT met.** §25.3's standard is
+   "**No chunk and no bank contains both**". Counted at review:
+
+```
+banks containing メダル : [42, 43]
+banks containing 勲章  : [1,2,3,4,5,6,7,8,9,12,13,14,15,16,17,18,19,23,25,32,33,40,41,42,43]
+banks containing BOTH  : [42, 43]
+messages containing both: 0
+```
+
+**No message holds both, so nothing is unreadable and no shipped line is re-cut — but banks 42 and
+43 hold both, so the collision is LIVE for whoever translates them.** It is recorded here rather
+than discharged. **Reserve, if that unit needs the split: `ｔｏｋｅｎ` (5 columns)** — verified free
+across `tl/` and `pending/`, and the actual English for a betting token, so the racetrack side is
+the one to move and §3's entry would change under §4.3 with `batch_002.tsv` named. Nothing is
+changed today.
+
+### 32.6 Ruling — `おかしらぁ！` → `Ｂｏｓｓｓ！`, and `Ｂｏｓｓ！！` is rejected
+
+The PR offered both at 0 bytes and left it to the reviewer. **`Ｂｏｓｓｓ！` is right, and not on
+width — both measure 6.** §5's mechanism fixes the **word** and takes the punctuation **from the
+source**. The source is `おかしらぁ！`: one exclamation mark, and the lengthening carried in the kana
+`ぁ`. `Ｂｏｓｓ！！` would invent a second `！` the source does not have **and** discard the
+lengthening the source does — breaking §5 in both halves at once. `Ｂｏｓｓｓ！` puts the extra beat in
+the word, which is settled convention (§29.3 くーっ → `Ｔｃｈｈ`, §26.5 ふーむ → `Ｈｍｍ`, §11.5 and
+§14.5's laugh beats).
+
+### 32.7 CORRECTION to §12.3 (§4.3) — `ふふ` is not feminine-only, and `ふふっ` joins it
+
+§12.3 glosses ふふ → `Ｆｕｆｕ` as "soft, amused feminine chuckle". The gendering is a description of
+where it was **first seen** (the ch.33 sorceress), not a restriction: this chunk's file line 2 opens
+with `ふふっ、ヒューゴーの奴、` from a **male** Imperial officer, rendered `Ｆｕｆｕ，`. The note is
+corrected to "soft, amused chuckle"; **the English form is unchanged and nothing is re-cut.**
+
+`ふふっ` is also a **new source spelling** and is collapsed onto the same form — one word, two
+spellings, the documented kind (§11.5 くっ / クッ, §28.3 何っ / 何ッ, §17.2 鬼 / オーガ). Counted at
+review: **`ふふっ` is 1 battle (this chunk only) + 1 script; `ふふ` is 8 battle (20, 28, 31 ×5, 33)
++ 1 script.** Shipped `chunk_033` L20 renders `ふふ、ここまで` as `Ｆｕｆｕ，　ｙｏｕ　ｈａｖｅ　ｃｏｍｅ`, so
+the two are byte-identical where they share a shape.
+
+### 32.8 `何だ、` → `Ｗｈａｔ，` is a row-level rendering, not a fixed form
+
+⚠️ **The PR's row called this "an eighth member of the 何 family" and it is not a family member at
+all — it is a clause head that English absorbs differently every time.** Counted at review, `何だ、`
+is **3 battle (chunks 0, 7, 20) + 5 script-unique**, and the corpus already renders it three ways:
+
+| Where | Source | Shipped English |
+|---|---|---|
+| `chunk_007` L13 | `何だ、お前は？` | `Ｗｈｏ　ａｒｅ　ｙｏｕ？` |
+| `batch_002.tsv` L9 | `何だ、作戦会議中だぞ！` | `Ｗｈａｔ　ｉｓ　ｉｔ？　Ｗｅ　ａｒｅ　ｉｎ` / `ａ　ｗａｒ　ｃｏｕｎｃｉｌ！` |
+| `chunk_020` file line 4 | `何だ、カーライン軍か？` | `Ｗｈａｔ，　ｔｈｅ　Ｃａｒｌｉｎｅ` / `ａｒｍｙ？` |
+
+All three are correct for their sentences and **none of them is wrong**; what would be wrong is a
+glossary row telling the next translator to write `Ｗｈａｔ，` mechanically. **`何だ、` takes whatever
+its own clause needs.** The rest of the 何 family stays fixed and held apart: 何だと？ →
+`Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), 何っ／ッ！？ → `Ｗｈａｔ！？`
+(§28.3), 何？ → `Ｗｈａｔ？` (§30.3), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), 何だろう・・・ →
+`Ｗｈａｔ　ｃｏｕｌｄ　ｔｈｉｓ　ｂｅ．．．` (§32.2). Separately, `どうした、` → `Ｗｈａｔ　ｉｓ　ｉｔ，` **is**
+fixed and this unit matches `chunk_007` L19's `どうした、ティミー？` → `Ｗｈａｔ　ｉｓ　ｉｔ，　Ｔｉｍｍｙ？`
+byte-for-byte.
+
+### 32.9 Register
+
+| Who | Register |
+|---|---|
+| **The would-be officer (portrait 09, unnamed)** | The chapter's comic villain, and the register is the joke. Grandiose and self-important, **zero contractions anywhere** — verified mechanically at review, not from the report: `ｉｓ　ｎｏ　ｄｏｕｂｔ　ｓｅａｒｃｈｉｎｇ`, `ｈｅ　ｉｓ　ｆａｒ　ｏｆｆ　ｔｈｅ　ｍａｒｋ．`, `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ　Ｅｍｐｉｒｅ！`, `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ，`, `Ａｎｄ　Ｉ　ｗａｓ　ａｂｏｕｔ　ｔｏ　ｋｅｅｐ　ｔｈｅ　ｃｒｅｄｉｔ　ｔｏ　ｍｙｓｅｌｆ．．．` — §14.6 / §20.5 / §25.5 / §28.6 / §31.7's Imperial-officer column, unchanged. ⚠️ **But his vocabulary is a bandit's** (`ずらかるぞ`, `独り占め`, `わし`), and that is left in the word choice rather than smoothed: a man who talks like a gang leader and demands to be called *General* |
+| His men (portraits 0A, 0B) | Polite upward, rough in the mouth (`ましたぜ`, `だぜ`, `ちまった`) — contractions where the sentence offers one (`Ｉｔ’ｓ　ｏｂｖｉｏｕｓ，`, `ｌｅｔ’ｓ　ｓｃａｒｐｅｒ`). 0A carries none in this unit only because no line of his offers a contractible construction |
+| **Aries (portrait 08)** | **Fixed from inside the chunk, not assumed** — portrait 02 calls `アリエスさんも、こっちへ来て` and portrait 08 answers on the very next page. Polite です／ます (`埋まってましたけど`), **no contractions** — `ｗｈｅｒｅ　ｔｈｅ　ｇｅｍｓｔｏｎｅｓ　ｌａｙ` / `ｔｈｅｒｅ　ｗａｓ　ａｌｓｏ　ｔｈｉｓ．`, `ｓｏｍｅｔｈｉｎｇ　ｌｉｋｅ　ｔｈｉｓ` / `ｗａｓ　ｂｕｒｉｅｄ　ｈｅｒｅ．．．` — matching §9's seed exactly. Her `{FC00}さん、` **drops the honorific** and carries it in register, per §21.2 |
+| The 9th Army party (portraits 00, 01, 02, 0C) | §7 unchanged, contractions throughout. **Portrait 02 is §21.4 / §25.5 / §28.6's unnamed female companion and is again "the one who notices"** — both `あら` lines in this chunk are hers, exactly as §25.5's `Ｗｈａｔ’ｓ　ｗｒｏｎｇ，　Ｓｅｎｅｃａ？` was. She is still unnamed here; if a later chunk names her, re-check §21.4, §25.5 and §32.4 together |
+
+⚠️ **A source oddity, not a typo: `ほーせき` (file line 49) is a childish, drawn-out `宝石`.**
+Rendered as the plain word with the childishness carried in register, per §2's politeness rule and
+the treatment §29.6 records for chunk 8's `てーこく`. **Not** spelled out as dialect, which §2
+forbids. Likewise `おかしらぁ` is expressive lengthening, not a misspelling (§32.6).
+
+⚠️ **Recorded at review, accepted, so they are not rediscovered as defects:** `こんなものが。` →
+`ｔｈｅｒｅ　ｗａｓ　ａｌｓｏ　ｔｈｉｓ．` (the *also* is carried by `〜所に`, but it is unflagged);
+`埋まっていた所に` → `ｗｈｅｒｅ　…　ｌａｙ` against the mirror message's `埋まってましたけど` →
+`ｗａｓ　ｂｕｒｉｅｄ　ｈｅｒｅ` (a §2.1 step 4 width synonym — `ｗｈｅｒｅ　ｔｈｅ　ｇｅｍｓｔｏｎｅｓ　ｗｅｒｅ　ｂｕｒｉｅｄ`
+is 30 columns; different source clauses, so §3 is not engaged); and `もんってことさ` → `ｏｕｒｓ　ｎｏｗ．`
+(a mild step-5 implication).

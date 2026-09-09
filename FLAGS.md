@@ -2275,3 +2275,117 @@ Unit 1, and Guilford's soliloquy (`クリッペン司令のご奮闘を拝見さ
 **Commander Krippen** — but no line names him, so no row of his carries a name, per §P's practice
 for chunk 13's King. If a later chunk settles it, only his register wants re-checking, not the
 text.
+
+---
+
+## T. Wave 4 review — battle chunk 20 / PR #14 (2026-09-09)
+
+**DECISION: MERGE at round 1**, squash-merged as `46b728a`. Every §6 gate run in a real checkout and
+pasted in the PR review; **no finding required a change to the unit**. Reviewer 3 of wave 4.
+
+**Figures, all verified here rather than taken from the PR:** `tl/battle/chunk_020.txt` is
+**4,265 / 8,192 bytes, slack 3,927**; 732 JP → 1,512 EN characters = **2.07×** against a 4.75×
+tier-D ceiling; **94 text rows, widest 23, none at 24** (11 rows at 23). `assemble.py check` →
+"All checks passed". `rowcheck.py 20` clean, no page-over-4 warning. An independent token-by-token
+skeleton diff against the pristine dump confirms **exactly three `{FFFE}` inserted on two lines
+(file line 29: 5→6, file line 48: 13→15), none deleted, no `{FCC0}` added**, and all 48 other body
+lines plus `{=FF}` and `{PAD 5493}` byte-identical tag for tag. **Every figure in the PR was
+correct as stated** — the first unit this wave for which that is true.
+
+### T1. ⚠️ OWED WORK — four rows in three shipped files must move to `Ｍｙ` for `あら`
+
+**Ruled at this review (glossary §32.4): `あら` takes `Ｍｙ` plus the source's own punctuation.**
+§28.3 is upheld and extended; chunk 20 ships `Ｍｙ？` / `Ｍｙ．．．？` and is correct. The decisive
+ground is that §24.4 already spent `Ｏｈ？` on おや **outright**, across 29 occurrences, so shipped
+`chunk_014`'s `あら？` → `Ｏｈ？` is byte-identical to a different fixed source word.
+
+**This leaves three shipped files as outliers. They are NOT fixed in the integration commit** — PR
+#15 (batch 006) is open and unreviewed on the same question from the script side (~30 more
+instances) and chunk 19 is mid-rework, so re-cutting shipped files inside a battle-chunk merge was
+the wrong blast radius. This is the §27 corrections-unit shape.
+
+| File | Row | Now | Must become | Cost |
+|---|---|---|---|---|
+| `tl/battle/chunk_007.txt` L19 | `あら・・・・？` | `Ｏｈ．．．．？` (7) | `Ｍｙ．．．．？` (7) | 0 bytes |
+| `tl/battle/chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (12) | `Ｍｙ，　ｓｎｏｗ．．．？` (12) | 0 bytes |
+| `tl/battle/chunk_011.txt` L3 | `あら、お客様？` | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` (16) | `Ｍｙ，　ｖｉｓｉｔｏｒｓ？` (13) | −6 bytes |
+| `tl/battle/chunk_014.txt` L3 | `あら？` | `Ｏｈ？` (3) | `Ｍｙ？` (3) | 0 bytes |
+
+All four are width-neutral or shorter and re-flow nothing; `chunk_007` has 399 bytes of slack and
+`chunk_011` 6,625, so neither re-cut is at risk. **Whoever takes this must re-run
+`assemble.py check` and `rowcheck.py` on 7, 11 and 14 afterwards.** Also correct §28.3's sentence
+"The alternative `Ｏｈ　ｍｙ，` is also free" — it is **false**, and `chunk_011` L3 ships it **for
+`あら、` itself**. Already struck in glossary §32.4.
+
+### T2. ⚠️ LIVE COLLISION — `勲章` and `メダル` share `ｍｅｄａｌ`, and share banks 42 and 43
+
+Chunk 20's `ｍｅｄａｌ` is correct and nothing is re-cut. But the PR (and the §9 seed before it)
+discharged the clash with §3's racetrack `メダル` → `ｍｅｄａｌ` on a false premise, and the
+discharge is withdrawn — see glossary §32.5.
+
+- `勲章` is **4 battle (chunks 20 ×2, 22 ×2) + 59 in `script_dump.txt` / 39 in `script_unique.txt`**,
+  not the seed's and the PR's "2 battle".
+- It is the plot item **`獅子の勲章`** (9×) / **`『獅子の勲章』`** (2×) — the King's decoration,
+  Fernando's forgery, the coup. Not a trinket.
+- §25.3's test, applied as this project states it ("no chunk and no bank contains both"), is **NOT
+  met**: `メダル` is in banks **42, 43**; `勲章` is in banks 1–9, 12–19, 23, 25, 32, 33, 40–43;
+  **both are in 42 and 43**. **0 messages contain both**, so nothing is unreadable today.
+
+**For whoever takes banks 42–43:** the reserve is `ｔｏｋｅｎ` (5 columns), verified free across `tl/`
+and `pending/`, and it is the **racetrack** side that moves — which makes §3's `メダル` row a §4.3
+correction naming `tl/script/batch_002.tsv`. Do not silently re-point `勲章`.
+
+### T3. Glossary rows the PR rendered but did not record — added at integration
+
+All correct as shipped; all needed rows so they cannot drift. Written into §32.2 / §32.3:
+`ふふっ、` → `Ｆｕｆｕ，` (a new spelling on §12.3, **whose "feminine" gloss is corrected — a male
+officer speaks it here**); `ようし、` → `Ｒｉｇｈｔ，` (a distinct source string collapsed onto
+§24.3's `よし、`, 1 battle + 2 script); `〜の奴` / `〜の奴ら` (**56 battle + 22 script**, no row until
+now, and three prior English forms — `ｆｅｌｌｏｗｓ`, `ｍｅｎ`, and this unit's `ｌｏｔ`, accepted as
+register-selected); `おい、` → `Ｏｉ，` (14 battle + 10 script; first **shipping** use — it existed
+only in parked `chunk_043`).
+
+⚠️ **`何だ、` → `Ｗｈａｔ，` is NOT a fixed form** and the PR's row called it "an eighth member of the
+何 family". It is a clause head English absorbs differently every time, and the corpus already
+renders it three ways: `Ｗｈｏ　ａｒｅ　ｙｏｕ？` (`chunk_007` L13), `Ｗｈａｔ　ｉｓ　ｉｔ？` (`batch_002`
+L9), and this unit's `Ｗｈａｔ，`. All three are right for their sentences. Rewritten as a row-level
+rendering in glossary §32.8 so the next translator does not apply it mechanically.
+
+⚠️ **`ｏｆｆｉｃｅｒ` is not free** — `chunk_001` already ships `ａ　ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ，` for a
+different source word. No collision (different message, different collocation), recorded on the
+将校 row.
+
+### T4. Small figure corrections, in this wave's established style
+
+- `Ｍｙ．．．？` is **6** columns, not the PR's 7. The `Ｏｈ？` ⇄ `Ｍｙ？` swap is still 0 bytes.
+- The PR's Glossary-additions table has **24** rows; the dispatch said 25.
+- The `グレイウーズ` → `ｇｒｅｙ　ｏｏｚｅ` precedent is **§17.2**, not §17.4 — the §9 seed mis-cited it
+  and the PR inherited the citation. Derivation unaffected.
+- `宝` / `お宝` occurs **3** times in this chunk, not the PR's 2.
+
+### T5. Confirmed, not defects — recorded so they are not re-raised
+
+- **Flag 13 CONFIRMED inherited.** The `{FCC0}` page in file line 48 carries a leading blank plus
+  four text rows in **the source's own segment structure** (`{FCC0}{FFFE}` + `ねえ、` +
+  `アリエスさんも、` + `こっちへ来て、` + `宝石を見なよ。`), reproduced exactly at 4/16/12/22. File
+  line 2's `{FCC0}` page likewise reproduces the source's leading blank + 2 rows + `　` row +
+  trailing blank. **Neither is `translation_prompt.md` §3.2's untested shape** (leading blank *and*
+  trailing blank *and* four text rows). This is glossary §10 question 4, still open for a human and
+  neither worsened nor depended on by this unit.
+- **§Q2 not re-discovered.** No `{FCC0}` was added anywhere; the documented prompt/gate
+  contradiction (`translation_prompt.md` licenses `{FCC0}` at lines 248/361/373/520 while
+  `assemble.py:125-126` and `rowcheck.py:93-94` exempt only `{FFFE}`) remains a documentation
+  defect for a human and was **not** grounds for any finding.
+- **§31.3's known-over-broad `まさか` → `Ｓｕｒｅｌｙ` is inert here**: `まさか` occurs **0 times** in
+  chunk 20, counted in the dump body. Chunk 19's re-reviewer still owes the narrowing.
+- Three renderings read closely and accepted: `こんなものが。` → `ｔｈｅｒｅ　ｗａｓ　ａｌｓｏ　ｔｈｉｓ．`
+  (the *also* is carried by `〜所に`, unflagged); `埋まっていた所に` → `ｗｈｅｒｅ　…　ｌａｙ` against the
+  mirror message's `ｗａｓ　ｂｕｒｉｅｄ　ｈｅｒｅ` (§2.1 step 4 width synonym, different source clauses);
+  `もんってことさ` → `ｏｕｒｓ　ｎｏｗ．` (mild step-5 implication).
+
+### T6. Bytes and slack after this merge
+
+`chunk_020` ships with **3,927 bytes of slack** — the third-largest margin in `tl/battle/` — so
+every reversible call in §32 (`Ｆｉｒｅ　Ｃｒｙｓｔａｌ` if chunk 19 needs it, −6 bytes; any `あら`
+respelling) is free here. **No bank is under 2,000 free** as a result of this unit: it touches no
+script bank at all, and `bankmeasure.py` was not run because nothing under `tl/script/` changed.
