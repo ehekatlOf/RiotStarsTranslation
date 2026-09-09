@@ -30,7 +30,9 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ⚠️ **WAVE 8 IS THE LAST BATTLE WAVE.** It spends the final four dispatchable chunks; after it,
 > battle work **STOPS** until a human clears Blocked **0** or **0a**.
 >
-> If this line still says "open wave 8" and no wave-8 session exists, the chain broke: open it.
+> ✅ **WAVE 8'S SESSION IS OPEN: `session_01GMZPvT2GCVmRBd8pwHPGED`** (opened 2026-09-09 13:01Z by
+> wave 7's coordinator, in the same turn as this close). If that session is dead and wave 8 never
+> ran, the chain broke here — open a replacement.
 
 ## Last updated
 2026-09-09 · by: **wave-7 coordinator** (`session_01N1VxX55Vw79fxNr6nTELcs`) ·
