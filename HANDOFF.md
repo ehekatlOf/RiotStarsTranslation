@@ -182,6 +182,18 @@ dispatch** (see the corrections above); position 4 (329–332, 521–566) is cle
 puts ~3,351 JP chars into bank 5 and must not be taken, and position 2 (320, 1073–1121) is the debug
 batch (28/50 scaffolding under the **unanchored** `[０-９]{2}：` on the text field) — never dispatch it.
 
+### ⚠️ Briefing correction — the `{FCC0}` rule is right, its STATED CAUSE was wrong
+I told all four translators and the PR #24 reviewer that `rowcheck.py:93-94` rejects `{FCC0}`
+because it "exempts only `{FFFE}`". **That is false and I verified the correction myself:**
+`rowcheck.py` **splits on `{FCC0}`** at lines **64, 77, 134 and 165** — it honours it as a page and
+run boundary. What actually forbids adding or removing one is **`assemble.py:tag_parity`
+(lines 117–126): "Every tag except `{FFFE}` must survive, in order."**
+**The rule is unchanged — never add or remove `{FCC0}`, and it is never grounds for a finding
+against a PR** (`translation_prompt.md` lines 248, 361, 373, 520 are a documentation defect for a
+human). Only the mechanism was misstated. ⚠️ **If `FLAGS.md` §Q2 records the narrower/wrong cause,
+the next reviewer should patch it in place** per the 2026-09-09 "patch, don't merely record"
+decision. Future dispatches must cite `tag_parity`, not `rowcheck`.
+
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **18 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
 exactly as chunk 17 did — 15, 23, 27, 28, 29, 39**; 16 and 32 are tier-A blocked. Dispatchable after
