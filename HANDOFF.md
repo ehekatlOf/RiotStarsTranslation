@@ -52,7 +52,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** | **PR #29 OPEN**, awaiting reviewer |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | 5,039 / 8,192 → **5,035** after fix | **PR #29 — CHANGES r1**, rework sent |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,565 / 8,192 — 2,627 slack** | **PR #33 OPEN**, awaiting reviewer |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
@@ -127,6 +127,31 @@ this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance 
 lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
 (chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
 claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
+
+### Review 1 of 5 — PR #29 (chunk 37): **CHANGES**, round 1. Rework sent to the same translator.
+All nine gates passed and were **independently re-measured** (gate 6 positive-controlled with two
+planted corruptions; L14's 8 rows proved inherited from a pristine extraction). Two reading
+findings, both single-segment word swaps: a lowercase sentence-start (`ｏｕｒ` → `Ｏｕｒ`), and
+`全滅` → `ａｎｎｉｈｉｌａｔｅ` diverging from the `ｗｉｐｅ(ｄ)　ｏｕｔ` of merged chunks 2, 9, 19 **and
+of open PR #33**. Post-fix figure simulated by the reviewer: **5,035 / 8,192, 3,157 slack**.
+
+⚠️ **RULING — `掌握` → `ｓｅｉｚｅ` WINS. PR #29 does NOT move; PR #30 (chunk 41) DOES.**
+`ｔｏ　ｇｒａｓｐ` → `ｔｏ　ｓｅｉｚｅ`: both 5 columns, row 22 either way — **zero bytes, zero re-flow**.
+⚠️ **The reviewer corrected MY framing, and it is right:** I said #29's `ｓｅｉｚｅｄ` "appears to
+create a §25.3 collision". **§25.3's test is CO-OCCURRENCE, not spend.** `ｓｅｉｚｅ`'s existing sets
+(`取り押さえ` c6/c22, `捕まえ` c21) and `掌握`'s (c37, c41, script FILE 870) are **disjoint — no
+chunk, bank or line holds two** — the same licence §28.3 used for `Ｙｅｓ，`. And
+`ｇｒａｓｐ　Ｉｍｐｅｒｉａｌ　ｓｔｒｅｎｇｔｈ` is not idiomatic English. Glossary row goes in live,
+struck at chunk 41's merge (`ルート` precedent, §29.1/§30.1).
+✅ **§Y6 settled and its premise refuted — Cress is FEMALE** (reviewer re-verified by reading chunk
+13, not the citation). ✅ **L14's 8 segments kept** — index safety under §L2 is the right branch
+while Blocked 4 is open.
+**Counts corrected:** `小隊` is 2 script lines / 3 instances (FILE 524, 1389); `マーシュ` is 3 lines
+/ 4 instances (FILE 870, 1330, 1379) and **FILE 1379 establishes Marsh is the ship's captain**;
+`マザロー` hapax confirmed → struck.
+✅ **The reviewer independently confirmed my DATA/FILE handling**: HANDOFF's DATA 1378/1380 and PR
+#30's FILE 1383/1385 for `決着` are **both right, two conventions** — correctly NOT recorded as an
+error either way.
 
 ✅ **WAVE BARRIER MET 14:43Z — all five units have an open PR (#29, #30, #31, #32, #33).**
 Review order: **37 → 38 → 41 → 42 → script 010**, one reviewer at a time, foreground.
