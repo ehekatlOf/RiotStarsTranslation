@@ -58,7 +58,7 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 |---|---|---|
 | battle chunk 30 | #27 | ✅ **MERGED** `9548e73` — 7,615 / 8,192 (577 slack); integrated `bb715d0`, glossary §43 / FLAGS §AE |
 | battle chunk 36 | #25 | ✅ **PARKED** `018af11` — 2,887 / 8,192 (5,305 slack); integrated `1ea3a70`, glossary §44 / FLAGS §AF. **No findings.** Reason is Blocked item **0a** |
-| battle chunk 31 | #26 | ✅ **MERGED** `6d2530c` — 5,399 / 8,192 (2,793 slack); integrated by `integrate: chunk 031 — glossary §45, FLAGS §AG, handoff` (SHA in the reviewer's return), glossary §45 / FLAGS §AG. **2 rounds:** round 1 CHANGES on one §2 finding (an unlicensed §2.1 step-4 compression, `百戦錬磨` → *veteran*, made for a geometry constraint a 44-chunk page-shape census showed does not exist); round 2 applied it verbatim at +44 bytes. Seven §9 seeds promoted, all as seeded; `召喚の儀式` struck as exhausted. **New rule at glossary §45.2 / FLAGS §AG1 — a page's source-blank TRAILING segment may carry text** (`.TTTT` is attested 182×; `.TTTT.`, the shape §3.2 warns about, 0×) |
+| battle chunk 31 | #26 | ✅ **MERGED** `6d2530c` at round 2 — 5,399 / 8,192 (2,793 slack); integrated `e3e2975`, glossary §45 / FLAGS §AG |
 | script batch_009 | #28 | **queued — the LAST unit.** +6,026 bytes, 2.034×, no bank negative |
 
 ⚠️ **ONE REVIEWER AT A TIME** — a rework does not occupy the slot, a review does. Push HANDOFF
@@ -228,6 +228,15 @@ row's **Alt column records REJECTED options, not a menu**. `{FCC0}` is forbidden
   matching, from an independent unit and agent. Second wave running this has happened.
 - **A wrong figure travels.** Three of the eight above originated in a PR, passed through my
   briefing unmeasured, and were caught only by the third role. The three-role split is doing work.
+
+- ⚠️ **A NINTH FIGURE OF MINE WRONG — AND WRONG IN BOTH DIRECTIONS AT ONCE.** I told chunk 31's
+  reviewer "§41.4 now predicts 11 of 11". It is **13 of 13**: the reviewer censused the whole battle
+  dump (**19 `どうやら`, 13 rendered, 6 untranslated** — chunks 15 ×3, 16, 23 ×2) and found
+  **§41.4's own table listed 8 and missed `chunk_008` line 14**, so the rule was 9 of 9 when
+  written, not 8 of 8. My number was too low AND the source table it came from was too low.
+  Glossary §45.4. ⚠️ **§41.4's "with no exceptions" is STILL wrong** — the census was battle-only,
+  and `batch_005.tsv` puts a plainly casual speaker (`俺たち`, `ラッキーだぜ`, `ｈａｓｎ’ｔ`) on the
+  `ｉｔ　ｓｅｅｍｓ` side. Pre-existing and shipped; no rendering changes.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
