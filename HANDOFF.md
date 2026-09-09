@@ -47,7 +47,7 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 | Unit | Branch / file | PR | State |
 |---|---|---|---|
 | ~~battle chunk 30~~ | `tl/battle/chunk_030.txt` | **#27** | ✅ **MERGED 2026-09-09 — squash `9548e73`; integration commit `integrate: chunk 030 — glossary §43, FLAGS §AE, handoff`.** 7,615 / 8,192, **slack 577**; 183 rows, widest 23, none at 24; both over-4 pages verified inherited against a pristine extraction; `{FFFE}` changed on 7 lines, all itemised. All 8 gates passed, no findings. Glossary **§43** (12 terms + 4 rulings), FLAGS **§AE** |
-| battle chunk 31 | `tl/battle/chunk_031.txt` | #26 | ⚠️ **CHANGES round 1** — 1 finding, routed to the same translator; reviewer a06a61f091fcf274c held for round 2 |
+| battle chunk 31 | `tl/battle/chunk_031.txt` | #26 | **rework round 1 PUSHED** `89f5d60` — 5,399 / 8,192 (slack 2,793), +44 as predicted. **Awaiting round-2 re-review by the SAME reviewer** (a06a61f091fcf274c), queued behind chunk 36 |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
 
@@ -288,6 +288,21 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   `Ｗｈａｔ　ｄｉｄ　ｙｏｕ　ｓａｙ？` verified free. Also `だけど、`'s stated reason is wrong (two
   connectives, not two spellings) though the collapse itself is discharged by shipped practice
   (`chunk_008` L8 carries both in one message).
+
+- 2026-09-09 (wave 7): ⚠️ **§AC3 HAS A NEW HIDING PLACE — MEASURE THE OPTION YOU ARGUE AGAINST,
+  NOT ONLY THE ONE YOU SHIP.** Chunk 31's translator measured every row that ENTERED its file with
+  `len()`, but the rejected alternative quoted in its own Flag 4 never entered the file, so it was
+  hand-counted — and wrong (23/23/22 for a true **22/22/22**; `hundred` and `battles` are 7 letters,
+  counted as 8). The reviewer's figure was right and the translator confirmed it against its own
+  measurement rather than deferring. **Rejected alternatives, reserves and "this would have been"
+  figures are exactly where hand-counting survives**, because the shipping row gets checked and the
+  argument row does not.
+- 2026-09-09 (wave 7): **SERIALISED REVIEW PAID OFF AGAIN — §41.4 NOW PREDICTS 11 OF 11.** Chunk 30
+  merged *between* chunk 31's two review rounds and entered the gate-6 index carrying `どうやら、`
+  **three times, all `Ｉｔ　ｓｅｅｍｓ …`, all on Rimul** — the formal, contraction-free side. That is
+  the same call chunk 31's L4 made independently, from a different unit and a different agent with
+  no knowledge of the question. This is the second wave running that reviewing one PR at a time has
+  produced an independent corroboration that parallel review would have hidden.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
