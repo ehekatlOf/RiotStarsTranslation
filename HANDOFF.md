@@ -54,7 +54,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | 5,039 → **5,037 / 8,192** expected | **PR #29 — CHANGES r2**, round 3 sent (max 3) |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (r3 @ `c477e8a`) | **PR #29 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
@@ -129,6 +129,27 @@ this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance 
 lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
 (chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
 claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
+
+✅ **PR #33 (chunk 38) MERGED — the wave's first.** Squash `7bd8e76`, integration `1eaf370`,
+re-verified green from a fresh checkout. **Battle 29/44, 25,487/43,161 JP chars (59.1%).**
+Glossary **§47**, FLAGS **§AI**. `マラナ` promoted to §1 and struck from §9 — ⚠️ **its gender is
+recorded as UNFIXED, not decided**, which is the right correction to my seed's wrong assertion.
+⚠️ **The reviewer RATIFIED the translator's refusal of its own prescription** (`Ｂａｄ，` over
+`Ｂａｄ！`) and recorded why it was wrong at §AI2: *"I prepended `ｔｈｅ` to the existing `Ｂａｄ！`
+without re-reading the result."* All three forms measure 23, so width decided nothing.
+⚠️ **§AI carries the sharpened §AG6 lesson: MEASURE THE REJECTED OPTION IN MORE THAN ONE WORD
+ORDER.** A greedy row count is a proven minimum **only for the ordering it was given**, and six
+correct measurements of six near-identical orderings produced a **false impossibility that nearly
+parked a shippable unit**.
+✅ **Gate 7 run glossary-key-first, as this wave's method finding requires: 1,097 keys enumerated,
+27 occur in chunk 38's source, all 27 conform.** Recorded as the recommended sweep at **§AI4**. It
+independently rediscovered the §28.3 `はっ` substring problem.
+✅ **TWO THINGS IT DECLINED TO INTEGRATE, both correct:** PR #33's Flag 4 "correction" is itself
+wrong (the clause is on the `鎮圧` row and is true) — filed as an addition, matching my own
+independent finding; and Flag 5's `pending/chunk_005` item was **already recorded** at
+`pending/README.md` line 31 from PR #18's review, so **no duplicate row was added** — and its
+"L18" vs the README's "19" is the **DATA/FILE trap again** (file line 19 = body line 18, both
+right), correctly left uncorrected in either direction.
 
 ### Review round 2 — PR #29: **CHANGES** again, ONE finding. Round 3 sent (the maximum).
 All gates re-run from scratch on `dfa9771` against the moved base, re-positive-controlled on the
