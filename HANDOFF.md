@@ -32,16 +32,16 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > Omit `environment_id` and `model` so both inherit. Wave 5's units are in **Next up**.
 
 ## Last updated
-2026-09-09 · by: **chunk-20 reviewer** (PR #14 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
-wave: **4 IN FLIGHT — 2 of 4 merged (18, 20); 19 in rework awaiting round 2; script 006 unreviewed**
+2026-09-09 · by: **chunk-19 reviewer** (PR #16 round-2 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
+wave: **4 IN FLIGHT — 3 of 4 merged (18, 19, 20); script 006 (PR #15) unreviewed, reviewer slot FREE**
 · queue: **fresh**
 
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **20** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, **20**, 33, 34, 35, 40 |
-| Battle JP characters | **15,257** | 43,161 | **35.3%** (was 32.2% at wave-4 start) |
+| Battle chunks | **21** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, **19**, **20**, 33, 34, 35, 40 |
+| Battle JP characters | **17,002** | 43,161 | **39.4%** (was 32.2% at wave-4 start) |
 | Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
 | Script message instances | 4,039 | 7,931 | **50.9%** |
 
@@ -53,30 +53,40 @@ Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifac
 ✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
 unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
-**Reviewer 1 DONE — chunk 18 MERGED. Reviewer 2 DONE — chunk 19 CHANGES round 1, rework pushed.
-Reviewer 3 DONE — chunk 20 MERGED round 1 (`46b728a`), integrated.** A translator *reworking* does
-not occupy the reviewer slot, so a sibling PR may be reviewed meanwhile — but never two reviewers
-at once. **The reviewer slot is now FREE.** Two units remain: **PR #16 round 2** (chunk 19, rework
-`e14811d` pushed and waiting) and **PR #15** (script batch 006, never reviewed). Review them one at
-a time; #16 round 2 should go to the same reviewer if it is still alive, since it holds that
-unit's context.
+**Reviewer 1 DONE — chunk 18 MERGED. Reviewer 3 DONE — chunk 20 MERGED round 1 (`46b728a`).
+Reviewer 2 DONE — chunk 19 MERGED at round 2 (`aecea69`), integrated.** **The reviewer slot is now
+FREE and ONE unit remains: PR #15** (script batch 006, never reviewed) → its integration takes
+**glossary §34 / `FLAGS.md` §V**, but **read the last heading at commit time; never reserve.**
 
-✅ **THE CROSS-UNIT MERGE ORDER IS SETTLED: chunk 20 merged FIRST (2026-09-09), so it LEFT THE §9
-SEED ROWS LIVE — and CHUNK 19 STRIKES THEM as the second** (the `ルート` precedent, §29.1/§30.1).
-Chunk 20's reviewer verified in the file that all four cross-unit terms were used **exactly as
-seeded** (`Ａｒｉｅｓ` ×3, `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ`, `Ｈｕｇｏ`, the long
-`Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ`) and annotated the §9 block with that status. **Chunk 19's round-2
-reviewer owns the strike** — including the fifth term `宝石`, which the seed missed.
+⚠️ **PR #15's reviewer inherits three rulings made after that PR was drafted**, and must weigh each
+difference as "translator error" against "a ruling that did not exist when the unit was drafted":
+**(a)** `あら` → `Ｍｙ` + the source's own punctuation (§32.4), which binds it; **(b)** the narrowed
+`まさか` of §33.6 — `Ｓｕｒｅｌｙ` covers only the incredulous use, **not** the `まさか…とは`
+exclamative, and `Ｓｕｒｅｌｙ` is **not** free (it renders はずだ and きっと in three shipped rows);
+**(c)** `宝石` → `ｇｅｍｓｔｏｎｅ` (§33.5). ⚠️ Also owed, and **not** PR #15's job: the `あら` re-cut
+of `chunk_007` L19/L24, `chunk_011` L3 and `chunk_014` L3 (`FLAGS.md` §T1), and the live
+`勲章`/`メダル` collision in banks 42–43 (§T2). Both belong to a §27-style corrections unit.
 
-✅ **SECTION NUMBERS ARE SETTLED FOR THIS PAIR: chunk 20's integration committed first and took
-§32 / `FLAGS.md` §T. Chunk 19's round-2 integration takes §33 / §U**, and PR #15's takes §34 / §V.
-Reviewer 2's unpushed draft (narrowing `まさか`, below) must be renumbered to **§33** before it is
-written. **Still: read the last heading at commit time; never reserve.**
+✅ **THE CROSS-UNIT RULE IS DISCHARGED (2026-09-09).** Chunk 20 merged first and left the §9 seed
+rows live; chunk 19 merged second at `aecea69` and **struck eight of them** — the four cross-unit
+rows (`アリエス`, `ヒューゴー`, `カバラ`, `火の水晶`) plus the four chunk-19-only seeds (`ソロン`,
+`ノーマン`, `トレジャーハンター`, `傭兵団`), all promoted to §33.1. **Every one was used exactly as
+seeded by both translators; not one was improved on unilaterally.** ✅ The seed's
+`Ｆｉｒｅ　Ｃｒｙｓｔａｌ` contingency **never fired** — chunk 19's four rows measure 18/18/21/21 and it
+shipped with 127 bytes spare, so the long `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` stands in both units.
+⚠️ The fifth term `宝石` **had no §9 row to strike** (the seed missed it); it is ruled
+`ｇｅｍｓｔｏｎｅ` at §33.5 and entered at §32.1 and §33.1. **Chunk 31 inherits it**, as do the three
+still-untranslated script lines.
+
+✅ **SECTION NUMBERS: chunk 20 took §32 / `FLAGS.md` §T; chunk 19 took §33 / §U** (verified against
+the files at commit time, not reserved). **PR #15's integration takes §34 / §V — but read the last
+heading immediately before writing; never reserve.** Wave 3 lost work to two reviewers both
+holding §28, and wave 4 nearly repeated it.
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
-| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | 🔄 **REWORK PUSHED `e14811d` — 8,065 / 8,192 (127 slack), all 4 findings accepted, none contested. Round-2 re-review QUEUED behind reviewer 3** (same reviewer `a7e69858f22822022`, which holds an unpushed §32). Round 1 was: All mechanical gates re-verified by recomputation and clean (8,067 / 8,192; five `{FFFE}`; `{FCC0}` 24→24; gate 6 clean). **Fails gate 7 only**: `ウルフ` → `Ｗｏｌｆ` collides with `ｗｏｌｆ` already shipped 3× in `batch_003.tsv` for 狼 (21 instances) — the §28.5 “reads as an English common word” failure, worst where the character announces himself by name. 4 findings, all byte-neutral or byte-positive → 8,065 / 8,192 (slack 127) |
+| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | ✅ **MERGED round 2** (squash `aecea69`), integrated by `integrate: chunk 019 — glossary, flags, handoff (PR #16)`. **8,065 / 8,192 (127 slack)** — the wave's tight unit, 1.91× against a 1.94 ceiling; 200 text rows, widest 23 with 14 at 23, none at 24, no page over 4 rows; `{FFFE}` net −9 on five lines, **`{FCC0}` untouched at 24**, non-break tag stream byte-identical on all 28 lines. Every §6 gate re-run from scratch in a real checkout at round 2 (not diffed) and pasted; gate 6 re-run against the **new** corpus including chunk 20. **All 4 round-1 findings accepted, none contested, and every one byte-neutral or byte-positive** — `ウルフ` → **`Ｕｌｆ`** (−2 B), the orphaned `Ｉ　ａｍ` row repacked (0 B), a row-final lone `ａ` + 5-column orphan removed (0 B), and a second undisclosed §2.1 step-6 reorder restored to source order (0 B). ⚠️ **The translator corrected the reviewer's own evidence on finding 1 and was right**: `ｗｏｌｆ` is shipped across **2 unique lines of `batch_003` = 42 message instances**, and L40's key contains the katakana `ウルフ` itself. 17 rows + 3 rulings + the `まさか` narrowing integrated as **glossary §33**; **`FLAGS.md` §U**. **Eight §9 wave-4 seed rows struck** — the cross-unit rule is discharged. Nothing left on this unit |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **MERGED round 1** (squash `46b728a`), integrated by `integrate: chunk 020 — glossary, flags, handoff (PR #14)`. **4,265 / 8,192 (3,927 slack); 94 text rows, widest 23, none at 24**; three `{FFFE}` added on two lines, none deleted, **no `{FCC0}`**; all 48 other body lines byte-identical to the dump. All §6 gates run in a real checkout and pasted; **every figure in the PR was correct as stated** and **no finding required a change to the unit**. **All five open questions ruled** (see below). 24 rows integrated as **glossary §32**; **`FLAGS.md` §T**. ⚠️ **Two items of owed work left behind, both in `FLAGS.md` §T1/§T2** — the `あら` re-cut of chunks 7, 11, 14, and the live `勲章`/`メダル` collision in banks 42–43 |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 

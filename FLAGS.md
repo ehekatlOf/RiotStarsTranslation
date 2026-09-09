@@ -2389,3 +2389,127 @@ different source word. No collision (different message, different collocation), 
 every reversible call in §32 (`Ｆｉｒｅ　Ｃｒｙｓｔａｌ` if chunk 19 needs it, −6 bytes; any `あら`
 respelling) is free here. **No bank is under 2,000 free** as a result of this unit: it touches no
 script bank at all, and `bankmeasure.py` was not run because nothing under `tl/script/` changed.
+
+---
+
+## U. Wave 4 review — battle chunk 19 / PR #16 (2026-09-09)
+
+Merged at `aecea69` after **round 2**. **8,065 / 8,192 bytes, slack 127** — 3,325 EN / 1,745 JP =
+**1.91×** against a 1.94 ceiling, the tightest unit of the wave and the second tightest shipped
+after chunk 0. 200 text rows, widest 23 with 14 at 23, **none at 24**, no page over 4 text rows.
+`{FFFE}` 188 → 179 (net −9) on five lines; **`{FCC0}` untouched at 24**; non-break tag stream
+byte-identical to the dump on all 28 lines. Glossary entries at **§33**.
+
+### U1. Four findings at round 1, all four accepted, none contested — and every one byte-neutral or better
+
+Recorded because the shape is worth repeating: in the wave's tightest unit, **no finding cost the
+budget a byte**. The rework came in at **net 0 characters** and −2 bytes overall.
+
+| # | Finding | Fix | Cost |
+|---|---|---|---|
+| 1 | `ウルフ` → `Ｗｏｌｆ` collides with shipped `ｗｏｌｆ` (the creature) | → **`Ｕｌｆ`** | **−2 bytes** |
+| 2 | Orphaned 4-column `Ｉ　ａｍ` row, against the chunk's own two other renderings of the same formula | repack to `Ｉ　ａｍ　Ｆａｒｉｎａ’ｓ` / `ｇｕａｒｄ　ｃａｐｔａｉｎ，` / `Ｕｌｆ．` | **0 bytes** |
+| 3 | Row ends on the lone article `ａ`, orphaning a 5-column `ｌｅａｄ．` — a `translation_prompt.md` §3.2 breach | 4 rows → 3, `…ｈｅ　ｍａｙ　ｋｎｏｗ` / `ｓｏｍｅｔｈｉｎｇ　ｏｆ　ａ　ｌｅａｄ．` | **0 bytes** |
+| 4 | A second, undisclosed §2.1 step-6 clause reorder | source order restored (`Ｆｒｏｍ　ｔｈｅ　ｆｏｒｅｓｔ，` / `ｓｏｌｄｉｅｒｓ．．．！`) | **0 bytes** |
+
+**The translator improved on two of them and disclosed both.** Finding 2's repack also removed a
+second orphan neither party had claimed (`ａｍ` would have been row-final), and finding 3's page
+turned out to carry a **leading blank plus four text rows** — the shape §3.2 says has never
+appeared in the source — so the fix moved it away from the wall rather than merely tidying it.
+
+⚠️ **The translator also corrected the reviewer's own evidence on finding 1, and was right.** The
+round-1 review said `ｗｏｌｆ` was shipped "three times… a 21-instance row", conflating three
+occurrences of the string with one unique line. Recounted: **2 unique lines of `batch_003`
+(L39, L40) at 21 instances each = 42 message instances**, and **L40's source key contains the
+katakana `ウルフ` itself** (`キラーウルフが進化した狼の怪物。` → `…ｆｒｏｍ　ｔｈｅ　ｋｉｌｌｅｒ　ｗｏｌｆ．`),
+so ウルフ → `ｗｏｌｆ` is literally shipped rather than inferred from 狼. The corrected figure is in
+§33.3.
+
+### U2. §31.3's `まさか` → `Ｓｕｒｅｌｙ` is over-broad — NARROWED at §33.6, and it was wrong on two facts
+
+⚠️ **This is the item a later unit is most likely to trip on.** §31.3 was written one PR earlier
+and named chunk 19 among the 13 chunks it binds. Chunk 19 is the unit that tests it and it does not
+hold as written. **No rendering changed; the entry did.** Full working at §33.6; the short form:
+
+- **8 of the 18 battle occurrences are the incredulous use** (`まさか…か？`, bare `まさか・・・`) —
+  chunks 0, 17, 18, 19, 25, 27, 39 ×2 — and take `Ｓｕｒｅｌｙ`. Both shipped instances
+  (`chunk_018`, `pending/chunk_017`) are of this kind and stand.
+- **10 are the exclamative `まさか…とは / とはな`** — chunks 19, 23 ×2, 24, 26, 27, 30, 32 ×2, 43 —
+  where `Ｓｕｒｅｌｙ` **inverts the sense**. Chunk 19 renders its one as `ｏｆ　ａｌｌ　ｔｈｉｎｇｓ`.
+- **"`Ｓｕｒｅｌｙ` is otherwise free across `tl/`" was false.** Three shipped lowercase `ｓｕｒｅｌｙ`
+  render `はずだ` (`chunk_000` L14) and `きっと` (`chunk_007` L20, `chunk_034` L2).
+- **§31.3 listed chunk 0, which already ships `まさか、` as `Ｉｔ　ｃａｎ’ｔ　ｂｅ，`** (`chunk_000`
+  L14) — contradicted by shipped work at the moment it was written. Chunk 0 stays recorded, not
+  re-cut (27 bytes of slack; §18.3).
+
+**Ten chunks inherit the narrowed reading: 23, 24, 26, 27, 30, 32, 43** for the exclamative and
+**25, 27, 39** for the incredulous.
+
+### U3. The wave-4 cross-unit rule is DISCHARGED — eight seed rows struck, none re-cut
+
+Chunk 20 merged first and left the four cross-unit rows live; chunk 19 merged second and struck
+them, plus the four chunk-19-only seeds — eight in all, **every one used exactly as seeded by both
+translators.** ✅ **§9's `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` contingency never fired**: the seed warned that
+tier-B chunk 19 might be unable to fit `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` (15) and would drag chunk 20 onto
+the short form. Its four rows measure 18 / 18 / 21 / 21 and it shipped with 127 bytes spare, so the
+long form stands in both units.
+
+⚠️ **`宝石` was a fifth cross-unit term the seed missed** — 6 battle (19 ×1, 20 ×4, 31 ×1) + 4
+unique script lines. Ruled `ｇｅｍｓｔｏｎｅ` at this review (§33.5) and shipped consistently by both
+units. **It has no §9 row**, so nothing was struck for it. **Chunk 31 inherits `ｇｅｍｓｔｏｎｅ`**, as
+do the three still-untranslated script lines — including the 21-instance
+`宝石として珍重する地方もある。`, which is the line that decided it.
+
+### U4. Two duplicate-check traps, both reproduced by the reviewer's own checker
+
+Written into §33.8. Recorded here because they will fire again on any future sweep:
+
+1. **`どうする？` reads DIVERGENT to any index-based row checker** — message 19's deliberate
+   step-6 reorder shifts the row index. Chunk 19 does carry `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？`
+   byte-identically at message 3. ⚠️ That string is shipped in **five** files (`chunk_000`,
+   `chunk_004`, `chunk_008`, `chunk_019`, `pending/chunk_005` ×2) — more entrenched than either
+   PR realised, which is precisely what made the reorder worth making.
+2. **Ellipsis checkers that STRIP tags rather than SPLIT on them report a false failure at message
+   24** — stripping glues `ｌｅｔ’ｓ　ｆｉｇｈｔ．` onto `．．．Ａｇｒｅｅｄ．` and invents a run of four.
+   The translator predicted this in its Flag 5 and the reviewer's first checker reproduced it
+   exactly. **Split on tags; do not strip them.**
+
+### U5. §29.4's `Ａｇｒｅｅｄ．` reserve is engaged for the first time
+
+Chunk 19 is the unit §29.4 wrote the reserve for: bare `了解。` (message 19) and `・・・わかった。`
+(message 24) on one map. 了解 keeps `Ｕｎｄｅｒｓｔｏｏｄ．`, わかった takes `．．．Ａｇｒｅｅｄ．`, and
+`Ａｇｒｅｅｄ` was re-verified free across `tl/` and `pending/` — it appears in no translation file
+but this one.
+
+⚠️ **The reserve is CONDITIONAL and the next two chunks must not copy it blindly.**
+`・・・わかった。` recurs in **chunks 24 and 27**. It takes `．．．Ａｇｒｅｅｄ．` **only** where a
+`了解` stands beside it; absent one, §6's `Ｒｉｇｈｔ` governs, as `chunk_013` L8 already ships.
+Check the chunk for `了解` before copying.
+
+### U6. Terms fixed at review that neither PR proposed
+
+- **`よりによって` → `ｏｆ　ａｌｌ　…`, complement following the source.** All three battle
+  occurrences are now shipped and they differ by design — `Ｏｆ　ａｌｌ　ｐｌａｃｅｓ，` (chunk 19,
+  complement is `厄介なところ`), `Ｏｆ　ａｌｌ　ｔｉｍｅｓ，` (chunk 8), `ｔｏ　ｓｅｎｄ　ｍｅ，　ｏｆ　ａｌｌ`
+  (chunk 4). The **word** is fixed; the noun follows the source. §3 is not engaged (different
+  messages). The phrase is now closed — no further occurrences remain.
+- **`どうやら、` → `Ｌｏｏｋｓ　ｌｉｋｅ　…`.** Chunk 19 absorbed it with no standing form and its
+  Flag 15 asked for one. **It reaches four more chunks — 23, 25, 30, 31** — so it is fixed now
+  rather than invented four times. Held distinct from §26.6's hearsay evidentials: どうやら is the
+  speaker's own inference from what he can see, not report of another's word.
+
+### U7. Not raised, so it is not "fixed" later
+
+Three rows end in a one- or two-letter word — `…ｂｕｔ　Ｉ` (message 1), `Ｌｏｏｋｓ　ｌｉｋｅ　ａ`
+(message 3), `ｂｕｔ　Ｉ　ｈｅａｒ　ｉｔ　ｉｓ　ａ` (message 23). Each mirrors the source's own break
+segment for segment, which §3.2 says should normally be preserved, and **none is compounded by an
+orphan row or a page at the four-row wall**. They stand. The one that *was* corrected stacked all
+three faults at once.
+
+### U8. Nothing new for a human
+
+No `{FCC0}` was added, so `FLAGS.md` §Q2's documented gate defect was not rediscovered. No tag
+required guessing; no source typo suspected. Banks are untouched by this unit — **bank 41 (353
+free), bank 40 (471) and bank 5 (3,381) remain the tight three**, unchanged by chunk 19, and no
+bank is negative. `python3 tools/assemble.py check` passes on the integration branch after this
+commit.

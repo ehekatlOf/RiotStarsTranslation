@@ -10,7 +10,7 @@ Entries in **§9 PROVISIONAL** are *not* decisions — they are names seen in th
 rendered in any translated line. Promote one to its proper table the first time you use it.
 
 Status: covers `script_unique.txt` lines 1–216 (unit, class, monster and equipment descriptions), 984–1001 and 1040–1047 (batch 005), and `battle_dump.txt`
-chunks **0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 20, 33, 34, 35, 40** (prologue + chapters
+chunks **0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 19, 20, 33, 34, 35, 40** (prologue + chapters
 2–5 + all of tier E), plus the parked **5, 17, 43**. ⚠️ **This line was stale and is corrected
 2026-09-08 (PR #13 review): it omitted chunks 6, 8, 9, 13 and 17, all merged or parked in waves
 2–3.** It is a coverage note, not a fixed entry — no rendering changes and nothing needs
@@ -313,29 +313,36 @@ across files, so **both translators must render these exactly as seeded here** r
 choosing. Per the `ルート` precedent (§29.1/§30.1) the row is struck once, by the **second** of the
 two reviewers to merge — the first deliberately leaves it live.
 
-⚠️ **STATUS 2026-09-09 — chunk 20 (PR #14) merged FIRST, so all four rows below are DELIBERATELY
-LEFT LIVE.** Verified at that review, in the file: `アリエス` → `Ａｒｉｅｓ` ×3, `盗賊カバラ` →
-`ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` ×1, `ヒューゴー` → `Ｈｕｇｏ` ×1, `火の水晶` →
-`Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` ×1 (**the long form**) — **all four used exactly as seeded, none improved
-on unilaterally.** Chunk 19 (PR #16) was still open and in rework when this merged; **it merges
-second and strikes these four rows.** ⚠️ **A FIFTH term belongs on this list and the seed missed
-it: `宝石`** (c19 ×1, c20 ×4, c31 ×1), with `宝` / `お宝` beside it — ruled `ｇｅｍｓｔｏｎｅ` by chunk
-19's reviewer and shipped consistently by chunk 20; see §32.1. ⚠️ **If chunk 19 (tier B, 1.94)
-cannot fit `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` (15) and takes `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` (12), chunk 20 must follow
-it** — that row is standalone with 3,927 bytes of slack behind it, so the change is −6 bytes and
-re-flows nothing.
+✅ **STATUS 2026-09-09, FINAL — the cross-unit rule is DISCHARGED and all eight wave-4 battle seeds
+are struck.** Chunk 20 (PR #14) merged first and deliberately left the four cross-unit rows live;
+chunk 19 (PR #16) merged **second**, at `aecea69`, and strikes them here — which is the whole of
+what the `ルート` precedent (§29.1 / §30.1) prescribes. Struck at that merge: the four cross-unit
+rows (`アリエス`, `ヒューゴー`, `カバラ`, `火の水晶`) **plus the four chunk-19-only seeds**
+(`ソロン`, `ノーマン`, `トレジャーハンター`, `傭兵団`), all eight promoted to §33.1 and **all eight
+used exactly as seeded by both translators — not one was improved on unilaterally.**
+
+✅ **The `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` contingency never fired.** This note previously warned that tier-B
+chunk 19 (ratio 1.94) might be unable to fit `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` (15) and would drag chunk 20
+onto the short form. It fitted: chunk 19's four rows measure **18 / 18 / 21 / 21** and the unit
+shipped with **127 bytes of slack**, so **the long form stands in both units and neither was
+re-cut.**
+
+⚠️ **A FIFTH term belonged on this list and the seed missed it: `宝石`** (c19 ×1, c20 ×4, c31 ×1),
+with `宝` / `お宝` beside it — ruled `ｇｅｍｓｔｏｎｅ` at chunk 19's review and shipped consistently by
+both units. **It has no §9 row to strike** because it was never seeded; the entries are §32.1 and
+§33.1. **Chunk 31 inherits `ｇｅｍｓｔｏｎｅ`.**
 
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
-| アリエス | `Ａｒｉｅｓ` | **CROSS-UNIT — chunk 19 L1, chunk 20 L47/L48 (×3).** A **PERSON**, female, and a travelling performer: asked `アリエスさんは、ファリーナは初めて？` she answers `いいえ。旅の巡業で何度か来たことが。` (*no — I have come a few times, touring*). Polite です/ます register. **11 battle + 9 script occurrences — the most-used new name in this wave.** 5 columns | Ａｒｉｅｓｕ, Ａｌｉｅｓ. The zodiac reading is the plain one and matches the European convention |
-| ソロン | `Ｓｏｌｏｎ` | chunk 19 L24 (×3). A **PERSON**, male — an imperial soldier recognised by his elder brother: `ソロン！？ソロンじゃねぇか！！` … `実の兄貴の頼みだ。手を貸そう。` **3 battle + 0 script.** 5 columns | Ｓｏｒｏｎ, Ｔｈｏｒｏｎ |
-| ヒューゴー | `Ｈｕｇｏ` | **CROSS-UNIT — chunk 19 ×1, chunk 20 L1 ×1.** A **PERSON**, male, named dismissively by a rival imperial officer: `ふふっ、ヒューゴーの奴、今ごろ　ファリーナを探索しておるんだろうが、見当違いもいいところだ。` **2 battle + 0 script.** 4 columns | Ｈｕｇｈｏ, Ｈｕｇｏｒ. The long ー is the ordinary Japanese spelling of *Hugo*, not a separate syllable |
-| ノーマン | `Ｎｏｒｍａｎ` | chunk 19 ×1 (`ほう。ノーマン、よければ、話して差し…`). A **PERSON**, male, of Farina; the main script has him leading the rebuilding afterwards (`今は、ノーマンさんたちがふっこーにはげん…`). **1 battle + 3 script.** 6 columns | Ｎｏｒｍａｎｎ |
-| カバラ | `Ｋａｂａｌａ` | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** A **PERSON**, male, a **dead bandit** whose hoard is this chapter's object: `カバラという盗賊の手に渡ったと聞きます`, `そのカバラも帝国に追われて、もうこの世に…`, `このカバラの財宝を捜しているトレジャーハンター`, `これも、盗賊カバラのお宝のひとつか。` `盗賊カバラ` → `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` (17 columns). **5 battle + 0 script.** 6 columns bare | Ｃａｂａｌａ, Ｋａｂｂａｌａ. ⚠️ カバラ is also the standard Japanese for *Kabbalah*; the `ネルガリ` → `Ｎｅｒｇａｌｉ` precedent (§17.4) chose the plain transliteration over the mythological source, and this row follows it |
-| 火の水晶 / 『火の水晶』 | `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”` | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** The chapter's plot object, and **an inventory item whose description line is a 21-instance row of the untranslated description table**: `ファリーナに伝わる伝説の水晶。炎のような美しい光を放つ。` (*a legendary crystal handed down in Farina; it gives off a beautiful light like flame*). Chunk 19 carries one instance in `『』` and the rest bare. `『…』` → `“…”` per `『知識の書』` (§12). **5 battle + 22 script.** 15 columns bare, **17 quoted** | `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` (12 bare / 14 quoted) if width bites — but chunk 20 is tier D (ratio 4.75) and chunk 19 tier B (1.94), so ⚠️ **chunk 19 is the one that may need the short form; if it takes it, chunk 20 must take it too.** The `Ｘ　ｏｆ　Ｙ` form matches the `Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ` precedent for `〜の〜` |
+| ~~アリエス~~ | ✅ **PROMOTED to §33.1** — `Ａｒｉｅｓ`, rendered once in `tl/battle/chunk_019.txt` (PR #16) and three times in `tl/battle/chunk_020.txt` (PR #14), **used exactly as seeded in both**. ⚠️ **This is one of the four CROSS-UNIT rows §9 deliberately left live at chunk 20's merge; chunk 19 merged second and strikes it**, per the `ルート` precedent (§29.1 / §30.1) | **CROSS-UNIT — chunk 19 L1, chunk 20 L47/L48 (×3).** A **PERSON**, female, and a travelling performer: asked `アリエスさんは、ファリーナは初めて？` she answers `いいえ。旅の巡業で何度か来たことが。` (*no — I have come a few times, touring*). Polite です/ます register. **11 battle + 9 script occurrences — the most-used new name in this wave.** 5 columns | — |
+| ~~ソロン~~ | ✅ **PROMOTED to §33.1** — `Ｓｏｌｏｎ`, rendered three times in `tl/battle/chunk_019.txt` (PR #16), **used exactly as seeded** | chunk 19 L24 (×3). A **PERSON**, male — an imperial soldier recognised by his elder brother: `ソロン！？ソロンじゃねぇか！！` … `実の兄貴の頼みだ。手を貸そう。` **3 battle + 0 script.** 5 columns | — |
+| ~~ヒューゴー~~ | ✅ **PROMOTED to §33.1** — `Ｈｕｇｏ`, rendered once in each of chunks 19 and 20, **used exactly as seeded in both**. **CROSS-UNIT row, struck at chunk 19's second merge** | **CROSS-UNIT — chunk 19 ×1, chunk 20 L1 ×1.** A **PERSON**, male, named dismissively by a rival imperial officer: `ふふっ、ヒューゴーの奴、今ごろ　ファリーナを探索しておるんだろうが、見当違いもいいところだ。` **2 battle + 0 script.** 4 columns | — |
+| ~~ノーマン~~ | ✅ **PROMOTED to §33.1** — `Ｎｏｒｍａｎ`, rendered once in `tl/battle/chunk_019.txt` (PR #16), **used exactly as seeded** | chunk 19 ×1 (`ほう。ノーマン、よければ、話して差し…`). A **PERSON**, male, of Farina; the main script has him leading the rebuilding afterwards (`今は、ノーマンさんたちがふっこーにはげん…`). **1 battle + 3 script.** 6 columns | — |
+| ~~カバラ~~ | ✅ **PROMOTED to §33.1** — `Ｋａｂａｌａ`, rendered four times in chunk 19 and once in chunk 20, **used exactly as seeded in both**, with `盗賊カバラ` → `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` ratified at chunk 19's review. **CROSS-UNIT row, struck at chunk 19's second merge** | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** A **PERSON**, male, a **dead bandit** whose hoard is this chapter's object: `カバラという盗賊の手に渡ったと聞きます`, `そのカバラも帝国に追われて、もうこの世に…`, `このカバラの財宝を捜しているトレジャーハンター`, `これも、盗賊カバラのお宝のひとつか。` `盗賊カバラ` → `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` (17 columns). **5 battle + 0 script.** 6 columns bare | — |
+| ~~火の水晶 / 『火の水晶』~~ | ✅ **PROMOTED to §33.1** — `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”`, **the LONG form, all five instances across both units** — chunk 19 ×4 (one quoted) and chunk 20 ×1. The seed's warning that tier-B chunk 19 might be forced onto the short `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` **did not materialise**: all four of its rows measure 18 / 18 / 21 / 21 and the chunk landed with 127 bytes to spare, so neither unit was re-cut. **CROSS-UNIT row, struck at chunk 19's second merge** | **CROSS-UNIT — chunk 19 ×4, chunk 20 L47 ×1.** The chapter's plot object, and **an inventory item whose description line is a 21-instance row of the untranslated description table**: `ファリーナに伝わる伝説の水晶。炎のような美しい光を放つ。` (*a legendary crystal handed down in Farina; it gives off a beautiful light like flame*). Chunk 19 carries one instance in `『』` and the rest bare. `『…』` → `“…”` per `『知識の書』` (§12). **5 battle + 22 script.** 15 columns bare, **17 quoted** | — |
 | ~~バーストウーズ~~ | ✅ **PROMOTED to §32.1** — `ｂｕｒｓｔ　ｏｏｚｅ`, lowercase, rendered in `tl/battle/chunk_020.txt` (PR #14), **used exactly as seeded**; 10 columns confirmed at review. ⚠️ **This row's citation was wrong: the `グレイウーズ` → `ｇｒｅｙ　ｏｏｚｅ` precedent is at §17.2, not §17.4.** The derivation is unaffected | battle chunk 20 | — |
-| トレジャーハンター | `ｔｒｅａｓｕｒｅ　ｈｕｎｔｅｒ` | chunk 19 ×1 — the people hunting Kabala's hoard in Marvellous. **Lowercase**: a trade, by the §17.1 species test and the `探検家` → `ｅｘｐｌｏｒｅｒ` precedent (§21.1). ⚠️ **In the dump it is SPLIT across a line break** — `トレジャー|ハンター` — so a naive grep for the whole word finds zero. **1 battle + 0 script.** 15 columns | — |
-| 傭兵団 | `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ` | chunk 19 L3 ×2 — `どうやら、傭兵団のようだな。` **2 battle + 0 script.** 14 columns | `ｍｅｒｃｅｎａｒｙ　ｃｏｍｐａｎｙ` (17), `ｍｅｒｃｅｎａｒｉｅｓ` (12) where the 団 is not doing work |
+| ~~トレジャーハンター~~ | ✅ **PROMOTED to §33.1** — `ｔｒｅａｓｕｒｅ　ｈｕｎｔｅｒ`, rendered once in `tl/battle/chunk_019.txt` (PR #16), lowercase, **used exactly as seeded**. The seed's warning held — the dump splits it `トレジャー|ハンター` across a `{FFFE}` | chunk 19 ×1 — the people hunting Kabala's hoard in Marvellous. **Lowercase**: a trade, by the §17.1 species test and the `探検家` → `ｅｘｐｌｏｒｅｒ` precedent (§21.1). ⚠️ **In the dump it is SPLIT across a line break** — `トレジャー|ハンター` — so a naive grep for the whole word finds zero. **1 battle + 0 script.** 15 columns | — |
+| ~~傭兵団~~ | ✅ **PROMOTED to §33.1** — `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ`, rendered twice in `tl/battle/chunk_019.txt` (PR #16), **used exactly as seeded**; the seed's shorter `ｍｅｒｃｅｎａｒｉｅｓ` alternative was not taken even under byte pressure | chunk 19 L3 ×2 — `どうやら、傭兵団のようだな。` **2 battle + 0 script.** 14 columns | — |
 | ~~おかしら (vs 将校 / 将軍)~~ | ✅ **PROMOTED to §32.1** — `Ｂｏｓｓ` (4) and `将校` → `ｏｆｆｉｃｅｒ` (7), rendered in `tl/battle/chunk_020.txt` (PR #14), **the seed's primary form taken over its `Ｃｈｉｅｆ` alternative**. ⚠️ **The gag SURVIVED and was read against the source at review** — `Ｙｏｕ　ｆｏｏｌ，` / `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ` / `Ｅｍｐｉｒｅ！　Ｃａｌｌ　ｍｅ` / `Ｇｅｎｅｒａｌ！　Ｇｅｎｅｒａｌ！！`, three words still three words, the doubled repeat kept. See §32.4a | battle chunk 20 | — |
 | ~~勲章~~ | ✅ **PROMOTED to §32.1** — `ｍｅｄａｌ`, rendered ×2 in `tl/battle/chunk_020.txt` (PR #14); 5 columns confirmed. ⚠️ **This row's reach was badly wrong and its silence on `メダル` cost a review: it is 4 battle (chunks 20 and 22) + 59 `script_dump` / 39 `script_unique`, not "2 battle", and it is the plot item `獅子の勲章` / `『獅子の勲章』`.** The clash with §3's racetrack `メダル` → `ｍｅｄａｌ` is **LIVE in banks 42 and 43** and is NOT discharged — see §32.5 | ~~chunk 20 L47/L48 ×2 — dug up beside the jewels~~ | `ｄｅｃｏｒａｔｉｏｎ` (12) rejected as too vague; `ｔｏｋｅｎ` (5) is the reserve, on the **racetrack** side |
 | デビルズラック | `“Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ”` | **script batch 002, unique 631** — an item pressed on the player by a grateful NPC (`これを　もらってくれ！デビルズラックだ！！`). A coined item name, so capitalised. ⚠️ **`’` not `'`** (§3.1). **0 battle + 1 script.** 14 columns quoted, 12 bare | `Ｄｅｖｉｌｓ　Ｌｕｃｋ` (11) if the apostrophe proves awkward at width; the source has no `『』`, so the quotes are optional — **prefer bare `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ`** unless the line reads as a title |
@@ -2467,3 +2474,227 @@ forbids. Likewise `おかしらぁ` is expressive lengthening, not a misspelling
 `ｗａｓ　ｂｕｒｉｅｄ　ｈｅｒｅ` (a §2.1 step 4 width synonym — `ｗｈｅｒｅ　ｔｈｅ　ｇｅｍｓｔｏｎｅｓ　ｗｅｒｅ　ｂｕｒｉｅｄ`
 is 30 columns; different source clauses, so §3 is not engaged); and `もんってことさ` → `ｏｕｒｓ　ｎｏｗ．`
 (a mild step-5 implication).
+
+---
+
+## 33. Added by chunk 019 (PR #16, merged 2026-09-09)
+
+Rendered in `tl/battle/chunk_019.txt` — chapter 19, Farina, in six scenes: the bridge conversation
+between a 9th Army man and Aries; Hugo's mercenaries ambush the squad and drop the country's only
+bridge, cutting the road out; the three mutually exclusive parley variants (the governor's envoy /
+guard captain Ulf / the no-quarrel plea); the two Imperial soldiers who finish the castle garrison
+and decide to kill a Carline prisoner; Governor Felix's long account of the Crystal of Fire, the
+bandit Kabala and the treasure hunter Korneff in Marvellous; and Solon's reunion with his elder
+brother. **8,065 / 8,192 bytes, slack 127 — 200 text rows, widest 23 with 14 at 23 and none at
+24**, no page over 4 text rows. **The wave's tight unit**: 3,325 EN / 1,745 JP = **1.91×** against
+a 1.94 ceiling. Merged at **round 2**; all four review findings were accepted and none contested,
+and the rework was **−2 bytes**.
+
+⚠️ **Line numbers in this section are MESSAGE lines** (dump body index, 1-based) = the `tl/` file
+line **minus one**, the §28 / §30 convention. That is the **third** of the five numbering
+conventions now in play in this repo (`FLAGS.md` §O8, §P; glossary §28, §29, §30, §31, §32).
+**Locate by content.**
+
+`Ｆａｒｉｎａ` / `Ｃａｒｌｉｎｅ` / `Ｒｏｙａｌ　Ａｒｍｙ` / `ｔｈｅ　Ｅｍｐｉｒｅ` / `ｇａｒｒｉｓｏｎ` /
+`ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` (§2), `Ｍａｒｖｅｌｌｏｕｓ` / `Ｋｏｒｎｅｆｆ` (§21.1), `Ｉｍｐｅｒｉａｌ　ｓｏｌｄｉｅｒ`
+(§25.1), `ａｄｖａｎｃｅ　ｐａｒｔｙ` (§29.1), `ｃｏｍｍａｎｄ` for 指揮下 (§28.2), `Ｒｉｇｈｔ，` for よし、
+×3 (§24.3), `Ｕｎｄｅｒｓｔｏｏｄ．` for 了解。 and `Ｉ　ｕｎｄｅｒｓｔａｎｄ` for わかりました ×4 (§21.2),
+`Ｈｏｗｅｖｅｒ，` (§23.3 — its **eighth** use), `Ｏｈ．` for ほう。 (§24.4), `Ｉ　ｓｅｅ．` for なるほど、
+(§30.3), `Ｎｏ，` for いえ、 (§30.3), `Ｙｅｓ．` for ええ。 (§29.3), `Ｙｅａｈ，` for ああ、 (§6),
+`Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？` for bare どうする？ (chunk 4), `ｒｕｍｏｕｒ` (§26.4) and `ｔｈｅｙ　ｓａｙ`
+(§26.6) are used unchanged.
+
+**§29.4's `Ａｇｒｅｅｄ．` reserve is engaged here for the first and so far only time**, exactly as
+that ruling anticipated: chunk 19 carries bare `了解。` (message 19) **and** `・・・わかった。`
+(message 24) on one map, so 了解 keeps `Ｕｎｄｅｒｓｔｏｏｄ．` and わかった takes
+`．．．Ａｇｒｅｅｄ．`. `Ａｇｒｅｅｄ` was re-verified free across `tl/` and `pending/` at this review —
+it occurs in no translation file but this one.
+
+### 33.1 People, places and things — eight promotions out of §9, and the cross-unit rule discharged
+
+All eight wave-4 battle seeds are promoted here and struck in §9. **Every one was used exactly as
+seeded**, in both units where the term is cross-unit.
+
+| Japanese | English | Note |
+|---|---|---|
+| アリエス | `Ａｒｉｅｓ` | 5 columns. **Promoted from §9 (wave-4 seed), CROSS-UNIT, used exactly as seeded.** A **PERSON**, female, a travelling performer. **11 battle + 9 script.** ⚠️ **Corroborated from outside both chunks at this review**: `script_unique` carries `アリエスの故郷、ファリーナね。` — *Farina, Aries's home town* — which independently confirms the §9 seed's reading and explains message 1's `旅の巡業で何度か来たことが` |
+| ソロン | `Ｓｏｌｏｎ` | 5 columns. **Promoted from §9, used exactly as seeded.** A **PERSON**, male — the Imperial soldier recognised by his elder brother in message 24. **3 battle + 0 script** |
+| ヒューゴー | `Ｈｕｇｏ` | 4 columns. **Promoted from §9, CROSS-UNIT, used exactly as seeded.** `ヒューゴー様` → `Ｌｏｒｄ　Ｈｕｇｏ` (9 columns) — 様 → **Lord** for a male superior addressed by his own subordinate, on §28.1's アーバイン様 → `Ｌｏｒｄ　Ｉｒｖｉｎｅ`, the exactly parallel case. Held clear of §21.2's さん rule. **2 battle + 0 script** |
+| ノーマン | `Ｎｏｒｍａｎ` | 6 columns. **Promoted from §9, used exactly as seeded.** A **PERSON**, male, of Farina. **1 battle + 3 script** — the script has him leading the rebuilding afterwards (`今は、ノーマンさんたちがふっこーにはげん…`), so the form will be reached again |
+| カバラ | `Ｋａｂａｌａ` | 6 columns bare. **Promoted from §9, CROSS-UNIT, used exactly as seeded.** A **PERSON**, male, a dead bandit. `盗賊カバラ` / `カバラという盗賊` → `ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` (17) — see §33.4. **5 battle + 0 script** |
+| 火の水晶 / 『火の水晶』 | `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”` | 15 / 17 columns. **Promoted from §9, CROSS-UNIT, the LONG form in all five instances across both units.** `『…』` → `“…”` per §12's `『知識の書』`. ⚠️ **§9's `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` contingency never fired** — the four chunk-19 rows measure 18 / 18 / 21 / 21 and the unit shipped with 127 bytes spare, so neither unit is re-cut. **5 battle + 22 script**, the script instances being the item-description row |
+| トレジャーハンター | `ｔｒｅａｓｕｒｅ　ｈｕｎｔｅｒ` | 15 columns, **lowercase** by the §17.1 species test and the 探検家 → *explorer* precedent (§21.1). **Promoted from §9, used exactly as seeded.** ⚠️ The seed's warning held: the dump splits it `トレジャー|ハンター` across a `{FFFE}`, so a whole-word grep finds zero. **1 battle + 0 script** |
+| 傭兵団 | `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ` | 14 columns. **Promoted from §9, used exactly as seeded**, both occurrences byte-identical. The seed's shorter `ｍｅｒｃｅｎａｒｉｅｓ` (12) was **not** taken even in the wave's tightest unit: both instances read as a unit and one form across the chunk is worth 2 characters. **2 battle + 0 script** |
+| フェリクス | `Ｆｅｌｉｘ` | 5 columns. **A PERSON**, male — Farina's civil governor, the speaker of message 23. ⚠️ **NOT in the glossary before this merge, despite the wave-4 dispatch telling the translator it was.** It occurred in `glossary.md` exactly once, inside §2's `ファリーナ` evidence note (`ファリーナの自治官フェリクス`), which names him only as evidence that *Farina* is a place and fixes **no English form**. This is a first-use promotion, not a reuse. Plain European reading per §11.4 / §14 / §17.3. **2 battle + 4 script** — the script scenes put him beside Bishop Creus, so the form will be reached again. Alt *Phelix*, *Ferikusu* |
+| 自治官 | `ｇｏｖｅｒｎｏｒ` | 8 columns, **lowercase in prose** per the §17.1 species test — a station, not a title an individual holds. **2 battle + 0 script.** `ｍａｇｉｓｔｒａｔｅ` (11) and `ａｄｍｉｎｉｓｔｒａｔｏｒ` (14) both rejected on width and vagueness |
+| フェリクス様 | `Ｇｏｖｅｒｎｏｒ　Ｆｅｌｉｘ` | 14 columns, 15 with the vocative comma. 様 takes the English **title of the man's station**, exactly as §24.1 fixed `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` and §26.1 `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, and built like `Ｃｏｍｍａｎｄｅｒ` / `Ｃａｐｔａｉｎ` / `Ｄｏｃｔｏｒ` / `Ｂｉｓｈｏｐ` (§25.1). **Not** §21.2's `〜さん` rule, which drops the honorific — the two patterns stay separate, as §26.1 insists |
+| ウルフ | **`Ｕｌｆ`** | 3 columns. A **PERSON**, male — Farina's guard captain, the speaker of the message-7 parley variant. ⚠️ **RULED at review; the PR proposed `Ｗｏｌｆ` and flagged it as the one call that could defensibly go either way. See §33.3.** Also **not** in the glossary before this merge despite the dispatch. **1 battle + 0 script.** Alt `Ｗｏｌｆ` recorded and **rejected** |
+| 衛兵隊長 | `ｇｕａｒｄ　ｃａｐｔａｉｎ` | 14 columns. Built on §2's 隊長 → captain. Kept **distinct** from 守備兵 → *garrison* (§2) and 警備兵 → *guards* (§23.1) — three source words, three English forms, and 守備兵 occurs **four times in this very chunk**, so they could not collapse. **1 battle + 0 script** |
+| 使いの者 | `ｅｎｖｏｙ` | 5 columns. Deliberately **not** `ｍｅｓｓｅｎｇｅｒ`, which §30.2 fixes for 伝令, nor `ｃｏｕｒｉｅｒ` (連絡員, §30.2). Consistent with `闇の使い` → `ｔｈｅ　ｄａｒｋ　ｅｎｖｏｙ` shipped in `batch_003` — 使い → *envoy* is already house practice. **1 battle + 0 script** |
+| ファリーナ城 | `Ｆａｒｉｎａ　Ｃａｓｔｌｅ` | 13 columns, on §2's `カーライン城` → `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` |
+| 財宝 | `ｈｏａｒｄ` | 6 columns. `このカバラの財宝` → `Ｋａｂａｌａ’ｓ　ｈｏａｒｄ．` Kept **distinct** from 宝 / お宝 → *treasure* (§32.1), which this chunk also carries — the source draws the distinction itself and *hoard* is what a dead bandit leaves |
+| 宝石 | `ｇｅｍｓｔｏｎｅ` | 9 columns. **Ruled at this review — see §33.5.** Never a §9 seed row; the entry is here and at §32.1. **6 battle (19 ×1, 20 ×4, 31 ×1) + 4 unique script lines.** **Chunk 31 inherits it** |
+
+### 33.2 Interjections and set phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| 何てこった、 | `Ｗｈａｔ　ａ　ｍｅｓｓ，` | 15 columns. Dismay at a bad situation, not a curse. Held **distinct** from §29.3's やれやれ、 → `Ｇｏｏｄ　ｇｒｉｅｆ，` (weary exasperation), §6's まったく → `Ｒｅａｌｌｙ，` and §23.2's 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？`. `ｍｅｓｓ` verified free across `tl/` (`pending/chunk_017`'s hit is `ｍｅｓｓｅｎｇｅｒ`) |
+| ああっ、 | `Ａｈｈ，` | 4 columns. Startled cry as the bridge falls. ⚠️ **A sixth member of the あ family and deliberately not `Ａａｈ，`**, which §23.2 fixed for あーあ and which is **shipped twice in `chunk_004`**. Kana beats tracked per §11.5 / §14.5 (two あ → the doubled letter), while staying clear of あ、 → `Ａｈ，` (§6), あーあ → `Ａａｈ，` (§23.2) and あ〜ん → `Ａａａｈ，` (§24.3). `Ａｈｈ` verified free |
+| 申し訳ない。 | `ｆｏｒｇｉｖｅ　ｍｅ．` | 10 columns. ⚠️ **Held apart from three "sorry" forms already fixed**: §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (the near-miss — same speaker type, same formality), §28.3's あいにく → `Ｓｏｒｒｙ，`, §30.3's ごめんね。 → `Ｉ’ｍ　ｓｏｒｒｙ．`. `Ｍｙ　ａｐｏｌｏｇｉｅｓ．` was rejected: it is free, but makes the row exactly **24** columns beside `Ｈｏｗｅｖｅｒ，`. ⚠️ **`ｆｏｒｇｉｖｅ` now renders two source words across `tl/`** — 許す → *forgive* is shipped in `chunk_007` L14 and `chunk_010` L3/L7. Different messages, so §3 is not engaged, and §25.3's co-occurrence test is met: chunk 19 contains no 許す at all. Different senses, too — refusing forgiveness against asking for it |
+| はたして (rhetorical) | `ｗｈｏ　ｃａｎ　ｓａｙ` | 14 columns. `今ははたして、誰の手に渡っていることか・・・` → `Ｉｎｔｏ　ｗｈｏｓｅ　ｈａｎｄｓ　ｉｔ` / `ｈａｓ　ｐａｓｓｅｄ　ｎｏｗ，` / `ｗｈｏ　ｃａｎ　ｓａｙ．．．` |
+| よりによって、 | **`ｏｆ　ａｌｌ　…`**, the complement following the source | ⚠️ **Recorded at review; neither PR proposed a row and the phrase had none, yet all three of its occurrences are now shipped.** `よりによって、厄介なところへ…` → `Ｏｆ　ａｌｌ　ｐｌａｃｅｓ，　ｗｅ’ｖｅ` / `ｌａｎｄｅｄ　ｉｎ　ａ　ｎａｓｔｙ　ｓｐｏｔ．` here; `chunk_008` ships the byte-identical row `よりによって、` as `Ｏｆ　ａｌｌ　ｔｉｍｅｓ，`; `chunk_004` ships `よりによって　この私を` as `ｔｏ　ｓｅｎｄ　ｍｅ，　ｏｆ　ａｌｌ`. **This is not a divergence to fix.** よりによって takes its complement from context and English does the same — chunk 19's is a place (`厄介なところ`), chunk 8's a time. **What is fixed is `ｏｆ　ａｌｌ`; the noun follows the source**, which is §5's word-plus-source-punctuation mechanism generalised one step. §3 is not engaged (different messages), and **all 3 battle occurrences are now rendered**, so the phrase is closed |
+| どうやら、 | **`Ｌｏｏｋｓ　ｌｉｋｅ　…`** | ⚠️ **Fixed here at review rather than left open.** Chunk 19 absorbs it into `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` / `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ．` with no standing form, and the PR's Flag 15 asked for one because **it reaches four more chunks — 23, 25, 30 and 31**. Fixing it now rather than letting four units each invent one. Held **distinct** from the hearsay evidentials of §26.6 (`らしい` → *they say* / *Word is*): どうやら is the speaker's own **inference from what he can see**, not report of another's word — which is exactly why chunk 19's ambush line takes it |
+
+### 33.3 Ruling — `ウルフ` takes `Ｕｌｆ`, because `ｗｏｌｆ` is already shipped for a creature
+
+§9 offered no reading for this name at all — it was never seeded, and the wave-4 dispatch wrongly
+told the translator it was already fixed. The PR proposed **`Ｗｏｌｆ`** with `Ｕｌｆ` recorded as the
+alternative, and asked the reviewer to rule. **Ruled: `Ｕｌｆ`.** Three reasons, in order of weight:
+
+1. **`ｗｏｌｆ` is not free — it is already shipped, for a monster.** Counted at review, and the
+   figure is the translator's recount rather than the reviewer's first, looser one:
+   `tl/script/batch_003.tsv` renders it across **2 unique lines at 21 instances each = 42 message
+   instances** — L39 `鋭い爪と牙を持つ凶暴な狼のモンスター。` → `Ａ　ｓａｖａｇｅ　ｗｏｌｆ　ｍｏｎｓｔｅｒ，…`
+   and L40 `キラーウルフが進化した狼の怪物。` →
+   `Ａ　ｗｏｌｆ　ｍｏｎｓｔｅｒ　ｅｖｏｌｖｅｄ　ｆｒｏｍ　ｔｈｅ　ｋｉｌｌｅｒ　ｗｏｌｆ．` ⚠️ **L40's source key
+   contains the katakana `ウルフ` itself**, so the mapping ウルフ → `ｗｏｌｆ` is *literally shipped*,
+   not merely inferred from the kanji 狼.
+2. **The project has rejected an English-common-word reading three times, and this is the sharpest
+   case.** §1 rejected `Ｌｉｏｎ` for リオン ("would read as the animal"), §17.2 rejected `Ｎｅｒｇａｌ`
+   for ネルガリ, and §28.5 rejected `Ｒｅｂａｒｋ` for レバーク, weighting it by context: "a kingdom
+   whose king announces himself — the worst possible place for a name that reads as a verb."
+   Chunk 19 is that context exactly — **a guard captain announcing himself by name**,
+   `私は、ファリーナの衛兵隊長、ウルフと申します。` — and unlike those three the colliding word is not
+   merely an English common noun but a **shipped creature name in this very project**.
+3. **`Ｕｌｆ` is equally a genuine European name** — the Norse form, and also spelled ウルフ — and sits
+   in the same Germanic set as Bauer, Helfer, Krippen, Leverk, Leclerc. `Ｕｌｆ` verified **free**
+   across `tl/` and `pending/`. §17.4's plain-transliteration preference (ネルガリ → `Ｎｅｒｇａｌｉ`)
+   is satisfied by either, so it does not decide against this.
+
+**Cost: −2 bytes**, one row, no re-flow (`Ｗｏｌｆ．` 5 → `Ｕｌｆ．` 4). **Lines this affects: one**,
+the only occurrence in either dump. After this merge, changing it is a §4.3 correction.
+
+### 33.4 Ruling — `盗賊` takes `ｂａｎｄｉｔ` on a person and keeps §4's `ｔｈｉｅｆ` as the class label
+
+§4 fixes 盗賊 → *thief* and the PR departed from it deliberately, asking for a ruling. **Ratified:
+both forms stand, and the split is required rather than merely defensible.**
+
+This is **§24.2's 弓兵 / 弓使い ruling applied to a new pair**. §4's row sits in the *Classes and
+class descriptions* table — it is the label in the unit roster — while `カバラという盗賊` /
+`盗賊カバラ` is an **epithet on a named individual**, which is the shape §24.2 split when it gave
+弓兵 → *archer* (class) and 弓使い → *bowman* (epithet), taking the seed's own alternative.
+
+**Counted at review across both dumps: 3 battle** (chunk 19 ×2, chunk 20 ×1) **+ 2 unique script
+lines** — and both script lines are **class descriptions**, `村での略奪をなりわいとする盗賊。` and
+`高い機動力を持つ馬に乗った盗賊。`, 21 instances each. Those two **must keep `ｔｈｉｅｆ`**: they are
+roster entries in the very table §4 governs. So a single English form is not available in either
+direction, and the split is forced by the corpus.
+
+⚠️ **`ｔｈｅ　ｂａｎｄｉｔ　Ｋａｂａｌａ` is rendered once, not twice** — the PR's additions table said
+twice. Message 23's second mention, `カバラという盗賊は`, renders as bare `Ｋａｂａｌａ　ｗｏｕｌｄ　ｓｔｅａｌ…`,
+dropping 盗賊 because the referent was identified one page earlier. That is the §2.1 **step 3**
+redundant-gloss case (§24.2's `先代の神父` → *my predecessor* precedent), not a step-5 departure, so
+it needed no flag. Recorded so the wording is not read as a §3 obligation.
+
+### 33.5 Ruling — `宝石` takes `ｇｅｍｓｔｏｎｅ`, and shipped `ｇｅｍ` is recorded, not re-cut
+
+Ruled at chunk 19's review and shipped consistently by chunk 20 in the same wave (§32.1). The
+argument neither PR could make rests on the **untranslated** part of the corpus, counted here:
+**6 battle occurrences** (19 ×1, 20 ×4, 31 ×1) **and 4 unique script lines, of which only one is
+translated.**
+
+The decisive line is one of the three still untranslated:
+`なめらかな肌触りをした硬質な石。宝石として珍重する地方もある。` — **21 message instances** — where 宝石
+is a bare **category noun** ("some regions prize it as a 宝石"). `ｇｅｍ` cannot serve it, because
+that line, like every line in that table, ends `ジェムタイプ：…` → **`Ｇｅｍ　Ｔｙｐｅ：…`**. The one
+shipped `ｇｅｍ` already demonstrates the hazard: `batch_003` L36 renders `額に宝石のはまった謎の生物。`
+as `…ｗｉｔｈ　ａ　ｇｅｍ　ｉｎ　ｉｔｓ　ｂｒｏｗ．` and carries `Ｇｅｍ　Ｔｙｐｅ：Ｃｙｃｌｅ` **two rows later in
+the same message.** `ｇｅｍｓｔｏｎｅ` is the only form that stays visibly clear of both `Ｇｅｍ`
+(ジェム, the pickup, §3) and `Ｊｅｗｅｌ` (ジュエル, the currency, §3).
+
+**Lines this affects: none.** `batch_003` L36 is **recorded, not re-cut** — the §20.4 / §23.1 /
+§24.5 / §27.4 shape, a different message, and *a gem in its brow* is the right English for an
+ornament set in a creature's head where *a gemstone in its brow* is clumsy. So 宝石 has **two
+English forms split by function**: `ｇｅｍｓｔｏｎｅ` the default category noun, `ｇｅｍ` inside the
+fixed phrase 額に宝石. That is the §4 石化能力 / §27.1 愛用 / §30.2 油断 "one word, two shapes"
+pattern. **Chunk 31 and the three untranslated script lines inherit `ｇｅｍｓｔｏｎｅ`.**
+
+### 33.6 CORRECTION to §31.3 (§4.3) — `まさか` → `Ｓｕｒｅｌｙ` is over-broad, and two of its stated facts are wrong
+
+§31.3 was written one PR earlier (chunk 18, PR #13) and fixes `まさか、` → `Ｓｕｒｅｌｙ`, naming
+chunk 19 among the 13 chunks it binds. **Chunk 19 is the unit that tests it, and it does not hold
+as written. No rendering changes anywhere; the entry does.**
+
+**1. The word covers two constructions and `Ｓｕｒｅｌｙ` fits only one.** Counted across
+`battle_dump.txt` at this review, the 18 occurrences split:
+
+| Construction | Count | Chunks | Takes |
+|---|---|---|---|
+| incredulous / negative supposition — `まさか…か？`, bare `まさか・・・` | **8** | 0, 17, 18, 19, 25, 27, 39 ×2 | **`Ｓｕｒｅｌｙ`** |
+| exclamative — `まさか…とは / とはな` | **10** | 19, 23 ×2, 24, 26, 27, 30, 32 ×2, 43 | **not `Ｓｕｒｅｌｙ`** |
+
+Chunk 19 carries one of each, and renders them correctly:
+`その声は、まさか・・・` → `Ｔｈａｔ　ｖｏｉｃｅ，　ｓｕｒｅｌｙ．．．` (conforming), and
+`まさか、帝国の兵士になっているとはな。` → `Ａｎ　Ｉｍｐｅｒｉａｌ` / `ｓｏｌｄｉｅｒ，　ｏｆ　ａｌｌ　ｔｈｉｎｇｓ．`
+`Ｓｕｒｅｌｙ` would invert the sense there — *"Surely you have become an Imperial soldier"* asserts
+what 〜とはな marks as astonishing. **The 〜とは construction means *to think that…!* and takes the
+English that fits its own clause**; `ｏｆ　ａｌｌ　ｔｈｉｎｇｓ` is chunk 19's, and the ten exclamative
+instances are **not** bound to a single form by this entry.
+
+**2. "`Ｓｕｒｅｌｙ` is otherwise free across `tl/`" is false.** Three shipped lowercase
+`ｓｕｒｅｌｙ` already render two *other* Japanese words: `指輪を　渡したはずだ。` →
+`ｔｈｅ　ｒｉｎｇ，　ｓｕｒｅｌｙ．` (`chunk_000` file L14, はずだ) and `あなたは　きっと` →
+`ｙｏｕ　ｗｉｌｌ　ｓｕｒｅｌｙ　ｂｅｃｏｍｅ` (`chunk_007` file L20), `きっと俺たちを倒しに` →
+`ｔｈｅｙ’ｖｅ　ｓｕｒｅｌｙ　ｃｏｍｅ` (`chunk_034` file L2). All are lowercase, mid-sentence, in
+different messages, so §3 is not engaged and none is re-cut — but the form was never free.
+
+**3. §31.3 lists chunk 0, and chunk 0 contradicts it.** `chunk_000.txt` file L14 already ships
+`まさか、` / `お前たちが・・・・` as **`Ｉｔ　ｃａｎ’ｔ　ｂｅ，`** / `ｔｈａｔ　ｙｏｕ．．．．` — an
+incredulous instance that does *not* take `Ｓｕｒｅｌｙ`. The row was contradicted by shipped work at
+the moment it was written. Chunk 0 stays **recorded, not re-cut**: it has 27 bytes of slack and
+§18.3 records that its next correction needs a full re-cut.
+
+**Read §31.3's row as:** `まさか` → **`Ｓｕｒｅｌｙ`** where the clause is an incredulous question or
+negative supposition, which is the use both shipped instances have (`chunk_018`,
+`pending/chunk_017`) and the use it was written for; **the `まさか…とは` exclamative is a different
+construction and takes the English its own clause needs**, recorded per instance. `Ｓｕｒｅｌｙ` is
+shared with はずだ and きっと in three shipped rows. **Lines this affects: none.**
+
+### 33.7 Register
+
+| Who | Register |
+|---|---|
+| Aries (portrait 05) | Polite, warm, **no contractions** — `Ｎｏ．　Ｉ　ｈａｖｅ　ｔｏｕｒｅｄ　ｈｅｒｅ`, `Ｉｔ　ｉｓ　ｓｍａｌｌ，　ｂｕｔ　Ｉ　ｌｏｖｅ　ｔｈｉｓ　ｃｏｕｎｔｒｙ．`, `Ｉ　ｄｏ　ｎｏｔ　ｋｎｏｗ　ｉｔｓ　ｎａｍｅ，`, `Ｗｉｔｈ　ｔｈｉｓ，　ｗｅ　ｃａｎ　ｍａｎａｇｅ．` ⚠️ **Her speaker identification was verified from the tag stream at review, not assumed**: message 23's `名前は知らないのですが、` opens `{FCB0}{=00050001}{FC51}`, and portrait **05** is fixed as Aries by message 1's `{FCB0}{=00050000}{FC50}` — same id, opposite channel byte, the §23.5 / §28.7 / §30.7 pattern. She is also portrait 05 in message 20. That is what puts her contraction-free voice beside a player character who contracts freely |
+| Governor Felix (portrait 09) | Formal, courteous and self-effacing, **no contractions** — `Ｉ　ａｍ　Ｆａｒｉｎａ’ｓ　ｇｏｖｅｒｎｏｒ，`, `Ｔｒｕｌｙ，　ｗｉｔｈｏｕｔ　ｙｏｕｒ　ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ`, `Ｈｏｗｅｖｅｒ，　ｆｏｒｇｉｖｅ　ｍｅ．`, `Ｉ　ｒｅｃｏｍｍｅｎｄ　ｉｔ．`, `Ｔｈｉｓ　ｍｕｃｈ　ｉｓ　ｎｏｔｈｉｎｇ．` §24.6's Bernard's-church priest column, extended to a civil official |
+| The envoy and Ulf (the two named parley speakers) | Formal and pleading, **no contractions** — `Ｉ　ｂｅｇ　ｙｏｕ．`, `Ｗｉｌｌ　ｙｏｕ　ｎｏｔ　ｌｅｎｄ　ｕｓ　ｙｏｕｒ　ｈｅｌｐ？`, `Ｉ　ｕｎｄｅｒｓｔａｎｄ！` The three variants are mutually exclusive and share six segments; **every shared segment is byte-identical across all three**, verified positionally at review |
+| Hugo and his mercenaries (portraits 07, 0C) | Curt and commanding — `Ｒｉｇｈｔ，　ｄｒｏｐ　ｔｈｅ　ｂｒｉｄｇｅ！`, `Ｃｕｔ　ｔｈｅｍ　ｏｆｆ　ｆｒｏｍ　ｔｈｅ　ｏｕｔｓｉｄｅ．` His subordinate is deferential, `Ｌｏｒｄ　Ｈｕｇｏ，`, Albert's shape (§20.5) |
+| The 9th Army (portraits 00, 01, 06, 0E) | §7 unchanged — casual, contractions throughout: `ｗｅ’ｄ　ｄｏ　ｂｅｓｔ　ｔｏ`, `ｔｈｅｙ’ｒｅ　ｃｏｍｉｎｇ`, `Ｉ’ｄ　ｒａｔｈｅｒ　ｈｉｄｅ`, `ｓｅｅｍｓ　ｗｅ　ｃａｎ’ｔ．`, `Ｗｈｏｓｅ　ｍｅｎ，　Ｉ　ｃａｎ’ｔ　ｓａｙ．` |
+| Solon and his elder brother (portraits 03, 04) | Rough and warm, contractions — `Ｉｓｎ’ｔ　ｔｈａｔ　Ｓｏｌｏｎ！！`, `Ｎｏｗ　ｔｈａｔ　Ｉ’ｍ　ｈｅｒｅ，`, `Ｉ’ｌｌ　ｌｅｎｄ　ａ　ｈａｎｄ．` Solon's one formal beat is `．．．Ａｇｒｅｅｄ．`, which is §29.4's reserve and not a register slip |
+
+### 33.8 Two duplicate-check traps this unit leaves behind
+
+Both were predicted by the PR and **both were independently reproduced by the reviewer's own
+checker**, which is why they are written down rather than left to bite the next sweep.
+
+1. **`どうする？` reads as DIVERGENT to any index-based row checker.** Message 19 re-flows
+   `あのカーライン兵は` / `どうする？` into `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ　ａｂｏｕｔ` / `ｔｈａｔ　Ｃａｒｌｉｎｅ
+   ｓｏｌｄｉｅｒ？` (the unit's single §2.1 step-6 reorder, deliberate — it removes a lowercase
+   `ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？` row that would have sat one character from the fixed form). The row
+   index shifts, so a positional checker pairs the wrong rows. **Chunk 19 does carry
+   `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？` byte-identically** at message 3. ⚠️ Counted at review: that string is
+   shipped in **five** files — `chunk_000`, `chunk_004`, `chunk_008`, `chunk_019` and
+   `pending/chunk_005` ×2 — so it is among the most entrenched fixed rows in the project.
+2. **Ellipsis checkers that STRIP tags instead of SPLITTING on them report a false failure at
+   message 24.** Stripping glues `ｌｅｔ’ｓ　ｆｉｇｈｔ．` onto the next message's `．．．Ａｇｒｅｅｄ．`
+   and invents a run of four dots. Split on tags and the profile matches on every message,
+   including the deliberate **two**-dot `ｏｆ　Ｆｉｒｅ．．` (message 23, `火の水晶を・・`). Same class
+   of trap as §24.5's `さあ、` / `よし、` before a `{FC00}` and §27.4's spaced / unspaced village line.
+
+⚠️ **Also recorded, so a later reviewer does not "fix" them:** three rows end in a one- or
+two-letter word — `…ｂｕｔ　Ｉ` (message 1), `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` (message 3) and
+`ｂｕｔ　Ｉ　ｈｅａｒ　ｉｔ　ｉｓ　ａ` (message 23). Each mirrors the source's own break segment for
+segment, which `translation_prompt.md` §3.2 says should normally be preserved, and none is
+compounded by an orphan row or a page at the four-row wall. **They stand.** The one row-final lone
+`ａ` that *was* corrected at review stacked all three faults at once — it also orphaned a 5-column
+`ｌｅａｄ．` and sat on a page carrying a leading blank plus four text rows.
