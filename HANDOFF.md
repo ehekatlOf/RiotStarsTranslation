@@ -52,7 +52,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | 5,039 / 8,192 → **5,035** after fix | **PR #29 — CHANGES r1**, rework sent |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** (r2 @ `dfa9771`) | **PR #29 — rework PUSHED**, awaiting re-review by the SAME reviewer |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,565 / 8,192 — 2,627 slack** | **PR #33 OPEN**, awaiting reviewer |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
@@ -127,6 +127,24 @@ this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance 
 lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
 (chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
 claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
+
+⚠️ **TWO GATE DEFECTS FOUND BY CHUNK 37's REWORK — THESE BIND EVERY FUTURE WAVE, NOT JUST THIS PR.**
+Round 1 passed **gates 6 and 7 cleanly while three terms were wrong.** Both defects are structural.
+1. ⚠️ **GATE 6 IS BLIND TO SUB-MESSAGE TERM RECURRENCE.** It pairs whole **messages**, so a term
+   recurring inside *differently worded* messages is invisible to it. That is exactly what `全滅`,
+   `始末` and `やはり` were. **A clean gate 6 is not evidence that terminology is consistent.**
+   The missing check is a **Japanese-side sub-message sweep**, which is **not in CLAUDE.md §6** at
+   all. Chunk 37's translator wrote one (`c037_terms.py`) and it immediately caught two more.
+2. ⚠️ **GATE 7 CAN PASS WHILE A GLOSSARY ROW THAT NAMES THE EXACT SOURCE STRING IS VIOLATED.**
+   Verified by me: `glossary.md` §37's `やはり、` row lists **`やはり反乱軍の`** among the five
+   instances it fixes — that is chunk 37 L6 — and the unit shipped a loose `Ｓｏ　…`. Both the
+   translator's self-check and the **reviewer's gate 7** passed it in round 1. Fixed at +8 bytes.
+   **Gate 7 needs to be run as "for each glossary row, does any instance list name a line in this
+   unit?", not as "do the terms I noticed match?"**
+Also found: `始末する` — §37's row is scoped "a hapax in this sense" (chunk 22's political
+euphemism); the **battle** sense ships as `ｆｉｎｉｓｈ` (merged c9, c19). §37 is not wrong; the unit
+was reading a scoped row as general. **Same error class as the `全滅` finding: censusing the ENGLISH
+and never the Japanese** (§Y2/§AC1).
 
 ### Review 1 of 5 — PR #29 (chunk 37): **CHANGES**, round 1. Rework sent to the same translator.
 All nine gates passed and were **independently re-measured** (gate 6 positive-controlled with two
