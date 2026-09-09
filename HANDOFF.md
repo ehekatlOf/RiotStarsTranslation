@@ -12,88 +12,64 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 7 — ALL 4 UNITS DECIDED. NOTHING IS LEFT TO REVIEW. THE COORDINATOR MUST NOW CLOSE THE
-> WAVE AND OPEN WAVE 8'S SESSION IN THE SAME TURN.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
-> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 36 ✅ PARKED, 31 ✅ MERGED,
-> script `batch_009` ✅ MERGED** (`aca5b77`, integrated by the commit titled `integrate: script batch 009 — glossary §46, FLAGS §AH, handoff` (this file's own commit)).
+> **WAVE 7 IS CLOSED — 3 merged, 1 parked, `check` green. Battle 28/44 (56.5%), script 53.7%.**
+> The next act is to **OPEN WAVE 8'S SESSION**, which wave 7's coordinator does in the same turn.
 >
-> **Literal next steps, in order:**
-> 1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (the §46/§AH
->    integration commit is on the branch — do **not** `git checkout`, see the stale-ref warning above).
-> 2. `python3 tools/assemble.py check` → must end "All checks passed"; `merge` and commit
->    `build/*_dump_merged.txt` if changed; refresh the README status table from `status`; prune worktrees.
-> 3. Commit `handoff: wave 7 closed`, push.
-> 4. **In the SAME turn, `create_session` for wave 8** — BOTH `source_url` and `source_revision`
->    (SKILL.md §6a), `source_revision` = `claude/workflow-translation-iterate-uzlkns`, prompt = the
->    wave number + the unit list + "read `HANDOFF.md` first". Then end.
+> ```
+> create_session(                                        # claude-code-remote MCP
+>   title:           "Riot Stars — wave 8",
+>   tags:            ["riotstars-translation", "wave-8"],
+>   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
+>   source_revision: "claude/workflow-translation-iterate-uzlkns",
+>   prompt:          <the wave-8 seed, per SKILL.md §6a>
+> )
+> ```
+> Omit `environment_id` and `model` so both inherit. Units: **battle 37, 38, 41, 42 + one script
+> batch computed fresh** — see **Next up**.
 >
-> ⚠️ **Wave 8 is the LAST battle wave**: only **37, 38, 41, 42** remain dispatchable. Recompute the
-> script batch against the fresh bank figures in **Next up** before dispatching.
+> ⚠️ **WAVE 8 IS THE LAST BATTLE WAVE.** It spends the final four dispatchable chunks; after it,
+> battle work **STOPS** until a human clears Blocked **0** or **0a**.
 >
-> If this line still says "wave 7" and `ListAgents` shows nothing alive: the coordinator died after
-> the last review. Everything above is already merged and integrated — **do not re-review or
-> re-dispatch anything**; just run steps 1–4.
+> If this line still says "open wave 8" and no wave-8 session exists, the chain broke: open it.
 
 ## Last updated
-2026-09-09 · by: **wave-7 reviewer, PR #28 integration (the wave's last)** ·
-wave: **7 FULLY DECIDED — 4 of 4 (chunk 30 MERGED, chunk 36 PARKED, chunk 31 MERGED after
-2 rounds, script batch_009 MERGED at round 1). Nothing left to review; the coordinator owes the
-wave close and wave 8's session** ·
-queue: **fresh; wave-7 batch re-verified, see Decisions**
+2026-09-09 · by: **wave-7 coordinator** (`session_01N1VxX55Vw79fxNr6nTELcs`) ·
+wave: **7 CLOSED — 3 merged, 1 parked, 1 rework round** · queue: **fresh; wave-8 script batch must
+be recomputed against the figures below, NOT inherited**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **28** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, **30**, **31**, 33, 34, 35, 40 |
-| Battle JP characters | **24,407** | 43,161 | **56.5%** (was 54.1% before chunk 31) |
-| Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` (**+50 from batch_009**) |
-| Script message instances | **4,259** | 7,931 | **53.7%** (was 53.1% before batch_009) |
+| Battle JP characters | **24,407** | 43,161 | **56.5%** (was 51.0% at wave-7 start) |
+| Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
+| Script message instances | **4,259** | 7,931 | **53.7%** |
 
-`check`: **All checks passed** at the §46/§AH integration commit. ⚠️ **Tightest banks: 41 → 353, 40 → 447, 5 → 2,007
-(was 3,357 — batch 008 spent 1,350), 2 → 3,365**, 3 → 8,113, 33 → 9,291. Parked and translated:
-chunks **5, 43** (tier-A budget), **17** (§D1 dump artifact) and ⭐ **36** (⚠️ **§AF1 charset gate on
-preserved source — a NEW and DIFFERENT blocker, and the cheapest on the Blocked list**).
-⚠️ **The Progress figures above are UNCHANGED by chunk 36 and that is correct** — a park writes to
-`pending/`, which `assemble.py` never reads (`grep -n "pending" tools/assemble.py` returns nothing),
-so `status` cannot count it. **986 finished JP characters (2.3 %) sit outside the 54.1 %.** ⭐ **The dumper is STILL unfixed** —
-re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` returns nothing.
+`check`: **All checks passed** at `6d73819`. ⚠️ **Tightest banks, re-measured at PR #28's review:
+41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365** — wave 7 moved none of them (`batch_009` spent only
+banks 7–12: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559).
+Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, Blocked 0),
+**36** (charset gate, Blocked **0a** — new this wave).
 
-## In flight — WAVE 7 (4 of 4 decided — nothing in flight)
-| Unit | PR | State |
-|---|---|---|
-| battle chunk 30 | #27 | ✅ **MERGED** `9548e73` — 7,615 / 8,192 (577 slack); integrated `bb715d0`, glossary §43 / FLAGS §AE |
-| battle chunk 36 | #25 | ✅ **PARKED** `018af11` — 2,887 / 8,192 (5,305 slack); integrated `1ea3a70`, glossary §44 / FLAGS §AF. **No findings.** Reason is Blocked item **0a** |
-| battle chunk 31 | #26 | ✅ **MERGED** `6d2530c` at round 2 — 5,399 / 8,192 (2,793 slack); integrated `e3e2975`, glossary §45 / FLAGS §AG |
-| script batch_009 | #28 | ✅ **MERGED** `aca5b77` at round 1, **no findings requiring a change** — DATA 534–583, 50 lines / 50 instances, +6,026 bytes, 2.0340×; integrated by the commit titled `integrate: script batch 009 — glossary §46, FLAGS §AH, handoff` (this file's own commit) |
+## In flight
+**Nothing. Wave 7 is closed and no PR is open.** Wave 8's session dispatches its own units.
 
-⚠️ **ONE REVIEWER AT A TIME** — a rework does not occupy the slot, a review does. Push HANDOFF
-before each reviewer; `git pull --ff-only` after each (it pushes an integration commit).
+## Next up — WAVE 8 (⚠️ THE LAST BATTLE WAVE)
+**Seed the glossary BEFORE dispatching.** Sections currently end at **glossary §46** and **FLAGS
+§AH** — ⚠️ take the next number by **READING both files at commit time**, never by reserving.
 
-### ✅ WAVE 7 IS FULLY DECIDED — 4 of 4. What PR #28's review settled, and what it did NOT
+**1–4. Battle chunks 37, 38, 41, 42 — the ONLY dispatchable battle chunks left.** From
+`queue.py battle`: 37 (JP 985, ratio **3.69**), 38 (1,080, **3.37**), 41 (593, **6.54**),
+42 (698, **5.46**) — all comfortable, none tier-A.
+⚠️ **Chunk 37 inherits `FLAGS.md` §Y6** — Cress's gender is fixed nowhere and rendered nowhere.
+⚠️ **Chunk 42 L11** is one of §L2's no-`{FC50}` 16-row pages (in-game question, Blocked 4).
 
-- **`『かげの石版』` §9 row: STRUCK.** Reach exhausted (battle chunk 36 rendered-and-parked +
-  script DATA 569 rendered here). Cross-unit consistency verified against the **merged** tree.
-- ⚠️ **`石版` §9 row: STILL LIVE — the dispatch's "strike both" was WRONG.** **DATA 300**
-  (`…漆黒の石版。`, **count 21 across 21 banks**) is in no wave-7 unit and is translated nowhere.
-  Whoever takes DATA 300 strikes the row. `FLAGS.md` §AH2, `glossary.md` §46.4.
-- ⚠️ **NEW — `ビーストショップ` §9 row: ALSO STILL LIVE, and its reach cell was incomplete.**
-  The term recurs at **DATA 899 (bank 28, untranslated)**; the cell said "script 555" only.
-  DATA 899 is **prose, not a menu** → `“Ｂｅａｓｔ　Ｓｈｏｐ”`, §12 quotes, **no cursor gutter**.
-  `FLAGS.md` §AH3. Struck outright: 鏡の神殿, リースの化身, リースの神々, 選ばれし者, オーホホホ.
-- ⚠️ **`クロイツェル` stays live** (1 battle + 1 script, bank 41), as before.
-- **§25.3's collision test has failed for the first time and is ruled** (`glossary.md` §46.3):
-  `なるほど` → `Ｉｎｄｅｅｄ．` where it shares a bank with `そうか`, which keeps `Ｉ　ｓｅｅ．`.
-  Census reproduced independently at review, cell for cell. `Ｅｘａｃｔｌｙ．` **not** spent;
-  `Ｑｕｉｔｅ　ｒｉｇｈｔ．` is the named next reserve. ⚠️ **The ruling is BANK-scoped: battle
-  chunk 32 holds both members, is untranslated, and is NOT covered** — `FLAGS.md` §AH4.
-- **Forward binding: DATA 691** (bank 17) must reuse 582/583's English byte-for-byte (§AH6).
-
-## Next up — WAVE 8 (write the unit list at wave close)
-⚠️ **Battle 37, 38, 41, 42 are the ONLY dispatchable battle chunks left.** After wave 8 spends them,
-battle work **STOPS** until a human fixes the dumper (§D1, Blocked 0) or the charset gate (Blocked
-**0a**, new this wave). Recompute the script batch against FRESH bank figures — batch_009 measured
-b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559; the four tight banks are
-unmoved at 41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365.
+**5. One script batch — COMPUTE IT YOURSELF, DO NOT INHERIT A POSITION.**
+⚠️ **Name the unit by LINE LIST, never by a `queue.py` position** — wave 7 was handed "position 6"
+and it was a different range. Re-run `queue.py script` against the figures above, check the batch
+is bank-feasible by **INSTANCES not lines**, and verify scaffolding and already-done counts.
+⚠️ **`石版` (DATA 300, count 21, 21 banks) and `ビーストショップ／アイテムショップ` (DATA 899, bank 28)
+are both still untranslated and both keep a §9 row live** — a batch containing either discharges it.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **15 open chunks.** ⚠️ **6 carry the §D1 dump artifact and will park exactly as chunk 17 did
@@ -264,12 +240,15 @@ row's **Alt column records REJECTED options, not a menu**. `{FCC0}` is forbidden
 | 3 | corrections + battle 8, 13, 17 | **3** | **1** | battle 18/44 (32.2%); script unchanged |
 | 4 | battle 18, 19, 20 + script 006 | **4** | 0 | battle 21/44 (39.4%); script 261 lines (51.6%) |
 | 5 | `あら` corrections + battle 21, 22 + script 007 | **4** | 0 | battle 23/44 (43.2%); script 311 (52.5%) |
-| 6 | battle 24, 25, 26 + script 008 | **4** | 0 | battle **26/44 (51.0%)**; script **358 (53.1%)** |
+| 6 | battle 24, 25, 26 + script 008 | **4** | 0 | battle 26/44 (51.0%); script 358 (53.1%) |
+| 7 | battle 30, 31, 36 + script 009 | **3** | **1** | battle **28/44 (56.5%)**; script **408 (53.7%)** |
 
-Waves 5 and 6 both ran the full three-role split with a separate reviewer per unit and no
-independence debt. Wave 6: PRs #21–#24, three merged at round 1, chunk 25 took one rework round
-(`フフ` → the shipped `Ｆｕｆｕ`; bare `そして、` → `Ａｎｄ，`). Detail lives in `glossary.md`
-§35–§42 and `FLAGS.md` §W–§AD, not here.
+**Wave 7 detail.** PRs #25–#28, full three-role split, four separate reviewers. Chunk 30 (7,615 /
+8,192) and script `batch_009` (+6,026 bytes, 2.034×) merged at round 1; chunk 31 (5,399 / 8,192)
+took one rework round; **chunk 36 PARKED on a NEW tooling blocker** (Blocked **0a**). Detail lives
+in `glossary.md` §43–§46 and `FLAGS.md` §AE–§AH, not here. **Nine coordinator/inherited figures were
+refuted by measurement and two corrections made TO the coordinator were themselves wrong** — see
+Decisions.
 
 ## How to resume
 1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (a plain

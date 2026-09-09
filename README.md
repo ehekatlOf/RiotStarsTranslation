@@ -71,10 +71,10 @@ See `translation_prompt.md` §0 for the session schedule and §3 for the full fo
 
 | | Done | Total |
 |---|---|---|
-| Battle chunks | 26 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,18,19,20,21,22,24,25,26,33,34,35,40) | 44 |
-| Battle Japanese characters | 21,998 | 43,161 (51.0%) |
-| Script unique lines | 358 | 1,430 |
-| Script message instances | 4,209 | 7,931 (53.1%) |
+| Battle chunks | 28 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,18,19,20,21,22,24,25,26,30,31,33,34,35,40) | 44 |
+| Battle Japanese characters | 24,407 | 43,161 (56.5%) |
+| Script unique lines | 408 | 1,430 |
+| Script message instances | 4,259 | 7,931 (53.7%) |
 
 `assemble.py status` prints the current figures. Live state, in-flight units and what is blocked:
 `HANDOFF.md`.
