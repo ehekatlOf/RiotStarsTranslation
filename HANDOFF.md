@@ -235,6 +235,25 @@ here**, the opposite direction to everything else, so it needs its own in-place 
 **Hand-counted widths are now the only systematic error three waves running**, and this wave they
 appeared in a coordinator seed, a translator PR body and nowhere that anyone actually measured.
 
+### PR #22's reviewer pushed back on my briefing TWICE and was right both times
+Recorded because both were coordinator errors, and because the third item would have shipped a defect.
+1. ❌ **`場所` has NO §9 row** — nothing to strike. My term-intersection found the word shared
+   between chunk 26 and batch 008, and I briefed it as a cross-unit *pairing* without checking that
+   the seed ever created a row for it. It did not. **A shared term and a strikeable glossary row are
+   different things** (cf. the 2026-09-09 ruling that a term is "in the glossary" only if a row
+   fixes an English form).
+2. ❌ **`FLAGS.md` §Q2 does NOT record the wrong `{FCC0}` cause** — its cited line numbers are
+   exactly the `tag_parity` lines in both tools. I briefed "patch §Q2 if it says otherwise"; the
+   reviewer checked, found it correct, and **declined to patch — which would have introduced an
+   error.** My misstatement lived only in my own dispatches, never in the repo.
+3. ⚠️ **The `そして、` ruling is POSITIONAL, and applying it as I briefed would have BROKEN chunk 26.**
+   Both ruled instances have `そして、` **alone on its display row**, where the comma is the row
+   ending rather than part of the word; the other four shipped instances render `Ａｎｄ` with no
+   comma. Chunk 26's is **list-final inside a continuing clause** (`彼らは、` … `そして、極めて残忍です。`)
+   and correctly takes lowercase `ａｎｄ`. Capitalising it would have broken a tricolon mid-sentence.
+   **PR #23's finding still stands** — chunk 25's IS a bare own-row `そして、`. glossary §40.4 narrows
+   the rule without undoing it.
+
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **18 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
 exactly as chunk 17 did — 15, 23, 27, 28, 29, 39**; 16 and 32 are tier-A blocked. Dispatchable after
