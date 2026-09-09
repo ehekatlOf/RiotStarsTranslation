@@ -4609,3 +4609,152 @@ not claim it is.** `Ａｌａｓ，　ｔｏ　ｔｈｉｎｋ…` **fits** — 
 per §AC3's "measure the option you argue against". The flag argues lexically (the a-family is
 spent; the lament rides on the exclamative *To think that…*) and names `Ａｌａｓ，` as a
 verified-free reserve. Accepted as a disclosed judgment, with the reserve now on the record.
+
+---
+
+## AI. Wave 8 review — battle chunk 38 / PR #33, MERGED (2026-09-09)
+
+Squash `7bd8e76`, merged at **round 2** (round 1 was CHANGES). Base
+`claude/workflow-translation-iterate-uzlkns`. **5,577 / 8,192, 2,615 slack.** All nine gates re-run
+on the round-2 file with **all-new** positive controls; glossary integration at **§47**.
+
+⚠️ **Numbering convention: `L<n>` is the `tl/` file index with the `=== CHUNK` header as line 0 —
+what `rowcheck.py` prints, i.e. dump body index + 1.**
+
+### AI1. A "geometrically impossible" claim that was not — and it nearly cost a unit
+
+PR #33 shipped `反旗を翻す` → `ｒｏｓｅ　ｉｎ　ｒｅｖｏｌｔ` and argued at length that PR #31's
+`ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` **could not fit** chunk 38's L18 page 2 — shape
+`.TTTT`, a leading unfillable blank plus four text rows, at the wall, `{FCC0}` forbidden. It measured
+**six** wordings; every one keeping all four content elements needed a fifth row, and the only one
+that fitted deleted 王国 (CLAUDE.md §3). The dispatch to the reviewer said in terms that if the
+geometry held and the banner form won, **chunk 38 must be PARKED**.
+
+**All six measurements were arithmetically correct. The conclusion was still wrong.** The
+obstruction is a property of **one token order**, not of the wording. The reviewer reproduced the
+5-row rejection (`rowcheck`: `!! c38 line 18: 5 text rows > 4`), then re-ordered: the tail
+`ｒｅｖｏｌｔ．．．．．` is 11 columns, atomic and must end the page, but it **need not be preceded by
+`ｔｈｅ　ｂａｎｎｅｒ　ｏｆ`** (13; 13 + 1 + 11 = 25 > 24). Put `ｂａｎｎｅｒ　ｏｆ` on the last row with
+it — `ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ．．．．．` = **21** — and it fits **four rows at ≤23** with every
+content element kept, by the same §2.1 step-6 clause reorder the PR already claimed for that page.
+
+⚠️ **THE LESSON, and it sharpens §AG6 rather than repeating it. "Measure the option you argue
+against" is not enough: MEASURE IT IN MORE THAN ONE WORD ORDER.** A rejected alternative never
+enters the file, so no gate ever checks it — and a *greedy* row count is a proven minimum only for
+the token order it was given. Six correct measurements of six near-identical orderings produced a
+false impossibility. A unit was one review round from being parked on the strength of it.
+
+### AI2. The reviewer's own prescription was wrong by one character, and the translator caught it
+
+Round 1's Finding 1 (`帝国軍` must keep its article, glossary §2 / §20.4 — see §47.5) prescribed
+`Ｂａｄ！　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ！！`. That is **ungrammatical**: a lowercase word after a
+full-stop-strength `！`. The reviewer had prepended `ｔｈｅ` to the existing `Ｂａｄ！` without
+re-reading the result — the defect was invisible at round 1 only because the old wording began with a
+capital `Ｉｍｐｅｒｉａｌ`. The translator shipped `Ｂａｄ，　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ！！` and
+**flagged the deviation for ratification instead of applying it silently**, which is what let it be
+ruled on. Measured: all three candidates are **23 columns**, so width decided nothing; the source's
+own mark is `、`, and round 1 had turned it into `！` only as a consequence of the width problem the
+article fix removed. **Ratified.**
+
+⚠️ **A prescribed fix is a reviewer's draft, not a gate result. Translators should measure and read
+it like any other candidate, and flag rather than obey.** This is the second time in wave 8 that a
+role's output was corrected by the next role down; it is the process working.
+
+### AI3. A gate that forced a lexical choice — `残兵` → `ｒｅｍｎａｎｔｓ`
+
+Adopting the banner ruling, the translator found that the shorter noun is **forced, not preferred**.
+Every §2-conformant wording keeping `ｒｅｍｎａｎｔ　ｓｏｌｄｉｅｒｓ` needs five rows (participial 98
+columns, finite 100, possessive 95 — five rows at both 23 and 24), and the **only** four-row packing
+that keeps it routes through `ｏｆ　ｏｌｄ　Ｃａｒｌｉｎｅ　Ｋｉｎｇｄｏｍ`, which breaks §2's fixed
+`カーライン王国` → `Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ` (`glossary.md:71`) — **a gate-7 failure, not
+an option.** Confirmed by the reviewer. ⚠️ One figure corrected in passing without changing the
+conclusion: the coordinator's note gave the *participial* as 95 columns; 95 is the **possessive**
+variant, the participial is **98**. Both are five rows.
+
+### AI4. Gate 7 run FROM THE GLOSSARY SIDE — the method, adopted from PR #29's round 2
+
+Rather than "do the terms I noticed match?", the reviewer enumerated **1,097** Japanese keys from
+every glossary table row, intersected them with chunk 38's source, and checked each aligned
+rendering. **27 keys occur in this chunk; all 27 conform.** Two fired as false positives and were
+adjudicated rather than passed over: **`はっ`** (§6 → `Ｓｉｒ`) only as a substring inside
+`はははっっ` — the method independently rediscovered §AI5's problem — and **`だって`**
+(`glossary.md:5099`), whose row is scoped in its own text to *causal, sentence-initial*, while chunk
+38's two instances are an incredulous echo and a concessive.
+
+⚠️ **This is now the recommended way to run gate 6/7's sub-message sweep.** A content-word sweep
+cannot reach a three-character particle phrase: `おい、` → `Ｏｉ，` (`glossary.md:2580`, with
+`Ｈｅｙ，` spent on `よう、` at 2579) was missed twice in chunk 37 — by a reviewer's gate 7 **and** by
+the translator's own Japanese-side sweep — and caught only key-side. **Chunk 38 ships `Ｏｉ，` and is
+correct**, confirmed key-side here.
+
+### AI5. Two corrections to existing glossary rows, both raised by the PR and both verified
+
+1. **§28.3's `ははっ` list wrongly counted chunk 38 — struck.** Chunk 38's string is `はははっっ`,
+   caught as a *substring*; in context it is **Marana laughing while taunting, answering no one**,
+   where `Ｙｅｓ，　ｓｉｒ！！` is nonsense. `はははっ` is battle chunk 38 only, 0 script — a hapax.
+   **The four genuine assents (c13 L2, c16 L2, c37 L1, c42 L6) and §28.3's ruling for them are
+   untouched.** The §35.2 / §35.3 "a substring count is not a census" failure in a new place.
+   ⚠️ **§29's `うん` co-occurrence argument cites the same list and is NOT disturbed** — `うん` is
+   chunks 8, 20, 43, so striking 38 creates no overlap. Checked before striking.
+2. **The wave-8 §9 seed's `マラナ` gender note was wrong — corrected in place, not merely struck.**
+   It read "`〜わ` → **female**". Re-measured independently at review: sentence-final `わ` occurs
+   **40** times in `battle_dump.txt` and at least four speakers are unambiguously male (c16 `ワシ`,
+   c39 Doctor Crimea, c42 `俺様`, c43 Helfer). Marana's own is `あると思ったわ！！` after a volitional
+   — the same masculine emphatic — and `おっさん` → `ｇｅｅｚｅｒ` (c38 L10) points the other way.
+   **No rendering turned on it**: she is first person throughout and the translator wrote no gendered
+   pronoun, deliberately declining `ｆｅｌｌｏｗ` (§32.2). Gender is **recorded as unfixed**.
+   ⚠️ **This is the §Y6 (Cress) shape a second time — a seeded gender assertion the corpus does not
+   carry. Seeds should stop asserting gender from a sentence-final particle.**
+
+### AI6. ⚠️ A correction that was itself wrong — caught before it entered the record
+
+PR #33's Flag 4 quoted `glossary.md` §37.1 as reading
+`反乱 (bare) | ｒｅｖｏｌｔ | 2 battle / 0 script — both now rendered, so the word is closed`
+and offered a §4.3 correction to it. **Read verbatim, that clause belongs to the `鎮圧` row
+immediately above (line 3639), not to the `反乱` row (line 3640), which carries no count and no
+closure claim at all — and 鎮圧's own claim is TRUE** (2 battle, chunks 22 and 43, 0 script; verified).
+Integrating the correction as written would have struck a true statement or corrected a claim never
+made. **The underlying measurement is right and went in as an ADDITION**: bare `反乱` is 3 battle
+(c22, c38, c43) + 4 script (DATA 443, 785, 896, 1383), with a scoping note against §38.3's
+`ｒｅｂｅｌｌｉｏｎ` for the script store. No rendering changed.
+
+⚠️ **This is exactly what §AF3 was written for: a wrong correction is worse than a wrong figure,
+because it enters the record as fact.** Verify a quotation by reading the line, not by trusting the
+quote — including when the quoting agent has been right about everything else, as it had been here.
+
+### AI7. ⚠️ An "unrecorded" divergence that was already recorded — and a DATA/FILE trap inside it
+
+PR #33's Flag 5 reported that `pending/chunk_005.txt`'s village line diverges from §27.2 and that
+"**no section records it**". **It is recorded**: `pending/README.md` line 31 carries exactly that row,
+with exactly that fix, from **PR #18's review**. No duplicate row was added — a second entry would
+have read as a second, independent finding. The rediscovery is still worth having: an independent
+positional sweep reconfirms the row is still open and still the only message-level divergence in the
+corpus.
+
+⚠️ **And the line numbers are NOT in conflict.** Flag 5 and the reviewer's gate-6 output say **18**;
+`pending/README.md` says **19**. The reviewer opened the file: the line is **file line 19 = body line
+18**. **Both are right, two conventions** — the §AE5 / §AF3 DATA-vs-FILE trap in a new file. Neither
+was "corrected" into the other.
+
+### AI8. A lookup key that no glossary row recorded — cross-unit with chunk 41
+
+`アイテムを奪われました。` exists in the dump in **two source forms**, and they are different lookup
+keys. §21.3 fixes the **broken** form `アイテムを{FFFE}奪われました。` and counts it seven times —
+**exact, verified** (c3 L8, c9 L13/14/15, c28 L7, c29 L15, c30 L10). The **unbroken** form is a
+separate **4** instances — **c38 L22, c39 L9, c41 L10, c41 L12** — and no row recorded it. Chunk 38
+renders it byte-identically to §21.3's English with the one `{FFFE}` added; that break is **forced,
+not elective** (unbroken the line measures **28** columns, over the hard 24). Recorded at §47.6.
+⚠️ **PR #30 (chunk 41) carries this form twice and must match byte-for-byte** — held to it at that
+review. The mirror case is `村が襲われました。`, which is **always unbroken** in the source (13
+instances, 0 broken) and also 28 on one row, so §27.2's added break is the only form there has been.
+
+### AI9. Figures, for the record
+
+| | |
+|---|---|
+| bytes | **5,577 / 8,192 — 2,615 slack**; byte cost re-derived from an independent implementation, not read off `assemble.py` |
+| growth | 1,080 JP → 2,333 EN readable characters, **2.16×** against a **3.37×** ceiling |
+| rows | **135 text rows** (source 129), widest **23**, twelve at 23, **none at 24** |
+| pages | no page over 4 text rows; no never-attested `.TTTT.`; three source-blank **trailing** segments filled at 0 bytes (§45.2) |
+| tags | non-`{FFFE}` stream **byte-identical on all 24 body lines**; `{FFFE}` **105 → 108** (lines 1, 20, 22 only); `{FCC0}` **12 → 12** |
+| controls | structure, geometry and duplicate checkers each **positive-controlled with planted corruptions at new sites in round 2**, all fired |

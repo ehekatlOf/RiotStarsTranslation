@@ -48,6 +48,7 @@ it is not silent.
 | アンゼルモ | Ａｎｓｅｌｍｏ | 中尉 → **Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ** (**24** columns). **Promoted from §14.6**, which already used this form for his register but never fixed the name. **7 columns** (corrected in place 2026-09-09, §4.3, PR #18 review; this row read “8”, and §29.5 read 25 for the titled form). See §36.4 |
 | ゼファー・クリッペン | Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ | 帝国の司令官 → Commander of the Empire. `・` has no glyph in §3.1 and becomes `　`. 14 columns. Alt *Zepher*, *Crippen*, *Klippen* |
 | ヘルファー様 | Ｌｏｒｄ　Ｈｅｌｆｅｒ | 様 → **Lord** for a male superior, paralleling 様 → Lady (Rimul §1, Phyllis §14.1). 11 columns. Does not change the §11.1 bare-name entry |
+| マラナ | Ｍａｒａｎａ | **Promoted from §9's wave-8 seed 2026-09-09 (PR #33), used exactly as seeded.** 7 columns. Imperial commander, and — `かつての上官` (chunk 38 L16) — **the party's own former superior officer**, who returns "from the depths of hell" after an earlier defeat. Register: the §14.6 / §20.5 / §25.5 / §28.6 Imperial-officer column, **zero contractions anywhere** (verified line by line at review). `この…` self-aggrandisement is kept as an appositive per §25.1 / §30.1: `このマラナ、` → `Ｉ，　Ｍａｒａｎａ，` and `このマラナにとっては` → `Ｔｏ　ｍｅ，　Ｍａｒａｎａ，`. ⚠️ **GENDER IS UNFIXED AND UNRENDERED — do not guess it.** The wave-8 seed asserted female from `〜わ`; that inference is refuted (see the struck §9 row for the 40-instance census and the four male speakers), and `おっさん` → `ｇｅｅｚｅｒ` at chunk 38 L10 points the other way. No shipped English genders her, and none should without evidence. **2 battle, 0 script — exhausted.** Alt *Malana* |
 | クリミア | Ｃｒｉｍｅａ | ⚠️ **CORRECTED 2026-09-08 (§4.3, PR #5 review): a PERSON — `クリミア博士`, the designer of the Empire's machine soldiers — not the region §2 filed him as.** Verified in both dumps before moving, not taken from the PR: **5 battle + 64 script occurrences, not one of them a place.** He self-refers in the third person (`この砦は、このクリミアにお任せ下さい。` — *leave this fort to Crimea*, i.e. to me; `またこのクリミアの新型機械兵` — *this Crimea's new machine soldier*), is addressed vocatively twice (`クリミア博士、反乱軍です・・・！！`, `クリミア博士、事は計画通り進んで`), is located **inside** a place (`クロスリーにいるクリミア博士`), and the script's machine-soldier table credits him as their maker (`クリミアの量産型機械兵２号機`). **Already-shipped work agrees**: `tl/script/batch_003.tsv` lines 85, 86 and 94 render that table as `Ｃｒｉｍｅａ’ｓ　ｍａｓｓ‐ｐｒｏｄｕｃｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｉｍｐｒｏｖｅｄ　…`, `Ｃｒｉｍｅａ’ｓ　ｆｉｎａｌ　ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ．` — a person's possessive, written before anyone noticed the §2 row was wrong. The rendering `Ｃｒｉｍｅａ` is unchanged, so **no translated line needs revisiting** — only the classification was wrong. This is the メルザリオ / ファリーナ shape (§20.1, §2); `FLAGS.md` §K6 deliberately deferred it to this reviewer. 6 columns. See §25.1 |
 
 ## 2. Factions, places, ranks
@@ -608,7 +609,7 @@ measurement disagrees with a cell here, your measurement wins and this cell is t
 |---|---|---|---|
 | マザロー | `Ｍａｚａｒｏ` | battle chunk 37 — `マザロー様！{FFFE}反乱軍の生き残り` | A **PERSON**, addressed `様`. ⚠️ **NOT `メルザリオ` → `Ｍｅｌｚａｒｉｏ` (§20.1), which is a PLACE** — different kana, the §Y2/§AC1 kana-variant blind spot. Keep the two visibly distinct. Alt *Mazarow*, *Masaro* |
 | マーシュ | `Ｍａｒｓｈ` | battle chunk 37 ×1; script ×3 (`ここの港には、マーシュが　いるはずよ。`) | A person at the port — `おお、マーシュ。{FFFE}無事だったか。` Alt *Mashu*, *March* |
-| マラナ | `Ｍａｒａｎａ` | battle chunk 38 ×2 — `このマラナ、{FFFE}お前たちと再会する` | Enemy commander; self-referential boast, `〜わ` → **female**, register per §7. Alt *Malana* |
+| ~~マラナ~~ | ✅ **PROMOTED to §1 and STRUCK HERE (PR #33, merged 2026-09-09)** — `Ｍａｒａｎａ`, **used exactly as seeded**, 7 columns. Chunk 38 renders **both** battle instances and there are 0 in script, so the term is **exhausted** and this row is struck outright rather than left live (the `ライトエルフ` precedent, §41.1; the `ルート` cross-unit procedure §29.1/§30.1 does not apply where one unit carries every occurrence). See §47.1 | ~~battle chunk 38 ×2 — `このマラナ、{FFFE}お前たちと再会する`~~ | ⚠️ **THE GENDER NOTE IN THIS SEED WAS WRONG AND IS CORRECTED IN PLACE (§4.3), NOT MERELY STRUCK.** It read “self-referential boast, `〜わ` → **female**”. **`〜わ` does not mark female in this corpus.** Raised by PR #33 and **re-measured independently at review**: sentence-final `わ` occurs **40** times in `battle_dump.txt` and at least four speakers are unambiguously male — c16 L14 `このワシが始末してくれるわ！` (**ワシ**), c39 L1 `一人残らず始末してくれるわ！` (**Doctor Crimea**, §1/§25.1), c42 L7 `俺様が始末してやるわ！` (**俺様**), c43 L1 `雑草どもが。目にもの見せてくれるわ。` (**Helfer**, §11.6). Marana's own is `あると思ったわ！！` after a volitional — the same masculine emphatic — and her other particles are `ぞ` and `〜おって`. ⚠️ **The source in fact male-codes her**: Seti calls the opponent `おっさん` (c38 L10), whose fixed English is `ｇｅｅｚｅｒ` (§24.2). **NO RENDERING TURNS ON IT OR EVER DID** — she is first person throughout and PR #33 wrote no gendered third-person pronoun, deliberately declining `ｆｅｌｌｏｗ` (§32.2) so as not to add an assertion of its own. Gender is therefore **recorded as unfixed**, not decided. ⚠️ **This is the §Y6 (Cress) shape a second time: a seeded gender assertion the corpus does not carry.** Alt *Malana* recorded and not taken |
 | 防御力＋ＮＮ (armour stat row) | `Ｄｅｆ＋ＮＮ` | script DATA 226, 239, 272 | ⚠️ **Exact analogy with `攻撃力＋ＮＮ` → `Ａｔｋ＋ＮＮ` (§4; 32+ instances already shipped). Prose keeps *defence power*.** **No `防御力＋ＮＮ` stat row has ever shipped — these are the first.** The form is **zero-growth** (5–6 columns in, 5–6 out) and that is load-bearing: **bank 40 has 447 bytes free**, and the armour rows are affordable only because the stat tail does not grow |
 | ボウガン | `ｃｒｏｓｓｂｏｗ` | script DATA 224 | 8 columns |
 | ボウキャノン | `ｂｏｗ　ｃａｎｎｏｎ` | script DATA 225 | 10 columns; kept audibly distinct from ボウガン. Alt *Bowcannon* |
@@ -1943,7 +1944,7 @@ unchanged. `助かりました！！` → `Ｙｏｕ　ｓａｖｅｄ　ｕｓ�
 |---|---|---|
 | あら、 | **`Ｍｙ，`** | 3 columns. A woman's mild, arch surprise. **Ratified at review, deliberately.** Deliberately **not** in the `Ｏｈ` family: §24.4 collapsed おお、/ ほう、 onto `Ｏｈ，` and おや onto `Ｏｈ？` outright, so `Ｏｈ` is spent and a fourth string cannot join them. `Ｍｙ` occurs **0** times elsewhere in `tl/`. ⚠️ **TWO CORRECTIONS to this row, 2026-09-09 (§4.3, PR #17 review) — see §35.1 and §35.2; the ruling stands unchanged and no rendering moves.** (a) Its reach was stated as "16 further occurrences (5 battle + 11 script-unique — both figures confirmed)"; **measured, it is 11 battle + 28 script-unique interjection instances = 39, i.e. 38 further than this one**. (b) ⚠️ **The alternative `Ｏｈ　ｍｙ，` was NOT free, and that sentence is struck: `chunk_011` L3 shipped `Ｏｈ　ｍｙ，` for `あら、` itself.** Retired by the wave-5 corrections unit (PR #17), after which `Ｏｈ　ｍｙ` occurs **0** times in `tl/` and `pending/`. `Ｍｙ，` is 3 columns to `Ｏｈ　ｍｙ，`'s 6, and あら is the milder of the pair |
 | 馬鹿者！ (direct address) | `Ｙｏｕ　ｆｏｏｌ！` | **A fifth バカ register**, held apart from §19.1's そんなバカな → `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` and バカなやつら → `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ`, §20.3's **バカ者** → `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ` (katakana, and *of* a third party) and §26.4's proverb. Same English root as §20.3 — this one is the vocative, and the kanji spelling is a different source string |
-| ははっ！ | `Ｙｅｓ，　ｓｉｒ！` | 9 columns. The doubled, more emphatic military assent. **Distinct** from §6's はっ → `Ｓｉｒ`, which this chunk uses byte-identically **two segments earlier in the same message** — they genuinely stand side by side, so they must not collapse. 5 battle + 1 script-unique **as a tic**, under §5's word-plus-source-punctuation mechanism (`ははっ・・・・！！` ch 16, `ははっ！！` ch 37, `はははっっ！！` ch 38, `ははっ・・・・` ch 42); the exact string `ははっ！` is 2 battle |
+| ははっ！ | `Ｙｅｓ，　ｓｉｒ！` | 9 columns. The doubled, more emphatic military assent. **Distinct** from §6's はっ → `Ｓｉｒ`, which this chunk uses byte-identically **two segments earlier in the same message** — they genuinely stand side by side, so they must not collapse. ~~5~~ **4** battle + 1 script-unique **as a tic**, under §5's word-plus-source-punctuation mechanism (`ははっ・・・・！！` ch 16, `ははっ！！` ch 37, ~~`はははっっ！！` ch 38,~~ `ははっ・・・・` ch 42); the exact string `ははっ！` is 2 battle. ⚠️ **THE ch 38 ENTRY IS STRUCK — CORRECTED IN PLACE 2026-09-09 (§4.3, PR #33 review).** Chunk 38's string is **`はははっっ`**, and it was caught here as a *substring* `ははっ`. Read in context it is **Marana laughing while taunting the enemy, answering no one** — `Ｙｅｓ，　ｓｉｒ！！` there is nonsense — and it renders `Ｈａｈａｈａ！！` per §47.2. Verified at review over both dumps: `はははっ` is battle chunk **38 only, 0 script** — a hapax. **The four genuine instances are assents answering a superior's order (c13 L2, c16 L2, c37 L1, c42 L6) and this row's ruling for them is untouched and correct.** The §35.2 / §35.3 "a substring count is not a census" failure in a new place. ⚠️ **§29's `うん` co-occurrence argument cites this same list and is NOT disturbed**: `うん` is chunks 8, 20, 43, so striking 38 creates no overlap |
 | まあよい、 | `Ｎｏ　ｍａｔｔｅｒ．` | 10 columns. A senior officer waving an objection aside. **Distinct** from §24.3's しかたねえ。 → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (resignation) and §6's まったく → `Ｒｅａｌｌｙ，`. 2 battle + 0 script |
 | 何っ！？ / 何ッ！？ | `Ｗｈａｔ！？` | 6 columns. ⚠️ **Corrected at review: the PR called this "a sixth member of the 何 family, all held apart", and it is not — `chunk_007.txt` L2 already ships the KATAKANA `何ッ！？` as `Ｗｈａｔ！？`.** The two are one full-width character apart, so they are different lookup keys and **CLAUDE.md §3 is not engaged** (the §24.5 / §27.4 shape). The collapse is the **documented** kind — one word, two kana spellings — which is exactly what §6 already does for 何だと？ / なんだと？, §6 for ふっ / フンッ and §17.2 for 鬼 / オーガ. §25.3's co-occurrence test is met: `何ッ！？` is chunk 7 only, `何っ！？` is chunks 13 and 18, and **no chunk holds both**. Chunk 7 has first use. The rest of the 何 family is still held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), and chunk 0's two stuttered forms (§23.2) |
 | 分かってる・・・ | `Ｉ　ｋｎｏｗ．．．` | 9 columns. The **progressive** form — a sixth member of the わかる family: いいな！！ → `Ｇｏｔ　ｉｔ！！`, わかったなっ！！ → `Ｇｏｔ　ｔｈａｔ！！`, 分かった / よし、 → `Ｒｉｇｈｔ，` (§6, §24.3), わかりました。 → `Ｉ　ｕｎｄｅｒｓｔａｎｄ．` (§21.2), 了解 → `Ｕｎｄｅｒｓｔｏｏｄ` (§21.2). This chunk's `わかった・・・・。` takes §6's `Ｒｉｇｈｔ` with the source's own five stops, per §5 |
@@ -3637,7 +3638,7 @@ checks passed"; `rowcheck.py 22` prints **no `!!` at all**. `bankmeasure` not re
 | 誤解 | `ｍｉｓｕｎｄｅｒｓｔｏｏｄ` (the verb) | 13 columns. `それは誤解だ。` → `Ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L05) and `クレス、誤解だ。` → `Ｃｒｅｓｓ，` / `ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L06) — **one form, both instances, the two branches of one scene**, so the player says the same thing whichever way the parley goes. The noun is 18 columns, not the PR's 16 (§37.6.3), and `Ｔｈａｔ’ｓ　ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ．` is **26** — it cannot share a row on a page already at four. `ｍｉｓｔａｋｅ` was rejected because `pending/chunk_017` spends it on `まちがいない` → `Ｎｏ　ｍｉｓｔａｋｅ．`. **2 battle / 0 script, both here.** Verified free across `tl/` **and** `pending/` |
 | 見損なう | `ｍｉｓｊｕｄｇｅ` | 9 columns. `私はお前を見損なっていたようだ。` → `ｉｔ　ｓｅｅｍｓ　Ｉ　ｈａｖｅ` / `ｍｉｓｊｕｄｇｅｄ　ｙｏｕ．` Deliberately **not** §30.4's reserved `ｕｎｄｅｒｅｓｔｉｍａｔｅ` (held for 甘く見る / 見くびる) and not its `ｍｉｓｒｅａｄ` (読みが甘い) — three source words, three English forms, which is what §30.4 wrote that reserve to protect. ⚠️ **Stronger than the PR argued, and confirmed at review**: 見損なう here is the *disappointment* sense — Cress thought too **well** of the player — so `ｕｎｄｅｒｅｓｔｉｍａｔｅ` would invert the direction of the error, not merely spend a reserve. **1 battle / 0 script.** Verified free |
 | 鎮圧 | `ｐｕｔ　…　ｄｏｗｎ` | 8 columns. **Not a new form — recording one already rendered.** `pending/chunk_043.txt` L4 ships `地上の反乱を鎮圧するための` → `ｌａｓｅｒ　ｗｅａｐｏｎｓ　ｔｏ　ｐｕｔ` / `ｄｏｗｎ　ｒｅｖｏｌｔ　ｏｎ　ｔｈｅ` / `ｇｒｏｕｎｄ　ｂｅｌｏｗ．`, and this chunk's `ここで鎮圧させてもらう。` → `ｐｕｔ　ｙｏｕ　ｄｏｗｎ　ｈｅｒｅ．` matches it. **2 battle / 0 script — both now rendered, so the word is closed** |
-| 反乱 (bare) | `ｒｅｖｏｌｔ` | 6 columns. Same source as above: `pending/chunk_043` already ships `ｒｅｖｏｌｔ` for bare 反乱, and `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` / `ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` matches. Held **distinct** from §26.4's 反乱軍 → *the rebels*, which this chunk also carries (`反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ`) — **both words appear in one message**, so they could never have collapsed |
+| 反乱 (bare) | `ｒｅｖｏｌｔ` | 6 columns. Same source as above: `pending/chunk_043` already ships `ｒｅｖｏｌｔ` for bare 反乱, and `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` / `ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` matches. Held **distinct** from §26.4's 反乱軍 → *the rebels*, which this chunk also carries (`反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ`) — **both words appear in one message**, so they could never have collapsed. ⚠️ **COUNT ADDED 2026-09-09 (PR #33 review) — an ADDITION, not a §4.3 correction: this row never carried a count or a closure claim.** Measured over both dumps with `反乱(?!軍)`: **3 battle (c22 L6, c38 L4, c43 L4) + 4 script (DATA 443, 785, 896, 1383)** — chunk 38 renders the third battle instance, `反乱となれば` → `Ｗｈｅｒｅ　ｔｈｅｒｅ　ｉｓ　ｒｅｖｏｌｔ，`, matching this row. ⚠️ **SCOPE: this row is the BATTLE store's form. §38.3 fixes the same bare word to `ｒｅｂｅｌｌｉｏｎ` from `batch_007` (script banks 2/3), and both stand** — §25.3's co-occurrence test is met (different stores; no shared chunk, bank or message), but a script batch reaching DATA 443/785/896/1383 must take §38.3's form, not this one. ⚠️ **The "2 battle / 0 script — closed" clause belongs to the `鎮圧` row directly above, where it is TRUE** (chunks 22 and 43, verified at this review); PR #33's Flag 4 quoted it against this row, and that misattribution is recorded rather than acted on — see `FLAGS.md` §AI |
 | 責任をとる | `ａｎｓｗｅｒ　ｆｏｒ　…` | `責任は、私がとる。` → `Ｉ　ｗｉｌｌ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` (21 columns). **Not a new form**: §15.2 fixes `責任はどうとるつもりだ` → `ｈｏｗ　ｄｏ　ｙｏｕ　ｉｎｔｅｎｄ　ｔｏ　ａｎｓｗｅｒ　ｆｏｒ　ｔｈｉｓ` (shipped, `batch_002` L9) and `pending/chunk_005` L28 ships `私が責任を持ちます。` → `Ｉ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` This is the third member and it matches both. **3 battle + 4 script-unique** |
 | 犠牲者 | `ｃａｓｕａｌｔｉｅｓ` | 10 columns. `これだけの犠牲者を出しておきながら、` → `Ａｆｔｅｒ　ｃａｕｓｉｎｇ　ｔｈｉｓ　ｍａｎｙ` / `ｃａｓｕａｌｔｉｅｓ，`. Military English for battle dead; *victims* would read as civilians, which is not what Cress means. **1 battle + related 犠牲 forms elsewhere** (`かなりの犠牲を` battle, `甚大な兵力を犠牲にした` script), so the noun is fixed here. Verified free |
 | 援護する | `ｓｕｐｐｏｒｔ` | 7 columns, **lowercase**. `リオン将軍とアルフレッドを援護してくれ。` → `９ｔｈ　Ａｒｍｙ，　ｓｕｐｐｏｒｔ` / `Ｇｅｎｅｒａｌ　Ｌｅｏｎ　ａｎｄ` / `Ａｌｆｒｅｄ，　ｗｈｏ　ｒｅｍａｉｎ` / `ｉｎ　ｔｈｅ　ｃａｓｔｌｅ．` A hapax — **1 battle / 0 script** — but fixed so it cannot drift. Held **distinct** from §2's 援軍 → *reinforcements / aid*, §20.3's 救援 → *go to … aid* and §24.2's 増援 → *reinforcements*: four source words, four English forms. ⚠️ Lowercase `ｓｕｐｐｏｒｔ` verified free at review; §26.3's `“Ｓｕｐｐｏｒｔ　Ｅｆｆｅｃｔ”` (支援効果) is capitalised, quoted and script-only, and §25.3's test is met (支援 script-only, 援護 battle chunk 22 only) |
@@ -5546,3 +5547,180 @@ covering it. Recorded at `FLAGS.md` §AH.
   (4 rows at 22/20/17/7, inside the limit), so this is a lexical choice and not a geometric
   necessity — recorded rather than presented as forced. **`Ａｌａｓ，` is verified free** and is the
   reserve if a later unit wants a word for the lament `ああ`.
+
+---
+
+## 47. Added by chunk 038 (PR #33, merged 2026-09-09)
+
+Squash `7bd8e76`. Merged at **round 2**; round 1 was CHANGES on two file findings and one PR-body
+finding. **5,577 / 8,192, 2,615 slack** — 1,080 JP → 2,333 EN readable characters, **2.16×** against
+a **3.37×** ceiling. 135 text rows (source 129), widest 23, twelve at 23, **none at 24**, no page
+over 4 text rows, no never-attested `.TTTT.` shape. `{FFFE}` **105 → 108** (lines 1, 20, 22 only);
+`{FCC0}` **12 → 12, none added**; the non-`{FFFE}` tag stream is byte-identical to the dump on all
+24 body lines. Chapter 38: Limrose burnt out, Marana's return, the surrender parley, Seneca's
+briefing on the Empire–Carline treaty, the townsman's parting gift, two tutorial boxes.
+
+⚠️ **Numbering convention used throughout this section: `L<n>` is the `tl/` file index counting the
+`=== CHUNK` header as line 0 — what `rowcheck.py 38` prints, i.e. dump body index + 1.**
+
+### 47.1 People and places
+
+| Japanese | English | Note |
+|---|---|---|
+| マラナ | `Ｍａｒａｎａ` | **Promoted to §1 and struck from §9.** 2 battle, 0 script — exhausted. ⚠️ **Gender unfixed and unrendered; the seed's `〜わ` → female inference is refuted** — see the struck §9 row and §47.5 |
+| 焼け野原 | `ａ　ｂｕｒｎｔ　ｗａｓｔｅ` | 15 columns. `リムローズが焼け野原に・・・・。` → `Ｌｉｍｒｏｓｅ　ｒｅｄｕｃｅｄ` / `ｔｏ　ａ　ｂｕｒｎｔ　ｗａｓｔｅ．．．．．`. **2 battle, both this chunk (the two variant openings), 0 script — exhausted.** `ｗａｓｔｅｌａｎｄ` was the rejected longer head; both verified free at review |
+| 独裁国 | `ａ　ｄｉｃｔａｔｏｒｓｈｉｐ　ｕｎｄｅｒ　…` | `ｄｉｃｔａｔｏｒｓｈｉｐ` is 12 columns and verified **free**. Deliberately **not** `ｔｙｒａｎｎｙ`, which §46.2 fixes for 圧制. ⚠️ **Count stated precisely at review**: the compound `独裁国` is **1 battle (this chunk), 0 script**; the bare stem **独裁** adds **1 script** (`独裁が`, untranslated). The row covers the stem, so a later script line inherits this head |
+| 残兵 | `ｒｅｍｎａｎｔｓ` | ⚠️ **FORCED BY A GATE, NOT PREFERRED — measured at round 2.** The longer `ｒｅｍｎａｎｔ　ｓｏｌｄｉｅｒｓ` cannot be made to fit L18 page 2 in four rows in **any** §2-conformant wording (participial 98 cols → 5 rows; finite 100 → 5; possessive 95 → 5, at both 23 and 24). The **only** four-row packing that keeps it routes through `ｏｆ　ｏｌｄ　Ｃａｒｌｉｎｅ　Ｋｉｎｇｄｏｍ`, which breaks §2's fixed `カーライン王国` → `Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ` — a gate-7 failure, so not an option. **1 battle + 1 script (DATA 1357, untranslated), which inherits this shorter head.** `ｒｅｍｎａｎｔ` verified free across `tl/` and `pending/` |
+| 同盟条約 / 調印 | `ａｌｌｉａｎｃｅ　ｔｒｅａｔｙ` / `ｓｉｇｎｉｎｇ` | 17 / 8 columns; both verified free. Built on §26.3's 同盟 → *alliance*, unchanged. 調印 is 1 battle + 2 script |
+| 民衆 | `ｉｔｓ　ｐｅｏｐｌｅ` | Ordinary prose. 1 battle + 1 script |
+
+### 47.2 Voice, tics and stock phrases
+
+| Japanese | English | Note |
+|---|---|---|
+| はははっっ | `Ｈａｈａｈａ` + the source's own punctuation | 6 columns, verified **free**. Marana's boastful **laugh**, kana beats tracked per §11.5 / §14.5 / §40.1 (three は → three `ha`), the doubled small `っっ` carried by the source's own `！！` per §5. ⚠️ **NOT §28.3's military assent — that row's chunk-38 entry is a substring false positive and is struck.** A hapax: battle chunk 38 only, 0 script. Both rejected alternatives measured (§AG6): `Ｙｅｓ，　ｓｉｒ！！` is 10 columns and `Ｈａｈａｈａｈ！！` 9 — **width decided nothing; the reading did** |
+| うわっ | `Ｕｗａｈ` | 4 columns, verified **free**. On §32.3's `ぬおっ` → `Ｎｗｏｈ` transliteration template and §41.1's `うわああっ` → `Ｕｗａａａｈ`; held distinct from `Ｇｕｈ` / `Ｇｗａｈ` / `Ｇｕｆｆ` / `Ｎｗｏｈ` / `Ｇｗｏｈ` / `Ｕｇｈ` / `Ａｇｈ` |
+| おのれ | `Ｃｕｒｓｅ　ｙｏｕ` | 12 columns. **Not a new form — recording a reuse of a PARKED rendering**: `pending/chunk_043.txt` ships `おのれ・・・奴らめ。` → `Ｃｕｒｓｅ．．．ｃｕｒｓｅ　ｔｈｅｍ．` **4 battle (38, 41 ×2, 43) + 0 script**, re-measured at review. ✅ **PR #30 (chunk 41) reached `Ｃｕｒｓｅ` independently** — this is the term's first *shipping* use |
+| 悪運が強い | `ｌｕｃｋｙ　ｄｅｖｉｌ` | 12 columns. `悪運の強い奴め！` → `Ｙｏｕ　ｌｕｃｋｙ　ｄｅｖｉｌ！` — §36.3's `Ｙｏｕ　〜` for a contempt marker in **direct address**. Kept clear of §34.1's `デビルズラック` → `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ` (capitalised, a predicate nominal): §25.3 met — that is script bank 12, this is battle chunk 38. A hapax |
+| 減らず口 | `ｂａｃｋ　ｔａｌｋ` | 10 columns, verified free. A hapax |
+| 恥を知れ | `Ｈａｖｅ　ｙｏｕ　ｎｏ　ｓｈａｍｅ！！` | 19 columns. A hapax. `ｓｈａｍｅ` is not free (§20.3's 恥さらし → *a disgrace*) — different words, different messages, §25.3 met; recorded so it cannot drift |
+| 恐れ入る | `ｄｏｅｓ　ｉｍｐｒｅｓｓ　…` | `そのしぶとさには恐れ入ったぜ。` → `ｔｈａｔ　ｔｅｎａｃｉｔｙ　ｏｆ　ｙｏｕｒｓ` / `ｄｏｅｓ　ｉｍｐｒｅｓｓ　ｍｅ．` — the emphatic `ｄｏｅｓ` keeps the source's topic-first order grammatical, a §2-licensed departure. A hapax |
+| しぶとい / しぶとさ | `ｔｅｎａｃｉｏｕｓ` / `ｔｅｎａｃｉｔｙ` | 10 / 9 columns, both verified **free**. Kept audibly related because the source echoes itself twice in one chunk (L04 `しぶとい奴め`, L16 `そのしぶとさ`). **2 battle, both this chunk, 0 script — exhausted.** The §4 石化能力 / §27.1 愛用 / §30.2 油断 "one word, two grammatical shapes" pattern |
+| ヒヨッ子 | `ｆｌｅｄｇｌｉｎｇｓ` | 12 columns, verified free. A hapax |
+| ジ・エンド | `Ｔｈｅ　Ｅｎｄ` | 7 columns, capitalised as the loanword flourish; verified **free**. The `・` is a katakana **separator** and maps to `　` per §45.7, so **no ellipsis rule is engaged** — a dot-count checker will report this line and must not be believed. Deliberately not lowercase `ｔｈｅ　ｅｎｄ`, which is spent in `chunk_000`, `chunk_031`, `batch_002` and `pending/chunk_043`. A hapax |
+| 苦戦する | `ｓｔｒｕｇｇｌｅ` | 9 columns. ⚠️ **Not free**: `chunk_018` ships `ご奮闘` → `ｓｔｒｕｇｇｌｅ` (§31.2). §25.3 **met** — 苦戦 is chunk 38 only; `ご奮闘` is chunk **18 only** (⚠️ corrected at review: chunk 28 carries the *bare* `奮闘ぶり`, not `ご奮闘`), and 38 is in neither set. A hapax |
+
+### 47.3 Reuses recorded, not new forms
+
+| Japanese | English | Where it was already shipped |
+|---|---|---|
+| とやら | `ｓｏ‐ｃａｌｌｅｄ` | `chunk_026` (`魔族とやらの歓迎、`). ⚠️ The bare grep reports chunks 13, 26, 38, but **chunk 13's two hits are the false positive `いた**ことやら**`** (こと+やら). Genuine `〜とやら` is **2 battle (26, 38) + 0 script — exhausted** |
+| 助太刀 | `ｌｅｎｄ　…　ａ　ｈａｎｄ` | `chunk_006` L9. **2 battle (6, 38) + 0 script — exhausted.** Shares its English with §33.7's `手を貸そう` → `Ｉ’ｌｌ　ｌｅｎｄ　ａ　ｈａｎｄ．` (chunk 19) — a **pre-existing** pairing, different source words, disjoint chunks, §25.3 met |
+| 避難 | `ｓｈｅｌｔｅｒ` | `chunk_003` L4. **2 battle (3, 38) + 0 script — exhausted** |
+| 占拠 | `ｔａｋｅｎ` | `chunk_022`. 3 battle (22, 37, 38) + 1 script |
+| 全滅 | `ｗｉｐｅｄ　ｏｕｔ` | `chunk_019` (`全滅か。` → `ｗｉｐｅｄ　ｏｕｔ．`), and chunks 2 and 9. **The fixed form, ruled at PR #29's round 1** |
+| 餌食 | `ｐｒｅｙ` | The kanji spelling of §25.1's `えじき` → `ｐｒｅｙ` (`chunk_009`), same construction `〜のえじきになる`. §40.1 deliberately holds 獲物 → `ｑｕａｒｒｙ` apart. ⚠️ `chunk_000` renders 餌食 as a verb phrase (`Ｓｔａｙ，　ａｎｄ　ｔｈｅｙ　ｅａｔ　ｕｓ．`) — **recorded, not re-cut**: a different message, and chunk 0 has 27 bytes of slack (§18.3) |
+| 抑える | `ｈｏｌｄ　…　ｄｏｗｎ` | New here; **2 battle, both this chunk, 0 script — exhausted, and both instances share the word.** Deliberately **not** `ｐｕｔ　…　ｄｏｗｎ`, which §37.1 fixes for **鎮圧** (chunks 22, 43 — neither is this chunk, so §25.3 is met and that reserve stays with 鎮圧) |
+| 降伏 | `ｓｕｒｒｅｎｄｅｒ` | 10 columns, ×2 here, byte-identical in the verb and noun uses. Shares its English with **投降** → `ｓｕｒｒｅｎｄｅｒ` (`chunk_030`); §25.3 **met and counted**: 投降 is chunk 30 only, 降伏 is chunks 16 and 38 only, 0 script either way. The `ｃａｐｉｔｕｌａｔｅ` reserve is unspent |
+| 刃を向ける | `ｔｕｒｎ　ａ　ｂｌａｄｅ　ｏｎ　…` | ✅ **PR #30 (chunk 41) reached this independently**; tense follows each source (`Ｔｏ　ｔｕｒｎ` here, `ｔｕｒｎｅｄ` there). **2 battle (38, 41) + 0 script — exhausted by the two units.** ⚠️ `ｂｌａｄｅ` is **not** free — `batch_003` L96/L99 and `batch_004` L21 use it for a physical sword blade (妖刀 / 刀身 / 名刀); **§25.3 met**: those are script bank 21, this is battle chunk 38 |
+
+### 47.4 `反旗を翻す` — the ruling, and the geometry that did **not** decide it
+
+| Japanese | English | Note |
+|---|---|---|
+| 反旗を翻す | `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` | **2 battle (38, 42) + 0 script.** Matches PR #31 (chunk 42), which shipped it first and did **not** move |
+
+**PR #33 originally shipped `ｒｏｓｅ　ｉｎ　ｒｅｖｏｌｔ` and argued PR #31's form was *geometrically
+impossible* in chunk 38's box** — L18 page 2 is shape `.TTTT` (a **leading**, unfillable blank plus 4
+text rows), already at the four-row wall, with `{FCC0}` forbidden by `assemble.py:tag_parity`. Six
+wordings were measured and every one keeping all four content elements needed a **fifth** row; the
+only one that fitted deleted 王国, which CLAUDE.md §3 forbids. **The reviewer re-measured and the
+claim does not hold.** The obstruction is a property of *one token order*, not of the wording: the
+tail `ｒｅｖｏｌｔ．．．．．` is 11 columns, atomic and must end the page, but it **need not be
+preceded by `ｔｈｅ　ｂａｎｎｅｒ　ｏｆ`** (13; 13 + 1 + 11 = 25 > 24). Moving `ｂａｎｎｅｒ　ｏｆ` onto
+the last row — `ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ．．．．．` = **21** — fits four rows at ≤23 with every
+element kept, by the same §2.1 step-6 clause reorder the PR already claimed for this page:
+
+```
+21 | Ａ　ｆｅｗ　ｒｅｍｎａｎｔｓ　ｏｆ　ｔｈｅ
+22 | ｏｌｄ　Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ
+23 | ｏｐｐｏｓｅｄ　ｉｔ，　ｒａｉｓｉｎｇ　ｔｈｅ
+21 | ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ．．．．．
+```
+
+So the choice fell to be made **on the merits**, and it goes to the banner form under §2's
+literal-first default: 反旗 *is* a flag of rebellion, English has the identical idiom, and the
+source's image survives at no cost — while `ｒｏｓｅ　ｉｎ　ｒｅｖｏｌｔ` discards it. §2's ban on
+importing an *unrelated* idiom is not engaged either way. **§25.3 met**: `ｂａｎｎｅｒ` renders §2's
+旗印 in chunks 0 and 27, disjoint from 反旗's {38, 42} — no shared chunk, bank or message.
+
+⚠️ **`ｒａｉｓｅ` is NOT free, and the near-miss is recorded rather than left to drift.** `chunk_022`
+L6 ships `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` /
+`ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` So `ｒａｉｓｅ` now renders **反乱を起こす** (chunk 22) and
+**反旗を翻す** (chunks 38, 42). §25.3 is met on disjoint chunks — and more to the point the two
+English forms are held apart by **exactly what holds the two Japanese forms apart, the flag**:
+`ｒａｉｓｅ　ａ　ｒｅｖｏｌｔ` against `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` mirrors 反乱
+against 反**旗**.
+
+⚠️ **The lesson, which is §AC3 / FLAGS §AG6 in a new place: MEASURE THE OPTION YOU ARGUE AGAINST —
+and measure it in more than one word order.** The rejected alternative never enters the file, so no
+gate ever checks it. Six measurements were made here and all six were arithmetically correct; what
+was missing was a re-ordering, and a unit was one review round away from being parked on the
+strength of it.
+
+### 47.5 `帝国軍` must carry its article — and the fallback the glossary already names
+
+`まずい、帝国軍だ！！` shipped at round 1 as `Ｂａｄ！　Ｉｍｐｅｒｉａｌ　ａｒｍｙ！！` (20 columns),
+which is **neither** of §20.4's two fixed forms. Gate 7 failed. Every one of the **11** shipped
+instances carries the article — `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` in chunks 2 ×2, 4, 8 ×4, 13, 31,
+and the licensed fallback `ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ` in chunks 7 and 11 — and the closest
+parallels pay for it: `chunk_008` L5 renders the same `〜、帝国軍だ！` shape across **two rows**, and
+`chunk_031` L3 splits `Ｉｍｐｅｒｉａｌ` from `ａｒｍｙ` rather than drop `ｔｈｅ`.
+
+**Ships as `Ｂａｄ，　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ！！` (23 columns)** — §20.4's **width fallback**,
+because the default `Ｂａｄ！　ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ！！` measures **24**: legal at the hard
+limit but over the ≤23 target of §3.2. This is the exact contingency §20.4 wrote the fallback for.
+
+⚠️ **The reviewer's own prescription was wrong by one character and the translator corrected it —
+recorded because the board preaches it.** The review prescribed `Ｂａｄ！　ｔｈｅ　…`, which is
+**ungrammatical**: a lowercase word after a full-stop-strength `！`. The reviewer had prepended
+`ｔｈｅ` to the existing `Ｂａｄ！` without re-reading the result. All three candidates
+(`Ｂａｄ！　ｔｈｅ…`, `Ｂａｄ，　ｔｈｅ…`, `Ｂａｄ！　Ｔｈｅ…`) measure **23**, so width decided
+nothing; the source's own mark is `、`, and round 1 had turned it into `！` only as a consequence of
+the width problem the article fix removed. **`Ｂａｄ，` is both grammatical and faithful, and is the
+only candidate that is both.** Flagged by the translator rather than applied silently — which is
+what let it be ruled on.
+
+### 47.6 The unbroken tutorial keys — a lookup key no row recorded
+
+| Japanese (source key) | English | Note |
+|---|---|---|
+| `アイテムを奪われました。` (**no internal `{FFFE}`**) | `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` | ⚠️ **A DIFFERENT KEY from §21.3's, and nothing recorded it until now.** §21.3 fixes the **broken** form `アイテムを{FFFE}奪われました。` and counts it "seven times across chunks 3, 9 ×3, 28, 29 and 30" — **that count is exact for the broken form, verified at this review.** The **unbroken** form is a separate 4 instances: **c38 L22, c39 L9, c41 L10, c41 L12**, none of them in §21.3's list. The `{FFFE}` in the English is **forced, not elective**: unbroken the line measures **28** columns, over the hard 24, and putting the break where §21.3 puts it makes the rendered rows identical too. The §27.4 trap (same readable text, different lookup key) in a new place |
+
+⚠️ **`村が襲われました。` is the mirror image and is worth stating**: measured at this review, that
+message is **always unbroken in the source** — 13 instances, **0** broken — so §27.2's fixed English,
+which adds a `{FFFE}`, is the only form there has ever been. It too measures **28** on one row.
+
+### 47.7 Departures, all §2.1-licensed and all flagged
+
+Every departure in this unit is forced by the **4-row × 24-column geometry**, not by bytes — the
+chunk landed with 2,615 spare, which is §0.2's "above about 4.0 the geometry takes over" in practice
+at a 3.37× ratio. The rejected alternative was measured in each case:
+
+1. **L03 p6** `まずい、帝国軍だ！！` — see §47.5.
+2. **L03 p5** `各地に避難している。` → `ｓｃａｔｔｅｒｅｄ　ｆｏｒ　ｓｈｅｌｔｅｒ．` (22); 各地に is carried by *scattered*. `ｔａｋｅｎ　ｓｈｅｌｔｅｒ　ｅｌｓｅｗｈｅｒｅ．` = 24. ⚠️ `ｓｃａｔｔｅｒ` is not free — §32.2 spends it on 蹴散らす (chunk 20, transitive, of enemies); different sense, disjoint chunks, §25.3 met.
+3. **L18 p1** renders the impersonal `調印式が行われているはず` actively; `ｔｈｅ　ｓｉｇｎｉｎｇ　ｏｆ　ｔｈｅ　ａｌｌｉａｎｃｅ` alone is 27 columns against a 92-column page.
+4. **L18 p2** — the §2.1 step-6 reorder of §47.4.
+5. **L19 p2** `そりゃ、` is dropped — the one place a *word* of the source is unrepresented, and the lightest available. ⚠️ **Verified at review by the test the PR did not run**: not merely appending but **re-wrapping the whole page** with `Ｓｕｒｅ，` or `Ｗｅｌｌ，` restored still needs **5 rows at ≤23** (it fits only at 24). `Ｅｖｅｎ　Ｉ` already carries the concession `俺だって` makes.
+6. **L16 p3** keeps the source's topic-first order grammatical with an emphatic `ｄｏｅｓ`.
+7. **L18 p9** `君の父さんの所へ。` → `Ｔｏ　ｙｏｕｒ　ｆａｔｈｅｒ．`; 所 is absorbed because *to your father* **is** *to where your father is*. `Ｔｏ　ｗｈｅｒｅ　ｙｏｕｒ　ｆａｔｈｅｒ　ｉｓ．` = 24.
+
+**Three pages fill a source-blank TRAILING segment at 0 bytes** (§45.2 / FLAGS §AG1): L10 p3 and L18
+p6 `TTT.` → `TTTT`, L15 p4 `.TTT.` → `.TTTT`. All attested shapes; the never-attested `.TTTT.` does
+not occur anywhere in the file.
+
+### 47.8 Register and speaker channels, derived inside chunk 38
+
+Attributions were taken from the `{FC50}`/`{FC51}` **channel**, not the portrait id (§41.2, FLAGS
+§W5), and confirmed at review. **Portrait 08 = Marana on both channels** (she self-names on
+08·`{FC51}`, and 08·`{FC50}` carries the same voice through L11, L16, L17 — the §23.5 / §28.7 / §30.7
+same-id/opposite-channel pattern). **05·`{FC50}` = Seneca**, named by the next speaker and confirmed
+by `僕の父` (§25.5). **06·`{FC51}` = Seti** and **07·`{FC50}` = Yuiti**, matching §40.2's genders and
+registers — Seti contracts (`Ｙｏｕ’ｒｅ`, `ｙｏｕ’ｖｅ`, `ｗｏｎ’ｔ`), Yuiti does not (`Ｉ　ｗａｓ`,
+`ｓｈａｌｌ　Ｉ`). **Marana takes zero contractions anywhere in the unit** (verified line by line) —
+the §14.6 / §20.5 / §25.5 / §28.6 Imperial-officer column, and the contrast with the 9th Army's
+casual portraits 00/01/03 is what makes her flatness read as rank (§7).
+
+⚠️ **`久しぶりだな！！` is uncontracted here where `chunk_006` contracts it** — Ridge's is
+`Ｉｔ’ｓ　ｂｅｅｎ　ａ　ｗｈｉｌｅ．` (19), Marana's is `Ｉｔ　ｈａｓ　ｂｅｅｎ　ａ　ｗｈｉｌｅ！！` (21).
+**Different messages, so CLAUDE.md §3 is not engaged**, and this is §39.7 / §42.7's ruling shape:
+*the fixed WORD is shared; the contraction follows the speaker.* Recorded so a positional row checker
+does not read it as a divergence.
+
+### 47.9 Notes recorded rather than acted on
+
+- **`それから、` between two vocatives is a list conjunction**, not §40.4/§41.8's reserved connective: `セティ！{FFFE}それから、ユイティ！！` → `Ｓｅｔｉ！` / `Ａｎｄ　Ｙｕｉｔｉ　ｔｏｏ！！`, because *And then, Yuiti!!* is not English between two names. §39.5's shape applied to a different connective. **The `Ａｎｄ　ｔｈｅｎ` reserve is not spent.**
+- **`カーライン宮廷軍だって？` is a bare echo question**, `Ｔｈｅ　Ｃａｒｌｉｎｅ　Ｒｏｙａｌ　Ａｒｍｙ？` (23), not §23.2's quotative `“　”` — that rule renders an echoed **clause**; this is an incredulous echo of a bare **noun phrase**. Confirmed at review against §5099's `だって` row, which is scoped to *causal, sentence-initial* and whose reserved quotative forms (`ｔｈｅｙ　ｓａｉｄ` / `ｔｈｅｙ　ｓａｙ．`) are **reportative** and so do not apply to an echo addressed back at the speaker.
+- **`Ｉｎｄｅｅｄ，　ｉｎｄｅｅｄ．` for `そうだろう、そうだろう。`** shares `Ｉｎｄｅｅｄ` with `chunk_002` (§20.3) and `batch_009` ×2 (§46.2, explicitly **bank**-scoped to script bank 8); neither source string is in chunk 38, so §25.3 is met. The source's doubling is preserved per §23.2's `気にしない、気にしない。`.
+- ⚠️ **An open question left open: expressive lengthening.** `おのれっー！？` → `Ｃｕｒｓｅ　ｙｏｕ！？` and `はははっっ！！` → `Ｈａｈａｈａ！！` carry the extra kana beat on **the source's own punctuation** rather than an added letter. The precedent cuts both ways — §29.3's `くーっ` → `Ｔｃｈｈ` and §43.2's `ブヒィ` → `ｏｉｎｋｋ` give a beat a letter, while §32.6 forbids inventing punctuation for one. **Here the source already supplies the mark**, and `Ｃｕｒｓｅ　ｙｏｕｕ！？` / `Ｈａｈａｈａｈ！！` read as typos. Recorded as the working rule; a general ruling is still owed.
+- **`ｈｏｎｏｕｒ`** (L11) — British spelling, consistent with `ｄｅｆｅｎｃｅ` ×11 across `tl/` and `ｈｏｎｏｕｒ` in `pending/chunk_005`.

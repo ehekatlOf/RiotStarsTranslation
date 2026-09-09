@@ -29,15 +29,17 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
 ## Last updated
-2026-09-09 · by: **wave-8 coordinator** (`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
+2026-09-09 · by: **PR #33's reviewer** (integration commit; chunk 38 MERGED at round 2, squash
+`7bd8e76`, glossary §47, FLAGS §AI — **the wave's first merge**) · previously: **wave-8 coordinator**
+(`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
 wave: **8 DISPATCHED — 5 units in flight** · queue: **script batch computed fresh this wave, by
 line list, not by a `queue.py` position**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **28** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, **30**, **31**, 33, 34, 35, 40 |
-| Battle JP characters | **24,407** | 43,161 | **56.5%** (was 51.0% at wave-7 start) |
+| Battle chunks | **29** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **38**, 40 |
+| Battle JP characters | **25,487** | 43,161 | **59.1%** (was 56.5% at wave-8 start) |
 | Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
 | Script message instances | **4,259** | 7,931 | **53.7%** |
 
@@ -53,7 +55,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | 5,039 → **5,037 / 8,192** expected | **PR #29 — CHANGES r2**, round 3 sent (max 3) |
-| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (r2 @ `41f8f37`) | **PR #33 — rework PUSHED**, awaiting re-review by the SAME reviewer |
+| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
@@ -177,6 +179,47 @@ ungrammatical. A one-character change either way.
 four-row packing that keeps that noun goes through `ｏｆ　ｏｌｄ　Ｃａｒｌｉｎｅ　Ｋｉｎｇｄｏｍ`, which
 **breaks §2's fixed `カーライン王国` → `Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ`** (glossary line 71). So
 the shorter `ｒｅｍｎａｎｔｓ` is **forced**, not preferred, and the 残兵 row changes with it.
+
+### ✅ Review 2 of 5, ROUND 2 — PR #33 (chunk 38): **MERGED.** Squash `7bd8e76`. THE WAVE'S FIRST MERGE.
+All nine gates re-run on the round-2 file with **all-new** positive controls (structure, geometry and
+duplicate checkers each re-planted at new sites; all fired). **5,577 / 8,192, 2,615 slack** — byte
+cost re-derived from an independent implementation, matching the round-1 simulation to the byte.
+`{FFFE}` 105→108 (lines 1, 20, 22 only); `{FCC0}` 12→12; 135 text rows, widest 23, **none at 24**.
+Integrated at glossary **§47** and `FLAGS.md` **§AI**. Battle now **29/44, 25,487/43,161 JP (59.1%)**.
+
+⚠️ **GATE 7 WAS RUN FROM THE GLOSSARY SIDE, KEY BY KEY — adopt this everywhere.** 1,097 Japanese
+keys enumerated from every glossary table row, intersected with the chunk's source: **27 occur here,
+all 27 conform.** Two fired as false positives and were adjudicated, not passed over (`はっ` only as
+a substring of `はははっっ`; `だって`, whose row is scoped in its own text to *causal,
+sentence-initial*). ✅ **`おい、` → `Ｏｉ，` confirmed correct in this unit** — and the method is what
+reaches a three-character particle phrase at all. Now recorded as the recommended sweep at §AI4.
+
+⚠️ **TWO ROLE-CORRECTIONS THIS ROUND, BOTH GOOD, BOTH RECORDED (§AI2, §AI3).** ① **The reviewer's own
+prescribed fix was wrong by one character and the translator refused it.** Round 1 prescribed
+`Ｂａｄ！　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ！！` — ungrammatical, a lowercase word after a full-stop-strength
+`！`, because `ｔｈｅ` was prepended to the old `Ｂａｄ！` without re-reading the result. Shipped
+`Ｂａｄ，　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｍｅｎ！！`: all three candidates measure **23**, so width decided
+nothing, and the source's own mark is `、`. **Ratified.** ② **`残兵` → `ｒｅｍｎａｎｔｓ` is FORCED by a
+gate, not preferred** — every §2-conformant wording keeping `ｒｅｍｎａｎｔ　ｓｏｌｄｉｅｒｓ` needs five
+rows (98/100/95 cols), and the only four-row packing that keeps it breaks §2's fixed `カーライン王国`
+→ `Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ`. **Confirmed.** (One figure corrected without effect: the *95*
+is the possessive variant; the participial is **98**.)
+
+⚠️ **TWO ITEMS THAT DID *NOT* GO INTO THE RECORD, AND THAT IS THE POINT (§AI6, §AI7).**
+① **PR #33's Flag 4 "correction" to §37.1 was itself wrong** — the quoted "2 battle / 0 script —
+closed" clause belongs to the **`鎮圧` row above it (line 3639), where it is TRUE**; the `反乱 (bare)`
+row (3640) carries **no count at all**. Filed the measurement as an **addition** plus a §38.3 scoping
+note, not as a §4.3 correction. ② **Flag 5's `pending/chunk_005.txt` village line is ALREADY
+recorded** — `pending/README.md` line 31, from PR #18's review — so **no duplicate row was added**.
+⚠️ Its "L18" vs the README's "19" is **not a discrepancy**: the line is **file line 19 = body line
+18**, both right, the DATA/FILE trap in a new file. **A wrong correction is worse than a wrong
+figure; verify a quotation by reading the line, even when the quoting agent has been right about
+everything else — as this one had.**
+
+**Already-accepted round-1 corrections are integrated:** §9's `マラナ` gender note corrected in place
+and the row promoted to §1 and struck (exhausted; gender **recorded as unfixed**, the §Y6 shape a
+second time); §28.3's `ははっ` list struck of chunk 38 (a `はははっ` substring; the four genuine
+assents stand, and §29's `うん` argument was checked and is undisturbed).
 
 ### Review 2 of 5 — PR #33 (chunk 38): **CHANGES**, round 1. Rework sent.
 Eight of nine gates pass, independently re-derived (byte cost reimplemented from scratch; full tag
