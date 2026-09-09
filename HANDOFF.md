@@ -52,11 +52,27 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | JP 985, headroom 5,299, ratio **3.69** (tier C) | dispatched |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** | **PR #29 OPEN**, awaiting reviewer |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | JP 593, headroom 6,565, ratio **6.54** (tier E) | dispatched |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | JP 698, headroom 6,225, ratio **5.46** (tier D) | dispatched |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances** / 2,477 JP chars | dispatched |
+
+**PR #29 (chunk 37) carries three things the reviewer must integrate, not just merge:**
+1. ⚠️ **`FLAGS.md` §Y6 is SETTLED — Cress is FEMALE — and §Y6's own premise is REFUTED.** §Y6 says
+   "no shipped English anywhere genders Cress". That is **false**: merged `tl/battle/chunk_013.txt`
+   body line 0 already ships `ａ　ｗｏｍａｎ　ｃａｐｔａｉｎ` addressed to Cress by name, rendering
+   the source's `女隊長` (corroborated by `上玉` / `献上してやる`, and `chunk_022` addresses her as
+   `クレス隊長`). The project committed to female in **wave 3** and §Y6 did not notice. **No
+   rendering changes anywhere.** Record the refutation, not only the answer, and correct glossary
+   §1's `クレス` row to state the gender.
+2. **Cross-unit, already actioned by me:** `決着をつけてやる` is in chunks 30 (shipped, renders
+   `ｓｅｔｔｌｅ`), 37 and **41**. I verified it in the dump and sent chunk 41's translator the
+   precedent mid-flight. ⚠️ **Chunk 30 writes it `決着を{FFFE}つけて` — a `{FFFE}` splits the
+   phrase, so a naive grep misses chunk 30.** Check chunk 41's PR uses `ｓｅｔｔｌｅ`.
+3. **§9 row states:** strike `マザロー` (hapax, exhausted). **Keep `マーシュ` LIVE** — 3 script
+   instances remain untranslated (the twin scene at `script_unique` 870, outside batch_010's
+   880–920 window). New `小隊` row also stays live (1 script instance, unique 524).
 
 ⚠️ **Chunk 37** inherits `FLAGS.md` §Y6 (Cress's gender — unfixed and unrendered anywhere; settle
 it with evidence or flag it, never guess silently). ⚠️ **Chunk 42 L11** is one of §L2's no-`{FC50}`
