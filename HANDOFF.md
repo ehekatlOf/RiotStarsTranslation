@@ -12,32 +12,26 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 7 IS CLOSED — 3 merged, 1 parked, `check` green. Battle 28/44 (56.5%), script 53.7%.**
-> The next act is to **OPEN WAVE 8'S SESSION**, which wave 7's coordinator does in the same turn.
+> **WAVE 8 IS IN FLIGHT — 5 units dispatched, glossary seeded at `5402c68`.** The coordinator is
+> `session_01GMZPvT2GCVmRBd8pwHPGED`. Nothing is reviewed until **all five** units have an open PR
+> (the wave barrier, CLAUDE.md §4 step 4).
 >
-> ```
-> create_session(                                        # claude-code-remote MCP
->   title:           "Riot Stars — wave 8",
->   tags:            ["riotstars-translation", "wave-8"],
->   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-8 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both inherit. Units: **battle 37, 38, 41, 42 + one script
-> batch computed fresh** — see **Next up**.
+> If you are resuming and the five PRs are open: review them **one at a time, in unit order**,
+> `run_in_background: false`. If a unit has no PR and its translator is gone, re-dispatch that unit
+> (two rounds max, then park). If a unit has no PR and its translator is alive, **wait**.
 >
-> ⚠️ **WAVE 8 IS THE LAST BATTLE WAVE.** It spends the final four dispatchable chunks; after it,
-> battle work **STOPS** until a human clears Blocked **0** or **0a**.
+> When the wave closes, open **wave 9's session** with `create_session` — BOTH `source_url`
+> (`https://github.com/ehekatlOf/RiotStarsTranslation`) and
+> `source_revision` (`claude/workflow-translation-iterate-uzlkns`) are required.
 >
-> ✅ **WAVE 8'S SESSION IS OPEN: `session_01GMZPvT2GCVmRBd8pwHPGED`** (opened 2026-09-09 13:01Z by
-> wave 7's coordinator, in the same turn as this close). If that session is dead and wave 8 never
-> ran, the chain broke here — open a replacement.
+> ⚠️ **WAVE 8 SPENDS THE LAST FOUR DISPATCHABLE BATTLE CHUNKS.** After it, battle work **STOPS
+> ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
+> and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
 ## Last updated
-2026-09-09 · by: **wave-7 coordinator** (`session_01N1VxX55Vw79fxNr6nTELcs`) ·
-wave: **7 CLOSED — 3 merged, 1 parked, 1 rework round** · queue: **fresh; wave-8 script batch must
-be recomputed against the figures below, NOT inherited**
+2026-09-09 · by: **wave-8 coordinator** (`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
+wave: **8 DISPATCHED — 5 units in flight** · queue: **script batch computed fresh this wave, by
+line list, not by a `queue.py` position**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -53,8 +47,20 @@ banks 7–12: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 ·
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, Blocked 0),
 **36** (charset gate, Blocked **0a** — new this wave).
 
-## In flight
-**Nothing. Wave 7 is closed and no PR is open.** Wave 8's session dispatches its own units.
+## In flight — WAVE 8 (dispatched 2026-09-09)
+Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. Round 1 for all.
+
+| Unit | Branch | File | Figures at dispatch | State |
+|---|---|---|---|---|
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | JP 985, headroom 5,299, ratio **3.69** (tier C) | dispatched |
+| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | JP 593, headroom 6,565, ratio **6.54** (tier E) | dispatched |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | JP 698, headroom 6,225, ratio **5.46** (tier D) | dispatched |
+| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances** / 2,477 JP chars | dispatched |
+
+⚠️ **Chunk 37** inherits `FLAGS.md` §Y6 (Cress's gender — unfixed and unrendered anywhere; settle
+it with evidence or flag it, never guess silently). ⚠️ **Chunk 42 L11** is one of §L2's no-`{FC50}`
+16-row pages — an in-game question (Blocked 4), **not the translator's to solve**.
 
 ## Next up — WAVE 8 (⚠️ THE LAST BATTLE WAVE)
 **Seed the glossary BEFORE dispatching.** Sections currently end at **glossary §46** and **FLAGS
