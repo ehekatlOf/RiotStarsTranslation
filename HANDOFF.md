@@ -54,9 +54,38 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** | **PR #29 OPEN**, awaiting reviewer |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
-| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | JP 593, headroom 6,565, ratio **6.54** (tier E) | dispatched |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | JP 698, headroom 6,225, ratio **5.46** (tier D) | dispatched |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances** / 2,477 JP chars | dispatched |
+
+⚠️ **CROSS-PR COLLISION — PRs #29 AND #30 RENDER `掌握` DIFFERENTLY. THE REVIEWER MUST RULE.**
+Found by me from both open PRs; the wave barrier is what made it visible before either merged.
+- **PR #29 (chunk 37)**, body line 18: `ヘルファーが帝国と手を結び軍を掌握したんだ` →
+  `ｓｅｉｚｅｄ　ｔｈｅ　ａｒｍｙ`. Chunk 37 did **not** flag `掌握` at all.
+- **PR #30 (chunk 41)**, body line 9: `帝国兵の力も掌握するつもりなのです` → `ｔｏ　ｇｒａｓｐ`.
+  Chunk 41 flagged it as cross-unit and offered to be the one that moves.
+- **I measured chunk 41's stated reason and it holds**: `ｓｅｉｚｅ` is ALREADY SPENT in three
+  **shipped** files — `chunk_006`, `chunk_021`, `chunk_022` — on a different source word
+  (`取り押さえろ` and chunk 22's Fernando line). **`ｇｒａｓｐ` occurs nowhere in `tl/` or
+  `pending/`.** So PR #29's choice creates a §25.3 co-occurrence collision and PR #30's does not.
+- ⚠️ **The two Japanese MESSAGES differ entirely, so CLAUDE.md §3's byte-identical rule is NOT
+  engaged.** This is term consistency under §25.3, not a gate failure. Reviewer's call, on the
+  evidence above; whichever way it goes, the second PR to merge must match the first.
+
+⚠️ **A FIGURE OF MINE TRAVELLED UNMEASURED AND WAS WRONG — recorded because the board preaches it.**
+My mid-flight note to chunk 41 said the line was "chunk 41 L7". I copied that from PR #29's report
+without reading it. **It is line 8** (convention: `=== CHUNK` header = line 0, so the first body line
+is line 1 — `rowcheck`'s numbering); **line 7 is the tag-only `{FCE0}{=0001}{FFFF}`**, no readable
+text. Verified by me in the dump. PR #30 caught it. Exactly the §AE-class failure the Decisions
+section describes: a wrong figure travels, and only the next role catches it.
+
+⚠️ **AND THE COUNTER-CASE, so it is NOT recorded as an error: PR #30 cites the two script instances
+as `script_unique` 1383 and 1385; I measure them at 1378 and 1380. BOTH ARE RIGHT** — 1383/1385 are
+**FILE**, 1378/1380 are **DATA**, and FILE = DATA + 5. Do **not** "correct" either into the other:
+this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance confirmed by me: both
+lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
+(chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
+claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
 
 **PR #29 (chunk 37) carries three things the reviewer must integrate, not just merge:**
 1. ⚠️ **`FLAGS.md` §Y6 is SETTLED — Cress is FEMALE — and §Y6's own premise is REFUTED.** §Y6 says
