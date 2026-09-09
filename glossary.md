@@ -403,6 +403,19 @@ comes from an outsider and chunk 22's `隊長` from Ryan's own subordinate, whic
 with no promotion at all. See **§37.4**. Nothing follows from leaving it open, because §26.2's
 source-rank rule is correct under either reading.
 
+✅ **STATUS 2026-09-09, FINAL — the wave-5 block is now clear.** `batch_007.tsv` (PR #20) merged
+last and renders **twelve** of the script seeds — `第１軍`, `リムローズ`, `イートン`/`イートンの森`,
+`チェコットの丘`, `レバーク城`, `兵舎`, `ジャガイモ`/`イモ`, `バター`, `ワイン` (bare),
+`とかいじん`, `ナンダイ`, `第２王子のトリフ様` — plus the three UI labels, **every one exactly as
+seeded, not one improved on unilaterally**, and it executes the `殿` decision as written. They are
+promoted to **§38.1** and struck above. **Two rows deliberately stay live**: `『極上のワイン』`,
+which this batch does not render, and the **UI-label block**, which §9 itself says the reviewer must
+flag rather than resolve (`FLAGS.md` §Z1). ⚠️ **Four of this block's own figures were wrong and are
+corrected in place above** — `リムローズ`'s reach (9 → 10 further, 12 → 11 unique), `ワイン`'s
+"24 unique" (→ 18), `ナンダイ`'s width (16 → **14**), and `第２王子のトリフ様`'s cost note; and
+⚠️ **the PR's proposed correction to `兵舎`'s "4 script" is itself wrong — this block was right.**
+See §38.6.
+
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
 | ~~ライアン~~ | ✅ **PROMOTED to §36.1 (chunk 21) and STRUCK HERE at chunk 22's merge (PR #19, `6423083`).** `Ｒｙａｎ`, 4 columns, rendered in **both** units exactly as seeded — `ライアン少尉` → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` in chunk 21 (22 bare, 23 in the vocative, one row) and `ライアン隊長` → `Ｃａｐｔａｉｎ　Ｒｙａｎ` (12) in chunk 22. **The cross-unit rule is discharged**: #18 merged first and deliberately left this row live, #19 merged second and strikes it, which is the whole of what the `ルート` precedent (§29.1 / §30.1) prescribes. ⚠️ **The seed's promotion reading is NOT ratified — see §37.4**; both renderings are correct under either reading, so nothing follows from leaving it open | ~~battle chunks 21 + 22, CROSS-UNIT~~ | ~~`Ｌｉａｎ`, `Ｒｉａｎ`~~ |
@@ -411,23 +424,24 @@ source-rank rule is correct under either reading.
 | ~~リオン将軍~~ | ✅ **PROMOTED to §37.1** — `Ｇｅｎｅｒａｌ　Ｌｅｏｎ`, **used exactly as seeded**; 12 columns confirmed at review. **Not cross-unit**: `リオン将軍` is battle chunk 22 only | ~~battle chunk 22~~ | — |
 | ~~バトウ神父~~ | ✅ **PROMOTED to §36.1** — `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, rendered ×3 in `tl/battle/chunk_021.txt` (PR #18), **used exactly as seeded**; 12 columns confirmed at review. **Not cross-unit**: all 3 battle occurrences are in chunk 21 (counted at review — `バトウ` is battle chunk 21 only), so nothing is left live | ~~battle chunk 21, 3 battle / 2 script~~ | — |
 | ~~５軍 / 第５軍~~ | ✅ **PROMOTED to §37.1** — `５ｔｈ　Ａｒｍｙ`, 8 columns confirmed. ⚠️ **NOT a first rendering, and this row's own advice pointed at the wrong tree**: `tl/battle/chunk_013.txt` L2 already ships the bare form as `ｔｈｅ　５ｔｈ　Ａｒｍｙ` and chunk 22 **matches it byte-for-byte**. The row said "grep `batch_005`", which the translator did and reported honestly; the reach that mattered was in `tl/battle/`. See §37.3 | ~~5 battle / 3 script~~ | — |
-| 第１軍 | `１ｓｔ　Ａｒｍｙ` | **8 columns**, same series. **0 battle / 3 script**, one of them unique 427 in this batch (`第１軍隊長のリオン`) | — |
-| リムローズ | `Ｌｉｍｒｏｓｅ` | **7 columns.** A **TOWN**, with a 市長 (§1 市長 → the mayor) and a forest nearby. ⚠️ **2 battle / 12 unique script lines — one of the widest-reaching names in this seed set**, so the reading is worth getting right first time | `Ｒｉｍｒｏｓｅ`, `Ｌｉｍｒｏｓｅ` (European reading per §11.4) |
-| イートン / イートンの森 | `Ｅａｔｏｎ` / `Ｅａｔｏｎ　Ｆｏｒｅｓｔ` | **5 / 12 columns.** A **PLACE**; the fairy village and Kel's birth village lie in it. Proper name, so capitalised `Ｆｏｒｅｓｔ` on §2's `カーライン城` → `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` and §33.1's `ファリーナ城` → `Ｆａｒｉｎａ　Ｃａｓｔｌｅ` — ⚠️ deliberately **unlike** §14.2's 妖精の森 → `the fairy forest`, which is lowercase because 妖精 is a common noun. **0 battle / 4 script** | `Ｅｔｏｎ`, `Ｉｔｏｎ` |
-| チェコットの丘 | `Ｃｈｅｋｏｔ　Ｈｉｌｌ` | **11 columns.** The 9th Army's first posting, `王国西部の丘陵地帯`. **0 battle / 1 script** | `Ｃｈｅｃｏｔｔ`, `Ｔｓｕｅｋｏｔｔｏ` |
-| レバーク城 | `Ｌｅｖｅｒｋ　Ｃａｓｔｌｅ` | **13 columns.** §28.1 already fixes レバーク → `Ｌｅｖｅｒｋ` (**a KINGDOM**, per that row's own correction); this is the castle, on `カーライン城`. **0 battle / 2 script** | — |
-| 兵舎 | `ｂａｒｒａｃｋｓ` | **8 columns**, lowercase (§17.1). Keep **distinct** from 砦 → `ｆｏｒｔ` (§19.2), 要塞 → fortress and 城 → castle (§2). **0 battle / 4 script** | — |
-| ジャガイモ / イモ | `ｐｏｔａｔｏｅｓ` / `ｐｏｔａｔｏ` | **8 / 6 columns**, lowercase (§17.1). The hobbit chief's gift, the spine of unique 430. **0 battle / 1 + 6 script** | — |
-| バター | `ｂｕｔｔｅｒ` | **6 columns**, lowercase. **0 battle / 1 script** | — |
-| ワイン / 『極上のワイン』 | `ｗｉｎｅ` / `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | **4 / 13 columns** (11 + the two quote marks), `『…』` → `“…”` per §12's `『知識の書』`. ⚠️ **44 script-dump instances / 24 unique — a named plot ITEM reaching far past this batch**; this batch has only the bare noun (`リムローズの市長にもらったワイン`), so **fix the bare form here and leave the titled form to the unit that first renders it** | `Ｅｘｑｕｉｓｉｔｅ　Ｗｉｎｅ`, `Ｖｉｎｔａｇｅ　Ｗｉｎｅ` |
-| とかいじん (都会人) | `ｃｉｔｙ　ｆｏｌｋ` | **9 columns**, lowercase. ⚠️ Written in **hiragana** in the source (`わたしたち、とかいじんの悩みは`) — a light, childish spelling in the fairy girl's mouth, set against the hobbit's rustic `ノロ`. Carry the lightness in register, not in a misspelling. **0 battle / 1 script** | `ｔｏｗｎｓｆｏｌｋ`, `ｃｉｔｙ　ｐｅｏｐｌｅ` |
-| ナンダイ (難題) | *(render the emphasis, not the katakana)* | ⚠️ **Katakana for emphasis**, not a name or a class: `王女様を捜さなきゃならないってゆうナンダイがあるの`. §3.1 has no device for katakana emphasis, so render it as weight in the English — `ａ　ｒｅａｌ　ｐｒｏｂｌｅｍ` (16) — and do **not** transliterate. **0 battle / 1 script** | `ａ　ｔａｌｌ　ｏｒｄｅｒ` (14) |
-| 第２王子のトリフ様 | `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` | **12 columns.** §28.1 fixes トリフ → `Ｔｏｒｉｆ`; §2 fixes `ホアグ王子` → `Ｐｒｉｎｃｅ　Ｈｏａｇ`. 第２王子 is **apposition, not part of the name** — `Ｓｅｃｏｎｄ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` (19) fits but over-titles him. **0 battle / 1 script** | — |
+| ~~第１軍~~ | ✅ **PROMOTED to §38.1** — `１ｓｔ　Ａｒｍｙ`, 8 columns confirmed, rendered in `tl/script/batch_007.tsv` (PR #20) in `第１軍隊長のリオン` → `Ｉ　ａｍ　Ｌｅｏｎ，　ｃａｐｔａｉｎ` / `ｏｆ　ｔｈｅ　１ｓｔ　Ａｒｍｙ．`, **used exactly as seeded** | ~~0 battle / 3 script~~ | — |
+| ~~リムローズ~~ | ✅ **PROMOTED to §38.1** — `Ｌｉｍｒｏｓｅ`, rendered 4× (PR #20), **used exactly as seeded**; **7 columns confirmed — this row's figure was right** and the PR's own hand-count of 8 was its own error, caught before pushing. ⚠️ **This row's reach was low: 10 further `script_dump` instances (banks 18, 20, 40, 41) + 2 battle (chunk 38)**, remeasured at review; the "12 unique script lines" is 11 | ~~2 battle / 12 unique script lines~~ | — |
+| ~~イートン / イートンの森~~ | ✅ **PROMOTED to §38.1** — `Ｅａｔｏｎ` / `Ｅａｔｏｎ　Ｆｏｒｅｓｔ`, 5 / 12 columns, rendered 3× in unique 430 (PR #20), **used exactly as seeded**. The 妖精の森 warning was heeded: unique 430 carries **both** and renders the fairy village lowercase beside the capitalised `Ｅａｔｏｎ　Ｆｏｒｅｓｔ`. Reach confirmed at review: **1 further script instance (bank 40), 0 battle** — 3 rendered + 1, so this row's "4 script" is right | ~~0 battle / 4 script~~ | — |
+| ~~チェコットの丘~~ | ✅ **PROMOTED to §38.1** — `Ｃｈｅｋｏｔ　Ｈｉｌｌ`, 11 columns confirmed (PR #20), **used exactly as seeded**. **A true hapax — 0 further occurrences in either dump**, verified at review | ~~0 battle / 1 script~~ | — |
+| ~~レバーク城~~ | ✅ **PROMOTED to §38.1** — `Ｌｅｖｅｒｋ　Ｃａｓｔｌｅ`, 13 columns confirmed (PR #20), **used exactly as seeded**. **1 further script instance (bank 41), 0 battle** | ~~0 battle / 2 script~~ | — |
+| ~~兵舎~~ | ✅ **PROMOTED to §38.1** — `ｂａｒｒａｃｋｓ`, 8 columns, lowercase, verified free across `tl/` and `pending/` (PR #20), **used exactly as seeded**. ⚠️ **This row's "4 script" is RIGHT.** The PR proposed correcting it to 3; measured at review, `script_dump.txt` holds **4** instances, 1 of them the unit's own → **3 further, 4 in total**. The PR's 3 is the *unique-line* count. See §38.6 | ~~0 battle / 4 script~~ | — |
+| ~~ジャガイモ / イモ~~ | ✅ **PROMOTED to §38.1** — `ｐｏｔａｔｏｅｓ` / `ｐｏｔａｔｏ` (PR #20), **used exactly as seeded**; **8 / 6 columns — this row's figures were right** and the PR's hand-count of 9 was its own error, caught before pushing. **0 further occurrences of ジャガイモ** | ~~0 battle / 1 + 6 script~~ | — |
+| ~~バター~~ | ✅ **PROMOTED to §38.1** — `ｂｕｔｔｅｒ`, 6 columns, lowercase, verified free (PR #20), **used exactly as seeded**. 0 further occurrences | ~~0 battle / 1 script~~ | — |
+| ワイン / ~~ワイン~~ / 『極上のワイン』 | **The BARE noun is ✅ PROMOTED to §38.1** — `ｗｉｎｅ`, 4 columns, lowercase, rendered 3× in `tl/script/batch_007.tsv` (PR #20), **used exactly as seeded and verified free** (`tl/`'s only hits are *swine*). ⚠️ **`『極上のワイン』` → `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13) STAYS LIVE** for the unit that first renders it, exactly as this row directs — batch 007 carries only the bare noun. ⚠️ **This row's "44 script-dump instances" is RIGHT** (the PR's "35 further" is six low; measured, 44 total − 3 own = **41 further**); the "24 unique" is 18 | `Ｅｘｑｕｉｓｉｔｅ　Ｗｉｎｅ`, `Ｖｉｎｔａｇｅ　Ｗｉｎｅ` |
+| ~~とかいじん (都会人)~~ | ✅ **PROMOTED to §38.1** — `ｃｉｔｙ　ｆｏｌｋ`, 9 columns, lowercase (PR #20), **used exactly as seeded**; the hiragana lightness carried in **register**, not in a misspelling, exactly as this row required | ~~0 battle / 1 script~~ | — |
+| ~~ナンダイ (難題)~~ | ✅ **PROMOTED to §38.1** — `ａ　ｒｅａｌ　ｐｒｏｂｌｅｍ` (PR #20), **used exactly as seeded**: the katakana emphasis rendered as weight in the English, not transliterated. ⚠️ **This row's width was wrong — it is 14 columns, not 16**, remeasured twice at review | ~~0 battle / 1 script~~ | ~~`ａ　ｔａｌｌ　ｏｒｄｅｒ` (14)~~ |
+| ~~第２王子のトリフ様~~ | ✅ **PROMOTED to §38.1** — `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`, 12 columns, rendered in `tl/script/batch_007.tsv` (PR #20), **used exactly as seeded**, and **the ordinal drop is RULED AND STANDS — see §38.5.** Decisive at review: `第２王子` occurs **exactly once in the whole script dump — that very line — and zero times in battle**, and the same fact is carried twice more by `弟のトリフ`, so no plot fact is lost from the game. ⚠️ **This row's cost figure is wrong**: `Ｓｅｃｏｎｄ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` is 19 bare but the row it would sit in measures **29**, so restoring the ordinal needs a page re-flow, not a word swap | ~~0 battle / 1 script~~ | — |
 
 ⚠️ **`モンスター` is NOT a seed — it is already SHIPPED.** `tl/script/batch_001.tsv` L33 renders it
 `ｍｏｎｓｔｅｒ` (7 columns). The menu option `　モンスターがいい` in unique 432 and the reply in 435
 **must reuse that word**; *creature* / *beast* would break CLAUDE.md §3's byte-identical rule.
 Recorded here only so nobody re-invents it. (**2 battle / 214 script-dump / 32 unique.**)
+✅ **DONE (PR #20)** — both render `ｍｏｎｓｔｅｒ` / `ｍｏｎｓｔｅｒｓ`, reused as required.
 
 ⚠️ **`殿` on the `{FFEC}` player-name insert — a decision, not a word.** Unique 427 has
 `９軍の隊長に任命された{FFEC}{=00}{=00}殿。` (Leon's first meeting). **Count the corpus before
@@ -438,6 +452,12 @@ in an added word" and §21.2's `さん` rule that drops the honorific. Leon's co
 formality already does the work, and the same sentence *names the rank* (`９軍の隊長に任命された`),
 so an added title would say it twice. Alt `Ｓｉｒ　{FFEC}` (3 + the insert).
 
+✅ **EXECUTED AND RATIFIED 2026-09-09 (PR #20, `tl/script/batch_007.tsv`).** Unique 427 renders
+`Ｏｈ？　Ｙｏｕ　ｍｕｓｔ　ｂｅ` / `{FFEC}{=00}{=00}，　ａｐｐｏｉｎｔｅｄ` / `ｃａｐｔａｉｎ　ｏｆ　ｔｈｅ` /
+`９ｔｈ　Ａｒｍｙ．` — **no word added**, the insert moved to where English wants it (which §1 permits
+and `translation_prompt.md` §5's own worked example does). The `Ｓｉｒ　{FFEC}` alternative is not
+taken and stays on record. See §38.1.
+
 ⚠️ **`『編成』`, `『キャラクター育成』`, `『キャラを入れる』` — UI SCREEN LABELS, and a FLAG.**
 §19.2 fixes 編成 → `form (your units)` **verbally**, and `batch_005` shipped exactly that
 (`ｉｆ　ｙｏｕ　ｆｏｒｍ　ｙｏｕｒ　ｕｎｉｔｓ`). These three are different: they are the **names of menus
@@ -447,6 +467,14 @@ and if the menus stay Japanese the instruction sends the player to a menu that d
 Proposal: `“Ｆｏｒｍａｔｉｏｎ”` (11), `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` (18),
 `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` (17), all with `『…』` → `“…”` per §12. **This needs the disc:
 the reviewer should raise it as a FLAGS entry, not resolve it.**
+
+✅ **DONE as this row directs (PR #20).** All three are rendered in `tl/script/batch_007.tsv`
+(unique 431 and 437) **exactly as proposed**, and **all three widths are correct as remeasured** —
+11 / 18 / 17. The reviewer did **not** resolve them: the question is raised as `FLAGS.md` **§Z1**
+and added to HANDOFF's **Blocked — needs a human** list, because the menu strings are in neither
+dump and no English label here can be checked against what the screen shows. §26.3's *verbal*
+編成 → *form (your units)* is used unchanged where the source is verbal (unique 437 ×2), which is
+the source's own split. Promoted to §38.1; **this row stays live until the disc settles it.**
 
 ✅ **RULED AND APPLIED 2026-09-09 (PR #18 review): §1's and §2's figures are corrected IN PLACE**, so
 the block below is now history rather than a live proposal. The measurement is not new — §29.5 made
@@ -3710,3 +3738,224 @@ choice there would be a §4.3 correction reaching three shipped files.
 | Jake (portrait 07) | Deferential and clipped, **no contractions** — `Ｃａｐｔａｉｎ！` / `Ａｒｅ　ｙｏｕ　ｓｕｒｅ？`, `Ｈｏｗｅｖｅｒ．．．`, `Ｓｉｒ！` (§6). The §20.5 Albert column: he reports and objects, he does not opine |
 | Portrait 06 — **two men in one chunk** | In L01 he is Ryan's subordinate (`ライアン隊長、５軍は手を…`); in L05 he is the messenger from Carline Castle, on Cress's side of the map. Both are deferential です / ます and take the same contraction-free register, so nothing rides on the identification — but ⚠️ **per §W5, portrait ids are per-chunk, and here one id is two people inside a single chunk.** Recorded so a later reader does not merge them |
 | The player's side (portrait 00) | §7's Kain column unchanged — contractions throughout in **both** branches (`ｙｏｕ’ｖｅ`, `ｗｅ　ｄｏｎ’ｔ`, `Ｉｔ’ｓ　ｔｒｕｅ．`, `Ｉ’ｍ　ａｓｋｉｎｇ　ｙｏｕ．`), which is the contrast that makes Cress's flatness read as rank |
+
+---
+
+## 38. Added by script batch 007 (PR #20, merged 2026-09-09)
+
+Rendered in `tl/script/batch_007.tsv` — `script_unique.txt` **file lines 318 and 421–469**, 50
+unique lines / **70 message instances**, banks **2** and **3** plus unique 318 replicated across 19
+further banks. 3,015 JP → 6,306 EN = **2.092×**; **7,074 bytes**; bank 2 **7,505 → 3,365**, bank 3
+**10,591 → 8,113**, bank 40 **471 → 447**, **bank 41 byte-for-byte untouched at 353**. 367 text
+rows, widest 23, seventeen at 23, **none at 24**, no page over 4 text rows the source did not
+already exceed. `{FFFE}` **+6 net (12 bytes)** on unique 427, 430, 439, 449 and 460; **`{FCC0}`
+untouched and the non-`{FFFE}` tag stream byte-identical on all 50 lines**. Merged at round 1.
+
+The content is the recruitment machinery: one item-description row (318), the tail of a rough human
+recruiter's copy of the skeleton (421–426), Leon's introduction (427), two refusals to enter the
+castle (428–429), the Hobbit Village chief's potatoes and the Princess's trail (430), Lord Helfer's
+briefing and the handover to Anselmo (431), the troop-type menu and its four replies (432–436),
+Anselmo on forming units (437), and **three copies of one hobbit-recruiter skeleton** (438–448 /
+449–459 / 460–469).
+
+`Ｃｏｍｅ　ｔｏ　ｔｈｉｎｋ　ｏｆ　ｉｔ，` (§19.1 / shipped `chunk_002` L12), `ｍｏｎｓｔｅｒ`
+(`batch_001` L33), `ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ` (§19.2), `Ｗｅｌｌ　ｎｏｗ，` (§19.1),
+`Ｌｏｒｄ　Ｈｅｌｆｅｒ` (§1), `Ｌｅｏｎ` (§1), `ｔｈｅ　Ｋｉｎｇ` (§28.1), `ｔｈｅ　Ｅｍｐｉｒｅ` /
+`ｃａｓｔｌｅ` / `９ｔｈ　Ａｒｍｙ` (§2), `ｔｈｅ　ｍａｙｏｒ` (§1), `ｔｈｅ　ｆａｉｒｙ　ｖｉｌｌａｇｅ`
+(§14.2), `ａｌｌｉａｎｃｅ` / `ｆｏｒｍ　（ｙｏｕｒ　ｕｎｉｔｓ）` (§26.3), `Ｒｉｇｈｔ，` (§6, §24.3),
+`Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ` (§24.3), `Ｔｈａｔ’ｓ　ｒｉｇｈｔ，` (§23.2), `Ｏｈ，` / `Ｏｈ！` /
+`Ｏｈ？` / `Ａｈ，` (§18.2, §24.4), `Ｈｍ？` (§20.3), `Ｅｈ！` (§21.2), `Ｍｏｖｅ　ｏｕｔ！` (§6),
+`ｔｈｅｙ　ｓａｙ` (§26.6) and the `，　ｎｙｏｒｏ．` tic in §18.1's spaced form are used unchanged.
+
+### 38.1 Twelve promotions out of §9 (wave-5 seeds) — every one used exactly as seeded
+
+| Japanese | English | Note |
+|---|---|---|
+| リムローズ | `Ｌｉｍｒｏｓｅ` | **Promoted from §9**, 4 renderings. **7 columns — §9's figure is right** (the PR hand-counted 8 and corrected itself). A **TOWN**. ⚠️ Reach remeasured at review: **10 further `script_dump` instances** (banks 18, 20, 40, 41) **+ 2 battle (chunk 38)** — the PR's "9 further" is one low; its bank and battle figures are exact |
+| リムローズの市長 | `ｔｈｅ　Ｌｉｍｒｏｓｅ　ｍａｙｏｒ` | 17 columns. §1 fixes 市長 → *the mayor* lowercase and `chunk_012` L17 ships `Ｉ　ａｍ　ｔｈｉｓ　ｔｏｗｎ’ｓ　ｍａｙｏｒ．`; this is that noun with the town attributive. **Width does not decide it** — the possessive `Ｌｉｍｒｏｓｅ’ｓ　ｍａｙｏｒ，　ｎｙｏｒｏ？` also measures 23 — the attributive was chosen so the break falls where the source's own `の` falls. Reversible at 0 bytes |
+| イートン / イートンの森 | `Ｅａｔｏｎ` / `Ｅａｔｏｎ　Ｆｏｒｅｓｔ` | **Promoted from §9**, 5 / 12 columns, 3 renderings in unique 430. Capitalised `Ｆｏｒｅｓｔ` on §2's `カーライン城` and §33.1's `ファリーナ城`, deliberately **unlike** §14.2's 妖精の森 → *the fairy forest* — and unique 430 carries both, correctly split. Reach: **1 further script instance (bank 40), 0 battle**, so §9's "4 script" is right |
+| チェコットの丘 | `Ｃｈｅｋｏｔ　Ｈｉｌｌ` | **Promoted from §9**, 11 columns. **A true hapax — 0 further occurrences in either dump**, verified |
+| レバーク城 | `Ｌｅｖｅｒｋ　Ｃａｓｔｌｅ` | **Promoted from §9**, 13 columns, on §28.1's `Ｌｅｖｅｒｋ` (a KINGDOM) plus §2's `カーライン城`. **1 further script instance (bank 41), 0 battle** |
+| 第２王子のトリフ様 | `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` | **Promoted from §9**, 12 columns, used exactly as seeded. **The ordinal is dropped — ruled at review and it stands; see §38.5** |
+| 第１軍 | `１ｓｔ　Ａｒｍｙ` | **Promoted from §9**, 8 columns, §2's army-number series, digit full-width. `第１軍隊長のリオン` → `Ｉ　ａｍ　Ｌｅｏｎ，　ｃａｐｔａｉｎ` / `ｏｆ　ｔｈｅ　１ｓｔ　Ａｒｍｙ．` — the apposition inverted as §26.2 already does for `２軍のフェルナンド将軍`, and rendered with **the rank the source gives it**, which is §26.2's own rule |
+| 兵舎 | `ｂａｒｒａｃｋｓ` | **Promoted from §9**, 8 columns, lowercase (§17.1). Held distinct from 砦 → *fort* (§26.4), 要塞 → *fortress* and 城 → *castle* (§2). `ｂａｒｒａｃｋｓ` verified free across `tl/` and `pending/`. ⚠️ **§9's "4 script" is RIGHT and the PR's correction to it is wrong — see §38.6** |
+| ジャガイモ / イモ | `ｐｏｔａｔｏｅｓ` / `ｐｏｔａｔｏ` | **Promoted from §9**, **8 / 6 columns — §9's figures are right** (the PR hand-counted 9 and corrected itself). Lowercase (§17.1). Both verified free. **0 further occurrences of ジャガイモ** |
+| バター | `ｂｕｔｔｅｒ` | **Promoted from §9**, 6 columns, lowercase. Verified free. 0 further occurrences |
+| ワイン | `ｗｉｎｅ` | **The BARE noun promoted from §9, and only that** — the titled `『極上のワイン』` → `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` stays live in §9 for the unit that first renders it, exactly as the seed directs. 4 columns, lowercase. Verified free (`tl/`'s only hits are *swine*). ⚠️ Reach remeasured: **41 further `script_dump` instances, 0 battle** — the PR's "35" is six low; §9's own "44 script-dump instances" is right |
+| とかいじん (都会人) | `ｃｉｔｙ　ｆｏｌｋ` | **Promoted from §9**, 9 columns, lowercase. The hiragana lightness is carried in **register**, not in a misspelling, exactly as the seed directs |
+| ナンダイ (難題) | `ａ　ｒｅａｌ　ｐｒｏｂｌｅｍ` | **Promoted from §9**, and **14 columns, not §9's 16** — remeasured twice at review. The katakana emphasis rendered as weight in the English, not transliterated, as the seed directs |
+| 『編成』 / 『キャラクター育成』 / 『キャラを入れる』 | `“Ｆｏｒｍａｔｉｏｎ”` / `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` / `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` | **Promoted from §9** — 11 / 18 / 17 columns with the quotes, **all three §9 figures correct as remeasured**. `『…』` → `“…”` per §12. ⚠️ **Raised as a FLAG, not settled — `FLAGS.md` §Z1 and the Blocked list.** §26.3's *verbal* 編成 → *form (your units)* is used unchanged where the source is verbal (unique 437 ×2); the split is the source's own |
+
+**`殿` on the `{FFEC}` player-name insert — §9's decision is EXECUTED and ratified.** Unique 427's
+`９軍の隊長に任命された{FFEC}{=00}{=00}殿。` renders `Ｏｈ？　Ｙｏｕ　ｍｕｓｔ　ｂｅ` /
+`{FFEC}，　ａｐｐｏｉｎｔｅｄ` / `ｃａｐｔａｉｎ　ｏｆ　ｔｈｅ` / `９ｔｈ　Ａｒｍｙ．` — **carried in
+register, no word added**, on §2's 貴官 rule. Leon's contraction-free formality does the work and
+the same sentence names the rank, so an added title would say it twice. The `Ｓｉｒ　{FFEC}`
+alternative is not taken and stays on record.
+
+### 38.2 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| 何かの木の木の実。 | `Ａ　ｎｕｔ　ｆｒｏｍ　ｓｏｍｅ　ｔｒｅｅ．` | 21 columns, one row. The item-description table's flat catalogue voice (§17.5); no `ジェムタイプ` suffix. **21 instances across 21 banks**, so +24 bytes in each, 504 in total. `ｎｕｔ` verified free — the only hit in `tl/` / `pending/` is *minute* |
+| 補充 (of soldiers) | `ｒｅｃｒｕｉｔ` / `ｒｅｃｒｕｉｔｉｎｇ` | 7 / 10 columns. ⚠️ **`ｒｅｃｒｕｉｔ` is NOT free**: `chunk_000.txt` L4 ships the **noun** `ａ　ｒｅｃｒｕｉｔ！` for a different word. Different part of speech, different message, different bank — recorded so it cannot drift |
+| 共同作戦 | `ｊｏｉｎｔ　ｏｐｅｒａｔｉｏｎｓ` | 16 columns, verified free. Held distinct from bare 作戦 → `Ｔｈｅ　ｐｌａｎ？` (§19.2), 作戦会議 → *war council* (§2) and シナリオ → *script* (§31.5) |
+| よろしく　頼む / よろしく頼むぞ | `Ｉ　ｓｈａｌｌ　ｃｏｕｎｔ　ｏｎ　ｙｏｕ．` | 21 columns, used twice byte-identically (427, 431). **A third member of §21.2's よろしく family**, held apart from よろしく / よろしくね → `Ｇｏｏｄ　ｔｏ　ｍｅｅｔ　ｙｏｕ` (a first introduction) and よろしくお願いします → `Ｉ　ａｍ　ｉｎ　ｙｏｕｒ　ｈａｎｄｓ` (a formal request). This one is neither: a superior entrusting a future task |
+| 手配しておこう。 | `Ｉ　ｓｈａｌｌ　ａｒｒａｎｇｅ　ｉｔ．` | 19 columns, `ａｒｒａｎｇｅ` verified free. Byte-identical in all four replies (433–436), as is `わかった。それでは、` → `Ｒｉｇｈｔ．　Ｗｅｌｌ　ｔｈｅｎ，` |
+| そうかい。 | `Ｉ　ｓｅｅ．` | 6 columns. **A fourth source string on §30.3's form**; §25.3's test is MET and counted at review with this unit's own keys excluded — そうか, そうですか and なるほど are **in no bank 2 or 3**. ⚠️ `そうかい` recurs **6 more times (banks 12, 17, 20, 23, 24)**; this binds them. Independently corroborated: `chunk_004` L11 ships the same two-clause shape, `そうか、気をつけてな。` → `Ｉ　ｓｅｅ．　Ｔａｋｅ　ｃａｒｅ．` |
+| じゃ、気を付けてな！ | `Ｔａｋｅ　ｃａｒｅ，　ｔｈｅｎ！` | 16 columns. `chunk_004` L11's `気をつけてな。` → `Ｔａｋｅ　ｃａｒｅ．` with the source's own stop and its `じゃ、` carried as a trailing *then* — different source string, same fixed words |
+| おいおい、 | `Ｏｉ，　ｏｉ，` | 7 columns. §32.3 fixes おい、 → `Ｏｉ，`; the doubling is preserved per §23.2's `気にしない、気にしない。` and §34.1's `これは、これは！`. §25.3's test MET: おい、 is in banks [5, 41] + **11** battle chunks (the PR's 12 is one high) and **not bank 2**. ⚠️ `おいおい` recurs **twice more (banks 29, 41)** — exact as the PR states |
+| 欲張りな　奴だな。 | `Ｗｈａｔ　ａ　ｇｒｅｅｄｙ　ｆｅｌｌｏｗ．` | 21 columns. `ｆｅｌｌｏｗ` for 奴 follows §32.1's register-selected `ｔｈａｔ　〜　ｆｅｌｌｏｗ`; `ｇｒｅｅｄｙ` verified free |
+| 地殻の変動 | `ｔｈｅ　ｅａｒｔｈ　ｉｓ　ｓｈｉｆｔｉｎｇ` | Rendered as a clause, not a noun, on §15.2's 黒幕 precedent — *crustal movement* has no place in a rough guard's mouth |
+| まったく (as an intensifier) | `Ｒｅａｌｌｙ` + the source's own punctuation | `まったく　恐ろしいぜ。` → `Ｒｅａｌｌｙ　ｔｅｒｒｉｆｙｉｎｇ．` (18). §5's mechanism: §6 fixes the **word** and the punctuation follows the source — no comma here because まったく modifies the adjective directly, so §6's `Ｒｅａｌｌｙ，` (exasperation, standing alone) is untouched |
+| 争い | `ｓｔｒｉｆｅ` | 6 columns, verified free. Held distinct from 戦乱 → *war* (unique 460) and 戦闘 → *battle* (unique 437) — **all three occur in this unit** |
+| おたずね者 | `ｗａｎｔｅｄ　ｍｅｎ` | 10 columns, verified free |
+| 大歓迎 | `Ｍｏｓｔ　ｗｅｌｃｏｍｅ` / `ｍｏｓｔ　ｗｅｌｃｏｍｅ　ｈｅｒｅ` | 12 / 17 columns, built on `translation_prompt.md` §2's own worked example `歓迎しますぞ！` → `Ｙｏｕ　ａｒｅ　ｍｏｓｔ　ｗｅｌｃｏｍｅ！`. Held **distinct** from §34.1's いらっしゃい〜 → `Ｗｅｌｃｏｍｅ` (`batch_006` L58). §25.3's test MET and counted: 大歓迎 banks [0, 3] chunks [7, 15, 26] against いらっしゃい banks [12, 13, 15–19, 22, 25, 26, 43] chunks [5, 6, 33] — **disjoint** |
+| 他に　用はないノロか？ | `Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？` | 20 columns. **A fourth "anything else?" form, keeping the source's own negative**, held apart from `batch_006`'s three (L35 `Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？`, L51 `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ　ｆｏｒ　ｙｏｕ？`, L69 `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？`). The rough human's `他にも用はあるかい？` takes bare `Ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` (14), a fifth. ⚠️ **Binds unique 470** — see `FLAGS.md` §Z2 |
+| 兵の数が　いっぱい | `Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ` | 19 columns, `ｒａｎｋｓ` verified free. Deliberately **not** §34.1's 荷物 → `ｐａｃｋ`, which is the inventory; this is the unit roster |
+| 念のため忠告しておくが、 | `Ａ　ｗｏｒｄ　ｏｆ　ｃａｕｔｉｏｎ：` | 18 columns; `：` is §3.1-legal |
+| 健闘を祈るぞ。 | `Ｉ　ｐｒａｙ　ｙｏｕ　ｆｉｇｈｔ　ｗｅｌｌ．` | 22 columns; keeps both 健闘 and 祈る. `Ｉ　ｐｒａｙ　ｆｏｒ　ｙｏｕｒ　ｓｕｃｃｅｓｓ．` measures **exactly 24** and was rejected on that ground, which §25.1 has twice done and §29.1 once |
+| よく参った。 | `Ｗｅｌｌ　ｍｅｔ．` | 9 columns. Helfer's archaic greeting, twice in unique 431, byte-identical. **A genuine hapax pair — 0 occurrences of よく参った outside this line**, verified. ⚠️ Shares its English with `はじめまして。` in **parked** `pending/chunk_005.txt` L23. §25.3's test is MET — はじめまして is script bank 10 and battle chunk 5 only, disjoint from banks 2 and 3 — and the file is parked, so §3 is not engaged either way |
+| 上官 | `ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ` | 16 columns. **Not a new form — recording a reuse and one departure.** §19.2 fixes it and `chunk_001.txt` L6/L7 ship `ａ　ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ，`. ⚠️ **Used unchanged TWICE here, not three times as the PR states — see §38.6** |
+
+### 38.3 Interjections
+
+| Japanese | English | Note |
+|---|---|---|
+| 何だい、 | `Ｗｈａｔ，` | An **eighth** 何-family member, held apart from 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` (§23.2), 何？ → `Ｗｈａｔ？` and 何っ！？ → `Ｗｈａｔ！？` (§28.3, §30.3), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2) and chunk 0's two stuttered forms. **Recorded at review; the PR did not propose a row.** `Ｗｈａｔ，` occurs elsewhere only inside longer redistributed rows (`chunk_020` L4, parked `chunk_005` L29), never as a standalone 何 rendering, so §3 is not engaged |
+| 何だぁ。 | `Ｗｈａｔ’ｓ　ａｌｌ　ｔｈｉｓ．` | A **ninth**. **Recorded at review.** Shares its English with parked `pending/chunk_043.txt` L20's `何の騒ぎだ、これは？` → `Ｗｈａｔ’ｓ　ａｌｌ　ｔｈｉｓ　ｎｏｉｓｅ？` — parked and a different string, so §3 is not engaged |
+| だめよ。 (refusal) | `Ｔｈａｔ　ｗｉｌｌ　ｎｏｔ　ｄｏ．` | 17 columns, verified free. **Recorded at review.** Held **distinct** from §30.3's ダメです！ → `Ｉｔ　ｉｓ　ｎｏ　ｕｓｅ！`, which is Rendol's despair; this is a refusal. Two senses of だめ, two English forms |
+| うーん、 | `Ｈｍｍ，` | **Recorded at review.** A second source string on §26.5's ふーむ → `Ｈｍｍ，` — the same grunt in two kana spellings, the §17.2 鬼 / オーガ shape, and the kana-beat convention gives both the double `ｍ` |
+| ふむ、 | `Ｈｍ，` | Verified free. Extends §6's む / ん → `Ｈｍ`; two kana beats, two letters, per §11.5 / §26.5 |
+| やめる (giving up) | `ｇｉｖｉｎｇ　ｕｐ` | **Not new, and the PR did not claim it.** `tl/battle/chunk_014.txt` L3 already ships `やめるか、オヤジ？` → `Ｇｉｖｉｎｇ　ｕｐ，　ｏｌｄ　ｍａｎ？`, and **all three of this unit's やめる occurrences match it** — `やめるのかい？` → `Ｗｈａｔ，　ｇｉｖｉｎｇ　ｕｐ？` (421) and `やめるノロか？` → `Ｇｉｖｉｎｇ　ｕｐ，　ｎｙｏｒｏ？` (454, 465). Verified positionally at review |
+| 〜ない方がいい | `Ｂｅｔｔｅｒ　ｎｏｔ` | **Not new, and the PR did not claim it.** `batch_006` L67 ships `そいつは　売らない方が` → `Ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ　ｔｈａｔ`; unique 429's `やめた方がいい。` → `Ｂｅｔｔｅｒ　ｎｏｔ．` matches it |
+| 反乱 / レベルアップ / 功績 / 納得いかない / のんき | `ｒｅｂｅｌｌｉｏｎ` / `ｌｅｖｅｌ　ｕｐ` / `Ｍｅｒｉｔ` / `ｉｔ　ｎａｇｓ　ｍｅ` / `ｅａｓｙ‐ｇｏｉｎｇ` | **Recorded at review**; all five verified free across `tl/` and `pending/`. 反乱 held distinct from §26.4's 反乱軍 → *the rebels / the rebel army*; `‐` in *easy‐going* is U+2010 |
+
+### 38.4 RULING — `ｃｈｉｅｆ` stays lowercase, and the decision binds nothing forward
+
+The PR raised this as its most important open call and it is ruled here on a measurement rather
+than on taste. **Every `村長さん` in the game is inside this unit** — 3 occurrences in
+`script_dump.txt`, 0 in `battle_dump.txt`, all three inside unique 430. Counted at review.
+
+| Where | Japanese | English |
+|---|---|---|
+| descriptive | `ホビットの村長さんか。` | `ｈｏｂｂｉｔ　ｖｉｌｌａｇｅ　ｃｈｉｅｆ．` |
+| vocative | `そ、村長さん、` | `Ｃ，　ｃｈｉｅｆ，` |
+| vocative | `村長さんは。` | `ｃｈｉｅｆ．` |
+
+**All three stay lowercase.** The descriptive one is settled outright: shipped `chunk_002.txt` L12
+has `ｔｈｅ　ｈｏｂｂｉｔ　ｖｉｌｌａｇｅ’ｓ` / `ｃｈｉｅｆ` in word **and** case, and §20.1 fixes
+村長 → *village chief*. The two vocatives follow it because §17.1's species test reads `chief` here
+as **what he is**, not a title conferred on an individual, and because §21.2's drop-the-honorific
+rule plus §2's politeness rule put `さん` into register rather than into an added English word.
+
+⚠️ **The counter-case is real and is recorded so it is not lost**: §24.3's shipped comma-stutter
+rows all capitalise (`Ｗ，　Ｗａｉｔ！`, `Ｗ，　Ｗｅｌｌ，`, `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．`), and
+§28.2's `お兄ちゃんたち` → `Ｍｉｓｔｅｒ，` and §2's トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ` are
+capitalised vocatives on non-name nouns. Against that: in all three of §24.3's rows the capital is
+purely **sentence-initial** on a word that is not a role noun, and here `Ｃ，` already carries the
+sentence-initial capital. **Reserve, at 0 bytes either way: `Ｃ，　Ｃｈｉｅｆ，` and `Ｃｈｉｅｆ．`**
+Because this unit exhausts the corpus, adopting the reserve later would touch these two rows and
+nothing else. `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ！` two segments earlier **is** capitalised, correctly — there
+it is §2's place name (`ホビットの村のじいさん`), not a description.
+
+### 38.5 RULING — the Torif ordinal is dropped, and the measurement is what settles it
+
+`第２王子のトリフ様` → `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` uses §9's seed exactly and **drops 第２王子**. The
+translator flagged it and declined to overrule a seed unilaterally, which was right; the call is the
+reviewer's. **It stands**, on three counted facts:
+
+1. **`第２王子` occurs exactly ONCE in the entire script dump — this very line — and zero times in
+   the battle dump.** Nothing else in the game inherits the drop.
+2. **The same fact is carried twice more by `弟のトリフ`** (2 script occurrences), which is the
+   evidence §9's own `ホアグ王子` row cites for Torif being the younger brother. **No plot fact is
+   lost from the game**, only from one hobbit's travel gossip, where the name alone identifies him.
+3. **Restoring it costs a page re-flow in either form.** The page carries 4 text rows already, and
+   ⚠️ **the one-row swap the PR floats does not in fact fit**: the row is
+   `ｔａｋｅｎ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ　ａｎｄ` at 22, and `ｔａｋｅｎ　Ｓｅｃｏｎｄ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ　ａｎｄ`
+   measures **29**, not the 19 the seed quotes for the bare title form. Remeasured at review.
+
+⚠️ **Forward obligation.** The two `弟のトリフ` lines are now the **only** place Torif's birth order
+lives. Whoever renders them must keep the younger-brother fact. Recorded in `FLAGS.md` §Z3.
+
+### 38.6 Corrections to this PR's own figures (§4.3) — none touches a line of the file
+
+Six subsidiary figures are wrong. Every headline figure — 50 / 70, 2.092×, 7,074 bytes, all 21 bank
+movements, 367 rows, widest 23, 17 at 23, none at 24, `{FFFE}` +6 on the five named lines, `{FCC0}`
+untouched — is **correct as stated** and was re-derived at review.
+
+| # | Claim | Measured |
+|---|---|---|
+| 1 | `兵舎` "2 further script instances … 3 in total, where §9 says 4" | **4 in `script_dump.txt`, 1 of them this unit's own → 3 further, 4 in total. §9's "4 script" is RIGHT and this correction to it is wrong.** The PR's 3 is the *unique-line* count, not the dump-instance count §9 uses |
+| 2 | `ワイン` "35 further script-dump instances" | **41 further** (44 total − 3 own), 18 unique lines. §9's own "44 script-dump instances" is right |
+| 3 | `リムローズ` "9 further script-dump instances" | **10 further** (14 − 4 own). Banks [18, 20, 40, 41] and 2 battle in chunk 38 are exact |
+| 4 | `上官` "used unchanged 3× here" | **2×.** Unique 431 carries 上官 three times; two render `ｓｕｐｅｒｉｏｒ　ｏｆｆｉｃｅｒ`, and the third (`貴官の上官となる`) renders the **bare** `ｙｏｕｒ　ｓｕｐｅｒｉｏｒ，　Ｆｉｒｓｔ`. Forced — the full form gives 28 columns — and it is §2.1 step 3 on a word the same message has already fixed twice, so **the rendering stands**; the departure was unflagged and is recorded here |
+| 5 | `ｖｉｓｉｔｏｒ` "in chunks 11, 33, 35" | **11 and 33.** `chunk_035.txt` contains no `ｖｉｓｉｔ` in any form |
+| 6 | `おい、` "12 battle chunks" | **11** (0, 8, 16, 20, 23, 27, 31, 32, 37, 38, 43; 14 instances). Banks [5, 41] correct, **not bank 2**, so §25.3's test still passes. `おいおい` "twice more (banks 29, 41)" is exact |
+
+⚠️ **A seventh correction, to Flag 7 rather than to a figure: the unit DOES contain one §2.1 step-6
+reorder, at unique 422.** The PR states it "contains no §2.1 step-6 reorder at all". The source is
+`最近、[地殻の変動が激しいのか][あちこちで妙な噂を　聞くぜ]。` — conjecture first, main clause
+second, one sentence; the English is `Ｉ　ｈｅａｒ　ｏｄｄ　ｒｕｍｏｕｒｓ　ａｌｌ` /
+`ｏｖｅｒ　ｌａｔｅｌｙ．　Ｍａｙｂｅ　ｔｈｅ` / `ｅａｒｔｈ　ｉｓ　ｓｈｉｆｔｉｎｇ　ｈａｒｄ．` — main clause
+first, conjecture second, two sentences. **The rendering stands**: nothing is added or dropped, the
+page keeps its four rows and its `{FCC0}` where the source has it, and fronting a Japanese
+parenthetical `〜のか` is close to forced in English. The flag was owed and is recorded here.
+
+**Flag 7's other content is verified and correct**: `ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ，　ｎｙｏｒｏ．` measures
+**22**, and unique 444 / 454 / 465 all follow the source's own clause order. Apart from 422 the unit
+is clean of step-6 reorders, and **the five §2.1 step 3 / step 5 departures the PR does list are all
+genuine and all flagged**.
+
+### 38.7 What the review confirmed rather than corrected
+
+- **`{FFEC}` inserts.** The PR's correction to its own dispatch is right: `rowcheck.py` defines
+  `SCRIPT_NAME = '{FFEC}{=00}{=00}'` with `NAME_COST = 7` and substitutes it in `_script_cols`,
+  and `assemble.py`'s `validate_body` does the same — the tool prints it in its own banner. **The
+  player-name insert IS counted, at 7 columns**, and all five gate-visible rows passed the real
+  column gate. The **insert+8 bound** on the three price-confirm lines is verified: `　Ｊｅｗｅｌｓ，`
+  is 8 against `ジュエルに`'s 5, and `，` is 1 against 0 — byte-for-byte the overhead §34.9 records
+  `batch_006` L60 already shipping, and **no `{FFFE}` was spent on those rows**, as §V1 requires.
+- **The identity map and the fourth skeleton copy** (§9's dispatch was wrong, the PR right): 421–426
+  is the tail of a rough human recruiter's copy whose head at unique **416–420 is untranslated**.
+  ⚠️ And **unique 417 is one of the nine menu lines this unit binds**, so that head inherits both
+  the menu strings *and* the register contrast — `Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ` / `ｔｉｍｅ！`
+  against `…ｔｉｍｅ，　ｎｙｏｒｏ．`, with `Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ` in both.
+- **All nine within-batch duplicate groups byte-identical, 0 divergences**, re-verified mechanically.
+- **`そういえば、` → `Ｃｏｍｅ　ｔｏ　ｔｈｉｎｋ　ｏｆ　ｉｔ，` is byte-identical to shipped
+  `chunk_002.txt` L12** — the one live cross-store form, checked positionally.
+- **`ノロ` count == `ｎｙｏｒｏ` count on all 50 lines**; ellipsis dot runs match the source
+  everywhere (the source's ellipsis is `・・・`, U+30FB ×3, and the two four-dot runs are `・・・。`
+  and `。・・・`); **19 source segments open with the cursor gutter and 0 lost it**, the three EN-only
+  leading `　` being §34.9's recorded price-insert word-space.
+- **§29.5's stale "25"**: §1 and §2 were already corrected in place at PR #18's review (§36.4), which
+  states in terms that PR #20 "now inherits a correct §2 … nothing is left for its reviewer to
+  patch". **Nothing was double-patched.** §29.5's own body still reads "would be 25 … still will not
+  share a row"; it is a historical ruling record and is left as written, with §36.4 and this section
+  as its correction. Re-measured a fourth time: `Ｆｉｒｓｔ`(5) + 1 + `Ｌｉｅｕｔｅｎａｎｔ`(10) + 1 +
+  `Ａｎｓｅｌｍｏ`(7) = **24**, at the hard limit and over the ≤23 preference, so the two-row split in
+  unique 431 is right.
+- **§29.4's `Ａｇｒｅｅｄ．` reserve is now SPENT** — `tl/battle/chunk_019.txt` L25 ships
+  `・・・わかった。` → `．．．Ａｇｒｅｅｄ．`, which is exactly what §29.4 prescribed for chunk 19.
+  Not a violation and nothing here relies on it, but **the わかる family has no reserve left**, and
+  this unit correctly does not need one: it renders `わかった。` → `Ｒｉｇｈｔ．` (§6, source's own
+  stop) and contains **no `了解`** — 了解 is script bank 5 only, battle chunks 3, 17, 19.
+
+### 38.8 Register — verified from the tag stream, not assumed
+
+| Who | Register |
+|---|---|
+| Lord Helfer (unique 431, portrait `{=00}{=07}`) | §11.6 unchanged — grandiose and archaic, **no contraction anywhere**: `Ｗｅｌｌ　ｍｅｔ．`, `Ｆｏｒｇｅｔ　ｎｏｔ．`, `ｌｅｔ　ｕｓ　ｔａｌｋ　ａ　ｌｉｔｔｌｅ`. Identified from the portrait stream and confirmed by Anselmo addressing him `ヘルファー様` two segments later |
+| Anselmo (unique 431 `{=00}{=08}`, 437) | §14.6 / §15.3's blustering Imperial officer, **no contractions** — `Ｔｈａｔ　ｉｓ　ａｌｌ．`, `ｔｈｅｙ　ｃａｎｎｏｔ　ｊｏｉｎ　ｂａｔｔｌｅ`, `Ｉ　ｐｒａｙ　ｙｏｕ　ｆｉｇｈｔ　ｗｅｌｌ．` |
+| Leon (unique 427) | Formal and **uncontracted** — `Ｆｏｒｇｉｖｅ　ｍｙ　ｌａｔｅｎｅｓｓ．`, `Ｉ　ａｍ　Ｌｅｏｎ`, `ｌｅｔ　ｕｓ　ｍｅｅｔ　ａｇａｉｎ．` §1's `Ｌｅｏｎ` unchanged |
+| The rough human recruiter (421–426) | `だぜ` / `かい` carried by contractions and by `ｙｏｕ　ｋｎｏｗ！` / `ａｒｅｎ’ｔ　ｔｈｅｙ！`. Held apart from his three hobbit twins **by register and the missing `ノロ` alone**, with the shared beats deliberately parallel |
+| The three hobbit recruiters (438–469) and the Hobbit Village chief (430) | §19.3 / §21.4's hobbits unchanged — warm and plain, light contractions (`Ｄｏｎ’ｔ　ｌｉｋｅ　ｉｔ`, `ｙｏｕ　ｗｏｎ’ｔ　ｅａｔ`), the `，　ｎｙｏｒｏ．` tic on every sentence in §18.1's **spaced** form, with the source's own stop each time (`，　ｎｙｏｒｏ？`, `，　ｎｙｏｒｏ！`, `，　ｎｙｏｒｏ！！`, `，　ｎｙｏｒｏ，`) |
+| Unique 428's speaker (female, `よ` / `の` / `わ`) | §14.6's Cavia column — **no contractions** (`Ｔｈａｔ　ｗｉｌｌ　ｎｏｔ　ｄｏ．`, `Ｉ　ａｍ　ｇｏｉｎｇ`, `Ｉ　ｗｉｌｌ　ｎｏｔ　ｒｅｔｕｒｎ`). **Nothing names her, so no glossary row is proposed** — §23.5's and §31.1's practice, correctly followed |
+| Unique 430's female party member | A **different** woman from 428's and correctly written so: light contractions (`ｃａｎ’ｔ`, `Ｔｈａｔ’ｓ`, `ｗｅ’ｖｅ　ｇｏｔ`). `私の生まれた村があるの` places her birth village in Eaton, which §9's own seed note anticipates. Unnamed, so no row |
+| The superior officer of unique 430's opening | `貴官` and `おった` carried in register, **no contractions** — `ｙｏｕ　ｈａｖｅ　ａ　ｖｉｓｉｔｏｒ．`, `Ｈｅ　ｈａｓ　ｂｅｅｎ　ｓｈｏｗｎ　ｔｏ　ｔｈｅ　ｂａｒｒａｃｋｓ，　Ｉ　ｅｘｐｅｃｔ．` §2's politeness rule |
+
+⚠️ **Two source oddities recorded so they are not rediscovered as defects.** Unique 449's
+`受けたって聞いたてたから` is a **suspected source typo** for `聞いてた` (one kana transposed); the
+sense is unambiguous and it renders as *I heard*. Unique 430's `そ、村長さん、` stutters a `そ` that
+does **not** prefix the following word — a bare hesitation — so §24.3's pattern (repeat the
+following word's first letter) gives `Ｃ，`.

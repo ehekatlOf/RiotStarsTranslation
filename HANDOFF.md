@@ -13,20 +13,25 @@ and verify with `git log -1` before trusting the tree. No work is lost; the loca
 container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 5 IS RUNNING** in `session_0126GVzUTXdEP5VpVWWJXBCU`. Seeds are committed (`9e595ff`);
-> all four PRs are open (barrier met) and **PR #17 is merged**. The coordinator's next acts, in
-> order:
-> 1. ✅ Barrier met — all four PRs open. ✅ **#17 merged** (`f25ff14`), ✅ **#18 merged**
->    (`6276b4b`) and ✅ **#19 merged** (`6423083`), all three with integration pushed.
->    `git pull --ff-only` before the next reviewer.
-> 2. Reviewer subagent, **one at a time, foreground**, in unit order: ~~corrections~~ →
->    ~~#18 battle 21~~ → ~~#19 battle 22~~ → **#20 script 007 — the last unit of the wave.**
->    ✅ **The `ライアン` §9 strike is DONE** (#19's merge, glossary §37) and the cross-unit rule
->    between 21 and 22 is discharged with **zero divergent renderings across eight shared terms**.
->    ⚠️ **#20's reviewer inherits a CORRECTED §2** — the 中尉 width is patched in place, so there is
->    nothing left to fix there (glossary §36.4).
->    ⚠️ **#20 is unconstrained by chunk 22**: it touches no `tl/script/` file, and `５軍`'s two
->    script lines (unique 524, 995) are outside batch 007's 318 / 421–469. Verified at that merge.
+> **WAVE 5's FOUR UNITS ARE ALL MERGED.** Seeds are committed (`9e595ff`); the review queue is
+> empty. The coordinator's next acts, in order:
+> 1. ✅ Barrier met — all four PRs opened. ✅ **#17** (`f25ff14`), ✅ **#18** (`6276b4b`),
+>    ✅ **#19** (`6423083`) and ✅ **#20** (`11af9e78`) merged, **each with its integration commit
+>    pushed**. `git pull --ff-only` before doing anything else — #20's integration is the latest.
+> 2. ~~Reviewer subagent, one at a time, foreground, in unit order~~ — **DONE**: ~~corrections~~ →
+>    ~~#18 battle 21~~ → ~~#19 battle 22~~ → ~~#20 script 007~~. **All four merged at round 1; not
+>    one required a change to its unit file.** The `ライアン` §9 strike is done (#19, glossary §37),
+>    the cross-unit rule between 21 and 22 is discharged with zero divergent renderings across eight
+>    shared terms, and **#20 struck the last twelve wave-5 script seeds (glossary §38.1), so the
+>    whole §9 wave-5 block is now clear** except two rows deliberately left live: `『極上のワイン』`
+>    (not rendered by this batch) and the **UI-label block**, which §9 itself says must be flagged
+>    rather than resolved — now **Blocked item 7** and `FLAGS.md` §Z1.
+>    ⚠️ **#20's reviewer confirmed it inherited a CORRECTED §2** (glossary §36.4) and did **not**
+>    double-patch. §29.5's own body still carries the stale "25"; it is a historical ruling record
+>    and is annotated by §36.4 and §38.7, not rewritten.
+>    ⚠️ **Read `FLAGS.md` §Z6 before planning the next script batch: bank 2 has moved into the
+>    tight group at 3,365 free** (it was 7,505). The tight list is now 41 (353), 40 (447),
+>    5 (3,357), **2 (3,365)**.
 > 3. Close the wave, then **open wave 6's session** with `create_session` (BOTH `source_url` and
 >    `source_revision`), units: **battle chunk 24 (C 2.99), 25 (C 3.48), 26 (C 3.36) + one script
 >    batch** — see Next up.
@@ -39,26 +44,31 @@ container artifact.
 > re-dispatch anything lost, and carry on from the step it reached. Do **not** restart the wave.
 
 ## Last updated
-2026-09-09 · by: **wave-5 reviewer 3** (PR #19 integration) ·
-wave: **5 REVIEWING — 3 of 4 merged (#17, #18, #19), 1 PR open (#20)** · queue: **fresh**
+2026-09-09 · by: **wave-5 reviewer 4** (PR #20 integration) ·
+wave: **5 — ALL FOUR UNITS MERGED (#17, #18, #19, #20), review queue EMPTY; awaiting wave-close** ·
+queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **23** | 44 | 0–4, 6–14, 18, 19, 20, 21, **22**, 33, 34, 35, 40 |
 | Battle JP characters | **18,664** | 43,161 | **43.2%** (was 32.2% at wave-4 start) |
-| Script unique lines | **261** | 1,430 | `tl/script/batch_001–006.tsv` |
-| Script message instances | **4,092** | 7,931 | **51.6%** |
+| Script unique lines | **311** | 1,430 | `tl/script/batch_001–007.tsv` (+50 from **batch 007**) |
+| Script message instances | **4,162** | 7,931 | **52.5%** (was 51.6%; +70 from batch 007) |
 
-`check`: **All checks passed** on the integration branch. Tightest banks: **41 → 353 free,
-40 → 471, 5 → 3,381**, 2 → 7,505, 33 → 9,315. Wave 4 spent only banks 12–15 (−2,480) and left 41
-and 40 byte-for-byte untouched. Parked and translated: chunks **5, 43** (tier-A budget) and **17**
-(dump artifact).
+`check`: **All checks passed** on the integration branch, re-run after PR #20's merge.
+⚠️ **Tightest banks, updated — bank 2 has joined the tight group**: **41 → 353 free, 40 → 447,
+5 → 3,357, 2 → 3,365**, 3 → 8,113, 33 → 9,291. Batch 007 spent **7,074 bytes across 21 banks**
+(bank 2 −4,140, bank 3 −2,478, nineteen banks −24 each for the 21-instance item row unique 318) and
+left **bank 41 byte-for-byte untouched**. **Whoever plans the next script batch must check bank 2's
+headroom before dispatching** — see `FLAGS.md` §Z6. Parked and translated: chunks **5, 43** (tier-A
+budget) and **17** (dump artifact).
 
 ## In flight — WAVE 5 · ✅ **BARRIER MET 03:08Z, all 4 PRs open** · reviewing in unit order
-**Review progress: #17 ✅ merged · #18 next · #19 · #20.** The reviewer re-checked the barrier
-itself before starting and it holds. `git pull --ff-only` before dispatching reviewer 2 — PR #17's
-integration commit is pushed.
+**Review progress: #17 ✅ · #18 ✅ · #19 ✅ · #20 ✅ — ALL FOUR MERGED, the wave's review queue is
+empty.** Each reviewer re-checked the barrier before starting and it held every time. `git pull
+--ff-only` after each — every integration commit is pushed. **Wave 5's units are done; what remains
+is the coordinator's wave-close (§4 step 6) and then the wave-6 session (§4 step 7).**
 Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisions).
 
 | Unit | Branch | File(s) | PR | State |
@@ -66,7 +76,7 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 | **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | ✅ **MERGED round 1** as `f25ff14`. 7,793 (399) / 7,437 (755) / 1,561 (6,631, −6) / 2,203 (5,989); net **−6 bytes**, **0 `{FFFE}`, 0 `{FCC0}`**, tag stream byte-identical on every line. Every gate run and pasted; **every PR figure correct as stated**. Integration = the `integrate: chunk corrections/あら (PR #17)` commit immediately after `f25ff14` — glossary **§35**, `FLAGS.md` **§W**, §T1 **DISCHARGED**. Nothing left on this unit |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | ✅ **MERGED round 1** as `6276b4b`. 4,431 / 8,192, **3,761 slack**; 863 JP → 1,809 EN = **2.096×** vs the 4.280 ceiling, 49.0 % of budget; **105 text rows** (source 100), widest 23, none at 24, no page over 4. `{FFFE}` **81 → 86 (+5)** on four lines, `{FCC0}` 7 → 7. Every gate run and pasted; **no finding required a change to the unit**. Integration = the `integrate: chunk 021 (PR #18)` commit — glossary **§36**, `FLAGS.md` **§X**, a `pending/README.md` row, §10.8 **CLOSED**, §1/§2 rank widths **patched in place**. ⚠️ **Three PR figures were wrong** (`{FFFE}` "55→59(+4)", "57 text rows", "nine at 23") — all corrected in §36.7 / §X1, **none touching the file**. Nothing left on this unit |
 | **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | ✅ **MERGED round 1** as `6423083`. 4,153 / 8,192, **4,039 slack**; 799 JP → 1,643 EN = **2.056×** vs the 4.586 ceiling, 44.8 % of budget; **108 text rows** (source 104), widest 23, eight at 23, none at 24, no page over 4. `{FFFE}` **87 → 89 (+2)** on L05 only, `{FCC0}` **11 → 11**. Every gate run and pasted; **no finding required a change to the unit**. Integration = the `integrate: chunk 022 (PR #19)` commit — glossary **§37**, `FLAGS.md` **§Y**, `ライアン` §9 row **STRUCK**, four §9 seeds promoted. ⚠️ **Four PR figures corrected** (`{FCC0}` "at 8" → 11; two rejected splits "= 24" → 23; `ａ ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ` 16 → 18; a "three-way" echo → two-way) and **two justifications replaced while the renderings stand** — none touching the file. Nothing left on this unit |
-| **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | **[#20](https://github.com/ehekatlOf/RiotStarsTranslation/pull/20)** | **PR OPEN** — 50 lines / **70 instances**, 2.092×, bank 2 → **3,365**, bank 41 untouched |
+| **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | **[#20](https://github.com/ehekatlOf/RiotStarsTranslation/pull/20)** | ✅ **MERGED round 1** as `11af9e78`. 50 unique lines / **70 message instances**, 3,015 JP → 6,306 EN = **2.092×** against a 3.01× ceiling in the only binding bank; **7,074 bytes across 21 banks**. Bank **2: 7,505 → 3,365**, bank **3: 10,591 → 8,113**, bank **40: 471 → 447**, **bank 41 byte-for-byte untouched at 353**; no bank negative. **367 text rows**, widest 23, seventeen at 23, none at 24, no page over 4. `{FFFE}` **+6 net (12 bytes)** on unique 427/430/439/449/460; **`{FCC0}` untouched, non-`{FFFE}` tag stream byte-identical on all 50 lines**. Every gate run and pasted; **no finding required a change to the unit**. Integration = the `integrate: script batch 007 (PR #20)` commit — glossary **§38**, `FLAGS.md` **§Z**, **twelve §9 wave-5 script seeds promoted and struck**, the `殿` decision **executed and ratified**, `モンスター` reuse **confirmed**. ⚠️ **Six PR figures corrected** (`兵舎` reach — where **§9 was right and the PR's correction to it was wrong** — plus `ワイン` 35→41, `リムローズ` 9→10, `上官` "3×"→2×, `ｖｉｓｉｔｏｒ` chunks, `おい、` 12→11 chunks) **and one owed §2.1 step-6 flag added for unique 422** — none touching the file. Two rulings: **the Torif ordinal drop stands** (§38.5) and **`ｃｈｉｅｆ` stays lowercase** (§38.4). Nothing left on this unit |
 
 **Cross-unit this wave (struck by the SECOND of the pair to MERGE — check which actually merged,
 never assume the order):**
@@ -282,8 +292,11 @@ banks (518–1,413) is what remains dispatchable.
    buffer) — needs the EXE, the disc image and an emulator. FLAGS §B3 recommends settling
    KOUSEI.EXE first and confirming the floor on **one** of 16 or 32, not both.
 2. **Main-script bank capacity** (`FLAGS.md` §F2 has the full table). About **66 KB short**
-   overall: bank 41 needs +30,534 with 353 free, bank 40 +20,924 with 471, bank 5 +14,720 with
-   3,381, bank 2 +12,798 with 7,505, bank 33 +11,492 with 9,315. Every other bank has room.
+   overall: bank 41 needs +30,534 with 353 free, bank 40 +20,924 with **447**, bank 5 +14,720 with
+   **3,357**, bank 2 +12,798 with **3,365**, bank 33 +11,492 with **9,291**. Every other bank has
+   room. ⚠️ **Free-space figures updated 2026-09-09 after PR #20 (`FLAGS.md` §Z6); the shortfalls
+   are unchanged. Bank 2 fell 7,505 → 3,365 and is now the fourth-tightest bank in the project** —
+   it was batch 007's binding bank and it no longer has room for a second batch of that size.
    **376 unique lines / 3,001 instances are unshippable** until a MAIN1.EXE repoint or bank-spill
    scheme exists. Two whole late chapters are the worst cases — unique 1160–1354 live in **bank 40
    alone** and 1355–1387 in **bank 41 alone**; neither can be shipped even partially in a way worth
@@ -320,6 +333,16 @@ banks (518–1,413) is what remains dispatchable.
    evidence underpinning a merge decision. Reviewers run concurrently with reworking translators by
    design, so they collide identically. Add: every agent namespaces every scratch file
    (`r015_dupes.py`), and no agent trusts a scratch script it did not write in the same turn.
+7. 🖥️ **NEW (PR #20 review) — the three `『』` UI screen labels need one look at the Formation
+   screen.** `FLAGS.md` **§Z1**. `tl/script/batch_007.tsv` unique 431 and 437 now ship
+   `“Ｆｏｒｍａｔｉｏｎ”`, `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` and `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”`
+   as **instructions to go and find those menus on screen** — but **the menu strings themselves are
+   in NEITHER dump**, so no English label here can be checked against what the screen shows, and if
+   the menus stay Japanese the instruction misdirects the player. Nothing is defective: all three
+   widths are right and `『…』` → `“…”` follows glossary §12. **The human's job is one screen**:
+   open Formation in-game and read the three entries. If they are still Japanese, either re-cut the
+   labels to describe the menus rather than name them, or find and translate the menu strings too.
+   Glossary §9's own UI-label row **stays live** until this is settled.
 
 ## Decisions this run
 - 2026-09-08: integration branch is `claude/workflow-translation-iterate-uzlkns`; `main` untouched.

@@ -3219,3 +3219,158 @@ records the evidence.
 Chunk 22 ships at **4,153 / 8,192, 4,039 slack**. The project's tightest battle chunk is still
 chunk 19 at **127**. **No bank moved** — this unit touches no script file — so §F2's table is
 unchanged and banks 41 (353) and 40 (471) are byte-for-byte as they were.
+
+---
+
+## Z. Wave 5 review — script batch 007 / PR #20 (2026-09-09)
+
+**MERGED at round 1** as `11af9e78`. `tl/script/batch_007.tsv` — `script_unique.txt` file lines 318
+and 421–469, 50 unique lines / **70 message instances**, 3,015 JP → 6,306 EN = **2.092×**,
+**7,074 bytes** across 21 banks. Every §6 gate run and pasted; full reading review line by line.
+**No finding required a change to the unit.** Glossary section **§38**.
+
+### Z1. NEEDS THE DISC — the three `『』` UI screen labels (BLOCKED, needs a human)
+
+⚠️ **This is the item on the Blocked list, and glossary §9 explicitly asked the reviewer to raise it
+rather than resolve it.**
+
+`tl/script/batch_007.tsv` unique **431** and **437** tell the player to go and find three menus on
+screen:
+
+| Japanese | Shipped English | Columns |
+|---|---|---|
+| `『編成』` | `“Ｆｏｒｍａｔｉｏｎ”` | 11 |
+| `『キャラクター育成』` | `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` | 18 |
+| `『キャラを入れる』` | `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` | 17 |
+
+**The menu strings themselves are in NEITHER dump.** They live in the executable or in a graphics
+table, not in `SCRIPT.BIN` or `HEXMAP.BIN`, so an English label here **cannot be verified against
+what the screen actually shows** — and if the menus stay Japanese, the instruction sends the player
+to a menu whose name does not match. All three widths are correct as remeasured, and `『…』` → `“…”`
+follows §12, so **nothing here is a defect**; the risk is a mismatch with a surface this project
+does not yet control.
+
+**What the human has to do:** open the Formation screen in-game and read the three menu entries. If
+they are still Japanese, either (a) the labels here should be re-cut to describe the menu rather
+than name it, or (b) the menu strings need to be found and translated too. Either way it is one
+look at one screen.
+
+Note that §26.3's **verbal** 編成 → `form (your units)` is a different thing and is untouched: the
+same unit uses it correctly twice in unique 437 where the source is verbal, which is the source's
+own split.
+
+### Z2. FORWARD BINDING — this unit fixes the recruiter menu for TEN untranslated lines
+
+Counted mechanically at review across `script_unique.txt`, not taken from the PR.
+
+**The three-option recruiter menu** ` 兵士を　補充したい` / ` 情報を　聞きたい` / ` 何でもない`
+→ **` Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ` / ` Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ` / ` Ｎｏｔｈｉｎｇ`**
+(leading `　` cursor gutter on all three) is **byte-identical readable text at twelve unique lines**.
+Three are now shipped — 440, 450, 461 — and **nine remain untranslated: 334, 335, 399, 405, 417,
+477, 488, 498, 509.**
+
+**`他に　用はないノロか？` → `Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？`** binds **unique 470**, the
+tenth.
+
+All ten carry different `{FFF8}` jump arguments and are therefore **different keys**, so CLAUDE.md
+§3 does not *force* reuse. But the player meets one menu at every recruiter, which is exactly
+§34.9's reasoning for unique 598 and the shop menu. **Whoever takes any of those ten lines should
+copy the English byte-for-byte and not re-invent it.**
+
+⚠️ **Unique 417 is one of the nine**, and it sits inside the untranslated head (416–420) of the
+rough human recruiter whose tail this unit renders at 421–426. So that head inherits **both** the
+menu strings *and* the register contrast this unit built: the human says
+`Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ` / `ｔｉｍｅ！` where the hobbits say `…ｔｉｍｅ，　ｎｙｏｒｏ．`, and
+`Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ` appears in both.
+
+### Z3. FORWARD OBLIGATION — Torif's birth order now lives in exactly two lines
+
+Unique 455 renders `第２王子のトリフ様` as `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`, per glossary §9's seed, and
+**drops the ordinal**. Ruled at review and it stands — see glossary §38.5 — on the measurement that
+`第２王子` occurs **exactly once in the entire script dump (that line) and zero times in the battle
+dump**, while the same fact is carried **twice more by `弟のトリフ`**.
+
+⚠️ **Those two `弟のトリフ` lines are now the only place in the game where Torif's birth order
+survives.** Whoever renders them **must keep the younger-brother fact** — it is what glossary §9's
+`ホアグ王子` row turns on (Hoag is Carline's first prince, Torif the pliable younger brother Helfer
+prefers as heir). Not a defect today; a thing that becomes one if it is dropped a second time.
+
+### Z4. Six PR-body figures corrected at review, none touching the file
+
+Recorded so they are not inherited. Every **headline** figure in the PR was correct as stated and
+re-derived at review — 50 / 70, 2.092×, 7,074 bytes, all 21 bank movements, 367 rows, widest 23,
+17 at 23, none at 24, `{FFFE}` +6 on the five named lines, `{FCC0}` untouched.
+
+1. **`兵舎`** — the PR's *correction to glossary §9* is itself wrong. Measured: 4 in
+   `script_dump.txt`, 1 of them the unit's own → **3 further, 4 in total**. §9's "4 script" is
+   **right**. The PR's 3 is the unique-line count.
+2. **`ワイン`** — "35 further" is **41** (44 total − 3 own). §9's "44 script-dump instances" is right;
+   its "24 unique" is 18.
+3. **`リムローズ`** — "9 further" is **10** (14 − 4 own). Banks [18, 20, 40, 41] and 2 battle in
+   chunk 38 are exact.
+4. **`上官`** — "used unchanged 3×" is **2×**. Unique 431 carries 上官 three times; the third
+   (`貴官の上官となる`) renders the bare `ｙｏｕｒ　ｓｕｐｅｒｉｏｒ，　Ｆｉｒｓｔ`, an unflagged §2.1
+   step-3 shortening forced by width (the full form gives 28 columns). Rendering stands.
+5. **`ｖｉｓｉｔｏｒ`** — "chunks 11, 33, 35" is **11 and 33**; `chunk_035.txt` has no `ｖｉｓｉｔ`
+   in any form.
+6. **`おい、`** — "12 battle chunks" is **11** (0, 8, 16, 20, 23, 27, 31, 32, 37, 38, 43; 14
+   instances). Banks [5, 41] correct and **not bank 2**, so §25.3's test still passes. `おいおい`
+   "twice more (banks 29, 41)" is exact.
+
+⚠️ **A seventh, to a claim rather than a figure: Flag 7's "the unit contains no §2.1 step-6 reorder
+at all" is false.** Unique **422** reorders — the source puts the conjecture
+(`地殻の変動が激しいのか`) before the main clause (`妙な噂を聞くぜ`) in one sentence; the English
+puts the main clause first and the conjecture second, in two. **The rendering stands** (nothing
+added or dropped, the page keeps its four rows and its `{FCC0}` in the source's place, and fronting
+a Japanese parenthetical `〜のか` is close to forced in English) — but the flag was owed. Glossary
+§38.6.
+
+### Z5. §Y3's staleness trap — checked, and it did not fire here
+
+§Y3 records that a translator's "verified free" is only a snapshot, and that `つるむ`'s went stale
+between drafting and review because a sibling merged in between. **This PR was written before three
+merges** (#17 `f25ff14`, #18 `6276b4b`, #19 `6423083`), so every reach and freedom claim was
+re-measured against the **post-merge** tree at review, not accepted on report.
+
+**All of them still hold.** `ｎｕｔ` (only hit *minute*), `ｗｉｎｅ` (only hits *swine*),
+`ｂａｒｒａｃｋｓ`, `ｇｒｅｅｄｙ`, `ｒａｎｋｓ`, `ｓｔｒｉｆｅ`, `ａｒｒａｎｇｅ`, `ｗａｎｔｅｄ　ｍｅｎ`,
+`ｊｏｉｎｔ　ｏｐｅｒａｔｉｏｎｓ`, `ｐｏｔａｔｏ`, `ｃｉｔｙ　ｆｏｌｋ`, `ｂｕｔｔｅｒ`,
+`ｍｏｓｔ　ｗｅｌｃｏｍｅ`, `Ｌｉｍｒｏｓｅ`, `Ｅａｔｏｎ`, `Ｃｈｅｋｏｔ`, `Ｔｏｒｉｆ`, `１ｓｔ　Ａｒｍｙ`
+— free on the current tree. `ｒｅｃｒｕｉｔ` correctly **not** free (`chunk_000` L4's noun).
+
+⚠️ **One glossary claim DID go stale, and it is not the PR's.** Glossary **§29.4** says
+"`Ａｇｒｅｅｄ` is **verified free across all of `tl/`**". It is not, since PR #16 merged:
+`tl/battle/chunk_019.txt` L25 ships `・・・わかった。` → `．．．Ａｇｒｅｅｄ．` — **which is exactly
+what §29.4 prescribed for chunk 19**, so the reserve was spent as designed, not violated. **Nothing
+is re-cut and no line changes.** But **the わかる family now has no reserve left**: a future unit
+that puts `わかった` beside `了解` in one segment will have to fix a new form. Recorded here rather
+than patched into §29.4, per §4.3. This unit is unaffected — it renders `わかった。` → `Ｒｉｇｈｔ．`
+(§6, the source's own stop) and contains **no `了解`**; 了解 is script bank 5 only, battle chunks
+3, 17 and 19.
+
+### Z6. Bytes and banks after this merge
+
+| Bank | before | after | spent |
+|---|---|---|---|
+| **2** | 7,505 | **3,365** | −4,140 |
+| **3** | 10,591 | **8,113** | −2,478 |
+| 5 | 3,381 | 3,357 | −24 |
+| **40** ⚠️ | 471 | **447** | −24 |
+| 4, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 42, 43 | | | −24 each |
+| **41** | 353 | **353** | **0 — byte-for-byte untouched** |
+
+**21 banks moved, 7,074 bytes, no bank negative.** Measured by removing the file, re-merging and
+re-measuring — **every figure in the PR body is exact.**
+
+⚠️ **§F2's tight list is now: bank 41 at 353 free, bank 40 at 447, bank 5 at 3,357, bank 2 at
+3,365.** **Bank 2 has moved into the tight group** — it was the binding bank for this unit
+(1,866 of its 3,015 JP characters, a 3.01× ceiling against the 2.09× actually spent) and it is now
+the project's fourth-tightest. **Whoever plans the next script batch must check bank 2's headroom
+before dispatching**, as this wave's coordinator correctly did.
+
+Unique 318's own cost, which the dispatch asked for: **+24 bytes in each of 21 banks, 504 in
+total** — 21 English columns against 9 Japanese characters. Bank 40's ceiling for that one line was
+**244 English characters**, so "keep it short" was never binding there; **bank 2 was**.
+
+No battle chunk moved — this unit touches no battle file — so the tightest chunk is still
+**chunk 19 at 127 bytes of slack**.
