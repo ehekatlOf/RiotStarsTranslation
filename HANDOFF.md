@@ -13,29 +13,20 @@ and verify with `git log -1` before trusting the tree. No work is lost; the loca
 container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 4 IS CLOSED — 4 of 4 merged, 0 parked. `check` green. Battle 21/44 (39.4%), script 51.6%.**
-> The next act is to **OPEN WAVE 5'S SESSION**, which wave 4's coordinator does in the same turn.
+> **WAVE 5 IS RUNNING** in `session_0126GVzUTXdEP5VpVWWJXBCU`. Seeds are committed (`9e595ff`);
+> four translators are dispatched. The coordinator's next acts, in order:
+> 1. Wait for **all four** PRs — the wave barrier (CLAUDE.md §4 step 4). Review nothing before it.
+> 2. Reviewer subagent, **one at a time, foreground**, in unit order: corrections → 21 → 22 → 007.
+> 3. Close the wave, then **open wave 6's session** with `create_session` (BOTH `source_url` and
+>    `source_revision`), units: **battle chunk 24 (C 2.99), 25 (C 3.48), 26 (C 3.36) + one script
+>    batch** — see Next up.
 >
-> ```
-> create_session(                                        # claude-code-remote MCP
->   title:           "Riot Stars — wave 5",
->   tags:            ["riotstars-translation", "wave-5"],
->   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-5 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both inherit. Units: **the `あら` corrections unit + battle
-> chunks 21, 22 + script `batch_007.tsv`** — see **Next up**.
->
-> ✅ **DONE 2026-09-09 01:46Z — wave 5's session is OPEN: `session_0126GVzUTXdEP5VpVWWJXBCU`.**
-> Wave 4's coordinator is finished; the chain is live and needs no human.
->
-> If that session never ran, the chain broke here: open a replacement the same way.
+> If this session died mid-wave: `ListAgents`, reconcile open PRs against **In flight** below,
+> re-dispatch anything lost, and carry on from the step it reached. Do **not** restart the wave.
 
 ## Last updated
-2026-09-09 · by: **wave-4 coordinator** (`session_013mqnLaJCts7hGduLSmsuak`) ·
-wave: **4 CLOSED — 4 merged, 0 parked** · queue: **fresh**
+2026-09-09 · by: **wave-5 coordinator** (`session_0126GVzUTXdEP5VpVWWJXBCU`) ·
+wave: **5 DISPATCHED — 4 units in flight, 0 PRs open** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -50,8 +41,33 @@ wave: **4 CLOSED — 4 merged, 0 parked** · queue: **fresh**
 and 40 byte-for-byte untouched. Parked and translated: chunks **5, 43** (tier-A budget) and **17**
 (dump artifact).
 
-## In flight
-**Nothing. Wave 4 is closed and no PR is open.** Wave 5's session dispatches its own units.
+## In flight — WAVE 5, dispatched 2026-09-09, all round 1
+Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisions).
+
+| Unit | Branch | File(s) | PR | State |
+|---|---|---|---|---|
+| **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | `chunk_007` L19+L24, `chunk_011` L3, `chunk_014` L3 | — | dispatched |
+| **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | — | dispatched |
+| **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | — | dispatched |
+| **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | — | dispatched |
+
+**Cross-unit this wave (struck by the SECOND of the pair to MERGE — check which actually merged,
+never assume the order):**
+- **`ライアン`** → chunks **21** (`ライアン少尉`) and **22** (`ライアン隊長`). Also `クレス` and
+  `リオン` carry two ranks each; all three are seeded together in §9 with corpus counts.
+- **`勲章`** → chunk **22** ×2 (`偽の勲章` / `本物の勲章`), already fixed `ｍｅｄａｌ` (§32.1), and
+  it is the plot item `獅子の勲章`. FLAGS §T2's live `メダル` collision is in banks **42–43** and
+  does **not** bite a battle chunk.
+- **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
+  must be reused byte-identically (CLAUDE.md §3).
+
+⚠️ **CORRECTION to this file's own wave-5 plan, measured at dispatch:** "banks 2–3" is right for
+unique **421–469** but **wrong for the batch**. Unique **318** (`何かの木の木の実。`, 9 JP chars,
+**21 instances**) is an item-description line replicated across **21 banks — 2, 3, 4, 5, 6, 7, 8,
+9, 12–19, 25, 33, 40, 42, 43** — so every character costs **2 bytes in each of them**, including
+**bank 40, the project's second-tightest at 471 free**. Bank 41 is untouched. Est. growth at
+2.10×: bank 2 **+4,105** (→ 3,400 free), bank 3 **+2,547** (→ 8,044 free), and **+19 in each of
+the other 19 banks**. Safe, but only because the line is short — it must stay short.
 
 ## Next up — WAVE 5
 **Four units. Seed the glossary BEFORE dispatching** (it moved four times during wave 3 and three
