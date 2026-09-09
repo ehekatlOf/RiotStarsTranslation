@@ -52,7 +52,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** (r2 @ `dfa9771`) | **PR #29 — rework PUSHED**, awaiting re-review by the SAME reviewer |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | 5,039 → **5,037 / 8,192** expected | **PR #29 — CHANGES r2**, round 3 sent (max 3) |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (r2 @ `41f8f37`) | **PR #33 — rework PUSHED**, awaiting re-review by the SAME reviewer |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
@@ -127,6 +127,26 @@ this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance 
 lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
 (chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
 claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
+
+### Review round 2 — PR #29: **CHANGES** again, ONE finding. Round 3 sent (the maximum).
+All gates re-run from scratch on `dfa9771` against the moved base, re-positive-controlled on the
+round-2 file. Figure **5,039 / 8,192** confirmed — the coincidence with round 1 is real, `git diff`
+shows exactly four changed body lines (2, 4, 6, 18). Fixes 3 and 4 confirmed correct, and the
+reviewer recorded its own round-1 error: it had read §37's scoped `始末する` row as general.
+**Finding:** `おい、` ships `Ｈｅｙ，` where §32.3 (`glossary.md:2580`) fixes **`Ｏｉ，`**, and
+`Ｈｅｙ，` is recorded *spent* on `よう、` (lines 2579, 3111). ⚠️ **Live across this wave — PR #33
+already ships `Ｏｉ，`**, so merging #29 as-is would ship two renderings of one source word out of
+one wave. Fix `Ｏｉ，　ｃａｌｌ　ｆｏｒ　ａｉｄ！！`, 19 → 18 columns, −2 bytes → **5,037 / 8,192**.
+⚠️ **§4.3 DEBT, not this PR's:** `おい、` → `Ｈｅｙ，` is shipped in **merged** `chunk_000` (×3),
+`chunk_008` (×1) and `chunk_031` — five instances predating or slipping past §32.3. A corrections
+unit's job; every re-cut is byte-negative, so none is budget-blocked.
+
+⚠️ **GATE 7 MUST BE RUN FROM THE GLOSSARY SIDE, KEY BY KEY — this is the wave's method finding.**
+Round 1 asked "do the terms I noticed match?" and passed. Round 2 enumerated **all 44 glossary keys
+occurring in chunk 37's source** and caught `おい、` — a three-character particle phrase that **no
+content-word sweep reaches**, which is why the translator's own Japanese-side sweep missed it too.
+**Gate 6 passed cleanly at round 1 while FOUR terms were wrong** (`全滅`, `始末`, `やはり`, `おい、`).
+The sub-message sweep must be **glossary-KEY-driven, not term-noticed-driven.**
 
 ⚠️ **TWO GATE DEFECTS FOUND BY CHUNK 37's REWORK — THESE BIND EVERY FUTURE WAVE, NOT JUST THIS PR.**
 Round 1 passed **gates 6 and 7 cleanly while three terms were wrong.** Both defects are structural.
