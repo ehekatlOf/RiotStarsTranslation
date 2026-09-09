@@ -41,7 +41,7 @@ wave: **5 DISPATCHED — 4 units in flight, 0 PRs open** · queue: **fresh**
 and 40 byte-for-byte untouched. Parked and translated: chunks **5, 43** (tier-A budget) and **17**
 (dump artifact).
 
-## In flight — WAVE 5, dispatched 2026-09-09, all round 1
+## In flight — WAVE 5 · ✅ **BARRIER MET 03:08Z, all 4 PRs open** · reviewing in unit order
 Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisions).
 
 | Unit | Branch | File(s) | PR | State |
@@ -49,7 +49,7 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 | **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | **PR OPEN**, awaiting barrier |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | **PR OPEN** — 4,431 / 8,192, **3,761 slack**, 2.10× vs 4.28 ceiling, widest row 23 |
 | **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | **PR OPEN** — 4,153 / 8,192, **4,039 slack**, 2.06× vs 4.59 ceiling, widest row 23, 22 glossary rows |
-| **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | — | dispatched |
+| **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | **[#20](https://github.com/ehekatlOf/RiotStarsTranslation/pull/20)** | **PR OPEN** — 50 lines / **70 instances**, 2.092×, bank 2 → **3,365**, bank 41 untouched |
 
 **Cross-unit this wave (struck by the SECOND of the pair to MERGE — check which actually merged,
 never assume the order):**
@@ -60,6 +60,28 @@ never assume the order):**
   does **not** bite a battle chunk.
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
+
+⚠️ **PR #20 CORRECTED MY DISPATCH IN THREE PLACES — one of them a rule I stated wrongly.**
+1. **`{FFEC}` is NOT uniformly gate-blind, and my dispatch said it was.** `assemble.py:validate_body`
+   substitutes `{FFEC}{=00}{=00}` with **7 placeholder characters**, and `rowcheck` does the same via
+   `SCRIPT_NAME` — the fix `FLAGS.md` §C4 records as **DONE**. So the **player-name insert IS
+   counted, at 7 columns**; only the *other* insert forms are blind. In this unit 5 rows were
+   gate-visible and 6 (the price-confirm lines) were bounded at **insert+8**, byte-for-byte the
+   overhead `batch_006` already ships and §V1 already ratified. **My wording came from the wave-5
+   seed message and should not be repeated to wave 6.**
+2. **70 message instances, not 52; 3,015 JP chars, not 3,056.** Unique 318 carries 21 and the other
+   49 carry 1 each. Instances cost no bytes, so no budget moves.
+3. **FOUR copies of the recruiter skeleton, not three.** My identity map for 438–448 / 449–459 /
+   460–469 was correct in every particular, but **421–426 is the TAIL of a fourth copy** — a rough
+   human castle guard (`だぜ` / `かい`) — whose head at **unique 416–420 is not in this batch and is
+   untranslated**. Held apart by register and the missing `ノロ` tic.
+
+⚠️ **PR #20 binds TEN untranslated lines outside itself (its Flag 5).** The three-option recruiter
+menu is byte-identical readable text at unique **334, 335, 399, 405, 417, 477, 488, 498, 509** as
+well as this unit's 440 / 450 / 461 — **twelve copies**, of which these are the first three
+rendered — and `他に　用はないノロか？` binds **unique 470**. Different tag arguments make them
+different keys, so §3 does not *force* reuse, but the player meets one menu at every recruiter.
+**Whoever takes 592–598 or 647–655 still inherits `batch_006`'s shop skeleton, not this one.**
 
 ✅ **The `２軍` relay landed — PR #19 Flag 21 confirms it.** Chunk 22's shipped file carries
 `２ｎｄ　Ａｒｍｙ` ×1 and `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ` ×0; **no follow-up commit was needed**, and the
