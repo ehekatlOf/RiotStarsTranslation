@@ -534,6 +534,40 @@ this block and never had one** — confirmed a third time; the dispatch's pairin
 | ~~古代文明~~ | ✅ **PROMOTED to §42.1 and STRUCK** — `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ`, **20 columns as seeded** (re-measured with `len()`), rendered in `tl/script/batch_008.tsv` (DATA 488), **used exactly as seeded** including the British `‑ｓａｔｉｏｎ`. The battle instance is in chunk 16, which is tier-A blocked, so this unit is the only shipper for now. Original seed note follows: | `batch_008` (**DATA line 488** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 473") — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
 | ~~司教様~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `ｔｈｅ　ｌａｔｅ　Ｂｉｓｈｏｐ` / `ｏｆ　Ｆａｒｉｎａ．`, and STRUCK — `Ｂｉｓｈｏｐ` is §26.1's, only the appellation is new.** `亡くなられた` is carried by *the late*, matching the massacre `tl/battle/chunk_021.txt` L10 already ships. See §42.1 | `batch_008` (**DATA line 498** — ⚠️ corrected in place 2026-09-09, PR #21 review; this read "unique 483", a *menu* line, and it is the **fourth** row of this block to carry a list index. PR #24's reviewer patched the `魔族`, `末えい`, `古代文明` and `ウェストバリー` rows and left this one; PR #21's Flag 5 named it correctly and it is now applied) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
 | ~~ウェストバリー~~ | ✅ **RENDERED by `batch_008` (PR #21, merged 2026-09-09) as `Ｉｎ　Ｗｅｓｔｂｕｒｙ，　ｔｈｅｙ　ｓａｙ，` and STRUCK.** `Ｗｅｓｔｂｕｒｙ`, 8 columns, byte-identical to the five shipped `ウエストバリー` (large エ) instances that a gate-6 grep on the exact Japanese cannot pair with it — §2's corrected row records both spellings. Original seed note follows: | `batch_008` (**DATA line 515** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 505") | ⚠️ **NOT a new term — a SOURCE SPELLING VARIANT** of `ウエストバリー` (large エ), which is shipped 5× as `Ｗｅｓｔｂｕｒｙ`. See the corrected §2 row. 8 columns |
+| クロイツェル | `Ｋｒｅｕｔｚｅｌ` | **Wave-7 seed.** **8 columns**; `リムル・クロイツェル` → `Ｒｉｍｕｌ　Ｋｒｅｕｔｚｅｌ` = **14**. Rimul's surname, first spoken in battle chunk 30's name-and-title challenge (`ディール帝国紅の騎士団の将、リムル・クロイツェルが相手になろう！`). German/European spelling per `Ｄｉｅｌ` (§25.1), `Ｈｅｌｆｅｒ`, `Ｂａｕｅｒ`. Does **not** disturb §1's `リムル` → `Ｒｉｍｕｌ` or `リムル様` → `Ｌａｄｙ　Ｒｉｍｕｌ` | battle chunk 30 | Alt *Kreutzell*, *Creutzel*, *Cruzel* |
+| カイザード | `Ｋａｉｚａｒｄ` | **Wave-7 seed.** **7 columns.** The imperial officer running the summoning in battle chunk 31; addressed `カイザード様` by his own men → `Ｌｏｒｄ　Ｋａｉｚａｒｄ` (**12**) on the §14.1 / §28.1 様 → **Lord** precedent, *not* §21.2's さん rule | battle chunk 31 | Alt *Kaisard*, *Kaiserd* |
+| ジュエルビースト | `Ｊｅｗｅｌ　Ｂｅａｓｔ` | **Wave-7 seed.** **11 columns.** A named monster whose forehead gem sells high; `ジュエル` → `Ｊｅｗｅｌ` is already fixed, so only the compound is new. Capitalised as a creature **name** here, not a class | battle chunk 31 | Alt *Jewelbeast* |
+| カーバンクル | `Ｃａｒｂｕｎｃｌｅ` | **Wave-7 seed.** **9 columns.** The standard RPG gem-browed beast; chunk 31 distinguishes it from the Jewel Beast (`カーバンクルとは少し違うようだが`), so the two forms must stay visibly distinct | battle chunk 31 | — |
+| 『闇の紋章』 | `“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”` | **Wave-7 seed.** **18 columns bare, 20 with the §12 quotes** (`『…』` → `“…”`). 紋章 appears nowhere else in the glossary | battle chunk 31 | Alt *Dark Emblem* (11) if the row will not carry 20 |
+| 冥界の王 | `ｔｈｅ　Ｎｅｔｈｅｒｗｏｒｌｄ　Ｋｉｎｇ` | **Wave-7 seed.** **20 columns**, so it fits one row; `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｅ　Ｕｎｄｅｒｗｏｒｌｄ` is **26** and cannot. Capitalised per §2's 王女様 → *the Princess* and §28.1's 国王 → *the King* | battle chunk 31 ×3 | Alt *the Underworld King* |
+| リッチ | `Ｌｉｃｈ` | **Wave-7 seed.** **4 columns.** ⚠️ **The game spells it itself** — chunk 31's incantation ends `ＥＬＡＧＬＡ・ＬｉＣＨ！` in full-width Latin, so this is a transcription, not a choice. Capitalised: chunk 31 uses it as the creature's name (`冥界の王、リッチよ！`) | battle chunk 31 | — |
+| 石版 | `ｔａｂｌｅｔ` | **Wave-7 seed. ⚠️ CROSS-UNIT — battle chunks 30 and 36 AND script 569/571 all render it; they must agree byte-for-byte.** **6 columns.** The plot object the whole wave turns on | battle 30, 36; script 569, 571 | Alt *stone tablet* (12) |
+| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Wave-7 seed. ⚠️ CROSS-UNIT — battle chunk 36 AND script 569.** **13 columns bare, 15 with the §12 quotes.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new | battle chunk 36; script 569 | Alt *Tablet of Shadow* (16) |
+| 鏡の神殿 | `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ` | **Wave-7 seed.** **13 columns.** 神殿 → *temple* is already fixed and held distinct from 教会 → *church* and 聖堂 → *sanctuary*; this only names the building | script 569, 571 | Alt *the Temple of the Mirror* (24 — fills a whole row) |
+| リースの化身 | `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **24 columns — exactly one full row, so it cannot take a mark or a particle on that row.** Bare 化身 → `ｉｎｃａｒｎａｔｉｏｎ` (**11**). `リース` → `Ｒｅｅｓｅ` is fixed at §26.1; ⚠️ the **maximal-run blind spot** (§Y2) means a search for `リース文明` never matches this — search bare `リース` | script 569, 571 | Alt *Reese's incarnation* |
+| リースの神々 | `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **17 columns.** Lower-case *gods* as a plural common noun (contrast §17.1's species test); the town's blessing formula `リースの神々よ、この者たちに祝福あれ！` | script 560, 567 | — |
+| 遠征軍 | `ｅｘｐｅｄｉｔｉｏｎａｒｙ　ｆｏｒｃｅ` | **Wave-7 seed.** **19 columns** — chunk 30 is tier B (ratio 2.43), so `ｅｘｐｅｄｉｔｉｏｎ` (**10**) is the licensed short form under budget pressure, not a different reading | battle chunk 30 | Alt *expedition* |
+| 選ばれし者 | `ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ` | **Wave-7 seed.** **14 columns.** Archaic-flavoured; the elder's register in script 570 is uncontracted throughout | script 570 | — |
+| 召喚の儀式 | `ｓｕｍｍｏｎｉｎｇ　ｒｉｔｕａｌ` | **Wave-7 seed.** **16 columns** | battle chunk 31 | Alt *summoning rite* (14) |
+| ビーストショップ / アイテムショップ | `Ｂｅａｓｔ　Ｓｈｏｐ` / `Ｉｔｅｍ　Ｓｈｏｐ` | **Wave-7 seed.** **10 and 9 columns.** ⚠️ These are the two **menu options** of script 555's choice and keep the leading `　` per CLAUDE.md §6.8. Check §34.1 shop vocabulary before rendering — the shop nouns may already be fixed there | script 555 | — |
+| オーホホホ | `Ｏｈｏｈｏｈｏ` | **Wave-7 seed.** **7 columns.** Cavia's haughty laugh, transliterated on §12.3's `ふふ` → `Ｆｕｆｕ` and §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ` precedent. ⚠️ §12.3's **Alt column records REJECTED options, not a menu** — do not propose `Ｈｏ　ｈｏ　ｈｏ` without reading it | script 559 | — |
+
+⚠️ **WAVE-7 SEEDS (battle chunks 30, 31, 36 + script `batch_009` = unique 534–583).** Proposed
+forms only — **promote on first use, and measure before you trust a width.** Every figure in the
+rows above was produced with `len()` on the full-width string (§AC3); if your own `len()` disagrees
+with a cell, **your measurement wins and the cell is the error** — say so in the PR.
+
+⚠️ **FOUR TERMS THAT LOOK NEW AND ARE ALREADY FIXED — do NOT reseed them:**
+1. **`３号機` → `Ｕｎｉｔ　３`** (6). `号機` → **Unit** is fixed (`機械兵 ＮＮ号機`, `４号機`).
+2. **`うらみ` → `ｇｒｕｄｇｅ`** (6). Chunk 30 writes it in **kana**; the fixed row is `恨み`. This is
+   the **mixed-script blind spot** (§Y2/§AC1) exactly — a kanji search never finds chunk 30's form.
+3. **`モンスター` → `ｍｏｎｓｔｅｒ`** — shipped, 214 instances, and §42.3 ruled the 魔物/モンスター
+   collapse **stands**. Chunk 31 has `モンスター` and `アンデッドモンスター` → `ｕｎｄｅａｄ　ｍｏｎｓｔｅｒ`
+   (14). **Do NOT spend the reserved `ｃｒｅａｔｕｒｅ`** — it is held for a future 魔物 split only.
+4. **`砦` → `ｆｏｒｔ`**, **`王女様` → `ｔｈｅ　Ｐｒｉｎｃｅｓｓ`**, **`第９軍`/`９軍` → `９ｔｈ　Ａｒｍｙ`**,
+   **`カーライン` → `Ｃａｒｌｉｎｅ`**, **`オーク` → `ｏｒｃ`** (lower-case in prose), **`神殿` → `ｔｅｍｐｌｅ`**,
+   **`聖堂` → `ｓａｎｃｔｕａｒｙ`**, **`ドルガンさん` → bare `Ｄｏｌｇａｎ`** (§21.2) — all fixed already.
+
 
 ⚠️ **THREE BINDING FACTS FOR `batch_008` THAT ARE NOT GLOSSARY TERMS**, recorded here because the
 unit cannot be translated correctly without them:
