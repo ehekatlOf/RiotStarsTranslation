@@ -53,7 +53,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** | **PR #29 OPEN**, awaiting reviewer |
-| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
+| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,565 / 8,192 — 2,627 slack** | **PR #33 OPEN**, awaiting reviewer |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
@@ -127,6 +127,38 @@ this is precisely the §AE5 / §AF3 trap that wave 7 had to withdraw. Substance 
 lines are **bank 41**, count 1, untranslated. So `決着をつけてやる` reaches **4 battle instances
 (chunks 30 ×2, 37, 41) + 2 script (DATA 1378, 1380, bank 41)** — larger than the 3 battle my note
 claimed. Bank 41 has 353 bytes free, so the script half is unshippable for now regardless.
+
+✅ **WAVE BARRIER MET 14:43Z — all five units have an open PR (#29, #30, #31, #32, #33).**
+Review order: **37 → 38 → 41 → 42 → script 010**, one reviewer at a time, foreground.
+
+⚠️ **A SEED CELL OF MINE IS WRONG AND PR #33 CAUGHT IT — I RE-VERIFIED AND THE PR IS RIGHT.**
+My §9 wave-8 seed says `マラナ`'s `〜わ` marks her **FEMALE**. **It does not.** Verified by me over
+the pristine dump: sentence-final `わ` occurs **40** times and at least four speakers are
+unambiguously male — c16 `このワシが始末してくれるわ！` (**ワシ**), c39 `一人残らず始末してくれるわ！`
+(**Doctor Crimea**, §1/§25.1), c42 `俺様が始末してやるわ！` (**俺様**), c43 `目にもの見せてくれるわ。`
+(**Helfer**). Marana's own chunk-38 particles are masculine-leaning (`ぞ`, `〜おって`), and Seti calls
+the opponent `おっさん`, whose fixed English is `ｇｅｅｚｅｒ` (§24.2). **No rendering turns on it** —
+she is first-person throughout and PR #33 added no gendered pronoun. **The §9 note must be corrected,
+not the file.** ⚠️ This is the §Y6 (Cress) shape a second time: a seeded gender assertion that the
+corpus does not carry.
+
+⚠️ **THE ONE DIVERGENCE THE REVIEWER MUST RULE — `反旗を翻す`, PR #33 vs PR #31.**
+- **#33 (chunk 38)**: `ｒｏｓｅ　ｉｎ　ｒｅｖｏｌｔ．．．．．`
+- **#31 (chunk 42)**: `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ`
+- **#33 measured six wordings of #31's form into its own L18 page 2 and every one that keeps all
+  four content elements needs a FIFTH row** on a page already at the 4-row wall with a **leading**
+  (unfillable) blank — and `{FCC0}` is forbidden. The only wording that fits **deletes 王国**, which
+  CLAUDE.md §3 forbids. So if the reviewer rules for the banner form, **chunk 38 must be PARKED or
+  chunk 42 changed instead** — a re-cut of that page is not available.
+- ✅ The other two shared terms **already agree** with no change: `おのれ` → `Ｃｕｒｓｅ` and
+  `刃を向ける` → `ｔｕｒｎ　ａ　ｂｌａｄｅ　ｏｎ` (#33 and #30 arrived at both independently).
+
+**PR #33 also raises three corrections to EXISTING glossary/FLAGS rows** (reviewer to integrate):
+§28.3's `ははっ` list wrongly counts chunk 38 — that instance is `はははっっ`, a **laugh** by Marana
+answering no one, caught as a **substring** false positive; the four genuine assents stand.
+§37.1's bare `反乱` "closed" claim is wrong (**3 battle + 4 script**, not 2 + 0) and collides with
+§38.3's `ｒｅｂｅｌｌｉｏｎ`. And `pending/chunk_005.txt` L18 diverges from §27.2's village line —
+parked, so nothing is broken today.
 
 **PR #29 (chunk 37) carries three things the reviewer must integrate, not just merge:**
 1. ⚠️ **`FLAGS.md` §Y6 is SETTLED — Cress is FEMALE — and §Y6's own premise is REFUTED.** §Y6 says
