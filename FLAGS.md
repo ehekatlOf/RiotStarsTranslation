@@ -2513,3 +2513,198 @@ required guessing; no source typo suspected. Banks are untouched by this unit �
 free), bank 40 (471) and bank 5 (3,381) remain the tight three**, unchanged by chunk 19, and no
 bank is negative. `python3 tools/assemble.py check` passes on the integration branch after this
 commit.
+
+---
+
+## V. Wave 4 review — script batch 006 / PR #15 (2026-09-09)
+
+Merged at **round 1** (squash `13a5ab8`), zero findings requiring a change to the unit. Glossary rows
+and every ruling are at **glossary §34**; this section carries what a human or a later unit has to act
+on. Section letter read off `FLAGS.md`'s last heading at commit time (`## U`), not reserved.
+
+**Figures, all re-derived at review against a measured baseline** (unit file removed, `merge` re-run,
+unit restored) rather than taken from the PR body:
+
+```
+BASELINE (batch_006.tsv absent):  script lines replaced: 4039  (unique forms: 211)
+WITH UNIT:                        script lines replaced: 4092  (unique forms: 261)
+                                  → +53 instances, +50 unique forms — exactly the unit
+```
+
+| Bank | Baseline free | With unit | Δ |
+|---|---|---|---|
+| 12 | 10,321 | **8,639** | −1,682 |
+| 13 | 13,449 | **12,727** | −722 |
+| 14 | 13,493 | **13,455** | −38 |
+| 15 | 13,433 | **13,395** | −38 |
+
+**Total −2,480 bytes; no bank negative.** 1,332 JP → 2,513 EN readable characters = **1.89×**
+(planning model 2.10×). Widest row **23**, seven at 23, **none at 24**. One `{FFFE}` added (unique 631,
+11 → 12); **no `{FCC0}` change**; the non-break tag stream is **byte-identical on all 50 lines** —
+verified mechanically, so Flag 4's insert repositionings changed no tag *order*.
+
+**Banks under 2,000 free, named as CLAUDE.md §6.5 requires: bank 41 → 353, bank 40 → 471.** Both are
+**byte-for-byte untouched by this unit** — identical on both sides of the baseline run. Next tightest
+is bank 5 at 3,381, then bank 2 at 7,505 and bank 12 at 8,639. `python3 tools/assemble.py check`
+passes on the integration branch after this commit.
+
+### V1. ⚠️ NEEDS THE DISC — `{FFEC}` insert widths, and this unit is the first to put twelve rows on §C4
+
+**This is the highest-value item in PR #15 for a human with the disc, and §C4 has been open since it
+was written.** `{FFEC}{=00}{=03}` (item name) and `{FFEC}{=00}{=01}` (number / price) have **no known
+width bound**, and **both `assemble.py check` and `rowcheck.py script` strip them to 0 columns** — only
+`{FFEC}{=00}{=00}`, the player name, is counted, at 7. **The column gate is therefore blind to twelve
+rows in this unit and cannot be relied on for any of them.**
+
+The translator's response was correct and is ratified: measure the English overhead carried beside each
+insert and hold every row to a stated bound. **Remeasured at review, all six lines, and the bound
+holds — maximum insert+8, against the Japanese's own insert+0 to insert+7:**
+
+| Unique | Item row JP → EN | Price row JP → EN |
+|---|---|---|
+| 600 | +4 → **+8** (`，　ｉｓ　ｉｔ？`) | +4 → **+8** (`Ｔｈａｔ　ｉｓ　`) |
+| 606 | +0 → **+1** (`，`) | +5 → **+8** (`　Ｊｅｗｅｌｓ．`) |
+| 616 | +4 → **+8** | +7 → **+8** |
+| 622 | +0 → **+1** | +5 → **+8** |
+| 636 | +0 → **+1** | +4 → **+8** |
+| 641 | +0 → **+1** | +5 → **+7** |
+
+**What one visit settles.** If an item name can reach **16** columns these rows are safe. At **20**, the
+two insert+8 item rows (600, 616) are one over — **and so is the Japanese** at insert+4 if a name
+reaches 20, which is itself evidence the ceiling is lower than 20. **Go to any shop, select the longest
+item name in the game, and read the price-confirm box.** That settles §C4 for these twelve rows **and
+for all four remaining copies of this shop skeleton** (unique 592–598, 647–655), which are queued behind
+it. Until then, no unit should spend a `{FFFE}` on these rows: a break bought with a guess is worse than
+a measured bound.
+
+⚠️ **Not grounds for a finding against any unit.** Measuring the overhead and declaring the bound is the
+correct response to an unmeasurable gate, and it is what this unit did.
+
+### V2. ⚠️ LIVE COLLISION — bank 41: the recall `そうだ、` must NOT take `Ｓａｙ，`
+
+**§32.3 (PR #14, merged the same day this PR was reviewed) fixed `ねえ、` → `Ｓａｙ，`, shipped in
+`chunk_020` L48. PR #15 had already drafted `そうだ、` (recall) → `Ｓａｙ，` and verified it free — which
+it was, at drafting time.** Counted at review:
+
+```
+ねえ、   battle 4 in chunks [5, 15, 20, 32] | script 16 in banks [0, 18, 20, 28, 40, 41]
+そうだ、  battle 4 in chunks [0, 5, 24, 39] | script 2  in banks [12, 41]
+SHARED chunks [5]   SHARED banks [41]   messages holding both: 1   → §25.3 NOT MET
+```
+
+Ruled at **glossary §34.2** on the §32.5 precedent: `Ｓａｙ，` stays with `ねえ、` (shipped, 20
+occurrences); the recall `そうだ、` → `Ｓａｙ，` **stands in `batch_006`** because bank 12 holds no
+`ねえ、` at all.
+
+> ⚠️ **WHOEVER TAKES BANK 41: its `そうだ、{FFEC}{=00}{=00}、王女様を探…` takes `Ｙｏｕ　ｋｎｏｗ，`
+> (10 columns, verified free across `tl/` and `pending/`), NOT `Ｓａｙ，`.** With the name insert the row
+> measures 19 columns. **Bank 41 has 353 bytes free** — the tightest bank in the project — so check the
+> figure before spending anything.
+
+The only message holding both is parked `chunk_005` msg 28, and it currently renders **neither** with
+`Ｓａｙ，` (`ねえ、あなたたち、` re-flowed away, `そうだ、` dropped and carried by
+`Ｆｅｉ，　ｗｏｎ’ｔ　ｙｏｕ　ｃｏｍｅ…`), so **nothing is visible today**. If chunk 5 is ever re-cut — it
+already owes §23.2 and §24.3 corrections — apply the reserve there too.
+
+### V3. ⚠️ LIVE COLLISION — bank 26: `いらっしゃいませ` and `ようこそ` in ONE message
+
+`Ｗｅｌｃｏｍｅ` renders both `ようこそ` (shipped `chunk_007` L15) and this unit's three
+`いらっしゃい`-family greetings. **PR #15's stated justification was wrong on the facts and is corrected
+at glossary §34.5; the collapse stands on other grounds.** Counted at review:
+
+```
+ようこそ    battle 1 (chunk 7) | script 3 in banks [4, 26]        (PR said "battle chunk 7 only")
+いらっしゃい  battle 4 (chunks 5, 6, 33) | script 21 in banks
+            [12,13,15,16,17,18,19,22,25,26,43]                    (PR said "banks 12-15 and 43")
+SHARED bank [26]   messages holding both: 1   → §25.3 NOT MET
+```
+
+The message is bank 26's casino greeter, both words on adjacent rows:
+`いらっしゃいませ！！{FFFE}カジノへ　ようこそ！{FFFE}店の準備があるから、{FFFE}ちょっと待っててね。`
+
+> ⚠️ **WHOEVER TAKES BANK 26** needs two forms in that one message. **The reserve is on the
+> `いらっしゃいませ` side — `Ｃｏｍｅ　ｉｎ` (7 columns), verified free** — because
+> `Ｗｅｌｃｏｍｅ　ｔｏ　ｔｈｅ　ｃａｓｉｎｏ` is the rendering English cannot avoid for `カジノへようこそ`.
+
+### V4. ⚠️ LIVE COLLISION — bank 19: `あれ？` and `何？` both land on `Ｗｈａｔ？`
+
+Not created by this unit — `chunk_020` L30 already ships `・・・あれ？` → `．．．Ｗｈａｔ？` (§32.3) and
+§30.3 fixes `何？` → `Ｗｈａｔ？` (`chunk_008` L10, `pending/chunk_017`). `batch_006` unique 626 conforms
+to shipped practice. Counted at review: `あれ？` chunk 20 + banks [1, 12, 16, 17, 19, 23, 41]; `何？`
+chunks [7, 8, 17, 28] + bank [19]. **Shared bank 19, no shared chunk, 0 messages hold both.** Live for
+bank 19's translator only; no reserve is named because no message forces it yet.
+
+### V5. ⚠️ FORWARD BINDINGS — the four remaining copies of this shop skeleton
+
+`batch_006` translates one of **five** copies of the same shop dialogue. The other four inherit its
+wording; they must not re-invent it.
+
+| Unique | What it is | What it inherits |
+|---|---|---|
+| **598** | the keigo shop's own buy/sell/leave menu — **byte-identical READABLE TEXT to 319 and 614**, different `{FFF6}` jump arguments | **`　Ｂｕｙ　ａｎ　ｉｔｅｍ` / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` / `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ`, byte-for-byte.** Strictly CLAUDE.md §3 does not force it — three different keys — but the player meets one menu in three shops. Leading `　` cursor gutter on all three |
+| 592, 596 | `毎度あり！！` (the rough shop's thanks) | `Ｍａｎｙ　ｔｈａｎｋｓ` (§34.1) |
+| 597 | `いらっしゃいませ。どんな　ご用でしょうか。` (the keigo greeting) | `Ｗｅｌｃｏｍｅ` + the source's punctuation; the keigo shop's **no-contractions-anywhere** register (§34.10) |
+| 647 | the frog shop's copy of the closed-shop notice | The §34.1 notice wording. ⚠️ **Its source differs from 633's in two ways and both are deliberate**: it **has** the `。` before `」` that 633 omits, and its indent is **four** full-width spaces where 633 uses two. Reproduce each exactly |
+| 333 | the plain copy of the same notice | Same wording, no tic, four-space indent |
+| 648–655 | the frog shop (katakana, `ゲロゲロ`) | `Ｗｅｌｃｏｍｅ`, `ａｒｔｉｃｌｅ`, `　Ｌｅａｖｅ　ｉｔ`, `Ｍａｎｙ　ｔｈａｎｋｓ`. ⚠️ **Unique 652's bare `ゲロゲロ？` takes `Ｒｉｂｂｉｔ？`** — glossary §34.6 rules the parallel bare `ノロ？` → `Ｎｙｏｒｏ？` and that ruling binds it |
+
+### V6. Three duplicate-check traps this unit leaves behind
+
+Written down because each will read as a defect to a checker and is not one.
+
+1. **Unique 319 and 614** are byte-identical readable text with different `{FFF6}` jump arguments
+   (`{=03}/{=09}/{=10}` against `{=24}/{=2A}/{=31}`). **Their English is byte-identical** — verified
+   mechanically at review: readable text equal, full field correctly unequal.
+2. **Unique 601 and 630 carry the byte-identical ROW `ありがとうございます。` and render it differently**
+   — `ｐｕｒｃｈａｓｅ．` in 601, `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ．` in 630. **Not a divergence**: §3
+   engages on the message, not the row (glossary §20.4, §24.5, §27.4, §31.4), and in 601 `お買い上げ`
+   sits on the preceding row so the English redistributes across the break. Same class of trap as
+   §24.5's `さあ、` before a `{FC00}` and §27.4's spaced / unspaced village line.
+3. **Five EN-only leading full-width spaces (unique 606, 616, 622, 636, 641) are NOT stray gutters.**
+   They are the separator after the `{FFEC}{=00}{=01}` price insert (`{FFEC}　Ｊｅｗｅｌｓ．`), which
+   Japanese does not need and English does. The real gutter check is clean: **19 source segments begin
+   with `　` and none lost it.**
+
+### V7. `rowcheck.py script` — two new INHERITED pages, and the `_script_rows` artifact behind them
+
+```
+  ~  line 3195 page 2: 5 text rows > 4  (source already 5 — INHERITED)   = unique 606
+  ~  line 3564 page 2: 6 text rows > 4  (source already 6 — INHERITED)   = unique 641
+  columns OK; no page over 4 text rows that the source did not already exceed
+```
+
+**Confirmed at review to be this unit's and genuinely inherited**, by diffing the merged dump against
+the committed baseline at those two line numbers — the untranslated source already carries 5 and 6
+rows and the English adds none.
+
+⚠️ **They are also a tool artifact and should not be "fixed".** `_script_rows` splits pages on
+`{FCC0}` / `{FC30}` / `{FC51}` / `{FC50}` / `{FFFF}` but **not on `{FFFA}`**, so a yes/no menu block is
+counted into the preceding text page. Both flagged pages are text page + menu block, not a five- or
+six-row wall of prose. Lines 1234 and 8194 in the same listing are pre-existing and unrelated.
+
+### V8. Unique 629 cannot be assigned to a shop
+
+Its register is the rough male of unique 592–596, but its `{FFF8}{=00}{=04}` jump target matches the
+**hobbit** block. Rendered in the plain rough-casual register the line itself carries
+(`Ｏｏｐｓ，　ｓｏｒｒｙ！` / `Ｔｈａｔ　ｏｎｅ’ｓ　ｓｐｏｋｅｎ　ｆｏｒ．` / `Ｃｏｕｌｄ　ｙｏｕ　ｐｉｃｋ　ａｎｏｔｈｅｒ？`),
+which is safe either way. **If a later batch places it, re-check** — if it turns out to be the hobbit's,
+it wants the `ノロ` tic, which the source does not give it here.
+
+### V9. Corrections this review makes to earlier work — recorded, none re-cuts a line
+
+| What | Correction |
+|---|---|
+| **glossary §32.5** | Its reserve line says `ｔｏｋｅｎ` is *"verified free across `tl/` and `pending/`"*. **No longer true** — `batch_006` unique 631 ships `ａ　ｔｏｋｅｎ　ｏｆ　ｍｙ　ｔｈａｎｋｓ` for `感謝のしるし`, its first use anywhere. **The reserve survives**: the idiom sits in bank 12 and §32.5's `勲章`/`メダル` collision is live in banks 42–43, so §25.3's test is met between them. Corrected at glossary §34.7 — the sentence, not the ruling, exactly as §32.4 struck §28.3's "the alternative is free" |
+| **`おっと` has three prior renderings, not two** | PR #15 named `chunk_007` L11 → `Ｎｏｗ　ｔｈｅｎ．` and `pending/chunk_043` L6 → `Ａｈ　ａｈ，`. Positional pairing at review found a third: **`chunk_007` L13 `おっと、` → `Ｎｏｔ　ｓｏ　ｆａｓｔ，`** — so one shipped chunk already renders its own two instances two ways. Ruled at glossary §34.3 as the §32.8 `何だ、` shape: a clause head, not a fixed form. **Nothing re-cut** |
+| **Six figures in PR #15's body** | `ジュエル` → `Ｊｅｗｅｌｓ` is **7** instances, not 6; `失礼ですが` is byte-identical as a *phrase* but not as a *row* (22 vs 18 columns, and two different source strings); `ようこそ` is **4** occurrences across chunk 7 and banks 4, 26, not "battle chunk 7 only"; `いらっしゃい〜` reaches **11 banks + 3 battle chunks**, not "banks 12–15 and 43"; `ａｌｌ　ｒｉｇｈｔ` shares with **five** shipped/parked files, not two; `ｐａｃｋ` and `ｗｏｒｔｈ` are **not** free (`chunk_007` L13's herd sense, `chunk_012` L15's `ｐｒｏｖｅ　ｍｙ　ｗｏｒｔｈ`) — both harmless, both recorded |
+
+### V10. Still open from earlier waves — untouched by this unit, listed so they are not lost
+
+- **§T1 — the `あら` re-cut** of `chunk_007` L19 + L24, `chunk_011` L3 and `chunk_014` L3 (4 rows, 3
+  files, all width-neutral or −6 bytes) is **still owed**. ⚠️ **PR #15 was the open PR §T1 named as a
+  reason to defer, and it is now merged**, so the deferral's stated condition is discharged: this is now
+  a clean §27-style corrections-unit job with nothing in flight against it. PR #15 **conforms** to
+  §32.4 (`あら` ×1 → `Ｍｙ，`), so it adds nothing to the list.
+- **§T2 — the `勲章` / `メダル` collision** is still live in banks 42–43, with `ｔｏｋｅｎ` as the reserve.
+  See V9 above: the reserve is still usable but is no longer unspent.
+- **§C4** — see V1. This unit is the first to put twelve rows on it.

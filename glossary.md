@@ -332,6 +332,16 @@ with `宝` / `お宝` beside it — ruled `ｇｅｍｓｔｏｎｅ` at chunk 19
 both units. **It has no §9 row to strike** because it was never seeded; the entries are §32.1 and
 §33.1. **Chunk 31 inherits `ｇｅｍｓｔｏｎｅ`.**
 
+✅ **STATUS 2026-09-09 — the wave-4 SCRIPT seeds are struck too, and the whole wave-4 block is now
+clear.** `batch_006.tsv` (PR #15) merged last and renders all four of the script seeds — `デビルズラック`,
+`オイラ`, `ハッピー` and `親方` — **every one exactly as seeded, not one improved on unilaterally**,
+including the two the seed argued hardest for: `ハッピー` lowercase in both instances so the repetition
+stays byte-identical, and `オイラ` carried as register with no pronoun and no dialect spelling. They are
+promoted to **§34.1** and struck below. ⚠️ **`親方`'s drift warning against §32.1's `おかしら` → `Ｂｏｓｓ`
+is DISCHARGED**, not merely heeded — §25.3's test was counted at review and is met in both dimensions.
+⚠️ **The seed block's "script batch 002" is the queue POSITION, not the filename**: the unit was written
+to `batch_006.tsv`, `batch_002.tsv` having shipped in wave 1.
+
 | Japanese | Proposed English | Where seen | Alternatives if the reading is open |
 |---|---|---|---|
 | ~~アリエス~~ | ✅ **PROMOTED to §33.1** — `Ａｒｉｅｓ`, rendered once in `tl/battle/chunk_019.txt` (PR #16) and three times in `tl/battle/chunk_020.txt` (PR #14), **used exactly as seeded in both**. ⚠️ **This is one of the four CROSS-UNIT rows §9 deliberately left live at chunk 20's merge; chunk 19 merged second and strikes it**, per the `ルート` precedent (§29.1 / §30.1) | **CROSS-UNIT — chunk 19 L1, chunk 20 L47/L48 (×3).** A **PERSON**, female, and a travelling performer: asked `アリエスさんは、ファリーナは初めて？` she answers `いいえ。旅の巡業で何度か来たことが。` (*no — I have come a few times, touring*). Polite です/ます register. **11 battle + 9 script occurrences — the most-used new name in this wave.** 5 columns | — |
@@ -345,10 +355,10 @@ both units. **It has no §9 row to strike** because it was never seeded; the ent
 | ~~傭兵団~~ | ✅ **PROMOTED to §33.1** — `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ`, rendered twice in `tl/battle/chunk_019.txt` (PR #16), **used exactly as seeded**; the seed's shorter `ｍｅｒｃｅｎａｒｉｅｓ` alternative was not taken even under byte pressure | chunk 19 L3 ×2 — `どうやら、傭兵団のようだな。` **2 battle + 0 script.** 14 columns | — |
 | ~~おかしら (vs 将校 / 将軍)~~ | ✅ **PROMOTED to §32.1** — `Ｂｏｓｓ` (4) and `将校` → `ｏｆｆｉｃｅｒ` (7), rendered in `tl/battle/chunk_020.txt` (PR #14), **the seed's primary form taken over its `Ｃｈｉｅｆ` alternative**. ⚠️ **The gag SURVIVED and was read against the source at review** — `Ｙｏｕ　ｆｏｏｌ，` / `Ｉ　ａｍ　ａｎ　ｏｆｆｉｃｅｒ　ｏｆ　ｔｈｅ` / `Ｅｍｐｉｒｅ！　Ｃａｌｌ　ｍｅ` / `Ｇｅｎｅｒａｌ！　Ｇｅｎｅｒａｌ！！`, three words still three words, the doubled repeat kept. See §32.4a | battle chunk 20 | — |
 | ~~勲章~~ | ✅ **PROMOTED to §32.1** — `ｍｅｄａｌ`, rendered ×2 in `tl/battle/chunk_020.txt` (PR #14); 5 columns confirmed. ⚠️ **This row's reach was badly wrong and its silence on `メダル` cost a review: it is 4 battle (chunks 20 and 22) + 59 `script_dump` / 39 `script_unique`, not "2 battle", and it is the plot item `獅子の勲章` / `『獅子の勲章』`.** The clash with §3's racetrack `メダル` → `ｍｅｄａｌ` is **LIVE in banks 42 and 43** and is NOT discharged — see §32.5 | ~~chunk 20 L47/L48 ×2 — dug up beside the jewels~~ | `ｄｅｃｏｒａｔｉｏｎ` (12) rejected as too vague; `ｔｏｋｅｎ` (5) is the reserve, on the **racetrack** side |
-| デビルズラック | `“Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ”` | **script batch 002, unique 631** — an item pressed on the player by a grateful NPC (`これを　もらってくれ！デビルズラックだ！！`). A coined item name, so capitalised. ⚠️ **`’` not `'`** (§3.1). **0 battle + 1 script.** 14 columns quoted, 12 bare | `Ｄｅｖｉｌｓ　Ｌｕｃｋ` (11) if the apostrophe proves awkward at width; the source has no `『』`, so the quotes are optional — **prefer bare `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ`** unless the line reads as a title |
-| オイラ | first person, **rustic register — not a word to translate** | **script batch 002, unique 632 ×4** — a cheerful odd-job lad: `オイラは、見てのとおりハッピーさ！オイラ、ここで下働きしてるのさ！` Carry it as §7 register (dropped subjects, `ｓａ`-ish breeziness, contractions), **not** as a rendered pronoun or an accent spelling. Compare §21.2's さん rule: politeness with no English lexical equivalent goes into word choice | Do **not** write dialect spelling (`Ｏｉ’ｍ`, `Ａｈ`); §2 forbids inventing |
-| ハッピー | `ｈａｐｐｙ` | **script batch 002, unique 632 ×2** — `その後どうだい？ハッピーかい？` … `見てのとおりハッピーさ！` The speaker is using the **English loanword** as slang, and the joke is that he keeps saying it. Render it *happy* both times so the repetition survives. **0 battle + 4 script.** 5 columns | — |
-| 親方 | `ｔｈｅ　ｂｏｓｓ` | **script batch 002, unique 632 ×2** — the lad's master, from whom the gift must be kept secret (`だけど、親方には内緒だ`). **7 columns.** ⚠️ Distinct from `おかしら` → `Ｂｏｓｓ` above (battle chunk 20): different speakers, different scenes, no shared line, so §3 is not engaged — but do not let them drift into one capitalised form | `ｔｈｅ　ｍａｓｔｅｒ` (10), `ｔｈｅ　ｇｕｖ’ｎｏｒ` — the last is too British for this register |
+| ~~デビルズラック~~ | ✅ **PROMOTED to §34.1** — `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ`, **the bare form this row itself preferred**, rendered once in `tl/script/batch_006.tsv` (PR #15) as `Ｉｔ’ｓ　Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ！！`. **Used exactly as seeded**: the line is a predicate nominal and not a title, so the quoted `“…”` alternative correctly did not fire; `’` is U+2019, verified at review. 12 columns | ~~script batch 002 (written to `batch_006.tsv`), unique 631~~ | — |
+| ~~オイラ~~ | ✅ **PROMOTED to §34.1** — carried as **register, not rendered as a word**, in all four instances in `tl/script/batch_006.tsv` (PR #15). **Seed followed exactly**: dropped subjects and contractions (`Ａｓ　ｙｏｕ　ｃａｎ　ｓｅｅ，　Ｉ’ｍ　ｈａｐｐｙ！`, `Ｉ’ｍ　ｔｈｅ　ｄｏｇｓｂｏｄｙ`, `Ｙｏｕ　ａｎｄ　ｍｅ　ｇｏ　ｂａｃｋ．`), no dialect spelling, no rendered pronoun | ~~script batch 002 (written to `batch_006.tsv`), unique 632 ×4~~ | — |
+| ~~ハッピー~~ | ✅ **PROMOTED to §34.1** — `ｈａｐｐｙ`, rendered twice in `tl/script/batch_006.tsv` (PR #15), **lowercase in BOTH instances so the repetition survives byte-identically** (`Ａｒｅ　ｙｏｕ　ｈａｐｐｙ？` / `Ｉ’ｍ　ｈａｐｐｙ！`). **Used exactly as seeded** — the obvious `Ｈａｐｐｙ？` was rejected precisely so the two would not differ by capitalisation, which is what this row's "the joke is that he keeps saying it" required. 5 columns | ~~script batch 002 (written to `batch_006.tsv`), unique 632 ×2~~ | — |
+| ~~親方~~ | ✅ **PROMOTED to §34.1** — `ｔｈｅ　ｂｏｓｓ`, lowercase, rendered twice in `tl/script/batch_006.tsv` (PR #15), **used exactly as seeded**. ⚠️ **This row's warning against drifting into §32.1's `おかしら` → `Ｂｏｓｓ` is DISCHARGED, not merely heeded**: §25.3's test was counted at review and is **MET** — `おかしら` is battle chunk 20 only (×5, 0 script) and `親方` is script bank 12 only (×2, 0 battle), so no chunk, no bank and no message holds both. 7 columns | ~~script batch 002 (written to `batch_006.tsv`), unique 632 ×2~~ | — |
 
 ⚠️ **Two corrections the wave-2 units force, both of the メルザリオ kind (§20.1):**
 
@@ -2698,3 +2708,277 @@ segment, which `translation_prompt.md` §3.2 says should normally be preserved, 
 compounded by an orphan row or a page at the four-row wall. **They stand.** The one row-final lone
 `ａ` that *was* corrected at review stacked all three faults at once — it also orphaned a 5-column
 `ｌｅａｄ．` and sat on a page carrying a leading blank plus four text rows.
+
+---
+
+## 34. Added by script batch 006 (PR #15, merged 2026-09-09)
+
+Rendered in `tl/script/batch_006.tsv` — `script_unique.txt` unique lines **319, 335 and 599–646**,
+50 unique lines / **53 message instances**, banks **12–15**: the shop and merchant dialogue. Four
+speakers share one skeleton (greeting · buy/sell/leave menu · "which one?" · price confirm · thanks ·
+declined · not enough money · pack full · "you shouldn't sell that" · nothing to sell · "anything
+else?" · goodbye), so **register is the only thing holding them apart** — the keigo shop (599–612),
+the shopkeeper's daughter minding the shop for her sick father (613–628, and 630–631 for the cure and
+his gift), a rough male shopkeeper (629), the odd-job lad (632) and the hobbit shop (335, 633–646).
+**1,332 JP → 2,513 EN readable characters = 1.89×**; banks 12/13/14/15 **10,321 / 13,449 / 13,493 /
+13,433 → 8,639 / 12,727 / 13,455 / 13,395** free, −2,480 bytes, no bank negative; **banks 41 (353) and
+40 (471) byte-for-byte untouched**. Widest row **23, none at 24**. Merged at **round 1**, with zero
+findings requiring a change to the unit.
+
+⚠️ **This section claimed §34 at commit time**, read off the file's last heading immediately before
+writing and not reserved — glossary ended at §33 and `FLAGS.md` at §U. Wave 3 lost work to two
+reviewers both holding §28 and wave 4 nearly repeated it at §32.
+
+⚠️ **Numbering here is `script_unique.txt` DATA index** (the file carries five header lines, so data
+index = file line − 5). That is the script convention and the **sixth** numbering convention in this
+repo (`FLAGS.md` §O8, §P; glossary §28, §29, §30, §31, §32, §33). **Locate by content.**
+
+`Ｉ　ｓｅｅ．` for そうですか。 (§30.3, ×4), `Ｍｙ，` for あら、 (§32.4), `Ｏｈ？` for おや？ and
+`Ｏｈ，` for おお、 (§24.4), `Ｂｕｔ，` for でも、 (§23.3), `Ｔｒｕｌｙ，` for 確かに、 (§28.3),
+`Ｗｈａｔ．．．？`/`Ｗｈａｔ？` for あれ (§21.2 under §5's punctuation rule), `Ｗｅｌｌ　ｔｈｅｎ，` for
+それでは、 (`chunk_008`), `Ｈｅｙ，` for よう、 (`chunk_006` L9), `ｉｔｅｍ` for アイテム (`batch_005`,
+§21.3), `Ｆａｔｈｅｒ` for お父さん (§25.4), `ｌｏｏｋｓ　ｌｉｋｅ` for みたい, `Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．`
+matching `chunk_010` L11, `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ` matching `chunk_003` L4, and
+`Ｂｙ　ｔｈｅ　ｗａｙ，` matching `chunk_009` L10 **byte-for-byte** are used unchanged. The `ノロ` tic is
+rendered **22 times, every one in §18.1's spaced form `，　ｎｙｏｒｏ．` carrying the source's own stop**
+(`．`×8, `？`×8, `！`×3, `！！`×2, plus the notice's `．”`).
+
+**The three rulings that post-date this PR's draft, checked one by one at review:**
+**(a)** §32.4's `あら` → `Ｍｙ` + the source's punctuation **binds and the unit conforms** — `あら`
+occurs exactly once (unique 630) and ships `Ｍｙ，　ｃｏｌｄ　ｍｅｄｉｃｉｎｅ．．．`; the PR reached the same
+answer independently from the script side and its five-row census corroborates §32.4's twelve.
+**(b)** §33.6's narrowed `まさか`: **`まさか` count in this unit is 0**, so it is not engaged.
+**(c)** §33.5's `宝石` → `ｇｅｍｓｔｏｎｅ`: **`宝石`, `宝` and `ジェム` are all 0** here. What the unit
+carries is `ジュエル`, §3's currency, and it is kept clear of both — see §34.1.
+
+### 34.1 Shop vocabulary first rendered here
+
+| Japanese | English | Note |
+|---|---|---|
+| ジュエル | `Ｊｅｗｅｌｓ` | 6 / 7 columns. **FIRST RENDERING IN THE PROJECT — promoted, and the form is §3's, not new.** §3 fixed ジュエル → *Jewel*, "do not translate as gem", but `Ｊｅｗｅｌ` in any casing occurred **nowhere** in `tl/` or `pending/` until now. ⚠️ **Seven instances, not the PR's six** — recounted at review against seven `ジュエル` in the source (unique 600, 603, 606, 616, 622, 636, 641), all plural. Held clear of ジェム → `Ｇｅｍ` (§3, **147×** in `tl/`) and 宝石 → `ｇｅｍｓｔｏｎｅ` (§33.5) |
+| いらっしゃいませ / いらっしゃい / いらっしゃいノロ | `Ｗｅｌｃｏｍｅ` + the source's own punctuation (+ tic) | 7 columns. Three source spellings, one English word — the §17.2 鬼 / オーガ collapse. `Ｗｅｌｃｏｍｅ！` (613), `Ｗｅｌｃｏｍｅ！！` (632), `Ｗｅｌｃｏｍｅ，　ｎｙｏｒｏ！！` (634). ⚠️ **Shares its English with `ようこそ` → `Ｗｅｌｃｏｍｅ，` (`chunk_007` L15, shipped) and §25.3's test is NOT met — see §34.5.** The collapse stands on other grounds; the collision is live in bank 26 |
+| お客様 / お客さん (vocative) | **dropped; carried by the second person** (`ｙｏｕ` / `ｙｏｕｒ`) | §2's rule for politeness with no English lexical equivalent, and **§30.2's `兵隊さん` → `ｓｏｌｄｉｅｒｓ` third pattern** — `さん` on a common noun, so neither §21.2's `〜さん`-on-a-personal-name rule nor §2's comic トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ`. 4 instances (603, 610 keigo; 619, 626 the daughter). ⚠️ **`ｖｉｓｉｔｏｒｓ` is NOT available**: verified at review by positional pairing — `chunk_011` L3 `あら、お客様？` → `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` and `chunk_035` L2 `お客様とはめずらしい。` → `Ｖｉｓｉｔｏｒｓ　…　ｍａｎｓｉｏｎ？　Ｈｏｗ　ｒａｒｅ．`, both the *guest-at-a-house* sense, plus `chunk_033` L2's `Ｎｅｗ　ｖｉｓｉｔｏｒｓ，` for a supplied subject. **§32.4's owed re-cut of `chunk_011` L3 keeps `ｖｉｓｉｔｏｒｓ`**, so the form stays spent. **No gendered vocative** (`ｓｉｒ`) was introduced, correctly — §10.7 leaves player gender open. The keigo/plain contrast survives message-wide in the syntax: `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ　ｙｏｕ　ｓｅｅｍ　ａ　ｌｉｔｔｌｅ　ｓｈｏｒｔ` against `Ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ　ｄｏｎ’ｔ　ｈａｖｅ　ｅｎｏｕｇｈ` |
+| 品 | `ａｒｔｉｃｌｅ` | 7 columns. **Held distinct from アイテム → `ｉｔｅｍ` (§21.3, `batch_005`), and the split is FORCED — see §34.4.** `ａｒｔｉｃｌｅ` verified free across `tl/` and `pending/`. 3 instances (605, 609, 640) |
+| 失礼ですが | `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，` | 18 columns. The **phrase** is byte-identical in both instances; ⚠️ **the ROWS are not, and the PR's "twice, byte-identical" overstates it** — 603 renders `お客様、失礼ですが` as `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ` (22) and 610 renders `失礼ですが、` as `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，` (18). Two different source strings, both correct. Held **distinct** from §24.3's すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` and §27.1's すみません。 → `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` — three source strings, three jobs. Free across `tl/` |
+| 残念です (a shop's regret) | `ａ　ｓｈａｍｅ` | Three source strings, three renderings, one noun: `それは　残念です。` → `Ｔｈａｔ　ｉｓ　ａ　ｓｈａｍｅ．` (602, 16), `誠に　残念です。` → `Ａ　ｇｒｅａｔ　ｓｈａｍｅ．` (608, 14), `そりゃ、残念ノロ。` → `Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ，　ｎｙｏｒｏ．` (335, 22). Held **distinct** from 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (chunk 6) and chunk 12's `ｍｏｓｔ　ｒｅｇｒｅｔｔａｂｌｅ`. `ａ　ｓｈａｍｅ` free. ⚠️ `Ｔｒｕｌｙ　ａ　ｓｈａｍｅ．` was correctly rejected for 608: §28.3 spends `Ｔｒｕｌｙ，` on `確かに、`, **which this very batch renders at 624** — the collision would have been inside one unit |
+| 毎度あり (+ tic) | `Ｍａｎｙ　ｔｈａｎｋｓ` | 11 columns; `毎度ありノロ！！` → `Ｍａｎｙ　ｔｈａｎｋｓ，　ｎｙｏｒｏ！！` (20), twice and byte-identical (642, 646). Free across `tl/`. Held **distinct** from the three ありがとう forms this batch also carries — `Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｙｏｕｒ　ｐｕｒｃｈａｓｅ` (お買い上げ〜, 601/617) and `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ` (ありがとうございました, matching `chunk_003` L4). ⚠️ **Binds `毎度あり！！` (unique 592, 596) and `毎度アリ、ゲロゲロ。` (unique 651)** |
+| やめておく (menu option) | `　Ｌｅａｖｅ　ｉｔ` | 9 columns with the cursor gutter. Twice, byte-identical (600, 606). **`Ｎｅｖｅｒ　ｍｉｎｄ` correctly not used** — §23.2 spends it on `気にしない、気にしない。` (`chunk_004` L3, shipped, verified at review) |
+| 店を出る / はい / いいえ / 買う / 引き取ってもらう | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` / `　Ｙｅｓ` / `　Ｎｏ` / `　Ｂｕｙ` / `　Ｓｅｌｌ　ｉｔ` | All keep the leading `　` cursor gutter (§7, prompt §7). **Verified mechanically at review: 19 source segments begin with a full-width space and 0 lost it.** `　はい` / `　いいえ` recur in four messages and are byte-identical in all four |
+| 貼り紙 / 棚卸し / 休業いたします | `ａ　ｎｏｔｉｃｅ` / `ｓｔｏｃｋｔａｋｉｎｇ` / `Ｃｌｏｓｅｄ` | The shop-closed sign (633). `「…」` → `“…”` per §19.2 / §15.1. **The source's two-space indent on the second quoted row is preserved**, and so is its missing `。` before `」` (the tic absorbs the stop). ⚠️ The English inverts the clause order — `本日、棚卸しのため／休業いたします` → `Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ／ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` — which is the English shop-notice register and loses nothing, but is a reorder the PR did not flag. Recorded, accepted. ⚠️ **Binds unique 647 (the frog shop's copy, `。` present and a four-space indent) and unique 333 (the plain copy)** |
+| 下働き | `ｄｏｇｓｂｏｄｙ` | 9 columns. The odd-job lad, twice (632). British and colloquial, which is his register. **`ｔｈｅ　ｈｅｌｐ` correctly rejected**: `ｈｅｌｐ` already renders 助け across nine shipped chunks and the servant sense would sit inside it. Free |
+| 親方 | `ｔｈｅ　ｂｏｓｓ` | 7 columns, lowercase, twice (632). **Used exactly as seeded (§9, wave 4) — struck from §9 at this merge.** ⚠️ **§32.1's forward warning is DISCHARGED**: §25.3's test **MET**, counted at review — `おかしら` is **battle chunk 20 only (×5), 0 script**; `親方` is **script bank 12 only (×2), 0 battle**. No shared chunk, no shared bank, no shared message. The two forms coexist without ever meeting, and `Ｂｏｓｓ` (§32.1) stays capitalised for the bandits' chief |
+| デビルズラック | `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ` | 12 columns. **Used exactly as seeded, in the seed's own preferred BARE form — struck from §9 at this merge.** `デビルズラックだ！！` → `Ｉｔ’ｓ　Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ！！` is a predicate nominal, not a title, so §9's quoted `“…”` alternative correctly did not fire. `’` is U+2019, verified |
+| ハッピー | `ｈａｐｐｙ` | 5 columns. **Used exactly as seeded — struck from §9** — and **lowercase in both instances so the repetition is byte-identical**: `ハッピーかい？` → `Ａｒｅ　ｙｏｕ　ｈａｐｐｙ？`, `見てのとおりハッピーさ！` → `Ｉ’ｍ　ｈａｐｐｙ！`. The obvious `Ｈａｐｐｙ？` was rejected precisely so the two would not differ by capitalisation, which is what §9's "the joke is that he keeps saying it" required |
+| オイラ | carried as register, **not rendered as a word** | **Seed followed exactly — struck from §9.** All four instances carried by dropped subjects and contractions (`Ａｓ　ｙｏｕ　ｃａｎ　ｓｅｅ，　Ｉ’ｍ　ｈａｐｐｙ！`, `Ｉ’ｍ　ｔｈｅ　ｄｏｇｓｂｏｄｙ`, `Ｙｏｕ　ａｎｄ　ｍｅ　ｇｏ　ｂａｃｋ．`). No dialect spelling, no rendered pronoun — §2's ban on inventing, upheld |
+| 売約済み | `ｓｐｏｋｅｎ　ｆｏｒ` | `それは　売約済みなんだ。` → `Ｔｈａｔ　ｏｎｅ’ｓ　ｓｐｏｋｅｎ　ｆｏｒ．` (22). Free |
+| 買い取り金額 | `ｗｈａｔ　…　ｉｓ　ｗｏｒｔｈ` | The daughter cannot price an item (625). *Buying‐in price* is 20 columns and will not share the row. ⚠️ `ｗｏｒｔｈ` is not free — `chunk_012` L15 ships `必ず役に立ってみせるぜ。` → `Ｉ’ｌｌ　ｐｒｏｖｅ　ｍｙ　ｗｏｒｔｈ．` Different word, different collocation, different chunk and bank; recorded so it cannot drift |
+| 荷物 (the player's inventory) | `ｐａｃｋ` | 4 columns. `お荷物がいっぱい` → `Ｙｏｕｒ　ｐａｃｋ　ｓｅｅｍｓ　ｔｏ　ｂｅ　ｆｕｌｌ．` (604), `荷物がいっぱい　みたいノロ。` → `Ｂｕｔ，　ｙｏｕｒ　ｐａｃｋ　ｌｏｏｋｓ　ｆｕｌｌ，　ｎｙｏｒｏ．` (639). ⚠️ **Not free, and the PR said it was**: `chunk_007` L13 ships `ｉｎ　ａ　ｐａｃｋ．` for `もんなんだよ` — the *herd* sense, a different word in a different chunk. No collision; recorded |
+| 屋敷 | `ｍａｎｓｉｏｎ` | 7 columns (632). ⚠️ Shares its English with `館` → `ｍａｎｓｉｏｎ` (`chunk_035` L2, shipped) — two source words for one kind of building, the §17.2 shape. **§25.3's test MET, counted at review**: `館` is battle chunk 35 + banks 8, 18, 31, 32, 38, 40; `屋敷` is script bank 12 only. **Disjoint** |
+| 兄さん (friendly address to a young man) | carried by the second person | `よう、いつかの兄さん。` → `Ｈｅｙ，　ｉｔ’ｓ　ｙｏｕ　ａｇａｉｎ．`; `オイラと兄さんの仲だ。` → `Ｙｏｕ　ａｎｄ　ｍｅ　ｇｏ　ｂａｃｋ．` §2's rule, as §28.2 handles `お兄ちゃんたち`. **Does not touch** §25.4's 父さん / お父様 → `Ｆａｔｈｅｒ`, which this batch also uses (613, 630) for a **third** source spelling, `お父さん`, on that ruling's own terms |
+| なあに、 | `Ｎｏｗ　ｎｏｗ，` | 8 columns. The father brushing off thanks (631). Free. Held **distinct** from §28.8's さあ、 → `Ｎｏｗ，` and §31.3's さて、 → `Ｎｏｗ　ｔｈｅｎ，`, which chunks 3, 7, 11, 18 and 33 already spend on `それじゃ、` / `おっと。` / `さて、` |
+| これは、これは！ | `ｗｅｌｌ，　ｗｅｌｌ！` | The doubled greeting, doubling preserved as §23.2 preserves `気にしない、気にしない。`. `おお、これは、これは！` → `Ｏｈ，　ｗｅｌｌ，　ｗｅｌｌ！` (15), taking §24.4's おお → `Ｏｈ，`. Free |
+| えーと | `Ｅｒｍ，` | 4 columns. The daughter's filler, twice, byte-identical (616, 622). **`Ｕｍ` correctly unavailable** — §29.3 spends it on `あの・・・` (`chunk_008` L9/L15). Free |
+| 悪いな！ | `ｓｏｒｒｙ！` | The rough shopkeeper's apology (629), inside `Ｏｏｐｓ，　ｓｏｒｒｙ！`. Held apart from the four sorry-forms already in `tl/` by punctuation and by never co-occurring: `Ｓｏｒｒｙ，` (あいにく §28.3; ごめんね、 chunk 10), `Ｉ’ｍ　ｓｏｒｒｙ．` (ごめんね。 §30.3), `Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．` (ごめんなさいね。 chunk 10), `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` (すみません。 §27.1) |
+| ごめんなさい。 | `Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．` | 13 columns (625). **Matches shipped `chunk_010` L11**, which renders `ごめんなさいね。` the same way — same word, §5's punctuation mechanism |
+| 感謝のしるし | `ａ　ｔｏｋｅｎ　ｏｆ　ｍｙ　ｔｈａｎｋｓ` | 22 columns (631). ⚠️ **This spends §32.5's named reserve — see §34.7.** The reserve survives; §32.5's freeness sentence does not |
+
+### 34.2 Ruling — `そうだ、` splits, `Ｓａｙ，` stays with `ねえ、`, and the reserve is `Ｙｏｕ　ｋｎｏｗ，`
+
+The PR proposed `そうだ、` → **`Ｓａｙ，`** on a grammatical argument and verified the form free. **The
+argument is ratified; the freeness was true when drafted and is not true now** — PR #14 merged
+`ねえ、` → `Ｓａｙ，` at **§32.3** on 2026-09-09, shipped in `chunk_020` L48, while this PR sat open.
+
+**The grammatical split is real and is ratified.** Counted across both dumps at review, `そうだ、`
+carries two distinct acts:
+
+| Use | Instances | Takes |
+|---|---|---|
+| confirmation / emphatic assertion | `そうだ、お前だ。` (chunk 0, **shipped `Ｙｅｓ，`**, §29.3), `そうだ、僕は男だ。` (chunk 24), `そうだ、完成させたのだ` (chunk 39) | `Ｙｅｓ，` |
+| **recall marker introducing an offer** | `そうだ、オイラあそこの屋敷で…` (unique 632, this unit), `そうだ、{FFEC}{=00}{=00}、王女様を探…` (bank 41), `そうだ、フェイさんも、一緒に…` (chunk 5) | **not `Ｙｅｓ，`** |
+
+Nobody is being answered in the second group, so `Ｙｅｓ，` would not be correct English and
+`translation_prompt.md` §2 requires the departure. This is the §32.8 `何だ、` shape one step short:
+the *use* is fixed, not a single word for the whole string.
+
+**§25.3's test, counted at review:**
+
+```
+ねえ、   battle 4 in chunks [5, 15, 20, 32] | script 16 in banks [0, 18, 20, 28, 40, 41]
+そうだ、  battle 4 in chunks [0, 5, 24, 39] | script 2  in banks [12, 41]
+SHARED chunks [5]   SHARED banks [41]   messages holding both: 1   → NOT MET
+```
+
+> **Ruled, on the §32.5 precedent set one PR earlier in this same wave** (rendering stands, collision
+> recorded LIVE, reserve named, nothing re-cut today):
+>
+> 1. **`Ｓａｙ，` stays with `ねえ、`.** It is shipped; it has **20 occurrences** against the recall
+>    `そうだ、`'s three; and *Say,* is the canonical English for a friendly call for attention.
+> 2. **The recall `そうだ、` → `Ｓａｙ，` is the default and STANDS in this unit.** Bank 12 contains
+>    **no `ねえ、` at all**, so §25.3's test is met for every scene this unit reaches.
+> 3. **Where a `ねえ、` shares the bank or the chunk, the recall `そうだ、` takes `Ｙｏｕ　ｋｎｏｗ，`
+>    (10 columns), verified free across `tl/` and `pending/`.** That is §29.4's shape — a default plus
+>    a conditional reserve — and it fits bank 41's `そうだ、{FC00}，` row at 19 columns, which matters
+>    because **bank 41 has 353 bytes free**.
+
+**The live locus is bank 41 and only bank 41** — six `ねえ、` and one `そうだ、`, all untranslated. The
+one message holding both is parked `chunk_005` msg 28, and it renders **neither** with `Ｓａｙ，`
+(`ねえ、あなたたち、` is re-flowed away; `そうだ、` is dropped and carried by
+`Ｆｅｉ，　ｗｏｎ’ｔ　ｙｏｕ　ｃｏｍｅ…`), so nothing is visible today.
+
+Rejected alternatives, each checked at review: **`Ｔｈａｔ　ｒｅｍｉｎｄｓ　ｍｅ，` is spent** —
+`pending/chunk_005` **L14 and L17** both ship `Ａｈ，　ｔｈａｔ　ｒｅｍｉｎｄｓ　ｍｅ，` for `あ、それはそうと`
+(the PR named L17; it is both). **`Ｈｅｙ，` is spent** on `よう、` and this batch uses it **two rows
+earlier in the very same message**. `Ｏｈ　ｒｉｇｈｔ，` compounds two already-spent forms, the §31.4
+hazard. `Ｃｏｍｅ　ｔｏ　ｔｈｉｎｋ　ｏｆ　ｉｔ` stands in chunks 2, 8 and `batch_002`.
+
+### 34.3 Ruling — `おっと` is a clause head, not a fixed form, and `Ｏｏｐｓ，` stands
+
+The PR flagged `おっと` rather than silently adding a third form, which was the right instinct. **The
+answer is that there was never a first one.** Paired positionally against the dump at review:
+
+| Where | Japanese | Shipped English |
+|---|---|---|
+| `chunk_007` L11 | `おっと。` | `Ｎｏｗ　ｔｈｅｎ．` |
+| **`chunk_007` L13** | **`おっと、`** | **`Ｎｏｔ　ｓｏ　ｆａｓｔ，`** |
+| `pending/chunk_043` L6 | `おっと、動くなよ。` | `Ａｈ　ａｈ，　ｄｏｎ’ｔ　ｍｏｖｅ．` |
+
+⚠️ **There are THREE prior renderings, not the PR's two, and two of them are in ONE shipped chunk** —
+so the co-occurrence test did not merely fail here, it failed inside `chunk_007` before this PR
+existed, and no unit has ever treated `おっと` as fixed.
+
+> **Ruled: `おっと` takes whatever its own clause needs** — the **§32.8 `何だ、` shape**, ruled at chunk
+> 20's review on identical evidence. **`Ｏｏｐｓ，` (6 columns, verified free) is right for both of this
+> unit's instances**, which are the plain caught-out *whoops*: `おっと、悪いな！` when an item turns out
+> reserved (629) and `おっと　親方が来た！` when the boss walks in (632). **Nothing is re-cut** — chunk
+> 7's two and chunk 43's one are each correct for their own sentence and none was the same speech act.
+
+`Ｎｏｗ　ｔｈｅｎ` was in any case unavailable in practice: §31.3 records it already serving `さて、`,
+`それじゃ、` **and** `おっと。` across chunks 3, 7, 11, 18 and 33. **Reach: `おっと` is 4 battle (chunks
+7 ×2, 25, 43) + 6 script (banks 12 ×2, 20, 23 ×3)**, so it will be reached seven more times.
+
+### 34.4 Ruling — `品` → `ａｒｔｉｃｌｅ` is FORCED apart from `アイテム` → `ｉｔｅｍ`
+
+The PR said §25.3's test fails and must not collapse. **Verified, and the specific justification
+holds.** The keigo shop's block is unique **597–612**: 597 is its greeting, **598 its own
+buy/sell/leave menu (`　アイテムを買う`)**, and **605 its `どの品を売ってもらえますか？`** — one shop, one
+scene, both words, four lines apart. Corpus-wide:
+
+```
+品      battle 1 (chunk 20) | script 44 across 23 banks
+アイテム  battle 12          | script 55 across 14 banks
+SHARED banks [0, 8, 12, 13, 14, 15, 16, 18, 20, 25, 40]   messages holding both: 0   → NOT MET
+```
+
+**Eleven shared banks, including this unit's own 12–15.** `ａｒｔｉｃｌｅ` (7 columns) verified free
+across `tl/` and `pending/`; `ｉｔｅｍ` is §21.3's and `batch_005`'s and is used unchanged here seven
+times. The two must never collapse.
+
+### 34.5 Ruling — the `Ｗｅｌｃｏｍｅ` collapse stands, but on different grounds, and bank 26 is LIVE
+
+**The rendering is correct and unchanged. The justification under it is not, and is replaced.** The
+PR's row reads *"§25.3's co-occurrence test is met and was counted: `ようこそ` is battle chunk 7 only;
+`いらっしゃい〜` is script banks 12–15 and 43; no scene shows both."* Both halves fail on measurement:
+
+```
+ようこそ    battle 1 (chunk 7) | script 3 in banks [4, 26]
+いらっしゃい  battle 4 (chunks 5, 6, 33) | script 21 in banks [12,13,15,16,17,18,19,22,25,26,43]
+SHARED bank [26]   messages holding both: 1   → NOT MET
+```
+
+The message is bank 26's casino greeter, with both words on **adjacent rows of one message**:
+`いらっしゃいませ！！{FFFE}カジノへ　ようこそ！{FFFE}店の準備があるから、{FFFE}ちょっと待っててね。`
+
+> **The collapse still stands, on the merits rather than the test.** The source itself doubles two
+> near-synonyms for one act; English has one word for both; that is §17.2's 鬼 / オーガ shape — a
+> deliberate collapse, not the flattening of a distinction the source draws. `chunk_007` L15's
+> `ようこそ、プリンセス。` → `Ｗｅｌｃｏｍｅ，　Ｐｒｉｎｃｅｓｓ．` is confirmed shipped and untouched.
+>
+> ⚠️ **The collision is LIVE in bank 26**, whose translator needs a second form for one of the two
+> rows. **The reserve is on the `いらっしゃいませ` side — `Ｃｏｍｅ　ｉｎ` (7 columns), verified free** —
+> because `Ｗｅｌｃｏｍｅ　ｔｏ　ｔｈｅ　ｃａｓｉｎｏ` is the one rendering English cannot avoid.
+
+### 34.6 Ruling — bare `ノロ？` → `Ｎｙｏｒｏ？`, and it binds `ゲロゲロ？`
+
+The tic's first non-suffixed rendering in the project (unique 638, 644 — 6 columns, byte-identical in
+both). §5 fixes ノロ as a trailing `，　ｎｙｏｒｏ．` **appended to the final clause of each sentence**,
+which presupposes a clause; here there is none — the hobbit uses the bare tic as an interjection, in
+exactly the slot where the parallel shops put `おや？` (594), `あれ？` (626, this batch) and `ゲロゲロ？`
+(652). §5's own sibling entry states the mechanism for that case: for ゲロゲロ **the word is fixed and
+the punctuation follows the source**.
+
+> **Ruled: `Ｎｙｏｒｏ？` — the word fixed, the source's own mark, capitalised because it opens a
+> sentence.** `Ｎｙｏｒｏ` capitalised is verified free elsewhere in `tl/`.
+>
+> ⚠️ **This binds unique 652 — `ゲロゲロ？` standing alone takes `Ｒｉｂｂｉｔ？`** (`Ｒｉｂｂｉｔ` is
+> §5's fixed word, shipped 7× in `chunk_010`) — and every later bare-tic interjection in either shop.
+
+### 34.7 CORRECTION to §32.5 (§4.3) — `ｔｏｋｅｎ` is no longer free, and the reserve survives anyway
+
+§32.5 names **`ｔｏｋｅｎ` (5 columns)** as the reserve for the racetrack `メダル` if the `勲章` collision
+in banks 42–43 ever has to be split, and states it is *"verified free across `tl/` and `pending/`"*.
+**That was true on 2026-09-09 and stops being true with this merge**: unique 631 ships
+`感謝のしるしだよ！！` → `ａ　ｔｏｋｅｎ　ｏｆ　ｍｙ　ｔｈａｎｋｓ！！`, the form's first use anywhere in `tl/`.
+
+**Nothing changes, and the reserve remains usable.** `感謝のしるし` is an idiom — *a token of my
+thanks*, where しるし is literally a sign — not the countable betting token; it sits in **bank 12**
+while §32.5's collision is live in **banks 42–43**, so §25.3's test is met between them and no player
+can see both. **What is corrected is §32.5's sentence, not its ruling**, exactly as §32.4 struck
+§28.3's "the alternative `Ｏｈ　ｍｙ，` is also free" while upholding §28.3 itself.
+
+**Read §32.5's reserve line as:** `ｔｏｋｅｎ` remains the reserve for the racetrack `メダル`; it is
+**no longer unspent** — `batch_006.tsv` unique 631 uses it in the fixed idiom *a token of my thanks*
+(bank 12), which does not reach banks 42–43. **Lines this affects: none.**
+
+### 34.8 Two more shared-English forms, checked and recorded so they do not drift
+
+Neither was raised by the PR; neither requires a change.
+
+| English | The two source strings | Status |
+|---|---|---|
+| `Ｗｈａｔ？` | `あれ？` (unique 626, this unit) and `何？` (§30.3, shipped `chunk_008` L10, `pending/chunk_017`) | **This unit conforms rather than introduces** — `chunk_020` L30 already ships `・・・あれ？` → `．．．Ｗｈａｔ？` under §5's punctuation rule (§32.3). Counted at review: `あれ？` chunk 20 + banks [1,12,16,17,19,23,41]; `何？` chunks [7,8,17,28] + bank [19]. **Shared bank 19, 0 shared chunks, 0 messages hold both.** Live for bank 19 only |
+| `Ｂｙ　ｔｈｅ　ｗａｙ，` | `ところで、` (unique 631) and `トコロデ、` (`chunk_010` L13) | **Not a collision and not a new form.** Unique 631 **matches shipped `chunk_009` L10 byte-for-byte** (`ところで` → `Ｂｙ　ｔｈｅ　ｗａｙ，`), and chunk 10's is the same word in katakana — the documented one-word/two-spellings collapse (§17.2). Good unflagged consistency |
+
+Also checked clean at review: `ａｌｌ　ｒｉｇｈｔ` — `いいノロか？` → `ａｌｌ　ｒｉｇｈｔ，　ｎｙｏｒｏ？` (636,
+641) shares its English with `大丈夫` in **five** shipped/parked files (chunks 3, 7, 8, 43 ×2 — the PR
+named two), and **§25.3's test is MET**: `大丈夫` is chunks [3,4,5,7,8,16,22,25,26,27,32,39,43] +
+banks [1,4,10,19,23,41]; `いいノロか` is banks [3,13,25] only; **disjoint in both dimensions**.
+
+### 34.9 Three duplicate-check traps this unit leaves behind
+
+1. **Unique 319 and 614 are byte-identical readable text with different `{FFF6}` jump arguments**
+   (`{=03}/{=09}/{=10}` against `{=24}/{=2A}/{=31}`). **Their English is byte-identical — verified
+   mechanically at review**, readable text equal, full field correctly unequal. ⚠️ **A third copy,
+   unique 598, is NOT in this batch** and belongs to whichever batch takes 592–598. It **must reuse
+   `　Ｂｕｙ　ａｎ　ｉｔｅｍ` / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` / `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` byte-for-byte** —
+   strictly CLAUDE.md §3 does not force it (three different keys), but the player meets one menu in
+   three shops.
+2. **Unique 601 and 630 carry the byte-identical ROW `ありがとうございます。` and render it differently**
+   — `ｐｕｒｃｈａｓｅ．` in 601, `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ．` in 630. **Not a divergence**: §3
+   engages on the message (§20.4, §24.5, §27.4, §31.4), and in 601 `お買い上げ` sits on the preceding
+   row so the English redistributes across the break. A positional row checker will report it. Same
+   class of trap as §24.5's `さあ、` before a `{FC00}` and §27.4's spaced / unspaced village line.
+3. **Five EN-only leading full-width spaces (unique 606, 616, 622, 636, 641) are NOT lost or stray
+   gutters.** They are the separator after the `{FFEC}{=00}{=01}` price insert — `{FFEC}　Ｊｅｗｅｌｓ．`
+   — which Japanese does not need and English does. The real gutter check is clean: **19 source
+   segments begin with `　` and 0 lost it.**
+
+### 34.10 Register
+
+| Who | Register |
+|---|---|
+| **The keigo shop (unique 599–612, portrait unstated)** | Formal and deferential, **no contraction anywhere** — verified line by line across all fourteen: `Ｉ　ｓｈａｌｌ　ｄｕｌｙ　ｒｅｃｅｉｖｅ　ｉｔ　ｆｒｏｍ　ｙｏｕ．`, `Ｉ　ｂｅｌｉｅｖｅ　ｉｔ　ｗｏｕｌｄ　ｂｅ　ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ　ｔｈａｔ　ａｒｔｉｃｌｅ．`, `Ｓｅｌｌ　ｏｒ　ｄｉｓｃａｒｄ　ｗｈａｔ　ｙｏｕ　ｄｏ　ｎｏｔ　ｎｅｅｄ`, `Ｉ　ｓｈａｌｌ　ａｗａｉｔ　ｙｏｕｒ　ｎｅｘｔ　ｖｉｓｉｔ．` Its `なさいますか` / `ございます` / `存じますが` are carried in syntax, never in an added word — §2's politeness rule, and the same column §24.6 / §26.7 give the Bernard's-church clergy |
+| **The shopkeeper's daughter (613–628, 630; portrait `{FB00}{=01}{=61}`)** | Polite but young, **light contractions** — `Ｉ’ｍ　ｍｉｎｄｉｎｇ　ｔｈｅ　ｓｈｏｐ．`, `ｙｏｕ　ｄｏｎ’ｔ　ｈａｖｅ　ｅｎｏｕｇｈ　ｍｏｎｅｙ．`, `Ｉ’ｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ`, `Ｅｒｍ，`, `Ｉ’ｍ　ｓｏ　ｓｏｒｒｙ．` — and **uncontracted where the source is polite**: 630's `Ｗｉｔｈ　ｔｈｉｓ，　Ｆａｔｈｅｒ　ｍａｙ　ｇｅｔ　ｂｅｔｔｅｒ．` for `治るかもしれません`. §15.3's racetrack-guide shape |
+| The rough male shopkeeper (629) | Blunt, contractions — `Ｏｏｐｓ，　ｓｏｒｒｙ！`, `Ｔｈａｔ　ｏｎｅ’ｓ　ｓｐｏｋｅｎ　ｆｏｒ．`, `Ｃｏｕｌｄ　ｙｏｕ　ｐｉｃｋ　ａｎｏｔｈｅｒ？` ⚠️ **Unassignable to a shop, correctly**: its register is the rough male of 592–596 but its jump target `{FFF8}{=00}{=04}` matches the hobbit block. Rendered in the plain rough-casual register the line itself carries; **if a later batch places it, re-check** |
+| The recovered father (631; portrait `{FB00}{=01}{=53}`) | Hearty and warm, contracts freely — `Ｉｔ’ｓ　ｎｏｔ　ｍｕｃｈ　ｏｆ　ａ　ｔｈａｎｋ‐ｙｏｕ，　ｂｕｔ`, `Ｉｔ’ｓ　Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ！！`, `Ｎｏｗ　ｎｏｗ，`. ⚠️ **The daughter/father link (613 → 630 → 631) is confirmed from the TAG STREAM at review, not the prose**: 613 and 630 carry portrait `{=01}{=61}`, 631 carries `{=01}{=53}`, and 631's `この前もらったかぜ薬のおかげで` answers 630's `これで、お父さん治るかもしれません` directly |
+| The odd-job lad (632; portrait `{FB00}{=01}{=54}`) | Breezy, dropped subjects, contractions throughout — `Ｈｅｙ，　ｉｔ’ｓ　ｙｏｕ　ａｇａｉｎ．`, `Ｈｏｗ’ｖｅ　ｙｏｕ　ｂｅｅｎ？`, `Ｉ’ｍ　ｏｎｌｙ　ｔｈｅ　ｄｏｇｓｂｏｄｙ．`, `Ｓｅｅ　ｙｏｕ！` This is where `オイラ` lives and it is never written |
+| The hobbit shop (335, 633–646) | The `ノロ` tic on every sentence, **22 instances, all in §18.1's spaced form**, plus the two bare-interjection `Ｎｙｏｒｏ？` of §34.6. Warm and plain otherwise — §19.3 / §21.4's hobbits, unchanged |
+
+⚠️ **Recorded at review, accepted, so they are not rediscovered as defects:** unique 600's
+`になりますが？` → `Ｊｅｗｅｌｓ．　Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` renders the sentence-final hedging `が` as an
+explicit tag question — §2's *"constructions ungrammatical if traced word-for-word"*, not an addition,
+and the parallel lines 616 / 636 have their own explicit `いいノロか？` and take it differently. Unique
+632's `ｈｏｌｄ　ｏｆ　ａ　ｒａｒｅ` / `ｗｅａｐｏｎ．` breaks between adjective and noun where the source
+breaks between object and verb; §3.2 forbids neither, no lone one- or two-letter word is left, and
+merging them would change a second line's `{FFFE}` count for a cosmetic gain — **it stands**, on
+§33.8's disposition of the same question. Unique 633's notice inverts its clause order for the English
+sign register, which the PR did not flag; content is complete and it is recorded above instead.

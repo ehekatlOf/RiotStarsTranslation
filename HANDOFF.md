@@ -11,8 +11,28 @@ skill and the agent files say `main`, read `claude/workflow-translation-iterate-
 The human fast-forwards `main` from this branch when the run is done. Nothing else changes.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 4 IS RUNNING.** Coordinator: `session_013mqnLaJCts7hGduLSmsuak`. Glossary seeded
-> (`e324d6c`, 15 rows in §9). Four units dispatched — see **In flight**.
+> ⚠️ **WAVE 4'S FOUR UNITS ARE ALL MERGED AND INTEGRATED. NO PR IS OPEN. NOTHING IS LEFT TO REVIEW.**
+> Chunk 18 `45e89d8` · chunk 20 `46b728a` · chunk 19 `aecea69` · **script batch 006 `13a5ab8`**.
+> Coordinator: `session_013mqnLaJCts7hGduLSmsuak`. Glossary seeded (`e324d6c`, 15 rows in §9);
+> **all fifteen seeds are now struck** — the eight battle seeds at chunk 19's merge, the four script
+> seeds at PR #15's.
+>
+> **THE COORDINATOR'S NEXT TWO ACTS, IN ONE TURN, ARE CLAUDE.md §4 STEPS 6 AND 7:**
+> 1. **Close the wave** — `check` on the integration branch (it passes as of this commit); `merge` and
+>    commit `build/*_dump_merged.txt` if changed; refresh the README status table from `status`
+>    (**battle 21/44, 17,002/43,161 JP chars = 39.4%; script 261/1,430 unique, 4,092/7,931 instances =
+>    51.6%**); prune worktrees; write the wave summary and wave 5's units here; commit and push
+>    `handoff: wave 4 closed`.
+> 2. **Then, in the same turn, open wave 5's session** with the `create_session` call below. Do not
+>    stop to summarise, do not ask permission, do not hand the decision back up. A closed wave with
+>    dispatchable work left and no successor session is the one failure CLAUDE.md's banner forbids.
+>
+> **Wave 5 owes one thing before it dispatches**, and it is not an audit — the three roles stayed
+> apart all wave and four independent reviewers merged four units they did not translate. It is
+> **`FLAGS.md` §T1, the `あら` re-cut** (4 rows across `chunk_007`, `chunk_011`, `chunk_014`, all
+> width-neutral or −6 bytes). ⚠️ **It was deferred because PR #15 was open on the same question; PR #15
+> is now merged and CONFORMS to §32.4, so the deferral's stated condition is discharged.** It is a
+> clean §27-style corrections unit with nothing in flight against it.
 >
 > **If that session died mid-wave:** do NOT restart the wave. Run preflight, reconcile the open
 > PR list against **In flight** below, re-dispatch only units with no PR and no live translator
@@ -32,9 +52,10 @@ The human fast-forwards `main` from this branch when the run is done. Nothing el
 > Omit `environment_id` and `model` so both inherit. Wave 5's units are in **Next up**.
 
 ## Last updated
-2026-09-09 · by: **chunk-19 reviewer** (PR #16 round-2 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
-wave: **4 IN FLIGHT — 3 of 4 merged (18, 19, 20); script 006 (PR #15) unreviewed, reviewer slot FREE**
-· queue: **fresh**
+2026-09-09 · by: **script-006 reviewer** (PR #15 integration, `session_013mqnLaJCts7hGduLSmsuak`) ·
+wave: **4 — ALL 4 UNITS MERGED (18, 19, 20, script 006). No open PRs. The reviewer slot is FREE and
+there is nothing left to review; the coordinator owes step 6 (wave close) and step 7 (open wave 5's
+session).** · queue: **fresh**
 
 
 ## Progress (`python3 tools/assemble.py status`)
@@ -42,23 +63,34 @@ wave: **4 IN FLIGHT — 3 of 4 merged (18, 19, 20); script 006 (PR #15) unreview
 |---|---|---|---|
 | Battle chunks | **21** | 44 | 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, **18**, **19**, **20**, 33, 34, 35, 40 |
 | Battle JP characters | **17,002** | 43,161 | **39.4%** (was 32.2% at wave-4 start) |
-| Script unique lines | 211 | 1,430 | `tl/script/batch_001–005.tsv` |
-| Script message instances | 4,039 | 7,931 | **50.9%** |
+| Script unique lines | **261** | 1,430 | `tl/script/batch_001–006.tsv` |
+| Script message instances | **4,092** | 7,931 | **51.6%** (was 50.9% at wave-4 start) |
 
 `check`: **All checks passed** on the integration branch. Tightest banks: **41 → 353 free,
-40 → 471, 5 → 3,381**, 2 → 7,505, 33 → 9,315. Bank 40 lost 38 bytes to PR #9's item-table edits.
+40 → 471, 5 → 3,381**, 2 → 7,505, **12 → 8,639**, 33 → 9,315. Bank 40 lost 38 bytes to PR #9's
+item-table edits; **banks 12–15 lost 2,480 to PR #15 and banks 41/40 are byte-for-byte untouched by
+it** (re-derived against a measured baseline at that review, not taken on report).
 Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifact).
 
 ## In flight — WAVE 4 (dispatched 2026-09-08)
-✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
-unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
+✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16), and ✅ **REVIEW IS COMPLETE — all four units are
+MERGED and no PR is open.** Base branch for every unit and PR was
 `claude/workflow-translation-iterate-uzlkns`.
 **Reviewer 1 DONE — chunk 18 MERGED. Reviewer 3 DONE — chunk 20 MERGED round 1 (`46b728a`).
-Reviewer 2 DONE — chunk 19 MERGED at round 2 (`aecea69`), integrated.** **The reviewer slot is now
-FREE and ONE unit remains: PR #15** (script batch 006, never reviewed) → its integration takes
-**glossary §34 / `FLAGS.md` §V**, but **read the last heading at commit time; never reserve.**
+Reviewer 2 DONE — chunk 19 MERGED at round 2 (`aecea69`), integrated. Reviewer 4 DONE — script batch
+006 MERGED round 1 (`13a5ab8`), integrated.** **The reviewer slot is FREE and NO unit remains.**
+PR #15's integration took **glossary §34 / `FLAGS.md` §V** — both read off the files' last headings at
+commit time (`## 33`, `## U`), not reserved, as this section required.
 
-⚠️ **PR #15's reviewer inherits three rulings made after that PR was drafted**, and must weigh each
+✅ **PR #15's three inherited post-draft rulings were each checked and each disposed of.**
+**(a)** §32.4's `あら` → `Ｍｙ` + the source's punctuation **binds and the unit CONFORMS** — `あら`
+occurs exactly once (unique 630) and ships `Ｍｙ，　ｃｏｌｄ　ｍｅｄｉｃｉｎｅ．．．`; the PR reached the same
+answer independently from the script side and its census corroborates §32.4's. **(b)** §33.6's narrowed
+`まさか` is **not engaged — `まさか` count in the unit is 0.** **(c)** §33.5's `宝石` → `ｇｅｍｓｔｏｎｅ`
+is **not engaged — `宝石`, `宝` and `ジェム` are all 0**; the unit carries `ジュエル` (§3's currency) and
+keeps it clear of both. The original warning follows, kept for the record:
+
+⚠️ ~~PR #15's reviewer inherits three rulings made after that PR was drafted~~, and must weigh each
 difference as "translator error" against "a ruling that did not exist when the unit was drafted":
 **(a)** `あら` → `Ｍｙ` + the source's own punctuation (§32.4), which binds it; **(b)** the narrowed
 `まさか` of §33.6 — `Ｓｕｒｅｌｙ` covers only the incredulous use, **not** the `まさか…とは`
@@ -78,20 +110,36 @@ shipped with 127 bytes spare, so the long `Ｃｒｙｓｔａｌ　ｏｆ　Ｆ�
 `ｇｅｍｓｔｏｎｅ` at §33.5 and entered at §32.1 and §33.1. **Chunk 31 inherits it**, as do the three
 still-untranslated script lines.
 
-✅ **SECTION NUMBERS: chunk 20 took §32 / `FLAGS.md` §T; chunk 19 took §33 / §U** (verified against
-the files at commit time, not reserved). **PR #15's integration takes §34 / §V — but read the last
-heading immediately before writing; never reserve.** Wave 3 lost work to two reviewers both
-holding §28, and wave 4 nearly repeated it.
+✅ **SECTION NUMBERS — ALL FOUR TAKEN AND VERIFIED, NONE RESERVED: chunk 20 took §32 / `FLAGS.md` §T;
+chunk 19 took §33 / §U; script batch 006 took §34 / §V.** Every one was read off the file's last
+heading immediately before writing (`## 33` / `## U` at PR #15's commit time), not held from an earlier
+draft. Wave 3 lost work to two reviewers both holding §28 and wave 4 nearly repeated it at §32; the
+practice that fixed it is *read at commit time, never reserve*, and it held four times out of four.
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
 | battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | ✅ **MERGED round 2** (squash `aecea69`), integrated by `integrate: chunk 019 — glossary, flags, handoff (PR #16)`. **8,065 / 8,192 (127 slack)** — the wave's tight unit, 1.91× against a 1.94 ceiling; 200 text rows, widest 23 with 14 at 23, none at 24, no page over 4 rows; `{FFFE}` net −9 on five lines, **`{FCC0}` untouched at 24**, non-break tag stream byte-identical on all 28 lines. Every §6 gate re-run from scratch in a real checkout at round 2 (not diffed) and pasted; gate 6 re-run against the **new** corpus including chunk 20. **All 4 round-1 findings accepted, none contested, and every one byte-neutral or byte-positive** — `ウルフ` → **`Ｕｌｆ`** (−2 B), the orphaned `Ｉ　ａｍ` row repacked (0 B), a row-final lone `ａ` + 5-column orphan removed (0 B), and a second undisclosed §2.1 step-6 reorder restored to source order (0 B). ⚠️ **The translator corrected the reviewer's own evidence on finding 1 and was right**: `ｗｏｌｆ` is shipped across **2 unique lines of `batch_003` = 42 message instances**, and L40's key contains the katakana `ウルフ` itself. 17 rows + 3 rulings + the `まさか` narrowing integrated as **glossary §33**; **`FLAGS.md` §U**. **Eight §9 wave-4 seed rows struck** — the cross-unit rule is discharged. Nothing left on this unit |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **MERGED round 1** (squash `46b728a`), integrated by `integrate: chunk 020 — glossary, flags, handoff (PR #14)`. **4,265 / 8,192 (3,927 slack); 94 text rows, widest 23, none at 24**; three `{FFFE}` added on two lines, none deleted, **no `{FCC0}`**; all 48 other body lines byte-identical to the dump. All §6 gates run in a real checkout and pasted; **every figure in the PR was correct as stated** and **no finding required a change to the unit**. **All five open questions ruled** (see below). 24 rows integrated as **glossary §32**; **`FLAGS.md` §T**. ⚠️ **Two items of owed work left behind, both in `FLAGS.md` §T1/§T2** — the `あら` re-cut of chunks 7, 11, 14, and the live `勲章`/`メダル` collision in banks 42–43 |
-| script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
+| script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **MERGED round 1** (squash `13a5ab8`), integrated by `integrate: script batch 006 — glossary, flags, handoff (PR #15)`. **50 unique lines / 53 instances (unique 319, 335, 599–646); 1,332 JP → 2,513 EN = 1.89×** against a 2.10× model. Banks 12/13/14/15 free **10,321 / 13,449 / 13,493 / 13,433 → 8,639 / 12,727 / 13,455 / 13,395 = −2,480**, none negative; **banks 41 (353) and 40 (471) byte-for-byte untouched**. Widest row 23 with 7 at 23, none at 24; **one `{FFFE}` added** (unique 631, 11→12), no `{FCC0}` change, **non-break tag stream byte-identical on all 50 lines**. Every §6 gate re-run in a real checkout and pasted, and **the +53 / +50 and every bank delta re-derived against a measured baseline** (unit removed, `merge` re-run, unit restored) rather than taken on report. **Zero findings required a change to the unit.** All six of the PR's open items ruled: `Ｓａｙ，` for the recall `そうだ、` (§34.2 — the split ratified, but §32.3 merged `ねえ、` → `Ｓａｙ，` after this PR was drafted, so the collision is **LIVE in bank 41** with reserve `Ｙｏｕ　ｋｎｏｗ，`), **`おっと` ruled a clause head, not a fixed form** (§34.3 — it has **three** prior renderings, not the PR's two: `chunk_007` renders its own two instances as `Ｎｏｗ　ｔｈｅｎ．` **and** `Ｎｏｔ　ｓｏ　ｆａｓｔ，`), bare `ノロ？` → `Ｎｙｏｒｏ？` (§34.6, **binds unique 652's `ゲロゲロ？` → `Ｒｉｂｂｉｔ？`**), `品` → `ａｒｔｉｃｌｅ` forced apart from `アイテム` → `ｉｔｅｍ` (§34.4 — the co-occurrence in the keigo shop's own block 597–612 verified), `お客様`/`お客さん` carried by the second person (§34.1), and `ジュエル` → `Ｊｅｗｅｌｓ` promoted on its **first rendering in the project — 7 instances, not the PR's 6**. ⚠️ **Two PR justifications corrected without changing a rendering**: the `Ｗｅｌｃｏｍｅ` co-occurrence test **fails** (bank 26 holds `いらっしゃいませ` and `ようこそ` in ONE message — §34.5, reserve `Ｃｏｍｅ　ｉｎ`), and `ｔｏｋｅｎ` **spends §32.5's named reserve** (§34.7 — the reserve survives, the freeness sentence does not). **31 glossary rows + 6 rulings integrated as §34; `FLAGS.md` §V**; **the four wave-4 script §9 seeds struck**, all four used exactly as seeded. Nothing left on this unit |
 
 ⚠️ **The script unit is `queue.py` batch POSITION 2, written to `batch_006.tsv`** — `batch_002.tsv`
 already exists and is merged. Do not let the position number become the filename.
+
+⚠️ **FORWARD BINDINGS LEFT BY `batch_006`, for whoever queues the next script batches — full detail and
+the reserves are in `FLAGS.md` §V2–§V5.** `batch_006` translated **one of five copies of the same shop
+skeleton**, and the other four must inherit rather than re-invent:
+- **Unique 598 must reuse `　Ｂｕｙ　ａｎ　ｉｔｅｍ` / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` / `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ`
+  byte-for-byte.** Its readable text is byte-identical to unique 319 and 614; only the `{FFF6}` jump
+  arguments differ, so it is a third key and CLAUDE.md §3 does not force it — the player meeting one
+  menu in three shops does. Keep the leading `　` cursor gutter on all three.
+- **Unique 592–597 and 647–655** inherit `Ｗｅｌｃｏｍｅ`, `Ｍａｎｙ　ｔｈａｎｋｓ`, `ａｒｔｉｃｌｅ`,
+  `　Ｌｅａｖｅ　ｉｔ` and the closed-shop notice wording. **Unique 652's bare `ゲロゲロ？` takes
+  `Ｒｉｂｂｉｔ？`**, per §34.6's ruling on the parallel bare `ノロ？`.
+- **Three LIVE collisions with named reserves: bank 41** (the recall `そうだ、` takes `Ｙｏｕ　ｋｎｏｗ，`,
+  **not** `Ｓａｙ，` — and bank 41 has 353 bytes free), **bank 26** (`いらっしゃいませ` and `ようこそ` sit
+  in one message; the reserve is `Ｃｏｍｅ　ｉｎ`), and **bank 19** (`あれ？` and `何？` share `Ｗｈａｔ？`;
+  no message forces a split yet).
 
 ⚠️ **A FIFTH CROSS-UNIT TERM, missed by the wave-4 seed and found by chunk 20's translator:
 `宝石` / `宝`.** Re-counted in the dump and confirmed: c19 has 宝石 ×1 and 宝 ×4 (incl. 財宝 ×1),
