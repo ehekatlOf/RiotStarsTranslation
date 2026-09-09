@@ -541,16 +541,16 @@ this block and never had one** — confirmed a third time; the dispatch's pairin
 | ~~『闇の紋章』~~ | ✅ **PROMOTED to §45.1 (PR #26)** — `“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”`, **used exactly as seeded, the primary form and not the `Ｄａｒｋ　Ｅｍｂｌｅｍ` alternative. The seed's 18 / 20 figures are CORRECT**, re-measured with `len()` at review; the translator's own first hand count of 19 / 21 was the error, which it caught and reported itself. Ships at 21 with its stop, on the row a source trailing blank freed (§45.2). Original seed note follows: **18 columns bare, 20 with the §12 quotes** (`『…』` → `“…”`). 紋章 appears nowhere else in the glossary | battle chunk 31 | Alt *Dark Emblem* (11) if the row will not carry 20 |
 | ~~冥界の王~~ | ✅ **PROMOTED to §45.1 (PR #26)** — `ｔｈｅ　Ｎｅｔｈｅｒｗｏｒｌｄ　Ｋｉｎｇ`, **used exactly as seeded; the seed's 20 is CORRECT** and `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｅ　Ｕｎｄｅｒｗｏｒｌｄ` measures **26**, both re-measured at review. ×3 — two take `ｏｕｒ` for `我らが` (20), the third is a **vocative** and drops the article (§45.3). Original seed note follows: **20 columns**, so it fits one row; `ｔｈｅ　Ｋｉｎｇ　ｏｆ　ｔｈｅ　Ｕｎｄｅｒｗｏｒｌｄ` is **26** and cannot. Capitalised per §2's 王女様 → *the Princess* and §28.1's 国王 → *the King* | battle chunk 31 ×3 | Alt *the Underworld King* |
 | ~~リッチ~~ | ✅ **PROMOTED to §45.1 (PR #26)** — `Ｌｉｃｈ`, **used exactly as seeded**, 4 columns confirmed. The game's own `ＬｉＣＨ` spelling survives verbatim in the incantation two rows below it (§45.5). Original seed note follows: **4 columns.** ⚠️ **The game spells it itself** — chunk 31's incantation ends `ＥＬＡＧＬＡ・ＬｉＣＨ！` in full-width Latin, so this is a transcription, not a choice. Capitalised: chunk 31 uses it as the creature's name (`冥界の王、リッチよ！`) | battle chunk 31 | — |
-| 石版 | `ｔａｂｌｅｔ` | ✅ **RENDERED ×3 in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded; 6 columns confirmed. ⚠️ THE ROW STAYS LIVE — do not strike it on chunk 30.** CROSS-UNIT: reach re-counted at the PR #27 review over both dumps and PR #27's figures are **exact** — **5 battle (chunks 30, 36) + 25 script instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43). Per the `ルート` precedent (§29.1 / §30.1) it is struck by the **last** of chunk 36 and the script units to land. ⚠️ **Unique-line ids, with the convention named — CORRECTED 2026-09-09 (§4.3, PR #25 review, §44.5).** The instances are **DATA 300 / 569 / 571 = FILE 305 / 574 / 576** (FILE = DATA + 5; the first data row of `script_unique.txt` is FILE 6). This row previously said "574/576 right, 569/571 wrong": **they are the same two lines in two conventions and neither was wrong.** What PR #27's review genuinely found, and it stands, is that **DATA 300 / FILE 305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third instance no row had named. Reach unchanged and exact; no rendering changes. The plot object the whole wave turns on | battle 30 ✅, **36 ✅ (PR #25, inside the proper name only — the bare noun is untouched there)**; script **DATA 300, 569, 571** OUTSTANDING | Alt *stone tablet* (12) |
-| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **Wave-7 seed. ✅ RENDERED in `pending/chunk_036.txt` (PR #25) exactly as seeded; 13 bare / 15 quoted re-measured with `len()`, both exact. ⚠️ THE ROW STAYS LIVE — `tl/script/batch_009.tsv` (PR #28) is the third unit and is unreviewed; struck by the last to land (§29.1 / §30.1).** ⚠️ **CROSS-UNIT — battle chunk 36 AND script DATA 569 (= FILE 574); convention named per §44.5.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new. **That check was done at the PR #25 review and is clean**: `かげ` = *shadow* is battle chunk 36 and script DATA 569 only; every other battle `かげ` is `おかげ` (chunk 8), `影` is 0 battle, and all 4 battle `カゲ` are `トカゲ` | battle chunk 36 ✅; script **DATA 569** OUTSTANDING | Alt *Tablet of Shadow* (16) |
-| 鏡の神殿 | `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ` | **Wave-7 seed.** **13 columns.** 神殿 → *temple* is already fixed and held distinct from 教会 → *church* and 聖堂 → *sanctuary*; this only names the building | script 569, 571 | Alt *the Temple of the Mirror* (24 — fills a whole row) |
-| リースの化身 | `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **24 columns — exactly one full row, so it cannot take a mark or a particle on that row.** Bare 化身 → `ｉｎｃａｒｎａｔｉｏｎ` (**11**). `リース` → `Ｒｅｅｓｅ` is fixed at §26.1; ⚠️ the **maximal-run blind spot** (§Y2) means a search for `リース文明` never matches this — search bare `リース` | script 569, 571 | Alt *Reese's incarnation* |
-| リースの神々 | `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ` | **Wave-7 seed.** **17 columns.** Lower-case *gods* as a plural common noun (contrast §17.1's species test); the town's blessing formula `リースの神々よ、この者たちに祝福あれ！` | script 560, 567 | — |
+| 石版 | `ｔａｂｌｅｔ` | ✅ **RENDERED ×3 in `tl/battle/chunk_030.txt` (PR #27) exactly as seeded; 6 columns confirmed. ⚠️ THE ROW STAYS LIVE — do not strike it on chunk 30.** CROSS-UNIT: reach re-counted at the PR #27 review over both dumps and PR #27's figures are **exact** — **5 battle (chunks 30, 36) + 25 script instances across 21 banks** (2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 25, 33, 40, 42, 43). Per the `ルート` precedent (§29.1 / §30.1) it is struck by the **last** of chunk 36 and the script units to land. ⚠️ **Unique-line ids, with the convention named — CORRECTED 2026-09-09 (§4.3, PR #25 review, §44.5).** The instances are **DATA 300 / 569 / 571 = FILE 305 / 574 / 576** (FILE = DATA + 5; the first data row of `script_unique.txt` is FILE 6). This row previously said "574/576 right, 569/571 wrong": **they are the same two lines in two conventions and neither was wrong.** What PR #27's review genuinely found, and it stands, is that **DATA 300 / FILE 305** (`軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`) is a third instance no row had named. Reach unchanged and exact; no rendering changes. The plot object the whole wave turns on. ⚠️ **STILL LIVE AFTER WAVE 7 — CHECKED AT PR #28's REVIEW AND THE ANSWER IS NO.** PR #28 renders **DATA 569 and 571** exactly as seeded (`ｔａｂｌｅｔ`, 6 columns, byte-identical to chunk 30's four bare instances), which left only **DATA 300**. That line — `軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`, **count 21, an item description spanning 21 banks** — is **NOT in any wave-7 unit and is NOT translated in any `tl/script/*.tsv`**; verified by direct lookup at review, not inferred. **PR #28 is therefore not the last unit to render `石版`, and the wave-7 dispatch's instruction to "strike both rows" was wrong on this one.** The row is struck by whichever unit takes DATA 300 | battle 30 ✅, **36 ✅ (PR #25, inside the proper name only — the bare noun is untouched there)**; script **569 ✅, 571 ✅ (PR #28); DATA 300 OUTSTANDING — this is what keeps the row live** | Alt *stone tablet* (12) |
+| ~~『かげの石版』~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE at `batch_009`'s merge (PR #28, 2026-09-09) — this was the LAST of its instances to land, so the `ルート` precedent (§29.1 / §30.1) is discharged and the row is struck.** `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”`, **used exactly as seeded; 13 bare / 15 quoted re-measured a third time at review, both exact.** Its whole reach is **battle chunk 36 (rendered, `pending/chunk_036.txt`) + script DATA 569 (rendered by PR #28)** — nothing outstanding. ✅ **Cross-unit consistency verified at review against the MERGED tree, not a report**: chunk 30 renders bare `石版` as lowercase `ｔａｂｌｅｔ`, chunk 36 renders the proper name `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”`, and `batch_009` renders **both** — the three agree exactly. ⚠️ **The bare `石版` row ABOVE is a different matter and STAYS LIVE — see it.** Original seed note follows: **Wave-7 seed.** ⚠️ **CROSS-UNIT — battle chunk 36 AND script DATA 569 (= FILE 574); convention named per §44.5.** Builds on 石版 → `ｔａｂｌｅｔ` above; `かげ` is kana here, so the **mixed-script blind spot** applies (§Y2) — grep `かげ`, `影` and `カゲ` before calling any form new. **That check was done at the PR #25 review and is clean**: `かげ` = *shadow* is battle chunk 36 and script DATA 569 only; every other battle `かげ` is `おかげ` (chunk 8), `影` is 0 battle, and all 4 battle `カゲ` are `トカゲ` | battle chunk 36 ✅; script **DATA 569** OUTSTANDING | Alt *Tablet of Shadow* (16) |
+| ~~鏡の神殿~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE at `batch_009`'s merge (PR #28, 2026-09-09)** — `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ`, **used exactly as seeded; 13 columns re-measured with `len()` at review and the seed's figure is exact.** Reach re-counted over both dumps at review: **script DATA 569, 571 and 0 battle — both rendered here, so the term is exhausted and the row is struck outright.** ⚠️ 569 page 3 and 571 render the *second* instance as bare `ｔｈｅ　ｔｅｍｐｌｅ` (§46's Flag 7): with the proper name that page needs **5 rows against a 4-row limit** — re-measured at review under an optimal wrap, and the departure is genuinely forced | script 569, 571 — both ✅ | Alt *the Temple of the Mirror* (24 — fills a whole row) |
+| ~~リースの化身~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE (PR #28, 2026-09-09)** — `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` / bare `ｉｎｃａｒｎａｔｉｏｎ`, **used exactly as seeded. The seed's 24 / 11 are BOTH EXACT**, re-measured at review, and the 24 is confirmed to be the widest run in the whole unit: it stands alone on its row in 569 and 571 and takes no mark or particle, exactly as the seed warned. ⚠️ **Reach corrected at review: DATA 568, 569, 571 — the seed's cell said "569, 571" and missed 568**, where the bare noun carries the verse so the quote mark can sit on the row. All three are rendered here, so the row is struck | script 568, 569, 571 — all ✅ | Alt *Reese's incarnation* |
+| ~~リースの神々~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE (PR #28, 2026-09-09)** — `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ`, **used exactly as seeded, 17 columns confirmed.** 560 splits it at `ｏｆ` across a break; **567 is a vocative and correctly drops the article — `Ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ，`, which measures 14, not the PR's 15** (re-measured at review; §9's "your measurement wins" rule applied). Both instances rendered, so the row is struck | script 560, 567 — both ✅ | — |
 | ~~遠征軍~~ | ✅ **PROMOTED to §43.2** — `ｅｘｐｅｄｉｔｉｏｎａｒｙ　ｆｏｒｃｅ`, rendered in `tl/battle/chunk_030.txt` (PR #27) in the **long** form; 19 columns confirmed with `len()`. **Exhausted: 1 battle (chunk 30) + 0 script, re-counted at review — this is the one wave-7 seed that is genuinely spent, and it is struck.** The licensed short `ｅｘｐｅｄｉｔｉｏｎ` (10) was **never needed** and is not spent: the chunk landed 577 bytes under and the long form fits the source's own four rows | battle chunk 30 ✅ | Alt *expedition* — unspent |
-| 選ばれし者 | `ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ` | **Wave-7 seed.** **14 columns.** Archaic-flavoured; the elder's register in script 570 is uncontracted throughout | script 570 | — |
+| ~~選ばれし者~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE (PR #28, 2026-09-09)** — `ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ`, **used exactly as seeded, 14 columns confirmed** with `len()` at review. A hapax — **script DATA 570 only, 0 battle**, re-counted at review — so the term is exhausted and struck outright. The elder's uncontracted register holds around it (`Ｔｏ　ｙｏｕ，　ｗｈｏ　ｈａｖｅ　ｂｅｃｏｍｅ　／　ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ，`) | script 570 ✅ | — |
 | ~~召喚の儀式~~ | ✅ **PROMOTED to §45.1 (PR #26)** — `ｓｕｍｍｏｎｉｎｇ　ｒｉｔｕａｌ`, **used exactly as seeded and not the `ｓｕｍｍｏｎｉｎｇ　ｒｉｔｅ` alternative**, 16 columns confirmed. **1 battle + 0 script — exhausted, and struck outright.** The short alternative was never needed: the chunk landed 2,793 bytes under | battle chunk 31 ✅ | ~~Alt *summoning rite* (14)~~ — unspent |
-| ビーストショップ / アイテムショップ | `Ｂｅａｓｔ　Ｓｈｏｐ` / `Ｉｔｅｍ　Ｓｈｏｐ` | **Wave-7 seed.** **10 and 9 columns.** ⚠️ These are the two **menu options** of script 555's choice and keep the leading `　` per CLAUDE.md §6.8. Check §34.1 shop vocabulary before rendering — the shop nouns may already be fixed there | script 555 | — |
-| オーホホホ | `Ｏｈｏｈｏｈｏ` | **Wave-7 seed.** **7 columns.** Cavia's haughty laugh, transliterated on §12.3's `ふふ` → `Ｆｕｆｕ` and §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ` precedent. ⚠️ §12.3's **Alt column records REJECTED options, not a menu** — do not propose `Ｈｏ　ｈｏ　ｈｏ` without reading it | script 559 | — |
+| ビーストショップ / アイテムショップ | `Ｂｅａｓｔ　Ｓｈｏｐ` / `Ｉｔｅｍ　Ｓｈｏｐ` | ✅ **RENDERED in `tl/script/batch_009.tsv` (PR #28) exactly as seeded — 10 / 9 bare and 11 / 10 with the cursor gutter, all four re-measured with `len()` at review and all four exact. ⚠️ BUT THE ROW STAYS LIVE, AND ITS REACH CELL WAS WRONG.** ⚠️ **CORRECTED 2026-09-09 (PR #28 review): the reach is NOT "script 555" alone.** `ビーストショップ` also occurs at **script DATA 899 (bank 28), which is untranslated** — `『ビーストショップ』でドラゴンやゴーレムを売ってくれるぜ。`, a signpost NPC in another town. Neither the wave-7 dispatch nor PR #28's body caught this; it was found by counting the term's reach over the dump at review rather than trusting the cell. **`アイテムショップ` alone IS exhausted (DATA 555 only) — but the two share one row, so the row is held live for `ビーストショップ`.** ⚠️ **DATA 899 is PROSE, not a menu**: it takes `“Ｂｅａｓｔ　Ｓｈｏｐ”` with §12 quotes for the source's `『　』` and **no leading `　` cursor gutter** — the gutter belongs only to 555's two menu options. §34.1's shop vocabulary was checked first and fixes ジュエル / 品 / アイテム and the menu options, but **no shop *name***, so only the compounds are new | script 555 ✅ (PR #28); **DATA 899 OUTSTANDING — this is what keeps the row live** | — |
+| ~~オーホホホ~~ | ✅ **PROMOTED to §46.1 and STRUCK HERE (PR #28, 2026-09-09)** — `Ｏｈｏｈｏｈｏ`, **used exactly as seeded, 7 columns confirmed.** Rendered with the source's own four stops as `Ｏｈｏｈｏｈｏ．．．．` (the `・・・・` run is 4 in the source and 4 in the English — verified at review). A hapax: **script DATA 559 only, 0 battle**, and both kana scripts were grepped (`オーホホホ` 1, `おーほほほ` 0) before it was called new. Struck outright | script 559 ✅ | — |
 
 ⚠️ **WAVE-7 SEEDS (battle chunks 30, 31, 36 + script `batch_009` = unique 534–583).** Proposed
 forms only — **promote on first use, and measure before you trust a width.** Every figure in the
@@ -5375,3 +5375,151 @@ question** — `FLAGS.md` §AG.
 | The two Imperial rankers (portraits 7, 8) | **Per speech, not per character.** Casual to each other (`ああ、何しろ`, `〜だからな`, `〜ほしいぜ` → `Ｙｅａｈ`, `ｔｈｅｙ’ｒｅ`, `ｌｅｔ’ｓ`); formal and contraction-free to Kaizard (`〜です`, `〜ます` → `Ｎｏ，　ｔｈｅｙ　ａｒｅ　ｅｎｅｍｉｅｓ．`, `Ｉｔ　ｓｅｅｍｓ　ｔｏ　ｂｅ`) |
 | The player's party (portraits 0, 1, 2, 3, 4) | §7 unchanged — casual, contractions throughout (`ｔｈｅｙ’ｒｅ　ａｔｔａｃｋｉｎｇ`, `Ｉ　ｃａｎ’ｔ　ｆｏｒｇｉｖｅ　ｔｈａｔ．`, `Ｗｅ’ｖｅ　ｇｏｔ　ｔｏ　ｈｅｌｐ　ｆａｓｔ！`) |
 | The villager (portrait 9) | Formal `です`, **no contraction** — `Ｔｈｉｓ　ｉｓ　ｔｅｒｒｉｂｌｅ！` — against the party's contractions on the same page |
+
+
+## 46. Added by script batch 009 (PR #28, merged 2026-09-09)
+
+`script_unique.txt` **DATA 534–583** (= FILE 539–588; FILE = DATA + 5, convention verified at
+review by reading `tools/queue.py:script_rows()`). 50 unique lines / 50 instances / 2,913 JP →
+5,925 EN visible characters = **2.0340×**, **+6,026 bytes** across banks 7, 8, 9, 10, 11, 12.
+Town troop-recruitment and court/NPC dialogue: a Leclerc courtier, Prince Hoag's island town,
+the elder of an ancient Reese town, the ruined village, fort guards, a shop greeting.
+
+**Every figure in this section was re-measured at review with `len()` and the tool's own row
+semantics. Where a PR-body cell disagreed, the measurement won and the cell is corrected below.**
+
+### 46.1 Wave-7 seeds promoted (all nine used exactly as seeded, none improved on unilaterally)
+
+| Japanese | English | Note |
+|---|---|---|
+| 鏡の神殿 | `Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ` | **13 columns**, exact. §9 row **STRUCK** — reach was DATA 569, 571 and both land here. 神殿 → *temple* stays distinct from 教会 → *church* and 聖堂 → *sanctuary* (this unit ships `ｓａｎｃｔｕａｒｙ` for 聖堂 at 575, so all three are live in one wave and stay apart) |
+| リースの化身 / 化身 | `ｔｈｅ　ｉｎｃａｒｎａｔｉｏｎ　ｏｆ　Ｒｅｅｓｅ` / `ｉｎｃａｒｎａｔｉｏｎ` | **24 / 11 columns**, both exact. The 24 is the widest run in the unit; it stands alone on its row at 569 and 571 and takes **no mark or particle**, exactly as §9 warned. §9 row **STRUCK**, with its reach corrected from "569, 571" to **568, 569, 571** |
+| リースの神々 | `ｔｈｅ　ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ` | **17 columns.** 560 splits it at `ｏｆ` across a break; **567 is a vocative and drops the article — `Ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ，`, which is 14 columns** (the PR body said 15; re-measured at review). §9 row **STRUCK** |
+| 『かげの石版』 | `“Ｓｈａｄｏｗ　Ｔａｂｌｅｔ”` | **15 quoted / 13 bare.** `『…』` → `“…”` per §12. **§9 row STRUCK — this unit was the LAST of its instances to land** (battle chunk 36 + script DATA 569), discharging the `ルート` precedent |
+| 石版 | `ｔａｂｌｅｔ` | **6 columns**, bare lowercase, byte-identical to chunk 30's four instances. ⚠️ **§9's row STAYS LIVE — DATA 300 (count 21, 21 banks) is untranslated.** See §46.4 |
+| 選ばれし者 | `ｔｈｅ　ｃｈｏｓｅｎ　ｏｎｅ` | **14 columns.** Hapax (DATA 570). §9 row **STRUCK** |
+| ビーストショップ / アイテムショップ | `　Ｂｅａｓｔ　Ｓｈｏｐ` / `　Ｉｔｅｍ　Ｓｈｏｐ` | **11 / 10 with the cursor gutter, 10 / 9 bare.** Both keep the leading `　` as menu options of 555's choice. ⚠️ **§9's row STAYS LIVE — `ビーストショップ` recurs at DATA 899.** See §46.4 |
+| オーホホホ | `Ｏｈｏｈｏｈｏ` | **7 columns**, with the source's own four stops → `Ｏｈｏｈｏｈｏ．．．．`. Cavia's laugh, on §12.3's `ふふ` → `Ｆｕｆｕ` and §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ`. §9 row **STRUCK** |
+
+### 46.2 New terms
+
+| Japanese | English | Note |
+|---|---|---|
+| なるほど (**beside `そうか` in one bank**) | `Ｉｎｄｅｅｄ．` | **7 columns.** The §25.3 collision ruling — see §46.3. §30.3's `なるほど` → `Ｉ　ｓｅｅ．` is **unchanged** for every unit not carrying `そうか` in the same bank |
+| 騎士道 | `ｃｈｉｖａｌｒｙ` | 9 columns. Hapax — 1 script, 0 battle. 536 |
+| 圧制 | `ｔｙｒａｎｎｙ` | 8 columns. Held **distinct** from 圧力 → `ｐｒｅｓｓｕｒｅ` (§42) and from 支配 — three source words for the Empire's grip |
+| 独立する | `ｗｉｎ　ｆｒｅｅ　ｏｆ` | 538. Held distinct from §28.2's 解放 → `ｆｒｅｅ` (the transitive verb); the shared head word is deliberate |
+| 詩 | `ｐｏｅｍ` | 4 columns. 568. `ｖｅｒｓｅ` is free but *poem* is the plainer word for a town's handed-down couplet |
+| 大渓谷 | `ｇｒｅａｔ　ｇｏｒｇｅ` | 12 columns. 574. **Deliberately not `Ｃａｎｙｏｎ`** — §30.1 spends that on 峡谷 in `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` and records `Ｇｏｒｇｅ` as the untaken alternative. 大 → *great* matches §2's 大要塞 |
+| 海岸 | `ｃｏａｓｔ` | 5 columns. 574. Distinct from §39.1's 港 → `Ｐｏｒｔ` |
+| 戦況 | `ｈｏｗ　ｇｏｅｓ　ｔｈｅ　ｗａｒ` | 558 and 576, byte-identical. ⚠️ `ｗａｒ` is **not** free — §38.2 spends it on 戦乱 (bank 3) and §42 uses `ｗａｒｒｅｄ` for 争って (bank 4). Different source words, no shared bank with 8 or 10; §25.3 met. Recorded so it cannot drift |
+| 参考にする | `ｔａｋｅ　…　ｉｎｔｏ　ａｃｃｏｕｎｔ` | 556/557. Deliberately **not** `ｂｅａｒ　…　ｉｎ　ｍｉｎｄ`, which §26.7 spends on the old tutor and which **this unit needs at 574** for `心に留めておきましょう` — the collision would have been inside one unit |
+| はじめまして。 | `Ｈｏｗ　ｄｏ　ｙｏｕ　ｄｏ．` | 14 columns. 574. ⚠️ **`Ｗｅｌｌ　ｍｅｔ．` deliberately NOT reused** although `pending/chunk_005` L23 renders this string that way: that file is **parked**, so §3 does not engage, and this unit's own **560 needs `Ｗｅｌｌ　ｍｅｔ` for `よく参られた`** (same verb 参る, and §38.2's shipped `よく参った。`). §38.2 flagged this pair; **bank 10 was the live locus and this is it** |
+| ほら、 | `Ｔｈｅｒｅ，` | 6 columns. 574, Annette urging her father. Distinct from §28.8's さあ、 → `Ｎｏｗ，`, §42.1's で、 → `Ｎｏｗ，`, §31.3's さて、 → `Ｎｏｗ　ｔｈｅｎ，`, §34.1's なあに、 → `Ｎｏｗ　ｎｏｗ，` |
+| 中央 (spatial) | `ｍｉｄｓｔ` | 574. ⚠️ **Not free**: `chunk_024` L16 ships `Ｉｎ　ｔｈｅ　ｍｉｄｓｔ　ｏｆ　ｗａｒ` — a **temporal** midst against this **spatial** one; different message, different store, no shared bank or chunk. §25.3 met |
+| 空き家 / うなり声 / 調査する / 拡張する / 誘致する | `ｅｍｐｔｙ　ｈｏｕｓｅ` / `ｇｒｏｗｌ` / `ｌｏｏｋ　ｉｎｔｏ` / `ｅｘｐａｎｄ` / `ｄｒａｗ　ｉｎ` | 552, 555; all five verified free across `tl/` and `pending/`. 館 → `ｍａｎｓｉｏｎ` is §34.1's, reused unchanged |
+| ご用 (honorific) | `ｅｒｒａｎｄ` | ⚠️ Held apart from plain 用 → `ｂｕｓｉｎｅｓｓ` (§42.2, `batch_008` DATA 502). **534** `ご用が　あれば` → `Ｉｆ　ｙｏｕ　ｈａｖｅ　ａｎ　ｅｒｒａｎｄ，` (23) and **561** `で、ご用は何かな？` → `Ｎｏｗ，　ｙｏｕｒ　ｅｒｒａｎｄ？` (17); the plain 用 keeps *business* at 549, 566, 582/583. This unit adds the **fifth and sixth** `ご用` openers and neither collides with §42.2's four |
+
+### 46.3 §25.3 RULING — `なるほど` → `Ｉｎｄｅｅｄ．` where it shares a bank with `そうか`
+
+**§25.3's standing test ("no chunk and no bank contains both") finally fails, exactly where §42.4
+predicted it would.** The census was recounted independently at review over both pristine dumps
+and **reproduces the PR's cell for cell**:
+
+```
+そうか。      script banks [5, 8, 9, 29, 33, 41]   battle chunks [7, 27, 30]
+そうか、      script banks [8, 19, 23, 33, 41]     battle chunks [4, 23, 32]
+そうですか    script banks [0, 7, 12, 16, 41]      battle chunks [3, 5, 31]
+そうかい      script banks [2, 12, 17, 20, 23, 24] battle chunks []
+なるほど      script banks [1, 5, 8, 33, 36, 40]   battle chunks [0,6,16,17,19,25,29,32,33,42,43]
+そう。       script banks [0, 4, 41]              battle chunks [0,4,5,16,19,29,43]
+そうでしたか   script banks [10]                    battle chunks []
+SHARED BANKS そうか x なるほど : [5, 8, 33]
+```
+
+**Bank 8 is the live locus and `batch_009` is the unit that translates both of its members**:
+`そうか` at DATA **550, 553, 554** and `なるほど` at **556, 557** — bank assignments verified
+individually at review — **all five spoken by Prince Hoag, in one town interface, in adjacent
+menu branches a player reaches in one visit.**
+
+**`なるほど` is the member that moves.** `そうか` keeps `Ｉ　ｓｅｅ．`, on three counted grounds:
+
+- `そうか` is 3 of the 5 rows to `なるほど`'s 2 — the smaller disturbance.
+- **`そうか` → `Ｉ　ｓｅｅ．` is shipped one bank over in this same recruiter skeleton**, at
+  `batch_008.tsv` L64/L67 (bank 5). Moving `そうか` would fork the skeleton's own voice.
+- `なるほど` → `Ｉ　ｓｅｅ．` is shipped only in battle `chunk_033` and **parked** `chunk_017`;
+  neither is bank 8, so **§30.3 stands unamended** for every unit not carrying both.
+
+`Ｉｎｄｅｅｄ．` is **7 columns**. Its only other occurrence anywhere is `chunk_002` L15's
+`Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！` for §20.3's `まったくだっ！` — different string, **battle** store,
+chunk 2: disjoint from script bank 8 in both dimensions, so §25.3 is met for the new form too.
+
+⚠️ **`Ｅｘａｃｔｌｙ．` (8) is NOT spent** — re-verified free across all of `tl/` and `pending/` at
+review, and stays reserved for `そのとおり` / `そうそう` per §25.3.
+⚠️ **Next reserve, verified free and unspent: `Ｑｕｉｔｅ　ｒｉｇｈｔ．` (12)**, §25.3's own
+second choice, for a third member of the family in one bank.
+
+**The other three members were checked, not assumed:** `そうですか` (537, 541) is **bank 7**, which
+holds no other member; 567's `そうか` is **bank 9**, which holds no `なるほど`; 574's
+`そうでしたか・・・。` → `Ｉ　ｓｅｅ．．．．` is a sixth source string on the form and a **true hapax**
+(bank 10 only, 0 battle), and bank 10 holds none of the other six. **Lines affected outside this
+unit: none.**
+
+⚠️ **FORWARD GAP — the ruling is BANK-scoped and does not reach a battle CHUNK.** Battle
+**chunk 32 holds both `そうか、` and `なるほど` and is untranslated**, while `chunk_033` already
+ships `なるほど` → `Ｉ　ｓｅｅ．`. Chunk 32's translator will meet this same collision with no rule
+covering it. Recorded at `FLAGS.md` §AH.
+
+### 46.4 CORRECTIONS to §9 made at this review
+
+1. **`石版` is NOT struck, and the wave-7 dispatch's "strike both rows" was wrong.** PR #28
+   renders DATA 569 and 571, leaving **DATA 300** — `軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`,
+   **count 21 across 21 banks**, an item description — which is in **no** wave-7 unit and is
+   translated in **no** `tl/script/*.tsv`. Verified by direct lookup at review. The row is struck
+   by whichever unit takes DATA 300. `『かげの石版』`, whose whole reach *is* exhausted, **is** struck.
+2. **`ビーストショップ`'s §9 reach cell was incomplete and the row is held live.** It said
+   "script 555"; the term also occurs at **DATA 899 (bank 28, untranslated)**,
+   `『ビーストショップ』でドラゴンやゴーレムを売ってくれるぜ。` **Neither the dispatch nor the PR body
+   caught this** — it was found by recounting the term's reach over the dump instead of trusting
+   the cell. DATA 899 is **prose, not a menu**: it takes `“Ｂｅａｓｔ　Ｓｈｏｐ”` (§12 quotes, **no**
+   cursor gutter). `アイテムショップ` alone is exhausted, but the two share one row.
+3. **`リースの化身`'s reach was "569, 571" and is actually 568, 569, 571.** Corrected in §9.
+4. **Three PR-body figures corrected under §9's "your measurement wins" rule; no rendering
+   changes.** `ａｓｌｅｅｐ　ｉｎ　ｔｈｅ　Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ．` is **28**, not 30;
+   `Ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ，` is **14**, not 15; the unit has **12** ellipsis runs, not 13.
+   Flag 7's departure was re-tested the hard way and **is** forced: under an optimal greedy wrap
+   that page needs **5 rows** with the proper name against a 4-row limit, and 4 without it.
+5. **A correction the PR itself made to the dispatch, confirmed here by reading the files:**
+   `Ｉ　ｓｅｅ．` for `そうかい` is **§38.2's, in `batch_007`** (banks 2/3). `batch_008` L64/L67
+   render **`そうか。`**, not `そうかい`. The dispatch's attribution was wrong, and the correction
+   *strengthens* §46.3 rather than weakening it.
+
+### 46.5 Register and structure notes
+
+- **`王` and `王子` name the same portrait (`0x14`, Prince Hoag) in bank 8 and the English commits
+  to neither.** 542's retainer says `王は…` → `Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ａｗａｙ`; 558's captain calls
+  the same portrait `王子` → `ｍｙ　Ｐｒｉｎｃｅ`. Each row renders exactly what its own line says
+  (§28.7). Hoag's father is dead (576), so *King* may be correct in-fiction, or 542 may be a
+  generic door line. **No English here decides it; an in-game visit would.** `FLAGS.md` §AH.
+- **`殿` and `さん` / `君` after the name insert are dropped**, per §21.2 and §9's ratified `殿`
+  decision — carried in register, no word added.
+- **Speaker register was traced through the tag stream, not assumed.** 574's six `{FB00}`
+  portraits map to `{FCB0}` indices 0–5: Annette, Dolgan, Prince Hoag, the player-captain and two
+  9th Army companions. Dolgan and the village woman are uncontracted (`Ｉ　ａｍ　ｔｒｕｌｙ
+  ｇｒａｔｅｆｕｌ`, `Ｗｅ　ａｒｅ　ｏｆ　ｌｉｔｔｌｅ　ｈｅｌｐ`); the 9th Army ranker contracts
+  (`ｗｅ’ｌｌ　ｍａｎａｇｅ　ｉｔ．．．` for 俺たち). Cavia is contraction-free per §14.6. Torif (576)
+  uses 僕 and is earnest but not casual — no contractions, matching §41's princes.
+- **The verse at 568 preserves the source's own indentation** — 2 full-width spaces on row 2 and
+  7 on row 3, counted and reproduced exactly (§34.1's shop-notice precedent). `「…」` → `“…”`.
+  Row 3 carries only `ｈｅｒ　ｆａｉｒ　ｆｏｒｍ”` because 7 of its 24 columns are gutter.
+- **`頑張ってくれたまえ。` renders two ways and it is the §34.9 trap-2 shape, not a divergence.**
+  573/576 give `ｂｕｔ　ｄｏ` / `ｂｅａｒ　ｕｐ．`; 577 gives `Ｄｏ` / `ｂｅａｒ　ｕｐ　ａ　ｗｈｉｌｅ　ｙｅｔ．`
+  — the extra words render **577's own `今しばらく`**, which 573/576 do not contain. The fixed
+  phrase `ｄｏ　ｂｅａｒ　ｕｐ` is byte-identical in all three. A positional row checker will report
+  this pair; it is not a defect.
+- **`ああ、` at 580 is rendered as a clause head, not a fixed interjection** — `ああ、…〜とは・・・`
+  → `Ｔｏ　ｔｈｉｎｋ　ｔｈａｔ…`, a lament rather than §6's assent `ああ` → `Ｙｅａｈ` (which §6
+  scopes to casual agreement from a rough speaker). ⚠️ **Measured at review: `Ａｌａｓ，` DOES fit**
+  (4 rows at 22/20/17/7, inside the limit), so this is a lexical choice and not a geometric
+  necessity — recorded rather than presented as forced. **`Ａｌａｓ，` is verified free** and is the
+  reserve if a later unit wants a word for the lament `ああ`.

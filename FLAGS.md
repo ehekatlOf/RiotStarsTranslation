@@ -4475,3 +4475,137 @@ Chunk 31 contains **no** `石版` — verified at review — so this unit discha
 (script `batch_009`) is the last unit that renders them** and is still unreviewed; the rows are
 struck by that merge, per the `ルート` precedent (§29.1 / §30.1). `クロイツェル` also stays live
 (1 battle + 1 script, bank 41, `script_unique` 1391), per §43.5.
+
+
+## AH. Wave 7 review — script batch 009 / PR #28, MERGED (2026-09-09)
+
+One review round → **MERGE** at `aca5b77`. `script_unique.txt` **DATA 534–583** (FILE 539–588;
+FILE = DATA + 5, verified at review by reading `tools/queue.py:script_rows()`), 50 unique lines /
+50 instances / 2,913 JP → 5,925 EN visible characters = **2.0340×**, **+6,026 bytes**.
+`{FFFE}` 285→286, `{FCC0}` 46→46, non-`{FFFE}` tag stream byte-identical on all 50 lines,
+340 text rows, 2 at 24, 26 at 23, none over 24, no page over 4 rows. **Every one of the PR's
+figures re-measured at review and every one is exact** — including all twelve bank figures,
+which were checked in **both** directions by moving the file aside and re-merging.
+
+Banks after this merge: **7 → 13,095 · 8 → 10,727 · 9 → 12,205 · 10 → 33,921 · 11 → 39,345 ·
+12 → 8,559.** No bank negative.
+
+### AH1. ⚠️ Banks under 2,000 free after this merge — unchanged, and NOT touched by this unit
+
+**bank 41 → 353 free · bank 40 → 447 free.** Bank 5 is next at **2,007**, bank 2 at **3,365**.
+All four were verified byte-for-byte unchanged across the before/after measurement — `batch_009`
+lands only in banks 7–12. **§F2's four tight banks remain the run's real ceiling** and nothing in
+wave 7 moved them.
+
+### AH2. ⚠️ §9's `石版` row is STILL LIVE after wave 7 — the wave-7 dispatch said to strike it and was WRONG
+
+The dispatch instructed the reviewer to strike **both** tablet rows if this unit rendered them
+consistently. It renders them consistently — but the strike is only half correct, and the
+dispatch itself flagged the doubt, which turned out to be justified.
+
+- **`『かげの石版』` IS struck.** Its whole reach is battle chunk 36 (rendered, parked) + script
+  **DATA 569** (rendered here). Nothing outstanding.
+- **`石版` is NOT struck.** Its reach is script **DATA 300, 569, 571**. This unit renders 569 and
+  571. **DATA 300** — `軍神ヘルメスが光の文字を刻んだとされる漆黒の石版。`, **count 21 across 21
+  banks**, an item description — is in **no** wave-7 unit and is translated in **no**
+  `tl/script/*.tsv`. Verified by direct lookup at review, not inferred from the cell.
+
+**Whoever takes DATA 300 strikes the row.** Until then `石版` → `ｔａｂｌｅｔ` (6 columns, bare
+lowercase) is binding. Recorded at `glossary.md` §9 and §46.4.
+
+### AH3. ⚠️ NEW — §9's `ビーストショップ` reach cell was INCOMPLETE; the row is held live for DATA 899
+
+The §9 row records the reach as "script 555". **`ビーストショップ` also occurs at script
+DATA 899 (bank 28), which is untranslated**:
+
+```
+DATA 899 (bank 28): ちょっと変わった仲間が{FFFE}ほしいなら、{FFFE}マーベラスの街へ{FFFE}行ってみなよ。
+                    {FCC0}{FFFE}『ビーストショップ』で{FFFE}ドラゴンやゴーレムを{FFFE}売ってくれるぜ。
+```
+
+**Neither the wave-7 dispatch nor the PR body caught this.** It was found by recounting the term's
+reach over the pristine dump rather than trusting the cell — the same failure mode §AE5/§AF3
+already cost this wave once.
+
+⚠️ **DATA 899 is PROSE, not a menu option.** It takes `“Ｂｅａｓｔ　Ｓｈｏｐ”` — §12 quotes for the
+source's `『　』`, and **no leading `　` cursor gutter**. The gutter belongs only to DATA 555's two
+menu options (`　Ｂｅａｓｔ　Ｓｈｏｐ` 11, `　Ｉｔｅｍ　Ｓｈｏｐ` 10). `アイテムショップ` alone is
+exhausted at 555, but the two share one §9 row, so the row is held live for `ビーストショップ`.
+
+### AH4. ⚠️ §25.3's collision test has FAILED for the first time, and the ruling is BANK-scoped — battle chunk 32 is the next place it bites
+
+`glossary.md` §46.3 rules `なるほど` → `Ｉｎｄｅｅｄ．` where it shares a bank with `そうか` (which
+keeps `Ｉ　ｓｅｅ．`). The census was recounted independently at review over both pristine dumps
+and **reproduces the PR's cell for cell**; `そうか` × `なるほど` share script banks **[5, 8, 33]**,
+and bank 8 is where this unit renders both (DATA 550/553/554 vs 556/557, all Prince Hoag).
+
+**The gap: the ruling names *banks*, so it does not reach a battle *chunk*.**
+
+- **Battle chunk 32 holds BOTH `そうか、` and `なるほど`, and is untranslated.**
+- Battle `chunk_033` already ships `なるほど` → `Ｉ　ｓｅｅ．` (§30.3).
+
+**Chunk 32's translator will meet this collision with no rule covering it.** The obvious extension
+is the chunk-scoped analogue of §46.3 — `なるほど` takes `Ｉｎｄｅｅｄ．` in chunk 32 — but that
+puts a second form on a chunk adjacent to `chunk_033`'s shipped `Ｉ　ｓｅｅ．`, so it wants a
+decision rather than a default. **Script banks 5 and 33 also hold both members and are
+untranslated**; there §46.3 applies directly and needs no new ruling.
+
+⚠️ **Reserves, both re-verified FREE across `tl/` and `pending/` at review:** `Ｅｘａｃｔｌｙ．` (8)
+stays reserved for `そのとおり` / `そうそう` per §25.3 and was **not** spent; `Ｑｕｉｔｅ　ｒｉｇｈｔ．`
+(12) is the named next reserve for a third member of the family in one bank.
+
+### AH5. ⚠️ NEEDS A HUMAN — is bank 8's town ruled by a King or by Prince Hoag?
+
+`王` and `王子` name the **same portrait** (`0x14`) in bank 8 and the English commits to neither:
+
+- **DATA 542** — a retainer: `王は ただいま外出しておられる` → `Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ａｗａｙ`.
+- **DATA 558** — the 9th Army captain calls that portrait `王子` → `ｍｙ　Ｐｒｉｎｃｅ`.
+- **DATA 574** fixes the portrait as **Prince Hoag** (`ホアグ王子`, twice), and **576** says his
+  father is dead (`父が亡くなって`).
+
+So *King* may be correct in-fiction (Hoag crowned), or 542 may be a generic door line reused
+across towns. **Each row renders exactly what its own line says**, which is §28.7's disposition of
+chunk 13's unnamed King, so nothing is blocked — but **one in-game visit to that town settles it.**
+§41.6's *referential* `王子様` is not reached by this unit and stays open where §41.6 left it.
+
+### AH6. FORWARD BINDING — DATA 691 (bank 17, untranslated) is a twin of 582/583
+
+DATA 691 carries the byte-identical visible text of this unit's **582/583**
+(`いらっしゃい！！` / `どんな 用だい？`). A different `{FB00}` portrait and different `{FFF8}`
+arguments make it a different key, so §3 does not *force* reuse — but the player meets one shop
+greeting. **Whichever batch takes DATA 691 must reuse `Ｗｅｌｃｏｍｅ！！` /
+`Ｗｈａｔ’ｓ　ｙｏｕｒ　ｂｕｓｉｎｅｓｓ？` byte-for-byte**, on §34.9's reasoning for unique 598.
+
+### AH7. Gate-6 method note — §AE7's lesson applied, and a checker that was wrong about the FILE
+
+Per §AE7, **no checker was believed at this review until a planted corruption made it fail.** Four
+passes were run, each with a positive control that **DETECTED** its planted fault: exact key (0
+collisions), visible-text siblings (4 pairs, all shipped, 0 divergences), in-batch whole messages
+(2 pairs, 0 divergences), and **page-level sub-sequences across the whole shipped script corpus —
+612 pages compared, 54 recurring-page pairs, 0 divergences**, which is the pass a whole-message
+comparison cannot see. A script `.tsv` keeps the Japanese in column 2, so a column-2 comparison is
+valid here; it would **not** be for a battle chunk.
+
+⚠️ **A worked example of the inverse failure — the checker was wrong, not the file.** A first-pass
+ellipsis checker reported DATA 574 as a dot-count mismatch (JP nine runs of 3, EN `3/4/4/4/3/3/3/3/3`).
+It was the checker: **three of the source runs are `・・・。` — an ellipsis followed by the source's
+own `。` — and `．．．．` is the correct rendering**, while the six bare `・・・` correctly give
+`．．．`. Re-run with the `。` accounted for: **0 mismatches on all 12 runs**, control DETECTED.
+**Compare a JP `・` run against an EN `．` run only after folding in a following `。`.**
+
+### AH8. Figure corrections to the PR body (no rendering changes; §9's "your measurement wins")
+
+`ａｓｌｅｅｐ　ｉｎ　ｔｈｅ　Ｍｉｒｒｏｒ　Ｔｅｍｐｌｅ．` is **28**, not the PR's 30 ·
+`Ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ，` is **14**, not 15 · the unit has **12** ellipsis runs, not 13 ·
+Flag 19's "the only non-possessive apostrophe-contraction in bank 10" overlooks
+`Ｔｈａｔ’ｓ　ｒｉｇｈｔ，` at 574 — **that rendering is correct**, being §30.3's mandated form for
+`そうよ` with the source's own comma, so the claim is imprecise and the translation is not.
+
+**Flag 7's departure was re-tested and IS forced**: with the proper name that page needs **5 rows
+against a 4-row limit** even under an optimal greedy wrap, and 4 rows without it.
+
+⚠️ **Flag 20 (`ああ、` at 580) is the one departure that is NOT forced by geometry, and the PR does
+not claim it is.** `Ａｌａｓ，　ｔｏ　ｔｈｉｎｋ…` **fits** — 4 rows at 22/20/17/7, measured at review
+per §AC3's "measure the option you argue against". The flag argues lexically (the a-family is
+spent; the lament rides on the exclamative *To think that…*) and names `Ａｌａｓ，` as a
+verified-free reserve. Accepted as a disclosed judgment, with the reserve now on the record.
