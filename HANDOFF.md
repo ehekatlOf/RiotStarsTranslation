@@ -55,8 +55,27 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** | **PR #29 OPEN**, awaiting reviewer |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | JP 1,080, headroom 5,115, ratio **3.37** (tier C) | dispatched |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | JP 698, headroom 6,225, ratio **5.46** (tier D) | dispatched |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances** / 2,477 JP chars | dispatched |
+
+**CROSS-UNIT TERMS THE REVIEWER MUST CROSS-CHECK BETWEEN OPEN PRs** (all measured by me over the
+pristine dump, tags stripped — the source *messages* differ in every case, so **CLAUDE.md §3 is NOT
+engaged**; these are §25.3 term-consistency calls):
+| Term | Where | Rendering | Note |
+|---|---|---|---|
+| `掌握` | c37 ×1, c41 ×1 | **#29 `ｓｅｉｚｅｄ` vs #30 `ｇｒａｓｐ`** | ⚠️ **A real divergence — see below** |
+| `決着をつけてやる` | c30 ×2 (shipped), c37, c41 | `ｓｅｔｔｌｅ` | Agreed across all three |
+| `反旗を翻す` | c38 ×1, c42 ×1 | #31 `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` | ⚠️ c38's is **split across a `{FFFE}`** (`反旗を{FFFE}翻した`), so a whole-phrase grep misses it. §25.3 vs §2's 旗印 → `ｂａｎｎｅｒ` (c0, c27) is **met**: disjoint chunk sets |
+| `おのれ` | c38 ×1, c41 ×2, c43 ×1 | #30 `Ｃｕｒｓｅ` | Nowhere in `tl/` — first **shipping** use (parked c43 has it) |
+| `刃を向け` | c38 ×1, c41 ×1 | #30 `ｔｕｒｎｅｄ　ａ　ｂｌａｄｅ　ｏｎ　ｕｓ` | — |
+| `ネズミ` family | 13 battle; c42 ×7, c41 ×2 | #31 spends 5 forms, #30 spends 2 | ⚠️ #31 notes c41's `この野ネズミが` is **grammatically SINGULAR** and §41.1 fixes only the plural `ｆｉｅｌｄ　ｍｉｃｅ`; `ｆｉｅｌｄ　ｍｏｕｓｅ` is unspent |
+I sent the last three to chunk 38 mid-flight, as I did `決着` to chunk 41.
+
+**PR #31 (chunk 42) also contributes independent evidence for §L2's pool reading** — worth carrying
+into Blocked 4's in-game visit. `はっ！` is forced to `Ｓｉｒ！` by **6 of 6** shipped instances, yet
+in L11 it lands mid-way through a run of Helfer's taunts, where a subordinate's assent makes no
+narrative sense. That is a **second, independent** consistency argument for pools of
+independently-selected strings, from a different chunk than §AE6's chunk 30.
 
 ⚠️ **CROSS-PR COLLISION — PRs #29 AND #30 RENDER `掌握` DIFFERENTLY. THE REVIEWER MUST RULE.**
 Found by me from both open PRs; the wave barrier is what made it visible before either merged.
