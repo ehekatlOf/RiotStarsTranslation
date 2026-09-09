@@ -53,61 +53,32 @@ preserved source — a NEW and DIFFERENT blocker, and the cheapest on the Blocke
 so `status` cannot count it. **986 finished JP characters (2.3 %) sit outside the 54.1 %.** ⭐ **The dumper is STILL unfixed** —
 re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` returns nothing.
 
-## In flight
-| Unit | Branch / file | PR | State |
-|---|---|---|---|
-| ~~battle chunk 30~~ | `tl/battle/chunk_030.txt` | **#27** | ✅ **MERGED 2026-09-09 — squash `9548e73`; integration commit `integrate: chunk 030 — glossary §43, FLAGS §AE, handoff`.** 7,615 / 8,192, **slack 577**; 183 rows, widest 23, none at 24; both over-4 pages verified inherited against a pristine extraction; `{FFFE}` changed on 7 lines, all itemised. All 8 gates passed, no findings. Glossary **§43** (12 terms + 4 rulings), FLAGS **§AE** |
-| battle chunk 31 | `tl/battle/chunk_031.txt` | #26 | **rework round 1 PUSHED** `89f5d60` — 5,399 / 8,192 (slack 2,793), +44 as predicted. **Awaiting round-2 re-review by the SAME reviewer** (a06a61f091fcf274c), queued behind chunk 36 |
-| ~~battle chunk 36~~ | **`pending/chunk_036.txt`** | **#25** | ✅ **PARKED 2026-09-09 — squash `018af11`; integration commit `integrate: chunk 036 — glossary §44, FLAGS §AF, pending README, handoff`.** All 8 gates passed, **no findings, no rework**. **2,887 / 8,192, slack 5,305** (31.4 % of budget); widest run 22, none at 23/24, 0 column problems; `{FFFE}` 104 → 107 all on body line 5, `{FCC0}` 2 → 2; both `>4`-row pages byte-identical to a pristine extraction. **Preservation verified, not accepted**: 9 of 10 body lines byte-identical incl. the 884-char MIPS listing, 23 replaced runs on the tenth, **every one Japanese on the source side**, 1,154 chars carried through. ⚠️ **Parked for a TOOLING reason, not budget — `FLAGS.md` §AF1, a NEW blocker kept distinct from §D1**; see Blocked item **0a**. Glossary **§44** (8 terms + 3 rulings + the §9 convention correction), FLAGS **§AF**, `pending/README.md` row added. **Nothing left on this unit but a human's one-function `assemble.py` fix; then `git mv`.** |
-| script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
+## In flight — WAVE 7 (3 of 4 decided)
+| Unit | PR | State |
+|---|---|---|
+| battle chunk 30 | #27 | ✅ **MERGED** `9548e73` — 7,615 / 8,192 (577 slack); integrated `bb715d0`, glossary §43 / FLAGS §AE |
+| battle chunk 36 | #25 | ✅ **PARKED** `018af11` — 2,887 / 8,192 (5,305 slack); integrated `1ea3a70`, glossary §44 / FLAGS §AF. **No findings.** Reason is Blocked item **0a** |
+| battle chunk 31 | #26 | **round 2 in review** — rework `89f5d60`, 5,399 / 8,192 (2,793 slack), +44 as predicted. Same reviewer resumed |
+| script batch_009 | #28 | **queued — the LAST unit.** +6,026 bytes, 2.034×, no bank negative |
 
-✅ **BARRIER MET. 2 of 4 decided (chunk 30 MERGED, chunk 36 PARKED), chunk 31 in REWORK round 1.**
-⚠️ **A rework does NOT occupy the reviewer slot.** **Remaining: PR #26 round 2 and PR #28.**
-Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
-→ script. Push HANDOFF before each reviewer; `git pull --ff-only` after each (it pushes an
-integration commit). Never two reviewers at once. A translator still working is not a
-failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
-fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
+⚠️ **ONE REVIEWER AT A TIME** — a rework does not occupy the slot, a review does. Push HANDOFF
+before each reviewer; `git pull --ff-only` after each (it pushes an integration commit).
 
-✅ **PR #25 (chunk 36) IS DECIDED — PARKED, squash `018af11`, no findings.** The park reason was
-**re-measured independently by the reviewer in a real checkout** and every figure below reproduced
-exactly. Three corrections were made **to the record, none to any file**: (1) ⚠️ **`FLAGS.md` §AE5's
-`石版` "correction" is WITHDRAWN — 569/571 and 574/576 are the SAME two lines in two conventions**
-(FILE = DATA + 5; the first data row of `script_unique.txt` is FILE 6), so neither was wrong; §AE5's
-real finding, the third instance at DATA 300 / FILE 305, stands, and glossary §9's rows now carry
-explicit convention labels (§AF3, glossary §44.5). ⚠️ **§AD5 flagged this exact clash one wave
-earlier and it recurred in the very next review** — state the convention on every line-number claim.
-(2) `riotbattle.bytes_from_body` **raises** on a battle body containing `{PAD}`, so PR #25's Flag 1
-overstated its cross-check; the byte figure itself is right and comes from `check` (§AF4).
-(3) `Ｆｏｒ　ｎｏｗ，` also renders `ここは、ひとまず` in `chunk_024`, which Flag 6 did not name;
-nothing collides (glossary §44.2). **The original coordinator note follows and was confirmed:** 2,887 / 8,192 bytes, slack 5,305; translation finished, faithful
-and format-clean; 0 column problems. It cannot enter `tl/` because **`assemble.py:validate_body`
-applies its charset whitelist to preserved SOURCE machine text**: chunk 36 is largely a full-width
-MIPS listing, and with `jp_ok=False` (the mode for translated files) **38 characters are rejected —
-`＞`×10 `＄`×14 `＿`×4 `｜`×3 `＃`×4 `ケ` `あ` `「` — and NOT ONE of them is on a translated run.**
-Re-measured here: pristine chunk 36 raises **193** problems; the delivered file raises **38** with
-`jp_ok=False` and **0** with `jp_ok=True`. ⚠️ **This is NOT the §D1 dumper artifact** — §D1 is
-`{FC70}`/`{FCA8}` tokenisation; this is the charset whitelist, a different fix in a different
-function. Reviewer: record it as its own `FLAGS.md` entry, a Blocked row and a `pending/README.md`
-row. Fix is one function in `assemble.py` (skip charset on runs byte-identical to the dump; merely
-widening `ALLOWED` is **insufficient** — the garbage block contains kana). **Needs no disc, no EXE
-and no dumper change, and after it unparking is a `git mv` and nothing else.**
-✅ **All three of those records are now WRITTEN** — `FLAGS.md` **§AF1** (its own entry, explicitly
-contrasted with §D1 in a side-by-side table), Blocked item **0a** above, and the
-`pending/README.md` reason table (now **three** reasons) plus a per-file row. Glossary **§44**
-carries the 8 terms, 3 rulings and the register. **Nothing on this unit is outstanding but the
-human's one-function `assemble.py` fix.**
+⚠️ **PR #28 IS THE LAST UNIT THAT RENDERS `石版` / `『かげの石版』`** — those §9 rows have been held
+live across three merges and may finally be struck when it lands. ⚠️ **`クロイツェル` stays live
+regardless** (1 battle + 1 script, bank 41). Only `遠征軍` is struck.
+**#28's open questions for its reviewer:** test the §25.3 ruling `なるほど` → `Ｉｎｄｅｅｄ．` (it
+shares banks 5, 8, 33 with `そうか`; this unit translates bank 8's instances of both) against its
+own census; `Ｅｘａｃｔｌｙ．` stays reserved, next reserve `Ｑｕｉｔｅ　ｒｉｇｈｔ．`. **8 of 50 rows
+carry sibling bindings**, 4 already shipped (DATA 535↔505, 578↔984, 579↔985, 581↔988) — ⚠️ **their
+TAGS DIFFER: match the visible English, keep your own tags.** DATA 691 is a twin of 582/583.
 
-## Next up — WAVE 7 (in flight; figures RE-VERIFIED by this coordinator)
-**Battle 30** (tier B, 1,358 JP, headroom 3,897, ratio **2.43** — tightest, expect a re-cut pass),
-**31** (tier C, 1,051 JP, ratio **3.46**), **36** (tier C, 986 JP, ratio **3.92** — ⚠️ **mostly a
-full-width MIPS assembly listing that must survive VERBATIM**; only ~154 JP chars are dialogue).
-
-**Script `tl/script/batch_009.tsv` = unique 534–583**, contiguous, **50 lines / 50 instances /
-2,913 JP chars**, **0/50 already translated, 0/50 scaffolding** — all re-measured, all exact.
-Banks **7, 8, 9, 10, 11, 12 only**; after: b7 **12,978**, b8 **10,621**, b9 **12,150**,
-b10 **33,597**, b11 **39,308**, b12 **8,541**. **None of the four tight banks (41, 40, 5, 2) is
-touched.** Scene: town troop-recruitment and NPC dialogue across several courts.
+## Next up — WAVE 8 (write the unit list at wave close)
+⚠️ **Battle 37, 38, 41, 42 are the ONLY dispatchable battle chunks left.** After wave 8 spends them,
+battle work **STOPS** until a human fixes the dumper (§D1, Blocked 0) or the charset gate (Blocked
+**0a**, new this wave). Recompute the script batch against FRESH bank figures — batch_009 measured
+b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559; the four tight banks are
+unmoved at 41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **15 open chunks.** ⚠️ **6 carry the §D1 dump artifact and will park exactly as chunk 17 did
@@ -195,156 +166,55 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-**Rulings live in their homes**: `glossary.md` §23–**§43**, `FLAGS.md` §K–**§AE**, `findings.md` §24,
-`pending/README.md`. ⚠️ **Section numbers are taken by READING both files at commit time.**
-- 2026-09-09 (wave 7, PR #27 review): **`ああ` splits on REGISTER** — §6's `Ｙｅａｈ` is conditioned
-  to casual, contraction-taking speakers; Rimul's assent is `Ｉ　ｄｏ．` (glossary §43.1; 13 of 13
-  shipped `Ｙｅａｈ` verified casual, the §41.4 precedent extended to a second interjection).
-  **`争い` → `ｓｔｒｉｆｅ` is §38's FIXED entry, `ｃｏｎｆｌｉｃｔ` refused** (§43.4) — and
-  **`batch_008.tsv` L55's `ｗａｒ` diverges from it and owes a re-cut** (`FLAGS.md` §AE2; 争い and
-  戦乱 **co-occur in bank 3**, so §25.3 FAILS for that pair). **Sentence-final `ブヒ` takes §5's
-  ノロ mechanism**, sentence-initial keeps §19.1's capital (§43.3). ⚠️ **Two reach counts in the PR
-  were wrong and BOTH came from counting the battle dump only**: `クロイツェル` is **not** a hapax
-  (bank 41 / unique 1391) so its §9 row **stays live** (§43.5), and `どうかご無事で` does **not**
-  recur in chunk 23 (§43.2). **Widths were exact everywhere** — §AC3's discipline has reached
-  widths but not yet reaches. **Gate 6 needs a positive control and a planted violation every
-  time**: this reviewer's first checker keyed on tag-bearing messages, matched nothing, and read as
-  a clean pass (`FLAGS.md` §AE7).
-- 2026-09-08: integration branch is `claude/workflow-translation-iterate-uzlkns`; `main` untouched.
-- 2026-09-08: script growth for planning is **2.10×**; **bank 40's budget goes to the 21-instance
-  item table**, not its story text; **seed the glossary BEFORE dispatching**; **a parked unit still
-  gets the full reading review**; **the `queue.py` batch POSITION is not the filename**.
-- 2026-09-09 (wave 6): **a term is "in the glossary" only if a row FIXES AN ENGLISH FORM**; findings
-  are **proposals to verify in BOTH directions** (5 coordinator figures wrong, 3 reviewer refusals
-  upheld, 2 agent claims refuted); **mechanical term search has 4 blind spots** (mixed script,
-  maximal runs, katakana register transforms, kana variants — `FLAGS.md` §Y2/§AC1); **a glossary
-  row's Alt column records REJECTED options, not a menu**; **measure every width with `len()`**
-  (§AC3 — the only systematic error three waves running); **`{FCC0}` is forbidden by
-  `assemble.py:tag_parity`, NOT by `rowcheck.py`**; **serialised review is worth its wall-clock**.
-- 2026-09-09 (wave 7): ⚠️ **THE WAVE-7 SEED'S LABEL WAS WRONG AND ITS FIGURES WERE RIGHT.** The unit
-  was handed over as "`queue.py script` **position 6**". It is **not**: position 6 is unique 340–342
-  + 702–748 (banks 18–21). Unique **534–583 is a hand-cut contiguous range straddling queue batches
-  3 and 4** and must be named by its line list, never by a queue position. **Every figure attached
-  to it re-measured EXACT** (50/50/2,913, six banks, all six after-figures, 0 done, 0 scaffolding).
-- 2026-09-09 (wave 7): ⚠️ **"Positions 1–5 are ALL bank-negative" does NOT reproduce** — all six
-  current positions fit. The seed chunked *all* untranslated lines in order; `queue.py`'s allocator
-  reports the *feasible* set, and by construction everything in it fits. **Two different questions;
-  say which one a bank claim answers.** 534–583 was kept anyway: contiguous, one scene, and it
-  touches none of the four tight banks.
-- 2026-09-09 (wave 7): **8 of the batch's 50 rows carry a sibling binding, not the 1 handed over.**
-  535↔505, 578↔984, 579↔985, 581↔988 are **already SHIPPED** (reuse the visible English exactly);
-  556↔557 and 582↔583 are **in-batch pairs**; 582/583↔691 is outside and untranslated. ⚠️ **The
-  bound rows' TAGS DIFFER** — match the visible English, keep your own tags, or tag parity breaks.
-- 2026-09-09 (wave 7): ⚠️ **A LIVE §25.3 COLLISION IS INSIDE THIS BATCH.** `Ｉ　ｓｅｅ．` already
-  renders `そうか`, `そうですか`, `なるほど` and `そうかい`. This batch puts **`そうか` (550, 553, 554)
-  AND `なるほど` (556, 557) BOTH IN BANK 8** — §25.3's "no chunk and no bank holds two" fails
-  outright, exactly as §42.4 predicted. It is the batch-009 translator's ruling to make and the
-  reviewer's to test; `Ｅｘａｃｔｌｙ．` stays reserved for `そのとおり`/`そうそう`.
+⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§44**, `FLAGS.md` §K–**§AF**,
+`findings.md` §24, `pending/README.md`. Section numbers are taken by **READING both files at commit
+time**, never reserved. This section keeps only what does not belong to a single unit.
 
-- 2026-09-09 (wave 7): ⚠️ **A COORDINATOR DISPATCH INSTRUCTION WAS IMPOSSIBLE, AND THE TRANSLATOR
-  WAS RIGHT TO REFUSE IT.** I told chunk 31 to reproduce its two Latin incantations "EXACTLY,
-  character for character". **`・` (U+30FB) is not in `assemble.py:ALLOWED` and is not in the
-  full-width Latin/digit ranges, so it is rejected outright** — verified here. The instruction was
-  unsatisfiable as written. The translator mapped the three `・` by existing rules instead
-  (separator → `　` per §1's `ゼファー・クリッペン`; trailing `・・` → `．．` per §3.1) and kept every
-  letter and its case byte-identical. **Third wave running that an agent has correctly refused a
-  coordinator instruction on measurement.** ⚠️ The same trap applies to chunk 36's preserved machine
-  text and to any future unit carrying source Latin — **`・` can never be "preserved verbatim".**
-- 2026-09-09 (wave 7): **two glossary figures corrected by measurement, both confirmed here.**
-  (a) **`ｇｅｍｓｔｏｎｅ` is 8 columns and `ｇｅｍｓｔｏｎｅｓ` 9** — §32.1 states "9 / 10" and §33.5
-  states "9"; both are one too high. No rendering changes; the form is 1 column *cheaper* than the
-  glossary believes. (b) **§32.7's `ふふ` census counts SUBSTRINGS, not laughs** — chunk 31 has
-  **3** ふ-runs (`ふふふ`, `ふふふふ`, `ふふふふふ`), whose non-overlapping `ふふ` substring count is
-  **5**, which is the "31 ×5" the row records. The §35.2 shape in a new place.
+**Standing (waves 4–6).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
+untouched. Script growth for planning **2.10×**. Bank 40's budget goes to the 21-instance item
+table, not its story text. Seed the glossary **before** dispatching. A **parked unit still gets the
+full reading review**. The `queue.py` batch **position is not the filename**. A term is "in the
+glossary" only if a row **fixes an English form**. Mechanical term search has **four blind spots**
+(mixed script, maximal runs, katakana register transforms, kana variants — §Y2/§AC1). A glossary
+row's **Alt column records REJECTED options, not a menu**. `{FCC0}` is forbidden by
+`assemble.py:tag_parity`, **not** by `rowcheck.py` (§Q2, already correct — never patch it).
 
-- 2026-09-09 (wave 7): **the kana/mixed-script blind spot bit THREE times in one chunk.** The
-  coordinator's brief caught `うらみ`/`恨み`; chunk 30's translator then found the same shape at
-  `まちがいない`/`間違いありません` and `じゃま`/`邪魔だて` by searching **both** scripts unprompted.
-  §Y2/§AC1's rule is not "check the one term you were warned about" — it is **search both scripts
-  for every term**.
-- 2026-09-09 (wave 7): ⚠️ **`石版` → `ｔａｂｌｅｔ` MUST STAY LIVE in §9 at every merge this wave.**
-  Reach re-measured by chunk 30's translator: **5 battle (chunks 30, 36) + 25 script instances
-  across 21 banks**, including unique 574/576. Chunk 36 being PARKED does not discharge it —
-  script 569/571 still render it. `クロイツェル` and `遠征軍` ARE exhausted by chunk 30 and may be
-  struck outright.
-
-- 2026-09-09 (wave 7): ⚠️ **A FOURTH COORDINATOR ERROR, caught by `batch_009` and verified here.**
-  My dispatch told it `Ｉ　ｓｅｅ．` renders "`そうかい` (batch 008)". **Both halves are wrong**:
-  `そうかい` is in **`batch_007.tsv:27`** (§38.2, banks 2/3), and **`batch_008` L64/L67 render
-  `そうか。`**. The correction *strengthens* the §25.3 ruling rather than weakening it, because it
-  puts a shipped `そうか` → `Ｉ　ｓｅｅ．` one bank over in the same town skeleton.
-  **Running total this wave: four coordinator figures/claims wrong, every one found by an agent
-  measuring.** The dispatch line "your measurement wins and my cell is the error" is doing real
-  work — keep writing it, and keep meaning it.
-- 2026-09-09 (wave 7): **§25.3 COLLISION RULED by `batch_009` (reviewer must test it):
-  `なるほど` → `Ｉｎｄｅｅｄ．` where it shares a bank with `そうか`; `そうか` keeps `Ｉ　ｓｅｅ．`.**
-  Census: the two share banks **5, 8 and 33**, and this unit translates bank 8's instances of both.
-  `なるほど` moves because it is the 2-row side, because `そうか` → `Ｉ　ｓｅｅ．` is shipped one bank
-  over in the same skeleton, and because `なるほど`'s only shipped instances are chunk 33 and parked
-  chunk 17. **`Ｅｘａｃｔｌｙ．` re-verified free and left reserved**; next reserve named as
-  `Ｑｕｉｔｅ　ｒｉｇｈｔ．`
-- 2026-09-09 (wave 7): **all six of my projected bank figures were CONSERVATIVE by 27–330 bytes** —
-  measured by moving the file aside, re-merging and re-running `bankmeasure` rather than projecting.
-  Actual: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559. **None of the
-  four tight banks moved by a byte** (41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365). Erring
-  conservative is the right direction, but the projection is not the measurement.
-
-- 2026-09-09 (wave 7): ⚠️ **A FIFTH COORDINATOR ERROR — `クロイツェル` IS NOT A HAPAX AND ITS §9 ROW
-  STAYS LIVE.** My reviewer briefing repeated PR #27's "1 battle + 0 script, struck outright". The
-  reviewer measured **1 battle + 1 script (bank 41, `script_unique` DATA 1386 / FILE 1391)** and
-  kept the row. **Only `遠征軍` was genuinely exhausted and struck.** A wrong figure travels: it was
-  the translator's, I repeated it without measuring, and only the third party caught it.
-- 2026-09-09 (wave 7): ⚠️ **THE SEVEN-NUMBERING-CONVENTIONS TRAP FIRED, AND IT LOOKED LIKE A
-  FACTUAL CORRECTION.** PR #27's reviewer reported the `石版` unique ids as "**305, 574, 576**, not
-  569/571". **Both are right — FILE = DATA + 5, confirmed here** (the first data line of
-  `script_unique.txt` is file line 6). My dispatch specified DATA numbering explicitly and was
-  internally consistent. ⚠️ **A convention difference stated as a correction is worse than either
-  convention**: a wave-8 agent that inherits "574/576" and resolves it with `script_rows()` lands
-  on the WRONG ROWS. **Every line-number claim must name its convention** — that is now twice this
-  wave that numbering has cost real attention.
-- 2026-09-09 (wave 7): **the reviewer's substantive `石版` catch is REAL and neither I nor the PR
-  had it.** There is a **third** row — **DATA 300 / FILE 305, 21 instances across 21 banks** — the
-  big item-table row, which is why the reach is 21 banks rather than one. Full set: DATA **300,
-  569, 571**. §9's `石版` row stays live until the last of them lands.
-- 2026-09-09 (wave 7): ⚠️ **A GATE-6 CHECKER THAT MATCHES NOTHING REPORTS A CLEAN PASS.** PR #27's
-  reviewer's first checker keyed on tag-bearing messages, matched zero, and passed. **Only a
-  positive control caught it.** Its working version keys on readable text and was proved live with
-  two planted corruptions. `FLAGS.md` §AE7. **Every gate-6 checker needs a positive control before
-  its output is evidence** — this is the sixth recorded quiet-failure trap in this repo.
-
-- 2026-09-09 (wave 7): **PR #26 → CHANGES on ONE finding, and the finding kills a PREMISE rather
-  than a rendering.** Chunk 31 compressed `百戦錬磨の将とはいえ、` under §2.1 step 4 because it read
-  §3.2 as forbidding a 4th text row beneath a leading blank. The reviewer censused **all 44 pristine
-  chunks**: the shape §3.2 actually warns about (`.TTTT.`) occurs **0** times, while `.TTTT` occurs
-  **182**. With the geometry premise gone, nothing licenses departing from literal in a chunk with
-  2,837 bytes of slack. Fix is the full literal at **22/22/22** (not the PR's 23/23/22), +44 bytes.
-  **A census over the corpus beat a plausible reading of the style guide** — that is the pattern to
-  repeat when a translator pleads geometry.
-- 2026-09-09 (wave 7): ⚠️ **A SIXTH INHERITED FIGURE WRONG, AND AGAIN IT PASSED THROUGH ME
-  UNMEASURED.** The second bad `ｇｅｍｓｔｏｎｅ` cell is at glossary **line 2804, inside §33's
-  promotions table** — NOT in §33.5, which carries no column figure at all. The PR said §33.5, I
-  repeated it, the reviewer measured. **The line number was right and the section attribution was
-  wrong in both of us.** Cite a location by reading it, not by copying a citation.
-- 2026-09-09 (wave 7): **§25.3 pairing left LIVE by PR #26, recorded not re-cut.** `何だって？` →
-  `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` creates a **bank-5/41 pairing the PR did not test**; reserve
-  `Ｗｈａｔ　ｄｉｄ　ｙｏｕ　ｓａｙ？` verified free. Also `だけど、`'s stated reason is wrong (two
-  connectives, not two spellings) though the collapse itself is discharged by shipped practice
-  (`chunk_008` L8 carries both in one message).
-
-- 2026-09-09 (wave 7): ⚠️ **§AC3 HAS A NEW HIDING PLACE — MEASURE THE OPTION YOU ARGUE AGAINST,
-  NOT ONLY THE ONE YOU SHIP.** Chunk 31's translator measured every row that ENTERED its file with
-  `len()`, but the rejected alternative quoted in its own Flag 4 never entered the file, so it was
-  hand-counted — and wrong (23/23/22 for a true **22/22/22**; `hundred` and `battles` are 7 letters,
-  counted as 8). The reviewer's figure was right and the translator confirmed it against its own
-  measurement rather than deferring. **Rejected alternatives, reserves and "this would have been"
-  figures are exactly where hand-counting survives**, because the shipping row gets checked and the
-  argument row does not.
-- 2026-09-09 (wave 7): **SERIALISED REVIEW PAID OFF AGAIN — §41.4 NOW PREDICTS 11 OF 11.** Chunk 30
-  merged *between* chunk 31's two review rounds and entered the gate-6 index carrying `どうやら、`
-  **three times, all `Ｉｔ　ｓｅｅｍｓ …`, all on Rimul** — the formal, contraction-free side. That is
-  the same call chunk 31's L4 made independently, from a different unit and a different agent with
-  no knowledge of the question. This is the second wave running that reviewing one PR at a time has
-  produced an independent corroboration that parallel review would have hidden.
+**Wave 7 — measurement discipline. This is the section that earns its space.**
+- ⚠️ **EIGHT coordinator/inherited figures were refuted by measurement this wave, and every single
+  one was caught by an agent I had told to check me.** Mine: the batch's "queue position 6" label
+  (it is a hand-cut line range); "positions 1–5 are all bank-negative" (does not reproduce); an
+  instruction to reproduce Latin "character for character" (**impossible** — `・` U+30FB is rejected
+  by the charset gate); `そうかい` attributed to `batch_008` (it is `batch_007.tsv:27`). Inherited
+  from a PR and repeated by me without measuring: `クロイツェル` called exhausted (it is not — 1
+  battle + 1 script, bank 41); the second bad `ｇｅｍｓｔｏｎｅ` cell placed in §33.5 (it is at
+  **line 2804 inside §33's promotions table**; §33.5 carries no figure). **Write "your measurement
+  wins and my cell is the error" into every dispatch, and mean it.**
+- ⚠️ **AND VERIFY IN BOTH DIRECTIONS — two "corrections" TO me were themselves wrong.** PR #27's
+  reviewer "corrected" `石版` DATA 569/571 to FILE 574/576 and it was written into `FLAGS.md` §AE5
+  and glossary §9 as though 569/571 were an error. **They are the same lines in two conventions**
+  (FILE = DATA + 5). Chunk 36's reviewer withdrew it (§AF3, glossary §44.5). §AE5's real finding —
+  a third `石版` at **DATA 300, 21 instances across 21 banks** — stands.
+- ⚠️ **STATE YOUR NUMBERING CONVENTION on every line-number claim, and cite a location by READING
+  it, not by copying a citation.** Seven conventions exist in this repo (`batch_008.tsv` counts
+  DATA, `batch_007.tsv` counts FILE, `rowcheck` line N = `validate_body` body line N−1). Numbering
+  has now cost real attention twice in one wave, and §AD5 flagged the same clash a wave earlier.
+- ⚠️ **MEASURE THE OPTION YOU ARGUE AGAINST, not only the one you ship** (§AC3's new hiding place).
+  Chunk 31's only wrong figure was its own **rejected** alternative — hand-counted because it never
+  entered the file, so nothing ever checked it. Reserves, alternatives and "this would have been"
+  figures are where hand-counting survives.
+- ⚠️ **A GATE-6 CHECKER THAT MATCHES NOTHING REPORTS A CLEAN PASS** (`FLAGS.md` §AE7). PR #27's
+  reviewer's first checker matched **zero** pairs and passed; only a positive control caught it.
+  **Plant a corruption, prove the checker fails on it, then trust its output.** Battle `tl/` files
+  hold no Japanese (grep is a null check — use the positional method); script TSVs keep Japanese in
+  column 2, so a column-2 grep is valid there.
+- **A CENSUS BEATS A PLAUSIBLE READING OF THE STYLE GUIDE.** Chunk 31 compressed a line believing
+  §3.2 forbade a 4th text row under a leading blank; a census of all 44 pristine chunks found that
+  shape (`.TTTT.`) occurs **0** times and `.TTTT` **182**. Premise gone, compression unlicensed.
+- **SERIALISED REVIEW PAID OFF AGAIN — §41.4 now predicts 11 of 11.** `chunk_030` merged *between*
+  chunk 31's two review rounds and supplied three more `どうやら` instances, all formal, all
+  matching, from an independent unit and agent. Second wave running this has happened.
+- **A wrong figure travels.** Three of the eight above originated in a PR, passed through my
+  briefing unmeasured, and were caught only by the third role. The three-role split is doing work.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
