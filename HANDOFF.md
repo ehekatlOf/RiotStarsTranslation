@@ -168,78 +168,49 @@ and state the convention**, per `glossary.md` §44.5 and §46. ⚠️ **Chunk 37
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-⚠️ **NEW, AND IT BINDS EVERY TRANSLATOR FROM NOW ON (glossary §45.2 / FLAGS §AG1).** **A page's
-source-blank TRAILING segment MAY carry text** — where no tag is added, moved or deleted and the
-resulting shape is attested in the pristine dump. It buys a text row for **0 bytes** against
-`{FFFE}`'s 2. A 44-chunk census settles it: `TTTT` 389, `TT` 262, `.TTTT` **182**, `TTT` 115 — and
-**`.TTTT.` 0**. ⚠️ **§3.2's warning is about `.TTTT.` ONLY** (leading blank *and* trailing blank
-*and* four text rows) and does **not** reach `.TTTT`; filling a trailing blank moves *away* from the
-never-attested shape. Misreading this cost chunk 31 a review round — it compressed a line for a
-constraint that does not exist, in a chunk with 2,837 bytes of slack.
-⚠️ **§AC3 EXTENDED (FLAGS §AG6): measure the option you argue AGAINST, not only the one you ship.**
-Chunk 31 `len()`-measured every row that entered the file and got all of them right; the *rejected*
-alternative quoted in its flag never entered the file, was hand-counted, and was wrong — and it was
-the number the whole argument rested on. No gate can catch that one.
-
-⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§45**, `FLAGS.md` §K–**§AG**,
+⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§46**, `FLAGS.md` §K–**§AH**,
 `findings.md` §24, `pending/README.md`. Section numbers are taken by **READING both files at commit
 time**, never reserved. This section keeps only what does not belong to a single unit.
 
-**Standing (waves 4–6).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
-untouched. Script growth for planning **2.10×**. Bank 40's budget goes to the 21-instance item
-table, not its story text. Seed the glossary **before** dispatching. A **parked unit still gets the
-full reading review**. The `queue.py` batch **position is not the filename**. A term is "in the
-glossary" only if a row **fixes an English form**. Mechanical term search has **four blind spots**
-(mixed script, maximal runs, katakana register transforms, kana variants — §Y2/§AC1). A glossary
-row's **Alt column records REJECTED options, not a menu**. `{FCC0}` is forbidden by
-`assemble.py:tag_parity`, **not** by `rowcheck.py` (§Q2, already correct — never patch it).
+**Standing (waves 4–8).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
+untouched. Script growth for planning **2.10×** (realised aggregate **2.118**, re-measured wave 8
+over 408 shipped lines). Bank 40's budget goes to the 21-instance item table, not its story text.
+Seed the glossary **before** dispatching. A **parked unit still gets the full reading review**. The
+`queue.py` batch **position is not the filename, and not the unit** — name script batches by their
+**DATA line list** and state the convention. A term is "in the glossary" only if a row **fixes an
+English form**. Mechanical term search has **four blind spots** (mixed script, maximal runs,
+katakana register transforms, kana variants — §Y2/§AC1). A glossary row's **Alt column records
+REJECTED options, not a menu**. `{FCC0}` is forbidden by `assemble.py:tag_parity`, **not** by
+`rowcheck.py` (§Q2, already correct — never patch it).
 
-**Wave 7 — measurement discipline. This is the section that earns its space.**
-- ⚠️ **EIGHT coordinator/inherited figures were refuted by measurement this wave, and every single
-  one was caught by an agent I had told to check me.** Mine: the batch's "queue position 6" label
-  (it is a hand-cut line range); "positions 1–5 are all bank-negative" (does not reproduce); an
-  instruction to reproduce Latin "character for character" (**impossible** — `・` U+30FB is rejected
-  by the charset gate); `そうかい` attributed to `batch_008` (it is `batch_007.tsv:27`). Inherited
-  from a PR and repeated by me without measuring: `クロイツェル` called exhausted (it is not — 1
-  battle + 1 script, bank 41); the second bad `ｇｅｍｓｔｏｎｅ` cell placed in §33.5 (it is at
-  **line 2804 inside §33's promotions table**; §33.5 carries no figure). **Write "your measurement
-  wins and my cell is the error" into every dispatch, and mean it.**
-- ⚠️ **AND VERIFY IN BOTH DIRECTIONS — two "corrections" TO me were themselves wrong.** PR #27's
-  reviewer "corrected" `石版` DATA 569/571 to FILE 574/576 and it was written into `FLAGS.md` §AE5
-  and glossary §9 as though 569/571 were an error. **They are the same lines in two conventions**
-  (FILE = DATA + 5). Chunk 36's reviewer withdrew it (§AF3, glossary §44.5). §AE5's real finding —
-  a third `石版` at **DATA 300, 21 instances across 21 banks** — stands.
-- ⚠️ **STATE YOUR NUMBERING CONVENTION on every line-number claim, and cite a location by READING
-  it, not by copying a citation.** Seven conventions exist in this repo (`batch_008.tsv` counts
-  DATA, `batch_007.tsv` counts FILE, `rowcheck` line N = `validate_body` body line N−1). Numbering
-  has now cost real attention twice in one wave, and §AD5 flagged the same clash a wave earlier.
-- ⚠️ **MEASURE THE OPTION YOU ARGUE AGAINST, not only the one you ship** (§AC3's new hiding place).
-  Chunk 31's only wrong figure was its own **rejected** alternative — hand-counted because it never
-  entered the file, so nothing ever checked it. Reserves, alternatives and "this would have been"
-  figures are where hand-counting survives.
-- ⚠️ **A GATE-6 CHECKER THAT MATCHES NOTHING REPORTS A CLEAN PASS** (`FLAGS.md` §AE7). PR #27's
-  reviewer's first checker matched **zero** pairs and passed; only a positive control caught it.
-  **Plant a corruption, prove the checker fails on it, then trust its output.** Battle `tl/` files
-  hold no Japanese (grep is a null check — use the positional method); script TSVs keep Japanese in
-  column 2, so a column-2 grep is valid there.
-- **A CENSUS BEATS A PLAUSIBLE READING OF THE STYLE GUIDE.** Chunk 31 compressed a line believing
-  §3.2 forbade a 4th text row under a leading blank; a census of all 44 pristine chunks found that
-  shape (`.TTTT.`) occurs **0** times and `.TTTT` **182**. Premise gone, compression unlicensed.
-- **SERIALISED REVIEW PAID OFF AGAIN — §41.4 now predicts 11 of 11.** `chunk_030` merged *between*
-  chunk 31's two review rounds and supplied three more `どうやら` instances, all formal, all
-  matching, from an independent unit and agent. Second wave running this has happened.
-- **A wrong figure travels.** Three of the eight above originated in a PR, passed through my
-  briefing unmeasured, and were caught only by the third role. The three-role split is doing work.
-
-- ⚠️ **A NINTH FIGURE OF MINE WRONG — AND WRONG IN BOTH DIRECTIONS AT ONCE.** I told chunk 31's
-  reviewer "§41.4 now predicts 11 of 11". It is **13 of 13**: the reviewer censused the whole battle
-  dump (**19 `どうやら`, 13 rendered, 6 untranslated** — chunks 15 ×3, 16, 23 ×2) and found
-  **§41.4's own table listed 8 and missed `chunk_008` line 14**, so the rule was 9 of 9 when
-  written, not 8 of 8. My number was too low AND the source table it came from was too low.
-  Glossary §45.4. ⚠️ **§41.4's "with no exceptions" is STILL wrong** — the census was battle-only,
-  and `batch_005.tsv` puts a plainly casual speaker (`俺たち`, `ラッキーだぜ`, `ｈａｓｎ’ｔ`) on the
-  `ｉｔ　ｓｅｅｍｓ` side. Pre-existing and shipped; no rendering changes.
-
+**Measurement discipline — the rules that keep earning their space.**
+- ⚠️ **"Your measurement wins and my cell is the error" goes in every dispatch.** Wave 7 had **nine**
+  coordinator/inherited figures refuted by measurement; wave 8's own briefing then asserted DATA 300
+  was "not bank-blocked" when it lands in bank 40 (see Remaining). **A wrong figure travels, and
+  only the third role catches it.**
+- ⚠️ **VERIFY IN BOTH DIRECTIONS — a wrong correction is worse than a wrong figure**, because it
+  enters the record as fact. Wave 7's `石版` DATA 569/571 → "FILE 574/576" correction was itself
+  wrong (same lines, two conventions) and had to be withdrawn (§AF3, glossary §44.5).
+- ⚠️ **STATE YOUR NUMBERING CONVENTION on every line-number claim** — seven exist in this repo —
+  and **cite a location by READING it, not by copying a citation.** Verified wave 8: in
+  `script_unique.txt`, **FILE = DATA + 5**, constant offset; `queue.py` uses DATA.
+- ⚠️ **MEASURE THE OPTION YOU ARGUE AGAINST** (§AC3 / FLAGS §AG6). A rejected alternative never
+  enters the file, so no gate ever checks it — that is where hand-counting survives. Wave 8 caught
+  two of its own hand-counted glossary widths this way before committing.
+- ⚠️ **A CHECKER THAT MATCHES NOTHING REPORTS A CLEAN PASS** (§AE7). **Plant a corruption, prove the
+  checker fails on it, then trust it.** Battle `tl/` files hold no Japanese, so grepping one for a
+  source string is a null check — use the positional method; script TSVs keep Japanese in column 2,
+  so a column-2 comparison IS valid there.
+- **A CENSUS BEATS A PLAUSIBLE READING OF THE STYLE GUIDE** (glossary §45.2 / FLAGS §AG1). A
+  page's source-blank **trailing** segment MAY carry text: `.TTTT` is attested **182** times across
+  the 44 pristine chunks, `.TTTT.` **0**. §3.2's warning is about `.TTTT.` only. Chunk 31 lost a
+  review round compressing for a constraint that does not exist.
+- **SERIALISED REVIEW EARNS ITS WALL-CLOCK.** Chunk 30 merged between chunk 31's two review rounds
+  and supplied three more `どうやら` instances that confirmed §41.4 (now **13 of 13**, glossary
+  §45.4). Never two reviewers at once; a translator reworking does **not** occupy the reviewer slot.
+- **A reviewer can finish its merge and integration while still "running".** Do not pull or write
+  HANDOFF mid-integration; if one dies after merging but before integrating, do the integration
+  yourself — **never re-review a merged PR.**
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
 |---|---|---|---|---|
