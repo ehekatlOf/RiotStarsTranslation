@@ -191,6 +191,22 @@ repacks fixed defects neither party had claimed: an orphaned `ａｍ` (§3.2), a
 leading-blank + 4 text rows = 5, now 4 and inside the box. **No round-1 edit touches a cross-unit
 term, so chunk 20 still needs no re-cut.**
 
+### 🔧 OPERATIONAL DEFECT — THE SHARED SCRATCHPAD BIT A **REVIEWER** THIS TIME
+Chunk 19's reviewer reports that its scratchpad `rows.py` was **overwritten mid-task by another
+agent working chunk 20**, and it caught this only because the output was visibly chunk 20's data.
+It re-ran under a unique name.
+
+⚠️ **This is my omission as coordinator, and it is a gap in the contract, not just in my dispatch.**
+`SKILL.md` §3 makes namespacing mandatory for **translators** and I passed that on to all four —
+but **nothing tells REVIEWERS to namespace, and I did not add it.** Reviewers run concurrently with
+reworking translators by design (a rework does not occupy the reviewer slot), so they collide in
+exactly the same way. Wave 2 lost a translator's measurements this way; wave 4 nearly lost a
+reviewer's **gate evidence**, which is worse — that is what a merge decision rests on.
+
+➡️ **Fix for wave 5 and for `SKILL.md`: every agent of every role namespaces every scratch file
+(`r014_rows.py`, `c021_measure.py`), or each gets a per-unit subdirectory. And no agent should
+trust a scratchpad script it did not write in the same turn.**
+
 ### ✅ `あら` IS RULED (chunk 20's review, PR #14) — and §28.3 is corrected
 → **`Ｍｙ` + the source's own punctuation.** §24.4 already spent `Ｏｈ？` on おや across **29
 occurrences**, so `Ｏｈ` cannot take a fourth string. §28.3's claim that "the alternative
