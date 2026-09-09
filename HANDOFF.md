@@ -27,7 +27,10 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > Omit `environment_id` and `model` so both inherit. Units: **battle chunks 24, 25, 26 + the
 > 47-line script batch (unique 470–516)** — see **Next up**.
 >
-> If this line still says "open wave 6" and no wave-6 session exists, the chain broke: open it.
+> ✅ **DONE 2026-09-09 05:39Z — wave 6's session is OPEN: `session_013hHmA6EJT3rCC5wAiX6fwt`.**
+> Wave 5's coordinator is finished; the chain is live and needs no human.
+>
+> If that session never ran, the chain broke here: open a replacement the same way.
 
 ## Last updated
 2026-09-09 · by: **wave-5 coordinator** (`session_0126GVzUTXdEP5VpVWWJXBCU`) ·
