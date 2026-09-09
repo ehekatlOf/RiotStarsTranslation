@@ -40,7 +40,7 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 | Unit | Branch / file | Budget | Round | State |
 |---|---|---|---|---|
 | battle chunk 24 | ~~`tl/battle-024`~~ → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | ✅ **MERGED — PR #24, decision MERGE, squash `f1d1581`, integration commit `integrate: chunk 024 — glossary, flags, handoff`.** All 9 gates passed, every figure re-measured exact: **5,913 / 8,192 (2,279 slack)**, 2.0479× against a 2.9913× ceiling, 157 text rows (src 155), widest 23, **none at 24**, `{FFFE}` 132→134, `{FCC0}` 14→14. Gate 6 by the positional method over 28 files: **zero new divergences**. Glossary **§39**, FLAGS **§AA**. Nothing sent back — 6 PR figures corrected at merge (§39.3), no line changed |
-| battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | ⚠️ **PR #23 — CHANGES at round 1**, 2 findings (both 1-row substitutions, −16 bytes). Findings relayed verbatim to the same translator; the SAME reviewer (holds its gate context, no integration commit pushed) re-reviews on the re-push. Expected after fix: **5,403 / 8,192 (2,789 slack)** |
+| battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | ⚠️ **PR #23 — round 2 PENDING.** Round 1 = CHANGES (2 findings); translator **re-pushed `dacd7ab`**, both accepted in full, landing at **5,403 / 8,192 (2,789 slack)** — exactly the predicted figure, −16 bytes. ⏳ Waiting on the reviewer slot: resume the SAME reviewer `a85358204fce2e636` once chunk 26 is decided |
 | battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **PR #22 OPEN** — **5,325 / 8,192 (2,867 slack)**, 1.84× growth, max run 23 cols, +3 `{FFFE}`. All six seed reach figures and widths re-measured **exact**. Awaiting the barrier |
 | script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
@@ -193,6 +193,17 @@ against a PR** (`translation_prompt.md` lines 248, 361, 373, 520 are a documenta
 human). Only the mechanism was misstated. ⚠️ **If `FLAGS.md` §Q2 records the narrower/wrong cause,
 the next reviewer should patch it in place** per the 2026-09-09 "patch, don't merely record"
 decision. Future dispatches must cite `tag_parity`, not `rowcheck`.
+
+### Width figures corrected at the chunk-25 rework (all re-measured with `len()`)
+The translator re-audited **all 37** width figures in PR #23's body: **14 wrong**, 13 of them one
+too high, and — the reviewer's diagnosis exactly — **every figure it argued from was correct**; all
+14 errors were in table cells typed rather than measured. I verified the key ones independently.
+⚠️ **`Ｐｒｉｎｃｅ　Ｈｏａｇ` is 11**, not the PR's 6 and not §9's "10 with the title" — **§9 is one LOW
+here**, the opposite direction to everything else, so it needs its own in-place fix. Also
+`Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ` **13** (not 14), `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` **15** (not 16),
+`ｄｅｓｃｅｎｄａｎｔ` **10** (Flag 15 formally **withdrawn by its own author**), `Ｆｕｆｕ` 4, `Ａｎｄ，` 4.
+**Hand-counted widths are now the only systematic error three waves running**, and this wave they
+appeared in a coordinator seed, a translator PR body and nowhere that anyone actually measured.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
 Battle: **18 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
