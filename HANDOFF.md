@@ -12,82 +12,72 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 5 IS CLOSED — 4 of 4 merged, 0 parked. `check` green. Battle 23/44 (43.2%), script 52.5%.**
-> The next act is to **OPEN WAVE 6'S SESSION**, which wave 5's coordinator does in the same turn.
+> **WAVE 6 IS RUNNING** in `session_013hHmA6EJT3rCC5wAiX6fwt`. Glossary seeded (`44333d8`);
+> four translators dispatched. The coordinator reviews behind the wave barrier, closes the wave,
+> then opens **wave 7's session** (`create_session`, BOTH `source_url` and `source_revision`).
 >
-> ```
-> create_session(                                        # claude-code-remote MCP
->   title:           "Riot Stars — wave 6",
->   tags:            ["riotstars-translation", "wave-6"],
->   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH are required
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-6 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both inherit. Units: **battle chunks 24, 25, 26 + the
-> 47-line script batch (unique 470–516)** — see **Next up**.
->
-> ✅ **DONE 2026-09-09 05:39Z — wave 6's session is OPEN: `session_013hHmA6EJT3rCC5wAiX6fwt`.**
-> Wave 5's coordinator is finished; the chain is live and needs no human.
->
-> If that session never ran, the chain broke here: open a replacement the same way.
+> If this line still says "wave 6 is running" and no agent is alive (`ListAgents`) and no wave-6
+> PRs are open, the chain broke here: re-dispatch the missing units, or open a replacement session.
 
 ## Last updated
-2026-09-09 · by: **wave-5 coordinator** (`session_0126GVzUTXdEP5VpVWWJXBCU`) ·
-wave: **5 CLOSED — 4 merged, 0 parked** · queue: **fresh, wave-6 batch pre-vetted**
+2026-09-09 · by: **wave-6 coordinator** (`session_013hHmA6EJT3rCC5wAiX6fwt`) ·
+wave: **6 dispatched — 4 units** · queue: **fresh; wave-6 batch re-verified, 3 seed errors corrected**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **23** | 44 | 0–4, 6–14, 18–22, 33, 34, 35, 40 |
-| Battle JP characters | **18,664** | 43,161 | **43.2%** (was 39.4% at wave-5 start) |
+| Battle JP characters | **18,664** | 43,161 | **43.2%** |
 | Script unique lines | **311** | 1,430 | `tl/script/batch_001–007.tsv` |
 | Script message instances | **4,162** | 7,931 | **52.5%** |
 
-`check`: **All checks passed** on the integration branch. Tightest banks: **41 → 353, 40 → 447,
-5 → 3,357, 2 → 3,365** (bank 2 fell from 7,505 this wave and has joined the tight group),
-33 → 9,291. Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifact).
+`check`: **All checks passed** on the integration branch at `44333d8`. Tightest banks:
+**41 → 353, 40 → 447, 5 → 3,357, 2 → 3,365**, 33 → 9,291. Parked: chunks **5, 43** (tier-A budget)
+and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked at wave-6 preflight with
+`grep -n "FC70\|FCA8" tools/riotbattle.py`: no match. Chunk 17 stays parked.
 
-## In flight
-**Nothing. Wave 5 is closed and no PR is open.** Wave 6's session dispatches its own units.
+## In flight — WAVE 6 (dispatched 2026-09-09)
+| Unit | Branch / file | Budget | Round | State |
+|---|---|---|---|---|
+| battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | dispatched |
+| battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | dispatched |
+| battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | dispatched |
+| script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | dispatched |
 
-## Next up — WAVE 6
-**Four units. Seed the glossary BEFORE dispatching.** Sections currently end at **glossary §38** and
-**FLAGS §Z** — ⚠️ take the next number by **READING both files at commit time**, never by reserving.
+**Review nothing until all four have an open PR** (CLAUDE.md §4 barrier).
 
-**1–3. Battle chunks 24 (C 2.99), 25 (C 3.48), 26 (C 3.36)** — chapter order, all artifact-free.
+### ⚠️ Wave-6 seed errors, measured and corrected at preflight
+The wave-5 handoff's script-batch arithmetic was wrong in three ways. The **unit is still sound**
+and was dispatched unchanged; the *figures and the rationale* were not.
+1. **Banks: 4 and 5 only — bank 3 is untouched.** The seed said "banks 3/4/5, bank 3 +448 → 7,665".
+   Measured: **bank 4 +2,119 → 9,662; bank 5 +1,491 → 1,866**. The seed said bank 5 → 2,640, so the
+   true post-batch figure is **774 bytes tighter than advertised** on an already-tight bank.
+2. **The bank-40 exclusion named the wrong lines — off by five.** The seed said unique **326/327/328**
+   are count-3 gossip lines with all instances in bank 40. They are not: they are count-**2** shop
+   lines in banks **{4:2}, {5:1,7:1}, {5:1,7:1}** with **zero** bank-40 instances. The lines actually
+   described (Batou the priest; Limrose's casino; the hobbit village) are unique **321, 322, 323** —
+   count 3, all three instances in bank 40, **+852 against 447 free → −405**. ⚠️ **321/322/323 are the
+   ones that must stay parked** until the bank-40 repoint. None of the six is in this wave's batch,
+   so nothing was at risk, but the wrong three would have been un-parked next wave.
+3. **The 21-instance item table is unique 127–313, not 127–330** (187 lines at count 21; 314–330 are
+   count 2–10). Matters for the next wave's bank-40 budgeting.
 
-**4. Script batch → `tl/script/batch_008.tsv` — ALREADY COMPUTED AND VETTED at the wave-5 close.**
-**Take `queue.py script` position 3 MINUS unique 326, 327, 328 → 47 lines, unique 470–516.**
-- 0/47 scaffolding, vetted on the **text field**. Banks 3/4/5 only: bank 3 **+448 → 7,665**,
-  bank 4 **+2,037 → 9,768**, bank 5 **+741 → 2,640**. **Bank 40 untouched at 447.**
-- ⚠️ **326/327/328 MUST be excluded.** Each has **count 3** and all three instances land in
-  **bank 40**: **+816 bytes against 447 free → bank 40 goes NEGATIVE by 369.** They are 3-instance
-  gossip lines (Batou; Limrose's casino; the hobbit village) and wait for the bank-40 repoint.
-- ⚠️ **Position 4 (329–332, 521–566) is NOT dispatchable** despite being scaffolding-clean: it puts
-  **3,351 JP chars into bank 5** (3,357 free) → **−3,991**. Clean of scaffolding, fatal on banks.
-- ⚠️ **Position 2 (320, 1073–1121) is the debug batch — NEVER dispatch** (28/50 scaffolding).
-- ⚠️ **The recorded vetting regex is broken TWICE, not once.** Matching the **text field** (rows are
-  `<count>\t<text>`) is necessary but **not sufficient**: `^[０-９]{2}：` fires **ZERO** times even
-  there, because the text begins with `{FB01}` tags, not digits. Use **unanchored `[０-９]{2}：`**
-  on the text field — that is what yields position 2's 28/50.
-
-⚠️ **Chunk 37 (a later wave) inherits `FLAGS.md` §Y6:** Cress's gender is fixed nowhere in
-`glossary.md` and rendered nowhere in `tl/` (chunks 8, 13, 22 are first-person, vocative or
-subject-less). A third-person line forces the pronoun; getting it wrong is a §4.3 correction
-reaching three shipped files.
+## Next up — WAVE 7 (provisional; the wave-6 close fixes it)
+Battle, chapter order: **30 (B 2.43), 31 (C 3.46), 36 (C 3.92)**. Script: the next `queue.py script`
+position that is scaffolding-clean **and** bank-safe — ⚠️ **verify banks by INSTANCES before
+dispatch** (see the corrections above); position 4 (329–332, 521–566) is clean of scaffolding but
+puts ~3,351 JP chars into bank 5 and must not be taken, and position 2 (320, 1073–1121) is the debug
+batch (28/50 scaffolding under the **unanchored** `[０-９]{2}：` on the text field) — never dispatch it.
 
 ## Remaining (dispatchable) — `python3 tools/queue.py battle`
-Battle: **21 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
-exactly as chunk 17 did — 15, 23, 27, 28, 29, 39.** Until a human fixes `riotbattle.tokenise` only
-**10 are dispatchable**, in chapter order: 24 (C 2.99), 25 (C 3.48), 26 (C 3.36), 30 (B 2.43),
-31 (C 3.46), 36 (C 3.92), 37 (C 3.69), 38 (C 3.37), 41 (E 6.54), 42 (D 5.46). **About three waves.**
+Battle: **18 open chunks**, but ⚠️ **6 carry the §D1 dump artifact (Blocked item 0) and will park
+exactly as chunk 17 did — 15, 23, 27, 28, 29, 39**; 16 and 32 are tier-A blocked. Dispatchable after
+wave 6: **30, 31, 36, 37, 38, 41, 42** — about **two more waves**.
 
-Script: **1,119 unique lines / 3,769 instances untranslated.** The item/equipment description table
-(unique 127–330, 21 instances each) is the highest-yield pool but **bank 40 is down to 447 free** —
-lines 185–225 stay parked until it is repointed. After that the 1-instance story text in the roomy
-banks (518–1,413) is what remains. ⚠️ **Bank 2 is now tight (3,365)** and cannot take a second batch
-the size of 007.
+Script: **1,072 unique lines / 3,722 instances** untranslated after wave 6. ⚠️ **Banks 40 (447),
+41 (353), 2 (3,365) and 5 (1,866 after this wave) are the binding constraint**, not the queue.
+⚠️ **Chunk 37 (a later wave) inherits `FLAGS.md` §Y6:** Cress's gender is fixed nowhere in
+`glossary.md` and rendered nowhere in `tl/`. A third-person line forces the pronoun.
 
 ## Blocked — needs a human
 0. 🔧 **THE `riotbattle.tokenise` DUMP ARTIFACT — the highest-leverage item here.** `FLAGS.md`
@@ -149,29 +139,30 @@ the size of 007.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-**Rulings live in their homes, not here**: `glossary.md` §23–§38, `FLAGS.md` §K–§Z, `findings.md`
-§24, `pending/README.md`. ⚠️ **Section numbers are taken by READING both files at commit time,
-never reserved** — wave 4 had a reserved §32 claimed mid-wave.
+**Rulings live in their homes**: `glossary.md` §23–§39, `FLAGS.md` §K–§Z, `findings.md` §24,
+`pending/README.md`. ⚠️ **Section numbers are taken by READING both files at commit time, never
+reserved.** FLAGS has exhausted single letters — the next reviewer picks a scheme (§AA, or §Z7 on)
+and says so.
 - 2026-09-08: integration branch is `claude/workflow-translation-iterate-uzlkns`; `main` untouched.
-- 2026-09-08: script growth for planning is **2.10×** measured (wave 4 came in at 1.89×, wave 5 at
-  2.09×).
+- 2026-09-08: script growth for planning is **2.10×** measured (wave 4: 1.89×, wave 5: 2.09×).
 - 2026-09-08: **bank 40's remaining budget goes to the 21-instance item table**, not its story text.
-- 2026-09-08: **seed the glossary BEFORE dispatching a wave**; **a parked unit still gets the full
-  reading review**; **the `queue.py` batch POSITION is not the filename**.
+- 2026-09-08: **seed the glossary BEFORE dispatching**; **a parked unit still gets the full reading
+  review**; **the `queue.py` batch POSITION is not the filename**.
 - 2026-09-09: **a term is "in the glossary" only if a row FIXES AN ENGLISH FORM** — `grep -c` on the
-  Japanese string is not that test.
-- 2026-09-09: **findings are proposals to be verified in BOTH directions.** Wave 5's evidence: three
-  translators and two reviewers corrected the coordinator; one reviewer corrected another reviewer's
-  correction; three units had PR figures corrected by their reviewer **while still merging**, none
-  costing a byte.
-- 2026-09-09: **compute cross-unit terms MECHANICALLY** (`FLAGS.md` §Y2) — intersect the ≥2-char
-  kanji/katakana runs of the two sources. The coordinator asserted five terms; four were wrong and a
-  fifth (`つるん`) was missing. The true set was **eight, and all eight agreed**.
+  Japanese is not that test.
+- 2026-09-09: **findings are proposals to verify in BOTH directions.** Wave 5: three translators and
+  two reviewers corrected the coordinator; three units had PR figures corrected while still merging.
+- 2026-09-09: **compute cross-unit terms MECHANICALLY** (`FLAGS.md` §Y2). ⚠️ **Extended at wave 6:**
+  a kanji/katakana-run intersection **cannot see mixed kanji+kana terms** — it missed `つるん` in
+  wave 5 and `末えい` in wave 6. **Mixed-script terms need their own pass.**
 - 2026-09-09: **a "verified free" reach claim goes STALE when a sibling merges** (`FLAGS.md` §Y3).
   Re-verify against the tree at review time, not at drafting time.
-- 2026-09-09: **a reviewer should PATCH a measured documentation error in place, not merely record
-  it.** §29.5 measured §2's rank widths in wave 3 and only recorded them; the wrong figure then
-  travelled two waves into the wave-5 seed. PR #18's reviewer patched §1 and §2.
+- 2026-09-09: **patch a measured documentation error in place, don't merely record it.** Wave 6 did
+  this to §2's `ウエストバリー` row (9 → **8** columns) in the seed commit.
+- 2026-09-09: **verify a handed-down batch's arithmetic before dispatching it, even when the handoff
+  says "already vetted — do not re-derive".** Not re-deriving the *unit* and not re-checking its
+  *figures* are different things: wave 6's inherited figures were wrong on banks, on the excluded
+  line numbers, and on the item table's extent. Re-verifying cost one script and caught all three.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
@@ -190,10 +181,10 @@ the project's first possessive on the `{FC00}` insert on the evidence that 48 ro
 character to it. Detail lives in `glossary.md` §35–§38 and `FLAGS.md` §W–§Z.
 
 ## How to resume
-1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (see Run
-   configuration — a plain `checkout` lands on a stale ref), then `python3 tools/assemble.py check`.
-2. Read this file — **NEXT ACTION says literally what to do next**; list open PRs and reconcile.
-3. `/translate` — preflight, then do what NEXT ACTION says.
-4. The run is recursive: each wave's session opens the next wave's session before it ends. If NEXT
+1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (a plain
+   `checkout` lands on a stale ref — see Run configuration), then `python3 tools/assemble.py check`.
+2. Read this file — **NEXT ACTION says literally what to do next**; `ListAgents`, then reconcile
+   open PRs (`git ls-remote --heads origin 'tl/*'`; `list_pull_requests` returns oversized bodies).
+3. The run is recursive: each wave's session opens the next wave's session before it ends. If NEXT
    ACTION names a spawn that never happened, the chain broke — spawn it yourself. The only four
    reasons to stop are in CLAUDE.md §8.
