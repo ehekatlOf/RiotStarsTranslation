@@ -47,12 +47,12 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 | Unit | Branch / file | PR | State |
 |---|---|---|---|
 | ~~battle chunk 30~~ | `tl/battle/chunk_030.txt` | **#27** | ✅ **MERGED 2026-09-09 — squash `9548e73`; integration commit `integrate: chunk 030 — glossary §43, FLAGS §AE, handoff`.** 7,615 / 8,192, **slack 577**; 183 rows, widest 23, none at 24; both over-4 pages verified inherited against a pristine extraction; `{FFFE}` changed on 7 lines, all itemised. All 8 gates passed, no findings. Glossary **§43** (12 terms + 4 rulings), FLAGS **§AE** |
-| battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | **#26** | **delivered — awaiting reviewer** (5,355 / 8,192, slack 2,837) |
+| battle chunk 31 | `tl/battle/chunk_031.txt` | #26 | ⚠️ **CHANGES round 1** — 1 finding, routed to the same translator; reviewer a06a61f091fcf274c held for round 2 |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | **#28** | **delivered — awaiting reviewer** (+6,026 bytes, 2.034×) |
 
-✅ **BARRIER MET. 1 of 4 DECIDED — chunk 30 MERGED.** Remaining: #26 chunk 31, #25 chunk 36
-(park), #28 script batch_009. Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
+✅ **BARRIER MET. 1 of 4 decided (chunk 30 MERGED), chunk 31 in REWORK round 1.** ⚠️ **A rework
+does NOT occupy the reviewer slot** — chunk 36 (#25) is being reviewed in parallel. Then #28. Reviewing now, ONE reviewer at a time, foreground, in unit order 30 → 31 → 36
 → script. Push HANDOFF before each reviewer; `git pull --ff-only` after each (it pushes an
 integration commit). Never two reviewers at once. A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
@@ -269,6 +269,25 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   positive control caught it.** Its working version keys on readable text and was proved live with
   two planted corruptions. `FLAGS.md` §AE7. **Every gate-6 checker needs a positive control before
   its output is evidence** — this is the sixth recorded quiet-failure trap in this repo.
+
+- 2026-09-09 (wave 7): **PR #26 → CHANGES on ONE finding, and the finding kills a PREMISE rather
+  than a rendering.** Chunk 31 compressed `百戦錬磨の将とはいえ、` under §2.1 step 4 because it read
+  §3.2 as forbidding a 4th text row beneath a leading blank. The reviewer censused **all 44 pristine
+  chunks**: the shape §3.2 actually warns about (`.TTTT.`) occurs **0** times, while `.TTTT` occurs
+  **182**. With the geometry premise gone, nothing licenses departing from literal in a chunk with
+  2,837 bytes of slack. Fix is the full literal at **22/22/22** (not the PR's 23/23/22), +44 bytes.
+  **A census over the corpus beat a plausible reading of the style guide** — that is the pattern to
+  repeat when a translator pleads geometry.
+- 2026-09-09 (wave 7): ⚠️ **A SIXTH INHERITED FIGURE WRONG, AND AGAIN IT PASSED THROUGH ME
+  UNMEASURED.** The second bad `ｇｅｍｓｔｏｎｅ` cell is at glossary **line 2804, inside §33's
+  promotions table** — NOT in §33.5, which carries no column figure at all. The PR said §33.5, I
+  repeated it, the reviewer measured. **The line number was right and the section attribution was
+  wrong in both of us.** Cite a location by reading it, not by copying a citation.
+- 2026-09-09 (wave 7): **§25.3 pairing left LIVE by PR #26, recorded not re-cut.** `何だって？` →
+  `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` creates a **bank-5/41 pairing the PR did not test**; reserve
+  `Ｗｈａｔ　ｄｉｄ　ｙｏｕ　ｓａｙ？` verified free. Also `だけど、`'s stated reason is wrong (two
+  connectives, not two spellings) though the collapse itself is discharged by shipped practice
+  (`chunk_008` L8 carries both in one message).
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
