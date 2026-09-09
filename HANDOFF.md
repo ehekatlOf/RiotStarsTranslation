@@ -41,16 +41,30 @@ chunks **5, 43** (tier-A budget) and **17** (dump artifact). ⭐ **The dumper is
 re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` returns nothing.
 
 ## In flight
-| Unit | Branch / file | Translator | State |
+| Unit | Branch / file | PR | State |
 |---|---|---|---|
-| battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | round 1 | dispatched |
-| battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | round 1 | dispatched |
-| battle chunk 36 | `tl/battle-036` → `tl/battle/chunk_036.txt` | round 1 | dispatched |
-| script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | round 1 | dispatched |
+| battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | — | translator round 1, running |
+| battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | — | translator round 1, running |
+| battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
+| script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | — | translator round 1, running |
 
-**Wave barrier: review NOTHING until all four have an open PR.** A translator still working is not
-a failure. A translator that returned/died with no PR gets ONE fresh re-dispatch (two max), then the
-unit parks and the barrier closes on the rest.
+**Wave barrier NOT yet met — 1 of 4 PRs open. Review nothing.** A translator still working is not a
+failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
+fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
+
+**PR #25 (chunk 36) is a PARK, and its reason is a NEW tooling blocker — verified by this
+coordinator, not taken on trust.** 2,887 / 8,192 bytes, slack 5,305; translation finished, faithful
+and format-clean; 0 column problems. It cannot enter `tl/` because **`assemble.py:validate_body`
+applies its charset whitelist to preserved SOURCE machine text**: chunk 36 is largely a full-width
+MIPS listing, and with `jp_ok=False` (the mode for translated files) **38 characters are rejected —
+`＞`×10 `＄`×14 `＿`×4 `｜`×3 `＃`×4 `ケ` `あ` `「` — and NOT ONE of them is on a translated run.**
+Re-measured here: pristine chunk 36 raises **193** problems; the delivered file raises **38** with
+`jp_ok=False` and **0** with `jp_ok=True`. ⚠️ **This is NOT the §D1 dumper artifact** — §D1 is
+`{FC70}`/`{FCA8}` tokenisation; this is the charset whitelist, a different fix in a different
+function. Reviewer: record it as its own `FLAGS.md` entry, a Blocked row and a `pending/README.md`
+row. Fix is one function in `assemble.py` (skip charset on runs byte-identical to the dump; merely
+widening `ALLOWED` is **insufficient** — the garbage block contains kana). **Needs no disc, no EXE
+and no dumper change, and after it unparking is a `git mv` and nothing else.**
 
 ## Next up — WAVE 7 (in flight; figures RE-VERIFIED by this coordinator)
 **Battle 30** (tier B, 1,358 JP, headroom 3,897, ratio **2.43** — tightest, expect a re-cut pass),
