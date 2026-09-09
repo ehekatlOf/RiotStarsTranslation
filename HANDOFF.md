@@ -46,7 +46,7 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 
 | Unit | Branch | File(s) | PR | State |
 |---|---|---|---|---|
-| **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | `chunk_007` L19+L24, `chunk_011` L3, `chunk_014` L3 | — | dispatched |
+| **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | **PR OPEN**, awaiting barrier |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | — | dispatched |
 | **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | — | dispatched |
 | **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | — | dispatched |
@@ -60,6 +60,25 @@ never assume the order):**
   does **not** bite a battle chunk.
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
+
+⚠️ **PR #17 — §T1's TABLE WAS INCOMPLETE: FIVE OUTLIERS IN FOUR FILES, NOT FOUR IN THREE.**
+The translator found a fifth shipped `あら？` → `Ｏｈ？` in **`tl/battle/chunk_008.txt` dump L4**
+(file line 5) and fixed it. **Verified independently by the coordinator before recording**: the dump
+row is `{FCB0}{=000A0001}{FC51}{FFFD}あら？{FFFE}{FC00}{=0000}、来たわ！` and the shipped row is the
+same portrait and tag structure with `Ｏｈ？` — the identical defect §32.4 names for `chunk_014` L3,
+on the identical source string. **§32.4 counted chunk 8 and then dropped it**: its census sentence
+(glossary line 2419) names "chunks 7, **8**, 11, 13, 14, 16, 20 ×2, 27 and 29" but its *Lines this
+affects* table omits chunk 8; §T1 and the wave-5 dispatch both inherited the omission. Chunk 8 L15's
+`あらかた` is 粗方 and is correctly excluded. Cost 0 bytes, 755 slack, no re-flow.
+**The dispatch authorised this** ("if you find a fifth outlier … SAY SO and handle it"), so gate 1
+for this unit is **four files, not three** — the reviewer should check that set, not the original
+three. It backs out as one hunk at zero cost if the reviewer disagrees.
+
+**PR #17 also proposes four §4.3 record corrections, none of which changes a rendering** — glossary
+§28.3's false "`Ｏｈ　ｍｙ，` is also free" sentence (which `chunk_011` L3 shipped for `あら、` itself),
+§28.3's reach figure (measured 11 battle + 28 script-unique interjection instances, not "16
+further"), §32.4's census figure (11 interjection rows, not the substring count 12), and §24.4's
+"おや 6 battle" (4 interjection). All are the reviewer's to apply, not the translator's.
 
 ⚠️ **CORRECTION to this file's own wave-5 plan, measured at dispatch:** "banks 2–3" is right for
 unique **421–469** but **wrong for the batch**. Unique **318** (`何かの木の木の実。`, 9 JP chars,
