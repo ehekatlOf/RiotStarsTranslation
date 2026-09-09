@@ -47,7 +47,7 @@ Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisio
 | Unit | Branch | File(s) | PR | State |
 |---|---|---|---|---|
 | **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | **PR OPEN**, awaiting barrier |
-| **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | — | dispatched |
+| **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | **PR OPEN** — 4,431 / 8,192, **3,761 slack**, 2.10× vs 4.28 ceiling, widest row 23 |
 | **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | — | dispatched |
 | **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | — | dispatched |
 
@@ -60,6 +60,24 @@ never assume the order):**
   does **not** bite a battle chunk.
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
+
+⚠️ **PR #18 CORRECTED MY DISPATCH, AND THE FIX WAS RELAYED TO CHUNK 22 IN FLIGHT.**
+My dispatch's "already fixed" list paired `２軍` with `２ｎｄ　Ｒｏｙａｌ　Ａｒｍｙ`. **Wrong for the
+bare form.** Verified before relaying: glossary **line 1528** is an explicit row — `２軍 (bare)` →
+`２ｎｄ　Ａｒｍｙ`, stating that §20.1's form does not apply — §20.1 covers `宮廷第２軍 / 宮廷２軍`
+only, and shipped `chunk_002.txt` carries **both** forms held apart in one message. Corpus: bare
+`２軍` **4 battle + 7 script**; `宮廷第２軍` 2 + 1; `宮廷２軍` 1 + 0. **Chunk 22 L05 carries a bare
+`２軍`** (`フェルナンド将軍率いる２軍に占拠されました！`) and had the same wrong pairing, so the
+correction was sent to its translator mid-run. **Script batch 007 is unaffected — checked, 0 hits.**
+
+⚠️ **A CORRECTION AGAINST THE COORDINATOR, recorded because it is right.** My §9 seed block presented
+the §2 rank-width error as a new measurement. **It is not new: glossary §29.5 made exactly this
+correction in wave 3** (`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ` is 17, not 18) and deliberately recorded it
+rather than patching §2, so **§2 still carries the wrong figure today**. What my note added that
+§29.5 did not have: §29.5's conclusion ("will not share a row in the vocative") was reasoned on
+**Cress**, who is 5 columns. **Ryan is 4**, so `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ，` is **23 and
+does fit** — chunk 21 measured it and shipped it as one row. The general claim is false; the
+Cress-specific one stands. §1's `Ａｎｓｅｌｍｏ` is also 7 columns, not 8.
 
 ⚠️ **PR #17 — §T1's TABLE WAS INCOMPLETE: FIVE OUTLIERS IN FOUR FILES, NOT FOUR IN THREE.**
 The translator found a fifth shipped `あら？` → `Ｏｈ？` in **`tl/battle/chunk_008.txt` dump L4**
