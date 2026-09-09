@@ -377,6 +377,83 @@ to `batch_006.tsv`, `batch_002.tsv` having shipped in wave 1.
    **neither chunk contains a single `将軍`**. Note this discharges *this* item; **§10 question 2,
    the class/unit name table, is a different item and remains open**.
 
+**Wave 5 seeds (2026-09-09) — battle chunks 21, 22 and script batch 007 (unique 318, 421–469).**
+Proposed forms follow the conventions already fixed: European readings (§11.4, §14), the species
+test (§17.1), the army-number series (§2), and `『…』` → `“…”` (§12). Every width below was
+**measured programmatically**, not estimated (wave 3 shipped two seeds a column too wide).
+
+⚠️ **This wave carries THREE two-title officers at once** — the exact shape of §9's discharged
+Fernando correction (§26.2, "the man holds two titles"). That case was settled on a corpus count
+of 17 against 2. **None of these three has a majority**, so the count does not settle them:
+
+| Officer | Rank A | Rank B | Bare | Reading |
+|---|---|---|---|---|
+| ライアン | `ライアン少尉` 1 battle | `ライアン隊長` 1 battle | 2 battle / 0 script | **both in THIS wave** — 少尉 in chunk 21, 隊長 in chunk 22, and 21 precedes 22 in chapter order |
+| クレス | `クレス少尉` 1 battle + 2 script | `クレス隊長` 1 battle | 7 battle / 4 script | §1 already renders 少尉 → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ`; chunk 22 is the first 隊長 |
+| リオン | `リオン将軍` 1 battle | `リオン隊長` 1 battle + 1 script, `第１軍隊長` 1 script | 7 battle / 14 script | script 427 (**this batch**) has him introduce himself as `第１軍隊長のリオン` |
+
+**Proposal for all three: render each occurrence with the rank the source gives it**, as §26.2
+already permits, and do **not** collapse them to one rank. A promotion between chapters is the
+likelier reading for ライアン (21 → 22) and is consistent either way. **Do not re-cut shipped
+work**; if a shipped file disagrees, record it and leave it to a corrections unit (§4.3).
+
+| Japanese | Proposed English | Where seen | Alternatives if the reading is open |
+|---|---|---|---|
+| ライアン | `Ｒｙａｎ` | **4 columns.** A **PERSON**, male — a Royal Army officer hostile to the 9th; takes Batou prisoner (ch.21) and leads the assault (ch.22). **2 battle / 0 script, both in THIS wave. ⚠️ CROSS-UNIT (21 + 22).** `ライアン少尉` → `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` (**22 cols — it FITS, see the width correction below**); `ライアン隊長` → `Ｃａｐｔａｉｎ　Ｒｙａｎ` (12) | `Ｌｉａｎ`, `Ｒｉａｎ` |
+| ジェイク | `Ｊａｋｅ` | **4 columns.** A **PERSON**, male — Cress's subordinate, ordered to open the fort (`ジェイク、砦を開けてやれ`). **2 battle / 0 script, both in chunk 22** | `Ｊｅｉｋｕ` |
+| クレス隊長 | `Ｃａｐｔａｉｎ　Ｃｒｅｓｓ` | **13 columns.** §1 fixes クレス → `Ｃｒｅｓｓ`; §2 fixes 隊長 → captain. New **appellation**, not a new reading. See the two-title table above | — |
+| リオン将軍 | `Ｇｅｎｅｒａｌ　Ｌｅｏｎ` | **12 columns.** §1 fixes リオン → `Ｌｅｏｎ`; §2 将軍 → `Ｇｅｎｅｒａｌ` (§26.2). New appellation | — |
+| バトウ神父 | `Ｆａｔｈｅｒ　Ｂａｔｏｕ` | **12 columns. Not a new reading** — §26.1 already fixes `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ` and §1 神父 → priest; this is the 〜神父 appellation taking the same English, on §24.1's ナコール様 pattern. **3 battle / 2 script** | — |
+| ５軍 / 第５軍 | `５ｔｈ　Ａｒｍｙ` | **8 columns**, on §2's `第９軍 / ９軍` → `9th Army`; `５` full-width, same rule. ⚠️ **5 battle / 3 script — reach well beyond this wave**, and `tl/script/batch_005.tsv` already carries a `５軍` line, so **grep it before writing** | — |
+| 第１軍 | `１ｓｔ　Ａｒｍｙ` | **8 columns**, same series. **0 battle / 3 script**, one of them unique 427 in this batch (`第１軍隊長のリオン`) | — |
+| リムローズ | `Ｌｉｍｒｏｓｅ` | **7 columns.** A **TOWN**, with a 市長 (§1 市長 → the mayor) and a forest nearby. ⚠️ **2 battle / 12 unique script lines — one of the widest-reaching names in this seed set**, so the reading is worth getting right first time | `Ｒｉｍｒｏｓｅ`, `Ｌｉｍｒｏｓｅ` (European reading per §11.4) |
+| イートン / イートンの森 | `Ｅａｔｏｎ` / `Ｅａｔｏｎ　Ｆｏｒｅｓｔ` | **5 / 12 columns.** A **PLACE**; the fairy village and Kel's birth village lie in it. Proper name, so capitalised `Ｆｏｒｅｓｔ` on §2's `カーライン城` → `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` and §33.1's `ファリーナ城` → `Ｆａｒｉｎａ　Ｃａｓｔｌｅ` — ⚠️ deliberately **unlike** §14.2's 妖精の森 → `the fairy forest`, which is lowercase because 妖精 is a common noun. **0 battle / 4 script** | `Ｅｔｏｎ`, `Ｉｔｏｎ` |
+| チェコットの丘 | `Ｃｈｅｋｏｔ　Ｈｉｌｌ` | **11 columns.** The 9th Army's first posting, `王国西部の丘陵地帯`. **0 battle / 1 script** | `Ｃｈｅｃｏｔｔ`, `Ｔｓｕｅｋｏｔｔｏ` |
+| レバーク城 | `Ｌｅｖｅｒｋ　Ｃａｓｔｌｅ` | **13 columns.** §28.1 already fixes レバーク → `Ｌｅｖｅｒｋ` (**a KINGDOM**, per that row's own correction); this is the castle, on `カーライン城`. **0 battle / 2 script** | — |
+| 兵舎 | `ｂａｒｒａｃｋｓ` | **8 columns**, lowercase (§17.1). Keep **distinct** from 砦 → `ｆｏｒｔ` (§19.2), 要塞 → fortress and 城 → castle (§2). **0 battle / 4 script** | — |
+| ジャガイモ / イモ | `ｐｏｔａｔｏｅｓ` / `ｐｏｔａｔｏ` | **8 / 6 columns**, lowercase (§17.1). The hobbit chief's gift, the spine of unique 430. **0 battle / 1 + 6 script** | — |
+| バター | `ｂｕｔｔｅｒ` | **6 columns**, lowercase. **0 battle / 1 script** | — |
+| ワイン / 『極上のワイン』 | `ｗｉｎｅ` / `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | **4 / 13 columns** (11 + the two quote marks), `『…』` → `“…”` per §12's `『知識の書』`. ⚠️ **44 script-dump instances / 24 unique — a named plot ITEM reaching far past this batch**; this batch has only the bare noun (`リムローズの市長にもらったワイン`), so **fix the bare form here and leave the titled form to the unit that first renders it** | `Ｅｘｑｕｉｓｉｔｅ　Ｗｉｎｅ`, `Ｖｉｎｔａｇｅ　Ｗｉｎｅ` |
+| とかいじん (都会人) | `ｃｉｔｙ　ｆｏｌｋ` | **9 columns**, lowercase. ⚠️ Written in **hiragana** in the source (`わたしたち、とかいじんの悩みは`) — a light, childish spelling in the fairy girl's mouth, set against the hobbit's rustic `ノロ`. Carry the lightness in register, not in a misspelling. **0 battle / 1 script** | `ｔｏｗｎｓｆｏｌｋ`, `ｃｉｔｙ　ｐｅｏｐｌｅ` |
+| ナンダイ (難題) | *(render the emphasis, not the katakana)* | ⚠️ **Katakana for emphasis**, not a name or a class: `王女様を捜さなきゃならないってゆうナンダイがあるの`. §3.1 has no device for katakana emphasis, so render it as weight in the English — `ａ　ｒｅａｌ　ｐｒｏｂｌｅｍ` (16) — and do **not** transliterate. **0 battle / 1 script** | `ａ　ｔａｌｌ　ｏｒｄｅｒ` (14) |
+| 第２王子のトリフ様 | `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` | **12 columns.** §28.1 fixes トリフ → `Ｔｏｒｉｆ`; §2 fixes `ホアグ王子` → `Ｐｒｉｎｃｅ　Ｈｏａｇ`. 第２王子 is **apposition, not part of the name** — `Ｓｅｃｏｎｄ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` (19) fits but over-titles him. **0 battle / 1 script** | — |
+
+⚠️ **`モンスター` is NOT a seed — it is already SHIPPED.** `tl/script/batch_001.tsv` L33 renders it
+`ｍｏｎｓｔｅｒ` (7 columns). The menu option `　モンスターがいい` in unique 432 and the reply in 435
+**must reuse that word**; *creature* / *beast* would break CLAUDE.md §3's byte-identical rule.
+Recorded here only so nobody re-invents it. (**2 battle / 214 script-dump / 32 unique.**)
+
+⚠️ **`殿` on the `{FFEC}` player-name insert — a decision, not a word.** Unique 427 has
+`９軍の隊長に任命された{FFEC}{=00}{=00}殿。` (Leon's first meeting). **Count the corpus before
+reasoning about it:** almost every `殿` in both dumps is `神殿` *temple*, a different word —
+only **2 unique lines** carry the name-insert `殿`, plus one `ホッジス殿`.
+**Proposal: carry it in register, adding no word**, on §2's `貴官` → "carried in **register**, not
+in an added word" and §21.2's `さん` rule that drops the honorific. Leon's contraction-free
+formality already does the work, and the same sentence *names the rank* (`９軍の隊長に任命された`),
+so an added title would say it twice. Alt `Ｓｉｒ　{FFEC}` (3 + the insert).
+
+⚠️ **`『編成』`, `『キャラクター育成』`, `『キャラを入れる』` — UI SCREEN LABELS, and a FLAG.**
+§19.2 fixes 編成 → `form (your units)` **verbally**, and `batch_005` shipped exactly that
+(`ｉｆ　ｙｏｕ　ｆｏｒｍ　ｙｏｕｒ　ｕｎｉｔｓ`). These three are different: they are the **names of menus
+the player is told to go and find on screen**. ⚠️ **The menu strings themselves are in neither
+dump** — so an English label here **cannot be verified against what the screen actually shows**,
+and if the menus stay Japanese the instruction sends the player to a menu that does not match.
+Proposal: `“Ｆｏｒｍａｔｉｏｎ”` (11), `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` (18),
+`“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` (17), all with `『…』` → `“…”` per §12. **This needs the disc:
+the reviewer should raise it as a FLAGS entry, not resolve it.**
+
+⚠️ **MEASURED CORRECTION to §2's rank widths — verify it yourself before relying on it.**
+§2 states 少尉 → Second Lieutenant is "**18 columns** — will not share a line with a name" and
+中尉 → First Lieutenant "**17 columns** — same rule". Measured full-width, both are **one column
+too many**: `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ` is **17** and `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ` is **16**.
+The consequence is not cosmetic — **the "will not share a line with a name" rule is false for
+every name yet tested**: `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｒｙａｎ` = **22**,
+`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ｃｒｅｓｓ` = **23**, `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` = **24**
+— all inside the 24-column box, though the last two are at or over the ≤23 preferred limit
+(CLAUDE.md §6). **This is an orchestrator's measurement, and §2 is not an orchestrator's to
+edit: it is a proposal for the reviewer to rule on, and chunk 21's translator should re-measure
+it independently before leaning on it.**
+
 ---
 
 ## 10. Open questions
