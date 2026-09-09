@@ -3778,3 +3778,165 @@ No source typos found, no tag meanings guessed, no `{FCC0}` added or removed, no
 The three items left open for later units — the `Ｘ，　`/`Ｘ‐` stutter outliers (§AB3), the
 `Ｃａｐｔａｉｎ` collision in banks 28 and 41 (§AB5), and confirming Treize's identity from chunk 27
 (§AB6) — are all decisions for a translator or reviewer, not for the human.
+
+---
+
+## AC. Wave 6 review — battle chunk 25 / PR #23 (2026-09-09)
+
+Merged at **round 2**, squash `68ba7f4`, after one CHANGES round with two findings. Both were fixed
+in one line and one commit, both independently re-verified by the translator against the tree before
+pushing, and neither was argued with. Third of wave 6's four units to merge, after chunks 24 and 26.
+
+**Measured at review on `dacd7ab`, merged onto `0ce2df6`:** **5,403 / 8,192 bytes, slack 2,789** —
+1,039 JP → 2,220 EN characters = **2.1367×** against a **3.4837** tier-C ceiling, 61.3 % of budget.
+**129 text rows** (source 124), widest **23**, **ten** at 23, **none at 24**, no page over four.
+`{FFFE}` **101 → 106**, `{FCC0}` **11 → 11**, `{FFFF}` 14, `{FC50}` 27, `{FC51}` 23, `{FC00}` 2,
+`{PAD 5161}` — all unchanged, non-`{FFFE}` tag stream byte-identical on all 18 lines. Gate 6 by the
+positional method over **29 files and 1,256 indexed source runs** with a live self-test: **0
+duplicate obligations**, 0 chunk-25 messages present as `script_unique` keys.
+
+### AC1. ⚠️ THE STANDING FINDING — a kana-script search finds only its own script, and this is now the THIRD distinct search blind spot this run
+
+Finding 1 of round 1 was `フフ・・、` → `Ｈｅｈ　ｈｅｈ．．，` against §12.3's fixed `ふふ` → `Ｆｕｆｕ`.
+The translator's own diagnosis at round 2 is the part worth keeping: **it grepped `フフ`, `フッ` and
+`フン` — all katakana — and never `ふふ` in hiragana.** The glossary row it needed was there and its
+search could not reach it, because a kana search is a *script* search.
+
+**Three distinct classes of term are now known to be invisible to the obvious search, and each cost
+a real finding:**
+
+| class | example | what fails | first cost |
+|---|---|---|---|
+| maximal kanji run | `王位継承` vs bare `王位` | a run intersection never pairs them | §Y2, wave 6 — missed by both units' dispatch lists |
+| mixed kanji + kana | `末えい`, `恨み`, `つるん` | a kanji-run sweep drops them entirely | §Y2 / §9, waves 5 and 6 |
+| **kana-script variant** | **`フフ` vs `ふふ`; `グフッ` vs `ぐふっ`; `クッ` vs `くっ`** | **a search in one kana script cannot see the other** | **§AC, this review** |
+
+> **Rule, for every agent: search a term in BOTH kana scripts and in the kanji, before concluding a
+> form is new.** `フフ` → `ふふ` is a `str.translate` away; there is no excuse for it being manual.
+> This matters most for interjections and laughs, which is precisely where the glossary collapses
+> spellings onto one English (§17.2 鬼 / オーガ, §11.5 くっ / クッ, §28.3 何っ / 何ッ, §29.3
+> くーっ / く〜っ, §30.3 ぐふっ / グフッ, §32.7 ふふ / ふふっ).
+
+⚠️ **A second, sharper point the translator found and the reviewer did not: §12.3's own row already
+listed `Ａｌｔ　Ｈｅｈ　ｈｅｈ　—　ｓｅｅ　ＦＬＡＧＳ`.** The shipped form was not merely a new
+invention, it was **the alternative that row had already considered and rejected.** A glossary row's
+"Alt" column is a record of rejected options, not a menu.
+
+Reach for whoever takes chunk 39: `ふふ` **8 battle** (chunks 20, 28, 31, 33) **+ 1 script**;
+`ふふっ` 1 + 1; `フフ` 2 (chunks 25, 39) + 1; `フフッ` 1 (chunk 39) + 1. **All four take `Ｆｕｆｕ`.**
+
+### AC2. `そして、` — the rule, its condition, and the collision it discharged
+
+Finding 2 of round 1 was bare `そして、` → `Ａｎｄ　ｔｈｅｎ，` where merged `chunk_024` and parked
+`chunk_043` both ship `Ａｎｄ，` **for the same speaker in the adjacent chapter**. Fixed to `Ａｎｄ，`.
+
+The rule as it now stands, combining this and §40.4 (chunk 26's review, which narrowed it between
+this PR's two rounds and **confirms rather than undoes** the finding):
+
+> `そして、` **alone on its display row** — opening a new sentence, or standing as its own
+> coordinating row — takes **`Ａｎｄ，`**. A `そして` **continuing into its own clause** takes
+> lowercase **`ａｎｄ`** with no comma. **`Ａｎｄ　ｔｈｅｎ` is reserved for `それから`.**
+
+✅ **The `Ａｎｄ　ｔｈｅｎ` collision is DISCHARGED, not merely recorded.** Before the fix, `Ａｎｄ　ｔｈｅｎ`
+rendered `それから、` in `pending/chunk_017` **and** `そして、` in chunk 25 — and **chunk 5 holds both
+source words**, so §25.3's co-occurrence test *failed*. After the fix `Ａｎｄ　ｔｈｅｎ` occurs
+**exactly once in the whole corpus** and the test is met. Reach: `そして` **10 battle** (chunks 5,
+16, 24, 25, 26, 39, 43) **+ 9 script** (banks 1, 9, 32, 41); `それから` 6 battle (5, 13, 17, 23, 38)
++ 2 script (banks 2, 43).
+
+### AC3. ⚠️ WIDTH FIGURES — the method rule, replacing another wave of individual corrections
+
+**Fourteen of PR #23's 37 width figures were wrong; thirteen were exactly one too high.** The
+translator re-measured all 37 itself at round 2 and formally withdrew its own Flag 15. Two rows of
+`glossary.md` were also wrong about one phrase in **opposite** directions and are patched in place:
+**§9 had `Ｐｒｉｎｃｅ　Ｈｏａｇ` at 10 (one LOW) and §39.1 at 13 (two HIGH); it is 11.**
+
+**The pattern is the finding.** Across two review rounds and two agents, **every figure either party
+argued from was exact** — `Ｐｒｉｎｃｅｓ　Ｈｏａｇ　ａｎｄ　Ｔｏｒｉｆ，` 23, the rejected 26-column
+alternative, `Ｒｉｇｈｔ，　ｇｅｔ　ｔｈｅ　ｓｈｉｐ　ｏｕｔ！` 24, `Ｓｕｒｅｌｙ　ｎｏｔ．．．．！？` 16 — **and every
+wrong figure was a table cell typed rather than measured.** Three waves running have now spent
+reviewer time on this.
+
+> **Rule: every column figure that reaches a PR body, a glossary row or a FLAGS entry is produced by
+> `len()`, including the ones that look obvious.** A figure nobody argues about is exactly the one
+> nobody checks, and it is the one a later unit will budget a row from. Nothing rendered has ever
+> been affected by these errors; the risk is entirely downstream.
+
+### AC4. Portrait id is not speaker — the channel test, and two readings it produced here
+
+Both of chunk 25's long messages put **two speakers under one `{FCB0}` portrait id**, separated only
+by the `{FC50}`/`{FC51}` channel byte. §40.5 used the same test on chunk 26's Treize in the same
+wave. Two readings this produced that no portrait-level reading would:
+
+- **Portrait 0002 channel 0 is Hoag, not Torif** — Hoag borrows his brother's portrait for
+  `何を言ってるんだ、トリフ。`
+- **Portrait 0008 channel 0 in the final message is Guilford, not Helfer** — Helfer (ch1) apologises
+  to Guilford by name and ch0 answers `なに、かまわん。…私が一人で解いてみせる。`
+
+It also confirmed §9's corrected attribution from inside the chunk: the light-elf descendant and
+Aura Smasher are **Aries's** (channel 1), not Torif's. Recorded at glossary §41.2.
+
+### AC5. §33.2's `どうやら` row was over-broad, and a reach count that looks only forward is why
+
+§33.2 fixed `どうやら、` → `Ｌｏｏｋｓ　ｌｉｋｅ　…` and named the four *untranslated* chunks it would
+bind — but `chunk_002` (wave 1) and `chunk_014` had already shipped **three** `seem` renderings, and
+the row counted none of them. Corrected in place at glossary §41.4: the corpus splits on **register,
+8 of 8** (contraction-free formal → `seem`; contracting casual → `Ｌｏｏｋｓ　ｌｉｋｅ`), the §36.2
+`とにかく` shape. **No line changes anywhere**; all eight instances were already on the right side.
+
+⚠️ **The general defect: a reach count that enumerates the chunks a term will reach, and not the
+files that already render it, is only half a count.** This is §37.3's and §38.6's failure in a new
+place, and it is the second half of §Y3 — a claim can be stale because the tree moved *forward*
+since it was written, or because it never looked *backward* in the first place.
+
+### AC6. Standing gate-6 trap list — two additions from this review
+
+The list every battle reviewer needs, with the two new entries first:
+
+1. ⚠️ **NEW — an ellipsis checker that counts `・` runs but ignores a closing `。` reports a FALSE
+   MISMATCH.** §3.1 counts `・・・。` as **four**. Chunk 25's line 12 has fourteen groups and two of
+   them are `・・・。`; a `・`-only checker reports 3-against-4 twice and looks like a real defect.
+2. ⚠️ **NEW — a segment-level positional checker SILENTLY DROPS every line whose `{FFFE}` count
+   changed.** Chunk 25's 129-row main line indexed **20** segments instead of 123 until the pairing
+   was keyed on the surviving tag stream instead of on segment index. The output looks clean; it is
+   empty. This is §W3/§Y7's skew in its most dangerous form, because it fails *quietly*.
+3. `split_battle` returns a **trailing blank separator line** — strip it from both sides or every
+   file mismatches and the checker reports zero pairs, which reads as "no duplicates" (§AA2).
+4. `pending/chunk_043.txt` and `pending/chunk_043_abridged.txt` are **two translations of one
+   chunk** — exclude `_abridged` or get 31 spurious divergences (§AA2).
+5. `tl/battle/chunk_001.txt` has **no trailing newline** (§W4); handle it by stripping trailing
+   blanks from both sides rather than popping, or the file drops out of the index entirely.
+6. Battle `tl/` files carry a **2-line header offset** from the dump body index.
+7. ⚠️ **A checker must exclude the unit under review from its own index**, or every run self-matches.
+   Report the count of runs *looked up* separately from the count of matches *found*.
+8. **Case matters in a `tl/` grep.** `ｐｕｒｓｕｅｒｓ` looked free across the whole tree until
+   `chunk_021` L3's sentence-initial `Ｐｕｒｓｕｅｒｓ？` was found — §36.1's row was right and the
+   grep was wrong.
+
+### AC7. Bank pressure — unchanged by this unit
+
+Nothing under `tl/script/` changed, so `bankmeasure` and `rowcheck script` are not engaged and no
+bank moved. The tightest banks are as §Z6 / §AB left them: **41 → 353, 40 → 447, 5 → 3,357,
+2 → 3,365**, 33 → 9,291. **No bank is under 2,000 free that was not already.**
+
+### AC8. Open, carried forward, not resolved here
+
+1. **§AA3 stays OPEN** — chunk 24's `．．ｌ．．．　ｍｙ　ｌｏｒｄ．．．` commits to a male patron and
+   nothing settles the referent. Chunk 25 makes Helfer the conspirator and puts Guilford beside him,
+   which is consistent with `Ｌｏｒｄ　Ｈｅｌｆｅｒ` but proves nothing. 4 columns either way, no
+   re-flow. Re-check when a chunk names Fernando's backer.
+2. **Portraits 01 and 09 of chunk 25 are unnamed on purpose.** 01 knows Rimul by sight, uses blunt
+   `お前` to her and polite `ですか` to a 司令官 who is present; Fernando fits and nothing names him.
+   The English supplies no name, so nothing needs revisiting if a later chunk settles it.
+3. **`王子様` referential is NOT ruled** — only the vocative is (glossary §41.6). The **8 script
+   instances** read referential and `batch_008` (PR #21) or a later script unit decides them, on
+   §1's `王女様` → *the Princess* precedent.
+4. **`pending/chunk_005.txt`'s two `王家` rows are queued for re-cut** in `pending/README.md`
+   (`ｔｈｅ　ｃｒｏｗｎ’ｓ` → `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ`, +8 columns), on the §23.2 precedent. Chunk 5 is
+   parked for the tier-A budget, so nothing ships until the slot patch lands either way.
+5. **Torif's register is fixed for the first time** at glossary §41.3 — formal, `僕`, no
+   contractions, `兄さん` → `Ｂｒｏｔｈｅｒ` capitalised as a vocative. **Chunks 26 and 42 carry him.**
+6. **`踊り子` → `ｄａｎｃｅｒ` binds 18 script instances** (banks 1, 18, 20, 23, 41) — the largest
+   forward obligation this unit creates. `ｆｉｅｌｄ　ｍｉｃｅ` binds chunks 41 and 42 and bank 41;
+   `小娘` reaches chunk 31; `封印` reaches chunk 32 and bank 41; `駒` reaches bank 41; `追手` reaches
+   chunk 29; `あの世` reaches chunk 41.

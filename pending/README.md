@@ -29,7 +29,10 @@ Parked files do not ship, so a divergence from shipped work is not a CLAUDE.md �
 | `chunk_043.txt` | 14 | `Ｗ‐ｗａｉｔ！` | `Ｗ，　Ｗａｉｔ！` | 9 → 8 cols, **−2 B** | PR #7 review, glossary §24.3; the comma form follows shipped `chunk_007`'s `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` |
 | `chunk_005.txt` | 19 | `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` | `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` | 24 cols on one row → **14 / 13**, **+8 B** (+1 `{FFFE}`) | PR #18 review, `FLAGS.md` §X2; glossary **§27.2** is the binding entry and chunks 7 ×2, 13, 17, 21 and 34 all carry it byte-identically. ⚠️ **The only message-level divergence in the whole corpus**, found by the positional sweep at that review |
 
-Net effect on `chunk_005.txt`: **+18 bytes**, so 8,679 → 8,697 against its 8,192-byte slot. It is
+| `chunk_005.txt` | **28** (file line 29) | `ｔｈｅ　ｃｒｏｗｎ’ｓ．　Ｓｅｒｖｉｎｇ` | a form built on **`ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ`** | ⚠️ **RE-FLOW, not a word swap — measured at review** | PR #23 review, glossary **§41.5**; `王家` → `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` (15) is fixed by chunk 25, which renders it twice. ⚠️ **Substituting in place does not work**: the row is `ｔｈｅ　ｃｒｏｗｎ’ｓ．　Ｓｅｒｖｉｎｇ` (20) and `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ’ｓ．　Ｓｅｒｖｉｎｇ` measures **26**, over the 24 hard limit. A three-row shape fits — `Ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ` (14) / `ｂｅｌｏｎｇｓ　ｔｏ　ｔｈｅ` (14) / `ｒｏｙａｌ　ｈｏｕｓｅ．` (12) — but the exact cut is the re-cutter's, not the reviewer's. ⚠️ **Also note this message carries `王家` TWICE** (`宮廷軍は王家のもの。` and `王家の人間のために`) and the current English renders the second only as `Ｓｅｒｖｉｎｇ　ｉｔ　ｉｓ　ｉｔｓ　ｄｕｔｙ．`, i.e. not as a `王家` at all; the re-cut should restore both |
+
+Net effect on `chunk_005.txt`: **+18 bytes** (the three rows above the `王家` one), so 8,679 → 8,697
+against its 8,192-byte slot; the `王家` row's cost is a re-flow and is measured at the re-cut. It is
 487 over already; this does not change its feasibility, and it must not be traded against the
 budget — the file needs the slot extension either way. `chunk_043.txt` gains 2 bytes back.
 

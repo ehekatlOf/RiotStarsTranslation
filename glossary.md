@@ -286,7 +286,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~司教~~ | ✅ **PROMOTED to §26.1** — Bishop, spelled out like Commander / Captain / Doctor (PR #8) | script 1047 | — |
 | ~~報奨金~~ | ✅ **PROMOTED to §24.2** — `ｒｅｗａｒｄ`, rendered in battle chunk 6 (PR #7) before script 991 reached a batch | script 991, battle chunk 6 | — |
 | ~~同盟~~ | ✅ **PROMOTED to §26.3** — alliance (PR #8) | script 999–1001 | — |
-| ~~ホアグ王子~~ | ✅ **PROMOTED to §39.1 (PR #24)** — `Ｐｒｉｎｃｅ　Ｈｏａｇ` / `Ｈｏａｇ`, **used exactly as seeded**, the first rendering in the project. Original seed note follows: **New seed, 2026-09-08 (PR #8 review)** — surfaced while verifying `アップミーズ`, and **not batch 005's business**: that batch does not render it. Carline's first prince, Cavia's elder brother (`私の兄でもあるホアグ王子`), the man who built Apumizu (`ホアグ王子がつくった街`), and a target of Helfer's (`奴らにはホアグとともに舞台から下りてもらう`). **6 battle + 16 script occurrences.** 10 columns with the title, 4 bare | Ｈｏａｇｕ, Ｈｏｇ. Promote in the wave that first renders it |
+| ~~ホアグ王子~~ | ✅ **PROMOTED to §39.1 (PR #24)** — `Ｐｒｉｎｃｅ　Ｈｏａｇ` / `Ｈｏａｇ`, **used exactly as seeded**, the first rendering in the project. Original seed note follows: **New seed, 2026-09-08 (PR #8 review)** — surfaced while verifying `アップミーズ`, and **not batch 005's business**: that batch does not render it. Carline's first prince, Cavia's elder brother (`私の兄でもあるホアグ王子`), the man who built Apumizu (`ホアグ王子がつくった街`), and a target of Helfer's (`奴らにはホアグとともに舞台から下りてもらう`). **6 battle + 16 script occurrences.** ~~10 columns with the title~~ ⚠️ **11 with the title** (corrected in place 2026-09-09, §4.3, PR #23 review — this row read 10 and is one **LOW**, the opposite direction to every other width error this wave; `len('Ｐｒｉｎｃｅ　Ｈｏａｇ')` = 11), 4 bare | Ｈｏａｇｕ, Ｈｏｇ. Promote in the wave that first renders it |
 | トリフ | `Ｔｏｒｉｆ` | **New seed, 2026-09-08 (PR #8 review)**, same sweep. Hoag's younger brother (`弟のトリフ`), whom Helfer prefers as the more pliable heir. **9 battle + 6 script occurrences.** 5 columns | Ｔｒｉｆ, Ｔｏｌｉｆ. Promote in the wave that first renders it |
 | ~~シェルビー~~ | ✅ **PROMOTED to §29.1** — `Ｓｈｅｌｂｙ`, a PLACE, rendered four times in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
 | ~~カーゴ~~ | ✅ **PROMOTED to §29.1** — `Ｃａｒｇｏ`, the proper name of a machine, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded; the `ｔｈｅ　ｃａｒｇｏ` trap was avoided** | battle chunk 8 | — |
@@ -507,8 +507,8 @@ mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana ter
 |---|---|---|---|
 | 魔族 | `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` — **lowercase** | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498 — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 483", which is a *menu* line, as this block's own FACT 1 says) AND chunk 26 (L5, L14).** **13 battle + 21 script instances**, reaching battle chunks **26, 27, 28, 29, 30, 32** — the largest-reach term this wave | Lowercase by the §17.1 species test: it names *what they are*, the exact case of `ホビット` → hobbit. **Not** `Ｄｅｍｏｎ`. Race-level use ("the demon race", "demonkind") is ordinary prose, not a second fixed form. Keep distinct from 魔物 → `ｍｏｎｓｔｅｒ`. **5 / 6 columns** ⚠️ **STAYS LIVE after PR #22 merged 2026-09-09: chunk 26 was the FIRST of this pair to merge — `tl/script/batch_008.tsv` is still ABSENT from the tree (verified by reading it). Per the `ルート` precedent (§29.1 / §30.1) **PR #21's reviewer strikes this row.** Chunk 26 used it exactly as seeded and every reach figure re-measured EXACT; see §40.1.** |
 | 魔物 | `ｍｏｎｓｔｅｒ` | `batch_008` ×1; 6 script | Holds the 魔族 / 魔物 distinction apart. 7 columns |
-| 末えい | `ｄｅｓｃｅｎｄａｎｔ` | ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** ⚠️⚠️ **NOT "1 instance each", and NOT a new form — corrected in place 2026-09-09 (§4.3, PR #24 review): `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED.** `tl/battle/chunk_010.txt` 12.2 renders `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ` / `ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．` — the same word in the lizardmen's **full-katakana** register (§5), which is why neither a kanji-run nor a kanji+kana search found it. **The choice is CONFIRMED by shipped work; only the novelty and reach claims were wrong.** Gate 6 is not engaged (different source strings), but both wave-6 units must match `ｄｅｓｃｅｎｄａｎｔ`. ✅ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns, measured `len()` — PR #23's Flag 15 says 11 and is a hand-count one high; the seed was right and the "correction" is NOT applied** | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
-| ライトエルフ | `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ` — **lowercase** | chunk 25 (L11) ×2 — ⚠️ **ARIES's bloodline, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's bloodline"). Gilford says `なるほど、確かにライトエルフの末えいのようだな` **to Aries**, who then finds his own spell useless — coherent with Aries being Bishop Creus's grandchild (chunk 24 L15). `ライトエルフの封印` is separately the seal Gilford intends to break. **The renderings are unaffected; only the note was wrong.** 2 battle + 0 script | ⚠️ **NOT open after all — corrected in this same seed before dispatch.** The sibling term `ダークエルフ` is ALREADY FIXED at **§17 as `ｄａｒｋ　ｅｌｆ`, lowercase**, and is already shipped lowercase in `tl/script/batch_003.tsv` L20 (`ａｎｃｉｅｎｔ　ｄａｒｋ　ｅｌｖｅｓ`). `ライトエルフ` is the same construction and takes the same case: **`ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, not a reviewer question.** Consistent with §17.1 and the `ホビット` → hobbit precedent. **Both instances must agree.** 9 / 11 columns |
+| 末えい | `ｄｅｓｃｅｎｄａｎｔ` | ⚠️ **RENDERED by chunk 25 (PR #23, merged 2026-09-09) as `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` / `ｌｉｇｈｔ　ｅｌｖｅｓ，　ｉｔ　ｓｅｅｍｓ．`, exactly as seeded — and THIS ROW IS DELIBERATELY LEFT LIVE.** `batch_008` (PR #21) is still open and renders it too; per the `ルート` precedent (§29.1 / §30.1) the row is struck once, by the **second** of the pair, so **PR #21's reviewer strikes it** after verifying the merged chunk 25 rather than assuming. Promoted to §41.1. ⚠️ **CROSS-UNIT: `batch_008` (DATA line 498, `知に長けた者の末えい`) AND chunk 25 (L11, `ライトエルフの末えい`).** ⚠️⚠️ **NOT "1 instance each", and NOT a new form — corrected in place 2026-09-09 (§4.3, PR #24 review): `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED.** `tl/battle/chunk_010.txt` 12.2 renders `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ` / `ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．` — the same word in the lizardmen's **full-katakana** register (§5), which is why neither a kanji-run nor a kanji+kana search found it. **The choice is CONFIRMED by shipped work; only the novelty and reach claims were wrong.** Gate 6 is not engaged (different source strings), but both wave-6 units must match `ｄｅｓｃｅｎｄａｎｔ`. ✅ **`ｄｅｓｃｅｎｄａｎｔ` is 10 columns, measured `len()` — PR #23's Flag 15 says 11 and is a hand-count one high; the seed was right and the "correction" is NOT applied** | ⚠️ **A kanji-run intersection does NOT find this term** — it is kanji+hiragana. Alt *scion*, *last of the line*. Both units must agree. 10 columns |
+| ~~ライトエルフ~~ | ✅ **PROMOTED to §41.1 and STRUCK HERE (PR #23, merged 2026-09-09)** — `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, **used exactly as seeded**, 9 / 11 columns confirmed. Chunk 25 renders **both** battle instances, so the term is **exhausted** and this row is struck outright rather than left live — the `ルート` cross-unit procedure (§29.1 / §30.1) does not apply where one unit carries every occurrence. The ARIES attribution below is **confirmed independently at PR #23's review from the `{FC50}`/`{FC51}` CHANNEL byte, not the portrait id** — the whole Guilford/Aries duel runs under one `{FCB0}{=00060000}` and the channel is what separates the speakers; see §41.2 | ~~chunk 25 (L11) ×2 — ⚠️ **ARIES's bloodline, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's bloodline"). Gilford says `なるほど、確かにライトエルフの末えいのようだな` **to Aries**, who then finds his own spell useless — coherent with Aries being Bishop Creus's grandchild (chunk 24 L15). `ライトエルフの封印` is separately the seal Gilford intends to break. **The renderings are unaffected; only the note was wrong.** 2 battle + 0 script~~ | ~~⚠️ **NOT open after all — corrected in this same seed before dispatch.** The sibling term `ダークエルフ` is ALREADY FIXED at **§17 as `ｄａｒｋ　ｅｌｆ`, lowercase**, and is already shipped lowercase in `tl/script/batch_003.tsv` L20 (`ａｎｃｉｅｎｔ　ｄａｒｋ　ｅｌｖｅｓ`). `ライトエルフ` is the same construction and takes the same case: **`ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ`, lowercase, not a reviewer question.** Consistent with §17.1 and the `ホビット` → hobbit precedent. **Both instances must agree.** 9 / 11 columns~~ |
 | ~~アネット~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ａｎｎｅｔｔｅ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×5 — **Dolgan's daughter**, the survivor who guides the party to the mountain settlement. 5 battle + 4 script | European reading. 7 columns |
 | ~~ドルガン~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｄｏｌｇａｎ`, used exactly as seeded; reach re-measured EXACT.** Original seed note follows: | chunk 26 (L14) ×2 — Annette's father, alive among the survivors. **Also battle chunk 32 + 8 script instances**; 4 battle + 8 script | Alt *Durgan*, *Dorgan*. 6 columns |
 | ~~セティ~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｓｅｔｉ`, used exactly as seeded, and FIXED AS FEMALE (§40.2).** Original seed note follows: | chunk 26 (L14, L15) — one of the **two ruling 魔族**, `恐ろしく強大で、驚くほど頭が回り、極めて残忍`. **Reaches battle chunks 26, 27, 28, 29, 38** — 6 battle instances | ⚠️ **A matched pair with ユイティ**: the Japanese rhymes them (‑ティ / ‑ティ) and the English should keep that. Alt *Sethi*, *Sety* — but pair the choice. 4 columns |
@@ -516,7 +516,7 @@ mixed-script, exactly as it missed `つるん` in wave 5.** Mixed kanji+kana ter
 | ~~トレーズ~~ | ✅ **PROMOTED to §40.1 (PR #22, merged) — `Ｔｒｅｉｚｅ`, used exactly as seeded. He is ALSO the dark elf of L10/L11, confirmed on the channel test (§40.5).** Original seed note follows: | chunk 26 (L15) — a wounded demon who begs Seti for help. **Reaches battle chunks 26, 27, 28, 29** — 6 battle instances | `トレーズ` is the standard katakana for French *Treize*, so this is the European reading. Alt *Traize*, *Trays*. 6 columns |
 | ~~カッフィ~~ | ✅ **PROMOTED to §39.1** — `Ｃａｆｆｉ` / `Ｃａｆｆｉ　Ｐｏｒｔ`, used exactly as seeded (PR #24) | chunk 24 (L14) ×3 — ⚠️ **a PORT, not a person**: `カッフィの港`, `カッフィへ来てくれ`. 3 battle + 3 script | Alt *Kaffi*, *Caffy*. 5 columns |
 | ~~ゴードン~~ | ✅ **PROMOTED to §39.1** — `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ`, used exactly as seeded (PR #24) | chunk 24 (L15) — `ファリーナのゴードン将軍`, one of the three who plotted the killing. 1 battle | **`将軍` → `Ｇｅｎｅｒａｌ` is ALREADY FIXED** (§32.1, and the §10 discharge at PR #8) — only the name is new here. 6 columns bare, 15 with the rank |
-| オーラスマッシャー | `Ａｕｒａ　Ｓｍａｓｈｅｒ` | chunk 25 (L11) — ⚠️ **ARIES's spell, NOT Torif's** (corrected in place 2026-09-09, §4.3, PR #24 review; this read "Trif's spell"). Aries casts it at Gilford and it fails: `オーラスマッシャーがきかない・・・？`. 1 battle | 12 columns. **The rendering is unaffected; only the note was wrong** |
+| ~~オーラスマッシャー~~ | ✅ **PROMOTED to §41.1 and STRUCK HERE (PR #23, merged 2026-09-09)** — `Ａｕｒａ　Ｓｍａｓｈｅｒ`, **used exactly as seeded**, 12 columns confirmed. A hapax carried entirely by chunk 25, so struck outright. ⚠️ **ARIES's spell, NOT Torif's — re-confirmed at PR #23's review on the CHANNEL byte**: the caster is `{FCB0}{=00060000}` **channel 1**, the same channel that then says `そ、そんな・・・オーラスマッシャーがきかない・・・？`; channel 0 is Guilford throughout. See §41.2 | ~~chunk 25 (L11) — Aries casts it at Gilford and it fails: `オーラスマッシャーがきかない・・・？`. 1 battle | 12 columns~~ |
 | ~~ホアグ王子派 / トリフ王子派~~ | ✅ **PROMOTED to §39.1** — `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ`, rendered in `tl/battle/chunk_024.txt` (PR #24) | chunk 24 (L14) — `ホアグ王子派とトリフ王子派との間で、争いが起こるのだ` | ⚠️⚠️ **THIS ROW CARRIED TWO ERRORS, BOTH CORRECTED IN PLACE 2026-09-09 (§4.3, PR #24 review). It is kept, struck through, rather than deleted, because a provisional row contradicting a main-table entry cost two translators a round this wave and the record of how should survive.** (1) It read **`Ｐｒｉｎｃｅ　Ｔｒｉｆ’ｓ　ｆａｃｔｉｏｎ`**. `トリフ` → **`Ｔｏｒｉｆ`** is fixed at §9 line 290, **promoted at §38.1**, and **shipped** at `tl/script/batch_007.tsv` L56 as `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`; `Ｔｒｉｆ` occurs **nowhere** in `tl/` or `pending/` — grepped at review. A main-table entry beats a provisional §9 row. Chunk 24's translator reached `Ｔｏｒｉｆ` independently, before the correction arrived. (2) It read "**21 / 21 columns**". Measured with `len()`: `Ｐｒｉｎｃｅ　Ｈｏａｇ’ｓ　ｆａｃｔｉｏｎ` is **21** and `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ’ｓ　ｆａｃｔｉｏｎ` is **22** — `Ｔｏｒｉｆ` is 5 columns to `Ｈｏａｇ`'s 4. **No rendering changes**: the long forms were never used, because they do not fit (§39.3). The two appear in ONE sentence and must be parallel; both shortened together, as this row directed. Note `’` not `'` (CLAUDE.md §3) |
 | 古代文明 | `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` | `batch_008` (**DATA line 488** — ⚠️ corrected in place 2026-09-09, PR #24 review; this read "unique 473") — `古代文明の宝庫`. 1 battle (ch.16) + 5 script | ⚠️ **British `‑ｓａｔｉｏｎ`**, matching `Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ` already shipped in `batch_005.tsv` L46. 20 columns |
 | 司教様 | `Ｂｉｓｈｏｐ` — **already fixed, §26.1** | `batch_008` (unique 483) `亡くなられたファリーナの司教様`; chunk 24 (L15) ×2 `ファリーナの司教、クレウス` / `クレウス司教の孫` | ⚠️ **Not a new person: this is Bishop `Ｃｒｅｕｓ`**, the late Bishop of Farina. Already rendered in `tl/battle/chunk_021.txt` L10/L20 and `batch_005.tsv` L46. `司教` → **Bishop**, possessive `Ｃｒｅｕｓ’` (§26.1) |
@@ -2765,7 +2765,7 @@ seeded**, in both units where the term is cross-unit.
 | 申し訳ない。 | `ｆｏｒｇｉｖｅ　ｍｅ．` | 10 columns. ⚠️ **Held apart from three "sorry" forms already fixed**: §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (the near-miss — same speaker type, same formality), §28.3's あいにく → `Ｓｏｒｒｙ，`, §30.3's ごめんね。 → `Ｉ’ｍ　ｓｏｒｒｙ．`. `Ｍｙ　ａｐｏｌｏｇｉｅｓ．` was rejected: it is free, but makes the row exactly **24** columns beside `Ｈｏｗｅｖｅｒ，`. ⚠️ **`ｆｏｒｇｉｖｅ` now renders two source words across `tl/`** — 許す → *forgive* is shipped in `chunk_007` L14 and `chunk_010` L3/L7. Different messages, so §3 is not engaged, and §25.3's co-occurrence test is met: chunk 19 contains no 許す at all. Different senses, too — refusing forgiveness against asking for it |
 | はたして (rhetorical) | `ｗｈｏ　ｃａｎ　ｓａｙ` | 14 columns. `今ははたして、誰の手に渡っていることか・・・` → `Ｉｎｔｏ　ｗｈｏｓｅ　ｈａｎｄｓ　ｉｔ` / `ｈａｓ　ｐａｓｓｅｄ　ｎｏｗ，` / `ｗｈｏ　ｃａｎ　ｓａｙ．．．` |
 | よりによって、 | **`ｏｆ　ａｌｌ　…`**, the complement following the source | ⚠️ **Recorded at review; neither PR proposed a row and the phrase had none, yet all three of its occurrences are now shipped.** `よりによって、厄介なところへ…` → `Ｏｆ　ａｌｌ　ｐｌａｃｅｓ，　ｗｅ’ｖｅ` / `ｌａｎｄｅｄ　ｉｎ　ａ　ｎａｓｔｙ　ｓｐｏｔ．` here; `chunk_008` ships the byte-identical row `よりによって、` as `Ｏｆ　ａｌｌ　ｔｉｍｅｓ，`; `chunk_004` ships `よりによって　この私を` as `ｔｏ　ｓｅｎｄ　ｍｅ，　ｏｆ　ａｌｌ`. **This is not a divergence to fix.** よりによって takes its complement from context and English does the same — chunk 19's is a place (`厄介なところ`), chunk 8's a time. **What is fixed is `ｏｆ　ａｌｌ`; the noun follows the source**, which is §5's word-plus-source-punctuation mechanism generalised one step. §3 is not engaged (different messages), and **all 3 battle occurrences are now rendered**, so the phrase is closed |
-| どうやら、 | **`Ｌｏｏｋｓ　ｌｉｋｅ　…`** | ⚠️ **Fixed here at review rather than left open.** Chunk 19 absorbs it into `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` / `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ．` with no standing form, and the PR's Flag 15 asked for one because **it reaches four more chunks — 23, 25, 30 and 31**. Fixing it now rather than letting four units each invent one. Held **distinct** from the hearsay evidentials of §26.6 (`らしい` → *they say* / *Word is*): どうやら is the speaker's own **inference from what he can see**, not report of another's word — which is exactly why chunk 19's ambush line takes it |
+| どうやら、 | **`Ｌｏｏｋｓ　ｌｉｋｅ　…`** for a CASUAL speaker / **`…　ｓｅｅｍ(ｓ)　…`** for a FORMAL one | ⚠️⚠️ **SCOPE CORRECTED 2026-09-09 (§4.3, PR #23 review) — this row was written as a blanket form and the corpus does not support one; see §41.4. `Ｌｏｏｋｓ　ｌｉｋｅ` is right for the speakers it was written from and wrong for a contraction-free one, and three shipped `seem` renderings PREDATED it and were not counted.** The row's original text follows unchanged: ⚠️ **Fixed here at review rather than left open.** Chunk 19 absorbs it into `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` / `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ．` with no standing form, and the PR's Flag 15 asked for one because **it reaches four more chunks — 23, 25, 30 and 31**. Fixing it now rather than letting four units each invent one. Held **distinct** from the hearsay evidentials of §26.6 (`らしい` → *they say* / *Word is*): どうやら is the speaker's own **inference from what he can see**, not report of another's word — which is exactly why chunk 19's ambush line takes it |
 
 ### 33.3 Ruling — `ウルフ` takes `Ｕｌｆ`, because `ｗｏｌｆ` is already shipped for a creature
 
@@ -4035,14 +4035,14 @@ in the PR body was re-measured at review and is **exact**, except the labelling 
 
 | Japanese | English | Note |
 |---|---|---|
-| ホアグ王子 / ホアグ | `Ｐｒｉｎｃｅ　Ｈｏａｇ` / `Ｈｏａｇ` | **Promoted from §9's wave-2 seed, used exactly as seeded.** 13 / 4 columns. Carline's elder prince, Cavia's brother. **The first rendering in the project** — `Ｈｏａｇ` occurred nowhere in `tl/` or `pending/` before this unit. 6 battle + 16 script |
+| ホアグ王子 / ホアグ | `Ｐｒｉｎｃｅ　Ｈｏａｇ` / `Ｈｏａｇ` | **Promoted from §9's wave-2 seed, used exactly as seeded.** ~~13 / 4 columns~~ **11 / 4 columns** (corrected in place 2026-09-09, §4.3, PR #23 review; `len('Ｐｒｉｎｃｅ　Ｈｏａｇ')` = 11. ⚠️ **The phrase had THREE different figures in this file — §9's 10, this row's 13 and the true 11** — measured twice; both wrong rows are now patched. No rendering changes). Carline's elder prince, Cavia's brother. **The first rendering in the project** — `Ｈｏａｇ` occurred nowhere in `tl/` or `pending/` before this unit. 6 battle + 16 script |
 | カッフィ / カッフィの港 | `Ｃａｆｆｉ` / `Ｃａｆｆｉ　Ｐｏｒｔ` | **Promoted from §9's wave-6 seed, used exactly as seeded.** 5 / 11 columns. **A PORT, not a person.** `Ｘの<feature>` → capitalised compound on §38.1's `チェコットの丘` → `Ｃｈｅｋｏｔ　Ｈｉｌｌ` and `イートンの森` → `Ｅａｔｏｎ　Ｆｏｒｅｓｔ`, **not** the possessive of §2's `バウワーの砦`. Both `カッフィの港` render `Ｃａｆｆｉ　Ｐｏｒｔ` byte-identically. 3 battle (all here) + 3 script |
 | ゴードン将軍 | `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ` | **Promoted from §9's wave-6 seed.** 16 columns; `Ｇｏｒｄｏｎ` alone 6. `ファリーナのゴードン将軍` → `Ｇｅｎｅｒａｌ　Ｇｏｒｄｏｎ` / `ｏｆ　Ｆａｒｉｎａ．` 将軍 → `Ｇｅｎｅｒａｌ` is §26.2's, unchanged. A hapax: 1 battle + 0 script |
 | ホアグ王子派 / トリフ王子派 | `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ` | **Promoted from §9's wave-6 seed, on the seed's own named short alternative — the long form does not fit; see §39.3.** **16 / 17 columns** as phrases. 派 → `ｆａｃｔｉｏｎ` matches shipped `batch_005.tsv` L32's `フェルナンド派の連中` → `Ｆｅｒｎａｎｄｏ’ｓ　ｆａｃｔｉｏｎ` (§26.4). Both shortened together, as the seed directs. Both princes are titled `Ｐｒｉｎｃｅ` three times elsewhere in the same message, so the title is not lost from the scene — §2.1 step 3's redundant-gloss case, not a dropped fact. 1 battle each, 0 script |
 | おじいさん / じいさん | `Ｇｒａｎｄｆａｔｈｅｒ` / `ｍｙ　ｇｒａｎｄｆａｔｈｅｒ` | 12 columns. **Vocative capitalised, referential lowercase** — the split §25.4 already draws for `Ｆａｔｈｅｒ`. Free across `tl/` and `pending/`, verified at review |
 | 孫 | `ｇｒａｎｄｃｈｉｌｄ` | 12 columns, **deliberately gender-neutral** — the L15 exchange turns on it; see §39.2. Free across `tl/` and `pending/`, verified at review |
-| 恨み | `ｇｒｕｄｇｅ` | 6 columns. **Not a new form** — `pending/chunk_043.txt` 13.3 ships `我が部下たちの恨み・・・` → `ｍｙ　ｓｏｌｄｉｅｒｓ’　ｇｒｕｄｇｅ．．．`. ⚠️ **CROSS-UNIT with chunk 25 (PR #23), which also ships `ｇｒｕｄｇｅ` — verified at this review. The row stays LIVE until chunk 25 merges**, per the `ルート` precedent (§29.1 / §30.1); chunk 24 is the first of the pair. 3 battle (24, 25, 43) + 0 script |
-| 王位 (継承) | `ｔｈｅ　ｔｈｒｏｎｅ` | 10 columns. `王位継承を巡って…名乗りを挙げられた` → `ｈａｓ　ｐｕｔ` / `ｈｉｍｓｅｌｆ　ｆｏｒｗａｒｄ　ｔｏ` / `ｓｕｃｃｅｅｄ　ｔｏ　ｔｈｅ　ｔｈｒｏｎｅ．` — keeps **both** 王位 (*throne*) and 継承 (*succeed*). ⚠️ **CROSS-UNIT with chunk 25, which ships `ｔｈｅ　ｔｈｒｏｎｅ` for bare `王位` — verified at this review. The row stays LIVE until chunk 25 merges.** 2 battle (24, 25) + 0 script. `ｓｕｃｃｅｅｄ` also renders 成功した in `batch_007.tsv` L67; §25.3's test is met — 成功 is bank 3 only, 王位継承 is battle chunk 24 only |
+| 恨み | `ｇｒｕｄｇｅ` | 6 columns. **Not a new form** — `pending/chunk_043.txt` 13.3 ships `我が部下たちの恨み・・・` → `ｍｙ　ｓｏｌｄｉｅｒｓ’　ｇｒｕｄｇｅ．．．`. ⚠️ **CROSS-UNIT with chunk 25 (PR #23), which also ships `ｇｒｕｄｇｅ` — verified at this review. ~~The row stays LIVE until chunk 25 merges~~ ✅ **DISCHARGED and STRUCK 2026-09-09 at chunk 25's merge (PR #23)** — chunk 24 merged first and deliberately left it live, chunk 25 merged **second** and strikes it, which is the whole of what the `ルート` precedent (§29.1 / §30.1) prescribes. Both units ship `ｇｒｕｄｇｅ`, verified positionally against the merged tree rather than assumed. 3 battle (24, 25, 43) + 0 script |
+| 王位 (継承) | `ｔｈｅ　ｔｈｒｏｎｅ` | 10 columns. `王位継承を巡って…名乗りを挙げられた` → `ｈａｓ　ｐｕｔ` / `ｈｉｍｓｅｌｆ　ｆｏｒｗａｒｄ　ｔｏ` / `ｓｕｃｃｅｅｄ　ｔｏ　ｔｈｅ　ｔｈｒｏｎｅ．` — keeps **both** 王位 (*throne*) and 継承 (*succeed*). ⚠️ **CROSS-UNIT with chunk 25, which ships `ｔｈｅ　ｔｈｒｏｎｅ` for bare `王位` — verified at this review. ~~The row stays LIVE until chunk 25 merges.~~ ✅ **DISCHARGED and STRUCK 2026-09-09 at chunk 25's merge (PR #23)** — chunk 25 ships bare `王位` → `ｏｎ　ｔｈｅ　ｔｈｒｏｎｅ　ｗｈａｔｅｖｅｒ．` and chunk 24 the compound `王位継承` → `ｓｕｃｃｅｅｄ　ｔｏ　ｔｈｅ　ｔｈｒｏｎｅ．`; both verified against the merged tree. ⚠️ **This pair is the standing counter-example to a maximal-kanji-run cross-unit sweep** — `王位継承` never matches `王位`, which is why neither unit's dispatch list carried it (`FLAGS.md` §Y2). 2 battle (24, 25) + 0 script. `ｓｕｃｃｅｅｄ` also renders 成功した in `batch_007.tsv` L67; §25.3's test is met — 成功 is bank 3 only, 王位継承 is battle chunk 24 only |
 | 計画する (of a killing) | `ｐｌｏｔ` | `殺害を計画した３人のうちの１人` → `ｏｎｅ` / `ｏｆ　ｔｈｅ　ｔｈｒｅｅ　ｗｈｏ` / `ｐｌｏｔｔｅｄ　ｍｙ` / `ｇｒａｎｄｆａｔｈｅｒ’ｓ　ｍｕｒｄｅｒ．` **`ｐｌａｎ` is not free** — §19.2 spends it on 作戦 and §31.5 turns on that. ⚠️ **`ｐｌｏｔ` renders THREE source words, not two** (corrected at review, §39.3): 計画 here, 企てた in `batch_007.tsv` L50, and a third already shipped as the noun in `batch_005.tsv` L36 (`Ｈｅｌｆｅｒ’ｓ　ｐｌｏｔ．`). §25.3's test is still met — 計画 is script banks [5, 41] + battle chunk 24, 企て is banks [1, 3, 23]; no shared bank, no shared chunk |
 | 容赦しない / 容赦せん | `ｓｈｏｗ　ｎｏ　ｍｅｒｃｙ` / `ｎｏ　ｍｅｒｃｙ` | 3 instances here across two speakers, one echoing the other (`容赦しない・・・？` / `それは、こっちのセリフだ。`), so one word throughout. `ｍｅｒｃｙ` free across `tl/` and `pending/`, verified at review |
 | 話が違う | `Ｔｈｉｓ　ｉｓ　ｎｏｔ` / `ｏｕｒ　ｂａｒｇａｉｎ，` | `ｂａｒｇａｉｎ` free, verified at review. A hapax — 1 battle, 0 script |
@@ -4368,3 +4368,294 @@ FLAGS §Y2): `tl/battle/chunk_025.txt` and `tl/script/batch_008.tsv` are both **
 - **`フフ` / `ふふ` do not occur in chunk 26**, so §12.3 / §32.7's `Ｆｕｆｕ` is not engaged here.
 - **`ｄｅｓｃｅｎｄａｎｔ` does not occur in chunk 26**, so nothing propagated PR #23's Flag 15
   miscount (it is **10** columns; §9 already carries the measurement).
+
+---
+
+## 41. Added by chunk 025 (PR #23, merged 2026-09-09)
+
+Rendered in `tl/battle/chunk_025.txt` — chapter 25, the flight to the ship and the unmasking:
+Hoag runs for the harbour; Torif catches him and the brothers discover each has been told the other
+wants him dead; Helfer greets them both and blames "someone"; Aries breaks cover and names Helfer as
+the man who deceived them, goaded Fernando and used Fernando to destroy her kin; Guilford appears,
+Rimul reports every port on the continent sealed, Helfer drops the mask; Aries attacks Guilford with
+Aura Smasher and is struck down; the party sails; Helfer and Guilford close on the light-elf seal.
+
+**5,403 / 8,192 bytes, slack 2,789** — 1,039 JP → 2,220 EN characters = **2.1367×** against a
+**3.4837** tier-C ceiling, 61.3 % of the English budget. **129 text rows** (source 124), widest
+**23**, ten at 23, **none at 24**, no page over four text rows. `{FFFE}` **101 → 106 (+5)**, all on
+one message line; `{FCC0}` **11 → 11**, none added or removed; `{FFFF}` 14, `{FC50}` 27, `{FC51}`
+23, `{FC00}` 2, `{PAD 5161}` — every one unchanged, and the non-`{FFFE}` tag stream is
+byte-identical to the dump on all 18 lines. **Merged at round 2**, with two findings, both fixed
+and both independently re-verified by the translator before pushing.
+
+`Ｔｏｒｉｆ` (§38.1) ×4, `Ｈｏａｇ` (§39.1), `Ａｒｉｅｓ` (§33.1), `Ｇｕｉｌｆｏｒｄ` / `Ｒｉｍｕｌ` /
+`Ｆｅｒｎａｎｄｏ` (§1), `Ｈｅｌｆｅｒ` (§11.1), `Ｃａｕｃａｓｕｓ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2),
+`Ｃｏｍｍａｎｄｅｒ` (§11.2), `Ｔｃｈ，` (§11.5), `Ｈｍｐｈ` ×3 (§6), `Ｒｉｇｈｔ，` (§24.3),
+`ｍｏｖｅ　ｏｕｔ！` (§6), `Ｉ　ｓｅｅ．` (§30.3), `Ｔｒｕｌｙ，` (§28.3), `Ｈｏｗｅｖｅｒ，` (§23.3, its
+ninth use), `Ｗｈａｔ　ｄｏ　ｙｏｕ　ｍｅａｎ．` (§37.4), `Ｎｏｔ　ｓｏ　ｆａｓｔ．` (§34.3),
+`ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ` (§25.5), `Ｙｏｕ　ｍａｙ　〜` (§31.2), `Ｙｏｕ　〜` on a contempt vocative
+(§36.3), `ｋｉｎ` / `ｐｕｒｓｕｅｒｓ` (§36.1), `ａｌｌ　ｒｉｇｈｔ` (§34.8), `Ｆｏｒ　ｎｏｗ，` (§33.2),
+`ｏｎｌｙ` for `たかが` (§19.1), `ｄｕｔｙ`, `ｐｉｅｃｅ` (§31.2), `ｇｒｕｄｇｅ` (§39.1) and §24.3's
+comma-stutter shape are used unchanged. **Three §9 wave-6 seeds are promoted below, all three used
+exactly as seeded, not one improved on unilaterally.**
+
+### 41.1 People, words and things first rendered here — three promotions out of §9
+
+| Japanese | English | Note |
+|---|---|---|
+| ライトエルフ | `ｌｉｇｈｔ　ｅｌｆ` / `ｌｉｇｈｔ　ｅｌｖｅｓ` | **Promoted from §9's wave-6 seed and STRUCK there — chunk 25 carries BOTH battle instances, so the term is exhausted and no cross-unit row survives.** 9 / 11 columns confirmed. Lowercase per §17.1's species test and §17.2's shipped `ｄａｒｋ　ｅｌｆ`. `ライトエルフの末えい` takes the English genitive plural `ｏｆ　ｔｈｅ　ｌｉｇｈｔ　ｅｌｖｅｓ`, `ライトエルフの封印` the attributive singular `ａ　ｌｉｇｈｔ　ｅｌｆ　ｓｅａｌ`. **2 battle + 0 script** |
+| オーラスマッシャー | `Ａｕｒａ　Ｓｍａｓｈｅｒ` | **Promoted from §9 and STRUCK there.** 12 columns. A true hapax — 1 battle / 0 script. **Aries's spell**, confirmed on the channel byte (§41.2) |
+| 末えい | `ｄｅｓｃｅｎｄａｎｔ` | **Promoted from §9, used exactly as seeded**, rendered `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` (**19** columns, not the PR's 20). **10 columns**, `len()`-measured — PR #23's own Flag 15 proposed 11 and **the author formally withdrew it at round 2**; the seed was right. ⚠️ **The §9 row is DELIBERATELY LEFT LIVE** for `batch_008` (PR #21), which renders it too and had not merged; chunk 25 is the first of that pair. **Not a new form**: `chunk_010` 12.2 already ships it for the full-katakana `マツエイ` (§5) |
+| 王家 | `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` | **15** columns (not the PR's 16). **Ruled at review — see §41.5.** ⚠️ Parked `pending/chunk_005.txt` renders it `ｔｈｅ　ｃｒｏｗｎ’ｓ`; that file does not ship, so gate 6 is not engaged, and the re-cut is queued in `pending/README.md`. **4 battle (chunks 5 ×2, 25 ×2) + 7 script** |
+| 王位 | `ｔｈｅ　ｔｈｒｏｎｅ` | 10 columns. **CROSS-UNIT with chunk 24 and struck at §39.1 by this merge.** `王位なんか狙ってはいない` → `Ｉ　ｈａｖｅ　ｎｏ　ｄｅｓｉｇｎｓ` / `ｏｎ　ｔｈｅ　ｔｈｒｏｎｅ　ｗｈａｔｅｖｅｒ．`, the `なんか` carried in `ｗｈａｔｅｖｅｒ` on shipped `chunk_021` L11's precedent |
+| 王子 (bare vocative) | `ｍｙ　Ｐｒｉｎｃｅ` | 9 columns. Helfer's deferential address to Hoag (`〜ですぞ、王子。`) |
+| 王子様 (vocative) | `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ` | **13** columns (not the PR's 14). The 様 rendered as the English title of the station, on §24.1's `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ` and §33.1's `フェリクス様` → `Ｇｏｖｅｒｎｏｒ　Ｆｅｌｉｘ`. **Held distinct from the bare `王子` above — two source strings, two English forms, separated by the honorific; see §41.6.** ⚠️ **The 8 script instances read REFERENTIAL and are NOT ruled here** |
+| 王子たち | `ｔｈｅ　Ｐｒｉｎｃｅｓ` | 11 columns. Already on the referential side of §41.6's split. 2 battle (25, 30) + 6 script |
+| 大陸 | `ｔｈｅ　ｃｏｎｔｉｎｅｎｔ` | **13** columns (not the PR's 14). ⚠️ **CROSS-UNIT with `batch_008`**: 1 battle (this) + 6 script (banks 4, 5, 41). No §9 row exists, so there is nothing to strike — recorded here instead, and **PR #21 must match this form** |
+| 踊り子 | `ｄａｎｃｅｒ` | 6 columns. Aries, whom §33.1 already fixes as a travelling performer. **Largest reach of anything new here: 1 battle + 18 script** (banks 1, 18, 20, 23, 41) |
+| 家臣 | `ｒｅｔａｉｎｅｒｓ` | **9** columns (not the PR's 10). Hoag's household men waiting on the ship. 1 battle + 2 script |
+| 野ネズミ | `ｆｉｅｌｄ　ｍｉｃｅ` | **10** columns (not the PR's 11). Helfer's contempt for the party. **A fifth contempt word**, held apart from 雑草ども → weeds (§11.5), ゴミ → rubbish (§14.4), 穀潰し → freeloaders (§2) and ガラクタ → junk (§23.1). **4 battle (25, 41, 42 ×2) + 1 script (bank 41)** |
+| 小娘 | `ｔｈａｔ　ｇｉｒｌ` | 9 columns. Contempt carried by the demonstrative, per §31.2's mechanism. 2 battle (25, 31) — **chunk 31 inherits it** |
+| 弱小種族 | `ｐｕｎｙ　ｒａｃｅ` | **9** columns (not the PR's 10). Direct address, so `Ｙｏｕ　〜` per §36.3. Hapax |
+| 知に溺れた | `ｄｒｏｗｎｅｄ　ｉｎ　（ｙｏｕｒ　ｏｗｎ）　ｃｌｅｖｅｒｎｅｓｓ` | Hapax. Post-posed because English requires it |
+| 張本人 | `ｔｏ　ｂｌａｍｅ` | `ヘルファーが張本人よ。` → `Ｈｅｌｆｅｒ　ｉｓ　ｔｏ　ｂｌａｍｅ．` (**19** columns, not the PR's 20). Held **distinct** from 黒幕 → `ｗｈｏ　ｉｓ　ｂｅｈｉｎｄ　ｉｔ` (§15.2, shipped `batch_002` L9). Hapax |
+| 企み | `ｐｌｏｔ` | 4 columns. ⚠️ **`ｐｌｏｔ` now renders FOUR source words** — 企み here, 計画 (chunk 24), 企てた (`batch_007` L50) and the noun in `batch_005` L36. §25.3's test re-run at this review and **MET**: 企み is battle chunk 25 only + 0 script; 計画 is battle chunk 24 only + banks 5, 41; no shared chunk, no shared bank, no message holds two |
+| そそのかす | `ｇｏａｄ` | **4** columns (not the PR's 5). Hapax. Held distinct from 操る below |
+| 操る | `ｍｏｖｅ` | `フェルナンドを操り、` → `ｈｅ　ｍｏｖｅｄ　Ｆｅｒｎａｎｄｏ`. Chosen to chime with §31.2's `手駒` → `ｐｉｅｃｅｓ` and this chunk's own `駒` — the same speaker's board metaphor |
+| 駒 | `ｐｉｅｃｅ` | 5 columns. **Not a new form** — §31.2 fixes Guilford's `手駒` → `ｐｉｅｃｅｓ` in shipped `chunk_018`; same man, same metaphor, and this is the line where it starts. 2 battle (18, 25) + 3 script (bank 41) |
+| 封印 | `ｓｅａｌ` | 4 columns. 2 battle (25, 32) + 4 script (bank 41) |
+| もろとも | `〜　ａｎｄ　ａｌｌ` | `王子もろとも` → `Ｔｈｅ　Ｐｒｉｎｃｅｓ　ａｎｄ　ａｌｌ，`. Hapax |
+| 番狂わせ | `ｕｐｓｅｔｓ` | 6 columns. Hapax |
+| 計算違い | `ｍｉｓｃａｌｃｕｌａｔｉｏｎ` | **14** columns (not the PR's 15). Hapax |
+| 出航 | `ｓｅｔ　ｓａｉｌ` | **8** columns (not the PR's 9). Hapax |
+| 追手 | `ｐｕｒｓｕｅｒｓ` | **8** columns (not the PR's 9). **Not a new rendering — a second SOURCE SPELLING** of §36.1's `追っ手`, shipped in `chunk_021` L3 as `Ｐｕｒｓｕｅｒｓ？`, collapsing onto it per §17.2's 鬼 / オーガ. `追手` is battle 25, 29; `追っ手` is battle 21 only. ⚠️ **A gate-6 grep on the exact Japanese will not pair them, and a lowercase grep of `tl/` will not find the chunk-21 instance either** — it is sentence-initial. **Chunk 29 inherits it** |
+| なんか (dismissive) | `ｗｈａｔｅｖｅｒ` | The particle carried in a word English already uses for it, matching shipped `chunk_021` L11's `ｎｏ　ｉｎｔｅｎｔｉｏｎ　ｗｈａｔｅｖｅｒ` |
+| うわああっ | `Ｕｗａａａｈ` + the source's own punctuation | **6** columns (not the PR's 7). A scream, on §32.3's `ぬおっ` → `Ｎｗｏｈ` transliteration template and held distinct from `Ｇｕｈ` / `Ｇｗａｈ` / `Ｇｕｆｆ` / `Ｎｗｏｈ` / `Ｇｗｏｈ` / `Ｕｇｈ`. Verified free. Hapax |
+
+### 41.2 Portrait id is NOT speaker — this chunk proves it twice, and the CHANNEL is what decides
+
+Both of this unit's long messages put **two different speakers under one `{FCB0}` portrait id** and
+separate them only by the `{FC50}`/`{FC51}` channel byte. This is the §23.5 / §28.7 / §30.7 pattern
+at its most load-bearing, and §40.5 independently used the same test on chunk 26's Treize.
+
+```
+port 0006 ch0  おっと、そうはさせん。                            Guilford
+port 0006 ch1  どけっ！どかないと貴様も殺すぞ！                    Aries
+port 0006 ch0  フフ・・、おもしろい。やってみろ。                   Guilford
+port 0006 ch1  死ねっ！！                                     Aries
+port 0006 ch0  フッ・・・・なるほど、確かにライトエルフの末えいのようだな。 Guilford
+port 0006 ch1  そ、そんな・・・オーラスマッシャーがきかない・・・？       Aries
+port 0006 ch0  フン、滅びるがいい。知に溺れた弱小種族め！              Guilford
+```
+
+**This settles §9's attribution from inside the chunk**: Aries is the light-elf descendant and Aura
+Smasher is *her* spell. Torif is not in the exchange at all. Two further readings the PR's own flag
+did not carry, both from the channel:
+
+- **Portrait 0002 channel 0 is HOAG, not Torif.** `何を言ってるんだ、トリフ。お前こそ、私の命を狙って・・・`
+  is Hoag borrowing his brother's portrait; the English is right (`Ｉｔ　ｉｓ　ｙｏｕ　ｗｈｏ` /
+  `ｓｅｅｋ　ｍｙ　ｌｉｆｅ．．．`, `私`, contraction-free).
+- **Portrait 0008 channel 0 in the final message is GUILFORD, not Helfer.** Helfer (ch1) apologises
+  `すまぬことをしたな、ギルフォード。`; ch0 answers `なに、かまわん。…私が一人で解いてみせる。` — the man
+  who undoes a seal is the 魔導師 (§11.4), and Helfer has just addressed him by name.
+
+### 41.3 Register
+
+| Who | Register |
+|---|---|
+| Aries (portrait 0B, and 06 ch1 in the duel) | §33.1 / §33.7 **unchanged and held across all six turns** — `Ｄｏ　ｎｏｔ　ｂｅ　ｄｅｃｅｉｖｅｄ！`, `Ｈｅｌｆｅｒ　ｉｓ　ｔｏ　ｂｌａｍｅ．`, `Ｉ　ｗｉｌｌ　ｄｅｆｅａｔ　Ｈｅｌｆｅｒ！`, `Ｏｕｔ　ｏｆ　ｍｙ　ｗａｙ！`, `Ｄｉｅ！！`, `Ｔｈ，　Ｔｈａｔ　ｃａｎｎｏｔ　ｂｅ．．．` ⚠️ **Her SOURCE register shifts here and the English does not follow it into contractions.** §33.1 fixes her polite です／ます from chunks 19 and 20; this chunk drops it entirely (`だまされちゃダメよ！`, `どけっ！`, `死ねっ！！`). **Ruled at review: the force goes in the words, not in newly granted contractions**, so §33.1's no-contraction row stands unbroken across all three of her chunks. The shift is the source's and is characterisation, not a register error |
+| Helfer (portrait 08) | §11.6 unchanged — **no contraction anywhere**: `Ｉｔ　ｓｅｅｍｓ，　ｍｙ　Ｐｒｉｎｃｅ，`, `Ｉ　ｓｈａｌｌ　ｓｅｎｄ　ｙｏｕ　ｔｏ`, `Ｉ　ｈａｖｅ　ｄｏｎｅ　ｙｏｕ　ｗｒｏｎｇ，`. His `あの世へ送ってやる。` deliberately does **not** copy shipped `chunk_000`'s `Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ` — different message, and the contraction is not his |
+| Guilford (portrait 06 ch0, 08 ch0) | **No contraction anywhere** — `Ｉｔ　ｍａｔｔｅｒｓ　ｎｏｔ　ａｔ　ａｌｌ．`, `Ｉ　ｓｈａｌｌ　ｕｎｄｏ　ｉｔ　ａｌｏｎｅ．`, `ｗｉｌｌ　ｎｅｖｅｒ　ｄｅｆｅａｔ` / `ｏｎｅ　ｓｕｃｈ　ａｓ　Ｉ！！`. His boastful `この私` takes `ｏｎｅ　ｓｕｃｈ　ａｓ　Ｉ`, the §25.1 `このクリミアに` shape, and his `Ｆｕｆｕ．．，` is §12.3's fixed laugh |
+| Hoag (portrait 03, and 02 ch0) | Formal and measured, `私`, **no contractions** — `Ｗｈａｔ　ａｒｅ　ｙｏｕ　ｓａｙｉｎｇ，　Ｔｏｒｉｆ．`, `ｗｈａｔ　ｉｎ　ｔｈｅ　ｗｏｒｌｄ` / `ｉｓ　ｔｈｅ　ｍｅａｎｉｎｇ　ｏｆ　ｔｈｉｓ？`, `Ｔｈａｔ　ｓｈｉｐ　ａｔ　ｔｈｅ　ｂａｃｋ．` |
+| **Torif (portrait 02 ch1) — FIXED HERE, first full scene** | Formal, earnest and young, `僕`, **no contractions** — `Ｂｒｏｔｈｅｒ，` / `ｉｓ　ｉｔ　ｔｒｕｅ　ｔｈａｔ　ｙｏｕ` / `ａｒｅ　ｓｅｅｋｉｎｇ` / `ｍｙ　ｖｅｒｙ　ｌｉｆｅ？`, `Ｉ　ｈａｖｅ　ｎｏ　ｄｅｓｉｇｎｓ`, `Ｉ，　ａｆｔｅｒ　ｙｏｕ，　Ｂｒｏｔｈｅｒ？` He addresses Hoag as `兄さん` → **`Ｂｒｏｔｈｅｒ`**, capitalised as a vocative on §25.4's `Ｆａｔｈｅｒ` / §39.1's `Ｇｒａｎｄｆａｔｈｅｒ` split. **Chunks 26 and 42 carry him** |
+| Rimul (portrait 07) | §7 / §30.7 unchanged — `Ｇｕｉｌｆｏｒｄ，　ａｓ　ｐｌａｎｎｅｄ，`, `ｉｓ　ｓｅａｌｅｄ．`, `Ｎｏｔ　ｏｎｅ　ｋｉｔｔｅｎ　ｇｅｔｓ　ｉｎ．` — no contractions, and the `ネコの子一匹` image kept rather than idiom-swapped |
+| The Caucasus townsman (portrait 05, L6) and the enemy soldier (portrait 05, L13) | Civilian and rank-and-file, contractions throughout (`Ｉｔ’ｓ`, `Ｉ’ｖｅ`, `Ｉ’ｌｌ`, `ｄｏｎ’ｔ`) — the deliberate §7 contrast that makes the royal and imperial flatness read as rank. **Two different speakers on one portrait id in different messages**, which is normal for this dump |
+| Portraits 01 and 09 | **Deliberately unnamed and no row is proposed.** 09 says only `誰だ、貴様！`; 01 knows Rimul by sight, uses blunt `お前` to her and polite `ですか` to a 司令官 who is present. Fernando fits and nothing in the chunk names him, so the English supplies no name — the §28.7 / §31.1 practice. A later chunk may settle it |
+
+### 41.4 CORRECTION to §33.2 (§4.3) — `どうやら` splits on REGISTER, and three shipped rows predated the row that claimed to fix it
+
+§33.2 fixes `どうやら、` → `Ｌｏｏｋｓ　ｌｉｋｅ　…` and names chunk 25 among four chunks it binds.
+**Chunk 25 renders it `Ｉｔ　ｓｅｅｍｓ，` and that is correct; the row is what is wrong.** Counted
+across the tree at this merge — twice, once at each review round, with chunk 26 arriving between:
+
+| where | speaker | register | English |
+|---|---|---|---|
+| `chunk_002` ×2 | Albert | §20.5 deferential, formal, **no contractions** | `ｉｔ　ｓｅｅｍｓ` / `Ｉｔ　ｓｅｅｍｓ　ｔｈｅｙ　ａｒｅ` |
+| `chunk_002` (other coda variant) | Albert | as above | `Ｔｈｅｙ　ｗｏｕｌｄ　ｓｅｅｍ　ｔｏ　ｂｅ` |
+| `pending/chunk_017` | Rendol | §30.7 formal, **no contractions** | `Ｔｈｅｙ　ｓｅｅｍ` |
+| **`chunk_025`** | **Helfer** | **§11.6 grandiose, archaic, no contractions** | **`Ｉｔ　ｓｅｅｍｓ，`** |
+| `chunk_014` | `〜みたいだぜ` | casual | `Ｌｏｏｋｓ　ｌｉｋｅ` |
+| `chunk_019` | 9th Army, `Ｉ　ｃａｎ’ｔ　ｓａｙ` | casual | `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` |
+| **`chunk_026`** | **`敵のようだな`, plain `だな`** | **casual** | **`Ｌｏｏｋｓ　ｌｉｋｅ　ｅｎｅｍｉｅｓ．`** |
+
+> **Ruled: contraction-taking, casual speakers take `Ｌｏｏｋｓ　ｌｉｋｅ　…`; contraction-free, formal
+> speakers take a `seem` clause.** **Register predicts 8 of 8, with no exceptions.**
+
+This is the §36.2 `とにかく` shape exactly, and §36.3's scoping of §31.2's `〜め` before it. Two
+things are worth keeping beyond the ruling itself:
+
+1. **§33.2's claim to be "fixing it now rather than letting four units each invent one" was false
+   when it was written.** `chunk_002` (wave 1) and `chunk_014` had already shipped **three**
+   `seem` renderings; the row counted only the *untranslated* chunks it would bind. A reach count
+   that looks forward and not backward is the §37.3 / §38.6 failure in a new place.
+2. **Chunk 26 is the decisive instance precisely because nobody was arguing about it.** An
+   independent unit and an independent reviewer put a plain `だな` speaker on the `Ｌｏｏｋｓ　ｌｉｋｅ`
+   side, between this PR's two review rounds, with no knowledge of this question.
+
+**Lines this affects: none.** All eight instances are already on the right side. §33.2's row is
+patched in place with the condition; the English forms are unchanged.
+
+### 41.5 RULING — `王家` takes `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ`, and `ｔｈｅ　ｃｒｏｗｎ` cannot do the job
+
+`pending/chunk_005.txt` renders `宮廷軍は王家のもの` as `Ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ　ｉｓ` /
+`ｔｈｅ　ｃｒｏｗｎ’ｓ．` Chunk 5 is **parked**, so it is not in `tl/`, gate 6 does not bind it and §3 is
+not engaged. The question is which form to fix forward, and it is settled by what the other
+construction will take rather than by seniority:
+
+- `王家を狙う何者か` → `ｓｏｍｅｏｎｅ　ｐｌｏｔｓ　ａｇａｉｎｓｔ` / `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ．`
+- `王家の人間がおらずとも` → `Ｅｖｅｎ　ｗｉｔｈｏｕｔ　ｏｎｅ　ｏｆ` / `ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ，`
+
+***one of the crown* is not English.** A single form has to serve both, and only
+`ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` (15) does. **Reach: 4 battle (chunks 5 ×2, 25 ×2) + 7 script** (banks 1,
+23, 41), so this needed deciding rather than drifting. `ｔｈｅ　ｃｒｏｗｎ` is **not** reserved — it is
+the natural English for 王権 or 王室 should either appear. **`pending/chunk_005.txt`'s two rows are
+queued for the re-cut in `pending/README.md`**, on the §23.2 precedent, and cost +8 columns there.
+
+### 41.6 RULING — `王子` and `王子様` split on the HONORIFIC, and only the vocative is decided
+
+Two source strings, two English forms, held apart exactly as §1 and §24.1 hold 様 apart:
+
+| source | who says it | English | why |
+|---|---|---|---|
+| bare `王子。` | Helfer, to Hoag | `ｍｙ　Ｐｒｉｎｃｅ` (9) | the plain deferential address of a courtier |
+| `王子様、` | Aries, to Hoag | `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ` (13) | 様 takes the English title of the station — §24.1's `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ`, §26.1's `バトウ様` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, §33.1's `フェリクス様` → `Ｇｏｖｅｒｎｏｒ　Ｆｅｌｉｘ`. **Not** §21.2's `〜さん` rule, which drops the honorific |
+
+The scene supports it: the schemer defers, the outsider uses the full title. ⚠️ **The referential
+question is NOT ruled here and must not be treated as settled.** The **8 script instances** read
+referential (`王子様を連れて、`, `王子様も、王女様も`, `王子様たちをかくま…`, `王子様が`,
+`王子様を・・・！？`), and §1 already fixes the parallel `王女様` → **the Princess** referentially, so
+the likely full entry is *referential `ｔｈｅ　Ｐｒｉｎｃｅ` / vocative `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ`` — but
+this unit renders no referential instance and a reviewer does not rule on lines that are not in
+front of him. **`batch_008` (PR #21) and later script units decide it**; this unit's
+`王子たち` → `ｔｈｅ　Ｐｒｉｎｃｅｓ` is already on the referential side.
+
+### 41.7 RULING — `どけっ` takes `Ｍｏｖｅ`, and chunk 25's emphatic is licensed by a repetition
+
+Counted at review: **`どけっ` is 2 battle instances, chunks 24 and 25 only, 0 script** — the dump's
+third `どけ` hit is `お城にとどけて` (chunk 0), a substring false positive that any bare grep will
+report. Nobody's cross-unit list carried this term; it surfaced only from a positional sweep.
+
+| where | source | English |
+|---|---|---|
+| `chunk_024` | `どけっ、` | `Ｍｏｖｅ！` |
+| `chunk_025` | `どけっ！どかないと貴様も殺すぞ！` | `Ｏｕｔ　ｏｆ　ｍｙ　ｗａｙ！` / `Ｍｏｖｅ，　ｏｒ　ｙｏｕ　ｄｉｅ　ｔｏｏ！` |
+
+> **Ruled: `どけ` → `Ｍｏｖｅ` is the fixed word. Chunk 25 stands and nothing is re-cut.** Its source
+> is one speaker, one breath, **the verb repeated** — imperative then negative-conditional. English
+> that used `Ｍｏｖｅ！` twice would flatten a repetition the source is using to escalate into a
+> threat, so the first takes the emphatic and the second the fixed word. **The emphatic is licensed
+> only by that repetition**; a bare `どけ` elsewhere takes `Ｍｏｖｅ`.
+
+§3 is not engaged (different messages, and the source strings differ in their own stop), and the two
+chunks are different scenes, so §25.3's co-occurrence test is not reached.
+
+### 41.8 The two round-1 findings, and what each is worth keeping
+
+Both were fixed at round 2 in **one line, one commit**, and both were re-verified by the translator
+against the tree rather than taken on the reviewer's word.
+
+**1. `フフ・・、` was `Ｈｅｈ　ｈｅｈ．．，` and is now `Ｆｕｆｕ．．，`.** §12.3 fixes `ふふ` → `Ｆｕｆｕ`
+and §32.7 already collapsed `ふふっ` onto it as "a new source spelling … one word, two spellings,
+the documented kind". `フフ` is the **third** spelling of that same word, and the project has never
+given a kana-script variant its own English — §30.3 did precisely this for `グフッ` → `Ｇｕｆｆ`
+("§14.5's ぐふっ in **katakana**"), §11.5 for `くっ` / `クッ`, §28.3 for `何っ` / `何ッ`, §29.3 for
+`くーっ` / `く〜っ`. Counted: **`ふふ` 8 battle (chunks 20, 28, 31, 33) + 1 script; `ふふっ` 1 + 1;
+`フフ` 2 (chunks 25, 39) + 1; `フフッ` 1 (chunk 39) + 1.** `Ｆｕｆｕ，` is shipped in `chunk_020` and
+`chunk_033`, both merged. **23 → 20 columns, −6 bytes, no re-flow**; the two dots and the comma
+still follow the source per §5.
+
+⚠️ **Two things worth more than the fix.** First, **§12.3's own row already listed
+`Ａｌｔ　Ｈｅｈ　ｈｅｈ　—　ｓｅｅ　ＦＬＡＧＳ`**, so the shipped form was the alternative that row had
+rejected — the translator found this itself at round 2 and it is a sharper account than the review's.
+Second, its stated cause: it grepped `フフ`, `フッ` and `フン` in **katakana** and never `ふふ` in
+hiragana. **A kana-script search finds only its own script.** That is the blind spot §17.2 exists to
+close and it is now the third distinct search failure this run, after §Y2's maximal-kanji-run
+intersection and §9's full-katakana `マツエイ`. See `FLAGS.md` §AC.
+
+**2. bare `そして、` was `Ａｎｄ　ｔｈｅｎ，` and is now `Ａｎｄ，`.** Merged `chunk_024` and parked
+`chunk_043` both ship `Ａｎｄ，` for the byte-identical bare segment, **from the same speaker, Aries,
+in the adjacent chapter of one continuous revelation**. Nothing forced the divergence (4 columns
+against 9, on a standalone row, with 2,773 bytes of slack), the outlier was the unmerged file rather
+than shipped work, and **`Ａｎｄ　ｔｈｅｎ` was already spent** on `それから、` in `pending/chunk_017` —
+where §25.3's test *fails*, since chunk 5 holds both source words. **9 → 4 columns, −10 bytes.**
+✅ **With this change `Ａｎｄ　ｔｈｅｎ` occurs exactly once in the whole corpus and the collision is
+DISCHARGED, not merely recorded.** §40.4's positional narrowing — `そして、` alone on its display row
+takes `Ａｎｄ，`, a `そして` continuing into its own clause takes lowercase `ａｎｄ` — is correct and
+leaves this instance squarely inside the rule.
+
+### 41.9 Corrections to this PR's own figures (§4.3) — fourteen, and none touches a line of the file
+
+The translator re-measured **all 37** width figures in its PR body at round 2 and reported **14
+wrong, 13 of them exactly one too high**; it also **formally withdrew its own Flag 15**
+(`ｄｅｓｃｅｎｄａｎｔ` is 10, not 11 — the seed was right). Every one is re-measured here with `len()`
+and carried into §41.1 above: `ｄｅｓｃｅｎｄａｎｔ` 11→**10**, `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ` 14→**13**,
+`ｔｈｅ　ｒｏｙａｌ　ｈｏｕｓｅ` 16→**15**, `ｔｈｅ　ｃｏｎｔｉｎｅｎｔ` 14→**13**, `ｒｅｔａｉｎｅｒｓ` 10→**9**,
+`ｆｉｅｌｄ　ｍｉｃｅ` 11→**10**, `ｐｕｎｙ　ｒａｃｅ` 10→**9**, `Ｈｅｌｆｅｒ　ｉｓ　ｔｏ　ｂｌａｍｅ．` 20→**19**,
+`ｇｏａｄ` 5→**4**, `ｍｉｓｃａｌｃｕｌａｔｉｏｎ` 15→**14**, `ｓｅｔ　ｓａｉｌ` 9→**8**, `Ｕｗａａａｈ` 7→**6**,
+`ｐｕｒｓｕｅｒｓ` 9→**8**, `ａ　ｄｅｓｃｅｎｄａｎｔ　ｏｆ　ｔｈｅ` 20→**19**.
+
+Two of this file's own rows were wrong about the same phrase in **opposite** directions and are
+patched in place above: **§9 said `Ｐｒｉｎｃｅ　Ｈｏａｇ` is "10 columns with the title" (one LOW) and
+§39.1 said 13 (two HIGH); it is 11.**
+
+**The pattern is the finding, not the fourteen instances.** Across both review rounds and both
+agents, **every figure either party argued from was exact** — `Ｐｒｉｎｃｅｓ　Ｈｏａｇ　ａｎｄ　Ｔｏｒｉｆ，`
+23, the rejected `Ｐｒｉｎｃｅ　Ｈｏａｇ，　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ，` 26,
+`Ｒｉｇｈｔ，　ｇｅｔ　ｔｈｅ　ｓｈｉｐ　ｏｕｔ！` 24, `Ｓｕｒｅｌｙ　ｎｏｔ．．．．！？` 16 — **and every wrong
+figure was a table cell typed rather than measured.** No rendering anywhere is affected; the risk
+is that a *later* unit budgets a row from one of these cells. `FLAGS.md` §AC states the method rule.
+
+### 41.10 Recorded, not re-cut — checked at review and not defects
+
+1. **`まさか・・・・！？` → `Ｓｕｒｅｌｙ　ｎｏｔ．．．．！？` conforms to a ruling the PR did not know
+   existed.** §33.6 splits `まさか` into the incredulous / negative-supposition use (takes
+   `Ｓｕｒｅｌｙ`) and the `まさか…とは` exclamative (does not), and **its table already lists chunk 25
+   among the seven chunks on the `Ｓｕｒｅｌｙ` side.** The supplied `ｎｏｔ` is the negative supposition
+   made explicit, which §2 requires because English cannot leave the negative elided. **Ratified.**
+2. **`Ｉ　ｓｅｅ．　Ｔｒｕｌｙ，` on one row** is §30.3's `なるほど、` plus §28.3's `確かに、`, both
+   unchanged and both with the `、`→`．`/`，` the corpus already uses.
+3. **`ｄｕｔｙ` has a THIRD instance the PR did not name** — `batch_007.tsv` renders
+   `任務に向かってもらう` → `ｇｏ　ｔｏ　ｙｏｕｒ　ｄｕｔｙ　ａｔ　ｏｎｃｅ`, the **same word 任務** as
+   `chunk_001` L0 and this unit. Extra agreement, not a collision. `務め` → `ｄｕｔｙ` in parked
+   `chunk_005` is a different word and §25.3's test is met.
+4. **`ｏｎｅ　ｓｕｃｈ　ａｓ　Ｉ` is a fifth English form for `この私`** beside `ｍｅ，　ｏｆ　ａｌｌ　ｐｅｏｐｌｅ`
+   (chunk 4), bare `ｍｅ` (chunk 18) and `ｔｈｅ　ｌｉｋｅｓ　ｏｆ　ｍｅ` (chunk 43). `この私` is a boastful
+   emphatic that takes whatever its clause needs — the §32.8 `何だ、` shape — not a fixed form.
+5. **Flag 20's `{FCC0}` rule is right and its stated mechanism is not.** `rowcheck.py` **splits** on
+   `{FCC0}` and honours it as a page boundary; what forbids adding or removing one is
+   `assemble.py:tag_parity`. **`FLAGS.md` §Q2 already cites `tag_parity` correctly** — checked at
+   this merge, and chunk 26's reviewer had already declined to "patch" it for the same reason. The
+   wave briefing's framing was the only thing wrong, and §AA7 records that.
+6. **Two bare `　` rows** in the final message are the source's own and are reproduced verbatim.
+
+### 41.11 Cross-unit rows after this merge — what is struck and what is LEFT LIVE
+
+Verified **by reading the integration branch's tree** at merge time, not assumed (§Y2):
+`tl/battle/chunk_024.txt` and `tl/battle/chunk_026.txt` are present, `tl/script/batch_008.tsv` is
+**absent**.
+
+- ✅ **`王位` and `恨み` are STRUCK at §39.1.** Chunk 24 merged **first** and deliberately left both
+  live; chunk 25 is the **second** of the pair and strikes them, which is the whole of what the
+  `ルート` precedent (§29.1 / §30.1) prescribes. Both units agree byte-for-byte.
+- ✅ **`ライトエルフ` and `オーラスマッシャー` are STRUCK at §9 outright** — chunk 25 carries **every**
+  battle instance of both, so there is no pair and no second merge to wait for.
+- ⚠️ **`末えい`'s §9 row STAYS LIVE.** It pairs this unit with `batch_008` (PR #21), which has not
+  merged. **PR #21's reviewer strikes it**, after verifying the merged chunk 25.
+- ⚠️ **`大陸` has NO §9 row** — it was never seeded. It is nonetheless cross-unit with `batch_008`
+  (1 battle + 6 script, banks 4, 5, 41) and **PR #21 must match `ｔｈｅ　ｃｏｎｔｉｎｅｎｔ`**, 13 columns.
+  Recorded at §41.1 rather than in §9, so nobody hunts for a row to strike.
+- ⚠️ **`魔族`'s §9 row STAYS LIVE and is NOT mine to strike.** Chunk 26 merged **first** of its pair
+  with `batch_008`; §40.7 left it live and **PR #21's reviewer strikes it**. `魔族` does not occur in
+  chunk 25 at all — counted: battle chunks 26, 27, 28, 29, 30, 32.
+- **`場所` has no §9 row** — confirmed again here after §40.7 recorded the same thing. Nothing to
+  strike; the wave briefing's pairing was wrong.
