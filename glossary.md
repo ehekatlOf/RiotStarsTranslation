@@ -598,6 +598,29 @@ answer both explicit.** It is the same massacre `tl/battle/chunk_021.txt` L10 al
 This is adjacent to but **distinct from** `FLAGS.md` §Y6, which is about **クレス** (Cress), a
 different character; §Y6 stays open and unaffected.
 
+**Wave 8 seeds (2026-09-09) — battle chunks 37, 38, 41, 42 and script batch 010.** Battle names
+follow the European-reading convention (§11.4, §14, §17.3); item-table vocabulary follows §4
+(British spellings) and the stat-row precedent of §22/§4. ⚠️ **Every width below was measured with
+`len()`, not hand-counted** (§AC3 / FLAGS §AG6), and **the proposer is fallible: if your
+measurement disagrees with a cell here, your measurement wins and this cell is the error.**
+
+| Japanese | Likely English | Where seen | Alt spellings / promotion note |
+|---|---|---|---|
+| マザロー | `Ｍａｚａｒｏ` | battle chunk 37 — `マザロー様！{FFFE}反乱軍の生き残り` | A **PERSON**, addressed `様`. ⚠️ **NOT `メルザリオ` → `Ｍｅｌｚａｒｉｏ` (§20.1), which is a PLACE** — different kana, the §Y2/§AC1 kana-variant blind spot. Keep the two visibly distinct. Alt *Mazarow*, *Masaro* |
+| マーシュ | `Ｍａｒｓｈ` | battle chunk 37 ×1; script ×3 (`ここの港には、マーシュが　いるはずよ。`) | A person at the port — `おお、マーシュ。{FFFE}無事だったか。` Alt *Mashu*, *March* |
+| マラナ | `Ｍａｒａｎａ` | battle chunk 38 ×2 — `このマラナ、{FFFE}お前たちと再会する` | Enemy commander; self-referential boast, `〜わ` → **female**, register per §7. Alt *Malana* |
+| 防御力＋ＮＮ (armour stat row) | `Ｄｅｆ＋ＮＮ` | script DATA 226, 239, 272 | ⚠️ **Exact analogy with `攻撃力＋ＮＮ` → `Ａｔｋ＋ＮＮ` (§4; 32+ instances already shipped). Prose keeps *defence power*.** **No `防御力＋ＮＮ` stat row has ever shipped — these are the first.** The form is **zero-growth** (5–6 columns in, 5–6 out) and that is load-bearing: **bank 40 has 447 bytes free**, and the armour rows are affordable only because the stat tail does not grow |
+| ボウガン | `ｃｒｏｓｓｂｏｗ` | script DATA 224 | 8 columns |
+| ボウキャノン | `ｂｏｗ　ｃａｎｎｏｎ` | script DATA 225 | 10 columns; kept audibly distinct from ボウガン. Alt *Bowcannon* |
+| ひみつの店 | `ｔｈｅ　ｓｅｃｒｅｔ　ｓｈｏｐ` | script DATA 310 | ⚠️ Lowercase **unless** it proves to be a *named* shop like `Ｂｅａｓｔ　Ｓｈｏｐ` (§12) — settle it on use and say which |
+| 会員証 | `ｍｅｍｂｅｒｓｈｉｐ　ｃａｒｄ` | script DATA 310 | 15 columns. Alt *ｍｅｍｂｅｒ’ｓ　ｃａｒｄ* (13) if the row is tight |
+| 鋼鉄の手袋 | `ｓｔｅｅｌ　ｇａｕｎｔｌｅｔｓ` | script DATA 272 | `腕を守る` → *that guard the arms* |
+| 鉄製の鎧 | `ｉｒｏｎ　ａｒｍｏｕｒ` | script DATA 239 | British per §4; `動きやすい` → *easy to move in* |
+| ダミーよろい１／２ | `ｄｕｍｍｙ　ａｒｍｏｕｒ　１` / `ｄｕｍｍｙ　ａｒｍｏｕｒ　２` | script DATA 261, 262 | Matches the shipped `Ｔｈｉｓ　ｉｓ　ａ　ｄｕｍｍｙ　ｗｅａｐｏｎ．` pattern |
+| 軍神ヘルメス | *the war god* `Ｈｅｒｍｅｓ` | script DATA 300 | Pattern of §22.1 — `軍神オーディン` → *the war god Ｏｄｉｎ*, `魔神ティール` → *the demon god Ｔｙｒ*. ⚠️ **This line discharges the §9 `石版` → `ｔａｂｌｅｔ` row** |
+| 『カルボナイト』 | `“Ｃａｒｂｏｎｉｔｅ”` | script DATA 880 | A **named crafting material**; `『…』` → `“…”` per §12 |
+| 『ジェムストーン』 | `“Ｇｅｍｓｔｏｎｅ”` | script DATA 880 | ⚠️ **Distinct from the bare `ｇｅｍｓｔｏｎｅ` already in §33's table** — the quoted form is the material's *name* (capitalised); the bare noun stays lowercase |
+| ヒーリング | `ｈｅａｌｉｎｇ` | script DATA 908, 909 (×3) | Common noun (`ヒーリング能力を持つ`), not a named spell — lowercase |
 ---
 
 ## 10. Open questions
