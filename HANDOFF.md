@@ -43,12 +43,13 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 ## In flight
 | Unit | Branch / file | PR | State |
 |---|---|---|---|
-| battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | — | translator round 1, running |
+| battle chunk 30 | `tl/battle-030` → `tl/battle/chunk_030.txt` | **#27** | **delivered — awaiting reviewer** (7,615 / 8,192, slack 577) |
 | battle chunk 31 | `tl/battle-031` → `tl/battle/chunk_031.txt` | **#26** | **delivered — awaiting reviewer** (5,355 / 8,192, slack 2,837) |
 | battle chunk 36 | `tl/battle-036` → **`pending/chunk_036.txt`** | **#25** | **PARK proposed — awaiting reviewer** |
 | script batch 009 | `tl/script-009` → `tl/script/batch_009.tsv` | — | translator round 1, running |
 
-**Wave barrier NOT yet met — 2 of 4 PRs open (#25 chunk 36, #26 chunk 31). Review nothing.** A translator still working is not a
+**Wave barrier NOT yet met — 3 of 4 PRs open (#25 chunk 36, #26 chunk 31, #27 chunk 30). Review
+nothing until `batch_009` has a PR too.** A translator still working is not a
 failure; wave-6 translators took 37–60 min. A translator that returned/died with no PR gets ONE
 fresh re-dispatch (two max), then the unit parks and the barrier closes on the rest.
 
@@ -195,6 +196,17 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
   glossary believes. (b) **§32.7's `ふふ` census counts SUBSTRINGS, not laughs** — chunk 31 has
   **3** ふ-runs (`ふふふ`, `ふふふふ`, `ふふふふふ`), whose non-overlapping `ふふ` substring count is
   **5**, which is the "31 ×5" the row records. The §35.2 shape in a new place.
+
+- 2026-09-09 (wave 7): **the kana/mixed-script blind spot bit THREE times in one chunk.** The
+  coordinator's brief caught `うらみ`/`恨み`; chunk 30's translator then found the same shape at
+  `まちがいない`/`間違いありません` and `じゃま`/`邪魔だて` by searching **both** scripts unprompted.
+  §Y2/§AC1's rule is not "check the one term you were warned about" — it is **search both scripts
+  for every term**.
+- 2026-09-09 (wave 7): ⚠️ **`石版` → `ｔａｂｌｅｔ` MUST STAY LIVE in §9 at every merge this wave.**
+  Reach re-measured by chunk 30's translator: **5 battle (chunks 30, 36) + 25 script instances
+  across 21 banks**, including unique 574/576. Chunk 36 being PARKED does not discharge it —
+  script 569/571 still render it. `クロイツェル` and `遠征軍` ARE exhausted by chunk 30 and may be
+  struck outright.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
