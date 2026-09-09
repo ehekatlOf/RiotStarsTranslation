@@ -39,12 +39,19 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 ## In flight — WAVE 6 (dispatched 2026-09-09)
 | Unit | Branch / file | Budget | Round | State |
 |---|---|---|---|---|
-| battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | dispatched |
+| battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | ✅ **PR #24 OPEN** — **5,913 / 8,192 (2,279 slack)**, 2.05× growth, widest row 23, +2 `{FFFE}`, `{FCC0}` untouched. Found `Ｔｏｒｉｆ` **independently** before my correction landed |
 | battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | ✅ **PR #23 OPEN** — **5,419 / 8,192 (2,773 slack)**, 2.14× growth, widest row 23, +5 `{FFFE}`, `{FCC0}` untouched. Awaiting the barrier |
 | battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **PR #22 OPEN** — **5,325 / 8,192 (2,867 slack)**, 1.84× growth, max run 23 cols, +3 `{FFFE}`. All six seed reach figures and widths re-measured **exact**. Awaiting the barrier |
 | script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
-**Review nothing until all four have an open PR** (CLAUDE.md §4 barrier).
+✅ **BARRIER MET 2026-09-09 — all four units have open PRs (#21, #22, #23, #24).** Reviewing
+begins, ONE reviewer at a time, in unit order: **24 (#24) → 25 (#23) → 26 (#22) → batch 008 (#21)**.
+
+⚠️ **For the reviewer of PR #24:** its Flag 4 states the shipped faction rows measure 20 / 18,
+but the bare phrases `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ` measure **16 / 17**,
+and 20 > 18 is backwards for a pair whose second name is one character longer. Probably the PR
+quotes ROW widths, not phrase widths. **Settle it against the file with `rowcheck`, not against
+the PR body.** Confirmed separately: the seed's "21 / 21" for the long forms is **21 / 22**.
 
 ### ⚠️ Three coordinator errors caught by batch 008's translator — all three verified and CONFIRMED
 Recorded here because the reviewer must apply the first two to `glossary.md` §9 in its integration
