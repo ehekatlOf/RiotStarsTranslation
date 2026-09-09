@@ -1328,7 +1328,14 @@ words”: ほう / ほお → `Ｏｈ` (with `．．．` or `，`), おや → `
 | `おお、` | 6 | 34 | **40** | `Ｏｈ，` |
 | `おお！` | 3 | 4 | 7 | `Ｏｈ！` |
 | `ほう、` / `ほお、` | 3 | 2 | **5** | `Ｏｈ，` |
-| `おや` | 6 | 23 | 29 | `Ｏｈ？` |
+| `おや` | 6 ⚠️ **4** | 23 | 29 | `Ｏｈ？` |
+
+⚠️ **CORRECTION to this table's `おや` battle figure, 2026-09-09 (§4.3, PR #17 review) — see §35.3.**
+**6 is the substring count; the interjection census is 4**, in chunks 1, 2, 31 and 35. The two false
+positives are `おやさしい方です。` (chunk 7 message line 19 — the very line that carries
+`あら・・・・？`) and `おやすいご用です。` (chunk 23). **Nothing turns on it**: `Ｏｈ？` is spent for
+おや either way, which is the only load this row bears, and the ruling below is untouched.
+**Lines this affects: none.**
 
 **`おお、` is the majority form of おお by 40 to 7, and it renders `Ｏｈ，` — the same string `ほう、`
 renders.** §18.2's split therefore separates おや and あ、 cleanly and does **not** separate おお
@@ -1762,7 +1769,7 @@ unchanged. `助かりました！！` → `Ｙｏｕ　ｓａｖｅｄ　ｕｓ�
 
 | Japanese | English | Note |
 |---|---|---|
-| あら、 | **`Ｍｙ，`** | 3 columns. A woman's mild, arch surprise. **Ratified at review, deliberately, because it binds 16 further occurrences (5 battle + 11 script-unique — both figures confirmed).** Deliberately **not** in the `Ｏｈ` family: §24.4 collapsed おお、/ ほう、 onto `Ｏｈ，` and おや onto `Ｏｈ？` outright, so `Ｏｈ` is spent and a fourth string cannot join them. `Ｍｙ` occurs **0** times elsewhere in `tl/`. The alternative `Ｏｈ　ｍｙ，` is also free but is 6 columns to `Ｍｙ，`'s 3, and あら is the milder of the pair |
+| あら、 | **`Ｍｙ，`** | 3 columns. A woman's mild, arch surprise. **Ratified at review, deliberately.** Deliberately **not** in the `Ｏｈ` family: §24.4 collapsed おお、/ ほう、 onto `Ｏｈ，` and おや onto `Ｏｈ？` outright, so `Ｏｈ` is spent and a fourth string cannot join them. `Ｍｙ` occurs **0** times elsewhere in `tl/`. ⚠️ **TWO CORRECTIONS to this row, 2026-09-09 (§4.3, PR #17 review) — see §35.1 and §35.2; the ruling stands unchanged and no rendering moves.** (a) Its reach was stated as "16 further occurrences (5 battle + 11 script-unique — both figures confirmed)"; **measured, it is 11 battle + 28 script-unique interjection instances = 39, i.e. 38 further than this one**. (b) ⚠️ **The alternative `Ｏｈ　ｍｙ，` was NOT free, and that sentence is struck: `chunk_011` L3 shipped `Ｏｈ　ｍｙ，` for `あら、` itself.** Retired by the wave-5 corrections unit (PR #17), after which `Ｏｈ　ｍｙ` occurs **0** times in `tl/` and `pending/`. `Ｍｙ，` is 3 columns to `Ｏｈ　ｍｙ，`'s 6, and あら is the milder of the pair |
 | 馬鹿者！ (direct address) | `Ｙｏｕ　ｆｏｏｌ！` | **A fifth バカ register**, held apart from §19.1's そんなバカな → `Ｔｈａｔ’ｓ　ｉｍｐｏｓｓｉｂｌｅ` and バカなやつら → `ｗｈａｔ　ｆｏｏｌｓ　ｙｏｕ　ａｒｅ`, §20.3's **バカ者** → `Ｔｈａｔ　ｆｏｏｌ　Ａｎｓｅｌｍｏ` (katakana, and *of* a third party) and §26.4's proverb. Same English root as §20.3 — this one is the vocative, and the kanji spelling is a different source string |
 | ははっ！ | `Ｙｅｓ，　ｓｉｒ！` | 9 columns. The doubled, more emphatic military assent. **Distinct** from §6's はっ → `Ｓｉｒ`, which this chunk uses byte-identically **two segments earlier in the same message** — they genuinely stand side by side, so they must not collapse. 5 battle + 1 script-unique **as a tic**, under §5's word-plus-source-punctuation mechanism (`ははっ・・・・！！` ch 16, `ははっ！！` ch 37, `はははっっ！！` ch 38, `ははっ・・・・` ch 42); the exact string `ははっ！` is 2 battle |
 | まあよい、 | `Ｎｏ　ｍａｔｔｅｒ．` | 10 columns. A senior officer waving an objection aside. **Distinct** from §24.3's しかたねえ。 → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (resignation) and §6's まったく → `Ｒｅａｌｌｙ，`. 2 battle + 0 script |
@@ -2419,6 +2426,14 @@ corpus was gathered at review rather than the five data points the dispatch supp
 **12 `あら` rows in the battle dump across chunks 7, 8, 11, 13, 14, 16, 20 ×2, 27 and 29, plus ~30
 in the script** — larger than §28.3's "16 further occurrences".
 
+⚠️ **CORRECTION to that census, 2026-09-09 (§4.3, PR #17 review) — see §35.2.** **12 is the raw
+substring count; the interjection census is 11.** The twelfth is `あらかた片付いたな。` (chunk 8
+message line 15), which is 粗方, *for the most part* — a different word. The chunk list is right and
+is unchanged. Measured with the same separation, the script side is **28** unique interjection lines
+(the substring count is 31; the false positives are `あらんことを。` ×2, 有らん, and
+`日を　あらためて、`, 改めて). **True reach: 11 battle + 28 script-unique = 39. Nothing turns on it
+— the ruling below rests on what `Ｏｈ？` already is, not on the count.**
+
 **What decides it is not the count but what `Ｏｈ？` already is.** §24.4 collapsed おや → `Ｏｈ？`
 *outright*, on **29 occurrences (6 battle + 23 script)**. `chunk_014` L3's `あら？` → `Ｏｈ？` is
 therefore byte-identical to a **different fixed source word**, and matching it would delete a member
@@ -2433,14 +2448,24 @@ for which form, and §24.4 settles which.
 had already been rendered three times in the `Ｏｈ` family. The ruling survives — it is the right one
 — but its "the alternative is free" reasoning does not, and is struck.
 
-**Lines this affects (§4.3) — four rows in three shipped files, all width-neutral or shorter:**
+**Lines this affects (§4.3) — ~~four rows in three shipped files~~ ⚠️ FIVE rows in FOUR shipped
+files, all width-neutral or shorter. ✅ ALL FIVE APPLIED 2026-09-09 by PR #17 (§35).**
 
-| File | Row | Now | Must become | Cost |
-|---|---|---|---|---|
-| `tl/battle/chunk_007.txt` L19 | `あら・・・・？` | `Ｏｈ．．．．？` (7) | `Ｍｙ．．．．？` (7) | 0 bytes |
-| `tl/battle/chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (12) | `Ｍｙ，　ｓｎｏｗ．．．？` (12) | 0 bytes |
-| `tl/battle/chunk_011.txt` L3 | `あら、お客様？` | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` (16) | `Ｍｙ，　ｖｉｓｉｔｏｒｓ？` (13) | −6 bytes |
-| `tl/battle/chunk_014.txt` L3 | `あら？` | `Ｏｈ？` (3) | `Ｍｙ？` (3) | 0 bytes |
+| File | Row | Now | Must become | Cost | |
+|---|---|---|---|---|---|
+| `tl/battle/chunk_007.txt` L19 | `あら・・・・？` | `Ｏｈ．．．．？` (7) | `Ｍｙ．．．．？` (7) | 0 bytes | ✅ |
+| `tl/battle/chunk_007.txt` L24 | `あら、雪・・・？` | `Ｏｈ，　ｓｎｏｗ．．．？` (12) | `Ｍｙ，　ｓｎｏｗ．．．？` (12) | 0 bytes | ✅ |
+| **`tl/battle/chunk_008.txt` L4** | **`あら？`** | **`Ｏｈ？`** (3) | **`Ｍｙ？`** (3) | **0 bytes** | ✅ |
+| `tl/battle/chunk_011.txt` L3 | `あら、お客様？` | `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` (16) | `Ｍｙ，　ｖｉｓｉｔｏｒｓ？` (13) | −6 bytes | ✅ |
+| `tl/battle/chunk_014.txt` L3 | `あら？` | `Ｏｈ？` (3) | `Ｍｙ？` (3) | 0 bytes | ✅ |
+
+⚠️ **The `chunk_008` row was MISSING from this table and is added 2026-09-09 (PR #17 review).**
+**§32.4 counted chunk 8 and then dropped it**: the census sentence above names "chunks 7, **8**, 11,
+13, 14, 16, 20 ×2, 27 and 29" while this table listed only four rows and none of them was chunk 8's.
+`FLAGS.md` §T1 and the wave-5 dispatch both inherited the omission; PR #17's translator found the row
+independently and fixed it. It is the female 9th Army companion (portrait `{=000A0001}`, `{FC51}`)
+spotting the Imperial advance — `{FFFD}あら？{FFFE}{FC00}{=0000}、来たわ！` — the identical defect on
+the identical source string as `chunk_014` L3. See §35.
 
 ⚠️ **Deliberately NOT applied in this commit, and the reason is on the record rather than implied.**
 PR #15 (script batch 006) is open and unreviewed and reaches this same question from the script side
@@ -2448,6 +2473,13 @@ with ~30 more instances; chunk 19 is mid-rework. Re-cutting three shipped files 
 battle-chunk merge while two siblings are in flight is the wrong blast radius. This is the §27
 corrections-unit shape: the **ruling** binds PR #15, chunk 19 and every later unit from now; the
 **re-cut** is owed work, carried in `FLAGS.md` §T and `HANDOFF.md` with the lines and costs above.
+
+✅ **DISCHARGED 2026-09-09 by PR #17** (`f25ff14`), the wave-5 `あら` corrections unit: **five rows in
+four files, net −6 bytes, zero `{FFFE}` and zero `{FCC0}` changes, tag stream byte-identical on every
+line**. Both blocking conditions held and then cleared exactly as this paragraph predicted — PR #15
+merged and conforms (`batch_006` unique 630 ships `Ｍｙ，　ｃｏｌｄ　ｍｅｄｉｃｉｎｅ．．．`), chunk 19
+merged and carries no `あら`. **`Ｏｈ　ｍｙ` now occurs 0 times in `tl/` and `pending/`**, and every
+`あら` interjection in both trees renders `Ｍｙ`. See §35 and `FLAGS.md` §W.
 
 #### 32.4a The `おかしら` / `将校` / `将軍` gag — three words, and they stayed three words
 
@@ -3059,3 +3091,126 @@ breaks between object and verb; §3.2 forbids neither, no lone one- or two-lette
 merging them would change a second line's `{FFFE}` count for a cosmetic gain — **it stands**, on
 §33.8's disposition of the same question. Unique 633's notice inverts its clause order for the English
 sign register, which the PR did not flag; content is complete and it is recorded above instead.
+
+---
+
+## 35. Added by the wave-5 `あら` corrections unit (PR #17, merged 2026-09-09)
+
+Not a new unit of text and **not a new entry**: PR #17 applies §32.4's ruling (`あら` → `Ｍｙ` plus
+the source's own punctuation) to the shipped outliers. **Five rows in four files** —
+`tl/battle/chunk_007.txt` L19 and L24, **`chunk_008.txt` L4**, `chunk_011.txt` L3,
+`chunk_014.txt` L3 — squash-merged as `f25ff14`. The §27 / PR #9 corrections-unit shape.
+
+**Verified at review, re-derived rather than inherited:** chunk 7 **7,793 / 8,192 (slack 399,
+unchanged)** · chunk 8 **7,437 / 8,192 (755, unchanged)** · chunk 11 **1,561 / 8,192 (6,631, was
+6,625, −6 bytes)** · chunk 14 **2,203 / 8,192 (5,989, unchanged)**. Net **−6 bytes**, all of it in
+chunk 11. **The tag stream is byte-identical to the base on every line of all four files**: zero
+`{FFFE}` changes, zero `{FCC0}` changes, no break added, moved or deleted; line counts unchanged at
+34 / 21 / 15 / 14. Exactly **five readable runs** differ across the four files and every one is an
+`あら` row. Every `rowcheck` warning was re-run against the pre-edit files and is **INHERITED**.
+`assemble.py check` passes. **No §9 PROVISIONAL row is promoted and no new term is rendered.**
+
+**After this merge `Ｏｈ　ｍｙ` occurs 0 times in `tl/` and `pending/`**, and every `あら`
+interjection in either tree renders `Ｍｙ`: `chunk_007` L19/L24, `chunk_008` L4, `chunk_011` L3,
+`chunk_013` L4, `chunk_014` L3, `chunk_020` L47/L48, `batch_006` unique 630. Chunks 16, 27 and 29
+are untranslated and inherit the form. `FLAGS.md` §T1 is **DISCHARGED**; see `FLAGS.md` §W.
+
+### 35.1 CORRECTION to §28.3 (§4.3) — the `Ｏｈ　ｍｙ，`-is-free sentence is struck
+
+§28.3's `あら、` row ended *"The alternative `Ｏｈ　ｍｙ，` is also free but is 6 columns to `Ｍｙ，`'s
+3"*. **It was false when written**: `chunk_011` L3 had already shipped `Ｏｈ　ｍｙ，` **for `あら、`
+itself**. §32.4 struck the sentence in §32.4's own body but left §28.3's row unamended, so a
+translator looking up `あら` — which is where they would look — still met the false claim. `FLAGS.md`
+§T1 asked for the correction; it is applied here **and** marked in place on the row itself, so the
+change is not silent.
+
+**§28.3's ruling survives untouched** — it was ratified on the true observation that `Ｍｙ` was free,
+and `Ｍｙ` was and is free. What is struck is one clause of its justification. **Lines this affects:
+none beyond the five this unit already applied**; `chunk_011` L3 is the row that made the sentence
+false and is now the row that retires it.
+
+### 35.2 CORRECTION to §28.3's and §32.4's reach figures (§4.3) — substring counts, not censuses
+
+Both entries counted the **substring** `あら` and reported it as the interjection. Measured at this
+review across both dumps, separating the two:
+
+| | substring rows | **interjection rows** | false positives excluded |
+|---|---|---|---|
+| `dumps/battle_dump.txt` | 12 | **11** | `あらかた片付いたな。` (chunk 8 msg-line 15 — 粗方) |
+| `dumps/script_unique.txt` | 31 | **28** | `あらんことを。` ×2 (有らん), `日を　あらためて、` (改めて) |
+
+- **§28.3 said "16 further occurrences (5 battle + 11 script-unique — both figures confirmed)".**
+  The true reach is **11 battle + 28 script-unique = 39**, i.e. **38 further** than §28.3's own
+  chunk-13 instance. Out by more than a factor of two, and "both figures confirmed" was not true.
+- **§32.4 said "12 `あら` rows in the battle dump".** The interjection census is **11**. Its chunk
+  list — 7, 8, 11, 13, 14, 16, 20 ×2, 27, 29 — is **right and unchanged**, and matches the census
+  run for run.
+- The 28 script-unique interjection lines are data indices 478, 479, 482, 489, 490, 499, 500, **630**,
+  665, 682, 685, 701, 707, 708, 719, 723, 784, 923, 951, 953, 954, 1141, 1144, 1327, 1355, 1391,
+  1406, 1427. **Only 630 is translated** (`batch_006`, conforming); the other 27 inherit `Ｍｙ`.
+
+**Lines this affects: none.** Neither ruling rested on the count — §32.4's decisive ground is that
+§24.4 spent `Ｏｈ？` on おや outright — so both stand exactly as written.
+
+### 35.3 CORRECTION to §24.4's `おや` battle figure (§4.3) — 4 interjection, not 6
+
+§24.4's corpus table gives `おや` **6 battle**. That is the substring count; **the interjection is 4**,
+in chunks **1, 2, 31 and 35** — precisely the three shipped renderings §32.4 cites (`chunk_001` L1,
+`chunk_002` L14, `chunk_035` L2) plus chunk 31's untranslated `おや。`. The two false positives are
+`おやさしい方です。` (chunk 7 message line 19) and `おやすいご用です。` (chunk 23).
+
+⚠️ **`おやさしい方です。` sits on the very message line that carries `あら・・・・？`** — chunk 7's line
+19 — so the one line in the project where both of §24.4's miscounts could be seen at once is a line
+this unit edits. Coincidence, recorded so it is not mistaken for a cause.
+
+**Nothing turns on it.** `Ｏｈ？` is spent for おや at 4 occurrences as surely as at 6, which is the
+only load that figure bears in §24.4's argument and in §32.4's. The script figure (23) is unchecked
+and is left as it stands. **Lines this affects: none.**
+
+### 35.4 The `chunk_008` row — how a counted row fell out of its own ruling's table
+
+Worth writing down because the mechanism is reusable, not because the row is interesting. §32.4
+gathered the corpus correctly, wrote the chunk list correctly (chunk 8 named), and then built its
+*Lines this affects* table from the **five data points the dispatch had supplied** rather than from
+its own census. The two disagreed by one row and nothing reconciled them. `FLAGS.md` §T1 copied the
+table, the wave-5 dispatch copied §T1, and the omission travelled three documents intact until PR
+#17's translator scanned the dump itself rather than trusting any of them.
+
+**The lesson is the same one §32.5 and `HANDOFF.md`'s 2026-09-09 entry already record in the other
+direction**: a census and the table built from it must be reconciled against each other before the
+section is committed, because after that they are copied, not re-derived.
+
+### 35.5 Speaker attributions — one PR flag corrected, and a caveat on §32.4's own aside
+
+⚠️ **PR #17's Flag 7 identifies `chunk_007` L19's speaker as "portrait 02 (§21.4/§25.5/§28.6/§32.9's
+unnamed female companion, 'the one who notices')". In chunk 7 portrait 02 is Timmy** — verified from
+the tag stream at review, not from prose: the segment immediately after is
+`{FCB0}{=00010001}{FC51}{FFFD}どうした、ティミー？` → `Ｗｈａｔ　ｉｓ　ｉｔ，　Ｔｉｍｍｙ？`, and the next
+speaker names her again. §11.1 fixes ティミー → `Ｔｉｍｍｙ`; §23.5 gives her register.
+
+**Portrait ids are per-chunk and do not carry identity across chunks** — §23.5 has Timmy at portrait
+**0007** in chunk 4, and §29.6 has the 9th Army squad at ids that differ again in chunk 8. So
+§32.4's own aside, *"The same-speaker argument (portrait 02 in chunks 7, 14 and 20) is real"*, does
+not hold either: chunk 20's portrait 02 is fixed as the unnamed female companion **from inside chunk
+20** (§32.9), chunk 7's portrait 02 is Timmy, and chunk 14's is unnamed.
+
+**Nothing changes.** §32.4 already says the same-speaker argument "argues for making *one* form
+consistent, not for which form, and §24.4 settles which" — so the ruling never rested on it, and
+`Ｍｙ` is the fixed form for `あら` whatever the speaker. Recorded so the inference is not reused as
+though it were established. The register of all five rows was checked independently and `Ｍｙ` suits
+every one: chunk 7 L19 Timmy (young, female); chunk 7 L24 the old woman granting an item (`のよ`,
+`ね`, `もっておいきなさい`); chunk 8 L4 a woman of the 9th Army squad (`来たわ！`, §29.6); chunk 11 L3
+**Maya**, whose §7 register is arch and coquettish and for whom `Ｍｙ，　ｖｉｓｉｔｏｒｓ？` is a
+straight improvement on `Ｏｈ　ｍｙ，`; chunk 14 L3 portrait 02, unnamed.
+
+⚠️ **`ｖｉｓｉｔｏｒｓ` is deliberately kept in `chunk_011` L3**, as §34.1's `お客様` row requires in
+terms ("§32.4's owed re-cut of `chunk_011` L3 keeps `ｖｉｓｉｔｏｒｓ`"): only `Ｏｈ　` is removed, so
+the form stays spent and §34.1 needs no amendment.
+
+### 35.6 No register or geometry consequence
+
+No page grew, no row grew, no break moved, no orphan was created, and `{FC50}`/`{FC51}` alternation
+is untouched in all four files — proven by the zero tag-stream diff rather than argued. The two rows
+that change width both **shrink** (`Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` 16 → 13) or stay equal. Chunk 7's two
+`> 4 rows` warnings on lines 23 and 24 are the `FLAGS.md` §D3 / §L2 pages that carry no
+`{FC50}`/`{FC51}` at all, are already queued for the in-game check, and are byte-identical to base.

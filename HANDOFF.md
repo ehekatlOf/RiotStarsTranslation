@@ -14,9 +14,12 @@ container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
 > **WAVE 5 IS RUNNING** in `session_0126GVzUTXdEP5VpVWWJXBCU`. Seeds are committed (`9e595ff`);
-> four translators are dispatched. The coordinator's next acts, in order:
-> 1. Wait for **all four** PRs — the wave barrier (CLAUDE.md §4 step 4). Review nothing before it.
-> 2. Reviewer subagent, **one at a time, foreground**, in unit order: corrections → 21 → 22 → 007.
+> all four PRs are open (barrier met) and **PR #17 is merged**. The coordinator's next acts, in
+> order:
+> 1. ✅ Barrier met — all four PRs open. ✅ **#17 reviewed and merged** (`f25ff14`, integration
+>    pushed). `git pull --ff-only` before the next reviewer.
+> 2. Reviewer subagent, **one at a time, foreground**, in unit order: ~~corrections~~ → **#18
+>    battle 21** → #19 battle 22 → #20 script 007.
 > 3. Close the wave, then **open wave 6's session** with `create_session` (BOTH `source_url` and
 >    `source_revision`), units: **battle chunk 24 (C 2.99), 25 (C 3.48), 26 (C 3.36) + one script
 >    batch** — see Next up.
@@ -25,8 +28,8 @@ container artifact.
 > re-dispatch anything lost, and carry on from the step it reached. Do **not** restart the wave.
 
 ## Last updated
-2026-09-09 · by: **wave-5 coordinator** (`session_0126GVzUTXdEP5VpVWWJXBCU`) ·
-wave: **5 DISPATCHED — 4 units in flight, 0 PRs open** · queue: **fresh**
+2026-09-09 · by: **wave-5 reviewer 1** (PR #17 integration) ·
+wave: **5 REVIEWING — 1 of 4 merged (#17), 3 PRs open** · queue: **fresh**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -42,11 +45,14 @@ and 40 byte-for-byte untouched. Parked and translated: chunks **5, 43** (tier-A 
 (dump artifact).
 
 ## In flight — WAVE 5 · ✅ **BARRIER MET 03:08Z, all 4 PRs open** · reviewing in unit order
+**Review progress: #17 ✅ merged · #18 next · #19 · #20.** The reviewer re-checked the barrier
+itself before starting and it holds. `git pull --ff-only` before dispatching reviewer 2 — PR #17's
+integration commit is pushed.
 Glossary seeded first (`9e595ff`, §9 wave-5 block: 21 rows + 4 recorded decisions).
 
 | Unit | Branch | File(s) | PR | State |
 |---|---|---|---|---|
-| **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | **PR OPEN**, awaiting barrier |
+| **`あら` corrections** (FLAGS §T1) | `tl/corrections-ara` | **5 rows / 4 files** — `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3, `chunk_014` L3 | **[#17](https://github.com/ehekatlOf/RiotStarsTranslation/pull/17)** | ✅ **MERGED round 1** as `f25ff14`. 7,793 (399) / 7,437 (755) / 1,561 (6,631, −6) / 2,203 (5,989); net **−6 bytes**, **0 `{FFFE}`, 0 `{FCC0}`**, tag stream byte-identical on every line. Every gate run and pasted; **every PR figure correct as stated**. Integration = the `integrate: chunk corrections/あら (PR #17)` commit immediately after `f25ff14` — glossary **§35**, `FLAGS.md` **§W**, §T1 **DISCHARGED**. Nothing left on this unit |
 | **battle chunk 21** (D 4.28) | `tl/battle-021` | `tl/battle/chunk_021.txt` | **[#18](https://github.com/ehekatlOf/RiotStarsTranslation/pull/18)** | **PR OPEN** — 4,431 / 8,192, **3,761 slack**, 2.10× vs 4.28 ceiling, widest row 23 |
 | **battle chunk 22** (D 4.59) | `tl/battle-022` | `tl/battle/chunk_022.txt` | **[#19](https://github.com/ehekatlOf/RiotStarsTranslation/pull/19)** | **PR OPEN** — 4,153 / 8,192, **4,039 slack**, 2.06× vs 4.59 ceiling, widest row 23, 22 glossary rows |
 | **script batch 007** | `tl/script-007` | `tl/script/batch_007.tsv` | **[#20](https://github.com/ehekatlOf/RiotStarsTranslation/pull/20)** | **PR OPEN** — 50 lines / **70 instances**, 2.092×, bank 2 → **3,365**, bank 41 untouched |
@@ -146,12 +152,11 @@ times *inside* wave 4 — §31, §32, §33 — so every reviewer must be told to
 against the CURRENT glossary, weighing each difference as "translator error" vs "a ruling that did
 not exist when the unit was drafted").
 
-**1. ⭐ The `あら` corrections unit — do this one, it is owed and now unblocked.** `FLAGS.md` §T1.
-Chunk 20's reviewer ruled `あら` → `Ｍｙ` + the source's own punctuation (glossary §32.4) and
-deliberately did **not** re-cut the outliers, because two sibling PRs were open on the same
-question. **Both have since merged and both conform, so that condition is discharged.** Re-cut four
-shipped rows, all width-neutral or −6 bytes: `chunk_007` L19 and L24, `chunk_011` L3,
-`chunk_014` L3. A §27-style corrections unit, one PR.
+**1. ~~⭐ The `あら` corrections unit~~ ✅ DONE — PR #17 merged as `f25ff14`.** It was **five rows in
+four files**, not four in three: `chunk_007` L19+L24, **`chunk_008` L4**, `chunk_011` L3,
+`chunk_014` L3. Net −6 bytes, 0 `{FFFE}`, 0 `{FCC0}`. `FLAGS.md` §T1 **DISCHARGED**; glossary §35
+and `FLAGS.md` §W carry the record, including three corrected reach figures and two new
+duplicate-check traps (§W3, §W4).
 
 **2. Battle chunks 21 (D 4.28) and 22 (D 4.59)** — chapter order, both artifact-free and roomy.
 ⚠️ **Chunk 21 inherits `この裏切り者め。`**: §31's `〜め` on a personal name → `Ｔｈａｔ　〜` was fixed
@@ -266,6 +271,23 @@ banks (518–1,413) is what remains dispatchable.
   with lines and measured costs and left to a corrections unit, because sibling PRs were in flight
   on the same question. Recording with the lines named is what §4.3 requires; applying them
   mid-wave is not.
+- 2026-09-09 (PR #17 review): **a census and the table built from it must be reconciled before the
+  section is committed** — after that they are copied, not re-derived. §32.4's census sentence named
+  chunk 8 and its *Lines this affects* table dropped it; `FLAGS.md` §T1 copied the table and the
+  wave-5 dispatch copied §T1, so **one omission travelled three documents intact** and was caught
+  only because a translator scanned the dump instead of trusting any of them. Same shape as the
+  2026-09-09 co-occurrence-counts entry below, one level up.
+- 2026-09-09 (PR #17 review): **a substring grep is not a census.** Four separate reach figures in
+  the glossary were raw `あら` / `おや` substring counts reported as interjection counts — §28.3's
+  "16 further" is really **39**, §32.4's "12 battle rows" is **11**, §24.4's "おや 6 battle" is **4**.
+  None changed a rendering, because none of the rulings rested on its count; all four are corrected
+  in glossary §35.1–§35.3. **Separate the interjection from the substring before writing a figure.**
+- 2026-09-09 (PR #17 review): **an index-aligned duplicate checker can MIS-PAIR a re-flowed line
+  rather than skip it.** On `chunk_008` body line 4 a deleted `{FFFE}` and an added insert-adjacent
+  run cancel, so all-tag run counts match (40 = 40) while the content is shifted — the checker
+  compares wrong pairs silently. Worse than skipping. `FLAGS.md` §W3 has the recipe for the next
+  sweep. Also: **`tl/battle/chunk_001.txt` is the only file with no trailing newline** and a
+  positional sweep drops the whole file (§W4).
 - 2026-09-09: **findings are proposals to be verified in both directions, and wave 4 is the
   evidence.** Every unit had figures or reasoning corrected by someone downstream: reviewer 1 fixed
   five of a PR's figures while ratifying its calls; reviewer 2 corrected reviewer 1's day-old

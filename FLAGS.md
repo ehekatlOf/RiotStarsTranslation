@@ -2292,7 +2292,15 @@ skeleton diff against the pristine dump confirms **exactly three `{FFFE}` insert
 lines plus `{=FF}` and `{PAD 5493}` byte-identical tag for tag. **Every figure in the PR was
 correct as stated** — the first unit this wave for which that is true.
 
-### T1. ⚠️ OWED WORK — four rows in three shipped files must move to `Ｍｙ` for `あら`
+### T1. ~~⚠️ OWED WORK~~ ✅ **DISCHARGED 2026-09-09 by PR #17 — and it was FIVE rows in FOUR files**
+
+> **Discharged at `f25ff14`** (wave-5 `あら` corrections unit). The table below is **incomplete**: it
+> omits **`tl/battle/chunk_008.txt` L4** (`あら？` → `Ｏｈ？` → **`Ｍｙ？`**, 3 columns, 0 bytes), which
+> glossary §32.4's own census sentence counted and its *Lines this affects* table then dropped — an
+> omission §T1 inherited here and the wave-5 dispatch inherited from §T1. PR #17's translator found
+> the row by scanning the dump rather than trusting any of the three documents, and fixed it.
+> **Five rows, four files, net −6 bytes, zero `{FFFE}` and zero `{FCC0}` changes.** Full record in
+> §W below and glossary §35; §32.4's table now carries the chunk 8 row.
 
 **Ruled at this review (glossary §32.4): `あら` takes `Ｍｙ` plus the source's own punctuation.**
 §28.3 is upheld and extended; chunk 20 ships `Ｍｙ？` / `Ｍｙ．．．？` and is correct. The decisive
@@ -2708,3 +2716,142 @@ it wants the `ノロ` tic, which the source does not give it here.
 - **§T2 — the `勲章` / `メダル` collision** is still live in banks 42–43, with `ｔｏｋｅｎ` as the reserve.
   See V9 above: the reserve is still usable but is no longer unspent.
 - **§C4** — see V1. This unit is the first to put twelve rows on it.
+
+---
+
+## W. Wave 5 review — corrections/`あら` / PR #17 (2026-09-09)
+
+**DECISION: MERGE at round 1**, squash-merged as **`f25ff14`**. Every §6 gate run in a real checkout
+and pasted in the PR review; **no finding required a change to the unit**, and **every figure in the
+PR body was correct as stated** — the second unit in the project for which that is true, after
+chunk 20. Reviewer 1 of wave 5. Not a new unit of text: it applies glossary §32.4's `あら` ruling to
+the shipped outliers, the §27 / PR #9 corrections-unit shape.
+
+**Figures, all re-derived here rather than taken from the PR.** `tl/battle/chunk_007.txt`
+**7,793 / 8,192, slack 399 (unchanged)** · `chunk_008.txt` **7,437 / 8,192, slack 755 (unchanged)** ·
+`chunk_011.txt` **1,561 / 8,192, slack 6,631 (was 6,625 — −6 bytes)** · `chunk_014.txt`
+**2,203 / 8,192, slack 5,989 (unchanged)**. Net **−6 bytes**, all in chunk 11. `assemble.py check` →
+"All checks passed". An independent token-by-token diff against the pre-edit files confirms **zero
+tag-stream changes on every line of all four files**, `{FFFE}` 154/155/34/41 unchanged, `{FCC0}`
+9/15/3/4 unchanged, `{FFFF}` unchanged, line counts 34 / 21 / 15 / 14 unchanged, and **exactly five
+readable runs changed — every one an `あら` row**. `rowcheck` was re-run on the **base** files and its
+output is byte-for-byte identical except chunk 11's byte line, so **every `!!` and every
+`{FFFE} changed` line is INHERITED**. Duplicate scan base vs after: **0 message-level divergences on
+both sides, the same 19 distinct segment-level keys on both sides**. `bankmeasure.py` not required
+(nothing under `tl/script/` changed) but run: **no bank negative**; the banks under 2,000 free are
+**41 → 353** and **40 → 471**, both byte-for-byte untouched by this unit.
+
+### W1. ✅ §T1 DISCHARGED — and its table was one row short
+
+**Five rows in four files, not four in three.** `tl/battle/chunk_008.txt` **message line 4** ships
+`{FCB0}{=000A0001}{FC51}{FFFD}あら？{FFFE}{FC00}{=0000}、来たわ！` and rendered `Ｏｈ？` — the identical
+defect §32.4 names for `chunk_014` L3, on the identical source string, from a female 9th Army
+companion (§29.6). Fixed at 3 → 3 columns, 0 bytes, no re-flow, against 755 bytes of slack.
+
+**§32.4 counted chunk 8 and then dropped it.** Its census sentence names "chunks 7, **8**, 11, 13,
+14, 16, 20 ×2, 27 and 29"; its *Lines this affects* table listed four rows and none was chunk 8's.
+§T1 copied the table, the wave-5 dispatch copied §T1, and the omission travelled three documents
+intact. Confirmed at review by an independent census of both dumps (below). `chunk_008` message line
+15's `あらかた片付いたな。` is 粗方 and is correctly **excluded**. The dispatch's scope named three
+files; its own verification clause ("if you find a fifth outlier … SAY SO and handle it") governs,
+and the row is ratified. **Gate 1 passes on exactly four files.**
+
+**After this merge `Ｏｈ　ｍｙ` occurs 0 times in `tl/` and `pending/`** and every `あら` interjection
+in either tree renders `Ｍｙ`. Chunks 16, 27 and 29 are untranslated and inherit the form.
+
+### W2. Three §4.3 record corrections applied at integration — all measured here first
+
+Written into glossary §35.1–§35.3 and marked in place on the rows themselves, so nothing is silent.
+**None changes a rendering.**
+
+| Where | Was | Is |
+|---|---|---|
+| §28.3 `あら、` row | "The alternative `Ｏｈ　ｍｙ，` is also free" | **False** — `chunk_011` L3 shipped `Ｏｈ　ｍｙ，` for `あら、` itself. Struck. §32.4 struck it in §32.4's body but left §28.3 unamended, where a translator would actually look |
+| §28.3 reach | "16 further (5 battle + 11 script-unique — both figures confirmed)" | **11 battle + 28 script-unique interjection instances = 39** (38 further). Out by >2× |
+| §32.4 census | "12 `あら` rows in the battle dump" | **11**; 12 is the substring count. Chunk list unchanged and correct |
+| §24.4 table | `おや` **6** battle | **4** interjection (chunks 1, 2, 31, 35); false positives `おやさしい方です。` and `おやすいご用です。` |
+
+```
+=== あら, by readable run ===            === おや, by readable run ===
+battle: 12 substring / 11 interjection   battle: 6 substring / 4 interjection
+        false pos: あらかた (chunk 8 L15)         false pos: おやさしい (ch7 L19), おやすい (ch23)
+script: 31 substring / 28 interjection
+        false pos: あらんことを ×2, 日を あらためて
+```
+
+⚠️ `おやさしい方です。` sits on **chunk 7 message line 19 — the very line carrying `あら・・・・？`**,
+so both of §24.4's miscounts meet on a line this unit edits. Coincidence, recorded.
+
+### W3. ⚠️ NEW — a positional duplicate checker can MIS-PAIR a re-flowed line, not merely skip it
+
+PR #17's Flag 11 disclosed that index-aligned duplicate checkers cannot see a line whose `{FFFE}`
+count changed, and named it as the likely reason chunk 8's row was missed. **Right in substance;
+the mechanism is worse than "skip", and this was reproduced at review on the actual line:**
+
+```
+chunk 8, dump body line 4 (tl file line 5) — the fifth outlier's own line
+  {FFFE} count               : JP 35  EN 34   -> a {FFFE}-ROW checker SKIPS the line (Flag 11 holds)
+  ALL-TAG readable-run count : JP 40  EN 40   -> such a checker does NOT skip it
+  it pairs  JP 'あら？'      with EN '，　ｔｈｅｙ’ｒｅ　ｈｅｒｅ！'
+  and pairs JP '確かだしな。'  with EN 'Ｍｙ？'
+```
+
+A deleted `{FFFE}` and an added insert-adjacent run **cancel**, so the run counts match while the
+content is shifted from index 32 onward. **For that checker shape the line is not skipped — it is
+silently mis-paired**, which is strictly worse: it returns *wrong* answers rather than *no* answer,
+and seeds the duplicate dictionary with garbage keys. Nothing broke here only because
+`確かだしな。` and `あら？` are each unique enough that no comparison fired.
+
+**For the next duplicate sweep:** pair on `{FFFE}`-delimited rows *and* on all-tag runs, treat a
+line whose `{FFFE}` count differs as **unpairable by index in both shapes**, and fall back to a
+content scan. This is the same family as §33.8's and §24.5's recorded traps and belongs beside them.
+
+### W4. ⚠️ NEW — `tl/battle/chunk_001.txt` has no trailing newline, and it costs a sweep a whole chunk
+
+Raised as PR #17's Flag 10 and **reproduced at review**: `chunk_001.txt` is the **only** file under
+`tl/battle/` or `pending/` written without a trailing newline. Every other chunk file has one, and
+the dump body carries a final empty-string sentinel that the trailing newline reproduces.
+Consequence: `read().split('\n')` yields **19 body lines against the dump's 20**, and a positional
+checker that guards on length **drops the entire file** — mine did, before I special-cased it.
+
+**Not a defect in any unit and not a build problem** — `assemble.py check` and `rowcheck.py` both
+tolerate it, and chunk 1's content is complete. But it is silent, and chunk 1 is the file carrying
+ten `ノロ` instances and §23.4's known `助かった` correction, so losing it from a sweep is not cheap.
+**Cheapest fix: append one newline** (0 bytes in the slot — the trailing newline is not part of the
+chunk body) in whatever corrections unit next touches `tl/battle/`, or normalise in the checker.
+Recorded rather than fixed here: this unit's scope is the five `あら` rows.
+
+### W5. ⚠️ Speaker attribution — a PR flag corrected, and a caveat on §32.4's own aside
+
+PR #17's Flag 7 calls `chunk_007` L19's speaker "portrait 02 (§21.4/§25.5/§28.6/§32.9's unnamed
+female companion)". **In chunk 7 portrait 02 is Timmy** — the next segment is
+`{FCB0}{=00010001}{FC51}{FFFD}どうした、ティミー？` → `Ｗｈａｔ　ｉｓ　ｉｔ，　Ｔｉｍｍｙ？`. **Portrait ids
+are per-chunk** (§23.5 has Timmy at 0007 in chunk 4), so §32.4's aside that "the same-speaker
+argument (portrait 02 in chunks 7, 14 and 20) is real" does not hold either. **Nothing changes** —
+§32.4 says that argument settles *consistency*, not *which form*, and `Ｍｙ` is the fixed form
+whatever the speaker. Glossary §35.5. **Registers of all five rows were checked and `Ｍｙ` suits
+every one.**
+
+### W6. Confirmed, not defects — recorded so they are not re-raised
+
+- **`ｖｉｓｉｔｏｒｓ` correctly kept** in `chunk_011` L3: §34.1's `お客様` row requires it in terms
+  ("§32.4's owed re-cut of `chunk_011` L3 keeps `ｖｉｓｉｔｏｒｓ`"). Only `Ｏｈ　` is removed, so the
+  form stays spent and §34.1 needs no amendment.
+- **Glossary additions "(none)" is right.** The unit renders no new term and promotes no §9 row.
+- **`あれは・・・？` → `Ｉｓ　ｔｈａｔ．．．？`** (`chunk_014` L3) is a **different source string** from
+  §21.2's `あれ・・・？` → `Ｗｈａｔ．．．？` and is unchanged by this unit. Not a divergence.
+- **§Q2 not re-discovered.** No `{FCC0}` was added anywhere; the documented prompt/gate
+  contradiction remains a documentation defect for a human and was not grounds for any finding.
+- **Chunk 7's two `> 4 rows` warnings** (lines 23, 24) are the §D3 / §L2 pages carrying no
+  `{FC50}`/`{FC51}`, already queued for the in-game check, and **byte-identical to base**.
+- **Cross-PR:** none of the three sibling wave-5 units touches these files or this word — `あら` is
+  absent from chunks 21 and 22 and from script batch 007's range (unique 318, 421–469, **0 hits**).
+- **Branch `tl/corrections-ara` not deleted** — `git push origin --delete` is blocked by the proxy
+  (HTTP 403). Harmless; not CLAUDE.md §8's "cannot push" condition.
+
+### W7. Bytes and slack after this merge
+
+Every chunk keeps far more than the 50-byte floor: chunk 7 **399**, chunk 8 **755**, chunk 11
+**6,631**, chunk 14 **5,989**. The project is **6 bytes lighter**. **No bank moved** — this unit
+touches no script file — so §F2's table is unchanged and banks 41 (353) and 40 (471) are
+byte-for-byte as they were.
