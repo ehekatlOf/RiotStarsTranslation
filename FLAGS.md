@@ -4355,3 +4355,123 @@ cross-check and conclude the tool is broken.
 
 Battle unit, nothing under `tl/script/`. Tightest banks are unchanged: **41 → 353, 40 → 447,
 5 → 2,007, 2 → 3,365.** No bank is under 2,000 free that was not already.
+
+---
+
+## AG. Wave 7 review — battle chunk 31 / PR #26, MERGED (2026-09-09)
+
+Two review rounds. Round 1 → CHANGES on one finding; round 2 applied it verbatim → MERGE at
+`6d2530c`. **5,399 / 8,192 bytes, 2,793 slack.** Longest column run 23, zero at 24, zero over 24,
+133 text rows, no page over 4. Tag stream unchanged on every line; no `{FCC0}` added.
+
+### AG1. ⚠️ NEW — a page's source-blank TRAILING segment MAY carry text, and §3.2's warning is narrower than it reads
+
+**Ruled at this review and recorded at `glossary.md` §45.2.** Chunk 31 buys a text row on **seven**
+pages by moving text into a trailing segment the Japanese left blank — no tag added, moved or
+deleted, slot count per page unchanged, physical row budget identical. A census of page text/blank
+shapes across all 44 pristine chunks, run at review, is what settles it:
+
+```
+TTTT   389      TT     262      .TTTT  182      TT.     98
+TTT.   276      T      251      .TTT.  132      TTT    115      .TTTT.   0
+```
+
+**`.TTTT.` — leading blank AND trailing blank AND four text rows — has 0 occurrences, exactly as
+§3.2 says.** But `.TTTT` has **182**, and `TTTT` is the commonest page shape in the game at 389.
+So filling a trailing blank moves *away* from the never-attested shape rather than toward it, and
+§3.2's warning does not reach it.
+
+⚠️ **This distinction cost a review round, and it will cost another unless it is read carefully.**
+The PR read §3.2 as barring a fourth text row under a leading blank, and on that basis compressed
+`百戦錬磨の将とはいえ、` to `Ａ　ｖｅｔｅｒａｎ　ｇｅｎｅｒａｌ，　ｙｅｔ` as a §2.1 step-4 shorter
+synonym — in a chunk with **2,837 bytes of slack**, where §2.1's ladder ("when a chunk is over
+budget") does not apply at all. The finding was raised, the census supplied, and round 2 restored
+the literal reading at +44 bytes. **No §2.1 compression remains in the file.**
+
+### AG2. ⚠️ OPEN — in-game legibility of the `・` separator inside the two Latin incantations
+
+**A human's question; nothing an agent can settle from the dumps.** `assemble.py`'s charset gate
+rejects `・` (U+30FB) and §3.1 states there is no `・`, so the wave dispatch's instruction to
+reproduce the incantations "exactly, character for character" **was not satisfiable**. The
+translator refused it and said so, which was right. The mapping is forced and every letter and its
+case is preserved byte for byte:
+
+| source | shipped | rule |
+|---|---|---|
+| `ＨＥＫａＳ・ＨＥＫａＳ` | `ＨＥＫａＳ　ＨＥＫａＳ` | separator → `　` (§1, `ゼファー・クリッペン`) |
+| `ＥＳＴｉＶｅｂＲＯｉ・・` | `ＥＳＴｉＶｅｂＲＯｉ．．` | trailing `・・` → `．．` (§3.1, count matched) |
+| `ＥＬＡＧＬＡ・ＬｉＣＨ！` | `ＥＬＡＧＬＡ　ＬｉＣＨ！` | separator → `　` |
+
+**Someone should look at these two lines on screen once**, since a magic formula's separator reads
+differently in a 24-column box than in a text editor. Add to the in-game visit alongside §L2.
+See `glossary.md` §45.7.
+
+### AG3. ⚠️ OPEN — stutter capitalisation is UNFIXED and the corpus is split 9 : 5
+
+Counted at this review across `tl/` and `pending/`. Neither form is fixed by any glossary row, and
+both are shipped:
+
+- **Capitalised** (9): `Ｗ，　Ｗａｉｔ` (c6), `Ｐ，　Ｐｒｉｎｃｅｓｓ` / `Ｗ，　Ｗｈｙ` (c7),
+  `Ｗ，　Ｗｅｌｌ` (c8), `Ｌ，　Ｌａｄｙ` (c14), `Ｉ，　Ｉｔ` (c22), `Ｗ，　Ｗｅｌｌ` / `Ｎ，　Ｎｏｔ` /
+  `Ｎ，　Ｎｏ` / `Ｗ，　Ｗｈａｔ` (c24), `Ｓ，　Ｓｅｔｉ` (c26), `Ｉ，　Ｍａｍｕ` (pending/c17).
+- **Lowercase** (5): `Ｙ，　ｙｅｓ` (c7), `Ｗ，　ｗａｉｔ` (c11), `Ｉ，　ａｆｔｅｒ` (c25),
+  `Ｗ，　ｗｈａｔ` (c26), `Ｃ，　ｃｈｉｅｆ` (`batch_007`).
+
+Chunk 31's `お、おい、` → `Ｈ，　ｈｅｙ，` is on the lowercase side and is **not a defect** — §24.3
+and §19.1 fix the *comma form*, not the case. But `chunk_026` ships both conventions in one file,
+which is the sort of thing a player sees. **For a future corrections unit**, not for a translator
+mid-wave: pick one, and note that the capitalised form is both the majority and the one English
+sentence-initial capitalisation would give.
+
+### AG4. Two §4.3 corrections applied in place, and a third to §41.4's census
+
+All three are recorded at `glossary.md` §45.4; **none touches a line of any file.**
+
+1. **`ｇｅｍｓｔｏｎｅ` is 8 columns, `ｇｅｍｓｔｏｎｅｓ` 9** — not 9 and 10. Two cells carried the same
+   wrong number and both are patched: §32.1's row and §33.1's row. ⚠️ **The second is in §33.1's
+   promotions table, not §33.5's prose** — §33.5 carries no column figure at all, and both the PR
+   and the wave dispatch mis-attributed it while getting the line number right. Flagged by the
+   translator; confirmed with `len()`.
+2. **§32.7's `ふふ` census counts substrings.** Chunk 31 has **3** ふ-runs, whose non-overlapping
+   `ふふ` substring count is 5 — the "31 ×5" the row records. The §35.2 shape again.
+3. **§41.4's own census was short by one, and the battle side is now 13 of 13.** 19 `どうやら` in
+   the battle dump: 13 rendered, 6 untranslated (chunks 15 ×3, 16, 23 ×2). §41.4 listed 8 and
+   missed `chunk_008` line 14, so it was 9 of 9 when written. ⚠️ **"With no exceptions" is still
+   wrong** — the count was battle-only, and `batch_005.tsv` puts a plainly casual speaker on the
+   `ｉｔ　ｓｅｅｍｓ` side. Same forward-not-backward count §41.4 criticised in §33.2 one section
+   earlier.
+
+### AG5. ⚠️ LIVE — `何だって？` shares its English with `何だと？` in script banks 5 and 41
+
+`何だって？` → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` is accepted as a third spelling on §6's row. The battle
+side is clean (no chunk holds both), but on interjection forms alone — **not** the bare substrings,
+which pick up `chunk_013`'s `何だと思っている` — **banks 5 and 41 hold both**, and `batch_002.tsv`
+already ships `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` into those pools. **Pre-existing, not created here, no
+line changes.** Recorded LIVE on the §42.4 pattern for whoever translates those pools. **Reserve,
+verified free: `Ｗｈａｔ　ｄｉｄ　ｙｏｕ　ｓａｙ？` (17).** See `glossary.md` §45.6.
+
+### AG6. §AC3 refinement — measure the option you argue AGAINST, not only the one you ship
+
+**A new hiding place for this project's most persistent bug, diagnosed by the translator itself.**
+Every row that entered `chunk_031.txt` was measured with `len()` and every one was right. The
+rejected alternative quoted in the PR's Flag 4 **never entered the file**, so it was hand-counted —
+23/23/22 against a true 22/22/22 (`hundred` and `battles` are 7 letters; it counted 8). That
+unmeasured number was the load-bearing one: it was the whole case for compressing the line.
+
+> **Rule: a width you cite in an argument is a width you must measure, even — especially — when it
+> belongs to the option you are rejecting.** `len()` on strings that never reach the file is as
+> mandatory as `len()` on the ones that do. Five coordinator claims and three glossary cells have
+> been refuted by measurement this wave; this is the first case where the unmeasured string was in
+> a *flag* rather than in a file, and no gate would ever have caught it.
+
+### AG7. Bank pressure — unchanged by this unit
+
+Battle unit, nothing under `tl/script/`. Re-measured after `merge`: **41 → 353, 40 → 447,
+5 → 2,007, 2 → 3,365.** No bank is under 2,000 free that was not already, and none moved.
+
+### AG8. `石版` and `『かげの石版』` §9 rows STAY LIVE after this merge
+
+Chunk 31 contains **no** `石版` — verified at review — so this unit discharges nothing. **PR #28
+(script `batch_009`) is the last unit that renders them** and is still unreviewed; the rows are
+struck by that merge, per the `ルート` precedent (§29.1 / §30.1). `クロイツェル` also stays live
+(1 battle + 1 script, bank 41, `script_unique` 1391), per §43.5.

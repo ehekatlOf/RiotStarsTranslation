@@ -12,10 +12,10 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 7 IS RUNNING — REVIEWING, 2 of 4 decided.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
-> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 36 ✅ PARKED, 31 in rework, script `batch_009`**.
-> **Next reviewers: PR #26 round 2 (battle chunk 31, same reviewer `a06a61f091fcf274c`) and PR #28
-> (script `batch_009`).** ⚠️ **#28's reviewer owns the `石版` / `『かげの石版』` §9 rows** — chunk 36
+> **WAVE 7 IS RUNNING — REVIEWING, 3 of 4 decided.** Coordinator: `session_01N1VxX55Vw79fxNr6nTELcs`.
+> Seeds pushed (`f62dadb`). Units: **battle 30 ✅ MERGED, 36 ✅ PARKED, 31 ✅ MERGED, script `batch_009`**.
+> **ONE REVIEWER LEFT: PR #28 (script `batch_009`) — the last unit of the wave.**
+> ⚠️ **#28's reviewer owns the `石版` / `『かげの石版』` §9 rows** — chunk 36
 > was the SECOND of three to land and both rows were **deliberately LEFT LIVE**; #28 is the third
 > and last, so it strikes them, **after reading the merged `tl/battle/chunk_030.txt` and
 > `pending/chunk_036.txt` rather than assuming**. Chunk 30 uses bare lowercase `ｔａｂｌｅｔ`, chunk 36
@@ -31,16 +31,16 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `source_revision` — SKILL.md §6a).
 
 ## Last updated
-2026-09-09 · by: **wave-7 reviewer, PR #25 integration** ·
-wave: **7 REVIEWING — 2 of 4 decided (chunk 30 MERGED, chunk 36 PARKED); 31 in rework round 1
-awaiting round-2 re-review, script batch_009 (#28) still to review** ·
+2026-09-09 · by: **wave-7 reviewer, PR #26 integration** ·
+wave: **7 REVIEWING — 3 of 4 decided (chunk 30 MERGED, chunk 36 PARKED, chunk 31 MERGED after
+2 rounds); script batch_009 (#28) is the LAST unit still to review** ·
 queue: **fresh; wave-7 batch re-verified, see Decisions**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **27** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, **30**, 33, 34, 35, 40 |
-| Battle JP characters | **23,356** | 43,161 | **54.1%** (was 51.0% before chunk 30) |
+| Battle chunks | **28** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, **30**, **31**, 33, 34, 35, 40 |
+| Battle JP characters | **24,407** | 43,161 | **56.5%** (was 54.1% before chunk 31) |
 | Script unique lines | **358** | 1,430 | `tl/script/batch_001–008.tsv` |
 | Script message instances | **4,209** | 7,931 | **53.1%** |
 
@@ -58,7 +58,7 @@ re-verified at the wave-6 close: `grep -n "FC70\|FCA8" tools/riotbattle.py` retu
 |---|---|---|
 | battle chunk 30 | #27 | ✅ **MERGED** `9548e73` — 7,615 / 8,192 (577 slack); integrated `bb715d0`, glossary §43 / FLAGS §AE |
 | battle chunk 36 | #25 | ✅ **PARKED** `018af11` — 2,887 / 8,192 (5,305 slack); integrated `1ea3a70`, glossary §44 / FLAGS §AF. **No findings.** Reason is Blocked item **0a** |
-| battle chunk 31 | #26 | **round 2 in review** — rework `89f5d60`, 5,399 / 8,192 (2,793 slack), +44 as predicted. Same reviewer resumed |
+| battle chunk 31 | #26 | ✅ **MERGED** `6d2530c` — 5,399 / 8,192 (2,793 slack); integrated by `integrate: chunk 031 — glossary §45, FLAGS §AG, handoff` (SHA in the reviewer's return), glossary §45 / FLAGS §AG. **2 rounds:** round 1 CHANGES on one §2 finding (an unlicensed §2.1 step-4 compression, `百戦錬磨` → *veteran*, made for a geometry constraint a 44-chunk page-shape census showed does not exist); round 2 applied it verbatim at +44 bytes. Seven §9 seeds promoted, all as seeded; `召喚の儀式` struck as exhausted. **New rule at glossary §45.2 / FLAGS §AG1 — a page's source-blank TRAILING segment may carry text** (`.TTTT` is attested 182×; `.TTTT.`, the shape §3.2 warns about, 0×) |
 | script batch_009 | #28 | **queued — the LAST unit.** +6,026 bytes, 2.034×, no bank negative |
 
 ⚠️ **ONE REVIEWER AT A TIME** — a rework does not occupy the slot, a review does. Push HANDOFF
@@ -166,7 +166,20 @@ now the binding constraint** — only queue position 6 fits. ⚠️ **Chunk 37 (
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§44**, `FLAGS.md` §K–**§AF**,
+⚠️ **NEW, AND IT BINDS EVERY TRANSLATOR FROM NOW ON (glossary §45.2 / FLAGS §AG1).** **A page's
+source-blank TRAILING segment MAY carry text** — where no tag is added, moved or deleted and the
+resulting shape is attested in the pristine dump. It buys a text row for **0 bytes** against
+`{FFFE}`'s 2. A 44-chunk census settles it: `TTTT` 389, `TT` 262, `.TTTT` **182**, `TTT` 115 — and
+**`.TTTT.` 0**. ⚠️ **§3.2's warning is about `.TTTT.` ONLY** (leading blank *and* trailing blank
+*and* four text rows) and does **not** reach `.TTTT`; filling a trailing blank moves *away* from the
+never-attested shape. Misreading this cost chunk 31 a review round — it compressed a line for a
+constraint that does not exist, in a chunk with 2,837 bytes of slack.
+⚠️ **§AC3 EXTENDED (FLAGS §AG6): measure the option you argue AGAINST, not only the one you ship.**
+Chunk 31 `len()`-measured every row that entered the file and got all of them right; the *rejected*
+alternative quoted in its flag never entered the file, was hand-counted, and was wrong — and it was
+the number the whole argument rested on. No gate can catch that one.
+
+⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§45**, `FLAGS.md` §K–**§AG**,
 `findings.md` §24, `pending/README.md`. Section numbers are taken by **READING both files at commit
 time**, never reserved. This section keeps only what does not belong to a single unit.
 
