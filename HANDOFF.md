@@ -79,6 +79,28 @@ never assume the order):**
 - **`モンスター`** → script **007** menu option, already SHIPPED as `ｍｏｎｓｔｅｒ` in `batch_001`;
   must be reused byte-identically (CLAUDE.md §3).
 
+⚠️ **CORRECTION AGAINST THE COORDINATOR — my cross-unit list was WRONG, and PR #18's reviewer
+caught it. Measured on the dump:**
+
+| term | chunk 21 | chunk 22 | |
+|---|---|---|---|
+| `ライアン` | **1** | **1** | ✅ genuinely CROSS-UNIT — the only one |
+| `クレス` | **0** | 4 | ❌ chunk 22 ONLY |
+| `リオン` | **0** | 1 | ❌ chunk 22 ONLY |
+| `ジェイク` | **0** | 2 | ❌ chunk 22 ONLY |
+| `５軍` | **0** | 1 | ❌ chunk 22 ONLY |
+
+I listed all five as cross-unit in the dispatches, in this file and in every watchdog. **Only
+`ライアン` is.** Practical consequence for **#19's reviewer**: it is the SECOND of the pair to merge,
+so it strikes the `ライアン` §9 row — but `クレス隊長`, `リオン将軍`, `ジェイク` and `５軍` are
+**ordinary single-unit first renderings** and should simply be promoted, not held live waiting for a
+sibling that never contained them.
+
+✅ **§2's rank widths are now PATCHED IN PLACE** (少尉 → **17**, 中尉 → **16**) by PR #18's reviewer,
+which chose to fix rather than record because §29.5 measured them in wave 3 and the wrong figure then
+travelled two waves. ⚠️ **#20's reviewer must NOT double-patch** — §29.5 named #20 (the first 中尉
+rendering) as the moment, but #18 got there first. §1's `Ａｎｓｅｌｍｏ` width is part of the same fix.
+
 ⚠️ **PR #20 CORRECTED MY DISPATCH IN THREE PLACES — one of them a rule I stated wrongly.**
 1. **`{FFEC}` is NOT uniformly gate-blind, and my dispatch said it was.** `assemble.py:validate_body`
    substitutes `{FFEC}{=00}{=00}` with **7 placeholder characters**, and `rowcheck` does the same via
