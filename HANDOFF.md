@@ -29,17 +29,17 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
 ## Last updated
-2026-09-09 · by: **PR #33's reviewer** (integration commit; chunk 38 MERGED at round 2, squash
-`7bd8e76`, glossary §47, FLAGS §AI — **the wave's first merge**) · previously: **wave-8 coordinator**
-(`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
-wave: **8 DISPATCHED — 5 units in flight** · queue: **script batch computed fresh this wave, by
-line list, not by a `queue.py` position**
+2026-09-09 · by: **PR #29's reviewer** (integration commit; chunk 37 MERGED at round 3, squash
+`5659d03`, glossary **§48**, FLAGS **§AJ**) · previously: **PR #33's reviewer** (chunk 38 MERGED,
+squash `7bd8e76`, glossary §47, FLAGS §AI) ·
+wave: **8 — 2 of 5 merged, 3 units still open (#30, #31, #32)** · queue: **script batch computed
+fresh this wave, by line list, not by a `queue.py` position**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **29** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **38**, 40 |
-| Battle JP characters | **25,487** | 43,161 | **59.1%** (was 56.5% at wave-8 start) |
+| Battle chunks | **30** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40 |
+| Battle JP characters | **26,472** | 43,161 | **61.3%** (was 56.5% at wave-8 start) |
 | Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
 | Script message instances | **4,259** | 7,931 | **53.7%** |
 
@@ -54,7 +54,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
-| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (r3 @ `c477e8a`) | **PR #29 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
+| battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |

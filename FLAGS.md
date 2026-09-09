@@ -4758,3 +4758,165 @@ instances, 0 broken) and also 28 on one row, so §27.2's added break is the only
 | pages | no page over 4 text rows; no never-attested `.TTTT.`; three source-blank **trailing** segments filled at 0 bytes (§45.2) |
 | tags | non-`{FFFE}` stream **byte-identical on all 24 body lines**; `{FFFE}` **105 → 108** (lines 1, 20, 22 only); `{FCC0}` **12 → 12** |
 | controls | structure, geometry and duplicate checkers each **positive-controlled with planted corruptions at new sites in round 2**, all fired |
+
+## AJ. Wave 8 review — battle chunk 37 / PR #29, MERGED (2026-09-09)
+
+**5,037 / 8,192, 3,155 slack.** Three review rounds, five findings, **three of them gate-7
+failures**. Every gate re-run in full each round, with both positive controls **re-planted on the
+file under review** rather than replayed — round 3's plants were deliberately different from rounds
+1 and 2 (L15's half of the internal duplicate rather than L16's; dots 8 → 9 rather than 8 → 7).
+
+### AJ1. ⚠️ OPEN, for a human — CLAUDE.md §6's gate 6 is structurally blind to term drift
+
+Gate 6 as specified pairs whole **messages**: for every Japanese message of the unit that recurs
+elsewhere, compare the English. A term that recurs **inside differently worded messages is invisible
+to it**, and nothing in §6 covers that case.
+
+**Gate 6 passed cleanly at this unit's round 1 while FOUR terms were wrong** — `全滅` (against three
+merged files), `始末` (a scoped row read as general), `やはり` (a row naming this unit's own line)
+and `おい、` (a row saying “the form is fixed from here”). The gate was not at fault; it was doing
+exactly what §6 asks.
+
+**The missing check is a Japanese-side sub-message sweep, and §AI4 now records how to run it: from
+the GLOSSARY'S KEYS, not from the terms the unit noticed.** This unit is the evidence for why that
+distinction is load-bearing rather than stylistic — see §AJ2. **Proposed §6 edit, for a human:** add
+a ninth gate, *“every glossary key that occurs in the unit's source is checked against the unit's
+rendering”*, and say in gate 6 that message-level pairing does not discharge it.
+
+### AJ2. The three gate-7 failures, and why each escaped the round before
+
+| Round | Term | Row | Caught by | Missed by |
+|---|---|---|---|---|
+| 2 | `やはり` | §37 — its instance list **names `やはり反乱軍の`**, this unit's L6 | the translator's Japanese-side sweep | the reviewer's gate 7, run as “do the terms I noticed match?” |
+| 2 | `始末` | §37 — scoped “a hapax **in this sense**” to chunk 22's political euphemism | the same sweep | the reviewer, who read the scoped row as general and wrote so in round 1 |
+| 3 | `おい、` | §32.3 “**the form is fixed from here**”, re-affirmed §34.1; `Ｈｅｙ，` spent on `よう、` | **the reviewer's glossary-key-driven sweep** | gate 7 **twice**, and the translator's own Japanese-side sweep |
+
+⚠️ **`おい、` is the decisive case and the reason §AI4's refinement is not optional: it is a
+three-character particle phrase.** A sweep keyed on content words cannot reach it *from either side
+of the review*. Only enumerating the glossary's own keys does.
+
+**Round 3's figures: 1,127 keys enumerated (969 unique); 46 occur in chunk 37's source; all 46
+adjudicated.** The enumerator was controlled **in both directions** — a planted key present in the
+source is reported (47), a planted key absent from it is not (46). Six hits were sweep artifacts and
+were adjudicated by reading rather than passed over (`で、` only inside `にまで、`; `でも` only inside
+`とでも`; `反乱` only inside `反乱軍`; `って` only inside `ってわけ` / `されたって`; `はっ` only
+inside `ははっ` — independently rediscovering §AI5's substring problem; and `ああ`, an artifact of
+the splitter stripping `〜` from §32's `あ〜あ`, which is absent from the source). Three more were
+**out of scope by their own wording**: §4482's `王子 (bare vocative)`, §1734's `編成` (the UI verb,
+not `再編成`), §1727's `同盟` (the noun, against this unit's `同盟国`).
+
+### AJ3. ⚠️ OPEN — a §4.3 debt on `おい、` in three MERGED files: four plain instances plus one stammer
+
+Fixing chunk 37 exposed that §32.3's `おい、` → `Ｏｉ，`, written at chunk 20's merge in wave 4, was
+already contradicted by merged work at the moment it was written, and was contradicted again
+afterwards without anyone noticing. Paired positionally against the dump at this review:
+
+| File | Source | Shipped | Re-cut | Δ |
+|---|---|---|---|---|
+| `chunk_000` ×3 (wave 1) | `おい、しっかりしろ。` / `おい、お前。` / `おい、お前！` | `Ｈｅｙ，　…` | plain swap to `Ｏｉ，` | −2 bytes each |
+| `chunk_008` ×1 (wave 3) | `おい、いいのか？` | `Ｈｅｙ，　ａｒｅ　ｙｏｕ　ｓｕｒｅ？` | plain swap | −2 bytes |
+| `chunk_031` ×1 (wave 7) | **`お、おい、あれ`** | **`Ｈ，　ｈｅｙ，　ｉｓｎ’ｔ　ｔｈａｔ　ａ`** | **`Ｏ，　ｏｉ，`** — a stammer, not a plain swap | −2 bytes |
+
+⚠️ **It is four plain instances plus ONE STAMMER, not five of a kind** — the translator's
+measurement, verified here. `chunk_031`'s source is `お、おい、`, and its re-cut composes the way
+§34.1 composes `おいおい、` → `Ｏｉ，　ｏｉ，`, which is a separate small decision. ⚠️ **`FLAGS.md`
+§AG3 looked at that very line and passed it** — but for its *stutter case*, not its word choice, so
+the divergence has never actually been ruled on. **Every re-cut is byte-negative** (`Ｏｉ，` is a
+column shorter than `Ｈｅｙ，`), so **none is budget-blocked, including `chunk_000` with its 27 bytes
+of slack** (§G1). **For a corrections unit, not for a translator mid-wave.** Chunk 38 ships `Ｏｉ，`
+and is correct (§AI4).
+
+### AJ4. ✅ SETTLED — §Y6 is discharged, and §Y6's own premise is REFUTED. Cress is FEMALE
+
+§Y6 asked whoever took chunk 37 to settle Cress's gender, on the stated ground that *“No shipped
+English anywhere genders Cress — `chunk_008` L4, `chunk_013` L1/L2 and this unit are all
+first-person, vocative or subject-less.”* **The second half of that sentence is false**, and it was
+false when it was written.
+
+Read at this review, not taken from a citation: `dumps/battle_dump.txt` chunk 13's **only** `クレス`
+line carries `その方、クレスと申したな。` … `女隊長と聞いておったから` … `なかなかの上玉ではないか`
+… `ギルフォード将軍に献上してやる`, and **merged `tl/battle/chunk_013.txt` has shipped
+`Ｉ　ｈａｄ　ｈｅａｒｄ　ｏｆ　ａ　ｗｏｍａｎ` / `ｃａｐｔａｉｎ` since wave 3**. `chunk_022` body line 0
+fixes the referent independently by addressing her as `クレス隊長`.
+
+**The project committed to female in wave 3 and §Y6 did not notice.** Glossary §1's `クレス` row now
+states the gender. ⚠️ **No rendering changes anywhere** — no shipped line uses a pronoun for her, and
+chunk 37's only `クレス` is `Ｃｒｅｓｓ　ｉｓ　ｗｉｔｈ　ｙｏｕ　ｔｏｏ！！`. The dispatch's expectation
+that chunk 37 would “force” the pronoun **did not hold**: every third-person referent in L14 and L18
+is Hoag or Rimul. **§Y6 is corrected, not merely closed** — this is the second row this wave whose
+seeded assertion the corpus refutes (§AI5's `マラナ` gender note is the other).
+
+### AJ5. Cross-PR ruling — `掌握` → `ｓｅｉｚｅ`; PR #30 moves, not this unit
+
+Full reasoning at `glossary.md` §48.3. In short: `ｓｅｉｚｅ` **is** already spent on three other
+source words (`取り押さえ` c6/c22, `捕まえ` c21), and `ｇｒａｓｐ` is free — both facts verified. But
+**§25.3's test is co-occurrence, not spend**: those chunk sets and `掌握`'s ({37, 41} + script FILE
+870) are **disjoint**, so no player can see the collision in one scene, which is the licence §28.3
+used for `Ｙｅｓ，`. And `ｇｒａｓｐ　Ｉｍｐｅｒｉａｌ　ｓｔｒｅｎｇｔｈ` is not idiomatic English.
+**The swap in chunk 41 is free — both words are 5 columns and the row is 22 either way.** The
+glossary row is left **live** for chunk 41's merge to strike (`ルート` precedent) and for FILE 870.
+
+### AJ6. A correction to a row written five hours earlier — `占拠` was under-scoped, not wrong
+
+§47.3 (chunk 38's merge) fixed `占拠` → `ｔａｋｅｎ` with a census naming chunks 22, **37** and 38 —
+the §37-`やはり` shape again, a row naming a unit it could not adjudicate, because chunk 37 was
+unmerged. Read at this review: the two `ｔａｋｅｎ` instances are **passive and punctual**; chunk 37's
+is **active, progressive and distributed**, and its `ため` clause needs the standing state.
+⚠️ **The rejected option was measured in FIVE word orders, per §AI's own new rule** — every one is
+over the ≤ 23 preference, against a shipped page whose widest row is 22. Row scoped in place;
+**no line needs revisiting**. Full table at `glossary.md` §48.4.
+
+### AJ7. For §L3's adopt-on-re-cut list — parked `pending/chunk_005.txt` diverges from §28.3 THREE times
+
+Raised by the translator, verified by reading the file, and **one instance more than it reported**:
+
+- body L23 — `本当に、` → `Ｔｒｕｌｙ，`
+- body L27 — **`確かに、フェイのことは残念でした。` drops the concessive entirely**
+  (`Ｗｈａｔ　ｂｅｆｅｌｌ　Ｆｅｉ　ｗａｓ　ａ　ｓｏｒｒｏｗ．`)
+- body L28 — `確かに、人間たちは、` → **`Ｔｒｕｅ，　ｈｕｍａｎｓ…`**
+
+§28.3 fixes 確かに、 → `Ｔｒｕｌｙ，`. Chunk 5 predates that ruling and is **parked**, so nothing in
+`tl/` is broken and nothing is owed today. ⚠️ Related and measured: `確かに` ∩ `本当に` over the
+battle dump is **exactly {5, 37}**, and chunk 5 is parked — so **chunk 37 is the first and only
+*shippable* unit where the clash arises**, which is why its `本当に` yields to `ｒｅａｌｌｙ` while the
+glossary-fixed `確かに、` keeps `Ｔｒｕｌｙ，`. The four merged files rendering `本当に` as *truly*
+(`chunk_003`, `_007`, `_019`, `_026`) contain no `確かに` and never had to choose.
+
+### AJ8. Confirmed, not defects — recorded so they are not re-raised
+
+- **L14 is one of §L2's eight no-`{FC50}` lines (8 text rows) and its segment count was preserved at
+  8** — accepted at rounds 1 and 2. Under the pool theory an added break shifts every later selector
+  index, and Blocked 4 is open, so preserving the count is the safer branch under **both** theories;
+  the 8 rows are inherited either way (pristine baseline re-run each round). The price is one dropped
+  adverbial (`ここまでに`), flagged as a §2.1 step-5 loss with its alternatives measured — the closest,
+  `Ｔｈｉｓ　ｆａｒ　ｈａｓ　ｄｒａｉｎｅｄ　ｕｓ．`, is **24**.
+- **`ａｔ　ｌａｓｔ` renders two source words inside this one file** — L6's `今日こそ` and L18's
+  `やっと` — and merged `chunk_030` spends it on a third (`せっかく`). §25.3's test is per *scene* and
+  these are two different scenes. The alternatives that fit were measured
+  (`Ｔｏｄａｙ　ｔｈｅｎ` 20, `Ｔｏｄａｙ，　ｔｈｅｎ` 21, `Ｔｏｄａｙ　ｉｔ　ｉｓ` 21) and are all **worse**
+  renderings of `こそ`'s emphatic focus. Recorded, not passed silently; noted for whoever re-cuts L18.
+- **`ｏｕｒ` → `Ｏｕｒ` (L18) was the only genuine lowercase sentence-start in the whole battle
+  corpus.** Scanning all shipped files reported seven hits; six were classified by reading and are
+  false positives — four follow an ellipsis (`chunk_004`, `_008`, `_019`, `_026`), one follows a
+  stripped `{FC00}{=0000}` that supplies the capital in play (`chunk_021`), and `chunk_030` L5 is a
+  subordinate clause split by a `{FCC0}`.
+- **`{FCA8}` appears once (L15)** and chunk 37 is **not** one of §D1's ten affected chunks — the
+  coincidence §36.8 recorded for chunk 21 and §Y7 for chunk 22.
+- **`tl/battle/chunk_001.txt` has no trailing newline**, so it holds 19 lines against the dump's 20
+  and a naive positional pairing skips it silently. Pre-existing; `check` passes; both this review's
+  and the translator's gate-6 tools pad trailing empties so chunk 1 is genuinely compared.
+- **Verified in both directions so it is NOT recorded as an error:** `HANDOFF.md` gives `決着`'s two
+  script instances as DATA 1378/1380 and PR #30 gives FILE 1383/1385. **Both are correct** — same
+  lines, two conventions, FILE = DATA + 5, reproduced by reading the file. The §AE5 / §AF3 trap.
+- **A figure that did travel wrong and is now fixed:** PR #29's Flag 4 cited chunk 41's `決着` at
+  `rowcheck` **L7**; it is **L8** (L7 is the tag-only `{FCE0}{=0001}{FFFF}`, L9 carries `掌握`).
+  `HANDOFF.md`'s correction was right and the PR adopted it.
+
+### AJ9. ⚠️ Evidence for Blocked 6's `SKILL.md` §3 edit, from this review's own working directory
+
+The shared scratchpad this reviewer worked in held **`c037_dupes.py` and `c037_plant.py` written by
+this unit's translator** alongside `r029_dupes.py` and `r029_plant.py` written by this reviewer, plus
+`b010_*`, `c038_*`, `c041_*`, `c042_*`, `r033_*` and `w8_*` from six other agents — **all in one
+directory, all in the same wave.** Namespacing is what kept them apart, and it held only because
+every agent happened to observe it. Blocked 6 asks for `SKILL.md` §3 to bind **every** role rather
+than translators alone; this is a second, independent instance of the condition that motivates it.
