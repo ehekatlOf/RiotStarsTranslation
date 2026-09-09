@@ -3374,3 +3374,240 @@ total** — 21 English columns against 9 Japanese characters. Bank 40's ceiling 
 
 No battle chunk moved — this unit touches no battle file — so the tightest chunk is still
 **chunk 19 at 127 bytes of slack**.
+
+---
+
+## AA. Wave 6 review — battle chunk 24 / PR #24 (2026-09-09)
+
+### ⚠️ AA0. SECTION NUMBERING — single letters are exhausted, and the scheme is now DOUBLE LETTERS
+
+`FLAGS.md` ran `A` … `Z` at one section per review and **§Z was the last single letter**. From this
+review the scheme is **double letters: §AA, §AB, §AC, §AD, …**, the ordinary spreadsheet-column
+convention, which sorts and reads unambiguously beside the existing single letters. **This review
+takes §AA.** As always, the next section is taken by **reading this file at commit time, never by
+reservation** — the remaining wave-6 reviewers (PR #23, #22, #21) should each read to the end and
+take the next free double letter.
+
+### AA1. Decision and gates
+
+**MERGE.** `paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks n.a. dupes ✓ glossary ✓ structure ✓`
+Squashed as **`f1d1581`**. Reviewed at `origin/tl/battle-024` (`31eefd4`) merged onto the
+integration branch at `0f261dd`; the merge took only `HANDOFF.md` and did not conflict.
+
+`git diff --name-only` = `tl/battle/chunk_024.txt` alone. `assemble.py check` → **All checks passed**.
+`rowcheck.py 24` prints **no `!!` at all** — no tag-parity, column, row or charset finding — and only
+`{FFFE} changed: line 7: 2->3, line 10: 20->21`, both in the PR's Flag 5 with before → after.
+
+**Every figure in the PR body was re-measured and is exact**, except the two labelling errors at
+AA2. Independently measured with `rowcheck`'s own algorithm (`NAME_COST=7`, `COLS=24`):
+
+```
+chunk 24: 5913 / 8192 bytes  slack 2279
+TEXT ROWS  src 155  tl 157      WIDEST tl 23 ; at 23 = 12 ; at 24 = 0 ; over 24 = 0
+READABLE chars: src 1210  tl 2478  ratio 2.0479
+tag_bytes = 953 ; english_budget = 3619.5 chars ; ceiling = 2.9913
+{FCC0} 14 -> 14   {FFFF} 18 -> 18   {FC30} 38 -> 38   {FC50} 22 -> 22   {FC51} 17 -> 17   {FC00} 6 -> 6
+```
+
+Ellipsis profile re-measured by **splitting on tags** (§33.8's trap) and counting `・・・。` as a
+four-`．` cluster, which is §3.1's own rule: JP `{2:2, 3:17, 4:6, 5:2}` against EN `{2:2, 3:17, 4:6,
+5:2}` — **exact match**. The single-stop difference (JP 31, EN 32) is L15's one sentence split.
+
+**No battle chunk moved but this one; the tightest chunk is still chunk 19 at 127 bytes of slack.**
+No bank moved — this unit touches no script file.
+
+### AA2. Gate 6 was run by the POSITIONAL method, and chunk 24 introduces zero divergences
+
+A battle `tl/` file holds no Japanese, so grepping one for a source string is a null check. The
+checker (`r024_dupes.py`, namespaced per §Y-era practice) pairs dump body line *i* with `tl` line
+*i* across **28 files** in `tl/battle/` and `pending/`, strips trailing blanks so `chunk_001`'s
+missing trailing newline does not drop the file (§W4), and marks lines whose `{FFFE}` count changed
+as row-unpairable (§W3 / §Y7).
+
+```
+positional pairs: 633   (row-unpairable lines: 83)
+WITHOUT 043_abridged                       divergent whole = 0  divergent rows = 9
+WITHOUT 043_abridged AND WITHOUT chunk 24  divergent whole = 0  divergent rows = 9
+NEW divergences introduced by chunk 24 (whole): []      (rows): []
+```
+
+⚠️ **Two traps this run leaves behind for the next reviewer to reuse.**
+
+1. **`assemble.split_battle` returns a body list with a TRAILING BLANK separator line**, so a naive
+   `len(body) == len(tl_lines[1:])` check fails on **every file in the corpus** and the checker
+   silently reports zero pairs and therefore zero divergences. It looks exactly like a clean pass.
+   Strip trailing `''` from the dump body as well as from the `tl` file.
+2. **`pending/chunk_043.txt` and `pending/chunk_043_abridged.txt` are two translations of the SAME
+   dump chunk.** Left in, they produce **31 spurious "divergent whole-message renderings"** that
+   have nothing to do with the unit under review. Exclude `_abridged` from any corpus-wide
+   consistency pass, or attribute every hit before reporting one.
+
+The residual **9 row divergences are pre-existing** and untouched by this unit — short rows such as
+`お前は、` and `もう少し` playing different grammatical roles in different sentences.
+
+Chunk 24's only content recurrences are byte-identical to shipped work:
+`{FC00}{=0000}、` → `{FC00}{=0000}，` (`chunk_007` 20.1, `chunk_022` 5.7) and `そして、` → `Ａｎｄ，`
+(`pending/chunk_043` 13.2). The honorific inserts, which the row key does not pair, were checked
+separately: `{FC00}{=0000}君、` → `{FC00}{=0000}，` follows `chunk_020` 47.5, and `chunk_014` 2.13
+keeps a **rank** where this drops an **honorific** — English has no *-kun*, it has *Captain*.
+
+### AA3. ⚠️ `様` on an unresolved referent is rendered `ｍｙ　ｌｏｒｄ`, which COMMITS TO A MALE PATRON
+
+`tl/battle/chunk_024.txt` body line 6 (file line 8), Fernando's death line:
+`話が違いますぞ、` / `・・ル・・・様・・・` → `ｏｕｒ　ｂａｒｇａｉｎ，` / `．．ｌ．．．　ｍｙ　ｌｏｒｄ．．．`
+
+Fernando dies half-naming the patron who betrayed him. The source gives one middle syllable, `ル`,
+which identifies nobody — `ヘル ファー`, `ギル フォード` and `リム ル` all contain it — and the
+translation reproduces that with a lowercase `ｌ`, the letter all three romanisations share. The dot
+runs are exact (2 / 3 / 3 both sides). **That part is right.**
+
+**What is open:** `様` → **Lord** for a male superior and **Lady** for a female one (`glossary.md`
+§1, `ヘルファー様` → `Ｌｏｒｄ　Ｈｅｌｆｅｒ`; `リムル` → `Ｌａｄｙ　Ｒｉｍｕｌ`). `ｍｙ　ｌｏｒｄ` therefore
+**commits to a male patron**, and **nothing in the corpus settles it.** Two of the three candidates
+are male (`ギルフォード様` → `Ｌｏｒｄ　Ｇｕｉｌｆｏｒｄ`, §32.1) and one is female (`リムル様` →
+`Ｌａｄｙ　Ｒｉｍｕｌ`, §1), which is the one that would break the row.
+
+**Action for whoever renders the chunk that names Fernando's backer: re-check this row.** It is 4
+columns either way (`ｌｏｒｄ` / `ｌａｄｙ`), so the fix would cost no re-flow and no byte. Chunk 25
+(PR #23) puts Helfer at the centre of the conspiracy — `ヘルファーが張本人よ` — which **points at**
+`Ｌｏｒｄ　Ｈｅｌｆｅｒ` but does not prove the referent of this fragment. **Left open deliberately;
+NOT resolved at this review.**
+
+### AA4. Cross-unit with chunk 25 (PR #23, open, NOT merged) — two agreements, two divergences
+
+Verified byte-for-byte against `origin/tl/battle-025`, which had not merged when this ran.
+
+**Agreeing, and the §9 rows therefore stay LIVE** (the `ルート` precedent, glossary §29.1 / §30.1 —
+struck by the **second** of the pair to merge; chunk 24 is the **first**, so nothing was struck):
+
+- `王位` → `ｔｈｅ　ｔｈｒｏｎｅ`. Chunk 24 `王位継承を巡って` → `ｓｕｃｃｅｅｄ　ｔｏ　ｔｈｅ　ｔｈｒｏｎｅ．`;
+  chunk 25 `僕は王位なんか狙ってはいない` → `Ｉ　ｈａｖｅ　ｎｏ　ｄｅｓｉｇｎｓ` / `ｏｎ　ｔｈｅ　ｔｈｒｏｎｅ`.
+- `恨み` → `ｇｒｕｄｇｅ`. Chunk 24 `一族の恨み` → `Ｔｈｅ　ｇｒｕｄｇｅ　ｏｆ　ｔｈｅ　ｋｉｎ`; chunk 25
+  `お前たちに恨みはないが、` → `Ｉ　ｂｅａｒ　ｙｏｕ　ｎｏ　ｇｒｕｄｇｅ，`; parked `chunk_043` 13.3 agrees.
+
+Also agreeing across the two: `Ｔｏｒｉｆ`, `Ａｒｉｅｓ`, `Ｆｅｒｎａｎｄｏ`, `Ｈｅｌｆｅｒ`, `Ｈｏａｇ`,
+`Ｃｏｍｍａｎｄｅｒ`, `ｔｈｅ　Ｅｍｐｉｒｅ`, `ｗａｒ`, `Ｐｒｉｎｃｅ`, `ｋｉｎ`, `ｍａｇｉｃ`, `Ｇｕｉｌｆｏｒｄ`,
+`Ｒｉｍｕｌ`. `何者` is correctly **not** a fixed form — chunk 24 renders it twice, `ｉｔ　ｓｅｅｍｓ
+ｓｏｍｅｏｎｅ` (indefinite) and `ｊｕｓｔ　ｗｈｏ　ｏｎ　ｅａｒｔｈ　ａｒｅ　ｙｏｕ？` (interrogative), which is
+the §32.8 shape.
+
+**Diverging — for the chunk 25 reviewer to settle, not chunk 24's defect:**
+
+1. ⚠️ **`そして、` — chunk 24 ships `Ａｎｄ，`, chunk 25 ships `Ａｎｄ　ｔｈｅｎ，`** (line 11, page 31).
+   **Chunk 24 matches the earlier shipped work**, `pending/chunk_043.txt` 13.2's `Ａｎｄ，`, so the
+   change belongs to chunk 25 — and `Ａｎｄ　ｔｈｅｎ，` adds a temporal sense the `〜のも … 〜のも`
+   list does not carry. Not gate-6, because chunk 25 is not in `tl/` yet.
+2. ⚠️ **`どけっ` is cross-unit and NEITHER PR nor the dispatch listed it.** Chunk 24 9.7 `どけっ、` →
+   `Ｍｏｖｅ！`; chunk 25 11.58 `どけっ！` → `Ｏｕｔ　ｏｆ　ｍｙ　ｗａｙ！`, with `どかないと` → `Ｍｏｖｅ，`
+   on the next row — so `Ｍｏｖｅ` does double duty across the pair for two different source words.
+   Different source strings, so nothing is gate-bound, and §6's `行くぞ！` → `Ｍｏｖｅ　ｏｕｔ！`
+   (`chunk_009`, `chunk_014`) is unaffected. **Wants a ruling.** Chunk 24 also has `そこをどいて！`
+   → `Ｓｔａｎｄ　ａｓｉｄｅ！`, a third form of the same act, which is fine as a third source string.
+
+### AA5. ⚠️ A STALE "FREE" CLAIM THAT BELONGS TO PRs #23 AND #21 — `末えい` → `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED
+
+`glossary.md` §9's wave-6 seed proposes `末えい` → `ｄｅｓｃｅｎｄａｎｔ` as a new form at "1 instance
+each" (chunk 25 and `batch_008`). **It is neither new nor two instances.** `tl/battle/chunk_010.txt`
+12.2 already ships:
+
+```
+誇リ高キ　龍人族ノ　マツエイダ。  ->  Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ / ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．
+```
+
+— the same word in the lizardmen's **full-katakana** register (§5). **The seed's CHOICE is confirmed
+by shipped work**, which is the good news; only the novelty and reach claims were wrong, and §9 is
+patched in place accordingly. Chunk 24 does not use the word.
+
+⚠️ **This is a THIRD spelling class past §Y2's blind spot.** §Y2 recommends a ≥2-character run
+intersection; wave 5 found it misses **kanji+kana** (`つるむ`, `末えい`); this review finds it also
+misses **full katakana** (`マツエイ` for `末えい`), which is a *register* transform, not a spelling
+variant, and which no search over the kanji form can ever find. The corpus already has the same
+problem recorded for `ウエストバリー` / `ウェストバリー` (§2). **Any cross-unit sweep must normalise
+katakana↔kanji↔kana before intersecting**, and must run against the whole of each sibling source
+rather than against a seed list — this is the third consecutive wave to be bitten.
+
+### AA6. `しまった` is RULED (glossary §39.4), and its recorded reach was wrong
+
+Flag 12 asked for the ruling and supplied a census that is wrong in three ways: the page indices
+(13.0 / 7.0 / 45.0 for what are really 13.1 / 7.1 / 45.1), the case (`Ｄａｍｎ　ｉｔ` where two of the
+three ship lowercase `ｄａｍｎ　ｉｔ`), and the reach ("13 battle chunks + 8 script", which counts the
+verbal auxiliary `〜てしまった` — five of the 13 battle hits and six of the 7 script hits).
+
+**RULED at glossary §39.4:** line-initial `しまった` → `Ｏｈ　ｎｏ`; after a grunt → `ｄａｍｎ　ｉｔ`,
+lowercase, capitalised only where it opens a sentence — §5's mechanism, the word fixed and the
+punctuation following the source. **The interjection reaches 8 battle chunks (0, 5, 8, 14, 16, 20,
+24, 37) + 1 script line; six are rendered, and the ruling binds the two that are not — chunk 16 L2
+and chunk 37 L0, both line-initial, both `Ｏｈ　ｎｏ．．．`.**
+
+### AA7. `{FCC0}` — §Q2 stands, but its stated mechanism is one step off
+
+Not re-raised as a finding, correctly. For the record, the briefing's framing ("both gates reject
+it — `assemble.py:125-126` and `rowcheck.py:93-94` exempt only `{FFFE}`") conflates two different
+checks:
+
+- **`rowcheck.py` DOES honour `{FCC0}` as a page boundary** — `row_problems` splits on
+  `\{(?:FCC0|FC30|FC51|FC50|FFFF)\}` (line 78) and `col_problems` does the same (line 66).
+- What forbids it is **`tag_parity`**, in both tools, which requires every tag except `{FFFE}` to
+  survive in the same order — so `{FCC0}` may be neither **added** nor **removed**, but a `{FCC0}`
+  the source already has is counted as a page break by the row and column checks.
+
+So §Q2's practical rule is right (the prompt tells translators to add one and the gates will fail
+them) and its cause is narrower than stated. Chunk 24 has 14 in and 14 out.
+
+### AA8. §9 corrections applied IN PLACE in this integration commit
+
+Per the run's 2026-09-09 "patch in place, do not merely record" decision. **All six verified by the
+reviewer before applying**, and the glossary rows carry the correction inline with the date and
+PR number, per §4.3.
+
+| # | What was wrong | Corrected to |
+|---|---|---|
+| 1 | §9 line ~520 read `Ｐｒｉｎｃｅ　Ｔｒｉｆ’ｓ　ｆａｃｔｉｏｎ` | `Ｔｏｒｉｆ` — fixed at §9 line 290, promoted at §38.1, shipped at `batch_007.tsv` L56. `Ｔｒｉｆ` occurs **nowhere** in `tl/` or `pending/` |
+| 2 | Same row read "**21 / 21** columns" | **21 / 22** — `Ｔｏｒｉｆ` is 5 columns to `Ｈｏａｇ`'s 4, `len()`-measured |
+| 3 | `古代文明` cited as "unique 473" | **DATA line 488** |
+| 4 | `魔族` / `末えい` / `司教様` cited as "unique 483" | **DATA line 498** — 483 is a *menu* line, as the block's own FACT 1 says |
+| 5 | `ウェストバリー` cited as "unique 505" | **DATA line 515** |
+| 6 | "`batch_008` is 47 lines but only **~26** distinct translations" | **32** — 47 − 22 in groups + 7 groups |
+| 7 | `ライトエルフ` / `オーラスマッシャー` attributed to **Torif** | **ARIES's** — Gilford says `確かにライトエルフの末えいのようだな` to Aries, who then finds `オーラスマッシャー` useless. Renderings unaffected; only the note was wrong |
+| 8 | `末えい` seeded as new, "1 instance each" | Already shipped in `chunk_010` — see AA5 |
+
+⚠️ **The numbering method matters and the dispatch's gloss for it was wrong.** The dispatch said each
+bad figure was "exactly `unique − 470`"; it is not (488 − 473 = 15, 498 − 483 = 15, 515 − 505 = 10 —
+inconsistent). The real mapping is **`batch_008.tsv`'s own declared convention**: its header reads
+*"script_unique.txt DATA lines 470-516 … 'DATA line' = tools/queue.py script_rows() numbering:
+1-based over script_unique.txt"*, i.e. **counting data rows only, skipping the file's 3 comment and
+2 blank lines**, so **DATA line = FILE line − 5**. Measured: `古代文明` is FILE 493 = DATA 488,
+`魔族`/`末えい`/`司教様` FILE 503 = DATA 498, `ウェストバリー` FILE 520 = DATA 515. The corrected
+figures are right; the arithmetic offered for them was not. `batch_007.tsv`'s header says **FILE
+lines**, so **the two batch files use different conventions** — check the header before citing a
+number. This is the seventh numbering convention in the repo (§O8, §P).
+
+❌ **NOT applied, and must not be:** PR #23's Flag 15 says §9's `末えい` → `ｄｅｓｃｅｎｄａｎｔ`
+"10 columns" should be 11. `len('ｄｅｓｃｅｎｄａｎｔ')` = **10**. The seed was right and that flag is a
+hand-count one high. The §9 row now records the measurement so it is not "corrected" a third time.
+
+### AA9. PR figures corrected without changing a byte (glossary §39.3)
+
+Six, all recorded rather than sent back, on the wave-5 precedent that a measured figure error in a
+PR body is fixed by the reviewer at merge:
+
+1. The faction "20 / 18" are **row** widths; the **phrases** are **16 / 17**. Numbers right, label
+   wrong. The page is 23 / 22 / 20 / 18, exactly as the PR states.
+2. **`ｂｌｏｗ` is not free** — `batch_001.tsv` L10 ships §4's fixed `一撃必殺` →
+   `ｋｉｌｌｉｎｇ　ｗｉｔｈ　ｏｎｅ　ｂｌｏｗ．`
+3. **`ｂｉｒｔｈ` is not free** — `batch_007.tsv` L31 ships `ｍｙ　ｂｉｒｔｈ　ｖｉｌｌａｇｅ`.
+4. **`ｐｌｏｔ` renders three source words, not two** — `batch_005.tsv` L36's `Ｈｅｌｆｅｒ’ｓ　ｐｌｏｔ．`
+   was missed by the §25.3 accounting.
+5. **`Ｈｍ．`'s census misses `chunk_004` 4.6** (`ん・・・？` → `Ｈｍ．．．？`).
+6. **`ｍｙ　ａｐｏｌｏｇｉｅｓ．` ships lowercase**, correctly; the additions table capitalises it.
+
+**All of 2–5 still pass §25.3's co-occurrence test, so not one line changed.** ⚠️ The lesson for the
+remaining wave-6 units: **"verified free" is a measurement, and three of this unit's were not
+measured.** That is `FLAGS.md` §Y3's failure mode in its other direction — not stale, simply
+unchecked — and it is cheap to catch: one grep of `tl/` and `pending/` per claimed-free word.
+
+### AA10. Nothing here needs a human, and nothing is blocked
+
+No `{FCA8}` §D1 artifact tag. `check` green on the integration branch after integration. Chunk 24
+is complete and shippable. The one item left open on purpose is **AA3**, the `様` gender commitment,
+which needs a later chunk to name Fernando's patron — not a human, and not a blocker.

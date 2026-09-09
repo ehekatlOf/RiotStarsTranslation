@@ -20,18 +20,18 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > PRs are open, the chain broke here: re-dispatch the missing units, or open a replacement session.
 
 ## Last updated
-2026-09-09 · by: **wave-6 coordinator** (`session_013hHmA6EJT3rCC5wAiX6fwt`) ·
-wave: **6 dispatched — 4 units** · queue: **fresh; wave-6 batch re-verified, 3 seed errors corrected**
+2026-09-09 · by: **wave-6 reviewer, unit 1 of 4** (PR #24, battle chunk 24) ·
+wave: **6 reviewing — 1 of 4 merged** · queue: **fresh; 8 §9 seed errors corrected in place**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **23** | 44 | 0–4, 6–14, 18–22, 33, 34, 35, 40 |
-| Battle JP characters | **18,664** | 43,161 | **43.2%** |
+| Battle chunks | **24** | 44 | 0–4, 6–14, 18–22, **24**, 33, 34, 35, 40 |
+| Battle JP characters | **19,874** | 43,161 | **46.0%** |
 | Script unique lines | **311** | 1,430 | `tl/script/batch_001–007.tsv` |
 | Script message instances | **4,162** | 7,931 | **52.5%** |
 
-`check`: **All checks passed** on the integration branch at `44333d8`. Tightest banks:
+`check`: **All checks passed** on the integration branch after PR #24's integration. Tightest banks:
 **41 → 353, 40 → 447, 5 → 3,357, 2 → 3,365**, 33 → 9,291. Parked: chunks **5, 43** (tier-A budget)
 and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked at wave-6 preflight with
 `grep -n "FC70\|FCA8" tools/riotbattle.py`: no match. Chunk 17 stays parked.
@@ -39,28 +39,69 @@ and **17** (dump artifact). ⭐ **The dumper is still unfixed** — re-checked a
 ## In flight — WAVE 6 (dispatched 2026-09-09)
 | Unit | Branch / file | Budget | Round | State |
 |---|---|---|---|---|
-| battle chunk 24 | `tl/battle-024` → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | ✅ **PR #24 OPEN** — **5,913 / 8,192 (2,279 slack)**, 2.05× growth, widest row 23, +2 `{FFFE}`, `{FCC0}` untouched. Found `Ｔｏｒｉｆ` **independently** before my correction landed |
+| battle chunk 24 | ~~`tl/battle-024`~~ → `tl/battle/chunk_024.txt` | 1,210 JP, headroom 4,819, ratio 2.99 (C) | 1 | ✅ **MERGED — PR #24, decision MERGE, squash `f1d1581`, integration commit `integrate: chunk 024 — glossary, flags, handoff`.** All 9 gates passed, every figure re-measured exact: **5,913 / 8,192 (2,279 slack)**, 2.0479× against a 2.9913× ceiling, 157 text rows (src 155), widest 23, **none at 24**, `{FFFE}` 132→134, `{FCC0}` 14→14. Gate 6 by the positional method over 28 files: **zero new divergences**. Glossary **§39**, FLAGS **§AA**. Nothing sent back — 6 PR figures corrected at merge (§39.3), no line changed |
 | battle chunk 25 | `tl/battle-025` → `tl/battle/chunk_025.txt` | 1,039 JP, headroom 5,161, ratio 3.48 (C) | 1 | ✅ **PR #23 OPEN** — **5,419 / 8,192 (2,773 slack)**, 2.14× growth, widest row 23, +5 `{FFFE}`, `{FCC0}` untouched. Awaiting the barrier |
 | battle chunk 26 | `tl/battle-026` → `tl/battle/chunk_026.txt` | 1,085 JP, headroom 5,115, ratio 3.36 (C) | 1 | ✅ **PR #22 OPEN** — **5,325 / 8,192 (2,867 slack)**, 1.84× growth, max run 23 cols, +3 `{FFFE}`. All six seed reach figures and widths re-measured **exact**. Awaiting the barrier |
 | script batch 008 | `tl/script-008` → `tl/script/batch_008.tsv` | unique **470–516**, 47 lines / 47 instances, 1,577 JP | 1 | ✅ **PR #21 OPEN** — 47/47 shipped, 0 parked. bank 4 **→10,179**, bank 5 **→2,007**, banks 3/40 untouched; growth **1.86×** (leaner than the 2.10× model). Widest row 23 cols. Awaiting the barrier |
 
 ✅ **BARRIER MET 2026-09-09 — all four units have open PRs (#21, #22, #23, #24).** Reviewing
-begins, ONE reviewer at a time, in unit order: **24 (#24) → 25 (#23) → 26 (#22) → batch 008 (#21)**.
+proceeds ONE reviewer at a time, in unit order: **~~24 (#24)~~ ✅ MERGED → 25 (#23) → 26 (#22) →
+batch 008 (#21)**. Next reviewer: **PR #23, battle chunk 25.**
 
-⚠️ **For the reviewer of PR #24:** its Flag 4 states the shipped faction rows measure 20 / 18,
-but the bare phrases `ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ` measure **16 / 17**,
-and 20 > 18 is backwards for a pair whose second name is one character longer. Probably the PR
-quotes ROW widths, not phrase widths. **Settle it against the file with `rowcheck`, not against
-the PR body.** Confirmed separately: the seed's "21 / 21" for the long forms is **21 / 22**.
+✅ **SETTLED at the PR #24 review — the faction widths.** Measured with `len()`: the **phrases**
+`ｔｈｅ　Ｈｏａｇ　ｆａｃｔｉｏｎ` / `ｔｈｅ　Ｔｏｒｉｆ　ｆａｃｔｉｏｎ` are **16 / 17**; the PR's "20 / 18" are
+the **shipped ROW widths** (`…　ｆａｃｔｉｏｎ　ａｎｄ` = 20, `…　ｆａｃｔｉｏｎ．` = 18), so the numbers
+were right and the label was wrong. The page is 23 / 22 / 20 / 18. §9 now records 16 / 17, and the
+long forms are confirmed **21 / 22**. See glossary §39.3 and FLAGS §AA9.
 
-### ⚠️ Three coordinator errors caught by batch 008's translator — all three verified and CONFIRMED
-Recorded here because the reviewer must apply the first two to `glossary.md` §9 in its integration
-commit (the run's 2026-09-09 "patch in place" decision), and because they are the *coordinator's*
-errors, not the unit's.
+### ⚠️ WHAT THE PR #24 REVIEWER HANDS TO THE NEXT THREE — read before reviewing #23
+1. ⚠️ **FLAGS.md's single letters are EXHAUSTED at §Z. The scheme is now DOUBLE LETTERS.** PR #24's
+   review took **§AA**; take the next free double letter by **reading `FLAGS.md` at commit time**,
+   never by reservation. Glossary is at **§39** after PR #24.
+2. ⚠️ **`末えい` → `ｄｅｓｃｅｎｄａｎｔ` IS ALREADY SHIPPED** — `tl/battle/chunk_010.txt` 12.2 renders
+   `誇リ高キ　龍人族ノ　マツエイダ。` as `Ｗｅ　ａｒｅ　ｄｅｓｃｅｎｄａｎｔｓ　ｏｆ　ｔｈｅ　ｐｒｏｕｄ　ｄｒａｇｏｎｆｏｌｋ．`
+   The seed's **choice is confirmed by shipped work**; its "new form, 1 instance each" claim is
+   wrong and §9 is patched. **This is a THIRD spelling class past §Y2** — full **katakana**, a
+   register transform no kanji or kanji+kana search can find. Bears on PR #23 and PR #21.
+3. ⚠️ **`そして、` diverges between chunks 24 and 25.** Chunk 24 ships `Ａｎｄ，`, matching shipped
+   `pending/chunk_043.txt` 13.2; **PR #23 ships `Ａｎｄ　ｔｈｅｎ，`** (line 11, page 31). Chunk 24
+   matches the earlier work, so **the change belongs to chunk 25**.
+4. ⚠️ **`どけっ` is cross-unit and NOBODY listed it.** Chunk 24 9.7 `どけっ、` → `Ｍｏｖｅ！`; chunk 25
+   11.58 `どけっ！` → `Ｏｕｔ　ｏｆ　ｍｙ　ｗａｙ！` with `どかないと` → `Ｍｏｖｅ，`. Different source
+   strings so nothing is gate-bound, but it wants a ruling from #23's reviewer.
+5. ⚠️ **"Verified free" is a MEASUREMENT.** Three of PR #24's were false (`ｂｌｏｗ`, `ｂｉｒｔｈ`, and
+   the `ｐｌｏｔ` accounting). All survived §25.3 so no line changed, but check every such claim
+   with one grep of `tl/` and `pending/` — this is §Y3's failure mode in its other direction.
+6. **Two gate-6 traps, both of which silently produce a false clean pass** — `split_battle` returns
+   a trailing blank separator line (strip it from the dump body too, or every file mismatches and
+   the checker reports zero pairs), and `pending/chunk_043{,_abridged}.txt` are two translations of
+   one dump chunk (exclude `_abridged`, or get 31 spurious divergences). FLAGS §AA2.
+7. ✅ **`王位` and `恨み` §9 rows are LEFT LIVE** — chunk 24 was the FIRST of the pair to merge, and
+   both agree with chunk 25. Per the `ルート` precedent (§29.1 / §30.1) **chunk 25's reviewer strikes
+   them**, having verified the merged chunk 24 rather than assuming.
+8. ❌ **Do NOT apply PR #23's Flag 15** — `len('ｄｅｓｃｅｎｄａｎｔ')` = **10**, not 11. The seed was
+   right; the §9 row now carries the measurement so it is not "corrected" a third time.
+9. ⚠️ **`FLAGS.md` §AA3 is left OPEN on purpose** — chunk 24's `・・ル・・・様・・・` →
+   `．．ｌ．．．　ｍｙ　ｌｏｒｄ．．．` commits to a **male** patron and nothing in the corpus settles it.
+   Chunk 25 makes Helfer the conspirator, which points at `Ｌｏｒｄ　Ｈｅｌｆｅｒ` but does not prove the
+   referent. 4 columns either way, no re-flow. Re-check when a chunk names Fernando's backer.
+10. ⚠️ **The two batch TSVs use DIFFERENT line conventions.** `batch_008.tsv` counts **DATA lines**
+    (data rows only, `= FILE line − 5`); `batch_007.tsv` counts **FILE lines**. Read the header
+    before citing a number. §9's wave-6 `batch_008` citations are now corrected to DATA 488 / 498 /
+    515 — and the dispatch's gloss for the error ("exactly `unique − 470`") was itself wrong.
+
+### ✅ Coordinator §9 errors — ALL APPLIED IN PLACE by the PR #24 reviewer in `integrate: chunk 024 — glossary, flags, handoff`
+Eight in total: the three below, the `Ｔｒｉｆ` pair, the `ライトエルフ`/`オーラスマッシャー`
+attribution, and `末えい`'s novelty claim. **Each was re-verified by the reviewer before applying**,
+and each glossary row now carries the correction inline, dated, with the PR number, per §4.3.
+**No rendering anywhere changed.** Full table at `FLAGS.md` §AA8. Kept below as the record of how.
 1. ⚠️ **§9's wave-6 block cites LIST INDICES as unique line numbers for `batch_008`.** `古代文明` is
    at unique **488** (seed says 473), `魔族`/`末えい`/`司教様` at **498** (seed says 483), and
-   `ウェストバリー` at **515** (seed says 505). Each wrong figure is exactly `unique − 470`. The
-   block therefore **contradicts itself** — its own FACT 1 correctly lists 483 as a *menu* line.
+   `ウェストバリー` at **515** (seed says 505). ⚠️ **The figures are right but this gloss is wrong:**
+   they are not "exactly `unique − 470`" (488−473=15, 498−483=15, 515−505=10, inconsistent). The real
+   mapping is `batch_008.tsv`'s **declared DATA-line convention = FILE line − 5**; `batch_007.tsv`
+   uses FILE lines instead, so **read the header before citing a number**. The
+   block **contradicts itself** — its own FACT 1 correctly lists 483 as a *menu* line.
    Cause: the term-context script printed `enumerate()` indices while the duplicate-group and `あら`
    scripts used real unique numbers; only the former reached the seed. **The duplicate groups, the
    `あら` list (478/479/482/489/490/499/500) and the menu group (472/483/493/504) are all correct.**
