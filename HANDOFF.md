@@ -53,7 +53,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | Unit | Branch | File | Figures at dispatch | State |
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,039 / 8,192 — 3,153 slack** (r2 @ `dfa9771`) | **PR #29 — rework PUSHED**, awaiting re-review by the SAME reviewer |
-| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | 5,565 → **5,577 / 8,192** after fixes | **PR #33 — CHANGES r1**, rework sent |
+| battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (r2 @ `41f8f37`) | **PR #33 — rework PUSHED**, awaiting re-review by the SAME reviewer |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 OPEN**, awaiting reviewer |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
@@ -145,6 +145,18 @@ Also found: `始末する` — §37's row is scoped "a hapax in this sense" (chu
 euphemism); the **battle** sense ships as `ｆｉｎｉｓｈ` (merged c9, c19). §37 is not wrong; the unit
 was reading a scoped row as general. **Same error class as the `全滅` finding: censusing the ENGLISH
 and never the Japanese** (§Y2/§AC1).
+
+**c38 round 2 pushed @ `41f8f37`.** All three findings fixed; figure **5,577 / 8,192, 2,615 slack**,
+matching the reviewer's simulation exactly. `{FFFE}` unchanged in round 2 (still lines 1, 20, 22).
+**One flagged deviation for the reviewer to ratify:** it ships `Ｂａｄ，　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ
+ｍｅｎ！！` where the finding prescribed `Ｂａｄ！　ｔｈｅ…`. All three candidate forms measure **23**,
+so width decides nothing; the source's own mark is `、`, and lower-case `ｔｈｅ` after `！` is
+ungrammatical. A one-character change either way.
+**A further gate-7 trap it found while adopting the ruling:** the participial keeping
+`ｒｅｍｎａｎｔ　ｓｏｌｄｉｅｒｓ` needs **five** rows at both 23 and 24 (95 columns), and the only
+four-row packing that keeps that noun goes through `ｏｆ　ｏｌｄ　Ｃａｒｌｉｎｅ　Ｋｉｎｇｄｏｍ`, which
+**breaks §2's fixed `カーライン王国` → `Ｋｉｎｇｄｏｍ　ｏｆ　Ｃａｒｌｉｎｅ`** (glossary line 71). So
+the shorter `ｒｅｍｎａｎｔｓ` is **forced**, not preferred, and the 残兵 row changes with it.
 
 ### Review 2 of 5 — PR #33 (chunk 38): **CHANGES**, round 1. Rework sent.
 Eight of nine gates pass, independently re-derived (byte cost reimplemented from scratch; full tag
