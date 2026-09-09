@@ -52,15 +52,25 @@ Parked and translated: chunks **5, 43** (tier-A budget) and **17** (dump artifac
 ✅ **BARRIER MET 4 of 4** (PRs #13, #14, #15, #16). Review is running, one reviewer at a time, in
 unit order 18 → 19 → 20 → script. Base branch for every unit and PR is
 `claude/workflow-translation-iterate-uzlkns`.
-**Reviewer 1 of 4 DONE — chunk 18 MERGED (round 1, zero blocking findings).
-Reviewer 2 of 4 is RUNNING on PR #16 (chunk 19).** Sections stood at **glossary §31 / FLAGS §S**
-when it was dispatched; it takes §32/§T after re-reading. Reviewers 3 and 4 (chunk 20 PR #14, then
-script batch_006 PR #15) follow, one at a time, never two.
+**Reviewer 1 DONE — chunk 18 MERGED. Reviewer 2 DONE — chunk 19 CHANGES round 1, rework in
+flight. Reviewer 3 dispatched on PR #14 (chunk 20).** A translator *reworking* does not occupy the
+reviewer slot, so a sibling PR may be reviewed meanwhile — but never two reviewers at once.
+
+⚠️ **THE MERGE ORDER OF THE TWO CROSS-UNIT CHUNKS HAS FLIPPED.** Reviewer 2 assumed chunk 19 would
+merge first and therefore **left the §9 wave-4 seed rows LIVE**. Chunk 19 is now in rework, so
+**chunk 20 will very likely merge FIRST** — which makes chunk 20 the *first* of the two, so its
+reviewer must **also leave the rows live**, and **chunk 19's re-review strikes them as the second**
+(the `ルート` precedent, §29.1/§30.1). Whoever merges second strikes; it is not chunk-20's-job by
+name.
+
+⚠️ **SECTION NUMBERS: reviewer 2 holds an UNPUSHED §32** (narrowing `まさか`, below) that it will
+write at its post-rework integration. It re-reads before writing, and so must reviewer 3 — whoever
+commits first takes §32 and the other takes §33. **Read at commit time; never reserve.**
 
 | Unit | Branch | File | Budget | PR | Status |
 |---|---|---|---|---|---|
 | battle chunk 18 | `tl/battle-018` | `tl/battle/chunk_018.txt` | 611 JP, tier D (6.28) | **#13** | ✅ **MERGED round 1** (squash `45e89d8`), integrated by `integrate: chunk 018 — glossary, flags, handoff (PR #13)`. 3,035 / 8,192 (5,157 slack); 78 text rows (not the PR's 60), widest 23, none at 24. All §6 gates passed and pasted; **zero blocking findings**. Both judgement calls ruled in the PR's favour: `いや、わかった。` → `Ｎｏ．　Ｒｉｇｈｔ．` (glossary §31.4) and `シナリオ` → `ｓｃｒｉｐｔ` (§31.5). 14 rows + `まさか` → `Ｓｕｒｅｌｙ` integrated as **glossary §31**; **`FLAGS.md` §S**. Nothing left on this unit |
-| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | ✅ **PR open** — 8,067 / 8,192 (**125 slack**), 1.91× against a 1.94 ceiling; re-cut once as tier B prescribes |
+| battle chunk 19 | `tl/battle-019` | `tl/battle/chunk_019.txt` | 1,745 JP, tier B (**1.94 — tight**) | **#16** | 🔄 **CHANGES round 1 — rework sent to the same translator.** All mechanical gates re-verified by recomputation and clean (8,067 / 8,192; five `{FFFE}`; `{FCC0}` 24→24; gate 6 clean). **Fails gate 7 only**: `ウルフ` → `Ｗｏｌｆ` collides with `ｗｏｌｆ` already shipped 3× in `batch_003.tsv` for 狼 (21 instances) — the §28.5 “reads as an English common word” failure, worst where the character announces himself by name. 4 findings, all byte-neutral or byte-positive → 8,065 / 8,192 (slack 127) |
 | battle chunk 20 | `tl/battle-020` | `tl/battle/chunk_020.txt` | 732 JP, tier D (4.75) | **#14** | ✅ **PR open** — 4,265 / 8,192 (3,927 slack); 25 glossary rows, 5 open questions for the reviewer (see below) |
 | script batch pos. 2 | `tl/script-006` | **`tl/script/batch_006.tsv`** | 50 lines / 53 inst, 1,332 JP, banks 12–15 | **#15** | ✅ **PR open** — 1.89× growth, −2,480 bytes across banks 12–15, none negative; banks 41/40 untouched; 27 glossary rows |
 
@@ -122,6 +132,21 @@ merge order, re-reading both files first.
 - **Chunk 23 is now bound in three places** by this merge (`FLAGS.md` §S3): `かかってくるがいい。`
   → `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．` (byte-identical, L15), `シナリオ` → `ｓｃｒｉｐｔ` (×2) and
   bare `守備` → `ｔｈｅ　ｄｅｆｅｎｃｅ`.
+
+### ⚠️ A REVIEWER CORRECTED THE PREVIOUS REVIEWER'S RULING — same wave, one hour apart
+Reviewer 1 added **glossary §31.3** (`まさか` → `Ｓｕｒｅｌｙ`) while merging chunk 18. Reviewer 2,
+reviewing chunk 19, found it **over-broad, and chunk 19's non-conforming rendering to be the
+correct one**:
+- Of the **18 `まさか` in the battle dump, only 8** are the incredulous use `Ｓｕｒｅｌｙ` fits;
+  **10 are the exclamative `まさか…とは`**, where `Ｓｕｒｅｌｙ` *inverts the sense*.
+- §31.3 claims `Ｓｕｒｅｌｙ` is free across `tl/`. It is not — three shipped lowercase `ｓｕｒｅｌｙ`
+  render `はずだ` and `きっと` in chunks 0, 7 and 34.
+- §31.3 names chunk 0, but chunk 0's `まさか、` already ships as `Ｉｔ　ｃａｎ’ｔ　ｂｅ，`.
+
+**Lines affected: none.** Both shipped `Ｓｕｒｅｌｙ` are the incredulous use and stand; chunk 0 stays
+recorded-not-re-cut. Reviewer 2 will narrow it under §4.3 at its integration. **This is the review
+layer working as designed — a ruling made at speed, caught by the next reader before it propagated
+into three more chunks.**
 
 ### ⚠️ TWO COORDINATOR ERRORS, both caught by translators and both verified before recording
 
