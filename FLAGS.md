@@ -5265,3 +5265,140 @@ five splits **inside** single entries, **no two entries merged**.
 
 Battle-only; no script file. Tightest banks stand where PR #28 left them: **41 → 353, 40 → 75,
 5 → 1,635, 2 → 3,365.**
+
+## AM. Wave 8 review — script batch 010 / PR #32, MERGED (2026-09-10)
+
+Squash `b9ba9d5`. 53 unique lines / 293 message instances. Two rounds; **five findings at round 1,
+every one a gate-7 failure, all five fixed at round 2.** Gated with **no working tree at all**
+(§AK6): `merge-tree --write-tree` → tree `2e4c77bf` at round 2 (`6ec0bede` at round 1), all gates on
+a `git archive` extraction, provenance proved by `cmp` + sha256 + blob id against
+`git show bf2f663:tl/script/batch_010.tsv`.
+
+### AM1. Byte figures — the wave's tightest numbers, confirmed on the final tree
+
+Differenced against a `git archive` of the base, not read from the PR, at **both** rounds:
+
+| bank | before | after | spend |
+|---|---:|---:|---:|
+| **40** | 447 | **75** | **372** |
+| **41** | 353 | **353** | **0 — not in the moved set at all** |
+| **5** | 2,007 | **1,635** | 372 |
+| 25 | 12,891 | 11,829 | 1,062 (372 + prose) |
+| 26 / 27 / 28 | — | — | 122 / 120 / 4,104 (prose only) |
+
+**Banks under 2,000 free after this merge: bank 40 (75), bank 41 (353), bank 5 (1,635).** No bank
+negative. The item table's growth is **exactly 372, spent in full in each of 21 banks** (2 3 4 5 6 7
+8 9 12 13 14 15 16 17 18 19 25 33 40 42 43) — verified by differencing the two `bankmeasure` runs,
+not by trusting the PR's table. **Bank 41 is not among them.** The whole cost of round 2's five fixes
+was **+6 bytes in bank 28**, which keeps 30,737 free: as predicted, no fix touched bank 40.
+
+⚠️ **Bank 40 should now be treated as CLOSED for item-table work.** Any remaining `script_unique`
+line with count 21 spends its growth in all 21 banks including bank 40's 75 free. In particular
+**DATA 281** (`軍神ヘルメスの愛用したブーツ。{FFFE}防御力＋１　魔法防御＋１`, count 21, untranslated) may
+now be **unshippable**: it needs a `魔法防御` form that nothing fixes yet, beside §51.1's `Ｄｅｆ＋ＮＮ`,
+and only a **zero-growth two-stat row** fits. See the live §9 `軍神ヘルメス` row.
+
+`check` **All checks passed** (4,552 replaced / 461 unique; base 4,259 / 408 → Δ **293 / 53**,
+confirmed from three independent directions). `rowcheck script` 4,655 lines, nothing non-inherited
+over 4 rows. `merge` prints **zero** "never matched the dump" lines. Max English width **23**;
+0 segments over 23, 0 over 24. `{FCC0}` 37 in / 37 out; `{FFFE}` count changes on exactly DATA
+193/194/300/310, plus one position-only move at DATA 880.
+
+### AM2. §4.3 DEBT IN ALREADY-MERGED WORK — `batch_007.tsv:31` capitalises a bare species plural
+
+Surfaced by round 1's finding 5 and **verified independently at review**: `tl/script/batch_007.tsv`
+line 31 ships **`Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ　ｔｅｌｌ　ｌｉｅｓ，　ｎｙｏｒｏ．`** — a capitalised bare plural in
+prose, which is exactly what §17.1 (`ホビット | hobbit | lowercase in prose`) and §40.1 (the 魔族 row,
+which calls ホビット → hobbit *the canonical lowercase case*) forbid. It is the **only** capitalised
+bare instance in `tl/`, against lowercase `ｈｏｂｂｉｔ` in five files. The same line's
+`Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` is **correct** — §2 place name — and its `ｈｏｂｂｉｔ　ｖｉｌｌａｇｅ　ｃｈｉｅｆ．`
+is correct too.
+
+⚠️ **The mitigating fact, recorded so the corrections unit does not over-read this:** the instance is
+**sentence-initial**, so its capital is ambiguous between species capitalisation and ordinary
+sentence capitalisation. That ambiguity is why it did not license PR #32's **mid-sentence**
+`Ｗｅ　Ｈｏｂｂｉｔｓ`. **One isolated instance, zero-cost to fix (identical width), for a corrections
+unit — it was not asked of PR #32.**
+
+### AM3. THE SOURCE-WORD MIRROR SWEEP — §AL1 operationalised, and it is now a gate step
+
+§AL recorded that a glossary-key-first sweep **cannot surface a word the glossary never recorded**
+(how `くそ` survived two rounds). PR #32's review ran the mirror of it and it should now be standard:
+
+> **For every kanji run ≥2 and katakana run ≥3 in the unit's source that is NOT a glossary key,
+> find whether an already-translated row contains the same run, and read both English sides.**
+
+33 such runs here. **No divergence**, and it produced three results a key-first sweep could not:
+
+- 古代文明 → `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ`, byte-identical to `batch_008.tsv:45`, British `-s-`
+  matched. 攻撃魔法 → `ａｔｔａｃｋ　ｍａｇｉｃ`, identical to `batch_003.tsv:27`, `:29`. 戦争 → `ｗａｒ`;
+  無事 → `ｓａｆｅ` (four files agree); 兄弟 → `ｂｒｏｔｈｅｒｓ`; 遺跡 → `ｒｕｉｎｓ`; 立派 → `ｆｉｎｅ`.
+- 感謝: the shipped family is `ｇｒａｔｅｆｕｌ` / `ｔｈａｎｋｓ` / `ｇｒａｔｉｔｕｄｅ`, and `batch_008.tsv:60`
+  ships the **uncontracted** `Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．`. ⚠️ **This WITHDREW a round-1 register
+  nit** against DATA 920's `Ｉ　ａｍ　ｇｒａｔｅｆｕｌ．` — the uncontracted form is the house form. **The
+  sweep prevented a wrong correction, which is the point of §AG6's mirror.**
+- 軍人 → `ｓｏｌｄｉｅｒｙ` here against `ａ　ｓｏｌｄｉｅｒ　ｏｆ　Ｃａｒｌｉｎｅ` at `batch_002.tsv:9`: same
+  root, collective for a plural address, held apart from §30.2's `Ｓｏｌｄｉｅｒｓ，` by register. Fixed
+  at §51.2 so the next 軍人 has an incumbent to read.
+
+### AM4. ⚠️ THE PAGE-SHAPE CENSUS — the divergence was the CORPUS, not the splitter, and both prior counts were right about their own dump
+
+This closes the dispute that ran three ways across wave 8. **§45.2's figures are a BATTLE-dump
+census.** The giveaway is its own neighbouring figure `5,355 → 5,399 / 8,192` — an 8,192-byte battle
+slot. Measured at PR #32's review over `dumps/battle_dump.txt` with `rowcheck`'s own boundary set
+`{FCC0}|{FC30}|{FC51}|{FC50}|{FFFF}`, **all five of §45.2's figures reproduce exactly**:
+
+| corpus (splitter = `{FCC0}\|{FC30}\|{FC51}\|{FC50}\|{FFFF}` in both) | pages | `TTTT` | `.TTTT` | `TTT` | `TT` | `.TTTT.` |
+|---|---:|---:|---:|---:|---:|---:|
+| **`dumps/battle_dump.txt`** — what §45.2 measured | 5,181 | **389** | **182** | **115** | **262** | **0** |
+| `dumps/script_dump.txt` — the store `batch_010` lives in | 21,224 | 721 | **325** | 196 | 6,602 | **1** |
+
+So **§45.2 and §AG1 stand unqualified for the battle store**, and the wave-8 coordinator's 325 was
+right for the script store. The single script-side `.TTTT.` is `script_dump.txt` line 6899 and is a
+**menu choice-block**, not an ordinary text page —
+`{FFFE}　はい{FFFE}　いいえ{FFF7}…{FB01}嘘だよ。お前から金を…` — so it is not a counterexample to §3.2's
+four-text-row warning either.
+
+> ⚠️ **The durable rule is one notch sharper than §AL3's:** a page-shape census is a property of
+> **(corpus, splitter)**, and these two dumps differ by ~2× on the very shape the rule turns on.
+> **State the dump AND the boundary set AND the total pages beside any shape figure.** Quoting a
+> battle-dump census at a script unit — or the reverse — is how three separate reviewers reached
+> three answers while every one of them computed correctly.
+
+**Moot in the safe direction for this PR:** DATA 880 page 2 goes `.TTT.` → `.TTTT`, attested **182**
+in the battle dump and **325** in the script dump. It never approaches `.TTTT.`. No tag added, moved
+or deleted; slot count per page unchanged. §45.2's liberty applies and the row is safe.
+
+### AM5. Rulings issued at this review — do not re-open
+
+- **DATA 300 keeps 3 rows; `とされる` is NOT restored.** Two independent grounds. (a) The
+  impossibility was reproduced **order-independently**: the minimum faithful token set emits **74
+  columns against 3 × 24 = 72**, so no word order fits — and it was extended past the PR's own
+  argument, because a claimed impossibility had already been false twice this wave: dropping the
+  article gives 72 vs 72 and **still does not pack**, and `ｒｅｐｕｔｅｄｌｙ` gives 71 vs 72 and **still
+  does not pack**. Impossible in three formulations. (b) Independently of bytes,
+  `translation_prompt.md` §3.2 records the description window's row count as **UNKNOWN** and says to
+  keep description entries to 2 text lines plus the stat line until it is confirmed. **A 4-row entry
+  would breach an open engine question, so the 3-row form is required, not merely affordable.**
+- **`復興` — §51.3.** `ざます` — §51.2. `ああ、` (lament) → `Ａｈｈ，` — §51.2. `『してんこうせき』` —
+  §51.2. `＜アイテム名＞` → `（ｉｔｅｍ　ｎａｍｅ）`, setting the precedent for DATA 127–130 — §51.2.
+- ⚠️ **`ｗｈｏ　ｒｕｌｅｄ　Ｆａｒｉｎａ．` teaches something about how to spend a fix:** the round-1 finding
+  could not be met by swapping a word, because the paraphrase had **displaced** the term rather than
+  occupying a slot it could drop into. The proposed repack was measured before it was asked for —
+  `ａｌｌ　ｔｈｅ　ｋｉｎ` + `ｔｈｅ　ｒｅａｌ　ｐｏｗｅｒ` does **not** pack even at the hard 24 (91 columns of
+  content against 96 of capacity — **the total fits and the packing still fails**). **A reviewer
+  asking for a fix should verify the fix packs, not merely that it fits by total** (§AK's rule,
+  applied in the reviewer's own direction).
+
+### AM6. Open, for whoever takes them
+
+- **DATA 281** — the second `軍神ヘルメス` line, count 21, needs `魔法防御` and may be unshippable
+  against bank 40's 75 free. §9 row held live. **AM1.**
+- **DATA 817** — the second `ピクシー` line, untranslated; §9 row added and held live.
+- **DATA 127–130** — the `＜ダミーデータ＞` rows, whose bracket precedent §51.2 now sets.
+- **`お城` → `ｃａｓｔｌｅ` vs `ｃｏｕｒｔ`.** DATA 907 renders `お城では` as `Ａｔ　ｃｏｕｒｔ`; `batch_007.tsv:29`
+  ships `ｔｈｅ　ｃａｓｔｌｅ`. **Deliberately not made a finding, and the measurement is why**:
+  `Ａｔ　ｔｈｅ　ｃａｓｔｌｅ` on that page needs 87 columns against 4 × 23 = 92 and **no packing exists**,
+  and it still does not pack at the hard 24 (87 vs 96) — a clean example of a total that fits while
+  the packing fails. The page is `.TTTT` and full; 城 is not a glossary key. Recorded for the next
+  unit that renders 城 in prose.

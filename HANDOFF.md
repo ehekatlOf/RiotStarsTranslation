@@ -12,23 +12,31 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 8 IS IN FLIGHT — 5 units dispatched, glossary seeded at `5402c68`.** The coordinator is
-> `session_01GMZPvT2GCVmRBd8pwHPGED`. Nothing is reviewed until **all five** units have an open PR
-> (the wave barrier, CLAUDE.md §4 step 4).
+> ✅ **WAVE 8 IS COMPLETE — all 5 units MERGED, 0 parked.** PR #29 (c37) · #33 (c38) · #30 (c41) ·
+> #31 (c42) · **#32 (script batch 010, the last, squash `b9ba9d5`)**. No open PR remains on this wave.
+> Glossary **§51**, `FLAGS.md` **§AM**. Battle **32/44, 27,763/43,161 JP (64.3%)**; script **461/1,430
+> unique lines, 4,552/7,931 instances (57.4%)**.
 >
-> If you are resuming and the five PRs are open: review them **one at a time, in unit order**,
-> `run_in_background: false`. If a unit has no PR and its translator is gone, re-dispatch that unit
-> (two rounds max, then park). If a unit has no PR and its translator is alive, **wait**.
+> **The coordinator's next act, in this same turn, is to open WAVE 9's session** with
+> `create_session` — BOTH `source_url` (`https://github.com/ehekatlOf/RiotStarsTranslation`) and
+> `source_revision` (`claude/workflow-translation-iterate-uzlkns`) are required — seeded with the
+> wave number and "read `HANDOFF.md` first". CLAUDE.md §4 step 7: this is not discretionary and is
+> not a report-back point.
 >
-> When the wave closes, open **wave 9's session** with `create_session` — BOTH `source_url`
-> (`https://github.com/ehekatlOf/RiotStarsTranslation`) and
-> `source_revision` (`claude/workflow-translation-iterate-uzlkns`) are required.
+> ⚠️ **WAVE 9 IS SCRIPT-ONLY.** Wave 8 spent the last four dispatchable battle chunks; battle work
+> **STOPS ENTIRELY** until a human clears Blocked **0** or **0a**, both re-tested at wave 8's
+> preflight and **both still unfixed**. Say so in wave 9's seed.
+>
+> ⚠️ **Wave 9's script queue must be recomputed against bank 40 = 75 free and bank 5 = 1,635.**
+> **Bank 40 is effectively CLOSED**: every remaining `script_unique` line with **count 21** spends its
+> growth in all 21 item-table banks, bank 40 included. Do not queue count-21 lines without measuring
+> them first. **DATA 281** is the concrete casualty — see §AM1 and the live §9 `軍神ヘルメス` row.
 >
 > ⚠️ **WAVE 8 SPENDS THE LAST FOUR DISPATCHABLE BATTLE CHUNKS.** After it, battle work **STOPS
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
-**batch_010 round 2 pushed @ `bf2f663`**, rebased onto the moved base. All five findings fixed;
+**batch_010 round 2 @ `bf2f663` — REVIEWED AND MERGED (squash `b9ba9d5`).** All five findings fixed;
 **bank 40 still 447 → 75, item-table growth still exactly 372, bank 41 untouched, no bank negative**
 — as predicted, no fix touched bank 40. `check` green, no "never matched the dump", 0 rows over 24
 **and 0 over the preferred 23**, tag stream identical on all 53 rows, page shapes identical to round 1.
@@ -53,6 +61,45 @@ unit — not any open PR's to fix.**
 excluded structural lines via `assemble.is_structural` → 126 / 3. **Two stated methods, still two
 answers — so the divergence is in what counts as structural, and the census cannot be quoted without
 its method.**
+
+### ✅ Review 5 of 5, ROUND 2 — PR #32 (script batch 010): **MERGED.** Squash `b9ba9d5`. **WAVE 8 IS COMPLETE.**
+Integrated at glossary **§51**, `FLAGS.md` **§AM**. Script **461 / 1,430 unique lines, 4,552 / 7,931
+instances (57.4%)**. All five round-1 findings fixed; the `git diff` of the two heads is **exactly 6
+data rows** — the five findings and nothing else. Gates re-run from scratch on `bf2f663`, nothing
+carried: **bank 40 447 → 75 confirmed on the FINAL tree**, item-table growth still exactly 372, bank
+41 untouched, banks under 2,000 free **40 (75) · 41 (353) · 5 (1,635)**. The whole cost of the rework
+was **+6 bytes in bank 28**. Gate 7 re-enumerated against the §50 glossary: **1,129 keys / 95 occur /
+95 conform**; of PR #31's 15 new keys, **0** touch this unit. Gate 6 re-run with **fresh** control
+sites (`batch_009.tsv:61` cross-file, and internally the reworked `復興` row itself) — both caught.
+✅ **THE `復興` RULING WENT AGAINST THE REVIEWER'S OWN ROUND-1 INSTINCT, AND THAT WAS RIGHT.** §26's
+row is `rebuilding / **rebuild**` — two members — and **`batch_009.tsv:72` renders the bare noun
+`この島の復興にも` verbally as `Ｉ　ｍｕｓｔ　ｈｅｌｐ　ｒｅｂｕｉｌｄ`**. So the row is not
+part-of-speech-locked and the corpus already picks whichever member English wants. The round-1 defect
+was that **neither** member was used (`ｒｉｓｅｓ　ａｇａｉｎ`), not that the nominal one was owed.
+Forcing the gerund would have been the wave's **fifth wrong correction**; §51.3 records it.
+⚠️ **THE CENSUS DISPUTE IS FINALLY CLOSED, AND EVERY COUNT IN IT WAS ARITHMETICALLY RIGHT — the
+divergence was the CORPUS, not the splitter.** §45.2 is a **battle-dump** census (its own neighbour
+figure `5,355 → 5,399 / 8,192` is an 8,192-byte battle slot). Over `dumps/battle_dump.txt` with
+`rowcheck`'s boundary set, **all five figures reproduce exactly**: `TTTT` 389 · `.TTTT` 182 · `TTT`
+115 · `TT` 262 · `.TTTT.` **0**. The **same** splitter over `dumps/script_dump.txt` gives `.TTTT`
+**325** and `.TTTT.` **1** — and that single page is a **menu choice-block**
+(`{FFFE}　はい{FFFE}　いいえ{FFF7}…`), not an ordinary text page. **So §45.2/§AG1 stand unqualified for
+the battle store, and the wave-8 coordinator's 325 was right for the script store.** §AM4. **State
+the DUMP as well as the boundary set and the total pages — these two dumps differ ~2× on the very
+shape the rule turns on.** DATA 880's liberty is safe on every measurement anyone has made.
+✅ **§AL1's warning was operationalised, not just acknowledged.** The reviewer ran the **source-word
+mirror**: every kanji run ≥2 / katakana run ≥3 in the source that is NOT a glossary key, matched
+against already-translated rows and read on both sides. **33 runs, no divergence** — and it
+**withdrew a round-1 register nit** (DATA 920's uncontracted `Ｉ　ａｍ　ｇｒａｔｅｆｕｌ．` is the house
+form: `batch_008.tsv:60` ships `Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．`). **The sweep prevented a wrong
+correction, which is the point.** §AM3 makes it a standard gate step.
+⚠️ **§4.3 DEBT RECORDED, NOT ASKED OF THIS PR:** `tl/script/batch_007.tsv:31` ships
+`Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ` — a capitalised bare plural in prose, the only one in `tl/`. ⚠️ It is
+**sentence-initial**, so its capital is ambiguous, which is exactly why it did not license PR #32's
+mid-sentence `Ｗｅ　Ｈｏｂｂｉｔｓ`. Zero-cost, for a corrections unit. §AM2.
+⚠️ **BANK 40 IS NOW EFFECTIVELY CLOSED (75 free).** Any remaining count-21 line spends its growth in
+all 21 banks including bank 40. **DATA 281** (`軍神ヘルメスの愛用したブーツ。…防御力＋１　魔法防御＋１`)
+needs a `魔法防御` form and **may now be unshippable**; only a zero-growth two-stat row fits. §AM1.
 
 ### Review 5 of 5 — PR #32 (script batch 010): **CHANGES**, round 1. Rework sent.
 Every gate but glossary passes. **Gate 7: 1,114 keys enumerated, 95 occur, 91 conform — 5 findings
@@ -280,11 +327,11 @@ three remaining branches present on origin. The dead reviewer's worktree was pru
 know whether it merged is to check the PR state and the branch log, never the agent's status.
 
 ## Last updated
-2026-09-10 · by: **PR #31's reviewer** (integration commit; chunk 42 MERGED at round 3, squash
-`35944da`, glossary **§50**, FLAGS **§AL**) · previously: **PR #30's reviewer** (chunk 41 MERGED at
-round 2, squash `3721e4d`, glossary §49, FLAGS §AK) ·
-wave: **8 — 4 of 5 merged, 1 unit still open (#32)** · queue: **script batch computed
-fresh this wave, by line list, not by a `queue.py` position**
+2026-09-10 · by: **PR #32's reviewer** (integration commit; script batch 010 MERGED at round 2, squash
+`b9ba9d5`, glossary **§51**, FLAGS **§AM**) · previously: **PR #31's reviewer** (chunk 42 MERGED at
+round 3, squash `35944da`, glossary §50, FLAGS §AL) ·
+wave: **8 — ✅ COMPLETE, 5 of 5 merged, 0 parked** · queue: **stale — wave 9 is script-only and its
+queue must be recomputed against bank 40 = 75 free (see NEXT ACTION)**
 
 ✅ **PR #31 (chunk 42) MERGED at round 3 — the wave's fourth.** **3,627 / 8,192, 4,565 slack**;
 battle **32/44, 27,763/43,161 JP (64.3%)**. Three findings, **and gate 6 was blind to all three** —
@@ -319,12 +366,15 @@ tree is needed for any gate. `FLAGS.md` §AK6.
 |---|---|---|---|
 | Battle chunks | **32** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40, **41**, **42** |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** (was 56.5% at wave-8 start) |
-| Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
-| Script message instances | **4,259** | 7,931 | **53.7%** |
+| Script unique lines | **461** | 1,430 | `tl/script/batch_001–010.tsv` |
+| Script message instances | **4,552** | 7,931 | **57.4%** |
 
-`check`: **All checks passed** at `6d73819`. ⚠️ **Tightest banks, re-measured at PR #28's review:
-41 → 353, 40 → 447, 5 → 2,007, 2 → 3,365** — wave 7 moved none of them (`batch_009` spent only
-banks 7–12: b7 13,095 · b8 10,727 · b9 12,205 · b10 33,921 · b11 39,345 · b12 8,559).
+`check`: **All checks passed** on the integration commit. ⚠️ **Tightest banks, re-measured at PR
+#32's review on the merged tree: 40 → 75, 41 → 353, 5 → 1,635, 2 → 2,993.** `batch_010` spent
+**372 in each of 21 banks** (2 3 4 5 6 7 8 9 12–19 25 33 40 42 43) plus prose in 25–28; **bank 41 was
+not touched**. ⚠️ **BANK 40 IS EFFECTIVELY CLOSED at 75 free** — every remaining `script_unique` line
+with **count 21** spends its growth in all 21 of those banks. Measure before queueing one; **DATA 281
+may already be unshippable** (§AM1).
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, Blocked 0),
 **36** (charset gate, Blocked **0a** — new this wave).
 
@@ -337,7 +387,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (verified by the reviewer on a no-working-tree extraction) | ✅ **PR #31 MERGED at round 3** — squash `35944da`; integrated at glossary **§50**, `FLAGS.md` **§AL**. Three rounds, three findings, **none visible to gate 6** (`ははっ`→§28.3, `たかが`→§19.1, `くそっ`→the incumbent `Ｄａｍｎ`). Nothing left on this unit |
-| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** (r2 @ `bf2f663`) | **PR #32 — rework PUSHED**, awaiting re-review (SAME reviewer) |
+| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75**, spend **372**, verified on the merged tree | ✅ **PR #32 MERGED at round 2** — squash `b9ba9d5`; integrated at glossary **§51**, `FLAGS.md` **§AM**. Two rounds, **five findings, all five gate-7 failures** (`実権`, `復興`, `兵隊さん`, `よろしく　頼む`, `ホビット`), all five fixed. ⚠️ **`復興` RULED at §51.3: the verbal `ｒｅｂｕｉｌｔ` STANDS** — §26's row has two members and `batch_009` already uses the verbal one for a nominal source; forcing the gerund would have been the wave's fifth wrong correction. Strikes §9's `石版` and `ビーストショップ`; **`軍神ヘルメス` and `ピクシー` left LIVE.** Nothing left on this unit |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
 1. ⚠️ **`軍神ヘルメス` is NOT exhausted and its §9 row must stay LIVE.** My seed implied DATA 300
@@ -798,6 +848,7 @@ REJECTED options, not a menu**. `{FCC0}` is forbidden by `assemble.py:tag_parity
 | 5 | `あら` corrections + battle 21, 22 + script 007 | **4** | 0 | battle 23/44 (43.2%); script 311 (52.5%) |
 | 6 | battle 24, 25, 26 + script 008 | **4** | 0 | battle 26/44 (51.0%); script 358 (53.1%) |
 | 7 | battle 30, 31, 36 + script 009 | **3** | **1** | battle **28/44 (56.5%)**; script **408 (53.7%)** |
+| 8 | battle 37, 38, 41, 42 + script 010 | **5** | 0 | battle **32/44 (64.3%)**; script **461 (57.4%)** |
 
 **Wave 7 detail.** PRs #25–#28, full three-role split, four separate reviewers. Chunk 30 (7,615 /
 8,192) and script `batch_009` (+6,026 bytes, 2.034×) merged at round 1; chunk 31 (5,399 / 8,192)
