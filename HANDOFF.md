@@ -28,6 +28,36 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+### Review 5 of 5 — PR #32 (script batch 010): **CHANGES**, round 1. Rework sent.
+Every gate but glossary passes. **Gate 7: 1,114 keys enumerated, 95 occur, 91 conform — 5 findings
+(4 non-conformant keys).** ⚠️ **Finding 1 is AGAIN a glossary row whose own census NAMES THE EXACT
+LINE** (§37's `実権`, naming `当時、ファリーナの実権を`) — **the third unit this wave to fail that
+way.** All five findings are 1-instance prose in banks 25–28; **none touches bank 40.**
+✅ **BANK ARITHMETIC INDEPENDENTLY CONFIRMED**, differenced against a `git archive` of the base
+rather than read from the PR: **bank 40 447 → 75 (spend 372, within my 380 cap)**, bank 5 → 1,635,
+**bank 41 353 → 353 untouched**; exactly 21 banks spend exactly 372; 293 instances / 53 unique
+confirmed from **three independent directions**. Banks under 2,000: **40 (75), 41 (353), 5 (1,635)**.
+✅ **DATA 899 `“Ｂｅａｓｔ　Ｓｈｏｐ”` confirmed prose, §12 quotes, NO gutter** — the single
+most-warned-about risk in the unit, and it is right. ✅ `石版` + `ビーストショップ` §9 rows strikable.
+✅ **`軍神ヘルメス` stays LIVE** — measured 2 unique lines / 42 instances, DATA 281 untranslated.
+✅ It gated the right tree with **no working tree at all** (§AK6 method), provenance proved by `cmp`
++ sha256 + blob id.
+
+⚠️⚠️ **A FOUNDATIONAL CENSUS IS METHOD-SENSITIVE AND ALL THREE COUNTS DISAGREE — INCLUDING MINE.**
+The `.TTTT` census underpins glossary §45.2 / FLAGS §AG1 and has been quoted all wave:
+| source | `.TTTT` | `.TTTT.` | `TTTT` |
+|---|---|---|---|
+| wave-7 census, quoted by PR #32 | 182 | **0** | 389 |
+| PR #32's reviewer | 325 | **1** | — |
+| **me, just now** | **126** | **3** | **133** |
+My method, stated because none of the three did: pages split on `{FCC0}`, rows on `{FFFE}`,
+structural lines excluded, a row is blank if it has no non-tag content.
+⚠️ **`.TTTT.` IS NOT ZERO** — two of three counts find it attested. **But the RULING SURVIVES**: it
+needs `.TTTT` to be *common*, which all three agree on (126 / 182 / 325), and never actually needed
+`.TTTT.` to be exactly 0. **No rendering anywhere changes.** ⚠️ **The lesson is the disagreement
+itself: a census quoted as a bare number across five waves, with no method attached, cannot be
+reproduced — and "never attested" is the most dangerous form to quote it in.**
+
 **c42 round 3 pushed @ `1a44e25` — 3,627 / 8,192, 4,565 slack, exactly the reviewed prediction**,
 rebased onto `6c29e51` so the base includes merged `chunk_041`. Census reproduced exactly (it also
 swept `ちくしょう`/`こんちくしょう` in case the family was wider — script dump `くそ` ×3, `クソ` ×0).
@@ -243,7 +273,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (r3 @ `1a44e25`) | **PR #31 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
-| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
+| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** (verified) | **PR #32 — CHANGES r1**, rework sent |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
 1. ⚠️ **`軍神ヘルメス` is NOT exhausted and its §9 row must stay LIVE.** My seed implied DATA 300
