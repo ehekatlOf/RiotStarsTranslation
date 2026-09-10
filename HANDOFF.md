@@ -28,6 +28,16 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+## ⏸️ WEEKLY RATE-LIMIT OUTAGE 2026-09-09 16:3xZ → 2026-09-10 18:00Z — RESOLVED, NOTHING LOST
+Reviewer 3 (PR #30) was killed mid-review by the account's **weekly** limit (HTTP 429, reset
+2026-09-10 18:00Z). **This is NOT one of CLAUDE.md §8's four stop conditions** — it is not "cannot
+push or open PRs", it is a transient outage — so the wave RESUMES rather than stopping.
+**Verified clean on resume:** head still `68dfdcb` (the dead reviewer pushed nothing), `check`
+green, **PR #30 NOT merged** (`tl/battle/chunk_041.txt` absent), no partial `integrate:` commit, all
+three remaining branches present on origin. The dead reviewer's worktree was pruned.
+⚠️ **Lesson for the successor: a reviewer killed mid-run leaves NO trace in git** — the only way to
+know whether it merged is to check the PR state and the branch log, never the agent's status.
+
 ## Last updated
 2026-09-09 · by: **PR #29's reviewer** (integration commit; chunk 37 MERGED at round 3, squash
 `5659d03`, glossary **§48**, FLAGS **§AJ**) · previously: **PR #33's reviewer** (chunk 38 MERGED,
@@ -56,7 +66,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
-| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 — REVIEW 3 OF 5 RUNNING** |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 — review 3 RESTARTED after outage** |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
