@@ -12,6 +12,33 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
+> ⛔ **THE RECURSIVE-SESSION CHAIN HAS HIT ITS CEILING AT WAVE 9. A HUMAN MUST START WAVE 10.**
+> **`send_later` AND `create_trigger` BOTH FAIL** from this session with:
+> `caller session is at lineage depth 8 (limit 8); cannot spawn or re-arm further child sessions`
+> — tested directly 2026-09-10, both tools, not inferred. Each wave has been a child of the last,
+> so wave 9 is the 8th descendant and **the last link this design can produce.** Consequences:
+> 1. **THERE IS NO WATCHDOG ON WAVE 9.** CLAUDE.md's "the timer is always armed" cannot be
+>    satisfied — the tool refuses. Wave 9's only wake mechanism is background-subagent completion
+>    notifications, which do work, but have **no backstop** if one is swallowed.
+> 2. **WAVE 10 CANNOT BE A NEW SESSION OPENED FROM HERE.** `create_session` is the same lineage
+>    mechanism and is expected to fail identically.
+>
+> **What a human should do: open wave 10 as a FRESH TOP-LEVEL SESSION** (depth 0) from
+> `https://github.com/ehekatlOf/RiotStarsTranslation`, `source_revision`
+> `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with the units in **Next
+> up**. That restores the full chain *and* the three-role split, and costs nothing else.
+>
+> **What wave 9 does if no human appears:** `.claude/agents/orchestrator.md` §7.2's documented
+> fallback — an `orchestrator` **subagent**, `run_in_background: true`. ⚠️ **This is a REAL
+> DEGRADATION, not an equivalent:** CLAUDE.md's own banner says a coordinator running as a subagent
+> **has no `Task` tool**, so it cannot spawn a reviewer and the three-role split collapses into one
+> agent that dispatches, judges and merges its own wave. **That happened in wave 1 and cost the
+> independence of four merges.** If that fallback is taken, every unit it merges is **SELF-REVIEWED**
+> and owes an independent post-merge audit (CLAUDE.md §8).
+>
+> ✅ **WAVE 9 ITSELF IS UNAFFECTED.** Its translators are subagents of this session, which *does*
+> have `Task`, so the reviewer can be spawned and the three-role split is intact for this wave.
+>
 > **WAVE 9 IS RUNNING — 3 script batches dispatched, behind the wave barrier (CLAUDE.md §4a).**
 > Coordinator: `session_01DFhp3iVua6qbKN4QhBJvPP`. Base `ff3295a` (glossary seeds) on
 > `claude/workflow-translation-iterate-uzlkns`.
@@ -109,6 +136,19 @@ bank-FEASIBLE now** — about **12 more batches**. So CLAUDE.md §8's "no dispat
 them are 21-instance item-table rows** held solely by bank 40.
 
 ## Blocked — needs a human
+0b. ⛔ **NEW 2026-09-10 — THE RUN'S AUTOMATION IS OUT OF ROAD, AND THIS IS THE CHEAPEST FIX ON
+   THIS LIST.** Every wave has run as a child session of the previous wave, and the platform caps
+   that at **lineage depth 8**. Wave 9 is at the cap. `send_later` and `create_trigger` were both
+   called and both returned `caller session is at lineage depth 8 (limit 8); cannot spawn or re-arm
+   further child sessions`; `create_session` uses the same mechanism. **So wave 9 runs without a
+   watchdog and cannot open wave 10 as a session.** ⚠️ **Nothing is wrong with the repository, the
+   translations or the tools** — `check` is green and every gate still works. **Fix: a human opens
+   wave 10 as a fresh top-level session** (any new Claude Code session on
+   `claude/workflow-translation-iterate-uzlkns`), which resets the depth to 0 and restores both the
+   chain and the three-role split. **Takes one action and needs no disc, EXE or emulator.** ⚠️ **The
+   in-run fallback — an `orchestrator` subagent — WORKS BUT IS DEGRADED**: subagents cannot spawn
+   subagents, so such a coordinator has no reviewer and self-reviews its own merges (wave 1's
+   failure, four merges). **Prefer the human action; it is strictly better and nearly free.**
 0a. 🔧 **NEW 2026-09-09 — THE CHEAPEST ITEM ON THIS LIST, AND IT IS NOT ITEM 0.** `FLAGS.md`
    **§AF1**. `assemble.py:validate_body` applies its charset whitelist to **preserved SOURCE
    machine text**. Battle chunk 36 is mostly a full-width MIPS assembly listing, English machine
