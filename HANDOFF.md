@@ -28,6 +28,27 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+**c42 round 3 pushed @ `1a44e25` — 3,627 / 8,192, 4,565 slack, exactly the reviewed prediction**,
+rebased onto `6c29e51` so the base includes merged `chunk_041`. Census reproduced exactly (it also
+swept `ちくしょう`/`こんちくしょう` in case the family was wider — script dump `くそ` ×3, `クソ` ×0).
+✅ **It refused to accept the finding on evidence of a kind it had itself rejected:** it checked that
+chunk 12's line is genuinely row-aligned (1 JP row / 1 EN row) *because* the one false positive in
+its own gate-6 run had been a row-offset artefact.
+⚠️ **A NEW FAILURE MODE, IN ITS OWN WORDS, AND IT IS THE SHARPEST DIAGNOSIS OF THE WAVE:**
+*"I asked whether `Ｄａｍｎ　ｉｔ` was free, found it wasn't, and reached for a new word — without
+ever asking what English `くそ` itself already had. **I measured the rejected alternative and never
+looked for the incumbent.**"*
+**§AG6 says measure the option you argue against. This is its mirror: SEARCH FOR THE FORM THE SOURCE
+WORD ALREADY HAS, before reaching for a new one.** Flag 6's reasoning was *correct and is preserved*
+by the fix (`ｄａｍｎ　ｉｔ` ships 4× for the しまった/何てこった family, bare `Ｄａｍｎ，` exactly once
+for くそ) — the error was one question upstream of everything it measured.
+✅ **The reverse control reproduces:** `くそっ` appears nowhere in its gate-6 evidence in either
+direction, because chunk 12's key is `クソッ` — gate 6 matches exact Japanese and **structurally
+cannot see this pair**. The §Y2/§AC1 kana blind spot behaving exactly as documented.
+✅ Gate 6 re-run against the enlarged corpus (**2,391 rows / 2,198 keys**, up from 2,326/2,136 now
+that chunk 41 shipped): pass, no new conflict against `chunk_041`, **and the planted-corruption test
+still fires with the round-3 file as baseline — so the clean result is load-bearing, not vacuous.**
+
 ### Review round 2 — PR #31: **CHANGES**, ALL GATES NOW PASS, one reading finding. Round 3 sent (max).
 `くそっ・・・！！` ships `Ｂｌａｓｔ　ｉｔ` where `chunk_012` already ships `Ｄａｍｎ` for the same
 interjection — くそ/クソ is **3 instances in the whole battle dump**, and the house rule collapses
@@ -221,7 +242,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | 3,635 → **3,627 / 8,192** expected | **PR #31 — CHANGES r2**, round 3 sent (max 3) |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (r3 @ `1a44e25`) | **PR #31 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
