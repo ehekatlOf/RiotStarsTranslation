@@ -85,13 +85,16 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 | Unit | Branch | PR | Round | State |
 |---|---|---|---|---|
 | `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` @ `855686e` | **[#34](https://github.com/ehekatlOf/RiotStarsTranslation/pull/34)** | 1 | ✅ **PR OPEN**, mergeable_state clean, 1 file / 1 commit. 60/60 lines, 0 parked. Gate 7 run glossary-side: **2,213 keys enumerated, 87 occurring, each adjudicated by reading**; controls fired both ways. Growth +2,464 B over banks 14–18, none under 10,333 free. ⚠️ **Reviewer: read Flags 1, 2, 3 FIRST** — (1) it rendered `いらっしゃいませ！！` → `Ｗｅｌｃｏｍｅ！！`, **knowingly against my dispatch table**, citing §34.1 + §34.5's reserve being scoped to a bank-26 `ようこそ` collision that its census puts in banks [4, 26] only — **my table row came from positional clause alignment and is exactly the artifact I warned it to verify; adjudicate independently, do not rubber-stamp either side**; (2) it declined §9's `Ｍｅｍｂｅｒ　Ｃａｒｄ` seed for the shipped `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ`, evidence being that D310 lands in **bank 15, its own bank**, so §25.3's co-occurrence test fails there; (3) `で、` → `Ｓｏ，` is **collision-forced, not width-forced** — a real §42.1 scope gap |
-| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` | — | 1 | dispatched 2026-09-10 |
+| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` @ `b7cb51e` | **[#35](https://github.com/ehekatlOf/RiotStarsTranslation/pull/35)** | 1 | ✅ **PR OPEN**, 1 file / 92 additions (gate 1 pre-verified). 61 lines / 63 inst, 0 parked. **Bank 2 landed at 1,607 free** — growth 1,386 against the 2,493 spendable, realised **2.02×**, under the 2.10× model. Gate 6 **0 failures** (22 pairs + 4 groups, controls both ways); gate 7 **83 keys / 151 key-row pairs, 0 failures**. All wave-9 seeds used **exactly as seeded**; `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` rendered ×4; **DATA 362 names no card, by design** (as dispatched). ⚠️ **Reviewer:** (a) **DATA 367 carries a DUMP ARTIFACT** — `{FFED}{=03}閧{=A8}`, a raw SJIS pair the dumper split, preserved verbatim; **check whether this is a new instance of Blocked 0 / §D1's class** and file it there if so; (b) §46.3's census is **short a cell** — bank 1 holds both `そうか・・・・` (D390) and `なるほど` (D391); (c) §32.5's `勲章`/`メダル` collision is now **realised**, bank 42 carrying a shipped racetrack `ｍｅｄａｌ`; (d) its **reading review caught a defect gate 7 passed** — D391's `王女様` drafted as `Ｙｏｕｒ　Ｈｉｇｈｎｅｓｓ`, corrected to `Ｐ‐Ｐｒｉｎｃｅｓｓ．．．．！？`; (e) new terms incl. `閣下` → `Ｈｉｓ　Ｅｘｃｅｌｌｅｎｃｙ` (**deliberately NOT collapsed onto §1's `様` → `Ｌｏｒｄ`**), `『獅子の勲章』` → `“Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ”` (**reach includes untranslated DATA 863**), `政務大臣`, `ホッジス` → `Ｈｏｄｇｅｓ` |
 | `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` | — | 1 | dispatched 2026-09-10 |
 
-**Barrier: 1 of 3 PRs open — NOTHING MAY BE REVIEWED YET** (CLAUDE.md §4a). `batch_012` and
-`batch_013` were confirmed **still running** by `ListAgents` at 2026-09-10 22:0x — a slow translator
+**Barrier: 2 of 3 PRs open — NOTHING MAY BE REVIEWED YET** (CLAUDE.md §4a). `batch_013` was confirmed **still running** by `ListAgents` at 2026-09-10 23:0x — a slow translator
 is not a failed one, so **wait; do not re-dispatch over a live agent.** Review order when the
 barrier closes: 011 → 012 → 013, one reviewer at a time, `run_in_background: false`.
+
+⚠️ **CROSS-UNIT, FOR THE REVIEWER TO HOLD:** `batch_012` renders `ホッジス` → `Ｈｏｄｇｅｓ` (DATA 398)
+as the retired officer to consult **about tactics** — and **`batch_013` IS the tactics-lecture
+unit.** Almost certainly the same NPC. **Check `batch_013` names him identically.**
 
 ## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
 **Seed the glossary BEFORE dispatching.** Sections end at **glossary §51** (wave 9's seeds went into
