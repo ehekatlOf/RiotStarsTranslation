@@ -28,6 +28,24 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+**c42 round 2 pushed @ `3e0ee7f` — 3,635 / 8,192, 4,557 slack, exactly the predicted figure**, and
+**rebased onto `a6667ef`** so the diff is against the branch after chunk 037 merged. Both findings
+verified **at source** before applying, not taken from the message. Its own account of finding 1:
+*"The miss was mine: I matched §6's はっ row and never reached §28.3, which governs the doubled
+form."* Gate 6 re-run against the **larger** merged corpus (2,326 aligned rows / 2,136 keys, up from
+2,130 / 1,950) — pass, no new conflict against chunk 037.
+✅ **IT ROOT-CAUSED THE OFF-BY-ONE RATHER THAN PATCHING IT:** its scratch helpers print a **0-based
+body index** while the file's own numbering is `rowcheck`; it converted for its own lines but not
+for corpus citations, so **all 17 were exactly one low**. **The helper now converts at the print
+site, so the two conventions cannot mix again.**
+⚠️ **A NEW §AG6 LOCATION, AND IT IS A GOOD ONE: the PR BODY'S OWN PROSE.** All five bad widths were
+in *prose about rows that are correct as shipped* — the unit `len()`-measured everything that
+entered the file and **hand-counted the figures while writing them up**. §AG6 has so far covered
+rejected alternatives; **it must also cover the write-up.**
+✅ Its `Ｂｅ　ｓｉｌｅｎｔ` flag now rests on the **co-occurrence test rather than on freeness**, since
+`pending/chunk_005` L28 already spends it on `黙りなさい。` — a sharper form of the very `だまれ`
+collision the flag existed to avoid.
+
 ### Review 4 of 5 — PR #31 (chunk 42): **CHANGES**, round 1. Rework sent.
 All mechanical gates pass, headline figures exact. **Gate 7 fails TWICE**, both against fixed forms
 with shipped precedent: `ははっ・・・・` → `Ｓｉｒ．．．．` where **§28.3's instance list names `c42 L6`
@@ -139,7 +157,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (r2 @ `2582852`) | **PR #30 — rework PUSHED**, awaiting re-review (SAME reviewer) |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | 3,629 → **3,635 / 8,192** expected | **PR #31 — CHANGES r1**, rework sent |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,635 / 8,192 — 4,557 slack** (r2 @ `3e0ee7f`) | **PR #31 — rework PUSHED**, awaiting re-review (SAME reviewer) |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
