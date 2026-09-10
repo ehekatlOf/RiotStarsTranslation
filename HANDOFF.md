@@ -263,11 +263,32 @@ three remaining branches present on origin. The dead reviewer's worktree was pru
 know whether it merged is to check the PR state and the branch log, never the agent's status.
 
 ## Last updated
-2026-09-10 · by: **PR #30's reviewer** (integration commit; chunk 41 MERGED at round 2, squash
-`3721e4d`, glossary **§49**, FLAGS **§AK**) · previously: **PR #29's reviewer** (chunk 37 MERGED at
-round 3, squash `5659d03`, glossary §48, FLAGS §AJ) ·
-wave: **8 — 3 of 5 merged, 2 units still open (#31, #32)** · queue: **script batch computed
+2026-09-10 · by: **PR #31's reviewer** (integration commit; chunk 42 MERGED at round 3, squash
+`35944da`, glossary **§50**, FLAGS **§AL**) · previously: **PR #30's reviewer** (chunk 41 MERGED at
+round 2, squash `3721e4d`, glossary §49, FLAGS §AK) ·
+wave: **8 — 4 of 5 merged, 1 unit still open (#32)** · queue: **script batch computed
 fresh this wave, by line list, not by a `queue.py` position**
+
+✅ **PR #31 (chunk 42) MERGED at round 3 — the wave's fourth.** **3,627 / 8,192, 4,565 slack**;
+battle **32/44, 27,763/43,161 JP (64.3%)**. Three findings, **and gate 6 was blind to all three** —
+each was a term inside a differently-worded message, demonstrated at each round with a reverse
+control that raised zero problems. §AL2 records the pattern and **the limit of the §AI4 key-first
+sweep it exposes: a glossary-key sweep cannot surface a word the glossary never recorded**, which
+is exactly how `くそ` survived two rounds. Its lesson is §AG6's mirror — **search for the incumbent
+form the SOURCE WORD already has before reaching for a new one** (§AL1).
+⚠️ **The `.TTTT` census spread is the PAGE-BOUNDARY SET, and §45.2's figures reproduce exactly.**
+Splitting pages on the `rowcheck` set gives `TTTT` 389, `.TTTT` 182, `.TTTT.` **0** — every one of
+§45.2's seven published figures; splitting on `{FCC0}` only gives 133 / 126 / **3**, which is the
+wave-8 coordinator's count exactly. **§45.2 and §AG1 stand; no rendering changes.**
+⚠️ **`batch_010`'s stated method ({FCC0}-only) reports 182 / 0, which my implementation of that
+method does NOT reproduce — so one description is still incomplete, and it is not "what counts as
+structural" (structural lines carry no `{FFFE}` and no text).** The one-step diagnostic is the
+**total pages counted**: `{FCC0}`-only = **916**, `rowcheck` set = **1,874**. **Publish the total
+beside any page-shape figure** — it pins the method independently of the shapes being argued
+about (§AL3).
+⚠️ **One wrong correction, mine: I reported §48.3 as still reading 22 columns at round 2 without
+re-reading it at the moved base — it reads 21, corrected in place by PR #30's merge.** §48.3 is
+untouched. **A record that documents its own former error still contains the wrong figure** (§AL4).
 
 ⚠️ **A REVIEW WORKTREE WAS REWRITTEN UNDER A LIVE REVIEWER between PR #30's two rounds** — branch
 `review` was tracking `origin/tl/battle-042` with PR #31's staged state when PR #30's reviewer
@@ -279,8 +300,8 @@ tree is needed for any gate. `FLAGS.md` §AK6.
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **31** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40, **41** |
-| Battle JP characters | **27,065** | 43,161 | **62.7%** (was 56.5% at wave-8 start) |
+| Battle chunks | **32** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40, **41**, **42** |
+| Battle JP characters | **27,763** | 43,161 | **64.3%** (was 56.5% at wave-8 start) |
 | Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
 | Script message instances | **4,259** | 7,931 | **53.7%** |
 
@@ -298,7 +319,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (r3 @ `1a44e25`) | **PR #31 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (verified by the reviewer on a no-working-tree extraction) | ✅ **PR #31 MERGED at round 3** — squash `35944da`; integrated at glossary **§50**, `FLAGS.md` **§AL**. Three rounds, three findings, **none visible to gate 6** (`ははっ`→§28.3, `たかが`→§19.1, `くそっ`→the incumbent `Ｄａｍｎ`). Nothing left on this unit |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** (r2 @ `bf2f663`) | **PR #32 — rework PUSHED**, awaiting re-review (SAME reviewer) |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**

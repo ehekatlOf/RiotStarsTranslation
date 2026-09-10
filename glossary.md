@@ -6070,3 +6070,225 @@ not be harmonised on a `〜わ` inference.
   is four per §3.1), L8 [3,3]→[3,3]. Zero `・`, `…`, `○` or ASCII.
 - **The stutter follows the shipped comma form**, `Ｃ，　Ｃｕｒｓｅ　ｙｏｕ．．．，` (16), not parked
   `chunk_043`'s hyphen — the §40.6 census (`Ｘ，　` 8 to 1) settles it.
+
+---
+
+## 50. Added by chunk 042 (PR #31, merged 2026-09-10)
+
+Three review rounds, **three findings, and not one of them was visible to gate 6** — each is a term
+recurring inside a differently-worded message, which is exactly the blind spot §48.5 and
+`FLAGS.md` §AJ1 describe. Figures: **3,627 / 8,192, 4,565 slack**; JP 698, headroom 6,225, ratio
+5.46 (tier D), widest run 24, four rows at 24. Numbering below is `rowcheck`'s (the `=== CHUNK 42`
+header is line 0, the first body line is line 1). Every width is `len()`-measured.
+
+Chunk 42 is Helfer's banquet in the new Carline: Guilford's recall by imperial edict, the toast,
+Anselmo bursting in, the "rat-hunt" framing of the 9th Army's attack, Anselmo left to fight alone,
+and Helfer's escape downriver.
+
+### 50.1 RULING — `くそ` / `クソ` → `Ｄａｍｎ`, and the incumbent is what settles it
+
+**Round 3.** The unit shipped `くそっ・・・！！` → `Ｂｌａｓｔ　ｉｔ．．．！！` (13), a word verified free.
+It is now **`Ｄａｍｎ．．．！！`** (9).
+
+| Japanese | English | Note |
+|---|---|---|
+| くそ / クソ (interjection) | `Ｄａｍｎ` + the source's own punctuation | 4 columns bare. **The whole corpus is three battle instances and zero script**, censused over the pristine dump at review and independently by the translator, which widened the sweep to `ちくしょう` / `こんちくしょう`: `chunk_012` L11 `クソッ、無念だ・・・。` → `Ｄａｍｎ，　ｈｏｗ　ｂｉｔｔｅｒ．．．．` (shipped first, so it fixes the word); `chunk_016` L2 `クソッ・・・・。` (**untranslated, tier A**); this unit's `くそっ・・・！！` → `Ｄａｍｎ．．．！！`. One word, two kana spellings, one English form — the §17.2 鬼／オーガ shape, and §5's mechanism for the stop. Held **distinct** from §39.4's two-word `ｄａｍｎ　ｉｔ` for `しまった`-after-a-grunt exactly as §6's はっ → `Ｓｉｒ` is held apart from §28.3's ははっ → `Ｙｅｓ，　ｓｉｒ` |
+
+**Why the collapse and not a fourth word.** The house rule collapses kana variants without
+exception — §17.2 鬼／オーガ, §11.5 くっ／クッ (the *neighbouring* interjection), §28.3 何っ／何ッ,
+§29.3 くーっ／く〜っ, §30.3 ぐふっ／グフッ, §2 ウエストバリー／ウェストバリー, and
+**§49.4's ぬぬっ／ぬぬッ → `Ｗｈｙ，` and かんねん／観念**, which applied it across **disjoint
+chunks** (2 and 41) and so removes the "§25.3 permits it" escape. `chunk_012` shipped first;
+§18.3 / §10.6 / §29.1 all put the later unit on the moving side.
+
+⚠️ **Taking `Ｄａｍｎ` here does not add a third source string to the form — it removes a fourth
+English word from the corpus.** `Ｂｌａｓｔ` now occurs nowhere in `tl/` or `pending/`, verified by
+reading the tree after the merge.
+
+⚠️ **The forward reason this had to be settled now: `chunk_016` holds BOTH `クソッ・・・・。` (L2) and
+`しまった・・・敵の` (L3)**, is untranslated and tier-A blocked, and would otherwise inherit two
+shipped candidates for one word. §39.4 already binds its `しまった` to the line-initial `Ｏｈ　ｎｏ`,
+so nothing in chunk 16 collides.
+
+> ⚠️ **The lesson, in the translator's own words, and it is the sharpest formulation this wave
+> produced:** *"I asked whether `Ｄａｍｎ　ｉｔ` was free, found it wasn't, and reached for a new
+> word — without ever asking what English `くそ` itself already had. **I measured the rejected
+> alternative and never looked for the incumbent.**"*
+>
+> **That is §AG6's mirror. §AG6 says measure the option you argue against; this says search for the
+> form the SOURCE WORD already has before reaching for a new one.** The unit's Flag 6 reasoning —
+> that §39.4 and `pending/chunk_005` speak for `Ｄａｍｎ　ｉｔ` — was **correct throughout and is
+> preserved by the fix**; the error sat one question upstream of everything it measured, which is
+> why no gate caught it. Recorded at `FLAGS.md` §AL.
+
+### 50.2 RULING — `ははっ` does not collapse into `はっ`, and §28.3 named this line
+
+**Round 1.** The unit shipped `ははっ・・・・` → `Ｓｉｒ．．．．` (7). It is now
+**`Ｙｅｓ，　ｓｉｒ．．．．`** (12), with the four dots from the source per §5.
+
+§28.3 fixes `ははっ！` → `Ｙｅｓ，　ｓｉｒ！` and says in its own words that it is *"**Distinct** from
+§6's はっ → `Ｓｉｒ` … they genuinely stand side by side, so they must not collapse."* Its instance
+list, corrected in place at PR #33's merge, **names `c42 L6`** among the four assents it governs.
+
+| Where | Japanese | English |
+|---|---|---|
+| `chunk_013` L2 | `ははっ！` | `Ｙｅｓ，　ｓｉｒ！` |
+| `chunk_037` L1 | `ははっ！！` | `Ｙｅｓ，　ｓｉｒ！！` |
+| `chunk_038` L11 | `はははっっ！！` | `Ｈａｈａｈａ！！` — the struck substring case (§28.3, §47.2), not a member |
+| **`chunk_042` L6** | `ははっ・・・・` | **`Ｙｅｓ，　ｓｉｒ．．．．`** |
+
+Two things the divergence had already produced, both now cleared: inside the file, L11 ships
+`Ｓｉｒ！` for `はっ！`, so one chunk carried both source strings on one English word; and across
+files, **`Ｓｉｒ．．．．` was already shipped in `chunk_009` L2 for the different string
+`はっ・・・。`**. After the fix `Ｓｉｒ．．．．` is `chunk_009` alone.
+
+### 50.3 `たかが` takes §19.1's `ｏｎｌｙ`, and `ｍｅｒｅ` stops doing two jobs
+
+**Round 1.** `たかが、ネズミの侵入か。` shipped as `Ｍｅｒｅｌｙ　ｒａｔｓ　ｉｎｔｒｕｄｉｎｇ．` (22); it is
+now **`Ｏｎｌｙ　ｒａｔｓ　ｉｎｔｒｕｄｉｎｇ．`** (20).
+
+§19.1 fixes `たかが〜` → `Ｔｈｅｙ’ｒｅ　ｏｎｌｙ　．．．` and §41.10 records `ｏｎｌｙ` for `たかが` as
+used unchanged by chunk 25. Both shipped instances use it: `chunk_001` L6 `たかがオーク。` →
+`Ｔｈｅｙ’ｒｅ　ｏｎｌｙ　ｏｒｃｓ．`, and `chunk_025` L12 `たかが{FFFE}ライトエルフの封印だ。` →
+`ｉｔ　ｉｓ{FFFE}ｏｎｌｙ　ａ　ｌｉｇｈｔ　ｅｌｆ　ｓｅａｌ．`.
+
+⚠️ **chunk_025's instance is Helfer, in the same contraction-free register as this line**, and it
+renders `ｏｎｌｙ` with the frame adapted. So §19.1's `Ｔｈｅｙ’ｒｅ` is the chunk-1 *sentence*, not
+the fixed element; **the fixed element is `ｏｎｌｙ`**, and §11.6's no-contraction rule is no
+obstacle to it. Recorded because the row as written invites the opposite reading.
+
+Two further grounds, both counted: `ｍｅｒｅ` was already spent on a neighbouring dismissive
+(`chunk_012` L2 `たかだか町道場の師範` → `ａ　ｍｅｒｅ　ｍａｓｔｅｒ　ｏｆ　ａ　ｔｏｗｎ`, and `chunk_026`
+×2 on `なんかに`); and **inside chunk 42 itself `ｍｅｒｅ` also rendered `ごとき`** at L6, so §25.3's
+test — *"no chunk and no bank contains both"* — was failing in its strictest form, one chunk with
+two source dismissives on one English lexeme. `Ｍｅｒｅ` is now `chunk_041` only.
+
+### 50.4 New forms first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| 同胞 | `ｂｒｅｔｈｒｅｎ` | **8** columns (the PR body's 9 is hand-counted). Helfer's address to the Imperial troops, `帝国軍の同胞たちよ！`. Held **distinct** from 仲間 → `ｃｏｍｒａｄｅｓ` (`chunk_020`, `pending/chunk_043`) — a different word, and `ｂｒｅｔｈｒｅｎ` suits §11.6's archaic register. Verified free. **1 battle + 0 script — exhausted** |
+| 勅令 | `ｅｄｉｃｔ` | **5** columns; `ｄｅｃｒｅｅ` is 6. Ships as `ｓｕｄｄｅｎ　ｉｍｐｅｒｉａｌ　ｅｄｉｃｔ，` (**22**) — *imperial* is inside 勅's meaning, not an added word. `ｂｙ` sits on the preceding row (`Ｇｅｎｅｒａｌ　Ｇｕｉｌｆｏｒｄ，　ｂｙ`, 20) because `ｂｙ　ｓｕｄｄｅｎ　ｉｍｐｅｒｉａｌ　ｅｄｉｃｔ，` is **25**, one over; `ｂｙ　ｓｕｄｄｅｎ　ｉｍｐｅｒｉａｌ　ｄｅｃｒｅｅ，` is 26. `ｂｙ　ｓｕｄｄｅｎ　ｒｏｙａｌ　ｅｄｉｃｔ，` (22) rejected — 勅 is an **emperor's** rescript. **Recurs verbatim in L2 and L11 and is byte-identical in both.** `ｅｄｉｃｔ` verified free (`tl/`'s one hit is *predict*). **2 battle (both this chunk) + 0 script — exhausted** |
+| 退治 | `ｅｘｔｅｒｍｉｎａｔｅ` (verb) / `ｒａｔ‐ｋｉｌｌｉｎｇ` (in ネズミ退治) | **11 / 11** columns (the PR body's 13 for the first is hand-counted). `ｅｘｔｅｒｍｉｎａｔ‐` verified free. `chunk_034` L6 renders 退治 phrase-level as `ｒｉｄ　ｕｓ　ｏｆ　ｔｈｅｍ．` — a different message, not a fixed form. **3 battle (34, 42 ×2) + 1 script** |
+| 一匹残らず | `Ｎｏｔ　ｏｎｅ　ｏｆ　ｔｈｅｍ　ｌｅｆｔ，` | **21** columns. Hapax — 1 battle + 0 script |
+| 無礼だぞ | `Ｉｎｓｏｌｅｎｃｅ，` | **10** columns (the PR body's 12 is hand-counted). Command register per §6's だまれ note. Verified free. **1 battle + 0 script — exhausted** |
+| 静粛に！ | `Ｂｅ　ｓｉｌｅｎｔ！` | **10** columns. ⚠️ **Deliberately NOT §6's だまれ → `Ｓｉｌｅｎｃｅ`**, which `batch_002` L9 already ships as `Ｓｉｌｅｎｃｅ，　Ａｌｆｒｅｄ．` — a host calling a hall to order is a different act from an officer cutting a subordinate off, and §6's entry is not this unit's to spend. ⚠️ **`Ｂｅ　ｓｉｌｅｎｔ` is NOT free and the PR's Flag 5 never checked the form it shipped**: `pending/chunk_005` L28 renders `黙りなさい。` as `Ｂｅ　ｓｉｌｅｎｔ．`. **The conclusion survives on §25.3, not on freeness**: 黙りなさい is chunk 5 (parked) only, 静粛に is chunk 42 only — disjoint, and a parked file engages neither §3 nor gate 6. **1 battle + 0 script — a true hapax** |
+| 新生 (新生カーライン) | `ｔｈｅ　ｎｅｗ　Ｃａｒｌｉｎｅ` | **15** columns. Matches the chunk's own `新しいカーライン` so the two read as one polity; the source varies the word, English has one. **1 battle + 0 script** |
+| 保護している (of a prince) | `ｈｏｌｄ` | **4** columns. `トリフ王子も、保護している。` → `Ｉ　ｈｏｌｄ　Ｐｒｉｎｃｅ　Ｔｏｒｉｆ　ｔｏｏ．` (**24**). The English keeps the source's custody/protection euphemism. **2 battle (16, 42) + 0 script**; chunk 16 is tier-A blocked |
+| 「勝てば正義」 | `“Ｗｉｎ　ａｎｄ　ｙｏｕ　ａｒｅ　ｒｉｇｈｔ”` | **21 bare** (the PR body's 22 is hand-counted), **24** quoted and with the source's `？`. `「…」` → `“…”` per §12. `Ｔｈｅ　ｗｉｎｎｅｒ　ｉｓ　ｒｉｇｈｔ` (22 quoted) rejected — it loses the conditional 勝てば that sets up the next entry about remaking history. 勝てば and 正義 are each **1 battle + 0 script — a true hapax pair** |
+| 知恵 | `ｗｉｔ` | **3** columns. `知恵さえあればな。` → `Ｓｏ　ｌｏｎｇ　ａｓ　ｏｎｅ　ｈａｓ　ｗｉｔ．` (**23**). Held distinct from 魔道の力 → *the power of magic* (§12.1) |
+| 万歳 | `Ｌｏｎｇ　ｌｉｖｅ　〜` | ⚠️ **NOT a new form, and the PR's `(§6)` citation is wrong — §6 has no 万歳 row.** The precedent is `chunk_009` **L8**, which renders `ディール帝国、万歳！！！` as `Ｌｏｎｇ　ｌｉｖｅ　ｔｈｅ　…` — **the same source word**, so this is a reuse, correctly made and never recorded. `ヘルファー様、万歳！！` → `Ｌｏｎｇ　ｌｉｖｅ　Ｌｏｒｄ　Ｈｅｌｆｅｒ！！` (**23**), ×3 in this chunk, byte-identical. **4 battle (9, 42 ×3) + 0 script** |
+| ごとき | `ｍｅｒｅ` | 4 columns. `野ネズミごときに、` → `Ｆｏｒ　ｍｅｒｅ　ｆｉｅｌｄ　ｍｉｃｅ，` (**20**). ⚠️ **The PR's additions table did not record it**, which is how it came to share a lexeme with `たかが` inside one chunk (§50.3). `ｍｅｒｅ` also renders `たかだか` (`chunk_012`) and `なんか` (`chunk_026` ×2) — three source words, three disjoint chunks, §25.3 met. **1 battle + 0 script** |
+| 何事 | (carried by the clause, no standing row) | `何事だっ！？` → `ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` and `何事かと思えば` → `Ｉ　ｗｏｎｄｅｒｅｄ　ｗｈａｔ　ｉｔ　ｗａｓ．` — **two forms, deliberately**, because the two constructions differ. ⚠️ **Not a member of the 何 family** (§6, §23.2, §28.3, §30.3, §21.2, §32.2) — 何事 is a different word and must not be collapsed onto `Ｗｈａｔ！？`. **2 battle (both this chunk) + 0 script** |
+
+### 50.5 Reuses recorded, not new forms
+
+`Ｈｅｌｆｅｒ` (§11.1) · `Ｌｏｒｄ　Ｈｅｌｆｅｒ` (§1) · `Ｇｕｉｌｆｏｒｄ` / `Ａｎｓｅｌｍｏ` (§1) ·
+`Ｃａｒｌｉｎｅ` / `９ｔｈ　Ａｒｍｙ` (§2) · `Ｇｅｎｅｒａｌ` (§26.2) · **`ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ`
+with its article** (§20.4, §47.5) · `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ` (§38.1 — **referential, so §41.6's
+vocative split is not engaged**) · `ｈｏｍｅｌａｎｄ` (§43.2, whose census already names chunk 42) ·
+`ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` (§47.4, which ratifies this PR's form by name and
+records that it did not move) · `ｙｏｕ　ｒａｔｓ` / `ｔｈｅ　ｒａｔｓ` (§30.1, §31.3) ·
+`ｆｉｅｌｄ　ｍｉｃｅ` (§41.1) · `Ｈｏｗｅｖｅｒ，` (§23.3) · `Ｓｉｒ！` (§6) · `Ｎｏｗ，` (§28.8, §31.3) ·
+`Ｉ　ｓｅｅ．` (§30.3) · `Ｏｈ，` (§24.4) · `Ｗｈａｔ．．．！？` (§28.3 + §5) · `ｔｈｅｙ　ｓａｙ` (§26.6) ·
+`ｆｉｎｅ` (§46.2) · `ｆｉｎｉｓｈ` (§48.2, battle sense) · `ｉｎｔｒｕｄｅ` / `ｉｎｔｒｕｄｉｎｇ`
+(`chunk_010` L2, same 侵入) · `ｓｐｏｒｔ` (`chunk_012` L4, same 余興) · `ｌｏｔ` (§32.2) ·
+`Ｎｏ　ｍｏｒｅ　ｔａｌｋ．` (`chunk_013` L8) · `“…”` for `「」` (§12).
+
+**`なるほど` → `Ｉ　ｓｅｅ．` is correct here and §46.3's forward gap does not reach this chunk** —
+that ruling moves なるほど to `Ｉｎｄｅｅｄ．` only where it shares a **bank** with `そうか`, and
+**chunk 42 contains `そうか` zero times**, recounted at review. §46.3's named forward risk is
+chunk 32, which holds both and is tier-A blocked.
+
+**`つべこべ申さず、` → `Ｎｏ　ｍｏｒｅ　ｔａｌｋ．` (13) is a deliberate reuse, ratified.**
+`chunk_013` **rowcheck-line 8** ships `さあ、つべこべ言わず` → `Ｎｏｗ，　ｎｏ　ｍｏｒｅ　ｔａｌｋ．` — the
+same idiom in a plain rather than humble-archaic verb form. Different source strings, so §3 is not
+engaged, but a fresh word would leave one idiom with two Englishes for nothing.
+**`Ｎｏ　ｍｏｒｅ　ｑｕｉｂｂｌｉｎｇ．` (18) is the reserve** if a later unit needs the split;
+`ｑｕｉｂｂｌ‐` verified free. ⚠️ That pairing must be confirmed **by reading**: chunk_013's line is
+one of the offset lines (§50.7), so a positional harvest mispairs it.
+
+### 50.6 The single §2 departure, ratified
+
+`ですが・・・！？` → **`Ｂｕｔ，　ｓｉｒ．．．！？`** (13). §2 puts politeness in register, not in added
+words, and the project has twice declined an added `Ｓｉｒ` — §38.1's `殿` on the name insert and
+§48.2's dropped `〜さん`. **What licenses it here is that neither of those reasons applies**:
+§38.1's was *"the same sentence names the rank, so an added title would say it twice"*, and
+`ですが・・・！？` names nothing, while bare `Ｂｕｔ．．．！？` (**8**, not the PR's 9) leaves a
+subordinate's protest with no addressee. It also harmonises with §50.2 — the same speaker answers
+`Ｙｅｓ，　ｓｉｒ．．．．` two segments later. Everywhere else in the unit です is carried in register
+with no added word (`私がですか・・・。` → `Ａｍ　Ｉ　ｔｏ　ｄｏ　ｉｔ．．．．`; `きゅ、９軍です。` →
+`Ｔｈ，　ｔｈｅ　９ｔｈ　Ａｒｍｙ．`, with `Ｔｈ，　ｔｈｅ　９ｔｈ　Ａｒｍｙ，　ｓｉｒ．` (22) rejected for
+exactly that reason). **Flagged by the translator rather than applied silently, which is what let
+it be ruled on.**
+
+### 50.7 L11, and what `findings.md` §24.2 actually requires
+
+L11 is one of `FLAGS.md` §L2 / `findings.md` §24's eight lines: **no `{FC50}`/`{FC51}` anywhere and
+16 text rows against a four-row box.** `rowcheck` reports 21. **The overage is inherited** — 16 in
+the pristine source — so CLAUDE.md §6 gate 4 is met, and the in-game question is Blocked 4.
+
+**Verified specifically at review, against a pristine extraction: the source has 16 text entries
+plus a trailing blank, the file has 21 plus a trailing blank, every one of the 16 entries survives
+in order, and NO TWO ENTRIES ARE MERGED** — the one thing §24.2 forbids. The five extra rows are
+splits **inside** single entries, each forced: `本国へ戻られた。` (`ｒｅｔｕｒｎｅｄ　ｔｏ　ｔｈｅ
+ｈｏｍｅｌａｎｄ．` = 25), `新しいカーラインのために、乾杯しようではないか。` (27),
+`反旗を翻そうというのだな？` (25), `「勝てば正義」…知っておるか？` (the quote alone is 24), and
+`歴史など、…できるのだ。` (the source row is 24 JP characters). Precedent for splitting inside such
+a line: `chunk_006` L21 (11 → 12 rows) and `chunk_007` L24 (6 → 8), both shipped.
+
+⚠️ **Independent evidence for §L2's pool reading, from a different chunk than §AE6's, and stronger
+than the PR claimed.** `はっ！` sits in L11 between two of Helfer's taunts, where a subordinate's
+assent makes no narrative sense — yet CLAUDE.md §3 forces `Ｓｉｒ！`, because the form is **7 of 7**
+across the shipped tree: `chunk_002` L14 and L20, `chunk_008` L10, **`chunk_013` L2**, `chunk_022`
+L5, `chunk_031` L2, `pending/chunk_017` L6. The PR counted 6 of 6 and missed `chunk_013` because
+**that line's English is offset by one** — it compresses JP rows 6–9 into EN rows 6–8 and leaves EN
+row 9 blank, so from index 10 on `en[k−1]` answers `jp[k]`. Read with the offset,
+`jp[11] はっ！ → en[10] Ｓｉｒ！` and `jp[12] しかし、 → en[11] Ｈｏｗｅｖｅｒ，`. **Carried to
+`FLAGS.md` §AL for whoever makes the chapter 5/6 in-game visit.**
+
+### 50.8 Recorded, not re-cut — checked at review and not defects
+
+- **Four rows sit at exactly 24 columns and all four are ratified.** 24 is the hard limit and legal;
+  §3.2's ≤ 23 is a preference. Each was named with a measured alternative and each alternative
+  loses something the source has: `ｄｏ　ｓｏｍｅ　ｒａｔ‐ｋｉｌｌｉｎｇ．` (20) drops 少々;
+  `Ｉ’ｍ　ｈｅｒｅ　ｆｏｒ　ｔｈａｔ　ｈｅａｄ！` (23) loses 来た;
+  `Ｐｒｉｎｃｅ　Ｔｏｒｉｆ，　ｔｏｏ，　Ｉ　ｈｏｌｄ．` is 26; `“Ｔｈｅ　ｗｉｎｎｅｒ　ｉｓ　ｒｉｇｈｔ”？` (22)
+  loses the conditional. The file's histogram is otherwise dominated by 22–23.
+- **L2 page 2 goes `TTT.` → `TTTT` and §45.2 rules exactly this** — a source-blank **trailing**
+  segment carrying text, no leading blank, no tag added, moved or deleted (L2's `{FFFE}` count is
+  unchanged). See §AL on the census method.
+- **`野ネズミども。` → `Ｔｈｅｓｅ　ｆｉｅｌｄ　ｍｉｃｅ．` (17) is now byte-identical to `chunk_041`
+  L6's rendering of the DIFFERENT string `この野ネズミが。`** (§49.9 ruled chunk 41's side). Two
+  source strings, one English row, across two files. No gate sees it, §3 binds identical Japanese
+  and is not engaged, and **chunk 42's side is the plural §41.1 actually fixes** — so chunk 42 is
+  the clean one. Recorded so it is not "corrected" later in the wrong direction.
+- **`ｆｉｎｅ` carries both `立派な` (§46.2) and `いい` in the 余興 frame inside this one chunk** —
+  `立派な兵器を` → `ａ　ｆｉｎｅ　ｗｅａｐｏｎ　ｔｏ　ｂｅａｒ，` and `いい余興になるだろう。` →
+  `Ｉｔ　ｗｉｌｌ　ｍａｋｅ　ｆｉｎｅ　ｓｐｏｒｔ`, the second forced by `chunk_012` L4's shipped
+  `Ｔｈｉｓ　ｗｉｌｌ　ｍａｋｅ　ｆｉｎｅ　ｓｐｏｒｔ`. Two correct rules meeting; recorded rather than re-cut.
+- **§32.2's `の奴ら` row glosses `ｌｏｔ` as "a bandit's word where *Carline's men* is an officer's"
+  while this line's speaker is an officer** (`９軍の奴らが・・・・！` → `Ｔｈｅ　９ｔｈ　Ａｒｍｙ’ｓ
+  ｌｏｔ．．．．！`, 23). **The row explicitly does not fix the word — "the word is not fixed; the
+  register is"** — so `ｌｏｔ` stands as one of its three named forms. Recorded so a later unit does
+  not read the row as settled; `ｍｅｎ` (§48.2, chunk 37) is the same length.
+- **`Ｃｕｒｓｅ　ｉｔ．．．！！` (13) was rejected for `くそっ` and that reason has only got stronger** —
+  §47.2 fixes おのれ → `Ｃｕｒｓｅ　ｙｏｕ` and `chunk_041` now ships it twice (§49.4).
+- **The stutter takes the comma form** (`きゅ、` → `Ｔｈ，　ｔｈｅ`), following `chunk_025` L13 and
+  the direction §L3 sets, not `chunk_000` L2's older hyphen. ⚠️ `FLAGS.md` §AG3 records that stutter
+  **capitalisation** is still unfixed and the corpus split 9 : 5; this unit does not settle it.
+- **`ヘルファー様っっ！！` → `Ｌｏｒｄ　Ｈｅｌｆｅｒ！！`** — the doubled `っっ` is carried by Helfer's
+  immediate rebuke, not by a third `！`, which would change the mark count against the source.
+- **`皆で　新しい` carries an internal ideographic space in the source**; it is a mid-row space in a
+  normal sentence, not a menu cursor gutter, and is correctly not reproduced as a leading space.
+  No source row in this chunk starts with `　`.
+
+### 50.9 Register and speakers — read off the channel byte, not the portrait id (§41.2)
+
+| Channel / tag | Who | Register |
+|---|---|---|
+| 0, `{FCB0}{=00040000}` / `{=00070000}` | **Helfer** | §11.6 — grandiose and archaic, **no contraction anywhere**, verified line by line |
+| 1, `{=00030001}` | **Anselmo** | §14.6 / §15.3 — blustering and superior, **no contractions**; deferential です／ます to Helfer |
+| **0**, `{FCB0}{=00030000}` (L7) | **Anselmo again** | ⚠️ **The same portrait id on the other channel** — exactly the trap §41.2 documents |
+| 0, `{=00000000}` | **the player side (Kain)** | §7 casual; **the unit's only contraction is his `Ｉ’ｖｅ`** |
+| 1, `{=00020001}` (L10) | **unidentified, and deliberately not guessed** | `船よ、{FC00}！船で河を下ったわ！！` — addresses the player by name. ⚠️ **The PR's Flag 14 read the sentence-final `わ` as marking a FEMALE speaker; that inference is REFUTED** by §1's corrected `マラナ` row (40-instance census) and by §49.8, which reads chunk 41's `〜わ` as emphatic **male**. **No rendering depends on it** — the English names nobody and is deliberately neutral — but the inference must not be carried forward |

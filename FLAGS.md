@@ -5075,3 +5075,193 @@ with a temporary index (`GIT_INDEX_FILE`) and `commit-tree`, so nothing was chec
 **Everything else in the PR body re-counted at review is exact** — 副官, 番人, 衰弱, 本望, 協力の証,
 口だけは達者, 一歩たりとも (chunk-41 hapaxes, 0 script), ともども vs もろとも, ぬぬ, 無念, 掌握,
 陰謀 / 計画, and every headline figure. That is a good record.
+
+---
+
+## AL. Wave 8 review — battle chunk 42 / PR #31, MERGED (2026-09-10)
+
+Squash `35944da`. **3,627 / 8,192, 4,565 slack**; JP 698, headroom 6,225, ratio 5.46. Three rounds,
+**three findings, none of them visible to gate 6.** Glossary section **§50**.
+
+### AL1. ⚠️ §AG6's MIRROR — measure the rejected alternative, but SEARCH FOR THE INCUMBENT FIRST
+
+The round-3 finding, and the sharpest formulation this wave produced. The unit shipped
+`くそっ・・・！！` → `Ｂｌａｓｔ　ｉｔ．．．！！`, having verified `Ｂｌａｓｔ` free and having correctly
+established that `Ｄａｍｎ　ｉｔ` was **not** free (§39.4 fixes it for `しまった`-after-a-grunt;
+`pending/chunk_005` spends it on `何てこった。`). Every one of those measurements was right.
+
+**What was never asked is what English `くそ` itself already had.** `chunk_012` L11 has shipped
+`クソッ、無念だ・・・。` → `Ｄａｍｎ，　ｈｏｗ　ｂｉｔｔｅｒ．．．．` since wave 3. One word, two kana
+spellings, two English words in two shipped files.
+
+> **In the translator's own words at round 3:** *"I asked whether `Ｄａｍｎ　ｉｔ` was free, found it
+> wasn't, and reached for a new word — without ever asking what English `くそ` itself already had.
+> **I measured the rejected alternative and never looked for the incumbent.**"*
+
+**§AG6 / §AC3 say: measure the option you argue against. This adds: before reaching for a new word,
+search the corpus for the form the SOURCE WORD already carries** — including its other kana
+spelling, which no grep on the exact Japanese will find. Fixed at **glossary §50.1**;
+`Ｂｌａｓｔ` now occurs nowhere in `tl/` or `pending/`.
+
+⚠️ **The error sat one question upstream of everything the unit measured, which is exactly why no
+gate caught it.** Flag 6's reasoning is correct and is *preserved* by the fix.
+
+### AL2. ⚠️ THREE FINDINGS, AND GATE 6 WAS BLIND TO ALL THREE — measured, not asserted
+
+CLAUDE.md §6 gate 6 pairs whole **messages** on exact Japanese. Every finding in this unit was a
+term inside a differently-worded message, so gate 6 passed clean at all three rounds while the
+defects stood. **Demonstrated with a reverse control at each round** (§AK5's method): reverting a
+fix and re-running gate 6 raises **zero** new problems.
+
+| Round | Term | Governing rule | Why gate 6 could not see it |
+|---|---|---|---|
+| 1 | `ははっ・・・・` → `Ｓｉｒ．．．．` | §28.3, which **names `c42 L6`** | `ははっ・・・・` is a unique row string in the corpus |
+| 1 | `たかが` → `Ｍｅｒｅｌｙ` | §19.1's `ｏｎｌｙ` | different messages in chunks 1, 25, 42 |
+| 3 | `くそっ` → `Ｂｌａｓｔ　ｉｔ` | the kana-variant rule | chunk 12's key is `クソッ`, a different string |
+
+This is §48.5 / §AJ1 reproduced three times in one unit. **The key-first gate-7 sweep found the
+first two; only a term census found the third**, because `くそ` has no glossary row at all — a
+glossary-key sweep cannot surface a word the glossary never recorded. **That is a real limit of the
+§AI4 method and it should be written down**: key-first covers everything the glossary knows, and
+nothing it does not.
+
+### AL3. ⚠️ THE PAGE-SHAPE CENSUS IS METHOD-SENSITIVE, AND ALL THE PUBLISHED FIGURES ARE CORRECT
+
+Three censuses of `.TTTT` / `.TTTT.` / `TTTT` were in circulation and disagreed (§45.2's
+182 / 0 / 389; PR #32's reviewer's 325 / 1; the wave-8 coordinator's 126 / 3 / 133). **Re-run over
+all 44 pristine chunks at this review, twice. There is no disagreement about the data — only about
+what counts as a page boundary, and both reproduce exactly:**
+
+```
+METHOD B — pages split on {FCC0}/{FC30}/{FC51}/{FC50}/{FFFF}   (rowcheck.row_problems' own set)
+   TTTT 389   .TTTT 182   TTT. 276   .TTT. 132   TT 262   TTT 115   .TTTT. 0     total 1,874
+METHOD A — pages split on {FCC0} only
+   TTTT 133   .TTTT 126   TTT.  75   .TTT.  68   TT  57   TTT  27   .TTTT. 3     total   916
+```
+
+**Method B reproduces every one of §45.2's seven published figures, `.TTTT.` = 0 included. Method A
+reproduces the coordinator's 126 / 3 / 133 exactly.** §45.2's numbers were never wrong: they are
+stated in the boundary set used by `rowcheck`, which is the tool that actually gates rows, and its
+`.TTTT.` = 0 is **correct as scoped**. `.TTTT.` becomes 3 only under a different definition of
+*page*.
+
+> **Ruled: §45.2 and §AG1 stand unchanged** — the ruling needs `.TTTT` to be common and it is under
+> either method (182 or 126). **No rendering changes anywhere.**
+>
+> ⚠️ **A page-shape figure is meaningless without its boundary set. Every published census must
+> carry its method or it cannot be reproduced, and three agents will derive three answers from the
+> same dump.** Rows: split on `{FFFE}`; a row is *text* if it has non-tag content after stripping;
+> structural lines excluded; wholly empty page fragments dropped.
+
+⚠️ **ONE DESCRIPTION STILL DOES NOT REPRODUCE, and the diagnostic is the TOTAL, not the shapes.**
+`batch_010`'s reviewer states its method as *"pages on `{FCC0}`, rows on `{FFFE}`, blank = no
+non-tag content, `=== CHUNK` headers and `{PAD n}` excluded"* and reports **182 / 0** — but that is
+the answer **my Method B** gives, and my implementation of *that stated method* is Method A, which
+gives 126 / 3. The wave-8 coordinator attributes the spread to "what counts as structural"; **that
+cannot be the cause** — structural lines carry no `{FFFE}` and no text, so excluding them or not
+moves the counts by a handful at most.
+
+**The cause is the page-boundary set, and the way to prove it in one step is to compare TOTAL PAGES
+COUNTED, not the shape rows**: `{FCC0}`-only yields **916** pages over the 44 chunks; the `rowcheck`
+set yields **1,874**. Any two censuses whose totals differ by that factor are not disagreeing about
+shapes at all. **Whoever next quotes a page-shape figure should publish the total alongside it** —
+it pins the method independently of the thing being argued about.
+
+### AL4. ⚠️ A CORRECTION NOTE BAITED A WRONG CORRECTION — mine, and it is the reviewer's error
+
+At round 1 I read `glossary.md` §48.3 as stating **22** columns for the `掌握` row and flagged it;
+it did read 22 then, and PR #30's merge corrected it in place to **21**. **At round 2 I asserted
+that it "still reads 22 in the merged base" without re-reading the file at the moved base.** It
+does not. The cell reads *"both **21** columns"* followed by
+`⚠️ CORRECTED IN PLACE 2026-09-10 (§4.3, PR #30's merge): this cell read 22.`
+
+**§48.3 is correct and is NOT touched.** The transferable part is the trap:
+
+> ⚠️ **A record that documents its own former error still contains the wrong figure.** A
+> carried-forward memory — or a grep — reads the correction note's historical value as the live
+> one. **Corrections written in place must be read in place**, at the head you are actually
+> committing against, and never quoted from a reading of an earlier base.
+
+This is the third §AE5 / §AF3-class wrong correction of wave 8 and the **first baited by a
+correction note rather than by a DATA/FILE offset**. My own round-1 review had told the translator
+to take section numbers by reading at commit time; I did not do it for this one.
+
+### AL5. ⚠️ §AG6 EXTENDS TO THE PR BODY'S OWN PROSE
+
+Round 1 found **five wrong widths in PR #31's body out of 55 stated**, and **all five were in prose
+about rows that are correct as shipped** — `ｂｒｅｔｈｒｅｎ` 9 (is 8), `ｅｘｔｅｒｍｉｎａｔｅ` 13 (11),
+`Ｉｎｓｏｌｅｎｃｅ，` 12 (10), bare `Ｗｉｎ　ａｎｄ　ｙｏｕ　ａｒｅ　ｒｉｇｈｔ` 22 (21), `Ｂｕｔ．．．！？` 9
+(8). Everything **entering the file** was `len()`-measured; the **write-up** was hand-counted.
+
+> **§AG6 has covered rejected alternatives. It must also cover the write-up**, because those
+> figures are what the glossary inherits — a reviewer who copies an additions table copies its
+> arithmetic. Corrected at §50.4.
+
+⚠️ **And the reviewer is not exempt**: I hand-counted `Ｓｏ　ｌｏｎｇ　ａｓ　ｏｎｅ　ｈａｓ　ｗｉｔ．` at 22
+and nearly issued a correction to a figure the PR had **right** at 23 (`Ｃａｒｌｉｎｅ` is seven
+letters, not eight). Caught by measuring before writing.
+
+### AL6. ⚠️ A NUMBERING CONVENTION DECLARED AND THEN NOT APPLIED — 17 citations, all one low
+
+PR #31 declared `rowcheck` numbering (`=== CHUNK` header = line 0) and applied it correctly to its
+own file, but its **corpus** citations were 0-based body indices — **17 of them, every one exactly
+one low**: `chunk_018` L9 (is **L8**), `chunk_025` L13 (**L12**), `chunk_012` L3 (**L4**),
+`chunk_010` L1 (**L2**), `chunk_034` L5 (**L6**), `chunk_013` L7 (**L8**), `chunk_020` L1 (**L2**),
+`chunk_000` L4 (**L3**), `chunk_006` L11 (**L12**), `chunk_033` L19 (**L20**),
+`pending/chunk_043` L1/L29/L34 (**L2/L30/L35**), `chunk_013` L1 (**L2**), and Flag 7's six `はっ！`
+cites. **Root-caused at round 2, not patched**: the scratch helpers printed a 0-based body index and
+the conversion was applied at the citation site rather than at the print site. **The helper now
+converts where it prints.** The `chunk_018` **L8** in the wave-8 dispatch was right and the PR's L9
+was not.
+
+### AL7. Evidence for §L2's pool reading, from a second chunk — `はっ！` is 7 of 7
+
+Carried here for whoever makes the chapter 5/6 in-game visit (**Blocked 4**). Chunk 42 L11 is one of
+§L2's eight lines: **no `{FC50}`/`{FC51}` anywhere, 16 text rows in the source, 21 shipped.**
+
+`はっ！` lands **mid-way through a run of Helfer's taunts**, where a subordinate's assent makes no
+narrative sense — and CLAUDE.md §3 forces `Ｓｉｒ！` there, because the form is **7 of 7** across
+the shipped tree: `chunk_002` L14 and L20, `chunk_008` L10, `chunk_013` L2, `chunk_022` L5,
+`chunk_031` L2, `pending/chunk_017` L6. **No exception anywhere.** L11 also carries the soldiers'
+`ヘルファー様、万歳！！` beside Helfer's own speech. That is a **second, independent** consistency
+argument for pools of independently-selected strings, from a different chunk than §AE6's chunk 30.
+
+⚠️ **The PR counted 6 of 6 and missed `chunk_013`** because that line's English is offset by one —
+it compresses JP rows 6–9 into EN rows 6–8 and leaves EN row 9 blank, so from index 10 on
+`en[k−1]` answers `jp[k]`. **A positional harvest mispairs `はっ！` with `Ｈｏｗｅｖｅｒ，` and
+`しかし、` with the row after it.** Any corpus sweep touching `chunk_013` line 2 must apply that
+offset; it also mispairs `ははっ！` (真 `Ｙｅｓ，　ｓｉｒ！`) and `つべこべ言わず` (真
+`Ｎｏｗ，　ｎｏ　ｍｏｒｅ　ｔａｌｋ．`).
+
+**§24.2's no-merge property was verified specifically**: 16 source entries, all present in order,
+five splits **inside** single entries, **no two entries merged**.
+
+### AL8. Method notes worth keeping
+
+- **No working tree was used for any gate, at any round** (§AK6). Gate 2 by
+  `git merge-tree --write-tree`; every other gate on a `git archive` extraction of the resulting
+  tree; provenance by `cmp` against `git show <head>:<path>` plus a sha256. **My worktree shared
+  branch `review` with another live agent's at `e450094` for the whole review** — the collision
+  §AK6 describes is structural, not a one-off, because worktree branch names are not per-agent.
+- **Gate 6 controls were re-planted at fresh sites with fresh texts at every round** — round 1 hit
+  the second `万歳` cheer and the L11 copies; round 2 the first cheer, the L2 copies and
+  `ヘルファー！`; round 3 the third `万歳` instance and third texts throughout. Coverage is only 4
+  cross-file and 3 internal keys, so **rotating the text and the copy is what keeps the control
+  honest** when the sites are nearly exhausted.
+- ⚠️ **Two of the reviewer's own checkers failed a planted control before the file did.** A
+  substring test over a whole line passed a corruption because the JP key had a spurious second
+  corpus rendering that happened to appear elsewhere in the same line; and a checker harvesting only
+  row-aligned lines missed internal duplicates spanning an aligned and an unaligned line. The fix is
+  to require the expected English as a **whole `{FFFE}`-delimited row** and to carry the unit's own
+  aligned rows forward into its unaligned lines. **§AE7 one level deeper: a control planted inside
+  coverage can expose the checker, not only the file.**
+- **Gate 7 figures, for the record:** round 1 — 2,261 distinct glossary keys, 103 occurring, 2
+  failing; round 3 — **2,329 distinct keys (5,020 occurrences), 109 occurring, all adjudicated,
+  0 failing.** Gate 6 corpus grew from 2,163 to **2,225 distinct segment keys / 2,494 aligned rows**
+  as chunks 037, 038 and 041 shipped. **Coverage each round: 79 segment keys (75 distinct), 4
+  recurring elsewhere, 3 internally; 0 of 25 page keys and 0 of 6 message keys recurring.**
+
+### AL9. Bank pressure — unchanged by this unit
+
+Battle-only; no script file. Tightest banks stand where PR #28 left them: **41 → 353, 40 → 75,
+5 → 1,635, 2 → 3,365.**
