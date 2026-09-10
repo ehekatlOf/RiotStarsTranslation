@@ -28,6 +28,25 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+**c41 round 2 pushed @ `2582852` — 3,035 / 8,192, 5,157 slack, exactly the predicted figure.**
+Both findings applied; `ｇｒａｓｐ` now occurs nowhere in `tl/`. ✅ **It independently confirmed the
+§48.3 column error by `len()` — 21, not 22** — after reading the row on the integration branch
+rather than trusting my message.
+⚠️ **ITS DIAGNOSIS OF THE §AI FAILURE MODE IS SHARPER THAN §AI1'S OWN WORDING AND SHOULD GO IN:**
+*"I tested the plural only in the orderings I had already discarded, never in the one I had
+chosen."* Round 1's arithmetic all reproduced (68 / 32 / 101 > 92) and **none of it licensed the
+conclusion** — the counterexample was **its own shipped sentence plus one letter**. That is the
+precise shape of both false impossibilities this wave: the rejected option is measured only in the
+orderings already rejected for other reasons.
+✅ **§AI1 THEN APPLIED PROSPECTIVELY, WHICH IS THE POINT OF THE RULE:** for the `帝国兵` step-5 drop
+it enumerated **28** wordings keeping 兵 explicit (4 heads × 7 tails), greedily packed — **0 of 28
+fit four rows at ≤23, and 0 of 28 fit even at the 24-column hard limit.** The drop is **forced**,
+now demonstrably rather than assertedly.
+✅ **Gate 6 re-run against the MERGED corpus** (chunks 37/38 read out of the integration branch,
+since this branch's base predates their merge), positive control re-run: **0 divergences.** Three
+cross-unit terms had **converged before either PR saw the other** — `刃を向ける`, `おのれ`, `決着` —
+and the stolen-item box is byte-identical to merged `chunk_038` L22. Only `掌握` had to move.
+
 ### Review 3 of 5 — PR #30 (chunk 41): **CHANGES**, round 1. Rework sent.
 Every headline figure in the PR re-derived from scratch and **exact**; the `.TTTT` census reproduces;
 the stolen-item box is byte-identical to shipped `chunk_038` and `決着` → `ｓｅｔｔｌｅ` is at L8 —
@@ -95,7 +114,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
-| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | 3,033 → **3,035 / 8,192** expected | **PR #30 — CHANGES r1**, rework sent |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (r2 @ `2582852`) | **PR #30 — rework PUSHED**, awaiting re-review (SAME reviewer) |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
