@@ -129,17 +129,24 @@ three remaining branches present on origin. The dead reviewer's worktree was pru
 know whether it merged is to check the PR state and the branch log, never the agent's status.
 
 ## Last updated
-2026-09-09 · by: **PR #29's reviewer** (integration commit; chunk 37 MERGED at round 3, squash
-`5659d03`, glossary **§48**, FLAGS **§AJ**) · previously: **PR #33's reviewer** (chunk 38 MERGED,
-squash `7bd8e76`, glossary §47, FLAGS §AI) ·
-wave: **8 — 2 of 5 merged, 3 units still open (#30, #31, #32)** · queue: **script batch computed
+2026-09-10 · by: **PR #30's reviewer** (integration commit; chunk 41 MERGED at round 2, squash
+`3721e4d`, glossary **§49**, FLAGS **§AK**) · previously: **PR #29's reviewer** (chunk 37 MERGED at
+round 3, squash `5659d03`, glossary §48, FLAGS §AJ) ·
+wave: **8 — 3 of 5 merged, 2 units still open (#31, #32)** · queue: **script batch computed
 fresh this wave, by line list, not by a `queue.py` position**
+
+⚠️ **A REVIEW WORKTREE WAS REWRITTEN UNDER A LIVE REVIEWER between PR #30's two rounds** — branch
+`review` was tracking `origin/tl/battle-042` with PR #31's staged state when PR #30's reviewer
+returned to it. A plain `git checkout` would have gated the wrong tree. **Reviewers: verify the
+merge with `git merge-tree --write-tree` and run the gates on a `git archive` extraction of the
+resulting tree; build the integration commit with a temporary index and `commit-tree`.** No working
+tree is needed for any gate. `FLAGS.md` §AK6.
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **30** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40 |
-| Battle JP characters | **26,472** | 43,161 | **61.3%** (was 56.5% at wave-8 start) |
+| Battle chunks | **31** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33, 34, 35, **37**, **38**, 40, **41** |
+| Battle JP characters | **27,065** | 43,161 | **62.7%** (was 56.5% at wave-8 start) |
 | Script unique lines | **408** | 1,430 | `tl/script/batch_001–009.tsv` |
 | Script message instances | **4,259** | 7,931 | **53.7%** |
 
@@ -156,7 +163,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
-| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (r2 @ `2582852`) | **PR #30 — rework PUSHED**, awaiting re-review (SAME reviewer) |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,635 / 8,192 — 4,557 slack** (r2 @ `3e0ee7f`) | **PR #31 — rework PUSHED**, awaiting re-review (SAME reviewer) |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 

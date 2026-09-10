@@ -4920,3 +4920,158 @@ this unit's translator** alongside `r029_dupes.py` and `r029_plant.py` written b
 directory, all in the same wave.** Namespacing is what kept them apart, and it held only because
 every agent happened to observe it. Blocked 6 asks for `SKILL.md` §3 to bind **every** role rather
 than translators alone; this is a second, independent instance of the condition that motivates it.
+
+---
+
+## AK. Wave 8 review — battle chunk 41 / PR #30, MERGED (2026-09-10)
+
+Squash `3721e4d`. Merged at **round 2**; round 1 was CHANGES on **two gate-7 failures**, both fixed
+verbatim. **3,035 / 8,192, slack 5,157.** Glossary section **§49**. Numbering in this entry:
+`rowcheck` lines (the `=== CHUNK 41` header is line 0).
+
+### AK1. ⚠️ LIVE — `陰謀` and `計画` both render `ｐｌｏｔ`, and they SHARE script bank 41
+
+**Raised by the PR (its Flag 8) and confirmed exactly at review**, counted over both dumps:
+
+```
+陰謀  battle [41 x2]  script banks {28: 1, 30: 1, 41: 2}
+計画  battle [24 x1]  script banks {5: 2, 41: 7}
+SHARED BANKS: [41]        script lines holding BOTH: 0
+```
+
+§41.1's clearance — *"no shared chunk, no shared bank, no message holds two"* — was run on
+**企み vs 計画** and is correct for that pair. It was **never run on 陰謀 vs 計画**, and for that pair
+§25.3's stated test **fails on bank 41**. Both renderings are already shipped (`batch_005` L36 and
+`chunk_024`), so nothing in chunk 41 could have been the fix, and **no line changes**.
+
+⚠️ **`ｐｌｏｔ` now renders FIVE source words** — 計画 (`chunk_024`), 企み (`chunk_025`), 企てる
+(`chunk_037` L18 and `batch_007` L50), 陰謀 (`batch_005` L36 and `chunk_041` ×2). **A future script
+batch touching bank 41 has to fork one of them.** Bank 41 has **353 bytes free**, the tightest in the
+project, so the fork must be measured before it is chosen. Recorded LIVE, on the §32.5 / §34.2 /
+§34.5 / §42.4 / §45.6 pattern.
+
+### AK2. ⚠️ The SECOND false impossibility of wave 8, and the sharpest statement of its shape yet
+
+§AI records that a greedy row count is a proven minimum **only for the ordering it was given**.
+Chunk 41's round 1 is the second instance in one wave, after chunk 38's `反旗` (§47.4), and the
+translator's own round-2 diagnosis states the mechanism better than §AI1's wording does:
+
+> **"I tested the plural only in the orderings I had already discarded, never in the one I had
+> chosen."**
+
+Round 1 argued that §30.1's fixed plural `ｒａｔｓ` could not fit L1 page 3, and **every figure it
+gave reproduces**: the rejected literal is **68** columns, the fixed `Ａｌｌ　ｕｎｉｔｓ，　ｔａｋｅ
+ｂａｔｔｌｅ　ｓｔａｔｉｏｎｓ！` is **32**, the page is `.TTTT` with an unfillable leading blank, and
+32 + 1 + 68 = **101 > 92** — still over at the 96 hard wall. **None of it licensed the conclusion.**
+Eleven orderings were measured at review, at 23 and at 24; **four fit**, and the cheapest is the
+unit's own shipped sentence with one letter added (22 / 22 / **23** / 21 = 88 of 92, breaks
+untouched, +2 bytes).
+
+**Both of this wave's false impossibilities have the identical shape:**
+
+| | claimed impossible | the counterexample |
+|---|---|---|
+| chunk 38 (§47.4) | `反旗を翻す` in four rows | the same wording with `ｂａｎｎｅｒ　ｏｆ` moved one row down |
+| chunk 41 (§AK2) | `ネズミども` plural in four rows | **its own shipped sentence plus one letter** |
+
+> **The rule, restated so it is actionable rather than cautionary: when you reject an option as
+> impossible, the LAST ordering you must test is the one you actually chose, minimally edited to
+> carry the rejected element.** That is the ordering a greedy search never reaches, because it was
+> never a candidate — it was the answer.
+
+⚠️ **And a corollary found at this review, on the `帝国兵` drop of the same unit (§49.7): a total-column
+bound does NOT rescue you either.** The shortest wordings keeping 兵 + 力 + も measure **89–92
+columns, under the 92 budget**, yet **all ten need five rows** once packed. Totals are necessary,
+never sufficient; greedy wrapping wastes columns at row ends. **Pack the candidate, do not total it.**
+
+### AK3. `決着をつけてやる` — the SCRIPT half, which no glossary row carries
+
+The coordinator's mid-task note to chunk 41 named three battle instances. **Measured over both dumps
+with tags stripped, and confirmed independently at this review: 4 battle + 2 script.**
+
+```
+battle : chunk_030 x2, chunk_037 x1, chunk_041 x1
+script : bank 41 x2  —  script_unique 1383 and 1385
+                        『事と次第によっては、この場で決着をつけなけりゃならんが。』
+```
+
+All four battle instances are now rendered and all four share `ｓｅｔｔｌｅ` (§43's row). **The two
+script lines are untranslated, sit in bank 41 — 353 bytes free — and `HANDOFF.md` has unique
+1355–1387 as currently unshippable**, but whoever eventually cuts them owes `ｓｅｔｔｌｅ` too, and no
+glossary row states it. Recorded here so it is not re-invented.
+
+⚠️ **A naive grep for `決着をつけて` over the raw dump returns chunks 37 and 41 only and misses
+`chunk_030`, which writes it `決着を{FFFE}つけて`.** Strip tags before matching. Same tag-split trap
+as §33.1's `トレジャー|ハンター`.
+
+### AK4. `野郎` has four collocation-selected renderings and no glossary row
+
+Recorded as a drift risk, not a defect — **nothing is re-cut and §25.3 is met** (chunks 7, 37, 41 and
+43 are disjoint; the script side is banks 20, 23, 28).
+
+| Where | Japanese | English |
+|---|---|---|
+| `chunk_007` L13 | `下衆な野郎は、許さねえ。` | `ｌｏｗ　ｓｗｉｎｅ` (as a unit) |
+| `chunk_037` L15 | `野郎、俺がちょっと` | `Ｔｈｅ　ｗｒｅｔｃｈ，` (bare vocative) |
+| **`chunk_041` L8** | `口だけは達者な野郎だぜ。` | **no noun at all** — `ｔｈａｔ　ｏｎｅ’ｓ　ａｌｌ　ｔａｌｋ．` |
+| parked `chunk_043` L6 | `卑劣な野郎だ・・・。` | `ｃｕｒ` |
+
+Chunk 41 spends **no new noun**, putting the contempt in the demonstrative (§31.2 / §41.1), so it
+**cannot collide by construction** — which is why it is the one instance that needs no defence. The
+§32.2 `〜の奴` shape: the word is not fixed, the register is.
+
+### AK5. A gate-6 artifact that reads as a divergence and is not — proved with a REVERSE control
+
+`助かりました！！` is reported divergent at SEGMENT level between `chunk_013` and `chunk_041`, and the
+PR's own gate-6 output presented it as the `ｍｅ` / `ｕｓ` divergence it was arguing about. **It is
+not.** Setting `ｍｅ` → `ｕｓ` at review does **not** clear the report:
+
+```
+c013 L04  JP |助かりました！！|   EN |Ｙｏｕ　ｓａｖｅｄ　ｕｓ！！|
+c041 L09  JP |助かりました！！|   EN |Ｙｏｕ　ｓａｖｅｄ　ｍｅ！！　Ｉ　ａｍ　ａ|
+```
+
+c041's slot carries the **following clause** because the English re-flowed across the break, so its
+segment text can never equal c013's whatever the object is. The §33.8 / §34.9 / §31.4 trap family in
+a new place. **A positional row checker cannot be read as evidence about a word choice unless the
+two slots hold the same clause** — check that first. The ruling stands on the message level
+(§49.5), where gate 6 reports **0 divergences**.
+
+⚠️ **A second control lesson from the same unit, and it is about controls rather than about this
+row.** The PR's own gate-6 control was planted at sites its checker did not cover — the corrupted
+strings recur nowhere else, so nothing was ever compared and the control proved nothing while
+appearing to pass. **§AE7 says a control is only evidence for the file and run it was planted in;
+this adds: it is only evidence for the SITES the checker actually covers.** State the coverage set
+first, then plant inside it. Chunk 41's is small and worth quoting as the shape of the thing: of
+**7 message / 20 page / 68 segment** keys, only **1 / 1 / 4** recur in another translated chunk.
+
+### AK6. ⚠️ OPERATIONAL — a review worktree was rewritten between rounds, under a live reviewer
+
+Recorded because it could have corrupted a merge silently and nothing in the board warns of it.
+Between chunk 41's round 1 and round 2 the worktree assigned to that reviewer was rewritten: branch
+`review` had been reset to track **`origin/tl/battle-042`** at a different merge commit, with staged
+changes adding chunk 41 and deleting chunk 42 — **PR #31's review state**, in PR #30's reviewer's
+worktree. A reviewer that had run `git checkout` and proceeded would have gated the wrong tree.
+
+**What it did instead, and what should generalise:** gate 2 was verified with
+`git merge-tree --write-tree` (a pure object operation that touches no working tree), and **every
+other gate was run against an isolated checkout extracted from that exact merged tree** with
+`git archive`. The contaminated worktree was left untouched. The integration commit was then built
+with a temporary index (`GIT_INDEX_FILE`) and `commit-tree`, so nothing was checked out at all.
+
+> **A reviewer's gates do not need a working tree. When one is unsafe, `merge-tree` + `archive` give
+> a provably correct one, and `commit-tree` writes the integration commit without a checkout.**
+
+### AK7. Figures corrected at this review — none touches a line of any file
+
+| # | Claim | Measured |
+|---|---|---|
+| 1 | glossary §48.3: `ｇｒａｓｐ` / `ｓｅｉｚｅ` rows "both **22** columns" | **21.** Measured with `len()` three times — reviewer at round 1, translator independently at round 2, and again at merge. **Corrected in place at §48.3** |
+| 2 | PR body: "English budget ~3,875 chars; **spent ~1,000**" | **1,293** readable EN characters, **33.4 %** of the budget, growth 2.1804× |
+| 3 | PR body: `Ｙｏｕ　ｓａｖｅｄ　ｍｅ！！` is "the first singular referent in the corpus" | **Not first** — `chunk_012` ships `助かったぜ、あんちゃん！` → `Ｙｏｕ　ｓａｖｅｄ　ｍｅ，　ｌａｄ！` (§23.4). The correction **favours** the shipped form |
+| 4 | PR body: `よくぞ` → "**First rendering anywhere**" | True of よくぞ, **false of the English string**: merged `chunk_037` L15 ships `Ｓｏ　ｙｏｕ　ｈａｖｅ` for `やっと`. Disjoint chunks, §25.3 met. A freeness claim that was not measured (§AC3) |
+| 5 | PR body: `ｔｏｋｅｎ` / `ｋｉｌｌｅｒｓ` treated as free | Neither is — `batch_006` unique 631 and `batch_003` respectively. Both survive §25.3; recorded so they cannot drift |
+
+**Everything else in the PR body re-counted at review is exact** — 副官, 番人, 衰弱, 本望, 協力の証,
+口だけは達者, 一歩たりとも (chunk-41 hapaxes, 0 script), ともども vs もろとも, ぬぬ, 無念, 掌握,
+陰謀 / 計画, and every headline figure. That is a good record.
