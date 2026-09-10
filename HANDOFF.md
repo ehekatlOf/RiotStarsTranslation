@@ -28,6 +28,33 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+### Review round 2 — PR #31: **CHANGES**, ALL GATES NOW PASS, one reading finding. Round 3 sent (max).
+`くそっ・・・！！` ships `Ｂｌａｓｔ　ｉｔ` where `chunk_012` already ships `Ｄａｍｎ` for the same
+interjection — くそ/クソ is **3 instances in the whole battle dump**, and the house rule collapses
+kana variants onto one form **8 times without exception**, most recently **§49.4's ぬぬっ/ぬぬッ,
+written one PR ago in the base this PR rebased onto** — which removes the §25.3 escape. Forward risk
+is concrete: **`chunk_016` holds both `クソッ` and `しまった`** and is untranslated. Fix
+`Ｄａｍｎ．．．！！`, 13 → 9 columns, **−8 bytes → 3,627 / 8,192**.
+✅ **THE REVIEWER STATED A REVERSE CONTROL THAT CUTS AGAINST ITS OWN FINDING (§AK5):** swapping the
+row to `Ｄａｍｎ．．．！！` raises 0 new gate-6 problems, and swapping it to **nonsense also raises 0** —
+so gate 6 never sees this line in either direction and **is not evidence**. The census carries it.
+✅ **AND IT DEMONSTRATED §AJ1 RATHER THAN ASSERTING IT:** negative control N2 **reverts this round's
+own fix and gate 6 stays silent**, because `ははっ・・・・` is a unique row string — so gate 6 was
+**structurally incapable** of catching the round-1 defect.
+✅ **It gated the RIGHT tree without ever checking one out**, per §AK6: `merge-tree --write-tree` →
+tree `66d82b1`, all gates on a `git archive` extraction, provenance proved by `cmp` + sha256 against
+`git show 3e0ee7f:…`. Its worktree was left byte-for-byte as found. **Gate 7: 2,329 keys / 109
+occur / 109 adjudicated** (up from 2,261/103 — §49 is the new material).
+
+⚠️ **A CORRECTION FROM THIS REVIEW IS ITSELF WRONG — I VERIFIED AND IT IS NOT ENTERING THE RECORD.**
+It reported `glossary.md` §48.3 "still reads 22 columns" for the `掌握` row and that §49.4's claim to
+have corrected it was false. **§48.3 reads: *"both **21** columns; both words are 5"*, followed by
+`⚠️ CORRECTED IN PLACE 2026-09-10 (§4.3, PR #30's merge): this cell read 22.`** The reviewer read the
+**correction note's historical value as the live figure**. My own `len()` gives **21**. ⚠️ **This is
+the §AE5 / §AF3 trap for the THIRD time this wave** — and the first time the bait was a *correction
+note* rather than a numbering convention. **A record that documents its own former error is easy to
+misread as still containing it.**
+
 ✅ **PR #30 (chunk 41) MERGED at round 2** — squash `3721e4d`, integration `d513ebb`, `check` green
 re-verified from a fresh extraction. **Battle 31/44, 27,065/43,161 JP (62.7%).** Glossary **§49**,
 FLAGS **§AK**. Gate 7 key-first: **1,748 keys, 57 occur, all 57 adjudicated**, fresh controls both
@@ -194,7 +221,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,635 / 8,192 — 4,557 slack** (r2 @ `3e0ee7f`) | **PR #31 — rework PUSHED**, awaiting re-review (SAME reviewer) |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | 3,635 → **3,627 / 8,192** expected | **PR #31 — CHANGES r2**, round 3 sent (max 3) |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
