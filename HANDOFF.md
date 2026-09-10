@@ -69,20 +69,37 @@ most-warned-about risk in the unit, and it is right. ✅ `石版` + `ビース�
 ✅ It gated the right tree with **no working tree at all** (§AK6 method), provenance proved by `cmp`
 + sha256 + blob id.
 
-⚠️⚠️ **A FOUNDATIONAL CENSUS IS METHOD-SENSITIVE AND ALL THREE COUNTS DISAGREE — INCLUDING MINE.**
-The `.TTTT` census underpins glossary §45.2 / FLAGS §AG1 and has been quoted all wave:
-| source | `.TTTT` | `.TTTT.` | `TTTT` |
-|---|---|---|---|
-| wave-7 census, quoted by PR #32 | 182 | **0** | 389 |
-| PR #32's reviewer | 325 | **1** | — |
-| **me, just now** | **126** | **3** | **133** |
-My method, stated because none of the three did: pages split on `{FCC0}`, rows on `{FFFE}`,
-structural lines excluded, a row is blank if it has no non-tag content.
-⚠️ **`.TTTT.` IS NOT ZERO** — two of three counts find it attested. **But the RULING SURVIVES**: it
-needs `.TTTT` to be *common*, which all three agree on (126 / 182 / 325), and never actually needed
-`.TTTT.` to be exactly 0. **No rendering anywhere changes.** ⚠️ **The lesson is the disagreement
-itself: a census quoted as a bare number across five waves, with no method attached, cannot be
-reproduced — and "never attested" is the most dangerous form to quote it in.**
+✅ **PR #31 (chunk 42) MERGED at round 3** — squash `35944da`, integration `48a03e5`. **Battle
+32/44, 27,763/43,161 JP (64.3%).** Glossary **§50**, FLAGS **§AL**. Gate 7: **2,329 keys, 109 occur,
+all 109 adjudicated, 0 failing.** All three findings verified fixed **in the corpus**: `Ｓｉｒ．．．．`
+is back to `chunk_009` alone, `Ｍｅｒｅ` to `chunk_041` only, and **`Ｂｌａｓｔ` occurs nowhere in the
+corpus**. **Five of the PR's widths were hand-counted and wrong; every §50 width was re-measured by
+`len()`.**
+⚠️ **THE REVIEWER RETRACTED ITS OWN §48.3 CLAIM IN ITS OWN WORDS:** *"I read 22 correctly at round 1
+and then asserted at round 2 that it still read 22 **without re-reading at the moved base**."*
+Recorded at §AL4. **The trap is not misreading — it is re-asserting a reading after the base moved.**
+⚠️ **AND IT NAMED THE LIMIT OF THE METHOD THIS WAVE HAS BEEN PROMOTING (§AL):** the glossary-key-first
+sweep **cannot surface a word the glossary never recorded** — which is exactly how `くそ` survived
+two rounds of it. **5-for-5 does not mean complete.**
+✅ **It handled the branch moving under it mid-integration correctly:** its first commit was rejected,
+so it **re-exported all three files from the new head and re-applied its patch onto the newer
+content**, verifying only its own four HANDOFF anchors moved. **No force-push. My batch_010 block and
+script-010 row are intact** — confirmed.
+
+✅ **CENSUS DISPUTE RESOLVED — §45.2 WAS RIGHT ALL ALONG, AND THE WRONG COUNT WAS MINE.**
+I recorded here that "`.TTTT.` is NOT zero" on a `{FCC0}`-only page split. **That was measuring a
+coarser page than the rule means.** PR #31's reviewer identified the cause and I verified it:
+splitting on **`rowcheck`'s actual page-boundary set — `{FCC0}|{FC30}|{FC51}|{FC50}|{FFFF}`** —
+reproduces **all five** of §45.2's figures **exactly**:
+| split | pages | `.TTTT` | `.TTTT.` | `TTTT` | `TTT` | `TT` |
+|---|---|---|---|---|---|---|
+| `{FCC0}` only (my error) | 1,376 | 126 | **3** | 133 | 27 | 57 |
+| **`rowcheck` set (canonical)** | 4,320 | **182** | **0** | **389** | **115** | **262** |
+**`.TTTT.` IS zero. §45.2 / §AG1 stand unqualified, and my "not zero" line was wrong** — struck
+here. ⚠️ **This is the wave's FOURTH wrong correction, and the first that was MINE.** The lesson is
+not "the census was unreliable" but the opposite: **a shape census is meaningless without its
+page-boundary set, and `rowcheck`'s is the one the rules are written against.** State the splitter,
+not just the number.
 
 **c42 round 3 pushed @ `1a44e25` — 3,627 / 8,192, 4,565 slack, exactly the reviewed prediction**,
 rebased onto `6c29e51` so the base includes merged `chunk_041`. Census reproduced exactly (it also
