@@ -28,6 +28,35 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+### Review 3 of 5 — PR #30 (chunk 41): **CHANGES**, round 1. Rework sent.
+Every headline figure in the PR re-derived from scratch and **exact**; the `.TTTT` census reproduces;
+the stolen-item box is byte-identical to shipped `chunk_038` and `決着` → `ｓｅｔｔｌｅ` is at L8 —
+**dispatch obligations 2 and 3 satisfied, obligation 1 not.** Two one-word findings; post-fix
+**3,035 / 8,192, slack 5,157**.
+✅ **GATE 7 KEY-FIRST, CONTROLLED BOTH DIRECTIONS: 1,748 keys enumerated (1,045 unique), 57 occur in
+chunk 41's source, all 57 adjudicated by reading — 55 conform, 2 FAIL.** Planted a key that IS
+present (reported) and one that is NOT (not reported). **The method is now three-for-three at
+finding what other checks miss.**
+✅ **Gate 6 coverage stated as evidence** — of 7 message / 20 page / 68 segment keys, only 1 / 1 / 4
+recur elsewhere. ⚠️ **The PR's own gate-6 control had been planted at sites the checker does not
+cover**; re-planted inside the coverage set, all three corruptions are caught. That is the §AE7
+positive-control rule biting one level deeper: *a control planted outside the checker's coverage
+proves nothing.*
+⚠️ **FINDING 2 IS §AI TURNED ON THE UNIT THAT HELPED ESTABLISH IT.** `ネズミども` shipped the singular
+`ｒａｔ` against §30.1's fixed plural. The PR's Flag 5 measured the plural at five rows and was right
+**for the one ordering it tested** (68 / 32 / 101 > 92 all reproduce) — but **eleven orderings were
+measured and four fit**, including the shipped sentence plus one letter, 88 of 92, every row ≤ 23.
+**Second false impossibility this wave, same cause.** ⚠️ **Chunk 42 (PR #31) carries `ネズミども` ×3
+and inherits this.**
+⚠️ **A §48.3 CELL IS WRONG AND MUST BE CORRECTED AT INTEGRATION:** it states 22 columns for the
+`掌握` row; **both forms measure 21.**
+**Rulings issued so they are not re-litigated:** Flag 2 `Ｙｏｕ　ｓａｖｅｄ　ｍｅ！！` **stands**
+(`chunk_012` already ships a singular referent, so the PR understated its own case); Flag 3
+`乗り込む` **not fixed** — `Ｗｅ’ｒｅ　ｇｏｉｎｇ　ｉｎ！！` stands; Flag 8 **confirmed exactly** (陰謀
+banks 28/30/41, 計画 banks 5/41, shared 41, 0 lines hold both) → `FLAGS.md`; Flag 18's corrections
+confirmed. One candidate finding was **raised and WITHDRAWN on the evidence** (`この野ネズミが。` →
+`Ｔｈｅｓｅ　ｆｉｅｌｄ　ｍｉｃｅ．` stands; §36.3 is scoped to `〜め`).
+
 ## ⏸️ WEEKLY RATE-LIMIT OUTAGE 2026-09-09 16:3xZ → 2026-09-10 18:00Z — RESOLVED, NOTHING LOST
 Reviewer 3 (PR #30) was killed mid-review by the account's **weekly** limit (HTTP 429, reset
 2026-09-10 18:00Z). **This is NOT one of CLAUDE.md §8's four stop conditions** — it is not "cannot
@@ -66,7 +95,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 |---|---|---|---|---|
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
-| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,033 / 8,192 — 5,159 slack** | **PR #30 — review 3 RESTARTED after outage** |
+| battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | 3,033 → **3,035 / 8,192** expected | **PR #30 — CHANGES r1**, rework sent |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
