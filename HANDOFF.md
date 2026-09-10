@@ -84,11 +84,14 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 ## In flight
 | Unit | Branch | PR | Round | State |
 |---|---|---|---|---|
-| `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` | — | 1 | dispatched 2026-09-10 |
+| `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` @ `855686e` | **[#34](https://github.com/ehekatlOf/RiotStarsTranslation/pull/34)** | 1 | ✅ **PR OPEN**, mergeable_state clean, 1 file / 1 commit. 60/60 lines, 0 parked. Gate 7 run glossary-side: **2,213 keys enumerated, 87 occurring, each adjudicated by reading**; controls fired both ways. Growth +2,464 B over banks 14–18, none under 10,333 free. ⚠️ **Reviewer: read Flags 1, 2, 3 FIRST** — (1) it rendered `いらっしゃいませ！！` → `Ｗｅｌｃｏｍｅ！！`, **knowingly against my dispatch table**, citing §34.1 + §34.5's reserve being scoped to a bank-26 `ようこそ` collision that its census puts in banks [4, 26] only — **my table row came from positional clause alignment and is exactly the artifact I warned it to verify; adjudicate independently, do not rubber-stamp either side**; (2) it declined §9's `Ｍｅｍｂｅｒ　Ｃａｒｄ` seed for the shipped `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ`, evidence being that D310 lands in **bank 15, its own bank**, so §25.3's co-occurrence test fails there; (3) `で、` → `Ｓｏ，` is **collision-forced, not width-forced** — a real §42.1 scope gap |
 | `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` | — | 1 | dispatched 2026-09-10 |
 | `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` | — | 1 | dispatched 2026-09-10 |
 
-**Barrier: none of the three may be reviewed until all three have an open PR** (CLAUDE.md §4a).
+**Barrier: 1 of 3 PRs open — NOTHING MAY BE REVIEWED YET** (CLAUDE.md §4a). `batch_012` and
+`batch_013` were confirmed **still running** by `ListAgents` at 2026-09-10 22:0x — a slow translator
+is not a failed one, so **wait; do not re-dispatch over a live agent.** Review order when the
+barrier closes: 011 → 012 → 013, one reviewer at a time, `run_in_background: false`.
 
 ## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
 **Seed the glossary BEFORE dispatching.** Sections end at **glossary §51** (wave 9's seeds went into
