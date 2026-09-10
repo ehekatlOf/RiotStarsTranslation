@@ -28,6 +28,36 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+✅ **PR #30 (chunk 41) MERGED at round 2** — squash `3721e4d`, integration `d513ebb`, `check` green
+re-verified from a fresh extraction. **Battle 31/44, 27,065/43,161 JP (62.7%).** Glossary **§49**,
+FLAGS **§AK**. Gate 7 key-first: **1,748 keys, 57 occur, all 57 adjudicated**, fresh controls both
+ways. §48.3 **corrected in place, 22 → 21**; the `掌握` cross-unit half **struck** but the row
+**stays live for script FILE 870**.
+
+⚠️⚠️ **WORKTREE HAZARD — CONFIRMED BY ME, AND IT BINDS EVERY REMAINING DISPATCH (`FLAGS.md` §AK6).**
+Reviewer 3 found its assigned worktree had been **rewritten between its two rounds**: branch
+`review` was tracking `origin/tl/battle-042` at a merge commit carrying **PR #31's staged state**
+(chunk 41 added, chunk 42 deleted). **A plain `git checkout` would have gated the wrong tree.**
+I verified the underlying cause directly: **TWO worktrees share the branch name `review` at the same
+commit `e450094`** — `agent-a0f0d6ffa71746d2e` (reviewer 4 / PR #31) and `agent-aa8fa7e82f7848031`
+(reviewer 3 / PR #30). The names are not per-agent, so they collide.
+✅ **The workaround that WORKED and should now be standard: NO GATE NEEDS A WORKING TREE.** Reviewer
+3 ran gate 2 through `git merge-tree --write-tree` (clean, tree `cee3aa5`), every other gate on a
+`git archive` extraction of that tree, and built its integration commit with a temporary index and
+`commit-tree` — **nothing was ever checked out**, and it left the worktree byte-for-byte as found.
+
+⚠️ **AN ORDER-INDEPENDENT PROOF BEAT ENUMERATION — the right answer to this wave's recurring trap.**
+Rather than enumerate more orderings of the `帝国兵` drop, reviewer 3 proved it by **packing**: the
+shortest wordings keeping 兵 + 力 + も are **89–92 columns against a 92 budget**, so **no total
+settles it** — but packed, **all ten need five rows at ≤23**. At the 24 hard limit exactly one packs
+and is **inadmissible** (it drops `つもり`, so Helfer no longer *intends* anything — the whole
+content of the warder's warning). **Corollary now recorded: a total never rescues a packing claim.**
+⚠️ **AND A REVERSE CONTROL DISSOLVED A SUPPOSED FINDING:** on `助かりました`, setting `ｍｅ` → `ｕｓ`
+does **not** clear the gate-6 line — c041's slot carries `Ｉ　ａｍ　ａ` from the following clause
+because the English re-flowed, so its segment text can never equal c013's **whatever the object is**.
+That line **was never evidence about me/us in either direction**, though the PR's own gate-6 output
+framed it as if it were (§AK5).
+
 **c42 round 2 pushed @ `3e0ee7f` — 3,635 / 8,192, 4,557 slack, exactly the predicted figure**, and
 **rebased onto `a6667ef`** so the diff is against the branch after chunk 037 merged. Both findings
 verified **at source** before applying, not taken from the message. Its own account of finding 1:
