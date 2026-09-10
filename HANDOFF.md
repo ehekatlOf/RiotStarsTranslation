@@ -12,24 +12,20 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> **WAVE 8 IS CLOSED — 5 of 5 merged, 0 parked, `check` green. Battle 32/44 (64.3%), script 57.4%.**
-> The next act is to **OPEN WAVE 9'S SESSION**, which wave 8's coordinator does in the same turn.
+> ✅ **WAVE 8 IS CLOSED — 5 of 5 merged, 0 parked, `check` green. Battle 32/44 (64.3%), script 57.4%.**
+> ✅ **WAVE 9'S SESSION IS OPEN: `session_01DFhp3iVua6qbKN4QhBJvPP`** ("Riot Stars — wave 9"),
+> created 2026-09-10 20:46Z from `claude/workflow-translation-iterate-uzlkns` @ `a7d6264`.
+> **The chain is intact. Wave 8's coordinator is done.**
 >
-> ```
-> create_session(                                   # mcp__Claude_Code_Remote__create_session
->   title:           "Riot Stars — wave 9",
->   tags:            ["riotstars-translation", "wave-9"],
->   source_url:      "https://github.com/ehekatlOf/RiotStarsTranslation",   # BOTH required
->   source_revision: "claude/workflow-translation-iterate-uzlkns",
->   prompt:          <the wave-9 seed, per SKILL.md §6a>
-> )
-> ```
-> Omit `environment_id` and `model` so both inherit.
+> **If you are wave 9's coordinator:** read CLAUDE.md, then this file top to bottom. Your units are
+> **script batches you compute yourself** — see **Next up**. **SCRIPT-ONLY: battle is finished.**
 >
-> ⚠️ **WAVE 9 IS SCRIPT-ONLY. BATTLE WORK IS FINISHED** until a human clears Blocked **0** or **0a**.
-> ⚠️ **The run is NOT complete** — see Remaining. Do not report it complete.
+> **If you are anyone else and that session is missing or never started**, the chain broke: re-open
+> it with `mcp__Claude_Code_Remote__create_session`, `source_url`
+> `https://github.com/ehekatlOf/RiotStarsTranslation` **and** `source_revision`
+> `claude/workflow-translation-iterate-uzlkns` (BOTH required), seeded per SKILL.md §6a.
 >
-> If this line still says "open wave 9" and no wave-9 session exists, the chain broke: open it.
+> ⚠️ **The run is NOT complete** — 603 bank-feasible script lines remain, ~12 batches. See Remaining.
 
 ## Last updated
 2026-09-10 · by: **wave-8 coordinator** (`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
