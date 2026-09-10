@@ -12,25 +12,32 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ✅ **WAVE 8 IS CLOSED — 5 of 5 merged, 0 parked, `check` green. Battle 32/44 (64.3%), script 57.4%.**
-> ✅ **WAVE 9'S SESSION IS OPEN: `session_01DFhp3iVua6qbKN4QhBJvPP`** ("Riot Stars — wave 9"),
-> created 2026-09-10 20:46Z from `claude/workflow-translation-iterate-uzlkns` @ `a7d6264`.
-> **The chain is intact. Wave 8's coordinator is done.**
+> **WAVE 9 IS RUNNING — 3 script batches dispatched, behind the wave barrier (CLAUDE.md §4a).**
+> Coordinator: `session_01DFhp3iVua6qbKN4QhBJvPP`. Base `ff3295a` (glossary seeds) on
+> `claude/workflow-translation-iterate-uzlkns`.
 >
-> **If you are wave 9's coordinator:** read CLAUDE.md, then this file top to bottom. Your units are
-> **script batches you compute yourself** — see **Next up**. **SCRIPT-ONLY: battle is finished.**
+> **Units — computed this wave, not inherited. All three ranges are fully contiguous (no gaps).**
+> DATA = 1-based index among non-blank, non-comment lines of `dumps/script_unique.txt`;
+> **FILE = DATA + 5** (verified this wave at DATA 1→FILE 6 and DATA 1430→FILE 1435).
 >
-> **If you are anyone else and that session is missing or never started**, the chain broke: re-open
-> it with `mcp__Claude_Code_Remote__create_session`, `source_url`
-> `https://github.com/ehekatlOf/RiotStarsTranslation` **and** `source_revision`
-> `claude/workflow-translation-iterate-uzlkns` (BOTH required), seeded per SKILL.md §6a.
+> | Unit | DATA | Lines / inst | Banks (cost / budget) | Theme |
+> |---|---|---|---|---|
+> | `batch_011` | 647–706 | 60 / 60 | 14–18, max 14% | town & shop NPCs, the frog merchant |
+> | `batch_012` | 355–415 | 61 / 63 | 0,1,2,42,43 — **bank 2 1,597/2,493 = 64%** | main plot (the coup) + casino |
+> | `batch_013` | 921–978 | 58 / 58 | 28,29, max 37% | tavern, item shop, tactics lectures |
+>
+> **Next step: wait for all three PRs (the §4a barrier), then one reviewer at a time in unit order.**
+> If a translator returns with no PR, re-dispatch that unit (2 attempts, then park).
 >
 > ⚠️ **The run is NOT complete** — 603 bank-feasible script lines remain, ~12 batches. See Remaining.
+> ⚠️ **Battle is finished until a human clears Blocked 0 or 0a.** Both re-tested at this wave's
+> preflight 2026-09-10: **still unfixed** (`grep FC70\|FCA8 tools/riotbattle.py` → no match;
+> `assemble.py:validate_body` still charset-checks preserved source text).
 
 ## Last updated
-2026-09-10 · by: **wave-8 coordinator** (`session_01GMZPvT2GCVmRBd8pwHPGED`) ·
-wave: **8 CLOSED — 5 merged, 0 parked, 4 rework rounds across 3 units** · queue: **wave 9's script
-batch must be RECOMPUTED against bank 40 = 75, not inherited**
+2026-09-10 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
+wave: **9 RUNNING — glossary seeded (`ff3295a`), 3 batches dispatched, awaiting the §4a barrier** ·
+queue: **recomputed this wave; my bank accounting reproduces `queue.py`'s 603/628 exactly**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -48,26 +55,46 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 **36** (charset gate, Blocked 0a).
 
 ## In flight
-**Nothing. Wave 8 is closed and no PR is open.** Wave 9's session dispatches its own units.
+| Unit | Branch | PR | Round | State |
+|---|---|---|---|---|
+| `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` | — | 1 | dispatched 2026-09-10 |
+| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` | — | 1 | dispatched 2026-09-10 |
+| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` | — | 1 | dispatched 2026-09-10 |
 
-## Next up — WAVE 9 (⚠️ SCRIPT-ONLY)
-**Seed the glossary BEFORE dispatching.** Sections currently end at **glossary §51** and **FLAGS
-§AM** — ⚠️ take the next number by **READING both files at commit time**, never by reserving.
+**Barrier: none of the three may be reviewed until all three have an open PR** (CLAUDE.md §4a).
 
-**COMPUTE THE BATCH YOURSELF; DO NOT INHERIT ONE.** Re-run `python3 tools/queue.py script` against
-the figures above, check feasibility **by INSTANCES not lines**, and hand the translator an explicit
-**DATA line list** (state the convention: DATA = 1-based index among non-blank non-comment lines of
-`dumps/script_unique.txt`; **FILE = DATA + 5**).
-⚠️ **A line whose clause is ALREADY SHIPPED elsewhere costs the SHIPPED form's bytes**, not a fresh
-optimal rendering's — §3 forces the byte-identical English. That is why wave 8's bank-40 estimate ran
-14 bytes low (DATA 193/194 were already in `batch_003`). **Check each candidate line's clause against
-shipped work before estimating.**
-⚠️ **`軍神ヘルメス` / DATA 281 stays LIVE** (21 instances) and needs a **`魔法防御`** form nothing
-fixes — but it lands in bank 40, so it may now be **unshippable**. **`ピクシー`** (DATA 817),
-**`マーシュ`** (FILE 870, 1330, 1379) and **`小隊`** (FILE 524, 1389) also stay live.
-**§4.3 debts for a corrections unit, none budget-blocked (all byte-negative):** `batch_007.tsv:31`
+## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
+**Seed the glossary BEFORE dispatching.** Sections end at **glossary §51** (wave 9's seeds went into
+**§9 PROVISIONAL**, not a new section) and **FLAGS §AM** — ⚠️ take the next number by **READING both
+files at commit time**, never by reserving.
+
+**COMPUTE YOUR OWN BATCHES; DO NOT INHERIT THIS TABLE — it is a starting point, not a queue.**
+After wave 9 merges, **424 lines / 447 instances** stay bank-feasible. The clusters, measured
+2026-09-10 (growth at the 2.10× planning model):
+
+| DATA | Lines | Banks | Growth | What it is |
+|---|---|---|---|---|
+| 707–879 | 173 | 18–25 | ~23,985 B | **continues wave 9's `batch_011` scene** — town, shops, NPCs |
+| 1043–1159 | 117 | 31–39 | ~9,756 B | ⚠️ **1043–1105 is a DEVELOPER DEBUG MENU** (sound test, flag toggles) — lowest player value in the corpus; **1106–1159 is real dialogue** (cake, resurrection, magic-tome shop). **Split it; do not batch them together** |
+| 1388–1430 | 42 | 42, 43 | ~2,978 B | casino: slots, medal exchange, prizes — player-facing |
+| 997–1034 | 38 | 30 | ~795 B | ⚠️ debug flag/sound test again — tiny growth, near-zero player value |
+| 326–345 | 19 | 18 banks | ~2,156 B | ⚠️ **38 instances from 19 lines, spread over 18 banks** — shop boilerplate; costs its growth in every one |
+| 584–598 · 521–533 · 465–469 | 15 · 13 · 5 | 12 · 6,7 · 3 | small | short leftovers, good for topping a batch up to 40–60 |
+
+⚠️ **THE ONLY BINDING BANK CONSTRAINT IN THE FEASIBLE SET IS BANK 5, and only via three lines.**
+Measured this wave: across **all 606** untranslated lines that touch neither bank 40 nor 41, bank 5
+is the sole bank over budget — and its whole overrun is **DATA 518, 519, 520** (growth **2,722 /
+1,713 / 1,954** bytes each, three giant blocks against bank 5's 1,135 spendable). Drop those three
+and 603 lines fit with room to spare. **That is exactly `queue.py`'s "603 lines, 628 instances", and
+this accounting reproduces it to the line.** Banks 40 and 41 get a budget of **zero** (75 and 353
+free against `RESERVE = 500`), so any line touching either is blocked outright.
+
+**Live glossary rows — do not re-decide, do not assume exhausted:** `軍神ヘルメス` (DATA 281, 21
+inst, needs a `魔法防御` form, lands in bank 40 so likely **unshippable**); `ピクシー` (DATA 817 —
+**inside 707–879**, so wave 10 probably discharges it); `マーシュ` (FILE 870, 1330, 1379); `小隊`
+(FILE 524, 1389). **§4.3 debts for a corrections unit, all byte-negative:** `batch_007.tsv:31`
 ships `Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ`, the only capitalised bare plural in `tl/`; merged `chunk_000` ×3,
-`chunk_008`, `chunk_031` still ship `Ｈｅｙ，` against §32.3's `Ｏｉ，` (four plain + one stammer).
+`chunk_008`, `chunk_031` still ship `Ｈｅｙ，` against §32.3's `Ｏｉ，`.
 
 ## Remaining
 **Battle: 0 dispatchable.** 8 chunks remain and **all are blocked** — 15, 23, 27, 28, 29, 39 by
@@ -157,56 +184,48 @@ them are 21-instance item-table rows** held solely by bank 40.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
-⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§51**, `FLAGS.md` §K–**§AM**,
-`findings.md` §24, `pending/README.md`. Section numbers are taken by **READING both files at commit
-time**, never reserved.
+⚠️ **RULINGS LIVE IN THEIR HOMES, NOT HERE** — `glossary.md` §23–**§51** plus the **§9 PROVISIONAL**
+seed tables, `FLAGS.md` §K–**§AM**, `findings.md` §24, `pending/README.md`. Section numbers are
+taken by **READING both files at commit time**, never reserved.
 
-**Standing (waves 4–8).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
+**Standing (waves 4–9).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
 untouched. Script growth for planning **2.10×** (realised 2.118 over 408 lines). Seed the glossary
 **before** dispatching. A **parked unit still gets the full reading review**. Name script batches by
 **DATA line list**, never a `queue.py` position. A term is "in the glossary" only if a row **fixes an
 English form**. A glossary row's **Alt column records REJECTED options**. `{FCC0}` is forbidden by
 `assemble.py:tag_parity`, **not** by `rowcheck.py` (§Q2 — never patch it, never a finding).
 
-**Wave 8 — the method findings. These are the wave's real product.**
-- ⚠️ **GATE 7 MUST BE RUN FROM THE GLOSSARY SIDE, KEY BY KEY**, with controls in **both** directions
-  (plant a key that IS present and one that is NOT). It was **5-for-5** at catching what every other
-  gate passed. **THREE units failed on a glossary row whose own census NAMES THE EXACT LINE** (c37
-  `やはり`, c42 `ははっ`, batch_010 `実権`). ⚠️ **But it cannot surface a word the glossary never
-  recorded** — that is how `くそ` survived two rounds. **5-for-5 is not complete.**
-- ⚠️ **§AG6's MIRROR (FLAGS §AL1/§AM3): "I measured the rejected alternative and never looked for the
-  incumbent."** Before reaching for a new word, **search for the English the SOURCE WORD already
-  has**. Operationalised as a sweep of every non-glossary kanji/katakana run against translated rows;
-  on batch_010 it ran 33 runs, found no divergence, and **withdrew a wrong correction**.
-- ⚠️ **GATE 6 PAIRS WHOLE MESSAGES AND MATCHES EXACT JAPANESE.** A unique row string, or a kana
-  variant (`クソッ`/`くそっ`), is **structurally invisible** to it — demonstrated by negative controls
-  that stayed silent while reverting real defects. **A clean gate 6 is not evidence of terminology
-  consistency.** ⚠️ **Plant controls INSIDE the checker's coverage set** — one PR's control was
-  planted where its checker never looked and proved nothing.
-- ⚠️ **MEASURE THE REJECTED OPTION IN MORE THAN ONE WORD ORDER.** Two false impossibilities this
-  wave; the first nearly parked a shippable unit. **An order-independent PACKING proof beats
-  enumeration, and A TOTAL NEVER RESCUES A PACKING CLAIM** (89–92 columns against a 92 budget can
-  still need five rows). **§AG6 also covers the PR body's own prose**, not just rejected options.
-- ⚠️ **FIVE WRONG CORRECTIONS THIS WAVE, ONE OF THEM MINE, ONE DECLINED.** The traps: a **numbering
-  convention** (DATA vs FILE, twice); a **correction note** — §48.3 reads 21 *plus a note that it
-  once read 22*, and **a record documenting its own former error reads as though it still contains
-  it**; **re-asserting a round-1 reading after the base moved** (§AL4); and **mine** — see below. The
-  declined one: a reviewer nearly forced `復興` to the nominal form, then found `batch_009.tsv:72`
-  already renders the bare noun **verbally**, so forcing it would have put the unit *out* of step.
-- ⚠️ **A SHAPE CENSUS NEEDS ITS SPLITTER *AND* ITS DUMP.** I claimed `.TTTT.` "is not zero"; it **is**
-  zero. §45.2 is a **battle-dump** census under `rowcheck`'s boundary set
-  (`{FCC0}|{FC30}|{FC51}|{FC50}|{FFFF}`), where all five figures reproduce exactly — `.TTTT` 182,
-  `.TTTT.` **0**, `TTTT` 389, `TTT` 115, `TT` 262. My `{FCC0}`-only split gave 126/3/133; the same
-  `rowcheck` splitter over the **script** dump gives 325/1, and that single `.TTTT.` is a **menu
-  choice-block**, not a text page. **Three right answers to three different questions.**
-- **INFRASTRUCTURE (§AK6): worktree branch names are NOT per-agent and collide** — two worktrees held
-  branch `review` at one commit, and one was rewritten between its own reviewer's rounds. ✅ **No gate
-  needs a working tree**: `merge-tree --write-tree` for gate 2, a `git archive` extraction for the
-  rest, `commit-tree` with a temporary index for integration. Four reviewers used it.
-- **A reviewer can merge AND push `integrate:` while still showing "running"**, and a reviewer killed
-  mid-run leaves **no trace in git**. **Never infer merge state from an agent's status.** A rejected
-  non-fast-forward push is the mid-integration signal: **hold, re-export from the new head, re-apply,
-  push — never force.**
+**Method findings (wave 8, still binding — these are what the dispatches carry).**
+- ⚠️ **GATE 7 RUNS FROM THE GLOSSARY SIDE, KEY BY KEY**, with controls in **both** directions.
+  **5-for-5** at catching what every other gate passed; **three units failed on a glossary row whose
+  own census NAMES THE EXACT LINE**. Require the **key count** as evidence — "no findings" is not
+  evidence. ⚠️ **It cannot surface a word the glossary never recorded** (how `くそ` survived twice).
+- ⚠️ **§AG6's MIRROR: "I measured the rejected alternative and never looked for the incumbent."**
+  Before reaching for a new word, **search for the English the SOURCE WORD already has**. Wave 9's
+  seeding hit this twice: `ウエイト` already ships as `Ｗａｉｔ　ｔｉｍｅ` in `chunk_000`, and a drafted
+  `素早さ` → `Ａｇｉｌｉｔｙ` would have contradicted **five shipped class rows** reading `ｓｐｅｅｄ` /
+  `ｓｗｉｆｔ`. Both were caught before commit; the row was dropped.
+- ⚠️ **GATE 6 PAIRS WHOLE MESSAGES AND MATCHES EXACT JAPANESE.** A unique row string or a kana
+  variant (`クソッ`/`くそっ`) is **structurally invisible** to it. **A clean gate 6 is not evidence of
+  terminology consistency.** Plant controls **inside** the checker's coverage set and **state the
+  coverage**. Battle `tl/` holds no Japanese (grep is a null check); **script TSVs keep Japanese in
+  column 2, so a column-2 comparison IS valid there.**
+- ⚠️ **MEASURE THE REJECTED OPTION IN MORE THAN ONE WORD ORDER.** Two false impossibilities in wave
+  8; the first nearly parked a shippable unit. **An order-independent PACKING proof beats
+  enumeration, and A TOTAL NEVER RESCUES A PACKING CLAIM.** §AG6 covers the PR body's own prose too.
+- ⚠️ **VERIFY CORRECTIONS IN BOTH DIRECTIONS — a wrong correction enters the record as fact.** Five
+  in wave 8. The traps that fired: a **numbering convention** (DATA vs FILE, twice); a **correction
+  note** (a record documenting its own former error reads as though it still contains it);
+  **re-asserting a round-1 reading after the base moved**; and **a shape census quoted without its
+  corpus** — a census needs its **SPLITTER *and* its DUMP**.
+- **INFRASTRUCTURE (§AK6): worktree branch names are NOT per-agent and collide.** ✅ **No gate needs
+  a working tree:** `git merge-tree --write-tree` for gate 2, a `git archive` extraction for the
+  rest, `commit-tree` with a temporary index for integration. **Say which tree you gated and how.**
+- **Never infer merge state from an agent's status.** A reviewer can merge *and* push `integrate:`
+  while still showing "running"; one killed mid-run leaves **no trace in git**. A rejected
+  non-fast-forward push is the mid-integration signal: **hold, re-export, re-apply, push — never
+  force.** (Hit once in wave 9, on the seed commit: wave 8's coordinator had pushed a HANDOFF line
+  after opening this session. Rebased, verified only `glossary.md` moved, pushed.)
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
