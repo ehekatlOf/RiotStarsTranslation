@@ -625,6 +625,61 @@ measurement disagrees with a cell here, your measurement wins and this cell is t
 | ピクシー | `Ｐｉｘｉｅ` | script DATA 909 ✅ (PR #32) **and DATA 817 — OUTSTANDING, this is what keeps the row live** | 5 columns. Capitalised as a class **name** on §4's `フリーナイト` → `Ｆｒｅｅ　Ｋｎｉｇｈｔ` / `ビーストマスター` → `Ｂｅａｓｔ　Ｍａｓｔｅｒ`. ⚠️ **NOT a hapax and NOT exhausted — 2 script-unique lines, 0 battle, verified by census at PR #32's review**: DATA 909 (rendered) and DATA 817 (`わたしたちピクシーは、…`, untranslated). Held live per the `ルート` precedent (§29.1 / §30.1). Siblings `シルフ` → `Ｓｙｌｐｈ` and `セイレーン` → `Ｓｉｒｅｎ` ARE hapaxes and are fixed at §51.2 |
 ---
 
+**Wave 9 seeds (2026-09-10) — script batches 011 (town/shop NPCs), 012 (main plot + casino) and
+013 (tavern + tactics lectures).** Every width is `len()`-measured and **every "Where seen" DATA
+number was verified by census against `dumps/script_unique.txt`, not carried over from a draft** —
+four figures in the first draft of this table were wrong and were corrected before it was committed.
+DATA = 1-based index among non-blank, non-comment lines of `script_unique.txt`; **FILE = DATA + 5**.
+
+⚠️ **FOUR RULINGS THIS WAVE'S SOURCE NEEDS ARE ALREADY FIXED — do not re-decide them and do not
+seed them again:** `ゲロゲロ` → **`Ｒｉｂｂｉｔ`** plus the frog merchant's blunt, article-dropping
+katakana register (**§5** — and batch 011 *is* that scene); `妖精` → **`ｆａｉｒｙ`**, lowercase common
+noun (**§1**); `ジュエル` → **`Ｊｅｗｅｌ`** held distinct from `ジェム` → **`Ｇｅｍ`** (**§3**); and
+`『…』` / `「…」` → **`“…”`** (**§12**, §3).
+
+⚠️ **TWO TERMS ARE RENDERED BY TWO DIFFERENT BATCHES OF THIS SAME WAVE.** Neither translator can
+see the other's file, so the form must come from here or they will diverge and gate 6 will not
+catch it (gate 6 pairs whole messages, and these are different messages):
+1. **`『極上のワイン』` — batch 012 DATA 370, 371, 372, 373 *and* batch 013 DATA 934, 939.** It is
+   **already seeded and live** at §9 / §38.1 as `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13), waiting since PR #20
+   for "the unit that first renders it". **Both units render it; both use that exact form.** The
+   bare noun `ワイン` → `ｗｉｎｅ` is already promoted and must not change.
+2. **The Member Shop / Member Card complex** — see the two rows below.
+
+| Japanese | Proposed English | Where seen (verified) | Alternatives if the reading is open |
+|---|---|---|---|
+| メンバーカード | `Ｍｅｍｂｅｒ　Ｃａｒｄ` (11) — **but see the warning** | script **DATA 674 (batch 011)**; DATA 1348 (not in this wave). ⚠️ **NOT in DATA 362** | ⚠️ **MAY ALREADY BE FIXED UNDER ANOTHER JAPANESE WORD.** §51 ships `会員証` → `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13, lowercase) for DATA 310, `ひみつの店の会員証。` If `ひみつの店` (§51: *not* a named shop, lowercase) and `メンバーショップ` are the **same shop**, this is one object under two Japanese names and §3 pressure is to match `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ`. **Genuinely open — settle it on use, say which and why, and flag it.** ⚠️ Batch 012's DATA 362 hands the player the card as a bare `このカードを`, so **that unit must not coin a name for it that contradicts this row.** Alt `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13) |
+| メンバーショップ | `Ｍｅｍｂｅｒ　Ｓｈｏｐ` (11) | script **DATA 362 (batch 012)** — the corpus's only instance | A **named** shop (`珍しいアイテムが一杯のメンバーショップ`), so capitalised on §12's `Ｂｅａｓｔ　Ｓｈｏｐ`, unlike §51's lowercase `ｔｈｅ　ｓｅｃｒｅｔ　ｓｈｏｐ`. ⚠️ Tied to the row above: if the two shops are one, say so |
+| ミュートフルーツ | `Ｍｕｔｅ　Ｆｒｕｉｔ` (10) | script **DATA 690 (batch 011)** | A named item |
+| ツェペリ卿 | *Lord* `Ｚｅｐｐｅｌｉ` → `Ｌｏｒｄ　Ｚｅｐｐｅｌｉ` (12) | script **DATA 386 (batch 012)** — the corpus's only line carrying it | ⚠️ **`卿` HAS NO RULING ANYWHERE IN THIS GLOSSARY** — this seed sets one, on the `様` → *Lady* precedent (§11, `フィリス様` → `Ｌａｄｙ　Ｐｈｙｌｌｉｓ`). Bare `Ｚｅｐｐｅｌｉ` is 7. Alt readings *Ｚｅｐｅｌｉ*, *Ｔｚｅｐｅｌｉ*; alt title *Ｓｉｒ* |
+| ブラックジャック | `Ｂｌａｃｋｊａｃｋ` (9) | script **DATA 355 (batch 012)**; DATA 1390, 1395, 1416 (not in this wave) | The casino game, capitalised as its name. ⚠️ Reach is **4 lines, not 1** — the casino batch later in the run inherits this form |
+| ポーカー | `Ｐｏｋｅｒ` (5) | script **DATA 370–373 (batch 012)** | Same. ⚠️ Those are the same four lines that carry `『極上のワイン』` — long multi-branch blocks |
+| ディーラー | `ｄｅａｌｅｒ` (6) | script **DATA 355 (batch 012)** | Lowercase common noun (§17.1) — a role, not a name |
+| クーデター | `ｃｏｕｐ` (4) | script **DATA 390 (batch 012)**; DATA 863, 1373 (not in this wave) | Lowercase. ⚠️ `ｃｏｕｐ　ｄ’ｅｔａｔ` needs an accent the charset lacks — do not reach for it |
+| 町長 | `ｔｏｗｎ　ｅｌｄｅｒ` (10) | script **DATA 381, 386, 391 (all batch 012)**; DATA 1102 (not in this wave) | The head of a small port town (`こんな港町の町長`). Alt `ｍａｙｏｒ` (5) if a row is tight |
+| ウエイト / ウエイト値 / `『ウエイト値』` | `Ｗａｉｔ` (4) / `Ｗａｉｔ　ｔｉｍｅ` (9) / `“Ｗａｉｔ　ｔｉｍｅ”` (11) | script **DATA 960, 967, 968, 969, 970, 977 (all batch 013)**; DATA 833 (not in this wave) | ⚠️ **NOT A NEW FORM — THE INCUMBENT IS ALREADY SHIPPED AND MUST BE MATCHED.** `tl/battle/chunk_000.txt:5`, the battle tutorial, reads `ｕｎｉｔｓ　ａｃｔ　ｉｎ　ｏｒｄｅｒ，{FFFE}ｆｒｏｍ　ｔｈｅ　ｌｏｗｅｓｔ　Ｗａｉｔ{FFFE}ｔｉｍｅ．` **Batch 013 is the tactics-lecture NPC teaching that same system**, so it matches that wording rather than re-coining it (§AG6's mirror). Do **not** reach for *Delay*, *Speed* or *Initiative* |
+| 「待ち時間」 | `“ｗａｉｔｉｎｇ　ｔｉｍｅ”` (15) | script **DATA 977 (batch 013)** — the corpus's only instance | ⚠️ **DO NOT COLLAPSE THIS INTO `“Ｗａｉｔ”`.** DATA 977 glosses `『ウエイト値』` *with* 「待ち時間」 — the two must stay visibly different in English or the sentence explains a term with itself. ⚠️ **And `“Ｗａｉｔ”` is already taken**: §15.1 fixes the *menu label* `「待機」` → `“Ｗａｉｔ”`, a different source word (standby) — holding three things apart, not two |
+| 戦術講座（第Ｎ回） / 講座Ｎ | `ｔａｃｔｉｃｓ　ｌｅｃｔｕｒｅ` (15) / `Ｌｅｃｔｕｒｅ　Ｎ` (9) | script **DATA 958–963 (batch 013)**; `講座` alone runs to DATA 972 | The tavern NPC's numbered tutorial series — **the spine of batch 013**, so one form must serve the menu rows *and* the prose. Alt `ｔａｃｔｉｃｓ　ｃｌａｓｓ` (13), `ｌｅｓｓｏｎ` (6) if a menu row is tight |
+| `『妖精のケーキ』` | `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | script **DATA 932, 933, 934, 937 (all batch 013)** | `『…』` → `“…”` (§12). ⚠️ **The bare noun `妖精` stays lowercase `ｆａｉｒｙ` (§1)** — only the *named item* is capitalised, exactly the `ｇｅｍｓｔｏｎｅ` / `“Ｇｅｍｓｔｏｎｅ”` split at §51 |
+| `『北風のシロップ』` | `“Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ”` (18) | script **DATA 933, 934, 950, 951 (all batch 013)**; DATA 852 (not in this wave) | ⚠️ **The faithful `“Ｓｙｒｕｐ　ｏｆ　ｔｈｅ　Ｎｏｒｔｈ　Ｗｉｎｄ”` measures 25 and CANNOT FIT the 24-column box** — measured, not guessed. That is why the compound is proposed. Alt `“Ｎｏｒｔｈｗｉｎｄ　Ｓｙｒｕｐ”` (17) |
+| `『スーパージュエル』` | `“Ｓｕｐｅｒ　Ｊｅｗｅｌ”` (13) | script **DATA 945, 946 (batch 013)**; DATA 843, 849 (not in this wave) | Holds §3's `Ｊｅｗｅｌ`, not *Gem* |
+| バニシュジュエル | `Ｖａｎｉｓｈ　Ｊｅｗｅｌ` (12) | script **DATA 946 (batch 013)** | Same; unquoted in its source, so unquoted in English |
+| ゲストユニット | `ｇｕｅｓｔ　ｕｎｉｔ` (10) | script **DATA 962, 969, 970 (all batch 013)** | ⚠️ **A SCREEN LABEL FOR THIS IS ALREADY PROMOTED AND IS A DIFFERENT SOURCE STRING:** `『ＧＵＥＳＴ　ＵＮＩＴ』` → `“ＧＵＥＳＴ　ＵＮＩＴ”`, already full-width Latin in the source and **reproduced, not re-cased**. The katakana `ゲストユニット` is the *prose* form — lowercase common noun, on `ユニット` → `ｕｎｉｔ` (16× in `tl/`). **Keep the two apart and say which each row is** |
+| インターミッション | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12) | script **DATA 978 (batch 013)**; DATA 1005, 1053 (not in this wave) | The between-battle phase, capitalised as the screen's name. ⚠️ If it proves to name an on-screen menu, it falls under §Z1's open UI-label question (Blocked 7) — flag rather than assume |
+| パラメータ | `ｓｔａｔ` (4) | script **DATA 975 (batch 013)**; DATA 1225, 1229 (not in this wave) | `パラメータの個別アップ` = raising individual stats. Alt `ｐａｒａｍｅｔｅｒ` (9) — wide, and *stat* is the register the tutorial already uses |
+| ＳＳ技能 | `ＳＳ　ｓｋｉｌｌ` (8) | script **DATA 945 (batch 013)**; DATA 1258, 1259 (not in this wave) | Keep `ＳＳ` full-width as the source has it |
+| ローテーション | `ｒｏｔａｔｉｏｎ` (8) | script **DATA 978 (batch 013)** — the corpus's only instance | Lowercase system term |
+
+⚠️ **`素早さ` WAS DRAFTED AS A SEED AND IS DELIBERATELY NOT ONE.** A census puts it at DATA 4, 6, 9,
+35, 73 (**all already translated**), 830, 1236 — and **none of those is in wave 9's source**; batch
+013's DATA 977 carries only the adverb `素早く`. Its incumbent, for whoever later takes DATA 1236
+(`素早さ。行動の素早さに関係する。`, the stat's own definition row), is the **lowercase prose**
+`ｓｐｅｅｄ` / `ｓｗｉｆｔ` already shipped in the class table — `Ａ　ｓｗｏｒｄ　ｗａｒｒｉｏｒ，　ｇｒｅａｔ{FFFE}ｉｎ
+　ｓｐｅｅｄ　ａｎｄ　ｓｋｉｌｌ．` and `Ａ　ｓｗｉｆｔ，　ｓｋｉｌｆｕｌ　ｍａｌｅ` — **not** a capitalised `Ａｇｉｌｉｔｙ`,
+which was this table's first draft and would have contradicted five shipped rows.
+
+---
+
 ## 10. Open questions
 
 1. ~~**リオン — Lion or Leon.**~~ ✅ **RESOLVED 2026-09-08 (PR #7 review).** The character appears
