@@ -28,6 +28,32 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+**batch_010 round 2 pushed @ `bf2f663`**, rebased onto the moved base. All five findings fixed;
+**bank 40 still 447 → 75, item-table growth still exactly 372, bank 41 untouched, no bank negative**
+— as predicted, no fix touched bank 40. `check` green, no "never matched the dump", 0 rows over 24
+**and 0 over the preferred 23**, tag stream identical on all 53 rows, page shapes identical to round 1.
+✅ **It repacked the whole page rather than swapping the word** on finding 1: `ｗｈｏ　ｒｕｌｅｄ
+Ｆａｒｉｎａ．` was a *paraphrase that had displaced the term*, so the fix restores `ｒｅａｌ　ｐｏｗｅｒ`
+byte-identical with `chunk_022` while keeping 何者か, `ｓｌａｕｇｈｔｅｒｅｄ` and `ｋｉｎ` (17/22/19/23,
+shape `TTTT` unchanged).
+✅ **It declined a byte-identical match on a part-of-speech argument and said so**: `復興` ships the
+verbal `ｒｅｂｕｉｌｔ` rather than `batch_005`'s nominal `ｒｅｂｕｉｌｄｉｎｇ`, because the two sources
+differ in part of speech (`ファリーナの復興も` nominal vs `復興する日` verbal) — both inside §26's own
+"rebuilding / **rebuild**" row, and the §27.1 `愛用`→`ｆａｖｏｕｒ` pattern. It offered to force the
+gerund if ruled otherwise. **The reviewer should rule explicitly.**
+
+⚠️ **§4.3 DEBT IN ALREADY-MERGED WORK, found by the §17.1 sweep and VERIFIED BY ME:**
+`tl/script/batch_007.tsv` line 31 ships **`Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ`** — a capitalised bare plural
+**in prose**, exactly finding 5's shape. My corpus check: it is the **ONLY** capitalised bare plural
+in all of `tl/`, against lowercase `ｈｏｂｂｉｔ` in **five** files. (The same line's
+`Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` is correct — §2 place name.) **One isolated instance, for a corrections
+unit — not any open PR's to fix.**
+✅ **The census methods are now reconcilable — batch_010 stated its own**: pages on `{FCC0}`, rows on
+`{FFFE}`, blank = no non-tag content, **`=== CHUNK` headers and `{PAD n}` excluded** → 182 / 0. Mine
+excluded structural lines via `assemble.is_structural` → 126 / 3. **Two stated methods, still two
+answers — so the divergence is in what counts as structural, and the census cannot be quoted without
+its method.**
+
 ### Review 5 of 5 — PR #32 (script batch 010): **CHANGES**, round 1. Rework sent.
 Every gate but glossary passes. **Gate 7: 1,114 keys enumerated, 95 occur, 91 conform — 5 findings
 (4 non-conformant keys).** ⚠️ **Finding 1 is AGAIN a glossary row whose own census NAMES THE EXACT
@@ -273,7 +299,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (verified by the reviewer at round 2) | ✅ **PR #30 MERGED at round 2** — squash `3721e4d`; integrated at glossary **§49**, `FLAGS.md` **§AK**. Two rounds, **two findings, both gate-7 failures** (`掌握` → `ｓｅｉｚｅ`, `ネズミども` → the fixed plural `ｒａｔｓ`), both fixed verbatim with the tag stream byte-identical on both lines. ⚠️ **Discharges chunk 37's two cross-unit obligations** and strikes §48.3's cross-unit half; §48.3's `掌握` row **stays live for script FILE 870**. Nothing left on this unit |
 | battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,627 / 8,192 — 4,565 slack** (r3 @ `1a44e25`) | **PR #31 — round 3 PUSHED**, awaiting re-review (SAME reviewer) |
-| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** (verified) | **PR #32 — CHANGES r1**, rework sent |
+| script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** (r2 @ `bf2f663`) | **PR #32 — rework PUSHED**, awaiting re-review (SAME reviewer) |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
 1. ⚠️ **`軍神ヘルメス` is NOT exhausted and its §9 row must stay LIVE.** My seed implied DATA 300
