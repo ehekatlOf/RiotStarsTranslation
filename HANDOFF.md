@@ -28,6 +28,30 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ENTIRELY** until a human clears Blocked **0** or **0a**. Both were re-tested at wave 8's preflight
 > and **both are still unfixed**. Wave 9 is script-only. Say so in wave 9's seed.
 
+### Review 4 of 5 — PR #31 (chunk 42): **CHANGES**, round 1. Rework sent.
+All mechanical gates pass, headline figures exact. **Gate 7 fails TWICE**, both against fixed forms
+with shipped precedent: `ははっ・・・・` → `Ｓｉｒ．．．．` where **§28.3's instance list names `c42 L6`
+by name** (fix `Ｙｅｓ，　ｓｉｒ．．．．`, +10 bytes), and `たかが、` → `Ｍｅｒｅｌｙ` where §19.1 fixes
+`ｏｎｌｙ` (−4 bytes). Post-fix **3,635 / 8,192, 4,557 slack**.
+✅ **GATE 7 KEY-FIRST IS NOW 4-FOR-4: 2,261 distinct keys enumerated (4,865 occurrences), 103 occur
+in chunk 42's source, 101 conform, 2 FAIL.** Controlled both ways. ⚠️ **Finding 1 is the same class
+as chunk 37's `やはり`: a glossary row that NAMES THE EXACT LINE, passed by every other check.**
+✅ **Gate-6 coverage stated as evidence** — of 79 segment / 26 page / 6 message keys, **4 / 0 / 0**
+recur in other files and 3 segment keys recur *inside* chunk 42; seven planted corruptions caught,
+two negative controls silent; L10 and L11 could not be row-aligned and were looked up explicitly.
+✅ **L11's §24.2 property verified in the exact way it needed to be:** all 16 source entries survive
+in order, the five extra rows are splits **inside** single entries, **no two entries merged.**
+✅ **§L2 pool evidence ACCEPTED and STRENGTHENED — `はっ！` → `Ｓｉｒ！` is 7 of 7, not 6 of 6**
+(`chunk_013` L2 was missed because that line's own English is offset by one).
+⚠️ **A NEW NUMBERING TRAP, and it is the wave's fourth: a PR can hold its OWN numbering convention
+correctly and still drift on its CROSS-FILE citations.** PR #31 declares `rowcheck` numbering and
+keeps to it for its own file, but **17 of its corpus citations are 0-based body indices**, off by
+one. 5 of 55 stated widths are out; 3 "verified free" claims are not free — **every conclusion
+survives on §25.3, no rendering changes.**
+✅ **AND THE REVIEWER CAUGHT ITSELF:** it nearly issued a third finding on a **hand count** of 22
+for `Ｓｏ　ｌｏｎｇ　ａｓ　ｏｎｅ　ｈａｓ　ｗｉｔ．`, measured it, found **the PR's 23 correct**, and
+withdrew. *"Nothing in the review is asserted from a hand count."*
+
 **c41 round 2 pushed @ `2582852` — 3,035 / 8,192, 5,157 slack, exactly the predicted figure.**
 Both findings applied; `ｇｒａｓｐ` now occurs nowhere in `tl/`. ✅ **It independently confirmed the
 §48.3 column error by `len()` — 21, not 22** — after reading the row on the integration branch
@@ -115,7 +139,7 @@ Base for every unit: `claude/workflow-translation-iterate-uzlkns` @ `5402c68`. R
 | battle chunk 37 | `tl/battle-037` | `tl/battle/chunk_037.txt` | **5,037 / 8,192 — 3,155 slack** (verified by the reviewer at round 3) | ✅ **PR #29 MERGED at round 3** — squash `5659d03`; integrated at glossary **§48**, `FLAGS.md` **§AJ**. Three rounds, five findings, **three of them gate-7 failures** (`やはり`, `始末`, `おい、`). ⚠️ **Leaves two live cross-unit obligations: `掌握` → `ｓｅｉｚｅ` (PR #30 must change `ｔｏ　ｇｒａｓｐ`; zero-cost, both words 5 columns) and `決着をつけてやる` → `ｓｅｔｔｌｅ` at chunk 41 `rowcheck` L8.** Nothing left on this unit |
 | battle chunk 38 | `tl/battle-038` | `tl/battle/chunk_038.txt` | **5,577 / 8,192 — 2,615 slack** (verified by the reviewer) | ✅ **PR #33 MERGED at round 2** — squash `7bd8e76`; integrated at glossary **§47**, `FLAGS.md` **§AI**. **THE WAVE'S FIRST MERGE.** Nothing left on this unit |
 | battle chunk 41 | `tl/battle-041` | `tl/battle/chunk_041.txt` | **3,035 / 8,192 — 5,157 slack** (r2 @ `2582852`) | **PR #30 — rework PUSHED**, awaiting re-review (SAME reviewer) |
-| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | **3,629 / 8,192 — 4,563 slack** | **PR #31 OPEN**, awaiting reviewer |
+| battle chunk 42 | `tl/battle-042` | `tl/battle/chunk_042.txt` | 3,629 → **3,635 / 8,192** expected | **PR #31 — CHANGES r1**, rework sent |
 | script batch 010 | `tl/script-010` | `tl/script/batch_010.tsv` | **53 lines / 293 instances**; bank 40 **447 → 75** | **PR #32 OPEN**, awaiting reviewer |
 
 **THREE CELLS OF MINE REFUTED BY PR #32's MEASUREMENT — I re-verified all three; the PR is right.**
