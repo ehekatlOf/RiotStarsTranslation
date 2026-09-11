@@ -60,7 +60,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | 🔄 **rework r1 pushed (`20764d2`) — RE-REVIEWER RUNNING** |
-| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ⚠️ **CHANGES round 1** — 5 findings sent to the same translator |
+| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | 🔄 **rework r1 pushed (`d917bb7`)** — all 5 implemented; **queued for re-review** |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
 All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
@@ -179,6 +179,35 @@ exactly the register split it cites; **all five of finding 5's column correction
 Still owed at merge: the eleven new rows, the **scoped** `すごい` row (scoping verified real), the
 `イワン`/`ヒミコ` stay-live instruction, `まったくだ。` → `Ｉｎｄｅｅｄ．`, and the `batch_013`/`batch_017`
 FLAGS debt.
+
+### ✅ PR #49 rework round 1 pushed (`d917bb7`, 2026-09-11 ~23:56) — re-review QUEUED behind #47
+**6,291 / 8,192 (1,901 slack)**, +10 bytes; realised 2.04×; `{FFFE}` 126 → 135; **`{FCC0}` 13 → 13**;
+**0 rows over 23**; max 4 text rows. `check` green, `rowcheck` clean, gate 6 re-run (11 hits, all
+byte-identical). **All five findings implemented.**
+- ⚠️⚠️ **FINDING 1's COUNT: THREE PARTIES, THREE NUMBERS, AND MINE WAS WRONG.** The review said "4×",
+  **I "corrected" it to 3 script rows, and the translator's census says 6 rows across 5 files. I
+  re-ran it: THE TRANSLATOR IS RIGHT.** My search used the bare spelling `よろしく頼む` only and **missed
+  `よろしく　頼む` WITH A FULL-WIDTH SPACE**, which is 3 more rows (`batch_007:28`, `batch_009:48`,
+  `batch_010:65`). Verified rows: `batch_007:28`, `batch_007:32`, `batch_009:48`, `batch_010:65`,
+  `batch_012:87`, `batch_014:46` — **all six ship the fixed form**, keying on **three** spellings
+  (`よろしく　頼む` ×3, `よろしく頼む` ×1, `よろしく頼むぞ` ×2). **The finding is STRENGTHENED: the fixed
+  form already spans the whole spelling family.** ⚠️ **This is the spelling-variant blind spot that has
+  bitten this run repeatedly (§63.2 / §64.1 twins; the `ワケ`/`訳` and `ほう`/`方` pairs in #47) — and I
+  walked into it while correcting someone else. A census over ONE spelling is not a census.**
+  **Coordinator error #2 this wave** (after omitting `砲台` → `ｂａｔｔｅｒｙ` from the chunk-15 seed).
+- **Finding 3: the translator asked for the ruling, it went against it, and it accepted on the evidence** —
+  §26.8 settles the plain form in words it had read but not applied. Both of the chunk's `助かった`
+  instances are now on the default side byte-identically, consistent with #47.
+- **Finding 4** supersedes round-1 Flag 9's last table row. The translator then ran the REVERSE direction
+  to bound the consequence: **exactly one English form in the file now renders two distinct Japanese, and
+  nothing else was flattened.** Likewise finding 2 left **exactly one divergent run** (`どうやら、`,
+  deliberate — narration box vs character) and it correctly did NOT "repair" it.
+- ⭐ **ROUND-1 FLAG 12 IS WITHDRAWN IN FULL AND MY SEED CELL WAS RIGHT:** `Ｈｉｍｉｋｏ’ｓ` is **8**, not 9;
+  `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = **14**. `Ｇｅｎｅｒａｌ　Ｉｖａｎ` 12 bare / 13 with comma — never a
+  disagreement. All five of finding 5's figures reproduce.
+- **New precedent worth recording at merge:** §41.4's register split applied for the first time to **a
+  narration box against a character inside one file**; §23.4 / §26.8's default confirmed for a plain
+  `助かったぞ` with an adjacent but out-of-sentence vocative.
 
 ### PR #49 (chunk 23) — the translator's report is in, integration debts below
 **6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
