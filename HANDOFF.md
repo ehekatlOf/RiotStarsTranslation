@@ -48,6 +48,12 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | **bank 30 only, 782 of 35,119** | dispatched |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | **bank 31 only, 2,185 of 34,745** | dispatched |
 
+✅ **All four dispatched 2026-09-11 as `translator` subagents of this session, `run_in_background: true`.**
+⏰ **Watchdog armed: `trig_01D4W2WT4UMcxh2oPaCCxJnj`, fires 12:41Z.** It re-arms itself on every wake
+and the chain of timers ends only when wave 13's session is open. **`ListAgents` is the authority on
+whether a translator is alive — silence is NOT evidence, and a subagent that returned nothing is
+LOST, not finished.**
+
 ⚠️ **Nothing is reviewed until ALL FOUR have an open PR** (CLAUDE.md §4 step 4, the wave barrier).
 Then one reviewer at a time, in the order above, `run_in_background: false`.
 ⚠️ `tl/script-017`–`-019` and every older `tl/*` branch are **MERGED but still on origin** — deletion
