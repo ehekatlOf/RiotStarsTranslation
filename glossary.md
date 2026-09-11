@@ -678,6 +678,75 @@ catch it (gate 6 pairs whole messages, and these are different messages):
 　ｓｐｅｅｄ　ａｎｄ　ｓｋｉｌｌ．` and `Ａ　ｓｗｉｆｔ，　ｓｋｉｌｆｕｌ　ｍａｌｅ` — **not** a capitalised `Ａｇｉｌｉｔｙ`,
 which was this table's first draft and would have contradicted five shipped rows.
 
+**Wave 10 seeds (2026-09-11) — script batches 014 (DATA 707–758), 015 (759–814) and 016 (815–869).**
+Proposed forms follow the conventions already fixed: the `『…』` → `“…”` rule (§12), the species /
+class test (§17.1 — a named class is capitalised like §4's `フリーナイト` → `Ｆｒｅｅ　Ｋｎｉｇｈｔ`, a
+species or trade stays lowercase), European readings (§11.4, §14) and **British spellings**
+(§4: *defence*, *armour*). Widths below are `len()` of the full-width string, measured, not counted
+by hand (§4.3, and wave 9's eighth-error near miss).
+
+⚠️ **TABLE A FIRST — THESE ARE NOT PROPOSALS.** Every row in Table A is **already shipped English**
+with **no glossary row of its own**, or a row whose Japanese is spelled differently in wave 10's
+source. Gate 6 pairs whole messages on exact Japanese, so **not one of these is visible to it.**
+Match the shipped form; do not re-coin. Where a row says *sample of one*, it is backed by a **single**
+shipped instance — per wave 9's `いらっしゃいませ！！` finding, treat it as a lead to verify by
+reading, not as a fixed distinction.
+
+| Japanese | Shipped English — MATCH IT | Shipped where | Recurs in wave 10 at |
+|---|---|---|---|
+| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716, D717, D720** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all five.** |
+| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
+| `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792** — three more instances, i.e. wave 10 triples the corpus. Read D791 (`かつてのカーライン…`) before fixing on it. |
+| `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
+| `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | D726, D733, D739, D744, D835, D836 |
+| `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | D726, D735, D737, D739, D740, D746, D744 — ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
+| `功績` | `Ｍｅｒｉｔ` (capitalised) | §38 row, `batch_007` | D758 ×2, D769 |
+| `ジェムストーン` | `“Ｇｅｍｓｔｏｎｅ”` | `batch_013` D880 | D744 |
+| `極上のワイン` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | `batch_012` ×6 | D765, D772, D857 |
+| `カジノ` | `ｃａｓｉｎｏ`, lowercase | `batch_010` ×2 | D747, D750, D812 |
+| `マーベラス` | `Ｍａｒｖｅｌｌｏｕｓ` | `batch_010`; §21.1 | D797, D806 |
+| `カッフィ` | `Ｃａｆｆｉ` / `Ｃａｆｆｉ　Ｐｏｒｔ` | §39 (promoted wave-6 seed) | **D867** |
+| `踊り子` | `ｄａｎｃｅｒ` | `batch_012` ×2 | D773, and the `『おどりこの指輪』` row below |
+| `館` | `ｍａｎｓｉｏｎ` | `batch_009`, `batch_011` | D711, D714, D716, D717, D720 |
+
+**Table B — genuinely new: in wave 10's source, absent from `glossary.md`. Proposed, not fixed.**
+
+| Japanese | Proposed English | Where seen | Alternatives / note |
+|---|---|---|---|
+| `“ヘルグレイブ”` | `“Ｈｅｌｇｒａｖｅ”` (10) | D712, a weapon found in the dark | ⚠️ **The source already writes this in `“ ”`, not `『 』`** — reproduce the source's own quotes, do not convert. Alt `Ｈｅｌｌｇｒａｖｅ` |
+| `『おどりこの指輪』` | `“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` (15) | D715 | `踊り子` already ships `ｄａｎｃｅｒ`; the source spells it **kana** here. Alt `“Ｒｉｎｇ　ｏｆ　ｔｈｅ　Ｄａｎｃｅｒ”` (20) |
+| `『暗黒の指輪』` | `“Ｄａｒｋ　Ｒｉｎｇ”` (11) | D722 | `暗黒` → *dark* is already fixed (§ダークナイト row). Alt `“Ｒｉｎｇ　ｏｆ　Ｄａｒｋｎｅｓｓ”` (18) |
+| `『コアプラント』` | `“Ｃｏｒｅ　Ｐｌａｎｔ”` (12) | D744 ×3 — the machine soldier's power core, which `ブラックボックス` sits inside | Alt `“Ｃｏｒｅｐｌａｎｔ”` (11) |
+| `ブラックボックス` | `ｂｌａｃｋ　ｂｏｘ` (9) | D744 | lowercase — a common noun, not a named part (§17.1) |
+| `ボネット平原` | `Ｂｏｎｎｅｔ　Ｐｌａｉｎ` (12) | D745, where the airship came down | A **place**. Alt `Ｂｏｎｎｅｔ　Ｐｌａｉｎｓ` (13) |
+| `『虹のドレス』` | `“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”` (15) | D748, a casino prize | — |
+| `バウアーの砦` | `Ｆｏｒｔ　Ｂａｕｅｒ` (10) / `Ｂａｕｅｒ` (5) | D757 | A **place**, German reading per §14. Alt `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` (12) |
+| `『功績レベル』` | `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` (13) | D758 ×2 | Built from the fixed `功績` → `Ｍｅｒｉｔ` and lowercase prose `ｌｅｖｅｌ` |
+| `能力値` | `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` (14) | D758 | Alt `ｓｔａｔｓ` (5) if the row is tight |
+| `隠れ家` | `ｈｉｄｅｏｕｔ` (7) | D714, the pickpocket's | `スリ` → `ｐｉｃｋｐｏｃｋｅｔ` is **binding** (3 shipped, `batch_012`) |
+| `「只今、研究開発中」` | `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22) | D724, the workshop's sign | The `貼り紙` row (§34) fixes the frame; only the sign text is open |
+| `戒厳令` | `ｍａｒｔｉａｌ　ｌａｗ` (11) | D787 | — |
+| `エクスカリバー` | `Ｅｘｃａｌｉｂｕｒ` (9) | D803, `伝説の剣` | — |
+| `ヘヴィメイル` | `Ｈｅａｖｙ　Ｍａｉｌ` (10) | D801, armour worn by an imperial soldier | Capitalised: a named item. Alt `ｈｅａｖｙ　ｍａｉｌ` |
+| `旅芸人の一座` | `ａ　ｔｒａｖｅｌｌｉｎｇ　ｔｒｏｕｐｅ` (19) | D760, D774 | British `‐ll‐`. Alt `ａ　ｔｒｏｕｐｅ　ｏｆ　ｐｌａｙｅｒｓ` (19) |
+| `幽霊` | `ｇｈｏｓｔ` (5) | D762 | — |
+| `生き返りの仙人` | `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` (21) | D756, D782 | Alt `ｔｈｅ　ｒｅｓｕｒｒｅｃｔｉｏｎ　ｓａｇｅ` (21) |
+| `アーマーナイト` | `Ａｒｍｏｕｒ　Ｋｎｉｇｈｔ` (13) | D828, a unit class | ⚠️ **British `ａｒｍｏｕｒ`** — the corpus ships `ａｒｍｏｕｒ` **10 times and `ａｒｍｏｒ` 0 times**. `Ａｒｍｏｒ　Ｋｎｉｇｈｔ` **REJECTED** on that count. Capitalised per §4's `フリーナイト` |
+| `腕力` | `ｓｔｒｅｎｇｔｈ` (8) | D829 | lowercase prose, like `attack power` / `speed`. Alt `ｐｏｗｅｒ` (5) — **rejected**: `パワー` already ships as `ｐｏｗｅｒ` (`batch_001`, `ｂｏｔｈ　ｐｏｗｅｒ　ａｎｄ　ｓｐｅｅｄ`), so reusing it here would merge two distinct source words |
+| `頑丈さ` | `ｔｏｕｇｈｎｅｓｓ` (9) | D831 | Alt `ｓｔｕｒｄｉｎｅｓｓ` (10) |
+| `移動力` | `ｍｏｖｅｍｅｎｔ` (8) | D827 | ⚠️ §4 fixes **`機動力` → `ｍｏｂｉｌｉｔｙ`**, a *different* word. **Do not collapse the two.** |
+| `体力` | `ｓｔａｍｉｎａ` (7) | D834, restored in castles and forts | Alt `ｈｅａｌｔｈ` (6), `ＨＰ` (2) |
+| `保険屋` | `ｉｎｓｕｒａｎｃｅ　ｏｆｆｉｃｅ` (16) | D840, a shop you enter | Alt `ｉｎｓｕｒｅｒ` (7) |
+| `保険金` | `ｉｎｓｕｒａｎｃｅ　ｐａｙｍｅｎｔ` (17) | D842 | — |
+| `慰霊金` | `ｃｏｎｄｏｌｅｎｃｅ　ｐａｙｍｅｎｔ` (18) | D845 — paid for soldiers killed in service | Alt `ｓｏｌａｔｉｕｍ` (8) — accurate but rare; `ｄｅａｔｈ　ｂｅｎｅｆｉｔ` (13) |
+| `「本日休業」` | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ”` (14) | D839 | §34's `貼り紙` row already fixes `休業いたします` → `Ｃｌｏｓｅｄ` |
+| `終止符をうつ` | `ｐｕｔ　ａｎ　ｅｎｄ　ｔｏ` (13) | D821 | An **idiom**, not a term; no row is being asked for |
+| `荷揚げ` | `ｕｎｌｏａｄｉｎｇ` (9) | D851 | — |
+
+⚠️ **`勝ってカブトの・・・` (D783) is a PROVERB, not a term** — `勝って兜の緒を締めよ`, *tighten your
+helmet-cords after the victory*. The speaker trails off mid-idiom, so the English must trail off too;
+**no glossary row is proposed and none should be coined.**
+
 ---
 
 ## 10. Open questions
