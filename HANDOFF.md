@@ -60,7 +60,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | 3,239 | 4,953 | ✅ PR open — **reviewer running** |
-| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — queued (translator still finalising its report) |
+| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — **report in**, queued for review |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
 All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
@@ -90,6 +90,35 @@ compares every tag except `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). *
 independently and both absorbed it by re-flowing `{FFFE}` inside the source's own pages** — chunk 27 paid
 a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank + 4-row shape.
 A tier-B/C chunk with a dense page may not be able to absorb it.
+
+### PR #49 (chunk 23) — the translator's report is in, integration debts below
+**6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
+over 4 text rows.** ⭐ **The binding constraint was the 24×4 box, not the slot** — so there is no byte
+risk if a later fix adds a character. Eleven new glossary rows (`武器倉庫`, `納庫`, `壊滅状態`,
+`間抜けども`, `悪知恵`, `小悪党`, `交友関係`, `骨は拾ってやる`, `いい気味だ`, `おやすいご用です`,
+`塔が襲われました。`, plus a **scoped** `すごい` row).
+- ⚠️ **§9.W13's `イワン` and `ヒミコ` rows STAY LIVE** — each still has one script-store line unrendered;
+  only `駐留部隊` and `帝国がバックにいた` are exhausted (the §29.1 / §30.1 cross-unit procedure).
+- ⭐ **Flag 9 — the chunk's real hazard, and gate 6 is blind to it:** L21 and L22 are two mutually
+  exclusive codas sharing **seven readable strings verbatim** and differing in six others by register
+  alone. Gate 6 pairs whole messages and sees none of it. The translator ran a within-file run-granularity
+  pass: **11 repeated runs, 0 divergent.** The reviewer should re-run that pass, not trust it.
+- ⭐ **Flag 5 — a CROSS-STORE reuse no battle-side check could find:** the stock dungeon frame
+  `…の中は静まり返っている` already ships in `batch_011`/`batch_014`/`batch_017`; the keys differ only in
+  `館`/`ほこら`/`塔`, so the incumbent English was reused rather than forked.
+- ⚠️ **Flag 12 — I VERIFIED BOTH CLAIMED CORRECTIONS TO MY SEED AND ONE OF THEM IS WRONG.** `len()`:
+  `Ｇｅｎｅｒａｌ　Ｉｖａｎ` = **12** bare, **13** with the vocative comma — the translator measured the
+  shipped form and its own note agrees the bare form is 12, so **there is no disagreement here**.
+  `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = **14, NOT 15** — `Ｈｉｍｉｋｏ’ｓ` is **8, not 9**. **My seed cell was
+  right; do not integrate 15 into the glossary.** Nothing renders differently (both ship inside rows of
+  13 and 20) — but a wrong figure in the glossary propagates, and this run has already been bitten by
+  relayed figures (Decisions §7). **The translator was right to challenge and right about the principle;
+  this particular cell it got wrong.**
+- **Open question for the reviewer — Flag 14:** which side of §23.4 `助かったぞ。` falls on. The
+  translator took the active `Ｙｏｕ　ｓａｖｅｄ　ｍｅ．` and will take the default without argument
+  (14 → 13 columns, one row, no re-flow). **Rule on it; do not leave it unanswered.**
+- **Standing note, not a defect:** `ａｒｍｏｕｒｙ` contains `ａｒｍｏｕｒ` (§4's 防具), so any future
+  substring census of `ａｒｍｏｕｒ` false-positives on this chunk. Recorded so nobody re-discovers it.
 
 ⚠️ **Every `tl/*` branch from waves 1–12 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
