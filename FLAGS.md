@@ -7023,3 +7023,212 @@ branch's absence. GitHub still refuses `REQUEST_CHANGES` (§AQ1), so the decisio
 throughout. A fresh container still clones **shallow with a stale local ref** of the integration
 branch — `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` remains
 the fix.
+
+---
+
+## AX. Wave 12 review — the corrections unit / PR #43, MERGED (2026-09-11, round 1)
+
+**DECISION: MERGE, round 1, no must-change finding.** Five §4.3 debt items in already-merged work
+across five `tl/` files; **3 fixed, 1 fixed after its citation was vindicated, 1 no defect.** Squash
+**`1134d2b`**. Base pinned and the merge re-verified at the reviewer's own checkout rather than
+inherited from the PR: base **`3c6c579`**, PR head **`fa03b4e`**, merge-base `e9db558`, merge commit
+`c5aec14`, **clean**. The PR's `merge-tree` result was deliberately not reused — the base had moved
+`45bab1c` → `e9db558` → `3c6c579` while it was open, carrying `batch_020`'s merge, its integration
+commit and the coordinator's own glossary corrections.
+
+Two rulings issued, four flags discharged, one flag closed as a false positive, four glossary rows
+corrected in place, nine findings — **all of them record corrections; none blocked the merge.**
+
+### AX1. Banks under 2,000 free — FOUR, and which one `tightest:` hides has changed AGAIN
+
+`bankmeasure` on the merged tree: **bank 40 — 75 · bank 41 — 353 · bank 5 — 1,595 · bank 2 —
+1,607.** ⚠️ **The `tightest:` line prints `40, 41, 5` and now HIDES BANK 2** — before PR #45 it hid
+bank 5. **Which bank is invisible is not stable, so the line can never be quoted; read the 44-row
+table.** This is the fifth consecutive review to say so (§AR1, §AS1, §AT1, §AU1, §AV1, §AW1).
+
+The unit's own banks: **bank 28 → 30,489 (−2)** and **bank 0 → 31,425 (−6)**. §AP7 predicted bank 0
+at 31,431 before the fix; **31,431 − 31,425 = 6, exact.** Neither is under 2,000; no bank negative.
+
+⚠️ **The PR's pasted `bankmeasure` block shows `bank 5 … free 1635` and is STALE** — `batch_020`
+took 40 bytes of bank 5 after this PR was authored. The PR's prose elsewhere says 1,595, so this is
+the paste, not the analysis.
+
+### AX2. ⭐⭐ THE CHUNK-0 ZERO IS REAL, AND IT IS WHAT LETS A SUB-50-SLACK FILE THROUGH GATE 4
+
+`chunk_000.txt` sits at **8,165 / 8,192 — 27 bytes slack**, well under gate 4's ≥ 50. **It passes
+because this unit changes it by exactly 0 bytes, and that was measured, not accepted:** both
+versions of all three battle chunks were run through `riotbattle.bytes_from_body` at review —
+
+```
+chunk  0  BASE  8165 (21 lines)   PR  8165 (21 lines)   DELTA +0
+chunk  8  BASE  7437 (19 lines)   PR  7435 (19 lines)   DELTA -2
+chunk 31  BASE  5399 (22 lines)   PR  5397 (22 lines)   DELTA -2
+```
+
+Items 2 and 4 cancel to the byte inside one line: **three `Ｈｅｙ，` → `Ｏｉ，` at −2 and three
+hyphen stutters → comma form at +2.** With the delta at 0 the 27 bytes are inherited from wave 1
+(§G1), chunk 0's ratio is **1.74 < 2.5** so gate 4's own exception applies, and the PR flags it.
+**Had the delta been anything but 0, this would have been a finding.** ⚠️ **A corrections unit that
+touches a nearly-full chunk must state the delta against `HEAD`, not the total** — the total alone
+cannot distinguish "inherited" from "caused here".
+
+### AX3. ⭐⭐ RULING — A COMMA STUTTER CAPITALISES; A COMMA DOUBLING DOES NOT. §AJ3's SUGGESTED FORM IS OVERRULED
+
+**§AJ3 left `chunk_031`'s form open and named `Ｏ，　ｏｉ，`, reasoning that it composes "the way
+§34.1 composes `おいおい、` → `Ｏｉ，　ｏｉ，`". That analogy is the error.** The two are different
+phenomena, the **source** distinguishes them, and each is near-unanimous on its own:
+
+| Shape | Source | Second element | Corpus (`tl/`) |
+|---|---|---|---|
+| **fragment stutter** — word said **once**, false start | `お、おい、` `な、何事だ` `ま、待て！` | **CAPITALISED** | **23 : 6** (19 : 7 before this PR) |
+| **word doubling** — word said **twice** | `おいおい、` | **lowercase** | **7 : 0** |
+
+**`Ｏ，　Ｏｉ，` (chunk_031) STANDS, and `Ｏｉ，　ｏｉ，` (`batch_007.tsv:24`) also stands.** Four
+grounds: the source is a comma stutter, so the comma form is *literal* rather than merely
+conventional; the corpus is 23 : 6; `Ｏ，　Ｏｉ，` contains §32.3's fixed `Ｏｉ，` **byte-for-byte**
+while `Ｏ，　ｏｉ，` fails a case-sensitive gate 7 (reproduced at review); and the same commit
+capitalises `Ｗｈ，　Ｗｈａｔ` / `Ｎ，　Ｎｏｗ` / `Ｔｈ，　Ｔｈｉｓ`, so the lowercase form would fork the
+convention inside one commit. **0 bytes either way.** Written to glossary **§62.4** specifically so a
+later corrections unit cannot "fix" one casing into the other. **§AJ3 is otherwise DISCHARGED.**
+
+⚠️ **`batch_007.tsv:24` is the shipped sibling neither the dispatch nor the PR named**, and it is
+what actually settles §AJ3's reasoning. It was found by a face-(c) `tl/` column-2 pass on the
+English `Ｏｉ`, not by any key-driven check — **the third face earns its keep a second wave running**
+(§AW2).
+
+### AX4. Figure corrections to the PR's Flag 4 — the conclusion survives, the premises do not
+
+| Claim | Measured at review |
+|---|---|
+| "**27** comma stutters in `tl/`, **21 : 6**" | **26 fragment stutters at 19 : 7 before, 29 at 23 : 6 after**, plus **7 whole-word doublings at 7 : 0** — a separate class. The 6 is right post-PR; **21 matches neither tree** |
+| "**all 27** comma stutters are **sentence-initial**" | **FALSE. 23 of 33 before, 24 of 36 after.** Both casings occur in **both** positions: `Ｐ，　Ｐｒｉｎｃｅｓｓ`, `Ｉ，　Ｉｔ`, `Ｓ，　Ｓｅｔｉ`, `Ｃ，　Ｃｕｒｓｅ` non-initial and capitalised; `Ｙ，　ｙｅｓ`, `Ｃ，　ｃｈｉｅｆ` non-initial and lowercase |
+
+**The PR's rejection of "capitalise iff sentence-initial" is nevertheless CORRECT** — position
+genuinely does not discriminate — **but it is correct on this evidence, not on the stated premise.**
+§AC3's pattern holds a third wave: every figure that was *measured* was exact; every wrong one was a
+summary count typed from a candidate list. The unit's own **60 → 11 / 49** hyphen split, by contrast,
+reproduced to the hit.
+
+### AX5. ⭐⭐ §AQ5's `編成` ROW IS CLOSED AS A FALSE POSITIVE OF ITS OWN GATE — free, and §Z1 is untouched
+
+**The highest-value item in the PR: it retires an open flag at zero cost and without the disc.**
+`編成` renders `“Ｆｏｒｍａｔｉｏｎ”` in **both** `batch_007` cells. D432's source is
+`『編成』画面で／『キャラを入れる』を／使うのだ` and its English is
+`ｕｓｅ　“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”／ｏｎ　ｔｈｅ　“Ｆｏｒｍａｔｉｏｎ”／ｓｃｒｅｅｎ．` — English puts
+the object before the locative, a licensed §2.1 step-6 reorder. **§AQ5's gate pairs the Nth `『…』`
+with the Nth `“…”`, so the reorder made bracket 1 (`『編成』`) look as though it rendered
+`“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”`.**
+
+⚠️⚠️ **A POSITIONAL BRACKET/QUOTE PAIRING CANNOT SURVIVE A LICENSED REORDERING, and it will keep
+producing this class of false positive.** §AQ5's own first two rows were already suspected false
+positives of a related kind (a `{FFFE}` splitting a span). **Anyone re-running that gate must read
+every hit against its source, not act on the count.**
+
+⭐ **`FLAGS.md` §Z1's own table already carried the correct pairing** — `『編成』` → `“Ｆｏｒｍａｔｉｏｎ”`,
+`『キャラを入れる』` → `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` — **so §AQ5 contradicted §Z1 for two waves and
+nobody opened §Z1.** §AP8's structural problem again.
+
+**§Z1 / Blocked 7 is UNCHANGED and still needs the disc.** Item 5 answers only §AQ5's *consistency*
+question; whether the three labels match what the Formation screen actually shows is a different
+question and still wants one look in game.
+
+### AX6. ⚠️ CITATION CONVENTIONS — the trap has a FIFTH face, and BOTH conventions are live in `glossary.md`
+
+**Confirmed at this review: project DATA = the 0-based `script_unique.txt` row index + 1**, pinned
+against three independent anchors — §34.4's D598 (`　アイテムを買う`) and D605
+(`どの品を売ってもらえますか？`), and §42.5's D481 (`そう。疲れたときはいつでもよってね。`). On that
+basis **§37.1's `反乱` census cell was 0-based and off by one on all four entries** — its 443 / 785 /
+896 / 1383 are really **444 / 786 / 897 / 1384**, and none of the four numbers it printed contains
+`反乱` at all. **Corrected in place, with the convention now named where the numbers are.** The
+glossary already knew — §57.5 reads "*D786 is that list's '785' under its 0-based numbering*" — but
+that sits ~3,400 lines from the cell it rescues.
+
+⚠️ **And the same row's BATTLE citations use a THIRD convention: "c22 L6, c38 L4, c43 L4" are
+1-based BODY indices** (0-based bodies 5 / 3 / 3; `tl/battle/` **file** lines 7 / 5 / 5), whereas
+§61.5.6 established that "chunk 8 L14" was **0-based**. **`glossary.md` therefore uses 0-based and
+1-based body indices in different rows, and 0-based DATA indices in a file whose stated convention is
+1-based.** Three conventions, one file.
+
+**The only durable fix is the one §AW and the wave-12 dispatch already reached for: cite by SECTION,
+and verify a row by its TEXT.** Every `glossary.md:NNNN` citation in PR #43's body — all of them
+right when written — had moved by the time it was reviewed: `:1677`→`:1689`, `:3350`→`:3362`,
+`:3948`→`:3972`, `:4265`→`:4289`, `:7367`→`:7393`, shifted by `batch_020`'s integration.
+
+### AX7. ⚠️ A `{FFFE}`-ONLY COLUMN CHECK IS WRONG IN THE DANGEROUS DIRECTION ON POOLED ROWS
+
+**The reviewer's first instrument reported `batch_012.tsv:53` at 27 columns — over the hard limit —
+and a finding was nearly raised on it.** The cause: it split the message on `{FFFE}` alone, and this
+row carries a `{FCC0}` **inside** a segment —
+
+```
+ａｎｄ　ｍａｋｅ　ｓｕｒｅ．{FCC0}{FB01}{FFFA}{=00}{=00}　Ａ　ｇｏｌｄ　ｉｎｇｏｔ
+```
+
+`{FCC0}` clears the box, so the true rows are **14** and **15**, and the source has the identical
+shape (`確かめられるといい。{FCC0}{FB01}{FFFA}{=00}{=00}　金の塊`). **`assemble.py:106` splits on
+`FCC0|FC30|FC51|FC50|FFFF` as well as `FFFE`, and any hand-rolled column check must do the same** —
+otherwise it fabricates over-width rows exactly where pooled rows concatenate scenes, which is where
+review attention is highest. Re-measured correctly, **every row on all five changed lines is ≤ 24
+before and after, and the widest row this unit writes is 22.**
+
+### AX8. Gate 7's three faces on a unit that is *entirely* gate 7 — corpus stated
+
+Face (a) **1,257 key cells**, face (b) **255 note-cell JP→EN pairs**, face (c) **1,803 `tl/` +
+`pending/` column-2 cells**. (A different splitter from §AW's 1,293 / 2,048 / 2,893, and from the
+PR's 691 + 697 — **gate-7 counts are instrument-dependent and the number is not the finding**.)
+
+Faces (a)+(b) fired **88 times** on the five changed lines; all 88 were read. **87 are multi-form-row
+or sense-split artifacts. The 88th decided item 1:** a row giving `反乱` → `ｒｅｖｏｌｔ`, which read
+in isolation makes this PR look like it changed a cell *away* from a glossary form. **Reading the
+row settles it** — §37.1 carries an explicit scope clause requiring the opposite, and the base was
+in violation of it. ⚠️ **A harvester that lifts a key and its English without the rest of the cell
+inverts the finding.**
+
+Face (c) on every English form the PR introduces: **`Ｏｉ`** 8 battle cells + `batch_007:24`, all
+`おい` (correctly excluding `Ｏｉｎｋ` for ブヒ in chunks 1/30 and `ＥＳＴｉＶｅｂＲＯｉ` in chunk 31);
+**`ｒｅｂｅｌｌｉｏｎ`** 3 cells, all script, all `反乱`; **`ａｒｔｉｃｌｅ`** 6 cells, all script, all
+bare `品`, nothing else in `tl/` shipping it.
+
+### AX9. Discharged at this merge, and what stays live
+
+- **§AJ3** (`おい、` in three merged files) — **DISCHARGED.** All 5 cells re-cut; **all 8 `おい`
+  instances in translated chunks now render `Ｏｉ，`** (5 here + chunks 20/37/38 already correct).
+  The other 6 are in untranslated 16 / 23 ×2 / 27 / 32 and parked 43. **All 8 script instances are
+  untranslated**, so the script store was never in debt. Its open sub-decision is ruled at §AX3.
+- **§AP5** (chunk 0's three hyphen stutters) — **DISCHARGED for merged work.** `tl/` holds **0**
+  hyphen stutters and all 49 legitimate `‐` compounds are untouched. The 8 that remain are in parked
+  `pending/chunk_043.txt` and `pending/chunk_043_abridged.txt` (4 each) and belong to §L3's
+  adopt-on-re-cut list. §AP5's own "hyphen 3" was right for `tl/`; **11 is the `tl/`+`pending/`
+  figure** and both are correct at their own scope.
+- **§AP7** (`品` → `ｇｏｏｄｓ` at D376) — **DISCHARGED, and its citation was RIGHT.** D376 is a
+  **25-segment pooled row** with the `品` in **segment 16**; judging it from its head is what made
+  the citation look false. **`品` → `ｇｏｏｄｓ` is now 0 across `tl/`** — the surviving `ｇｏｏｄｓ`
+  (`batch_012:62`, D385) renders **`モノ`**, a different source word.
+- **§AQ5's `batch_007` row** — **CLOSED as a false positive of its own gate** (§AX5). Its other two
+  rows are unaffected by this merge.
+- **§37.1's `反乱` row STAYS LIVE for D1384 only** — untranslated, **bank 41, 353 bytes free**,
+  blocked behind §F2. Whoever renders it must take §38.3's `ｒｅｂｅｌｌｉｏｎ`, not `ｒｅｖｏｌｔ`.
+- **§Z1 / Blocked 7 unchanged** — still needs the disc, on its own terms.
+
+### AX10. What the PR got right, recorded because the reviewer could have got it wrong
+
+**All 14 DATA citations in the PR body are exact** — D376, 426, 432, 444, 632, 710, 770, 786, 852,
+859, 867, 897, 927, 974 — re-derived one at a time, **14/14**. So are every byte figure, both bank
+deltas, the 60 → 11/49 hyphen split, the 13 / 5 / 8 hey census, the 22/20/10 → 21/20/14 re-flow, the
+`{FFFE}`/`{FCC0}` invariants and the chunk-0 zero.
+
+⭐ **The unit disclosed two of its own scripts as wrong before they were right** — `[Ｈｈ]ｅｙ`
+matching inside **`ｔｈｅｙ`**, and a battle pairing off by one until the dump's trailing inter-chunk
+blank was dropped. **Both are real traps and the reviewer hit the second one**; the pairing self-test
+in this review (32 files, 0 mismatches) exists because of that disclosure. **A translator reporting
+its own instrument failures is worth more to the next agent than a clean-looking flag list.**
+
+### AX11. Still true, carried forward
+
+Branch deletion returns **HTTP 403** for this app (§AQ9): `tl/corrections-wave12` was **NOT** deleted
+and remains on the remote; the authoritative signal is the PR's own `merged: true` plus the squash
+commit, never the branch's absence. GitHub still refuses **`REQUEST_CHANGES`** (§AQ1) — and on a
+self-authored PR it refuses `APPROVE` too — so the decision was posted as a **`COMMENT`** review with
+`DECISION:` on line 1. `gh` is not installed; the GitHub MCP tools were used throughout. A fresh
+container still clones **shallow with a stale local ref** of the integration branch, and
+`git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` remains the fix.

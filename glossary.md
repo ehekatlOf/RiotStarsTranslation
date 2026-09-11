@@ -1686,7 +1686,7 @@ the first unit in the project to ship with zero re-flow.
 |---|---|---|
 | あーあ | `Ａａｈ，` | Dejected sigh, twice in this chunk, byte-identical in both. **Distinct** from あ、 → `Ａｈ，`, ほう → `Ｏｈ`, おお → `Ｏｈ！`, おや → `Ｏｈ？` (§6, §18.2). The doubled `ａ` tracks the long vowel, as §11.5 tracks laugh beats |
 | そうそう。 | `Ｔｈａｔ’ｓ　ｒｉｇｈｔ．` | Casual agreement. ⚠️ **`pending/chunk_005.txt` line 32 renders the byte-identical `そうそう。` as `Ｑｕｉｔｅ　ｓｏ．`** — verified. Accepted at review because `pending/` does not ship and the speaker here is Ridge, whose §7 register has no *Quite so*. **But chunk 4 has now shipped, so this form binds**: chunk 5's re-cut must adopt it or it *creates* a §3 violation the day the slot patch lands. Measured for that re-cut: 9 → 13 columns, **+8 bytes** |
-| 何だ！？ | `Ｗｈａｔ　ｉｓ　ｉｔ！？` | A fifth member of the 何 family, all held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), and chunk 0's shipped `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` and `こ、今度は何だ！？` → `Ｎ‐ｎｏｗ　ｗｈａｔ！？` (both carry the source's stutter) |
+| 何だ！？ | `Ｗｈａｔ　ｉｓ　ｉｔ！？` | A fifth member of the 何 family, all held apart: 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` (§6), あれ・・・？ → `Ｗｈａｔ．．．？` (§21.2), and chunk 0's shipped `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` and `こ、今度は何だ！？` → `Ｎ‐ｎｏｗ　ｗｈａｔ！？` (both carry the source's stutter) ⚠️⚠️ **SHIPPED FORMS SUPERSEDED 2026-09-11 (§4.3, PR #43) — the two hyphen forms are NO LONGER IN THE TREE.** `chunk_000` now ships **`Ｗｈ，　Ｗｈａｔ　ｉｓ　ｔｈｉｓ！？`** (17→18) and **`Ｎ，　Ｎｏｗ　ｗｈａｔ！？`** (12→13), with a third, `こ、これを・・・` → **`Ｔｈ，　Ｔｈｉｓ．．．`** (10→11). **The comma form is the LITERAL rendering, not merely the convention**: all three sources are `X、X…` comma stutters, so the hyphen was the departure. §AP5's `19 : 3` debt is discharged for merged work; `tl/` holds **0** hyphen stutters and the 49 legitimate `‐` compounds are untouched. The 8 that remain are in parked `pending/chunk_043*` (§L3). See §62.2 |
 | 気にしない、気にしない。 | `Ｎｅｖｅｒ　ｍｉｎｄ，　ｎｅｖｅｒ　ｍｉｎｄ．` | The source's doubling is kept; 23 columns exactly. Same treatment as `早く、早く！！` → `Ｑｕｉｃｋ，　ｑｕｉｃｋ！！` in this chunk |
 | 〜って (quotative, echoing back) | the echoed clause in `“　”` | `どうする？って` → `“Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？”`. The quotes carry the particle; `“ ”` is §3.1-legal and already the `『…』` form (§3) |
 
@@ -1804,7 +1804,7 @@ placeholder row and discharges §10.1.
 | あ〜ん | Ａａａｈ， | The drawn-out wail of a man watching his reward evaporate. The `〜` lengthener becomes a repeated vowel, per the kana-beat convention (§11.5, §14.5). **Distinct** from §23.2's あーあ → `Ａａｈ，` and §6's あ、 → `Ａｈ，` — three source strings, three lengths |
 | ちょっと、(protest) | Ｈｏｌｄ　ｏｎ， | An interruption. Kept **distinct** from this chunk's own すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` — two source strings, one an interruption and one an apology |
 | ・・・聞いたな？ | ．．．Ｙｏｕ　ｈｅａｒｄ　ｔｈａｔ？ | **Distinct** from §6's 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？` and §21.2's あれ・・・？ → `Ｗｈａｔ．．．？` |
-| ま、待て！ | Ｗ，　Ｗａｉｔ！ | 8 columns. **Ruled 2026-09-08, PR #7 review.** The comma form, following shipped `chunk_007`'s `バ、バカな・・・` → `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` (§19.1). ⚠️ `pending/chunk_043.txt` line 14 renders the byte-identical string as `Ｗ‐ｗａｉｔ！`; it is parked, so §3 is not engaged today, and the re-cut is queued in `pending/README.md`. Chunk 0's `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` (§23.2) is a **different source string** and stays as it is |
+| ま、待て！ | Ｗ，　Ｗａｉｔ！ | 8 columns. **Ruled 2026-09-08, PR #7 review.** The comma form, following shipped `chunk_007`'s `バ、バカな・・・` → `Ｉｍ，　Ｉｍｐｏｓｓｉｂｌｅ．．．` (§19.1). ⚠️ `pending/chunk_043.txt` line 14 renders the byte-identical string as `Ｗ‐ｗａｉｔ！`; it is parked, so §3 is not engaged today, and the re-cut is queued in `pending/README.md`. Chunk 0's `な、何事だ！？` → `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？` (§23.2) is a **different source string** and stays as it is ⚠️ **RECORD CORRECTED 2026-09-11 (§4.3, PR #43): it is still a different source string (`な、何事だ！？`, not `ま、待て！`), but it no longer "stays as it is" — it now ships `Ｗｈ，　Ｗｈａｔ　ｉｓ　ｔｈｉｓ！？`, this row's own comma form.** The ruling here was right all along and merged work has caught up to it. See §23.2 and §62.2 |
 | しかたねえ。 | Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ． | Twice here, byte-identical. **The same words as `pending/chunk_005`'s 仕方ない、 → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ，`** — which chunk 6 also carries, byte-identical — with the stop following the source, `．` against `，`. That is §5's stated mechanism for a fixed form under punctuation that is not its own, not a divergence |
 
 ### 24.4 Ruling — §18.2's four-way punctuation split does not hold, and `おお、` collides with `ほう、`
@@ -3359,7 +3359,7 @@ carries is `ジュエル`, §3's currency, and it is kept clear of both — see 
 | ジュエル | `Ｊｅｗｅｌｓ` | 6 / 7 columns. **FIRST RENDERING IN THE PROJECT — promoted, and the form is §3's, not new.** §3 fixed ジュエル → *Jewel*, "do not translate as gem", but `Ｊｅｗｅｌ` in any casing occurred **nowhere** in `tl/` or `pending/` until now. ⚠️ **Seven instances, not the PR's six** — recounted at review against seven `ジュエル` in the source (unique 600, 603, 606, 616, 622, 636, 641), all plural. Held clear of ジェム → `Ｇｅｍ` (§3, **147×** in `tl/`) and 宝石 → `ｇｅｍｓｔｏｎｅ` (§33.5) |
 | いらっしゃいませ / いらっしゃい / いらっしゃいノロ | `Ｗｅｌｃｏｍｅ` + the source's own punctuation (+ tic) | 7 columns. Three source spellings, one English word — the §17.2 鬼 / オーガ collapse. `Ｗｅｌｃｏｍｅ！` (613), `Ｗｅｌｃｏｍｅ！！` (632), `Ｗｅｌｃｏｍｅ，　ｎｙｏｒｏ！！` (634). ⚠️ **Shares its English with `ようこそ` → `Ｗｅｌｃｏｍｅ，` (`chunk_007` L15, shipped) and §25.3's test is NOT met — see §34.5.** The collapse stands on other grounds; the collision is live in bank 26 |
 | お客様 / お客さん (vocative) | **dropped; carried by the second person** (`ｙｏｕ` / `ｙｏｕｒ`) | §2's rule for politeness with no English lexical equivalent, and **§30.2's `兵隊さん` → `ｓｏｌｄｉｅｒｓ` third pattern** — `さん` on a common noun, so neither §21.2's `〜さん`-on-a-personal-name rule nor §2's comic トカゲさん → `Ｍｉｓｔｅｒ　Ｌｉｚａｒｄ`. 4 instances (603, 610 keigo; 619, 626 the daughter). ⚠️ **`ｖｉｓｉｔｏｒｓ` is NOT available**: verified at review by positional pairing — `chunk_011` L3 `あら、お客様？` → `Ｏｈ　ｍｙ，　ｖｉｓｉｔｏｒｓ？` and `chunk_035` L2 `お客様とはめずらしい。` → `Ｖｉｓｉｔｏｒｓ　…　ｍａｎｓｉｏｎ？　Ｈｏｗ　ｒａｒｅ．`, both the *guest-at-a-house* sense, plus `chunk_033` L2's `Ｎｅｗ　ｖｉｓｉｔｏｒｓ，` for a supplied subject. **§32.4's owed re-cut of `chunk_011` L3 keeps `ｖｉｓｉｔｏｒｓ`**, so the form stays spent. **No gendered vocative** (`ｓｉｒ`) was introduced, correctly — §10.7 leaves player gender open. The keigo/plain contrast survives message-wide in the syntax: `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ　ｙｏｕ　ｓｅｅｍ　ａ　ｌｉｔｔｌｅ　ｓｈｏｒｔ` against `Ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ　ｄｏｎ’ｔ　ｈａｖｅ　ｅｎｏｕｇｈ` |
-| 品 | `ａｒｔｉｃｌｅ` | 7 columns. **Held distinct from アイテム → `ｉｔｅｍ` (§21.3, `batch_005`), and the split is FORCED — see §34.4.** `ａｒｔｉｃｌｅ` verified free across `tl/` and `pending/`. 3 instances (605, 609, 640) |  ⚠️ **REACH NOTE ADDED 2026-09-11 (§4.3, PR #35 review) — the ruling and the rendering are UNCHANGED, and §34.4's split is intact.** This row's own reach cell names three lines, all in the keigo shop's sell branch. **`tl/script/batch_012.tsv` DATA 376 is a fourth occurrence and it ships `ｇｏｏｄｓ`, not `ａｒｔｉｃｌｅ`** — `奴の　盗んだ品が` → `Ｔｈｅ　ｇｏｏｄｓ　ｈｅ　ｓｔｏｌｅ　ａｒｅ`. **This is NOT a §34.4 violation**: §34.4 forbids collapsing `品` onto `アイテム` → `ｉｔｅｍ`, and that unit keeps them apart (`アイテム` → `ｉｔｅｍｓ` at DATA 362). It is a second English for one sense, and it is **recorded as §4.3 debt rather than reworked**, because PR #35 was at round 3 and the variance is one noun in one row. **Measured both ways with `len()` at review and width forced nothing:** `ｇｏｏｄｓ` 5, `ａｒｔｉｃｌｅｓ` 8; the page wraps **three rows either way** — shipped 22/20/10, the conforming form 21/20/14 at the ≤23 preference — so the fix is **+6 bytes into bank 0, which has 31,431 free, with no re-flow and no tag change**. A corrections unit should take it. See `FLAGS.md` §AP |
+| 品 | `ａｒｔｉｃｌｅ` | 7 columns. **Held distinct from アイテム → `ｉｔｅｍ` (§21.3, `batch_005`), and the split is FORCED — see §34.4.** `ａｒｔｉｃｌｅ` verified free across `tl/` and `pending/`. ~~3 instances (605, 609, 640)~~ **6 SHIPPED instances — D376, 590, 605, 609, 640, 735** |  ⚠️ **REACH NOTE ADDED 2026-09-11 (§4.3, PR #35 review) — the ruling and the rendering are UNCHANGED, and §34.4's split is intact.** This row's own reach cell names three lines, all in the keigo shop's sell branch. **`tl/script/batch_012.tsv` DATA 376 is a fourth occurrence and it ships `ｇｏｏｄｓ`, not `ａｒｔｉｃｌｅ`** — `奴の　盗んだ品が` → `Ｔｈｅ　ｇｏｏｄｓ　ｈｅ　ｓｔｏｌｅ　ａｒｅ`. **This is NOT a §34.4 violation**: §34.4 forbids collapsing `品` onto `アイテム` → `ｉｔｅｍ`, and that unit keeps them apart (`アイテム` → `ｉｔｅｍｓ` at DATA 362). It is a second English for one sense, and it is **recorded as §4.3 debt rather than reworked**, because PR #35 was at round 3 and the variance is one noun in one row. **Measured both ways with `len()` at review and width forced nothing:** `ｇｏｏｄｓ` 5, `ａｒｔｉｃｌｅｓ` 8; the page wraps **three rows either way** — shipped 22/20/10, the conforming form 21/20/14 at the ≤23 preference — so the fix is **+6 bytes into bank 0, which has 31,431 free, with no re-flow and no tag change**. A corrections unit should take it. See `FLAGS.md` §AP ⭐⭐ **DEBT DISCHARGED 2026-09-11 (PR #43). `ｇｏｏｄｓ` IS GONE AND THE REACH CELL IS CORRECTED.** D376 was re-cut to `Ｔｈｅ　ａｒｔｉｃｌｅｓ　ｈｅ　ｓｔｏｌｅ`, **+6 bytes into bank 0 (31,431 → 31,425, the predicted figure to the byte)**, columns **22/20/10 → 21/20/14**, tag stream byte-identical, no `{FFFE}` moved. **`品` → `ｇｏｏｄｓ` is now 0 across `tl/`**; the one surviving `ｇｏｏｄｓ` (`batch_012:62`, D385) renders **`モノ`**, a different source word this row does not reach. **§34.4's `品`/`アイテム` split is intact** — `batch_012` keeps `アイテム` → `ｉｔｅｍｓ` at D362. **`FLAGS.md` §AP7 is CLOSED.** ⚠️ **The reach cell said "3 instances" and there are SIX SHIPPED** — D590 (`batch_019:42`) and D735 (`batch_014:37`) landed in waves 10 and 11 and were never added, and D376 is this unit's. **All six render `ａｒｔｉｃｌｅ`**; note D609 carries it on its **third** row (`ｔｈａｔ　ａｒｔｉｃｌｅ．`, the keigo reorder), so a row-local check misses it. ⚠️ **6 shipped is not the whole census: the bare noun is 8 instances** — D1278 and D1304 are untranslated in **bank 40 (75 bytes free)**. **§61.5.1's eight and this cell's six are both right at their own scope**, and nothing contradicts either. ⚠️ **This row's "with no re-flow" clause above is the one part of it that is WRONG**: the naive in-place swap makes the row **25** columns, so the two breaks in the page must each shift right by one word. The cell's own predicted `21/20/14` is only reachable **with** the re-flow — it contradicted itself, and the figures were right. ⚠️ **No collision with `batch_020`'s `商品` → `ｗａｒｅｓ`** (D343, bank 20) or with battle `記念品` → `ｋｅｅｐｓａｋｅ` (chunk 20) — both compounds, checked at this review. See §62.3 |
 | 失礼ですが | `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，` | 18 columns. The **phrase** is byte-identical in both instances; ⚠️ **the ROWS are not, and the PR's "twice, byte-identical" overstates it** — 603 renders `お客様、失礼ですが` as `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ` (22) and 610 renders `失礼ですが、` as `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，` (18). Two different source strings, both correct. Held **distinct** from §24.3's すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` and §27.1's すみません。 → `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` — three source strings, three jobs. Free across `tl/` |
 | 残念です (a shop's regret) | `ａ　ｓｈａｍｅ` | Three source strings, three renderings, one noun: `それは　残念です。` → `Ｔｈａｔ　ｉｓ　ａ　ｓｈａｍｅ．` (602, 16), `誠に　残念です。` → `Ａ　ｇｒｅａｔ　ｓｈａｍｅ．` (608, 14), `そりゃ、残念ノロ。` → `Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ，　ｎｙｏｒｏ．` (335, 22). Held **distinct** from 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (chunk 6) and chunk 12's `ｍｏｓｔ　ｒｅｇｒｅｔｔａｂｌｅ`. `ａ　ｓｈａｍｅ` free. ⚠️ `Ｔｒｕｌｙ　ａ　ｓｈａｍｅ．` was correctly rejected for 608: §28.3 spends `Ｔｒｕｌｙ，` on `確かに、`, **which this very batch renders at 624** — the collision would have been inside one unit |
 | 毎度あり (+ tic) | `Ｍａｎｙ　ｔｈａｎｋｓ` | 11 columns; `毎度ありノロ！！` → `Ｍａｎｙ　ｔｈａｎｋｓ，　ｎｙｏｒｏ！！` (20), twice and byte-identical (642, 646). Free across `tl/`. Held **distinct** from the three ありがとう forms this batch also carries — `Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｙｏｕｒ　ｐｕｒｃｈａｓｅ` (お買い上げ〜, 601/617) and `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ` (ありがとうございました, matching `chunk_003` L4). ⚠️ **Binds `毎度あり！！` (unique 592, 596) and `毎度アリ、ゲロゲロ。` (unique 651)** |
@@ -3969,7 +3969,7 @@ checks passed"; `rowcheck.py 22` prints **no `!!` at all**. `bankmeasure` not re
 | 誤解 | `ｍｉｓｕｎｄｅｒｓｔｏｏｄ` (the verb) | 13 columns. `それは誤解だ。` → `Ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L05) and `クレス、誤解だ。` → `Ｃｒｅｓｓ，` / `ｙｏｕ’ｖｅ　ｍｉｓｕｎｄｅｒｓｔｏｏｄ．` (L06) — **one form, both instances, the two branches of one scene**, so the player says the same thing whichever way the parley goes. The noun is 18 columns, not the PR's 16 (§37.6.3), and `Ｔｈａｔ’ｓ　ａ　ｍｉｓｕｎｄｅｒｓｔａｎｄｉｎｇ．` is **26** — it cannot share a row on a page already at four. `ｍｉｓｔａｋｅ` was rejected because `pending/chunk_017` spends it on `まちがいない` → `Ｎｏ　ｍｉｓｔａｋｅ．`. **2 battle / 0 script, both here.** Verified free across `tl/` **and** `pending/` |
 | 見損なう | `ｍｉｓｊｕｄｇｅ` | 9 columns. `私はお前を見損なっていたようだ。` → `ｉｔ　ｓｅｅｍｓ　Ｉ　ｈａｖｅ` / `ｍｉｓｊｕｄｇｅｄ　ｙｏｕ．` Deliberately **not** §30.4's reserved `ｕｎｄｅｒｅｓｔｉｍａｔｅ` (held for 甘く見る / 見くびる) and not its `ｍｉｓｒｅａｄ` (読みが甘い) — three source words, three English forms, which is what §30.4 wrote that reserve to protect. ⚠️ **Stronger than the PR argued, and confirmed at review**: 見損なう here is the *disappointment* sense — Cress thought too **well** of the player — so `ｕｎｄｅｒｅｓｔｉｍａｔｅ` would invert the direction of the error, not merely spend a reserve. **1 battle / 0 script.** Verified free |
 | 鎮圧 | `ｐｕｔ　…　ｄｏｗｎ` | 8 columns. **Not a new form — recording one already rendered.** `pending/chunk_043.txt` L4 ships `地上の反乱を鎮圧するための` → `ｌａｓｅｒ　ｗｅａｐｏｎｓ　ｔｏ　ｐｕｔ` / `ｄｏｗｎ　ｒｅｖｏｌｔ　ｏｎ　ｔｈｅ` / `ｇｒｏｕｎｄ　ｂｅｌｏｗ．`, and this chunk's `ここで鎮圧させてもらう。` → `ｐｕｔ　ｙｏｕ　ｄｏｗｎ　ｈｅｒｅ．` matches it. **2 battle / 0 script — both now rendered, so the word is closed** |
-| 反乱 (bare) | `ｒｅｖｏｌｔ` | 6 columns. Same source as above: `pending/chunk_043` already ships `ｒｅｖｏｌｔ` for bare 反乱, and `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` / `ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` matches. Held **distinct** from §26.4's 反乱軍 → *the rebels*, which this chunk also carries (`反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ`) — **both words appear in one message**, so they could never have collapsed. ⚠️ **COUNT ADDED 2026-09-09 (PR #33 review) — an ADDITION, not a §4.3 correction: this row never carried a count or a closure claim.** Measured over both dumps with `反乱(?!軍)`: **3 battle (c22 L6, c38 L4, c43 L4) + 4 script (DATA 443, 785, 896, 1383)** — chunk 38 renders the third battle instance, `反乱となれば` → `Ｗｈｅｒｅ　ｔｈｅｒｅ　ｉｓ　ｒｅｖｏｌｔ，`, matching this row. ⚠️ **SCOPE: this row is the BATTLE store's form. §38.3 fixes the same bare word to `ｒｅｂｅｌｌｉｏｎ` from `batch_007` (script banks 2/3), and both stand** — §25.3's co-occurrence test is met (different stores; no shared chunk, bank or message), but a script batch reaching DATA 443/785/896/1383 must take §38.3's form, not this one. ⚠️ **The "2 battle / 0 script — closed" clause belongs to the `鎮圧` row directly above, where it is TRUE** (chunks 22 and 43, verified at this review); PR #33's Flag 4 quoted it against this row, and that misattribution is recorded rather than acted on — see `FLAGS.md` §AI |
+| 反乱 (bare) | `ｒｅｖｏｌｔ` | 6 columns. Same source as above: `pending/chunk_043` already ships `ｒｅｖｏｌｔ` for bare 反乱, and `俺たちは反乱なんて起こすつもりはない。` → `Ｗｅ　ｈａｖｅ　ｎｏ　ｉｎｔｅｎｔｉｏｎ` / `ｏｆ　ｒａｉｓｉｎｇ　ａ　ｒｅｖｏｌｔ．` matches. Held **distinct** from §26.4's 反乱軍 → *the rebels*, which this chunk also carries (`反乱軍に仕立て上げ、` → `ｂｒａｎｄｅｄ　ｕｓ` / `ａｓ　ｒｅｂｅｌｓ`) — **both words appear in one message**, so they could never have collapsed. ⚠️ **COUNT ADDED 2026-09-09 (PR #33 review) — an ADDITION, not a §4.3 correction: this row never carried a count or a closure claim.** Measured over both dumps with `反乱(?!軍)`: **3 battle (c22 L6, c38 L4, c43 L4) + 4 script (~~DATA 443, 785, 896, 1383~~ → **DATA 444, 786, 897, 1384**)** — chunk 38 renders the third battle instance, `反乱となれば` → `Ｗｈｅｒｅ　ｔｈｅｒｅ　ｉｓ　ｒｅｖｏｌｔ，`, matching this row. ⚠️ **SCOPE: this row is the BATTLE store's form. §38.3 fixes the same bare word to `ｒｅｂｅｌｌｉｏｎ` from `batch_007` (script banks 2/3), and both stand** — §25.3's co-occurrence test is met (different stores; no shared chunk, bank or message), but a script batch reaching DATA ~~443/785/896/1383~~ **444/786/897/1384** must take §38.3's form, not this one. ⚠️ **The "2 battle / 0 script — closed" clause belongs to the `鎮圧` row directly above, where it is TRUE** (chunks 22 and 43, verified at this review); PR #33's Flag 4 quoted it against this row, and that misattribution is recorded rather than acted on — see `FLAGS.md` §AI ⚠️⚠️ **CENSUS RENUMBERED 2026-09-11 (§4.3, PR #43 review) — THE RULING, THE SCOPE AND THE RENDERING ARE ALL UNCHANGED.** Both DATA lists in this row were **0-based body indices** in a file whose stated convention is **1-based DATA**; none of 443 / 785 / 896 / 1383 contains `反乱` at all. **Project DATA = the 0-based index + 1**, confirmed at that review against three independent anchors — §34.4's D598 (`　アイテムを買う`) and D605 (`どの品を売ってもらえますか？`), and §42.5's D481 (`そう。疲れたときはいつでもよってね。`). §57.5's `反乱`/D786 note already relied on this ("*that list's 785 under its 0-based numbering*") ~3,400 lines away, which is §AP8's structural problem; **the convention is now named where the numbers are.** ⚠️ **The `L6 / L4 / L4` battle citations are 1-based BODY indices** (0-based bodies 5 / 3 / 3; `tl/battle/` **file** lines 7 / 5 / 5) — a different convention from §61.5.6's 0-based "chunk 8 L14", and **both are live in this file**; see `FLAGS.md` §AX. ⭐ **STATUS 2026-09-11: D897 IS NOW SHIPPED and it took this row's scope clause.** `batch_010.tsv:48` shipped `ｒｅｖｏｌｔ` against the clause above and was re-cut to `ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ　ｗａｓ` at PR #43 — see §62.1. D444 (`batch_007:50`) and D786 (`batch_015:40`) were already conformant. ⚠️ **THE ROW STAYS LIVE FOR D1384 ONLY** — untranslated, bank 41, 353 bytes free, blocked behind §F2. Whoever renders it must take §38.3's `ｒｅｂｅｌｌｉｏｎ`. ⚠️ **ENGLISH-SIDE REACH, which this cell does not state: `ｒｅｖｏｌｔ` is 4× in 3 merged battle files, not 3× — because §47.4's `反旗を翻す` → `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` is a THIRD source word on the same English, in chunks 38 and 42.** §47.4 records it correctly and names chunk 42; **this cell does not, so read §47.4 before counting `ｒｅｖｏｌｔ` in `tl/battle/`.** §25.3 stays met — all four are battle-store |
 | 責任をとる | `ａｎｓｗｅｒ　ｆｏｒ　…` | `責任は、私がとる。` → `Ｉ　ｗｉｌｌ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` (21 columns). **Not a new form**: §15.2 fixes `責任はどうとるつもりだ` → `ｈｏｗ　ｄｏ　ｙｏｕ　ｉｎｔｅｎｄ　ｔｏ　ａｎｓｗｅｒ　ｆｏｒ　ｔｈｉｓ` (shipped, `batch_002` L9) and `pending/chunk_005` L28 ships `私が責任を持ちます。` → `Ｉ　ａｎｓｗｅｒ　ｆｏｒ　ｉｔ．` This is the third member and it matches both. **3 battle + 4 script-unique** |
 | 犠牲者 | `ｃａｓｕａｌｔｉｅｓ` | 10 columns. `これだけの犠牲者を出しておきながら、` → `Ａｆｔｅｒ　ｃａｕｓｉｎｇ　ｔｈｉｓ　ｍａｎｙ` / `ｃａｓｕａｌｔｉｅｓ，`. Military English for battle dead; *victims* would read as civilians, which is not what Cress means. **1 battle + related 犠牲 forms elsewhere** (`かなりの犠牲を` battle, `甚大な兵力を犠牲にした` script), so the noun is fixed here. Verified free |
 | 援護する | `ｓｕｐｐｏｒｔ` | 7 columns, **lowercase**. `リオン将軍とアルフレッドを援護してくれ。` → `９ｔｈ　Ａｒｍｙ，　ｓｕｐｐｏｒｔ` / `Ｇｅｎｅｒａｌ　Ｌｅｏｎ　ａｎｄ` / `Ａｌｆｒｅｄ，　ｗｈｏ　ｒｅｍａｉｎ` / `ｉｎ　ｔｈｅ　ｃａｓｔｌｅ．` A hapax — **1 battle / 0 script** — but fixed so it cannot drift. Held **distinct** from §2's 援軍 → *reinforcements / aid*, §20.3's 救援 → *go to … aid* and §24.2's 増援 → *reinforcements*: four source words, four English forms. ⚠️ Lowercase `ｓｕｐｐｏｒｔ` verified free at review; §26.3's `“Ｓｕｐｐｏｒｔ　Ｅｆｆｅｃｔ”` (支援効果) is capitalised, quoted and script-only, and §25.3's test is met (支援 script-only, 援護 battle chunk 22 only) |
@@ -5964,7 +5964,7 @@ briefing on the Empire–Carline treaty, the townsman's parting gift, two tutori
 
 | Japanese | English | Note |
 |---|---|---|
-| 反旗を翻す | `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` | **2 battle (38, 42) + 0 script.** Matches PR #31 (chunk 42), which shipped it first and did **not** move |
+| 反旗を翻す | `ｒａｉｓｅ　ｔｈｅ　ｂａｎｎｅｒ　ｏｆ　ｒｅｖｏｌｔ` | **2 battle (38, 42) + 0 script.** Matches PR #31 (chunk 42), which shipped it first and did **not** move ⭐ **CROSS-REFERENCE ADDED 2026-09-11 (PR #43 review) — nothing here is corrected; this row was RIGHT and it is the one that gets read too late.** §37.1's `反乱 (bare)` census names only "3 battle", so a reviewer counting the **English** `ｒｅｖｏｌｔ` across `tl/battle/` finds **4** (chunk_022 ×1, chunk_038 ×2, chunk_042 ×1, plus 2 in parked `chunk_043*`) and suspects a defect. **The fourth is this row's word, and chunk 42 is a file §37.1 never names.** §AP8's structural problem exactly: the scope was recoverable only by reading another section. §37.1 now points here |
 
 **PR #33 originally shipped `ｒｏｓｅ　ｉｎ　ｒｅｖｏｌｔ` and argued PR #31's form was *geometrically
 impossible* in chunk 38's box** — L18 page 2 is shape `.TTTT` (a **leading**, unfillable blank plus 4
@@ -8343,3 +8343,137 @@ re-cut. **Recorded for a corrections unit**, beside the PR's own Flag 14 (`な�
 | narration + an old man at the trading port | 342, 343 | 20, 21 | `batch_013:47`, `batch_015:51`; §7's village-elder column, **no contraction in D343** |
 | the ship's captain | 344 | 23, 24 | `batch_013:38`, `batch_016:90` |
 | the Bernard's-church priest | 345 | 30, 31 | `batch_009:62`, `batch_005:39/40` — §24.6's contraction-free clergy |
+
+---
+
+## 62. Added by the wave-12 corrections unit (PR #43, merged 2026-09-11, round 1)
+
+**No new term. This unit coins nothing** — it brings five already-shipped cells onto forms the
+glossary had already fixed, across five files: `tl/battle/chunk_000.txt` (2 items, 6 cells),
+`chunk_008.txt`, `chunk_031.txt`, `tl/script/batch_010.tsv`, `tl/script/batch_012.tsv`.
+Five §4.3 debt items: **3 fixed, 1 fixed after its citation was vindicated, 1 no defect.**
+
+Figures, re-measured at review: chunk 0 **8,165 / 8,192 — delta exactly +0** (items 2 and 4 cancel,
+−6 / +6), chunk 8 **7,435 (757)**, chunk 31 **5,397 (2,795)**; bank 28 −2, bank 0 −6 (31,431 →
+**31,425**). **Tag stream byte-identical on every one of the five changed lines** — 0 `{FFFE}` and
+0 `{FCC0}` added, deleted or moved; the Japanese key byte-identical on both script rows.
+
+### 62.1 `反乱` → `ｒｅｂｅｌｌｉｏｎ` at D897 — the two-store split is now CLEAN
+
+| Source | DATA | Cell | Was | Now |
+|---|---|---|---|---|
+| `反乱を起こした一味は、` | **897** | `batch_010.tsv:48` | `ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ　ｗａｓ` (21) | **`ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ　ｗａｓ`** (22) |
+
+**§37.1's own row required this** — *"a script batch reaching DATA …/896/… must take §38.3's form,
+not this one"* — and the base shipped `ｒｅｖｏｌｔ` against that clause. +2 bytes, no break moved,
+page 22/22/22/21. ⭐ **The determiner is not invented: `batch_015.tsv:40` (D786, merged) already
+renders `反乱を起こした` as `ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ．`**, so the project's two renderings of
+that phrase are now byte-identical — better than either option the dispatch offered, both of which
+would have coined a third wording, and it is also what keeps the row off 24 columns
+(`ｒａｉｓｅｄ　ｔｈｅ　ｒｅｂｅｌｌｉｏｎ　ｗａｓ` is exactly **24**). `ｒｅｂｅｌｌｉｏｎ` is **9** columns,
+not 10 — five parties have now measured it.
+
+**After this unit: `ｒｅｖｏｌｔ` = 0 in `tl/script/`, `ｒｅｂｅｌｌｉｏｎ` = 0 in `tl/battle/`.** §25.3
+stays met. **§37.1's row stays LIVE for D1384 only** (bank 41, 353 free, blocked behind §F2).
+
+### 62.2 `おい、` → `Ｏｉ，`, and the hyphen stutters — both debts closed, censuses re-derived
+
+**`おい` as an interjection, censused over both dumps at review: 22 — 14 battle + 8 script**, which
+matches §32.3's battle side exactly. **All 8 in translated chunks now render `Ｏｉ，`**: five re-cut
+here (`chunk_000` ×3 — `おい、しっかりしろ。` / `おい、お前。` / `おい、お前！`; `chunk_008`
+`おい、いいのか？`; `chunk_031` `お、おい、あれ`) and three already correct (chunks 20, 37, 38). The
+other 6 are in untranslated 16 / 23 ×2 / 27 / 32 and parked 43. **All 8 script instances are
+untranslated**, so the script store was never in debt — every defect was battle. `〜ておいた`
+(chunk 8) correctly untouched.
+
+**English side: 13 `Ｈｅｙ`/`ｈｅｙ` occurrences before, 5 were defects, 8 remain and all 8 render
+`よう`/`よっ`** — §32.3's `ねえ、` row says in terms that `Ｈｅｙ，` is spent on `よう、`.
+⚠️ **The census only comes out right case-insensitively and with `ｔｈｅｙ` excluded**: a
+case-sensitive `Ｈｅｙ，` grep declares `chunk_031` clean (it carried lowercase `Ｈ，　ｈｅｙ，`) and a
+bare `[Ｈｈ]ｅｙ` matches inside `ｔｈｅｙ`. Both failure modes were hit for real in this wave.
+
+**Hyphen stutters: re-derived over `tl/` AND `pending/` by classifying each hit, not counting the
+pattern — 60 runs → 11 stutters / 49 compounds before, 57 → 8 / 49 after.** The 8 remaining are all
+in `pending/chunk_043.txt` and `pending/chunk_043_abridged.txt` (4 each), parked and out of remit
+(§L3). **Exactly 3 were in merged work, all in `chunk_000`, and this unit took all 3.** §AP5's
+"hyphen 3" was right for `tl/`; the 11 is the `tl/`+`pending/` figure. **`tl/` now holds 0 hyphen
+stutters.** §23.2's and §24.3's shipped-form records are corrected in place.
+
+### 62.3 `品` → `ａｒｔｉｃｌｅ` at D376 — and §34.1's "no re-flow" was the wrong part
+
+D376 is a **25-segment pooled row** (the Caucasus mayor's greeting, then the pickpocket scene) and
+the `品` is in **segment 16** — `奴の　盗んだ品が` → **`Ｔｈｅ　ａｒｔｉｃｌｅｓ　ｈｅ　ｓｔｏｌｅ`**.
+⚠️ **Judging a pooled row from its head is what makes the citation look false; check every `{FFFE}`
+segment.** +6 bytes into bank 0, columns **22/20/10 → 21/20/14** — §34.1's own predicted figures to
+the column — but reaching them **requires** moving the two breaks one word right, because the naive
+in-place swap is **25**. **So §34.1's "with no re-flow" clause contradicted its own figures, and the
+figures won.** All **6 shipped** bare-`品` cells now render `ａｒｔｉｃｌｅ`; the bare noun is **8**
+instances (D1278/D1304 untranslated, bank 40), so §61.5.1's eight and §34.1's corrected six are
+both right at their own scope. **`品` → `ｇｏｏｄｓ` is 0 across `tl/`**; the surviving `ｇｏｏｄｓ`
+(`batch_012:62`, D385) renders `モノ`. §34.4's split intact; no collision with §61.1's
+`商品` → `ｗａｒｅｓ` or with battle `記念品` → `ｋｅｅｐｓａｋｅ`.
+
+### 62.4 RULING — a comma STUTTER capitalises the repeated word; a comma DOUBLING does not
+
+⭐⭐ **The decision `FLAGS.md` §AJ3 left open, and §AJ3's own analogy is what was wrong.** §AJ3
+proposed `Ｏ，　ｏｉ，` for `chunk_031`, reasoning that it *"composes the way §34.1 composes
+`おいおい、` → `Ｏｉ，　ｏｉ，`"*. **That is the wrong comparison class.** They are two different
+phenomena, the source distinguishes them, and each is near-unanimous in the corpus on its own:
+
+| Shape | Source | Second element | Corpus (`tl/`) |
+|---|---|---|---|
+| **fragment stutter** — the word said **once**, after a false start | `お、おい、` `な、何事だ` `ま、待て！` | **CAPITALISED** — it is the word, opening its clause | **23 : 6** (was 19 : 7) |
+| **word doubling** — the word said **twice** | `おいおい、` | **lowercase** — a continuation inside the sentence | **7 : 0** |
+
+So **`Ｏ，　Ｏｉ，` (`chunk_031`) and `Ｏｉ，　ｏｉ，` (`batch_007.tsv:24`) BOTH STAND**, and the two
+casings of `Ｏｉ` are not a divergence. **Written down because a later corrections unit would
+otherwise "fix" one into the other.** The fragment-stutter ruling is also what §23.2 and §24.3
+already held (`ま、待て！` → `Ｗ，　Ｗａｉｔ！`, ruled PR #7), and `Ｏ，　Ｏｉ，` carries §32.3's fixed
+`Ｏｉ，` byte-for-byte, which `Ｏ，　ｏｉ，` does not — a case-sensitive gate 7 fails the lowercase
+form. 0 bytes either way; the capital is free.
+
+⚠️ **Figures corrected against the PR's Flag 4, which said "27 comma stutters, 21 : 6":** measured
+at review, **26 fragment stutters at 19 : 7 before this unit, 29 at 23 : 6 after**, plus **7
+whole-word doublings at 7 : 0**. The 6 is right; 21 matches neither tree. ⚠️ **And "all 27 are
+sentence-initial" is FALSE** — only 23 of 33 before (24 of 36 after) are segment-initial, and **both
+casings occur in both positions** (`Ｐ，　Ｐｒｉｎｃｅｓｓ`, `Ｉ，　Ｉｔ`, `Ｓ，　Ｓｅｔｉ`,
+`Ｃ，　Ｃｕｒｓｅ` non-initial and capitalised; `Ｙ，　ｙｅｓ`, `Ｃ，　ｃｈｉｅｆ` non-initial and
+lowercase). **The PR's rejection of "capitalise iff sentence-initial" is still correct — position
+genuinely does not discriminate — but on this evidence rather than on its stated premise.**
+
+### 62.5 RULING — §AQ5's `編成` divergence is a FALSE POSITIVE of its own gate, and closeable free
+
+⭐⭐ **The highest-value finding in the unit: it retires an open flag at zero cost and without the
+disc.** `編成` renders `“Ｆｏｒｍａｔｉｏｎ”` in **both** cells; the second English legitimately
+reverses the two menu names:
+
+| Cell | `『…』` in source order | `“…”` in English order |
+|---|---|---|
+| `batch_007.tsv:32` (D426) | `『編成』` · `『キャラクター育成』` | `“Ｆｏｒｍａｔｉｏｎ”` · `“Ｃｈａｒａｃｔｅｒ　Ｇｒｏｗｔｈ”` |
+| `batch_007.tsv:38` (D432) | `『編成』` · `『キャラを入れる』` | **`“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”`** · **`“Ｆｏｒｍａｔｉｏｎ”`** |
+
+D432's source is `『編成』画面で／『キャラを入れる』を／使うのだ`; the English is
+`ｕｓｅ　“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”／ｏｎ　ｔｈｅ　“Ｆｏｒｍａｔｉｏｎ”／ｓｃｒｅｅｎ．` — a licensed
+§2.1 step-6 reorder, since English puts the object before the locative. **§AQ5's gate paired the Nth
+bracket with the Nth quote, so the reorder made bracket 1 (`『編成』`) look like it rendered
+`“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”`. A positional pairing cannot survive a licensed reordering.**
+⭐ **§Z1's own table already carried the correct pairing** — §AQ5 contradicted §Z1 and nobody
+noticed for two waves. `『キャラを入れる』` → `“Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ”` is a different source
+string; §26.3's **verbal** `編成` → `ｆｏｒｍ　ｙｏｕｒ　ｕｎｉｔｓ` is used correctly twice in D432,
+and unbracketed `編成画面で` (D974) correctly ships unquoted `Ｆｏｒｍａｔｉｏｎ　ｓｃｒｅｅｎ` per §12.
+**No ruling needed, no sense-split row, nothing blocked on the disc. §Z1 is unchanged** — whether
+the labels match the on-screen menus is a different question and still needs one look in game.
+
+### 62.6 Recorded, not re-cut — checked at review and not defects
+
+- **All 14 DATA citations in the PR body are exact** (376, 426, 432, 444, 632, 710, 770, 786, 852,
+  859, 867, 897, 927, 974), re-derived one by one. So are the byte figures, the bank deltas, the
+  60→11/49 split, the 13/5/8 hey census, the 22/20/10→21/20/14 re-flow and the chunk-0 zero.
+- **chunk 0's 27-byte slack is below gate 4's ≥ 50 and is not this unit's.** Ratio 1.74 < 2.5, so
+  gate 4 permits it; recorded since wave 1 (§G1); and the measured delta is **exactly 0**.
+- **The one 24-column row in `chunk_000`** (`ｔｈｅ　Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ．．．．？`) is
+  pre-existing and untouched. **Widest row this unit writes: 22.**
+- **Ellipsis dot runs are byte-identical before and after on all five lines.** `こ、これを・・・` →
+  `Ｔｈ，　Ｔｈｉｓ．．．` keeps 3 for 3.
+- **No cell in this unit contains a runtime insert**, so §AT2's `rowcheck.py` blind spot (non-player
+  inserts stripped to zero columns) reaches nothing here — checked, not assumed.

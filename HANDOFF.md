@@ -19,12 +19,26 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 >
 > If this session died mid-wave: `ListAgents`, reconcile the open PRs below against **In flight**,
 > re-dispatch anything with no branch, and **re-arm the `send_later` watchdog**.
+>
+> ### ▶ 2 of 4 REVIEWED AND MERGED (#45 `5b6c212`, #43 `1134d2b`). NEXT: dispatch a `reviewer` for **PR #44 `batch_021`**, then **PR #46 `batch_022`**.
+> **`git pull --ff-only` FIRST** — #43's reviewer pushed an integration commit that edited five
+> `glossary.md` rows in place and appended **§62** / **§AX**. Then dispatch one reviewer,
+> `run_in_background: false`, one PR at a time.
+> ⚠️ **Tell #44's and #46's reviewers: every `glossary.md:NNNN` citation in their PR body is STALE**
+> (+12 to +26 from #45's integration, then shifted again by #43's). **Cite by section; verify a row
+> by its text.** ⚠️ **And that `glossary.md` now uses THREE citation conventions (§AX6): 0-based DATA
+> in §37.1's renumbered cell's history, 1-based DATA as the stated norm, and both 0- and 1-based BODY
+> indices for battle lines. State which one every number is.**
 
 ## Last updated
-2026-09-11 · by: the **wave-12 reviewer of PR #45** (`batch_020`), integration commit below ·
-wave: **12 REVIEWING — barrier met, 1 of 4 reviewed and MERGED (#45); #43, #44, #46 still to review** ·
-**every figure in the Progress block and the `batch_020` row below was re-derived by the reviewer from
+2026-09-11 · by: the **wave-12 reviewer of PR #43** (the corrections unit), integration commit below ·
+wave: **12 REVIEWING — barrier met, 2 of 4 reviewed and MERGED (#45, #43); #44 and #46 still to review** ·
+**every figure in the Progress block and in both merged rows below was re-derived by its reviewer from
 the dumps + a fresh `merge`/`bankmeasure`/`rowcheck`, not inherited**
+⚠️ **glossary now ends §62, FLAGS now ends §AX** — both read off the file at commit time, never reserved.
+⚠️ **The four banks under 2,000 free are UNCHANGED by PR #43: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
+`bankmeasure`'s `tightest:` line now hides **bank 2** (it hid bank 5 before #45) — **which bank is
+invisible is not stable, so never quote that line; read the 44-row table.**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -47,23 +61,30 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | Unit | Branch | DATA | Size | Bank cost (mine) | State |
 |---|---|---|---|---|---|
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst**; 532 JP → 1,051 EN = **1.9756×**; widest run **23**, none at 24 | 21 banks, **+2,256 B**, max **410** (bank 18), bank 5 **realised 40** of 1,635 — all 21 deltas re-derived twice by the reviewer, by independent routes, and they agree bank for bank | ✅ **MERGED round 1, no must-change finding.** PR #45, squash **`5b6c212`**, gated at head `2b7e840` on base pinned `065e67b`. Integration commit: **`integrate: script batch 020 — glossary, flags, handoff`**, the commit that adds glossary §61 and FLAGS §AW. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` on the PR is the signal. Glossary **§61**, FLAGS **§AW** |
-| corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
+| corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items — 3 fixed, 1 fixed after its citation was vindicated, 1 no defect** | chunk 0 **+0 (measured, both versions through `bytes_from_body`)**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 (31,431 → **31,425**, §AP7's predicted figure to the byte) | ✅ **MERGED round 1, no must-change finding.** PR #43, squash **`1134d2b`**, gated at head `fa03b4e` on base pinned **`3c6c579`** (merge-base `e9db558`, merge commit `c5aec14`, clean — the author's `merge-tree` was NOT reused). Integration commit: **`integrate: corrections wave 12 — glossary, flags, handoff`**, adding glossary **§62** and FLAGS **§AX**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: `Ｏ，　Ｏｉ，` stands (§62.4 / §AX3); §AQ5's `編成` row closed as a false positive of its own gate (§62.5 / §AX5).** **Discharged: §AJ3, §AP5 (merged work), §AP7, §AQ5's `batch_007` row.** **§37.1's `反乱` row stays LIVE for D1384 only.** Four glossary rows corrected in place (§23.2, §24.3, §34.1, §37.1) + a cross-reference added at §47.4 |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | bank 31 only — **realised 1,724**, not my 2,185 bound | ✅ **PR #46 OPEN** |
 
-## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **1 of 4 DONE**.
-~~**#45 `batch_020`**~~ ✅ **MERGED `5b6c212`, round 1, no must-change finding** → **#43 corrections
-(NEXT)** → #44 `batch_021` → #46 `batch_022` (unit order; the two debug twins adjacent so the second
-reviewer can pair them). `reviewer` subagents, `run_in_background: false`.
-⚠️ **`git pull --ff-only` before dispatching the next reviewer — PR #45's reviewer pushed an
-integration commit.** ⚠️ **PR #43's base has moved: it was opened on `45bab1c` and the branch tip is
-now past `5b6c212` plus this integration commit, so its reviewer must re-verify the merge itself
-against the CURRENT tip rather than trusting the author's `merge-tree` result.**
-⚠️ **PR #43 touches `batch_012` D376's `品` → `ｇｏｏｄｓ`. PR #45's review confirmed the two do not
-collide either way #43 lands** (bare `品` in bank 0 vs `商品` → `ｗａｒｅｓ` in bank 20; `ｇｏｏｄｓ` was
-left unspent by `batch_020`), and it corrected §34.4's `品` reach figure from a raw substring count
-(44 / 23 banks) to the bare-noun census (**8 instances / 5 banks [0, 12, 13, 19, 40]**) — **#43's
-reviewer should read glossary §61.5.1 before re-deriving it.**
+## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **2 of 4 DONE**.
+~~**#45 `batch_020`**~~ ✅ **MERGED `5b6c212`, round 1** → ~~**#43 corrections**~~ ✅ **MERGED
+`1134d2b`, round 1, no must-change finding** → **#44 `batch_021` (NEXT)** → #46 `batch_022`
+(the two debug twins adjacent so the second reviewer can pair them). `reviewer` subagents,
+`run_in_background: false`.
+⚠️ **`git pull --ff-only` before dispatching the next reviewer — BOTH #45's and #43's reviewers
+pushed integration commits, and #43's edited five `glossary.md` rows in place.**
+⚠️⚠️ **EVERY `glossary.md:NNNN` CITATION IN AN OPEN PR BODY IS NOW STALE.** #45's integration shifted
+things by +12 to +26 and #43's shifted them again. Measured at #43's review: `:1677`→`:1689`,
+`:3350`→`:3362`, `:3948`→`:3972`, `:4265`→`:4289`, `:7367`→`:7393`. **CITE BY SECTION AND VERIFY A ROW
+BY ITS TEXT** — #44's and #46's reviewers must not trust a line number from their PR body.
+⚠️ **glossary §37.1's `反乱` census cell is now RENUMBERED and the DATA convention is NAMED there:
+project DATA = the 0-based `script_unique.txt` index + 1**, pinned at #43's review against three
+independent anchors (§34.4's D598 and D605, §42.5's D481). ⚠️ **The same row's `L6 / L4 / L4` battle
+citations are 1-based BODY indices, while §61.5.6's "chunk 8 L14" was 0-based — three conventions are
+live in one file (§AX6). State which one you are using for every number you quote.**
+⭐ **§AX7 — a `{FFFE}`-only column check is WRONG in the dangerous direction on pooled rows.** It
+reported `batch_012:53` at 27 columns and a finding was nearly raised; a `{FCC0}` sits *inside* that
+segment, so the true rows are 14 and 15. `assemble.py:106` splits on `FCC0|FC30|FC51|FC50|FFFF` as
+well as `FFFE` — **any hand-rolled column check must do the same.**
 **4 of 4 translators returned, 0 lost, 0 re-dispatches.** Realised growth **1.87×–1.98×** against the
 **2.10×** plan, so every unit came in under its bound.
 
@@ -104,8 +125,27 @@ fifth unit to plan. **After wave 12, every remaining line is blocked behind the 
    26–374 bytes and the tightest (bank 5) needs **94** of 1,635. The *count* was wrong, not the verdict.
 2. **`batch_021` needs 782 (not ~795); `batch_022` needs 2,185 (not ~2,254).** Formula rounding only.
 
-**THE CORRECTIONS UNIT — and ⚠️ THE INHERITED DEBT CITATIONS ARE SYSTEMATICALLY UNRELIABLE.**
-I re-derived each item before dispatching and **three of five citations were wrong**:
+**THE CORRECTIONS UNIT — ✅ ALL FIVE ITEMS RESOLVED AND MERGED (PR #43, `1134d2b`). RESOLUTIONS FIRST;
+the dispatch-time notes below are kept only as a record of which citations misled whom.**
+
+| # | Item | Outcome, as MERGED and verified at review |
+|---|---|---|
+| 1 | `反乱` → `ｒｅｂｅｌｌｉｏｎ` at **D897** (`batch_010:48`) | ✅ **FIXED.** `ｒｅｂｅｌｌｉｏｎ` is **9** columns, so the row goes **21 → 22, +2 bytes** — **my "+8 bytes / 21→25 / needs a re-wrap" was WRONG on all three counts.** The unit took the article from **shipped `batch_015:40` (D786)**, making both renderings of `反乱を起こした` byte-identical. §37.1's own scope clause *required* the change. **Split now clean: `ｒｅｖｏｌｔ` 0× in `tl/script/`, `ｒｅｂｅｌｌｉｏｎ` 0× in `tl/battle/`.** Row **stays LIVE for D1384** (bank 41, blocked) |
+| 2 | `おい、` → `Ｏｉ，` | ✅ **FIXED, 5 cells.** Census: **`おい` = 22 (14 battle + 8 script)**; **all 8 in translated chunks now render `Ｏｉ，`** (5 here + chunks 20/37/38 already right); all 8 script instances untranslated, so the script store was never in debt. English side: **13 hey-family before, 5 defects, 8 remain, all `よう`/`よっ`.** ⚠️ **My `Ｈｅｙ，` grep was CASE-SENSITIVE and wrongly cleared `chunk_031` (it carried lowercase `Ｈ，　ｈｅｙ，`); the inherited citation was right and my correction was the error.** **§AJ3 DISCHARGED** |
+| 3 | `品` → `ａｒｔｉｃｌｅ` at **D376** (`batch_012:53`) | ✅ **FIXED.** ⚠️ **My "the citation does not locate a real cell" was WRONG** — D376 is a **25-segment pooled row** and the `品` is in **segment 16**. +6 bytes into bank 0, columns **22/20/10 → 21/20/14**, §AP7's prediction to the column. **`品` → `ｇｏｏｄｓ` now 0 across `tl/`** (the survivor, `batch_012:62`, renders `モノ`). §34.1's reach cell corrected 3 → **6 shipped** of **8** bare-noun instances, consistent with §61.5.1. **§AP7 CLOSED** |
+| 4 | hyphen stutters → comma form | ✅ **FIXED, 3 cells.** Re-derived: **60 hyphen runs → 11 stutters / 49 compounds; 8 of the 11 in parked `chunk_043*`, leaving exactly 3 in merged work.** `tl/` now holds **0** hyphen stutters. ⭐ **All three sources are `X、X…` comma stutters, so the comma form is the LITERAL rendering** — stronger ground than §AP5's convention argument. **§AP5 DISCHARGED for merged work** |
+| 5 | `編成` (§AQ5) | ✅ **NO DEFECT — and the flag is CLOSED for free.** `編成` → `“Ｆｏｒｍａｔｉｏｎ”` in **both** cells; D432's English legitimately reverses the two menu names, and **§AQ5's gate pairs the Nth bracket with the Nth quote, so a licensed reorder faked the divergence.** §Z1's own table already had the correct pairing. **No ruling, no sense-split, no disc needed. Blocked 7 / §Z1 UNCHANGED** |
+
+**RULING ISSUED at review, 0 bytes either way:** `chunk_031` keeps **`Ｏ，　Ｏｉ，`**, not §AJ3's
+suggested `Ｏ，　ｏｉ，`. **§AJ3's analogy to `おいおい、` → `Ｏｉ，　ｏｉ，` was the wrong comparison
+class**: a **fragment stutter** (word said once, false start) capitalises — **23 : 6** in `tl/` — and
+a **word doubling** (word said twice) does not — **7 : 0**. Both forms stand; written to glossary
+**§62.4** so a later unit cannot "fix" one into the other. ⚠️ **The unit's own "27 stutters, 21 : 6"
+and "all 27 are sentence-initial" were both wrong** (measured: 26 at 19 : 7 before, 29 at 23 : 6
+after; only 23 of 33 segment-initial) — **its conclusion survives, its premises did not.**
+
+⚠️ **THE DISPATCH-TIME NOTES BELOW ARE SUPERSEDED. Three of my five briefs to this unit were wrong
+and the translator caught every one.** Kept for the method record only:
 - ⭐⭐ **`反乱` — the GLOSSARY'S OWN CENSUS IS OFF BY ONE ON ALL FOUR ENTRIES.** The row at
   `glossary.md:3883` lists the script instances as "DATA 443, 785, 896, 1383". **None of those four
   contains `反乱` at all.** Measured: bare `反乱` (excluding `反乱軍`) is at **DATA 444, 786, 897,
