@@ -52,13 +52,13 @@ glossary ends **§54**, FLAGS ends **§AP** — both re-read at commit time, not
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
-**Wave 10 — three script units, dispatched in parallel. Barrier: review nothing until all three
-have an open PR.**
+✅ **BARRIER MET 2026-09-11 — all three units have an open PR (#37, #38, #39). Review has begun:
+one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016.**
 
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ✅ **PR #37 open** — awaiting barrier |
-| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | dispatched |
+| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ✅ **PR #39 open** |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
@@ -116,6 +116,47 @@ in-game; (c) Flag 14 — D849 is a seven-row source page with no `{FC30}`, possi
 / `{=02}` number inserts (all have ≥ 10 columns headroom); (e) the §9 strikes it lists — `ピクシー` is
 exhausted by D817, `『獅子の勲章』` by D863; `マーシュ` and `クーデター` **stay live** (FILE 1330/1379 and
 DATA 1373 remain).
+
+**`batch_015` → PR #39** (2026-09-11). 56/56 lines, ratio **2.13×**, growth **+7,170 B measured**
+(bank 20 free 29,489 → **22,319**, 24.7% of spendable). Widest row 24, **353 of 373 runs ≤ 23**, no
+page over 4 rows. Nothing parked. It measured the bank delta by moving its own file out of `tl/`,
+re-running `merge`+`bankmeasure`, restoring and re-running — **not by copying my figure.**
+
+⚠️ **IT CAUGHT FOUR MORE OF MY ERRORS. All verified here against the dumps:**
+1. **`ｈｅｒｍｉｔ` is 6 columns, not 7** — and that 7 was in the row I wrote **as a correction** to the
+   phantom `生き返りの仙人` seed. **A wrong correction entering the record as fact is §4.3's own named
+   trap, and I walked into it.** Fixed in `glossary.md`.
+2. **"Longest line is D803 at 188 JP chars" — the number is right, the line is wrong.** Measured:
+   **D807 = 188**, D803 = 158, D806 = 105.
+3. **"Projected growth ~3,400 B, about 12% of spendable" was the CHARACTER growth mislabelled as
+   bytes.** (2.10−1)×3,161 = 3,477 characters; bytes are twice that. My own model gives **7,263 B**
+   and the measured figure is **7,170 B = 24.7%**. ⚠️ **The survey and this board were NOT affected**
+   — the combined bank-20 demand recorded at dispatch, 8,429 B, is right and reconciles
+   (7,170 for `batch_015` + 1,259 for `batch_014`'s bank-20 share). **The error was confined to one
+   dispatch line, and the conclusion — bank capacity is not binding — held either way.**
+4. **`親衛隊` is 7 script-unique lines, not the 6 my seed implied**: D789/791/792/793/794 (bank 20),
+   D898 (bank 28, shipped), and **D1330 in BANK 40**, which has 75 bytes free and a spendable budget
+   of zero under §F2. **So the row stays LIVE after this wave and its last instance may never land
+   without an engine-side fix.** Recorded in the glossary row; **it also wants a FLAGS §B entry**,
+   which is the reviewer's to make.
+
+⚠️ **MY UNIT TITLE FOR `batch_015` NAMES THE WRONG TOWN.** I called it "Rimrose town NPCs". The
+speakers are **not** in Limrose: **D759** has them describe their own town as `王国一の商業都市にして、
+最大の貿易港` (the kingdom's greatest commercial city and largest trading port), and **D760** says a
+troupe `リムローズに　きてる` — come *to* Limrose — and the speaker wants to **go there** and see it.
+**The unit never names its own town.** The translator kept my commit title so this board would still
+match on it, which was the right call. Read the row as **"great port town NPCs"**.
+
+**Open for `batch_015`'s reviewer to rule:** (a) Flag 5 — `フーム` → `Ｈｍｍｍ` vs collapsing onto
+§26.5's `Ｈｍｍ`; **this unit breaks that row's stated co-occurrence test**, since `うーん、` (D813) and
+`フーム` (D807) are both in bank 20; (b) Flag 10 — bare `極上のワイン` at **D770** carries no `『』`, so
+it ships capitalised but unquoted; there is **no incumbent for the unbracketed case** — rule it;
+(c) Flag 9 — `ｇｈｏｓｔｓ` vs the seed's singular; (d) Flag 7 — two in-bank pairs of already-fixed
+forms it could not avoid and correctly did not fork.
+**Pre-existing debt it found on the branch, for the reviewer (it could not touch `main`):**
+`batch_010` D897 ships `ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ` for bare `反乱` against §38.3's fixed
+`ｒｅｂｅｌｌｉｏｎ`; and **§37.1's line list "DATA 443, 785, 896, 1383" is off by one throughout** —
+the true census is **444, 786, 897, 1384**.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
