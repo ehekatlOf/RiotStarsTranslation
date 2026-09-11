@@ -952,6 +952,62 @@ attributions are one unit short.** Corrected here rather than silently, 2026-09-
 **0 first-column keys** until wave 11 promoted it. Harvest `X` → `Y` pairs from **note cells**, not
 only key cells, before claiming gate 7 clean.
 
+
+### 9.W13 Wave-13 provisional seeds — battle chunks 15, 23, 27
+
+⚠️ **EVERY FIGURE BELOW WAS CENSUSED BY ME AT SEED TIME** — both dumps, `tl/script/*.tsv` on the
+Japanese side, and `tl/battle/*.txt` **by POSITIONAL PAIRING** (battle `tl/` holds no Japanese, so a
+grep there is a null check — the standing warning, and wave 12's coordinator fell into it anyway).
+Column counts are `len()` output, not hand counts: **I hand-counted `Ｏｋａｙ` as 5 and `ｇａｒｒｉｓｏｎ`
+as 9 and both were wrong.** **If a cell here disagrees with what you measure, YOUR MEASUREMENT WINS** —
+say so in the PR body with the command you ran.
+
+⭐ **THREE OF THESE TEN ROWS ARE "DO NOT DECIDE — REUSE".** The value of this block is mostly in the
+collision tests, not the new words: `ｓｔｒｏｎｇｈｏｌｄ`, `ｈｉｄｅｏｕｔ` and `Ａｌｌ　ｒｉｇｈｔ` all look
+like the obvious answer to one of this wave's terms and **all three are already spent on different
+Japanese.**
+
+| Japanese | Proposed English | Where seen (censused at seed time) | Status / promotion note |
+|---|---|---|---|
+| `ウシャシャシャシャシャ` | `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ` | **2 battle (chunk 15 L0, L2) / 0 script / 0 `tl/`.** `Ｕｓｈａｓｈａ` verified FREE across `tl/` and `pending/` | **16 columns.** The Ifrit commander's laugh. Kana beats tracked per §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ`, §14.5's `クックックッ`, §40.1 and §12.3: `ウ` + `シャ`×5 → `Ｕ` + `ｓｈａ`×5. Punctuation from the source per §5 — L0's `、` → `，`, L2's `！`. **Fits 24; no re-cut needed.** The beat rule is settled across six laughs, so this is mechanical, not a judgement call |
+| `ニール` | `Ｎｅｉｌ` | **2 battle (chunk 15 L10, both in one pooled message) / 0 script / 0 `tl/`.** FREE | **4 columns.** A 6th Army soldier who joins the party after the Ifrit fight. European reading per §11.4 / §14. Alts `Ｎｅａｌ` / `Ｎｉｌ` — `Ｎｅｉｌ` is the standard katakana and needs no defence |
+| ⛔ `オーケー` | **`Ｏｋａｙ`** — ALREADY KEYED, do not re-decide | **2 battle (chunk 15 L10, L11 — the same pooled message) / 0 script.** Incumbent: **`tl/battle/chunk_038.txt` L9 ships `オッケー！` → `Ｏｋａｙ！`**, found by positional pairing | **4 columns. USE BYTE-IDENTICALLY.** ⚠️⚠️ **GATE 6 IS DOUBLY BLIND HERE** — battle `tl/` holds no Japanese *and* the two spellings differ (`オーケー` vs `オッケー`), so even a Japanese-side grep would not pair them. This is §63.2 / §64.1's twin problem in a new place. ⚠️ **`ＯＫ` IS NOT A PRECEDENT:** chunk 36's `＞ＯＫ` is preserved machine text (§BA), not a rendering of this word. ⚠️ **`Ａｌｌ　ｒｉｇｈｔ` IS SPENT** on `イイカ？` (`batch_019.tsv`) — do not reach for it. Chunk 26 L15 also ships one `Ｏｋａｙ．` inside a pooled row, so the form is established, not free |
+| `炎熱騎士団` | `Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ` | **1 battle (chunk 15 L2) / 0 script / 0 `tl/` — a hapax.** FREE | **13 columns.** Built on the settled family, **not invented**: `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§4, 15) and `黒の騎士団` → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§13, 13). Capitalised as a **named** imperial order; bare `騎士団` of a kingdom's own stays lowercase `ｋｎｉｇｈｔｓ` (§2253's row) — the §17.1 species test and §63.1's named-thing rule. Alt `Ｂｌａｚｉｎｇ　Ｋｎｉｇｈｔｓ` (15). ⚠️ **`紅蓮の炎` sits two sentences away in L0: if it takes `ｃｒｉｍｓｏｎ`, keep that LOWERCASE** — `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` is a different, capitalised proper noun, exactly the §64.2 `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split |
+| `イワン` | `Ｉｖａｎ` | **2 battle (chunk 23 L2) + 1 script unique line / 0 `tl/`.** FREE | **4 columns.** An imperial general on Fernando's side; `イワン将軍` → `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (12), title before name as §20 already does for the others. ⚠️ **L2's second instance is `イワンに罪をかぶせて` — he is the one they plan to frame**, so he is a *character*, not a place. Alt `Ｉｗａｎ`; `Ｉｖａｎ` is the standard katakana for the Slavic name and matches the European-reading convention |
+| `ヒミコ` | `Ｈｉｍｉｋｏ` | **1 battle (chunk 23 L0) + 1 script unique line / 0 `tl/`.** FREE | **6 columns.** ⚠️ **A JAPANESE name, so §11.4 / §14's European-reading convention does NOT apply** — it transliterates straight. `東のヒミコ分隊` → `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` (14), with `分隊` taking §4's **squad**; §61's `分隊長` → *squad captain* / *squad leader* is the **officer** row and is not this |
+| `根城` | `ｌａｉｒ` | **4 battle (chunk 27 L3, L4, L6; chunk 32 L0) + 2 script unique lines / 0 `tl/`.** `ｌａｉｒ` verified FREE | **4 columns.** ⚠️⚠️ **THE TWO OBVIOUS FORMS ARE BOTH ALREADY SPENT ON DIFFERENT JAPANESE — this is the row to read twice.** `ｓｔｒｏｎｇｈｏｌｄ` renders **`拠点`** (`batch_015.tsv`) and `ｈｉｄｅｏｕｔ` renders **`隠れ家`** (`batch_014.tsv`). Taking either would collapse three distinct words into one English form and §25.3 would be breached in a way gate 6 cannot see. ⚠️ **BINDS CHUNK 32** (blocked, tier A): there `奴らの根城` is the *heroes* speaking of the demons' base, while chunk 27's three are the *demons* speaking of their own — **one English form must serve both points of view, and `ｌａｉｒ` does.** Alt, if you can defend it against those two incumbents: `ｂａｓｅ` |
+| ⛔ `駐留部隊` | **`ｇａｒｒｉｓｏｎ`** — REUSE THE INCUMBENT, not a new seed | **1 battle (chunk 23 L0) / 0 script.** Incumbent verified by positional pairing in **4 shipped chunks**: c0 L12/L16 (×3), c7 L2, c17 L2/L5, c19 L2/L5/L6/L18, plus `batch_005.tsv` | **8 columns.** `ｇａｒｒｉｓｏｎ` is the settled rendering of the **守備隊 / 駐屯** family. `駐留部隊` is the same concept — a force stationed in a place — so **§25.3 is not engaged and reuse is correct**, not a collapse. `せめて、もう少し城に駐留部隊を残しておけば・・・` → *had I only left a larger garrison at the castle．．．* |
+| `帝国がバックにいた` | `ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ　ｂｅｈｉｎｄ　ｉｔ` | **1 battle (chunk 23 L21) / 0 script / 0 `tl/`** | ⚠️ **NOT A NAME — do not transliterate.** `バック` here is the loanword in its idiomatic *backing* sense. Sykes and Leon are reading the escape ship: *the Empire was behind it after all*. The katakana sweep surfaces this row, which is exactly why a katakana sweep is not a seed list |
+| ⛔ `ダメージ` | **`ｄａｍａｇｅ`**, lowercase — ALREADY KEYED | **3 battle (chunk 0 L9 **SHIPPED**; chunk 27 L5, L6) + 3 script unique.** Shipped 3×: `batch_013.tsv` (×2), `batch_016.tsv`, and **chunk 0 L9 verified by POSITIONAL PAIRING** | **6 columns. USE BYTE-IDENTICALLY.** A common noun, so lowercase per §17.1 — and all four shipped instances already are. ⚠️ **The chunk-0 instance is invisible to every grep of `tl/battle/`**; it took a positional pair to find. `かなりのダメージを受けた` → *took ｑｕｉｔｅ ａ ｂｉｔ ｏｆ ｄａｍａｇｅ*, on `batch_016`'s shipped `ｄｅａｌ　ｂｉｇ　ｄａｍａｇｅ` |
+
+⛔ **ALREADY KEYED ELSEWHERE — USE BYTE-IDENTICALLY, DO NOT RE-SEED AND DO NOT RE-DECIDE.** Verified
+by a `glossary.md` key read at seed time, not by a reach census:
+
+- **Chunk 15** — `イフリート` → `Ｉｆｒｉｔ` (§30.1, 5, capitalised: a named fortress gun, so the §17.1
+  species test does not apply) · `カーライン` → `Ｃａｒｌｉｎｅ` (§1) · `要塞` → `ｆｏｒｔｒｅｓｓ` (§4, 8) ·
+  `宮廷軍` → `Ｒｏｙａｌ　Ａｒｍｙ` (§4 — kept distinct from `宮廷防衛軍` → *Royal Defence Force*) ·
+  `焼き尽くす` → **`ｂｕｒｎ　…　ｔｏ　ａｓｈ`** (§2144's row; *burn to nothing*, **not** *burn up*) —
+  **wanted by L0's `紅蓮の炎で焼き尽くしてくれるわっ！`.**
+- ⭐⭐ **CHUNK 15 — A WARNING THAT HAS BEEN WAITING SINCE WAVE 3 IS NOW DUE.** Both the §9 `イフリート`
+  row and §30.1 carry, in terms, *"the gloss is in chunk 15, not in chunk 17 — this stays live for
+  whoever takes chunk 15"*. **That is this wave.** Chunk 15 **L0** is the passage the warning names:
+  `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！`. Chunk 17 rendered `Ｉｆｒｉｔ`
+  with the *name only*; **L0 is where the thing is actually explained** (a 巨大砲台, and the 紅蓮 fire
+  association that motivates the name). Render the gloss here and say so in the PR so the row can be
+  closed at last.
+- **Chunk 23** — `リオン` → `Ｌｅｏｎ` (§1, decided PR #7) · `アルフレッド` → `Ａｌｆｒｅｄ`, and `少尉` →
+  **`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ａｌｆｒｅｄ`** (§1) · `フェルナンド` → `Ｆｅｒｎａｎｄｏ` (§1) ·
+  `ギルフォード` → `Ｇｕｉｌｆｏｒｄ` (§1; **no contraction anywhere** in his register, §4881) ·
+  `アルベール` → `Ａｌｂｅｒｔ` (§1511, 6; deferential, `はっ！` → `Ｓｉｒ！`) · `サイクス` → `Ｓｙｋｅｓ`
+  (§1512, 5) · `アリエス` → `Ａｒｉｅｓ` (§3142, 5, **a person, female**) · `機械兵` → `machine soldier`
+  (§4) · `城内` / `守備` / `本国` / `手配` all keyed.
+  ⚠️ **`バウアーの砦` → `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` (12) / `Ｂａｕｅｒ` (5) — the INCUMBENT.** §724's
+  `Ｆｏｒｔ　Ｂａｕｅｒ` seed was **WITHDRAWN** at PR #37 because it would have split a shipped proper
+  noun, and the kana also appears as `バウワー`. **Do not revive it.**
+- **Chunk 27** — `セティ` → `Ｓｅｔｉ` (§4622, 4, **FEMALE**; casually rough, contracts, `キャハハハハ` →
+  `Ｋｙａｈａｈａｈａｈａ`) · `ユイティ` → `Ｙｕｉｔｉ` (§4623, 5, **MALE**) — **the matched pair is
+  deliberate, preserve it** · `トレーズ` → `Ｔｒｅｉｚｅ` (§4624, 6) · `リムル` → `Ｒｉｍｕｌ`, `様` →
+  **`Ｌａｄｙ　Ｒｉｍｕｌ`** (§1) · `ネズミども` → `ｒａｔｓ` (§2538, 4).
 ---
 
 ## 10. Open questions
