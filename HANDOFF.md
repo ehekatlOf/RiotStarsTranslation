@@ -70,6 +70,32 @@ run** — `tl/script-004`…`014` are all merged and all still present on origin
 corrected it here.** **Use the integration commit and the PR's merged state as the signal**, never
 the branch's absence. One-action human fix: enable *Automatically delete head branches* on the repo.
 
+---
+
+⚠️ **MY ELEVENTH ERROR — AND THE SECOND TIME I HAVE PUT AN ERROR *INSIDE A CORRECTION*.** I told PR #39's
+reviewer that `glossary.md:2217`'s `うーん、` row cites **both** banks wrongly. ✅ **Re-censused against the
+SOURCE: only the `ふーむ` half is wrong, and my replacement figures were themselves short.**
+
+| | the row says | I said | **true (source census, all lines)** |
+|---|---|---|---|
+| `ふーむ` | script bank 31 | banks 30, 11 | **banks 11, 30, 33** (D1129 is untranslated) |
+| `うーん` | battle chunk 8 | "wrong" | **battle chunks 8 AND 26 — so the row is RIGHT**; script banks **2, 20, 29, 40** |
+
+**Root cause, and it is the same shape as the phantom seed: I censused the wrong population.** I counted
+**shipped lines in `tl/script/*.tsv`** — which answers *"where has this been translated?"* — when §25.3's
+co-occurrence test asks *"where does this term OCCUR?"*, translated or not. Untranslated lines are
+invisible to a `tl/` census and they are exactly what the test is about. **A census needs its corpus
+stated, and mine was the wrong corpus.** ⚠️ **Note `うーん` occurs in bank 20 at D813 — this wave's own
+line — so the row's test was live against my own unit and I could not see it.**
+✅ **The RULING is untouched**: it rests on merged precedent (`batch_013` ships `ん〜` D925/D948 and
+`うーん` D940 all in bank 29 as `Ｈｍｍ，`), which no census error affects.
+
+⚠️ **STALE FIGURE IN THE HUMAN'S OWN BLOCKED LIST — for PR #38's reviewer to fix at integration.**
+`FLAGS.md` **§F2 lines 321 and 330 state bank 40 has 1,771 free.** ✅ **It has 75** (`bankmeasure`, today).
+That is the figure a human would read when costing the bank-40/41 repoint, which is **Blocked item 2**.
+PR #39's reviewer correctly filed the `親衛隊`/D1330 blocker as **§F2a** rather than §B — **my dispatch
+sent it to §B, which is tier-A battle ratios, and that was wrong too.**
+
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
@@ -79,8 +105,11 @@ the branch's absence. One-action human fix: enable *Automatically delete head br
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
 
-**`batch_014` → PR #37** (2026-09-11). 52/52 lines, ratio **2.0204×**, growth **5,596 B**; banks 18/19/20
-land at **8,473 / 7,809 / 28,469** free, all three **under** the projection. Widest row 23, **0 at 24**,
+**`batch_014` → PR #37** (2026-09-11). 52/52 lines, ratio **2.0201×** as merged, growth **5,594 B**; banks
+18/19/20 land at **8,473 / 7,803 / 28,477** free, all three **under** the projection. ⚠️ **CORRECTED
+2026-09-11 (PR #39 review): I recorded 7,809 / 28,469 from the PRE-REWORK PR body and never refreshed
+them after the rework changed the file.** The bank-20 share is **1,012 B**, not the 1,259 I derived by
+subtraction, so the wave's combined bank-20 demand was **8,190 B**, not 8,429. Widest row 23, **0 at 24**,
 no page over 4 rows. One `{FFFE}` added (D715, forced), **no `{FCC0}` change**. Gate 7 run key-first:
 **2,342 keys enumerated, 145 occurring, all adjudicated.**
 
