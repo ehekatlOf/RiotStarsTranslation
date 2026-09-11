@@ -14,6 +14,7 @@ changed freely as long as each bank still fits in 0xA000.
 The dump is losslessly tokenised:
   - a run of SJIS characters is written as readable text
   - a control code (0xFB..0xFF lead) is written as a tag  {XXXX}
+  - a control code's argument bytes are written as raw tags {=XX}, unconditionally (tagargs.py)
   - any other single byte is written as a raw tag         {=XX}
   - the header block is written once per bank as          {HDR:...hex...}
   - trailing zero padding is written as                   {PAD n}
@@ -28,6 +29,7 @@ Usage:
     python3 riotscript.py unique SCRIPT.BIN  unique.txt     # dedup convenience dump
 """
 import sys, re
+from tagargs import ARG_LEN
 
 BANK = 0xA000
 NBANKS = 44
@@ -75,8 +77,16 @@ def tokenise_stream(b):
                 out.append(escape_text(''.join(run)))
                 continue
         if 0xfb <= c <= 0xff and i + 1 < n:
+            code = (c << 8) | b[i+1]
             out.append('{%02X%02X}' % (c, b[i+1]))
             i += 2
+            # argument bytes are data: emit them as raw tags unconditionally — never as
+            # text, never as a control code (tagargs.py)
+            for _ in range(ARG_LEN.get(code, 0)):
+                if i >= n:
+                    break
+                out.append('{=%02X}' % b[i])
+                i += 1
             continue
         # any other single byte
         out.append('{=%02X}' % c)

@@ -14,6 +14,7 @@ u16 LE when it reaches RAM, but the on-disc layout is standard order.)
 Tokenisation and the losslessness guarantee are identical to riotscript.py:
   - runs of SJIS characters  -> readable text
   - control code (FB..FF)    -> {XXXX}
+  - its argument bytes       -> {=..} raw, unconditionally, for the codes in tagargs.py
   - any other single byte    -> {=XX}
   - the graphics prefix       -> {PRE n}   (n bytes copied from the original file)
   - trailing zero padding     -> {PAD n}
@@ -29,6 +30,7 @@ Usage:
     python3 riotbattle.py stats  HEXMAP.BIN
 """
 import sys, re
+from tagargs import ARG_LEN
 
 CHUNK = 0x2A800
 # Each map chunk has a FIXED internal layout, verified across all 43 script-bearing chunks:
@@ -92,21 +94,34 @@ def tokenise(b):
                 out.append(escape_text(''.join(run)))
                 continue
         if 0xfb <= c <= 0xff and i + 1 < n:
+            code = (c << 8) | b[i+1]
             out.append('{%02X%02X}' % (c, b[i+1])); i += 2
+            k = ARG_LEN.get(code, 0)
+            if k and i < n:
+                # argument bytes are data: take them unconditionally — never as text, never
+                # as a control code (tagargs.py) — then keep coalescing whatever raw bytes
+                # follow, so a line without an artifact tokenises exactly as it always did
+                j = _raw_run_end(b, min(i + k, n), n)
+                out.append('{=%s}' % b[i:j].hex().upper())
+                i = j
             continue
         # coalesce a run of raw (non-text, non-control) bytes into one tag
-        j = i
-        raw = bytearray()
-        while j < n:
-            cj = b[j]
-            if 0xfb <= cj <= 0xff and j + 1 < n:
-                break
-            if is_lead(cj) and j + 1 < n and sjis_char(b[j:j+2]) is not None:
-                break
-            raw.append(cj); j += 1
-        out.append('{=%s}' % raw.hex().upper())
+        j = _raw_run_end(b, i, n)
+        out.append('{=%s}' % b[i:j].hex().upper())
         i = j
     return ''.join(out)
+
+
+def _raw_run_end(b, j, n):
+    """Advance j over bytes that are neither a control code nor a decodable SJIS pair."""
+    while j < n:
+        cj = b[j]
+        if 0xfb <= cj <= 0xff and j + 1 < n:
+            break
+        if is_lead(cj) and j + 1 < n and sjis_char(b[j:j+2]) is not None:
+            break
+        j += 1
+    return j
 
 
 def unescape_split(s):

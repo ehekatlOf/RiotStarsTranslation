@@ -7706,3 +7706,84 @@ chunk; this admits nothing the translator wrote.
 
 **BATTLE 32 → 33 / 44 chunks, 27,763 → 28,749 JP characters (64.3% → 66.6%).** §AF1 closed;
 `pending/README.md` row removed; HANDOFF Blocked 3 resolved.
+
+## BB. Tool fix — the `tokenise` argument-length table, both tools, both dumps re-generated; chunk 17 shipped, six chunks unblocked (2026-09-11)
+
+Done by the root/runner session on the human's explicit instruction (CLAUDE.md §3). Closes **§D1, §R4,
+§AP2, §AY2** and HANDOFF Blocked 1. `tools/tagargs.py` is the ONE table; `riotbattle.tokenise` and
+`riotscript.tokenise_stream` both import it. **Two entries in the record were wrong and are corrected
+here; one of them concealed a shipped rendering defect.**
+
+### BB1. The fix
+After emitting a control code that has an entry in `ARG_LEN`, the tokeniser consumes that many bytes
+as raw `{=..}` unconditionally — never as text, never as another control code. That closes **both**
+holes §AY2 distinguished (an argument byte that is an SJIS lead → kanji; an argument byte in FB–FF →
+a spurious tag) with one mechanism. In `riotbattle` the forced bytes keep coalescing with any raw
+bytes that follow, so a line without an artifact tokenises **exactly** as before; `riotscript` emits
+one `{=XX}` per byte, so the same holds by construction.
+
+### BB2. The table was MEASURED at byte level, and two flag entries were wrong
+Every occurrence of each code in both pristine dumps, decoded to bytes, grouped by the shape of the
+eight bytes that follow (T = FB–FF, L = SJIS lead, . = other):
+
+| Code | Occurrences | Length | Evidence |
+|---|---|---|---|
+| `FC70` | 37 (battle) | **2** | a u16 item id, then a control code — 37/37 |
+| `FCA8` | 66 (battle) | **2** | a u16, then a control code — 66/66. **NOT 8 (§R4/§AP2).** The "8" is `FCA8`'s two bytes plus a following **six-byte `FA 10/11 00 00 00 00` command** the tokeniser has never treated as a tag (it also follows `FCA7`, `FCB2`, `FCB6`, `FB01`). **Two occurrences in chunk 28 read `FCA8 01 99 FC 20 …`: forcing 8 would have hidden a real `{FC20}` and the `{FFFF}` after it inside a data blob.** |
+| `FFED` | 5 (script) | **2** | a u16 amount — `0x03E8` = 1000, `0x1388` = 5000, `0x00C8` = 200 — then a control code, 5/5. **NOT 4 (§AP2).** §AP2 counted the first character of the following text as an argument: at D367 the bytes are `FF ED 03 E8 │ 82 A8 82 A8 81 41 …` = `おお、さすがは…`. |
+| `FFF3` | 129 (script) | **4** | `00 xx 00 yy`, 129/129; six have `xx = FF` — §AY2's `{FF00}` |
+
+`FFED`/`FFF3` do not occur in the battle store and `FC70`/`FCA8` do not occur in the script store.
+`findings.md` is right that argument lengths are not fixed per code *in general*; the table carries
+only codes proven consistent across every occurrence, and says so.
+
+### BB3. ⚠️ §AP2's "zero shipping impact" was wrong — `batch_012` D367 rendered a stray `お`
+Because `FFED` takes 2 bytes, the `82 A8` that §AP2 kept as "arguments" on **both** sides of the row
+was the first `お` of `おお、さすがは`. The shipped English `{FFED}{=03}閧{=A8}Ｏｈ，…` therefore emitted
+`FF ED 03 E8 82 A8 Ｏｈ，…` — **the engine would print `お` before "Oh, just what I expected…"**.
+Corrected in this commit: the row's key is the re-dumped `{FFED}{=03}{=E8}おお、さすがは…` (byte-identical
+to the source) and the English is `{FFED}{=03}{=E8}Ｏｈ，…` — **exactly the two bytes `82 A8` removed,
+nothing else** (asserted). Bank 0 is not tight. The English reading "Oh, just what I expected of
+{name}!" already covers `おお` and is unchanged. `batch_021` D1003 (`{FF00}` → `{=FF}{=00}`) is a pure
+representation change, byte-identical.
+
+### BB4. Re-generated WITHOUT the binaries, with the proof chain a real `refresh` will re-run
+`original/` is absent by design. Both dumps are lossless, so: (1) rebuild a HEXMAP.BIN / SCRIPT.BIN
+whose script slots / bank streams are the OLD dumps decoded by the OLD tools; (2) the OLD `dump()` on
+those files reproduces `dumps/battle_dump.txt`, `script_dump.txt` and `script_unique.txt` **byte for
+byte** — so they carry exactly the bytes a real `refresh` reads; (3) the NEW `dump()` on the same
+files is the new dumps. Then, every changed line proven individually:
+
+| Proof | Result |
+|---|---|
+| dump line counts | unchanged (battle 1,042 · script 8,982 · unique 1,435) |
+| battle lines changed | **18**, in chunks 5, 15, 16, 17, 23, 27, 28, 29, 32, 39 — the §R census exactly; **none in a shipped chunk** |
+| script lines changed | **7** — D367's dump line and the six `{FF00}` lines |
+| every changed line | contains a table code; **decodes to identical bytes** |
+| argument-as-kanji signatures | battle **24 → 0** (`FC70` 5, `FCA8` 19) · script **1 → 0** · `{FF00}` **6 → 0** |
+| `script_unique` keys changed | **2**, both shipped rows (above) |
+| `tl/battle/` shipped files | **0 lines changed** (asserted; `tag_parity` intact) |
+| `pending/chunk_005.txt` L18, `pending/chunk_017.txt` L20 | re-tokenised, file text was the old canonical form, **bytes identical** |
+| `riotbattle.py verify` / `riotscript.py verify` on the rebuilt files | **ROUND TRIP OK**, byte-identical (7,659,520 / 1,802,240 bytes) |
+| new dumps are fixpoints of the new tools | True, both |
+
+**When the human drops the real binaries into `original/` and runs `assemble.py refresh`, the output
+must be byte-identical to `dumps/` as committed. If it is not, stop: something in this chain was wrong.**
+
+### BB5. `dumps/battle_unique.txt` was stale since the repo's first commit
+It predated chunk 33 joining the dump (429 unique / 437 instances; the regeneration has 436 / 444 —
+the seven missing messages are chunk 33's sorceress dialogue) and nothing reads it programmatically.
+Regenerated with the new tool. `pending/README.md`'s "chunk 33 is missing" finding is annotated.
+
+### BB6. Effect, and what the record now says
+- **Chunk 17 shipped** (`git mv`, 5,857 / 8,192, slack 2,335; tag parity against the re-dumped line).
+- **Chunks 15, 23, 27, 28, 29, 39 are dispatchable** — nothing blocks them any more.
+- **16 and 32 stay blocked on the tier-A floor only** (1.59× / 1.61× vs §B2's 1.64×); **5 and 43 parked on
+  it only**. §D1 applies to nothing.
+- **BATTLE 33 → 34 / 44; 28,749 → 29,892 JP characters; total 43,161 → 43,137** — the 24 artifact kanji
+  had been counted as Japanese characters. 66.6% → **69.3%**.
+- ⚠️ `tools/queue.py battle` now prints "dispatchable 7": it lists **32** because its tier-A cutoff is
+  hardcoded 1.6, not §B2's 1.64. Not fixed here; the queue in HANDOFF is the authority.
+- Follow-up for a future byte census, not done here: rare control codes in the battle dump (`FF77`×2,
+  `FFC8`, `FFD4`×2, `FFD7`×2, `FFD8`) and script (`FCFF`, `FFC3`–`FFC9`, `FFD8`–`FFDE`, `FFEE`, `FFFC`, all ≤3)
+  were not examined; none is implicated by any artifact signature.

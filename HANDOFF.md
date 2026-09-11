@@ -11,52 +11,48 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ✅ THE RUN'S AUTOMATED TRANSLATION WORK IS COMPLETE. THERE IS NOTHING LEFT FOR AN AGENT TO DISPATCH.
-> **WAVE 12 CLOSED — 4 of 4 MERGED, ALL AT ROUND 1, 0 PARKED, 0 LOST, 0 RE-DISPATCHES.**
-> **Script 63.6% → 65.3%. Battle unchanged at 64.3% (blocked, not idle).**
+> # ▶ THE RUN IS OPEN AGAIN. SIX BATTLE CHUNKS ARE DISPATCHABLE. START WAVE 13.
+> **2026-09-11: both repo-only tool fixes are on `main`** — the `tokenise` argument-length table
+> (Blocked 1, `FLAGS.md` **§BB**) and the `validate_body` charset gate (Blocked 3, **§BA**). Chunks **17 and
+> 36 shipped**; chunks **15, 23, 27, 28, 29, 39 are no longer blocked.** Battle **34 / 44, 69.3%**.
 >
-> ## ⛔ I DID NOT OPEN A WAVE 13, AND THAT IS A MEASURED DECISION, NOT AN OMISSION.
-> **CLAUDE.md §8's first stop condition — "No dispatchable unit left → final handoff, stop" — now
-> holds, and I verified it rather than assumed it.** Re-running the feasibility census on the closed
-> branch: **366 unique lines / 2,751 instances remain and FEASIBLE = 0 lines, 0 instances.**
-> Wave 12 consumed **all 116** bank-feasible lines that existed at its open.
-> **Opening a session whose only possible finding is "there is nothing to do" would burn a context to
-> re-derive this number.** The root runner session's own watchdog independently reached the same
-> conclusion. **If you want the run resumed, the unblocking tasks below are the work — not another wave.**
+> **Do this:** open a fresh session on `main` and run `/translate`, or open the wave-13 session directly
+> with the seed in `SKILL.md` §6a (`source_revision: "main"`). **Wave 13 = chunks 15, 23, 27** (chapter
+> order); **wave 14 = 28, 29, 39.** Figures in Next up. Every wave: glossary seeds → 3 translators → wave
+> barrier → one reviewer at a time, merging **into `main`** → close with the `origin/main` proof → open
+> the next session. **The integration branch is `main`; nothing overrides that** (CLAUDE.md top banner).
 >
-> ### ⚠️ ONE HONEST QUALIFICATION, so nobody reads "0" as more absolute than it is
-> **0 is measured at this run's standing planning rate — 2.10× growth with a 500-byte safety reserve.**
-> Two lines are **marginal** rather than impossible: **D519 (745 JP chars) and D520 (850)** each fail
-> at 2.10× and each *would* fit **only by spending bank 5's entire remaining 1,595 bytes**, and only if
-> the translation realised ~1.87× (wave 12's actual rate). **At most ONE of the two could ever fit**
-> — together they need 2,762 B. **D518 (1,184 chars) cannot fit either way.** All three are enormous
-> pooled multi-scene rows (D518 even opens with a `１２３４５６７８９０１２` ruler string), i.e. FLAGS
-> §L2's independently-selected string pools. **Spending the last safety reserve in a tight bank on one
-> pooled row is a policy decision for a human, not a dispatchable unit** — and it is the same trade
-> §F2 already resolved the other way for bank 40 (budget goes to the 21-instance item table, not to
-> one-instance story text).
-
+> ⚠️ Battle chunks are chapter-ordered and voices accumulate — read the shipped neighbours the dispatch
+> names. ⚠️ Battle `tl/` holds no Japanese; **gate 6 must pair the dump positionally** (translator.md).
+> ⚠️ **`queue.py battle` prints "dispatchable 7" and lists chunk 32 — it is NOT dispatchable.** §B2's
+> measured floor is 1.64×; 32 is 1.61× and 16 is 1.59×, both blocked on the tier-A slot extension.
+> ⚠️ **The re-dump changed the representation of 18 battle lines in exactly these chunks** (§BB4) — start
+> every unit from the pristine dump as CLAUDE.md §2 says, never from an old worktree or an old PR.
+>
+> After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
+> was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-11 · by: **the root/runner session, on the human's instruction** · **chunk 36 SHIPPED — the
-`validate_body` charset gate (Blocked 3 / FLAGS §AF1) is fixed, FLAGS §BA** · wave 12 closed earlier
-today (4 of 4 merged, PRs #43–#46, all round 1) · figures below re-measured after the move
+2026-09-11 · by: **the root/runner session, on the human's instruction** · **chunks 17 and 36 SHIPPED —
+the `tokenise` argument-length table (Blocked 1, FLAGS §BB) and the `validate_body` charset gate
+(Blocked 3, §BA) are both fixed; both dumps re-generated and proven (§BB4)** · **6 battle chunks
+dispatchable — the run is OPEN** · figures below measured after the re-dump
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **33** | 44 | chunk 36 shipped 2026-09-11 (FLAGS §BA); the rest **blocked, not idle** |
-| Battle JP characters | **28,749** | 43,161 | **66.6%** |
+| Battle chunks | **34** | 44 | 17 and 36 shipped 2026-09-11 (§BB, §BA); **6 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
+| Battle JP characters | **29,892** | 43,137 | **69.3%** — the total fell by 24: the artifact kanji had been counted as Japanese (§BB6) |
 | Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 948) |
 | Script message instances | **5,180** | 7,931 | **65.3%** (was 63.6%) |
 
-`check`: **All checks passed** with chunk 36 in `tl/battle/`. **glossary ends §64 · FLAGS ends §BA** — ⚠️ **always take
+`check`: **All checks passed** at the tokenise-fix commit, chunks 17 and 36 in `tl/battle/`. **glossary ends §64 · FLAGS ends §BB** — ⚠️ **always take
 the next number by READING both files at commit time, never by reserving.**
 `build/*_dump_merged.txt` regenerated at this close. README status table refreshed. **All worktrees
 pruned — `git worktree list` shows only the main checkout.** **No open PR, no live agent.**
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and WHICH ONE IT HIDES IS NOT STABLE** — it
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
-Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact).
+Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
 ## In flight
 **Nothing. The run is complete.** No open PR, no unmerged unit branch, no live agent, no worktree.
@@ -64,15 +60,25 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact).
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
 this repo; use the PR's `merged: true` and the squash SHA in the committed record.**
 
-## Next up
-**NOTHING DISPATCHABLE — MEASURED, NOT ASSUMED.** See NEXT ACTION for the census and its one
-qualification. The work that remains is the human list below, in that order.
+## Next up — WAVE 13, then WAVE 14 (battle; `queue.py battle` after the re-dump, 2026-09-11)
+| Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Note |
+|---|---|---|---|---|---|---|---|
+| **13** | **15** | D | 620 | 6,373 | 6.14× | 3,806 | |
+| **13** | **23** | C | 1,257 | 4,521 | 2.80× | 3,517 | the tightest of the six — tier C, write tight from the first draft |
+| **13** | **27** | D | 668 | 6,145 | 5.60× | 3,740 | |
+| **14** | **28** | D | 770 | 5,807 | 4.77× | 3,673 | |
+| **14** | **29** | D | 610 | 6,163 | 6.05× | 3,691 | |
+| **14** | **39** | D | 622 | 6,479 | 6.21× | 3,861 | |
+
+**Do not dispatch 16 (A, 1.59×) or 32 (1.61×)** — both below §B2's 1.64× floor; `queue.py`'s 1.6 cutoff is
+wrong about 32. **No script batch:** 0 feasible lines (Remaining). Start each unit from the pristine
+dump (CLAUDE.md §2) — these chunks' dump lines changed representation at the re-dump (§BB4).
 
 ## Remaining — 366 unique lines / 2,751 instances, and the binding constraint for every one
-**Battle: 0 dispatchable.** 8 chunks remain, **all blocked** — 15, 23, 27, 28, 29, 39 by §D1's dump
-artifact; **16 and 32 by BOTH §D1 and the tier-A floor** (1.59× and 1.61× against §B2's 1.64×).
-⚠️ **`queue.py battle` reports "dispatchable 11" and is WRONG ON BOTH COUNTS** — its tier-A cutoff is
-hardcoded **1.6**, and it knows **nothing** about §D1.
+**Battle: 6 dispatchable** — 15, 23, 27, 28, 29, 39 (Next up). **2 blocked** — 16 and 32, on the tier-A
+slot extension only (1.59× / 1.61× against §B2's 1.64×). §D1 applies to nothing any more (§BB).
+⚠️ `queue.py battle` prints "dispatchable 7" because its tier-A cutoff is hardcoded 1.6, not 1.64 — it
+counts 32. Use this table, not that line.
 
 **Script: 366 unique lines / 2,751 instances**, and I measured the binding bank for each:
 | Binding bank | Lines | Instances | Free | Note |
@@ -85,25 +91,15 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
 task at the top of the human list: the §F2 bank-40/41 repoint.** Everything else is rounding.
 
 ## Blocked — needs a human, IN PRIORITY ORDER
-### 1. 🔧 THE `tokenise` ARGUMENT-LENGTH TABLE — cheapest real win, repo-only, unblocks 10 chunks
-`FLAGS.md` **§D1, §R, §AP2, §AY2**. Needs **no disc, no EXE, no emulator** — unlike everything below.
-The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte is a valid lead
-byte, so an item id plus the *next tag's* lead byte decodes as a kanji. **24 occurrences across 10
-chunks** — `{FC70}` in 5, 16, 17, 23, 39 and `{FCA8}` in 15, 27, 28, 29, 32 — and each makes `check`
-**unsatisfiable** for that chunk: the dump form passes tag parity and fails charset; every re-tokenised
-form does the reverse. **Chunk 17 is finished, faithful, format-clean and 2,335 bytes UNDER its slot,
-parked for this reason alone.**
-⚠️ **THE BUG IS IN BOTH TOOLS AND HAS TWO DISTINCT SYMPTOMS — established across waves 10 and 12:**
-- `riotbattle.py` and **`riotscript.py:tokenise_stream` (lines 61–83)** both test `is_sjis_lead(c)`
-  **before** the tag branch and **have no argument-length table.** A fix to one leaves the other.
-- **§R4/§AP2's script instance (D367) is the SJIS-LEAD branch.** **§AY2's `{FF00}` at D1003 is the
-  CONTROL-TAG branch** — `is_sjis_lead` **excludes `0xFF`**, so after `{FFF3}` the loop meets `0xFF` in
-  the `0xfb <= c <= 0xff` branch and emits `{FF00}` from an **argument byte**. Census 1 unique / 6 dump
-  / 0 battle; **zero shipping impact**, proved from the encoder's grammar.
-- ⚠️⚠️ **THEREFORE A LEAD-BYTE REORDER FIXES NEITHER SYMPTOM. It must be an ARGUMENT-LENGTH TABLE —
-  and ONE table serves both branches in both tools.**
-Then `assemble.py refresh`; chunk 17 unparks with a `git mv` plus a **0-byte** re-tokenisation of one tail.
-
+### 1. ✅ RESOLVED 2026-09-11 — the `tokenise` argument-length table; both dumps re-generated; chunk 17 shipped
+`FLAGS.md` **§BB**. `tools/tagargs.py` (`FC70` 2 · `FCA8` 2 · `FFED` 2 · `FFF3` 4 — **measured at byte level;
+§R4's "8" and §AP2's "4" were wrong**, §BB2) is imported by both tokenisers. Dumps re-generated without
+the binaries from their own lossless bytes and proven (§BB4): 18 battle + 7 script lines changed, all
+byte-identical, none in a shipped chunk; artifact signatures 24 → 0, `{FF00}` 6 → 0. **§AP2's "zero
+shipping impact" was wrong — `batch_012` D367 rendered a stray `お`; fixed (§BB3).** Chunk 17: `git mv`,
+5,857 / 8,192. **15, 23, 27, 28, 29, 39 dispatchable; 16, 32 on the tier-A floor only.**
+⚠️ **When you drop the real binaries into `original/`, `assemble.py refresh` must reproduce `dumps/`
+byte-for-byte. If it does not, stop and look before anything else.**
 ### 2. ⭐⭐ THE BANK-40/41 REPOINT (§F2) — by far the biggest lever left
 `FLAGS.md` **§F2**, figures refreshed **§Z6**. About **66 KB short**: bank 41 needs +30,534 with **353**
 free, bank 40 +20,924 with **75**, bank 5 +14,720 with **1,595**, bank 2 +12,798 with **1,607**, bank 33
@@ -297,14 +293,13 @@ vs 782; bank 31 **1,724** vs 2,185; bank 5 **40** vs 94). Translators ran 27–5
 Detail lives in `glossary.md` §61–§64 and `FLAGS.md` §AW–§AZ.
 
 ## How to resume
-1. `git fetch && git reset --hard origin/main` (a plain `checkout` can land on a stale shallow ref —
-   see the top of this file), then `python3 tools/assemble.py check`.
-2. ⛔ **DO NOT open another wave to look for translation work — there is none, and NEXT ACTION shows the
-   measurement.** The queue is empty at the run's standing 2.10× planning rate; the only qualification is
-   the two marginal pooled rows named there, which are a policy call, not a unit.
-3. **The work is the human list under "Blocked — needs a human", in that order.** Items **1** and **3**
-   need **nothing but the repository** — no disc, no EXE, no emulator — and between them unblock **11
-   battle chunks**. Item **2** unblocks **99.9% of all remaining script text.**
-4. **When a blocker clears, the loop still works**: start a fresh session on this branch and run
-   `/translate`. The chain, the wave barrier, the three-role split and every gate are unchanged — the
-   only thing that stopped is the supply of feasible units.
+1. `git fetch && git reset --hard origin/main` (a plain `checkout` can land on a stale shallow ref — see
+   the top of this file), then `python3 tools/assemble.py check`.
+2. **There IS dispatchable work: six battle chunks.** Run `/translate`, or open the wave-13 session with
+   the SKILL.md §6a seed on `main`. Wave 13 = 15, 23, 27; wave 14 = 28, 29, 39 (Next up).
+3. **After wave 14, the work is the human list under "Blocked — needs a human", in this order:** the §F2
+   bank-40/41 repoint (2, unlocks 363 script lines / 2,748 instances), the tier-A slot extension (4,
+   unparks 5 and 43, unblocks 16 and 32), the two in-game visits (5), binaries and play-test (6).
+4. **Drop `SCRIPT.BIN` and `HEXMAP.BIN` into `original/` and run `python3 tools/assemble.py refresh`
+   before anything else with the discs: it must reproduce `dumps/` byte-for-byte** (FLAGS §BB4). Then
+   `assemble.py all` for the real `checkedit`.

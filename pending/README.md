@@ -5,13 +5,12 @@ The directory name deliberately does not match `tl/battle/chunk_NNN.txt`, so `ch
 `build` ignore it and the patch stays buildable with those chapters falling through to Japanese
 (prompt §0.5).
 
-⚠️ **Nothing here is unfinished work, and there are now TWO reasons a file is parked.** Read the
+⚠️ **Nothing here is unfinished work, and there is now ONE reason a file is parked.** Read the
 reason before assuming a file needs translating again:
 
 | Reason | Files | What lifts it |
 |---|---|---|
 | **Over the 8,192-byte slot** | `chunk_043.txt`, `chunk_043_abridged.txt`, `chunk_005.txt` | the slot extension (`pending/slot-extension.md`, `findings.md` §23) |
-| **Tooling — the `FLAGS.md` §D1 dump artifact** | **`chunk_017.txt`** (and `chunk_005.txt`, which has it *as well as* being over slot) | a `riotbattle.tokenise` fix + re-dump (`FLAGS.md` §R4) |
 
 Move a file into `tl/battle/` only once the constraint named in its row below has been lifted.
 
@@ -48,25 +47,24 @@ say which one a hit is in** (`FLAGS.md` §X3).
 |---|---|---|---|
 | `chunk_043.txt` | 11,181 | 8,192 | faithful translation, 1.86x. Needs a ~12 KB slot. **Ship this one.** |
 | `chunk_043_abridged.txt` | 8,941 | 8,192 | evidence only, 1.41x, 13 sentences already deleted — still 749 over. Do not ship. |
-| `chunk_005.txt` | 8,679 | 8,192 | faithful and fully compressed, 1.64x — 487 over. See `FLAGS.md` §2–4. Needs a slot extension, same as 43. **Also carries the §D1 artifact** (line 17), so it needs the dumper fix too. |
-| **`chunk_017.txt`** | **5,857** | 8,192 | ⚠️ **NOT a budget park — 2,335 bytes UNDER its slot.** PR #12, merged at round 2 (squash `2e0790d`), reviewed line by line and glossary-integrated at §30. **This is finished translation waiting on a tooling fix, not unfinished work.** 1,144 JP → 2,472 EN = 2.16x against a 3.19x ceiling; 154 rows, widest 23, none at 24; no page over 4 text rows; `{FCC0}` untouched. It is here **only** because message line 19's item-grant tail carries the `FLAGS.md` §D1 dump artifact (`{FC70}{=00}入{=A300020000}`, where `入` is item id `0x93` plus the next tag's `0xFC` lead byte decoded as Shift-JIS) and `assemble.py`'s charset and tag-parity gates cannot both be satisfied — all four candidate encodings emit the **byte-identical** stream, so nothing is lost by waiting. **`FLAGS.md` §R** has the proof, the 24-occurrence / 10-chunk scope and the fix. |
+| `chunk_005.txt` | 8,679 | 8,192 | faithful and fully compressed, 1.64x — 487 over. See `FLAGS.md` §2–4. Needs a slot extension, same as 43. |
 
 
 The chunk 43 pair passes every other `assemble.py check` rule: tag parity, charset, 24 columns,
 4 rows, line count and `{PAD}` identity. The byte budget is the only failure.
 
-`chunk_005.txt` passes tag parity, columns, line count and `{PAD}` identity, but has **two
-further defects that are not translation problems** and would need handling even at budget:
-its line 17 carries a dump artifact (`{FC70}{=00}逓{=20000E}`, where lines 14/16 have the clean
-`{FC70}{=0062}{FC20}{=000E}` — the dumper decoded argument bytes ~~0x9276~~ **`0x92FC`** as text),
-which trips the charset check; and its source line 10 contains a 7-row and a 5-row page, the first
-pages over 4 rows encountered in any chunk worked so far.
+`chunk_005.txt` passes tag parity, columns, charset, line count and `{PAD}` identity. Its line 17
+carried the §D1 dump artifact until 2026-09-11 (`FLAGS.md` §BB: the tokeniser fix re-dumped it as
+`{FC70}{=0092}{FC20}{=000E}` and this file was re-tokenised with identical bytes). One defect that is
+not a translation problem remains: its source line 10 contains a 7-row and a 5-row page (§D2).
 
 ⚠️ **Correction, 2026-09-08 (PR #12 review, `FLAGS.md` §R5):** the byte pair above read `0x9276`
 and that is wrong — `逓` encodes to **`92 FC`**. The line number (17) and the diagnosis were both
 right; only the value was mistyped. **That artifact is the same one that parks `chunk_017.txt`**,
 and it is now enumerated project-wide: **24 occurrences across 10 chunks** (5, 15, 16, 17, 23, 27,
 28, 29, 32, 39). One `riotbattle.tokenise` fix plus a re-dump clears all ten — see `FLAGS.md` §R.
+**✅ Done 2026-09-11, `FLAGS.md` §BB: chunk 17 shipped; 15, 23, 27, 28, 29, 39 dispatchable; 5, 16 and 32
+remain on the slot extension only.**
 
 ---
 
@@ -104,6 +102,9 @@ size the destination RAM buffer — a 16 KB read into an 8 KB buffer is the one 
 fails silently.
 
 ## Separate finding: chunk 33 is missing from the dump
+**✅ Resolved before this run** — the dump carries all 44 chunks and chunk 33 shipped in wave 8. But
+`dumps/battle_unique.txt` had never been regenerated and lacked chunk 33's seven messages until
+2026-09-11 (`FLAGS.md` §BB5).
 
 `tools/riotbattle.py::find_script_bounds` returns `None` unless `\xfc\x51` appears in the slot.
 **Chunk 33 opens every message with `{FC50}` and never uses `{FC51}`**, so it is silently
