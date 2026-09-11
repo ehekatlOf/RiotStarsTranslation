@@ -12,143 +12,92 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ### ✅ STAND-DOWN CONFIRMED — FOR THE ROOT SESSION (`session_018YepyHo7ky7emoUMicnUcL`)
-> **You asked wave 9 to confirm before you open wave 10. This is that confirmation, written here
-> because you are idle and peer messaging cannot reach you — and because `HANDOFF.md` is this run's
-> designated channel (CLAUDE.md §7).**
+> ### ▶ WAVE 10 IS RUNNING. Coordinator: `riotstarstranslation-31` (top-level session, lineage depth 1).
+> Three units dispatched, script-only. **Nothing is reviewed until all three have an open PR**
+> (CLAUDE.md §4 step 4, the wave barrier). After the barrier: one `reviewer` subagent at a time,
+> foreground, in unit order 014 → 015 → 016.
 >
-> 1. **The wave-10 `orchestrator` subagent is STOPPED.** `TaskStop` succeeded; `ListAgents` reports
->    no live agents and no other session on this machine.
-> 2. **It merged NOTHING.** It reached preflight and survey and pushed one `HANDOFF.md` commit
->    (`8fb09ad`). Verified from primary sources, not its report:
->    `git diff --stat 34c19e7 8fb09ad` → **`HANDOFF.md` only**; `git ls-remote` → **no
->    `tl/script-014/015/016` branch**; no PR opened; nothing written to `tl/`, `glossary.md` or
->    `FLAGS.md`; `git status` clean. **No unit is SELF-REVIEWED and NO audit debt exists.**
-> 3. **Wave 9 was already closed before your check-in arrived** (it was late — routine, per the
->    warning in this file). Step 6 is complete: `check` green, `build/script_dump_merged.txt`
->    rebuilt and committed, README refreshed, worktrees and local branches pruned.
-> 4. **No coordinator is working this repo.** Wave 9's coordinator has ended its turn. **The repo is
->    yours; open wave 10 when ready.**
+> **If this session is gone and the units are unreviewed:** `git fetch && git reset --hard
+> origin/claude/workflow-translation-iterate-uzlkns`, list open PRs, and resume at whichever step
+> In flight names. **If a wave-10 PR is merged but wave 11 was never opened, the chain broke — open
+> it yourself** (`create_session`, this environment, `source_revision` = the integration branch).
 >
-> ⚠️ **One correction, as data rather than disagreement:** your message put wave 9's figure errors at
-> **4 translators / 3 reviewers**. The verified record is **1 coordinator, 2 translators, 4
-> reviewers** — the coordinator one is wave 9's own. The full tally, with who caught each, is in
-> **Decisions**. It matters for wave 10's dispatches: **the source shifted across the wave**, and the
-> last three were reviewers'. If you hold evidence for the 4/3 split it should displace this on the
-> record — but it is not adopted unverified, which is this wave's own central lesson.
+> ✅ **The three-role split is INTACT this wave.** `Task`, `send_later` and `create_session` all
+> work here; wave 9's depth-8 cap does not apply. **No unit is SELF-REVIEWED and there is NO audit
+> debt outstanding** — wave 9 closed 3 of 3 with five separate reviewers, and its wave-10
+> `orchestrator` subagent was stood down having merged nothing (verified at this wave's preflight:
+> `git ls-remote` shows no `tl/script-014/015/016` branch predating this wave, and `8fb09ad`
+> touched `HANDOFF.md` only).
 >
-> ---
->
-> ✅ **WAVE 9 IS CLOSED — 3 of 3 merged, 0 parked, `check` green. Script 640/1,430 lines, 59.7%.**
->
-> ✅ **WAVE 10 OPENS AS A GENUINE TOP-LEVEL SESSION, FROM THE RUN'S ROOT SESSION. THE DEPTH-8 CHAIN
-> IS RETIRED.** `session_018YepyHo7ky7emoUMicnUcL` — the run's original runner, **lineage depth 0**,
-> outside the cap that stopped wave 9 — is opening it. Verified against the session record, not
-> taken on the message alone: web origin, **no parent session**, created 2026-09-08 before wave 1,
-> same environment and branch. A wave 10 opened from there is **depth 1**, so it has a full tool
-> surface: its own translators, its own **independent reviewer**, its own watchdog, and it can open
-> wave 11. **The three-role split is intact and no human action is required.**
->
-> ⛔ **THE §7.2 SUBAGENT FALLBACK WAS STOOD DOWN, AND IT MERGED NOTHING.** Wave 9's coordinator
-> spawned an `orchestrator` subagent when `create_session` failed, then stopped it on the root
-> session's instruction. **It got as far as preflight and survey and pushed one `HANDOFF.md` commit
-> (`8fb09ad`); it created no branch, opened no PR, and wrote nothing to `tl/`, `glossary.md` or
-> `FLAGS.md`.** Verified from `git log`, `git status`, `git ls-remote` and `git diff --stat`, not
-> from the agent's own report. **Therefore NO unit is SELF-REVIEWED and NO audit debt exists.**
-> `check` is green at that commit.
->
-> ⭐ **ONE FACT THAT SUBAGENT ESTABLISHED EMPIRICALLY, worth keeping: a subagent really does have NO
-> spawn tool.** It tested its own surface rather than assuming — `SendMessage`, `Monitor`, `TaskStop`
-> and **no `Task`**. CLAUDE.md's claim that "subagents cannot spawn subagents" is now verified rather
-> than inherited, which is exactly why the §7.2 fallback costs review independence and why a real
-> session is worth waiting for.
->
-> **Wave 10's coordinator: compute your own units.** The stood-down subagent's survey proposed
-> batches **014/015/016 = DATA 707–856** and recomputed the feasible queue at **424 lines / 447
-> instances**. ⚠️ **That is a LEAD, NOT A QUEUE — re-derive it.** It is close to wave 9's own close
-> figure (427/450) but was measured by an agent that did not finish; and every dispatch in this run
-> warns against inheriting a line list.
->
-> ⚠️ **WAVE 10 IS SCRIPT-ONLY.** Both battle blockers were re-tested **twice** on 2026-09-11 — at
-> wave 9's close and again at the subagent's preflight — and **both are still unfixed**:
-> `grep -n "FC70\|FCA8" tools/riotbattle.py` returns no hits; `riotscript.tokenise_stream` still
-> tests `is_sjis_lead` before the tag branch with no argument-length table; and
-> `assemble.py:validate_body` still applies its charset whitelist with no dump-identical exemption.
-> All 8 remaining battle chunks stay blocked.
->
-> ⚠️ **The run is NOT complete** — ~424–427 lines stay bank-feasible, roughly 8–9 batches.
+> ⚠️ **WAVE 10 IS SCRIPT-ONLY.** All 8 remaining battle chunks stay blocked on Blocked 0 / 0a.
+> ⚠️ **The run is NOT complete** — ~250 lines stay bank-feasible after this wave, roughly 5–6 batches.
 
 ## Last updated
-2026-09-11 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
-wave: **9 CLOSED — 3 of 3 merged, 0 parked, 0 lost, 0 re-dispatches** ·
-**wave 10 handed to the ROOT session as a top-level spawn; the §7.2 subagent was stood down having
-merged nothing** · queue: **424–427 lines / 447–450 instances bank-feasible — re-derive, do not inherit**
+2026-09-11 · by: **wave-10 coordinator** (`riotstarstranslation-31`) ·
+wave: **10 DISPATCHED — batches 014, 015, 016, DATA 707–869, 163 lines / 163 instances** ·
+queue re-derived from primary sources, **not inherited**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **640** | 1,430 | `tl/script/batch_001–013.tsv` (was 461) |
-| Script message instances | **4,733** | 7,931 | **59.7%** (was 57.4%) |
+| Script unique lines | **640** | 1,430 | `tl/script/batch_001–013.tsv` |
+| Script message instances | **4,733** | 7,931 | **59.7%** |
 
-`check`: **All checks passed** at `2648372`. glossary ends **§54**, FLAGS ends **§AP**.
-⚠️ **TIGHTEST BANKS: 40 → 75, 41 → 353, 2 → 1,607, 5 → 1,635.** ⚠️ **BANK 2 IS NEW TO THIS LIST** —
-it was 2,993 before wave 9 and `batch_012` spent 1,386 of it. It is now the **third**-tightest bank
-in the game and is no longer comfortable. Banks 40 and 41 still have a spendable budget of **zero**
-(free < the 500-byte reserve), so any line touching either remains blocked outright.
+`check`: **All checks passed** at `957d76a` and again at the seed commit `566f94d`.
+glossary ends **§54**, FLAGS ends **§AP** — both re-read at commit time, not inherited.
+⚠️ **TIGHTEST BANKS, re-measured by `bankmeasure.py` this wave: 40 → 75, 41 → 353, 2 → 1,607,
+5 → 1,635.** Banks 40 and 41 have a spendable budget of **zero** (free < the 500-byte reserve).
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
-**Nothing. Wave 9 is closed (3 of 3 merged, 0 parked) and wave 10 has not started.**
-No PR is open, no unit branch is unmerged, and no coordinator is working this repo.
-⚠️ **Exactly one coordinator works the repo at a time (CLAUDE.md §4).** Wave 9's coordinator has
-ended; wave 10's top-level session is the next and only writer.
+**Wave 10 — three script units, dispatched in parallel. Barrier: review nothing until all three
+have an open PR.**
 
-## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
-**Seed the glossary BEFORE dispatching.** Sections end at **glossary §54** and **FLAGS §AP** —
-⚠️ take the next number by **READING both files at commit time**, never by reserving. Wave 9's own
-seeds went into **§9 PROVISIONAL**; the ones its units spent are struck.
+| Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
+|---|---|---|---|---|---|---|
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | dispatched |
+| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | dispatched |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | dispatched |
 
-**COMPUTE YOUR OWN BATCHES. This table is a starting point, not a queue** — it was measured at
-wave 9's close (2026-09-11) and the bank figures move with every merge.
+Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
+2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
 
-**790 lines / 3,198 instances untranslated. 427 lines / 450 instances are bank-feasible**; of those,
-**six are GIANT single lines** worth checking before batching:
+## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
+**Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
+counts below were measured before wave 10 merged anything.
 
-| DATA | Growth | Bank | Verdict |
+After wave 10, **~627 lines / ~3,035 instances remain untranslated; ~264 lines stay bank-feasible.**
+Contiguous feasible runs, measured 2026-09-11 by `bankmeasure` + a per-run growth model at 2.10×:
+
+| DATA | Lines | Banks | What it is |
 |---|---|---|---|
-| 518, 519, 520 | 2,722 / 1,713 / 1,954 B | 5 | ⛔ **NOT shippable** — 6,389 B against bank 5's 1,135 spendable. These three are the *sole* reason bank 5 shows as over budget. |
-| 744 | 1,391 B | 19 | ✅ feasible — bank 19 has room |
-| 863 | 2,935 B | 23 | ✅ feasible — and it carries `『獅子の勲章』`, whose glossary row is **held live** for it |
-| 865 | 1,476 B | 23 | ✅ feasible |
+| **870–879** | 10 | 25 | ⭐ **the blacksmith (`かじ屋`, `ノロ` verbal tic) — take this FIRST.** See the cross-wave duplicate warning below. |
+| 1106–1159 | ~54 | 31–39 | real dialogue — ⚠️ **1043–1105 immediately before it is a DEVELOPER DEBUG MENU; do not batch them together** |
+| 1415–1430 | 16 | 43 | casino: slots, medal exchange, prizes — player-facing |
+| 584–598 | 15 | 12 | leftovers, good for topping a batch to 40–60 |
+| 997–1034 | 38 | 30 | ⚠️ debug flag/sound test — near-zero player value |
+| 465–469 | 5 | 3 | leftovers |
 
-**Clusters of the remaining 421 workable lines:**
+⚠️ **NOT shippable:** DATA **518, 519, 520** — 6,389 B of growth against bank 5's 1,135 spendable.
+These three alone are why bank 5 shows as over budget. ⚠️ DATA **326–345** pays its growth in
+**18 banks for 38 instances**. ⚠️ **1043–1413 as a whole run is bank-blocked** by banks 40/41; only
+sub-ranges are feasible, so slice it rather than testing it whole.
 
-| DATA | Lines | Banks | Growth | What it is |
-|---|---|---|---|---|
-| 707–879 | **170** | 18–25 | ~18,183 B | **continues wave 9's `batch_011` scene** — town, shops, NPCs. The obvious next 3 batches. |
-| 1043–1159 | 117 | 31–39 | ~9,756 B | ⚠️ **1043–1105 is a DEVELOPER DEBUG MENU** (sound test, flag toggles); **1106–1159 is real dialogue**. **Split it; do not batch them together.** |
-| 1388–1430 | 42 | 42, 43 | ~2,978 B | casino: slots, medal exchange, prizes — player-facing |
-| 997–1034 | 38 | 30 | ~795 B | ⚠️ debug flag/sound test again — near-zero player value |
-| 326–345 | 19 | 18 banks | ~2,156 B | ⚠️ **38 instances from 19 lines across 18 banks** — pays its growth in every one |
-| 584–598 · 521–533 · 465–469 | 15 · 13 · 5 | 12 · 6,7 · 3 | small | leftovers, good for topping a batch to 40–60 |
+⚠️ **CROSS-WAVE DUPLICATE DEBT — wave 10 ships the incumbents these four inherit.** Measured this
+wave by longest-common-substring against DATA 707–869:
+`870`↔`724` share **`貼り紙がしてある・・・`** (11 chars) · `874`,`877`↔`711` share
+**`か？　はい　いいえ`** (9) · `879`↔`744` share **`の材料になりそうなもの`** (11).
+**None is byte-identical, so gate 6 cannot see any of them.** Whoever takes 870–879 must read
+`batch_014` first and match it.
 
-**Terms already owed to later units** (from wave 9's merged rows, so they are BINDING, not proposals):
-`『獅子の勲章』` → `“Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ”` (DATA 863) · `クーデター` → `ｃｏｕｐ` (863, 1373) ·
-`ブラックジャック` → `Ｂｌａｃｋｊａｃｋ` (1390, 1395, 1416) · `スリ` → `ｐｉｃｋｐｏｃｋｅｔ` (286, 518, 520,
-714) · `工房` → `ｗｏｒｋｓｈｏｐ` (744, 788, 1346, 1364, 1365) · `行商` → `ｐｅｄｌａｒ` (806) · `町長` →
-`ｔｏｗｎ　ｅｌｄｅｒ` (1102) · `ベルナール教会` → `Ｂｅｒｎａｒｄ’ｓ　ｃｈｕｒｃｈ` (910) · `ピクシー` →
-`Ｐｉｘｉｅ` (DATA 817 — **inside 707–879**, so wave 10 probably discharges it) · `マーシュ` (FILE 870,
-1330, 1379) · `小隊` (FILE 524, 1389).
-
-**A corrections unit is now worth a slot.** §4.3 debt in **merged** work, all byte-negative or free:
-**FLAGS §AP5** — `chunk_000.txt` ships three hyphen stutters (`Ｗｈ‐ｗｈａｔ`, `Ｎ‐ｎｏｗ`, `Ｔｈ‐ｔｈｉｓ`)
-against §23.2's comma convention (census **19 : 3**); **§AP7** — `品` → `ｇｏｏｄｓ` at DATA 376 against
-§34.1's `ａｒｔｉｃｌｅ`, fix measured at +6 B into a bank with 31,431 free; **§AP9** — a stale §9
-`トリフ` row four merged units already render; `batch_007.tsv:31`'s `Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ`, the only
-capitalised bare plural in `tl/`; and merged `chunk_000` ×3, `chunk_008`, `chunk_031` shipping
-`Ｈｅｙ，` against §32.3's `Ｏｉ，`.
+**A corrections unit is still worth a slot.** §4.3 debt in **merged** work, all byte-negative or
+free: **FLAGS §AP5** — `chunk_000.txt` ships three hyphen stutters against §23.2's comma convention
+(census **19 : 3**); **§AP7** — `品` → `ｇｏｏｄｓ` at DATA 376 against §34.1's `ａｒｔｉｃｌｅ`,
++6 B into a bank with 31,431 free; **§AP9** — a stale §9 `トリフ` row four merged units already
+render, `batch_007.tsv:31`'s `Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ`, and merged `chunk_000` ×3, `chunk_008`,
+`chunk_031` shipping `Ｈｅｙ，` against §32.3's `Ｏｉ，`.
 
 ## Remaining
 **Battle: 0 dispatchable.** 8 chunks remain, **all blocked** — 15, 23, 27, 28, 29, 39 by §D1's dump
@@ -156,11 +105,20 @@ artifact; **16 and 32 by BOTH §D1 and the tier-A floor** (1.59× and 1.61× aga
 ⚠️ **`queue.py battle` reports "dispatchable 11" and is WRONG ON BOTH COUNTS** — its tier-A cutoff is
 hardcoded **1.6**, and it knows **nothing** about §D1.
 
-**Script: 790 unique lines / 3,198 instances untranslated**, of which **427 lines / 450 instances are
-bank-feasible** (421 after setting aside the three unshippable bank-5 giants) — roughly **8–9 more
-batches**. CLAUDE.md §8's "no dispatchable unit left" does **NOT** hold; the run continues.
-The other 363 lines (2,748 instances) are bank-blocked, **117 of them 21-instance item-table rows
-held solely by bank 40's 75 free bytes**.
+**Script: 790 unique lines / 3,198 instances untranslated at wave 10's start** — re-derived this
+wave from `script_unique.txt` + `script_dump.txt` + `bankmeasure`, and it reproduces wave 9's close
+figure exactly. Of those, **~427 lines are bank-feasible**; **wave 10 takes 163 of them**, leaving
+**~264 feasible lines, roughly 5–6 batches**. CLAUDE.md §8's "no dispatchable unit left" does
+**NOT** hold; the run continues. The other ~363 lines (2,748 instances) are bank-blocked, **117 of
+them 21-instance item-table rows held solely by bank 40's 75 free bytes**.
+
+⚠️ **Two figures in wave 9's closing table did not survive re-measurement, and the table said to
+re-measure.** It listed DATA 707–879 as **170 lines / ~18,183 B**; the range is **173 lines**
+(707–879 inclusive is 173 slots and **none** of them is translated) and its growth at the standing
+**2.10×** planning ratio is **23,985 B**. The line count is arithmetic and certain; the byte figure
+differs because 18,183 B is not what 2.10× yields for 10,443 JP chars (2×1.10×10,443 = 22,974 plus
+row breaks). Recorded as data, not as a complaint: **both figures were labelled "a starting point,
+not a queue", and re-deriving them is what that label asks for.**
 
 ## Blocked — needs a human
 8. 🎮 **NEW 2026-09-11 — NINE TUTORIAL SCREENS NEED EYES ON THE GAME (PR #36, FLAGS §AO1–AO3).**
