@@ -694,19 +694,20 @@ reading, not as a fixed distinction.
 
 | Japanese | Shipped English — MATCH IT | Shipped where | Recurs in wave 10 at |
 |---|---|---|---|
-| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716, D717, D720** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all five.** |
+| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** |
+| `館の中は静寂に　包まれている・・。` | — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
 | `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
-| `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792** — three more instances, i.e. wave 10 triples the corpus. Read D791 (`かつてのカーライン…`) before fixing on it. |
+| `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792, D793, D794 — five**, all in `batch_015`. Wave 10 takes the corpus from 1 instance to 6, so this unit, not the incumbent, effectively fixes the term. Read D791 (`かつてのカーライン…`) and D794 (`親衛隊だか何だか知らねえが` — hostile, colloquial) before fixing on it. |
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
-| `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | D726, D733, D739, D744, D835, D836 |
-| `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | D726, D735, D737, D739, D740, D746, D744 — ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
+| `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
+| `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | **D726, D737, D744, D746** (`batch_014`) and **D807** (`batch_015`) — 5 lines, **8 occurrences**. Cross-unit. ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
 | `功績` | `Ｍｅｒｉｔ` (capitalised) | §38 row, `batch_007` | D758 ×2, D769 |
 | `ジェムストーン` | `“Ｇｅｍｓｔｏｎｅ”` | `batch_013` D880 | D744 |
-| `極上のワイン` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | `batch_012` ×6 | D765, D772, D857 |
+| `極上のワイン` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | `batch_012` ×6 | **D765, D770, D772** (`batch_015`) and **D857** (`batch_016`) — 4 occurrences. Cross-unit. |
 | `カジノ` | `ｃａｓｉｎｏ`, lowercase | `batch_010` ×2 | D747, D750, D812 |
 | `マーベラス` | `Ｍａｒｖｅｌｌｏｕｓ` | `batch_010`; §21.1 | D797, D806 |
 | `カッフィ` | `Ｃａｆｆｉ` / `Ｃａｆｆｉ　Ｐｏｒｔ` | §39 (promoted wave-6 seed) | **D867** |
-| `踊り子` | `ｄａｎｃｅｒ` | `batch_012` ×2 | D773, and the `『おどりこの指輪』` row below |
+| `踊り子` | `ｄａｎｃｅｒ` | `batch_012` ×2 | **D719** (`batch_014`), **D773, D774** (`batch_015`), **D863** (`batch_016`) — 4 lines, **8 occurrences**. ⚠️ **The only term in this wave that spans all three units**, and D719 spells it in **kana** (`踊り子さん` vs `おどりこ` in the D715 item name). |
 | `館` | `ｍａｎｓｉｏｎ` | `batch_009`, `batch_011` | D711, D714, D716, D717, D720 |
 
 **Table B — genuinely new: in wave 10's source, absent from `glossary.md`. Proposed, not fixed.**
