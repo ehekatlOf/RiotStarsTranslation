@@ -67,6 +67,7 @@ on `claude/workflow-translation-iterate-uzlkns`.**
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
+| 018 | #41 | 1 | **CHANGES** | **All 8 gates PASSED** (base pinned `f64ca52`, tree `9b68866`, `git archive`, no working tree). Gate 7 **1,540 raw / 1,300 distinct keys, 31 occur**. Reviewer re-derived **all ten `{FFEC}` insert rows** — every figure matched the PR, incl. the 21-column worst case at D1420. **1 finding on the file** ⤵ · Rework relayed to `a128d73965f6152f7`, round 1 of 3 |
 | 017 | #42 | 2 | ✅ **MERGE** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways. **Reviewer re-derived everything rather than accepting it**: both `len()`s (18→19, 16→19), both page shapes (D1112 p3 = 14/11/19, D1138 p1 = 13/19/13, both 3 rows, no re-flow), the bank table (bank 33 **5,627**, total 6,152), and a **wider** pronoun sweep (adding `ｍａｎ/ｍｅｎ/ｗｏｍａｎ/ｈｉｍｓｅｌｆ/Ｌａｄｙ/Ｌｏｒｄ/…`) — after the fix **none of D1120, D1122, D1138 carries any gendered reference**. Base **pinned to a SHA** (`c017144`) because the integration branch moved twice mid-review and `merge-tree` silently returned a different tree each time |
 | 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
 
@@ -90,6 +91,25 @@ a distinct failure from the four coordinator errors above** — those censused t
 one censused the right corpus for the wrong question. `HANDOFF.md`'s wave-10 table already warns that
 *"where is it translated?"* and *"where does it occur?"* differ; this is the third question,
 *"has this specific instance shipped?"*, and it needs its own grep.
+
+⭐ **THE 018 FINDING — A TERMINOLOGY COLLAPSE GATE 6 CANNOT SEE.** `batch_018` renders **`さ、`** as
+`Ｎｏｗ，` at D1408/D1409 — but `Ｎｏｗ，` is **`さあ、`'s** settled English, and the same file ships
+`さあ、` → `Ｎｏｗ，` at D1388/D1415, so **two source strings land on one English inside one file**.
+`glossary.md:2261` and `:1788` hold them apart. The proof is a shipped battle line: **`chunk_006.txt:13`
+carries BOTH in one Fernando speech** — `さ、お城へ戻りましょう。` → `Ｃｏｍｅ，　ｌｅｔ　ｕｓ　ｒｅｔｕｒｎ`
+beside `さあ、` → `Ｎｏｗ，`; `chunk_007.txt:20` gives a second, a **different speaker** (Nacol), also
+`Ｃｏｍｅ，`. `さ、` is **5 occurrences in the whole game**; this unit renders 2 of the 3 script ones and
+was the only work anywhere rendering it as anything but `Ｃｏｍｅ，`.
+
+⚠️ **THE 018 REVIEWER CORRECTED THE PR'S "FIRST IN THE SCRIPT STORE" CLAIM.** D1408 is the **third**
+§L2-shape pool, not the first: **D517 (62 segments) is already shipped in `batch_002.tsv`** and D1387
+(13 segments) is untranslated. It also relocated the PR's own strongest evidence — the pool ends on a
+*complete* sentence, and the incomplete fragment `えっ、王女様が` sits **19th of 22, inside** it.
+
+⚠️ **`FLAGS.md` §AQ8 IS STALE** — "51 rows, none over 8" predates `batch_016`/`batch_017`; the true
+pre-018 figure is **58 rows, maximum +14**, and D1420's **+17** will be the new corpus maximum. The
+018 reviewer will correct §AQ8 at integration. **68 gate-blind insert rows now ride on §V1's shop visit**,
+and D1404/D1424 are the cheapest in-game test case in the corpus (1 and 5 visible columns).
 
 ⚠️ **FORWARD HAZARDS censused by `batch_017` but NOT in its banks — for `FLAGS.md` at integration:**
 `よかろう` [2, 33, 41] and `わかったわ` [36, 41] **share bank 41**, and `なんだ、` is **also** bank 41 —
