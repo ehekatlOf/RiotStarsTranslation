@@ -108,9 +108,16 @@ changed, all inside script slots** (§BB4).
 `FLAGS.md` **§F2**, figures refreshed **§Z6**. About **66 KB short**: bank 41 needs +30,534 with **353**
 free, bank 40 +20,924 with **75**, bank 5 +14,720 with **1,595**, bank 2 +12,798 with **1,607**, bank 33
 +11,492. **Unblocks 363 unique lines / 2,748 instances — 99.9% of everything still untranslated.**
-Needs a MAIN1.EXE repoint or a bank-spill scheme. **Policy this run:** bank 40's spendable budget goes
-to the 21-instance item table (~840 instances), not its own story text (~25 instances). Reversible, but
-the arithmetic is not close.
+**The MAIN1.EXE loader is TRACED (FLAGS §BD, 2026-09-11):** `load_bank` at 0x80037B00 reads 20 sectors
+at `bank*20` into a 0xA000 buffer at 0x800D8068 that is followed with zero clearance by the event record
+table; eleven constant references, all mechanical to relocate. Design: a per-bank (start, count) table in
+the EXE, the loader tail rewritten in place (17 words, no stub), the buffer moved to a 72 KB free region.
+**Blocked on ONE input: two DuckStation savestates from MAIN1 scenes (a town mid-dialogue, the overworld)
+so `riotfont.py liveness` can prove the target region is unwritten** — the four static candidates are
+exactly where pointer-addressed load buffers would live. Tooling (`tools/banks.py`, `riotscript.py
+--layout`, the MAIN1 patch tool + simulation) is the next engine item in the root session.
+**Policy this run:** bank 40's spendable budget goes to the 21-instance item table (~840 instances), not
+its own story text (~25 instances). Reversible, but the arithmetic is not close.
 ⚠️ **THREE THINGS COME DUE THE MOMENT BANK 40/41 OPENS, and each is written down so nothing is lost:**
 - **D1169 `音楽のＯＮ・ＯＦＦを切り替えます` contains `・`, which §3.1 FORBIDS** (§AY5/§AZ7). **No existing
   precedent covers it** — wave 12 ruled `・` → `，` only for *apposition* (§64/§AZ), which does **not**

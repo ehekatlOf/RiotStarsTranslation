@@ -7890,3 +7890,82 @@ dispatch 16 and 32 at 16,384.
 - Font payload placement rests on the July savestate (§11 4b); re-run `liveness` with a new one.
 - The boot EXE's own half-width port (§11 #11) and the 7-character name cap (#10) are untouched.
 - `MAIN1.EXE`'s SCRIPT.BIN bank loader (§F2 repoint) is not traced; that is the next engine item.
+
+## BD. `MAIN1.EXE` SCRIPT.BIN bank loader — TRACED; the §F2 repoint is a per-bank layout table plus a relocated 72 KB buffer, blocked only on a town savestate (2026-09-11, root session, Fable)
+
+### BD1. The loader (all addresses retail `MAIN1.EXE`, `t_addr 0x80010000`, `pc0 0x800456B0`)
+
+`load_bank(a0 = bank)` at **`0x80037B00`**, 40 words, called from six sites (`0x8002D204`, `0x8002DC7C`,
+`0x80037ED4`, `0x8003B22C`, `0x8003B2E4`, `0x8003CFBC`):
+
+```
+80037B08  if bank == gp+0x2A0 (current) return
+80037B20  gp+0x2D8 = previous bank ; gp+0x2A0 = bank
+80037B28  copy the 4-byte CdlLOC of SCRIPT.BIN's start (CD record 7, 0x8007F6CC; loc at +0x104 =
+          0x8007F7D0, filled at boot by the game's own ISO directory parse) to the scratch loc 0x8009A334
+80037B60  v0 = bank ? bank*20 : 0                     ; sll 2 / addu / sll 2
+80037B74  advance(v0 & 0xFFFF)                        ; 0x80012AC0: MSF arithmetic on 0x8009A334
+80037B7C  read(loc 0x8009A334, dest 0x800D8068, 0x14) ; 0x80012988: CdlSetmode, CdlSetloc, CdlReadN,
+                                                        CdGetSector per sector, count sectors, retries
+```
+
+`advance(n)` was simulated on the repo's R3000 for n = 0, 1, 20, 860 (retail max), 880, 1540, 1760,
+3000 against an independent MSF computation: correct every time, no load-delay hazard. `read()` has
+no count cap and no file-size check. The CD layer differs from KOUSEI's: MAIN1 parses the ISO PVD,
+path table and directories itself (`0x8005D380`/`0x8005D70C`, `read_sectors(count, lba, buf)` at
+`0x8005D9A8`) into a file table at `0x8009C408`, and the 37 CD records (`0x8007EF08` + k×0x11C:
+21-byte path, +0x100 dest pointer, +0x104 CdlLOC) get their positions from it.
+
+### BD2. The bank buffer and its consumers
+
+**Buffer `0x800D8068..0x800E2068`, exactly 0xA000, and `0x800E2068` is the first byte of the event
+record table (stride 92, `0x80022380`/`0x80022D68`/`0x80023AE0`… address it) — zero clearance.**
+A bigger bank cannot be read in place; the buffer must move, as in findings §23.2.
+
+How code reaches the buffer — eleven places, all constants, no arithmetic on the address elsewhere:
+
+| site | what |
+|---|---|
+| `0x80037B84` | the loader's `dest` |
+| `0x8007F7CC` | data word: CD record 7's dest pointer (`+0x100`), used by the generic per-record loader |
+| `0x800133CC` | `gp+0x240 = base` (script cursor base), `gp+0x1E4 = 0` |
+| `0x80031C20` | `gp+0x210 = base`, `gp+0x1E4 = 0` |
+| `0x80031C04` | `gp+0x210 = base+0x384` (body), `gp+0x1E4 = 0xE1` (= 900/4: the cursor is a word index) |
+| `0x80033FF0` | `gp+0x240 = base+0x384`, `gp+0x1E4 = 0xE1` |
+| `0x80031CCC`, `0x8003BF60` | `s4 = base`, then `lhu base[(rec*9 + field)*2]` — the 50 × 18-byte header records read as 9 halfwords |
+| `0x8003BEF0` | `sh base[(idx + gp+0x1E4)*2]` — a header field written back in RAM |
+
+Everything else walks the bank through `gp+0x240` / `gp+0x210`. So relocation is those eleven words
+(ten `lui`/`addiu` halves plus one data word), all mechanical.
+
+### BD3. The design (not built yet)
+
+1. **Per-bank layout table**, 44 × (u16 start sector, u16 count), in a verified zero run of the image;
+   `tools/banks.py` is the single source for the EXE patch, `riotscript.py --layout`, `bankmeasure.py`
+   and `assemble.py`. Only the tight banks grow: 41 → 35 sectors (+30,534 needed at §F2's 1.9×),
+   40 → 31, 5 → 28, 2 → 27, 33 → 26; every other bank stays 20 and the file grows by ≈ 47 sectors,
+   not by 44 × 15. Banks stay in order; SCRIPT.BIN stays contiguous; path-based loading makes its
+   size irrelevant to the image, but the rebuilt disc should keep it (and HEXMAP.BIN) last.
+2. **The loader tail rewritten in place** (17 words, `0x80037B60..0x80037BA0`, same count): table
+   address, `lhu a0 = start`, `lhu v1 = count` two instructions before the `jal advance`, count parked
+   at `sp+0x14` (the frame is 0x18 with `ra` at +0x10; the callee's spill area is +0..+0xF), `lw a2`
+   in `read`'s delay slot (its first use of `a2` is eleven instructions in). No hazard, no stub.
+3. **Buffer relocated** to a 72 KB region (36 sectors ≥ bank 41's 35) by patching the eleven words in
+   BD2. Candidates by static evidence (reference-free gaps in BSS between the image end `0x8009A800`
+   and the crt0 clear end `0x801DF028`): `0x800A8000..0x800D0000` (160 KB), `0x800F0852..0x8016CC78`
+   (497 KB), `0x8017001C..0x8018FF5F` (128 KB), `0x801C0040..0x801DE650` (121 KB). **Static evidence
+   is not enough here** (Appendix B: a savestate proves not-written; these gaps are exactly where
+   pointer-addressed load buffers would live). **Needed from the human: two DuckStation savestates
+   from MAIN1 scenes — one mid-dialogue in a town, one on the overworld — for
+   `riotfont.py liveness original/MAIN1.EXE STATE.sav`.** Until then the buffer address is a
+   parameter, the tool ships with it unset, and nothing is built.
+4. Verification before any boot: the loader simulated for all 44 banks with `advance`/`read`
+   intercepted (sector, count, dest per bank); `riotscript.py --layout` round-trips the enlarged file;
+   `bankmeasure` per-bank budgets; the eleven relocation words verified against retail before writing.
+
+### BD4. Consequence for the translation run
+
+§F2's 363 blocked lines / 2,748 instances stay blocked until BD3 is built AND booted. When it is,
+banks 41, 40, 5, 2 and 33 gain 30,720 / 22,528 / 16,384 / 14,336 / 12,288 bytes respectively and the
+§4 step-1 survey rule ("a line is blocked if any of its banks cannot absorb its growth at 2.0×") is
+re-run against the new budgets. `bankmeasure.py`'s figure remains the only one that counts.
