@@ -701,7 +701,7 @@ reading, not as a fixed distinction.
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
 | `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
 | `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | **D726, D737, D744, D746** (`batch_014`) and **D807** (`batch_015`) — 5 lines, **8 occurrences**. Cross-unit. ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
-| `功績` | `Ｍｅｒｉｔ` (capitalised) | §38 row, `batch_007` | D758 ×2, D769 |
+| `功績` | `Ｍｅｒｉｔ` (capitalised) **in the game-system sense only** | §38 row, `batch_007` | ⚠️ **REACH CELL CORRECTED 2026-09-11 (§4.3, PR #42 review) — it read “D758 ×2, D769”, and it was wrong in two ways.** Re-counted over both pristine dumps at review: `功績` is in **6 unique lines — D426 (bank 2), D517 (bank 5), D758 (bank 20), D769 (bank 20), D1136 (bank 33), D1355 (bank 41)**, 0 battle. **Five are shipped and the sixth, D1355, is untranslated.** And the cell was silent about a **second sense the corpus has shipped since wave 1**: `batch_002.tsv:9` (D517) renders `９軍の功績です。` as `ｗａｓ　ｔｈｅ　ａｃｈｉｅｖｅｍｅｎｔ` / `ｏｆ　ｔｈｅ　９ｔｈ　Ａｒｍｙ．` — the **prose** sense, never recorded. `batch_017` D1136 (`一躍功績をあげた`) is the same prose sense and matches it. **§25.3 tested at bank level and MET: Merit-sense lines are in banks [2, 20], achievement-sense lines in [5, 33] — disjoint.** `ａｃｈｉｅｖｅｍｅｎｔ` occurs in exactly those two places in `tl/`. **No shipped rendering changes** — only the cell. ⚠️ **D1355 is in bank 41 and will have to choose a sense; it is the line that could break the disjointness.** See §58.4 |
 | ~~`ジェムストーン`~~ | ✅ **EXHAUSTED (PR #37)** — 3 of 3 rendered (`batch_010`, `batch_013`, `batch_014` D744), all byte-identical `“Ｇｅｍｓｔｏｎｅ”`, **0 remaining**. `“Ｇｅｍｓｔｏｎｅ”` | `batch_013` D880 | D744 |
 | `極上のワイン` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | `batch_012` ×6 | **D765, D770, D772** (`batch_015`) and **D857** (`batch_016`) — 4 occurrences. Cross-unit. |
 | `カジノ` | `ｃａｓｉｎｏ`, lowercase | `batch_010` ×2 | D747, D750, D812 |
@@ -815,17 +815,17 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 
 | Japanese | Proposed English | Where seen — MY census | Alternatives / note |
 |---|---|---|---|
-| `ほこら` | `ｓｈｒｉｎｅ` (6) | **3 unique, 0 battle** — D1104, D1105 (batch 017) and **D324, which is in BANK 40 and may never ship**. Row STAYS LIVE | lowercase common noun per §17.1. `ｗａｙｓｉｄｅ　ｓｈｒｉｎｅ` (16) rejected: too wide for D1104's two-row page |
-| `『ようせいのケーキ』` | `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | **2 unique, 0 battle — D1105 and D1107, BOTH in batch 017, so this exhausts it** | ⚠️ **Kana spelling of §53's `『妖精のケーキ』`. Same item, same English** — the game writes the item-table form in kana. This is my reading, not a corpus fact: §53's four instances are all kanji. Verify by reading D1105→D1107 as one quest |
-| `『ごくじょうのワイン』` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13) | **3 unique, 0 battle — D1107, D1110, D1111, all batch 017** | ⚠️ Same case: kana spelling of §56.5's `『極上のワイン』`. **D1108 carries the KANJI `『極上のワイン』` in the same scene**, so one unit ships both spellings — they must agree |
-| `魔道書` | `ｇｒｉｍｏｉｒｅ` (8) | **3 unique / 23 dump instances, 0 battle** — D1144, D1151 (batch 017) and **D293, untranslated and outside wave 11**. ⚠️ **ROW STAYS LIVE**, and D293 alone carries ~21 of the 23 | D293 is an item-description line (`古代魔術の知識が詰まった魔道書`) reaching 21 banks incl. 40 — it is **not bound by this row**; whoever renders it decides the description sense. Alt `ｍａｇｉｃ　ｔｏｍｅ` (11), `ｓｐｅｌｌｂｏｏｋ` (10) |
-| `『すごい魔術師に　　　　　　　なれる本』` | `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ{FFFE}　　　　Ｇｒｅａｔ　Ｍａｇｅ”` | **2 unique, 0 battle — D1146, D1147, both batch 017. Exhausted** | ⚠️ **The source pads the title across a break with 7 full-width spaces and the break is INSIDE the `『　』`.** Widths measured: `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ` = 19, `　　　　Ｇｒｅａｔ　Ｍａｇｅ”` = 16. Keep it two rows; the indent is the source's. Alt `“Ｔｈｅ　Ｂｏｏｋ　ｏｆ　Ｇｒｅａｔ　Ｍａｇｅｒｙ”` if the two-row shape will not hold |
-| `『フォースシールド』` | `“Ｆｏｒｃｅ　Ｓｈｉｅｌｄ”` (14) | **1 unique, 0 battle — D1157. Exhausted** | Katakana loan straight back; §12 quotes for the source's `『』` |
-| `部隊章` | `ｕｎｉｔ　ｉｎｓｉｇｎｉａ` (13) | **1 unique, 0 battle — D1112. Exhausted** | D1112 is the hermit recognising the 9th Army by it. Alt bare `ｉｎｓｉｇｎｉａ` (8) if the row is tight, `ｕｎｉｔ　ｂａｄｇｅ` (10) |
-| `生き返りの秘法` | `　Ｔｈｅ　ｒｉｔｅ　ｏｆ　ｒｅｖｉｖａｌ` (20 **with** the menu gutter) | **2 unique / 4 dump, 0 battle** — D1115 (batch 017, a menu option) and **D324, bank 40**. ⚠️ **ROW STAYS LIVE** | ⚠️ D324 writes it in `「　」`, D1115 bare in a menu. §12 gives D324 quotes; **the menu option takes none**. `　ｔｈｅ　ｓｅｃｒｅｔ　ｏｆ　ｒｅｖｉｖａｌ` (22) also fits but crowds the box; `ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` at §56.1 already spends `ｒｅｖｉｖａｌ` on this same character, which is why the noun is kept |
-| `禁断のアンデッド` | `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ` (20) | **1 unique, 0 battle — D1145. Exhausted** | `アンデッド` → lowercase `ｕｎｄｅａｄ` is §1's and unchanged; only `禁断` is new |
-| `ムーン` | `Ｍｏｏｎ` (4) | **1 unique, 0 battle — D1158, a bare one-word line. Exhausted** | ⚠️ **A name with no context whatever** — D1158 is the entire message. Could be a person, a beast or a place. If the unit cannot tell, say so in the PR body and flag it for the in-game list rather than inventing a gloss |
-| `エウロス` | `Ｅｕｒｏｓ` (5) | **1 unique, 0 battle — D1159. Exhausted** | Greek east-wind name; `Ｅｕｒｕｓ` (5) is the Latin. Kept Greek to match the katakana. A **found** thing (`エウロスを見つけた`), so probably an item or a creature |
+| `ほこら` | `ｓｈｒｉｎｅ` (6) | ⚠️ **CELL CORRECTED 2026-09-11 (PR #42 review), and it was wrong in BOTH directions.** It read “3 unique, 0 battle — D1104, D1105 (batch 017) and D324”. Re-counted over both dumps at review: **4 unique — D324 (bank 40), D1086 (bank 31), D1095 (bank 31), D1104 (bank 33)** — 0 battle — **and D1105 contains no `ほこら` at all** (`'ほこら' in D1105` → `False`; D1105 is the `ほっほっほっ。何じゃ？` opener). D1086 and D1095 are debug-menu lines (`２９（ほこら使用可能）`, `「森のほこら」で生き返りが使えるようになります。`). `batch_017` renders **D1104 only**, so **three instances remain and the ROW STAYS LIVE** — on the old figure it would have been struck as exhausted. | lowercase common noun per §17.1. `ｗａｙｓｉｄｅ　ｓｈｒｉｎｅ` (16) rejected: too wide for D1104's two-row page |
+| ~~`『ようせいのケーキ』`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `“Ｆａｉｒｙ　Ｃａｋｅ”`, **used exactly as seeded**, 12 columns confirmed with `len()`. 2 of 2 rendered, **exhausted**. The seed's kana/kanji reading was right: the cross-file item gate pairs it with `batch_013`'s four kanji instances and they agree. Original seed cell follows: `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | **2 unique, 0 battle — D1105 and D1107, BOTH in batch 017, so this exhausts it** | ⚠️ **Kana spelling of §53's `『妖精のケーキ』`. Same item, same English** — the game writes the item-table form in kana. This is my reading, not a corpus fact: §53's four instances are all kanji. Verify by reading D1105→D1107 as one quest |
+| ~~`『ごくじょうのワイン』`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”`, **used exactly as seeded**, 3 of 3 rendered, **exhausted**. The seed's warning held: **D1108 carries the KANJI `『極上のワイン』` in the same unit and takes the same English**, and the cross-file gate pairs both spellings with `batch_012`/`013`/`015`/`016` — 9 shipped instances, all agreeing. Original seed cell follows: `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13) | **3 unique, 0 battle — D1107, D1110, D1111, all batch 017** | ⚠️ Same case: kana spelling of §56.5's `『極上のワイン』`. **D1108 carries the KANJI `『極上のワイン』` in the same scene**, so one unit ships both spellings — they must agree |
+| `魔道書` | `ｇｒｉｍｏｉｒｅ` (8) | **3 unique / 23 dump instances, 0 battle** — D1144, D1151 (**both shipped in `batch_017`, PR #42, 2026-09-11**) and **D293, untranslated and outside wave 11**. ⚠️ **ROW STAYS LIVE**, reach re-confirmed at review, and D293 alone carries ~21 of the 23 | D293 is an item-description line (`古代魔術の知識が詰まった魔道書`) reaching 21 banks incl. 40 — it is **not bound by this row**; whoever renders it decides the description sense. Alt `ｍａｇｉｃ　ｔｏｍｅ` (11), `ｓｐｅｌｌｂｏｏｋ` (10) |
+| ~~`『すごい魔術師に　　　　　　　なれる本』`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — **used byte-for-byte as seeded, two rows and the source's own indent**, 2 of 2 rendered, **exhausted**. The `Ｔｈｅ　Ｂｏｏｋ　ｏｆ　Ｇｒｅａｔ　Ｍａｇｅｒｙ` alternative was not needed. Original seed cell follows: `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ{FFFE}　　　　Ｇｒｅａｔ　Ｍａｇｅ”` | **2 unique, 0 battle — D1146, D1147, both batch 017. Exhausted** | ⚠️ **The source pads the title across a break with 7 full-width spaces and the break is INSIDE the `『　』`.** Widths measured: `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ` = 19, `　　　　Ｇｒｅａｔ　Ｍａｇｅ”` = 16. Keep it two rows; the indent is the source's. Alt `“Ｔｈｅ　Ｂｏｏｋ　ｏｆ　Ｇｒｅａｔ　Ｍａｇｅｒｙ”` if the two-row shape will not hold |
+| ~~`『フォースシールド』`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `“Ｆｏｒｃｅ　Ｓｈｉｅｌｄ”`, **used exactly as seeded**, 14 columns confirmed, 1 of 1, **exhausted**. Original seed cell follows: `“Ｆｏｒｃｅ　Ｓｈｉｅｌｄ”` (14) | **1 unique, 0 battle — D1157. Exhausted** | Katakana loan straight back; §12 quotes for the source's `『』` |
+| ~~`部隊章`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2) — but with the seed's FIRST ALTERNATIVE, not its primary, and the seed's own “if the row is tight” clause is what licensed it.** `ｉｎｓｉｇｎｉａ` (8), not `ｕｎｉｔ　ｉｎｓｉｇｎｉａ` (13). Measured at review, both values: the primary makes D1112's opening row `Ｈｍ？　Ｔｈａｔ　ｕｎｉｔ　ｉｎｓｉｇｎｉａ．．．` = **25** columns, one over the 24 hard limit, and the page already carries the source's 4 rows so none can be added; the shipped `Ｈｍ？　Ｔｈａｔ　ｉｎｓｉｇｎｉａ．．．` = **20**. (`ｕｎｉｔ　ｂａｄｇｅ` = 10 would also have fitted at 22 but reads wrong for a military marking.) 1 of 1, **exhausted**. Original seed cell follows: `ｕｎｉｔ　ｉｎｓｉｇｎｉａ` (13) | **1 unique, 0 battle — D1112. Exhausted** | D1112 is the hermit recognising the 9th Army by it. Alt bare `ｉｎｓｉｇｎｉａ` (8) if the row is tight, `ｕｎｉｔ　ｂａｄｇｅ` (10) |
+| `生き返りの秘法` | `　Ｔｈｅ　ｒｉｔｅ　ｏｆ　ｒｅｖｉｖａｌ` (20 **with** the menu gutter) | **2 unique / 4 dump, 0 battle** — D1115 (**shipped in `batch_017`, PR #42, 2026-09-11**, a menu option) and **D324, bank 40, untranslated**. ⚠️ **ROW STAYS LIVE**, reach re-confirmed at review | ⚠️ D324 writes it in `「　」`, D1115 bare in a menu. §12 gives D324 quotes; **the menu option takes none**. `　ｔｈｅ　ｓｅｃｒｅｔ　ｏｆ　ｒｅｖｉｖａｌ` (22) also fits but crowds the box; `ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` at §56.1 already spends `ｒｅｖｉｖａｌ` on this same character, which is why the noun is kept |
+| ~~`禁断のアンデッド`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ`, **used exactly as seeded**, 1 of 1, **exhausted**. Original seed cell follows: `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ` (20) | **1 unique, 0 battle — D1145. Exhausted** | `アンデッド` → lowercase `ｕｎｄｅａｄ` is §1's and unchanged; only `禁断` is new |
+| ~~`ムーン`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `Ｍｏｏｎ．` shipped at D1158, 1 of 1, **exhausted** — ⚠️ **but the seed's warning was NOT discharged and the referent is still unknown.** D1158 is the entire message, one word; bank 39 holds only D1158 and D1159, so there is no context anywhere to resolve it. The translator said so rather than inventing a gloss, which is what the seed asked for. **Open for a human with the disc — `FLAGS.md` §AT.** Original seed cell follows: `Ｍｏｏｎ` (4) | **1 unique, 0 battle — D1158, a bare one-word line. Exhausted** | ⚠️ **A name with no context whatever** — D1158 is the entire message. Could be a person, a beast or a place. If the unit cannot tell, say so in the PR body and flag it for the in-game list rather than inventing a gloss |
+| ~~`エウロス`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `Ｅｕｒｏｓ`, **used exactly as seeded**, Greek over the Latin `Ｅｕｒｕｓ` to match the katakana, 1 of 1, **exhausted**. D1159 (`ここで、エウロスを見つけたんだよね。` → `Ｉｔ　ｗａｓ　ｈｅｒｅ　ｔｈａｔ　Ｉ` / `ｆｏｕｎｄ　Ｅｕｒｏｓ，　ｙｏｕ　ｋｎｏｗ．`) shows it is a **found** thing, consistent with the seed's item-or-creature guess but not proof of it. Original seed cell follows: `Ｅｕｒｏｓ` (5) | **1 unique, 0 battle — D1159. Exhausted** | Greek east-wind name; `Ｅｕｒｕｓ` (5) is the Latin. Kept Greek to match the katakana. A **found** thing (`エウロスを見つけた`), so probably an item or a creature |
 | `スロットマシーン` | `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ` (13 with gutter) | **2 unique, 0 battle — D1390 (menu), D1392. Exhausted** | Capitalised as a game name beside `Ｂｌａｃｋｊａｃｋ` (§54) in the same menu |
 | `メダル交換所` | `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ` (15 with gutter) | **4 unique, 0 battle — D1390, D1391, D1411, D1430. Exhausted** | Capitalised: it is the named counter. Bare `交換所` in `　交換所を出る` (D1397, D1418) takes lowercase `ｅｘｃｈａｎｇｅ` (8) on the `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` pattern → `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` (21) |
 | `レース場` | `　Ｒａｃｅｔｒａｃｋ` (10 with gutter) | **1 unique, 0 battle — D1411, a menu option. Exhausted** | Alt `　Ｒａｃｅ　Ｔｒａｃｋ` (12) |
@@ -977,7 +977,7 @@ unnamed sorceress tests the party's mage and grants the “Ｂｏｏｋ　ｏｆ
 | Japanese | English | Note |
 |---|---|---|
 | 聖堂 | sanctuary | 9 columns. Not “cathedral” / “sacred hall” — both are too wide to share a line and the place is a mages' preserve, not a church |
-| 『知識の書』 | “Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ” | `『…』` → `“…”`; 20 columns with the quotes, so it never shares a line with anything but a short article |
+| 『知識の書』 | “Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ” | `『…』` → `“…”`; **19** columns with the quotes, so it never shares a line with anything but a short article. ⚠️ **WIDTH CORRECTED IN PLACE 2026-09-11 (§4.3, PR #42 review) — this cell read “20 columns”.** `len('“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”')` = **19** (1+4+1+2+1+9+1); bare, `len('Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ')` = **17**. **The rendering is unchanged and no translated line needs revisiting** — the error was in the safe direction, the form is one column cheaper than the glossary believed, and `batch_017` D1148 ships it at 19 on its own row. Corrected so a future width decision is not made on the wrong number |
 | 魔道の力 | the power of magic | 魔道 here is the art, not a person — do not confuse with 魔導師 |
 
 ### 12.2 Classes
@@ -3069,7 +3069,7 @@ seeded**, in both units where the term is cross-unit.
 |---|---|---|
 | 何てこった、 | `Ｗｈａｔ　ａ　ｍｅｓｓ，` | 15 columns. Dismay at a bad situation, not a curse. Held **distinct** from §29.3's やれやれ、 → `Ｇｏｏｄ　ｇｒｉｅｆ，` (weary exasperation), §6's まったく → `Ｒｅａｌｌｙ，` and §23.2's 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？`. `ｍｅｓｓ` verified free across `tl/` (`pending/chunk_017`'s hit is `ｍｅｓｓｅｎｇｅｒ`) |
 | ああっ、 | `Ａｈｈ，` | 4 columns. Startled cry as the bridge falls. ⚠️ **A sixth member of the あ family and deliberately not `Ａａｈ，`**, which §23.2 fixed for あーあ and which is **shipped twice in `chunk_004`**. Kana beats tracked per §11.5 / §14.5 (two あ → the doubled letter), while staying clear of あ、 → `Ａｈ，` (§6), あーあ → `Ａａｈ，` (§23.2) and あ〜ん → `Ａａａｈ，` (§24.3). `Ａｈｈ` verified free |
-| 申し訳ない。 | `ｆｏｒｇｉｖｅ　ｍｅ．` | 10 columns. ⚠️ **Held apart from three "sorry" forms already fixed**: §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (the near-miss — same speaker type, same formality), §28.3's あいにく → `Ｓｏｒｒｙ，`, §30.3's ごめんね。 → `Ｉ’ｍ　ｓｏｒｒｙ．`. `Ｍｙ　ａｐｏｌｏｇｉｅｓ．` was rejected: it is free, but makes the row exactly **24** columns beside `Ｈｏｗｅｖｅｒ，`. ⚠️ **`ｆｏｒｇｉｖｅ` now renders two source words across `tl/`** — 許す → *forgive* is shipped in `chunk_007` L14 and `chunk_010` L3/L7. Different messages, so §3 is not engaged, and §25.3's co-occurrence test is met: chunk 19 contains no 許す at all. Different senses, too — refusing forgiveness against asking for it |
+| 申し訳ない。 | `ｆｏｒｇｉｖｅ　ｍｅ．` | **11** columns. ⚠️ **WIDTH CORRECTED IN PLACE 2026-09-11 (§4.3, PR #42 review) — this cell read “10 columns”.** `len('ｆｏｒｇｉｖｅ　ｍｅ．')` = **11**; **10** is `len('ｆｏｒｇｉｖｅ　ｍｅ')`, the figure without the stop, and the stop is part of the fixed form. **The rendering is unchanged and no translated line needs revisiting** — `batch_017` D1105 ships `Ｆｏｒｇｉｖｅ　ｍｅ，　ｂｕｔ` (capitalised sentence-initially) and the sub-message sweep confirms it is byte-identical to `batch_012`'s shipped row. ⚠️ **Held apart from three "sorry" forms already fixed**: §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ` (the near-miss — same speaker type, same formality), §28.3's あいにく → `Ｓｏｒｒｙ，`, §30.3's ごめんね。 → `Ｉ’ｍ　ｓｏｒｒｙ．`. `Ｍｙ　ａｐｏｌｏｇｉｅｓ．` was rejected: it is free, but makes the row exactly **24** columns beside `Ｈｏｗｅｖｅｒ，`. ⚠️ **`ｆｏｒｇｉｖｅ` now renders two source words across `tl/`** — 許す → *forgive* is shipped in `chunk_007` L14 and `chunk_010` L3/L7. Different messages, so §3 is not engaged, and §25.3's co-occurrence test is met: chunk 19 contains no 許す at all. Different senses, too — refusing forgiveness against asking for it |
 | はたして (rhetorical) | `ｗｈｏ　ｃａｎ　ｓａｙ` | 14 columns. `今ははたして、誰の手に渡っていることか・・・` → `Ｉｎｔｏ　ｗｈｏｓｅ　ｈａｎｄｓ　ｉｔ` / `ｈａｓ　ｐａｓｓｅｄ　ｎｏｗ，` / `ｗｈｏ　ｃａｎ　ｓａｙ．．．` |
 | よりによって、 | **`ｏｆ　ａｌｌ　…`**, the complement following the source | ⚠️ **Recorded at review; neither PR proposed a row and the phrase had none, yet all three of its occurrences are now shipped.** `よりによって、厄介なところへ…` → `Ｏｆ　ａｌｌ　ｐｌａｃｅｓ，　ｗｅ’ｖｅ` / `ｌａｎｄｅｄ　ｉｎ　ａ　ｎａｓｔｙ　ｓｐｏｔ．` here; `chunk_008` ships the byte-identical row `よりによって、` as `Ｏｆ　ａｌｌ　ｔｉｍｅｓ，`; `chunk_004` ships `よりによって　この私を` as `ｔｏ　ｓｅｎｄ　ｍｅ，　ｏｆ　ａｌｌ`. **This is not a divergence to fix.** よりによって takes its complement from context and English does the same — chunk 19's is a place (`厄介なところ`), chunk 8's a time. **What is fixed is `ｏｆ　ａｌｌ`; the noun follows the source**, which is §5's word-plus-source-punctuation mechanism generalised one step. §3 is not engaged (different messages), and **all 3 battle occurrences are now rendered**, so the phrase is closed |
 | どうやら、 | **`Ｌｏｏｋｓ　ｌｉｋｅ　…`** for a CASUAL speaker / **`…　ｓｅｅｍ(ｓ)　…`** for a FORMAL one | ⚠️⚠️ **SCOPE CORRECTED 2026-09-09 (§4.3, PR #23 review) — this row was written as a blanket form and the corpus does not support one; see §41.4. `Ｌｏｏｋｓ　ｌｉｋｅ` is right for the speakers it was written from and wrong for a contraction-free one, and three shipped `seem` renderings PREDATED it and were not counted.** The row's original text follows unchanged: ⚠️ **Fixed here at review rather than left open.** Chunk 19 absorbs it into `Ｌｏｏｋｓ　ｌｉｋｅ　ａ` / `ｍｅｒｃｅｎａｒｙ　ｂａｎｄ．` with no standing form, and the PR's Flag 15 asked for one because **it reaches four more chunks — 23, 25, 30 and 31**. Fixing it now rather than letting four units each invent one. Held **distinct** from the hearsay evidentials of §26.6 (`らしい` → *they say* / *Word is*): どうやら is the speaker's own **inference from what he can see**, not report of another's word — which is exactly why chunk 19's ambush line takes it |
@@ -7344,7 +7344,7 @@ raw grep under-reports):
 | `腕力` | `ｓｔｒｅｎｇｔｈ` | ⚠️ **LIVE — DATA 1234 outstanding** |
 | `頑丈さ` | `ｔｏｕｇｈｎｅｓｓ` | **struck** — D831 |
 | `移動力` | `ｍｏｖｅｍｅｎｔ` | **struck** — D827. Not `機動力` → `ｍｏｂｉｌｉｔｙ` (§4) |
-| `体力` | `ｓｔａｍｉｎａ` | ⚠️ **LIVE — DATA 1126 outstanding** |
+| ~~`体力`~~ | `ｓｔａｍｉｎａ` | ✅ **STRUCK — EXHAUSTED 2026-09-11 by `batch_017` (PR #42, round 2).** 2 unique / 0 battle: **D834 (bank 21), shipped in `batch_016.tsv:62**` (`キャラクターの体力が` → `ｙｏｕｒ　ｃｈａｒａｃｔｅｒｓ’` / `ｓｔａｍｉｎａ　ｒｅｃｏｖｅｒｓ．`), and **D1126 (bank 33), shipped in `batch_017.tsv:31`** (`生き返りの術はわしも体力を使うのじゃ` → `ｒｅｖｉｖａｌ　ｃｏｓｔｓ　ｓｔａｍｉｎａ`). ⚠️ **PR #42 round 1 claimed D834 was untranslated and that this row stayed live; it was wrong and the flag was retracted in round 2.** The translator's own diagnosis is worth keeping: *re-deriving a term's reach is not re-deriving its status* — the reach (2 unique) was right, the status was asserted without grepping `tl/`. Both figures re-derived independently at review |
 | `保険屋` | `ｉｎｓｕｒａｎｃｅ　ｏｆｆｉｃｅ` | **struck** — D840 |
 | `保険金` | `ｉｎｓｕｒａｎｃｅ　ｐａｙｍｅｎｔ` | **struck** — D842 |
 | `慰霊金` | `ｃｏｎｄｏｌｅｎｃｅ　ｐａｙｍｅｎｔｓ` | ⚠️ **LIVE — DATA 1351 outstanding** |
@@ -7501,3 +7501,161 @@ framings are true; state which you counted.
 - **Census break-insensitively.** `終止符をうつ`, `仙人` and several others are split across a
   `{FFFE}` in the source, so a raw grep of either dump returns 0 for the whole phrase.
 - **State your corpus when you census**, and `len()` both values before calling either wrong.
+
+## 58. Added by script batch 017 (PR #42, merged 2026-09-11, round 2)
+
+DATA 1100–1159, 60 unique lines / 60 instances, banks 31–39 (bank 33 carries 35 of them):
+the shrine hermit of revival, the Farina reconstruction scene, and the magic tutor. Bank 33
+8,919 → 5,627 free (3,292 bytes); 6,152 bytes across all nine banks; no bank negative. Merged
+after one rework round. **Every width in this section was measured with `len()` at review, not
+copied from the PR.**
+
+### 58.1 Register — the largest single-character block the run has shipped
+
+D1105–D1138 is ~30 messages of one speaker, the `ほこら` hermit, who is `batch_015`'s
+`ｈｅｒｍｉｔ` (§56.1, D782 `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ`). Read against `batch_014`
+D756 and `batch_015` D782 at review and found continuous with them: **no contractions**, `じゃ`
+and `のう` carried in **register and word choice** rather than in archaic English spelling (§2,
+§7's “Village elders (じゃ / のう) — plain and old-fashioned, no archaic English spelling”), and
+`お前さん` consistently plain `ｙｏｕ` with no invented endearment. His laugh is tracked by kana
+beats per §11.5 / §45.5 and is the anchor of the voice.
+
+### 58.2 Promotions out of §9 — the wave-11 seeds
+
+**Eight struck as exhausted**, seven of them used exactly as seeded:
+`『ようせいのケーキ』` → `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) · `『ごくじょうのワイン』` →
+`“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13) · `『すごい魔術師に…なれる本』` →
+`“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ{FFFE}　　　　Ｇｒｅａｔ　Ｍａｇｅ”` (19 / 16, two rows, the
+source's own indent) · `『フォースシールド』` → `“Ｆｏｒｃｅ　Ｓｈｉｅｌｄ”` (14) ·
+`禁断のアンデッド` → `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ` (20) · `ムーン` → `Ｍｏｏｎ．` ·
+`エウロス` → `Ｅｕｒｏｓ` (5).
+
+The eighth, **`部隊章`, took the seed's first alternative rather than its primary**, and the
+seed's own “if the row is tight” clause is what licensed it. Both measured: the primary makes
+D1112's opening row `Ｈｍ？　Ｔｈａｔ　ｕｎｉｔ　ｉｎｓｉｇｎｉａ．．．` = **25**, one over the hard
+limit, and the page already carries the source's four rows so none can be added; the shipped
+`Ｈｍ？　Ｔｈａｔ　ｉｎｓｉｇｎｉａ．．．` = **20**. `ｕｎｉｔ　ｉｎｓｉｇｎｉａ` = 13, `ｉｎｓｉｇｎｉａ` = 8,
+`ｕｎｉｔ　ｂａｄｇｅ` = 10.
+
+**Three stay live**, reach re-counted over both pristine dumps at review:
+`ほこら` (4 unique — D324, D1086, D1095, D1104\*; the §9 cell was wrong in both directions and
+is corrected there) · `魔道書` (3 unique — D293 outstanding) · `生き返りの秘法` (2 unique —
+D324 outstanding). `体力` → `ｓｔａｍｉｎａ` is **struck at §57.1** instead: it is exhausted, not
+live — see §58.4.
+
+### 58.3 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| `ほっほっほっ。` / `ほっほっ、` | `Ｈｏｈｏｈｏ．` / `Ｈｏｈｏ，` | **7 / 5.** The hermit's laugh; kana beats per §11.5 / §45.5 — three っ → three syllables, two → two. `Ｈｏｈｏ` verified **free** (0 hits outside this unit). Does **not** revive §10.6's rejected `Ｈｏｈ` for ほう |
+| `何じゃ？` | `Ｗｈａｔ　ｎｏｗ？` | **11.** ×3, all three in bank 33. Held apart from D1106's `どうした？` → `Ｗｈａｔ　ｉｓ　ｉｔ？` (byte-identical to `batch_012`'s shipped row) and from §23.2's 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` |
+| `何じゃと。` | `Ｗｈａｔ　ｗａｓ　ｔｈａｔ．` | **18.** §6 fixes 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？`; this is the same shape in じゃ dialect and only the stop differs, per §5's punctuation-follows-source |
+| `いやー、` | `Ｄｅａｒ　ｍｅ，` | **10.** ⚠️ **Not a coinage — a reuse, and the PR's first note was replaced at review with this stronger evidence.** `batch_012` L37 (`いやあ、`) and L42 (`いやはや、`) already ship `Ｄｅａｒ　ｍｅ，`, **both bank 0**; this is a third member of the same いや-elongation family in **bank 33**, so §25.3 is met by census (0 ∩ 33 = ∅). §6's row is separately scoped `いや (deflection)` → `Ｎｏ` and reaches none of the three: D1107 and D1113 carry the plain `いや、`, both keep §6's `Ｎｏ，`, and the two forms stand side by side in this file |
+| `すまんすまん。` | `ｍｙ　ａｐｏｌｏｇｉｅｓ．` | **15.** ⚠️ A deliberate, forced departure from `batch_015`'s すまない → `Ｓｏｒｒｙ，`, taking `chunk_024` L16's incumbent instead: bank 33 already spends `Ｓｏｒｒｙ` twice in this unit (both 悪い forms below) and a third would put three source words under one English head **inside one bank**. `すまん` reach: banks 20, 33, 41 |
+| `悪いのう。` | `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` | **21.** D1105; `悪いのう` is in **bank 33 only**. ⚠️ **Also not a coinage** — `tl/battle/chunk_002.txt` **L14** already ships this exact string for `すみません。` (paired positionally against the pristine dump at review). **§25.3 proved by census rather than assumed: `すみません` occurs ZERO times in `script_dump.txt` and `script_unique.txt` and 4 times in `battle_dump.txt`** — it is battle-only, so the two can never share a bank |
+| `悪いが、` | `Ｓｏｒｒｙ，` | **6.** D1129. Same head word as 悪いのう — one source word, one English head, the complement following the source per §5. §28.3 fixes あいにく → `Ｓｏｒｒｙ，` too, and §25.3 is met by census: あいにく occurs in `script_dump.txt` zero times (battle chunk 13 only). ⚠️ `悪いが` also occurs in **bank 24, untranslated** — see `FLAGS.md` §AT |
+| `残念じゃが、` | `Ｉ　ａｍ　ａｆｒａｉｄ，` | **12.** ⚠️ Not a coinage — the project's existing prose rendering of the 残念 family: 残念だけど、→ `Ｉ　ａｍ　ａｆｒａｉｄ，` in `batch_008` ×3 and `batch_014`, 残念ですが → `Ｉ　ａｍ　ａｆｒａｉｄ．` in `batch_011`. Deliberately **not** §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ`, which would put a third `sorry`-headed form in bank 33 |
+| `反省してる` | `Ｉ’ｍ　ｓｏｒｒｙ．` | **10.** Hapax, D1157, bank 38. Reuses §30.3's fixed form for ごめんね。 — §25.3 met by census: ごめんね is in bank 15 only. `ｒｅｇｒｅｔ` rejected: **not** free (renders 後悔 in `batch_015` L56 and 無念 in `chunk_043`) |
+| `とりゃああぁぁぁーっっ！` | `Ｔｏｒｙａａａａａａｈ！` | **12.** Hapax, D1122 — the hermit's revival shout. Kana beats per §11.5 / §45.5: six `ａ` for the あああぁぁぁ tail, the っっ carried by the final consonant rather than by extra letters. `Ｔｏｒｙａ` verified **free** (0 hits) |
+| `のひょおぉーーっ！！` | `Ｎｏｈｙｏｏｏｈ！！` | **10.** Hapax, D1138 — his mock-horror cry when the revival "fails". Three `ｏ` for おおぉ, same rule. `Ｎｏｈｙｏ` verified **free** (0 hits) |
+| `大失敗じゃあぁーーっっ！` | `Ａ　ｇｒｅａｔ　ｂｌｕｎｄｅｒ！` | **16.** Hapax, D1138. `ｂｌｕｎｄｅｒ` verified **free** (0 hits). The drawn-out じゃあぁーーっっ is a register marker, not lexical content, and is carried by the exclamation rather than by stretched letters — **the reverse of the two cries above, where the stretch *is* the word** |
+| `よかろう、` (bank 33) / `わかったわ。` (bank 36) | `Ｖｅｒｙ　ｗｅｌｌ，` (10) / `Ｖｅｒｙ　ｗｅｌｌ．` (10) | **A double spend inside one file, recorded deliberately.** D1125 and D1145. §25.3 is **met for this unit**: `よかろう` is in banks [2, 33, 41], `わかったわ` in [36, 41], and this unit's two instances are in 33 and 36 — disjoint. ⚠️ **But the two SHARE bank 41, so the collision is live for whoever renders it.** And `Ｖｅｒｙ　ｗｅｌｌ` already renders three further source words — `いいでしょう。` (`chunk_021` L19), `いいわ。` (`chunk_033` L22), `よし、ひとつ` (`chunk_035` L3) — so with these two it now carries **five source words corpus-wide**. All five citations verified at their file lines at review. See `FLAGS.md` §AT |
+| `なんだ、` | `ｗｈａｔ　ｉｓ　ｔｈｉｓ，` | **13** — ⚠️ **the PR's cell said 17, and 17 is `len('ｗｈａｔ　ｉｓ　ｔｈｉｓ，　ｙｏｕ')`, the width of the *precedent's* row rather than of this unit's.** `len('ｗｈａｔ　ｉｓ　ｔｈｉｓ，')` = **13**, and `rowcheck` measures D1150's shipped row at 13. Corrected here at integration; **no rendering changes** — 13 is comfortably inside 23. D1150, bank 36. A tenth member of the 何-family that §38.2 holds apart by exact source string. `ｗｈａｔ　ｉｓ　ｔｈｉｓ` is already shipped for `なんと` (`batch_012` L46, bank 0) and `何事だっ！？` (`chunk_042` L3); **§25.3 met — §38.2's `何だぁ。` → `Ｗｈａｔ’ｓ　ａｌｌ　ｔｈｉｓ．` is bank 2 and never meets bank 36.** ⚠️ `なんだ、` is **also in bank 41** |
+| `『Ｘ』を手に入れた。` | `“Ｘ”{FFFE}ｏｂｔａｉｎｅｄ．` | **A frame, ×5 here** (D1146–D1149, D1157) and the first time the project renders it. Impersonal system-box register per §21.3's `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` and §27.2 — **no “you” is introduced that the source does not have.** Every future item grant in the script hits this |
+| `修練` | `ｄｒｉｌｌ` | **5.** Hapax, D1152. ⚠️ Held distinct from 修行 → `ｔｒａｉｎｉｎｇ`, **and the two share bank 36** (修行 [36, 40], 修練 [36]), so §25.3 is engaged and answered by keeping two words for two words. `ｄｒｉｌｌ` verified free |
+| `物騒な` | `Ｄａｎｇｅｒｏｕｓ` | **9.** D1135, and the row shipped as `Ｄａｎｇｅｒｏｕｓ　ｔｉｍｅｓ，　ｔｈｅｓｅ．` = 23. ⚠️ **Live** — 2 unique, and **D1380 (bank 41) is untranslated** |
+| `静まり返っている` | `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` | ⚠️ **Not new — recorded at review because a key-first gate would read it as a coinage.** `batch_011` L61 and `batch_014` L13/16/18 already ship `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` for the `静まりかえっている` / `静まりかっている` spellings (bank 18); `batch_017` D1104 and D1156 (banks 33, 38) take the same English for the 返 spelling. **Three spellings, one word, one English — the ウエストバリー / 鬼-オーガ pattern (§2, §17.2).** Each instance keeps **its own** dot count: D1104 `．．．`, D1156 bare. Held distinct from §55.1's 静寂に包まれている → `ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ` (bank 18), which is a different source phrase |
+| `訳のわからん` / `暴れ回っとる` / `一躍` / `したたかな` | `ｎｏ　ｏｎｅ　ｃａｎ　ｆａｔｈｏｍ` / `ｒｕｎｓ　ｗｉｌｄ` / `ｌｅａｐｔ　ｔｏ` / `ｓｈｒｅｗｄ` (7) | D1135, D1135, D1136, D1136. All four verified free |
+| `騒ぎを巻き起こす` | `ｓｔｉｒ　ｕｐ　ｔｒｏｕｂｌｅ` | Hapax, D1134. `ｔｒｏｕｂｌｅ` is **not** free (17 hits) but every one renders a different source word and none shares bank 33 |
+| `年老いた国` / `定員いっぱい` / `解雇して` | `ａｎ　ａｇｅｄ　ｌａｎｄ` / `ａｔ　ｆｕｌｌ　ｓｔｒｅｎｇｔｈ` / `ｄｉｓｍｉｓｓ` | D1134, D1133, D1133. 解雇 is party management, not employment |
+| `運命の　つながり` / `戦友` / `じじい` (self-deprecating) | `ｔｈｅ　ｂｏｎｄ　ｏｆ　ｆａｔｅ` / `ａ　ｃｏｍｒａｄｅ　ｉｎ　ａｒｍｓ` / `ａｎ　ｏｌｄ　ｍａｎ` | D1129, D1112, D1112. 戦友 holds §21's 仲間 → `ｃｏｍｒａｄｅ` and adds the 戦. `じじい` is the hermit on himself |
+| `お使い` | `ｅｒｒａｎｄ` | D1105, D1112. ⚠️ **§25.3 tested at review and MET**: §46.2 spends `ｅｒｒａｎｄ` on `ご用`, but `お使い` is in **bank 33 only** while `ご用` is in banks [1, 4, 5, 7, 9, 12, 15, 16, 18, 22, 42, 43] — **disjoint** |
+| `頭が下がる` / `行動力` / `有り様` / `手分けしよう` / `ワナ` / `しゃくにさわる` | `Ｉ　ｂｏｗ　ｂｅｆｏｒｅ` / `ｚｅａｌ` / `ｔｈｉｓ　ｓｉｇｈｔ` / `ｌｅｔ’ｓ　ｓｐｌｉｔ　ｕｐ` / `ｔｒａｐ` / `ｈａｒｄ　ｔｏ　ｂｅａｒ` | D1110–D1111, D1110–D1111, D1102, D1102, D1102, D1102 |
+| `ある方の使い` | `ｔｈｅ　ｅｎｖｏｙ　ｏｆ　ａ　ｃｅｒｔａｉｎ　ｐｅｒｓｏｎ` | D1102, across two rows |
+| `物好き` (singular, predicative) | `ａｎ　ｏｄｄ　ｓｏｒｔ` | **17** on the shipped row `ｏｒ　ａｎ　ｏｄｄ　ｓｏｒｔ．．．`. §21 fixes the plural `ｏｄｄ　ｓｏｒｔｓ` (Korneff, ×2); D1110/D1111's `物好きというべきか` is singular and predicative, so **the word is the glossary's and only the number follows the source**. Script-side reach now exhausted (2 unique, both here); the 2 battle instances already shipped as the plural |
+
+### 58.4 RULING — a runtime-inserted unit name is never given a gender
+
+**`{FFEC}{=00}{=05}` prints a roster unit's name at run time, so no row that refers back to it
+may assume a man.** `batch_017` is the **only** file in `tl/` or `pending/` that renders this
+insert — 3 unique messages, D1120, D1122, D1138, all here — so this unit sets the precedent and
+the next unit to use it inherits the rule.
+
+The roster demonstrably includes women: §1 fixes **Cress as FEMALE** (settled 2026-09-09, §4.3,
+PR #29 review), Beatrice and Maya join the party, and §4 fixes 女剣士 → *swordswoman* and
+女魔術師 → *sorceress*. A gendered pronoun beside the printed name is therefore not a style
+question — it is **contradicted on screen**.
+
+Two rows shipped in round 1 with a male pronoun and were fixed in round 2. Both measured, both
+inside their existing 3-row pages, **no re-flow and no `{FCC0}` change**, 8 bytes:
+
+| D | source | round 1 | shipped | `len()` |
+|---|---|---|---|---|
+| 1112 | `１人だけなら、わしの力で生き返らせてやろう。` | `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｈｉｍ．` (18) | `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` | **19** |
+| 1138 | `ちゃんと生き返ったわい。` | `Ｈｅ　ｈａｓ　ｃｏｍｅ　ｂａｃｋ` (16) | `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` | **19** |
+
+**Singular *they*, not `ｔｈａｔ　ｏｎｅ`.** The reviewer offered `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈａｔ　ｏｎｅ．`
+(23), which also fits; the translator declined it with a reason the review accepted — D1112's page
+opens `Ｏｎｅ　ａｌｏｎｅ，　ａｎｄ` (14), so `ｔｈａｔ　ｏｎｅ` would close the page on an echo the
+Japanese (`１人だけなら` … null-object `生き返らせてやろう`) does not have. Singular *they* is also
+what the unit already does with this referent everywhere else: D1119 `ｔｈｅ　ｏｎｅ　ｙｏｕ　ｗｏｕｌｄ　ｒａｉｓｅ`,
+D1122 `ｈａｓ　ｂｅｅｎ　ｒａｉｓｅｄ．`, D1129 `ｔｈａｔ　ｏｎｅ`, D1133 `ａ　ｃｏｍｒａｄｅ … ｒａｉｓｅｄ`.
+It is not an anachronism for a contraction-free archaic speaker.
+
+**Where the insert is itself the subject, singular agreement is correct and unchanged**: D1122 and
+D1138 keep `{FFEC}{=00}{=05}` / `ｈａｓ　…`, because there the *name* agrees, not a pronoun.
+
+Verified at review with a sweep wider than pronouns (`ｈｅ/ｈｉｍ/ｈｉｓ/ｓｈｅ/ｈｅｒ/ｈｉｍｓｅｌｆ/
+ｈｅｒｓｅｌｆ/ｍａｎ/ｍｅｎ/ｗｏｍａｎ/Ｓｉｒ/Ｌａｄｙ/Ｌｏｒｄ/ｌａｄ/ｇｉｒｌ/ｂｏｙ`, on word boundaries):
+after the fix **none of D1120, D1122, D1138 contains any gendered reference**. Seven remain in the
+file and all seven are legitimate — D1100 Father Batou, D1102 Governor Felix, D1112 `ｍａｎ’ｓ`
+(the hermit on himself), D1136 ×2 Helfer, and D1101 / D1134 `ｍｅｎ`, the collective for a body of
+soldiers that §2 already sanctions (`帝国軍` → *the Empire's men*, `守備兵` → *garrison men*).
+
+### 58.5 §4.3 corrections made by this merge — three cells, no rendering changes
+
+All three were found by this unit, re-derived independently at review, and corrected **in place**
+at the rows they belong to, not silently:
+
+1. **§9's `功績` reach cell** read “D758 ×2, D769”. It is **6 unique** — D426, D517, D758, D769,
+   D1136, D1355 — and the cell was silent about a second sense `batch_002.tsv:9` (D517) has
+   shipped since wave 1: `ａｃｈｉｅｖｅｍｅｎｔ`, the prose sense, beside `Ｍｅｒｉｔ`, the
+   game-system sense. §25.3 met at bank level: Merit [2, 20] vs achievement [5, 33], **disjoint**.
+2. **§12's `『知識の書』`** read “20 columns”; `len()` = **19**.
+3. **§33.2's `申し訳ない。`** read “10 columns”; `len('ｆｏｒｇｉｖｅ　ｍｅ．')` = **11**, and 10 is
+   the figure without the stop.
+
+And **§57.1's `体力` → `ｓｔａｍｉｎａ` is struck as EXHAUSTED**, not held live: D834 is shipped in
+`batch_016.tsv:62` and D1126 here. PR #42's round-1 flag claimed the opposite and was retracted in
+round 2. The translator's own diagnosis is the lesson worth keeping: **re-deriving a term's *reach*
+is not re-deriving its *status*** — the reach was right, the status was asserted without grepping
+`tl/`.
+
+### 58.6 What the review confirmed rather than corrected
+
+- **`なるほど` → `Ｉｎｄｅｅｄ` in bank 33, `Ｉ　ｓｅｅ．` in bank 36, inside one file.** §46.3's
+  bank-scoped ruling fires here. Census re-run on the bare substring at review: `そうか` script
+  banks [1, 2, 5, 8, 9, 12, 17, 19, 20, 23, 24, 29, 33, 41]; `なるほど` [1, 5, 8, 33, 36, 40];
+  **shared [1, 5, 8, 33]**. Bank 33 is shared → D1112 moves; bank 36 holds no `そうか` at all →
+  D1145 keeps §30.3's form. Both of this unit's `そうか` lines (D1105, D1117) keep `Ｉ　ｓｅｅ．`,
+  which is what §46.3 prescribes: `なるほど` is the member that moves.
+- **`おお！！` → `Ｏｈｈ！！`, differing from `おお！` → `Ｏｈ！` by a letter.** `chunk_034` **L7**
+  ships `Ｏｈｈ！！` for the byte-identical row and `chunk_001` **L2** ships `Ｏｈ！`; taking the
+  incumbent is what §2.2 and CLAUDE.md §3 require. **§18.2 predicts only `Ｏｈ` + the source's own
+  punctuation and does not predict the doubled letter** — the question is open at `FLAGS.md` §AT.
+- **`勲章` → `ｍｅｄａｌ` (§32.1) beside §3's racetrack `メダル` → `ｍｅｄａｌ`**: D1102 is bank 32,
+  `メダル` is banks [42, 43]. §25.3 met.
+- The cross-file item gate: `“Ｆａｉｒｙ　Ｃａｋｅ”`, `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (both spellings),
+  `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` (`chunk_033`), `“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”`
+  (`chunk_031`) — all agree with every file that already ships them.
+
+### 58.7 Citations in this repo are FILE LINES, 1-based
+
+Recorded because it cost a round-1 finding a wrong citation. A battle-chunk reference such as
+`chunk_034` **L7** means the **7th line of `tl/battle/chunk_034.txt` counting from 1, including
+the `=== CHUNK` header and any comment lines** — *not* an index into the body lines after
+structural lines are dropped. Verified at review against three existing citations: `chunk_034` L7
+is `Ｏｈｈ！！`, `chunk_001` L2 is `Ｏｈ！`, `chunk_024` L16 is `ｍｙ　ａｐｏｌｏｇｉｅｓ．`. A
+reviewer's tooling that drops `===`, `#` and `{PAD}` lines produces a **different** number for the
+same row (L14 → body index 12), and printing it as if it were a file line puts a wrong citation
+into the record. Print the file line.

@@ -6411,3 +6411,149 @@ pushes succeed; `gh` is absent and the GitHub MCP has no delete-branch tool. **D
 deleted" in `HANDOFF.md`** — PR #37's reviewer did and it was false. Use the integration commit and
 the PR's merged state as the signal. One-action human fix: enable *Automatically delete head
 branches* on the repo.
+
+## AT. Wave 11 review — script batch 017 / PR #42, MERGED (2026-09-11, round 2)
+
+Reviewer: the same agent at both rounds. **Every gate re-run from scratch at round 2; nothing
+inherited from round 1.** **Tree gated:** `git merge-tree --write-tree` of `tl/script-017`
+(`eb2c5c1`) onto the integration head **pinned to an explicit SHA** — `c017144` — → tree
+**`fa2d957`**, exported with `git archive` and gated there (§AK6 — no working tree needed). The SHA
+had to be pinned because the integration branch moved **twice** between two consecutive commands
+while the review ran (`c52d2f6` → `c017144`), and `merge-tree` silently produced a different tree
+each time. `fa2d957` differs from the pinned base in **`tl/script/batch_017.tsv` only**.
+Squash **`6e30b45`**.
+
+```
+Gates: paths ✓  merge ✓  check ✓  figures ✓  rows ✓  banks ✓  dupes ✓  glossary ✓  structure ✓
+```
+
+`check` → `script lines replaced: 4956 (unique forms: 863)` / `All checks passed` — **803 + 60 =
+863** exactly. `merge` → **0** "never matched the dump". `rowcheck script` → `columns OK; no page
+over 4 text rows that the source did not already exceed`; **0 INTRODUCED, 17 INHERITED, 0 column
+violations**. Bank 33 **8,919 → 5,627 free (3,292 bytes)**, 6,152 across banks 31–39, no bank
+negative — all nine figures re-derived by deleting the unit file from the merged tree and
+re-running `merge` + `bankmeasure`, not taken from the PR.
+
+**Round 1 = CHANGES on three findings; round 2 = MERGE.** Finding 1 changed the file (§AT4);
+findings 2 and 3 were PR-body corrections and are folded into `glossary.md` §58.
+
+### AT1. Banks under 2,000 free — still FOUR, still only THREE on the `tightest:` line
+
+```
+~  bank  2   39353 / 40960 used   free   1607
+~  bank  5   39325 / 40960 used   free   1635
+~  bank 40   40885 / 40960 used   free     75
+~  bank 41   40607 / 40960 used   free    353
+tightest: bank 40 75 free, bank 41 353 free, bank 2 1607 free
+```
+
+Unchanged by this unit — it lands in banks 31–39, all above 5,600 free. §AS1 stands: **list every
+bank, never quote `tightest:`.**
+
+### AT2. ⚠️ TOOL BUG — `rowcheck.py` strips the non-player inserts to ZERO columns
+
+`tools/rowcheck.py:125-128` (`_script_cols`) substitutes **only** `SCRIPT_NAME`
+(`{FFEC}{=00}{=00}`, the player name, at 7 columns) and `{FC00}{=0000}`; **every other
+`{FFEC}{=00}{=0x}` insert is stripped to nothing** by the generic `\{[^}]*\}` removal. Rows
+carrying an item name (`{=00}{=03}`), a unit name (`{=00}{=05}`) or a number (`{=00}{=01}` /
+`{=00}{=02}`) are therefore **bounded, not measured**, and a wide row can pass.
+
+`batch_017` carries `{FFEC}{=00}{=05}` on three rows. `rowcheck` reported **1, 0 and 0**; hand
+measured at §8's worst case of 16 half-width characters they are **D1120 = 17** (`<unit>，` =
+16+1), **D1122 = 16**, **D1138 = 16** — all clear of 24, so nothing is wrong in this unit. The unit
+has **no** number inserts, so the worse half of the bug is not engaged here.
+
+**Every reviewer must hand-measure insert rows and check the translator's arithmetic.** Wave 10
+let a 21-column price row through exactly this way. **Do not patch `rowcheck.py`** (CLAUDE.md §3 —
+a tool bug is a flag for a human, not a translator's problem). Still open for a human.
+
+### AT3. ⚠️ §18.2 does not predict `Ｏｈｈ！！` — two forms of `おお` are now shipped
+
+`おお！` → `Ｏｈ！` and `おお！！` → `Ｏｈｈ！！` differ **by a letter**, not only by punctuation.
+§18.2 fixes “`Ｏｈ` + the source's own punctuation”, which predicts `Ｏｈ！！`. Census over the
+pristine dumps at review: `おお！！` → script bank [33] + battle chunk [34]; `おお！` → script banks
+[3, 33] + battle chunks [1, 3, 34]. Shipped: `tl/battle/chunk_034.txt` **L7** ships `Ｏｈｈ！！`
+for the byte-identical row and `tl/battle/chunk_001.txt` **L2** ships `Ｏｈ！`.
+
+`batch_017` D1107 took `chunk_034`'s incumbent, which is what §2.2 and CLAUDE.md §3 require
+(identical Japanese → byte-identical English). **The open question is which governs going forward:
+is the doubled letter the rule for the doubled `！`, or is `chunk_034` an outlier that §4.3 should
+correct to `Ｏｈ！！`?** Both forms are shipped today. A ruling would stop the next unit
+re-deciding. **Script bank 3 still holds an untranslated `おお！`.**
+
+### AT4. RULING — a runtime-inserted unit name is never given a gender (`{FFEC}{=00}{=05}`)
+
+Full ruling and the measured fix at `glossary.md` **§58.4**. In short: `{FFEC}{=00}{=05}` prints a
+roster unit's name at run time; the roster contains women (§1 fixes **Cress FEMALE**; Beatrice,
+Maya; §4's 女剣士 / 女魔術師), so a gendered pronoun beside the printed name is contradicted on
+screen. `batch_017` is the **only** file in `tl/` or `pending/` that renders this insert — 3 unique
+messages, D1120, D1122, D1138 — so it sets the precedent.
+
+Round 1 shipped `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｈｉｍ．` (18) at D1112 and `Ｈｅ　ｈａｓ　ｃｏｍｅ　ｂａｃｋ`
+(16) at D1138; round 2 ships `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19) and
+`Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19) — singular *they*, inside the existing 3-row pages, no
+re-flow, 8 bytes. Where the insert is itself the subject (D1122, D1138 `<unit>` / `ｈａｓ　…`),
+singular agreement is correct and unchanged.
+
+**Any future unit that uses `{FFEC}{=00}{=03}` (item name) or `{=00}{=04}` inherits the same
+question** and should assume nothing about the referent that the source does not state.
+
+### AT5. ⚠️ BANK 41 CARRIES THREE LIVE COLLISIONS AT ONCE, and it has 353 bytes free
+
+Censused at review over the pristine dumps. Bank 41 is untranslated, is the second-tightest bank
+in the build, and holds **all** of the following pairs whose English this wave has now spent:
+
+| source words in bank 41 | English now spent | where spent |
+|---|---|---|
+| `よかろう` [2, 33, 41] **and** `わかったわ` [36, 41] | both `Ｖｅｒｙ　ｗｅｌｌ` | `batch_017` D1125 (bank 33), D1145 (bank 36) |
+| `なんだ、` [36, 41] | `ｗｈａｔ　ｉｓ　ｔｈｉｓ，` | `batch_017` D1150 (bank 36) |
+| `功績` [… 41] (D1355) | `Ｍｅｒｉｔ` **or** `ａｃｈｉｅｖｅｍｅｎｔ` | two senses, banks [2, 20] vs [5, 33] |
+| `物騒な` (D1380) | `Ｄａｎｇｅｒｏｕｓ` | `batch_017` D1135 |
+| `すまん` [20, 33, 41] | `ｍｙ　ａｐｏｌｏｇｉｅｓ．` | `batch_017` D1111 |
+
+§25.3 is met **today** only because none of these pairs has yet met inside one bank. **Bank 41 is
+the bank where several of them will.** Whoever is dispatched bank 41 should be handed this table.
+
+### AT6. ⚠️ `Ｖｅｒｙ　ｗｅｌｌ` now renders FIVE source words corpus-wide
+
+`よかろう、` (`batch_017` D1125, bank 33) · `わかったわ。` (`batch_017` D1145, bank 36) ·
+`いいでしょう。` (`tl/battle/chunk_021.txt` **L19**) · `いいわ。` (`tl/battle/chunk_033.txt`
+**L22**) · `よし、ひとつ` (`tl/battle/chunk_035.txt` **L3**). All five citations verified at their
+file lines at review by pairing each chunk positionally against the pristine dump.
+
+No two share a bank or a chunk, so §25.3 is met at every point today — but five source words under
+one English phrase is past the point where the corpus should be relying on that. ⚠️ **`chunk_035`'s
+`よし` sits oddly beside §57.2's `よし` → `Ｒｉｇｈｔ`.** Worth a ruling **before bank 41 is
+translated** (§AT5).
+
+### AT7. ⚠️ D1158 is the single word `ムーン。` and its referent cannot be established
+
+The whole message is one word. It ships as `Ｍｏｏｎ．` per the §9 seed, and bank 39 holds **only**
+D1158 and D1159, so there is no surrounding context anywhere in the bank to resolve it. It could be
+a person, a beast, a place or a spell. The translator said so rather than inventing a gloss, which
+is what the seed asked for.
+
+**Needs a human with the disc** — this is the only line in the unit whose *meaning* could not be
+established. Add it to the in-game list. D1159's `エウロス` → `Ｅｕｒｏｓ` is better grounded (the
+line makes it a **found** thing) but is not proved to be an item either.
+
+### AT8. ⚠️ A citation trap that cost this review a wrong line number
+
+`glossary.md` and `FLAGS.md` cite battle chunks by **file line, 1-based, counting the
+`=== CHUNK` header and any comment lines** — verified at review against three existing citations
+(`chunk_034` L7 = `Ｏｈｈ！！`, `chunk_001` L2 = `Ｏｈ！`, `chunk_024` L16 = `ｍｙ　ａｐｏｌｏｇｉｅｓ．`).
+
+A reviewer's or translator's tooling that pairs a chunk positionally against the dump necessarily
+**drops** `===`, `#` and `{PAD}` lines and works in a 0-based body index, which is a **different
+number for the same row** (file L14 → body index 12). Round 1 of this review printed a body index
+as if it were a file line in three citations; the translator caught one and the other two were
+found by checking the convention. **Print the file line.** Recorded at `glossary.md` §58.7.
+
+### AT9. Carried forward, not new
+
+- **`悪いが、` recurs untranslated in bank 24** as well as bank 33. Whoever renders it should take
+  `Ｓｏｒｒｙ，` from `batch_017` D1129 unless a bank-24 co-occurrence forbids it.
+- **`魔道書` (D293), `生き返りの秘法` (D324) and `ほこら` (D324, D1086, D1095) stay live** — see
+  `glossary.md` §9. D293 alone carries ~21 of the 23 `魔道書` dump instances and reaches 21 banks;
+  it is an item description and is **not** bound by the §9 row.
+- **`体力` is struck as exhausted** (`glossary.md` §57.1) — D834 in `batch_016`, D1126 here.

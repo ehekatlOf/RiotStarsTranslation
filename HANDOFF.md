@@ -32,39 +32,42 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ⚠️ **WAVE 11 IS SCRIPT-ONLY.** Battle stays blocked on Blocked 0 / 0a. The run is **not** complete.
 
 ## Last updated
-2026-09-11 · by: **wave-11 coordinator** (`session_012m7kST3Y5f2ag1jqg6pX8y`, depth 2, full tool
-surface) · wave: **11 DISPATCHED — 3 units in flight, 0 merged, 0 parked** · queue below
-**re-derived by me from `script_unique.txt` + `script_dump.txt` + `bankmeasure`, not inherited**
+2026-09-11 · by: **the `batch_017` REVIEWER** (integration commit) · wave: **11 — 1 of 3 merged
+(`batch_017`, PR #42, round 2), 2 awaiting review, 0 parked** · glossary now ends **§58**, FLAGS ends
+**§AT** — both numbers taken by READING the files at commit time, not reserved
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **803** | 1,430 | `tl/script/batch_001–016.tsv` (was 640) |
-| Script message instances | **4,896** | 7,931 | **61.7%** (was 59.7%) |
+| Script unique lines | **863** | 1,430 | `tl/script/batch_001–017.tsv` (was 803) |
+| Script message instances | **4,956** | 7,931 | **62.5%** (was 61.7%) |
 
-`check`: **All checks passed** at `580680d`. glossary ends **§57**, FLAGS ends **§AS** — both re-read.
+`check`: **All checks passed** after the `batch_017` integration commit. glossary ends **§58**,
+FLAGS ends **§AT** — both re-read at commit time.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, so bank 5 is invisible to anyone quoting it.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
-**WAVE 11 — three units, all script, all dispatched 2026-09-11. Wave barrier NOT yet met.**
+**WAVE 11 — three units, all script, all dispatched 2026-09-11. Barrier met; `batch_017` MERGED.**
 
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
-| `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | 🔄 **ROUND 1 = CHANGES** (all 8 gates ✓; 1 finding on the file). Rework sent to the same translator |
+| `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | ✅ **MERGED 2026-09-11, round 2** — squash **`6e30b45`**, integration commit **`integrate: script batch 017 — glossary, flags, handoff`** (the commit directly after `6e30b45` on this branch). Bank 33 8,919 → **5,627** free (3,292 B); 6,152 B over banks 31–39; no bank negative. All 9 gates ✓ re-run from scratch on merged tree **`fa2d957`**. ⚠️ **Branch `tl/script-017` still on origin — deletion returns HTTP 403 (FLAGS §AQ9); NOT deleted** |
 | `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **PR OPEN** — awaiting the barrier. −2,706 B (42: 9,647 free · 43: 8,943), `check` green |
 | `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: `batch_017`'s TRANSLATOR (rework round 1), then the 017 reviewer again.** ✅ **BARRIER
-MET — all three PRs open: #42 (017), #41 (018), #40 (019).** One reviewer at a time, order 017 → 018 → 019.
+**Who acts next: the WAVE-11 COORDINATOR — dispatch the reviewer for `batch_018` (PR #41), then
+`batch_019` (PR #40).** ✅ Barrier was met at all three PRs; `batch_017` is merged and integrated.
+One reviewer at a time, foreground. ⚠️ **`git pull --ff-only` first — the 017 integration commit is
+on `claude/workflow-translation-iterate-uzlkns`.**
 
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
-| 017 | #42 | 2 | ⏳ **re-review running** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways |
+| 017 | #42 | 2 | ✅ **MERGE** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways. **Reviewer re-derived everything rather than accepting it**: both `len()`s (18→19, 16→19), both page shapes (D1112 p3 = 14/11/19, D1138 p1 = 13/19/13, both 3 rows, no re-flow), the bank table (bank 33 **5,627**, total 6,152), and a **wider** pronoun sweep (adding `ｍａｎ/ｍｅｎ/ｗｏｍａｎ/ｈｉｍｓｅｌｆ/Ｌａｄｙ/Ｌｏｒｄ/…`) — after the fix **none of D1120, D1122, D1138 carries any gendered reference**. Base **pinned to a SHA** (`c017144`) because the integration branch moved twice mid-review and `merge-tree` silently returned a different tree each time |
 | 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
 
 ⭐ **THE 017 FINDING IS A REAL BUG AND SETS A PROJECT-WIDE PRECEDENT.** D1112 ships
@@ -123,6 +126,9 @@ sources, both mine, and the reviewer must NOT re-report them as the translator's
    that does not have the word and missed two that do (D1086/D1095, debug-menu lines in bank 31).
    `batch_017` renders **D1104 only**, so **three instances remain and the §9 row STAYS LIVE.**
    Had the translator trusted the cell, the row would have been struck as exhausted.
+   ✅ **RE-DERIVED A THIRD TIME BY THE 017 REVIEWER AND CONFIRMED** (D324 bank 40, D1086 bank 31,
+   D1095 bank 31, D1104 bank 33; `'ほこら' in D1105` → `False`). The §9 cell is **corrected in place**
+   by the integration commit and the row is **kept live**.
 5. ✅ **`Ｘボタン` → `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` is settled by SHIPPED WORK, not by my §16 reasoning.**
    **D1414 — already merged in `batch_002.tsv`, bank 43, same speaker, same scene — renders
    `×ボタンを押してね` as `Ｃｒｏｓｓ　ｂｕｔｔｏｎ`**, and D1393's `Ｘボタンよ` is the same instruction in
