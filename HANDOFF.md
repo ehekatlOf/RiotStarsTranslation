@@ -57,7 +57,7 @@ one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016
 
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
-| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ✅ **PR #37 open** — awaiting barrier |
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ⛔ **CHANGES (PR #37)** — rework round 1 sent |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ✅ **PR #39 open** |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
@@ -157,6 +157,48 @@ forms it could not avoid and correctly did not fork.
 `batch_010` D897 ships `ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ` for bare `反乱` against §38.3's fixed
 `ｒｅｂｅｌｌｉｏｎ`; and **§37.1's line list "DATA 443, 785, 896, 1383" is off by one throughout** —
 the true census is **444, 786, 897, 1384**.
+
+---
+
+### Review round 1 — PR #37 `batch_014`: **DECISION: CHANGES** (2026-09-11)
+Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✗ · structure ✓`.
+Tree gated: `git merge-tree --write-tree` of `tl/script-014` onto `4f22aae` → tree `ee6c21e`, which the
+real merge reproduced. **Every headline figure in the PR body reproduced exactly**, including the bank
+deltas, measured against a real baseline. Not merged; **no integration commit** (CHANGES means none).
+
+**Four findings, all zero- or near-zero-byte. Sent verbatim to the same translator (round 1 of 3).**
+1. **D740 — a price-insert row at 21 columns** against §V1's ratified bound of **8** (the whole shipped
+   corpus holds all 42 such rows to 8). ⚠️ **`rowcheck.py:_script_cols` strips `{=00}{=01}` to 0 columns,
+   so NO GATE CAN SEE THIS** — and prices reach four digits (`１０００`/`２０００`/`５０００ジュエル` are
+   literal in `script_dump.txt`), so the row would render at **25 columns in game**. Fix is zero-byte.
+2. **D738 — same class at 17 columns.**
+3. **D744 — `乗り気` → `ｋｅｅｎ` is a real §25.3 collision.** ✅ **Verified here:** `鋭い` → `ｋｅｅｎ` ships in
+   **five** lines (D36, D75, D79, D165, D169), each 21 instances spanning 21 banks **including bank 19**,
+   which is D744's own bank. The unit's own Flag 13 names the unspent reserve `ｅａｇｅｒ`.
+4. **D750 — `ｅｖｅｒｙ　ｌａｓｔ　ｃｏｉｎ` imports a currency the game lacks** (`ｃｏｉｎ` occurs nowhere else;
+   `Ｊｅｗｅｌ` ×47). Lowest severity.
+
+⚠️ **A FIGURE I PROPAGATED WITHOUT CHECKING, AND THE REVIEWER CAUGHT IT.** I repeated the PR body's
+"`素材` reaches 21 banks" into both the review dispatch and this board. ✅ **Verified: `素材` is 4 unique
+lines — D737, D738, D740 are each count 1 and ALL IN BANK 19 alone; the entire 21-bank reach is
+DATA 289**, a single count-21 armour-description line that is **untranslated**. The ruling is therefore
+`素材` → `ｓｔｕｆｆ` **approved but sense-split**, with D289 explicitly not bound. **This is the eighth
+figure error of the wave and the first I passed along from someone else rather than generating.**
+
+**Other rulings:** D719's developer note **stays translated in place** (reachable after the message's
+first `{FC30}`; blanking it would change the byte stream — a FLAGS item for a human with the disc).
+D712's `発見つけた` is a **source typo** → FLAGS §B. Three PR-body glossary keys had drifted from the
+source (`ボンネット平原`→`ボネット平原`, `かくれ家`→`隠れ家`, `能力`→`能力値` — **the §9 seeds were right and
+the PR table drifted**), and the gutter census is **20→27 / seven**, not 28 / eight: all **report-only,
+applied by the reviewer at merge — the translator must NOT re-push for them.**
+✅ It also **withdrew two findings after measuring** rather than reporting them: the unit's
+line-ending and single-word-row rates (7.8% / 7.5%) sit *below* merged `batch_010`/`012`/`013`.
+
+⚠️ **NEW INFRASTRUCTURE FLAG — REVIEWERS CANNOT SET `REQUEST_CHANGES` IN THIS REPO.** GitHub refuses
+it: *"Can not request changes on your own pull request"* (single-account repo). The decision is posted
+as a COMMENT review whose **first line is `DECISION: CHANGES`**, with an explicit do-not-merge note.
+**Every future reviewer inherits this — do not read an absent REQUEST_CHANGES state as approval.**
+Belongs in `FLAGS.md` at the next integration commit.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
