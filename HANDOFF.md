@@ -13,8 +13,11 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 
 ## NEXT ACTION — always current, always a literal instruction
 > ### ✅ WAVE 11 IS CLOSED — 3 of 3 MERGED, 0 PARKED, 0 LOST, 0 RE-DISPATCHES. Script **61.7% → 63.6%**.
-> **▶ WAVE 12'S SESSION IS BEING OPENED NOW by wave 11's coordinator (`session_012m7kST3Y5f2ag1jqg6pX8y`),
-> in the same turn as this commit** (CLAUDE.md §4 step 7).
+> **▶ WAVE 12 IS OPEN: `session_01UMK4VSo7m2SaC6uqaJKCdX`** ("Riot Stars — wave 12"), opened
+> 2026-09-11 12:11Z by wave 11's coordinator (`session_012m7kST3Y5f2ag1jqg6pX8y`) in the same turn
+> as the wave-11 close — CLAUDE.md §4 step 7. It is a **child of wave 11, so depth 3**, with a full
+> tool surface: its own translators, its own independent reviewer, its own watchdog, and it can open
+> wave 13. **The chain is intact and no human action is required.**
 >
 > ⚠️ **IF YOU ARE READING THIS AND NO WAVE-12 SESSION EXISTS, THE CHAIN BROKE — OPEN IT YOURSELF.**
 > `create_session`, ⚠️ **`source_url` https://github.com/ehekatlOf/RiotStarsTranslation is REQUIRED
