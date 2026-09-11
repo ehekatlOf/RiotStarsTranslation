@@ -67,6 +67,7 @@ on `claude/workflow-translation-iterate-uzlkns`.**
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
+| 018 | #41 | 2 | ⏳ **re-review running** | Head `87c4420`. Translator **verified finding 1 positionally against the battle dump before applying it** — both reviewer FILE-line citations hold, census reproduced exactly (5 true hits after removing 2 false positives). Accepted 2(a)–(e) and 3; **disclosed one deviation** (D1409 shipped as ONE row, `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` 21, on a §5 volitional split) and **corrected two reviewer figures** (17 not 16, 6 not 7) |
 | 018 | #41 | 1 | **CHANGES** | **All 8 gates PASSED** (base pinned `f64ca52`, tree `9b68866`, `git archive`, no working tree). Gate 7 **1,540 raw / 1,300 distinct keys, 31 occur**. Reviewer re-derived **all ten `{FFEC}` insert rows** — every figure matched the PR, incl. the 21-column worst case at D1420. **1 finding on the file** ⤵ · Rework relayed to `a128d73965f6152f7`, round 1 of 3 |
 | 017 | #42 | 2 | ✅ **MERGE** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways. **Reviewer re-derived everything rather than accepting it**: both `len()`s (18→19, 16→19), both page shapes (D1112 p3 = 14/11/19, D1138 p1 = 13/19/13, both 3 rows, no re-flow), the bank table (bank 33 **5,627**, total 6,152), and a **wider** pronoun sweep (adding `ｍａｎ/ｍｅｎ/ｗｏｍａｎ/ｈｉｍｓｅｌｆ/Ｌａｄｙ/Ｌｏｒｄ/…`) — after the fix **none of D1120, D1122, D1138 carries any gendered reference**. Base **pinned to a SHA** (`c017144`) because the integration branch moved twice mid-review and `merge-tree` silently returned a different tree each time |
 | 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
@@ -105,6 +106,18 @@ was the only work anywhere rendering it as anything but `Ｃｏｍｅ，`.
 §L2-shape pool, not the first: **D517 (62 segments) is already shipped in `batch_002.tsv`** and D1387
 (13 segments) is untranslated. It also relocated the PR's own strongest evidence — the pool ends on a
 *complete* sentence, and the incomplete fragment `えっ、王女様が` sits **19th of 22, inside** it.
+
+⭐⭐ **A NEW STRUCTURAL HOLE IN GATE 7, FOUND BY `batch_018`'s TRANSLATOR AND VERIFIED BY ME —
+PUT IT IN EVERY FUTURE DISPATCH.** **`さ、` has ZERO first-column keys in `glossary.md`; its ruling
+lives entirely in two *Note cells*.** Measured by me: `grep -cE '^\| *`?さ、' glossary.md` = **0**,
+`grep -c 'さ、' glossary.md` = **2**. **A key-first gate 7 is therefore STRUCTURALLY INCAPABLE of
+finding it** — which is exactly why the 018 reviewer's *reading* review caught the collapse and no
+gate did. ⚠️ **This is §48.5's hole in a new shape: the glossary DID record the ruling, just not
+where the gate looks.** HANDOFF's standing rule already says gate 7 runs glossary-row-first and that
+*"it cannot surface a word the glossary never recorded"* — **this is the sharper case, a word the
+glossary DID record, in a cell the gate does not read.** Fix, both halves: **(1) extract `X` → `Y`
+pairs from NOTE CELLS as well as key cells when running gate 7; (2) promote such rulings to real
+first-column rows** so the next gate 7 can see them.
 
 ⚠️ **`FLAGS.md` §AQ8 IS STALE** — "51 rows, none over 8" predates `batch_016`/`batch_017`; the true
 pre-018 figure is **58 rows, maximum +14**, and D1420's **+17** will be the new corpus maximum. The
