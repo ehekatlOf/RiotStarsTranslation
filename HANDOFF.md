@@ -59,8 +59,8 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 ## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
-| battle **15** | `tl/battle-015` | **#47** | 3,239 | 4,953 | ✅ PR open — **reviewer running** |
-| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — **report in**, queued for review |
+| battle **15** | `tl/battle-015` | **#47** | 3,239 | 4,953 | ⚠️ **CHANGES round 1** — 3 findings sent to the same translator |
+| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — **reviewer running** |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
 All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
@@ -90,6 +90,34 @@ compares every tag except `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). *
 independently and both absorbed it by re-flowing `{FFFE}` inside the source's own pages** — chunk 27 paid
 a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank + 4-row shape.
 A tier-B/C chunk with a dense page may not be able to absorb it.
+
+### ⚠️ PR #47 — CHANGES, round 1 (2026-09-11 ~23:15). Not merged; no integration commit; nothing pushed.
+Seven of eight gates passed; **gate 7 failed**. I re-verified all three findings myself before relaying:
+1. ⭐⭐ **`砲台` → `ｂａｔｔｅｒｙ`, not `ｇｕｎ` (4 places).** `glossary.md` §42.1 fixes `砲台 (prose)` →
+   `ｂａｔｔｅｒｙ`, and **§42.8's correction table was written for chunk 15 BY NAME**, re-measuring
+   `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` at 23 columns *specifically so chunk 15 would not be
+   steered off it*. **CONFIRMED by reading §42.1 at `glossary.md:5173`.**
+   ⚠️⚠️ **THIS ONE IS MINE.** My own §9.W13 census printed `砲台 … glossary:YES` and I read the
+   `砲台 (prose) → ｂａｔｔｅｒｙ` row during seeding — **and then left it out of the chunk-15 dispatch's
+   ALREADY KEYED list, where I did list `要塞`, `宮廷軍` and `焼き尽くす`.** The translator had no reason
+   to look for it. **A seed that lists four keyed forms and silently omits a fifth is worse than one that
+   lists none**, because it reads as exhaustive. Wave 12's Decisions §7 is now nine coordinator errors.
+2. **`助かったよ。` → `Ｉ　ａｍ　ｓａｖｅｄ．`** (§23.4's default; 11 columns vs 10, zero re-flow).
+   ⭐ **A CROSS-PR bind inside this wave: PR #49 already ships `Ｈｍ，　Ｉ　ａｍ　ｓａｖｅｄ．`**, so the
+   two must agree. **CONFIRMED at `glossary.md:1795`.**
+3. **`負けたよ。` → `Ｉ　ｌｏｓｅ．`, not `Ｙｏｕ　ｗｉｎ．`** (both instances, byte-identical, §40.3).
+   ⚠️ **I suspected this was a substring false positive of `ｗｉｎ` inside `ｗｉｎｅ`/`ｗｉｎｄ` — the
+   §3 trap — and CHECKED IT AS A WHOLE WORD. I was wrong and the reviewer is right:** `batch_015.tsv:57`
+   ships `俺の負けだ。` → `Ｉ　ｌｏｓｅ．` and `勝ったら` → `ｗｉｎ` **twice in that one message**, and
+   `chunk_037` renders 勝てる / 勝ち目 → `ｗｉｎ` twice more. `Ｙｏｕ　ｗｉｎ．` inverts an established
+   two-store mapping.
+⭐ **The wave-3 Ifrit warning is NOT discharged this round and stays live in §9 and §30.1** — the gloss
+landed on the wrong noun, and a gloss in the wrong noun does not connect for the player.
+**All three are FORWARD-direction misses** (what English this Japanese already has). The PR's reverse
+EN→JP pass was genuinely good and caught four real problems — **it structurally cannot see this half.**
+Still owed at merge: the `{FCC0}` / `tag_parity` `FLAGS.md` entry, and three PR-body corrections
+(`巨大砲台` is not a new term; `ねえ、` → `Ｓａｙ，` is already §34.2; the `やめた方がいい` row over-reaches
+against `batch_007.tsv:30`'s shipped `Ｂｅｔｔｅｒ　ｎｏｔ．`).
 
 ### PR #49 (chunk 23) — the translator's report is in, integration debts below
 **6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
