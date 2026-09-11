@@ -64,6 +64,7 @@ MET — all three PRs open: #42 (017), #41 (018), #40 (019).** One reviewer at a
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
+| 017 | #42 | 2 | ⏳ **re-review running** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways |
 | 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
 
 ⭐ **THE 017 FINDING IS A REAL BUG AND SETS A PROJECT-WIDE PRECEDENT.** D1112 ships
@@ -74,10 +75,24 @@ at D1119/D1122/D1129/D1133. ⚠️ **`batch_017` is the ONLY file in `tl/` or `p
 this insert, so whatever it ships becomes the precedent for every future line carrying a unit name.**
 Fixes offered: `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19) / `…ｔｈａｔ　ｏｎｅ．` (23); `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19).
 
-⚠️ **ONE REVIEWER FINDING CONTRADICTS THE PR AND THE TRANSLATOR WAS ASKED TO CHECK IT, NOT COMPLY.**
-The reviewer says PR Flag 11 is false — that D834 **is** shipped (`batch_016.tsv:62`) and `体力` is
-therefore EXHAUSTED, not live. If it holds, §57.1's row is struck at integration. **Three of wave 9's
-seven wrong figures were reviewers', so this is verified, not assumed.**
+✅ **THAT REVIEWER FINDING HELD, AND THE TRANSLATOR VERIFIED IT BEFORE CONCEDING.** PR Flag 11 was
+false: D834 **is** shipped (`batch_016.tsv:62`), so **`体力` is 2 unique / 0 battle and EXHAUSTED by
+this unit** — §57.1's row is struck at integration. ⚠️ **§57.1 read "LIVE — DATA 1126 outstanding",
+and D1126 is this unit's own line, so the row was live only because of `batch_017` itself.**
+
+⭐ **A NEW METHOD RULE, COINED BY `batch_017`'s TRANSLATOR ABOUT ITS OWN ERROR — put it in every
+future dispatch: "RE-DERIVING A REACH IS NOT RE-DERIVING A STATUS."** It censused `体力`'s reach
+correctly (2 unique) and then asserted D834's *shipped status* without ever grepping `tl/`. **This is
+a distinct failure from the four coordinator errors above** — those censused the wrong corpus; this
+one censused the right corpus for the wrong question. `HANDOFF.md`'s wave-10 table already warns that
+*"where is it translated?"* and *"where does it occur?"* differ; this is the third question,
+*"has this specific instance shipped?"*, and it needs its own grep.
+
+⚠️ **FORWARD HAZARDS censused by `batch_017` but NOT in its banks — for `FLAGS.md` at integration:**
+`よかろう` [2, 33, 41] and `わかったわ` [36, 41] **share bank 41**, and `なんだ、` is **also** bank 41 —
+two hazards in one bank. `Ｖｅｒｙ　ｗｅｌｌ` already renders `いいでしょう。`, `いいわ。` and `よし、ひとつ`,
+so with this unit's it is **five source words under one English phrase corpus-wide**; `chunk_035`'s
+`よし` sits oddly beside §57.2's `よし` → `Ｒｉｇｈｔ`.
 ⛔ **Nothing is reviewed until all three are open** (CLAUDE.md §4 step 4). At 09:07Z both remaining
 translators were alive and 43–44 min in; wave 9's ran 52 min – 1 h 34 m, so this is normal, not a stall.
 
