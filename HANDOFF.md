@@ -58,7 +58,7 @@ one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | 🔁 **rework r1 PUSHED (`727146b`)** — awaiting re-review |
-| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ✅ **PR #39 open** |
+| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ⛔ **CHANGES (PR #39)** — rework r1 sent |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
@@ -234,6 +234,44 @@ re-push for this** — the Flag wording is the reviewer's to fix at merge.
 🚫 **RE-REVIEW OF #37 IS BLOCKED UNTIL REVIEWER `a4c142b40cc5b30ae` RETURNS FROM PR #39** — one reviewer
 at a time (§4 step 4). This is round **1 of 3**; a third CHANGES means PARK with the measured reason or
 one fresh translator.
+
+### Review round 1 — PR #39 `batch_015`: **DECISION: CHANGES** (2026-09-11)
+Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✗ · structure ✓`.
+Tree gated: `merge-tree --write-tree` of `tl/script-015` onto `723c7da` → tree **`96a9e33`**, reproduced by
+the real merge. **Every headline figure reproduced exactly**, including the bank delta re-derived by the
+PR's own move-out/move-back method (29,489 → 22,319 = 7,170 B). Not merged; **no integration commit**.
+✅ **The price-insert gate-blind class is ABSENT here — checked, not assumed:** the unit's only `{FFEC}`
+form is `{FFEC}{=00}{=00}` (D770, the name insert, counted at 7); `{=00}{=01}/{=02}/{=03}` and `{FC00}`
+are all absent, and `５０００ジュエル` / `２０ジュエル` are literal text. **No row is bounded rather than measured.**
+
+**Three findings, all zero- or negative-byte, no re-flow. Sent verbatim to the same translator (round 1 of 3).**
+1. **D807 `Ｈｍｍｍ` forks a form the corpus has already unified.** ✅ **Verified here, and the evidence is
+   STRONGER than the review states: six shipped instances across four kana spellings** — `ふーむ`
+   (`batch_005`, `batch_009`), `うーん` (**`batch_007`**, `batch_013`), `ん〜` (`batch_013` ×2) — **all
+   `Ｈｍｍ`.** The reviewer cited five and missed the `batch_007` one. §38.3's row governs kana spellings
+   of this grunt directly, so the ruling does not depend on the bank co-occurrence I raised in dispatch.
+   The unit itself already ships `Ｈｍｍ，` for `うーん、` at D813 — **only the katakana spelling was forked.**
+2. **D793 `Ｗａｓｔｅｄ` → `ｗａｓｔｅｄ`** — sole outlier of 32 comma-terminated rows; zero bytes.
+3. **D792 `はあ、` unrendered** against Flag 15's "nothing else is dropped"; no incumbent exists, so a
+   declared §2.1 departure discharges it.
+
+**The four rulings it was asked for:** (a) **collapse** `フーム` → `Ｈｍｍ`; (b) D770's unquoted capitals
+**ratified** — §12 converts *the source's own* brackets, and §9's `“ヘルグレイブ”` row states the mirror
+principle; (c) **`ｇｈｏｓｔｓ` is right**; (d) Flag 7's two in-bank pairs **confirmed** — flagging rather
+than forking was correct, and §29.4's reserve does not fire.
+
+⚠️ **MY NINTH FIGURE ERROR — the §9 seed `幽霊` → `ｇｈｏｓｔ` (5) was simply the wrong entry.** ✅ Verified:
+merged **`batch_008` already ships `ｇｈｏｓｔｓ　ｗａｌｋ　ｓｏｕｔｈ　ｏｆ　Ｋｉｅｓａ` for the same rumour.** The
+translator deviated from my seed and was right; the reviewer confirmed it on stronger grounds than
+either of us gave. **Corrected in `glossary.md` §9.** This is the second time this wave a translator has
+been right against my seed (`バウアーの砦` was the first).
+
+⭐ **The reviewer printed BOTH text-run counts rather than asserting either wrong** — it counts 372 runs
+/ 352 ≤ 23 against the PR's 373 / 353, a splitter difference at D794; both give 94.6% and widest /
+at-24 / over-24 agree exactly. **That is the discipline this run keeps failing at, done right.**
+It also confirmed every dispatch correction I gave it, including that **§37.1's off-by-one is a
+0-based/1-based convention mismatch, not an invented error** — the same shape as the DATA-vs-FILE
+mismatch on PR #37. **Record it as a convention, never as someone's mistake.**
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
