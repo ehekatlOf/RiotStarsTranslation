@@ -45,7 +45,7 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 |---|---|---|---|---|---|
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; tightest **bank 5 needs 94 of 1,635** | dispatched |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
-| `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | **bank 30 only, 782 of 35,119** | dispatched |
+| `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | **bank 31 only, 2,185 of 34,745** | dispatched |
 
 ✅ **All four dispatched 2026-09-11 as `translator` subagents of this session, `run_in_background: true`.**
@@ -238,6 +238,47 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
+
+### WAVE 12 — `batch_021` (PR #44): a realised-vs-planning figure, and a NEW tool artifact
+1. ⚠️ **MY 782-BYTE BANK FIGURE WAS A PLANNING BOUND, NOT A PREDICTION — THE REALISED COST IS 456.**
+   `batch_021` measured bank 30 at **35,119 → 34,663 free** from a real `merge` + `bankmeasure`, and
+   it closes arithmetically: `(591 − 356) × 2 − 7 × 2 = 456` (English merges 8 flag rows, netting
+   **−7 `{FFFE}`** at 2 bytes each). Realised growth was **1.66×**, not 2.10×.
+   ⚠️ **This is not the same kind of error as the three below.** 2.10× is this run's *documented*
+   planning rate (Standing, waves 4–11) and overstating is the safe direction for a **feasibility
+   floor** — a unit that fits under 2.10× certainly fits. **But the realised figure is 456 and that
+   is what the record should carry.** The translator's framing is exactly right: re-measuring was
+   the correct instinct, and the correction is larger than the rounding I anticipated.
+   **Lesson for the final handoff: quote the planning bound and the realised figure as two numbers,
+   never one.** Realised growth across waves has run 1.66×–2.04× against a 2.10× plan.
+2. ⚠️ **MY §9.W12 "Where seen" CELLS ARE ONE UNIT SHORT ON SIX ROWS.** `任務失敗`, `ザコ戦`, `ボス戦`,
+   `ゲームオーバー`, `宿敵` and `魔族` name `batch_022` only and **omit `batch_021`'s own instance**.
+   The counts are right; the attributions are wrong. One-line fix per row at promotion.
+3. ⚠️ **`インターミッション` is 4 instances over 3 lines in `tl/`, not the 2 I stated.**
+4. ⭐⭐ **NEW TOOL FINDING — A SECOND `tokenise_stream` ARTIFACT, ON A DIFFERENT BRANCH FROM §R4's.**
+   D1003 carries `{FFF3}{=00}{FF00}{=14}` where its seven siblings carry `{FFF3}{=00}{=B4}{=00}{=12}`.
+   **`{FF00}` is not a real tag.** `tools/riotscript.py:55–90 tokenise_stream` has **no argument-length
+   table**, so after `{FFF3}` it re-enters the loop, meets `0xFF` in the `0xfb <= c <= 0xff` branch and
+   emits `{FF00}` from an **argument byte**. ⚠️ **§R4's artifact came from the SJIS-lead branch; this
+   one is the CONTROL-TAG branch — same missing table, second distinct symptom.** Census: **1 in
+   `script_unique.txt`, 6 in `script_dump.txt`, 0 in the battle dump.** Round-trip verified: both
+   forms emit `ff f3 00 ff 00 14`, so **zero shipping impact** — the token stream was copied verbatim.
+   **Belongs in `FLAGS.md` beside §R4. Do NOT patch `riotscript.py` (CLAUDE.md §3).** This strengthens
+   Blocked 0: the fix is one argument-length table serving **both** branches in **both** tools.
+5. ⭐⭐ **THE TWIN-UNIT TRAP IS REAL AND MEASURED, AND I FORWARDED IT TO `batch_022` MID-FLIGHT.**
+   `batch_021` D1005–D1034 and `batch_022` D1053–D1082 are the **same 30 readable strings**, differing
+   only in the trailing `{FFF8}` argument — so **gate 6 pairs NOTHING** and a divergence would ship
+   undetected. Two hard consequences for `batch_022`'s menu rows (which carry a `　` cursor gutter, so
+   +1 column over `batch_021`'s): **track 17 and track 20 land at exactly 24 — the hard limit, zero
+   slack** — and **track 23 `伝説の古代文明` is 30 columns and CANNOT FIT**, because a 4-option menu row
+   cannot be split without breaking the option↔`{FFF6}` mapping; it must be abbreviated, and
+   `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` alone is 20 and fixed at §42.1.
+   ⚠️ **THE REVIEWER MUST PAIR THESE 30 TITLES BY HAND at whichever PR lands second** — the full table
+   is in PR #44's Handoff section. **An open case-policy call spans both files** (sentence case for
+   descriptive titles, title case for seeded label forms): **rule it ONCE across both**, 0 bytes either way.
+6. ⚠️ **`ｂｏｓｓ` now carries three disjoint senses** — `ボス戦`/`大ボス` (script banks 30–31), `おかしら`
+   → `Ｂｏｓｓ` (§32.1, battle chunk 20 only), `親方` → `ｔｈｅ　ｂｏｓｓ` (§34.1, script bank 12 only).
+   §25.3's co-occurrence test **passes**: no chunk and no bank holds two of the three.
 
 ### ⚠️ WAVE 12 — THREE COORDINATOR ERRORS, ALL MINE, ALL CAUGHT BY THE CORRECTIONS TRANSLATOR
 **I "corrected" three inherited claims in my own dispatch and was WRONG ON ALL THREE. The inherited
