@@ -11,7 +11,15 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ THE RUN IS OPEN AGAIN. SIX BATTLE CHUNKS ARE DISPATCHABLE. START WAVE 13.
+> # ▶ WAVE 13 IS BEING OPENED (2026-09-11, ~22:30 UTC) BY THE ROOT/RUNNER SESSION — DO NOT OPEN A SECOND ONE.
+> The runner (Fable, root session) is creating the wave-13 session now: title **"Riot Stars — wave 13"**,
+> tags `riotstars-translation`, `wave-13`, model Opus, `source_revision: main`, seeded per SKILL.md §6a.
+> **If you are a coordinator reading this:** `list_sessions` — if a wave-13 session other than yours is alive,
+> stop; the runner reconciles on its 15-minute watchdog. The runner does not touch the repository while a
+> wave is alive. The engine work (Blocked 2, 4, 6) belongs to the runner, not to waves: leave it alone.
+>
+> _(The previous NEXT ACTION follows; it stays valid for the units and the rules.)_
+> # THE RUN IS OPEN AGAIN. SIX BATTLE CHUNKS ARE DISPATCHABLE. WAVE 13 = 15, 23, 27.
 > **2026-09-11: both repo-only tool fixes are on `main`** — the `tokenise` argument-length table
 > (Blocked 1, `FLAGS.md` **§BB**) and the `validate_body` charset gate (Blocked 3, **§BA**). Chunks **17 and
 > 36 shipped**; chunks **15, 23, 27, 28, 29, 39 are no longer blocked.** Battle **34 / 44, 69.3%**.
