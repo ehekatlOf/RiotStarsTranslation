@@ -298,6 +298,49 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
 
 ## Decisions this run
 
+### ⭐⭐ WAVE 12 — PR #43 MERGED ROUND 1: FOUR FLAGS RETIRED, AND A TOOLING FINDING THAT CHANGES HOW WE HAND-MEASURE
+**`DECISION: MERGE`, round 1, no must-change finding.** Squash `1134d2b`, integration `173c197`,
+glossary **§62**, FLAGS **§AX**. Base pinned `3c6c579`, merge-base `e9db558`, **the author's
+`merge-tree` was NOT reused**. No semantic collision with `batch_020`'s §34.1/§34.4 rewrite.
+
+1. ⭐⭐ **`assemble.py:106` SPLITS RUNS ON `{FCC0|FC30|FC51|FC50|FFFF}` AS WELL AS `{FFFE}` — SO ANY
+   HAND-MEASUREMENT THAT SPLITS ONLY ON `{FFFE}` CAN OVERSTATE COLUMNS.** The reviewer caught its own
+   near-miss this way: a `{FFFE}`-only split reported `batch_012:53` at **27 columns**, but a `{FCC0}`
+   sits inside that segment and the true rows are **14 / 15**. ⚠️ **I have been telling every agent
+   to "hand-measure" insert-bearing rows without saying what to split on. Verified in the source by
+   me. This goes in every future brief.**
+2. ⭐⭐ **§AQ5's `編成` ROW IS CLOSED AS A FALSE POSITIVE OF ITS OWN GATE — AN OPEN FLAG RETIRED FOR
+   FREE, AND WITHOUT THE DISC.** D432's English legitimately reverses the two menu names (§2.1 step 6)
+   and the gate's Nth-bracket/Nth-quote pairing faked a collision. **§Z1's own table already had it
+   right.** ⚠️ **§Z1 / Blocked 7 are UNCHANGED** — this answers only the consistency question, not
+   whether the labels match the screen.
+3. ⭐⭐ **`Ｏ，　Ｏｉ，` STANDS, AND THE REVIEWER FOUND THE FACT NOBODY NAMED.** `batch_007.tsv:24`
+   ships the **doubled** `おいおい、` as `Ｏｉ，　ｏｉ，`, and **§AJ3 proposed the lowercase form by
+   analogy to that — the WRONG COMPARISON CLASS.** Measured: **fragment stutters 23 : 6 capitalised;
+   word doublings 7 : 0 lowercase.** Both stand, written to §62.4 so nobody "fixes" one into the other.
+4. ✅ **FOUR FLAGS DISCHARGED: §AJ3 · §AP5 (merged work) · §AP7 · §AQ5's `batch_007` row.**
+   **§37.1's `反乱` row stays LIVE for D1384 only** (bank 41, blocked). Four glossary rows corrected
+   in place (§23.2, §24.3, §34.1, §37.1) plus a cross-reference at §47.4.
+5. ⭐ **THE CITATION TRAP'S FIFTH FACE — THREE CONVENTIONS COEXIST IN ONE FILE.** §37.1's "c22 L6" is
+   a **1-based BODY index**; §61.5.6's "chunk 8 L14" (mine) was **0-based**; the documented convention
+   is a 1-based FILE line. **All three are live in `glossary.md` right now.** Renumbered and the
+   convention named in place.
+6. ⚠️ **THREE OF THE UNIT'S OWN FIGURES WERE WRONG and the reviewer re-derived them** — "27 stutters,
+   21 : 6" → **26 at 19 : 7 before, 29 at 23 : 6 after**; "all 27 are sentence-initial" is **false**
+   (23 of 33), though the conclusion survives; and its bank 5 paste (1,635) was stale, now **1,595**.
+   ⚠️ **All its `glossary.md:NNNN` citations had moved (+12 to +26).** ✅ **All 14 DATA citations exact.**
+7. ✅ **MY FIRST THREE ERRORS CONFIRMED IN DETAIL, AND ITEM 1 WAS WRONG ON ALL THREE COUNTS**: my
+   "+8 bytes / 21→25 columns / needs a re-wrap" is really **+2 / 21→22 / no re-wrap**, and the donor
+   is real (`batch_015.tsv:40` D786 ships `ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ．`). My case-sensitive grep:
+   confirmed wrong, **5 defects of 13, the 8 survivors all `よう`/`よっ`**. Pooled D376: the unit was
+   right, `品` is in **segment 16**, +6 into bank 0 (31,431 → **31,425**, §AP7's predicted figure to
+   the byte).
+8. ⚠️ **`品` SIX vs §61.5.1's EIGHT — BOTH RIGHT, NO CONTRADICTION**: **6 shipped, 8 bare-noun**
+   (D1278/D1304 untranslated in bank 40). A reach and a status, not a disagreement — §58.5's lesson.
+9. ⭐ **`bankmeasure`'s `tightest:` NOW HIDES BANK 2; BEFORE #45 IT HID BANK 5. WHICH ONE IS INVISIBLE
+   IS NOT STABLE.** Verified by me just now: four banks under 2,000 — **40 → 75 · 41 → 353 ·
+   5 → 1,595 · 2 → 1,607** — and the line prints 40, 41, 5. **Never quote that line.**
+
 ### ⭐⭐ WAVE 12 — PR #45 MERGED ROUND 1, AND GATE 7's THIRD FACE EARNED ITS KEEP IMMEDIATELY
 **`DECISION: MERGE`, round 1, no must-change finding.** Squash `5b6c212`, integration `463b01b`,
 glossary **§61**, FLAGS **§AW**. Base pinned `065e67b`, re-fetched at both ends and unchanged.
