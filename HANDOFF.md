@@ -146,11 +146,47 @@ dispatch and the reviewer upheld it. `マーシュ`, `クーデター`, `親衛�
 gate-7 keys **1,317** (reviewer, `/`-split + struck rows) vs **1,138** (PR); insert rows **54** (post-merge)
 vs **51** (pre-#38).
 
+### Rework round 1 — PR #38 `batch_016`: **all three findings applied, pushed as `43fa715`** (2026-09-11)
+**Rebased onto `53afa23` first**, so `batch_014`/`batch_015` are in its duplicate surface and §55/§56 in its
+glossary surface. Gates re-run on the enlarged corpus: `check` passes (4,896 lines / 803 unique forms) ·
+`merge` 0 unmatched · `rowcheck script` clean · banks 21/22/23/24 free **34,269 / 38,033 / 28,265 / 39,511** ·
+slot-level Japanese-side sweep over **16 script TSVs + 32 battle chunks: 0 conflicts** · cross-file
+item-name gate 63 messages / 53 names / **0 divergences** · **gate 7 re-run at 1,175 keys** (up 38 from
+§55/§56), 120 occurring. Growth **+8,598 B**, ratio **2.012×**.
+
+⭐ **IT FOUND A STRONGER PRECEDENT THAN THE REVIEWER'S FOR FINDING 2.** ✅ Corroborated here:
+**`chunk_003` ships `Ｒｉｇｈｔ，　ｔｈｅｎ．` on the line whose Japanese carries `よし、じゃあ、`** — so
+`よし` = `Ｒｉｇｈｔ` and `じゃあ` = `ｔｈｅｎ` in a **single shipped row**. Its coinage had appropriated
+`Ｒｉｇｈｔ`, which belongs to `よし` — exactly the reviewer's objection, proved from one line rather than
+two separate precedents. ⚠️ **`じゃあ、` → `Ｒｉｇｈｔ　ｔｈｅｎ，` must NOT be recorded in the glossary.**
+
+⭐ **AND IT FOUND WHY IT MADE THE PRICE ERROR — a rule-scope gap, not carelessness (its Flag 20).** It had
+applied **§10.8** (cardinals in running prose spelled out; digits kept in fixed names and tables of
+numbers). **A price is neither**, so §10.8 does not reach it and the corpus does. ⚠️ **Note for the
+reviewer: `glossary.md:3662` (§36.6) states "§10.8 is CLOSED", so the fix may belong in §36.6's successor
+rather than in §10.8 itself — check before writing.** Either way **the corpus rule is: prices keep their
+full-width digits** — 4 shipped, 4 keeping digits.
+
+⚖️ **One change it DECLINED, disclosed rather than made silently (Flag 21) — good judgement.** D846 could
+also take `Ｗｅｌｌ　ｔｈｅｎ，`, but this unit's other two instances of the particle (D863, D865) are
+**lifts** rendering it bare `Ｔｈｅｎ`, so changing D846 would fork the particle **against donor rows it
+must not touch**. Only D868, where the particle stands alone on its row, takes the fuller form. **One row
+to overrule if the reviewer disagrees.**
+
+✅ **It confirmed the D849 correction the hard way** — listing every tag in the source line: **six `{FFFE}`
+and no `{FFEC}` at all**. My headroom figures were exact (13 / 10 / 16). Flag 10 now reads **D843 ×2 and
+D844 ×1**.
+✅ **Gate 7 against the 38 new §55/§56 rows: exactly one reaches this unit and it is a FALSE POSITIVE** —
+§55's `なあ、` → `Ｔｅｌｌ　ｍｅ，` keys on the **clause-initial** particle; D857's `買っていったなあ。` is the
+**sentence-final** musing one. Two other new rows **confirm** its existing choices.
+✅ **All five of D863's and all three of D865's `{FFFE}` changes are inside the LIFTS** — the donor's own
+flow reproduced byte-for-byte, so those counts are `batch_012`'s and `chunk_037`'s, not this unit's.
+
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #39, squash `8f66547`**, integration below. Read the row as **"great port town NPCs"** — the unit never names its own town |
-| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ⛔ **CHANGES (PR #38)** — rework r1 sent |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | 🔁 **rework r1 PUSHED (`43fa715`)** — round 2 in review |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
