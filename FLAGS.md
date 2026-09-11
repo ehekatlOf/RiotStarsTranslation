@@ -6731,3 +6731,129 @@ is invalid, and so is "branch present = unmerged".**
 - **`ほこら`, `魔道書` (D293), `生き返りの秘法` (D324) stay live** — §AT9, unchanged by this unit.
 - **`景品` → `ｐｒｉｚｅ` is DISCHARGED** — 10 script-unique, D748 in `batch_014` and 9 here, 0 remaining.
 - **`ｃｏｉｎ` is discharged and spent only on `コイン`** — 2 script-unique, D1398 and D1419, both here.
+
+## AV. Wave 11 review — script batch 019 / PR #40, MERGED (2026-09-11, round 1)
+
+Squash `dcd2c57`. Gated on merge tree **`3aec8820ca296fc14199b79c206295ac17b68db3`**, base pinned to
+**`0b5cd448dc8e556ed814c2a764b41593f99d93a4`** (`integrate: script batch 018`), head
+**`86bb1bb00b1c50ddcad42029d5f5b1ccd8431766`**. `merge-tree --write-tree` run **twice**, both returning
+the same tree, RC=0; the worktree was then reset to a commit carrying exactly that tree and
+`git rev-parse HEAD^{tree}` re-checked before any measurement. All eight §6 gates ✓, **merged round 1
+with no must-change finding** — the first script unit in four waves to land without rework. Banks 3
++430 · 6 +550 · 7 +68 · 12 +492 · 25 +732 = **+2,272 B**, no bank negative, all five re-derived by
+removing and restoring the unit file on the gated tree.
+
+### AV1. Banks under 2,000 free — still FOUR, still only THREE on the `tightest:` line
+
+**40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.** Unchanged by this unit, which touches 3, 6, 7, 12 and
+25 — none of them. `bankmeasure`'s `tightest:` line prints three, so **bank 5 remains invisible to
+anyone quoting it**. Read the full table. §AT1 / §AU1 carried forward verbatim because it is still
+true, and it was again confirmed from the full table rather than the summary line.
+
+### AV2. ⭐⭐ LIVE COLLISION — `兵器` and `武器` both render `ｗｅａｐｏｎ`, and the reserve is NOT free
+
+`武器` → `ｗｅａｐｏｎ` is everywhere; `兵器` → `ｗｅａｐｏｎ` is now recorded at §60.3. **Both occur in this
+unit** — D532 (`兵器`, bank 6) and D879 (`武器の材料` → `ｗｅａｐｏｎ　ｍａｔｅｒｉａｌｓ`, `武器や防具` →
+`ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ`, bank 25). **The banks are disjoint and the two never share a message, so
+§25.3's co-occurrence test passes today.** Outstanding on the `兵器` side: **5 script-unique / 45
+instances / 8 battle, with D220 and D221 (`レーザー兵器`, ×21 each), D518 and D520 untranslated.**
+
+⚠️ **The PR named `ｏｒｄｎａｎｃｅ` as the reserve on the `兵器` side. It is not freely available.** Review
+paired the battle dump positionally against `tl/battle/` and found `兵器` → `ｗｅａｐｏｎ` **already shipped
+five times across chunks 008, 009 and 042** (table at §60.5). Breaking the collision that way would
+contradict five merged battle lines. **Recorded, not pre-decided — but whoever decides must count
+those five.**
+
+### AV3. ⭐ THE `一番` / `イチバン` CROSS-STORE SPLIT — a live trap for the next agent
+
+**Second census error of this shape in two waves.** `イチバン` is exhausted **in its katakana spelling
+only** (3 script-unique, 0 battle, all here). `一番` is 0 in the script and **2 in battle**, and
+`tl/battle/chunk_010.txt` already ships the *identical sentence formula* — `一番強イ奴、一番エライ。` →
+`Ｓｔｒｏｎｇｅｓｔ　ｉｓ　ｈｉｇｈｅｓｔ．` — in the same lizardman/frog register. **Nothing was changed**: D522's
+source carries a three-fold `イチバン` anaphora the compressed battle form cannot hold, and D527 already
+lands on `Ｓｔｒｏｎｇｅｓｔ．`. Full ruling and both renderings at **§60.4**. **Anyone meeting `一番` in this
+register is bound by `chunk_010`, not by the katakana row.**
+
+### AV4. ⭐ `炎ノ雨` — the §9 row is NOT struck, and 24 instances remain
+
+The seed said "1 unique, 0 battle — Exhausted". True of the katakana; **`炎の雨` is 5 script-unique / 25
+instances / 0 battle** (D223 ×21, D514, D518, D520, D1287) and **`batch_008.tsv:71` already ships it
+lowercase and descriptive** — `炎の雨を　降らせる砲台` → `ａ　ｂａｔｔｅｒｙ　ｒａｉｎｉｎｇ　ｆｉｒｅ`, verified at
+review. D532 correctly took §9's own stated lowercase alternative. **§9's row STAYS LIVE; 4 lines and
+24 instances outstanding, 21 of them in one item description (D223).** Whoever renders D223 is not
+bound to a proper name.
+
+### AV5. `rowcheck.py` cannot see four of this unit's eight inserts — and the PR's own table missed one
+
+`_script_cols` expands only `{FFEC}{=00}{=00}` (to `NAME_COST` = 7, `rowcheck.py:18`) and strips every
+other insert to **zero columns**, so `{FFEC}{=00}{=01}` (price), `{=00}{=03}` (item) and `{=00}{=04}`
+(unit) are *bounded, not measured*. Hand-measured budgets are tabled at **§60.6**. Two things to carry
+forward:
+
+1. ⚠️ **This unit has FIVE insert-bearing rows — D469, D524, D586, D591 and D874 — and eight inserts.
+   The PR's flag table listed four and omitted D874** (item name, fixed text 1 column, budget 22/23).
+   No geometric risk — it is the most generous budget in the unit — but a missing row is how a later
+   unit re-tightens an insert nobody is watching. Added at integration.
+2. ⚠️ **OPEN FOR A HUMAN WITH THE BINARIES: the item-name table's true maximum rendered width is
+   unrecorded.** §8 caps unit names at 16 half-width and class/monster at 20 but says nothing about
+   items. D591's price budget of **8/9 digits** is the tightest row in the unit; D586's item budget of
+   **16** is identical to three already-merged rows (`batch_006:24` — same shop chain, same bank 12 —
+   and `batch_011:17`/`:25`), so this unit is no tighter than shipped work. Carried from §AU's
+   equivalent because it is still unresolved.
+
+### AV6. Citation accuracy — the trap sprang again, and five small figures corrected
+
+**Flag 12 cited `batch_011:27` for `また　来てね！` → `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！`. The line is
+`batch_011.tsv:34`**; `:27` is `でも、それ以上は持ちきれないみたいね。`. The substantive claim survived —
+that line is **bank 15**, disjoint from bank 12 — but this is the third consecutive wave in which a
+file-line citation was wrong, and the second in which the agent citing the trap sprang it. **Check
+every file-line citation against the file.**
+
+Separately, Flag 12 checked banks 15 and 23 for disjointness and **missed that `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ`
+already occurs inside bank 12** at `batch_006.tsv:52` (`また　来て下さいね。` → `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ．`).
+Not a defect — D596 ships `！` and `batch_006:52` ships `．`, each following its own source per §34.1,
+and the flanking sentences differ — but **a bank-disjointness check must include the bank you are
+writing into**, not only the bank you are borrowing from.
+
+Five supporting figures in the PR body were one column out, all in the safe direction and none
+changing a decision, re-measured from the file rather than retyped: **D467 row 2 = 13** (not 14) ·
+**D527 row 1 = 21** (not 22) · **`Ｓｔｒｏｎｇｅｓｔ．` = 10** (not 11) · **`Ｈｅｒｅ’ｓ　ｔｈｅ　ｓｍｉｔｈｙ，　ｎｙｏｒｏ．`
+= 25** (not 26). Every load-bearing figure was exactly right: the four one-row alternatives measure
+**31 / 29 / 26 / 28**, all over the 24-column limit, so all four `{FFFE}` additions are forced.
+
+### AV7. Gate 7 method — a backtick-only harvester misses un-backticked key cells
+
+Running gate 7 row-first over `glossary.md` (7,845 lines, 59 sections, 1,854 table rows), a harvester
+taking **only backticked runs** found 1,589 distinct Japanese keys and 65 in this unit's source. Adding
+**plain un-backticked column-0 cells** — the shape of `glossary.md:67`, `| 帝国 | the Empire | … |` —
+raised it to **2,512 keys and 89 hits**, newly reaching `いらっしゃいませ`, `村長`, `味方`, `補充`, `騎士`,
+`ふう` and `用`. **The `帝国` row that this unit's Flag 3 turns on is itself un-backticked**, so a
+backtick-only gate 7 cannot see the row it is being asked to check. Combined with §AU2's note-cell
+hole, a sound gate 7 must harvest **(a) backticked col 0, (b) plain col 0, (c) backticked runs in every
+other cell, (d) `X`→`Y` arrow pairs in every cell and every prose line, (e) un-ticked JP → `EN` in
+prose.** State the key count and the splitter.
+
+### AV8. Rows discharged and rows left live at this integration — all statuses grepped in `tl/`
+
+**Status is not reach**: every line below was re-derived by grepping `tl/script/*.tsv`, not inferred
+from a dump census.
+
+| Row | Outcome |
+|---|---|
+| `荷物` (§59.5) | ✅ **DISCHARGED, exhausted** — D589 shipped; 5 of 5 script-unique, 0 battle. §AU's reviewer stopped it being struck one wave early and was right |
+| `また　どうぞ` | ✅ **DISCHARGED, exhausted** — D596 and D1426 both shipped and **they agree**: `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！` / `ｄｏ　ｃｏｍｅ　ａｇａｉｎ．`, case by sentence position, punctuation source-following |
+| `いらっしゃいませ` | ✅ **DISCHARGED, exhausted** — all 11 script-unique lines shipped, D597 the last. The single battle "hit" is a false positive: `chunk_006`'s `いらっしゃいません` / `いらっしゃいました`, inflected honorifics, not the greeting |
+| `かじ屋`, `クロイ馬ノ騎士` | ✅ **PROMOTED to §60 and STRUCK** — both 1/1/0 battle, 0 remaining |
+| **`店を出る`** | ⚠️ **STAYS LIVE** — D584/D598 shipped, so 9 of 10 done, but **D339 (×2) remains untranslated** |
+| **`炎ノ雨` / `炎の雨`** | ⚠️ **STAYS LIVE** — see §AV4; 4 lines / 24 instances outstanding |
+| **`兵器`** | ⚠️ **STAYS LIVE** — see §AV2; D220, D221, D518, D520 outstanding |
+| **`貼り紙がしてある・・・`** | ⚠️ **STAYS LIVE** — D870 shipped (4 copies now agree) but **D333 (×2) and D338 (×2) remain**, which no earlier cell named |
+| **`材料` / `武器や防具`** | ⚠️ **BOTH STAY LIVE** — `材料` 14 of 17 shipped, **D304/D305/D308 (×21 each) remain**; `武器や防具` 2 of 3, **D1354 remains** |
+| `『カルボナイト』` / `『ジェムストーン』` | ✅ **RESOLVED** — D873's `どの石` menu is a **runtime item list** (`{FFFB}{=00}{=0A}`), not text, so it reaches no stone name and none was coined |
+
+### AV9. Still true, carried forward
+
+Branch deletion returns **HTTP 403** for this app (§AQ9): PR #40's branch `tl/script-019` was **NOT
+deleted** and remains on the remote. GitHub still refuses `REQUEST_CHANGES` (§AQ1), so the decision was
+posted as a `COMMENT` review with `DECISION:` on line 1. `gh` is not installed; the GitHub MCP tools
+were used throughout.

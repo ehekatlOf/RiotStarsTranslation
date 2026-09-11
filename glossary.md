@@ -696,7 +696,7 @@ reading, not as a fixed distinction.
 |---|---|---|---|
 | ~~`館の中は静まりかっている・・・。`~~ | ✅ **EXHAUSTED and PROMOTED to §55.1 by `batch_014` (PR #37, merged 2026-09-11)** — 3 of 3 script instances rendered (D711, D714, D716), 0 battle, **0 remaining**. Shipped with the corrected dot counts (4 / 4 / **5**). Original seed note follows: `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
 | ~~`館の中は静寂に　包まれている・・。`~~ | ✅ **EXHAUSTED and RULED at §55.1 (PR #37)** — rendered `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．`, deliberately **parallel to but distinct from** the `静まりかっている` row above, as this row asked. 2 of 2 rendered (D717, D720), byte-identical, **0 remaining**. Original seed note follows: — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
-| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
+| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647, `batch_014` D724, `batch_019` D870 | ⚠️ **ROW STAYS LIVE — D870 shipped by `batch_019` (PR #40), but the row is NOT exhausted.** Re-censused by grepping `tl/` at the PR #40 integration: **6 script-unique / 8 instances, 4 shipped (D633, D647, D724, D870), 2 REMAINING — D333 (×2) and D338 (×2)**, which no earlier cell ever named |
 | `親衛隊` | `ｇｕａｒｄ` (5), **lowercase** — ✅ **RULED and RENDERED 2026-09-11 (PR #39), but the row STAYS LIVE** | `batch_010` D898 (bank 28) + `batch_015` D789/D791/D792/D793/D794 (bank 20) — **6 of 7 rendered** | ⚠️ **D1330 REMAINS, and it is in BANK 40 — 75 bytes free, a spendable budget of ZERO under §F2.** Full census re-measured at review: **7 script-unique lines, 0 battle** — D789, D791, D792, D793, D794, D898, **D1330**. The wave-10 seed implied six; it is seven. One word covers all five of `batch_015`’s registers because **the contempt is never in the noun** — in D794 it sits in `だか何だか知らねえが` → `ｇｕａｒｄ　ｏｒ　ｗｈａｔｅｖｅｒ　ｔｈｅｙ　ａｒｅ`, in D793 in the flat `ちぇっ`. English “the guard” is exactly a ruler’s household corps and takes a plural verb (`Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ　ｌｏｒｄ　ｉｔ…`, `…ａｒｅ　ｓｔｒｏｎｇｅｒ　ｔｈａｎ…`). **Lowercase**, matching the one shipped instance and §17.1’s function-noun test. See `FLAGS.md` §B and §AR |
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
 | `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
@@ -809,13 +809,13 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 
 | Japanese | Shipped English — MATCH IT | Shipped where (verified) | Recurs in wave 11 at |
 |---|---|---|---|
-| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | ⚠️ **THREE files, not one**: `batch_006.tsv:57`, `batch_011.tsv:8`, `batch_014.tsv:26` — I re-derived this; the wave-10 handoff named only `batch_014` | **D870** (batch 019) |
+| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | ⚠️ **THREE files, not one**: `batch_006.tsv:57`, `batch_011.tsv:8`, `batch_014.tsv:26` — I re-derived this; the wave-10 handoff named only `batch_014` | ✅ **D870 SHIPPED byte-identical** (`batch_019.tsv:51`, PR #40) — four copies now agree. ⚠️ **ROW STAYS LIVE: D333 and D338 remain untranslated** (see §9's wave-10 row) |
 | the closed-shop notice `「…ノロ」` | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` | `batch_006.tsv:57` (`「本日、棚卸しのため休業いたしますノロ」`) | **D870**'s `「今日は{FFFE}　　　　お休みノロ」` is a **different, shorter** notice. Not byte-identical, so gate 6 is blind. Keep the `“…”`, the leading pad and the `，　ｎｙｏｒｏ．`; do not copy the stocktaking wording |
-| `材料` / `武器や防具` | `ｍａｔｅｒｉａｌｓ` / `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` | `batch_010.tsv:31` — **the same smith, same scene, already half-shipped** | **D872, D878, D879** (batch 019). ⚠️ **Read `batch_010.tsv:31` in full before writing D879** — it is this NPC's own explanation speech and fixes his voice |
+| `材料` / `武器や防具` | `ｍａｔｅｒｉａｌｓ` / `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` | `batch_010.tsv:31` — **the same smith, same scene, already half-shipped** | ✅ **D872, D878, D879 SHIPPED** (`batch_019.tsv:53/59/60`, PR #40) — `ｍａｔｅｒｉａｌｓ` and `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` both byte-identical to `batch_010.tsv:31`, the same smith's own speech. ⚠️ **BOTH ROWS STAY LIVE**, re-censused in `tl/` at the PR #40 integration: `材料` **17 unique / 77 instances, 14 shipped, 3 REMAIN — D304, D305, D308 (×21 each)**; `武器や防具` **3 unique, 2 shipped, 1 REMAINS — D1354** |
 | `　はい` / `　いいえ` | `　Ｙｅｓ` / `　Ｎｏ` | every batch since 006; the leading `　` gutter is part of the string | D1108, D1120, D1126, D1127, D1392, D1395, D1403, D1412, D1413, D1416, D1424, D524, D586, D591, D874, D877, D879 |
-| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | ⚠️ **REACH CORRECTED 2026-09-11 (PR #41 review), and this cell was one line short.** `店を出る` is **10 script-unique lines, 0 battle; 7 shipped, 3 REMAINING — D339, D584 and D598.** D1390 and D1411 shipped here in `batch_018`; **D339 is a third outstanding line this cell never named**, alongside batch 019's D584/D598. **ROW STAYS LIVE.** 15 confirmed with `len()` |
+| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | ⚠️ **REACH CORRECTED 2026-09-11 (PR #41 review), and this cell was one line short.** `店を出る` is **10 script-unique lines, 0 battle.** ⚠️ **UPDATED at the PR #40 integration: D584 and D598 are now shipped (`batch_019.tsv:36/50`), so the count is 9 shipped, 1 REMAINING — D339 (×2) alone.** **ROW STILL STAYS LIVE** until D339 is rendered. The PR #41 correction that first named D339 is upheld: §7 had listed only two outstanding lines. 15 confirmed with `len()` |
 | `　アイテムを買う` / `　アイテムを売る` | `　Ｂｕｙ　ａｎ　ｉｔｅｍ` (12) / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` (13) | `batch_006.tsv:21` | **D584, D598** — ⚠️ D584 and D598 are **two unique rows with identical readable text**; they must take byte-identical English |
-| `『カルボナイト』` / `『ジェムストーン』` | `“Ｃａｒｂｏｎｉｔｅ”` / `“Ｇｅｍｓｔｏｎｅ”` | `batch_010.tsv:31` | possible in D873's `どの石` menu — check before coining a stone name |
+| `『カルボナイト』` / `『ジェムストーン』` | `“Ｃａｒｂｏｎｉｔｅ”` / `“Ｇｅｍｓｔｏｎｅ”` | `batch_010.tsv:31` | ✅ **RESOLVED at the PR #40 integration — D873's `どの石` menu does NOT reach them.** The menu is a **runtime item list** (`{FFFB}{=00}{=0A}`), not text, so no stone name is rendered there and no stone name was coined. Both terms were already exhausted on the script side (`カルボナイト` 2/2, `ジェムストーン` 3/3). Whether they appear in the list can only be seen in game |
 
 **Table B — genuinely new: absent from `glossary.md` (grepped, whole file). Proposed, not fixed.**
 
@@ -842,9 +842,9 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 | ~~`ドラム`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｒｅｅｌｓ`, **used exactly as seeded**, both dump occurrences; **EXHAUSTED, `tl/` grepped**: 1 script-unique / 2 occurrences, 0 battle, 0 remaining. The `ｄｒｕｍｓ` fallback was offered to the reviewer and **not** taken: English slot machines have reels, and the seed's own reasoning stands. Original seed cell follows: `ｒｅｅｌｓ` (5) | **1 unique / 2 dump, 0 battle — D1393 (`ドラムスタート`, `ドラムは…ストップ`). Exhausted** | English slot machines have *reels*, not drums. `ｄｒｕｍｓ` (5) is the literal and is the fallback if the reviewer prefers the source's own image |
 | ~~`絵柄`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｓｙｍｂｏｌｓ`, **used exactly as seeded**, 7 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. `ｐｉｃｔｕｒｅｓ` (8) stays unspent. Original seed cell follows: `ｓｙｍｂｏｌｓ` (7) | **1 unique, 0 battle — D1393. Exhausted** | the slot faces. Alt `ｐｉｃｔｕｒｅｓ` (8) |
 | ~~`的中確率`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｈｉｔ　ｒａｔｅ`, **rendering unchanged and used exactly as seeded**, 8 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. | **1 unique, 0 battle — D1393** | ⛔ **THE SEED'S REASON WAS FALSE AND IS REPLACED — see §59.4.** It read *"Held apart from §-fixed `命中率` → the battle accuracy stat, which is a different word in a different store."* **Both halves fail on measurement.** `命中率` is **not** in a different store: it is **3 script instances, 0 battle — D830, D979, D1237 — and D830 already ships `ｈｉｔ　ｒａｔｅ　ｒｉｓｅｓ．` in `batch_016.tsv`**, so `ｈｉｔ　ｒａｔｅ` was already spent on `命中率` in the same store before this unit existed. **What licenses the row is §25.3 bank-disjointness, on a map measured at review: `的中確率` bank [42]; `命中率` banks [21, 29, 40]; shared banks NONE, 0 messages holding both.** Alt `ｏｄｄｓ` (4) stays free and unspent |
-| `かじ屋` | `ｓｍｉｔｈｙ` (6) | **1 unique, 0 battle — D871 (`ここは、かじ屋ノロ`). Exhausted** | The *place*, which is what `ここは` needs. `ｂｌａｃｋｓｍｉｔｈ` (10) is the person and is the alternative if the reviewer reads it as the trade. ⚠️ `batch_010.tsv:31` is this same shop and **names neither** — it opens `ここでは、…` — so nothing is inherited and nothing is contradicted |
-| `炎ノ雨` | `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ` (12) | **1 unique, 0 battle — D532. Exhausted** | The Empire's weapon, in the frog king's katakana. Capitalised as a named weapon, on §33.1's `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / §45.1's `Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ` `Ｘ　ｏｆ　Ｙ` pattern. Alt lowercase `ａ　ｒａｉｎ　ｏｆ　ｆｉｒｅ` (16) if it reads as description, not a name |
-| `クロイ馬ノ騎士` | `ｔｈｅ　Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ` (22) | **1 unique, 0 battle — D527. Exhausted** | ⚠️ **The katakana is the frog's broken speech, not the game's spelling** — the phrase would be `黒い馬の騎士` in any other mouth, so the ENGLISH should be ordinary English, with the frog's register carried by the surrounding clipped syntax (§5), not by mangling this noun. Plural `Ｋｎｉｇｈｔｓ` (23) if the source means the order |
+| ~~`かじ屋`~~ | ✅ **PROMOTED to §60 and STRUCK (PR #40, merged 2026-09-11)** — `ｓｍｉｔｈｙ`, **used exactly as seeded**, 6 confirmed. **EXHAUSTED, `tl/` grepped at integration**: 1 script-unique, 0 battle, 0 remaining — D871 = `batch_019.tsv:52`. Original seed cell follows: **1 unique, 0 battle — D871 (`ここは、かじ屋ノロ`). Exhausted** | The *place*, which is what `ここは` needs. `ｂｌａｃｋｓｍｉｔｈ` (10) is the person and is the alternative if the reviewer reads it as the trade. ⚠️ `batch_010.tsv:31` is this same shop and **names neither** — it opens `ここでは、…` — so nothing is inherited and nothing is contradicted |
+| `炎ノ雨` / `炎の雨` | **lowercase `ｒａｉｎ　ｏｆ　ｆｉｒｅ`** — ⚠️ **RENDERED at D532 (PR #40) but the ROW STAYS LIVE; the seed's proposal `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ` was NOT taken** | ⚠️ **THE SEED'S "1 unique, 0 battle — Exhausted" CENSUSED ONLY THE KATAKANA SPELLING.** Re-derived over both dumps at the PR #40 review: `炎ノ雨` is 1/1/0 battle (D532, shipped), but **`炎の雨` — the same phrase in ordinary kana — is 5 script-unique / 25 instances / 0 battle: D223 (×21), D514, D518, D520, D1287, and only D514 is shipped.** **4 lines and 24 instances REMAIN** | **The decisive fact is that the ordinary spelling already ships lowercase and descriptive**: `batch_008.tsv:71` renders `炎の雨を　降らせる砲台` as `ａ　ｂａｔｔｅｒｙ　ｒａｉｎｉｎｇ　ｆｉｒｅ` — verified at review, not quoted. Capitalising it at D532 would have contradicted merged work and pre-empted 24 further instances, 21 of them in one item description (D223, `敵全体に炎の雨を降らせる。`). D532 therefore ships `Ｒａｉｎ　ｏｆ　ｆｉｒｅ　ｂｕｒｎｓ　ａｌｌ{FFFE}ｉｎ　ｏｎｅ　ｍｏｍｅｎｔ．` — sentence-initial capital only. **Whoever renders D223 decides the description sense and is NOT bound to a proper name by this row.** This is the second §9 seed in two waves whose "exhausted" rested on one spelling of a two-spelling term — see also §60.4 |
+| ~~`クロイ馬ノ騎士`~~ | ✅ **PROMOTED to §60 and STRUCK (PR #40, merged 2026-09-11)** — `Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ`, **the NOUN exactly as seeded**; the seed's leading `ｔｈｅ` is displaced by the genitive it always appears under (`帝国ノ　クロイ馬ノ騎士。` → `Ｅｍｐｉｒｅ’ｓ　Ｂｌａｃｋ　Ｈｏｒｓｅ{FFFE}Ｋｎｉｇｈｔ．`). **EXHAUSTED, `tl/` grepped at integration**: 1 script-unique, 0 battle, 0 remaining — D527 = `batch_019.tsv:29`; `黒い馬` has 0 occurrences in either dump, so no rival spelling exists. Original seed cell follows: **1 unique, 0 battle — D527. Exhausted** | ⚠️ **The katakana is the frog's broken speech, not the game's spelling** — the phrase would be `黒い馬の騎士` in any other mouth, so the ENGLISH should be ordinary English, with the frog's register carried by the surrounding clipped syntax (§5), not by mangling this noun. Plural `Ｋｎｉｇｈｔｓ` (23) if the source means the order |
 
 ⚠️ **BATCH 019's THREE REGISTERS ARE THE WHOLE DIFFICULTY, and two of them are already fixed.**
 D465–469 and D870–879 are `ノロ` speakers (§5 / §18.1); D521–532 is the `ゲロゲロ` frog king in
@@ -7750,7 +7750,7 @@ No player sees both. **Keep the rendering; the reason is replaced.** `ｏｄｄ�
 | `大当たり` | `ｗｉｎ　ｂｉｇ` | 7 | D1393 ×2 (`大当たり！`, `大当たりすると、`) — one English for both so the sentence pair keeps its echo. **Exhausted**, 0 prior hits anywhere |
 | `お待たせっ` | `Ｓｏｒｒｙ　ｆｏｒ　ｔｈｅ　ｗａｉｔ` | 20 | D1388. **Exhausted**, 0 prior hits |
 | `手続き` | `ｆｏｒｍａｌｉｔｉｅｓ` | 12 | **Not new — this RECORDS `batch_010.tsv:38`'s incumbent** (`入場の手続き` → `ｅｎｔｒｙ　ｆｏｒｍａｌｉｔｉｅｓ`), which the glossary never carried. D1428 is `帰るための手続き` → `ｒｅｔｕｒｎ　ｆｏｒｍａｌｉｔｉｅｓ`. **Exhausted** (2 script-unique, both shipped) |
-| `荷物` | `ｐａｃｋ` | 4 | D1406, D1427. **Not new — RECORDS `batch_006.tsv:28`/`:63`'s incumbent**, beside `持ち物` → `ｐａｃｋ` (`batch_016.tsv:77`). ⚠️ **ROW STAYS LIVE: 5 script-unique, 0 battle, 4 shipped, D589 REMAINS** (batch 019's range, PR #40 open at integration). Status grepped in `tl/`, not inferred |
+| `荷物` | `ｐａｃｋ` | 4 | D1406, D1427. **Not new — RECORDS `batch_006.tsv:28`/`:63`'s incumbent**, beside `持ち物` → `ｐａｃｋ` (`batch_016.tsv:77`). ~~⚠️ **ROW STAYS LIVE: 5 script-unique, 0 battle, 4 shipped, D589 REMAINS**~~ ✅ **DISCHARGED and EXHAUSTED at the PR #40 integration**: D589 shipped at `batch_019.tsv:41` (`おや？荷物が いっぱいみたいだぜ。` → `Ｏｈ？　Ｙｏｕｒ　ｐａｃｋ{FFFE}ｌｏｏｋｓ　ｆｕｌｌ．`), so **5 of 5 script-unique shipped, 0 battle, 0 remaining**. The PR #41 reviewer's `tl/` grep — which stopped this row being struck one wave early — is upheld. Status grepped in `tl/`, not inferred |
 | `ご用` (elliptical / polite pair) | `Ｎｅｅｄ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` / `Ｉｓ　ｔｈｅｒｅ　ｍｏｒｅ　ｙｏｕ　ｎｅｅｄ？` | 19 / 23 | D1401 (casual) and D1422 (polite). Held apart from each other and from the corpus per §42.2 — see §59.6 |
 | `何がお望み` / `何がお望みですか` | `Ｗｈａｔ　ｗｏｕｌｄ　ｙｏｕ　ｌｉｋｅ？` / `Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｐｌｅａｓｕｒｅ？` | 20 / 22 | D1396 / D1417, the register pair. Both verified free across `tl/script/` and `tl/battle/` |
 | `いい？` / `いいですか？` (offer confirmation) | `ｗｉｌｌ　ｔｈａｔ　ｄｏ？` / `ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` | 13 / 14 | D1403, D1412 and D1424. Joins §34.9's shipped `になりますが？` → `Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` family rather than spending `ａｌｌ　ｒｉｇｈｔ`, which §34.7 records as already doing two jobs |
@@ -7842,3 +7842,179 @@ in the same two banks as all 25 of this unit's. §32.5's reserve `ｔｏｋｅ�
 ⚠️ **One rider for the disc:** the prize insert `{FFEC}{=00}{=03}` renders an **item name**, so if the Lion's
 Medal is ever a casino prize, D1404 reads `ｔｈｅ　Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ．` (**22** columns — it fits) beside
 `ｍｅｄａｌｓ` in the same message, and the "0 messages hold both" finding would no longer hold. See `FLAGS.md` §AU5.
+
+## 60. Added by script batch 019 (PR #40, merged 2026-09-11)
+
+Noro village, the frog king's court, the rough item shop and the smithy — DATA 465–469, 521–533,
+584–598, 870–879, **43 unique lines / 43 instances**, banks 3, 6, 7, 12, 25. Bank 3 7,741 → **7,311**
+free (+430); 6 13,115 → **12,565** (+550); 7 12,723 → **12,655** (+68); 12 8,187 → **7,695** (+492);
+25 11,829 → **11,097** (+732); **+2,272 B total**, no bank negative, and **none of the four banks under
+2,000 free is touched** (40 → 75 · 41 → 353 · 2 → 1,607 · **5 → 1,635** — read off the full
+`bankmeasure` table, because its `tightest:` line prints only three and bank 5 is invisible there).
+All five growth figures re-derived at review by removing and restoring the unit file. Merged round 1:
+**no must-change finding.** Every gate was run against a pinned merge tree (`3aec882`, derived twice
+from base `0b5cd44`).
+
+### 60.1 The three registers, and how they are held apart
+
+One file, three voices, and this is the unit's whole difficulty. It is solved, and the method is the
+row to keep.
+
+| Speaker | DATA | Bank | Marked by |
+|---|---|---|---|
+| Noro villagers and the smith | 465–469, 870–879 | 3, 25 | §5's `ノロ` tic, **30 → 30**, in §18.1's spaced form |
+| the frog king, **full-katakana source** | 521–532 | 6 | §5's `ゲロゲロ` → `Ｒｉｂｂｉｔ`, **7 → 7**, plus dropped articles and copulas |
+| chamberlain · rough shopkeeper · keigo clerk | 533, 584–596, 597–598 | 7, 12 | keigo vs contractions; no tic |
+
+⭐ **RULING — the katakana register is carried by SYNTAX, never by mangled English spelling.** The
+frog's source is written entirely in katakana, which is his broken speech and not the game's own
+spelling; the English is therefore **ordinary, correctly-spelled English with articles and copulas
+dropped**. `ワレラノ　王ハ{FFFE}タダイマ　オヤスミ中。` → `Ｏｕｒ　Ｋｉｎｇ{FFFE}ｒｅｓｔｉｎｇ　ａｔ　ｐｒｅｓｅｎｔ．` ·
+`帝国ハ、頭イイ。` → `Ｅｍｐｉｒｅ　ｃｌｅｖｅｒ．` · `兵ノ数　イッパイ。` → `Ｙｏｕｒ　ｒａｎｋｓ　ｆｕｌｌ．` ·
+`コイツラ　キット{FFFE}役ニタツ！` → `Ｔｈｅｓｅ　ｓｕｒｅｌｙ{FFFE}ｕｓｅｆｕｌ！`. **This is not an invention — it is
+the shipped house form for this exact voice**, verified positionally against the battle dump at
+review: `tl/battle/chunk_010.txt` already ships `沼ヲオカス者、` → `Ｄｅｆｉｌｅｒｓ　ｏｆ　ｓｗａｍｐ　ａｒｅ`
+(article dropped *inside* the noun phrase) and `我ラ、強イ種族。` → `Ｗｅ，　ｓｔｒｏｎｇ　ｒａｃｅ．` for the
+ch.10 lizardmen, who share the `ゲロゲロ` tic per §5.
+
+⚖️ **The proof that the split works: D521 and D533 are the same message in two mouths.** Both say "the
+King is unavailable, come back later", and they stay visibly apart —
+frog `Ｏｕｒ　Ｋｉｎｇ{FFFE}ｒｅｓｔｉｎｇ　ａｔ　ｐｒｅｓｅｎｔ．{FFFE}Ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ．{FFFE}Ｒｉｂｂｉｔ．` against
+chamberlain `Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ｏｕｔ{FFFE}ｈｕｎｔｉｎｇ　ａｔ　ｐｒｅｓｅｎｔ．{FFFE}Ｆｏｒｇｉｖｅ　ｍｅ，　ｂｕｔ{FFFE}ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ．`
+— copula dropped and no apology against a full copula, an apology and §42.6's no-contraction
+deference. The shared `ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ` is the `batch_008:59` / `batch_009:37` incumbent and is
+correct in both.
+
+### 60.2 ⭐ RULING — the two shops in bank 12 are held apart, and this is the model for it
+
+**D582–D614 are ALL in bank 12** (read off the `=== BANK` headers at review, not inferred): a **rough**
+shopkeeper at D582–D596 (`んだい` / `だぜ` / `くんな` / `かい？`) and a **keigo** clerk at D597–D611. They
+are parallel message for message, and §25.3 is satisfied **by contractions and syntax, never by added
+words** (§2, §34.10). Verified mechanically: **4 apostrophes in the rough run, 0 in the keigo clerk's
+own run** — the single apostrophe inside `batch_006:23–38` is at `:37`, the shopkeeper's *daughter*, a
+third speaker.
+
+| Function | rough (this unit) | keigo (`batch_006`) |
+|---|---|---|
+| which one | `Ｗｈｉｃｈ　ｏｎｅ　ｗｉｌｌ　ｉｔ　ｂｅ？` (D585) | `Ｗｈｉｃｈ　ｗｉｌｌ　ｙｏｕ　ｈａｖｅ？` (D599) |
+| confirm | `，　ｔｈｅｎ？` / `Ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` (D586) | `，　ｉｓ　ｉｔ？` / `Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` (D600) |
+| short of funds | `Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}ｍｏｎｅｙ．` (D588, `お金`) | `Ｉ　ｂｅｇ　ｙｏｕｒ　ｐａｒｄｏｎ，　ｂｕｔ…` (D603, `ジュエル`) |
+| pack full | `ｌｏｏｋｓ　ｆｕｌｌ` / `ｙｏｕ　ｄｏｎ’ｔ　ｎｅｅｄ` / `ｃｏｍｅ　ａｇａｉｎ，　ｗｉｌｌ　ｙｏｕ．` (D589) | `ｓｅｅｍｓ　ｔｏ　ｂｅ　ｆｕｌｌ` / `ｙｏｕ　ｄｏ　ｎｏｔ　ｎｅｅｄ` / `ｐｌｅａｓｅ　ｃｏｍｅ　ａｇａｉｎ．` (D604) |
+| which to sell | `Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｉｌｌ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ？` (D590) | `…　ｗｏｕｌｄ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ？` (D605) |
+| sell confirm | `Ｆｏｒ　ｔｈａｔ　ｏｎｅ，` / `Ｉ’ｄ　ｇｉｖｅ．　Ｈｏｗ’ｓ　ｔｈａｔ？` (D591) | `Ｉｎ　ｔｈａｔ　ｃａｓｅ，` / `Ｉ　ｓｈａｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ` (D606) |
+| don't sell that | `Ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ　ｔｈａｔ{FFFE}ｏｎｅ，　Ｉ　ｒｅｃｋｏｎ．{FFFE}Ｌｅａｖｅ　ｉｔ　ａｌｏｎｅ．` (D593) | `Ｉ　ｂｅｌｉｅｖｅ　ｉｔ　ｗｏｕｌｄ　ｂｅ…` (D609) |
+
+⚖️ **D591's `{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ　ｉｓ　ｗｈａｔ{FFFE}Ｉ’ｄ　ｇｉｖｅ．` is doubly determined and must not be
+"fixed" to match `batch_014:42`'s `Ｉ’ｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ`.** (a) Geometry: it is the tightest insert row
+in the unit at **8/9 price digits** (fixed text 15), and every packing that reuses the other form
+either overruns the source's 5-row page or squeezes the price budget to 2–5 digits. (b) **Register: the
+`Ｉ…ｔａｋｅ　ｉｔ　ｆｏｒ` formula belongs to keigo D606 in the SAME BANK.** Reusing it would have collapsed
+the rough shop onto the polite one at the exact message where they differ.
+
+### 60.3 Words and phrases first fixed here
+
+| Japanese | English | Cols | Note |
+|---|---|---|---|
+| `かじ屋` | `ｓｍｉｔｈｙ` | 6 | **Promotes §9's wave-11 seed, used exactly as seeded.** D871 `ここは、かじ屋ノロ。` → `Ｔｈｉｓ　ｉｓ　ｔｈｅ{FFFE}ｓｍｉｔｈｙ，　ｎｙｏｒｏ．` — the *place*, which `ここは` requires. **EXHAUSTED**, `tl/` grepped: 1 script-unique, 0 battle, 0 remaining. `batch_010.tsv:31` is the same shop and names it nothing (`ここでは、…`), so nothing is contradicted |
+| `クロイ馬ノ騎士` | `Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ` | 19 | **Promotes §9's seed; the NOUN exactly as seeded.** The seed's leading `ｔｈｅ` is displaced by the genitive it always appears under. **EXHAUSTED**: 1/1/0 battle, D527. `黒い馬` = 0 occurrences in either dump, so no rival spelling exists |
+| `イチバン` | `ｎｕｍｂｅｒ　ｏｎｅ` | 10 | The frog king's superlative in his katakana. D522 ×3 (`Ｙｏｕ　ａｌｌ，　ｎｕｍｂｅｒ　ｏｎｅ．` / `Ｎｕｍｂｅｒ　ｏｎｅ　ｓｔｒｏｎｇ　ｏｎｅｓ，` / `Ｎｕｍｂｅｒ　ｏｎｅ　ｇｒｅａｔ．` — the triple anaphora IS the line), D525 ×1, D527 ×1. 3 script-unique / 5 word-occurrences, **0 battle in this spelling — but see §60.4, which is the row that actually binds** |
+| `兵器` | `ｗｅａｐｏｎ` | 7 | ⚠️ **NOT a first rendering — this RECORDS the battle incumbent**, corrected at review (see §60.5). D532 `兵器ヲ　持ッテイル。` → `Ｔｈｅｙ　ｈａｖｅ　ｔｈａｔ　ｗｅａｐｏｎ．` **ROW STAYS LIVE**: 5 script-unique / 45 instances / 8 battle; **D220 and D221 (`レーザー兵器`, ×21 each), D518 and D520 remain** |
+| `ショウガナイ` | `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` | 18 | Not a new form — the katakana variant of `仕方ない` / `しかたない`, §17.2's kana-variant collapse. `batch_007:45/55/66`, `batch_014:20/23/32`, `batch_015:54/67` all ship `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ`. D526 `ショウガナイ・・・。` → `．．．．` (3 dots + the stop = 4). Recorded so the katakana cannot drift; `しかたない` also sits in bank 25 at D876 |
+| `気に入らない` / `気ニ　イラナイ` | `Ｎｏｔ　ｔｏ　ｙｏｕｒ　ｌｉｋｉｎｇ` | 19 | One phrase, two speakers, one core English, banks disjoint: D526 (frog, bank 6) `Ｎｏｔ　ｔｏ　ｙｏｕｒ　ｌｉｋｉｎｇ？`, D876 (Noro, bank 25) `Ｎｏｔ　ｔｏ　ｙｏｕｒ　ｌｉｋｉｎｇ，{FFFE}ｎｙｏｒｏ？`. The register is carried by the tic and by what follows, not by a second English |
+| `行き違いになる` | `ｍｉｓｓ　ｅａｃｈ　ｏｔｈｅｒ` | 17 | D467. Hapax, 1/1/0. The **mutual** sense is the point — chief and party crossed on the road; `ｍｉｓｓｅｄ　ｈｉｍ` was rejected as one-sided even though it would have saved a row |
+| `でき映え` | `ｐｉｅｃｅ　ｏｆ　ｗｏｒｋ` | 13 | D875 `なかなかの{FFFE}でき映えノロ。` → `Ｑｕｉｔｅ　ａ　ｆｉｎｅ{FFFE}ｐｉｅｃｅ　ｏｆ　ｗｏｒｋ，　ｎｙｏｒｏ．` Hapax, 1/1/0 |
+| `石` (crafting) | `ｓｔｏｎｅ`, bare lowercase | 5 | D873 `どの石を　使うノロ？`. Held **distinct** from §3's `パワーストーン` → `“Ｐｏｗｅｒ　Ｓｔｏｎｅ”`, §33.5's `宝石` → `ｇｅｍｓｔｏｎｅ` and §51.1's `石版` → `ｔａｂｌｅｔ`. The menu it opens is a runtime item list, so no stone name is rendered — see §9 |
+| `ＯＫ　カ？` | `ＯＫ？` | 3 | D524. **The source itself writes `ＯＫ` in full-width Latin**, which passes §3.1 unchanged — the same case §9 records for `Ｒ１ボタン`. Deliberately *not* collapsed onto `Ａｌｌ　ｒｉｇｈｔ？`, which the same message already spends on `イイカ？` two rows above |
+| `また　どうぞ` | `ｄｏ　ｃｏｍｅ　ａｇａｉｎ` | 17 | ✅ **CROSS-UNIT PAIR CLOSED, and the two agree.** D596 (bank 12, this unit) `また　どうぞ！` → `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！`; D1426 (bank 43, `batch_018:44`) `ご用の際は、また　どうぞ。` → `ｄｏ　ｃｏｍｅ　ａｇａｉｎ．` — one phrase, **case by sentence position and punctuation following each source**, per §34.1. **EXHAUSTED**: 2 of 2 shipped, 0 battle |
+
+**Incumbents conformed to, recorded only so they cannot drift** (all verified in `tl/` at review, none
+newly coined): `他に　用はないノロか？` → `Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？` (§38.2, = `batch_007:49/60`) ·
+`で、今日はどんな用ノロ？` → `Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ{FFFE}ｔｏｄａｙ，　ｎｙｏｒｏ？` (§52.3, byte-identical to all
+three of `batch_007:40/50/61` — **this two-row incumbent is why D466 needed its fifth `{FFFE}`**) ·
+`他ニ　用アルカ？` → `Ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？` (= `batch_011:20`) · `他にも　用はあるかい？` →
+`Ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` (= `batch_014:33`) · `どの品を売ってくれるんだい？` →
+`Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｉｌｌ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ？` (= `batch_014:37`, byte-identical) ·
+`貼り紙がしてある・・・` → `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` (three files) · `材料` → `ｍａｔｅｒｉａｌｓ` and
+`武器や防具` → `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` (= `batch_010:31`, the same smith) · `荷物` → `ｐａｃｋ` (§59.5) ·
+`品` → `ａｒｔｉｃｌｅ` held apart from `アイテム` → `ｉｔｅｍ` (§34.4) · honorific `ご用` → `ｅｒｒａｎｄ` (D597)
+held apart from plain `用` → `ｂｕｓｉｎｅｓｓ` (D530) per §42.2 / §46.2 · `兵の数…いっぱい` → `ｒａｎｋｓ` and
+`補充` → `ｒｅｃｒｕｉｔｉｎｇ` (§38.2) held apart from `荷物` → `ｐａｃｋ`, **both present here and correctly
+split** (D529 vs D589) · `いらっしゃい*` → `Ｗｅｌｃｏｍｅ` + the source's own punctuation (§34.1: D597 `．`,
+D871 `！`) · `毎度あり` → `Ｍａｎｙ　ｔｈａｎｋｓ` · `じゃあ、` → `Ｗｅｌｌ　ｔｈｅｎ，` (§57.2) · `でも、` → `Ｂｕｔ，`
+(§28) · `おや？` → `Ｏｈ？` · `ふう` → `Ｐｈｅｗ，` · `またの機会に` → `Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ` (§52.2) ·
+`村長` → `village chief` · `メルザリオ` → `Ｍｅｌｚａｒｉｏ` · `カーライン` → `Ｃａｒｌｉｎｅ` · `帝国` → `the Empire`.
+
+### 60.4 ⚠️ `イチバン` is EXHAUSTED ONLY IN ITS KATAKANA SPELLING — `一番` is already shipped in battle
+
+**The second §9-shaped census error in two waves, caught at review, and the row that binds is this
+one.** The PR censused `イチバン` (3 script-unique, **0 battle**) and proposed to strike the row as
+exhausted. It is exhausted *in that spelling*. But **`一番` — the same word, the same
+frog/lizardman register — is 0 in the script and 2 in the battle dump, and one of them is the
+identical sentence formula, already shipped**:
+
+> `tl/battle/chunk_010.txt` — `一番強イ奴、一番エライ。` → **`Ｓｔｒｏｎｇｅｓｔ　ｉｓ　ｈｉｇｈｅｓｔ．`**
+> against this unit's D522 `イチバン　ツヨイ奴、{FFFE}イチバン　エライ。` → `Ｎｕｍｂｅｒ　ｏｎｅ　ｓｔｒｏｎｇ　ｏｎｅｓ，{FFFE}Ｎｕｍｂｅｒ　ｏｎｅ　ｇｒｅａｔ．`
+
+⚖️ **NEITHER rendering is wrong and NEITHER was changed.** D522's source repeats `イチバン` **three times
+across three rows** (`オ前ラ、イチバン。` heads it), and the triple anaphora is the characterisation;
+`Ｓｔｒｏｎｇｅｓｔ　ｉｓ　ｈｉｇｈｅｓｔ．` is one row and cannot carry it, while the battle line has only two
+`一番` and no third row to fill. **And D527 already lands on the battle incumbent**: `イチバン　ツヨイ。`
+→ `Ｓｔｒｏｎｇｅｓｔ．` (10), forced there by §2.1 step 4 — the four-row page must also hold
+`Ｏｕｒ　ｂｒｏｔｈｅｒｓ　ｓａｗ　ｈｉｍ．` (21), a two-row `Ｅｍｐｉｒｅ’ｓ　Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ．` (28) and
+`Ｂｅｗａｒｅ．　Ｒｉｂｂｉｔ．` (15), and `Ｎｕｍｂｅｒ　ｏｎｅ　ｓｔｒｏｎｇ．` (18) needs a fifth row. Shipped 21/20/18/15.
+**So both forms already coexist by design, and the rule is: `ｎｕｍｂｅｒ　ｏｎｅ` where the box allows the
+repetition, `Ｓｔｒｏｎｇｅｓｔ` where it does not — and `Ｓｔｒｏｎｇｅｓｔ` is the battle store's word, not a
+coinage.** Whoever next meets `一番` in this register is bound by `chunk_010`, not by the katakana row.
+
+### 60.5 ⚠️ CORRECTION — `兵器` → `ｗｅａｐｏｎ` was NOT a first rendering
+
+The PR's glossary cell read "**First rendering anywhere**". It is not, and the error is instructive:
+the dump census (5 script-unique / 45 instances / 8 battle) was **exactly right**, but a *rendering
+status* was asserted from it. **Battle `tl/` holds no Japanese, so grepping it is a null check** — the
+battle dump has to be paired **positionally** against `tl/battle/`, and doing so at review found
+`兵器` → `ｗｅａｐｏｎ` already shipped **five times in three chunks**:
+
+| file | source | shipped English |
+|---|---|---|
+| `tl/battle/chunk_008.txt` | `新兵器なのかな？` | `ｎｅｗ　ｗｅａｐｏｎｓ？` |
+| `tl/battle/chunk_008.txt` | `兵器工場を作ったんだ。` | (`ｔｈｅ　Ｅｍｐｉｒｅ　ｂｕｉｌｔ` a weapons factory) |
+| `tl/battle/chunk_009.txt` | `この兵器のえじきに` | `ｆｏｒ　ｔｈｉｓ　ｗｅａｐｏｎ！！` |
+| `tl/battle/chunk_009.txt` | `しかし恐ろしい兵器だ。` | `ｗｈａｔ　ａ　ｔｅｒｒｉｂｌｅ　ｗｅａｐｏｎ{FFFE}ｉｔ　ｉｓ．` |
+| `tl/battle/chunk_042.txt` | `立派な兵器を` | `ａ　ｆｉｎｅ　ｗｅａｐｏｎ　ｔｏ　ｂｅａｒ，` |
+
+**D532 is therefore consistent with every shipped instance** — the correction strengthens the unit. But
+two consequences bind: (1) the §60.3 row records an incumbent, not a coinage; (2) ⚠️ **`ｏｒｄｎａｎｃｅ` is
+NOT freely available as the reserve on the `兵器` side** of its live collision with `武器` → `ｗｅａｐｏｎ`
+(§AV). Taking it would contradict five merged battle lines, so the collision, if it ever has to be
+broken, must be broken on terms that account for them.
+
+### 60.6 Geometry — every `{FFFE}` added is forced, and the insert rows are hand-measured
+
+**Four `{FFFE}` added on 43 lines, no `{FCC0}` moved anywhere, every other tag byte-identical in count,
+order and spelling on all 43 lines.** Each addition re-measured from the file at review; the one-row
+alternative is over the 24-column limit in every case: **D466 4→5 (one row = 31)** · **D467 4→5 (29)** ·
+**D871 2→3 (26; `Ｈｅｒｅ’ｓ　ｔｈｅ　ｓｍｉｔｈｙ，　ｎｙｏｒｏ．` = 25 and `Ｔｈｅ　ｓｍｉｔｈｙ　ｉｓ　ｈｅｒｅ，　ｎｙｏｒｏ．` = 26
+are no better)** · **D873 1→2 (28; dropping `使う` would fit at 19 but loses the verb, and
+`batch_010:34`'s `Ｗｈａｔ　ｄｏ　Ｉ　ｍａｋｅ，　ｎｙｏｒｏ？` shows this smith's idiom keeps it)**.
+
+**No row exceeds 23 columns**; the widest are six rows at exactly 23 (D522, D528, D593, D594, D875,
+D878). ⚠️ **`rowcheck.py:_script_cols` expands only `{FFEC}{=00}{=00}` (to 7) and strips every other
+insert to ZERO columns, so insert rows must be hand-measured.** This unit has **FIVE** insert-bearing
+rows and eight inserts — the PR's own flag table listed four and **omitted D874**:
+
+| DATA | insert | fixed text | runtime budget ≤ 23 / ≤ 24 |
+|---|---|---|---|
+| D469 | player name | 15 | name capped at 7 (§8) → row is **22**, verified |
+| D524 | unit name `，` | 1 | 22 / 23 |
+| D524 | price `　Ｊｅｗｅｌｓ．` | 8 | 15 / 16 digits |
+| D586 | item name `，　ｔｈｅｎ？` | 7 | 16 / 17 |
+| D586 | price | 8 | 15 / 16 digits |
+| D591 | item name `，` | 1 | 22 / 23 |
+| **D591** | **price `　Ｊｅｗｅｌｓ　ｉｓ　ｗｈａｔ`** | **15** | **8 / 9 digits — the tightest row in the unit** |
+| **D874** | **item name `，`** | **1** | **22 / 23 — the row the PR's table missed; the most generous budget here** |
+
+D591's page 2 is 5 text rows and the **source's own page is already 5**, so it is inherited, not
+introduced. D586's item-name budget of 16 is identical to three merged rows (`batch_006:24`, the same
+shop chain and the same bank 12, plus `batch_011:17`/`:25`, all shipping `{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？`),
+so this unit is no tighter than shipped work. **The item-name table's true maximum width remains
+unrecorded and needs the binaries — see §AV.**

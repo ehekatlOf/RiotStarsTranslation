@@ -12,17 +12,22 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ### ▶ WAVE 11 IS RUNNING — 3 UNITS DISPATCHED 2026-09-11. Coordinator: `session_012m7kST3Y5f2ag1jqg6pX8y`.
-> **Units: `batch_017` (DATA 1100–1159), `batch_018` (DATA 1388–1413 / 1415–1430), `batch_019`
-> (DATA 465–469, 521–533, 584–598, 870–879).** Glossary seeds committed at `80fe2d1` (§9, wave-11
-> block: Table A 7 incumbents + Table B 24 new rows). `check` green.
+> ### ▶ WAVE 11 IS COMPLETE — ALL 3 UNITS MERGED AND INTEGRATED 2026-09-11. Coordinator: `session_012m7kST3Y5f2ag1jqg6pX8y`.
+> **Units: `batch_017` (PR #42, squash `6e30b45`), `batch_018` (PR #41, squash `426f8c1`),
+> `batch_019` (PR #40, squash `dcd2c57`).** Barrier was met at all three PRs; **each unit had its
+> own independent reviewer subagent** — the coordinator translated nothing and merged nothing.
+> **0 parked, 0 audit debt.** `check` green on the integration branch.
 >
-> **NOW: `batch_019` (PR #40) is the LAST unit of wave 11.** Barrier was met at all three PRs.
-> **`batch_017` MERGED** (squash `6e30b45`) and **`batch_018` MERGED** (squash `426f8c1`), both
-> round 2, both with an independent reviewer. **Dispatch ONE `reviewer` subagent for PR #40,
-> foreground, then close the wave and open wave 12's session.**
-> ⚠️ `git pull --ff-only` first: the 018 integration commit is on this branch.
-> Then one `reviewer` subagent at a time, in unit order 017 → 018 → 019, foreground.
+> **NOW, COORDINATOR — two things, in this order, in the same turn:**
+> 1. **Close wave 11**: `git pull --ff-only` (the 019 integration commit is on this branch), run
+>    `python3 tools/assemble.py merge` and commit `build/*_dump_merged.txt` if changed (⚠️ **the
+>    committed `build/` is stale — it predates all three wave-11 units**), refresh the README status
+>    table from `status`, prune worktrees, commit and push `handoff: wave 11 closed`.
+> 2. **Then IMMEDIATELY open wave 12's session** with `create_session` (⚠️ **`source_url` is
+>    REQUIRED alongside `source_revision`**), `source_revision` = `claude/workflow-translation-iterate-uzlkns`,
+>    seeded with nothing but the wave number and "read `HANDOFF.md` first". **Do not stop to
+>    summarise and do not wait to be asked** — CLAUDE.md §4 step 7.
+>
 > A translator that is still working is **not** a failure — wait. One that is **gone from
 > `ListAgents` with no PR is LOST** — prune its worktree and re-dispatch (2 max, then park).
 >
@@ -31,52 +36,66 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > **In flight** below, restart what is lost, re-arm a `send_later` watchdog, finish the wave, then
 > open wave 12 with `create_session` (⚠️ **`source_url` is REQUIRED alongside `source_revision`**).
 >
-> ✅ **NO AUDIT DEBT CARRIED IN.** Wave 10's three units each had an independent reviewer.
+> ✅ **NO AUDIT DEBT, IN OR OUT.** Wave 10's three units and wave 11's three units each had an
+> independent reviewer subagent. Nothing in waves 10–11 is self-reviewed.
 >
 > ⚠️ **WAVE 11 IS SCRIPT-ONLY.** Battle stays blocked on Blocked 0 / 0a. The run is **not** complete.
 
 ## Last updated
-2026-09-11 · by: **the `batch_018` REVIEWER** (integration commit) · wave: **11 — 2 of 3 merged
-(`batch_017` PR #42 and `batch_018` PR #41, both round 2), 1 awaiting review (`batch_019`, PR #40),
-0 parked** · glossary now ends **§59**, FLAGS ends **§AU** — both numbers taken by READING the files
-at commit time, not reserved
+2026-09-11 · by: **the `batch_019` REVIEWER** (integration commit) · wave: **11 — ALL 3 MERGED
+(`batch_017` PR #42 r2, `batch_018` PR #41 r2, `batch_019` PR #40 **round 1**), 0 parked, 0 audit
+debt** · glossary now ends **§60**, FLAGS ends **§AV** — both numbers taken by READING the files at
+commit time, not reserved
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **905** | 1,430 | `tl/script/batch_001–018.tsv` (was 863) |
-| Script message instances | **4,998** | 7,931 | **63.0%** (was 62.5%) |
+| Script unique lines | **948** | 1,430 | `tl/script/batch_001–019.tsv` (was 905) |
+| Script message instances | **5,041** | 7,931 | **63.6%** (was 63.0%) |
 
-`check`: **All checks passed** after the `batch_018` integration commit. glossary ends **§59**,
-FLAGS ends **§AU** — both re-read at commit time.
+`check`: **All checks passed** after the `batch_019` integration commit. glossary ends **§60**,
+FLAGS ends **§AV** — both re-read at commit time.
+⚠️ **`build/*_dump_merged.txt` on this branch is STALE** — it predates `batch_017`, `batch_018` and
+`batch_019` (147 lines out of date). Regenerating it is the coordinator's wave-close step, not a
+reviewer's; `assemble.py` reads only `tl/`, so no build is broken by this.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, so bank 5 is invisible to anyone quoting it.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
-**WAVE 11 — three units, all script, all dispatched 2026-09-11. Barrier met; `batch_017` MERGED.**
+**WAVE 11 — three units, all script, all dispatched 2026-09-11. Barrier met; ALL THREE MERGED.**
 
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
 | `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | ✅ **MERGED 2026-09-11, round 2** — squash **`6e30b45`**, integration commit **`integrate: script batch 017 — glossary, flags, handoff`** (the commit directly after `6e30b45` on this branch). Bank 33 8,919 → **5,627** free (3,292 B); 6,152 B over banks 31–39; no bank negative. All 9 gates ✓ re-run from scratch on merged tree **`fa2d957`**. ⚠️ **Branch `tl/script-017` still on origin — deletion returns HTTP 403 (FLAGS §AQ9); NOT deleted** |
 | `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **MERGED 2026-09-11, round 2** — squash **`426f8c1`**, integration commit `integrate: script batch 018 — glossary, flags, handoff` (the commit directly after `426f8c1` on this branch). Bank 42 11,301 → **9,645** free (−1,656), bank 43 9,995 → **8,947** (−1,048), **total −2,704**; no bank negative, **exactly two banks moved** (proved by a `bankmeasure` diff with the file removed and restored). 1,299 JP → 2,647 EN = **2.038×**. All 8 gates ✓ re-run from scratch on merge tree **`7dbe045`** (base pinned `44d7cd7`, head `87c4420`, `git merge-tree` + `git archive`, **no working tree**). ⚠️ **Branch `tl/script-018` still on origin — deletion returns HTTP 403 (FLAGS §AQ9/§AU9); NOT deleted** |
-| `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
+| `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960² | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **MERGED 2026-09-11, ROUND 1 — no must-change finding** — squash **`dcd2c57`**, integration commit `integrate: script batch 019 — glossary, flags, handoff` (the commit directly after `dcd2c57` on this branch). Banks 3 7,741→**7,311** (+430) · 6 13,115→**12,565** (+550) · 7 12,723→**12,655** (+68) · 12 8,187→**7,695** (+492) · 25 11,829→**11,097** (+732) = **+2,272 B**; no bank negative, **none of the four banks under 2,000 free is touched**. All 8 gates ✓ re-run on merge tree **`3aec882`** (base pinned `0b5cd44`, head `86bb1bb`, `merge-tree --write-tree` derived **twice** and compared before use). ⚠️ **Branch `tl/script-019` still on origin — deletion returns HTTP 403 (FLAGS §AQ9/§AU9/§AV9); NOT deleted** |
 
-**Who acts next: the WAVE-11 COORDINATOR — dispatch the reviewer for `batch_019` (PR #40), the LAST
-unit of wave 11.** ✅ Barrier was met at all three PRs; `batch_017` and `batch_018` are merged and
-integrated. One reviewer at a time, foreground. ⚠️ **`git pull --ff-only` first — the 018 integration
-commit is on `claude/workflow-translation-iterate-uzlkns`.**
-⚠️ **THREE GLOSSARY ROWS BATCH 019 OWES, all verified LIVE at the 018 integration by grepping `tl/`,
-not by re-reading a reach:** `　店を出る` → **D584, D598** (and **D339**, which §7's cell never named
-— corrected), `また　どうぞ` → **D596** (takes `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！`; `batch_018` D1426 already ships
-`ｄｏ　ｃｏｍｅ　ａｇａｉｎ．` for `また　どうぞ。`, so the words are fixed and only case and final punctuation
-follow each source), `いらっしゃいませ` → **D597**, and `荷物` → **D589**.
+² 960 is the kana+kanji-only count; the same 43 lines are **1,155** readable characters under
+`translation_prompt.md` §0.2's tag-stripped convention. Both are correct under their own definition
+and both are recorded so they are not read as a contradiction.
+
+**Who acts next: the WAVE-11 COORDINATOR — close the wave, then open wave 12's session in the same
+turn.** ✅ All three units merged and integrated, each by its own independent reviewer. ⚠️ **`git pull
+--ff-only` first — the 019 integration commit is on `claude/workflow-translation-iterate-uzlkns`.**
+
+✅ **THE FOUR GLOSSARY ROWS BATCH 019 OWED — ALL DISCHARGED OR CORRECTLY LEFT LIVE, every status
+grepped in `tl/` at integration (status is not reach):**
+- `　店を出る` → **D584 and D598 shipped**, so 9 of 10 done — ⚠️ **ROW STAYS LIVE, D339 (×2) remains.**
+  The 018 correction that first named D339 is upheld.
+- `また　どうぞ` → **D596 shipped and it AGREES with `batch_018`'s D1426**: `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！` /
+  `ｄｏ　ｃｏｍｅ　ａｇａｉｎ．`, one phrase, case by sentence position, punctuation following each source.
+  **EXHAUSTED, 2 of 2.**
+- `いらっしゃいませ` → **D597 shipped; all 11 script-unique lines now done. EXHAUSTED.** The one battle
+  "hit" is a false positive (`chunk_006`'s inflected `いらっしゃいません` / `いらっしゃいました`).
+- `荷物` → **D589 shipped; 5 of 5. EXHAUSTED**, discharging §59.5's row.
 
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
+| 019 | #40 | 1 | ✅ **MERGE** | **All 8 gates PASSED on the first round — the first script unit in four waves to need no rework.** Tree `3aec882` **derived twice** from pinned base `0b5cd44` before use. Gate 7 run row-first with the key count stated: a backtick-only harvester found **1,589 keys / 65 hits**, but adding **plain un-backticked column-0 cells** raised it to **2,512 keys / 89 hits** — ⚠️ **`glossary.md:67`'s `帝国` row, the one this unit's Flag 3 turns on, is itself un-backticked and invisible to a backtick-only gate 7** (FLAGS §AV7). Reviewer re-derived all seven claims it was asked to: the `炎の雨` census (5 unique / 25 / D223 ×21, and `batch_008:71`'s lowercase `ａ　ｂａｔｔｅｒｙ　ｒａｉｎｉｎｇ　ｆｉｒｅ`) ✓, the `兵器` census ✓, **all four `{FFFE}` one-row measurements (31 / 29 / 26 / 28, every one over 24, so all four forced)** ✓, zero `帝国軍` ✓, **Flag 11's two-shops-in-bank-12 split read off the `=== BANK` headers** ✓, Flag 12's bank sets ✓, and **all eight insert budgets incl. D591's 8/9-digit worst case** ✓. **Five findings, none blocking, all integration corrections**: (1) `兵器` → `ｗｅａｐｏｎ` is **NOT a first rendering** — shipped 5× in battle chunks 008/009/042, so `ｏｒｄｎａｎｃｅ` is not a free reserve (§60.5, §AV2); (2) the `イチバン` "0 battle, exhausted" is **katakana-only** — `一番` ships `Ｓｔｒｏｎｇｅｓｔ　ｉｓ　ｈｉｇｈｅｓｔ．` in `chunk_010` (§60.4, §AV3); (3) **a FIFTH insert row, D874, missing from the PR's flag table** (§AV5); (4) Flag 12 cited `batch_011:27` for a line at **`:34`**, and checked the banks it borrowed from but not bank 12, which already holds `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ` at `batch_006:52` (§AV6); (5) four one-column slips in the PR's supporting arithmetic, all safe-direction (§AV6). ⭐ **Reading review: the three registers are held apart and the katakana register is carried by SYNTAX, not mangled spelling** — verified against `chunk_010`'s shipped `Ｄｅｆｉｌｅｒｓ　ｏｆ　ｓｗａｍｐ　ａｒｅ` / `Ｗｅ，　ｓｔｒｏｎｇ　ｒａｃｅ．` for the same voice. Tics 30→30 and 7→7, counted line by line |
 | 018 | #41 | 2 | ✅ **MERGE** | Head `87c4420`. Translator **verified finding 1 positionally against the battle dump before applying it** — both reviewer FILE-line citations hold, census reproduced exactly (5 true hits after removing 2 false positives). Accepted 2(a)–(e) and 3; **disclosed one deviation** (D1409 shipped as ONE row, `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` 21, on a §5 volitional split) and **corrected two reviewer figures** (17 not 16, 6 not 7). **REVIEWER RULING: all 8 gates ✓ on tree `7dbe045`; the rework is exactly 2 rows with the tag stream identical on both; every reported figure re-derived and confirmed (−1,656 / −1,048 / −2,704 / 2.038×).** ⭐ **The translator's D1409 form was ACCEPTED and the reviewer's proposal was the worse one** — `ｓｈａｌｌ` would have put a volitional marker on a plain non-past source and collapsed the §5 split the same review endorsed in round 1. **The reviewer was wrong on three counts and says so in FLAGS §AU8**: two `len()` figures (17 not 16, 6 not 7), its own §AT8 0-based-index slip (`えっ、王女様が` is non-empty #20, index 19), and that proposal. Items 4 (gate-7 note-cell hole) and 5 (`さあ、` → `Ｃｏｍｅ，` at `chunk_030.txt:27`) **verified and integrated**; item 6 (the `ｔｈｅ　` deletion) **declined with reasons, recorded as a costed reserve in FLAGS §AU6** |
 | 018 | #41 | 1 | **CHANGES** | **All 8 gates PASSED** (base pinned `f64ca52`, tree `9b68866`, `git archive`, no working tree). Gate 7 **1,540 raw / 1,300 distinct keys, 31 occur**. Reviewer re-derived **all ten `{FFEC}` insert rows** — every figure matched the PR, incl. the 21-column worst case at D1420. **1 finding on the file** ⤵ · Rework relayed to `a128d73965f6152f7`, round 1 of 3 |
 | 017 | #42 | 2 | ✅ **MERGE** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways. **Reviewer re-derived everything rather than accepting it**: both `len()`s (18→19, 16→19), both page shapes (D1112 p3 = 14/11/19, D1138 p1 = 13/19/13, both 3 rows, no re-flow), the bank table (bank 33 **5,627**, total 6,152), and a **wider** pronoun sweep (adding `ｍａｎ/ｍｅｎ/ｗｏｍａｎ/ｈｉｍｓｅｌｆ/Ｌａｄｙ/Ｌｏｒｄ/…`) — after the fix **none of D1120, D1122, D1138 carries any gendered reference**. Base **pinned to a SHA** (`c017144`) because the integration branch moved twice mid-review and `merge-tree` silently returned a different tree each time |
@@ -156,6 +175,8 @@ sources, both mine, and the reviewer must NOT re-report them as the translator's
    — I conflated two rows.** `glossary.md:67` fixes bare **`帝国` → `ｔｈｅ　Ｅｍｐｉｒｅ`**; §20.4 is
    `帝国軍` only. `batch_019` contains `帝国軍` **zero** times and bare `帝国` twice (D527, D532), and
    it correctly rendered the Empire row. **The file is right and the dispatch was wrong.**
+   ✅ **CONFIRMED at the PR #40 review** — the reviewer re-counted `帝国軍` in the unit's own 43 keys
+   independently and got **zero**; the five `帝国軍` lines are D800, D801, D1102, D1356, D1366.
 2. ⭐ **My §9 seed `炎ノ雨` → `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ`, "1 unique, 0 battle — D532, exhausted", censused
    only the KATAKANA spelling.** Re-derived by me just now: **`炎の雨`, the ordinary spelling, is 5
    unique lines / 25 dump instances — D223 (count 21), D514, D518, D520, D1287** — and **D514 is
@@ -163,6 +184,14 @@ sources, both mine, and the reviewer must NOT re-report them as the translator's
    therefore takes §9's own stated lowercase alternative, `ｒａｉｎ　ｏｆ　ｆｉｒｅ`. ⚠️ **The §9 row must
    be kept LIVE, NOT struck as exhausted**, and whoever renders D223 decides the description sense.
    **This is wave 10's "measured ONE SIDE of a comparison" shape, committed by me in a seed.**
+   ✅ **BOTH CENSUSES RE-DERIVED AND CONFIRMED at the PR #40 review**, and the §9 row was **kept LIVE**
+   at integration with the corrected figures (glossary §9, FLAGS §AV4). ⭐ **AND THE SAME SHAPE
+   RECURRED INSIDE THE PR ITSELF**: its `イチバン` cell claimed "0 battle — the row is exhausted" on a
+   **katakana-only** census, while `一番` already ships `Ｓｔｒｏｎｇｅｓｔ　ｉｓ　ｈｉｇｈｅｓｔ．` in
+   `tl/battle/chunk_010.txt` for the identical sentence formula. Neither rendering was wrong and
+   nothing changed in the file, but the row is now scoped to the katakana and cross-referenced —
+   **glossary §60.4, FLAGS §AV3. Two waves, three instances: censusing ONE spelling of a two-spelling
+   term is now the single most repeated error in this run.**
 3. ⚠️ **My §9 seed's REASON for `的中確率` → `ｈｉｔ　ｒａｔｅ` is FALSE, though the rendering stands.**
    I wrote that `命中率` is *"a different word in a different store"*. Re-derived by me: `命中率` is
    **script DATA 830, 979, 1237 — 0 battle-dump hits — i.e. the SAME store**, and **D830 already
