@@ -13,14 +13,19 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 
 ## NEXT ACTION — always current, always a literal instruction
 > ### ✅ WAVE 10 IS CLOSED — 3 of 3 MERGED, 0 PARKED, 0 LOST, 0 RE-DISPATCHES. Script **59.7% → 61.7%**.
-> **▶ WAVE 11'S SESSION IS BEING OPENED NOW by wave 10's coordinator (`riotstarstranslation-31`),
-> in the same turn as this commit** (CLAUDE.md §4 step 7).
+> **▶ WAVE 11 IS OPEN: `session_012m7kST3Y5f2ag1jqg6pX8y`** ("Riot Stars — wave 11"), opened
+> 2026-09-11 08:02Z by wave 10's coordinator (`riotstarstranslation-31`,
+> `session_01QqghnLjqDZ5w9bDuM1WArC`) in the same turn as the wave-10 close — CLAUDE.md §4 step 7.
+> It is a **child of wave 10, so depth 2**, with a full tool surface: its own translators, its own
+> independent reviewer, its own watchdog, and it can open wave 12. **The chain is intact and no human
+> action is required.**
 >
-> ⚠️ **IF YOU ARE READING THIS AND NO WAVE-11 SESSION EXISTS, THE CHAIN BROKE BETWEEN THIS COMMIT AND
-> THAT SPAWN — OPEN IT YOURSELF.** `create_session`, inherit this environment, `source_revision` =
+> ⚠️ **If that session is gone or never started, the chain broke — open a replacement yourself.**
+> `create_session`, `source_url` https://github.com/ehekatlOf/RiotStarsTranslation, `source_revision`
 > `claude/workflow-translation-iterate-uzlkns`, prompt = the wave number, "read `HANDOFF.md` first",
 > and the Next up list below. Nothing else is outstanding: **no open PR, no unmerged branch, no
-> in-flight agent, `check` green.**
+> in-flight agent, `check` green at `1be8c31`.**
+> ⚠️ **`create_session` requires `source_url` alongside `source_revision`** — it errors without it.
 >
 > ✅ **NO UNIT IS SELF-REVIEWED AND THERE IS NO AUDIT DEBT.** All three units were reviewed by agents
 > that did not translate them, and **each went to a FRESH reviewer at round 2** — five separate
