@@ -696,7 +696,7 @@ reading, not as a fixed distinction.
 |---|---|---|---|
 | ~~`館の中は静まりかっている・・・。`~~ | ✅ **EXHAUSTED and PROMOTED to §55.1 by `batch_014` (PR #37, merged 2026-09-11)** — 3 of 3 script instances rendered (D711, D714, D716), 0 battle, **0 remaining**. Shipped with the corrected dot counts (4 / 4 / **5**). Original seed note follows: `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
 | ~~`館の中は静寂に　包まれている・・。`~~ | ✅ **EXHAUSTED and RULED at §55.1 (PR #37)** — rendered `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．`, deliberately **parallel to but distinct from** the `静まりかっている` row above, as this row asked. 2 of 2 rendered (D717, D720), byte-identical, **0 remaining**. Original seed note follows: — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
-| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647, `batch_014` D724, `batch_019` D870 | ⚠️ **ROW STAYS LIVE — D870 shipped by `batch_019` (PR #40), but the row is NOT exhausted.** Re-censused by grepping `tl/` at the PR #40 integration: **6 script-unique / 8 instances, 4 shipped (D633, D647, D724, D870), 2 REMAINING — D333 (×2) and D338 (×2)**, which no earlier cell ever named |
+| ~~`貼り紙がしてある・・・`~~ | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647, `batch_014` D724, `batch_019` D870, **`batch_020` D333 + D338** | ✅ **EXHAUSTED AND STRUCK at the `batch_020` integration (PR #45, 2026-09-11).** Re-censused at that review by grepping `script_unique.txt` for `貼り紙`, not inherited: **6 script-unique lines / 8 instances — D333 (×2), D338 (×2), D633, D647, D724, D870 — 6 of 6 now shipped, 0 remaining**, and `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` is byte-identical in all six. The PR #40 cell was exactly right that D333 and D338 were the outstanding two. See §61.2 |
 | `親衛隊` | `ｇｕａｒｄ` (5), **lowercase** — ✅ **RULED and RENDERED 2026-09-11 (PR #39), but the row STAYS LIVE** | `batch_010` D898 (bank 28) + `batch_015` D789/D791/D792/D793/D794 (bank 20) — **6 of 7 rendered** | ⚠️ **D1330 REMAINS, and it is in BANK 40 — 75 bytes free, a spendable budget of ZERO under §F2.** Full census re-measured at review: **7 script-unique lines, 0 battle** — D789, D791, D792, D793, D794, D898, **D1330**. The wave-10 seed implied six; it is seven. One word covers all five of `batch_015`’s registers because **the contempt is never in the noun** — in D794 it sits in `だか何だか知らねえが` → `ｇｕａｒｄ　ｏｒ　ｗｈａｔｅｖｅｒ　ｔｈｅｙ　ａｒｅ`, in D793 in the flat `ちぇっ`. English “the guard” is exactly a ruler’s household corps and takes a plural verb (`Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ　ｌｏｒｄ　ｉｔ…`, `…ａｒｅ　ｓｔｒｏｎｇｅｒ　ｔｈａｎ…`). **Lowercase**, matching the one shipped instance and §17.1’s function-noun test. See `FLAGS.md` §B and §AR |
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
 | `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
@@ -813,7 +813,7 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 | the closed-shop notice `「…ノロ」` | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` | `batch_006.tsv:57` (`「本日、棚卸しのため休業いたしますノロ」`) | **D870**'s `「今日は{FFFE}　　　　お休みノロ」` is a **different, shorter** notice. Not byte-identical, so gate 6 is blind. Keep the `“…”`, the leading pad and the `，　ｎｙｏｒｏ．`; do not copy the stocktaking wording |
 | `材料` / `武器や防具` | `ｍａｔｅｒｉａｌｓ` / `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` | `batch_010.tsv:31` — **the same smith, same scene, already half-shipped** | ✅ **D872, D878, D879 SHIPPED** (`batch_019.tsv:53/59/60`, PR #40) — `ｍａｔｅｒｉａｌｓ` and `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` both byte-identical to `batch_010.tsv:31`, the same smith's own speech. ⚠️ **BOTH ROWS STAY LIVE**, re-censused in `tl/` at the PR #40 integration: `材料` **17 unique / 77 instances, 14 shipped, 3 REMAIN — D304, D305, D308 (×21 each)**; `武器や防具` **3 unique, 2 shipped, 1 REMAINS — D1354** |
 | `　はい` / `　いいえ` | `　Ｙｅｓ` / `　Ｎｏ` | every batch since 006; the leading `　` gutter is part of the string | D1108, D1120, D1126, D1127, D1392, D1395, D1403, D1412, D1413, D1416, D1424, D524, D586, D591, D874, D877, D879 |
-| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | ⚠️ **REACH CORRECTED 2026-09-11 (PR #41 review), and this cell was one line short.** `店を出る` is **10 script-unique lines, 0 battle.** ⚠️ **UPDATED at the PR #40 integration: D584 and D598 are now shipped (`batch_019.tsv:36/50`), so the count is 9 shipped, 1 REMAINING — D339 (×2) alone.** **ROW STILL STAYS LIVE** until D339 is rendered. The PR #41 correction that first named D339 is upheld: §7 had listed only two outstanding lines. 15 confirmed with `len()` |
+| ~~`　店を出る`~~ | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21`, **`batch_020.tsv:20` (D339)** | ✅ **EXHAUSTED AND STRUCK at the `batch_020` integration (PR #45, 2026-09-11).** `店を出る` is **10 script-unique lines, 0 battle**; D339 (×2) was the last, exactly as the PR #40 cell said, and it ships byte-identically. Verified at that review against six shipped donors (`batch_006:21/38`, `batch_011:37`, `batch_014:28`, `batch_016:69`, `batch_018:9`). The PR #41 correction that first named D339 is upheld. 15 confirmed with `len()`. See §61.2 |
 | `　アイテムを買う` / `　アイテムを売る` | `　Ｂｕｙ　ａｎ　ｉｔｅｍ` (12) / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` (13) | `batch_006.tsv:21` | **D584, D598** — ⚠️ D584 and D598 are **two unique rows with identical readable text**; they must take byte-identical English |
 | `『カルボナイト』` / `『ジェムストーン』` | `“Ｃａｒｂｏｎｉｔｅ”` / `“Ｇｅｍｓｔｏｎｅ”` | `batch_010.tsv:31` | ✅ **RESOLVED at the PR #40 integration — D873's `どの石` menu does NOT reach them.** The menu is a **runtime item list** (`{FFFB}{=00}{=0A}`), not text, so no stone name is rendered there and no stone name was coined. Both terms were already exhausted on the script side (`カルボナイト` 2/2, `ジェムストーン` 3/3). Whether they appear in the list can only be seen in game |
 
@@ -881,12 +881,12 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 
 | Japanese | Proposed English | Where seen (censused at seed time) | Status / promotion note |
 |---|---|---|---|
-| `棚卸し` | `ｓｔｏｃｋｔａｋｉｎｇ` | **4 script / 0 battle.** Shipped twice: `batch_006.tsv:57`, `batch_011.tsv:8`. Wanted by **D333** | ⭐⭐ **PROMOTED FROM A NOTE CELL — not a new decision, an existing one made visible to gate 7.** `glossary.md:813` fixes the noro sign as `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”`. **D333 is the SAME SIGN WITHOUT THE NORO TIC** — use `ｓｔｏｃｋｔａｋｉｎｇ` byte-identically |
-| `仕入れ` (noun, on a shop sign) | `ｒｅｓｔｏｃｋｉｎｇ` | **3 script / 0 battle.** Wanted by **D338** | ⚠️ **SCOPE — A SECOND SENSE IS ALREADY SHIPPED AND MUST NOT BE COLLAPSED INTO THIS.** `batch_013.tsv:56` renders the **verb** `ネタを仕入れとくよ` as `Ｉ’ｌｌ　ｌａｙ　ｉｎ　ｓｏｍｅ　ｎｅｗｓ`. That is *to lay in*, a different sense from the sign's *restocking*. **Both stand.** A reviewer must not read this as an inconsistency |
+| ~~`棚卸し`~~ | `ｓｔｏｃｋｔａｋｉｎｇ` | **4 script / 0 battle.** Shipped twice: `batch_006.tsv:57`, `batch_011.tsv:8`. Wanted by **D333** | ⭐⭐ **PROMOTED FROM A NOTE CELL — not a new decision, an existing one made visible to gate 7.** `glossary.md:813` fixes the noro sign as `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”`. **D333 is the SAME SIGN WITHOUT THE NORO TIC** — use `ｓｔｏｃｋｔａｋｉｎｇ` byte-identically ✅ **PROMOTED to §61.1 and STRUCK at the `batch_020` merge (PR #45, 2026-09-11) — used exactly as seeded, byte-identical to `batch_006:57` / `batch_011:8`.** D333 shipped; **4 script / 0 battle, all four now shipped — EXHAUSTED.** The note-cell-to-key promotion this row was written for is what made the term visible to a key-first gate 7, and it worked. |
+| ~~`仕入れ` (noun, on a shop sign)~~ | `ｒｅｓｔｏｃｋｉｎｇ` | **3 script / 0 battle.** Wanted by **D338** | ⚠️ **SCOPE — A SECOND SENSE IS ALREADY SHIPPED AND MUST NOT BE COLLAPSED INTO THIS.** `batch_013.tsv:56` renders the **verb** `ネタを仕入れとくよ` as `Ｉ’ｌｌ　ｌａｙ　ｉｎ　ｓｏｍｅ　ｎｅｗｓ`. That is *to lay in*, a different sense from the sign's *restocking*. **Both stand.** A reviewer must not read this as an inconsistency ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — used exactly as seeded.** D338 shipped `ｒｅｓｔｏｃｋｉｎｇ`. **The scope warning was heeded and verified at review: `batch_013:56` still renders the VERB `ネタを仕入れとくよ` as `Ｉ’ｌｌ　ｌａｙ　ｉｎ　ｓｏｍｅ　ｎｅｗｓ` and is untouched. Both stand.** 3 script / 0 battle — EXHAUSTED on the sign sense. |
 | `てーこく` / `てーこく軍` | `ｔｈｅ　Ｅｍｐｉｒｅ` / `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` — §2 and §20.4's settled forms, **unchanged** | ⚠️ **THIS CELL WAS WRONG IN ALL THREE FIGURES — CORRECTED 2026-09-11 after `batch_020` pushed back. Measured: 16 unique lines / 20 script instances (my "9" was `てーこく軍`'s count alone, which my own `てーこく*` wildcard did not describe) · 1 BATTLE instance (`battle_dump.txt:234`, chunk 8 L14), not 0 · ALREADY SHIPPED TWICE in `tl/`, not 0** — `tl/battle/chunk_008.txt` L14 and `tl/script/batch_014.tsv:46`. 13 unique / 15 instances remain, all blocked | ⚠️ **A SOFT KANA SPELLING OF `帝国`, NOT A NEW TERM.** ⚠️ **"D320 IS THE FIRST TO SHIP, SO IT SETS PRECEDENT" WAS FALSE — the precedent was set in WAVE 2** (`chunk_008`, and `glossary.md` §29.6 already records that treatment). D320 **conforms** to a two-wave-old incumbent. **The recommendation below still stands; only my figures were wrong.** ⚠️ **`帝国` and `帝国軍` are DISTINCT (§20.4) and wave 11 conflated them — do not repeat that.** **RECOMMENDED: do NOT misspell the English.** The kana softening marks the *speaker* (a child: D320 closes `あぶないよ`), not the *Empire*, and §3.1 gives no safe way to spell-shift full-width Latin. Carry the register in the surrounding syntax. **Alt, REJECTED unless you can defend it: an English misspelling** |
-| `木漏れ日` | `ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered** (grepped, not assumed). Wanted by **D342** | New seed. D342 is a quiet empty-square scene description; §2's literal-then-tight applies. 18 columns — check it against the 24 limit in place |
-| `さえずり` | `ｂｉｒｄｓｏｎｇ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered.** Wanted by **D342** | New seed. `ｂｉｒｄｓｏｎｇ` is 9 columns against `ｔｗｉｔｔｅｒｉｎｇ ｏｆ ｓｍａｌｌ ｂｉｒｄｓ`; D342 is 40 JP chars and the tightest of the 21, so width is real. **Alt: `ｔｈｅ　ｓｏｎｇ　ｏｆ　ｓｍａｌｌ　ｂｉｒｄｓ`** |
-| `君子、あやうきにちかよらず` | `ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ　ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` | **2 script / 0 battle / 0 `tl/`.** Wanted by **D340** | New seed. A proverb quoted colloquially (`〜ってやつよね`). ⚠️ **Do not import "discretion is the better part of valour"** — §2 bans inventing; the source names a 君子. Render the proverb, keep the speaker's casual frame |
+| ~~`木漏れ日`~~ | `ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered** (grepped, not assumed). Wanted by **D342** | New seed. D342 is a quiet empty-square scene description; §2's literal-then-tight applies. 18 columns — check it against the 24 limit in place ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — used exactly as seeded**, 18 columns confirmed with `len()`, split `Ａｍｉｄ　ｓｏｆｔ　ｄａｐｐｌｅｄ` / `ｓｕｎｌｉｇｈｔ，` across the source’s own break. `ｄａｐｐｌｅｄ` and `ｓｕｎｌｉｇｈｔ` both re-verified FREE at review. **2 instances, both D342 — EXHAUSTED.** |
+| ~~`さえずり`~~ | `ｂｉｒｄｓｏｎｇ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered.** Wanted by **D342** | New seed. `ｂｉｒｄｓｏｎｇ` is 9 columns against `ｔｗｉｔｔｅｒｉｎｇ ｏｆ ｓｍａｌｌ ｂｉｒｄｓ`; D342 is 40 JP chars and the tightest of the 21, so width is real. **Alt: `ｔｈｅ　ｓｏｎｇ　ｏｆ　ｓｍａｌｌ　ｂｉｒｄｓ`** ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — the ALTERNATIVE taken, not the primary, and the reason is faithfulness, not width.** Ships as `ｓｏｎｇ` inside `ｓｍａｌｌ　ｂｉｒｄｓ’　ｓｏｎｇ`. ⚠️ **This row’s "width is real" premise is REFUTED: `ｓｕｎｌｉｇｈｔ，　ｂｉｒｄｓｏｎｇ` measures 18 and would have fitted at 20 columns on that row.** The primary was declined because `ｂｉｒｄｓｏｎｇ` already means *the song of birds* and taking it would have folded away the source’s own `小鳥の`, which §2 does not license when a faithful form fits. **`ｂｉｒｄｓｏｎｇ` is therefore UNSPENT and verified free.** 2 instances, both D342 — EXHAUSTED. |
+| ~~`君子、あやうきにちかよらず`~~ | `ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ　ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` | **2 script / 0 battle / 0 `tl/`.** Wanted by **D340** | New seed. A proverb quoted colloquially (`〜ってやつよね`). ⚠️ **Do not import "discretion is the better part of valour"** — §2 bans inventing; the source names a 君子. Render the proverb, keep the speaker's casual frame ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — used exactly as seeded**, as `Ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ` / `ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` (22 / 21) with `ってやつよね` carried by `ｔｈａｔ’ｓ　ｔｈｅ　ｓａｙｉｎｇ，　ｉｓｎ’ｔ　ｉｔ．`. **The warning was heeded: "discretion is the better part of valour" is NOT imported, and the 君子 is rendered.** `ｗｉｓｅ　ｍａｎ` and `ｈａｒｍ’ｓ` both re-verified FREE. 2 instances, both D340 — EXHAUSTED. |
 | `フラグ` | `Ｆｌａｇ` | **21 script / 0 battle / 0 `tl/`.** ⚠️ **CORRECTED: I wrote "wanted throughout `batch_021`" — in fact 13 of the 21 instances are `batch_022`'s and only 8 are `batch_021`'s** | ⚠️ **DEVELOPER DEBUG TEXT.** `フラグ５５は、ＯＦＦです。` → `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. The source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — **keep them exactly, do not re-case** |
 | `新曲` | `Ｎｅｗ　Ｔｒａｃｋ` | **15 script / 0 battle / 0 `tl/`.** `batch_021` + `batch_022` | Debug sound test. Title-case as a menu label |
 | `ザコ戦` / `ボス戦` | `ｍｏｂ　ｂａｔｔｌｅ` / `ｂｏｓｓ　ｂａｔｔｌｅ` | **3 / 3 script, 0 battle, 0 `tl/`.** `batch_022` D1048 | Debug sound test. In D1048 they sit inside `（…）` after `バトル`, so the parenthetical is the discriminator |
@@ -900,13 +900,13 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 
 | Term | Settled English | Key | Instances in `tl/` |
 |---|---|---|---|
-| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `glossary.md:699` | **4 shipped.** ⚠️ **ROW STAYS LIVE — D333 and D338 are the 5th and 6th** |
+| ~~`貼り紙がしてある・・・`~~ | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `glossary.md:699` | **4 shipped.** ⚠️ **ROW STAYS LIVE — D333 and D338 are the 5th and 6th** ✅ **ROW NOW EXHAUSTED AND STRUCK (PR #45, 2026-09-11).** This cell was exactly right: D333 and D338 were the 5th and 6th, and with them **6 of 6 unique lines / 8 of 8 instances are shipped, 0 remaining**. Re-censused at review from `script_unique.txt`, not inherited. |
 | `ジュエル` | `Ｊｅｗｅｌ` / `Ｊｅｗｅｌｓ` — **never "gem"** | `glossary.md:96` | **73.** D327, D331, D332 |
 | `インターミッション` | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12 cols) | **§53.1** (was cited `:6815`; ⚠️ **my own 65-line seed insert moved it to `:6880` — cite by SECTION, never by line**) | 2. `batch_021` D1005. ⚠️ `batch_022` D1043 abbreviates it `ＩＭ` — keep the abbreviation |
 | `魔族` | `ｄｅｍｏｎｓ` — **§40.1** (was cited `:4525`; ⚠️ **moved to `:4590` by my own seed insert — cite by SECTION**) | 6. `batch_022` D1051 |
-| `ノロ` | the hobbit tic, §5 / §18.1 | — | **155.** D318, D335 |
+| `ノロ` | the hobbit tic, §5 / §18.1 | — | **155.** D318, D335 ✅ **D318 SHIPPED (PR #45, 2026-09-11) — 3 instances, all in §18.1’s spaced form `，　ｎｙｏｒｏ` carrying the source’s own mark (`．`, `！`, `！`), verified character by character.** ⚠️ **This cell’s "D318, D335" is misleading: D335 was ALREADY SHIPPED at `batch_006:22` before wave 12 and is not in `batch_020` at all** — checked at review while confirming the unit’s 21-line list has no hole. **ROW STAYS LIVE** for the tic at large. |
 
-⭐⭐ **THREE NEAR-DUPLICATE TRAPS GATE 6 CANNOT SEE. READ THIS BEFORE TRANSLATING `batch_020`.**
+⭐⭐ ~~**THREE NEAR-DUPLICATE TRAPS GATE 6 CANNOT SEE. READ THIS BEFORE TRANSLATING `batch_020`.**~~ **THERE WERE FOUR, AND THE FOURTH WAS THE MOST DANGEROUS — CORRECTED 2026-09-11 (PR #45).** The three below were all correct. The fourth, **D326 ↔ D481 (`batch_008.tsv:38`), readable-identical and differing only by a leading `{FC51}`**, was named in terms by **§42.5’s own FORWARD-BINDING table** all along and no trap list carried it forward. **§42.5 is the first place a script unit should look**, and it is not read by any gate. All four were verified by hand at the review and all four ship byte-identically; see §61.3.
 Gate 6 pairs **whole messages on exact Japanese**. All three pairs below differ **only in their
 `{FFF6}` jump-target arguments**, so the whole-message keys are NOT equal, gate 6 reports clean, and
 a divergent English would ship undetected. **The readable text is identical and the English must be
@@ -3365,7 +3365,7 @@ carries is `ジュエル`, §3's currency, and it is kept clear of both — see 
 | 毎度あり (+ tic) | `Ｍａｎｙ　ｔｈａｎｋｓ` | 11 columns; `毎度ありノロ！！` → `Ｍａｎｙ　ｔｈａｎｋｓ，　ｎｙｏｒｏ！！` (20), twice and byte-identical (642, 646). Free across `tl/`. Held **distinct** from the three ありがとう forms this batch also carries — `Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｙｏｕｒ　ｐｕｒｃｈａｓｅ` (お買い上げ〜, 601/617) and `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ` (ありがとうございました, matching `chunk_003` L4). ⚠️ **Binds `毎度あり！！` (unique 592, 596) and `毎度アリ、ゲロゲロ。` (unique 651)** |
 | やめておく (menu option) | `　Ｌｅａｖｅ　ｉｔ` | 9 columns with the cursor gutter. Twice, byte-identical (600, 606). **`Ｎｅｖｅｒ　ｍｉｎｄ` correctly not used** — §23.2 spends it on `気にしない、気にしない。` (`chunk_004` L3, shipped, verified at review) |
 | 店を出る / はい / いいえ / 買う / 引き取ってもらう | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` / `　Ｙｅｓ` / `　Ｎｏ` / `　Ｂｕｙ` / `　Ｓｅｌｌ　ｉｔ` | All keep the leading `　` cursor gutter (§7, prompt §7). **Verified mechanically at review: 19 source segments begin with a full-width space and 0 lost it.** `　はい` / `　いいえ` recur in four messages and are byte-identical in all four |
-| 貼り紙 / 棚卸し / 休業いたします | `ａ　ｎｏｔｉｃｅ` / `ｓｔｏｃｋｔａｋｉｎｇ` / `Ｃｌｏｓｅｄ` | The shop-closed sign (633). `「…」` → `“…”` per §19.2 / §15.1. **The source's two-space indent on the second quoted row is preserved**, and so is its missing `。` before `」` (the tic absorbs the stop). ⚠️ The English inverts the clause order — `本日、棚卸しのため／休業いたします` → `Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ／ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` — which is the English shop-notice register and loses nothing, but is a reorder the PR did not flag. Recorded, accepted. ⚠️ **Binds unique 647 (the frog shop's copy, `。` present and a four-space indent) and unique 333 (the plain copy)** |
+| 貼り紙 / 棚卸し / 休業いたします | `ａ　ｎｏｔｉｃｅ` / `ｓｔｏｃｋｔａｋｉｎｇ` / `Ｃｌｏｓｅｄ` | The shop-closed sign (633). `「…」` → `“…”` per §19.2 / §15.1. **The source's two-space indent on the second quoted row is preserved**, and so is its missing `。` before `」` (the tic absorbs the stop). ⚠️ The English inverts the clause order — `本日、棚卸しのため／休業いたします` → `Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ／ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` — which is the English shop-notice register and loses nothing, but is a reorder the PR did not flag. Recorded, accepted. ⚠️ **Binds unique 647 (the frog shop's copy, `。` present and a four-space indent) and unique 333 (the plain copy)** ⚠️⚠️ **BINDS CELL COMPLETED 2026-09-11 (§4.3, PR #45 review) — it named 2 of the 5 siblings and omitted THREE: unique 338, 724 and 870.** The family is DATA **333, 338, 633, 647, 724, 870 = 6 unique lines / 8 instances**, censused at that review by grepping `script_unique.txt` for `貼り紙`. All six are now shipped and the row is exhausted. **The rendering is unchanged; only the reach was short.** ⭐ **And this row's `。` note is now confirmed as a RULE by a controlled positive case rather than merely recorded**: unique 647 (`batch_011.tsv:8`) **does** carry `。` before `」` in its source **and its shipped English does carry `．`**, while D333/D338 carry neither and correctly take no stop. The stop tracks the source, and `batch_006:57`'s stop is the `ノロ` tic's own. See §61.3 |
 | 下働き | `ｄｏｇｓｂｏｄｙ` | 9 columns. The odd-job lad, twice (632). British and colloquial, which is his register. **`ｔｈｅ　ｈｅｌｐ` correctly rejected**: `ｈｅｌｐ` already renders 助け across nine shipped chunks and the servant sense would sit inside it. Free |
 | 親方 | `ｔｈｅ　ｂｏｓｓ` | 7 columns, lowercase, twice (632). **Used exactly as seeded (§9, wave 4) — struck from §9 at this merge.** ⚠️ **§32.1's forward warning is DISCHARGED**: §25.3's test **MET**, counted at review — `おかしら` is **battle chunk 20 only (×5), 0 script**; `親方` is **script bank 12 only (×2), 0 battle**. No shared chunk, no shared bank, no shared message. The two forms coexist without ever meeting, and `Ｂｏｓｓ` (§32.1) stays capitalised for the bandits' chief |
 | デビルズラック | `Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ` | 12 columns. **Used exactly as seeded, in the seed's own preferred BARE form — struck from §9 at this merge.** `デビルズラックだ！！` → `Ｉｔ’ｓ　Ｄｅｖｉｌ’ｓ　Ｌｕｃｋ！！` is a predicate nominal, not a title, so §9's quoted `“…”` alternative correctly did not fire. `’` is U+2019, verified |
@@ -3465,12 +3465,24 @@ buy/sell/leave menu (`　アイテムを買う`)**, and **605 its `どの品を�
 scene, both words, four lines apart. Corpus-wide:
 
 ```
-品      battle 1 (chunk 20) | script 44 across 23 banks
-アイテム  battle 12          | script 55 across 14 banks
-SHARED banks [0, 8, 12, 13, 14, 15, 16, 18, 20, 25, 40]   messages holding both: 0   → NOT MET
+品      battle 1 (chunk 20) | script 44 across 23 banks   <- RAW SUBSTRING COUNT, superseded
+品      (bare noun)         | script  8 across  5 banks [0, 12, 13, 19, 40]
+アイテム  battle 12          | script 55 across 14 banks [0, 8, 12, 13, 14, 15, 16, 18, 20, 23, 25, 29, 36, 40]
+SHARED banks (bare 品)  [0, 12, 13, 40]                  messages holding both: 0   → NOT MET
 ```
 
-**Eleven shared banks, including this unit's own 12–15.** `ａｒｔｉｃｌｅ` (7 columns) verified free
+⚠️⚠️ **FIGURE CORRECTED 2026-09-11 (§4.3, PR #45 review) — THE RULING IS UNCHANGED AND ITS STRONGEST
+GROUND IS UNTOUCHED.** The `品` row above is a **raw substring count**: 44 instances across 23 banks
+includes `一品` (21), `景品` (10), `商品` (4) and `品物` (1). **The bare noun is 8 instances across 8
+unique lines — DATA 376, 590, 605, 609, 640, 735, 1278, 1304 — in banks [0, 12, 13, 19, 40]**,
+re-derived at that review with the compounds excluded morpheme by morpheme. ~~**Eleven shared banks,
+including this unit's own 12–15.**~~ The shared set therefore narrows from eleven to **four** — **but
+it still contains bank 12, which is the keigo shop's own bank**, where 605 (`どの品を`) and 598
+(`　アイテムを買う`) sit four lines apart in one scene, and `messages holding both` is still **0**.
+**§34.4 rests on that scene, not on the bank count, so the ruling stands exactly as written and
+`ａｒｔｉｃｌｅ` is unchanged.** The `アイテム` side of the cell (55 / 14 banks) was exact. **No
+rendering changes anywhere.** This is the number a future §25.3 test would read, which is why it is
+corrected rather than left. See §61.5. `ａｒｔｉｃｌｅ` (7 columns) verified free
 across `tl/` and `pending/`; `ｉｔｅｍ` is §21.3's and `batch_005`'s and is used unchanged here seven
 times. The two must never collapse.
 
@@ -5170,8 +5182,8 @@ reuse — but the player meets one line, which is §34.9's reasoning for unique 
 
 | This unit | Japanese | Siblings outside the unit |
 |---|---|---|
-| **472 / 483 / 493 / 504** | the recruiter menu | **5 untranslated: DATA 329, 330, 394, 400, 412**; 3 shipped identically in `batch_007` (DATA 435, 445, 456) |
-| **481** | `そう。疲れたときはいつでもよってね。` | **DATA 326, count 2, untranslated** |
+| ~~**472 / 483 / 493 / 504**~~ | the recruiter menu | **5 untranslated: DATA 329, 330, 394, 400, 412**; 3 shipped identically in `batch_007` (DATA 435, 445, 456) ✅ **DISCHARGED AND STRUCK at the `batch_020` merge (PR #45, 2026-09-11).** The readable-identical family is **12 unique lines — D329, D330, 394, 400, 412, 435, 445, 456, 472, 483, 493, 504 — and all 12 are now shipped, all 12 byte-identical**; `batch_012` took 394/400/412 and `batch_020` took the last two, D329 and D330, which also match each other. **0 remaining.** |
+| ~~**481**~~ | `そう。疲れたときはいつでもよってね。` | **DATA 326, count 2, untranslated** ✅ **DISCHARGED AND STRUCK (PR #45, 2026-09-11).** D326 ships the three segments `Ｉ　ｓｅｅ．` / `Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ` / `ｙｏｕ　ａｒｅ　ｗｅａｒｙ．` **byte-identically to D481 (`batch_008.tsv:38`)**, asserted segment by segment at review. ⭐ **This row is the one the wave-12 dispatch’s trap list missed — a forward-binding row no gate reads. Read §42.5 first.** |
 | **505** | `どれが　よろしいかな？` | **DATA 535, untranslated** |
 | **506** | `軍隊にとって兵士は　立派な財産。大切にされよ。` | **DATA 403, untranslated** |
 
@@ -8095,3 +8107,239 @@ introduced. D586's item-name budget of 16 is identical to three merged rows (`ba
 shop chain and the same bank 12, plus `batch_011:17`/`:25`, all shipping `{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？`),
 so this unit is no tighter than shipped work. **The item-name table's true maximum width remains
 unrecorded and needs the binaries — see §AV.**
+
+---
+
+## 61. Added by script batch 020 (PR #45, merged 2026-09-11, round 1)
+
+Rendered in `tl/script/batch_020.tsv` — the shop and recruit menus, two shop-closed notices, the
+empty village square and the trading port. `script_unique.txt` DATA **318, 320, 326–334, 336–345**,
+**21 unique lines / 44 message instances**, banks 3, 4, 5, 6, 7, 8, 9, 12, 14, 15, 16, 17, 18, 20,
+21, 23, 24, 30, 31, 32, 34. **532 JP → 1,051 EN readable characters = 1.9756×**; growth **+2,256 B
+across 21 banks**, max **410** (bank 18), no bank negative. **71 text runs, widest 23, none at 24.**
+`{FFFE}` **+1 (D320 only)**; `{FCC0}` untouched on all 21; the non-`{FFFE}` tag stream byte-identical
+on all 21. **Merged round 1 with no must-change finding** — the second script unit in a row to do so.
+Gated at PR head **`2b7e840`** on a base pinned to **`065e67bf11a2524cfa18978da142f1ae2596ec7b`**,
+re-fetched at both ends of the review and unchanged; squash **`5b6c212`**. All 21 per-bank deltas were
+re-derived at review by holding the unit file aside, re-running `merge` and diffing, and independently
+predicted from `script_dump.txt` — the two agree bank for bank.
+
+⚠️ **This section claimed §61 by reading the file's last heading at commit time (§60), not by
+reserving it.** ⚠️ **Numbering: every `Dnnn` here is a 1-based DATA index over the body of
+`script_unique.txt`, asserted at review (`uni[5]` starts `126\t`, so FILE = DATA + 5). `batch_NNN.tsv:n`
+and `chunk_NNN` numbers are 1-based FILE lines.** ⚠️ **FOUR banks are under 2,000 free after this
+unit — 40 → 75 · 41 → 353 · **5 → 1,595** · 2 → 1,607 — and `bankmeasure`'s `tightest:` line prints
+only THREE. This unit is the proof: bank 5 dropped 40 bytes past bank 2, so the line now prints 5 and
+**bank 2 has become invisible**. Read the full table, never that line.**
+
+⭐ **This is the last genuinely player-facing script text in the game.** Everything remaining is debug
+menus (`batch_021`, `batch_022`) or blocked behind the §F2 bank repoint.
+
+### 61.1 New rows this unit fixes
+
+| Japanese | English | Note |
+|---|---|---|
+| `商品` | `ｗａｒｅｓ` (5) | D343, the trading port. `様々な商品` → `ｗａｒｅｓ　ｏｆ　ｅｖｅｒｙ　ｋｉｎｄ`. **Held distinct from bare `品` → `ａｒｔｉｃｌｅ` (§34.1/§34.4), `アイテム` → `ｉｔｅｍ` (§21.3) and `batch_012:53`'s `ｇｏｏｄｓ`** — a different noun (merchandise), not the bare `品` those rows key. §25.3 re-measured at review morpheme by morpheme: bare `品` banks **[0, 12, 13, 19, 40]**, `商品` banks **[20, 40]**; **bank 20 holds no bare `品` at all** and the only shared bank is 40, which is blocked. `ｗａｒｅｓ` verified **free** across `tl/` and `pending/`. ⚠️ **LIVE — `商品` is 2 unique lines / 4 instances; D348 (count 2, bank 40) remains, untranslated** |
+| `立ち寄る` (and `〜よってね` as its D326/D481 sub-case) | `ｃａｌｌ　ｉｎ` | ⚠️⚠️ **KEY NARROWED AT REVIEW — the PR proposed `立ち寄る` / `寄る`, and keying the bare verb would have silently invalidated shipped work.** ⭐ **`batch_014.tsv:36` (D734, count 1, bank 19) already ships the bare verb — `また　いつでも{FFFE}寄っていっておくれ。` → `Ｄｏ　ｄｒｏｐ　ｉｎ　ａｇａｉｎ{FFFE}ａｎｙ　ｔｉｍｅ．` — as `ｄｒｏｐ　ｉｎ`, not `ｃａｌｌ　ｉｎ`.** See §61.4 for the full verb census and the §25.3 test. **NOT a coinage**: it records **two** incumbents, `batch_008:38` (`いつでもよってね。` → `Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ`) and **`batch_016:66`** (`立ち寄ってみれば。` → `ｗｈｙ　ｎｏｔ　ｃａｌｌ　ｉｎ？`), the second of which the PR did not name. Three instances here, one word: D318 `Ｃａｌｌ　ｉｎ　ａｇａｉｎ，　ｎｙｏｒｏ！`, D326 `Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ` (the byte-identical lift from D481), D343 `ｔｏ　ｃａｌｌ　ｉｎ　ｔｈｅｒｅ．`. ⚠️ **LIVE — 1 remaining on `立ち寄`: D1383 (bank 41, blocked), plus D1377's `立寄って` spelling variant** |
+| `寄っていって` (bare verb, the *drop-in* sense) | `ｄｒｏｐ　ｉｎ` | **Recorded at review, not proposed by the PR, and not a new decision — it is `batch_014:36`'s incumbent, written down so the `ｃａｌｌ　ｉｎ` row above cannot swallow it.** §25.3's test is **MET**: `ｃａｌｌ　ｉｎ` banks **[3, 4, 20, 21]**, `ｄｒｏｐ　ｉｎ` bank **[19]** — disjoint, and no message holds both. **Nothing is re-cut.** ⚠️ **LIVE — D1346 (bank 40, untranslated) carries the SAME `寄っていっておくれ` construction as D734 and inherits `ｄｒｏｐ　ｉｎ`, not `ｃａｌｌ　ｉｎ`.** See §61.4 |
+| `君子、あやうきにちかよらず` | `Ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ{FFFE}ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` (22 / 21) | **Promotes §9.W12, used exactly as seeded.** D340. The proverb is **rendered, not replaced** — "discretion is the better part of valour" is not imported (§2), and the source's `君子` is kept. `ってやつよね` is carried by `ｔｈａｔ’ｓ　ｔｈｅ　ｓａｙｉｎｇ，　ｉｓｎ’ｔ　ｉｔ．`; the `ｓａｙｉｎｇ` in `batch_015:46` is the gerund of *say*, not this noun, so no clash. `ｗｉｓｅ　ｍａｎ` and `ｈａｒｍ’ｓ` both re-verified free. **EXHAUSTED** — 2 instances, both D340 |
+| `木漏れ日` | `ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ` (18) | **Promotes §9.W12, used exactly as seeded**, split `Ａｍｉｄ　ｓｏｆｔ　ｄａｐｐｌｅｄ` / `ｓｕｎｌｉｇｈｔ，` across the source's own break, with `やわらかな` → `ｓｏｆｔ`. Both words re-verified free. **EXHAUSTED** — banks [20, 21], 2 instances, both D342 |
+| `さえずり` | `ｓｏｎｇ`, in `ｓｍａｌｌ　ｂｉｒｄｓ’　ｓｏｎｇ` | ⚠️ **§9.W12's ALTERNATIVE taken, not its primary, and the seed's own clause licenses it.** ⚠️ **The seed's "width is real" premise is REFUTED and the decline is on faithfulness alone**: `ｓｕｎｌｉｇｈｔ，　ｂｉｒｄｓｏｎｇ` measures **18**, well inside the row, so **width forced nothing**. `ｂｉｒｄｓｏｎｇ` already means *the song of birds* and taking it would have folded away the source's own `小鳥の`, which §2 does not license when a faithful form fits. **`ｂｉｒｄｓｏｎｇ` therefore stays UNSPENT and is verified free.** **EXHAUSTED** — banks [20, 21], 2 instances, both D342 |
+| `仕入れ` (noun, on a shop sign) | `ｒｅｓｔｏｃｋｉｎｇ` (10) | **Promotes §9.W12, used exactly as seeded.** D338. ⚠️ **The second sense is NOT collapsed into it, and that was verified rather than assumed**: `batch_013:56` still renders the **verb** `ネタを仕入れとくよ` as `Ｉ’ｌｌ　ｌａｙ　ｉｎ　ｓｏｍｅ　ｎｅｗｓ`, untouched. **Both stand.** `ｒｅｓｔｏｃｋ` verified free. 3 script / 0 battle — **EXHAUSTED on the sign sense** |
+| `そうなの？` | `Ｉｓ　ｔｈａｔ　ｓｏ？` (11) | D337, the female shopkeeper. ⚠️ **NOT a coinage — it takes `batch_015:35`'s incumbent for `そう？`**, the interrogative member of the same `そう` family. §5's punctuation mechanism cannot help, because `Ｉ　ｓｅｅ？` is not English. §25.3 measured: `そうなの？` bank [15], `そう？` bank [20], and **bank 15 holds no member of the `Ｉ　ｓｅｅ．` family at all**. ⚠️ **A `そうなの` substring also occurs at `batch_012:68`, and it is NOT this word** — `今教会にいるそうなの`, hearsay `〜そうだ` + explanatory `の`; found by reading all 141 segments of that pooled row, not its head. **EXHAUSTED** — 2 instances, both D337 |
+| `残念だわ。` (bare, female) | `Ｗｈａｔ　ａ　ｓｈａｍｅ．` (13) | D337. ⚠️ **NOT a coinage — byte-identical to `batch_011:66`'s shipped form for `そう、残念ね。`.** The **sixth** member of §34.1's `残念` family, all held apart by their own source strings: `Ｔｈａｔ　ｉｓ　ａ　ｓｈａｍｅ．` (`それは　残念です。`), `Ａ　ｇｒｅａｔ　ｓｈａｍｅ．` (`誠に　残念です。`), `Ａ　ｓｈａｍｅ．` (`残念です。`), `Ｉ　ａｍ　ａｆｒａｉｄ，` (`残念だけど、`), `Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ．` (`そいつは／そりゃ、残念だな。`, **which this same unit ships at D334**). All eleven shipped `残念` rows were read at review. **EXHAUSTED** — bank [15], 2 instances |
+| `シカタナイナ。` | `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (15) | D336, the frog merchant. ⚠️ **NOT a new form — the katakana variant of §42.1's `しょうがない` / §24.3's `しかたねえ` / `batch_014:20`'s `しかたない。`**, §17.2's kana-variant collapse, and byte-identical to those incumbents. The article-free English is §5's register for this voice and needs no adjustment. §25.3: the `仕方/しかた/しょうが` family occupies banks [2, 3, 4, 19, 20, 23, 41]; **D336 is bank 14, which holds none of them.** **EXHAUSTED** — 2 instances |
+| `失礼致します。` | `Ｉ　ｔａｋｅ　ｍｙ　ｌｅａｖｅ．` (16) | D345, the Bernard's-church priest. ⚠️ **NOT a coinage — it takes `batch_009:62`'s fixed words** for `では、失礼するぞ。` (`Ｉ　ｔａｋｅ　ｍｙ　ｌｅａｖｅ，　ｔｈｅｎ．`), minus the `，　ｔｈｅｎ` that rendered *that* line's `では`, because D345 carries `それでは、` as its own segment and §57.2's `Ｗｅｌｌ　ｔｈｅｎ，` takes it — so nothing is doubled. Uncontracted per §24.6; the whole row carries no apostrophe. **EXHAUSTED** — banks [30, 31], 2 instances |
+| `他にご用は　おありか？` | `Ａｎｏｔｈｅｒ　ｅｒｒａｎｄ？` (15) | D328, King Leverk. Built on honorific `ご用` → `ｅｒｒａｎｄ` (§46.2/§60.3), held apart from plain `用` → `ｂｕｓｉｎｅｓｓ` / `Ｎｏｔｈｉｎｇ　ｅｌｓｅ` (§38.2, `batch_007:49/60`). **Verbless in exactly the way §42.2 ratified for this same King in this same bank** (`今日は　何のご用か？` → `Ｙｏｕｒ　ｅｒｒａｎｄ　ｔｏｄａｙ？`, `batch_008:60`), so a player meeting both hears one voice. `Ａｎｏｔｈｅｒ　ｅｒｒａｎｄ` verified free in `tl/script/`; lowercase `ａｎｏｔｈｅｒ　ｅｒｒａｎｄ` occurs once in `chunk_019`, a different source string in the battle store. ⚠️ **This is the TENTH distinct `ご用`/`用` opener in `tl/`, not the PR's "sixth" — see §61.6.** **EXHAUSTED** — 2 instances, both D328 |
+| `よろしいかな？` (offer confirmation) | `ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ？` (16) | D327 ×2, King Leverk. ⚠️ **NOT a coinage — `よろしい` → `ｓｕｉｔ` is ALREADY this speaker's word in THIS bank**: `batch_008:62` (bank 5, King Leverk) and `batch_009:30` both ship `どれが　よろしいかな？` → `Ｗｈｉｃｈ　ｗｏｕｌｄ　ｓｕｉｔ　ｙｏｕ？`, and §42.2 ratifies it. `ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ` verified free, and it keeps `よろしい` (→ `ｓｕｉｔ`) apart from `いい` (→ `ａｌｌ　ｒｉｇｈｔ`, this unit's own D331) and from `になりますが？` (→ `Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？`, banks [12, 16], disjoint from [5, 7]). **The source repeats the question verbatim and so does the English.** **EXHAUSTED** — banks [5, 7], 2 instances |
+| `うんうん、` | `Ｙｅｓ，　ｙｅｓ，` | D340. ⚠️ **NOT a new word — §29.3's `うん、` → `Ｙｅｓ，` doubled**, on §23.2's doubling-preserved precedent (`気にしない、気にしない。` → `Ｎｅｖｅｒ　ｍｉｎｄ，　ｎｅｖｅｒ　ｍｉｎｄ．`), with `batch_014:46` as the shipped `うん、` → `Ｙｅｓ，`. §25.3 measured precisely: the only `うん、` in **bank 18** are D340's own two; the others are bank 19 (`batch_014:46`, shipped `Ｙｅｓ，`) and bank 41 (×2, untranslated). `Ｙｅｓ，　ｙｅｓ` verified free. **EXHAUSTED** — 2 instances |
+| `そーよね。` | `ｔｈａｔ’ｓ　ｔｒｕｅ．` | D340. ⚠️⚠️ **NOT a coinage, and the strongest incumbent in the unit: `batch_013:32` ships `そうよね、` → `Ｔｈａｔ’ｓ　ｔｒｕｅ．`** — the same word, `ー` for `う` being §17.2's kana-lengthener variant. Lowercase because it continues after `Ｙｅｓ，　ｙｅｓ，`. §25.3: `そうね。` banks [21, 41], `そうそう` [0, 2, 20, 41], `そうよ。` [1, 23] — **bank 18 holds none of them.** The contraction is correct for this speaker: `batch_014:20/23/24/25` ship `Ｌｅｔ’ｓ` and `ｉｔ’ｓ` from her. **EXHAUSTED** — 2 instances |
+| `占領される` (resultative passive) | `ｈａｓ　ｂｅｅｎ　ｓｅｉｚｅｄ` | D320. Keeps `占領`'s own shipped head word from `batch_010:42` (`攻め入って占領した` → `ｍａｒｃｈｅｄ　ｉｎｔｏ　Ｆａｒｉｎａ　ａｎｄ　ｓｅｉｚｅｄ　ｉｔ`, bank 28) rather than borrowing §48.4's `占拠` forms, and `ｓｅｉｚｅｄ　ｂｙ` is verified free. ⚠️⚠️ **`占領` ALREADY HAS TWO SHIPPED ENGLISHES AND THE PR NAMED ONLY ONE — see §61.7.** `batch_012:67` (D390, bank 1) renders `…ファリーナを占領した戦いのことを` as `ｔｏｏｋ　Ｆａｒｉｎａ？`, for the same historical event. **D320's banks (32, 34) are disjoint from both 1 and 28, so no player sees the split and nothing is re-cut here.** `ｏｃｃｕｐｙ` (§48.4) stays unspent — re-verified free. ⚠️ **LIVE — 8 further instances remain** |
+| `あぶない` | `ｄａｎｇｅｒｏｕｓ` | D320. §25.3 measured: `あぶない` banks [32, 34, 40]; `危険` [1, 5, 40, 41]; `物騒` (§58.3) [33, 41]. **The only shared bank is 40, which is blocked, and D320's own banks (32, 34) hold neither.** ⚠️ **`ｄａｎｇｅｒｏｕｓ` is NOT free** — `chunk_005`, `chunk_007` and `batch_008` (bank 5, `危険`) carry it — but the banks are disjoint, so this is the documented §17.2 collapse and not a collision a player can meet. ⚠️ **LIVE — 2 further instances, one of them in bank 40** |
+
+**Used exactly as already keyed, byte-identically, nothing re-decided** — each opened and read at
+review, not taken from the PR's list: `貼り紙がしてある・・・` → `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．`
+(§9.W12, **now exhausted**) · `棚卸し` → `ｓｔｏｃｋｔａｋｉｎｇ` · `休業いたします` → `Ｃｌｏｓｅｄ` (§34.1)
+· `「…」` → `“…”` (§12) · `ジュエル` → `Ｊｅｗｅｌｓ` (§3, never *gem*) · `ジュエルに` → `　Ｊｅｗｅｌｓ，`
+(six shipped rows in `batch_007`/`batch_008` alone) · `ノロ` → `，　ｎｙｏｒｏ` in §18.1's **spaced**
+form ×3, each with the source's own mark (`．`, `！`, `！`) · `てーこく` / `てーこく軍` →
+`ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` **with its article** (§20.4 default, §47.5 mandatory) · `大歓迎` →
+`ｍｏｓｔ　ｗｅｌｃｏｍｅ` (§38.2, `batch_007:39/40`) · `そうノロか。` → `Ｉ　ｓｅｅ，　ｎｙｏｒｏ．`
+(`batch_006:22`) · `そうかい。` → `Ｉ　ｓｅｅ．` (§38.2, and `batch_007:27`, `batch_011:56`,
+`batch_015:63`) · `ソウカ。` → `Ｉ　ｓｅｅ．` (`batch_019:33`) · `そう。` → `Ｉ　ｓｅｅ．`
+(`batch_008:38`) · `おや？` → `Ｏｈ？` (§24.4, and `batch_009:43`, the same speaker as D332) ·
+`ジュエルが足りない` / `またの　機会に` → `batch_007:24`'s four rows, row for row, differing only in
+the final mark · `　兵士を　補充したい` / `　情報を　聞きたい` / `　何でもない` → the three recruit
+options, ten shipped copies · `　モンスターを買う` / `　店を出る` → `batch_011:37` · `　はい` / `　いいえ`
+→ `　Ｙｅｓ` / `　Ｎｏ` with the gutter · `{insert}だな？` → `{insert}，　ｉｓ　ｉｔ？` (`batch_012:91`) ·
+`広場には　誰もいない。` → `Ｔｈｅ　ｓｑｕａｒｅ　ｉｓ　ｅｍｐｔｙ．` (`batch_015:51`) · `また、` + come →
+`ａｇａｉｎ` (`batch_008:67`) · `珍しい(物)` → `ｒａｒｅ　ｔｈｉｎｇ` (`batch_006:56`, `batch_013:47`) ·
+`この街の港` → `ｔｈｉｓ　ｔｏｗｎ’ｓ　ｐｏｒｔ` (`batch_013:47`) · `じゃ、` + farewell → trailing `ｔｈｅｎ`
+(§38.3, `batch_013:38`) · `それでは、` → `Ｗｅｌｌ　ｔｈｅｎ，` (§57.2, and `batch_006:31/47`,
+`batch_017:17`) · `何もない` → `ｔｈｅｒｅ　ｉｓ　ｎｏｔｈｉｎｇ` and `しらべる` → `ｓｅａｒｃｈ`
+(`batch_014:16/18`) · `１度` → spelled-out `ｏｎｃｅ` (§10.8) · `〜がいい` as an invitation → plain
+imperative (`batch_007:39`, `batch_008:67`) · `Ｌｅｔ’ｓ` for `〜ましょ` (`batch_014:20/23/24/25`).
+
+### 61.2 Rows this unit exhausts
+
+`貼り紙がしてある・・・` (§9.W12, `glossary.md:699`) — **6 unique / 8 instances, 6 of 6 shipped, 0
+remaining**; D333 and D338 were the last two, exactly as that cell said · `　店を出る` — **10 unique,
+10 shipped, 0 remaining**; D339 was the last · `棚卸し`, `仕入れ` (sign sense), `木漏れ日`, `さえずり`,
+`君子、あやうきにちかよらず` — all five §9.W12 seeds **promoted and struck** · §42.5's forward-binding
+rows **472/483/493/504** and **481** — both **discharged**, and §42.5's remaining live rows are
+**`505` → D535** and **`506` → D403**, both blocked.
+
+⚠️ **`てーこく` / `てーこく軍` STAYS LIVE in §9.W12** — 13 unique lines / 15 instances remain, all
+blocked behind the §F2 repoint, and they inherit this form.
+
+### 61.3 RULING — the shop-closed notice takes NO closing stop, and the donor would have misled the reviewer
+
+D333 and D338 ship `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　　　ｓｔｏｃｋｔａｋｉｎｇ”` and
+`…{FFFE}　　　　ｒｅｓｔｏｃｋｉｎｇ”` — **four-space indent, no full stop.** The PR argued this and is
+right; a reviewer reading `batch_006:57` alone would have demanded a stop. **Confirmed four ways, one
+of them a controlled positive case:**
+
+| Source | `。` before `」`? | Indent | Shipped English | Stop? |
+|---|---|---|---|---|
+| **D333 / D338** (this unit) | **no** | **4** | `…　ｓｔｏｃｋｔａｋｉｎｇ”` / `…　ｒｅｓｔｏｃｋｉｎｇ”` | **no** ✓ |
+| D633 (`batch_006:57`) | no | 2 | `…　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` | yes — **the `ノロ` tic's own** |
+| **D647 (`batch_011:8`)** | **YES** | 4 + a 7-space `ゲロゲロ` pad | `…　ｓｔｏｃｋｔａｋｉｎｇ．` / `…　Ｒｉｂｂｉｔ”` | **yes** ✓ |
+| D839 (`batch_016:67`, §57.1) | no | 3 | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ”` | no ✓ |
+
+**The stop tracks the source, and §34.1's own note says so in terms** ("and so is its missing `。`
+before `」` (the tic absorbs the stop)"). D647 is the case that settles it: where the source *does*
+carry `。`, the shipped English *does* carry `．`. **And the indent does not transfer** — each source's
+own width is preserved, 4 / 2 / 4+7 / 3, measured at review, exactly as `glossary.md:3291` requires.
+
+⭐ **All four near-duplicate traps were verified by hand and all four ship byte-identically.** D326 ↔
+D481 (readable-identical, one leading `{FC51}` apart) — three segments byte-identical. D339 ↔ D676
+(`batch_011:37`) — English byte-identical, and **each source keeps its own `{FFF6}` jump arguments**
+(`{=03}`/`{=0C}` here, `{=05}`/`{=0E}` there), checked token by token. D329 / D330 — identical to each
+other and to all ten shipped copies. D333 / D338 — above. **Gate 6 sees none of the four**, because
+all four differ in a `{FFF6}`/`{FFF8}`/`{FC51}` argument, so the whole-message keys are unequal; what
+found them was a **visible-text pairing plus a segment-level pass over the shipped TSVs**, and that
+pass is not in CLAUDE.md §6.
+
+### 61.4 RULING — `ｃａｌｌ　ｉｎ` and `ｄｒｏｐ　ｉｎ` both stand; the key is narrowed, nothing is re-cut
+
+The PR proposed the row as `立ち寄る` **/ `寄る`** → `ｃａｌｌ　ｉｎ`, saying "`寄る` and `立ち寄る` are
+the same verb". They are — which is exactly why keying the bare verb would have made
+**`batch_014.tsv:36`'s shipped `ｄｒｏｐ　ｉｎ` retroactively non-conformant**, and §4.3 forbids writing
+an entry that invalidates shipped work without listing the lines it affects. **Censused at review over
+`script_unique.txt` in every inflection, with the instrumental `〜によって` excluded — 13 instances / 9
+unique lines across 7 banks:**
+
+| DATA | count | bank | status | English |
+|---|---|---|---|---|
+| 318 | 3 | 3 | **this unit** | `Ｃａｌｌ　ｉｎ　ａｇａｉｎ，　ｎｙｏｒｏ！` |
+| 326 | 2 | 4 | **this unit** | `Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ` |
+| 343 | 2 | 20 | **this unit** | `ｔｏ　ｃａｌｌ　ｉｎ　ｔｈｅｒｅ．` |
+| 481 | 1 | 4 | `batch_008:38` | `Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ` |
+| **734** | 1 | **19** | **`batch_014:36`** | **`Ｄｏ　ｄｒｏｐ　ｉｎ　ａｇａｉｎ` / `ａｎｙ　ｔｉｍｅ．`** |
+| 838 | 1 | 21 | **`batch_016:66`** | `ｗｈｙ　ｎｏｔ　ｃａｌｌ　ｉｎ？` |
+| 1346 | 1 | 40 | untranslated | inherits **`ｄｒｏｐ　ｉｎ`** — same `寄っていっておくれ` construction as D734 |
+| 1377 | 1 | 41 | untranslated | `立寄って`, no `ち` — inherits `ｃａｌｌ　ｉｎ` |
+| 1383 | 1 | 41 | untranslated | inherits `ｃａｌｌ　ｉｎ` |
+
+> **Ruled, on the §34.1 / §42.3 / §32.5 pattern — rendering stands, both forms recorded, nothing
+> re-cut today.** §25.3's test is **MET**: `ｃａｌｌ　ｉｎ` banks **[3, 4, 20, 21]**, `ｄｒｏｐ　ｉｎ` bank
+> **[19]** — disjoint, no shared bank and no message holding both. The `ｃａｌｌ　ｉｎ` row's key is
+> narrowed to `立ち寄る` (plus `〜よってね` as D326/D481's sub-case) and `寄っていって` → `ｄｒｏｐ　ｉｎ`
+> is written down beside it. **No line in `batch_020.tsv` or in any shipped file changes.**
+
+⚠️ **Two census corrections to the PR's own cell, both in its favour.** Its `立ち寄` figures (7
+instances / 4 unique lines, banks [3, 20, 21, 41]) are **exact for the string `立ち寄`** — the row just
+claimed the verb. And its status cell said "**2 REMAIN** (banks 21, 41)": **D838 (bank 21) is already
+shipped at `batch_016:66`, and with `ｃａｌｌ　ｉｎ`** — a **second independent incumbent** the PR did not
+name, so the form is better attested than claimed and the live count on `立ち寄` is **1**, not 2.
+⚠️ **`立寄って` (D1377, no `ち`) is a kanji-elision spelling variant that a `立ち寄` grep cannot see** —
+the §Y2 / §AC1 mixed-script blind spot in a new shape.
+
+### 61.5 Corrections to existing cells — written out, per §4.3, with nothing silent
+
+1. **§34.4's `品` reach figure was a RAW SUBSTRING COUNT. The ruling is unchanged and its strongest
+   ground is untouched.** "44 across 23 banks" includes `一品` (21), `景品` (10), `商品` (4) and
+   `品物` (1). **The bare noun is 8 instances / 8 unique lines — DATA 376, 590, 605, 609, 640, 735,
+   1278, 1304 — in banks [0, 12, 13, 19, 40]**, so the shared-bank set with `アイテム` narrows from
+   eleven to **four [0, 12, 13, 40]** — **but it still contains bank 12, the keigo shop's own bank**,
+   where 605 (`どの品を`) and 598 (`　アイテムを買う`) sit four lines apart in one scene, and
+   `messages holding both` is still **0**. §34.4 rests on that scene, not on the count.
+   **`ａｒｔｉｃｌｅ` is unchanged; no rendering changes anywhere.** Corrected in place at §34.4. The
+   `アイテム` side (55 / 14 banks) was exact.
+2. **§34.1's `貼り紙 / 棚卸し / 休業いたします` "binds" cell named 2 of 5 siblings**, omitting unique
+   **338, 724 and 870**. Completed in place; the family is DATA 333, 338, 633, 647, 724, 870.
+3. **The wave-12 dispatch and §9.W12 named THREE near-duplicate traps; there were FOUR.** The fourth,
+   D326 ↔ D481, was in **§42.5's own forward-binding table** all along. Noted in place at §9.W12.
+4. **§9.W12's `ノロ` cell reads "D318, D335"**; D335 was **already shipped at `batch_006:22`** before
+   wave 12 and is not in `batch_020` at all. Noted in place.
+5. **`glossary.md:699` and `:816` are struck** (§61.2), both exactly as their PR #40 cells predicted.
+6. **Citation convention: "chunk 8 L14" (Flag 2 and §9.W12's corrected `てーこく` cell) is a 0-based
+   body index, not the 1-based FILE line the stated convention promises.** The instance is
+   `dumps/battle_dump.txt` **line 234 (1-based file line — exact)**, chunk 8 **body index 14**, which
+   is **`tl/battle/chunk_008.txt` file line 16 (1-based)**, where the shipped English is
+   `Ｗａｓ　ｔｈａｔ{FFFE}ａｎｏｔｈｅｒ　ｏｆ　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ{FFFE}ｎｅｗ　ｗｅａｐｏｎｓ？` — exactly as
+   quoted. **The substance is right because the pairing was positional against the dump**, which is
+   the method that saved it. The off-by-two had already propagated from the seed into the PR.
+
+### 61.6 Recorded, not re-cut — checked at review and not defects
+
+- **D328 is the TENTH distinct `ご用`/`用` opener in `tl/`, not the "sixth" the PR claims.** Beyond
+  §42.2's four (D471, 482, 492, 503) the corpus holds §46.2's D534 and D561, §52/§53's D661 and D701
+  (`Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？`), §57.3's D847 (`Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？`), §59.5's
+  D1401 and D1422, and §60.3's D597. **The family is deliberately variegated — one English per source
+  string — so the rendering is conformant and only the ordinal was wrong.**
+- **`あちこち` has no fixed English and needs none.** Shipped as `ａｎｄ　ｆｒｏｍ　ａｌｌ　ｏｖｅｒ`
+  (`batch_010:66`), `ａｂｏｕｔ　ｔｈｅ　ｔｏｗｎ` (`batch_012:84`), `ｔｒａｖｅｌ　ａｌｌ…`
+  (`batch_015:27`) and more; D343's `ｆｒｏｍ　ｃｏｕｎｔｒｉｅｓ　ｆａｒ　ａｎｄ　ｗｉｄｅ` is in the same
+  free-adverbial family. `ｆａｒ　ａｎｄ　ｗｉｄｅ` verified free.
+- **`だな？` is not a two-way variance.** `batch_012:79` renders the bare segment `ｉｓ　ｉｔ？` and
+  `batch_012:91` renders it `，　ｉｓ　ｉｔ？` — because 79's source puts the comma's slot on the
+  **previous** segment (`む、{insert}{FFFE}だな？` → `Ｈｍ，　{insert}，` / `ｉｓ　ｉｔ？`). D331's source
+  is `{insert}だな？` on one segment, identical to 91's, and it takes 91's form. **Correct; the
+  apparent divergence was a segmentation artifact.**
+- **`様` fires on D343's `様々な商品`** and is the quantifier, not §1/§2's honorific `様` → Lady/Lord;
+  the unit renders it `ｏｆ　ｅｖｅｒｙ　ｋｉｎｄ` and introduces no honorific. The PR's adjudication list
+  did not name this one; it is correct anyway.
+- **D320's contraction `ｉｔ’ｓ` is licensed by §29.6, two waves old**, whose register row for this
+  same speaker reads "Her `てーこく` … carried in register, not spelled out — §2's rule — and her
+  register is already doing it through contractions and tag questions." D345's contraction-free
+  clergy register is §24.6's; bank 30/31's row carries no apostrophe.
+- **D1332 (count 1, bank 40, untranslated) is readable-identical to D320** with a different tag
+  stream, so gate 6 is blind to it. **Whoever renders it after the §F2 repoint must reuse this unit's
+  English byte-for-byte.** ⚠️ **D320's own count is 3, not the PR's 2, and its banks are 32 (×2) and
+  34 (×1)** — the 44-instance total depends on it.
+
+### 61.7 ⭐⭐ LIVE §4.3 DEBT — `占領` has TWO shipped Englishes for one event
+
+| Source | DATA | bank | Shipped |
+|---|---|---|---|
+| `攻め入って占領した` | 891 (`batch_010:42`) | 28 | `ｍａｒｃｈｅｄ　ｉｎｔｏ　Ｆａｒｉｎａ　ａｎｄ　ｓｅｉｚｅｄ　ｉｔ` |
+| `…ファリーナを占領した戦いのことを` | 390 (`batch_012:67`) | 1 | `ｏｆ　ｔｈｅ　ｗａｒ　ｔｅｎ　ｙｅａｒｓ` / `ａｇｏ　ｉｎ　ｗｈｉｃｈ　Ｃａｒｌｉｎｅ` / **`ｔｏｏｋ　Ｆａｒｉｎａ？`** |
+| `てーこく軍に占領されてる` | **320** (this unit) | 32, 34 | `ｈａｓ　ｂｅｅｎ　ｓｅｉｚｅｄ` |
+
+**Both shipped rows describe the same historical event — Carline taking Farina ten years ago — and
+render it with different verbs.** Found at review by reading **all 141 segments** of `batch_012:67`,
+a pooled multi-scene row, rather than its head. **D320 is on the right side of the split** and its
+banks (32, 34) are disjoint from both 1 and 28, so no player meets the collision and nothing is
+re-cut. **Recorded for a corrections unit**, beside the PR's own Flag 14 (`なるけど、いいかい？` →
+`ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` at `batch_011:54` vs `ｂｕｔ　ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` at
+`batch_012:91`, banks 2 and 17, on the byte-identical source). **Neither is this unit's to fix.**
+
+### 61.8 Register — verified line by line, eleven voices in 21 lines
+
+| Who | DATA | Banks | Anchored to |
+|---|---|---|---|
+| the `ノロ` recruiter | 318 | 3 | `batch_007:39/40/49/60`, `batch_006:22` — D318 was the last hole in that skeleton, and its rows 3–4 come out **byte-identical to `batch_007:40`'s two** except the final mark |
+| a young female party member | 320 | 32, 34 | **§29.6's own register row**, plus D1332's bank-40 pool neighbours |
+| **Phyllis** | 326 | 4 | `batch_008` D470–501 (§42.6, contraction-free) — D326 is the byte-identical lift of D481 |
+| **King Leverk** | 327, 328 | 5, 7 | `batch_008:60/62`, `batch_009:30` (§42.6, no contractions, plain and old-fashioned) |
+| the frog king's court (menu only) | 329 | 6 | plain-Japanese engine menu inside the `ゲロゲロ` scene |
+| `batch_009`'s uncontracted recruiter | 330, 331, 332 | 8, 9 | `batch_009:30/34/43` — **no contraction anywhere**, which is why D331 takes the full `ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` |
+| `batch_019`'s rough shopkeeper | 333, 334 | 12, 15 | `batch_011:56`, `batch_019:36–44` |
+| the frog merchant (full katakana) | 336 | 14 | §5 / §60.1, `batch_019:33` — blunt and article-free |
+| the female shopkeeper | 337 | 15 | `batch_011:66`, `batch_015:35` |
+| the monster shop | 338, 339 | 16, 17, 18 | `batch_011:8/37` |
+| the mansion companion | 340, 341 | 18 | `batch_013:32`, `batch_014:16/18/20/23/24/25/36/46` — contracts freely (`Ｌｅｔ’ｓ`, `ｉｔ’ｓ`) |
+| narration + an old man at the trading port | 342, 343 | 20, 21 | `batch_013:47`, `batch_015:51`; §7's village-elder column, **no contraction in D343** |
+| the ship's captain | 344 | 23, 24 | `batch_013:38`, `batch_016:90` |
+| the Bernard's-church priest | 345 | 30, 31 | `batch_009:62`, `batch_005:39/40` — §24.6's contraction-free clergy |

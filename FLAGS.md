@@ -6857,3 +6857,169 @@ Branch deletion returns **HTTP 403** for this app (§AQ9): PR #40's branch `tl/s
 deleted** and remains on the remote. GitHub still refuses `REQUEST_CHANGES` (§AQ1), so the decision was
 posted as a `COMMENT` review with `DECISION:` on line 1. `gh` is not installed; the GitHub MCP tools
 were used throughout.
+
+---
+
+## AW. Wave 12 review — script batch 020 / PR #45, MERGED (2026-09-11, round 1)
+
+Squash **`5b6c212`**. Reviewed at PR head **`2b7e840e9a8d0fea048425312f14557b5886fa87`** on a base
+**pinned to `065e67bf11a2524cfa18978da142f1ae2596ec7b`** and re-fetched at the end of the review,
+still that SHA at both ends — the wave-11 mid-review branch move (§AV) did not recur. **All eight
+§6 gates ✓, merged round 1 with no must-change finding.** Integration commit: this one.
+
+⭐ **`batch_020` is the LAST GENUINELY PLAYER-FACING SCRIPT TEXT IN THE GAME.** What remains is debug
+menus (`batch_021`, `batch_022`) and the 366 lines / 2,751 instances blocked behind §F2.
+
+**Figures, every one re-derived at review, none relayed.** 21 unique lines / 44 message instances
+(counts read from `script_unique.txt`: 3 + 3 + 19×2); 532 JP → 1,051 EN readable characters =
+**1.9756×**; **+2,256 B across 21 banks**, max **410** (bank 18), no bank negative. 71 text runs,
+widest **23**, **0** at exactly 24, **0** over 24; no page over 4 text rows; `{FFFE}` +1 (D320 only);
+`{FCC0}` untouched on all 21; non-`{FFFE}` tag streams byte-identical in content and order on all 21.
+Per-bank deltas were obtained twice by independent routes — by holding the unit file aside, re-running
+`merge` and diffing `bankmeasure`, and by predicting `2*(EN−JP) + 2*ΔFFFE` per line and attributing it
+to each occurrence's bank from `script_dump.txt` — and the two agree **bank for bank**.
+
+### AW1. Banks under 2,000 free — FOUR, and this unit is the proof the `tightest:` line cannot be quoted
+
+**40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** Bank 5 is the only tight bank this unit touches; it
+needed **40** of 1,635, well under the dispatch's 94 estimate (which was computed at 2.10× against a
+realised 1.9756×). Banks 40, 41 and 2 are byte-for-byte untouched.
+
+⚠️⚠️ **`bankmeasure`'s `tightest:` line printed `bank 40 · bank 41 · bank 2` before this unit and
+prints `bank 40 · bank 41 · bank 5` after it — because bank 5 dropped 40 bytes past bank 2, so BANK 2
+BECAME INVISIBLE.** §AT1 / §AU1 / §AV1 warned that the line shows only three of the four; this is the
+first unit to make the omission *change which* bank is hidden. **Read the full 44-bank table. The
+line is not a summary, it is a sample.**
+
+### AW2. ⭐⭐ GATE 7 HAS A THIRD FACE AND IT IS WHAT FOUND THIS REVIEW'S ONLY REAL DEFECT
+
+`batch_022`'s wave-12 finding (`その他`: 0 glossary mentions of any kind, 7 shipped in `batch_013`) is
+confirmed as structural, and the face-(c) pass was run here for the first time on a merged unit:
+
+- **(a) key cells** — 1,293 distinct Japanese runs harvested from the first column of every table row
+  in `glossary.md`; 56 occur in this unit's source.
+- **(b) note cells** — 2,048 distinct backticked Japanese runs harvested from *every* cell of every
+  line; 94 occur in the source. Union 99, each hit of length ≥ 2 adjudicated by reading the row.
+  (My counts differ from the PR's 1,333 / 2,158 — splitter and struck-row handling; the hit set is
+  what matters. **Gate-7 key counts are not comparable between harvesters; state your corpus.**)
+- **(c) the `tl/` COLUMN-2 pass** — **2,893 aligned JP→EN *segment* pairs harvested from the shipped
+  TSVs themselves**, every `tl/script/*.tsv` except the unit under review, then the unit's own 71
+  segments paired against them. **28 of 28 exact counterparts byte-identical, 0 divergences.** A
+  second pass took 82 content words from the source, found the 60 that recur in a shipped row's
+  Japanese, and read each one's shipped renderings.
+
+⭐ **Face (c) is the only pass that found anything.** §AW3, §AW4 and §AW6 are all its results, and no
+glossary-side harvester however good could have produced any of them. **Gate 7 needs the `tl/`
+column-2 pass, and it needs it at SEGMENT level, not whole-message level.**
+
+### AW3. ⭐ A proposed glossary key would have invalidated shipped work — narrowed at integration
+
+The PR proposed `立ち寄る` **/ `寄る`** → `ｃａｌｌ　ｉｎ`, stating that the two are the same verb. They
+are — which is why keying the bare verb would have made **`batch_014.tsv:36` (D734, bank 19)**
+retroactively non-conformant: it already ships `また　いつでも{FFFE}寄っていっておくれ。` as
+`Ｄｏ　ｄｒｏｐ　ｉｎ　ａｇａｉｎ{FFFE}ａｎｙ　ｔｉｍｅ．` — **`ｄｒｏｐ　ｉｎ`.** §4.3 forbids an entry that
+invalidates shipped work without listing the lines it affects.
+
+Censused at review in **every inflection**, with the instrumental `〜によって` excluded: **13 instances
+/ 9 unique lines across banks [3, 4, 19, 20, 21, 40, 41]** — D318 (3, bk 3), D326 (2, bk 4), D343 (2,
+bk 20), D481 (1, bk 4), **D734 (1, bk 19)**, D838 (1, bk 21), D1346 (1, bk 40, untranslated, the *same*
+`寄っていっておくれ` construction as D734), D1377 (1, bk 41, spelled **`立寄って`** with no `ち`), D1383
+(1, bk 41). **§25.3's test is MET — `ｃａｌｌ　ｉｎ` [3, 4, 20, 21] vs `ｄｒｏｐ　ｉｎ` [19], disjoint, no
+message holding both — so both stand and nothing is re-cut.** The key is narrowed to `立ち寄る` and
+`寄っていって` → `ｄｒｏｐ　ｉｎ` is written down beside it (glossary §61.1, §61.4). **No line in
+`batch_020.tsv` or any shipped file changes.**
+
+⚠️ **Two census corrections, both in the PR's favour.** Its `立ち寄` numbers are exact *for that
+string*; and its "**2 REMAIN** (banks 21, 41)" is wrong — **D838 (bank 21) is already shipped at
+`batch_016:66`, as `ｗｈｙ　ｎｏｔ　ｃａｌｌ　ｉｎ？`**, a second independent incumbent the PR did not name.
+Live count on `立ち寄`: **1** (D1383, blocked). ⚠️ **`立寄って` is a kanji-elision spelling variant a
+`立ち寄` grep cannot see — the §Y2 / §AC1 mixed-script blind spot in a new shape.** Add elided-kana
+spellings to the list of things a reach census must try.
+
+### AW4. ⭐⭐ LIVE §4.3 DEBT — `占領` has two shipped Englishes for one event
+
+`batch_010:42` (D891, bank 28) ships `攻め入って占領した` → `…ａｎｄ　ｓｅｉｚｅｄ　ｉｔ．`;
+**`batch_012:67` (D390, bank 1) ships `…ファリーナを占領した戦いのことを` → `ｔｏｏｋ　Ｆａｒｉｎａ？`** —
+**the same historical event, two verbs.** Found by reading **all 141 segments** of that pooled
+multi-scene row rather than its head, which is the wave-12 coordinator's own error #3 avoided.
+D320 (this unit, banks 32 and 34) renders `ｈａｓ　ｂｅｅｎ　ｓｅｉｚｅｄ` and is on the **right** side of
+the split; all three bank sets are disjoint, so no player meets the collision. **Recorded for a
+corrections unit, nothing re-cut.** Beside it, the PR's own **Flag 14**, confirmed: `なるけど、いいかい？`
+ships as both `ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` (`batch_011:54`, bank 2) and
+`ｂｕｔ　ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` (`batch_012:91`, bank 17) on the **byte-identical** source.
+**Neither is `batch_020`'s to fix.**
+
+### AW5. RULING — the shop-closed notice takes no closing stop, and the donor alone would mislead
+
+Full evidence at glossary **§61.3**. D333/D338 carry no `。` before `」` and correctly ship no stop;
+`batch_006:57`'s stop is the `ノロ` tic's own (§34.1 says so in terms); **`batch_011:8` (D647) DOES
+carry `。` and DOES ship `．`** — the controlled positive case that settles it; §57.1's
+`「本日休業」` → `“Ｃｌｏｓｅｄ　ｔｏｄａｙ”` has neither. **And the indent does not transfer** — 4 / 2 /
+4+7 / 3 spaces, each source's own, measured. **A reviewer reading only the donor would have demanded
+a stop and been wrong. The PR argued this against its own dispatch and was right.**
+
+### AW6. Figure corrections carried into the record
+
+1. **§34.4's `品` reach was a RAW SUBSTRING COUNT** — "44 across 23 banks" includes `一品`(21),
+   `景品`(10), `商品`(4), `品物`(1). **The bare noun is 8 instances / 8 unique lines in banks
+   [0, 12, 13, 19, 40]**; the shared-bank set with `アイテム` narrows eleven → **four**, but **still
+   contains bank 12**, the keigo shop's own, and `messages holding both` is still **0**. §34.4 rests
+   on that scene, so **the ruling and `ａｒｔｉｃｌｅ` are unchanged.** The PR's Flag 8 was right and is
+   reproduced exactly. **It does not collide with PR #43 either way that lands**: #43's target is
+   `batch_012:53` (D376, bank 0, a **bare** `品`, shipped `ｇｏｏｄｓ`); this unit's `商品` → `ｗａｒｅｓ`
+   is a different noun in bank 20, and `ｇｏｏｄｓ` is left unspent here.
+2. **Flag 6's alternative measures 24, not 25.** `ｉｔ’ｓ　ｄａｎｇｅｒｏｕｓ　ｔｏ　ｇｏ　ｎｅａｒ．` = **26**
+   (exact); `ｇｏｉｎｇ　ｎｅａｒ　ｉｓ　ｄａｎｇｅｒｏｕｓ．` = **24**. **The break is still forced, and more
+   firmly than the flag argues**: 24 is at the hard limit and over §3.2's ≤23 target; the source's
+   `から、` still needs its `ｓｏ`, and `ｓｏ　ｇｏｉｎｇ　ｎｅａｒ　ｉｓ　ｄａｎｇｅｒｏｕｓ．` = **27**; and the
+   shipped English totals **75** columns (19+22+23+11) against a three-row ceiling of 3 × 24 = **72**,
+   so **no three-row packing exists at any wording.** The page goes 3 → 4 text rows and stays **at**
+   the limit, with neither a leading nor a trailing blank row, so §3.2's one untested shape is not in
+   play.
+3. **D320's count is 3, not 2**, banks 32 (×2) and 34 (×1). The 44-instance total depends on it.
+   Flag 3's D1332 sibling (count 1, bank 40, untranslated) is otherwise confirmed and must be reused
+   byte-for-byte after the §F2 repoint.
+4. **"chunk 8 L14" is a 0-BASED BODY INDEX, not the 1-based FILE line the convention promises.** The
+   `てーこく` battle instance is `dumps/battle_dump.txt` **line 234 (1-based file line — exact)**, chunk
+   8 **body index 14**, i.e. **`tl/battle/chunk_008.txt` FILE line 16 (1-based)**. The English there is
+   exactly as quoted, because the pairing was positional against the dump. **The off-by-two had already
+   propagated from the coordinator's corrected seed cell into the PR's Flag 2** — which is the §AQ3
+   trap springing for the third wave running, this time inside a *correction*. Corrected at glossary
+   §61.5.6.
+5. **§34.1's `貼り紙` "binds" cell named 2 of 5 siblings** (omitting 338, 724, 870); completed.
+6. **D328 is the tenth `ご用`/`用` opener in `tl/`, not the sixth.** Rendering conformant; ordinal wrong.
+7. **§9.W12's `ノロ` cell reads "D318, D335"; D335 was already shipped at `batch_006:22`** before wave
+   12 and is not in `batch_020`. Checked while confirming the unit's 21-line list has no hole — it has
+   none: D319 and D335 are shipped, D321–325 and D346 are bank 40 and blocked.
+
+### AW7. Method notes worth keeping
+
+- **A pooled row must be read segment by segment, and twice here it mattered.** `batch_012:67` (141
+  segments) hid the `占領` → `ｔｏｏｋ` debt at segment 77; `batch_012:68` (unaligned) produced a
+  `そうなの` harvester hit that turned out to be `今教会にいるそうなの` — hearsay `〜そうだ` + `の`, not
+  the interjection. **Head-fragment judgement would have got one wrong in each direction.**
+- **A segment-level apparent divergence can be a segmentation artifact.** `batch_012:79` renders the
+  bare segment `だな？` as `ｉｓ　ｉｔ？` and `:91` renders it `，　ｉｓ　ｉｔ？`; the difference is that
+  79's source puts the comma's slot on the **previous** segment. **Check where the source's break
+  falls before reporting a variance.**
+- **`rowcheck.py:_script_cols` expands ONLY `{FFEC}{=00}{=00}` and `{FC00}{=0000}` (to 7) and strips
+  every other insert to ZERO columns** — read in the tool's source at lines 125–128, not inferred.
+  D327's and D331's `{FFEC}{=00}{=04}` / `{=01}` rows are therefore **bounded, not measured**; hand-
+  measured fixed text 1 / 8 / 8 / 8, runtime budgets 22 / 15 / 15 / 15 at ≤23, each identical in
+  shape to shipped siblings that were opened and read. ⚠️ **The item- and unit-name tables' true
+  maximum widths remain unrecorded and need the binaries — carried forward from §AV.**
+- **The disclosure standard set by this PR is the one to keep.** It named the sections it covered by
+  key sweep rather than by eyes, and the reviewer spot-read **§42 in full** — the section most likely
+  to have been mishandled, holding the `ご用` ladder, the `Ｉ　ｓｅｅ．` family and the forward-binding
+  table — plus §34.1, §18.1, §20.4, §29.6, §47.5 and §57.1–57.4. **§42.5 is where the fourth trap was
+  hiding, and no gate reads it.**
+
+### AW8. Still true, carried forward
+
+Branch deletion returns **HTTP 403** for this app (§AQ9): PR #45's branch `tl/script-020` was **NOT
+deleted** and remains on the remote; the authoritative signal is the PR's own `merged: true`, not the
+branch's absence. GitHub still refuses `REQUEST_CHANGES` (§AQ1), so the decision was posted as a
+`COMMENT` review with `DECISION:` on line 1. `gh` is not installed; the GitHub MCP tools were used
+throughout. A fresh container still clones **shallow with a stale local ref** of the integration
+branch — `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` remains
+the fix.

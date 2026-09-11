@@ -21,36 +21,49 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > re-dispatch anything with no branch, and **re-arm the `send_later` watchdog**.
 
 ## Last updated
-2026-09-11 · by: **wave-12 coordinator** (`session_01UMK4VSo7m2SaC6uqaJKCdX`, top-level) ·
-wave: **12 RUNNING — 4 units dispatched, wave barrier not yet met** ·
-**every figure below re-derived by me from the dumps + a fresh `merge`/`bankmeasure`, not inherited**
+2026-09-11 · by: the **wave-12 reviewer of PR #45** (`batch_020`), integration commit below ·
+wave: **12 REVIEWING — barrier met, 1 of 4 reviewed and MERGED (#45); #43, #44, #46 still to review** ·
+**every figure in the Progress block and the `batch_020` row below was re-derived by the reviewer from
+the dumps + a fresh `merge`/`bankmeasure`/`rowcheck`, not inherited**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **948** | 1,430 | `tl/script/batch_001–019.tsv` (was 803) |
-| Script message instances | **5,041** | 7,931 | **63.6%** (was 61.7%) |
+| Script unique lines | **969** | 1,430 | `tl/script/batch_001–020.tsv` (was 948) |
+| Script message instances | **5,085** | 7,931 | **64.1%** (was 63.6%) |
 
-`check`: **All checks passed** at `c5f0d5b`. glossary ends **§60**, FLAGS ends **§AV** — both re-read
-at commit time, never reserved. `build/*_dump_merged.txt` regenerated at the close (it had gone
-**147 lines stale**; `assemble.py` reads only `tl/`, so no build was ever broken).
-⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.**
-⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, so bank 5 is invisible to anyone quoting it.**
+`check`: **All checks passed** on the integration branch after PR #45. glossary now ends **§61**,
+FLAGS now ends **§AW** — both re-read off the file at commit time, never reserved.
+⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** Bank 5 took the
+only hit (−40 of 1,635) and **has now dropped BELOW bank 2**.
+⚠️⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and after PR #45 it prints bank 5 INSTEAD
+OF bank 2 — so which bank is hidden has changed. The line is a sample, not a summary: read the full
+44-bank table.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight — WAVE 12, dispatched 2026-09-11
 | Unit | Branch | DATA | Size | Bank cost (mine) | State |
 |---|---|---|---|---|---|
-| `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; bank 5 **realised 40**, not my 94 bound; max **410** (bank 18) | ✅ **PR #45 OPEN — awaiting barrier** |
+| `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst**; 532 JP → 1,051 EN = **1.9756×**; widest run **23**, none at 24 | 21 banks, **+2,256 B**, max **410** (bank 18), bank 5 **realised 40** of 1,635 — all 21 deltas re-derived twice by the reviewer, by independent routes, and they agree bank for bank | ✅ **MERGED round 1, no must-change finding.** PR #45, squash **`5b6c212`**, gated at head `2b7e840` on base pinned `065e67b`. Integration commit: **`integrate: script batch 020 — glossary, flags, handoff`**, the commit that adds glossary §61 and FLAGS §AW. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` on the PR is the signal. Glossary **§61**, FLAGS **§AW** |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | bank 31 only — **realised 1,724**, not my 2,185 bound | ✅ **PR #46 OPEN** |
 
-## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING NOW, ONE AT A TIME.
-**#45 `batch_020` → #43 corrections → #44 `batch_021` → #46 `batch_022`** (unit order; the two debug
-twins adjacent so the second reviewer can pair them). `reviewer` subagents, `run_in_background: false`.
+## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **1 of 4 DONE**.
+~~**#45 `batch_020`**~~ ✅ **MERGED `5b6c212`, round 1, no must-change finding** → **#43 corrections
+(NEXT)** → #44 `batch_021` → #46 `batch_022` (unit order; the two debug twins adjacent so the second
+reviewer can pair them). `reviewer` subagents, `run_in_background: false`.
+⚠️ **`git pull --ff-only` before dispatching the next reviewer — PR #45's reviewer pushed an
+integration commit.** ⚠️ **PR #43's base has moved: it was opened on `45bab1c` and the branch tip is
+now past `5b6c212` plus this integration commit, so its reviewer must re-verify the merge itself
+against the CURRENT tip rather than trusting the author's `merge-tree` result.**
+⚠️ **PR #43 touches `batch_012` D376's `品` → `ｇｏｏｄｓ`. PR #45's review confirmed the two do not
+collide either way #43 lands** (bare `品` in bank 0 vs `商品` → `ｗａｒｅｓ` in bank 20; `ｇｏｏｄｓ` was
+left unspent by `batch_020`), and it corrected §34.4's `品` reach figure from a raw substring count
+(44 / 23 banks) to the bare-noun census (**8 instances / 5 banks [0, 12, 13, 19, 40]**) — **#43's
+reviewer should read glossary §61.5.1 before re-deriving it.**
 **4 of 4 translators returned, 0 lost, 0 re-dispatches.** Realised growth **1.87×–1.98×** against the
 **2.10×** plan, so every unit came in under its bound.
 
