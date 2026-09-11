@@ -46,7 +46,13 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; bank 5 **realised 40**, not my 94 bound; max **410** (bank 18) | ✅ **PR #45 OPEN — awaiting barrier** |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
-| `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | **bank 31 only, 2,185 of 34,745** | dispatched |
+| `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | bank 31 only — **realised 1,724**, not my 2,185 bound | ✅ **PR #46 OPEN** |
+
+## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING NOW, ONE AT A TIME.
+**#45 `batch_020` → #43 corrections → #44 `batch_021` → #46 `batch_022`** (unit order; the two debug
+twins adjacent so the second reviewer can pair them). `reviewer` subagents, `run_in_background: false`.
+**4 of 4 translators returned, 0 lost, 0 re-dispatches.** Realised growth **1.87×–1.98×** against the
+**2.10×** plan, so every unit came in under its bound.
 
 ✅ **All four dispatched 2026-09-11 as `translator` subagents of this session, `run_in_background: true`.**
 ⏰ **Watchdog armed: `trig_01D4W2WT4UMcxh2oPaCCxJnj`, fires 12:41Z.** It re-arms itself on every wake
@@ -238,6 +244,42 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
+
+### ⚠️ WAVE 12 — `batch_022` (PR #46): I RELAYED A TABLE WITHOUT MEASURING IT, AND REPEATED AN ERROR I HAD ALREADY DIAGNOSED
+1. ⭐⭐ **I RELAYED `batch_021`'s WIDTH TABLE TO `batch_022` VERBATIM AND IT WAS WRONG ON 18 OF 22
+   ROWS.** `batch_022` distrusted the relay, **read `batch_021`'s actual branch**, and was right.
+   Verified by me: `Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ` is **18** columns, so `batch_021`'s row is **21**
+   (its table claimed 23) and `batch_022`'s menu row is **22** (I relayed **24**). ⚠️ **So my
+   "track 20 lands at exactly 24, zero slack" was FALSE.** `track 17 = 24` **was** right, and track 18
+   was understated. **A relayed measurement is not a measurement. I passed on another agent's table
+   as fact without re-deriving a single cell of it.**
+2. ⭐⭐ **I DIAGNOSED THE STALE-CITATION BUG THIS WAVE AND THEN LEFT IT IN MY OWN SEED.** `batch_022`
+   found **both** of §9.W12's below-the-insert "already keyed" citations off by **exactly 65** — and
+   §9.W12 is **exactly 65 lines**. `インターミッション` `:6815`→`:6880`, `魔族` `:4525`→`:4590`.
+   (The two citations *above* line 868 — `貼り紙` `:699`, `ジュエル` `:96` — were unaffected and correct.)
+   ⚠️ **I recorded this exact failure mode after the corrections translator caught it, and did not go
+   back and fix the pointers sitting in my own text. Diagnosing a defect and leaving it in place is
+   worse than not noticing it.** **FIXED at `6da4f95`: both now cite by SECTION, which does not move.**
+3. ⭐⭐ **GATE 7 HAS A THIRD FACE, AND NO GLOSSARY-SIDE HARVESTER CAN REACH IT.** `その他` has **0
+   mentions in `glossary.md` of ANY kind — 0 key cells AND 0 note cells — yet ships 7× in
+   `batch_013`** as `　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ`. So: **(a) key cells · (b) NOTE cells (§AT1's `さ、`) ·
+   (c) forms SHIPPED IN `tl/` THAT THE GLOSSARY NEVER RECORDED AT ALL.** ⚠️ **Face (c) defeats even a
+   perfect note-cell harvester.** **GATE 7 NEEDS A `tl/` COLUMN-2 PASS** — harvest JP→EN pairs from the
+   shipped TSVs themselves. Recorded in §9.W12 at `6da4f95`.
+4. ⚠️ **MY "YOU MUST ABBREVIATE TRACK 23" WAS HALF RIGHT.** `batch_021` kept §42.1's full
+   `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` by splitting across one `{FFFE}`; `batch_022` matched it
+   byte-for-byte on the confirmation row and abbreviated **only** the 4-option menu row — which is the
+   source's own `ＩＭ`/`インターミッション` policy. **Better than what I told it to do.**
+5. ✅ **THE CROSS-UNIT BLOCKER IS RESOLVED IN THE FILE, NOT DEFERRED.** All **30** shared strings carry
+   `batch_021` PR #44's English, **verified 30/30 by direct byte diff of its branch**. The reviewer
+   re-runs that diff **only if `batch_021` is reworked**. ✅ **`batch_022` WITHDREW its own title-case
+   draft** after finding `batch_013` and `batch_021` both contradicted it — its own counter-evidence
+   pointed at their answer. **That is the standard: an agent overturning itself on evidence.**
+6. ⚠️ **ONE 24-COLUMN ROW IS THE REVIEWER'S CALL** — `　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）`, at the
+   hard limit with zero slack, fixable by abbreviating that menu row alone. **119 of 120 runs are ≤ 23.**
+7. **The unit is TWO debug tools, not one** — D1083–1099 is a **flag editor**, distinct from the sound
+   test. ⭐ **First rendering anywhere of two place names**: `キエーザ城` → `Ｋｉｅｓａ　Ｃａｓｔｌｅ`,
+   `ルクレール城` → `Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ`. Live rows: `ほこら`, `館`, `キエーザ`, `インターミッション`.
 
 ### ⚠️ WAVE 12 — `batch_020` (PR #45): A FOURTH TRAP I MISSED, AND A SEED CELL WRONG IN ALL THREE FIGURES
 1. ⭐⭐ **THERE WAS A FOURTH NEAR-DUPLICATE TRAP AND THE GLOSSARY HAD ALREADY WRITTEN IT DOWN.**
