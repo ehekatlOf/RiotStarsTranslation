@@ -58,7 +58,7 @@ one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | 🔁 **rework r1 PUSHED (`727146b`)** — awaiting re-review |
-| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ⛔ **CHANGES (PR #39)** — rework r1 sent |
+| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | 🔁 **rework r1 PUSHED (`3d60879`)** — awaiting re-review |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
@@ -272,6 +272,46 @@ at-24 / over-24 agree exactly. **That is the discipline this run keeps failing a
 It also confirmed every dispatch correction I gave it, including that **§37.1's off-by-one is a
 0-based/1-based convention mismatch, not an invented error** — the same shape as the DATA-vs-FILE
 mismatch on PR #37. **Record it as a convention, never as someone's mistake.**
+
+### Rework round 1 — PR #39 `batch_015`: **all three findings applied, pushed as `3d60879`** (2026-09-11)
+Gates re-run on the pushed file: `check` passes · `merge` 0 unmatched · `bankmeasure` bank 20 free
+**22,311** · `rowcheck script` clean · gate 6 0 of 56 keys recur, 0 internal duplicates · gate 8 0
+problems. EN 6,742 → **6,746** chars, growth **+7,178 B** (−2 finding 1, 0 finding 2, **+10 finding 3**).
+Runs at 24: 20 → **21**; ≤ 23: **352 of 373**.
+
+⭐ **THE TRANSLATOR BEAT BOTH OF US ON FINDING 1's EVIDENCE, AND FOUND THE FACT THAT ACTUALLY SETTLES IT.**
+I gave six shipped instances; the reviewer gave five. **It found eight**, by pairing the battle dump's
+Japanese with `tl/battle/` English (`chunk_008`, `chunk_026`) — a census neither of us ran, since battle
+`tl/` holds no Japanese and a naive grep there is a null check.
+✅ **And the decisive fact, verified here: `batch_013` ALREADY SHIPS `ん〜` (DATA 925, 948) AND `うーん`
+(DATA 940) IN THE SAME BANK — bank 29 — all as `Ｈｍｍ，`.** That is the exact shape of this unit's bank 20
+(`フーム` D807 + `うーん` D813). **So its own §25.3 objection is answered by MERGED PRECEDENT, not merely by
+§38.3's authority** — which is a much better answer than either the reviewer or I gave it.
+
+⚠️ **A MERGED GLOSSARY ROW IS STALE AND WANTS FIXING AT #39's INTEGRATION COMMIT (reviewer's, not mine —
+§4 step 2 makes seeding my only glossary write).** `glossary.md:2217`, the `うーん、` row, justifies itself
+with *"§25.3's test is met: `ふーむ` is in script bank 31, `うーん` in battle chunk 8."* ✅ **Both banks are
+wrong:** `ふーむ` ships in banks **30** (`batch_005` D988) and **11** (`batch_009` D581); `うーん` ships in
+banks **2** (`batch_007` D425) and **29** (`batch_013` D940). **The ruling stands — the stated reason for it
+does not.** This is the third stale-or-mismatched citation found in the merged record this wave.
+
+⚠️ **MY TENTH ERROR, small and mine alone:** I wrote "six shipped instances across **four** kana spellings".
+The six is right; the spellings are **three** (`ふーむ`, `うーん`, `ん〜`) — I counted the untranslated `フーム`
+as a fourth. **Counting the thing you are about to translate as evidence that it is already settled is
+circular, and it is the same shape as the phantom `生き返りの仙人` seed earlier this wave.**
+
+**Finding 3 was applied by RENDERING rather than declaring, deliberately**, and the reasoning is sound:
+`はあ、` is now carried in register by `ｅｖｅｒ` (+10 B, page stays 4 rows, no `{FFFE}` added), because
+declaring a drop here while §2-carrying `いや、` at D765/D793 would have left the unit internally
+inconsistent. An `Ａｈ`-form was measured and rejected — `Ａｈｈ，` is `ああ、` (D814) and `Ａｈ！` is `あっ！`
+(D810), **both already in bank 20**. **Reviewer: reverting to a plain declaration is a one-word change if
+you prefer it.** It also asks that **Flag 15 be STRUCK from the PR body at integration, not amended** —
+"nothing else is dropped" was the error the reviewer caught, and is only true now because D792 was fixed.
+The one remaining declared elision is D812's page-1 `らしい`.
+
+**Splitter disagreement: closed, no action.** After the rework the ≤ 23 counts coincide at 352, but that is
+arithmetic coincidence (D792's second row moved 19 → 24); the totals still differ 373 vs 372 on the D794
+definitional difference. Both sides agree it needs no action.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
