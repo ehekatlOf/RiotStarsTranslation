@@ -35,6 +35,8 @@ python3 tools/assemble.py build      merge, then reinsert into build/SCRIPT.BIN 
 python3 tools/assemble.py all        check + build + riotbattle checkedit
 python3 tools/assemble.py build --extended   tier-A chunks in appended 16 KB slots (tools/slots.py; needs the engine build)
 python3 tools/engine.py build        patched KOUSEI.EXE + SLPS_008.29 into build/ (font, renderer, slot stub, menus), simulated
+python3 tools/engine.py build --main1-buffer 0xADDR   also MAIN1.EXE with the per-bank script layout (tools/banks.py, bankext.py);
+                                     the buffer address needs savestate evidence first (FLAGS §BD)
 ```
 
 Then rebuild the disc image with the two files in `build/` and run it.

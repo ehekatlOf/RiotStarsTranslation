@@ -7,14 +7,17 @@ the way the inserter does, so the figures are the ones that decide whether a ban
 Usage:
     python3 tools/bankmeasure.py [merged_dump]      default build/script_dump_merged.txt
     python3 tools/bankmeasure.py --banks 40,5,2     restrict the report
+    --extended                                     budget each bank at its tools/banks.py size
 """
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import riotscript
+import banks
 
 BANK = 0xA000
+EXTENDED = False      # --extended: per-bank sizes from tools/banks.py
 
 
 def measure(path):
@@ -46,6 +49,8 @@ def measure(path):
 
 if __name__ == '__main__':
     args = [a for a in sys.argv[1:]]
+    EXTENDED = '--extended' in args
+    args = [a for a in args if a != '--extended']
     only = None
     if args and args[0] == '--banks':
         only = {int(x) for x in args[1].split(',')}
@@ -56,8 +61,9 @@ if __name__ == '__main__':
     for b, n in sorted(used.items()):
         if only and b not in only:
             continue
-        free = BANK - n
+        limit = banks.size(b, EXTENDED)
+        free = limit - n
         mark = '!!' if free < 0 else ('~ ' if free < 2000 else '  ')
-        print('%s bank %2d  %6d / %d used   free %6d' % (mark, b, n, BANK, free))
-    tight = sorted(used.items(), key=lambda kv: -kv[1])[:3]
-    print('tightest: ' + ', '.join('bank %d %d free' % (b, BANK - n) for b, n in tight))
+        print('%s bank %2d  %6d / %d used   free %6d' % (mark, b, n, limit, free))
+    tight = sorted(used.items(), key=lambda kv: -(kv[1] - banks.size(kv[0], EXTENDED)))[:3]
+    print('tightest: ' + ', '.join('bank %d %d free' % (b, banks.size(b, EXTENDED) - n) for b, n in tight))

@@ -27,9 +27,12 @@ Usage:
     python3 riotscript.py insert SCRIPT.BIN  script.txt  SCRIPT_new.BIN
     python3 riotscript.py verify SCRIPT.BIN                 # self-test round trip
     python3 riotscript.py unique SCRIPT.BIN  unique.txt     # dedup convenience dump
+    --layout on insert: banks placed per tools/banks.py (five banks enlarged, file 928 sectors);
+                        needs bankext.py's MAIN1.EXE. dump/verify/unique always use the retail layout.
 """
 import sys, re
 from tagargs import ARG_LEN
+import banks as bank_layout      # 'banks' is a local in insert()
 
 BANK = 0xA000
 NBANKS = 44
@@ -181,7 +184,7 @@ def _emit_bytes_from_body(body, bank):
     return bytes(out)
 
 
-def insert(script_path, dump_path, out_path):
+def insert(script_path, dump_path, out_path, layout=False):
     orig = open(script_path, 'rb').read()
     text = open(dump_path, 'r', encoding='utf-8').read()
     # split into banks
@@ -214,28 +217,33 @@ def insert(script_path, dump_path, out_path):
     out = bytearray()
     overflow = []
     for bank in range(NBANKS):
+        limit = bank_layout.size(bank, layout)          # 0xA000, or the bank's enlarged size under --layout
         body = '\n'.join(bodies.get(bank, []))
         stream = _emit_bytes_from_body(body, bank)
         h = hdr.get(bank, b'')
         content = h + stream
-        want_pad = BANK - len(content)
+        want_pad = limit - len(content)
         if want_pad < 0:
-            overflow.append((bank, len(content), len(content) - BANK))
+            overflow.append((bank, len(content), len(content) - limit, limit))
             # still assemble (truncation would corrupt) so caller can see the failure
-            bankbytes = content[:BANK]
+            bankbytes = content[:limit]
         else:
             bankbytes = content + b'\x00' * want_pad
-        assert len(bankbytes) == BANK or want_pad < 0
-        out += bankbytes[:BANK]
+        assert len(bankbytes) == limit or want_pad < 0
+        assert len(out) == bank_layout.offset(bank, layout)
+        out += bankbytes[:limit]
 
     if overflow:
         print('!! BANK OVERFLOW — reinsertion would corrupt the file:')
-        for bank, used, over in overflow:
-            print('   bank %d: %d bytes used, %d over the 0x%X limit' % (bank, used, over, BANK))
+        for bank, used, over, limit in overflow:
+            print('   bank %d: %d bytes used, %d over the 0x%X limit' % (bank, used, over, limit))
         print('   Shorten the translation in these banks and retry.')
         raise SystemExit(2)
 
-    assert len(out) == len(orig), 'size drift %d != %d' % (len(out), len(orig))
+    want = bank_layout.total_size(layout)
+    assert len(out) == want, 'size drift %d != %d' % (len(out), want)
+    if not layout:
+        assert len(out) == len(orig), 'size drift %d != %d' % (len(out), len(orig))
     open(out_path, 'wb').write(out)
     return out_path
 
@@ -298,6 +306,8 @@ def unique(script_path, out_path):
 
 
 def main(argv):
+    layout = '--layout' in argv
+    argv = [a for a in argv if a != '--layout']
     if len(argv) < 2:
         print(__doc__)
         return 1
@@ -305,7 +315,7 @@ def main(argv):
     if cmd == 'dump':
         p = dump(argv[2], argv[3]); print('wrote', p)
     elif cmd == 'insert':
-        p = insert(argv[2], argv[3], argv[4]); print('wrote', p)
+        p = insert(argv[2], argv[3], argv[4], layout=layout); print('wrote', p)
     elif cmd == 'verify':
         ok = verify(argv[2]); return 0 if ok else 1
     elif cmd == 'unique':

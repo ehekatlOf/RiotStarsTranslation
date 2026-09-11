@@ -5,7 +5,9 @@ engine.py  --  build the patched executables from original/ into build/, and ver
     python3 tools/engine.py build     KOUSEI.EXE: hookfont -> halfwidth --glyph-only -> renderer -> slotext apply
                                       SLPS_008.29: namegrid -> menutext -> prompttext
     python3 tools/engine.py verify    riotfont simcheck + slotext simulate on build/KOUSEI.EXE (both must PASS),
-                                      slpsmap on build/SLPS_008.29
+                                      slpsmap on build/SLPS_008.29, bankext simulate on build/MAIN1.EXE if present
+    --main1-buffer 0xADDR             also build MAIN1.EXE (tools/bankext.py: per-bank SCRIPT.BIN layout, bank
+                                      buffer relocated to ADDR). ADDR needs savestate evidence: FLAGS §BD3/§BD5.
 
 The chains are findings.md §18 and §22 plus pending/slot-extension.md §3 (FLAGS §BC3). The font
 payload goes to 0x80105448, the run the compact build has shipped in since 2026-07-30 (Appendix B:
@@ -42,8 +44,8 @@ def sha(path):
     return hashlib.sha256(open(path, 'rb').read()).hexdigest()[:16]
 
 
-def build():
-    for f in ('KOUSEI.EXE', 'SLPS_008.29'):
+def build(main1_buffer=None):
+    for f in ('KOUSEI.EXE', 'SLPS_008.29') + (('MAIN1.EXE',) if main1_buffer else ()):
         if not os.path.exists(os.path.join(ORIG, f)):
             raise SystemExit('original/%s missing — run python3 tools/unpack.py first' % f)
     os.makedirs(BUILD, exist_ok=True)
@@ -59,7 +61,11 @@ def build():
     run(['riotfont.py', 'namegrid', os.path.join(ORIG, 'SLPS_008.29'), k('p1.29')], must='size preserved')
     run(['riotfont.py', 'menutext', k('p1.29'), k('p2.29')], must='size preserved')
     run(['riotfont.py', 'prompttext', k('p2.29'), os.path.join(BUILD, 'SLPS_008.29')], must='size preserved')
-    for f in ('KOUSEI.EXE', 'SLPS_008.29'):
+    if main1_buffer:
+        print('MAIN1.EXE')
+        run(['bankext.py', 'apply', os.path.join(ORIG, 'MAIN1.EXE'), os.path.join(BUILD, 'MAIN1.EXE'),
+             '--buffer', '0x%08X' % main1_buffer], must='words written')
+    for f in ('KOUSEI.EXE', 'SLPS_008.29') + (('MAIN1.EXE',) if main1_buffer else ()):
         p = os.path.join(BUILD, f)
         print('  build/%-12s %9d bytes  sha256 %s' % (f, os.path.getsize(p), sha(p)))
     return verify()
@@ -73,11 +79,18 @@ def verify():
     if 'ＮＥＷ　ＧＡＭＥ' not in out:
         raise SystemExit('FAILED: build/SLPS_008.29 does not carry the English menu')
     print('  build/SLPS_008.29 carries the English menu, prompts and Latin name grid')
-    print('ENGINE BUILD OK — not booted: see pending/slot-extension.md §5')
+    if os.path.exists(os.path.join(BUILD, 'MAIN1.EXE')):
+        run(['bankext.py', 'simulate', os.path.join(BUILD, 'MAIN1.EXE')], must='RESULT: PASS')
+    print('ENGINE BUILD OK — not booted: see pending/slot-extension.md §5 and FLAGS §BD5')
     return True
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2 or sys.argv[1] not in ('build', 'verify'):
+    argv = sys.argv[1:]
+    mb = None
+    if '--main1-buffer' in argv:
+        mb = int(argv[argv.index('--main1-buffer') + 1], 16)
+        del argv[argv.index('--main1-buffer'):argv.index('--main1-buffer') + 2]
+    if not argv or argv[0] not in ('build', 'verify'):
         print(__doc__); raise SystemExit(2)
-    raise SystemExit(0 if (build() if sys.argv[1] == 'build' else verify()) else 1)
+    raise SystemExit(0 if (build(mb) if argv[0] == 'build' else verify()) else 1)

@@ -7938,7 +7938,7 @@ How code reaches the buffer — eleven places, all constants, no arithmetic on t
 Everything else walks the bank through `gp+0x240` / `gp+0x210`. So relocation is those eleven words
 (ten `lui`/`addiu` halves plus one data word), all mechanical.
 
-### BD3. The design (not built yet)
+### BD3. The design (BUILT and simulated the same day — BD5; not booted)
 
 1. **Per-bank layout table**, 44 × (u16 start sector, u16 count), in a verified zero run of the image;
    `tools/banks.py` is the single source for the EXE patch, `riotscript.py --layout`, `bankmeasure.py`
@@ -7962,6 +7962,44 @@ Everything else walks the bank through `gp+0x240` / `gp+0x210`. So relocation is
 4. Verification before any boot: the loader simulated for all 44 banks with `advance`/`read`
    intercepted (sector, count, dest per bank); `riotscript.py --layout` round-trips the enlarged file;
    `bankmeasure` per-bank budgets; the eleven relocation words verified against retail before writing.
+
+### BD5. Tooling built, and what changed against BD3 (same day, later)
+
+- **Table placement.** No zero run inside the MAIN1 image passes Appendix B's filters (39 runs ≥ 176 B,
+  every one a stride-table record or code-referenced; the 236-byte run at `0x8007EF1C` is CD record 0's
+  padding). The head of BSS is referenced from its first byte. So the image is **extended by one sector**
+  (`t_size 0x8A800 → 0x8B000`, file 569,344 → 571,392 bytes) and the table lives at `0x8009A800`: no
+  lui/addiu reference and no gp-relative access (gp = `0x8009A0E0`, 231 distinct gp-relative addresses,
+  last below `0x8009A448`, first above `0x8009D2F1`) lands in `0x8009A800..0x8009C000`. The crt0
+  zero-fill start moves `0x8009A20C → 0x8009B000` (one word at `0x800456B4`); every byte it no longer
+  clears is inside the loaded image and zero in the file, on first boot and on every re-entry.
+  The executables load each other through `LoadExec` (BIOS A0:51h — `0x8004577C` in MAIN1,
+  `0x800BD578` in KOUSEI, `0x8002CC08` in SLPS, all called with the `cdrom:\…;1` path and the stack
+  top), which reads `t_size` from the header, and no EXE carries MAIN1's size as a constant (the 0x116
+  hits are sprite-table values). The extension is therefore honoured by the loader.
+- **Loader tail** as BD3, with two refinements: the count is reloaded from `sp+0x14` four
+  instructions before `read` (not in its delay slot — correct on hardware either way, but the
+  simulator records call arguments before a delay-slot load commits), and the loc pointer is built
+  as `addiu a0,gp,0x254` (gp+0x254 = `0x8009A334`), which frees the word for it.
+- `tools/banks.py` (layout: 41→36, 40→31, 5→28, 2→27, 33→26 sectors; SCRIPT.BIN 1,900,544 bytes =
+  928 sectors; buffer 36 sectors = 73,728), `tools/bankext.py apply|simulate|show` (`--buffer` has no
+  default and is refused without one; `--revert` restores the retail file including its size),
+  `riotscript.py insert --layout`, `bankmeasure.py --extended`, `assemble.py --extended` now covers
+  both stores and passes `--layout` through `build`. `dump`/`verify`/`refresh`/default `check`
+  untouched (verify ROUND TRIP OK, refresh byte-identical, All checks passed).
+
+| Check (2026-09-11) | Result |
+|---|---|
+| `bankext simulate`, retail EXE, 44 banks | `advance(bank*20)`, `read(loc, 0x800D8068, 20)`, current bank stored, `sp` restored, 0 hazards, loc copied |
+| `bankext simulate`, patched (candidate buffer `0x800A8000`) | `advance(start[bank])`, `read(loc, buffer, count[bank])` for all 44 (2→27, 5→28, 33→26, 40→31, 41→36, others 20), current bank stored, `sp` restored, 0 hazards; crt0 zero-fill starts at `0x8009B000`; table page readable from the image |
+| `apply --revert` | byte-identical to retail |
+| `assemble.py build --extended` | SCRIPT.BIN 1,900,544 bytes; all 44 bank slices re-emitted from the merged dump match byte for byte (tight banks: 2 15,943 free, 5 17,979, 33 17,915, 40 22,603, 41 33,121); HEXMAP as §BC |
+| default `build` afterwards | retail sizes, `checkedit` OK, tracked merged dumps unchanged |
+
+**Still blocked on the human, unchanged:** the buffer address. `0x800A8000` is the candidate used for
+the simulation only (the 160 KB reference-free gap nearest the retail buffer). No MAIN1.EXE goes to the
+human until `riotfont.py liveness original/MAIN1.EXE TOWN.sav OVERWORLD.sav` shows the 73,728 bytes
+unwritten; then `python3 tools/engine.py build --main1-buffer 0x…` builds and simulates it.
 
 ### BD4. Consequence for the translation run
 

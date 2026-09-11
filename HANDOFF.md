@@ -114,8 +114,13 @@ table; eleven constant references, all mechanical to relocate. Design: a per-ban
 the EXE, the loader tail rewritten in place (17 words, no stub), the buffer moved to a 72 KB free region.
 **Blocked on ONE input: two DuckStation savestates from MAIN1 scenes (a town mid-dialogue, the overworld)
 so `riotfont.py liveness` can prove the target region is unwritten** — the four static candidates are
-exactly where pointer-addressed load buffers would live. Tooling (`tools/banks.py`, `riotscript.py
---layout`, the MAIN1 patch tool + simulation) is the next engine item in the root session.
+exactly where pointer-addressed load buffers would live. **The tooling is DONE and simulated (FLAGS §BD5):**
+`tools/banks.py`, `tools/bankext.py` (image +1 sector for the table, loader tail rewritten, buffer
+relocated; all 44 banks simulate; revert byte-identical), `riotscript.py --layout`, `bankmeasure.py
+--extended`, `assemble.py build --extended` (SCRIPT.BIN 1,900,544 bytes, every bank slice verified).
+When the savestates land: `riotfont.py liveness original/MAIN1.EXE TOWN.sav OVERWORLD.sav` on
+`0x800A8000` (+73,728), then `python3 tools/engine.py build --main1-buffer 0x800A8000` (or the region the
+savestates clear), then the boot test: a town dialogue in a tight bank (any bank-41 scene).
 **Policy this run:** bank 40's spendable budget goes to the 21-instance item table (~840 instances), not
 its own story text (~25 instances). Reversible, but the arithmetic is not close.
 ⚠️ **THREE THINGS COME DUE THE MOMENT BANK 40/41 OPENS, and each is written down so nothing is lost:**

@@ -24,8 +24,9 @@ Usage:
     python3 tools/assemble.py build               merge, then reinsert into build/*.BIN
     python3 tools/assemble.py refresh             re-dump from original/ into dumps/
     python3 tools/assemble.py all                 check + build + checkedit
-    --extended                                    tier-A chunks (slots.EXTENDED) in appended 16 KB slots;
-                                                  their parked pending/ files ride along; needs slotext.py's KOUSEI.EXE
+    --extended                                    tier-A chunks (slots.EXTENDED) in appended 16 KB slots (needs
+                                                  slotext.py's KOUSEI.EXE) and the enlarged script banks (tools/banks.py,
+                                                  needs bankext.py's MAIN1.EXE); parked pending/ battle files ride along
 
 Exit code is non-zero if anything failed, so this is safe to wire into a script.
 """
@@ -40,6 +41,7 @@ TLS    = os.path.join(ROOT, 'tl', 'script')
 BUILD  = os.path.join(ROOT, 'build')
 
 import slots
+import banks as bank_layout      # 'banks' is a local dict in merge_script
 SCRIPT_SLOT = slots.SCRIPT_SLOT   # battle chunk script slot, 0x25000..0x27000 (retail)
 EXTENDED = False                  # --extended: tier-A chunks budgeted at slots.EXT_SLOT in appended slots
 BANK        = 0xA000        # SCRIPT.BIN bank size
@@ -310,8 +312,9 @@ def merge_script(verbose=True):
         if cur is not None and not is_structural(line):
             banks[cur] += cost(line)
     for b, used in sorted(banks.items()):
-        if used > BANK:
-            problems.append('bank %d: %d bytes, %d over the 0x%X limit' % (b, used, used - BANK, BANK))
+        limit = bank_layout.size(b, EXTENDED)
+        if used > limit:
+            problems.append('bank %d: %d bytes, %d over the 0x%X limit' % (b, used, used - limit, limit))
 
     problems += validate_body([l for l in merged.split('\n')], 'script', jp_ok=True)
     if verbose:
@@ -398,7 +401,7 @@ def cmd_build():
             print('  -- skipping %s (original or merged dump missing)' % binary)
             continue
         out = os.path.join(BUILD, binary)
-        flag = ['--extended'] if (EXTENDED and binary == 'HEXMAP.BIN') else []
+        flag = ['--extended'] if (EXTENDED and binary == 'HEXMAP.BIN') else (['--layout'] if (EXTENDED and binary == 'SCRIPT.BIN') else [])
         ok &= run([sys.executable, os.path.join(TOOLS, tool), 'insert', src, dump, out] + flag)
     if os.path.exists(os.path.join(BUILD, 'HEXMAP.BIN')):
         flag = ['--extended'] if EXTENDED else []
