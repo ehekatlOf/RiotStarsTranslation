@@ -55,10 +55,10 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
 | `batch_017` | 1100–1159 | 60 / 60 | 2,834 | 31–39 | `tl/script-017` | — | translator dispatched |
-| `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,109 | 42, 43 | `tl/script-018` | — | translator dispatched |
+| `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **PR OPEN** — awaiting the barrier. −2,706 B (42: 9,647 free · 43: 8,943), `check` green |
 | `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: the coordinator** — **1 of 3 PRs open.** Wait for 017 and 018, then reviewer 017 → 018 → 019.
+**Who acts next: the coordinator** — **2 of 3 PRs open (#41, #40).** Wait for `batch_017`, then reviewer 017 → 018 → 019.
 ⛔ **Nothing is reviewed until all three are open** (CLAUDE.md §4 step 4). At 09:07Z both remaining
 translators were alive and 43–44 min in; wave 9's ran 52 min – 1 h 34 m, so this is normal, not a stall.
 
@@ -75,6 +75,18 @@ sources, both mine, and the reviewer must NOT re-report them as the translator's
    therefore takes §9's own stated lowercase alternative, `ｒａｉｎ　ｏｆ　ｆｉｒｅ`. ⚠️ **The §9 row must
    be kept LIVE, NOT struck as exhausted**, and whoever renders D223 decides the description sense.
    **This is wave 10's "measured ONE SIDE of a comparison" shape, committed by me in a seed.**
+3. ⚠️ **My §9 seed's REASON for `的中確率` → `ｈｉｔ　ｒａｔｅ` is FALSE, though the rendering stands.**
+   I wrote that `命中率` is *"a different word in a different store"*. Re-derived by me: `命中率` is
+   **script DATA 830, 979, 1237 — 0 battle-dump hits — i.e. the SAME store**, and **D830 already
+   ships as `ｈｉｔ　ｒａｔｅ` in `batch_016.tsv`.** What actually licenses the row is §25.3 measured:
+   `的中確率` is bank [42], `命中率` banks [21, 29, 40] — **0 shared banks, 0 messages hold both.**
+   ⚠️ **HANDOFF's own inherited list names `命中率 (D1237)` as a live §9 row — i.e. script — and I
+   wrote "different store" with that on the page in front of me.** Keep the rendering; the §9 row's
+   stated reason must be replaced at integration.
+4. ✅ **`Ｘボタン` → `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` is settled by SHIPPED WORK, not by my §16 reasoning.**
+   **D1414 — already merged in `batch_002.tsv`, bank 43, same speaker, same scene — renders
+   `×ボタンを押してね` as `Ｃｒｏｓｓ　ｂｕｔｔｏｎ`**, and D1393's `Ｘボタンよ` is the same instruction in
+   the same words. My proposal was right; the corpus proof is stronger than the argument I gave.
 ⚠️ **No unit touches banks 2, 5, 40 or 41** (verified: the three bank-sets are disjoint from the
 four tight banks). Tightest bank touched is **33** — 8,919 free, ~4,415 projected demand.
 
@@ -434,3 +446,6 @@ one rework round; chunk 37 (5,037) and chunk 42 (3,627) took **three**; script `
 3. The run is recursive: each wave's session opens the next wave's session before it ends. If NEXT
    ACTION names a spawn that never happened, the chain broke — spawn it yourself. The only four
    reasons to stop are in CLAUDE.md §8, and **"nothing dispatchable" does NOT hold** — see Remaining.
+
+¹ 1,299 = all readable characters after tag-strip. The dispatch said 1,109 (kana+kanji only).
+Both are true of their own corpus; growth is calibrated on 1,299. Not an error — state the convention.
