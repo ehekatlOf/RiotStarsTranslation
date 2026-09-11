@@ -12,6 +12,33 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
+> ⛔ **THE RECURSIVE-SESSION CHAIN HAS HIT ITS CEILING AT WAVE 9. A HUMAN MUST START WAVE 10.**
+> **`send_later` AND `create_trigger` BOTH FAIL** from this session with:
+> `caller session is at lineage depth 8 (limit 8); cannot spawn or re-arm further child sessions`
+> — tested directly 2026-09-10, both tools, not inferred. Each wave has been a child of the last,
+> so wave 9 is the 8th descendant and **the last link this design can produce.** Consequences:
+> 1. **THERE IS NO WATCHDOG ON WAVE 9.** CLAUDE.md's "the timer is always armed" cannot be
+>    satisfied — the tool refuses. Wave 9's only wake mechanism is background-subagent completion
+>    notifications, which do work, but have **no backstop** if one is swallowed.
+> 2. **WAVE 10 CANNOT BE A NEW SESSION OPENED FROM HERE.** `create_session` is the same lineage
+>    mechanism and is expected to fail identically.
+>
+> **What a human should do: open wave 10 as a FRESH TOP-LEVEL SESSION** (depth 0) from
+> `https://github.com/ehekatlOf/RiotStarsTranslation`, `source_revision`
+> `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with the units in **Next
+> up**. That restores the full chain *and* the three-role split, and costs nothing else.
+>
+> **What wave 9 does if no human appears:** `.claude/agents/orchestrator.md` §7.2's documented
+> fallback — an `orchestrator` **subagent**, `run_in_background: true`. ⚠️ **This is a REAL
+> DEGRADATION, not an equivalent:** CLAUDE.md's own banner says a coordinator running as a subagent
+> **has no `Task` tool**, so it cannot spawn a reviewer and the three-role split collapses into one
+> agent that dispatches, judges and merges its own wave. **That happened in wave 1 and cost the
+> independence of four merges.** If that fallback is taken, every unit it merges is **SELF-REVIEWED**
+> and owes an independent post-merge audit (CLAUDE.md §8).
+>
+> ✅ **WAVE 9 ITSELF IS UNAFFECTED.** Its translators are subagents of this session, which *does*
+> have `Task`, so the reviewer can be spawned and the three-role split is intact for this wave.
+>
 > **WAVE 9 IS RUNNING — 3 script batches dispatched, behind the wave barrier (CLAUDE.md §4a).**
 > Coordinator: `session_01DFhp3iVua6qbKN4QhBJvPP`. Base `ff3295a` (glossary seeds) on
 > `claude/workflow-translation-iterate-uzlkns`.
@@ -35,7 +62,8 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `assemble.py:validate_body` still charset-checks preserved source text).
 
 ## Last updated
-2026-09-10 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
+2026-09-11 · by: **PR #34’s round-2 reviewer** (integration commit; the row below is mine) ·
+previously 2026-09-10 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
 wave: **9 RUNNING — glossary seeded (`ff3295a`), 3 batches dispatched, awaiting the §4a barrier** ·
 queue: **recomputed this wave; my bank accounting reproduces `queue.py`'s 603/628 exactly**
 
@@ -44,8 +72,8 @@ queue: **recomputed this wave; my bank accounting reproduces `queue.py`'s 603/62
 |---|---|---|---|
 | Battle chunks | **32** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33–35, **37**, **38**, 40, **41**, **42** |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** (was 56.5% at wave-8 start) |
-| Script unique lines | **461** | 1,430 | `tl/script/batch_001–010.tsv` |
-| Script message instances | **4,552** | 7,931 | **57.4%** (was 53.7%) |
+| Script unique lines | **521** | 1,430 | `tl/script/batch_001–011.tsv` (batch 011 merged, PR #34) |
+| Script message instances | **4,612** | 7,931 | **58.1%** (was 57.4% at wave-9 start) |
 
 `check`: **All checks passed** at `965ee18`. ⚠️ **Tightest banks after wave 8: 40 → 75, 41 → 353,
 5 → 1,635, 2 → 2,993.** ⚠️ **Bank 40 and bank 5 are effectively CLOSED to further item-table work** —
@@ -57,11 +85,45 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 ## In flight
 | Unit | Branch | PR | Round | State |
 |---|---|---|---|---|
-| `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` | — | 1 | dispatched 2026-09-10 |
-| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` | — | 1 | dispatched 2026-09-10 |
-| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` | — | 1 | dispatched 2026-09-10 |
+| `batch_011` — town & shop NPCs, DATA 647–706 | `tl/script-011` | **[#34](https://github.com/ehekatlOf/RiotStarsTranslation/pull/34)** | 2 | ✅ **MERGED** `edd6d2d` · integrated `2eff660` · **glossary §52, FLAGS §AN** · `check` green. 60/60 lines, +2,474 B, bank 16 10,953 free. Round 2: **no findings, no round 3 manufactured.** Gate 7 **2,322 keys / 131 occurring / 0 failures**; §AG6 mirror 44 runs, 17 incumbents, conforms. Gated tree `452615e` (`merge-tree` + `git archive`), provenance by `cmp` + sha256. |
+✅ **PR #34 MERGED and INTEGRATED (2026-09-10; review closed 2026-09-11).** Squash `edd6d2d`; integration commit pushed to `integrate:claude/workflow-translation-iterate-uzlkns`. Section numbers **taken by reading both files at commit time**: `glossary.md` ended at §51 → new **§52**; `FLAGS.md` ended at §AM → new **§AN**. PR #35 had **not** integrated when they were read. The two wave-9 §9 seeds this unit discharges are **struck**: `ミュートフルーツ` promoted as seeded and exhausted; `メンバーカード` promoted onto its **own listed Alt** `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13), which is what that row asked for.
 
-**Barrier: none of the three may be reviewed until all three have an open PR** (CLAUDE.md §4a).
+⚠️ **NEW CROSS-UNIT FINDING, AND IT IS A FINDING ON PR #36, NOT ON #34 — route it to `batch_013`’s reviewer or translator.** `『進化の木の実』` is shipped here as `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` (18, D689, bank 16) and rendered `“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` (15) by **`batch_013` L52 (bank 29)**. Neither form was in `glossary.md` when either unit was written. **Ruled at glossary §52.5 for the long form**, on the corpus’s two decided `『Ｘの Ｙ』` precedents — §12 `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` and §33.1 `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”`, the latter recording the short compound as weighed and **“never fired”** — and because `batch_011` merged first and is now the shipped work. **Width decides nothing, measured both ways with `len()`:** #36’s row becomes `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”？` = **19** against its current 16 — inside the box, **one row, no re-flow, no tag change**. Banks 16 and 29 are disjoint, so §25.3 is not engaged. See `FLAGS.md` §AN4.
+
+⚠️ **`FLAGS.md` §AN1 records the wave’s own dispatch-table false positive with its generic cause**, and **§AN2 records that this reviewer’s FIRST census of `で、` was itself a positional artifact that would have overwritten a correct record** — a “starts with” matcher returned zero where the substring sits mid-segment. The corrected record is at glossary **§52.3**: `で、` has **two** shipped Englishes, `Ｎｏｗ，` (bank 4, §42.1) and `Ｓｏ，` (**bank 3, `batch_007` L40/L50/L61, shipped since wave 5**), and `batch_011` takes the latter in bank 16 because §28.8’s `さあ、` → `Ｎｏｗ，` already occupies that bank inside the same message. **No `tl/` line moves.** PR #34’s Flag 3 claimed `Ｓｏ，` was spent “only on `ダカラ、` in chunk 26” and missed its own strongest evidence — which makes the choice **stronger**, not weaker.
+
+| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` @ `84cd10d` | **[#35](https://github.com/ehekatlOf/RiotStarsTranslation/pull/35)** | **3 — LAST PERMITTED** | ⚠️ **ROUND 2 → CHANGES, 5 findings, round 3 sent 2026-09-11. §5's three-round cap is now reached: round 3 merges or the unit PARKS.** All 8 gates pass; the 5 are **gate-7 terminology**, net **+4 bytes**, no re-flow beyond one restored `{FFFE}` and one 3-row repack. The reviewer justified the round rather than asserting it: **each of the 5 has a merged precedent where the identical item was a review finding on another unit and was fixed** (§51.4 `Ｈｏｂｂｉｔ` capitalisation, §41.8 `そして、`, §48.2 `やはり`) — merging would hold this unit to a **lower** standard than three merged units. Gate 6 coverage **1,153 rows / 43 files incl. `batch_011`**; gate 7 **1,040 keys / 113 occurring / 196 pairs / 77 apparent → 5 genuine**. Round-1 finding 3 (`ベルナール教会`) **confirmed declined a second time — do not let it reappear.** |
+| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` @ `d55846d` | **[#36](https://github.com/ehekatlOf/RiotStarsTranslation/pull/36)** | 1 | ⏳ **CROSS-UNIT FIX APPLIED; first review dispatched 2026-09-11.** `『進化の木の実』` → `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` per merged §52.5; verified by me — byte-identical to `batch_011`'s instance, short form now **0× anywhere in `tl/`**, row 16 → 19 columns, **no re-flow**, bank 29 −6 (16,879 free). ⭐ **IT BUILT THE CHECK THAT WOULD HAVE CAUGHT THE DIVERGENCE** — see Decisions. Body figures re-verified mechanically: **22 forms, 21 literal in the file, 1 split across a `{FFFE}`, 0 unverified**; that pass found a **fifth** wrong figure (flag 8's rejected alt, 30 → **29**) in a part of the body no one was examining. |
+
+✅ **BARRIER MET — all 3 PRs open (#34, #35, #36), 0 units parked, 0 re-dispatches needed.**
+**Reviews: #34 ✅ MERGED. #35 → round 3, the LAST permitted (merges or parks). #36 in first review.**
+⚠️ **WAVE 9 HAS NOW PRODUCED THREE WRONG CORRECTIONS, AND THE THIRD CAME FROM A REVIEWER**
+(`ベルナール教会`, declined with evidence by `batch_012`'s translator and verified by me). The
+standing lesson holds in **both** directions: a reviewer's finding is not privileged over a
+translator's evidence. ⚠️ **A fourth near-miss, self-caught:** PR #34's reviewer's first `で、`
+census used a "starts with" matcher and returned the **opposite** of the truth because `で、今日は`
+sits mid-segment; a whole-row substring census found it. Recorded at **§AN2** as the dispatch-table
+false positive running in reverse. ⚠️ **A rework message must NOT tell a translator to
+`git reset --hard` the integration branch** — on its own branch that DISCARDS its commit. `batch_011`'s
+translator caught this in my round-1 rework text and fetched-and-diffed instead, verifying every
+intervening commit touched only `HANDOFF.md` (independently confirmed). **Scope that preflight line to
+fresh checkouts.**
+⚠️ **DELIBERATE ORDER DEVIATION, recorded rather than silent: #35 is being reviewed WHILE #34
+reworks**, instead of idling until #34 finishes. **The invariant CLAUDE.md §4 actually protects is
+preserved — exactly ONE reviewer alive at a time**, so `glossary.md` / `FLAGS.md` / `HANDOFF.md`
+writes still serialise. Rationale: reworks ran 4–12 min and reviews 12–30 min in wave 8, and **this
+wave has no watchdog** (lineage cap, Blocked 0b), so an idle stall is a real risk while a moved base
+is not — translators touch only their own `tl/` file, so a `batch_012` merge cannot conflict with
+`batch_011`'s rework, and gate 2 re-checks mergeability against the current head anyway. Section
+numbers are still taken by **READING at commit time**, which is what makes out-of-order integration
+safe. If this proves wrong, the fallback is simply to serialise fully again.
+Reviewing now, **one reviewer at a time, `run_in_background: false`, in unit order 011 → 012 → 013**.
+Push `HANDOFF.md` before each reviewer; `git pull --ff-only` after it (it pushes an `integrate:`
+commit). ⚠️ **Never infer merge state from an agent's status** — check `git log` and the PR.
+
+⚠️ **CROSS-UNIT, FOR THE REVIEWER TO HOLD:** `batch_012` renders `ホッジス` → `Ｈｏｄｇｅｓ` (DATA 398)
+as the retired officer to consult **about tactics** — and **`batch_013` IS the tactics-lecture
+unit.** Almost certainly the same NPC. **Check `batch_013` names him identically.**
 
 ## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
 **Seed the glossary BEFORE dispatching.** Sections end at **glossary §51** (wave 9's seeds went into
@@ -109,6 +171,19 @@ bank-FEASIBLE now** — about **12 more batches**. So CLAUDE.md §8's "no dispat
 them are 21-instance item-table rows** held solely by bank 40.
 
 ## Blocked — needs a human
+0b. ⛔ **NEW 2026-09-10 — THE RUN'S AUTOMATION IS OUT OF ROAD, AND THIS IS THE CHEAPEST FIX ON
+   THIS LIST.** Every wave has run as a child session of the previous wave, and the platform caps
+   that at **lineage depth 8**. Wave 9 is at the cap. `send_later` and `create_trigger` were both
+   called and both returned `caller session is at lineage depth 8 (limit 8); cannot spawn or re-arm
+   further child sessions`; `create_session` uses the same mechanism. **So wave 9 runs without a
+   watchdog and cannot open wave 10 as a session.** ⚠️ **Nothing is wrong with the repository, the
+   translations or the tools** — `check` is green and every gate still works. **Fix: a human opens
+   wave 10 as a fresh top-level session** (any new Claude Code session on
+   `claude/workflow-translation-iterate-uzlkns`), which resets the depth to 0 and restores both the
+   chain and the three-role split. **Takes one action and needs no disc, EXE or emulator.** ⚠️ **The
+   in-run fallback — an `orchestrator` subagent — WORKS BUT IS DEGRADED**: subagents cannot spawn
+   subagents, so such a coordinator has no reviewer and self-reviews its own merges (wave 1's
+   failure, four merges). **Prefer the human action; it is strictly better and nearly free.**
 0a. 🔧 **NEW 2026-09-09 — THE CHEAPEST ITEM ON THIS LIST, AND IT IS NOT ITEM 0.** `FLAGS.md`
    **§AF1**. `assemble.py:validate_body` applies its charset whitelist to **preserved SOURCE
    machine text**. Battle chunk 36 is mostly a full-width MIPS assembly listing, English machine
@@ -125,8 +200,17 @@ them are 21-instance item-table rows** held solely by bank 40.
    and no dumper change.** Afterwards, unparking is `git mv pending/chunk_036.txt
    tl/battle/chunk_036.txt` and nothing else. **986 JP characters — 2.3 % of the battle script —
    are finished and waiting on it.**
-0. 🔧 **THE `riotbattle.tokenise` DUMP ARTIFACT — the highest-leverage item here.** `FLAGS.md`
-   **§D1, §R**. The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte
+0. 🔧 **THE `tokenise` DUMP ARTIFACT — the highest-leverage item here.** `FLAGS.md` **§D1, §R**.
+   ⚠️ **WIDENED 2026-09-10 (PR #35 review): THE SAME BUG IS IN `tools/riotscript.py` TOO, NOT ONLY
+   `riotbattle`.** `riotscript.tokenise_stream` (lines 61–83) tests `is_sjis_lead(c)` **before** the
+   tag branch and **has no argument-length table** — verbatim §R4's cause, in a second file. Verified
+   directly, not inferred. **A fix that patches only `riotbattle` leaves this unfixed.** Census by
+   signature detector, calibrated by reproducing §R2's recorded figure exactly: **24 in the battle
+   dump, 1 in the script dump** (script DATA 367, `{FFED}{=03}閧{=A8}` = `FF ED 03 E8 82 A8`, where
+   `E8` is a valid SJIS lead so two argument bytes decoded as text). ⚠️ **The script instance has NO
+   SHIPPING IMPACT** — both JP and EN re-encode to the identical byte prefix, so nothing renders
+   wrongly; it is dump-representation only. **So fix `riotbattle` first — that is what unblocks 8
+   chunks — and `riotscript` alongside it, since it is the same three-line change.** The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte
    is a valid lead byte, so an item id plus the *next tag's* lead byte decodes as a kanji.
    **24 occurrences across 10 chunks** — `{FC70}` in 5, 16, 17, 23, 39 and `{FCA8}` in 15, 27, 28,
    29, 32 — and each makes `check` unsatisfiable for that chunk: the dump form passes tag parity and
@@ -194,6 +278,46 @@ untouched. Script growth for planning **2.10×** (realised 2.118 over 408 lines)
 **DATA line list**, never a `queue.py` position. A term is "in the glossary" only if a row **fixes an
 English form**. A glossary row's **Alt column records REJECTED options**. `{FCC0}` is forbidden by
 `assemble.py:tag_parity`, **not** by `rowcheck.py` (§Q2 — never patch it, never a finding).
+
+**⚠️ WAVE 9's OWN FINDING — MY DISPATCH TABLE PRODUCED A FALSE POSITIVE. Carry this into every
+future dispatch.** I gave all three translators a "shipped clause" table built by splitting shipped
+pairs on `{FFFE}`/`{FCC0}`/`{FC30}`/`{FC51}`/`{FC50}` and aligning clauses **positionally**. On
+`いらっしゃいませ！！` it asserted a corpus distinction (`Ｃｏｍｅ　ｉｎ！！` vs `Ｗｅｌｃｏｍｅ！`) that
+**does not exist**. `batch_011`'s translator rejected it by reading; PR #34's reviewer then proved
+it independently: the form occurs **twice in the whole corpus** — bank 16 (this unit) and bank 26
+(`batch_010` D885) — and D885 is exactly the message §34.5's **reserve** covers, licensed only
+because `カジノへ　ようこそ！` sits on the adjacent row. **The table learned a rule from a sample of
+one, and the real conditioning variable was the bank.** The cause is **generic**: positional
+alignment infers a rule from whichever instances happen to be translated, and a term whose only
+shipped instance sits under a documented reserve will look like a fixed distinction.
+✅ **The mitigation worked** — every dispatch labelled the table "a LEAD TO VERIFY BY READING, never
+a ruling", and that is exactly what the translator did. **Keep that framing, and additionally mark
+any row backed by a SINGLE shipped instance as such.**
+
+⭐ **WAVE 9's BEST PROCESS ARTIFACT — A NEW GATE THAT CLOSES A REAL HOLE IN GATE 6. Put it in
+every future dispatch.** Gate 6 pairs whole messages on exact Japanese, so **two units coining
+different English for the same `『…』` item name are structurally invisible to it** — which is
+exactly how `『進化の木の実』` shipped as `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` in `batch_011` and
+`“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` in `batch_013`, caught only by a reviewer **after the first had merged**.
+`batch_013` then built the missing check: **pair every `『…』` in a message with the `“…”` spans in
+that same message, and compare those pairings ACROSS FILES.** On its own unit: 17 names, 4 shared
+with other files, 0 divergences. **Cheap, mechanical, and it would have caught this before delivery.**
+
+⚠️ **GATE 8's "`{FFFF}` last on every message" IS A BATTLE-STORE RULE AND DOES NOT APPLY TO SCRIPT
+UNITS** — my dispatches mis-scoped it onto all three. Verified: `dumps/script_unique.txt` contains
+**0** `{FFFF}` (the dump has 8,760; the unique keys omit the trailing one, per CLAUDE.md §4 step 1),
+and `batch_003`/`004`/`005` each carry the line *"Japanese keys are copied byte-for-byte from
+script_unique.txt, i.e. without `{FFFF}`"* — **the repo documents this in three places.** PR #35's
+reviewer caught it as its own instrument being wrong and said so rather than reporting a failure.
+
+⚠️ **ALL FIVE OF WAVE 9's WRONG FIGURES SHARE ONE SHAPE, AND IT IS NARROWER THAN "VERIFY BOTH
+DIRECTIONS": someone measured ONE SIDE of a comparison and inferred the other.** My clause table
+measured shipped English without counting how many instances backed it. The `で、` census matched
+one way. The `バニシュジュエル` correction re-measured the source but not the replacement string. The
+`こおりのゆびわ` correction re-measured the value it corrected *from*, not *to*. **The operational
+rule is mechanical: `len()` BOTH values and PRINT BOTH before asserting either is wrong.** It is not
+a counsel of care — I hand-counted `Ｌｅｃｔｕｒｅ` as 8 letters (it is 7) while checking a
+translator's figure, and only measuring stopped me adding a sixth error.
 
 **Method findings (wave 8, still binding — these are what the dispatches carry).**
 - ⚠️ **GATE 7 RUNS FROM THE GLOSSARY SIDE, KEY BY KEY**, with controls in **both** directions.

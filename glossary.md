@@ -648,9 +648,9 @@ catch it (gate 6 pairs whole messages, and these are different messages):
 
 | Japanese | Proposed English | Where seen (verified) | Alternatives if the reading is open |
 |---|---|---|---|
-| メンバーカード | `Ｍｅｍｂｅｒ　Ｃａｒｄ` (11) — **but see the warning** | script **DATA 674 (batch 011)**; DATA 1348 (not in this wave). ⚠️ **NOT in DATA 362** | ⚠️ **MAY ALREADY BE FIXED UNDER ANOTHER JAPANESE WORD.** §51 ships `会員証` → `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13, lowercase) for DATA 310, `ひみつの店の会員証。` If `ひみつの店` (§51: *not* a named shop, lowercase) and `メンバーショップ` are the **same shop**, this is one object under two Japanese names and §3 pressure is to match `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ`. **Genuinely open — settle it on use, say which and why, and flag it.** ⚠️ Batch 012's DATA 362 hands the player the card as a bare `このカードを`, so **that unit must not coin a name for it that contradicts this row.** Alt `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13) |
+| ~~メンバーカード~~ | ✅ **PROMOTED to §52 and STRUCK (PR #34, merged 2026-09-10) — NOT as seeded: the seed’s own listed Alt `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13) was taken instead of `Ｍｅｍｂｅｒ　Ｃａｒｄ` (11), which is exactly what this row asked for ("settle it on use, say which and why").** The two shops ARE one object under two Japanese names, and the test this row set is met on measurement: `会員証` (§51.1, shipped `Ｔｈｅ　ｓｅｃｒｅｔ　ｓｈｏｐ’ｓ　ｍｅｍｂｅｒ’ｓ　ｃａｒｄ．` at DATA 310, a 21-instance row) lands in **bank 15**, which is `batch_011`’s own bank — so §25.3’s co-occurrence test **FAILS**, and a capitalised `Ｍｅｍｂｅｒ　Ｃａｒｄ` at the door beside a lowercase `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` in the item list would read as two different objects. Widths reproduced with `len()` at review: 13 vs 11, and D674’s row measures 14, well inside 24 — **width forced nothing.** ⚠️ **DATA 1348 is still untranslated and must take `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` too**; `batch_012` (PR #35) carries **0** `メンバーカード`, verified at review, so there is no cross-unit conflict. Original seed note follows:  ⚠️ **MAY ALREADY BE FIXED UNDER ANOTHER JAPANESE WORD.** §51 ships `会員証` → `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13, lowercase) for DATA 310, `ひみつの店の会員証。` **Genuinely open — settle it on use, say which and why, and flag it.** Alt `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` (13) |
 | メンバーショップ | `Ｍｅｍｂｅｒ　Ｓｈｏｐ` (11) | script **DATA 362 (batch 012)** — the corpus's only instance | A **named** shop (`珍しいアイテムが一杯のメンバーショップ`), so capitalised on §12's `Ｂｅａｓｔ　Ｓｈｏｐ`, unlike §51's lowercase `ｔｈｅ　ｓｅｃｒｅｔ　ｓｈｏｐ`. ⚠️ Tied to the row above: if the two shops are one, say so |
-| ミュートフルーツ | `Ｍｕｔｅ　Ｆｒｕｉｔ` (10) | script **DATA 690 (batch 011)** | A named item |
+| ~~ミュートフルーツ~~ | ✅ **PROMOTED to §52 and STRUCK (PR #34, merged 2026-09-10) — used exactly as seeded.** `Ｍｕｔｅ　Ｆｒｕｉｔ`, 10 columns, the seeded cell exact under `len()` at review. DATA 690 is the corpus’s only instance (census over both dumps at review), so the row is **exhausted** and struck outright rather than left live. Unquoted, beside the quoted `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` four rows earlier — the source quotes one and not the other, and both are preserved as the source has them. Original note follows:  A named item |
 | ツェペリ卿 | *Lord* `Ｚｅｐｐｅｌｉ` → `Ｌｏｒｄ　Ｚｅｐｐｅｌｉ` (12) | script **DATA 386 (batch 012)** — the corpus's only line carrying it | ⚠️ **`卿` HAS NO RULING ANYWHERE IN THIS GLOSSARY** — this seed sets one, on the `様` → *Lady* precedent (§11, `フィリス様` → `Ｌａｄｙ　Ｐｈｙｌｌｉｓ`). Bare `Ｚｅｐｐｅｌｉ` is 7. Alt readings *Ｚｅｐｅｌｉ*, *Ｔｚｅｐｅｌｉ*; alt title *Ｓｉｒ* |
 | ブラックジャック | `Ｂｌａｃｋｊａｃｋ` (9) | script **DATA 355 (batch 012)**; DATA 1390, 1395, 1416 (not in this wave) | The casino game, capitalised as its name. ⚠️ Reach is **4 lines, not 1** — the casino batch later in the run inherits this form |
 | ポーカー | `Ｐｏｋｅｒ` (5) | script **DATA 370–373 (batch 012)** | Same. ⚠️ Those are the same four lines that carry `『極上のワイン』` — long multi-branch blocks |
@@ -6438,3 +6438,148 @@ outstanding `マーシュ` lines (FILE 870 / 1330 / 1379), though whoever takes 
 beside this one. · `Ｉ　ａｍ　ｇｒａｔｅｆｕｌ．` at DATA 920 is **uncontracted deliberately and correctly** —
 `batch_008.tsv:60` ships `Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．` for 感謝しております; a round-1 register nit
 against it was **withdrawn** at round 2 when the source-word sweep found the incumbent.
+
+---
+
+## 52. Added by script batch 011 (PR #34, merged 2026-09-10)
+
+The town and shop NPCs, `script_unique.txt` **DATA 647–706** (= FILE 652–711), banks 14–18: the
+frog merchant, a woman's item shop and the members-only door, a keigo monster shop and the
+fruit-tree shop across three visit states, a rough dealer, and Maya's undead shop. 60 unique lines
+/ 60 instances, **+2,474 bytes** across five banks, none of them tight. Merged at round 2; round 1
+returned one finding (§52.4).
+
+**Every width below was measured with `len()` at review, not carried from the PR** — all fifteen of
+the PR's own figures reproduced exactly, and are recorded here as verified rather than as claimed.
+
+### 52.1 Shop and town vocabulary first rendered here
+
+| Japanese | English | Note |
+|---|---|---|
+| メンバーカード | `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ` | 13 columns, lowercase. **Promoted from §9's wave-9 seed onto the seed's own listed Alt, not onto its proposed `Ｍｅｍｂｅｒ　Ｃａｒｄ` (11)** — the seed asked for exactly this decision ("settle it on use, say which and why"). `ひみつの店` and `メンバーショップ` are one shop: DATA 674 (mine) is the members-only door, DATA 1348 says a `メンバーカード` is needed to enter, and §51.1's shipped `会員証` → `Ｔｈｅ　ｓｅｃｒｅｔ　ｓｈｏｐ’ｓ　ｍｅｍｂｅｒ’ｓ　ｃａｒｄ．` (DATA 310, count 21) lands in **21 banks including bank 15 — batch 011's own**, so §25.3's co-occurrence test **fails** and two casings of one object would meet in one bank. **Width forced nothing**: 13 vs 11, and D674's row measures 14 against 24. ⚠️ **DATA 1348 is untranslated and must take this form.** `batch_012` (PR #35) carries **0** `メンバーカード`, verified at review |
+| ミュートフルーツ | `Ｍｕｔｅ　Ｆｒｕｉｔ` | 10 columns. **Promoted from §9's wave-9 seed, used exactly as seeded, and struck — DATA 690 is the corpus's only instance, so the term is exhausted.** Unquoted, because its source is unquoted |
+| 『進化の木の実』 | `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` | 18 columns with the quotes; `ａ　“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”．` is 21 on D689's row. `『…』` → `“…”` per §12. **The LONG `Ｙ　ｏｆ　Ｘ` form, on the corpus's two decided precedents for a `『Ｘの Ｙ』` item name** — §12's `『知識の書』` → `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` (19) and §33.1's `『火の水晶』` → `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”` (17), where the short compound `Ｆｉｒｅ　Ｃｒｙｓｔａｌ` was explicitly considered and **"never fired"**. ⚠️ **CROSS-UNIT AND LIVE — see §52.5. `batch_013` (PR #36) renders the same item `“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` and must change to this form.** 2 script instances, banks **16** (here) and **29** (batch 013), 0 battle |
+| 木の実 | `ｎｕｔ` | 3 columns, lowercase. **Not a new form — it records the shipped incumbent**: `batch_007.tsv:21` ships `何かの木の木の実。` → `Ａ　ｎｕｔ　ｆｒｏｍ　ｓｏｍｅ　ｔｒｅｅ．`, read at review. ⚠️ **Bare `実` stays `ｆｒｕｉｔ` (5)** — that split is load-bearing: it is what lets D689's tree "bear fruit" and still yield a "Nut", and D690's `ミュートフルーツ` sit beside both |
+| 当店 | `ｏｕｒ　ｓｈｏｐ` | 8 columns. The shopkeeper's own formal word for the shop. D685, D686, D689, D690. **0 instances in `battle_dump.txt`**, counted at review — genuinely first rendered here. ⚠️ D690 compresses it to `ｕｓ` on a 23-column row where the full form cannot fit (the speaker *is* the shop); that variant is width-forced, flagged in the PR and recorded at §AN |
+| 大繁盛 | `ｂｏｏｍｉｎｇ` | 7 columns. D689, D690. **0 battle instances.** ⚠️ **The additive `も` of `当店も大繁盛` is carried by `，　ｔｏｏ` in BOTH lines** — see §52.4 |
+| 取り扱う | `ｄｅａｌ　ｉｎ` | 7 columns. `それは　うちでは取り扱ってないの。` → `Ｗｅ　ｄｏｎ’ｔ　ｄｅａｌ　ｉｎ　ｔｈａｔ　ｈｅｒｅ．` (D670), `かわいい　モンスターを取り扱っております。` → `ｗｅ　ｄｅａｌ　ｉｎ　ｃｕｔｅ　ｍｏｎｓｔｅｒｓ．` (D675). One verb, two registers, one English |
+| 芽を出す | `ｓｐｒｏｕｔ` | 6 columns. D688. ⚠️ **The key is split across a `{FFFE}` in the source** (`木の実は、芽を{FFFE}出し始めました`), so a gate-6 exact-key grep cannot pair it — recorded here instead |
+| 裏の庭 | `ｇａｒｄｅｎ　ｏｕｔ　ｂａｃｋ` | 15 columns. D688, the shop's back garden where the nut is planted |
+| 静まりかえる | `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` | 13 columns. D700, the narration entering Maya's mansion: `館の中は静まりかえっている・・・。` → `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ　ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` ⚠️ **`・・・。` is FOUR dots under §3.1 and the English has four** — verified by counter at review. `館` → `ｍａｎｓｉｏｎ` is §34.1's existing form (`chunk_035` L2), not a new one |
+| 子 (of a monster) | `ｌｉｔｔｌｅ　ｏｎｅ` | 10 columns. `どの子に　なさいます？` → `Ｗｈｉｃｈ　ｌｉｔｔｌｅ　ｏｎｅ？` (D677, keigo), `どの子に　する？` → `Ｗｈｉｃｈ　ｌｉｔｔｌｅ　ｏｎｅ　ｉｓ　ｉｔ？` (D702, Maya), `他の子も` → `ｔｈｅ　ｏｔｈｅｒ　ｌｉｔｔｌｅ　ｏｎｅｓ` (D706). The shopkeepers call their stock *children*; `ｃｒｅａｔｕｒｅ` would lose the affection the whole scene runs on |
+| かわいがる | `ｄｏｔｅ　ｏｎ` | 7 columns. D679 `Ｄｏ　ｄｏｔｅ　ｏｎ　ｉｔ，　ｗｏｎ’ｔ　ｙｏｕ．`, D694 `Ｄｏｔｅ　ｏｎ　ｉｔ　ｆｏｒ　ｍｅ，　ｗｉｌｌ　ｙｏｕ！！`, D704 `Ｔｈｉｎｋ　ｏｆ　ｉｔ　ａｓ　Ｍａｙａ　ａｎｄ　ｄｏｔｅ　ｏｎ　ｉｔ．` One verb across three registers, the register carried by the frame rather than by the verb. **0 battle instances** |
+| ゼイタク | `ｅｘｔｒａｖａｇａｎｔ` | 11 columns. D653, in the frog's katakana: `オマエ、ゼイタク。` → `Ｙｏｕ　ｅｘｔｒａｖａｇａｎｔ．` — §5's article- and copula-dropping register, so no `ａｒｅ` |
+| くれてやる (menu) | `　Ｇｉｖｅ　ｉｔ　ｔｏ　ｔｈｅｍ` | 16 columns **with the leading cursor gutter**, which is part of the string (prompt §7). D685 |
+| やらない (menu) | `　Ｒｅｆｕｓｅ` | 7 columns with the gutter. D685. Held **distinct** from §34.1's `やめておく` → `　Ｌｅａｖｅ　ｉｔ` (9) and from `　いいえ` → `　Ｎｏ` — three menu refusals, three source strings, three jobs |
+
+### 52.2 Incumbents this unit conformed to that the glossary had never recorded
+
+Both were found by §AG6's mirror at review — searching for the English the **source word** already
+has, before asking what a new one should be. Neither is a new decision; both are recorded so they
+cannot drift, and the unit matches both.
+
+| Japanese | English | Where it was already shipped |
+|---|---|---|
+| 不思議 | `ｓｔｒａｎｇｅ` | 7 columns. `tl/battle/chunk_034.txt` L5 ships `不思議なことが` → `ｓｔｒａｎｇｅ　ｔｈｉｎｇｓ　ｄｏ`, aligned to the dump at review. **1 battle + 1 script instance in the whole corpus**, and D685's `不思議な木の実ですね！` → `ａ　ｓｔｒａｎｇｅ　ｎｕｔ！` is the second — so the term is **exhausted** |
+| またの機会に | `Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ` | 22 columns. `batch_007.tsv` L24, L47, L58, L69 all ship `またの　機会に` → `Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ` / `ｔｉｍｅ．` D683 renders `残念ですが、またの機会に　お越しください。` as `Ｉ　ａｍ　ａｆｒａｉｄ．　Ｄｏ　ｃｏｍｅ` / `ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ．` — the incumbent plus `Ｄｏ` for the keigo `ください`. `残念ですが` takes `Ｉ　ａｍ　ａｆｒａｉｄ．` on `batch_008.tsv:35`'s shipped `残念だけど、` → `Ｉ　ａｍ　ａｆｒａｉｄ，` |
+| かわいい | `ｃｕｔｅ` (4) / `ｄａｒｌｉｎｇ` (7) | ⚠️ **A register SPLIT of one source word across two shipped incumbents, not a new word.** `ｄａｒｌｉｎｇ` for Maya's undead shop — her own shipped word, `chunk_011` L3 `さあ、私のかわいい` → `Ｎｏｗ　ｔｈｅｎ，　ｍｙ　ｄａｒｌｉｎｇ` (bank 18, D701/D705). `ｃｕｔｅ` for the keigo monster shop — `chunk_013` L5 `カワイイとこ` → `Ｓｈｅ’ｓ　ｇｏｔ　ａ　ｃｕｔｅ` (bank 16, D675). **Both verified against the battle dump at review, and the banks are disjoint**, so the two never meet. Neither word is invented |
+
+### 52.3 CORRECTION to §42.1 (§4.3) — `で、` has TWO shipped Englishes, and the second was never recorded
+
+**No rendering moves. §42.1's row is not wrong; it is incomplete, and its own clearance sentence
+already said so.** The row fixes `で、` → `Ｎｏｗ，` and scopes the clearance to **bank 4**, noting
+that `さあ、` (§28.8, also `Ｎｏｗ，`) occupies banks `[1, 5, 16, 23, 24, 41, 42, 43]`. Re-counted at
+this review against `dumps/script_dump.txt`, that list is exact — and **bank 16 is in it**, while
+`batch_011`'s D689 carries `さあ、これを` and `で、他にご用は？` **inside one message**. So `Ｎｏｗ，`
+genuinely cannot serve `で、` in bank 16.
+
+**What the record was missing is that the second English already ships.** Counted at review by
+reading the aligned rows, not by positional inference:
+
+```
+で、今日はどんな用ノロ？  -> Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ / ｔｏｄａｙ，　ｎｙｏｒｏ？
+                          batch_007.tsv L40, L50, L61   bank 3, 3 unique lines / 4 instances
+で、どんな　用かしら？    -> Ｎｏｗ，　ｗｈａｔ　ｄｏ　ｙｏｕ　ｎｅｅｄ？        batch_008.tsv L39   bank 4
+で、どんな　ご用かしら？  -> Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？      batch_008.tsv L49   bank 4
+で、今日は　どうした？    -> Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｉｔ　ｔｏｄａｙ？        batch_009.tsv L39
+で、ご用は何かな？        -> Ｎｏｗ，　ｙｏｕｒ　ｅｒｒａｎｄ？                batch_009.tsv L56
+```
+
+> **Recorded: `で、` → `Ｎｏｗ，` (4) in bank 4 and its siblings, and `Ｓｏ，` (3) where `Ｎｏｗ，` is
+> already spent on `さあ、` in the same bank — the latter is an INCUMBENT since `batch_007`, not a
+> coinage by this unit.** `batch_011` D687, D688, D689, D690 take `Ｓｏ，` in bank 16. `Ｓｏ，` is
+> spent elsewhere only on `ダカラ、` (`chunk_026` L8 `ダカラ、俺タチノ敵！` → `Ｓｏ，　ｙｏｕ　ｏｕｒ
+> ｅｎｅｍｙ！`), which is battle and disjoint from banks 14–18.
+>
+> ⚠️ **PR #34's Flag 3 said `Ｓｏ，` was spent "only on `ダカラ、` in battle chunk 26" and that is the
+> incomplete half** — it missed its own strongest evidence. **This makes the choice stronger, not
+> weaker**, so nothing changes in `tl/`; only the record does.
+>
+> ⚠️ **Method note, because it nearly went the other way.** The first census run at this review
+> matched only segments *starting* with `で、` and reported the `batch_007` rows as `ｆｏｒｅｓｔ，
+> ｎｙｏｒｏ．` — a **positional-alignment artifact**, `で、今日は` sitting mid-segment there. Had it
+> been trusted, a correct record would have been overwritten with a wrong one. A second, direct
+> census (`grep` on the whole row, then reading every aligned segment) found the real incumbent.
+> **A census needs its splitter AND its reading.**
+
+### 52.4 The round-2 finding, and what fixed it
+
+Round 1 returned **one** finding: D689 dropped the additive `も` of `おかげで` / `当店も　大繁盛！！`
+that the same speaker's near-twin D690 renders `，　ｔｏｏ` four rows later. Not budget- or
+geometry-forced. The repack, measured independently at round 2:
+
+```
+round 1   Ｔｈａｎｋｓ　ｔｏ　ｙｏｕ，        (14) {FFFE} ｏｕｒ　ｓｈｏｐ　ｉｓ　ｂｏｏｍｉｎｇ！！     (21)  = 35 chars
+round 2   Ｔｈａｎｋｓ　ｔｏ　ｙｏｕ，　ｏｕｒ   (18) {FFFE} ｓｈｏｐ　ｉｓ　ｂｏｏｍｉｎｇ，　ｔｏｏ！！  (22)  = 40 chars
+delta +5 chars = +10 bytes ; bank 16 free 10,963 -> 10,953 ; {FFFE} 11 -> 11 ; 36 non-{FFFE} tags identical
+```
+
+All three additive `も` in the unit now carry — D689 and D690's `当店も` → `，　ｔｏｏ`, and D706's
+`他の子も` → `ｔｈｅ　ｏｔｈｅｒ　ｌｉｔｔｌｅ　ｏｎｅｓ　ｔｏｏ．` A full sweep of the unit's twelve `も` at
+round 2 found the other nine to be `でも` (conjunction, ×2), `〜てもらう` (auxiliary, ×2), `もの`
+(noun), `とっても` (intensifier) and `他にも` in the shop's stock *anything else?* formula (×3), none
+of them the additive particle.
+
+### 52.5 ⚠️ LIVE cross-unit row — `『進化の木の実』` binds PR #36
+
+`batch_013` (PR #36, **open and unreviewed at this merge**) renders the same named item
+`“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` at its DATA 952 / file L52, against this unit's `“Ｎｕｔ　ｏｆ
+Ｅｖｏｌｕｔｉｏｎ”`. Neither form was in this glossary when either unit was written, so neither
+translator was overriding a ruling.
+
+> **Ruled for the LONG form, and `batch_013` changes.** The corpus's two *decided* `『Ｘの Ｙ』` item
+> names both take `Ｙ　ｏｆ　Ｘ` — §12's `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”` and §33.1's
+> `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”`, the latter recording that the short compound `Ｆｉｒｅ　Ｃｒｙｓｔａｌ`
+> was weighed and **"never fired"**. `batch_011` merged first and now *is* the shipped work.
+> (§9's `“Ｆａｉｒｙ　Ｃａｋｅ”` and `“Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ”` are compounds but are **seeds, not
+> decisions**, and the Syrup row documents its compound as width-forced at 25 columns.)
+>
+> ⚠️ **Width decides nothing, and both directions were measured with `len()` before ruling:**
+> `batch_013`'s row becomes `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”？` = **19** columns against its current
+> 16 — inside the box, **no re-flow**; and conversely `ａ　“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”．` would have
+> been 18 here against the shipped 21, so this unit could have gone either way too.
+> The banks are **16 and 29 — disjoint**, so §25.3 is not engaged; this is a naming divergence only.
+
+### 52.6 Confirmed without change
+
+`いらっしゃいませ` / `いらっしゃい` / `イラッシャイ` → `Ｗｅｌｃｏｍｅ` + the source's own punctuation
+(§34.1) across all **8** instances, including D688's `！！`. ⚠️ **§34.5's `Ｃｏｍｅ　ｉｎ` is a
+*reserve*, scoped to the bank-26 `ようこそ` collision, and §51.5 records it as already spent and the
+collision discharged — so it does not reach banks 14–18.** The wave-9 dispatch table asserted a
+corpus distinction here that does not exist; see `FLAGS.md` §AN for the generic cause. ·
+`貼り紙 / 棚卸し / 休業いたします` (§34.1) — that row *names* unique 647, and D647's first two rows
+are **byte-identical** to `batch_006.tsv` L57, with the frog copy's own 4-space (not 2-space)
+indent, its `。` → `．` where the hobbit's tic absorbs the stop, and its 7-space `ゲロゲロ」` →
+`Ｒｉｂｂｉｔ”` row. · §34.1 `毎度あり` *names* unique 651 → `Ｍａｎｙ　ｔｈａｎｋｓ，　Ｒｉｂｂｉｔ．`, and
+§34.6 *names* unique 652 → `Ｒｉｂｂｉｔ？`; both conform. · §34.1 `お客様` **dropped, carried by the
+second person** at D688–D690, on that row's own terms. · §32.4/§35 `あら？` → `Ｍｙ？` ×2 and
+`あら、` → `Ｍｙ，`. · `あれ？` → `Ｗｈａｔ？` matching `batch_006.tsv:50`. · §3/§34.1 `ジュエル` ×9 →
+`Ｊｅｗｅｌｓ` ×9, **0** bare singular and **0** `Ｇｅｍ`. · §5 `ゲロゲロ` ×9 → `Ｒｉｂｂｉｔ` ×9, each
+with the source's own mark. · §42.1/§42.2's `ご用` family: D661 and D701 both render
+`どんな　ご用かしら？` as `Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？`, byte-identical to each other and to
+§42.1's shipped clause for DATA 492. · §17.2 kana-variant collapse `ええと` onto §34.1's `えーと` →
+`Ｅｒｍ，` (D668, bank 15 against §34.1's bank 12 — disjoint). · §7 Maya's third-person
+self-reference kept at D704 (`Ｔｈｉｎｋ　ｏｆ　ｉｔ　ａｓ　Ｍａｙａ`). · ⚠️ **The PR's "Reuses recorded"
+list credits `妖精` → `ｆａｉｒｙ` and a `ジェム`/`ジュエル` split this unit's source does not contain
+— measured at review, `妖精` 0, `ジェム` 0, `ｆａｉｒｙ` 0, `Ｇｅｍ` 0 — so neither is carried into this
+section.**

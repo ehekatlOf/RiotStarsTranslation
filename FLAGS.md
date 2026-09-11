@@ -5402,3 +5402,183 @@ or deleted; slot count per page unchanged. §45.2's liberty applies and the row 
   and it still does not pack at the hard 24 (87 vs 96) — a clean example of a total that fits while
   the packing fails. The page is `.TTTT` and full; 城 is not a glossary key. Recorded for the next
   unit that renders 城 in prose.
+
+---
+
+## AN. Wave 9 review — script batch 011 / PR #34, MERGED (2026-09-10; review closed 2026-09-11)
+
+Town and shop NPCs, DATA 647–706, banks 14–18. **Round 2, head `a1581f3`, merged `edd6d2d`.**
+Round 1 returned CHANGES with one finding; the rework fixed it and nothing else. All eight §6 gates
+green at round 2, re-run from scratch on the moved base. Glossary integration at **§52**.
+
+### AN1. ⚠️ THE WAVE-9 DISPATCH TABLE PRODUCED A FALSE POSITIVE, AND THE CAUSE IS GENERIC
+
+The wave-9 coordinator's dispatches carried a "shipped clause" table built by splitting shipped
+JP/EN pairs on `{FFFE}` / `{FCC0}` / `{FC30}` / `{FC50}` / `{FC51}` and **aligning the resulting
+clauses positionally**. On `いらっしゃいませ` it asserted a corpus distinction that **does not
+exist** — `いらっしゃいませ！！` → `Ｃｏｍｅ　ｉｎ！！` against `いらっしゃいませ！` → `Ｗｅｌｃｏｍｅ！`
+— and instructed all three translators to preserve it.
+
+Measured at this review, over both dumps and all of `tl/`:
+
+```
+§34.1   いらっしゃいませ / いらっしゃい / いらっしゃいノロ -> Ｗｅｌｃｏｍｅ + the source's own punctuation
+§34.5   Ｃｏｍｅ　ｉｎ is a RESERVE, scoped to the bank-26 ようこそ collision, and nothing wider
+§51.5   batch_010's DATA 885 spends that reserve exactly as reserved;
+        "the bank-26 Ｗｅｌｃｏｍｅ collision is now discharged and the reserve is spent"
+Ｃｏｍｅ　ｉｎ！！ corpus-wide: 1 instance, bank 26, and it is DATA 885.
+```
+
+So the whole evidential base for the "distinction" was **one** shipped message, and that message
+sits under a documented reserve. `batch_011`'s translator rejected the instruction by reading and
+flagged it as the thing it most wanted checked; both reviewers then proved it independently.
+
+> **The cause is generic and will recur, so state it as a rule.** *Positional clause alignment
+> infers a rule from whichever instances happen to be translated. A term whose only shipped
+> instance sits under a documented reserve, a width forcing or any other local licence will look
+> like a fixed distinction, because the licence is invisible to the alignment.*
+>
+> **Mitigations, both already partly in place, both now binding.**
+> 1. Keep the framing every wave-9 dispatch used — "a LEAD TO VERIFY BY READING, never a ruling".
+>    It worked: the translator did exactly that.
+> 2. **Additionally mark any row whose evidence is a SINGLE shipped instance as such**, with the
+>    count. A one-instance row is a hypothesis; the table gave it the same weight as a 20-instance
+>    one.
+> 3. Before trusting an aligned pair, check whether the shipped side is covered by a `glossary.md`
+>    reserve or width note. Grep the glossary for the English form, not only for the Japanese.
+
+⚠️ **This bug bit a second time inside this very review, in the opposite direction — see AN2.**
+
+### AN2. ⚠️ A POSITIONAL CENSUS NEARLY OVERWROTE A CORRECT RECORD WITH A WRONG ONE
+
+Instructed to correct §42.1's `で、` row, this reviewer's first census matched only segments
+*starting* with `で、` and reported `batch_007`'s three rows as `で、森に住むじいさんに` →
+`ｆｏｒｅｓｔ，　ｎｙｏｒｏ．　Ａｎ　ｏｌｄ` — i.e. **no `Ｓｏ，` incumbent anywhere**. Had that been
+trusted, the review would have recorded that an existing, correct claim was false.
+
+A second, direct census — `grep` for the substring over whole rows, then read every aligned
+segment of every hit — found the truth: `batch_007.tsv` L40, L50, L61 each ship
+`で、今日はどんな用ノロ？` → `Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ` / `ｔｏｄａｙ，　ｎｙｏｒｏ？`, with
+`で、今日は` sitting **mid-segment**, which is why a "starts with" matcher missed all three. Bank
+census: `で、今日はどんな用ノロ` = bank 3 (4 instances); `で、どんな` = bank 4 (2); this unit's
+`で、今日は何のご用で` = bank 16 (2).
+
+> **Rule: a substring census must match the substring, not the segment. "Starts with" is a
+> different query and will silently return zero.** This is the same family as §AL4's
+> "re-asserting a round-1 reading after the base moved" and §AG6's "quoted without its corpus" —
+> *a census needs its splitter, its dump AND its matcher stated.*
+
+The record fix itself is written out at **glossary §52.3**: `で、` has **two** shipped Englishes —
+`Ｎｏｗ，` (bank 4 and siblings, §42.1) and `Ｓｏ，` (bank 3, `batch_007`, since wave 5) — and
+`batch_011` takes the latter in bank 16 because §28.8's `さあ、` → `Ｎｏｗ，` already occupies that
+bank *inside the same message* (D689 carries both words). **No `tl/` line moves.**
+
+### AN3. PR #34's Flag 3 was incomplete in its own favour, and PR bodies keep doing this
+
+Flag 3 stated that `Ｓｏ，` is "spent elsewhere only on `ダカラ、` in battle chunk 26". True as far
+as it went (`chunk_026` L8 `ダカラ、俺タチノ敵！` → `Ｓｏ，　ｙｏｕ　ｏｕｒ　ｅｎｅｍｙ！`, verified), but
+it **missed its own strongest evidence** — the three shipped `batch_007` rows above. The effect is
+benign here (it turns a coinage into a reuse), but it is the fourth wave running in which a PR's
+freeness or spentness sentence has been incomplete. ⚠️ **A "this form is free / spent only on X"
+sentence must be produced by a census, and the census command belongs in the PR body.**
+
+Two smaller PR-body defects, both recorded rather than made findings:
+
+- **The body is round 1's and was never refreshed for the rework.** It still says "One commit, one
+  file" and its bank table still reads bank 16 → 10,963 free. The true post-rework figure is
+  **10,953** (−10 bytes). No template section is missing and no figure is absent, so §6's PR-body
+  gate is not failed; the correct figures are in the merge commit title, glossary §52 and HANDOFF.
+  ⚠️ **A rework should refresh the body's figures, and a reviewer should not have to carry that.**
+- **The "Reuses recorded" list credits two things the source does not contain.** Measured in the
+  unit: `妖精` 0, `ジェム` 0, `ｆａｉｒｙ` 0, `Ｇｅｍ` 0 (`ジュエル` 9 → `Ｊｅｗｅｌｓ` 9, 0 bare
+  singular). Neither was carried into glossary §52. Same shape as §AM's own note: **a "reuse" is a
+  claim about the source and needs the same census as an addition.**
+
+### AN4. ⚠️ CROSS-UNIT AND LIVE — `『進化の木の実』` binds PR #36, which is open and unreviewed
+
+`batch_011` D689 ships `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` (18). `batch_013` (PR #36) L52 renders the
+same named item `“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` (15). Neither form was in `glossary.md` when either unit
+was written, so neither translator overrode a ruling. **Ruled for the long form at glossary §52.5**,
+on the corpus's two decided `『Ｘの Ｙ』` precedents (§12 `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”`; §33.1
+`“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”`, which records the short compound as considered and **"never
+fired"**), and because `batch_011` merged first and is now the shipped work.
+
+**Width decides nothing and both directions were measured with `len()` before ruling:** #36's row
+becomes `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”？` = **19** against its current 16 — inside the box, no
+re-flow; conversely `ａ　“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”．` would have been 18 here against the shipped 21.
+Banks **16 and 29 — disjoint**, so §25.3 is not engaged; this is a naming divergence only.
+
+> ⚠️ **ACTION FOR PR #36's REVIEWER: this is a finding on #36.** One row, no re-flow, no tag change.
+
+### AN5. Two unrecorded incumbents found by §AG6's mirror, and the unit matched both
+
+`不思議` → `ｓｔｒａｎｇｅ` (`chunk_034` L5, aligned to the dump at review) and `またの機会に` →
+`Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ` (`batch_007` L24/L47/L58/L69). Neither is a glossary key, so
+**gate 7 could not have surfaced either** — that is §AG6's standing blind spot, and the mirror is
+what caught them. Both are now recorded at glossary §52.2, with `かわいい`'s two-incumbent register
+split (`ｄａｒｌｉｎｇ` from `chunk_011` L3 for Maya, `ｃｕｔｅ` from `chunk_013` L5 for the keigo
+shop; banks 18 and 16, disjoint).
+
+⚠️ **Method note for the mirror itself:** a first pass searched only `tl/script/*.tsv` and reported
+`不思議` as having no incumbent. `tl/battle/*.txt` holds **0 Japanese characters outside tags**
+(measured over all 32 files), so the Japanese side has to be taken from `dumps/battle_dump.txt`
+**aligned by line index** to the translated chunk — the dump line and the `tl/` line are the same
+message. **A mirror that searches only `tl/` is half a mirror.**
+
+### AN6. Bank state after this merge — no change to the tight banks
+
+```
+bank 14  28279 / 40960   free  12681      (-378)
+bank 15  28373 / 40960   free  12587      (-412)
+bank 16  30007 / 40960   free  10953      (-1106, of which -10 is the round-2 rework)
+bank 17  27825 / 40960   free  13135      (-288)
+bank 18  30627 / 40960   free  10333      (-290)
+total growth +2,474 bytes
+tightest: bank 40 75 free, bank 41 353 free, bank 5 1635 free   <- byte-for-byte UNCHANGED
+```
+Every other bank is byte-identical to the pre-merge baseline, verified by diffing two
+`bankmeasure.py` runs. **Banks under 2,000 free remain 5, 40 and 41** — all pre-existing §F2, none
+touched by this unit, and the §F2 arithmetic is unaffected.
+
+### AN7. Gate method notes worth keeping
+
+- **Gated with no working tree, as §AK6 requires, and this was a genuine second-round hazard.**
+  `git merge-tree --write-tree` → tree `452615e`; `git archive` of that tree and of the bare
+  integration head (`4504447`) into two scratch dirs, so "free before" was reproduced here rather
+  than taken from the PR; provenance by `cmp` + `sha256sum` against `git show a1581f3:…`
+  (`e1889a72…`), and `diff -rq` of the two extractions showing the merged tree differs from the
+  base by **exactly one added file**. Round 1's evidence was discarded outright: base `0a462db` →
+  `4504447` and head `855686e` → `a1581f3`.
+- **Gate 6's coverage must be stated, and `tl/battle` is not part of it.** 60 unit keys vs **461**
+  shipped keys across 10 files, 0 exact-key collisions, controls fired correctly in both
+  directions; a second arm on **tag-stripped visible text** (58 distinct unit texts vs 423
+  elsewhere) is what catches messages differing only in a portrait or jump argument, and it found
+  the one real cross-file twin — D691 against `batch_009` L77/L78, byte-identical.
+- **Gate 7 key count, this review: 2,322 keys enumerated / 131 occurring / 0 failures.** Five
+  glossary rows *name this unit's exact lines* (§34.1 on unique 647 and 651, §34.6 on unique 652,
+  plus the `いらっしゃいませ` and `ご用` rows) and all five conform — the fourth wave running in which
+  the glossary-side sweep's value has come from rows that cite the line numbers under review.
+- **§3.1's four-dot case was handled correctly by the unit and by the checker.** D700's
+  `静まりかえっている・・・。` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` — `・・・。` is **four**, not three.
+  D647's bare `・・・` is three. Both match. (A round-1 reviewer's own counter got this wrong
+  before catching it; the counter used here counts the trailing `。` explicitly.)
+
+### AN8. Still open after this merge, for whoever takes these lines
+
+- **DATA 1348** — the second `メンバーカード` line, untranslated; must take `ｍｅｍｂｅｒ’ｓ　ｃａｒｄ`
+  (glossary §52.1).
+- **DATA 530** (bank 6) — readable text identical to this unit's D659; must reuse
+  `Ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？`.
+- **DATA 339** (banks 17 and 18 — this unit's own banks) — menu identical to D676; must reuse
+  `　Ｂｕｙ　ａ　ｍｏｎｓｔｅｒ` / `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ`.
+- **`ｗｏｎ’ｔ　ｙｏｕ` at D679 is the keigo shop's only contraction** (that scene is otherwise
+  `Ｗｅ　ｓｈａｌｌ`, `Ｉ　ａｍ　ａｆｒａｉｄ`, `ｙｏｕ　ｃａｎｎｏｔ`, `Ｉ　ｓｈａｌｌ`, `Ｔｈａｔ　ｉｓ`,
+  `Ｍａｙ　Ｉ　ａｓｋ`). **Read and accepted, not a finding**: a negative tag question has no natural
+  uncontracted English form, and this shopkeeper is not in glossary §7's register table. Recorded
+  so it cannot drift, and so the next unit in these banks knows the profile is deliberate.
+- **`当店` → `ｕｓ` at D690** is a width-forced variant of §52.1's `ｏｕｒ　ｓｈｏｐ` on a 23-column row
+  where the full form cannot fit (the speaker *is* the shop). Flagged by the PR, accepted, recorded.
+- ⚠️ **The squash-merge title carries a literal `&amp;`** where `&` was intended
+  (`town &amp; shop NPCs`) — an HTML-escaping artifact of the merge API call, cosmetic only, in
+  `edd6d2d`'s subject line. Not worth rewriting history; noted so it is not read as a typo in the
+  source data.
