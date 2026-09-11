@@ -33,20 +33,24 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ⚠️ **The run is NOT complete** — ~250 lines stay bank-feasible after this wave, roughly 5–6 batches.
 
 ## Last updated
-2026-09-11 · by: **wave-10 coordinator** (`riotstarstranslation-31`) ·
-wave: **10 DISPATCHED — batches 014, 015, 016, DATA 707–869, 163 lines / 163 instances** ·
-queue re-derived from primary sources, **not inherited**
+2026-09-11 · by: **PR #37 reviewer** (integration commit) ·
+wave: **10 IN REVIEW — `batch_014` MERGED (PR #37, `af11117`); `batch_015` (#39) rework r1 pushed,
+awaiting re-review; `batch_016` (#38) unreviewed** · 1 of 3 units landed
+
+⚠️ **Coordinator: the reviewer slot is now FREE.** Next reviewer takes **PR #39 round 2**, then
+**PR #38 round 1**. One reviewer at a time (§4 step 4). `git pull --ff-only` before dispatching —
+this integration commit moved the branch.
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **640** | 1,430 | `tl/script/batch_001–013.tsv` |
-| Script message instances | **4,733** | 7,931 | **59.7%** |
+| Script unique lines | **692** | 1,430 | `tl/script/batch_001–014.tsv` — **+52 from `batch_014`** |
+| Script message instances | **4,785** | 7,931 | **60.3%** — first time past 60% |
 
-`check`: **All checks passed** at `957d76a` and again at the seed commit `566f94d`.
-glossary ends **§54**, FLAGS ends **§AP** — both re-read at commit time, not inherited.
+`check`: **All checks passed** at `957d76a`, at the seed commit `566f94d`, and on the `batch_014`
+merge tree. glossary ends **§55**, FLAGS ends **§AQ** — both re-read at commit time, not inherited.
 ⚠️ **TIGHTEST BANKS, re-measured by `bankmeasure.py` this wave: 40 → 75, 41 → 353, 2 → 1,607,
 5 → 1,635.** Banks 40 and 41 have a spendable budget of **zero** (free < the 500-byte reserve).
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
@@ -57,7 +61,7 @@ one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016
 
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
-| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | 🔁 **rework r1 PUSHED (`727146b`)** — awaiting re-review |
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | ~~`tl/script-014`~~ | ✅ **MERGED round 2 — PR #37, squash `af11117`**, branch deleted. Integration commit below. |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | 🔁 **rework r1 PUSHED (`3d60879`)** — awaiting re-review |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
@@ -231,9 +235,81 @@ and both conflate two things: **true cursor gutters are 20 → 20, zero lost**, 
 with a full-width space once tags are stripped, so a naive split counts it as a gutter. **It did not
 re-push for this** — the Flag wording is the reviewer's to fix at merge.
 
-🚫 **RE-REVIEW OF #37 IS BLOCKED UNTIL REVIEWER `a4c142b40cc5b30ae` RETURNS FROM PR #39** — one reviewer
-at a time (§4 step 4). This is round **1 of 3**; a third CHANGES means PARK with the measured reason or
-one fresh translator.
+### Review round 2 — PR #37 `batch_014`: **DECISION: MERGE** ✅ (2026-09-11), squash `af11117`
+Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✓ · structure ✓`.
+**Findings: none.** Reviewed by a **fresh** reviewer that inherited nothing — every gate re-run from
+primary sources on `727146b`. Tree gated per §AK6 with no working tree: `merge-tree --write-tree` onto
+`737eb05` → `070a69c`. ⚠️ **The integration head moved mid-review** (`737eb05` → `441efab`, PR #39's
+HANDOFF-only rework commit); the reviewer **re-ran the merge and `check` gates against `441efab`**
+(tree `1799fb9`, exit 0, "All checks passed") and confirmed the unit file byte-identical in both trees.
+Integration commit: glossary **§55** (read at commit time, not reserved), FLAGS **§AQ**, eleven §9
+PROVISIONAL rows struck as exhausted.
+
+**All four round-1 findings verified applied**, at **zero added tags** (global tag multiset identical
+between `db7f126` and `727146b`) and −2 bytes net. `ｋｅｅｎ` **0** in the unit; `ｃｏｉｎ` **0 in the unit
+and 0 across all of `tl/`**, so the wave-11 reservation is real and unspent.
+
+⭐ **THE GATE-BLIND CLASS IS NOW CLEAN CORPUS-WIDE, NOT JUST IN THIS UNIT.** The reviewer read
+`rowcheck.py:_script_cols` directly to confirm only `{FFEC}{=00}{=00}`/`{FC00}{=0000}` expand (to 7)
+and every other insert strips to **0 columns**, then hand-measured **every** gate-blind row: all **9**
+in this unit at exactly **insert+8**, and across all `tl/script/*.tsv` **51 rows, none over §V1's bound
+of 8** (+1 ×11, +5 ×1, +7 ×1, +8 ×38). **Price rows alone: 27, reading 7×1 / 8×26 — the translator's
+claim, confirmed exactly.**
+
+⭐ **THE TRAILING-SEGMENT MOVE WAS VERIFIED ON ALL FOUR GROUNDS, INDEPENDENTLY.** §45.2 read verbatim ·
+**`.TTT` measured at 9 in `script_dump.txt`** (§45.2's own table lists no `.TTT` row, so this needed
+measuring) · **`{FFF8}` shares a segment with readable text 19× in the script dump, and DATA 1423 does
+it on the exact `{FFF8}{=00}{=14}` variant** · no `{FFFE}` spent. The reviewer's page-shape model
+**reproduces §45.2's battle census exactly** (TTTT 389, TTT. 276, TT 262, .TTTT 182, .TTT. 132,
+TTT 115, TT. 98, .TTTT. 0), which is what licenses the new figure. Full audit: 10 pages changed shape,
+**every one attested, 0 over 4 text rows**.
+
+⚠️ **A SCOPE NOTE ON §45.2, so the figure is not quoted wider than it holds:** its "`.TTTT.` has 0
+occurrences" is a **battle-dump** census and is correct there; the **script** dump has **1**. Nothing
+in this unit produces that shape.
+
+**Rulings given (all requested by the PR):** (a) `素材` → `ｓｔｕｆｆ` **approved but SENSE-SPLIT**, with
+**D289 explicitly NOT BOUND** — the "21-bank reach" is that one untranslated armour line, while D737/738/740
+are each count 1 in bank 19 alone; (b) **D724's §2.1 compression RATIFIED** at glossary §55.3 with reasons
+rather than by inheritance — `只今` is carried by "in progress", only `開発` is dropped, nothing
+sentence/turn/plot-bearing goes, and the literal alternatives are worse in register or cost; it does not
+reach the "must change" test. FLAGS §AQ4 carries it for a human with the disc; (c) **D719's developer note
+stays translated in place** (FLAGS §AQ3 — a project-policy question for a human, not a translation call).
+
+**Report-only, applied by the reviewer at merge — the translator did NOT re-push for any of them:**
+three PR-body glossary keys corrected to the source (`ボネット平原`, `隠れ家`, `能力値` — **the §9 seeds
+were right and the PR table drifted**); the **`参考になる` row STRUCK, not reworded** (D745 ships
+`Ｉ　ｌｅａｒｎ　ｍｕｃｈ　ｆｒｏｍ　ｉｔ．` and `ａｃｃｏｕｎｔ` is ×0 — the row described a rendering the file does
+not contain); Flag 10's gutter census settled at **20 → 20 true gutters, zero lost, plus 8 separate
+insert word-spaces (6 price, 2 player-name)**, superseding both earlier figures.
+
+⚠️ **NO FIGURE ERROR THIS ROUND — the 5,594/5,596 gap is DEFINITIONAL and both are right.**
+**Text growth = 2 × (EN − JP readable chars) = 5,594.** **Bank delta = text growth + 2 per added
+`{FFFE}` = 5,596**, and the *measured* bank delta is 5,596 (+1,860 / +2,724 / +1,012 against a real
+baseline of 10,333 / 10,527 / 29,489). They close exactly. Recorded as convention 2 of three in
+FLAGS §AQ7, beside DATA-vs-FILE and gutters-vs-insert-spaces.
+
+**Three counts where the reviewer's figure and the PR's differ, both printed rather than adjudicated:**
+text rows **348 vs 346** (the PR body is round 1's; the two trailing-segment fills added exactly 2 rows,
+so they reconcile — widest **23**, **0 at 24** in both) · glossary keys **1,172 / 64 occurring vs
+2,342 / 145** (key-splitting granularity) · item-name pairs **38 with 3 divergences vs 43 with 1** —
+and both agree **0 divergences involve this unit**.
+
+**One qualifier on round 1's `鋭い` census, both figures right to their own question:** `鋭い` is
+**5 unique lines / 105 instances** — correct — but only **3 of the 5 render `ｋｅｅｎ`** (D36, D165, D169);
+D75 and D79 render `ｓｈａｒｐ`. The finding held either way and is applied.
+
+⚠️ **NEW §4.3 DEBT IN MERGED WORK, found by the reviewer's cross-file item-name gate, none of it this
+unit's** (FLAGS §AQ5): `batch_007`'s `編成` renders **both** `Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ` and `Ｆｏｒｍａｔｉｏｎ`
+— **the real one, needs a ruling**; `batch_012`'s `獅子の勲章` shows the same `{FFFE}`-split shape as
+`batch_013`'s §53.1-ratified `北風のシロップ` and likely needs confirming, not fixing. ✅ **`batch_006`'s
+`どの品を` will/would split is NOT debt** — it tracks the source's own politeness, and `batch_014` D735
+correctly took `ｗｉｌｌ` for the plain `売ってくれるんだい`.
+
+⚠️ **INFRASTRUCTURE FLAG NOW IN `FLAGS.md` §AQ1 — every future reviewer inherits it.** GitHub refuses
+`REQUEST_CHANGES` in this single-account repo, so **the decision is a COMMENT review whose FIRST LINE is
+`DECISION: …`**, and **an absent `REQUEST_CHANGES` must never be read as approval, nor an absent
+`APPROVE` as a block** — the review state carries no information here.
 
 ### Review round 1 — PR #39 `batch_015`: **DECISION: CHANGES** (2026-09-11)
 Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✗ · structure ✓`.

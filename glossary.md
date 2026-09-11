@@ -694,15 +694,15 @@ reading, not as a fixed distinction.
 
 | Japanese | Shipped English — MATCH IT | Shipped where | Recurs in wave 10 at |
 |---|---|---|---|
-| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
-| `館の中は静寂に　包まれている・・。` | — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
+| ~~`館の中は静まりかっている・・・。`~~ | ✅ **EXHAUSTED and PROMOTED to §55.1 by `batch_014` (PR #37, merged 2026-09-11)** — 3 of 3 script instances rendered (D711, D714, D716), 0 battle, **0 remaining**. Shipped with the corrected dot counts (4 / 4 / **5**). Original seed note follows: `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
+| ~~`館の中は静寂に　包まれている・・。`~~ | ✅ **EXHAUSTED and RULED at §55.1 (PR #37)** — rendered `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．`, deliberately **parallel to but distinct from** the `静まりかっている` row above, as this row asked. 2 of 2 rendered (D717, D720), byte-identical, **0 remaining**. Original seed note follows: — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
 | `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
 | `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792, D793, D794 — five**, all in `batch_015`. Wave 10 takes the corpus from 1 rendered instance to 6, so this unit, not the incumbent, effectively fixes the term. Read D791 (`かつてのカーライン…`) and D794 (`親衛隊だか何だか知らねえが` — hostile, colloquial) before fixing on it. ⚠️ **FULL CENSUS, corrected 2026-09-11 (PR #39): 7 script-unique lines, 0 battle** — the five above (bank 20), **D898** (bank 28, shipped in `batch_010`), and **D1330 (bank 40)**. **Bank 40 has 75 bytes free**, i.e. a spendable budget of zero under §F2, so D1330 may never land without an engine-side fix. **This row therefore STAYS LIVE after wave 10 merges.** |
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
 | `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
 | `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | **D726, D737, D744, D746** (`batch_014`) and **D807** (`batch_015`) — 5 lines, **8 occurrences**. Cross-unit. ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
 | `功績` | `Ｍｅｒｉｔ` (capitalised) | §38 row, `batch_007` | D758 ×2, D769 |
-| `ジェムストーン` | `“Ｇｅｍｓｔｏｎｅ”` | `batch_013` D880 | D744 |
+| ~~`ジェムストーン`~~ | ✅ **EXHAUSTED (PR #37)** — 3 of 3 rendered (`batch_010`, `batch_013`, `batch_014` D744), all byte-identical `“Ｇｅｍｓｔｏｎｅ”`, **0 remaining**. `“Ｇｅｍｓｔｏｎｅ”` | `batch_013` D880 | D744 |
 | `極上のワイン` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` | `batch_012` ×6 | **D765, D770, D772** (`batch_015`) and **D857** (`batch_016`) — 4 occurrences. Cross-unit. |
 | `カジノ` | `ｃａｓｉｎｏ`, lowercase | `batch_010` ×2 | D747, D750, D812 |
 | `マーベラス` | `Ｍａｒｖｅｌｌｏｕｓ` | `batch_010`; §21.1 | D797, D806 |
@@ -714,18 +714,18 @@ reading, not as a fixed distinction.
 
 | Japanese | Proposed English | Where seen | Alternatives / note |
 |---|---|---|---|
-| `“ヘルグレイブ”` | `“Ｈｅｌｇｒａｖｅ”` (10) | D712, a weapon found in the dark | ⚠️ **The source already writes this in `“ ”`, not `『 』`** — reproduce the source's own quotes, do not convert. Alt `Ｈｅｌｌｇｒａｖｅ` |
-| `『おどりこの指輪』` | `“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` (15) | D715 | `踊り子` already ships `ｄａｎｃｅｒ`; the source spells it **kana** here. Alt `“Ｒｉｎｇ　ｏｆ　ｔｈｅ　Ｄａｎｃｅｒ”` (20) |
-| `『暗黒の指輪』` | `“Ｄａｒｋ　Ｒｉｎｇ”` (11) | D722 | `暗黒` → *dark* is already fixed (§ダークナイト row). Alt `“Ｒｉｎｇ　ｏｆ　Ｄａｒｋｎｅｓｓ”` (18) |
-| `『コアプラント』` | `“Ｃｏｒｅ　Ｐｌａｎｔ”` (12) | D744 ×3 — the machine soldier's power core, which `ブラックボックス` sits inside | Alt `“Ｃｏｒｅｐｌａｎｔ”` (11) |
+| ~~`“ヘルグレイブ”`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 10 columns confirmed with `len()`. The source's own `“ ”` reproduced, not converted. **1 script + 0 battle — exhausted.** Original seed note follows: `“Ｈｅｌｇｒａｖｅ”` (10) | D712, a weapon found in the dark | ⚠️ **The source already writes this in `“ ”`, not `『 』`** — reproduce the source's own quotes, do not convert. Alt `Ｈｅｌｌｇｒａｖｅ` |
+| ~~`『おどりこの指輪』`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 15 columns confirmed. **1 script + 0 battle — exhausted.** ⚠️ Held **distinct** from D719's descriptive `踊り子さんの指輪` → lowercase unquoted `ａ　ｄａｎｃｅｒ’ｓ　ｒｉｎｇ`; the source's own brackets decide the case. Original seed note follows: `“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` (15) | D715 | `踊り子` already ships `ｄａｎｃｅｒ`; the source spells it **kana** here. Alt `“Ｒｉｎｇ　ｏｆ　ｔｈｅ　Ｄａｎｃｅｒ”` (20) |
+| ~~`『暗黒の指輪』`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 11 columns confirmed. **1 script + 0 battle — exhausted.** Original seed note follows: `“Ｄａｒｋ　Ｒｉｎｇ”` (11) | D722 | `暗黒` → *dark* is already fixed (§ダークナイト row). Alt `“Ｒｉｎｇ　ｏｆ　Ｄａｒｋｎｅｓｓ”` (18) |
+| ~~`『コアプラント』`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 12 columns confirmed. **1 script line (×3 in-message) + 0 battle — exhausted.** Original seed note follows: `“Ｃｏｒｅ　Ｐｌａｎｔ”` (12) | D744 ×3 — the machine soldier's power core, which `ブラックボックス` sits inside | Alt `“Ｃｏｒｅｐｌａｎｔ”` (11) |
 | `ブラックボックス` | `ｂｌａｃｋ　ｂｏｘ` (9) | D744 | lowercase — a common noun, not a named part (§17.1) |
 | `ボネット平原` | `Ｂｏｎｎｅｔ　Ｐｌａｉｎ` (12) | D745, where the airship came down | A **place**. Alt `Ｂｏｎｎｅｔ　Ｐｌａｉｎｓ` (13) |
-| `『虹のドレス』` | `“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”` (15) | D748, a casino prize | — |
+| ~~`『虹のドレス』`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 15 columns confirmed. **1 script + 0 battle — exhausted.** Original seed note follows: `“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”` (15) | D748, a casino prize | — |
 | ~~`バウアーの砦`~~ | ⛔ **SEED WITHDRAWN 2026-09-11 (PR #37) — use the INCUMBENT `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` (12) / `Ｂａｕｅｒ` (5).** My `Ｆｏｒｔ　Ｂａｕｅｒ` would have split a shipped proper noun. | D757 (`batch_014`), **D1300 (a later wave inherits this)** | ⚠️ **Why the seed missed it: a KANA SPELLING VARIANT.** §2 has carried `バウワーの砦` → `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` since ch.40, and `tl/battle/chunk_040.txt` **ships** `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` and `Ｂａｕｅｒ`. Census: `バウアー` script **2** / battle **1**; `バウワー` script **0** / battle **1**. I searched the glossary for `バウアー`, found nothing, and never searched `バウワー` — **§AG6's mirror exactly: I measured the alternative and never looked for the incumbent.** An exact-key grep cannot see this and gate 6 cannot catch it. Caught by `batch_014`'s translator. |
-| `『功績レベル』` | `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` (13) | D758 ×2 | Built from the fixed `功績` → `Ｍｅｒｉｔ` and lowercase prose `ｌｅｖｅｌ` |
-| `能力値` | `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` (14) | D758 | Alt `ｓｔａｔｓ` (5) if the row is tight |
+| ~~`『功績レベル』`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 13 columns confirmed. **1 script + 0 battle — exhausted.** ⚠️ The bare `功績レベル` two segments later ships **unquoted** `Ｍｅｒｉｔ　Ｌｅｖｅｌ` — same rule, inside one message. Original seed note follows: `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` (13) | D758 ×2 | Built from the fixed `功績` → `Ｍｅｒｉｔ` and lowercase prose `ｌｅｖｅｌ` |
+| ~~`能力値`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded** and not the `ｓｔａｔｓ` alternative, 14 columns confirmed. **1 script + 0 battle — exhausted.** ⚠️ **The key is `能力値`, not `能力`** — the PR body's table drifted; the seed was right. Original seed note follows: `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` (14) | D758 | Alt `ｓｔａｔｓ` (5) if the row is tight |
 | `隠れ家` | `ｈｉｄｅｏｕｔ` (7) | D714, the pickpocket's | `スリ` → `ｐｉｃｋｐｏｃｋｅｔ` is **binding** (3 shipped, `batch_012`) |
-| `「只今、研究開発中」` | `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22) | D724, the workshop's sign | The `貼り紙` row (§34) fixes the frame; only the sign text is open |
+| ~~`「只今、研究開発中」`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 22 columns confirmed. **1 script + 0 battle — exhausted.** The §2.1 compression it carries is **ratified at §55.3**, with reasons. Original seed note follows: `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22) | D724, the workshop's sign | The `貼り紙` row (§34) fixes the frame; only the sign text is open |
 | `戒厳令` | `ｍａｒｔｉａｌ　ｌａｗ` (11) | D787 | — |
 | `エクスカリバー` | `Ｅｘｃａｌｉｂｕｒ` (9) | D803, `伝説の剣` | — |
 | `ヘヴィメイル` | `Ｈｅａｖｙ　Ｍａｉｌ` (10) | D801, armour worn by an imperial soldier | Capitalised: a named item. Alt `ｈｅａｖｙ　ｍａｉｌ` |
@@ -6875,3 +6875,151 @@ a `『…』`/`「…」`, **45 distinct bracketed names, 7 occurring in more th
 span `Ｇｅｍｓ`), `ＥＮＴＥＲ`, and `極上のワイン` itself. **Read, not counted**, which is §AO2's
 lesson applied. The gate also confirms **§AN4's fix has landed**: `進化の木の実` is now
 `Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ` in **both** `batch_011` and `batch_013`.
+
+---
+
+## 55. Added by script batch 014 (PR #37, merged 2026-09-11, round 2)
+
+DATA 707–758, banks 18 / 19 / 20 — the pickpocket's mansion, Seneca's machine-soldier workshop and
+the first town NPCs. 52 unique lines / 52 instances. Two review rounds; round 1's four findings are
+described at §55.4. Figures, measured at review against a baseline with the unit absent: JP 2,742 →
+EN **5,539** readable chars = **2.0201×**; text growth **5,594 B**; measured bank delta **5,596 B**
+(banks 18/19/20 free 10,333 / 10,527 / 29,489 → **8,473 / 7,803 / 28,477**). 348 text rows, widest
+**23**, **0 at 24**, no page over 4 rows. `{FFFE}` 291 → 292 (D715, forced); `{FCC0}` 56 → 56.
+
+### 55.1 The three mansion-interior sentences — one set phrase, two variants, three dot counts
+
+The `§9` seeds are discharged and promoted here. **The two Japanese sentences are different
+sentences, not spelling variants, and they take deliberately parallel but distinct English:**
+
+| Japanese | English | Note |
+|---|---|---|
+| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | D711, D714, D716. ⚠️ **The dot count is NOT uniform across the three.** Measured tails: D711 `・・・。` = **4**, D714 `・・・。` = **4**, **D716 `・・・。。` = 5** — a doubled `。` in the source. §3.1 takes the source's count, so D716 ships **five** stops and the other two ship four. Confirmed at review: the unit's dot-run profile matches the source on **52 of 52** rows. `batch_011` D700 spells the verb `静まりかえっている`, so gate 6 is blind to all of them |
+| `館の中は静寂に　包まれている・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．` | D717, D720 — *the mansion is wrapped in silence*, a **different sentence**. Three stops, per the source's `・・。`. **D717 and D720 carry identical readable text and ship byte-identical English**; their tag streams differ, which is why they are two unique rows, and the EN tag delta mirrors the JP tag delta exactly (verified at review) |
+| `館` | `ｍａｎｓｉｏｎ` | Row stays **live** — 4 script instances remain (D1093, D1102, D1156, D1349) |
+
+### 55.2 Items, places and words first rendered here
+
+| Japanese | English | Note |
+|---|---|---|
+| `“ヘルグレイブ”` | `“Ｈｅｌｇｒａｖｅ”` | 10 columns. D712. ⚠️ **The source already writes this in `“ ”`, not `『 』`** — the source's own quotes are reproduced, not converted. Exhausted |
+| `『おどりこの指輪』` | `“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` | 15 columns. D715. ⚠️ **Held distinct from the descriptive use.** D719's `踊り子さんの指輪` has **no brackets** and ships lowercase, unquoted `ａ　ｄａｎｃｅｒ’ｓ　ｒｉｎｇ`. §12 converts *the source's own* brackets, so the source's punctuation decides quoting and case — the same principle §9's `“ヘルグレイブ”` row states from the other side. Exhausted |
+| `『暗黒の指輪』` | `“Ｄａｒｋ　Ｒｉｎｇ”` | 11 columns. D722. Exhausted |
+| `『コアプラント』` | `“Ｃｏｒｅ　Ｐｌａｎｔ”` | 12 columns. D744 ×3 in one message, byte-identical. The machine soldier's power core. Exhausted |
+| `ブラックボックス` | `ｂｌａｃｋ　ｂｏｘ` | 9 columns. D744. **Lowercase and unquoted** — a common noun with no source brackets (§17.1), standing beside the quoted `“Ｃｏｒｅ　Ｐｌａｎｔ”` in the same speech, which is what makes the bracket rule visible. Row stays **live**: D309 remains |
+| `ボネット平原` | `Ｂｏｎｎｅｔ　Ｐｌａｉｎ` | 12 columns. D745, where the airship came down. ⚠️ **The key is `ボネット平原`, no `ン` after `ボ`.** The PR body's table wrote `ボンネット平原`; the §9 seed was right and the shipped TSV is right — verified by a key-first match at review. Row stays **live**: D1373 remains |
+| `『虹のドレス』` | `“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”` | 15 columns. D748, a casino prize. Exhausted |
+| `『功績レベル』` | `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` | 13 columns. D758. ⚠️ **The bare `功績レベル` two segments later ships UNQUOTED `Ｍｅｒｉｔ　Ｌｅｖｅｌ`** — the bracket rule applied inside a single message. Built on the fixed `功績` → `Ｍｅｒｉｔ`. Exhausted |
+| `能力値` | `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` | 14 columns. D758. ⚠️ **The key is `能力値`, not `能力`** — the PR body's table drifted; the seed was right. Distinct from `batch_013`'s `能力` → `ａｂｉｌｉｔｉｅｓ`. Exhausted |
+| `隠れ家` | `ｈｉｄｅｏｕｔ` | 7 columns. D714, the pickpocket's. Row stays **live**: **1 battle instance in chunk 27**, which is blocked on §D1 |
+| `スリ` | `ｐｉｃｋｐｏｃｋｅｔ` | Used exactly as the §54 incumbent. Row stays **live**: D286, D518, D520 remain |
+| `ネグラ` | `ｄｅｎ` | 4 columns. D710 — katakana, lowlife register, deliberately shorter and rougher than `隠れ家` → `ｈｉｄｅｏｕｔ`. Row stays **live**: D1376 remains |
+| `素材` | `ｓｔｕｆｆ` | ⚠️ **APPROVED BUT SENSE-SPLIT — and the reach in the PR body was wrong.** Held apart from `材料` → `ｍａｔｅｒｉａｌｓ` because **both stand in one message at D737**, so §25.3 cannot merge them. **The PR body's "reaches 21 banks" is the census of the wrong thing.** Measured at review: `素材` is **4 unique lines**; D737, D738, D740 are each **count 1 and all in bank 19 alone**; the entire 21-instance / 21-bank reach is **DATA 289**, a single armour-description line that is **UNTRANSLATED**. ⚠️ **D289 is therefore NOT BOUND by this row** — whoever renders that table line decides the description sense on its own merits |
+| `暗闇` | `ｇｌｏｏｍ` | 6 columns. D712, D715. `ｄａｒｋｎｅｓｓ` is already spent in `batch_012`; `ｇｌｏｏｍ` verified free across `tl/` and `pending/`. Exhausted |
+| `形見` | `ｋｅｅｐｓａｋｅ` | 9 columns. D752. Exhausted |
+| `景品` | `ｐｒｉｚｅ` | 5 columns. D748. Row stays **live and it is WIDE** — **9 instances remain**, all in the casino (D1396, 1397, 1402, 1404, 1408, 1417, …), **which is wave 11's queue**. Whoever takes the casino inherits this form |
+| `不景気` | `ｓｌｕｍｐ` | 5 columns. D710. Exhausted |
+| `とほほ` | `Ｔｏｈｏｈｏ` | 7 columns. D750. Kept as the interjection, transliterated on the §12.3 `ふふ` → `Ｆｕｆｕ` / §11.5 `フハハハ` precedent, rather than invented English tone. Exhausted |
+| `ハハッ` | `Ｈａｈａ．` | D710 ×2, byte-identical. Exhausted |
+| `へえ` / `へ〜` | `Ｈｕｈ，` | D737, D744. §17.2 kana-variant collapse. §25.3 cleared at review against a real bank map: `はっ` is in banks [1, 41], **not** 18/19/20 |
+| `なあ、` | `Ｔｅｌｌ　ｍｅ，` | 10 columns. D710. ⚠️ **A forced fork, and the collision is REAL — verified at review, not assumed.** §32.3 fixes `ねえ、` → `Ｓａｙ，`, and `ねえ、` is in banks **[0, 18, 20, 28, 40, 41]** while `なあ、` is in **[18, 41, 42]** — **they share bank 18, and both occur in this unit** (`なあ、` at D710, `ねえ、` at D717/720/747/751). §25.3 therefore forbids merging them and `なあ、` had to take a free form |
+| `ね、` | `Ｓａｙ，` | D744. Collapsed onto §32.3's `ねえ、` → `Ｓａｙ，` on the §17.2 kana-variant rule — the same particle, one syllable shorter. Deliberate, so a later unit cannot fork it |
+| `よろしく頼む` | `Ｉ　ｓｈａｌｌ　ｃｏｕｎｔ　ｏｎ　ｙｏｕ．` | D744. ⚠️ **A SENSE-SPLIT from §21.2's `よろしく` → `Ｇｏｏｄ　ｔｏ　ｍｅｅｔ　ｙｏｕ`**, which is the *greeting* sense. This is the *request* sense at the end of a favour asked, and the greeting form would be wrong. Both stand |
+| `工房` | `ｗｏｒｋｓｈｏｐ` | Used exactly as the §54 incumbent. Row stays **live**: D788, D1346, D1364, D1365 remain |
+| `やあ、` | `Ｈｅｌｌｏ，` | D725, D744, D745. **Not new** — this records `batch_012`'s incumbent, which the glossary did not carry. Distinct from `よう、` → `Ｈｅｙ，` and `おい、` → `Ｏｉ，` |
+
+### 55.3 RULING — D724's `只今、研究開発中`, and why a §2.1 compression stands on a unit with slack
+
+The unit flagged this itself (its Flag 7) and asked for a ruling rather than inheriting one, which
+is exactly what §2.1 steps 5–6 require. **Ratified**, with the reasoning written down because the
+default runs the other way and §45.2 has already cost one PR a round on this shape.
+
+> `貼り紙がしてある・・・` `{FCC0}` `「只今、研究開発中」`
+> → `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` `{FCC0}` `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22)
+
+**Why it is not simply licensed.** §2.1's ladder opens "*When a chunk is over budget*", and this
+unit never was — bank 19 keeps 7,803 free after it, and the page carries **1 text row of 4**, so a
+second row was available for 2 bytes. §45.2 makes the point in terms: a step-4 compression on a
+chunk with slack was **required to be reverted** in PR #26 round 1.
+
+**Why it stands anyway.** `只今` is carried by "in progress" — the `〜中` progressive is the same
+information, which is §2.1 step 3 (a gloss the Japanese carries for its own reasons) on its own
+terms, not a cut. That leaves only `開発` dropped from the `研究開発` compound. No sentence, speaker
+turn or plot fact goes, which is CLAUDE.md §3's actual red line; the sign's function to the player
+is unchanged; and the literal alternatives are not better — `“Ｎｏｗ　ｕｎｄｅｒ　ｒｅｓｅａｒｃｈ{FFFE}ａｎｄ　ｄｅｖｅｌｏｐｍｅｎｔ”`
+spends a break and a row on a door sign, and `“Ｒ＆Ｄ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (17, and `＆` **is** in the
+§3.1 charset) is anachronistic on a 1997 fantasy sign. ⚠️ **It does not reach "must change", which
+is the CHANGES test — but it is a visible sign, so `FLAGS.md` §AQ carries it for a human with the disc.**
+
+### 55.4 Round 1's four findings, and what the rework proved
+
+All four applied at **zero added tags** — the global tag multiset is identical between `db7f126`
+and `727146b` — and **−2 bytes net**. Verified independently at round 2.
+
+1. **D740** and **2. D738** — price-insert rows at **21** and **17** columns of overhead against
+   FLAGS §V1's ratified bound of **8**. ⚠️ **No gate can see this**: `rowcheck.py:_script_cols`
+   expands only `{FFEC}{=00}{=00}` / `{FC00}{=0000}` (to 7) and strips **every other insert to 0
+   columns** — read in the tool's source at review, not inferred. Re-measured across the **whole**
+   unit: all **9** gate-blind rows now sit at exactly **insert+8**. Corpus-wide across
+   `tl/script/*.tsv`: **51** such rows, distribution +1 ×11, +5 ×1, +7 ×1, +8 ×38, **none over 8**;
+   restricted to price rows `{=00}{=01}`, **27 rows reading 7×1 / 8×26 — no outlier left.**
+3. **D744 `乗り気` → `ｋｅｅｎ`** was a §25.3 collision and is now `ｖｅｒｙ　ｅａｇｅｒ　ｆｏｒ　ｉｔ，　ｓｏ`;
+   `ｋｅｅｎ` is **0** in the unit. ⚠️ **One qualifier on round 1's census, because both figures are
+   right to their own question:** `鋭い` is **5 unique lines / 105 instances** (D36, D75, D79, D165,
+   D169) — correct — but only **3 of the 5 actually render `ｋｅｅｎ`** (D36, D165, D169); D75 and D79
+   render `ｓｈａｒｐ`. The finding held either way.
+4. **D750 `ｅｖｅｒｙ　ｌａｓｔ　ｃｏｉｎ`** → `ａｌｌ　ｏｆ　ｔｈｅｍ，`. ⭐ **The translator found a better reason
+   than the finding gave.** Round 1 objected that the game lacks a coin; it **has** one — `コイン`
+   at **DATA 1398 (bank 42)** and **DATA 1419 (bank 43)**, the casino medal counter, both
+   untranslated and **both in wave 11's feasible queue**. ⚠️ **`ｃｏｉｎ` IS RESERVED for `コイン`** and
+   is verified **0 across all of `tl/`** — do not spend it. Distinct from §3's `メダル` → `ｍｅｄａｌ`.
+
+### 55.5 RULING — the trailing-segment fill, re-verified on the script store
+
+D738 and D740 each move their page's last clause into a segment the Japanese left blank
+(`.TT.` → `.TTT`), buying a row for **0 bytes**. **Ratified under §45.2**, and every ground was
+re-measured at review rather than accepted:
+
+- **`.TTT` is attested 9 times in `dumps/script_dump.txt`** (and 4 in the battle dump). §45.2's own
+  table lists no `.TTT` row, so this needed measuring; the same census reproduces §45.2's battle
+  figures **exactly** (TTTT 389, TTT. 276, TT 262, .TTTT 182, .TTT. 132, TTT 115, TT. 98,
+  **.TTTT. 0**), which is what licenses the new figure.
+- **The game itself puts readable text on a `{FFF8}{=00}{=14}` row.** `script_dump.txt` puts
+  readable text in the same segment as a `{FFF8}` tag **19 times**, and **DATA 1423 does it on the
+  exact `{=00}{=14}` argument variant** (`どの景品と交換しますか？`). The shape is the game's own.
+- **No `{FFFE}` was spent**, and D738's insert move across the break is separately licensed by
+  prompt §1 ("you may move an insert tag within its own sentence"); it stays inside its sentence.
+- Full audit: **10** pages changed shape in the unit, **every one attested**, **0** over 4 text rows.
+
+⚠️ **A scope note on §45.2, recorded so the figure is not quoted wider than it holds:** its
+"`.TTTT.` has **0** occurrences" is a census of `dumps/battle_dump.txt` and is correct there. The
+**script** dump has **1**. Nothing in this unit produces that shape; the note exists so a later
+unit does not cite "0 in the game" from a battle-only count.
+
+### 55.6 Register — the `batch_011` seam holds, and the two-register split is inherited
+
+| Who | Register |
+|---|---|
+| The recruiter (D707, D708, D709, D723) | Female, warm, **no contractions** (`Ｉｔ　ｓｅｅｍｓ　ｙｏｕ　ｃａｎｎｏｔ`, `Ｉ　ａｍ　ａｆｒａｉｄ`). `あら、` → `Ｍｙ，` (§28.3) and `あら？` → `Ｍｙ？` on §5's punctuation-follows-source mechanism. Continues her seven contraction-free lines in `batch_011` |
+| The odd-job lad (D710) | Rough and casual, contractions throughout (`ｉｔ’ｓ`, `Ｉ’ｍ`, `ｔｈｅｒｅ’ｓ`). `オイラ` carried as register, not rendered as a word (§34.1) |
+| Seneca (D744, D745) | Casual, warm, **contraction-taking** — which is what licenses `ああ。` → `Ｙｅａｈ．` under §6 / §43.1's condition rather than a formal assent |
+| The machine-soldier dealer (D727–743) | Casual male, contractions (`Ｉ’ｌｌ`, `Ｗｏｎ’ｔ`, `ｃａｎ’ｔ`) |
+| The old man (D757) | `のう` / `じゃわい` — §7's village-elder column: plain, old-fashioned, **no contractions** (`ｉｔ　ｉｓ　ｓａｆｅ`), no archaic English spelling |
+
+⚠️ **`仲間を　加えられない` is rendered TWICE in this unit and deliberately differently** — `ｃａｎｎｏｔ`
+at D708 (the recruiter, `みたいよ`) and `ｃａｎ’ｔ` at D733 (the dealer, `みたいだね`). **This is not a
+divergence: it exactly mirrors merged `batch_011`**, which splits the same phrase the same way on
+the source's own register (`みたいですね` → `ｙｏｕ　ｃａｎｎｏｔ　ａｄｄ　ａｎｙ`, `みたいだぜ` → `ｃａｎ’ｔ　ａｄｄ　ａｎｙ　ｍｏｒｅ`).
+Gate 6 cannot see either pair, because the messages are not byte-identical.
+
+### 55.7 Two corrections to the wave-10 seed, confirmed at review
+
+- **`バウアーの砦` — the seed is WITHDRAWN**, and the §9 row already carries it. §2 has shipped
+  `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` since ch.40 under the **kana variant `バウワーの砦`**, and `chunk_040` ships it.
+  The unit used the incumbent. ⚠️ **D1300 inherits this in a later wave.**
+- **`生き返りの仙人` was a phantom compound**, corrected to bare `仙人` → `ｈｅｒｍｉｔ` (**6** columns,
+  not 7). Row stays **live**: **D782 belongs to `batch_015`** and must match.
+- **`参考になる` — the PR body proposed `ｔａｋｅ … ｉｎｔｏ ａｃｃｏｕｎｔ`, and NO SUCH ROW IS ENTERED.**
+  Measured at review: D745 ships `Ｉ　ｌｅａｒｎ　ｍｕｃｈ　ｆｒｏｍ　ｉｔ．` and `ａｃｃｏｕｎｔ` is **×0** in the
+  unit. The proposed row described a rendering the file does not contain, so it is **struck, not
+  reworded**. §46.2's transitive `参考にする` is untouched.

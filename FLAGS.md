@@ -5936,3 +5936,132 @@ measurement.
 `len()` BOTH values and PRINT BOTH; plant a control that you have PROVED mutates something; and
 read every hit a pattern returns.** A reviewer's finding is not privileged over a translator's
 evidence, and a census is not a count.
+
+---
+
+## AQ. Wave 10 review — script batch 014 / PR #37, MERGED (2026-09-11, round 2)
+
+DATA 707–758, banks 18/19/20, 52 lines / 52 instances. Two rounds; round 1 raised four findings,
+all applied at **zero added tags** and **−2 bytes net**, all verified independently at round 2 by a
+fresh reviewer that inherited nothing. Gates: `paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks ✓
+dupes ✓ glossary ✓ structure ✓`. Tree gated per §AK6 with `merge-tree --write-tree` + `git archive`
+into a scratch dir, no working tree. Glossary integration at **§55**.
+
+### AQ1. ⚠️ NEW INFRASTRUCTURE FLAG — REVIEWERS CANNOT SET `REQUEST_CHANGES` IN THIS REPO
+
+**Every future reviewer in this run inherits this.** GitHub refuses the state:
+*"Can not request changes on your own pull request"* — the repo is single-account, so the PR author
+and the reviewer resolve to the same identity.
+
+> **The decision is posted as a COMMENT review whose FIRST LINE is
+> `DECISION: MERGE | CHANGES | PARK`.** On CHANGES the review must also say in words that the PR
+> **must not be merged**. ⚠️ **NEVER read an absent `REQUEST_CHANGES` state as approval, and never
+> read an absent `APPROVE` as a block** — the review state carries no information in this repo and
+> only the first line of the body does. First hit on PR #37 round 1; re-confirmed round 2.
+
+### AQ2. ⚠️ NEEDS THE DISC — D712's `発見つけた` is a SOURCE TYPO, preserved in Japanese, unrenderable in English
+
+`script_unique.txt` DATA 712 reads `“ヘルグレイブ”を{FFFE}発見つけた！！`. The regular form is
+`発見した`, and **D715, the sibling line four rows later, has exactly that** (`『おどりこの指輪』を{FFFE}発見した！！`).
+`発見つけた` conflates 発見した and 見つけた. **Shipped as `Ｙｏｕ　ｈａｖｅ　ｆｏｕｎｄ` — the intended sense;
+there is no way to reproduce a Japanese orthographic slip in English and §2 does not ask for one.**
+The Japanese key is untouched and byte-identical to the dump, so nothing propagates wrongly.
+**Nothing to fix; recorded so a later reader does not "correct" the dump.** Same class as §10.10's
+`訊ねたい`/`尋ねたい`.
+
+### AQ3. 🎮 NEEDS THE DISC — D719 is a DEVELOPER NOTE, translated in place, and this is a project-policy call
+
+DATA 719's message carries, after its first `{FC30}`, a note from the developers to themselves:
+
+```
+注：このイベントは、{FFFE}　　今のままでは脈絡が{FFFE}　　通ってないので、{FFFE}　　近々　修正します．
+```
+
+*"Note: this event does not hang together as it stands, so we shall fix it shortly."* Shipped
+translated, with its **2-space indent preserved verbatim** and its unusual full-width `．`
+terminator reproduced.
+
+**Ruled at review: it stays translated in place.** It sits after the message's first `{FC30}`, so it
+is reachable in-game, and blanking it would change the byte stream against the source for no gain —
+which §3 forbids on its own terms. ⚠️ **What a human with the disc should do:** walk the mansion
+ring event in Limrose and see whether the note actually displays. **If it does, this is a project
+policy question — do we ship developer notes in English, in Japanese, or not at all? — and it wants
+one answer for the whole project, not a per-line one.** No other developer note is known in either
+dump. **Does not block anything.**
+
+### AQ4. 🎮 NEEDS THE DISC (low value) — D724's workshop sign carries a ratified §2.1 compression
+
+`「只今、研究開発中」` → `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22 columns) drops `開発` from the
+`研究開発` compound. **Ratified at glossary §55.3 with full reasoning** — §2.1's ladder is
+conditioned on being over budget and this unit was not, so the ruling does not rest on the ladder;
+it rests on `只今` being carried by "in progress", on no sentence/turn/plot fact being lost, and on
+the literal alternatives being worse in register or cost. **The page has 3 free rows, so a fully
+literal two-row rendering remains available at 2 bytes if anyone ever wants it.** Recorded because
+it is a sign the player reads, not dialogue that scrolls past.
+
+### AQ5. §4.3 DEBT IN MERGED WORK — three item-name divergences the PR's own gate did not surface
+
+Found by the reviewer's cross-file item-name gate (every `『…』`/`「…」` paired with the `“…”` spans in
+the same message, across all shipped script TSVs): **38 bracketed names paired, 3 divergences, and
+NONE of them belongs to `batch_014`.** All three are pre-existing and byte-cheap to fix.
+
+| Where | Japanese | Divergence | Note |
+|---|---|---|---|
+| `batch_012` | `獅子の勲章` | `Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ` vs `Ｍｅｄａｌ　ｏｆｔｈｅ　Ｌｉｏｎ` | A `{FFFE}` splitting the span at a word space — **the same shape as `batch_013`'s `北風のシロップ`, already ratified at §53.1**, so this is very likely a false positive of the same kind and wants confirming, not fixing blind |
+| `batch_013` | `北風のシロップ` | `Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ` vs `Ｎｏｒｔｈ　ＷｉｎｄＳｙｒｕｐ` | Known, §53.1-ratified. Listed for completeness |
+| `batch_007` | `編成` | `Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ` vs `Ｆｏｒｍａｔｉｏｎ` | ⚠️ **The real one — two genuinely different English forms for one bracketed source term.** Needs a ruling: they may be two different menu contexts, in which case a sense-split row settles it |
+
+⚠️ **Also in merged `batch_006`: `どの品を` renders `Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｏｕｌｄ　ｙｏｕ` at one line
+and `Ｗｉｌｌ` at another. This is NOT debt — it tracks the source's own politeness** (`売ってもらえますか`
+vs `売ってくれるノロ`), and `batch_014` D735 correctly took `ｗｉｌｌ` for the plain `売ってくれるんだい`.
+Recorded so the next gate-6 sweep does not report it as a divergence.
+
+### AQ6. Banks under 2,000 free, re-measured after this merge
+
+`bankmeasure.py` on the merged tree: **bank 40 — 75 · bank 41 — 353 · bank 2 — 1,607 · bank 5 —
+1,635.** **None is touched by this unit.** The unit's own banks land at **18 — 8,473 · 19 — 7,803 ·
+20 — 28,477**, all three well under the dispatch projection. No bank negative.
+
+### AQ7. METHOD — three conventions that have now each cost this run a false correction
+
+Recorded together because the shape repeats and the cost is always the same: someone reports an
+"error" that is a definitional difference, and a reviewer or coordinator spends a round on it.
+
+1. **DATA vs FILE line numbers.** **DATA n = the nth non-comment, non-blank data line of
+   `script_unique.txt`, 1-based.** For this unit, `FILE = DATA + 5` in `script_unique.txt`, and
+   inside `batch_014.tsv` (8 header lines) `FILE = data-index + 8`. Worked example, measured:
+   **D750 is FILE 52 AND unit data-index 44; D742 is FILE 44 AND data-index 36.** Round 1 counted
+   data-lines and the translator counted file lines; **both were pointing at D750 and neither was
+   wrong.** Third occurrence in this run (twice in wave 8).
+2. **"Growth" vs "bank delta".** **Text growth = `2 × (EN readable chars − JP readable chars)`.
+   Bank delta = text growth + 2 bytes per added `{FFFE}`.** For `batch_014`: 5,594 and 5,596
+   respectively, and the measured bank delta is 5,596 — they close exactly. A PR reporting one and
+   a reviewer measuring the other will disagree by exactly the tag cost, every time. **State which
+   you mean.**
+3. **Cursor gutters vs insert word-spaces.** A row opening `{FFEC}…　` has readable text starting
+   with a full-width space **once tags are stripped**, so a naive split counts it as a cursor
+   gutter. For `batch_014` the true census is **20 → 20 gutters, zero lost**, plus **8 separate
+   insert word-spaces (6 price, 2 player-name)** — which supersedes both the PR body's "28 / eight"
+   and round 1's "27 / seven". **Mark the insert before splitting.**
+
+### AQ8. §V1's bound holds across the whole corpus — re-measured, and the gate is still blind
+
+Re-confirmed at this review by reading `rowcheck.py:_script_cols` directly: it expands **only**
+`{FFEC}{=00}{=00}` and `{FC00}{=0000}`, to 7 columns, and **strips every other insert to 0**. So
+`{=00}{=01}` (price), `{=00}{=03}` (item name) and `{=00}{=04}` are **bounded, not measured**, by
+both `assemble.py check` and `rowcheck.py script`.
+
+Hand-measured census across **all** of `tl/script/*.tsv` after this merge — **51 gate-blind rows,
+none over §V1's bound of 8**:
+
+| insert overhead | rows |
+|---|---|
+| +1 | 11 |
+| +5 | 1 |
+| +7 | 1 |
+| **+8** | **38** |
+
+Restricted to price rows `{FFEC}{=00}{=01}`: **27 rows, 7 ×1 / 8 ×26 — no outlier anywhere in the
+corpus.** ⚠️ **§V1's ask is unchanged and still the highest-value disc item here: go to any shop,
+select the longest item name in the game, and read the price-confirm box.** That settles the bound
+for all 51 rows at once. Until then no unit should spend a `{FFFE}` on these rows.
