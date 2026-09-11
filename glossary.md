@@ -887,13 +887,13 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 | ~~`木漏れ日`~~ | `ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered** (grepped, not assumed). Wanted by **D342** | New seed. D342 is a quiet empty-square scene description; §2's literal-then-tight applies. 18 columns — check it against the 24 limit in place ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — used exactly as seeded**, 18 columns confirmed with `len()`, split `Ａｍｉｄ　ｓｏｆｔ　ｄａｐｐｌｅｄ` / `ｓｕｎｌｉｇｈｔ，` across the source’s own break. `ｄａｐｐｌｅｄ` and `ｓｕｎｌｉｇｈｔ` both re-verified FREE at review. **2 instances, both D342 — EXHAUSTED.** |
 | ~~`さえずり`~~ | `ｂｉｒｄｓｏｎｇ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered.** Wanted by **D342** | New seed. `ｂｉｒｄｓｏｎｇ` is 9 columns against `ｔｗｉｔｔｅｒｉｎｇ ｏｆ ｓｍａｌｌ ｂｉｒｄｓ`; D342 is 40 JP chars and the tightest of the 21, so width is real. **Alt: `ｔｈｅ　ｓｏｎｇ　ｏｆ　ｓｍａｌｌ　ｂｉｒｄｓ`** ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — the ALTERNATIVE taken, not the primary, and the reason is faithfulness, not width.** Ships as `ｓｏｎｇ` inside `ｓｍａｌｌ　ｂｉｒｄｓ’　ｓｏｎｇ`. ⚠️ **This row’s "width is real" premise is REFUTED: `ｓｕｎｌｉｇｈｔ，　ｂｉｒｄｓｏｎｇ` measures 18 and would have fitted at 20 columns on that row.** The primary was declined because `ｂｉｒｄｓｏｎｇ` already means *the song of birds* and taking it would have folded away the source’s own `小鳥の`, which §2 does not license when a faithful form fits. **`ｂｉｒｄｓｏｎｇ` is therefore UNSPENT and verified free.** 2 instances, both D342 — EXHAUSTED. |
 | ~~`君子、あやうきにちかよらず`~~ | `ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ　ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` | **2 script / 0 battle / 0 `tl/`.** Wanted by **D340** | New seed. A proverb quoted colloquially (`〜ってやつよね`). ⚠️ **Do not import "discretion is the better part of valour"** — §2 bans inventing; the source names a 君子. Render the proverb, keep the speaker's casual frame ✅ **PROMOTED to §61.1 and STRUCK (PR #45, 2026-09-11) — used exactly as seeded**, as `Ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ` / `ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` (22 / 21) with `ってやつよね` carried by `ｔｈａｔ’ｓ　ｔｈｅ　ｓａｙｉｎｇ，　ｉｓｎ’ｔ　ｉｔ．`. **The warning was heeded: "discretion is the better part of valour" is NOT imported, and the 君子 is rendered.** `ｗｉｓｅ　ｍａｎ` and `ｈａｒｍ’ｓ` both re-verified FREE. 2 instances, both D340 — EXHAUSTED. |
-| `フラグ` | `Ｆｌａｇ` | **21 script / 0 battle / 0 `tl/`.** ⚠️ **CORRECTED: I wrote "wanted throughout `batch_021`" — in fact 13 of the 21 instances are `batch_022`'s and only 8 are `batch_021`'s** | ⚠️ **DEVELOPER DEBUG TEXT.** `フラグ５５は、ＯＦＦです。` → `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. The source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — **keep them exactly, do not re-case** |
-| `新曲` | `Ｎｅｗ　Ｔｒａｃｋ` | **15 script / 0 battle / 0 `tl/`.** `batch_021` + `batch_022` | Debug sound test. Title-case as a menu label |
-| `ザコ戦` / `ボス戦` | `ｍｏｂ　ｂａｔｔｌｅ` / `ｂｏｓｓ　ｂａｔｔｌｅ` | **3 / 3 script, 0 battle, 0 `tl/`.** `batch_022` D1048 | Debug sound test. In D1048 they sit inside `（…）` after `バトル`, so the parenthetical is the discriminator |
-| `任務失敗` | `Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ` | **3 script / 0 battle / 0 `tl/`.** `batch_022` D1047 | Debug label |
-| `ゲームオーバー` (as a menu **label**) | `Ｇａｍｅ　Ｏｖｅｒ` | **4 script / 0 battle.** Wanted by `batch_022` **D1047** | ⚠️ **SCOPE — a PROSE rendering is already shipped and is NOT this.** `batch_005.tsv:22` renders `ゲームオーバーになる場合もある` as `ｔｈｅ　ｇａｍｅ　ｍａｙ　ｂｅ　ｏｖｅｒ　ｉｎ　ｓｏｍｅ　ｃａｓｅｓ`. That is a clause; D1047 is a **sound-test label**. **Both stand** |
-| `宿敵` | `Ａｒｃｈ‐Ｅｎｅｍｙ` | **3 script / 0 battle / 0 `tl/`.** `batch_022` D1050 | Debug track title. `‐` is **U+2010**, per §9's `ｅａｓｙ‐ｇｏｉｎｇ` precedent — **not** ASCII `-` |
-| `鑑賞` | `Ｌｉｓｔｅｎ` | **1 script / 0 battle / 0 `tl/`.** `batch_022` D1052 | Debug verb on a sound-test screen. Hapax |
+| ~~`フラグ`~~ | `Ｆｌａｇ` | **21 script / 0 battle.** ⚠️ **CORRECTED: I wrote "wanted throughout `batch_021`" — in fact 13 of the 21 instances are `batch_022`'s and only 8 are `batch_021`'s** | ⚠️ **DEVELOPER DEBUG TEXT.** `フラグ５５は、ＯＦＦです。` → `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. The source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — **keep them exactly, do not re-case** ✅ **PROMOTED to §63.4 / §64.2 and STRUCK at the `batch_022` merge (PR #46, 2026-09-11) — used exactly as seeded by both twins. 21 of 21 shipped, 0 remaining — EXHAUSTED.** 8 in `batch_021` (D997–D1004), 13 in `batch_022` (D1084, D1087–D1098). ⚠️ **`Ｆｌａｇ　Ｎ` is the numbered LABEL and stays capitalised; bare `どのフラグを` (D1084) is a common noun and ships lowercase `ｆｌａｇ`** — the `ホビット` → `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split (§2, §17.1, §38.4), ruled at §64.2. |
+| ~~`新曲`~~ | `Ｎｅｗ　Ｔｒａｃｋ` | **15 script / 0 battle / 0 `tl/`.** `batch_021` + `batch_022` | Debug sound test. Title-case as a menu label ✅ **PROMOTED and STRUCK (PR #46, 2026-09-11) — used exactly as seeded, title case as directed, by both twins. EXHAUSTED.** ⚠️ **Both this cell's "15" and §63.4's "12 unique" are right under different definitions and neither is an error**: re-censused at PR #46's review, `新曲` is **12 unique LINES / 15 substring OCCURRENCES** (5 lines in `batch_021`, 7 in `batch_022`; `batch_022` D1051 and D1052 each carry 2–3 in one line). 12 of 12 lines shipped, 0 remaining. |
+| ~~`ザコ戦` / `ボス戦`~~ | `ｍｏｂ　ｂａｔｔｌｅ` / `ｂｏｓｓ　ｂａｔｔｌｅ` | **3 / 3 script, 0 battle, 0 `tl/`.** `batch_022` D1048 | Debug sound test. In D1048 they sit inside `（…）` after `バトル`, so the parenthetical is the discriminator ✅ **PROMOTED and STRUCK (PR #46, 2026-09-11) — used exactly as seeded, BOTH LOWERCASE, by both twins. 3 / 3 shipped each, 0 remaining — EXHAUSTED.** ⚠️ **This cell's "the parenthetical is the discriminator" phrasing reads as licence to compress `Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）` to `Ｂａｔｔｌｅ（Ｂｏｓｓ）`, and `batch_022` drafted exactly that and withdrew it.** It is not licence: the redundancy is the SOURCE'S own (`バトル（ザコ戦）`), §2.1 step 3 is a *compression* step and neither twin is within thousands of bytes of its budget, so it is never reached. §63.5's three-way `ｂｏｓｓ` test is met. |
+| ~~`任務失敗`~~ | `Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ` | **3 script / 0 battle / 0 `tl/`.** `batch_022` D1047 | Debug label ✅ **PROMOTED and STRUCK (PR #46, 2026-09-11) — used exactly as seeded by both twins. 3 / 3 shipped (D1018 `batch_021`; D1047, D1066 `batch_022`), 0 remaining — EXHAUSTED.** Title case is licensed here because this row seeds that form (§63.1). |
+| ~~`ゲームオーバー` (as a menu **label**)~~ | `Ｇａｍｅ　Ｏｖｅｒ` | **4 script / 0 battle.** Wanted by `batch_022` **D1047** | ⚠️ **SCOPE — a PROSE rendering is already shipped and is NOT this.** `batch_005.tsv:22` renders `ゲームオーバーになる場合もある` as `ｔｈｅ　ｇａｍｅ　ｍａｙ　ｂｅ　ｏｖｅｒ　ｉｎ　ｓｏｍｅ　ｃａｓｅｓ`. That is a clause; D1047 is a **sound-test label**. **Both stand** ✅ **PROMOTED and STRUCK (PR #46, 2026-09-11). 4 / 4 shipped — the three label instances (D1019 `batch_021`; D1047, D1067 `batch_022`) plus D981's prose instance, shipped since wave 2 — 0 remaining, EXHAUSTED. The register split stands and was verified at that review: `。`/`．` counts match on all 57 rows of `batch_022` and no shipped line moves.** |
+| ~~`宿敵`~~ | `Ａｒｃｈ‐Ｅｎｅｍｙ` | **3 script / 0 battle / 0 `tl/`.** `batch_022` D1050 | Debug track title. `‐` is **U+2010**, per §9's `ｅａｓｙ‐ｇｏｉｎｇ` precedent — **not** ASCII `-` ✅ **PROMOTED and STRUCK (PR #46, 2026-09-11) — used exactly as seeded by both twins. 3 / 3 shipped (D1026 `batch_021`; D1050, D1074 `batch_022`), 0 remaining — EXHAUSTED.** `‐` re-verified as **U+2010** by codepoint at that review: `batch_022` holds exactly two, both in this compound, and **0 ASCII characters of any kind**. |
+| ~~`鑑賞`~~ | `Ｌｉｓｔｅｎ` | **1 script / 0 battle / 0 `tl/`.** `batch_022` D1052 | Debug verb on a sound-test screen. Hapax ✅ **PROMOTED to §64.2 and STRUCK (PR #46, 2026-09-11) — `batch_022` alone renders it, so struck outright rather than left live.** The bare seed does not render the line, which is *exit the listening mode*: D1052 ships `　Ｅｘｉｔ　Ｌｉｓｔｅｎ　ｍｏｄｅ` (17 with the gutter) — the seeded word keeps its seeded capital, `ｍｏｄｅ` takes §63.1 sentence case. ⚠️ **`Ｌｉｓｔｅｎ` now renders BOTH this and `いいか、` (`translation_prompt.md` §5's worked example, 9 instances in `tl/`, all battle). §25.3 counted at review and MET on every axis: disjoint store, disjoint bank, disjoint message.** |
 
 ⛔ **ALREADY KEYED — DO NOT RE-SEED, DO NOT RE-DECIDE, USE BYTE-IDENTICALLY.** Each verified by a
 `tl/` grep at seed time, not by a reach census:
@@ -902,8 +902,8 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 |---|---|---|---|
 | ~~`貼り紙がしてある・・・`~~ | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `glossary.md:699` | **4 shipped.** ⚠️ **ROW STAYS LIVE — D333 and D338 are the 5th and 6th** ✅ **ROW NOW EXHAUSTED AND STRUCK (PR #45, 2026-09-11).** This cell was exactly right: D333 and D338 were the 5th and 6th, and with them **6 of 6 unique lines / 8 of 8 instances are shipped, 0 remaining**. Re-censused at review from `script_unique.txt`, not inherited. |
 | `ジュエル` | `Ｊｅｗｅｌ` / `Ｊｅｗｅｌｓ` — **never "gem"** | `glossary.md:96` | **73.** D327, D331, D332 |
-| `インターミッション` | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12 cols) | **§53.1** (was cited `:6815`; ⚠️ **my own 65-line seed insert moved it to `:6880` — cite by SECTION, never by line**) | 2. `batch_021` D1005. ⚠️ `batch_022` D1043 abbreviates it `ＩＭ` — keep the abbreviation |
-| `魔族` | `ｄｅｍｏｎｓ` — **§40.1** (was cited `:4525`; ⚠️ **moved to `:4590` by my own seed insert — cite by SECTION**) | 6. `batch_022` D1051 |
+| `インターミッション` | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12 cols) | **§53.1** (was cited `:6815`; ⚠️ **my own 65-line seed insert moved it to `:6880` — cite by SECTION, never by line**) | 2. `batch_021` D1005. ⚠️ `batch_022` D1043 abbreviates it `ＩＭ` — keep the abbreviation ✅ **DONE (PR #46, 2026-09-11): D1043 ships `　０１：ＩＭ` (6) and D1053 `０１：Ｉｎｔｅｒｍｉｓｓｉｏｎ` (15), so the source's own menu/confirmation contrast is preserved exactly. 3 of 3 script instances now shipped (D978, D1005, D1053) — the TERM is exhausted. ⚠️ THE ROW STAYS LIVE ANYWAY, against `FLAGS.md` §Z1 / Blocked 7: nothing in either debug file settles whether `Ｉｎｔｅｒｍｉｓｓｉｏｎ` names an on-screen menu label, and D1043's `ＩＭ` is the closest thing to evidence in the wave without being evidence. A human with the disc owns it.** |
+| `魔族` | `ｄｅｍｏｎｓ` — **§40.1** (was cited `:4525`; ⚠️ **moved to `:4590` by my own seed insert — cite by SECTION**) | 6. `batch_022` D1051 ✅ **D1051 SHIPPED (PR #46, 2026-09-11) as `２５：Ｄｅｍｏｎｓ`, byte-identical to `batch_021` D1029 — the capital is LINE-INITIAL only and §40.1's *"Not `Ｄｅｍｏｎ`"* is honoured.** ⚠️ **ROW STAYS LIVE, and by a wide margin: re-censused at that review, `魔族` is 17 script-unique / 13 battle, 8 shipped, and 9 unique lines REMAIN — D1309, D1312 (bank 40), D1375, D1376, D1377, D1381, D1382, D1383, D1386 (bank 41). Both of those banks are in §F2's four.** |
 | `ノロ` | the hobbit tic, §5 / §18.1 | — | **155.** D318, D335 ✅ **D318 SHIPPED (PR #45, 2026-09-11) — 3 instances, all in §18.1’s spaced form `，　ｎｙｏｒｏ` carrying the source’s own mark (`．`, `！`, `！`), verified character by character.** ⚠️ **This cell’s "D318, D335" is misleading: D335 was ALREADY SHIPPED at `batch_006:22` before wave 12 and is not in `batch_020` at all** — checked at review while confirming the unit’s 21-line list has no hole. **ROW STAYS LIVE** for the tic at large. |
 
 ⭐⭐ ~~**THREE NEAR-DUPLICATE TRAPS GATE 6 CANNOT SEE. READ THIS BEFORE TRANSLATING `batch_020`.**~~ **THERE WERE FOUR, AND THE FOURTH WAS THE MOST DANGEROUS — CORRECTED 2026-09-11 (PR #45).** The three below were all correct. The fourth, **D326 ↔ D481 (`batch_008.tsv:38`), readable-identical and differing only by a leading `{FC51}`**, was named in terms by **§42.5’s own FORWARD-BINDING table** all along and no trap list carried it forward. **§42.5 is the first place a script unit should look**, and it is not read by any gate. All four were verified by hand at the review and all four ship byte-identically; see §61.3.
@@ -932,6 +932,17 @@ byte-identical.** Verified by me at seed time:
 NEVER RECORDED AT ALL.** ⚠️ **Face (c) is invisible to every glossary-side harvester, however good.**
 **Gate 7 needs a `tl/` COLUMN-2 PASS: harvest JP→EN pairs from the shipped TSVs themselves, not only
 from `glossary.md`.** Do that before claiming gate 7 clean.
+
+✅ **CLOSED FOR THIS TERM 2026-09-11 (PR #46) — `その他` is now a first-column row at §64.2, and the
+method it exposed is now standard.** The `tl/` column-2 pass ran at PR #45's review (2,893 pairs, three
+findings nothing else could reach) and again at PR #46's (**3,573 aligned JP→EN segment pairs / 2,949
+distinct Japanese segments over all 21 shipped TSVs — 71 hits on `batch_022`'s own segments, 0
+divergences**). Final census: `その他` is **17 script-unique / 17 dump instances / 0 battle — 7 in
+`batch_013`, 10 in `batch_022`, all 17 shipped, EXHAUSTED**, and `　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ` is
+byte-identical in all seventeen **including the U+3000 cursor gutter**, with 0 occurrences anywhere else
+in `tl/`. ⚠️ **Face (c) is not closed as a method by one row — it is closed only while the `tl/` pass is
+actually run. Run it.** ⚠️ **And note what the pass is worth beyond this term: at PR #46 it independently
+found the `古びた館` case-split (§64.4) that no glossary-side harvester could see.**
 
 ⚠️ **SIX "Where seen" CELLS ABOVE NAME ONLY `batch_022` AND OMIT `batch_021`'s OWN INSTANCE** —
 `任務失敗`, `ザコ戦`, `ボス戦`, `ゲームオーバー`, `宿敵`, `魔族`. **The counts are right; the
@@ -5101,7 +5112,7 @@ Merged at **round 1**, with zero findings requiring a change to the unit.
 
 | Japanese | English | Note |
 |---|---|---|
-| キエーザ | `Ｋｉｅｓａ` | **Promoted from §9's wave-2 seed, used exactly as seeded.** **5 columns.** The first rendering anywhere; rendered twice in DATA 512 (`キエーザの沼` → `ｔｈｅ　ｓｗａｍｐ` / `ｏｆ　Ｋｉｅｓａ．`, `キエーザの南` → `ｓｏｕｔｈ　ｏｆ` / `Ｋｉｅｓａ．`). `Ｋｉｅｓａ` verified **free** across `tl/` and `pending/` at review. ⚠️ **The `Ｃｈｉｅｓａ` (Italian *church*) reading is NOT ruled out, only unsupported here**: this unit names a swamp and a direction and gives no religious evidence either way. `キエーザ城` (script 1090/1092) is still unrendered and is where the question actually lives — §9's row is struck, but the question is carried forward in `FLAGS.md` §AD |
+| キエーザ | `Ｋｉｅｓａ` | **Promoted from §9's wave-2 seed, used exactly as seeded.** **5 columns.** The first rendering anywhere; rendered twice in DATA 512 (`キエーザの沼` → `ｔｈｅ　ｓｗａｍｐ` / `ｏｆ　Ｋｉｅｓａ．`, `キエーザの南` → `ｓｏｕｔｈ　ｏｆ` / `Ｋｉｅｓａ．`). `Ｋｉｅｓａ` verified **free** across `tl/` and `pending/` at review. ⚠️ **The `Ｃｈｉｅｓａ` (Italian *church*) reading is NOT ruled out, only unsupported here**: this unit names a swamp and a direction and gives no religious evidence either way. `キエーザ城` (script 1090/1092) is still unrendered and is where the question actually lives — §9's row is struck, but the question is carried forward in `FLAGS.md` §AD ⚠️⚠️ **CELL UPDATED 2026-09-11 (§4.3, PR #46 review): `キエーザ城` IS NOW RENDERED, and the question it was holding STAYS OPEN ANYWAY.** `batch_022` D1087 ships `２章でキエーザ城に入れるようになります。` → `Ｉｎ　Ｃｈａｐｔｅｒ　２　ｙｏｕ　ｃａｎ` / `ｅｎｔｅｒ　Ｋｉｅｓａ　Ｃａｓｔｌｅ．` — **the first rendering of the compound anywhere** (censused in both dumps at that review: `キエーザ城` is **1 script-unique / 1 script-dump / 0 battle**, this line, so the term is now exhausted). **But a developer debug flag label saying a castle becomes enterable carries no religious evidence either way, so `Ｃｈｉｅｓａ` is neither taken nor ruled out and `FLAGS.md` §AD stays LIVE for a human with the disc.** This row's "still unrendered" clause is therefore superseded, not its question. ⚠️ **Also: the "script 1090/1092" citations are FILE lines** (FILE = DATA + 5), and only **FILE 1092 = D1087** carries the `城` compound — FILE 1090 = D1085 carries `キエーザクリア`, a flag-picker menu label, not `キエーザ城`. See §64.4 |
 | レバーク王 | `Ｋｉｎｇ　ｏｆ　Ｌｅｖｅｒｋ` | **14 columns.** Built on two fixed entries, not invented: §28.1's レバーク → `Ｌｅｖｅｒｋ` (a **kingdom**, as §28.1 corrected) and the **form** already shipped in `tl/battle/chunk_013.txt` L8 for `我がルクレール国王` → `ｏｕｒ　Ｋｉｎｇ　ｏｆ　Ｌｅｃｌｅｒｃ`. `予は　レバーク王。` → `Ｉ　ａｍ　Ｋｉｎｇ　ｏｆ　Ｌｅｖｅｒｋ．` (20), articleless as that precedent is. Bare `王は` → `Ｔｈｅ　Ｋｉｎｇ` (8) on §28.1's 国王 row — the speaker of DATA 502 is a **retainer** in honorific third person (`おられる`), not the King |
 | 砲台 (prose) | `ｂａｔｔｅｒｙ` | **7 columns.** DATA 514, `炎の雨を　降らせる砲台`. **First prose rendering.** §4's `無人砲台` → `turret` is a *class-label* row and is **untouched** — the class-vs-prose split §17.1 makes for ウィザード / 魔導師 and §24.2 for 弓兵 / 弓使い. ⚠️ **The two do share banks 4 and 5**, because the 21-instance item table is replicated everywhere and `batch_003` L91/L92 ship `ｔｕｒｒｅｔ`; that is the split working as designed, not a collision. ⚠️⚠️ **CORRECTED AT MERGE, and this one changes an inherited decision:** the PR's row tells chunk 15's translator that `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` is **25** columns and does not fit. Measured with `len()` it is **23**, and `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ` is **17**, not 20. **It fits** — inside the box, at the ≤23 preferred limit. Chunk 15 is not steered away from the full form |
 | 暗礁 | `ｒｅｅｆ` / `ｒｅｅｆｓ` | 4 / 5 columns. DATA 488, `かたい暗礁に　守られた` → `ｇｕａｒｄｅｄ　ｂｙ　ｈａｒｄ　ｒｅｅｆｓ，`. Verified **free** at review |
@@ -7101,7 +7112,7 @@ sentences, not spelling variants, and they take deliberately parallel but distin
 |---|---|---|
 | `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | D711, D714, D716. ⚠️ **The dot count is NOT uniform across the three.** Measured tails: D711 `・・・。` = **4**, D714 `・・・。` = **4**, **D716 `・・・。。` = 5** — a doubled `。` in the source. §3.1 takes the source's count, so D716 ships **five** stops and the other two ship four. Confirmed at review: the unit's dot-run profile matches the source on **52 of 52** rows. `batch_011` D700 spells the verb `静まりかえっている`, so gate 6 is blind to all of them |
 | `館の中は静寂に　包まれている・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．` | D717, D720 — *the mansion is wrapped in silence*, a **different sentence**. Three stops, per the source's `・・。`. **D717 and D720 carry identical readable text and ship byte-identical English**; their tag streams differ, which is why they are two unique rows, and the EN tag delta mirrors the JP tag delta exactly (verified at review) |
-| `館` | `ｍａｎｓｉｏｎ` | Row stays **live** — 4 script instances remain (D1093, D1102, D1156, D1349) |
+| `館` | `ｍａｎｓｉｏｎ` | ⚠️ **CELL CORRECTED 2026-09-11 (§4.3, PR #46 review) — it read "4 script instances remain (D1093, D1102, D1156, D1349)", and by now three of those four are shipped.** Re-censused at that review by grepping `script_unique.txt` for `館` and pairing every hit against all of `tl/script/`: **11 unique lines, 10 shipped, and only D1349 (bank 40) REMAINS.** D1102 (`batch_017.tsv:7`) and D1156 (`batch_017.tsv:61`) shipped in **wave 11**, before this cell was written; D1093 ships in `batch_022` (PR #46). **PR #46's own body repeated the stale figure as "3 remain" and that is corrected here too — it is one.** The rendering is unchanged; **ROW STAYS LIVE for D1349 alone**, which is in bank 40 (75 bytes free, a spendable budget of zero under §F2). See §64.6 |
 
 ### 55.2 Items, places and words first rendered here
 
@@ -8584,7 +8595,7 @@ a `{FFF6}`/`{FFF8}`/`{FC51}`-argument difference hid a real pairing (§61.3, §4
 
 | Japanese | English | Note |
 |---|---|---|
-| `街の音楽` / `城の音楽` / `村の音楽` | `Ｔｏｗｎ　ｍｕｓｉｃ` (10) / `Ｃａｓｔｌｅ　ｍｕｓｉｃ` (12) / `Ｖｉｌｌａｇｅ　ｍｕｓｉｃ` (13) | D1006–D1008. ⭐ **`音楽` has 0 glossary mentions of ANY kind and `ｍｕｓｉｃ`/`Ｍｕｓｉｃ` = 0 in all of `tl/`** — both re-measured at review, so this is a genuine first rendering. The head nouns are incumbents used unchanged below the line-initial capital: `ｔｏｗｎ` **46**, `ｃａｓｔｌｅ` **44**, `ｖｉｌｌａｇｅ` **43** in `tl/` (raw substring counts, re-run — the PR's 39 / 38 / 46 are corrected, see §63.6). Bare `街` / `城` / `村` have no fixed row; the three keys a harvester finds (`街道` → `ｒｏａｄ`, `城内の様子`, `村長` → `village chief`) are different source strings. ⚠️ **ROW STAYS LIVE — `音楽` is 23 unique lines / 28 instances / 0 battle; 9 here, 13 in `batch_022`, and D1169 REMAINS in bank 40** (see the `音楽のＯＮ・ＯＦＦ` warning below) |
+| `街の音楽` / `城の音楽` / `村の音楽` | `Ｔｏｗｎ　ｍｕｓｉｃ` (10) / `Ｃａｓｔｌｅ　ｍｕｓｉｃ` (12) / `Ｖｉｌｌａｇｅ　ｍｕｓｉｃ` (13) | D1006–D1008. ⭐ **`音楽` has 0 glossary mentions of ANY kind and `ｍｕｓｉｃ`/`Ｍｕｓｉｃ` = 0 in all of `tl/`** — both re-measured at review, so this is a genuine first rendering. The head nouns are incumbents used unchanged below the line-initial capital: `ｔｏｗｎ` **46**, `ｃａｓｔｌｅ` **44**, `ｖｉｌｌａｇｅ` **43** in `tl/` (raw substring counts, re-run — the PR's 39 / 38 / 46 are corrected, see §63.6). Bare `街` / `城` / `村` have no fixed row; the three keys a harvester finds (`街道` → `ｒｏａｄ`, `城内の様子`, `村長` → `village chief`) are different source strings. ⚠️ **ROW STAYS LIVE — `音楽` is 23 unique lines / 28 instances / 0 battle; 9 here, 13 in `batch_022`, and D1169 REMAINS in bank 40** (see the `音楽のＯＮ・ＯＦＦ` warning below) ⚠️⚠️ **CONFIRMED LIVE AFTER THE WAVE, 2026-09-11 (PR #46 review) — `batch_022`'s 13 are shipped and this row is NOT struck.** Re-censused independently from `script_unique.txt` against all of `tl/script/`: **`音楽` is 23 unique lines, 22 shipped, and exactly ONE REMAINS — D1169, `音楽のＯＮ・ＯＦＦを切り替えます`, bank 40.** Its three neighbours D1167, D1168 and D1170 are the same option-screen family and are also unshipped in bank 40, which is the reason `ＯＮ`/`ＯＦＦ` are **14 unique / 10 shipped / 4 remaining** too. ⚠️ **Bank 40 has 75 bytes free — a spendable budget of zero under §F2 — and D1169's `・` is outside §3.1 with no precedent covering an `ＯＮ・ＯＦＦ` pair** (§1's is name-internal, `batch_013:80`'s is a bullet, and PR #46's D1093 ruling is apposition). **Whoever takes D1169 inherits both problems; neither is a translation problem.** `batch_022`'s four forms match this row byte-for-byte. |
 | `マップ` / `マップの音楽Ｎ` | `Ｍａｐ` / `Ｍａｐ　ｍｕｓｉｃ　Ｎ` (11) | D1011–D1016. ⚠️ **Not a coinage — it records the shipped incumbent.** `batch_005.tsv:22` ships `マップをクリアしても` → `ｃｌｅａｒ　ｔｈｅ　ｍａｐ．`, `:24` `マップ上で` → `ｏｎ　ｔｈｅ　ｍａｐ`, `batch_013.tsv:86` `Ｓｏ　ｏｎ　ｍａｐｓ　ｔｈａｔ　ｈａｖｅ` — all lowercase, all read at review; `Ｍａｐ` capitalised = **0** elsewhere in `tl/`. Full-width digit on §10.8's own label carve-out (`Ｕｎｉｔ　４` §11.2, `Ｌｅｃｔｕｒｅ　Ｎ` §53.1, `Ｃｌａｓｓ　ＮＮ` §4), and the source writes `マップの音楽１` with a full-width digit itself |
 | `マップクリア` (bare label) | `Ｍａｐ　ｃｌｅａｒｅｄ` (11) | D1017. `クリア` has **0 glossary rows**. The head word is the shipped one and the **noun form of the shipped verb**, on §51.3's *"the row is not source-part-of-speech-locked"* and §27.1's *"voice and tense follow the source"*. `Ｍａｐ　ｃｌｅａｒ` was rejected at review as an imperative reading. ⚠️ **ROW STAYS LIVE — 3 unique lines (D1017 here, D1047 and D1065 in `batch_022`)**; and see the next row, which is the one a `マップクリア` grep cannot see |
 | `マップクリアー時に` (the `ー` spelling, in a `〜時に` clause) | `ｗｈｅｎ　ｙｏｕ` `{FFFE}` `ｃｌｅａｒ　ｔｈｅ　ｍａｐ` | ⚠️⚠️ **ADDED AT REVIEW, NOT PROPOSED BY THE PR, and it is the closest source form to the row above.** `batch_013.tsv:86` (**D978, bank 29**) already ships it — found by reading **all 29 `{FFFE}` segments of that pooled row (segment 19), not its head**, which is §62.3's trap in a new place. **It is NOT a divergence and nothing is re-cut**: `マップクリアー` is §17.2's kana-lengthener variant of `マップクリア` (the `そーよね`/`そうよね` and `イチバン`/`一番` relation, §61.1 / §60.4), the source there is a **temporal clause** and here a **bare label**, and both take the one head word `ｃｌｅａｒ`, conjugated to each source's own shape. **Written down because a later corrections unit would otherwise "fix" one into the other.** `マップクリアー` = 1 instance, D978, **shipped and EXHAUSTED** |
@@ -8745,3 +8756,252 @@ Written out rather than patched silently. **The file is unchanged by all nine.**
   carry none; `check`/`merge` accepting all 38 keys is the evidence), **0 `===` / `{PAD}` / `{HDR:}`**.
 - **Register: §17.5's flat catalogue voice, correct for the material.** No speaker, no tic, no
   contraction, nothing invented, nothing dropped on any of the 38 rows.
+
+---
+
+## 64. Added by script batch 022 (PR #46, merged 2026-09-11, round 1)
+
+Rendered in `tl/script/batch_022.tsv` — **the second developer debug file, and it is TWO tools:** the
+sound-test selection screens (DATA **1043–1082**) and a **flag editor** (DATA **1083–1099**), the
+latter distinct from the sound test and not described by the dispatch. `script_unique.txt` DATA
+**1043–1099**, **57 unique lines / 57 message instances** (every line a hapax), **bank 31 only**.
+**994 JP → 1,855 EN readable characters = 1.866×.** Bank 31 **34,717 → 32,993 free, +1,724 bytes**,
+measured by holding the file aside and diffing `bankmeasure` over all 44 banks: **exactly one bank
+touched**. **120 non-empty text runs, widest 24 on one row (§64.3), 4 at 23, 119 of 120 ≤ 23, none
+over. Max 4 text rows, no page over.** `{FFFE}` **1 change, D1075 1 → 2**; the non-`{FFFE}` tag stream
+**byte-identical on all 57 rows**; **52 cursor gutters preserved, none added**; **0 dot runs and the
+`。`/`．` counts match on all 57 rows**. **Merged round 1 with no must-change finding** — the fourth
+script unit in a row. Squash **`004da58`**, gated at PR head **`2966439`** on a base pinned to
+**`e84d0b167006d0e98399e22e8daf687c1a2231bb`**, on a merge the reviewer derived itself
+(commit **`4236d79`**, tree **`d83a07b`**) rather than reusing the author's.
+
+⚠️ **This section claimed §64 by reading the file's last heading at commit time (§63), not by
+reserving it.** ⚠️ **Numbering: every `Dnnn` here is a 1-based DATA index over the body of
+`script_unique.txt` (FILE = DATA + 5); `batch_NNN.tsv:n` numbers are 1-based FILE lines.** ⚠️ **FOUR
+banks stay under 2,000 free and none is this unit's — 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607 —
+and `bankmeasure`'s `tightest:` line prints only THREE. It hides BANK 2 at this merge** (it hid bank 5
+before PR #45). **Read the 44-row table, never that line.**
+
+⚠️ **NOT PLAYER-FACING.** Reachable only through a developer debug menu, no speaker, no voice,
+**§17.5's flat catalogue voice**. The weighting changes; the standard does not. ⚠️ **But the "no
+player value" framing is right about reachability and wrong about terminology risk:** the 17
+flag-editor lines carry **six** real place/content references and **two first renderings anywhere**
+(§64.4) — more glossary-bearing proper nouns than the 40 sound-test lines hold.
+
+### 64.1 The twin pairing, from the other side — 30 / 30, and gate 6 still sees nothing
+
+`batch_022` D1053–D1082 and `batch_021` D1005–D1034 are the **same 30 readable strings**, differing
+only in the trailing `{FFF8}` jump argument. §63.2 paired them at #44's merge from `batch_021`'s
+side; **PR #46's review paired them again from this side against the MERGED `batch_021` in the tree**,
+resolving each row's DATA from its own JP key rather than by offset:
+
+```
+pairs whose readable JP AND readable EN are identical: 30 / 30      mismatches: NONE
+exact-key matches between the two units: 0 / 57   ->  gate 6 pairs 0 of them
+```
+
+**Nothing moved at #44's merge.** The one row with structure, **D1075 ↔ D1027, is byte-identical
+including the break position** — `{FB01}２３：Ｌｅｇｅｎｄａｒｙ{FFFE}ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ{FFFE}…`,
+differing only in `{FFF8}{=00}{=10}` vs `{=2D}`. This unit took `batch_021`'s 30 titles **verbatim from
+its branch** rather than from a transcription, which is what made them agree; the transcription it was
+given was wrong on 18 of 22 rows (§64.8).
+
+⚠️ **The forms differ only in the CURSOR GUTTER**: `batch_022`'s abbreviated menu rows are `　ＮＮ：` +
+title (+1 column), `batch_021`'s full rows are `ＮＮ：` + title. **A title of 20 is therefore 23 there
+and 24 here** — which is the whole of §64.3.
+
+### 64.2 New rows this unit fixes
+
+| Japanese | English | Note |
+|---|---|---|
+| `その他` (menu paging item) | `　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ` (15 with the gutter) | ⭐⭐ **GATE 7'S THIRD FACE, AND THIS IS THE ROW THAT CLOSES IT.** Not a new decision: **`batch_013` has shipped this form 7× since wave 9** and `grep -c 'その他' glossary.md` was **0** — 0 key cells *and* 0 note cells — so **no glossary-side harvester, however good, could find it.** Only `tl/` knew. Found by grepping `tl/script` **column 2** for the unit's own source strings. Final census at review: **17 script-unique / 17 dump instances / 0 battle — 7 `batch_013` + 10 `batch_022`, all shipped, EXHAUSTED**, byte-identical in all seventeen **including the U+3000 gutter**, and `Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ` occurs **0** times elsewhere in `tl/`. ⚠️ **It is functionally a PAGING control, not a generic "Other"** — proved from the bank's own message table: on all nine sound-test pages it jumps to the **next** page (0x09→0x0A→…→0x12). A functional `　Ｍｏｒｅ` reads better, **but changing it is a §4.3 correction to 17 shipped instances across two files, so it is a decision for a human, not a fix** (and `Ｍｏｒｅ` is already spent 8× in `tl/` on other source strings). ⚠️ **`Ｏｔｈｅｒ` was the dispatch's suggestion and is NOT free — `Ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？` is §64.5's `他ニ　用アルカ？`.** See §64.8 |
+| `フラグ` (mid-sentence common noun) | `ｆｌａｇ`, lowercase | ⭐ **RULED at review.** §9.W12 fixes `フラグ` → `Ｆｌａｇ` and all 12 label uses here are `Ｆｌａｇ　Ｎ` capitalised, byte-consistent with `batch_021`'s `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. **`Ｆｌａｇ　Ｎ` is a NUMBERED LABEL** — the `Ｕｎｉｔ　４` (§11.2) / `Ｃｌａｓｓ　ＮＮ` (§4) / `Ｌｅｃｔｕｒｅ　Ｎ` (§53.1) shape, and §10.8's own label carve-out — **and bare `どのフラグを` (D1084) is a common noun**, so it ships `Ｗｈｉｃｈ　ｆｌａｇ　ｄｏ　ｙｏｕ` / `ｗａｎｔ　ｔｏ　ｃｈａｎｇｅ？`. That is §2's `ホビット` → `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` (name) / `ｈｏｂｂｉｔ` (descriptive) split, ruled at §17.1 and made scope-binding at §38.4. **No competing form exists**: `ｆｌａｇ`/`Ｆｌａｇ` had 0 occurrences in `tl/` before wave 12 |
+| `〜をＯＮ／ＯＦＦにします` (**action**) | `Ｆｌａｇ　Ｎ　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ／ＯＦＦ．` | ⚠️ **DELIBERATELY DISTINCT from `batch_021`'s `フラグＮは、ＯＮ／ＯＦＦです。` → `Ｆｌａｇ　Ｎ　ｉｓ　ＯＮ／ＯＦＦ．` (§63), and the two were read side by side in the merged tree at review.** Two different source strings — a **state readout** there, an **action** here — so they do not collapse and must not. Same vocabulary, different verb. `ＯＮ`/`ＯＦＦ` are the source's own full-width Latin, **reproduced verbatim, not re-cased**, per §9.W12 |
+| `操作する` (flag editor) | `ｃｈａｎｇｅ` | `どのフラグを操作しますか？` → `Ｗｈｉｃｈ　ｆｌａｇ　ｄｏ　ｙｏｕ` / `ｗａｎｔ　ｔｏ　ｃｈａｎｇｅ？`; `操作しない` → `　Ｄｏ　ｎｏｔ　ｃｈａｎｇｅ` (14, gutter kept). **`操作` has 0 shipped segments in all of `tl/`** — verified by the column-2 pass, so the word is genuinely free. Held **distinct from all five shipped menu refusals**: `何でもない` → `　Ｎｏｔｈｉｎｇ`, `特にない` → `　Ｎｏｔｈｉｎｇ　ｉｎ　ｐａｒｔｉｃｕｌａｒ`, `やらない` → `　Ｒｅｆｕｓｅ`, `やめておく` → `　Ｌｅａｖｅ　ｉｔ`, `いいえ` → `　Ｎｏ`. ⚠️ **The other `ｃｈａｎｇｅ` hits in `tl/` are NOT a §25.3 collision** — `クラスチェンジ` → *class change* (`batch_010:60`, §4), `変え` (`batch_013:82`) and the bank-42/43 exchange lines are **ordinary English vocabulary reuse, not two FIXED forms sharing one English**, which is what §25.3 is about. Alt `ｅｄｉｔ`, `ｓｅｔ` — unspent |
+| `大ボス` | `ｇｒｅａｔ　ｂｏｓｓ` (11) | §63.3's row, used byte-identically; **3 / 3 shipped, EXHAUSTED.** `大` → `ｇｒｅａｔ` is the corpus's word (§2's `大要塞`, §46.2's `大渓谷`) |
+| `Ｎ章で` / `Ｎ章・` | `Ｉｎ　Ｃｈａｐｔｅｒ　Ｎ` / `Ｃｈａｐｔｅｒ　Ｎ，` | ⭐ **First rendering of `章` in this sense anywhere: `Ｃｈａｐｔｅｒ`/`ｃｈａｐｔｅｒ` has 0 occurrences in all of `tl/` outside this unit, and `Ｎ章` occurs in EXACTLY these five lines in the whole corpus** — D1087, D1089, D1091 (`２章`), D1093 (`３章`), D1097 (`４章`); 0 in battle. Both figures re-derived at review. **Set here and exhausted here.** ⚠️ **The two forms are the SOURCE'S own distinction and are kept apart**: the locative `Ｎ章で` takes *In*, the appositive `Ｎ章・` does not. Full-width digit per §10.8's label carve-out. `Ｃｈ．３` was drafted and **rejected** — §2.1 licenses compression only where a row is over budget, and all five rows fit spelled out at 13–22 columns |
+| `・` between a chapter label and the place it introduces | `，` | ⭐ **RULED at review — a THIRD sense of `・`, and neither existing precedent fits.** §3.1 has no `・`. §1's is **name-internal** (`ゼファー・クリッペン` → `Ｚｅｐｈｙｒ　Ｋｒｉｐｐｅｎ`, `・` → `　`); `batch_013.tsv:80`'s is a **bullet** (`・本当は、` → `＊　Ｉｎ　ｆａｃｔ，`). D1093's `３章・マーベラスの街の` is **apposition**, for which English uses a comma: `Ｃｈａｐｔｅｒ　３，　Ｍａｒｖｅｌｌｏｕｓ` (21). The bare-space alternative (20) reads as a title rather than an apposition, and the comma agrees with this unit's own `Ｉｎ　Ｃｈａｐｔｅｒ　４，` at D1097. ⚠️ **This does NOT reach D1169's `音楽のＯＮ・ＯＦＦ`** — that is a coordinated pair, a fourth sense, and it is still open (see the §63.3 `音楽` row) |
+| `鑑賞モードを抜ける` | `　Ｅｘｉｔ　Ｌｉｓｔｅｎ　ｍｏｄｅ` (17 with the gutter) | Built on §9.W12's `鑑賞` → `Ｌｉｓｔｅｎ`, which alone does not render the line — the source is *exit the listening mode*, not bare `鑑賞`. The seeded word keeps its seeded capital; `ｍｏｄｅ` takes §63.1 sentence case. A true hapax (D1052 only). ⚠️ **`Ｌｉｓｔｅｎ` now renders both this and `いいか、` (9 in `tl/`, all battle). §25.3 MET on every axis: disjoint store, bank and message** |
+| `他に用はありますか？` / `まだ　要りますか？` | `Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` (23) / `Ｄｏ　ｙｏｕ　ｓｔｉｌｌ　ｎｅｅｄ　ｉｔ？` (21) | See §64.5 — a **four-way** hold-apart, not the three the PR named |
+
+**Used exactly as already keyed, nothing re-decided** — each opened and read at review, and each also
+re-verified by the column-2 pass against its shipped donor: `インターミッション` → `Ｉｎｔｅｒｍｉｓｓｉｏｎ`
+(§53.1, and `ＩＭ` kept on the menu row as §9.W12 directs) · `古代文明` → `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ`
+(§42.1 / §51.2, British `-s-`, **kept in full on the confirmation row**) · `魔族` → `Ｄｅｍｏｎｓ` (§40.1,
+line-initial capital only) · `カジノ` → `Ｃａｓｉｎｏ` (same) · `仲間` → `ｃｏｍｒａｄｅ(s)` (§28.2) ·
+`伝説の` → `ｌｅｇｅｎｄａｒｙ` (§22.1, a **note-cell** row) · `ほこら` → `ｓｈｒｉｎｅ` (§9, lowercase) ·
+`館` → `ｍａｎｓｉｏｎ` · `モンスター` → `ｍｏｎｓｔｅｒ` · `生き返り` → `ｒｅｖｉｖａｌ` (§56.1) ·
+`マップクリア` → `Ｍａｐ　ｃｌｅａｒｅｄ` · `マップＯＰ` → `Ｍａｐ　ｏｐｅｎｉｎｇ` · `音楽` → `ｍｕｓｉｃ` (§63.3) ·
+`キエーザ` → `Ｋｉｅｓａ` · `ルクレール` → `Ｌｅｃｌｅｒｃ` · `コーカサス` → `Ｃａｕｃａｓｕｓ` · `マヤ` → `Ｍａｙａ` ·
+`マーベラス` → `Ｍａｒｖｅｌｌｏｕｓ` · `アップミーズ` → `Ａｐｕｍｉｚｕ` · `　はい`/`　いいえ` → `　Ｙｅｓ`/`　Ｎｏ` ·
+`「…」` → `“…”` (§12).
+
+### 64.3 ⭐ RULING — the one run at exactly 24 SHIPS, and abbreviating it would be worse
+
+`　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）` is **24 columns**, the only run in the unit over the ≤23
+preference. D1048 runs `[23, 24, 23, 15]`, re-derived at review with the full splitter.
+
+> **24 is the hard limit, not a violation. It ships.** `assemble.py check` passes, and the corpus has
+> **explicit precedent at 24 with the tradeoff named in those very words**: §2's 中尉 row describes
+> `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` as "**24** — inside the box, at the hard limit, over the ≤23
+> preferred limit" and ships it.
+
+**The offered fix was measured and declined.** `　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ）` is **17** and would leave
+tracks 16 and 18 spelled out with 17 abbreviated **on one visible page** — trading a real on-screen
+inconsistency among three adjacent options for one column of theoretical headroom, on a developer debug
+menu that will never take the one-character fix §3.2's preference exists to protect. **The unit
+identified this itself, measured it, offered the fix and declined to apply it unilaterally; that was
+the right call and it is ratified.** The run exists only because the unit adopted `batch_021`'s
+full-phrase form for byte-identity, which §3 requires — **the 24 is the price of gate 6 conformance and
+is the cheaper of the two costs.**
+
+### 64.4 ⭐ RULINGS on the flag editor — two first renderings, and a case split gate 6 cannot see
+
+**1. `キエーザ城` → `Ｋｉｅｓａ　Ｃａｓｔｌｅ` (12) and `ルクレール城` → `Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ` (14) — the
+first rendering of either, anywhere.** Censused in **both dumps and both scripts** at review:
+
+```
+キエーザ城   script_unique 1 | script_dump 1 | battle_dump 0      <- this unit is its ONLY occurrence
+ルクレール城  script_unique 1 | script_dump 1 | battle_dump 0      <- likewise
+キエーザ     5 | 5 | 0          ルクレール    4 | 4 | 2
+```
+
+The `Ｘ　Ｃａｓｔｌｅ` precedent is **unanimous — 13 shipped instances** (`Ｆａｒｉｎａ　Ｃａｓｔｌｅ` in
+`chunk_019`; `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` in `chunk_022`, `chunk_037` ×5, `chunk_040`, `batch_012`,
+`batch_015`, `batch_016` ×3, `batch_019`) **plus four glossary rows** (§2's `カーライン城`, §38.1's
+`レバーク城`, §42.1's `キエーザ`, §28.1's `ルクレール`). **Every glossary row containing `城` was read at
+review and nothing conflicts.** `Ｌｅｃｌｅｒｃ` is a **kingdom** (§28.1), so `Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ` is its
+castle — consistent. ⚠️ **`Ｃｈｉｅｓａ` is NOT settled by this and `FLAGS.md` §AD stays LIVE:** a debug
+flag label saying a castle becomes enterable carries no religious evidence either way. §42.1's cell is
+corrected in place, because it said `キエーザ城` "is still unrendered".
+
+**2. ⭐⭐ `「古びた館」` → `“Ｏｌｄ　Ｍａｎｓｉｏｎ”` stands beside a shipped lowercase `ａｎ　ｏｌｄ　ｍａｎｓｉｏｎ`,
+and BOTH are correct. Found by the `tl/` column-2 pass and by nothing else.** `batch_009.tsv:47` (D552)
+ships the **unquoted, descriptive** `古びた館` as `ｉｓｌａｎｄ　Ｉ　ｆｏｕｎｄ　ａｎ　ｏｌｄ` / `ｍａｎｓｉｏｎ．`;
+D1093 ships the **quoted** `「古びた館」` as `“Ｏｌｄ　Ｍａｎｓｉｏｎ”`.
+
+> **This is §55.2's ruling applied, not a divergence.** That row holds `『おどりこの指輪』` →
+> `“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` distinct from descriptive `踊り子さんの指輪` → lowercase
+> `ａ　ｄａｎｃｅｒ’ｓ　ｒｉｎｇ`, saying in terms: **"the source's own brackets decide the case."** §51's
+> `ｇｅｍｓｔｏｎｅ` / `“Ｇｅｍｓｔｏｎｅ”` and §53's `ｆａｉｒｙ` / `“Ｆａｉｒｙ　Ｃａｋｅ”` are the same shape.
+> **Written down because a later corrections unit would otherwise "fix" one into the other.** Gate 6 is
+> not engaged — different messages.
+
+The unit applies that rule consistently across all three of its quoted labels: **named locations
+capitalised** — `“Ｏｌｄ　Ｍａｎｓｉｏｎ”`, `“Ｆｏｒｅｓｔ　Ｓｈｒｉｎｅ”`, matching `batch_010.tsv:50`'s shipped
+`Ａｔ　ｔｈｅ　“Ｂｅａｓｔ　Ｓｈｏｐ”` — and **a descriptive phrase around a name lowercase** —
+`“ｔｈｅ　ｔｏｗｎ　ｏｆ　Ａｐｕｍｉｚｕ”`, byte-matching that same line's own `ｔｈｅ　ｔｏｗｎ　ｏｆ`. ⚠️ **`FLAGS.md`
+§I1 (quoted-token case) stays OPEN and this unit deliberately does not settle it** — debug text is the
+last corpus that should. The unit said so rather than claiming otherwise.
+
+**3. `マヤ逃がした` → `（Ｍａｙａ　ｒｅｌｅａｓｅｄ）`** is the literal of `逃がす` and stays clear of
+`許してやる` → `　Ｓｐａｒｅ　ｈｅｒ` (`translation_prompt.md` §7's own example) — a different verb, so two
+Englishes is correct, not a collapse. §1's "spareable" describes the event, not the word.
+
+### 64.5 ⭐ The `他に用` family is FOUR-way, not three — and all four stand
+
+The PR's Flag 15 named three. **The column-2 pass found a fourth, and it is the closest of all to this
+unit's own** — recorded so a future reader does not read it as drift:
+
+| Source | English | Where | Register |
+|---|---|---|---|
+| `他ニ　用アルカ？` | `Ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？` (15) | `batch_011:20`, `batch_019:32` | the katakana merchant, §5 |
+| `他に用はあるか？` / `〜あるかな？` | `Ａｎｙ　ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？` | **`batch_009:44`, `:61` — NOT named by the PR** | gruff, plain |
+| `他に用はありますか？` | `Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` (23) | **this unit, D1099** | polite ます |
+| `まだ　要りますか？` | `Ｄｏ　ｙｏｕ　ｓｔｉｌｌ　ｎｅｅｄ　ｉｔ？` (21) | **this unit, D1083** | polite ます |
+
+**Four different source strings, four Englishes, and no rule is engaged** — CLAUDE.md §3 binds identical
+Japanese, and the glossary's own practice holds near-synonyms apart by register (§6's `いいな！！` /
+`わかったなっ！！`, §20.3, §21.2, §24.3's five-member わかる family). `ｂｕｓｉｎｅｓｓ` would read oddly of a
+developer tool, which is no shop. **All four stand.** D1083's "it" is unambiguous: the bank's jump table
+shows its Yes returns to the sound test.
+
+### 64.6 Corrections to existing cells — written out, per §4.3, with nothing silent
+
+Five, and **not one touches a line of any file.** No rendering changes anywhere.
+
+1. ⚠️ **§55.1's `館` cell read "4 script instances remain (D1093, D1102, D1156, D1349)" — it is ONE.**
+   Re-censused by pairing every `館` line of `script_unique.txt` against all of `tl/script/`: **11 unique
+   lines, 10 shipped, only D1349 (bank 40) remains.** D1102 and D1156 shipped in `batch_017` in **wave
+   11**, before that cell was written. **PR #46's body repeated the stale figure as "3 remain" and that is
+   corrected with it.** Row stays live for one line.
+2. ⚠️ **§42.1's `キエーザ` cell said `キエーザ城` "is still unrendered".** Now false — D1087 renders it.
+   The `Ｃｈｉｅｓａ` **question** stays open regardless (§64.4). And its "script 1090/1092" citations are
+   **FILE lines**, of which only FILE 1092 (= D1087) carries the `城` compound; FILE 1090 (= D1085)
+   carries `キエーザクリア`. The same applies to §9's `ルクレール` cell: FILE 1096 = D1091.
+3. **§9.W12's `新曲` "15 script" and §63.4's "12 unique" are BOTH right** under different definitions —
+   **12 unique lines / 15 substring occurrences** — and neither is an error. Recorded because the two
+   figures sit two thousand lines apart and look like a contradiction.
+4. **§63.3's `音楽` row is CONFIRMED LIVE, not struck**: 23 unique, 22 shipped, **D1169 remains in bank
+   40**, and it carries a `・` in a coordinated `ＯＮ・ＯＦＦ` pair that §64.2's apposition ruling does
+   **not** reach. Its three neighbours D1167/D1168/D1170 are unshipped in the same bank, which is also
+   why `ＯＮ`/`ＯＦＦ` are 14 unique / 10 shipped / **4 remaining**.
+5. **The PR's own absolutes were stale and its DELTAS were exact** — the distinction that matters.
+   Bank 31 `34,745 → 33,021` is **`34,717 → 32,993`** (PR #45 spent 28 bytes there in between);
+   bank 5's `1,635` is **`1,595`** (PR #45 spent 40); `check`'s `5,098 / 1,005` is the authoring base and
+   is **`5,180 / 1,064`** on the merged base. **+1,724, +57 and +57 are all exact.** This is the third
+   wave running in which a PR's absolute bank figure drifted between authoring and review while its
+   delta held (§63, §61.6) — **quote the delta.**
+
+### 64.7 Recorded at review — checked and not defects
+
+- **The §2.1 step-6 re-flow at D1087 / D1089 / D1091 stands, and the source-aligned alternative is
+  impossible.** All four candidates re-measured with `len()`, and **the PR's figures are exact**:
+  `Ｃｈａｐｔｅｒ　２，　Ｋｉｅｓａ　Ｃａｓｔｌｅ` 23 · `Ｃｈａｐｔｅｒ　２，　Ｃａｕｃａｓｕｓ` 19 ·
+  **`Ｃｈａｐｔｅｒ　２，　Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ` 25, over the hard limit** · without the comma **24, still at
+  it**. `{FFFE}` counts unchanged. The run-level consequence the PR declares — one source run taking
+  three Englishes — **engages no rule: §3 binds identical Japanese MESSAGES, not rows** (§20.4, §23.1,
+  §24.5, §27.4), and the three messages differ in flag number and place.
+- **The track-23 abbreviation at D1050 is FORCED, not chosen, and the full form survives.** Re-measured:
+  `Ｌｅｇｅｎｄａｒｙ　ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` is **30** and the menu row would be **34**; the menu row
+  **cannot** take a `{FFFE}` because the Nth option maps to the Nth `{FFF6}` (invariant verified on all
+  12 menu lines: `{FFF7}` count = `{FFF6}` count = gutter count, JP and EN alike). `　２３：Ｌｅｇｅｎｄａｒｙ
+  ａｎｃｉｅｎｔｓ` is **22**. §2's `援軍` → `reinforcements` / **`aid`** is the precedent for a width-forced
+  short variant of a fixed form, "flag each time", and it is flagged. **The full §42.1 form ships on
+  D1075 byte-identically to `batch_021`, and the menu-abbreviates / confirmation-spells-out pattern is
+  the SOURCE'S own, set at track 01 (`ＩＭ` vs `インターミッション`).** §42.1 is not changed and
+  `batch_008.tsv:45` does not move.
+- ⭐ **The source's punctuation inconsistency is PRESERVED, not tidied, and this was verified
+  mechanically rather than by eye.** D1093 and D1097 end `…にします` with **no** stop; D1087/1089/1091/1095
+  end `…にします。`. The English matches each line's own: `ＯＮ` against `ＯＮ．`. **`。`/`．` counts agree on
+  all 57 rows — 0 mismatches.** A reviewer seeing two rows without a full stop is seeing the source.
+  The ON/OFF split points are mirrored the same way (D1087 one row, D1095 two).
+- **`{FC30}{FC30}` at D1089** — two consecutive end-of-text tags, preserved verbatim; tag parity confirms.
+- **44 / 44 menu options carry the cursor gutter, and the unit checked this mechanically after an
+  eyeball told it otherwise.** Re-verified at review over all 52 gutter-bearing JP segments: **52 / 52
+  preserved, none added.** The only two segments without one (`まだ　要りますか？`, `他に用はありますか？`)
+  are **prompts, not options** — correctly.
+- **D1083 and D1099 carry 2 options against 1 `{FFF6}` — in the SOURCE too.** Inherited, not introduced.
+- **No in-game check is owed and §AO1–AO3 / Blocked 8 does NOT extend to this unit.** No line in
+  D1043–1099 carries readable text after a `{FFF6}` dispatch, `check` passes on every menu page, and the
+  one added `{FFFE}` is a plain width split inside a one-option message, not a column-model workaround.
+- **`{FCC0}` could not be added at D1093** (forbidden by `assemble.tag_parity`, §Q2). Flagged, tool not
+  patched — CLAUDE.md §3 honoured.
+
+### 64.8 ⭐⭐ What this unit proves about gate 7, and it is a method finding
+
+**`その他` is the sharpest form of the §AT1 hole yet found, and the third distinct form of it in three
+waves.** The progression, now complete:
+
+| Face | The hole | Found at | Caught by |
+|---|---|---|---|
+| **(a)** key cells | a term has no first-column row | wave 9 (§51.4) | a key-first grep |
+| **(b)** NOTE cells | the ruling lives in a note cell, 0 keys (`さ、`) | wave 11 (§59.1, §59.7) | a note-cell harvest |
+| **(c)** `tl/` only | **0 mentions in `glossary.md` of ANY kind, 7 shipped instances** | **wave 12, `batch_022`** | **only a `tl/` column-2 pass** |
+
+**Face (c) is invisible to every glossary-side harvester, however good** — the unit ran a three-pass
+harvest over the whole file (1,978 key cells, 264 note-cell pairs, 830 candidate substrings) and it
+found nothing, correctly. It found `その他` only by grepping **`tl/script` column 2** for its own source
+strings. **The standing requirement is therefore: gate 7 needs the `tl/` column-2 pass, and a reviewer
+must state its corpus.** At PR #46's review that corpus was **3,573 aligned JP→EN segment pairs / 2,949
+distinct Japanese segments over all 21 shipped TSVs — 71 hits, 0 divergences** — and **it independently
+found §64.4's `古びた館` case split, which nothing else could.**
+
+⚠️ **THE DISPATCH THIS UNIT RECEIVED WAS WRONG ABOUT WHOSE WORD IT WAS, AND THE UNIT MEASURED RATHER
+THAN TRUSTED.** It said `その他` and `フラグ` were mostly `batch_021`'s. Measured: `その他` is **10 of 17
+this unit's and 0 `batch_021`'s**; `フラグ` is **13 of 21 this unit's, 8 `batch_021`'s**. It also relayed
+a per-row width table that was **wrong on 18 of 22 rows**, including a false warning that track 20 sat
+at exactly 24 (it is 22) — and the unit **fetched `batch_021`'s actual branch and measured** instead of
+working from the transcription, which is the only reason the 30 titles agree byte-for-byte. ⭐ **A
+relayed measurement is not a measurement, and a reported one is not either. Every figure in this
+section was re-derived at review, the reviewer's own dispatch included.**

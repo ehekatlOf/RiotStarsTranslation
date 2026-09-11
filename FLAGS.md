@@ -7487,3 +7487,187 @@ stays live; **a human with the disc owns it.**
 - ⚠️ **`tl/battle/` holds no Japanese, so grepping it for a source term is a NULL CHECK** (§60.5,
   §AW7). The battle side of gate 6 must be done **positionally against `dumps/battle_dump.txt`** — done
   here, **0 of 38 messages and 0 of 46 segments**, so nothing to pair.
+
+---
+
+## AZ. Wave 12 review — script batch 022 / PR #46, MERGED (2026-09-11, round 1)
+
+`tl/script/batch_022.tsv` — **the second developer debug file, and it is TWO tools**: the sound-test
+selection screens (DATA **1043–1082**) and a **flag editor** (DATA **1083–1099**). DATA **1043–1099**,
+**57 unique lines / 57 instances** (every line a hapax), **bank 31 only**, **994 JP → 1,855 EN =
+1.866×**, **+1,724 bytes** (bank 31 **34,717 → 32,993 free**, measured by hold-aside/restore over all
+44 banks — **exactly one bank touched**). **120 non-empty text runs, widest 24 on ONE row, 4 at 23,
+119 of 120 ≤ 23, none over**; `{FFFE}` **1 change (D1075, 1 → 2)**; non-`{FFFE}` tag stream
+**byte-identical on all 57 rows**; **52 cursor gutters preserved, none added**; **max 4 text rows, no
+page over**; **0 dot runs and the `。`/`．` counts agree on all 57 rows**. **Merged round 1, no
+must-change finding — the fourth script unit in a row.** Squash **`004da58`**, PR head **`2966439`**,
+base pinned **`e84d0b1`**, merge derived at review (**`4236d79`** / tree **`d83a07b`**) rather than
+reused. Glossary **§64**.
+
+⚠️ **NOT PLAYER-FACING** — reachable only through a debug menu, no speaker, no voice. That changed the
+weighting, not the standard: every §6 gate was run and pasted. ⚠️ **But the "near-zero player value"
+framing is right about reachability and wrong about terminology risk:** the 17 flag-editor lines carry
+**six** real place/content references and **two first renderings anywhere** — more glossary-bearing
+proper nouns than the 40 sound-test lines hold.
+
+### AZ1. Banks under 2,000 free — still FOUR, and `tightest:` hides BANK 2 for a second wave
+
+`40 → 75` · `41 → 353` · `5 → 1,595` · `2 → 1,607`. **None is this unit's** (bank 31 → 32,993).
+```
+tightest: bank 40 75 free, bank 41 353 free, bank 5 1595 free
+```
+**Bank 2 is invisible on that line again.** §AV1, §AW1, §AX1 and §AY1 all said it; this is **five waves
+running**. ⭐ **The PR body quoted bank 5 as `1,635` — correct when written, stale by 40 at review
+because PR #45 spent 40 bytes there. Read the 44-row table, at review time, every time.**
+
+### AZ2. ⭐ QUOTE THE DELTA, NEVER THE ABSOLUTES — third wave running, and this one is the clearest case
+
+The PR reported bank 31 as **`34,745 → 33,021`, +1,724**. Measured at review by holding the file aside
+and diffing `bankmeasure` over all 44 banks:
+
+```
+bank 31    34717 ->   32993   +1724 bytes        total banks touched: 1
+```
+
+**Both absolutes are 28 bytes low, and the delta is EXACT.** PR #45's `batch_020` spent 28 bytes in
+bank 31 between authoring and review. The same happened to #44 (28 bytes in bank 30, §63) and to #46's
+own `check` figures (`5,098 / 1,005` authoring vs **`5,180 / 1,064`** merged, +57/+57 exact).
+
+> **Standing instruction, now three-for-three: a script PR's bank and `check` ABSOLUTES go stale the
+> moment a sibling merges, and its DELTA does not. Measure the delta by hold-aside/restore and quote
+> the delta. An absolute figure in a PR body is a timestamp, not a measurement.**
+
+### AZ3. ⭐ RULED — a run at exactly 24 SHIPS on this unit, and the fix would have been worse
+
+`　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）` is **24 columns** (D1048 runs `[23, 24, 23, 15]`). **24 is the
+hard limit, not a violation**; `check` passes and §2's 中尉 row already ships
+`Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` at 24, describing it in those very words as *"inside the box, at
+the hard limit, over the ≤23 preferred limit"*.
+
+**The offered fix was measured and declined**: `　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ）` is **17** and would leave
+tracks 16 and 18 spelled out with 17 abbreviated **on one visible page**. That trades a real on-screen
+inconsistency for one column of theoretical headroom on a debug menu. ⚠️ **The run exists only because
+the unit adopted `batch_021`'s full phrase for gate-6 byte-identity — it is the PRICE of §3
+conformance, and the cheaper of the two costs.** Glossary §64.3. **Nothing to action.**
+
+### AZ4. ⭐⭐ GATE 7's THIRD FACE IS NOW NAMED, DEMONSTRATED AND CLOSED FOR ONE TERM — and the method requirement is permanent
+
+`その他` had **0 mentions in `glossary.md` of ANY kind — 0 key cells AND 0 note cells — while shipping 7
+times in `batch_013` since wave 9.** The three faces of the hole, now all found:
+
+| Face | The hole | Found | Caught only by |
+|---|---|---|---|
+| (a) key cells | no first-column row | wave 9, §51.4 | a key-first grep |
+| (b) NOTE cells | the ruling lives in a note (`さ、`, 0 keys) | wave 11, §AT1 / §59.7 | a note-cell harvest |
+| **(c) `tl/` only** | **0 glossary mentions at all, 7 shipped** | **wave 12, `batch_022`** | **a `tl/` COLUMN-2 PASS** |
+
+**Face (c) is invisible to every glossary-side harvester, however good.** The unit ran a three-pass
+harvest over the whole file (1,978 key cells, 264 note-cell pairs, 830 candidate substrings) and found
+nothing — correctly. It found the term only by grepping **`tl/script` column 2** for its own source
+strings.
+
+> ⭐ **STANDING REQUIREMENT: gate 7 is not clean until the `tl/` column-2 pass has run, and the
+> reviewer must STATE ITS CORPUS.** At this review it was **3,573 aligned JP→EN segment pairs / 2,949
+> distinct Japanese segments over all 21 shipped TSVs — 71 hits on this unit's segments, 0
+> divergences.** It has now paid off three reviews running: §AW found `立ち寄る`/`ｄｒｏｐ　ｉｎ`, and this
+> one independently found the `古びた館` case split (§AZ5) that nothing else could see.
+
+`その他` is promoted to a first-column row at **§64.2**. Final census: **17 script-unique / 17 dump
+instances / 0 battle — 7 `batch_013` + 10 `batch_022`, all shipped, EXHAUSTED**, byte-identical in all
+seventeen **including the U+3000 cursor gutter**.
+
+⚠️ **AND IT IS FUNCTIONALLY A PAGING CONTROL, NOT A GENERIC "OTHER" — a decision for a human, not a
+fix.** Proved from the bank's own message table: on all nine sound-test pages `その他` jumps to the
+**next** page (0x09→0x0A→…→0x12), and on D1085 to the next flag page. A functional `　Ｍｏｒｅ` reads
+better on a paging control, **but changing it is a §4.3 correction to 17 shipped instances across two
+files**, and `Ｍｏｒｅ` is already spent 8× in `tl/` on other strings. **Recorded so nobody re-derives
+the jump table.**
+
+### AZ5. ⭐ `「古びた館」` → `“Ｏｌｄ　Ｍａｎｓｉｏｎ”` beside a shipped lowercase `ａｎ　ｏｌｄ　ｍａｎｓｉｏｎ` — BOTH stand, and it is §55.2's rule, not a drift
+
+Found by the column-2 pass. `batch_009.tsv:47` (D552) ships the **unquoted, descriptive** `古びた館` as
+`ａｎ　ｏｌｄ` / `ｍａｎｓｉｏｎ．`; D1093 ships the **quoted** `「古びた館」` as `“Ｏｌｄ　Ｍａｎｓｉｏｎ”`. **§55.2
+says in terms that "the source's own brackets decide the case"** (`『おどりこの指輪』` →
+`“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”` against descriptive `踊り子さんの指輪` → `ａ　ｄａｎｃｅｒ’ｓ　ｒｉｎｇ`), and §51's
+`ｇｅｍｓｔｏｎｅ` / `“Ｇｅｍｓｔｏｎｅ”` is the same shape. **Conformance, not divergence.** Gate 6 is not
+engaged — different messages. **Written down at §64.4 because a corrections unit would otherwise "fix"
+one into the other. Nothing to action.**
+
+⚠️ **`FLAGS.md` §I1 (quoted-token case) STAYS OPEN.** The unit split named-location (capitalised) from
+descriptive-phrase (lowercase, `“ｔｈｅ　ｔｏｗｎ　ｏｆ　Ａｐｕｍｉｚｕ”`, byte-matching `batch_010.tsv:50`) and
+**said so rather than claiming to settle it. Debug text is the last corpus that should settle §I1.**
+
+### AZ6. ⚠️ TWO FIRST RENDERINGS — and `Ｃｈｉｅｓａ` (§AD) STAYS OPEN ANYWAY
+
+`キエーザ城` → **`Ｋｉｅｓａ　Ｃａｓｔｌｅ`** (12) and `ルクレール城` → **`Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ`** (14) — the
+first rendering of either, anywhere. Censused in **both dumps and both scripts** at review: each is
+**1 script-unique / 1 script-dump / 0 battle**, and this unit is its only occurrence. The `Ｘ　Ｃａｓｔｌｅ`
+precedent is **unanimous — 13 shipped instances plus four glossary rows**, and every glossary row
+containing `城` was read: nothing conflicts.
+
+⚠️⚠️ **§AD IS NOT DISCHARGED.** §42.1 said `キエーザ城` "is where the [`Ｃｈｉｅｓａ`] question actually
+lives" — **and a developer debug flag label saying a castle becomes enterable carries no religious
+evidence either way.** The compound is now rendered and the question is **still open**, for a human
+with the disc. §42.1's cell is corrected in place (it said "still unrendered"); **§AD stays LIVE.**
+
+### AZ7. ⚠️ WHAT REMAINS IN BANK 40 AFTER THIS WAVE — and `音楽` is NOT exhausted
+
+Re-censused at this review from `script_unique.txt` against all of `tl/script/`. **Every one of these is
+in §F2's sub-2,000 set and none is a translation problem:**
+
+| Term | Total | Shipped | REMAINING | Bank |
+|---|---|---|---|---|
+| `音楽` | 23 unique | 22 | **1 — D1169** | **40** |
+| `ＯＮ` / `ＯＦＦ` | 14 each | 10 | **4 — D1167, D1168, D1169, D1170** | **40** |
+| `ほこら` | 4 | 3 | **1 — D324** | **40** |
+| `館` | 11 | 10 | **1 — D1349** | **40** |
+| `生き返り` | 5 | 4 | **1 — D324** | **40** |
+| `魔族` | 17 | 8 | **9** | **40, 41** |
+
+⚠️⚠️ **`音楽`'s §63.3 row is CONFIRMED LIVE and deliberately NOT struck. D1169 is
+`音楽のＯＮ・ＯＦＦを切り替えます`, in bank 40 (75 bytes free — a spendable budget of ZERO), and its `・`
+is a coordinated `ＯＮ・ＯＦＦ` pair that NO existing precedent covers:** §1's is name-internal,
+`batch_013:80`'s is a bullet, and **this unit's own new `・` → `，` ruling is apposition and does not
+reach it** (§64.2). D1167/D1168/D1170 are the same option-screen family, same bank, same problem.
+**Whoever takes them inherits a byte problem and a charset question, both for a human.**
+
+### AZ8. Struck from §9.W12 at this merge — all seven exhausted seeds, and one kept live
+
+**The second debug twin to merge strikes the rows, per the `ルート` precedent (§29.1 / §30.1); #44
+promoted all seven and deliberately left every one live.** Censused per DATA at this review, not
+inherited:
+
+`フラグ` **21/21** · `新曲` **12/12 lines (15 occurrences)** · `任務失敗` **3/3** · `ザコ戦` **3/3** ·
+`ボス戦` **3/3** · `ゲームオーバー` **4/4** (label *and* prose senses both shipped) · `宿敵` **3/3** ·
+`鑑賞` **1/1** — **all EXHAUSTED, all struck.**
+
+**Kept LIVE, and each for a stated reason:** `てーこく` (13 unique remain, all blocked) ·
+`インターミッション` (term exhausted 3/3, but the **row** stays live against **§Z1 / Blocked 7** — nothing
+in either debug file settles whether it names an on-screen menu label, and D1043's `ＩＭ` is the closest
+thing to evidence without being evidence) · `ノロ` · `魔族` · `音楽` (§AZ7) · `ほこら` · `館` · §AD's
+`キエーザ`.
+
+### AZ9. ⚠️ THE COORDINATOR'S DISPATCH WAS WRONG TWICE MORE AND THE UNIT MEASURED RATHER THAN TRUSTED
+
+Recorded because the pattern is now the wave's signature. The dispatch told this unit that `その他` and
+`フラグ` were mostly `batch_021`'s. **Measured: `その他` is 10 of 17 this unit's and 0 `batch_021`'s;
+`フラグ` is 13 of 21 this unit's, 8 `batch_021`'s.** It also relayed a per-row width table **wrong on 18
+of 22 rows**, including a false warning that track 20 sat at exactly 24 (**it is 22**) — and the unit
+**fetched `batch_021`'s actual branch and measured it** rather than working from the transcription,
+which is the only reason the 30 shared titles agree byte-for-byte. Its own Flags 7, 8 and 9 report all
+of this against the coordinator, with the commands beside them.
+
+> ⭐ **A relayed measurement is not a measurement, and a REPORTED measurement is not one either.
+> Every figure in this review was re-derived — the reviewer's own dispatch included — and where the PR
+> and the reviewer disagreed, the figure was measured a third time. Where the file and a report
+> disagree, THE FILE IS THE AUTHORITY.**
+
+### AZ10. Nothing new is blocked, and nothing here needs a human except what already did
+
+**No new blocked item.** **§AO1–AO3 / Blocked 8 does NOT extend to this unit** — no line in D1043–1099
+carries readable text after a `{FFF6}` dispatch, `check` passes on every menu page, and the single
+added `{FFFE}` is a plain width split inside a one-option message, not a column-model workaround.
+`{FCC0}` could not be added at D1093 (forbidden by `assemble.tag_parity`, §Q2) — flagged, **tool not
+patched**, CLAUDE.md §3 honoured. **Open for a human, all pre-existing:** §Z1 / Blocked 7
+(`インターミッション` as a screen label), §I1 (quoted-token case), §AD (`Ｃｈｉｅｓａ`), §F2's bank-40 / 41
+ceiling, and §AZ7's `ＯＮ・ＯＦＦ` charset question.

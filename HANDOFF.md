@@ -20,15 +20,19 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > If this session died mid-wave: `ListAgents`, reconcile the open PRs below against **In flight**,
 > re-dispatch anything with no branch, and **re-arm the `send_later` watchdog**.
 >
-> ### ▶ 3 of 4 REVIEWED AND MERGED (#45 `5b6c212`, #43 `1134d2b`, **#44 `b3ca8cb`**). NEXT: dispatch a `reviewer` for **PR #46 `batch_022`** — the last unit of the wave.
-> **`git pull --ff-only` FIRST** — #44's reviewer pushed an integration commit appending glossary
-> **§63** and FLAGS **§AY**. Then dispatch the last reviewer, `run_in_background: false`.
-> ⚠️ **Tell #46's reviewer: every `glossary.md:NNNN` citation in its PR body is STALE** (+12 to +26
-> from #45's integration, shifted again by #43's, and now by #63's 266 appended lines). **Cite by
-> section; verify a row by its text.** ⚠️ **And that `glossary.md` uses THREE citation conventions
-> (§AX6): project DATA = 0-based `script_unique.txt` body index + 1; `batch_NNN.tsv:n` and
-> `chunk_NNN` are 1-based FILE lines; §37.1's battle `L6`/`L4` are 1-based BODY indices. State which
-> one every number is.**
+> ### ▶▶ ✅ ALL 4 OF 4 REVIEWED AND MERGED — WAVE 12's REVIEW WORK IS COMPLETE. #45 `5b6c212` · #43 `1134d2b` · #44 `b3ca8cb` · **#46 `004da58`**. **ALL FOUR AT ROUND 1, NOT ONE MUST-CHANGE FINDING.**
+> **`git pull --ff-only` FIRST** — #46's reviewer pushed the integration commit appending glossary
+> **§64** and FLAGS **§AZ**. **Then close the wave** (CLAUDE.md §4 step 6) **and open wave 13's
+> session** (step 7 — it is not discretionary).
+> ⭐ **FINAL MEASURED FIGURES, from `status` on the integration branch after #46:**
+> **script 1,064 / 1,430 unique lines · 5,180 / 7,931 message instances = 65.3%** (was 1,007 / 5,123
+> / 64.6% before this wave's last unit); **battle unchanged at 32 / 44 chunks, 27,763 / 43,161 JP
+> chars = 64.3%.** `check`: **All checks passed**, `script lines replaced: 5180 (unique forms: 1064)`.
+> ⚠️ **glossary now ends §64, FLAGS now ends §AZ** — both read off the file at commit time, never
+> reserved.
+> ⚠️ **Wave 13 inherits NO dispatchable translation work.** Every term §AZ7 lists as remaining is in
+> bank 40 or 41 (75 and 353 bytes free), and D1169's `ＯＮ・ＯＦＦ` also needs a charset ruling no
+> existing precedent covers. **Verify that and write the run's final handoff; do not hunt for work.**
 >
 > ### ▶ TWO THINGS #46's REVIEWER INHERITS FROM #44, BOTH SETTLED — DO NOT RE-OPEN THEM
 > 1. ⭐⭐ **CASE POLICY IS RULED (glossary §63.1 / FLAGS §AY3): descriptive labels take SENTENCE CASE**
@@ -54,28 +58,41 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > (§AY5), and it carries a `・` that is outside §3.1.
 
 ## Last updated
-2026-09-11 · by: the **wave-12 reviewer of PR #44** (`batch_021`), integration commit below ·
-wave: **12 REVIEWING — barrier met, 3 of 4 reviewed and MERGED (#45, #43, #44); only #46 left** ·
-**every figure in the Progress block and in all three merged rows below was re-derived by its reviewer
+2026-09-11 · by: the **wave-12 reviewer of PR #46** (`batch_022`), integration commit below ·
+wave: **12 — ALL 4 OF 4 REVIEWED AND MERGED, ALL AT ROUND 1, NOT ONE MUST-CHANGE FINDING.
+Review work complete; the coordinator owes the wave close (§4 step 6) and wave 13's session (step 7)** ·
+**every figure in the Progress block and in all four merged rows below was re-derived by its reviewer
 from the dumps + a fresh `merge`/`bankmeasure`/`rowcheck`, not inherited**
-⚠️ **glossary now ends §63, FLAGS now ends §AY** — both read off the file at commit time, never reserved.
-⚠️ **The four banks under 2,000 free are UNCHANGED by PR #44: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
-`bankmeasure`'s `tightest:` line still hides **bank 2** (it hid bank 5 before #45) — **which bank is
-invisible is not stable, so never quote that line; read the 44-row table.**
+⚠️ **glossary now ends §64, FLAGS now ends §AZ** — both read off the file at commit time, never reserved.
+⚠️ **The four banks under 2,000 free are UNCHANGED by PR #46 (bank 31 only): 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
+`bankmeasure`'s `tightest:` line still hides **bank 2** — **five waves running that the hidden bank
+moved; never quote that line, read the 44-row table.**
+⭐⭐ **STANDING RULE, now three-for-three (§AZ2): a script PR's bank and `check` ABSOLUTES go stale the
+moment a sibling merges; its DELTA does not.** #46's `34,745 → 33,021` was 28 bytes low at review and
+its **+1,724 was exact**; #44's absolutes were 28 low and its +456 exact. **Measure the delta by
+hold-aside/restore and quote the delta.**
+⭐⭐ **GATE 7 HAS A THIRD FACE AND IT IS NOW PROVEN (§AZ4 / glossary §64.8): a form can be settled in
+`tl/` and have ZERO mentions in `glossary.md` of any kind.** `その他` shipped 7× in `batch_013` with 0
+key cells and 0 note cells. **Gate 7 is not clean until the `tl/` COLUMN-2 PASS has run and the
+reviewer has STATED ITS CORPUS.** It has now found something in three reviews running.
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **1,007** | 1,430 | `tl/script/batch_001–021.tsv` (was 969) |
-| Script message instances | **5,123** | 7,931 | **64.6%** (was 64.1%) |
+| Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 1,007) |
+| Script message instances | **5,180** | 7,931 | **65.3%** (was 64.6%) |
 
-`check`: **All checks passed** on the integration branch after PR #44 —
-`script lines replaced: 5123  (unique forms: 1007)`. glossary now ends **§63**, FLAGS now ends
-**§AY** — both re-read off the file at commit time, never reserved.
-⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** **PR #44 touched
-none of them** — bank 30 only, 35,091 → 34,635.
+`check`: **All checks passed** on the integration branch after PR #46 —
+`script lines replaced: 5180  (unique forms: 1064)`. glossary now ends **§64**, FLAGS now ends
+**§AZ** — both re-read off the file at commit time, never reserved.
+⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** **PR #46 touched
+none of them** — bank 31 only, 34,717 → 32,993 (**+1,724, measured by hold-aside over all 44 banks:
+exactly one bank**).
+⭐ **Wave 12 total: +116 unique lines / +116 instances across its three translation units** (#45 +21,
+#44 +38, #46 +57), plus #43's five corrections. **Realised growth 1.66×–1.98× against a 2.10× plan —
+every unit came in under its bound.**
 ⚠️⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and it currently hides BANK 2** (it hid bank
 5 before PR #45). The line is a sample, not a summary: **read the full 44-bank table.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
@@ -86,17 +103,20 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst**; 532 JP → 1,051 EN = **1.9756×**; widest run **23**, none at 24 | 21 banks, **+2,256 B**, max **410** (bank 18), bank 5 **realised 40** of 1,635 — all 21 deltas re-derived twice by the reviewer, by independent routes, and they agree bank for bank | ✅ **MERGED round 1, no must-change finding.** PR #45, squash **`5b6c212`**, gated at head `2b7e840` on base pinned `065e67b`. Integration commit: **`integrate: script batch 020 — glossary, flags, handoff`**, the commit that adds glossary §61 and FLAGS §AW. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` on the PR is the signal. Glossary **§61**, FLAGS **§AW** |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items — 3 fixed, 1 fixed after its citation was vindicated, 1 no defect** | chunk 0 **+0 (measured, both versions through `bytes_from_body`)**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 (31,431 → **31,425**, §AP7's predicted figure to the byte) | ✅ **MERGED round 1, no must-change finding.** PR #43, squash **`1134d2b`**, gated at head `fa03b4e` on base pinned **`3c6c579`** (merge-base `e9db558`, merge commit `c5aec14`, clean — the author's `merge-tree` was NOT reused). Integration commit: **`integrate: corrections wave 12 — glossary, flags, handoff`**, adding glossary **§62** and FLAGS **§AX**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: `Ｏ，　Ｏｉ，` stands (§62.4 / §AX3); §AQ5's `編成` row closed as a false positive of its own gate (§62.5 / §AX5).** **Discharged: §AJ3, §AP5 (merged work), §AP7, §AQ5's `batch_007` row.** **§37.1's `反乱` row stays LIVE for D1384 only.** Four glossary rows corrected in place (§23.2, §24.3, §34.1, §37.1) + a cross-reference added at §47.4 |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst**; 356 JP → 591 EN = **1.6601×**; 39 text runs, widest **23** (D1021), **none at 24**, max **2** text rows on any page; `{FFFE}` **46 → 39, net −7**; `{FCC0}` untouched, non-`{FFFE}` tag stream byte-identical on all 38 | **bank 30 only — realised +456**, not the 782 planning bound. Bank 30 **35,091 → 34,635 free** (⚠️ **NOT** the PR body's 35,119 → 34,663 — PR #45 spent 28 bytes in bank 30 in between; the **delta** is 456 on either base). Measured by holding the file aside and diffing: **exactly one line over 44 banks**, and it closes on the text arithmetic `(591−356)×2 − 7×2 = 456` | ✅ **MERGED round 1, no must-change finding.** PR #44, squash **`b3ca8cb`**, gated at head `1e55d1b` on base pinned **`f90f613`** (merge-base `e9db558`, merge tree **`f4bbc0e`**, clean — the author's `merge-tree` was NOT reused). Integration commit: **`integrate: script batch 021 — glossary, flags, handoff`**, adding glossary **§63** and FLAGS **§AY**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: ⭐⭐ descriptive labels take SENTENCE CASE, one ruling for both debug files (§63.1 / §AY3) — it ratifies what shipped, so NONE of the 30 titles shared with #46 moved; `マップＯＰ` → `Ｍａｐ　ｏｐｅｎｉｎｇ` expansion ratified over the `Ｒ１`/`ＯＫ` counter-precedent; `ｂｏｓｓ`'s third sense passes §25.3 on both axes.** **New: a SECOND script-side `tokenise` artifact on a DIFFERENT branch from §R4's/§AP2's (§AY2) — `{FF00}` at D1003, control-tag branch not SJIS-lead, 1 unique / 6 dump / 0 battle, zero shipping impact, and it means the fix must be an ARGUMENT-LENGTH TABLE.** **Nine figure/citation corrections, none touching a line of any file (§63.6 / §AY7).** **Ten glossary rows (nine the PR's + `マップクリアー`, found at review in segment 19 of a 29-segment pooled row); seven §9.W12 seeds promoted and EVERY ROW LEFT LIVE for #46 to strike.** ⚠️ **`音楽` is NOT exhausted after wave 12 — D1169 remains in bank 40 (§AY5).** Glossary **§63**, FLAGS **§AY** |
-| `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | bank 31 only — **realised 1,724**, not my 2,185 bound | ✅ **PR #46 OPEN** |
+| `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst**; 994 JP → 1,855 EN = **1.866×**; **120 non-empty text runs, widest 24 on ONE row (D1048, ruled to ship — §AZ3), 4 at 23, 119 of 120 ≤ 23, none over**; max **4** text rows, no page over; `{FFFE}` **1 change (D1075 1→2, byte-identical to `batch_021` D1027 including the break)**; non-`{FFFE}` tag stream byte-identical on all 57; **52 gutters preserved, none added**; **0 dot runs, `。`/`．` counts agree on all 57** | **bank 31 only — realised +1,724**, not my 2,185 bound. **Bank 31 34,717 → 32,993**, measured by holding the file aside and diffing `bankmeasure` over all 44 banks: **exactly one bank touched**. ⚠️ **NOT the PR body's 34,745 → 33,021 — those absolutes are 28 bytes low because #45 spent 28 in bank 31 in between; the DELTA is exact on either base** (§AZ2) | ✅ **MERGED round 1, no must-change finding.** PR #46, squash **`004da58`**, gated at head `2966439` on base pinned **`e84d0b1`** (merge-base `45bab1c`, merge commit **`4236d79`**, tree **`d83a07b`**, clean — the author's result was NOT reused). Integration commit: **`integrate: script batch 022 — glossary, flags, handoff`**, adding glossary **§64** and FLAGS **§AZ**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: ⭐ the single 24-column run SHIPS (§64.3 / §AZ3) — §2's `Ｆｉｒｓｔ　Ｌｉｅｕｔｅｎａｎｔ　Ａｎｓｅｌｍｏ` is the shipped precedent at 24, and the offered fix (17) would split tracks 16/17/18 on one visible page; ⭐ track 23's menu abbreviation is FORCED, not chosen (full form 30, menu row 34, and the menu row cannot take a `{FFFE}` because the Nth option maps to the Nth `{FFF6}`) and the full §42.1 form survives on D1075; `フラグ` lowercase as a bare common noun vs capitalised `Ｆｌａｇ　Ｎ` as a numbered label; `・` → `，` as a THIRD sense (apposition), which does NOT reach D1169's `ＯＮ・ＯＦＦ`; the four-way `他に用` family all stands (§64.5 — the PR named three, the `tl/` pass found `batch_009`'s fourth).** **New: ⭐⭐ two first renderings anywhere — `キエーザ城` → `Ｋｉｅｓａ　Ｃａｓｔｌｅ` and `ルクレール城` → `Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ`, each 1 script-unique / 0 battle, on a unanimous 13-instance `Ｘ　Ｃａｓｔｌｅ` precedent — and `Ｃｈｉｅｓａ` (§AD) STAYS OPEN, because a debug flag label carries no religious evidence; ⭐⭐ `「古びた館」` → `“Ｏｌｄ　Ｍａｎｓｉｏｎ”` stands beside `batch_009:47`'s shipped lowercase `ａｎ　ｏｌｄ　ｍａｎｓｉｏｎ` — §55.2's brackets-decide-case rule, found by the `tl/` column-2 pass and by nothing else (§AZ5).** **Twin pairing re-verified from this side against the MERGED `batch_021`: 30/30 readable JP and EN identical, 0/57 exact-key matches — gate 6 pairs nothing.** **Gate 7 all three faces: 1,334 key cells + 993 note-cell pairs over the whole file + a `tl/` COLUMN-2 PASS over 3,573 aligned JP→EN segment pairs / 2,949 distinct JP segments from 21 shipped TSVs — 71 hits, 0 divergences (§AZ4).** **Five figure corrections, none touching a line (§64.6).** ⚠️ **ALL EIGHT exhausted §9.W12 seeds struck; `音楽` KEPT LIVE for D1169 in bank 40, whose `・` no precedent covers (§AZ7).** Glossary **§64**, FLAGS **§AZ** |
 
-## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **3 of 4 DONE**.
+## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. **ALL 4 OF 4 REVIEWED AND MERGED, ALL AT ROUND 1.**
 ~~**#45 `batch_020`**~~ ✅ **MERGED `5b6c212`, round 1** → ~~**#43 corrections**~~ ✅ **MERGED
 `1134d2b`, round 1, no must-change finding** → ~~**#44 `batch_021`**~~ ✅ **MERGED `b3ca8cb`,
-round 1, no must-change finding** → **#46 `batch_022` (NEXT, and the last unit of the wave)**
+round 1, no must-change finding** → ~~**#46 `batch_022`**~~ ✅ **MERGED `004da58`, round 1, no
+must-change finding — the last unit of the wave**
 (the two debug twins were kept adjacent so the second reviewer could pair them — **#44's reviewer
-did the pairing itself, 30/30, and nothing moved**). `reviewer` subagents, `run_in_background: false`.
-**Three units in a row merged at round 1.**
-⚠️ **`git pull --ff-only` before dispatching the next reviewer — BOTH #45's and #43's reviewers
-pushed integration commits, and #43's edited five `glossary.md` rows in place.**
+did the pairing itself, 30/30, nothing moved, and #46's reviewer re-verified it from the other side
+against the MERGED file: 30/30 again**). `reviewer` subagents, `run_in_background: false`.
+⭐ **FOUR units in a row merged at round 1, and not one must-change finding in the whole wave.**
+⚠️ **`git pull --ff-only` before anything else — ALL FOUR reviewers pushed integration commits;
+#43's edited five `glossary.md` rows in place and #46's edited four more (§42.1's `キエーザ`, §55.1's
+`館`, §53.1's `インターミッション`, §40.1's `魔族`) plus struck eight §9.W12 rows.**
 ⚠️⚠️ **EVERY `glossary.md:NNNN` CITATION IN AN OPEN PR BODY IS NOW STALE.** #45's integration shifted
 things by +12 to +26 and #43's shifted them again. Measured at #43's review: `:1677`→`:1689`,
 `:3350`→`:3362`, `:3948`→`:3972`, `:4265`→`:4289`, `:7367`→`:7393`. **CITE BY SECTION AND VERIFY A ROW
