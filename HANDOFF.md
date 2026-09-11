@@ -59,8 +59,8 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 ## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
-| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | 🔄 **rework r1 PUSHED (`20764d2`)** — all findings implemented; **queued for re-review** behind #49 |
-| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — **reviewer running** |
+| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | 🔄 **rework r1 pushed (`20764d2`) — RE-REVIEWER RUNNING** |
+| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ⚠️ **CHANGES round 1** — 5 findings sent to the same translator |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
 All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
@@ -152,6 +152,33 @@ against `batch_007.tsv:30`'s shipped `Ｂｅｔｔｅｒ　ｎｏｔ．`).
 REVIEWER'S call, not the translator's** — L0 now reads `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ`, the same phrase
 the script store already uses for the object, so the gloss connects to both chunk 17's bare name and the
 rumour line. **Do not close §9 / §30.1 without checking that in the file.**
+
+### ⚠️ PR #49 — CHANGES, round 1 (2026-09-11 ~23:45). Not merged; no integration commit; nothing pushed.
+**Eight of nine gates passed**; gate 7 failed on three already-fixed forms plus one register slip.
+Merge base pinned to `f20740a`; `main` moved to `e59ac01` mid-review (HANDOFF only, so no gate redone).
+Net of all fixes: **+12 bytes → 6,293 / 8,192, 1,899 slack**, one added `{FFFE}`, no re-flow.
+⭐ **ALL FOUR RE-RUNS I ASKED FOR CAME BACK INDEPENDENTLY CONFIRMED, AND ONE CORRECTED THE TRANSLATOR:**
+- **Twin codas: the reviewer found 10 repeated segments, 0 divergent** (translator said 11 — the extra is
+  an indexer artefact, checked by hand). ⭐ **It also ran the REVERSE direction the translator did not:
+  0 English forms shared between the two codas for different Japanese — nothing flattened.**
+- **Cross-store frame: pairing exact, no comma or dot drift.** ⚠️ **It found a LIVE DEBT that is not this
+  PR's: `batch_013.tsv:31` ships the byte-identical Japanese with a different English.** For FLAGS.
+- **My figure stands, independently: `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = 14, `Ｈｉｍｉｋｏ’ｓ` = 8. 15 must not
+  reach the glossary.** `Ｇｅｎｅｒａｌ　Ｉｖａｎ` 12 bare / 13 with comma — a scope difference, not a defect.
+- **Flag 3's page shape: both claims hold** — the fill is attested **182× dump-wide** and the forbidden
+  shape is absent from the whole battle dump (0). `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ａｌｆｒｅｄ` = 24 confirmed.
+⭐⭐ **THE CROSS-PR §23.4 BIND IS DISCHARGED CONSISTENTLY** (finding 3): chunk 23's `助かったぞ。` takes the
+**default** `Ｉ　ａｍ　ｓａｖｅｄ．`, same as #47's `助かったよ。` — よ and ぞ are the same particle class and
+no licensing feature separates them. **The two PRs now agree.**
+**I verified every finding before relaying:** §38.2 at `glossary.md:4327` is real and fixes the form
+(⚠️ shipped in **3** script rows — `batch_007:32`, `batch_012:87`, `batch_014:46` — the review's "4×"
+counts a different addressing convention; the finding is unaffected); §41.4 at `:4944` is real and is
+exactly the register split it cites; **all five of finding 5's column corrections reproduce exactly**
+(`ａｒｍｏｕｒｙ` 7, `ａ　ｐｅｔｔｙ　ｃｒｏｏｋ` 13, `ｓｈａｔｔｅｒｅｄ` 9, `Ｆｅａｒｓｏｍｅ，` 9,
+`Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` 14), and so do findings 2–4's (8→10, 13→11, 22→21).
+Still owed at merge: the eleven new rows, the **scoped** `すごい` row (scoping verified real), the
+`イワン`/`ヒミコ` stay-live instruction, `まったくだ。` → `Ｉｎｄｅｅｄ．`, and the `batch_013`/`batch_017`
+FLAGS debt.
 
 ### PR #49 (chunk 23) — the translator's report is in, integration debts below
 **6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
