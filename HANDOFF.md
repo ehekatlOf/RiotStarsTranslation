@@ -57,15 +57,31 @@ hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never tha
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
 ## In flight — WAVE 13, dispatched 2026-09-11 ~21:50 UTC
-| Unit | Branch | Round | Translator | PR | State |
-|---|---|---|---|---|---|
-| battle chunk **15** | `tl/battle-015` | 1 | dispatched | — | translating |
-| battle chunk **23** | `tl/battle-023` | 1 | dispatched | — | translating |
-| battle chunk **27** | `tl/battle-027` | 1 | dispatched | — | translating |
+| Unit | Branch | Round | PR | State |
+|---|---|---|---|---|
+| battle chunk **15** | `tl/battle-015` | 1 | **#47** (base `main`, 1 file) | ✅ **PR OPEN — awaiting the barrier**, then review |
+| battle chunk **23** | `tl/battle-023` | 1 | — | translator alive at 33 min, still working |
+| battle chunk **27** | `tl/battle-027` | 1 | — | translator alive at 33 min, still working |
 
-**The wave barrier is NOT met until all three have an open PR.** Nothing is reviewed before then
-(CLAUDE.md §4 step 4). A translator still working is not a failure — wait, do not re-dispatch over a
-live agent. Two re-dispatches per unit, then park.
+**The wave barrier is NOT met: 2 of 3 units have no PR. Nothing is reviewed yet** (CLAUDE.md §4 step 4).
+A translator still working is not a failure — wait, do not re-dispatch over a live agent. Two
+re-dispatches per unit, then park. Chunk 23 is the wave's largest (35 body lines) and tightest (2.80×).
+
+**PR #47 — 3,239 / 8,192, 4,953 slack; realised 2.15× JP; worst column 23; 0 pages over the source's
+row count.** `check` green, `rowcheck 15` clean, gate 6 by positional pairing over 2,055 aligned JP→EN
+pairs plus a reverse EN→JP pass. **The reviewer owes four integrations on merge** (detail in the PR body):
+1. ⭐ **Close the wave-3 warning**: §9's `イフリート` row and §30.1 both say *"the gloss is in chunk 15 —
+   stays live for whoever takes chunk 15"*. **Delivered in L0.** Drop it from both.
+2. Promote the three §9.W13 seeds — `ウシャシャシャシャシャ`, `ニール`, `炎熱騎士団` — all used exactly as
+   seeded, all exhausted by this chunk.
+3. Record five incumbent forms the glossary never held (`そういうワケにはいかない`, `ねえ、` → `Ｓａｙ，`,
+   `あと一息`, `やめたほうがいい`, `カーライン軍`). ⚠️ **Two are SPELLING TWINS gate 6 cannot pair**
+   (`ワケ`/`訳`, `ほう`/`方`) — the §63.2 / §64.1 blind spot again, in the battle store.
+4. **`FLAGS.md`: the prompt and the tool disagree.** `translation_prompt.md` §3.2 tells a translator to
+   add a `{FCC0}` page break when four rows will not hold a page, but `assemble.py:tag_parity` drops
+   only `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). This chunk absorbed it by tightening at
+   6.14×; **a tier-B/C chunk with a 46-character page might not.**
+
 ⚠️ **Every `tl/*` branch from waves 1–12 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
 this repo; use the PR's `merged: true` and the squash SHA in the committed record.**
