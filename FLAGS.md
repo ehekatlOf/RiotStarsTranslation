@@ -5755,3 +5755,184 @@ every message" and `translation_prompt.md` §7's checkbox describe the **battle*
 unique keys omit the trailing one, per CLAUDE.md §4 step 1 — and `batch_003`/`004`/`005` each carry
 a comment saying so. This unit's keys and English carry **0** and **0**, which is **correct**. A
 `{FFFF}`-absence finding on a script batch is always a false positive.
+
+---
+
+## AP. Wave 9 review — script batch 012 / PR #35, MERGED (2026-09-11, round 3)
+
+Merged by squash as `84cf8d6` after **three** rounds, the maximum CLAUDE.md §5 allows. Gated
+without a working tree (§AK6): gate 2 by `git merge-tree --write-tree` → tree
+`fa0d6be984d0052a7bb5027be50c451530f9a63a`, everything else over a `git archive` of that tree
+against a second archive of the bare head as baseline; provenance of the unit file by `cmp` +
+`sha256sum` against `git show 26cbb55:tl/script/batch_012.tsv`. **All evidence was re-derived
+against the post-#34 *and* post-#36 head** — round 2's gate 6 and gate 7 were void and none of it
+was reused. Section letter taken by **reading `FLAGS.md` at commit time** (it ended at §AO).
+
+### AP1. Figures, and bank 2 is named as required
+
+| Bank | free before | free after | growth |
+|---|---|---|---|
+| 0 | 35,197 | 31,431 | 3,766 |
+| 1 | 32,175 | 26,191 | 5,984 |
+| **2** | **2,993** | **1,607** | **1,386** |
+| 42 | 11,585 | 11,301 | 284 |
+| 43 | 10,279 | 9,995 | 284 |
+
+⚠️ **BANKS UNDER 2,000 FREE AFTER THIS MERGE: 40 (75), 41 (353), `2` (1,607), 5 (1,635).** Bank 2 is
+the only one this unit moves; **banks 5, 40 and 41 are untouched**, verified cell by cell before and
+after. Bank 2 measures 39,353 / 40,960 used and lands 1,107 bytes inside the 2,493 the dispatch made
+spendable; 1,607 is 3.2× the 500 reserve. Growth sums to **11,704 bytes**, which is exactly the
+instance-weighted delta measured independently through `riotscript._emit_bytes_from_body`
+(15,407 → 27,111) — two methods, one number. Realised ratio **1.991×**. 776 text runs, **widest 23,
+none over 23**. `{FFFE}` 606 → 574; `{FCC0}` unchanged on all 61 rows. Player-name insert 14
+occurrences over 7 messages, every insert count identical on both sides, 0 rows changed.
+
+### AP2. §D1 IS WIDER THAN §D1 SAYS — the same dumper bug is in `riotscript.py`, and the script instance has NO shipping impact
+
+Recorded here so §D1 is not read as a `riotbattle`-only defect. `tools/riotscript.py`'s
+`tokenise_stream` (lines 61–83) tests `is_sjis_lead(c)` **before** the tag branch and **has no
+argument-length table** — verbatim §R4's cause, in a second file. Census by signature detector,
+calibrated by reproducing §R2's recorded figure exactly: **24 in the battle dump, 1 in the script
+dump**. The script instance is **DATA 367**, `{FFED}{=03}閧{=A8}` = `FF ED 03 E8 82 A8`, where `E8`
+is a valid SJIS lead so two argument bytes decoded as the kanji `閧`.
+
+⚠️ **NO SHIPPING IMPACT, and this was re-proved by measurement at PR #35's merge review rather than
+taken from the PR.** Both sides of the row were emitted through `riotscript._emit_bytes_from_body`:
+the **common byte prefix is 15 bytes**, `ff ef 03 e8 00 0d fb 01 ff ed 03 e8 82 a8 82`, and the
+artifact's own `FF ED 03 E8 82 A8` sits **inside** it on the Japanese key *and* on the English
+replacement. Nothing renders wrongly; it is a dump-representation defect only. The `閧` is
+reproduced byte-for-byte in `tl/script/batch_012.tsv` and must stay — editing it would change the
+tag stream, which CLAUDE.md §3 forbids. `assemble.py check` passes (Japanese is tolerated in the
+main script). **A human with the disc owns the tool fix; fix `riotbattle` first, since that is what
+unblocks eight chunks, and `riotscript` alongside it — it is the same three-line change.** See
+`HANDOFF.md` Blocked 0.
+
+### AP3. §46.3's census cell was short by one bank and is corrected in place; the RULING is untouched
+
+`glossary.md` §46.3 keyed its census on `そうか。` and `そうか、` and so could not see a `そうか`
+closed with a **dot run**. `batch_012`'s DATA 390 is `そうか・・・・` (bank 1) and its DATA 391 carries
+`ふむ、なるほど、` (bank 1) — **two scenes a player reaches in one visit, both in this unit.**
+Re-counted on the bare substring: `そうか` reaches script banks [1, 2, 5, 8, 9, 12, 17, 19, 20, 23,
+24, 29, 33, 41] and `なるほど` [1, 5, 8, 33, 36, 40]; **shared banks corrected to [1, 5, 8, 33]**.
+§46.3's ruling was applied there exactly as written — **`なるほど` is the member that moved**: DATA
+391 ships `Ｈｍ，　Ｉｎｄｅｅｄ．` and DATA 390 keeps `Ｉ　ｓｅｅ．．．．`. `Ｉｎｄｅｅｄ．` is otherwise in
+bank 8 and battle chunks 2 and 38, disjoint from bank 1 on both §25.3 axes. Bank 0's `そうですか`
+(DATA 358, 376) keeps `Ｉ　ｓｅｅ．`; bank 0 holds no `そうか` and no `なるほど`.
+⚠️ **This is §AN2's shape a second time — a census matched on a SPELLING where the rule is about a
+WORD.** Same fix: census the bare substring, then read the hits.
+
+### AP4. §32.5's `勲章` / `メダル` collision is now REALISED on the racetrack side, and is not resolved
+
+DATA 355 is a Blackjack tutorial in **banks 42 and 43** and renders `賭けたメダル` as **`ｍｅｄａｌｓ`**
+— §3's fixed form, the same word `batch_002.tsv` L13 already ships (`ｈａｖｅｎ’ｔ　ｂｅｔ　ａｎｙ
+ｍｅｄａｌｓ`) in **bank 43**. §32.5's reserve `ｔｏｋｅｎ` was **not** taken, and correctly: no message
+holds both words, this unit renders no `勲章` in banks 42/43, and moving the racetrack side would
+contradict §3 and re-cut shipped work. **What changes is that bank 42 now also carries a shipped
+`ｍｅｄａｌ` on the racetrack side.** The collision stays live for whoever translates a `勲章` line in
+either bank — and note that `『獅子の勲章』` → `“Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ”` (§54.1) now has
+**DATA 863 outstanding**, so that day may come. §32.5 is otherwise unchanged.
+
+### AP5. THE STUTTER CONVENTION IS `19 : 3`, NOT `21 : 0` — and the three are §4.3 DEBT IN MERGED WORK
+
+⚠️ **A round-2 review asserted `21 : 0`; the translator re-censused and is right, and the correction
+was verified independently at the merge.** A regex for `letter‐letter` over `tl/` returns **45
+hits, of which 42 are ordinary hyphenated compounds** — `ｒｅｄ‐ｒｏｏｆｅｄ`, `ｓｅｌｆ‐ｄｅｆｅｎｃｅ`,
+`ｈａｎｇｅｒｓ‐ｏｎ`, `ｓｏ‐ｃａｌｌｅｄ`, `ｌｏｎｇ‐ｒａｎｇｅ`, `ｍａｓｓ‐ｐｒｏｄｕｃｅｄ`, `ｄｏｕｂｌｅ‐ｅｄｇｅｄ` …
+**The genuine picture is comma 19, hyphen 3.**
+
+**All three hyphen stutters are in merged `tl/battle/chunk_000.txt`** — `Ｗｈ‐ｗｈａｔ　ｉｓ　ｔｈｉｓ！？`,
+`Ｎ‐ｎｏｗ　ｗｈａｔ！？` and `Ｔｈ‐ｔｈｉｓ．．．`, the very rows §23.2 calls "chunk 0's two stuttered
+forms". **The finding still stands** — 19 : 3 keeps the comma the convention, §23.2 ruled it
+explicitly in PR #7, and §38.4 confirms the shipped comma rows capitalise the repeated word, which
+`Ｙ，　Ｙｏｕｒ` and `Ｐ，　Ｐｒｉｎｃｅｓｓ` do. **But chunk 0 is SHIPPED, not parked like `chunk_043`,
+so those three are §4.3 debt in merged work** — the §51.4 / §AM2 shape — and they belong here, not
+in a PR body. **A corrections unit should re-cut them to the comma form.**
+
+⚠️ **THE GENERIC LESSON, and it is the wave's fourth instance: A REGEX CENSUS OVER THIS CORPUS IS A
+CANDIDATE LIST, NOT A COUNT.** The first stutter detector written for this question was wrong in
+**both** directions — it missed `Ｗｈ‐ｗｈａｔ` and falsely counted `ｄｏｕｂｌｅ‐ｅｄｇｅｄ`. Read every
+hit a pattern returns.
+
+### AP6. Two gate-7 instruments were wrong at this review and the CONTROLS caught both
+
+Worth recording because gate 7 is the run's most load-bearing gate and its failure modes are not
+obvious:
+
+- **v1 did not tag-strip the haystack**, so an expected phrase split by a break —
+  `Ｍｅｍｂｅｒ{FFFE}Ｓｈｏｐ` — read as a failure. Any glossary form long enough to be broken across
+  two rows will do this.
+- **v2 normalised spaces away**, so `Ｂｌａｃｋ　Ｊａｃｋ` matched `Ｂｌａｃｋｊａｃｋ` and a real
+  divergence would have passed. The fix is to collapse runs of spaces to **one** space and keep a
+  single space significant — a `{FFFE}` inside a phrase becomes exactly one space, so this stays
+  correct in both directions.
+- **A control that does not mutate anything proves nothing.** The first `Member Shop` positive
+  control was a silent no-op because the raw text contains `Ｍｅｍｂｅｒ{FFFE}Ｓｈｏｐ` and the
+  substitution never fired. **Assert the mutation count, not just the failure count.**
+
+Final instrument: **1,293 keys extracted / 144 present / 315 key-row pairs / 72 raw candidates, all
+72 read, 0 failures**, with 8 of 9 positive controls firing (the ninth is an OR over a multi-form
+row and is covered by the cross-file item-name gate instead) and four negative controls clean.
+
+### AP7. `品` → `ｇｏｏｄｓ` at DATA 376 — §4.3 DEBT, byte-negative, measured, for a corrections unit
+
+§34.1 fixes `品` → `ａｒｔｉｃｌｅ` (shipped 3× in `batch_006`, all in the keigo shop's sell branch).
+`batch_012` DATA 376 is a fourth occurrence and ships **`ｇｏｏｄｓ`**: `奴の　盗んだ品が` →
+`Ｔｈｅ　ｇｏｏｄｓ　ｈｅ　ｓｔｏｌｅ　ａｒｅ`. **This is NOT a §34.4 violation** — §34.4 forbids collapsing
+`品` onto `アイテム` → `ｉｔｅｍ`, and this unit keeps them apart (`アイテム` → `ｉｔｅｍｓ` at DATA 362).
+It is a second English for one sense.
+
+**Measured both ways with `len()`, both printed, before anything was asserted:** `ｇｏｏｄｓ` = 5,
+`ａｒｔｉｃｌｅｓ` = 8; the page wraps **three rows either way** — shipped 22 / 20 / 10, the conforming
+form 21 / 20 / 14 at the ≤23 preference, and 21 / 24 / 10 at the hard 24. **So width forced
+nothing**, and the fix is **+6 bytes into bank 0, which has 31,431 free, with no re-flow, no page
+break and no tag change.**
+
+⚠️ **It was recorded rather than reworked because PR #35 was at round 3, the last CLAUDE.md §5
+allows, and the decision there is MERGE or PARK.** Parking 61 lines of otherwise excellent work
+over one noun in one row — correct English, no gate broken, no propagation, no player harm — would
+have been grossly disproportionate. This is the same shape as §AP5's `chunk_000` stutters and
+`batch_007.tsv:31`'s `Ｈｏｂｂｉｔｓ　ｄｏ　ｎｏｔ`: **cheap, byte-negative debt for a corrections unit.**
+Reach note written into `glossary.md` §34.1 in place.
+
+### AP8. Two glossary rows whose SCOPE was recoverable only by reading another section — both now written in
+
+This is the wave's second and third instance of the same structural problem and it cost real review
+time both times.
+
+- **§2's `ホビット` row had an EMPTY note column**, so a key-first gate 7 reads it as fixing a
+  capital everywhere and flags the **correct** lowercase `ｈｏｂｂｉｔ　ｖｉｌｌａｇｅ　ｃｈｉｅｆ` (DATA
+  370–373) as a failure. The governing rules are §17.1 ("lowercase in prose") and §38.4, two
+  thousand lines away. **Scope written into the row in place; the rendering is unchanged.**
+- **§31's `まさか、` → `Ｓｕｒｅｌｙ` row is scoped to the negative-conjecture sense by its own two
+  examples and says so nowhere.** ⚠️ **A reviewer was ready to raise `まさか〜とは` → `Ｔｏ　ｔｈｉｎｋ`
+  as a finding and MEASURING STOPPED IT:** that construction has a **shipped incumbent** in two
+  merged chunks — `chunk_024` L4 and `chunk_030` L4 both render it `Ｔｏ　ｔｈｉｎｋ　ｔｈａｔ…`, with
+  `pending/chunk_043` L29 on the sibling `，　ｏｆ　ａｌｌ　ｔｈｉｎｇｓ，`. `batch_012` D380 matches the
+  incumbent and D377 matches the negative sense (`ｃｏｕｌｄ　ｎｅｖｅｒ`). **§AG6's mirror: search for
+  the English the SOURCE WORD already has before charging a departure.** Scope written in.
+
+### AP9. `トリフ` — a §9 row that four merged units already discharged and nobody struck
+
+`batch_012` renders `トリフ` → `Ｔｏｒｉｆ` at DATA 386 (`Ｐｒｉｎｃｅ　Ｔｏｒｉｆ`). ⚠️ **It is a REUSE,
+not a promotion:** censused at review, `Ｔｏｒｉｆ` is already shipped byte-identically in
+`chunk_024`, `chunk_025`, `chunk_042` and `batch_007.tsv:56`. §9's row says "promote in the wave
+that first renders it" and that wave was wave 6 at the latest. **The row is stale debt and was
+deliberately LEFT STANDING rather than struck by a unit that is the fifth renderer** — striking it
+here would credit the wrong unit. **An audit item, not a translation item.** The same shape as
+`ベルナール教会`, which a round-1 review twice asked to be added as a promotion and which the
+translator twice declined, correctly (§14.2 main-table, already shipped in `batch_005` and
+`batch_010`, **no §9 row exists to strike**).
+
+### AP10. Wave 9's scoreboard on corrections, updated
+
+Seven wrong figures this wave, **four of them reviewers'**. PR #35's round 2 contributed two on its
+own (`+4` for `+2`, `21 : 0` for `19 : 3`) and a round-1 finding on `ベルナール教会` that was wrong
+and was declined twice. #36's reviewer nearly added a fifth on a conflated `{FFFE}{FFFA}` regex and
+caught it by sampling (§AO2). This review added two of its own broken instruments (§AP6) and one
+near-miss on `まさか` (§AP8) — all three caught before they reached a finding, by controls and by
+measurement.
+
+⚠️ **THE OPERATIONAL RULE THAT CATCHES ALL OF THEM IS THE SAME ONE, AND IT IS MECHANICAL:
+`len()` BOTH values and PRINT BOTH; plant a control that you have PROVED mutates something; and
+read every hit a pattern returns.** A reviewer's finding is not privileged over a translator's
+evidence, and a census is not a count.
