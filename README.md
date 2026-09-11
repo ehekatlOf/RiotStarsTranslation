@@ -8,9 +8,10 @@ Untranslated chunks and lines fall through to the original Japanese.
 
 ## First-time setup
 
-Put the two untouched files from the disc image in `original/`:
+The disc files are on `main` as split zips. Rebuild the two the tools read (hashes are pinned):
 
 ```
+python3 tools/unpack.py
 original/SCRIPT.BIN     44 banks × 0xA000   main script
 original/HEXMAP.BIN     46 chunks × 0x2A800 battle maps + battle script
 ```

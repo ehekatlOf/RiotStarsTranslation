@@ -7767,8 +7767,17 @@ files is the new dumps. Then, every changed line proven individually:
 | `riotbattle.py verify` / `riotscript.py verify` on the rebuilt files | **ROUND TRIP OK**, byte-identical (7,659,520 / 1,802,240 bytes) |
 | new dumps are fixpoints of the new tools | True, both |
 
-**When the human drops the real binaries into `original/` and runs `assemble.py refresh`, the output
-must be byte-identical to `dumps/` as committed. If it is not, stop: something in this chain was wrong.**
+**Confirmed 2026-09-11 against the real binaries.** The human uploaded the disc's file tree to `main` as
+`riotstars.zip.001–003` (store-only zip split at 24,000,000 bytes); `tools/unpack.py` joins the parts and
+rebuilds `original/` against pinned sizes and sha256s. Then: `assemble.py refresh` reproduced
+`dumps/battle_dump.txt` and `dumps/script_dump.txt` **byte-for-byte** (`git status --short dumps/` empty);
+`riotbattle.py verify` / `riotscript.py verify` on the real files **ROUND TRIP OK** (8,040,448 / 1,802,240
+bytes — the real `HEXMAP.BIN` is 46 × 0x2A800 + 0x8000 where the stand-in above was 44 × 0x2A800 =
+7,659,520; the dump is identical either way, so the region past chunk 43 contributes no script line);
+`unique` from both real files **identical** to the committed `script_unique.txt` (1,430 / 7,931) and
+`battle_unique.txt` (436 / 444); `assemble.py build` wrote both `.BIN`s and `checkedit` reported **OK —
+132,487 bytes changed, all inside script slots**. The chain in this section held. `original/` stays
+gitignored; `.gitignore`'s "never commit" note on game data is now the human's call, not the repo's.
 
 ### BB5. `dumps/battle_unique.txt` was stale since the repo's first commit
 It predated chunk 33 joining the dump (429 unique / 437 instances; the regeneration has 436 / 444 —

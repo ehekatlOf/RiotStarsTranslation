@@ -32,9 +32,10 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-11 · by: **the root/runner session, on the human's instruction** · **chunks 17 and 36 SHIPPED —
-the `tokenise` argument-length table (Blocked 1, FLAGS §BB) and the `validate_body` charset gate
-(Blocked 3, §BA) are both fixed; both dumps re-generated and proven (§BB4)** · **6 battle chunks
+2026-09-11 · by: **the root/runner session, on the human's instruction** · **THE GAME FILES ARE ON `main`
+(`riotstars.zip.001–003`, the human's upload). `python3 tools/unpack.py` rebuilds `original/`; `refresh`
+from the real binaries reproduced `dumps/` byte-for-byte, both files round-trip, `build` + real
+`checkedit` OK (FLAGS §BB4)** · chunks 17 and 36 shipped earlier today (§BB, §BA) · **6 battle chunks
 dispatchable — the run is OPEN** · figures below measured after the re-dump
 
 ## Progress (`python3 tools/assemble.py status`)
@@ -98,8 +99,9 @@ the binaries from their own lossless bytes and proven (§BB4): 18 battle + 7 scr
 byte-identical, none in a shipped chunk; artifact signatures 24 → 0, `{FF00}` 6 → 0. **§AP2's "zero
 shipping impact" was wrong — `batch_012` D367 rendered a stray `お`; fixed (§BB3).** Chunk 17: `git mv`,
 5,857 / 8,192. **15, 23, 27, 28, 29, 39 dispatchable; 16, 32 on the tier-A floor only.**
-⚠️ **When you drop the real binaries into `original/`, `assemble.py refresh` must reproduce `dumps/`
-byte-for-byte. If it does not, stop and look before anything else.**
+✅ **Confirmed against the real binaries the same day: `refresh` reproduced `dumps/` byte-for-byte,
+`verify` ROUND TRIP OK on both files, both unique lists identical, `build` + `checkedit` OK — 132,487 bytes
+changed, all inside script slots** (§BB4).
 ### 2. ⭐⭐ THE BANK-40/41 REPOINT (§F2) — by far the biggest lever left
 `FLAGS.md` **§F2**, figures refreshed **§Z6**. About **66 KB short**: bank 41 needs +30,534 with **353**
 free, bank 40 +20,924 with **75**, bank 5 +14,720 with **1,595**, bank 2 +12,798 with **1,607**, bank 33
@@ -150,10 +152,13 @@ Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no fait
   store: D518/D519/D520 are exactly such pooled rows** (1,184 / 745 / 850 JP chars, multi-scene, one
   opening with a ruler string).
 
-### 6. Binaries and play-test
-Put `SCRIPT.BIN` and `HEXMAP.BIN` in `original/`, run `python3 tools/assemble.py all` (real `checkedit`),
-rebuild the disc, play-test. **`original/` is gitignored and absent from clones, so `build` cannot write
-`.BIN` files and `riotbattle.py checkedit` cannot run in an agent container. That is expected, not a defect.**
+### 6. Disc rebuild and play-test — the binaries part is DONE 2026-09-11
+The game files are on `main` as `riotstars.zip.001–003` (the human's upload). `python3 tools/unpack.py`
+rebuilds `original/` in any clone (pinned sizes and sha256s; a bad part fails loudly), and
+`python3 tools/assemble.py build` then writes `build/HEXMAP.BIN` and `build/SCRIPT.BIN` and runs the real
+`checkedit` — it did: OK, 132,487 bytes changed, all inside script slots. **Left for the human: put the two
+built files back into the disc image and play-test.** `build/*.BIN` are gitignored; any session rebuilds
+them with `unpack.py` then `build`.
 
 ### 7. Enable "Automatically delete head branches" — kills a permanent false signal
 Branch deletion returns **HTTP 403** from every agent container (§AQ9), so ~45 merged `tl/*` branches
@@ -300,6 +305,7 @@ Detail lives in `glossary.md` §61–§64 and `FLAGS.md` §AW–§AZ.
 3. **After wave 14, the work is the human list under "Blocked — needs a human", in this order:** the §F2
    bank-40/41 repoint (2, unlocks 363 script lines / 2,748 instances), the tier-A slot extension (4,
    unparks 5 and 43, unblocks 16 and 32), the two in-game visits (5), binaries and play-test (6).
-4. **Drop `SCRIPT.BIN` and `HEXMAP.BIN` into `original/` and run `python3 tools/assemble.py refresh`
-   before anything else with the discs: it must reproduce `dumps/` byte-for-byte** (FLAGS §BB4). Then
-   `assemble.py all` for the real `checkedit`.
+4. **The game files are on `main`.** `python3 tools/unpack.py` rebuilds `original/` from
+   `riotstars.zip.001–003` (pinned hashes; fails loudly on a bad part). `refresh` reproduced `dumps/`
+   byte-for-byte on 2026-09-11 (FLAGS §BB4); if it ever does not, stop and look. `assemble.py build`
+   runs the real `checkedit` anywhere now; the disc rebuild and play-test are still the human's.

@@ -144,10 +144,12 @@ _,ch,_=a.split_battle(a.read('dumps/battle_dump.txt')); h,b=ch[$N]
 open('tl/battle/chunk_%03d.txt'%$N,'w',encoding='utf-8').write('\n'.join([h]+b))"
 ```
 
-`original/` (the game binaries) is gitignored and absent from clones, so `build` cannot write
-`.BIN` files here and `riotbattle.py checkedit` cannot run. That is expected, not a defect.
-Agents gate on `check`, `rowcheck` and `bankmeasure`; binaries, disc rebuilds and in-game tests
-are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt for the disc or EXEs.
+`original/` (the game binaries) is gitignored, but since 2026-09-11 the disc files are on `main` as
+`riotstars.zip.001–003`: `python3 tools/unpack.py` rebuilds `original/` in any clone against pinned
+hashes, after which `refresh` and `build` (the real `checkedit`) run here. `refresh` reproduced
+`dumps/` byte-for-byte on that date (FLAGS §BB4); if it ever does not, stop and look. Agents still
+gate on `check`, `rowcheck` and `bankmeasure`; disc rebuilds and in-game tests remain the human's job
+(HANDOFF.md → "Blocked — needs a human").
 
 ## 3. Rules that bind every agent
 
