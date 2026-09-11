@@ -785,6 +785,12 @@ for exactly this. ⚠️ **D1393 writes the fourth button as full-width `Ｘボ�
 stated reason for `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` — that a glyph-named button beside three shape-named ones
 would be the odd one out — applies to `Ｘボタン` with equal force, so `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` (12) is
 the proposal; the reviewer should confirm it rather than assume it.
+✅ **RESOLVED 2026-09-11 (PR #41, §59.3) — and by SHIPPED WORK, not by §16's argument.** `batch_002.tsv`
+already renders **D1414**, the racetrack tutorial, **bank 43, same speaker and same instruction as D1393**,
+as `ｐｒｅｓｓ　ｔｈｅ{FFFE}Ｃｒｏｓｓ　ｂｕｔｔｏｎ` for `×ボタンを押してね`. D1393's `やめる時は、メダルを入れないで　Ｘボタンよ`
+is the same instruction in the same words, so rendering `Ｘボタン` any other way would fork one button inside
+one venue's two tutorials. **It is conformance to the corpus, not the silent normalisation of a typo.**
+§16's argument holds independently. `Ｘボタン` is 1 script-unique, 0 battle, 0 remaining — **exhausted**.
 
 ⚠️ **`ｃｏｉｎ` IS RESERVED for `コイン`, and wave 11 discharges it.** Censused here, not relayed:
 `コイン` is **2 script-unique lines, 0 battle — D1398 and D1419, both in batch 018**, both the
@@ -807,7 +813,7 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 | the closed-shop notice `「…ノロ」` | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` | `batch_006.tsv:57` (`「本日、棚卸しのため休業いたしますノロ」`) | **D870**'s `「今日は{FFFE}　　　　お休みノロ」` is a **different, shorter** notice. Not byte-identical, so gate 6 is blind. Keep the `“…”`, the leading pad and the `，　ｎｙｏｒｏ．`; do not copy the stocktaking wording |
 | `材料` / `武器や防具` | `ｍａｔｅｒｉａｌｓ` / `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` | `batch_010.tsv:31` — **the same smith, same scene, already half-shipped** | **D872, D878, D879** (batch 019). ⚠️ **Read `batch_010.tsv:31` in full before writing D879** — it is this NPC's own explanation speech and fixes his voice |
 | `　はい` / `　いいえ` | `　Ｙｅｓ` / `　Ｎｏ` | every batch since 006; the leading `　` gutter is part of the string | D1108, D1120, D1126, D1127, D1392, D1395, D1403, D1412, D1413, D1416, D1424, D524, D586, D591, D874, D877, D879 |
-| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | **D1390, D1411** (batch 018), **D584, D598** (batch 019) |
+| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | ⚠️ **REACH CORRECTED 2026-09-11 (PR #41 review), and this cell was one line short.** `店を出る` is **10 script-unique lines, 0 battle; 7 shipped, 3 REMAINING — D339, D584 and D598.** D1390 and D1411 shipped here in `batch_018`; **D339 is a third outstanding line this cell never named**, alongside batch 019's D584/D598. **ROW STAYS LIVE.** 15 confirmed with `len()` |
 | `　アイテムを買う` / `　アイテムを売る` | `　Ｂｕｙ　ａｎ　ｉｔｅｍ` (12) / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` (13) | `batch_006.tsv:21` | **D584, D598** — ⚠️ D584 and D598 are **two unique rows with identical readable text**; they must take byte-identical English |
 | `『カルボナイト』` / `『ジェムストーン』` | `“Ｃａｒｂｏｎｉｔｅ”` / `“Ｇｅｍｓｔｏｎｅ”` | `batch_010.tsv:31` | possible in D873's `どの石` menu — check before coining a stone name |
 
@@ -826,16 +832,16 @@ Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to 
 | ~~`禁断のアンデッド`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ`, **used exactly as seeded**, 1 of 1, **exhausted**. Original seed cell follows: `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ` (20) | **1 unique, 0 battle — D1145. Exhausted** | `アンデッド` → lowercase `ｕｎｄｅａｄ` is §1's and unchanged; only `禁断` is new |
 | ~~`ムーン`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `Ｍｏｏｎ．` shipped at D1158, 1 of 1, **exhausted** — ⚠️ **but the seed's warning was NOT discharged and the referent is still unknown.** D1158 is the entire message, one word; bank 39 holds only D1158 and D1159, so there is no context anywhere to resolve it. The translator said so rather than inventing a gloss, which is what the seed asked for. **Open for a human with the disc — `FLAGS.md` §AT.** Original seed cell follows: `Ｍｏｏｎ` (4) | **1 unique, 0 battle — D1158, a bare one-word line. Exhausted** | ⚠️ **A name with no context whatever** — D1158 is the entire message. Could be a person, a beast or a place. If the unit cannot tell, say so in the PR body and flag it for the in-game list rather than inventing a gloss |
 | ~~`エウロス`~~ | ✅ **PROMOTED to §58.2 and STRUCK (PR #42, merged 2026-09-11, round 2)** — `Ｅｕｒｏｓ`, **used exactly as seeded**, Greek over the Latin `Ｅｕｒｕｓ` to match the katakana, 1 of 1, **exhausted**. D1159 (`ここで、エウロスを見つけたんだよね。` → `Ｉｔ　ｗａｓ　ｈｅｒｅ　ｔｈａｔ　Ｉ` / `ｆｏｕｎｄ　Ｅｕｒｏｓ，　ｙｏｕ　ｋｎｏｗ．`) shows it is a **found** thing, consistent with the seed's item-or-creature guess but not proof of it. Original seed cell follows: `Ｅｕｒｏｓ` (5) | **1 unique, 0 battle — D1159. Exhausted** | Greek east-wind name; `Ｅｕｒｕｓ` (5) is the Latin. Kept Greek to match the katakana. A **found** thing (`エウロスを見つけた`), so probably an item or a creature |
-| `スロットマシーン` | `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ` (13 with gutter) | **2 unique, 0 battle — D1390 (menu), D1392. Exhausted** | Capitalised as a game name beside `Ｂｌａｃｋｊａｃｋ` (§54) in the same menu |
-| `メダル交換所` | `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ` (15 with gutter) | **4 unique, 0 battle — D1390, D1391, D1411, D1430. Exhausted** | Capitalised: it is the named counter. Bare `交換所` in `　交換所を出る` (D1397, D1418) takes lowercase `ｅｘｃｈａｎｇｅ` (8) on the `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` pattern → `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` (21) |
-| `レース場` | `　Ｒａｃｅｔｒａｃｋ` (10 with gutter) | **1 unique, 0 battle — D1411, a menu option. Exhausted** | Alt `　Ｒａｃｅ　Ｔｒａｃｋ` (12) |
-| `草競馬` | `ｈｏｒｓｅ　ｒａｃｉｎｇ` (12) | **1 unique, 0 battle — D1412. Exhausted** | 草競馬 is *country/amateur* racing; the diminutive is worth keeping if it fits — `ｔｈｅ　ｖｉｌｌａｇｅ　ｒａｃｅｓ` (17). ⚠️ **§3's `メダル (racetrack)` row already calls this venue the racetrack**, so the venue and the activity should not drift apart |
-| `方向キー` | `Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ` (19) | **3 unique, 0 battle — D1393, D1398, D1419. Exhausted** | The PS1 d-pad. Alt `ｄｉｒｅｃｔｉｏｎ　ｐａｄ` (13) if 19 will not fit — D1398/D1419 give it a whole row (`方向キーで`), so 19 is affordable there |
-| `Ｒ１ボタン` | `Ｒ１　ｂｕｔｔｏｎ` (9) | **1 unique, 0 battle — D1393. Exhausted** | ⚠️ **The source already writes `Ｒ１` in full-width Latin, so it passes §3.1 unchanged** — this is the one button named by its keycap in the source, and §16's shape-name reasoning does not reach it |
-| `ボーナスゲーム` | `Ｂｏｎｕｓ　Ｇａｍｅ` (10) | **1 unique, 0 battle — D1393. Exhausted** | Capitalised as a named mode |
-| `ドラム` | `ｒｅｅｌｓ` (5) | **1 unique / 2 dump, 0 battle — D1393 (`ドラムスタート`, `ドラムは…ストップ`). Exhausted** | English slot machines have *reels*, not drums. `ｄｒｕｍｓ` (5) is the literal and is the fallback if the reviewer prefers the source's own image |
-| `絵柄` | `ｓｙｍｂｏｌｓ` (7) | **1 unique, 0 battle — D1393. Exhausted** | the slot faces. Alt `ｐｉｃｔｕｒｅｓ` (8) |
-| `的中確率` | `ｈｉｔ　ｒａｔｅ` (8) | **1 unique, 0 battle — D1393. Exhausted** | ⚠️ **Held apart from §-fixed `命中率` → the battle accuracy stat**, which is a different word in a different store. Alt `ｏｄｄｓ` (4) |
+| ~~`スロットマシーン`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ`, **used exactly as seeded**, 13 with the gutter confirmed with `len()`. 2 of 2 rendered; **EXHAUSTED — status re-derived by grepping `tl/`, not inferred from the reach**: 2 script-unique, 0 battle, 0 remaining. Original seed cell follows: `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ` (13 with gutter) | **2 unique, 0 battle — D1390 (menu), D1392. Exhausted** | Capitalised as a game name beside `Ｂｌａｃｋｊａｃｋ` (§54) in the same menu |
+| ~~`メダル交換所`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ`, **used exactly as seeded**, 4 of 4; **EXHAUSTED, `tl/` grepped**: 4 script-unique, 0 battle, 0 remaining. ⚠️ **THE SEED'S WIDTH FOR THE BARE FORM WAS WRONG IN THIS CELL AND IS CORRECTED IN §59:** `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` is **19**, not the 21 written below — `len()` run on both, and the PR body's own 20 was also wrong. The shipped row is right; only the figures were not. Original seed cell follows: `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ` (15 with gutter) | **4 unique, 0 battle — D1390, D1391, D1411, D1430. Exhausted** | Capitalised: it is the named counter. Bare `交換所` in `　交換所を出る` (D1397, D1418) takes lowercase `ｅｘｃｈａｎｇｅ` (8) on the `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` pattern → `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` (21) |
+| ~~`レース場`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `　Ｒａｃｅｔｒａｃｋ`, **used exactly as seeded**, 10 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. ⭐ It also conforms to a shipped incumbent the seed did not cite — `batch_010.tsv:37` already renders `競馬場` → `ｒａｃｅｔｒａｃｋ`, so venue and menu label agree. Original seed cell follows: `　Ｒａｃｅｔｒａｃｋ` (10 with gutter) | **1 unique, 0 battle — D1411, a menu option. Exhausted** | Alt `　Ｒａｃｅ　Ｔｒａｃｋ` (12) |
+| ~~`草競馬`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｈｏｒｓｅ　ｒａｃｉｎｇ`, **used exactly as seeded**, 12 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. The seed's own warning decided it: `ｔｈｅ　ｖｉｌｌａｇｅ　ｒａｃｅｓ` was rejected because it would fork the venue from `batch_010.tsv:37`'s `ｒａｃｅｔｒａｃｋ`. Original seed cell follows: `ｈｏｒｓｅ　ｒａｃｉｎｇ` (12) | **1 unique, 0 battle — D1412. Exhausted** | 草競馬 is *country/amateur* racing; the diminutive is worth keeping if it fits — `ｔｈｅ　ｖｉｌｌａｇｅ　ｒａｃｅｓ` (17). ⚠️ **§3's `メダル (racetrack)` row already calls this venue the racetrack**, so the venue and the activity should not drift apart |
+| ~~`方向キー`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ`, **used exactly as seeded**, 19 confirmed with `len()`; **EXHAUSTED, `tl/` grepped**: 3 script-unique, 0 battle, 0 remaining. The 13-column `ｄｉｒｅｃｔｉｏｎ　ｐａｄ` reserve was **not** needed and stays unspent. Original seed cell follows: `Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ` (19) | **3 unique, 0 battle — D1393, D1398, D1419. Exhausted** | The PS1 d-pad. Alt `ｄｉｒｅｃｔｉｏｎ　ｐａｄ` (13) if 19 will not fit — D1398/D1419 give it a whole row (`方向キーで`), so 19 is affordable there |
+| ~~`Ｒ１ボタン`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — but it **ships under English coordination, not in the bare form**, and that is recorded rather than glossed over. D1393 names `ボタン` twice (`Ｒ１ボタンか{FFFE}○ボタン`); the English writes it once — `Ｒ１　ｏｒ　Ｃｉｒｃｌｅ　ｂｕｔｔｏｎ．` (**20**, `len()`-checked). The alternative `Ｒ１　ｂｕｔｔｏｎ　ｏｒ　Ｃｉｒｃｌｅ．` is **also 20** — the two are exactly equal in width (the PR gave both as 21), so the choice rests on §3/§16 alone: keeping the bare `Ｒ１　ｂｕｔｔｏｎ` would have broken `○ボタン` → `Ｃｉｒｃｌｅ　ｂｕｔｔｏｎ`, which is **settled**, and a provisional row yields to a settled one. **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining, so no later unit inherits the bare form. Original seed cell follows: `Ｒ１　ｂｕｔｔｏｎ` (9) | **1 unique, 0 battle — D1393. Exhausted** | ⚠️ **The source already writes `Ｒ１` in full-width Latin, so it passes §3.1 unchanged** — this is the one button named by its keycap in the source, and §16's shape-name reasoning does not reach it |
+| ~~`ボーナスゲーム`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `Ｂｏｎｕｓ　Ｇａｍｅ`, **used exactly as seeded**, 10 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. Original seed cell follows: `Ｂｏｎｕｓ　Ｇａｍｅ` (10) | **1 unique, 0 battle — D1393. Exhausted** | Capitalised as a named mode |
+| ~~`ドラム`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｒｅｅｌｓ`, **used exactly as seeded**, both dump occurrences; **EXHAUSTED, `tl/` grepped**: 1 script-unique / 2 occurrences, 0 battle, 0 remaining. The `ｄｒｕｍｓ` fallback was offered to the reviewer and **not** taken: English slot machines have reels, and the seed's own reasoning stands. Original seed cell follows: `ｒｅｅｌｓ` (5) | **1 unique / 2 dump, 0 battle — D1393 (`ドラムスタート`, `ドラムは…ストップ`). Exhausted** | English slot machines have *reels*, not drums. `ｄｒｕｍｓ` (5) is the literal and is the fallback if the reviewer prefers the source's own image |
+| ~~`絵柄`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｓｙｍｂｏｌｓ`, **used exactly as seeded**, 7 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. `ｐｉｃｔｕｒｅｓ` (8) stays unspent. Original seed cell follows: `ｓｙｍｂｏｌｓ` (7) | **1 unique, 0 battle — D1393. Exhausted** | the slot faces. Alt `ｐｉｃｔｕｒｅｓ` (8) |
+| ~~`的中確率`~~ | ✅ **PROMOTED to §59 and STRUCK (PR #41, merged 2026-09-11, round 2)** — `ｈｉｔ　ｒａｔｅ`, **rendering unchanged and used exactly as seeded**, 8 confirmed; **EXHAUSTED, `tl/` grepped**: 1 script-unique, 0 battle, 0 remaining. | **1 unique, 0 battle — D1393** | ⛔ **THE SEED'S REASON WAS FALSE AND IS REPLACED — see §59.4.** It read *"Held apart from §-fixed `命中率` → the battle accuracy stat, which is a different word in a different store."* **Both halves fail on measurement.** `命中率` is **not** in a different store: it is **3 script instances, 0 battle — D830, D979, D1237 — and D830 already ships `ｈｉｔ　ｒａｔｅ　ｒｉｓｅｓ．` in `batch_016.tsv`**, so `ｈｉｔ　ｒａｔｅ` was already spent on `命中率` in the same store before this unit existed. **What licenses the row is §25.3 bank-disjointness, on a map measured at review: `的中確率` bank [42]; `命中率` banks [21, 29, 40]; shared banks NONE, 0 messages holding both.** Alt `ｏｄｄｓ` (4) stays free and unspent |
 | `かじ屋` | `ｓｍｉｔｈｙ` (6) | **1 unique, 0 battle — D871 (`ここは、かじ屋ノロ`). Exhausted** | The *place*, which is what `ここは` needs. `ｂｌａｃｋｓｍｉｔｈ` (10) is the person and is the alternative if the reviewer reads it as the trade. ⚠️ `batch_010.tsv:31` is this same shop and **names neither** — it opens `ここでは、…` — so nothing is inherited and nothing is contradicted |
 | `炎ノ雨` | `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ` (12) | **1 unique, 0 battle — D532. Exhausted** | The Empire's weapon, in the frog king's katakana. Capitalised as a named weapon, on §33.1's `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / §45.1's `Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ` `Ｘ　ｏｆ　Ｙ` pattern. Alt lowercase `ａ　ｒａｉｎ　ｏｆ　ｆｉｒｅ` (16) if it reads as description, not a name |
 | `クロイ馬ノ騎士` | `ｔｈｅ　Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ` (22) | **1 unique, 0 battle — D527. Exhausted** | ⚠️ **The katakana is the frog's broken speech, not the game's spelling** — the phrase would be `黒い馬の騎士` in any other mouth, so the ENGLISH should be ordinary English, with the frog's register carried by the surrounding clipped syntax (§5), not by mangling this noun. Plural `Ｋｎｉｇｈｔｓ` (23) if the source means the order |
@@ -2258,7 +2264,7 @@ shipped in `tl/`; these rows record the shipped form, they do not change it.
 
 | Japanese | English | Note |
 |---|---|---|
-| さあ、 | **`Ｎｏｗ，`** | ⚠️ **Settled here. Chunk 13 is the THIRD shipped file to agree** — `さあ、つべこべ言わず` → `Ｎｏｗ，　ｎｏ　ｍｏｒｅ　ｔａｌｋ．`, beside `chunk_006` L12 and `chunk_033` L20, which ship the bare segment as `Ｎｏｗ，`. **16 battle + 10 script-unique occurrences**, so this is the largest single drift risk §O7 listed. Two row-level variants stand and are **not** re-cut: `chunk_011` L3's `さあ、私のかわいい` → `Ｎｏｗ　ｔｈｅｎ，　ｍｙ　ｄａｒｌｉｎｇ` (a longer vocative follows), and `chunk_003` L4's `さあ、{FC00}{=0000}、` → `Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`, which **§24.5 already rules is a different row** because the name insert is inside it. Held **distinct** from Fernando's `さ、` → `Ｃｏｍｅ，` (§24.6) |
+| さあ、 | **`Ｎｏｗ，`** | ⚠️ **Settled here. Chunk 13 is the THIRD shipped file to agree** — `さあ、つべこべ言わず` → `Ｎｏｗ，　ｎｏ　ｍｏｒｅ　ｔａｌｋ．`, beside `chunk_006` L12 and `chunk_033` L20, which ship the bare segment as `Ｎｏｗ，`. **16 battle + 10 script-unique occurrences**, so this is the largest single drift risk §O7 listed. Two row-level variants stand and are **not** re-cut: `chunk_011` L3's `さあ、私のかわいい` → `Ｎｏｗ　ｔｈｅｎ，　ｍｙ　ｄａｒｌｉｎｇ` (a longer vocative follows), and `chunk_003` L4's `さあ、{FC00}{=0000}、` → `Ｃｏｍｅ　ｏｎ，　{FC00}{=0000}，`, which **§24.5 already rules is a different row** because the name insert is inside it. Held **distinct** from Fernando's `さ、` → `Ｃｏｍｅ，` (§24.6) — ⭐ **and that distinction is now a FIRST-COLUMN ROW of its own at §59.1, because it was unfindable here: see §59.7.** ⚠️ **THIS VARIANT LIST IS STALE AND IS CORRECTED 2026-09-11 (PR #41 review).** It names two row-level variants; a positional pairing of every `さあ、` in the battle dump against `tl/battle/` finds **four English forms over the 10 paired instances**: `Ｎｏｗ，` ×4 (`chunk_006.txt:13`, `chunk_033.txt:21`, `chunk_041.txt:9`, `chunk_042.txt:3`), `Ｎｏｗ　ｔｈｅｎ，` ×2 (`chunk_011.txt:4` **and `chunk_031.txt:5`, which this row does not name**), `Ｃｏｍｅ　ｏｎ，` ×1 (`chunk_031.txt:18`, `さあ、。` → `Ｃｏｍｅ　ｏｎ，　．` — the shape this row attributes to `chunk_003` alone), and **`Ｃｏｍｅ，` ×1 — `chunk_030.txt:27`, `さあ、早く` → `Ｃｏｍｅ，　ｂｅ　ｑｕｉｃｋ．`, which this row does not name at all and which merged in wave 7, AFTER the row was written.** `Ｎｏｗ，` remains the settled default; the variants are driven by what follows. **None of this disturbs §59.1**: `さ、` is 2 of 2 `Ｃｏｍｅ，`, and what `batch_018` had done was put `さ、` on `さあ、`'s *default* |
 | ヘビー | `ｈｅａｖｙ` | Shipped `ちょっとヘビーだぜ。` → `ａ　ｂｉｔ　ｈｅａｖｙ．`, `chunk_003` file L6. **1 battle / 0 script.** A hapax; the row exists so the loanword cannot be re-invented |
 | 洞窟 | `ｃａｖｅ` / `ｃａｖｅｓ` | Shipped in `chunk_003` file L6. **5 battle / 0 script** |
 | 赤い屋根の家 / 赤い屋根の建物 | `ｒｅｄ‐ｒｏｏｆｅｄ　ｈｏｕｓｅｓ` / `ｒｅｄ‐ｒｏｏｆｅｄ　ｂｕｉｌｄｉｎｇｓ` | Shipped in `chunk_003` file L6, both forms. Uses `‐` (U+2010). **2 battle / 0 script.** The two are kept apart because the source keeps them apart |
@@ -7659,3 +7665,180 @@ is `Ｏｈｈ！！`, `chunk_001` L2 is `Ｏｈ！`, `chunk_024` L16 is `ｍｙ�
 reviewer's tooling that drops `===`, `#` and `{PAD}` lines produces a **different** number for the
 same row (L14 → body index 12), and printing it as if it were a file line puts a wrong citation
 into the record. Print the file line.
+
+## 59. Added by script batch 018 (PR #41, merged 2026-09-11, round 2)
+
+The casino and the racetrack — DATA 1388–1413 and 1415–1430, 42 unique lines / 42 instances, banks
+42 and 43. Bank 42 11,301 → **9,645** free (−1,656); bank 43 9,995 → **8,947** free (−1,048); total
+**−2,704 B**, no bank negative, exactly two banks moved (proved by a `bankmeasure` diff with the unit
+file removed and restored: two lines of diff over 44 banks). 1,299 JP → 2,647 EN readable characters
+= **2.038×**. Merged round 2 after one must-change finding, §59.1.
+
+### 59.1 ⭐ RULING — `さ、` takes `Ｃｏｍｅ，`, and it is NOT Fernando-scoped
+
+| Japanese | English | Where | Note |
+|---|---|---|---|
+| `さ、` (segment-initial) | **`Ｃｏｍｅ，`** (5) | D1408, D1409 (`batch_018`); `tl/battle/chunk_006.txt:13`, `chunk_007.txt:20` | ⭐ **HELD DISTINCT FROM `さあ、` → `Ｎｏｗ，` (§2261). This row exists because the ruling was previously recorded ONLY in two note cells and no gate could see it — see §59.7.** Round 1 shipped `Ｎｏｗ，` at both D1408 and D1409, collapsing the two source strings onto one English inside a file that also ships `さあ、` → `Ｎｏｗ，` twice (D1388, D1415). **Reach, censused over both stores: `さ、` is 5 segment-initial occurrences in the entire game** — 2 battle (`chunk_006.txt:13` `さ、お城へ戻りましょう。` → `Ｃｏｍｅ，　ｌｅｔ　ｕｓ　ｒｅｔｕｒｎ`, Fernando; `chunk_007.txt:20` `さ、お父様たちも` → `Ｃｏｍｅ，　ｙｏｕｒ　ｆａｔｈｅｒ`, **Nacol — so the form was already extended past Fernando in shipped work**) and 3 script (D1368, untranslated, bank 41; D1408 and D1409, here). ⚠️ A raw substring grep gives 3 battle + 4 script; **two are false positives and are named so no later census re-files them** — `ことの愚かさ、` (`chunk_032`, untranslated) and `これあげるからさ、` (D1157, `batch_017`, sentence-final particle). **The decisive citation is `tl/battle/chunk_006.txt:13`, which carries BOTH source strings in one Fernando line**: `さ、…` → `Ｃｏｍｅ，　ｌｅｔ　ｕｓ　ｒｅｔｕｒｎ／ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．`, and later `さあ、` → `Ｎｏｗ，／ｈｕｒｒｙ　ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．` — one speaker, one shipped line, both English forms landing on *the castle*, so the contrast is not incidental. **D1408 is the same sentence as `chunk_006.txt:13`'s** and shipped `ｌｅｔ　ｕｓ／ｒｅｔｕｒｎ　ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．` already; only the head was wrong. **D1368 (bank 41, `さ、早く。`) is the one instance left and is now bound by this row** |
+
+**Shipped at D1408:** `Ｃｏｍｅ，　Ｐｒｉｎｃｅｓｓ，　ｌｅｔ　ｕｓ` (**22**, `len()`-checked) / `ｒｅｔｕｒｎ　ｔｏ　ｔｈｅ　ｃａｓｔｌｅ．` (21).
+**Shipped at D1409:** `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` (**21**), **one row, and NOT the reviewer's proposed
+two-row `Ｃｏｍｅ，　ｗｈｅｒｅ　ｓｈａｌｌ` (17) + `ｗｅ　ｇｏ？` (6).** ⭐ **The translator's form is the correct one
+and the reviewer's was worse**, for a reason the review had missed: `どこへ　行く？` is **plain non-past**, and
+`ｓｈａｌｌ`/`ｓｈｏｕｌｄ` is reserved in this very unit for the **volitional** — `次は　どうする？` → `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ　ｎｅｘｔ？`
+(19, D1407) against `次は、どうしよっか？` → `Ｗｈａｔ　ｓｈｏｕｌｄ　ｗｅ　ｄｏ　ｎｅｘｔ？` (23, D1410), the §5 split the
+reviewer had itself endorsed in round 1. The `ｓｈａｌｌ` was present in the round-1 text and **neither agent filed
+it**; the rework removed a latent §5 inconsistency the reviewer had carried forward. `ｄｏ　ｗｅ　ｇｏ` now matches
+`ｄｏ　ｗｅ　ｄｏ` (D1407) and `ｄｏ　ｗｅ　ｐｌａｙ` (D1388/D1389) across the attendant's whole voice, and one row keeps
+the tag stream unchanged rather than buying a `{FFFE}`.
+
+### 59.2 The twelve §9 wave-11 seeds, all promoted and struck
+
+Every one **used exactly as seeded** except `Ｒ１ボタン` (ships under coordination — see its struck cell).
+**Every "exhausted" below is a STATUS re-derived by grepping `tl/`, not a reach re-derived from the dumps** —
+§58's lesson, applied. All twelve: 0 remaining, 0 battle.
+
+| Japanese | English | Cols | Lines |
+|---|---|---|---|
+| `スロットマシーン` | `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ` / bare `Ｓｌｏｔ　Ｍａｃｈｉｎｅ` | 13 / 12 | D1390 (menu), D1392 |
+| `メダル交換所` | `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ` | 15 | D1390, D1391, D1411, D1430 |
+| `交換所` (bare) | `ｅｘｃｈａｎｇｅ`, lowercase → `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` | 8 → **19** | D1397, D1418 |
+| `レース場` | `　Ｒａｃｅｔｒａｃｋ` | 10 | D1411 |
+| `草競馬` | `ｈｏｒｓｅ　ｒａｃｉｎｇ` | 12 | D1412 |
+| `方向キー` | `Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ` | 19 | D1393, D1398, D1419 |
+| `Ｒ１ボタン` | `Ｒ１　ｂｕｔｔｏｎ`, shipped as `Ｒ１　ｏｒ　Ｃｉｒｃｌｅ　ｂｕｔｔｏｎ．` | 9 / 20 | D1393 |
+| `ボーナスゲーム` | `Ｂｏｎｕｓ　Ｇａｍｅ` | 10 | D1393 |
+| `ドラム` | `ｒｅｅｌｓ` | 5 | D1393 ×2 |
+| `絵柄` | `ｓｙｍｂｏｌｓ` | 7 | D1393 |
+| `的中確率` | `ｈｉｔ　ｒａｔｅ` | 8 | D1393 — see §59.4 |
+| `Ｘボタン` | `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` | 12 | D1393 — see §59.3 |
+
+⚠️ **`　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` is 19 columns.** `len()` run at integration. The §9 seed cell said **21**
+and the PR body said **20**; both were wrong and both are corrected here. The shipped row was always right.
+(`　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` = **15**, which §7's row has correct.)
+
+### 59.3 `Ｘボタン` → `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` — settled by SHIPPED WORK, not by §16's argument
+
+§9 framed this as an open question resting on §16's odd-one-out reasoning. **There is a stronger answer.**
+`batch_002.tsv` already renders **D1414** — the racetrack tutorial, **bank 43, same speaker, same scene and
+the same instruction as D1393** — as `ｐｒｅｓｓ　ｔｈｅ{FFFE}Ｃｒｏｓｓ　ｂｕｔｔｏｎ` for `×ボタンを押してね`. D1414's
+`やめる時は…×ボタンを押してね` and D1393's `やめる時は、メダルを入れないで　Ｘボタンよ` are the same instruction in
+the same words; rendering `Ｘボタン` any other way would fork one button inside one venue's two tutorials.
+**This is conformance to the corpus, not the silent normalisation of a source typo** — the distinction §3's
+"never change the source" rule turns on. §16's argument holds independently.
+
+### 59.4 ⛔ CORRECTION — §9's stated REASON for `的中確率` was false; the rendering is unchanged
+
+The seed justified `ｈｉｔ　ｒａｔｅ` by holding it apart from "§-fixed `命中率` → the battle accuracy stat,
+**which is a different word in a different store**". **Both halves fail on measurement**, and the translator
+found it: `命中率` is **3 script instances, 0 battle — D830, D979, D1237 — and D830 already ships
+`命中率が　高くなるぜ。` → `ｈｉｔ　ｒａｔｅ　ｒｉｓｅｓ．` in `batch_016.tsv`.** So `ｈｉｔ　ｒａｔｅ` was already spent
+on `命中率` **in the same store** before this unit existed. **What actually licenses the row is §25.3
+bank-disjointness, on a map re-derived at review:**
+
+```
+的中確率 : 1 script instance, bank [42]            | 0 battle
+命中率   : 3 script instances, banks [21, 29, 40]  | 0 battle
+shared banks: []   messages holding both: 0
+```
+
+No player sees both. **Keep the rendering; the reason is replaced.** `ｏｄｄｓ` (4) stays free and unspent.
+
+### 59.5 New rows this unit fixes
+
+| Japanese | English | Cols | Note |
+|---|---|---|---|
+| `大当たり` | `ｗｉｎ　ｂｉｇ` | 7 | D1393 ×2 (`大当たり！`, `大当たりすると、`) — one English for both so the sentence pair keeps its echo. **Exhausted**, 0 prior hits anywhere |
+| `お待たせっ` | `Ｓｏｒｒｙ　ｆｏｒ　ｔｈｅ　ｗａｉｔ` | 20 | D1388. **Exhausted**, 0 prior hits |
+| `手続き` | `ｆｏｒｍａｌｉｔｉｅｓ` | 12 | **Not new — this RECORDS `batch_010.tsv:38`'s incumbent** (`入場の手続き` → `ｅｎｔｒｙ　ｆｏｒｍａｌｉｔｉｅｓ`), which the glossary never carried. D1428 is `帰るための手続き` → `ｒｅｔｕｒｎ　ｆｏｒｍａｌｉｔｉｅｓ`. **Exhausted** (2 script-unique, both shipped) |
+| `荷物` | `ｐａｃｋ` | 4 | D1406, D1427. **Not new — RECORDS `batch_006.tsv:28`/`:63`'s incumbent**, beside `持ち物` → `ｐａｃｋ` (`batch_016.tsv:77`). ⚠️ **ROW STAYS LIVE: 5 script-unique, 0 battle, 4 shipped, D589 REMAINS** (batch 019's range, PR #40 open at integration). Status grepped in `tl/`, not inferred |
+| `ご用` (elliptical / polite pair) | `Ｎｅｅｄ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？` / `Ｉｓ　ｔｈｅｒｅ　ｍｏｒｅ　ｙｏｕ　ｎｅｅｄ？` | 19 / 23 | D1401 (casual) and D1422 (polite). Held apart from each other and from the corpus per §42.2 — see §59.6 |
+| `何がお望み` / `何がお望みですか` | `Ｗｈａｔ　ｗｏｕｌｄ　ｙｏｕ　ｌｉｋｅ？` / `Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｐｌｅａｓｕｒｅ？` | 20 / 22 | D1396 / D1417, the register pair. Both verified free across `tl/script/` and `tl/battle/` |
+| `いい？` / `いいですか？` (offer confirmation) | `ｗｉｌｌ　ｔｈａｔ　ｄｏ？` / `ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` | 13 / 14 | D1403, D1412 and D1424. Joins §34.9's shipped `になりますが？` → `Ｗｏｕｌｄ　ｔｈａｔ　ｄｏ？` family rather than spending `ａｌｌ　ｒｉｇｈｔ`, which §34.7 records as already doing two jobs |
+
+### 59.6 The register split, and how it is marked
+
+⚠️ **The dispatch's framing was wrong and the translator corrected it.** The split is **not** by DATA range
+(D1388–1413 against D1415–1430). It is **bank 42 (the casino counter, casual) plus the attendant girl,
+against the polite medal-exchange clerk at D1417–D1427** — because bank 43 *also* holds seven casual
+attendant lines (D1409, D1410, D1412, D1413, D1415, D1416, D1428–D1430). D1416 in particular
+(`ブラックジャックね？　ゲームの説明を聞く？`) is casual and sits in bank 43.
+
+**Marked by contractions and syntax, never by added words (§2, §34.10). Verified mechanically at review:
+9 contractions in the casual column — D1391, D1393, D1398, D1400, D1402, D1405, D1415, D1428, D1430 —
+and 0 anywhere in D1417–D1427.** (The PR said 7; its own Flag 5 lists D1428–D1430 as casual, so 9 is the
+count consistent with its framing.) Two of the polite renderings are **byte-identical to `batch_006`'s
+keigo shop**: `Ｙｏｕ　ｓｅｅｍ　ａ　ｌｉｔｔｌｅ　ｓｈｏｒｔ／ｏｆ　Ｊｅｗｅｌｓ．` and `ｓｅｅｍｓ　ｔｏ　ｂｅ　ｆｕｌｌ．`, against the
+casual `Ｙｏｕ’ｒｅ　ａ　ｌｉｔｔｌｅ　ｓｈｏｒｔ…　ｌｏｏｋｓ　ｌｉｋｅ．` and `ｌｏｏｋｓ　ｆｕｌｌ．`
+
+⚠️ **` メダルを買う` / ` メダルを景品と交換` / ` 交換所を出る` (D1397, D1418) is the PLAYER's menu, not the
+clerk's speech**, and the two rows are byte-identical readable text — so it takes **one** English for both
+counters and is deliberately register-neutral. ` Ｔｒａｄｅ　ｍｅｄａｌｓ　ｆｏｒ　ｐｒｉｚｅｓ` is **24 columns**, the
+hard limit: kept because every element of `メダルを景品と交換` survives, where ` Ｔｒａｄｅ　ｆｏｒ　ｐｒｉｚｅｓ` (17)
+drops the object and ` Ｓｗａｐ　ｍｅｄａｌｓ　ｆｏｒ　ｐｒｉｚｅｓ` (23) is too colloquial for a shared menu. **Precedent
+checked at review: the corpus holds 29 rows at exactly 24 and 0 above 24**, four of them menu rows in
+`batch_015`, so 24 has precedent on exactly this row type.
+
+### 59.7 ⭐⭐ A STRUCTURAL HOLE IN GATE 7 — a ruling recorded where no key-first gate can see it
+
+**`さ、` has ZERO first-column keys in `glossary.md`.** Measured at review and again at integration: `さ、`
+occurs on exactly **2 lines (1788 and 2261), both inside NOTE CELLS**, and in **0 first-column cells**.
+Gate 7 as every reviewer has run it extracts **first-column** cells and tests them against the unit's
+Japanese — so it sees **0 of 2**, and **a key-first gate 7 was structurally incapable of finding §59.1.**
+The reading review found it; no gate could have.
+
+This is §48.5's hole in a new shape: **the glossary DID record the ruling — just not where the gate looks.**
+Two consequences, both acted on here:
+1. **§59.1 exists as a real first-column row** so the next gate 7 can see it. Any future ruling of the form
+   "X is held distinct from Y" belongs in column 1, not only in a note.
+2. **Gate 7 should additionally extract `X` → `Y` pairs out of note cells**, not only first-column keys.
+   Recorded in `FLAGS.md` §AU2 as a method change, not as anyone's error.
+
+### 59.8 Conformed to without re-coining
+
+Each verified in the shipped file, not taken from the dispatch: `景品` → `ｐｒｉｚｅ` (§55.2 — **all 9 remaining
+instances ship here; 10 script-unique total, D748 in `batch_014` plus 9 here, 0 remaining, so that row is
+DISCHARGED**) · `ブラックジャック` → `Ｂｌａｃｋｊａｃｋ` (§54, whose own cell named D1390/D1395/D1416 as the lines
+the casino batch would inherit — all three ship it) · `メダル` → `ｍｅｄａｌ` (§3) · `ジュエル` → `Ｊｅｗｅｌ` (§3) ·
+`○`/`△`/`□ボタン` → `Ｃｉｒｃｌｅ`/`Ｔｒｉａｎｇｌｅ`/`Ｓｑｕａｒｅ　ｂｕｔｔｏｎ` (§3, §16) · `　店を出る` → `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ`
+(`batch_006.tsv:21`) · `　はい`/`　いいえ` → `　Ｙｅｓ`/`　Ｎｏ` with the gutter · `あら？` → `Ｍｙ？` (§32.4) ·
+`さあ、` → `Ｎｏｗ，` (§2261 — **and held apart from `さ、`, §59.1**) · `じゃ、` → `Ｗｅｌｌ，`, `それじゃ、`/`それでは、`
+→ `Ｗｅｌｌ　ｔｈｅｎ，` (§57.2) · `まったく` → `ｒｅａｌｌｙ` (§6) · `いらっしゃいませ。` → `Ｗｅｌｃｏｍｅ．` (§3277/§34.5) ·
+`お客様` → **dropped, carried by `ｙｏｕ`/`ｙｏｕｒ`** (§3278, conformed at D1391/D1398/D1419) · `ドラゴン` →
+lowercase `ｄｒａｇｏｎｓ` (§1230) · `ありがとうございました。` → `Ｔｈａｎｋ　ｙｏｕ　ｖｅｒｙ　ｍｕｃｈ．` ·
+`ちょっと　待っててね。` → `ｓｏ　ｗａｉｔ　ａ　ｌｉｔｔｌｅ　ｗｈｉｌｅ．` (`batch_010.tsv:36`, the §27.4 spaced/unspaced pair)
+· `いただきます` → `Ｉ　ｓｈａｌｌ　ｄｕｌｙ　ｒｅｃｅｉｖｅ` (§34.10) · `お受け取り下さい` → `ａｃｃｅｐｔ` (`chunk_006` L12) ·
+`サイクス` → `Ｓｙｋｅｓ` (§18.4) · `王女様` → `the Princess` (§1), and **bare `Ｐｒｉｎｃｅｓｓ，` as a vocative at D1408** ·
+prices keep full-width digits (§57.3).
+
+⚠️ **`また　どうぞ` — the cross-unit pair, and this side is settled.** D1426 `ご用の際は、また　どうぞ。` ships
+`ｄｏ　ｃｏｍｅ　ａｇａｉｎ．` — lowercase because it continues `Ｉｆ　ｅｖｅｒ　ｙｏｕ　ｈａｖｅ　ｎｅｅｄ，`, full-stopped
+because the source writes `。`. **D596 (bank 12) is the other instance and was still untranslated at this
+integration** (batch 019, PR #40 open); it takes `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！` for its `また　どうぞ！`. Same words,
+capitalisation and punctuation following each source. **Nothing here needs revisiting whichever way #40 lands.**
+
+⚠️ **`ｃｏｉｎ` was reserved for `コイン` and is now DISCHARGED, and only there.** Re-derived: `コイン` is
+**2 script-unique lines, 0 battle — D1398 and D1419, both here** — and both render `ｃｏｉｎｓ` standing beside
+`ｍｅｄａｌｓ` in the same message, so the source's two words stay two words. `ｃｏｉｎ` appears nowhere else in
+the unit.
+
+### 59.9 §32.5's `メダル` / `勲章` collision — STILL LIVE, and more expensive to break than the PR estimated
+
+This unit spends `ｍｅｄａｌ` **25 times in banks 42 and 43** (19 bare `メダル` + 6 inside `メダル交換所`).
+**Censused at source at integration, not relayed:**
+
+- **`勲章` is 8 script-unique lines + 4 battle-dump occurrences. 5 script lines shipped; 3 remain — D303,
+  D1367, D1368.** In **banks 42–43 the whole `勲章` side is D303 alone** (`二頭の獅子をデザインした、古ぼけた勲章。`,
+  the Lion's Medal item description, 21 instances spanning 21 banks, **untranslated**). **0 messages hold both.**
+- `ｍｅｄａｌ` is already spent on `勲章` in **shipped** work: `Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ` ×3 in `batch_012`
+  (bank 1) and `batch_016` (bank 23) — disjoint from 42/43 — **and, which the PR did not census, FOUR times
+  in the BATTLE store**: `chunk_020.txt:48` and `:49` `Ｌｏｏｋｓ　ｌｉｋｅ　ａ　ｍｅｄａｌ．`, `chunk_022.txt:6`
+  `ａ　ｆｏｒｇｅｄ　ｍｅｄａｌ` and `Ｂｕｔ，　ｔｈｅ　ｒｅａｌ　ｍｅｄａｌ，`.
+
+⛔ **So the PR's recommendation — "break it on `勲章`'s side at D303, one untranslated line against 26 shipped
+ones" — UNDERCOUNTS ITS OWN SIDE.** D303 is not a free line to re-cut: `勲章` → `ｍｅｄａｌ` already has **seven
+shipped renderings** (4 battle + 3 script) that D303 would fork from. **Nothing is unreadable today** — the two
+senses are bank- and store-disjoint and no message holds both — but whoever renders D303 inherits the collision
+in the same two banks as all 25 of this unit's. §32.5's reserve `ｔｏｋｅｎ` (5) stays unspent on the racetrack side.
+⚠️ **One rider for the disc:** the prize insert `{FFEC}{=00}{=03}` renders an **item name**, so if the Lion's
+Medal is ever a casino prize, D1404 reads `ｔｈｅ　Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ．` (**22** columns — it fits) beside
+`ｍｅｄａｌｓ` in the same message, and the "0 messages hold both" finding would no longer hold. See `FLAGS.md` §AU5.

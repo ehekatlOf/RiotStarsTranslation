@@ -6557,3 +6557,177 @@ found by checking the convention. **Print the file line.** Recorded at `glossary
   `glossary.md` §9. D293 alone carries ~21 of the 23 `魔道書` dump instances and reaches 21 banks;
   it is an item description and is **not** bound by the §9 row.
 - **`体力` is struck as exhausted** (`glossary.md` §57.1) — D834 in `batch_016`, D1126 here.
+
+## AU. Wave 11 review — script batch 018 / PR #41, MERGED (2026-09-11, round 2)
+
+Squash `426f8c1`. Gated on merge tree `7dbe045` (base pinned to `44d7cd7`, head `87c4420`), built with
+`git merge-tree --write-tree` and extracted with `git archive` — **no working tree at any point**, and the
+tree SHA was re-derived twice before use because the integration branch moves during review. All eight
+§6 gates ✓. Bank 42 11,301 → **9,645** free, bank 43 9,995 → **8,947**, total **−2,704 B**, no bank
+negative. 1,299 JP → 2,647 EN = **2.038×**.
+
+### AU1. Banks under 2,000 free — still FOUR, still only THREE on the `tightest:` line
+
+**40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.** Unchanged by this unit, which touches only 42 and 43.
+`bankmeasure`'s `tightest:` line prints three, so **bank 5 remains invisible to anyone quoting it**.
+Read the full table. This is §AT1 carried forward verbatim because it is still true.
+
+### AU2. ⭐⭐ A STRUCTURAL HOLE IN GATE 7 — a real ruling that no key-first gate can reach
+
+**Found by `batch_018`'s translator, verified by the coordinator, re-verified at integration.**
+
+`glossary.md` recorded `さ、` → `Ｃｏｍｅ，` held distinct from `さあ、` → `Ｎｏｗ，` — **but only inside two
+NOTE CELLS** (lines 1788 and 2261). Measured: `さ、` occurs on **2 lines of `glossary.md`, in 0 first-column
+cells**. Gate 7 as every reviewer has run it extracts first-column keys and tests them against the unit's
+Japanese, so it saw **0 of 2**, and **was structurally incapable of finding the one must-change defect in
+this PR.** The reading review found it. This is §48.5's hole in a new shape: **the glossary had the ruling;
+the gate could not look where it was written.**
+
+**Two method changes, both already applied:**
+1. `glossary.md` **§59.1 is now a real first-column row** for `さ、` → `Ｃｏｍｅ，`. **Any ruling of the form
+   "X is held distinct from Y" belongs in column 1, not only in a note cell.**
+2. **Gate 7 should additionally extract `X` → `Y` pairs from note cells**, not only first-column keys. Until
+   it does, "gate 7 clean" is weaker evidence than it reads — and a clean gate 7 is **not** a substitute for
+   reading every line with the Japanese beside it.
+
+⚠️ Not a finding against anyone. The seed, the translator and the reviewer all behaved correctly; the gate
+was blind. **Record it, change the method.**
+
+### AU3. Five pool-shaped script lines, not one — and D1408 is NOT the first
+
+`FLAGS.md` §L2 / `findings.md` §24 describe a *pool*: many `{FFFE}`-separated fragments, no `{FCC0}`, one
+"page", fragments from unrelated scenes, consistent with independently-selected strings rather than one
+message. The PR claimed D1408 was **the first such case in the script store**. **It is not.** Censused over
+`script_unique.txt` at **≥10 `{FFFE}` and 0 `{FCC0}`**:
+
+| DATA | breaks | segments | state |
+|---|---|---|---|
+| **D517** | 61 | 62 | **SHIPPED in `batch_002.tsv`** — this is the `rowcheck script` entry `line 1234 page 0: 76 text rows > 4 (source already 61 — INHERITED)` the corpus has carried since batch 002; §D4 covers it |
+| D1361 | 11 | 12 | untranslated |
+| D1379 | 10 | 11 | untranslated |
+| D1387 | 12 | 13 | untranslated |
+| **D1408** | 22 | 23 | **SHIPPED in `batch_018.tsv`** — `rowcheck` reports 22 text rows, source already 22, INHERITED |
+
+So D1408 is the **third** line of this shape and the **second to ship**. ⚠️ The reviewer's own first census
+used ≥12 breaks and found only three; the translator's ≥10 found five. **Segment counts differ by one
+throughout between the two agents (61/62, 12/13, 22/23) because one counted `{FFFE}` and the other counted
+segments — two conventions over identical data, not a discrepancy.**
+
+**D1408's own shape.** 23 segments, 22 non-empty, 0 `{FCC0}`, fragments from at least four scenes: a losing
+gambler, the Princess ordering the player about, Sykes handing something over, and the escort home. **The
+tell is that `えっ、王女様が` — a grammatically incomplete fragment — sits among complete sentences**; the pool
+itself *ends* on the complete `城へ帰りましょう。` (⚠️ the reviewer's round-1 note called `えっ、王女様が` "the
+19th of 22", which was its **0-based index** presented as an ordinal — as an ordinal it is non-empty **#20
+of 22**; see §AU8).
+
+**Translation consequence, recorded so it is not mistaken for carelessness:** every segment is rendered
+self-contained and no through-line is forced. `王女のところへ` / `持っていけ。` ships in the **source's own
+order** (`ｔｏ　ｔｈｅ　Ｐｒｉｎｃｅｓｓ` / `ｔａｋｅ　ｉｔ．`) rather than the more natural English, because if the
+engine selects single rows then `ｔｏ　ｔｈｅ　Ｐｒｉｎｃｅｓｓ` is a phrase and `ｔａｋｅ　ｉｔ　ｔｏ　ｔｈｅ` is a fragment.
+
+⚠️ **NEEDS THE DISC.** Stand on the casino floor in the chapter where the Princess appears and see which of
+these eleven turns fire, and whether they fire singly or in runs. **It is the same question `findings.md` §24
+has held open for the battle store, and D1408 is a cheaper test case than D517's 62 segments.**
+
+### AU4. ⛔ §AQ8's insert census is STALE — corrected here, with the new corpus maximum
+
+§AQ8 states "51 gate-blind rows, none over §V1's bound of 8". **Re-measured across all of `tl/script/*.tsv`
+at this review: that figure predates `batch_016` and `batch_017` and is no longer true even of the corpus
+before this unit.**
+
+| | rows | max English overhead |
+|---|---|---|
+| §AQ8 as written | 51 | +8 |
+| Corpus **before** `batch_018` | **58** | **+14** (`batch_016` D843, `{=00}{=02}` → `　Ｓｕｐｅｒ　Ｊｅｗｅｌｓ．`; and +11 on that line's `{=00}{=01}`) |
+| Corpus **after** `batch_018` | **68** | **+17** (D1420, `{=00}{=02}` → `　ｍｅｄａｌｓ，　ｃｏｒｒｅｃｔ？`) |
+
+Per insert kind after this merge: `{=00}{=01}` 30 rows (28 at +8, one +7, one +11) · `{=00}{=02}` 3 rows
+(+14, +15, +17) · `{=00}{=03}` 16 rows (8 at +1, **2 at +5 — both this unit's**, 6 at +8) · `{=00}{=04}`
+12 rows · `{=00}{=05}` 3 rows · `{=00}{=06}` 4 rows (+8, +9, +16, +16 — all this unit's).
+
+**D1420 at +17 is the tightest gate-blind row in the corpus**: it leaves room for a **7-digit** medal count.
+That is far beyond any plausible cap and is **not a defect**, but it is the number a future census should
+compare against, not §AQ8's 8. ⚠️ **§V1's ask is unchanged and now covers 68 rows: go to any shop, select the
+longest item name in the game, and read the price-confirm box.**
+
+### AU5. §32.5's `メダル` / `勲章` collision — LIVE, and its `勲章` side is dearer than the PR estimated
+
+Full state in `glossary.md` §59.9. In short: `勲章` is **8 script-unique lines + 4 battle-dump occurrences**;
+5 script lines shipped, **3 remain (D303, D1367, D1368)**; in banks 42–43 the whole `勲章` side is **D303
+alone, untranslated**; **0 messages hold both senses**. The PR recommended breaking the collision on D303's
+side as "one untranslated line against 26 shipped ones". ⛔ **That undercounts its own side**: `勲章` →
+`ｍｅｄａｌ` is already shipped **seven times** — `Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ` ×3 (`batch_012` bank 1,
+`batch_016` bank 23) **and 4 in the battle store** (`chunk_020.txt:48`, `:49`, `chunk_022.txt:6` ×2).
+D303 is bound by seven siblings, not free. Nothing is unreadable today. `ｔｏｋｅｎ` (5) stays unspent.
+
+⚠️ **Rider for the disc visit:** the prize insert `{FFEC}{=00}{=03}` renders an **item name**. If the Lion's
+Medal is ever a casino prize, D1404 reads `ｔｈｅ　Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ．` (22 columns — it fits) beside
+`ｍｅｄａｌｓ` in the same message, and "0 messages hold both" stops being true. **One look at the prize list
+settles it.**
+
+### AU6. A NAMED, COSTED RESERVE on §V1 — free to take, deliberately not taken in round 2
+
+D1404 and D1425 carry `ｔｈｅ　{FFEC}{=00}{=03}．` = **5** visible columns against the Japanese's `を` = **1**
+and `です。` = **3**. So those English rows overflow at an item name of **20** columns where the Japanese
+overflowed at **24** and **22**. **Deleting the two `ｔｈｅ　` restores parity — visible 1, threshold 24 — at
+zero byte cost and with no other row touched.**
+
+**Declined in round 2, on purpose, and the reasoning is recorded so it can be re-taken cheaply:** §V1 says in
+terms that measuring the overhead and declaring the bound is the correct response to an unmeasurable gate and
+is **"not grounds for a finding against any unit"**; these rows are already the corpus's second-safest tier
+(threshold 19 against six shipped `{=00}{=03}` rows at +8, whose threshold is 16); the longest English bare
+item name coined anywhere in `glossary.md` is `Ｍｅｄａｌ　ｏｆ　ｔｈｅ　Ｌｉｏｎ` = **17**, leaving two columns of
+margin; `ｙｏｕｒ　ｐｒｉｚｅ，　ｔｈｅ　{item}．` is the better English apposition; round 3 was the last round
+available; and **one disc visit settles all 68 rows at once**. ⭐ **A post-disc pass can take this in one
+edit if the item table turns out to reach 20 columns.**
+
+### AU7. `tag_parity` is NOT applied to the script store — the script tag stream is ungated
+
+`assemble.py:191` runs `tag_parity` on every **battle** chunk; `merge_script` at `:280` runs only
+`validate_body`. **So a changed script tag stream passes `check` silently** — nothing in the toolchain
+compares a script line's tags against the dump. This matters here because `batch_018` deliberately adds a
+`{FCC0}` at D1393 (a fourth page: three shape-named buttons plus `ｂｕｔｔｏｎ` will not hold in four rows) and
+two `{FFFE}`, and repositions two `{FFEC}` inserts across a `{FFFE}` (allowed by §1 — same sentence, order
+and count unchanged).
+
+**Verified by hand at review instead: the non-break tag stream is byte-identical on all 42 lines**, and the
+round-1 → round-2 rework changed **two rows with the tag streams identical on both**. ⚠️ **Not a tool bug to
+patch** (§Q2 — do not patch `rowcheck.py` for this either), but every reviewer of a script unit should know
+that gate 8's tag clause is **theirs to run**, not `check`'s.
+
+### AU8. Two reviewer errors in this review, recorded
+
+Round 1 and round 2 each cost one, and in both cases **the translator was right**:
+
+1. **The reviewer's own §AT8 trap, sprung in the review that cited §AT8.** Round 1 called `えっ、王女様が`
+   "the 19th of 22". **19 is its 0-based index; as an ordinal it is non-empty #20 of 22.** The translator
+   recorded it as two conventions rather than filing it; it was the reviewer's error.
+2. **Two `len()` figures wrong, in opposite directions.** Round 1's proposed fix gave
+   `Ｃｏｍｅ，　ｗｈｅｒｅ　ｓｈａｌｌ` as 16 (**17**) and `ｗｅ　ｇｏ？` as 7 (**6**). The total was right by
+   coincidence, so the fix would have worked, but neither figure was.
+3. **The reviewer's proposed string for D1409 was worse than what shipped** — it would have put `ｓｈａｌｌ`
+   (volitional) on a plain non-past source and collapsed the §5 split the same review had endorsed one
+   paragraph earlier. See `glossary.md` §59.1. **A reviewer's finding is not privileged over a translator's
+   evidence, and this round is the third consecutive wave to prove it.**
+
+### AU9. ⚠️ Branch deletion still returns HTTP 403 — `tl/script-018` survives, and that means nothing
+
+```
+$ git push origin --delete tl/script-018
+error: RPC failed; HTTP 403 curl 22 The requested URL returned error: 403
+send-pack: unexpected disconnect while reading sideband packet
+```
+
+§AQ9 unchanged, attempted and failed again. **PR #41 is merged (squash `426f8c1`); the branch surviving on
+origin is not evidence to the contrary**, and §AS8's rule holds in both directions: **"branch gone = merged"
+is invalid, and so is "branch present = unmerged".**
+
+### AU10. Carried forward, not new
+
+- **`荷物` → `ｐａｃｋ` stays LIVE** — 5 script-unique, 4 shipped, **D589 remains** (batch 019's range).
+- **`　店を出る` stays LIVE and its §7 reach cell was one line short** — 10 script-unique, 7 shipped,
+  **3 remain: D339, D584, D598.** The cell named only D584/D598; **D339 was never listed.** Corrected.
+- **`いらっしゃいませ` (D597) and `また　どうぞ` (D596) stay live**, both in batch 019's range.
+- **`ほこら`, `魔道書` (D293), `生き返りの秘法` (D324) stay live** — §AT9, unchanged by this unit.
+- **`景品` → `ｐｒｉｚｅ` is DISCHARGED** — 10 script-unique, D748 in `batch_014` and 9 here, 0 remaining.
+- **`ｃｏｉｎ` is discharged and spent only on `コイン`** — 2 script-unique, D1398 and D1419, both here.

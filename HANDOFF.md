@@ -17,7 +17,11 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > (DATA 465–469, 521–533, 584–598, 870–879).** Glossary seeds committed at `80fe2d1` (§9, wave-11
 > block: Table A 7 incumbents + Table B 24 new rows). `check` green.
 >
-> **NOW: hold the WAVE BARRIER.** Nothing is reviewed until **all three** units have an open PR.
+> **NOW: `batch_019` (PR #40) is the LAST unit of wave 11.** Barrier was met at all three PRs.
+> **`batch_017` MERGED** (squash `6e30b45`) and **`batch_018` MERGED** (squash `426f8c1`), both
+> round 2, both with an independent reviewer. **Dispatch ONE `reviewer` subagent for PR #40,
+> foreground, then close the wave and open wave 12's session.**
+> ⚠️ `git pull --ff-only` first: the 018 integration commit is on this branch.
 > Then one `reviewer` subagent at a time, in unit order 017 → 018 → 019, foreground.
 > A translator that is still working is **not** a failure — wait. One that is **gone from
 > `ListAgents` with no PR is LOST** — prune its worktree and re-dispatch (2 max, then park).
@@ -32,20 +36,21 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ⚠️ **WAVE 11 IS SCRIPT-ONLY.** Battle stays blocked on Blocked 0 / 0a. The run is **not** complete.
 
 ## Last updated
-2026-09-11 · by: **the `batch_017` REVIEWER** (integration commit) · wave: **11 — 1 of 3 merged
-(`batch_017`, PR #42, round 2), 2 awaiting review, 0 parked** · glossary now ends **§58**, FLAGS ends
-**§AT** — both numbers taken by READING the files at commit time, not reserved
+2026-09-11 · by: **the `batch_018` REVIEWER** (integration commit) · wave: **11 — 2 of 3 merged
+(`batch_017` PR #42 and `batch_018` PR #41, both round 2), 1 awaiting review (`batch_019`, PR #40),
+0 parked** · glossary now ends **§59**, FLAGS ends **§AU** — both numbers taken by READING the files
+at commit time, not reserved
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **863** | 1,430 | `tl/script/batch_001–017.tsv` (was 803) |
-| Script message instances | **4,956** | 7,931 | **62.5%** (was 61.7%) |
+| Script unique lines | **905** | 1,430 | `tl/script/batch_001–018.tsv` (was 863) |
+| Script message instances | **4,998** | 7,931 | **63.0%** (was 62.5%) |
 
-`check`: **All checks passed** after the `batch_017` integration commit. glossary ends **§58**,
-FLAGS ends **§AT** — both re-read at commit time.
+`check`: **All checks passed** after the `batch_018` integration commit. glossary ends **§59**,
+FLAGS ends **§AU** — both re-read at commit time.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 2 → 1,607 · 5 → 1,635.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, so bank 5 is invisible to anyone quoting it.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
@@ -56,18 +61,23 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
 | `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | ✅ **MERGED 2026-09-11, round 2** — squash **`6e30b45`**, integration commit **`integrate: script batch 017 — glossary, flags, handoff`** (the commit directly after `6e30b45` on this branch). Bank 33 8,919 → **5,627** free (3,292 B); 6,152 B over banks 31–39; no bank negative. All 9 gates ✓ re-run from scratch on merged tree **`fa2d957`**. ⚠️ **Branch `tl/script-017` still on origin — deletion returns HTTP 403 (FLAGS §AQ9); NOT deleted** |
-| `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **PR OPEN** — awaiting the barrier. −2,706 B (42: 9,647 free · 43: 8,943), `check` green |
+| `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **MERGED 2026-09-11, round 2** — squash **`426f8c1`**, integration commit `integrate: script batch 018 — glossary, flags, handoff` (the commit directly after `426f8c1` on this branch). Bank 42 11,301 → **9,645** free (−1,656), bank 43 9,995 → **8,947** (−1,048), **total −2,704**; no bank negative, **exactly two banks moved** (proved by a `bankmeasure` diff with the file removed and restored). 1,299 JP → 2,647 EN = **2.038×**. All 8 gates ✓ re-run from scratch on merge tree **`7dbe045`** (base pinned `44d7cd7`, head `87c4420`, `git merge-tree` + `git archive`, **no working tree**). ⚠️ **Branch `tl/script-018` still on origin — deletion returns HTTP 403 (FLAGS §AQ9/§AU9); NOT deleted** |
 | `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: the WAVE-11 COORDINATOR — dispatch the reviewer for `batch_018` (PR #41), then
-`batch_019` (PR #40).** ✅ Barrier was met at all three PRs; `batch_017` is merged and integrated.
-One reviewer at a time, foreground. ⚠️ **`git pull --ff-only` first — the 017 integration commit is
-on `claude/workflow-translation-iterate-uzlkns`.**
+**Who acts next: the WAVE-11 COORDINATOR — dispatch the reviewer for `batch_019` (PR #40), the LAST
+unit of wave 11.** ✅ Barrier was met at all three PRs; `batch_017` and `batch_018` are merged and
+integrated. One reviewer at a time, foreground. ⚠️ **`git pull --ff-only` first — the 018 integration
+commit is on `claude/workflow-translation-iterate-uzlkns`.**
+⚠️ **THREE GLOSSARY ROWS BATCH 019 OWES, all verified LIVE at the 018 integration by grepping `tl/`,
+not by re-reading a reach:** `　店を出る` → **D584, D598** (and **D339**, which §7's cell never named
+— corrected), `また　どうぞ` → **D596** (takes `Ｄｏ　ｃｏｍｅ　ａｇａｉｎ！`; `batch_018` D1426 already ships
+`ｄｏ　ｃｏｍｅ　ａｇａｉｎ．` for `また　どうぞ。`, so the words are fixed and only case and final punctuation
+follow each source), `いらっしゃいませ` → **D597**, and `荷物` → **D589**.
 
 ### Review log
 | Unit | PR | Round | Decision | Note |
 |---|---|---|---|---|
-| 018 | #41 | 2 | ⏳ **re-review running** | Head `87c4420`. Translator **verified finding 1 positionally against the battle dump before applying it** — both reviewer FILE-line citations hold, census reproduced exactly (5 true hits after removing 2 false positives). Accepted 2(a)–(e) and 3; **disclosed one deviation** (D1409 shipped as ONE row, `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` 21, on a §5 volitional split) and **corrected two reviewer figures** (17 not 16, 6 not 7) |
+| 018 | #41 | 2 | ✅ **MERGE** | Head `87c4420`. Translator **verified finding 1 positionally against the battle dump before applying it** — both reviewer FILE-line citations hold, census reproduced exactly (5 true hits after removing 2 false positives). Accepted 2(a)–(e) and 3; **disclosed one deviation** (D1409 shipped as ONE row, `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` 21, on a §5 volitional split) and **corrected two reviewer figures** (17 not 16, 6 not 7). **REVIEWER RULING: all 8 gates ✓ on tree `7dbe045`; the rework is exactly 2 rows with the tag stream identical on both; every reported figure re-derived and confirmed (−1,656 / −1,048 / −2,704 / 2.038×).** ⭐ **The translator's D1409 form was ACCEPTED and the reviewer's proposal was the worse one** — `ｓｈａｌｌ` would have put a volitional marker on a plain non-past source and collapsed the §5 split the same review endorsed in round 1. **The reviewer was wrong on three counts and says so in FLAGS §AU8**: two `len()` figures (17 not 16, 6 not 7), its own §AT8 0-based-index slip (`えっ、王女様が` is non-empty #20, index 19), and that proposal. Items 4 (gate-7 note-cell hole) and 5 (`さあ、` → `Ｃｏｍｅ，` at `chunk_030.txt:27`) **verified and integrated**; item 6 (the `ｔｈｅ　` deletion) **declined with reasons, recorded as a costed reserve in FLAGS §AU6** |
 | 018 | #41 | 1 | **CHANGES** | **All 8 gates PASSED** (base pinned `f64ca52`, tree `9b68866`, `git archive`, no working tree). Gate 7 **1,540 raw / 1,300 distinct keys, 31 occur**. Reviewer re-derived **all ten `{FFEC}` insert rows** — every figure matched the PR, incl. the 21-column worst case at D1420. **1 finding on the file** ⤵ · Rework relayed to `a128d73965f6152f7`, round 1 of 3 |
 | 017 | #42 | 2 | ✅ **MERGE** | Head `eb2c5c1`. Translator accepted all 3 findings, pushed back on nothing substantive. D1112 → `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19), D1138 → `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19); +8 B, bank 33 5,635→5,627. It **added a gate of its own** — a full-file gendered-pronoun sweep — confirming the finding's scope both ways. **Reviewer re-derived everything rather than accepting it**: both `len()`s (18→19, 16→19), both page shapes (D1112 p3 = 14/11/19, D1138 p1 = 13/19/13, both 3 rows, no re-flow), the bank table (bank 33 **5,627**, total 6,152), and a **wider** pronoun sweep (adding `ｍａｎ/ｍｅｎ/ｗｏｍａｎ/ｈｉｍｓｅｌｆ/Ｌａｄｙ/Ｌｏｒｄ/…`) — after the fix **none of D1120, D1122, D1138 carries any gendered reference**. Base **pinned to a SHA** (`c017144`) because the integration branch moved twice mid-review and `merge-tree` silently returned a different tree each time |
 | 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
@@ -93,19 +103,27 @@ one censused the right corpus for the wrong question. `HANDOFF.md`'s wave-10 tab
 *"where is it translated?"* and *"where does it occur?"* differ; this is the third question,
 *"has this specific instance shipped?"*, and it needs its own grep.
 
-⭐ **THE 018 FINDING — A TERMINOLOGY COLLAPSE GATE 6 CANNOT SEE.** `batch_018` renders **`さ、`** as
+⭐ **THE 018 FINDING — A TERMINOLOGY COLLAPSE GATE 6 CANNOT SEE. ✅ FIXED IN ROUND 2 AND MERGED; the
+ruling is now `glossary.md` §59.1, a FIRST-COLUMN row.** Round 1 rendered **`さ、`** as
 `Ｎｏｗ，` at D1408/D1409 — but `Ｎｏｗ，` is **`さあ、`'s** settled English, and the same file ships
 `さあ、` → `Ｎｏｗ，` at D1388/D1415, so **two source strings land on one English inside one file**.
 `glossary.md:2261` and `:1788` hold them apart. The proof is a shipped battle line: **`chunk_006.txt:13`
 carries BOTH in one Fernando speech** — `さ、お城へ戻りましょう。` → `Ｃｏｍｅ，　ｌｅｔ　ｕｓ　ｒｅｔｕｒｎ`
 beside `さあ、` → `Ｎｏｗ，`; `chunk_007.txt:20` gives a second, a **different speaker** (Nacol), also
 `Ｃｏｍｅ，`. `さ、` is **5 occurrences in the whole game**; this unit renders 2 of the 3 script ones and
-was the only work anywhere rendering it as anything but `Ｃｏｍｅ，`.
+was the only work anywhere rendering it as anything but `Ｃｏｍｅ，`. **Shipped in round 2 as
+`Ｃｏｍｅ，　Ｐｒｉｎｃｅｓｓ，　ｌｅｔ　ｕｓ` (22) at D1408 and `Ｃｏｍｅ，　ｗｈｅｒｅ　ｄｏ　ｗｅ　ｇｏ？` (21) at D1409** —
+the latter the translator's own one-row form, not the reviewer's two-row proposal, which would have put
+`ｓｈａｌｌ` (volitional) on a plain non-past source. **D1368 (bank 41) is the one instance left.**
 
 ⚠️ **THE 018 REVIEWER CORRECTED THE PR'S "FIRST IN THE SCRIPT STORE" CLAIM.** D1408 is the **third**
-§L2-shape pool, not the first: **D517 (62 segments) is already shipped in `batch_002.tsv`** and D1387
-(13 segments) is untranslated. It also relocated the PR's own strongest evidence — the pool ends on a
-*complete* sentence, and the incomplete fragment `えっ、王女様が` sits **19th of 22, inside** it.
+§L2-shape pool, not the first: **D517 (61 breaks / 62 segments) is already shipped in `batch_002.tsv`**
+and D1387 (12 / 13) is untranslated. ⚠️ **CORRECTED AT THE 018 INTEGRATION — there are FIVE, not three.**
+The reviewer censused at ≥12 breaks; the translator's ≥10 also finds **D1361 (11 / 12)** and **D1379
+(10 / 11)**, both untranslated. Full table in FLAGS §AU3. It also relocated the PR's own strongest
+evidence — the pool ends on a *complete* sentence (`城へ帰りましょう。`), and the incomplete fragment
+`えっ、王女様が` sits **inside** it. ⚠️ **The reviewer wrote "19th of 22"; 19 is its 0-BASED INDEX, and as
+an ordinal it is non-empty #20 of 22 — the §AT8 trap, sprung in the review that cited §AT8. FLAGS §AU8.**
 
 ⭐⭐ **A NEW STRUCTURAL HOLE IN GATE 7, FOUND BY `batch_018`'s TRANSLATOR AND VERIFIED BY ME —
 PUT IT IN EVERY FUTURE DISPATCH.** **`さ、` has ZERO first-column keys in `glossary.md`; its ruling
