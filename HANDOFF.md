@@ -96,11 +96,61 @@ That is the figure a human would read when costing the bank-40/41 repoint, which
 PR #39's reviewer correctly filed the `親衛隊`/D1330 blocker as **§F2a** rather than §B — **my dispatch
 sent it to §B, which is tier-A battle ratios, and that was wrong too.**
 
+---
+
+### Review round 1 — PR #38 `batch_016`: **DECISION: CHANGES** (2026-09-11)
+Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✗ · structure ✓`.
+Tree gated: merge of `fad228e` + `ef1a5c9` → **`58a2337`** (`merge-tree --write-tree` + `git archive`), so
+**#37 and #39 were in scope**. `check` = All checks passed, **803 unique forms = 748 + 55 exactly**. Banks
+21/22/23/24 free **34,269 / 38,033 / 28,269 / 39,509**; **four banks under 2,000 free — 40 (75), 41 (353),
+2 (1,607), 5 (1,635)**. Not merged; **no integration commit**.
+
+⭐ **The unit's hardest work verified clean:** D863's lift from `batch_012` D390 is **byte-exact across 37
+recurring pages, zero divergent**, and D865's lift from `chunk_037` is byte-exact across every twin found
+by **positionally pairing the battle dump's Japanese against `tl/battle/` English** — the same census
+technique `batch_015`'s translator invented earlier this wave, now used by a reviewer. The **Rimul
+pronoun fix (Flag 12) is real and correctly shipped.**
+
+**Three findings, all one-row or PR-body. Sent verbatim to the same translator (round 1 of 3).**
+1. **D852** — `２００ジュエルで` ships as `Ｔｗｏ　ｈｕｎｄｒｅｄ　Ｊｅｗｅｌｓ？`, **the project's only
+   spelled-out price**, against four shipped precedents keeping full-width digits — including
+   **`batch_015:61`'s `２０ジュエルで` → `２０　Ｊｅｗｅｌｓ．　Ｗｉｌｌ　ｔｈａｔ　ｄｏ？`, the identical
+   construction, merged THIS WAVE.** Fix also restores the dropped `でどうだ`.
+2. **D868** — `じゃあ、` → `Ｒｉｇｈｔ　ｔｈｅｎ，` is a **third** form for a particle already shipped as
+   `Ｗｅｌｌ　ｔｈｅｎ，` (`batch_010`) and `Ｗｅｌｌ，` (`batch_014`). The PR's reason — distinguishing D868
+   from D860's `Ｒｉｇｈｔ，` — does not hold, since `Ｗｅｌｌ　ｔｈｅｎ，` distinguishes them equally.
+3. **PR body only** — §6 wants per-line `{FFFE}` before→after; **seven messages changed and one is
+   reported** (D816 7→6, D835 4→5, D839 2→3, D843 6→5, D844 2→1, D863 118→113, D865 59→62). All seven
+   re-flows are sound.
+
+⚠️ **IT CORRECTED MY DISPATCH THREE TIMES. Verified here; two are mine, and one is not a correction:**
+1. ✅ **D849 is NOT a bounded row — I relayed a misclassification without checking it.** Its source writes
+   **`＜個数＞` as LITERAL TEXT** and the unit renders literal `（ｎｕｍｂｅｒ）`; **the line contains no
+   `{FFEC}` at all**, so it is fully measured at 19 columns. The unit's bounded rows are **D843 ×2 and
+   D844 ×1**. The translator's own Flag 10 listed D849 and **I passed it into the review dispatch
+   unverified — the same relay failure as the `素材` "21 banks" figure earlier this wave.** (Its
+   ≥10-columns-headroom claim does hold: 13 / 10 / 16, independently measured.)
+2. ✅ **The §F2 bank-40 staleness is WIDER than I found, and partly already fixed.** PR #39's reviewer had
+   already written **§F2a at `FLAGS.md:386`**, which states outright that 1,771 "was true in August and is
+   now stale". What is still owed is an **in-place marker**, and the stale figure appears **six times —
+   lines 321, 330, 339, 360, 396, 754 — not the two I named.**
+3. ⚖️ **`ピクシー` — NOT an error on either side, a scope difference; recording it so it is not "fixed"
+   again.** The row covers **two** instances: **D909** (bank 28, shipped in `batch_010` before this wave)
+   and **D817** (bank 21, rendered here). So D817 was the **sole OUTSTANDING** instance — my wording — and
+   the row's **total census is two** — the reviewer's. **Both are true and the strike verdict is identical.**
+   This is the sixth convention/scope mismatch this wave; **state the scope, do not report it as a mistake.**
+
+**Ratified, do not reopen:** `バトウ` at D864 stays **`Ｂａｔｏｕ`** (§26.1) — the translator declined my
+dispatch and the reviewer upheld it. `マーシュ`, `クーデター`, `親衛隊` **stay live**; `『獅子の勲章』` is
+**exhausted** (D386/390/863 all rendered). Two figure differences are **method** differences, not errors:
+gate-7 keys **1,317** (reviewer, `/`-split + struck rows) vs **1,138** (PR); insert rows **54** (post-merge)
+vs **51** (pre-#38).
+
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #39, squash `8f66547`**, integration below. Read the row as **"great port town NPCs"** — the unit never names its own town |
-| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ⏳ **PR #38 open — NO REVIEW YET**, next after #39 |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ⛔ **CHANGES (PR #38)** — rework r1 sent |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
