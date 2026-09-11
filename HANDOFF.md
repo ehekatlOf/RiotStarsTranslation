@@ -258,6 +258,49 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
 
 ## Decisions this run
 
+### ⭐⭐ WAVE 12 — PR #45 MERGED ROUND 1, AND GATE 7's THIRD FACE EARNED ITS KEEP IMMEDIATELY
+**`DECISION: MERGE`, round 1, no must-change finding.** Squash `5b6c212`, integration `463b01b`,
+glossary **§61**, FLAGS **§AW**. Base pinned `065e67b`, re-fetched at both ends and unchanged.
+Script **948 → 969 unique lines · 5,041 → 5,085 instances · 63.6% → 64.1%.** All 21 bank deltas
+**re-derived twice by independent routes** and agreeing bank for bank at **+2,256 B**.
+
+1. ⭐⭐ **THE `tl/` COLUMN-2 PASS (gate 7 face (c)) FOUND THREE FINDINGS NOTHING ELSE COULD HAVE —
+   ON ITS FIRST USE.** 2,893 aligned JP→EN segment pairs, 28 of 28 counterparts byte-identical.
+   ⚠️ **Its finding 1 is the kind that invalidates shipped work: the proposed `立ち寄る`/`寄る` →
+   `ｃａｌｌ　ｉｎ` key OVER-REACHED.** `tl/script/batch_014.tsv:36` (D734, bank 19) already ships the
+   bare verb as **`ｄｒｏｐ　ｉｎ`**. Census over every inflection: **13 instances / 9 unique lines,
+   banks [3,4,19,20,21,40,41]**. §25.3 **MET** (`ｃａｌｌ　ｉｎ` [3,4,20,21] vs `ｄｒｏｐ　ｉｎ` [19],
+   disjoint) → **both stand, the key was narrowed at integration, nothing re-cut.**
+   **Face (c) is now mandatory in every reviewer brief and it has paid for itself once already.**
+2. ⚠️ **MY CITATION-CONVENTION ERROR PROPAGATED FROM MY SEED INTO THE TRANSLATOR'S FLAG.** I wrote
+   "chunk 8 L14"; that is a **0-based body index**, not the 1-based FILE line the convention promises
+   — it is `battle_dump.txt` line **234** (1-based, exact) and `chunk_008.txt` **file line 16**.
+   **A malformed citation does not stay in the document you wrote it in.**
+3. ⚠️ **`占領` ALREADY HAD TWO SHIPPED ENGLISHES** — `ｓｅｉｚｅｄ` (`batch_010:42`, bank 28) and
+   **`ｔｏｏｋ`** (`batch_012:67`, bank 1) **for the same event.** Found by reading **all 141 segments**
+   of that pooled row. D320 is on the right side; recorded as live §4.3 debt.
+4. ✅ **TRAP 4's ABSENT CLOSING STOP IS CORRECT, AND THE TRANSLATOR WAS RIGHT AGAINST ITS OWN DONOR**
+   — settled by a **controlled positive case**: `batch_011:8` (D647) *does* carry `。` and *does* ship
+   `．`, while D333/D338 carry neither. **All four traps ship byte-identically**; D339 keeps its own
+   `{FFF6}` args; indents preserved per source (4 / 2 / 4+7 / 3).
+5. **Three more figure corrections, none affecting a rendering:** only **1** `立ち寄` instance remains,
+   not 2 (D838 is already shipped at `batch_016:66` as `ｗｈｙ　ｎｏｔ　ｃａｌｌ　ｉｎ？`, a second
+   incumbent that *strengthens* the row) — and ⚠️ **`立寄って` (D1377) is a kanji-elision variant a
+   `立ち寄` grep cannot see.** D328 is the **tenth** `ご用`/`用` opener, not the sixth. §34.1's
+   `貼り紙` binds cell named 2 of 5 siblings. Flag 6's alternative is **24** columns, not 25 — verdict
+   firmer, since the shipped English is 75 columns against a 3×24 = 72 ceiling, so **no three-row
+   packing exists at any wording**.
+6. ⚠️ **§34.1's `品` FIGURE REPRODUCED EXACTLY** — bare `品` = **8 instances / 5 banks [0,12,13,19,40]**
+   — and **no collision with PR #43 either way it lands** (#43's target is a bare `品` in bank 0;
+   `batch_020`'s new `商品` → `ｗａｒｅｓ` is a different noun in bank 20). Corrected census at §61.5.1.
+7. ⚠️ **NOTE FOR THE #43 REVIEWER: `git pull --ff-only` FIRST, and its base has moved well past the
+   `45bab1c` it was opened on** — re-verify the merge against the current tip, do not reuse the
+   author's `merge-tree` result.
+8. ⚠️ **A LIVE DEMONSTRATION OF THE BATTLE NULL-CHECK, BY ME, JUST NOW:** I grepped
+   `tl/battle/chunk_008.txt` for `てーこく` to verify finding 5 and got **zero hits** — because
+   **battle `tl/` holds NO Japanese.** The rule I have been handing to every agent this wave caught me
+   the moment I stopped applying it. **Pair the battle dump positionally; never grep battle `tl/`.**
+
 ### ⚠️ WAVE 12 — `batch_022` (PR #46): I RELAYED A TABLE WITHOUT MEASURING IT, AND REPEATED AN ERROR I HAD ALREADY DIAGNOSED
 1. ⭐⭐ **I RELAYED `batch_021`'s WIDTH TABLE TO `batch_022` VERBATIM AND IT WAS WRONG ON 18 OF 22
    ROWS.** `batch_022` distrusted the relay, **read `batch_021`'s actual branch**, and was right.
