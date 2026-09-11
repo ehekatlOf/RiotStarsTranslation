@@ -12,32 +12,29 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ### ✅ WAVE 10 IS CLOSED — 3 of 3 MERGED, 0 PARKED, 0 LOST, 0 RE-DISPATCHES. Script **59.7% → 61.7%**.
-> **▶ WAVE 11 IS OPEN: `session_012m7kST3Y5f2ag1jqg6pX8y`** ("Riot Stars — wave 11"), opened
-> 2026-09-11 08:02Z by wave 10's coordinator (`riotstarstranslation-31`,
-> `session_01QqghnLjqDZ5w9bDuM1WArC`) in the same turn as the wave-10 close — CLAUDE.md §4 step 7.
-> It is a **child of wave 10, so depth 2**, with a full tool surface: its own translators, its own
-> independent reviewer, its own watchdog, and it can open wave 12. **The chain is intact and no human
-> action is required.**
+> ### ▶ WAVE 11 IS RUNNING — 3 UNITS DISPATCHED 2026-09-11. Coordinator: `session_012m7kST3Y5f2ag1jqg6pX8y`.
+> **Units: `batch_017` (DATA 1100–1159), `batch_018` (DATA 1388–1413 / 1415–1430), `batch_019`
+> (DATA 465–469, 521–533, 584–598, 870–879).** Glossary seeds committed at `80fe2d1` (§9, wave-11
+> block: Table A 7 incumbents + Table B 24 new rows). `check` green.
 >
-> ⚠️ **If that session is gone or never started, the chain broke — open a replacement yourself.**
-> `create_session`, `source_url` https://github.com/ehekatlOf/RiotStarsTranslation, `source_revision`
-> `claude/workflow-translation-iterate-uzlkns`, prompt = the wave number, "read `HANDOFF.md` first",
-> and the Next up list below. Nothing else is outstanding: **no open PR, no unmerged branch, no
-> in-flight agent, `check` green at `1be8c31`.**
-> ⚠️ **`create_session` requires `source_url` alongside `source_revision`** — it errors without it.
+> **NOW: hold the WAVE BARRIER.** Nothing is reviewed until **all three** units have an open PR.
+> Then one `reviewer` subagent at a time, in unit order 017 → 018 → 019, foreground.
+> A translator that is still working is **not** a failure — wait. One that is **gone from
+> `ListAgents` with no PR is LOST** — prune its worktree and re-dispatch (2 max, then park).
 >
-> ✅ **NO UNIT IS SELF-REVIEWED AND THERE IS NO AUDIT DEBT.** All three units were reviewed by agents
-> that did not translate them, and **each went to a FRESH reviewer at round 2** — five separate
-> reviewers across the wave. The three-role split held throughout.
+> ⚠️ **If this session is gone, take over:** `git fetch && git reset --hard
+> origin/claude/workflow-translation-iterate-uzlkns`, `ListAgents`, list open PRs, reconcile against
+> **In flight** below, restart what is lost, re-arm a `send_later` watchdog, finish the wave, then
+> open wave 12 with `create_session` (⚠️ **`source_url` is REQUIRED alongside `source_revision`**).
 >
-> ⚠️ **WAVE 11 IS SCRIPT-ONLY.** Both battle blockers are unchanged; all 8 remaining battle chunks stay
-> blocked on Blocked 0 / 0a. ⚠️ **The run is NOT complete** — see Next up.
+> ✅ **NO AUDIT DEBT CARRIED IN.** Wave 10's three units each had an independent reviewer.
+>
+> ⚠️ **WAVE 11 IS SCRIPT-ONLY.** Battle stays blocked on Blocked 0 / 0a. The run is **not** complete.
 
 ## Last updated
-2026-09-11 · by: **wave-10 coordinator** (`riotstarstranslation-31`, top-level session, depth 1) ·
-wave: **10 CLOSED — 3 of 3 merged (PRs #37, #39, #38), 0 parked, 0 lost, 0 re-dispatches** ·
-**wave 11 opened in the same turn** · queue below **re-derived after the merges, not inherited**
+2026-09-11 · by: **wave-11 coordinator** (`session_012m7kST3Y5f2ag1jqg6pX8y`, depth 2, full tool
+surface) · wave: **11 DISPATCHED — 3 units in flight, 0 merged, 0 parked** · queue below
+**re-derived by me from `script_unique.txt` + `script_dump.txt` + `bankmeasure`, not inherited**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -53,41 +50,51 @@ wave: **10 CLOSED — 3 of 3 merged (PRs #37, #39, #38), 0 parked, 0 lost, 0 re-
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
-**Nothing. Wave 10 is closed.** No open PR, no unmerged unit branch, no live agent, worktrees pruned.
-⚠️ **`tl/script-014`, `-015` and `-016` are MERGED but still on origin** — branch deletion fails from the
-agent container (**FLAGS §AQ9**), as it has all run. **"Branch gone = merged" is an INVALID signal in this
-repo; use the `integrate:` commit and the PR's merged state.** Human fix: enable *Automatically delete
-head branches*.
+**WAVE 11 — three units, all script, all dispatched 2026-09-11. Wave barrier NOT yet met.**
 
-## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
-**COMPUTE YOUR OWN BATCHES. This is a starting point, not a queue** — every figure below was measured
-at wave 10's close and the bank figures move with every merge. **627 lines / 3,035 instances remain
-untranslated.** Feasibility re-derived against `bankmeasure` at 2.10× growth, 500-byte reserve:
+| Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
+|---|---|---|---|---|---|---|---|
+| `batch_017` | 1100–1159 | 60 / 60 | 2,834 | 31–39 | `tl/script-017` | — | translator dispatched |
+| `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,109 | 42, 43 | `tl/script-018` | — | translator dispatched |
+| `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | — | translator dispatched |
+
+**Who acts next: the coordinator** — wait for all three PRs, then reviewer 017 → 018 → 019.
+⚠️ **No unit touches banks 2, 5, 40 or 41** (verified: the three bank-sets are disjoint from the
+four tight banks). Tightest bank touched is **33** — 8,919 free, ~4,415 projected demand.
+
+⚠️ **Every merged `tl/script-*` branch is still on origin** — branch deletion fails from the agent
+container (**FLAGS §AQ9**). **"Branch gone = merged" is an INVALID signal in this repo**; use the
+`integrate:` commit and the PR's merged state. Human fix: enable *Automatically delete head branches*.
+
+## Next up — WAVE 12 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
+**COMPUTE YOUR OWN BATCHES.** Every figure here I re-derived at wave 11's dispatch; bank figures
+move with every merge. **627 lines / 3,035 instances were untranslated when wave 11 opened**
+(independently confirmed against `queue.py script`). Wave 11 takes 145 of them.
+
+⭐ **A CORRECTION TO THE INHERITED QUEUE, FOUND BY READING THE LINES RATHER THAN THE TABLE.**
+Wave 10's table called **1043–1105 a "DEVELOPER DEBUG MENU"**. It is not, at its top end: the debug
+flag menu ends at **D1099** (`他に用はありますか？`), and **D1100–D1105 are real dialogue** — Father
+Batou's church (D1100, bank 31), the Farina reconstruction scene with Bishop Cleus and Governor
+Felix (D1101–1103, bank 32, D1102 alone is 365 JP chars), the shrine interior (D1104) and **the
+hermit's quest-giver line (D1105)**, which is the direct set-up for D1106's *"did you bring the
+cake?"*. Wave 11's `batch_017` therefore runs **1100–1159, not 1106–1159** — it keeps one
+conversation in one file and exhausts the `『ようせいのケーキ』` row (D1105 + D1107 are its only two
+instances). **The debug range left for a future wave is 1043–1099 (57 lines), not 1043–1105.**
 
 | DATA | Lines | JP | Banks | Verdict |
 |---|---|---|---|---|
-| **1106–1159** | **54** | 2,451 | 33–39 | ✅ **the best unit left — real dialogue, one coherent block** |
-| **1388–1413** | 26 | 882 | 42, 43 | ✅ casino: slots, medal exchange |
-| **1415–1430** | 16 | 417 | 43 | ✅ casino prizes — pairs naturally with the row above |
-| **870–879** | 10 | 289 | 25 | ✅ ⭐ **the blacksmith — see the duplicate warning below** |
-| **584–598** | 15 | 282 | 12 | ✅ leftovers, good for topping a batch to 40–60 |
-| **465–469** | 5 | 204 | 3 | ✅ leftovers |
-| 1043–1105 | 63 | 1,818 | 31–33 | ⚠️ **DEVELOPER DEBUG MENU — feasible but near-zero player value. NEVER batch with real dialogue.** |
-| 997–1034 | 38 | 356 | 30 | ⚠️ debug flag/sound test — same caution |
-| **1160–1354** | **195** | 4,836 | **40 only** | ⛔ **BLOCKED — bank 40 has 75 free bytes.** No amount of re-translation helps. |
+| 1043–1099 | 57 | ~1,640 | 31–33 | ⚠️ **DEVELOPER DEBUG MENU — feasible, near-zero player value. NEVER batch with real dialogue.** |
+| 997–1034 | 38 | 356 | 30 | ⚠️ debug flag / sound test — same caution |
+| 326–345 | 19 | — | 18 banks | ⚠️ feasible but pays its growth in **every one of 18 banks** for 38 instances |
 | 518/519/520 | 3 | — | 5 | ⛔ **not shippable** — 6,389 B against bank 5's 1,135 spendable |
-| 326–345 | 19 | — | 18 banks | ⚠️ pays its growth in every one of 18 banks for 38 instances |
+| **1160–1354** | **195** | 4,836 | **40 only** | ⛔ **BLOCKED — bank 40 has 75 free bytes.** No re-translation helps |
+| 1355–1387 | 33 | — | **41 only** | ⛔ **BLOCKED — bank 41 has 353 free** |
 
-⚠️ **CROSS-WAVE DUPLICATE DEBT — wave 10 shipped the incumbents these inherit, and GATE 6 CANNOT SEE
-ANY OF THEM** (it pairs whole messages on exact Japanese). Measured by longest common substring:
-**D870 ↔ D724** share `貼り紙がしてある・・・` (11 chars) · **D874, D877 ↔ D711** share `か？　はい　いいえ` (9)
-· **D879 ↔ D744** share `の材料になりそうなもの` (11). **Whoever takes 870–879 must read `batch_014` first.**
-
-⚠️ **BINDING, carried out of wave 10:** **`ｃｏｉｎ` is RESERVED** for `コイン` at **D1398 and D1419** (the
-casino medal counter — both in the table above, so wave 11 probably discharges it). **Prices keep their
-full-width digits** (§57.3; corpus 5 of 5). **`Ｒｉｇｈｔ` belongs to `よし`, not `じゃあ`** (§57.2).
-**§9 rows that STAY LIVE:** `親衛隊` (D1330, **bank 40**, may never land), `マーシュ` (FILE 1330, 1379),
-`クーデター` (D1373), `腕力` (D1234), `体力` (D1126), `慰霊金` (D1351), `命中率` (D1237).
+⚠️ **AFTER WAVE 11 THE BANK-FEASIBLE PLAYER-FACING SCRIPT IS ESSENTIALLY DONE.** What remains is
+95 lines of developer debug menus, the 18-bank table rows, and ~400 lines behind the §F2 repoint.
+**Wave 12 should plan for that**: either the debug menus (low value, honest completion), the
+corrections unit below (real quality gain, byte-negative), or a final handoff. This is the first
+wave where "no dispatchable unit left" comes into view — but it does **not** hold yet.
 
 **A corrections unit is still worth a slot.** §4.3 debt in merged work, all byte-negative or free:
 **§AP5** `chunk_000`'s three hyphen stutters (census 19 : 3) · **§AP7** `品` → `ｇｏｏｄｓ` at DATA 376 ·
@@ -95,6 +102,12 @@ full-width digits** (§57.3; corpus 5 of 5). **`Ｒｉｇｈｔ` belongs to `よ
 §32.3's `Ｏｉ，` in `chunk_000` ×3 / `chunk_008` / `chunk_031` · **§AQ5** `batch_007` renders `編成` as
 BOTH `Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ` and `Ｆｏｒｍａｔｉｏｎ` · `batch_010` D897 ships `ｒｅｖｏｌｔ` for bare
 `反乱` against §38.3's `ｒｅｂｅｌｌｉｏｎ`.
+
+⚠️ **§9 ROWS THAT STAY LIVE AFTER WAVE 11** (a promotion is not a strike): `親衛隊` (D1330, **bank
+40**, may never land) · `マーシュ` (FILE 1330, 1379) · `クーデター` (D1373) · `腕力` (D1234) · `体力`
+(D1126 — ⚠️ **that is in `batch_017`, so wave 11 may discharge it**) · `慰霊金` (D1351) · `命中率`
+(D1237) · and, new this wave, `ほこら` (D324, bank 40) · `魔道書` (**D293 — 21 of its 23 instances,
+reaching 21 banks**) · `生き返りの秘法` (D324, bank 40).
 
 ## Remaining
 **Battle: 0 dispatchable.** 8 chunks remain, **all blocked** — 15, 23, 27, 28, 29, 39 by §D1's dump
