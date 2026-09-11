@@ -748,6 +748,116 @@ reading, not as a fixed distinction.
 helmet-cords after the victory*. The speaker trails off mid-idiom, so the English must trail off too;
 **no glossary row is proposed and none should be coined.**
 
+
+---
+
+**Wave 11 seeds (2026-09-11) — script batches 017 (the shrine hermit + magic tutor, DATA 1100–1159),
+018 (the casino and racetrack, DATA 1388–1413 / 1415–1430) and 019 (Noro village, the frog king,
+the item shop and the smithy — DATA 465–469, 521–533, 584–598, 870–879).**
+DATA = 1-based index among non-blank, non-comment lines of `script_unique.txt`; **FILE = DATA + 5**.
+
+⚠️ **EVERY width below was measured with `len()` on the exact string, both sides printed. Every
+"Where seen" figure is a census I ran myself over `dumps/script_unique.txt` + `dumps/script_dump.txt`
+(tags stripped, so it is break-insensitive) — none is carried from a draft, a report or `HANDOFF.md`.
+⚠️ I am still the coordinator wave 10 recorded thirteen figure errors against. Re-derive anything
+you rely on, and say so with evidence if I am wrong — in wave 10 every agent who corrected the
+coordinator was right.**
+
+⚠️ **ALREADY FIXED — do NOT re-decide and do NOT re-seed.** `ノロ` (sentence-final) → trailing
+**`，　ｎｙｏｒｏ．`** with the source's own stop (§5 / §18.1) · `ゲロゲロ` → **`Ｒｉｂｂｉｔ`** plus the
+frog's blunt article-dropping register (§5) · `景品` → **`ｐｒｉｚｅ`** (5) (§55.2 — that row is
+LIVE and names batch 018 by name) · `ブラックジャック` → **`Ｂｌａｃｋｊａｃｋ`** (10), one word (§54) ·
+`メダル` → **`ｍｅｄａｌ`** (5) (§3) · `ジュエル` → **`Ｊｅｗｅｌ`** (§3) · `材料` → **`ｍａｔｅｒｉａｌｓ`**
+in the weapon-crafting sense (§54) · `『闇の紋章』` → **`“Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ”`** (§45.1) ·
+`『知識の書』` → **`“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”`** (§12) · `妖精` → lowercase `ｆａｉｒｙ` (§1) ·
+`アンデッド` → lowercase `ｕｎｄｅａｄ` (§1) · `『妖精のケーキ』` → **`“Ｆａｉｒｙ　Ｃａｋｅ”`** (12) (§53) ·
+`『極上のワイン』` → **`“Ｆｉｎｅｓｔ　Ｗｉｎｅ”`** (13), bare → `Ｆｉｎｅｓｔ　Ｗｉｎｅ` unquoted (§56.5) ·
+`仙人` → **`ｈｅｒｍｉｔ`** (6) (§56.1) · the four pad buttons, §3 / §16: `○` → `Ｃｉｒｃｌｅ　ｂｕｔｔｏｎ`
+(13), `×` → **`Ｃｒｏｓｓ　ｂｕｔｔｏｎ`** (12), `△` → `Ｔｒｉａｎｇｌｅ　ｂｕｔｔｏｎ` (15), `□` →
+`Ｓｑｕａｒｅ　ｂｕｔｔｏｎ` (13) · all names met here — `バトウ`/`バトウ神父` (§26.1/§36.1), `クレウス`,
+`フェリクス様` → `Ｇｏｖｅｒｎｏｒ　Ｆｅｌｉｘ` (§25.1), `ノーマン`, `ワーウィック` → `Ｗａｒｗｉｃｋ` (§25.1),
+`アルフレッド` → `Ａｌｆｒｅｄ` (§1), `ヘルファー`, `ファリーナ`, `カーライン`, `サイクス`, `メルザリオ`.
+
+⚠️ **THE `○` GLYPH IS FORBIDDEN IN THE ENGLISH (gate 8) AND THE SOURCE USES IT THREE TIMES** —
+`（○ボタンで決定）` at D1398 and D1419, and `○・△・□の{FFFE}ボタン` at D1393. §3's shape names exist
+for exactly this. ⚠️ **D1393 writes the fourth button as full-width `Ｘボタン`, not `×ボタン`**, and
+§3's entry is keyed to `×`. **This is a real question, not a typo to normalise silently:** §16's
+stated reason for `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` — that a glyph-named button beside three shape-named ones
+would be the odd one out — applies to `Ｘボタン` with equal force, so `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` (12) is
+the proposal; the reviewer should confirm it rather than assume it.
+
+⚠️ **`ｃｏｉｎ` IS RESERVED for `コイン`, and wave 11 discharges it.** Censused here, not relayed:
+`コイン` is **2 script-unique lines, 0 battle — D1398 and D1419, both in batch 018**, both the
+medal-buying prompt (`購入するコインの{FFFE}枚数`). They sit in the same message as `メダル` → `ｍｅｄａｌ`,
+which is why the source's own two words must stay two words in English.
+⚠️ **Prices keep their FULL-WIDTH DIGITS (§57.3), and §10.8 is CLOSED and does not reach them.**
+
+⚠️ **BANKS 42 AND 43 ARE BATCH 018's, AND §32.5's `メダル` / `勲章` COLLISION LIVES IN EXACTLY THOSE
+TWO BANKS.** `勲章` → `ｍｅｄａｌ` (§32.1) and `メダル` → `ｍｅｄａｌ` (§3) are two source words with one
+English form. §32.5 left the collision LIVE and undischarged. Batch 018 renders the racetrack sense
+~11 times. **Read §32.5 before writing, and say in the PR body whether the collision is still live
+after your unit.** `ｔｏｋｅｎ` (5) is §32.5's named reserve on the racetrack side.
+
+**Table A — in the wave's source, already shipped elsewhere: MATCH THE SHIPPED FORM, do not re-coin.**
+Gate 6 pairs whole messages on exact Japanese, so **none of these is visible to it.**
+
+| Japanese | Shipped English — MATCH IT | Shipped where (verified) | Recurs in wave 11 at |
+|---|---|---|---|
+| `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | ⚠️ **THREE files, not one**: `batch_006.tsv:57`, `batch_011.tsv:8`, `batch_014.tsv:26` — I re-derived this; the wave-10 handoff named only `batch_014` | **D870** (batch 019) |
+| the closed-shop notice `「…ノロ」` | `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”` | `batch_006.tsv:57` (`「本日、棚卸しのため休業いたしますノロ」`) | **D870**'s `「今日は{FFFE}　　　　お休みノロ」` is a **different, shorter** notice. Not byte-identical, so gate 6 is blind. Keep the `“…”`, the leading pad and the `，　ｎｙｏｒｏ．`; do not copy the stocktaking wording |
+| `材料` / `武器や防具` | `ｍａｔｅｒｉａｌｓ` / `ｗｅａｐｏｎｓ　ａｎｄ　ａｒｍｏｕｒ` | `batch_010.tsv:31` — **the same smith, same scene, already half-shipped** | **D872, D878, D879** (batch 019). ⚠️ **Read `batch_010.tsv:31` in full before writing D879** — it is this NPC's own explanation speech and fixes his voice |
+| `　はい` / `　いいえ` | `　Ｙｅｓ` / `　Ｎｏ` | every batch since 006; the leading `　` gutter is part of the string | D1108, D1120, D1126, D1127, D1392, D1395, D1403, D1412, D1413, D1416, D1424, D524, D586, D591, D874, D877, D879 |
+| `　店を出る` | `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` (15) | `batch_006.tsv:21` | **D1390, D1411** (batch 018), **D584, D598** (batch 019) |
+| `　アイテムを買う` / `　アイテムを売る` | `　Ｂｕｙ　ａｎ　ｉｔｅｍ` (12) / `　Ｓｅｌｌ　ａｎ　ｉｔｅｍ` (13) | `batch_006.tsv:21` | **D584, D598** — ⚠️ D584 and D598 are **two unique rows with identical readable text**; they must take byte-identical English |
+| `『カルボナイト』` / `『ジェムストーン』` | `“Ｃａｒｂｏｎｉｔｅ”` / `“Ｇｅｍｓｔｏｎｅ”` | `batch_010.tsv:31` | possible in D873's `どの石` menu — check before coining a stone name |
+
+**Table B — genuinely new: absent from `glossary.md` (grepped, whole file). Proposed, not fixed.**
+
+| Japanese | Proposed English | Where seen — MY census | Alternatives / note |
+|---|---|---|---|
+| `ほこら` | `ｓｈｒｉｎｅ` (6) | **3 unique, 0 battle** — D1104, D1105 (batch 017) and **D324, which is in BANK 40 and may never ship**. Row STAYS LIVE | lowercase common noun per §17.1. `ｗａｙｓｉｄｅ　ｓｈｒｉｎｅ` (16) rejected: too wide for D1104's two-row page |
+| `『ようせいのケーキ』` | `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | **2 unique, 0 battle — D1105 and D1107, BOTH in batch 017, so this exhausts it** | ⚠️ **Kana spelling of §53's `『妖精のケーキ』`. Same item, same English** — the game writes the item-table form in kana. This is my reading, not a corpus fact: §53's four instances are all kanji. Verify by reading D1105→D1107 as one quest |
+| `『ごくじょうのワイン』` | `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (13) | **3 unique, 0 battle — D1107, D1110, D1111, all batch 017** | ⚠️ Same case: kana spelling of §56.5's `『極上のワイン』`. **D1108 carries the KANJI `『極上のワイン』` in the same scene**, so one unit ships both spellings — they must agree |
+| `魔道書` | `ｇｒｉｍｏｉｒｅ` (8) | **3 unique / 23 dump instances, 0 battle** — D1144, D1151 (batch 017) and **D293, untranslated and outside wave 11**. ⚠️ **ROW STAYS LIVE**, and D293 alone carries ~21 of the 23 | D293 is an item-description line (`古代魔術の知識が詰まった魔道書`) reaching 21 banks incl. 40 — it is **not bound by this row**; whoever renders it decides the description sense. Alt `ｍａｇｉｃ　ｔｏｍｅ` (11), `ｓｐｅｌｌｂｏｏｋ` (10) |
+| `『すごい魔術師に　　　　　　　なれる本』` | `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ{FFFE}　　　　Ｇｒｅａｔ　Ｍａｇｅ”` | **2 unique, 0 battle — D1146, D1147, both batch 017. Exhausted** | ⚠️ **The source pads the title across a break with 7 full-width spaces and the break is INSIDE the `『　』`.** Widths measured: `“Ｈｏｗ　ｔｏ　Ｂｅｃｏｍｅ　ａ` = 19, `　　　　Ｇｒｅａｔ　Ｍａｇｅ”` = 16. Keep it two rows; the indent is the source's. Alt `“Ｔｈｅ　Ｂｏｏｋ　ｏｆ　Ｇｒｅａｔ　Ｍａｇｅｒｙ”` if the two-row shape will not hold |
+| `『フォースシールド』` | `“Ｆｏｒｃｅ　Ｓｈｉｅｌｄ”` (14) | **1 unique, 0 battle — D1157. Exhausted** | Katakana loan straight back; §12 quotes for the source's `『』` |
+| `部隊章` | `ｕｎｉｔ　ｉｎｓｉｇｎｉａ` (13) | **1 unique, 0 battle — D1112. Exhausted** | D1112 is the hermit recognising the 9th Army by it. Alt bare `ｉｎｓｉｇｎｉａ` (8) if the row is tight, `ｕｎｉｔ　ｂａｄｇｅ` (10) |
+| `生き返りの秘法` | `　Ｔｈｅ　ｒｉｔｅ　ｏｆ　ｒｅｖｉｖａｌ` (20 **with** the menu gutter) | **2 unique / 4 dump, 0 battle** — D1115 (batch 017, a menu option) and **D324, bank 40**. ⚠️ **ROW STAYS LIVE** | ⚠️ D324 writes it in `「　」`, D1115 bare in a menu. §12 gives D324 quotes; **the menu option takes none**. `　ｔｈｅ　ｓｅｃｒｅｔ　ｏｆ　ｒｅｖｉｖａｌ` (22) also fits but crowds the box; `ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` at §56.1 already spends `ｒｅｖｉｖａｌ` on this same character, which is why the noun is kept |
+| `禁断のアンデッド` | `ｔｈｅ　ｆｏｒｂｉｄｄｅｎ　ｕｎｄｅａｄ` (20) | **1 unique, 0 battle — D1145. Exhausted** | `アンデッド` → lowercase `ｕｎｄｅａｄ` is §1's and unchanged; only `禁断` is new |
+| `ムーン` | `Ｍｏｏｎ` (4) | **1 unique, 0 battle — D1158, a bare one-word line. Exhausted** | ⚠️ **A name with no context whatever** — D1158 is the entire message. Could be a person, a beast or a place. If the unit cannot tell, say so in the PR body and flag it for the in-game list rather than inventing a gloss |
+| `エウロス` | `Ｅｕｒｏｓ` (5) | **1 unique, 0 battle — D1159. Exhausted** | Greek east-wind name; `Ｅｕｒｕｓ` (5) is the Latin. Kept Greek to match the katakana. A **found** thing (`エウロスを見つけた`), so probably an item or a creature |
+| `スロットマシーン` | `　Ｓｌｏｔ　Ｍａｃｈｉｎｅ` (13 with gutter) | **2 unique, 0 battle — D1390 (menu), D1392. Exhausted** | Capitalised as a game name beside `Ｂｌａｃｋｊａｃｋ` (§54) in the same menu |
+| `メダル交換所` | `　Ｍｅｄａｌ　Ｅｘｃｈａｎｇｅ` (15 with gutter) | **4 unique, 0 battle — D1390, D1391, D1411, D1430. Exhausted** | Capitalised: it is the named counter. Bare `交換所` in `　交換所を出る` (D1397, D1418) takes lowercase `ｅｘｃｈａｎｇｅ` (8) on the `　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ` pattern → `　Ｌｅａｖｅ　ｔｈｅ　ｅｘｃｈａｎｇｅ` (21) |
+| `レース場` | `　Ｒａｃｅｔｒａｃｋ` (10 with gutter) | **1 unique, 0 battle — D1411, a menu option. Exhausted** | Alt `　Ｒａｃｅ　Ｔｒａｃｋ` (12) |
+| `草競馬` | `ｈｏｒｓｅ　ｒａｃｉｎｇ` (12) | **1 unique, 0 battle — D1412. Exhausted** | 草競馬 is *country/amateur* racing; the diminutive is worth keeping if it fits — `ｔｈｅ　ｖｉｌｌａｇｅ　ｒａｃｅｓ` (17). ⚠️ **§3's `メダル (racetrack)` row already calls this venue the racetrack**, so the venue and the activity should not drift apart |
+| `方向キー` | `Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ` (19) | **3 unique, 0 battle — D1393, D1398, D1419. Exhausted** | The PS1 d-pad. Alt `ｄｉｒｅｃｔｉｏｎ　ｐａｄ` (13) if 19 will not fit — D1398/D1419 give it a whole row (`方向キーで`), so 19 is affordable there |
+| `Ｒ１ボタン` | `Ｒ１　ｂｕｔｔｏｎ` (9) | **1 unique, 0 battle — D1393. Exhausted** | ⚠️ **The source already writes `Ｒ１` in full-width Latin, so it passes §3.1 unchanged** — this is the one button named by its keycap in the source, and §16's shape-name reasoning does not reach it |
+| `ボーナスゲーム` | `Ｂｏｎｕｓ　Ｇａｍｅ` (10) | **1 unique, 0 battle — D1393. Exhausted** | Capitalised as a named mode |
+| `ドラム` | `ｒｅｅｌｓ` (5) | **1 unique / 2 dump, 0 battle — D1393 (`ドラムスタート`, `ドラムは…ストップ`). Exhausted** | English slot machines have *reels*, not drums. `ｄｒｕｍｓ` (5) is the literal and is the fallback if the reviewer prefers the source's own image |
+| `絵柄` | `ｓｙｍｂｏｌｓ` (7) | **1 unique, 0 battle — D1393. Exhausted** | the slot faces. Alt `ｐｉｃｔｕｒｅｓ` (8) |
+| `的中確率` | `ｈｉｔ　ｒａｔｅ` (8) | **1 unique, 0 battle — D1393. Exhausted** | ⚠️ **Held apart from §-fixed `命中率` → the battle accuracy stat**, which is a different word in a different store. Alt `ｏｄｄｓ` (4) |
+| `かじ屋` | `ｓｍｉｔｈｙ` (6) | **1 unique, 0 battle — D871 (`ここは、かじ屋ノロ`). Exhausted** | The *place*, which is what `ここは` needs. `ｂｌａｃｋｓｍｉｔｈ` (10) is the person and is the alternative if the reviewer reads it as the trade. ⚠️ `batch_010.tsv:31` is this same shop and **names neither** — it opens `ここでは、…` — so nothing is inherited and nothing is contradicted |
+| `炎ノ雨` | `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ` (12) | **1 unique, 0 battle — D532. Exhausted** | The Empire's weapon, in the frog king's katakana. Capitalised as a named weapon, on §33.1's `Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ` / §45.1's `Ｅｍｂｌｅｍ　ｏｆ　Ｄａｒｋｎｅｓｓ` `Ｘ　ｏｆ　Ｙ` pattern. Alt lowercase `ａ　ｒａｉｎ　ｏｆ　ｆｉｒｅ` (16) if it reads as description, not a name |
+| `クロイ馬ノ騎士` | `ｔｈｅ　Ｂｌａｃｋ　Ｈｏｒｓｅ　Ｋｎｉｇｈｔ` (22) | **1 unique, 0 battle — D527. Exhausted** | ⚠️ **The katakana is the frog's broken speech, not the game's spelling** — the phrase would be `黒い馬の騎士` in any other mouth, so the ENGLISH should be ordinary English, with the frog's register carried by the surrounding clipped syntax (§5), not by mangling this noun. Plural `Ｋｎｉｇｈｔｓ` (23) if the source means the order |
+
+⚠️ **BATCH 019's THREE REGISTERS ARE THE WHOLE DIFFICULTY, and two of them are already fixed.**
+D465–469 and D870–879 are `ノロ` speakers (§5 / §18.1); D521–532 is the `ゲロゲロ` frog king in
+**full katakana** (§5's blunt article-dropping register — `batch_011` *is* that scene, read it);
+D533 and D584–598 are ordinary speakers. **One file, three voices; keep them apart.**
+
+⚠️ **D1408 (batch 018) IS NOT A MESSAGE — it is a POOL OF UNRELATED FRAGMENTS.** Eleven speaker
+turns from at least three scenes (the casino floor, `サイクス`, the 王女) concatenated into one
+`script_unique` row, ending mid-sentence. This is the shape `FLAGS.md` §L2 / `findings.md` §24
+predicted for the over-long battle pages — **independently selected strings sharing one slot.**
+Translate each fragment on its own terms, do not force a through-line, and **flag it in the PR body**:
+it is direct evidence for an open engine question.
+
+⚠️ **THE HERMIT OF BATCH 017 IS `batch_015`'s `ｈｅｒｍｉｔ` (§56.1, D782 `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ
+ｒｅｖｉｖａｌ`), AND HIS VOICE IS ALREADY ON RECORD.** D1105–D1138 is ~30 messages of one old man
+(`わし`, `〜じゃ`, `ほっほっ`, `おぬし`, `お前さん`). **Read D756 (`batch_014`) and D782 (`batch_015`)
+before writing a line of him** — this is the largest single-character block the run has shipped and
+the voice must not restart from scratch.
+
 ---
 
 ## 10. Open questions
