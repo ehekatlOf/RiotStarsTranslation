@@ -11,24 +11,17 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ WAVE 13 IS BEING OPENED (2026-09-11, ~22:30 UTC) BY THE ROOT/RUNNER SESSION — DO NOT OPEN A SECOND ONE.
-> The runner (Fable, root session) is creating the wave-13 session now: title **"Riot Stars — wave 13"**,
-> tags `riotstars-translation`, `wave-13`, model Opus, `source_revision: main`, seeded per SKILL.md §6a.
-> **If you are a coordinator reading this:** `list_sessions` — if a wave-13 session other than yours is alive,
-> stop; the runner reconciles on its 15-minute watchdog. The runner does not touch the repository while a
-> wave is alive. The engine work (Blocked 2, 4, 6) belongs to the runner, not to waves: leave it alone.
+> # ▶ WAVE 13 IS RUNNING IN ITS OWN SESSION (opened 2026-09-11 ~21:48 UTC). DO NOT OPEN A SECOND ONE.
+> **Units: battle chunks 15, 23, 27.** Coordinator: the wave-13 session (Opus, top-level, `Task` present,
+> so the three-role split holds — translators and reviewer are its subagents).
+> **If you are a coordinator reading this:** `list_sessions` — if a wave-13 session other than yours is
+> alive, stop. The runner (Fable, root session) reconciles on its 15-minute watchdog and does not touch
+> the repository while a wave is alive. **The engine work (Blocked 2, 4, 6 — `tools/slots.py`,
+> `slotext.py`, `banks.py`, `bankext.py`, `engine.py`, `--extended`/`--layout`) belongs to the runner;
+> a wave never edits it and never runs `build --extended`.**
 >
-> _(The previous NEXT ACTION follows; it stays valid for the units and the rules.)_
-> # THE RUN IS OPEN AGAIN. SIX BATTLE CHUNKS ARE DISPATCHABLE. WAVE 13 = 15, 23, 27.
-> **2026-09-11: both repo-only tool fixes are on `main`** — the `tokenise` argument-length table
-> (Blocked 1, `FLAGS.md` **§BB**) and the `validate_body` charset gate (Blocked 3, **§BA**). Chunks **17 and
-> 36 shipped**; chunks **15, 23, 27, 28, 29, 39 are no longer blocked.** Battle **34 / 44, 69.3%**.
->
-> **Do this:** open a fresh session on `main` and run `/translate`, or open the wave-13 session directly
-> with the seed in `SKILL.md` §6a (`source_revision: "main"`). **Wave 13 = chunks 15, 23, 27** (chapter
-> order); **wave 14 = 28, 29, 39.** Figures in Next up. Every wave: glossary seeds → 3 translators → wave
-> barrier → one reviewer at a time, merging **into `main`** → close with the `origin/main` proof → open
-> the next session. **The integration branch is `main`; nothing overrides that** (CLAUDE.md top banner).
+> **Wave 13's own next step is tracked in In flight below.** On close: write wave 14 (chunks 28, 29, 39)
+> into Next up, prove `origin/main` is at the close commit, and open the wave-14 session.
 >
 > ⚠️ Battle chunks are chapter-ordered and voices accumulate — read the shipped neighbours the dispatch
 > names. ⚠️ Battle `tl/` holds no Japanese; **gate 6 must pair the dump positionally** (translator.md).
@@ -40,13 +33,11 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-11 · by: **the root/runner session (Fable), on the human's instruction: engine work** · **ENGINE
-BUILD 1 IS READY FOR ITS BOOT TEST (FLAGS §BC): `KOUSEI.EXE` = font hook + half-width + 24-column renderer
-+ the tier-A slot extension, rebuilt from the retail EXE, `simcheck` and `slotext simulate` PASS;
-`HEXMAP.BIN` extended with chunks 5 and 43 in appended 16 KB slots, `checkedit --extended` OK;
-`SLPS_008.29` menus + name entry applied. NOT booted — see Blocked 4.** · the game files are on `main`
-(`unpack.py`, §BB4) · chunks 17 and 36 shipped earlier today · **6 battle chunks dispatchable — the
-translation run is OPEN** · figures below measured after the re-dump
+2026-09-11 · by: **the wave-13 coordinator (its own session)** · **WAVE 13 DISPATCHED — battle chunks
+15, 23, 27, three translators in parallel behind the wave barrier.** Glossary seeds committed as §9.W13
+(`d96d42f`). Preflight green: `check` All checks passed, `origin/main` == local, one worktree, **no open
+PR and no live agent at wave start**. · the game files are on `main` (`unpack.py`, §BB4) · engine build 1
+still awaits its boot test (Blocked 4/6, the runner's work, not this wave's)
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -65,8 +56,16 @@ pruned — `git worktree list` shows only the main checkout.** **No open PR, no 
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
-## In flight
-**Nothing. The run is complete.** No open PR, no unmerged unit branch, no live agent, no worktree.
+## In flight — WAVE 13, dispatched 2026-09-11 ~21:50 UTC
+| Unit | Branch | Round | Translator | PR | State |
+|---|---|---|---|---|---|
+| battle chunk **15** | `tl/battle-015` | 1 | dispatched | — | translating |
+| battle chunk **23** | `tl/battle-023` | 1 | dispatched | — | translating |
+| battle chunk **27** | `tl/battle-027` | 1 | dispatched | — | translating |
+
+**The wave barrier is NOT met until all three have an open PR.** Nothing is reviewed before then
+(CLAUDE.md §4 step 4). A translator still working is not a failure — wait, do not re-dispatch over a
+live agent. Two re-dispatches per unit, then park.
 ⚠️ **Every `tl/*` branch from waves 1–12 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
 this repo; use the PR's `merged: true` and the squash SHA in the committed record.**
