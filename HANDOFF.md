@@ -59,11 +59,19 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 ✅ **BARRIER MET 2026-09-11 — all three units have an open PR (#37, #38, #39). Review has begun:
 one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016.**
 
+⚠️ **"BRANCH GONE = MERGED" IS AN INVALID SIGNAL IN THIS REPO — DO NOT USE IT.** `git push --delete`
+fails from the agent container (`send-pack: unexpected disconnect`) while ordinary pushes succeed;
+`gh` is absent and the GitHub MCP has no delete-branch tool. **This has affected every reviewer all
+run** — `tl/script-004`…`014` are all merged and all still present on origin. Recorded as **FLAGS
+§AQ9**, ruled cosmetic. ⚠️ **PR #37's own HANDOFF row said "branch deleted"; it was not, and I have
+corrected it here.** **Use the integration commit and the PR's merged state as the signal**, never
+the branch's absence. One-action human fix: enable *Automatically delete head branches* on the repo.
+
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
-| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | ~~`tl/script-014`~~ | ✅ **MERGED round 2 — PR #37, squash `af11117`**, branch deleted. Integration commit below. |
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | 🔁 **rework r1 PUSHED (`3d60879`)** — awaiting re-review |
-| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ⏳ **PR #38 open — NO REVIEW YET**, next after #39 |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
