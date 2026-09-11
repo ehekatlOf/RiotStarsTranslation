@@ -56,9 +56,25 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 |---|---|---|---|---|---|---|---|
 | `batch_017` | 1100–1159 | 60 / 60 | 2,834 | 31–39 | `tl/script-017` | — | translator dispatched |
 | `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,109 | 42, 43 | `tl/script-018` | — | translator dispatched |
-| `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | — | translator dispatched |
+| `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: the coordinator** — wait for all three PRs, then reviewer 017 → 018 → 019.
+**Who acts next: the coordinator** — **1 of 3 PRs open.** Wait for 017 and 018, then reviewer 017 → 018 → 019.
+⛔ **Nothing is reviewed until all three are open** (CLAUDE.md §4 step 4). At 09:07Z both remaining
+translators were alive and 43–44 min in; wave 9's ran 52 min – 1 h 34 m, so this is normal, not a stall.
+
+⚠️ **TWO COORDINATOR ERRORS ALREADY CAUGHT BY A TRANSLATOR — both verified by me against the primary
+sources, both mine, and the reviewer must NOT re-report them as the translator's:**
+1. **My dispatch to `batch_019` said "`帝国` / `帝国軍` → `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` (§20.4)". WRONG
+   — I conflated two rows.** `glossary.md:67` fixes bare **`帝国` → `ｔｈｅ　Ｅｍｐｉｒｅ`**; §20.4 is
+   `帝国軍` only. `batch_019` contains `帝国軍` **zero** times and bare `帝国` twice (D527, D532), and
+   it correctly rendered the Empire row. **The file is right and the dispatch was wrong.**
+2. ⭐ **My §9 seed `炎ノ雨` → `Ｒａｉｎ　ｏｆ　Ｆｉｒｅ`, "1 unique, 0 battle — D532, exhausted", censused
+   only the KATAKANA spelling.** Re-derived by me just now: **`炎の雨`, the ordinary spelling, is 5
+   unique lines / 25 dump instances — D223 (count 21), D514, D518, D520, D1287** — and **D514 is
+   ALREADY MERGED** in `batch_008.tsv` as lowercase `ａ　ｂａｔｔｅｒｙ　ｒａｉｎｉｎｇ　ｆｉｒｅ`. `batch_019`
+   therefore takes §9's own stated lowercase alternative, `ｒａｉｎ　ｏｆ　ｆｉｒｅ`. ⚠️ **The §9 row must
+   be kept LIVE, NOT struck as exhausted**, and whoever renders D223 decides the description sense.
+   **This is wave 10's "measured ONE SIDE of a comparison" shape, committed by me in a seed.**
 ⚠️ **No unit touches banks 2, 5, 40 or 41** (verified: the three bank-sets are disjoint from the
 four tight banks). Tightest bank touched is **33** — 8,919 free, ~4,415 projected demand.
 
