@@ -1,12 +1,14 @@
-## Run configuration — READ BEFORE BRANCHING
-**The integration branch for this run is `claude/workflow-translation-iterate-uzlkns`, not `main`.**
-Everywhere `CLAUDE.md`, the `translate` skill and the agent files say `main`, read this branch.
-**The human fast-forwards `main` when the run is done — that is now.**
+## Integration branch: `main`. Not configurable.
+Every PR bases on `main`; the reviewer merges into `main`; a wave is closed only when `origin/main`
+is at the close commit (`CLAUDE.md` top banner). **This block used to redirect the run to
+`claude/workflow-translation-iterate-uzlkns` and told every agent to read `main` as that branch —
+twelve waves merged there while `main` sat untouched and a human was told nothing had been done.**
+`main` was fast-forwarded to the branch tip on 2026-09-11 (284 commits, 54 translated units); the
+old branch is kept identical to `main` as a mirror and has no authority.
 
-⚠️ **A fresh container clones SHALLOW and carries a STALE local ref of that branch.** It starts
-detached at the right commit, so `git checkout <branch>` moves you **backwards** and
-`git pull --ff-only` then aborts. Fix: `git fetch && git reset --hard
-origin/claude/workflow-translation-iterate-uzlkns`, verify with `git log -1`.
+⚠️ **A fresh container clones SHALLOW and may carry a STALE local ref of `main`.** If `git checkout
+main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && git reset --hard
+origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
 > # ✅ THE RUN'S AUTOMATED TRANSLATION WORK IS COMPLETE. THERE IS NOTHING LEFT FOR AN AGENT TO DISPATCH.
@@ -252,8 +254,8 @@ in the same turn.
    the single **24-column** run ships (§64.3/§AZ3) · **`・` → `，` for apposition only**, which does
    **not** reach D1169's `ＯＮ・ＯＦＦ`.
 
-**Standing (waves 4–12).** Integration branch is `claude/workflow-translation-iterate-uzlkns`; `main`
-untouched. Script growth for planning **2.10×**; ⚠️ **realised across wave 12 was 1.66×–1.98×, so quote
+**Standing (waves 4–12).** Integration branch is **`main`** — it was `claude/workflow-translation-iterate-uzlkns`
+with `main` untouched until 2026-09-11, which hid the whole run; see the top of this file and `CLAUDE.md`. Script growth for planning **2.10×**; ⚠️ **realised across wave 12 was 1.66×–1.98×, so quote
 the planning bound and the realised figure as TWO numbers, never one.** Seed the glossary **before**
 dispatching. A **parked unit still gets the full reading review**. Name script batches by **DATA line
 list**. A term is "in the glossary" only if a row **fixes an English form**. Section numbers are taken by
@@ -301,8 +303,8 @@ vs 782; bank 31 **1,724** vs 2,185; bank 5 **40** vs 94). Translators ran 27–5
 Detail lives in `glossary.md` §61–§64 and `FLAGS.md` §AW–§AZ.
 
 ## How to resume
-1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (a plain `checkout`
-   lands on a stale ref — see Run configuration), then `python3 tools/assemble.py check`.
+1. `git fetch && git reset --hard origin/main` (a plain `checkout` can land on a stale shallow ref —
+   see the top of this file), then `python3 tools/assemble.py check`.
 2. ⛔ **DO NOT open another wave to look for translation work — there is none, and NEXT ACTION shows the
    measurement.** The queue is empty at the run's standing 2.10× planning rate; the only qualification is
    the two marginal pooled rows named there, which are a policy call, not a unit.

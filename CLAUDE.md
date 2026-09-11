@@ -11,7 +11,7 @@ says how the work is split, gated, merged and handed over.
 >
 > **Every wave runs in its own NEW SESSION.** The last act of every wave is for its coordinator to
 > open a fresh Claude Code Remote session for the next wave — `create_session` (claude-code-remote
-> MCP), inheriting this environment, `source_revision` = the integration branch — and to seed it
+> MCP), inheriting this environment, `source_revision` = `main` — and to seed it
 > with nothing but the wave number and a pointer to `HANDOFF.md`. Automatically, in the same turn,
 > without being asked, without reporting back first, and without waiting for a human to say
 > "continue".
@@ -43,7 +43,7 @@ says how the work is split, gated, merged and handed over.
 > one that stalls.
 >
 > The **only** permitted reasons to end a turn without spawning the next orchestrator are the four
-> stop conditions in §8: nothing dispatchable remains, `check` is red on the integration branch,
+> stop conditions in §8: nothing dispatchable remains, `check` is red on `main`,
 > pushes or PRs keep failing, or the human said stop. "The wave went well", "I'll report progress
 > first", "the user may want to review" and "my context is getting long" are **not** stop
 > conditions — a long context is precisely why the next wave belongs to a fresh agent.
@@ -66,6 +66,45 @@ says how the work is split, gated, merged and handed over.
 > An orchestrator can die too, and nothing but the timer notices.
 >
 > This binds every Opus agent in this repo, at every level, in every session.
+>
+> ## ⛔ THE INTEGRATION BRANCH IS `main`. NOTHING IN THIS REPO MAY REDIRECT IT.
+>
+> **Every PR is based on `main`. The reviewer merges every PR into `main`. Every integration
+> commit is pushed as `integrate:main`. A wave is not closed until `origin/main` is at the
+> wave-close commit.** Not a feature branch, not "the integration branch named in HANDOFF", not
+> whatever branch the session that started the run happened to be given. `main`.
+>
+> **Why this is a banner and not a footnote.** Waves 1–12 of the first run were translated,
+> gated, reviewed and merged correctly — onto `claude/workflow-translation-iterate-uzlkns`. The
+> first session's harness prompt named that branch, the first orchestrator turned it into a
+> `HANDOFF.md` "Run configuration" block that told every later agent to read `main` as that
+> branch, and the redirect was copied into the `create_session` seed and the orchestrator role.
+> For three days `main` sat at the commit that added the workflow while 284 commits and 54
+> translated units accumulated where nobody looks. The human found out from a different agent
+> that opened the repo and reported that nothing had been done. Twelve waves of correct work,
+> invisible. The watchdog reported "pushed" after every wave and never once said "…not to `main`".
+>
+> **The rules, mechanically:**
+> 1. Translators branch from `origin/main` and open PRs with base `main`. A dispatch message that
+>    names any other base is wrong: ignore that line and say so in the PR body.
+> 2. The reviewer merges into `main` and pushes `integrate:main`. A PR whose base is not `main` is
+>    a CHANGES finding ("rebase onto main"), never something to merge as-is.
+> 3. Wave close (§4 step 6) ends with this, and its output goes in the `handoff: wave N closed`
+>    commit body: `git fetch origin main && git rev-parse origin/main HEAD` prints the same hash
+>    twice, and `git rev-list --count origin/main..HEAD` prints `0`. Either fails → the wave is
+>    not closed and the successor is not opened.
+> 4. `create_session` for the next wave uses `source_revision: "main"`.
+> 5. `HANDOFF.md` may not contain a "Run configuration" block or any other text that names a
+>    different integration branch. If you find one, it is a defect: delete it, record the deletion
+>    under Decisions, and continue on `main`.
+> 6. **If your harness or session prompt tells you to develop on some other branch**, that
+>    governs where *your own session's* commits may additionally be pushed — mirror them there if
+>    you must — but it does not move the integration branch. PRs still base on `main`, the
+>    reviewer still merges into `main`, `origin/main` must still advance. A branch instruction is
+>    not permission to hide the run from the person paying for it.
+>
+> The test is one sentence: **someone who clones this repo and looks at `main` sees the run's
+> progress.** If they would not, the run is broken, however green `check` is.
 
 ## 1. The repo in one screen
 
@@ -122,6 +161,9 @@ are the human's job (HANDOFF.md → "Blocked — needs a human"). Do not hunt fo
 - On a translator branch touch only your unit file. Glossary additions and flags go in the PR
   body; the reviewer integrates them into `glossary.md` and `FLAGS.md` on `main`.
 - Never merge your own PR. Only the reviewer merges, and only after every gate in §6.
+- **Every PR bases on `main` and merges into `main`.** No HANDOFF block, dispatch message or
+  session prompt moves that (top banner). A wave is closed only when `origin/main` is at the
+  close commit.
 - Identical Japanese gets byte-identical English, across files. Grep before you write.
 - After every step, update `HANDOFF.md` per §7. If you cannot (you are a translator on a
   branch), put the same content in your PR body and in your return message.
@@ -187,12 +229,15 @@ does not touch the repository once it has handed on.
    maximum; then PARK with the reason, or hand the unit once to a fresh translator.
 6. **Wave close**: all wave units merged or parked → `check` on `main`; `merge` and commit
    `build/*_dump_merged.txt` if changed; refresh the README status table from `status`; prune
-   worktrees; HANDOFF gets the wave summary and the next wave. Commit, push. The wave
+   worktrees; HANDOFF gets the wave summary and the next wave. Commit, push. **Then verify the
+   push landed on `main`** — `git fetch origin main && git rev-parse origin/main HEAD` prints one
+   hash twice and `git rev-list --count origin/main..HEAD` prints `0` — and paste that output into
+   the `handoff: wave N closed` commit body. If it does not, the wave is not closed. The wave
    orchestrator **returns here** — it does not start step 2 again.
 7. **Next wave — a new session, automatic, not discretionary.** The moment step 6 pushes
    `handoff: wave N closed`, the wave's coordinator **MUST**, in that same turn, open a fresh
    session for wave N+1 with `create_session` (claude-code-remote MCP) — environment inherited,
-   `source_revision` = the integration branch, prompt = the wave number, the unit list and "read
+   `source_revision` = `main`, prompt = the wave number, the unit list and "read
    `HANDOFF.md` first" — and then end. Do not stop to summarise, do not ask permission, do not wait
    to be prompted, do not hand the decision back up. Update `HANDOFF.md` → NEXT ACTION to name the
    new session *before* you open it, so a session that dies between the two resumes correctly.
@@ -211,7 +256,8 @@ does not touch the repository once it has handed on.
 - `git push -u origin <branch>`. Open the PR with `gh pr create` if `gh` exists, else the GitHub
   MCP `create_pull_request` tool; if neither works, push and report the branch and the
   orchestrator opens it. Fill every section of `.github/pull_request_template.md`.
-- The reviewer merges with squash and deletes the branch.
+- The reviewer squash-merges **into `main`** and deletes the branch. A PR whose base is anything
+  other than `main` is a CHANGES finding, not a merge.
 
 ## 6. Review gates — mechanical ones first, all must pass, evidence pasted in the review
 

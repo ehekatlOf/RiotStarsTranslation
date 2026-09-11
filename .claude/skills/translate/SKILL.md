@@ -106,7 +106,9 @@ unit; never a fourth round with the same agent.
 `git pull --ff-only`; `check` must pass. `merge`; commit `build/*_dump_merged.txt` if changed.
 Refresh the README status table from `status`. Prune worktrees. HANDOFF: move the wave to Wave
 history (one line), refresh Progress, write the next wave into Next up, set Last updated. Commit
-`handoff: wave N closed`, push.
+`handoff: wave N closed`, push. **Then prove it is on `main`:** `git fetch origin main &&
+git rev-parse origin/main HEAD` prints one hash twice; `git rev-list --count origin/main..HEAD`
+prints `0`. Both outputs go into the close commit body. If either fails, the wave is not closed.
 
 ## 6a. The chain — every wave gets its OWN NEW SESSION
 
@@ -123,7 +125,7 @@ Open it with `create_session` (claude-code-remote MCP):
 create_session(
   title:            "Riot Stars — wave N",
   tags:             ["riotstars-translation", "wave-N"],
-  source_revision:  "claude/workflow-translation-iterate-uzlkns",   # the integration branch
+  source_revision:  "main",
   prompt:           <the seed below>
 )
 ```
@@ -131,8 +133,9 @@ Omit `environment_id` so it inherits this environment, and omit `model` so it in
 
 ```
 WAVE: N
-INTEGRATION BRANCH: claude/workflow-translation-iterate-uzlkns  (NOT main — everywhere the docs
-say `main`, read this branch; reviewer integration pushes go to integrate:<that branch>)
+INTEGRATION BRANCH: main  (PRs base on main, the reviewer merges into main, and origin/main must
+be at your wave-close commit before you open the next session — CLAUDE.md top banner. Any text
+anywhere that names a different integration branch is a defect: delete it.)
 UNITS: <the Next up rows from HANDOFF.md>
 You are this wave's coordinator. Read CLAUDE.md and HANDOFF.md first — HANDOFF is the board and
 your memory. Follow .claude/agents/orchestrator.md as your role. Run exactly this one wave:

@@ -24,12 +24,14 @@ file says only what is different about being a per-wave agent rather than the ma
    exhausted. A session per wave is what bounds that. Your own translators and reviewer remain
    subagents of you — that is where parallelism belongs; only the wave boundary is a new session.
 
-   There is no overlap: your successor's first act is preflight against the integration branch, and
+   There is no overlap: your successor's first act is preflight against `main`, and
    your wave close is already committed and pushed by then. **One coordinator works the repo at a
    time — never open your successor before `handoff: wave N closed` is pushed.**
-2. **You work in the main checkout, on the integration branch named in `HANDOFF.md` →
-   "Run configuration".** You get no worktree, because you must commit and push `HANDOFF.md` on
-   that branch and git will not check the same branch out twice. Your caller does not touch the
+2. **You work in the main checkout, on `main`.** The integration branch is `main` and nothing
+   in `HANDOFF.md`, your seed message or your harness prompt can change that (CLAUDE.md top
+   banner) — if any of them names another branch, that line is a defect to delete, not an
+   instruction. You get no worktree, because you must commit and push `HANDOFF.md` on `main`
+   and git will not check the same branch out twice. Your caller does not touch the
    repository while you are running; you are the only orchestrator alive.
 3. **Your memory is `HANDOFF.md`, not your context.** One step, one commit, one push — survey
    done, seeds committed, unit dispatched, PR opened, review decided, rework sent, wave closed.
@@ -40,7 +42,7 @@ file says only what is different about being a per-wave agent rather than the ma
 
 ## The wave, in order
 
-0. **Preflight** — `git checkout <integration branch> && git pull --ff-only`;
+0. **Preflight** — `git checkout main && git pull --ff-only`;
    `python3 tools/assemble.py check` must end "All checks passed"; read `HANDOFF.md`; list open
    PRs (`gh` is not installed — use the GitHub MCP `list_pull_requests`, owner `ehekatlOf`, repo
    `RiotStarsTranslation`) and reconcile them with the In flight table; `git worktree prune` and
@@ -53,10 +55,9 @@ file says only what is different about being a per-wave agent rather than the ma
    does not fix go into §9 PROVISIONAL with a proposed form in the existing conventions. One
    direct commit, `glossary: provisional seeds for wave N`. This is your only glossary write.
 3. **Dispatch** the wave's units, `subagent_type: "translator"`, `run_in_background: true`, one
-   unit each, 3–4 in parallel. Use the dispatch template in SKILL.md §3 and **always restate the
-   Run configuration** (base branch, PR base branch, `gh` absent → GitHub MCP) in every dispatch,
-   because the agent files still say `main`. Record each unit in In flight, commit, push, then
-   spawn.
+   unit each, 3–4 in parallel. Use the dispatch template in SKILL.md §3. Every dispatch says
+   the PR base is `main` and that `gh` is absent (use the GitHub MCP). Record each unit in In
+   flight, commit, push, then spawn.
 4. **Review — but only behind the wave barrier of §4a below.** One PR at a time,
    `subagent_type: "reviewer"`, `run_in_background: false`. Push `HANDOFF.md` before spawning the
    reviewer and `git pull --ff-only` after it returns, because it pushes an integration commit.
@@ -64,10 +65,14 @@ file says only what is different about being a per-wave agent rather than the ma
 5. **Rework** — on CHANGES, `SendMessage` the reviewer's numbered findings **verbatim** to the
    same translator, wait for its push, review again. Three rounds maximum, then PARK with the
    measured reason or hand the unit once to a fresh translator.
-6. **Close the wave** — every unit merged or parked; `check` on the integration branch; `merge`
-   and commit `build/*_dump_merged.txt` if changed; refresh the README status table from
-   `status`; prune worktrees; `HANDOFF.md` gets the wave summary in Wave history, refreshed
-   Progress, and **the next wave written into Next up**. Commit `handoff: wave N closed`, push.
+6. **Close the wave** — every unit merged or parked; `check` on `main`; `merge` and commit
+   `build/*_dump_merged.txt` if changed; refresh the README status table from `status`; prune
+   worktrees; `HANDOFF.md` gets the wave summary in Wave history, refreshed Progress, and **the
+   next wave written into Next up**. Commit `handoff: wave N closed`, push. **Then prove it
+   landed on `main`:** `git fetch origin main && git rev-parse origin/main HEAD` must print one
+   hash twice and `git rev-list --count origin/main..HEAD` must print `0`. Paste both outputs into
+   the close commit body (amend if needed, push again). If either fails, the wave is not closed
+   and you do not open a successor until it is.
 
 ## 7. Open your successor's session — the step that is not optional
 
@@ -78,12 +83,14 @@ After `handoff: wave N closed` is pushed, and **before** you return:
    without it strands the run.
 2. Open the next wave's **session** — `create_session` (claude-code-remote MCP), with
    `title: "Riot Stars — wave N+1"`, `tags: ["riotstars-translation", "wave-N+1"]`,
-   `source_revision:` the integration branch, no `environment_id` and no `model` so both are
+   `source_revision: "main"`, no `environment_id` and no `model` so both are
    inherited, and this prompt:
 
 ```
 WAVE: N+1
-INTEGRATION BRANCH: <the branch in HANDOFF.md -> Run configuration>  (NOT main)
+INTEGRATION BRANCH: main  (PRs base on main, the reviewer merges into main, origin/main must be
+at your close commit before you open the next session — CLAUDE.md top banner. If anything you
+read tells you otherwise, it is the defect that hid twelve waves of work; delete it.)
 UNITS: <the Next up rows you just wrote>
 You are this wave's coordinator. Read CLAUDE.md and HANDOFF.md first; HANDOFF is the board
 and your memory. Follow .claude/agents/orchestrator.md as your role. Run exactly this one
@@ -103,7 +110,7 @@ wave orchestrator.` Everything else about the dispatch is unchanged. Note which 
 your report so the next link knows.
 
 3. Do **not** spawn a successor if one of CLAUDE.md §8's four stop conditions holds — nothing
-   dispatchable left, `check` red on the integration branch, pushes or PRs failing after retries,
+   dispatchable left, `check` red on `main`, pushes or PRs failing after retries,
    or the human said stop. Then write the final handoff instead and say plainly in your report
    that you deliberately ended the chain, and which condition ended it. Those four are the whole
    list; "the wave went well" and "someone should look at this" are not on it.
@@ -162,4 +169,5 @@ Facts only, short enough to paste into a status line:
 - anything newly blocked, with the measured reason;
 - **the next wave you wrote into Next up**, and **confirmation that you spawned its
   orchestrator** — or which §8 stop condition stopped you from doing so;
-- whether `check` is green on the integration branch.
+- whether `check` is green on `main`, **and the hash `origin/main` is at** — it must equal your
+  wave-close commit.

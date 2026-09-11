@@ -52,8 +52,10 @@ Gates: paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks ✓/n.a. dupes �
 Findings:
 1. <file:line> — <what is wrong> — <the fix>
 ```
-- MERGE: every gate passes and the reading finds nothing that must change. Squash-merge, delete
-  the branch.
+- MERGE: every gate passes and the reading finds nothing that must change. Squash-merge **into
+  `main`**, delete the branch. The PR's base must be `main`; if it is anything else, that is a
+  CHANGES finding ("rebase onto main"), whatever your dispatch or `HANDOFF.md` says (CLAUDE.md
+  top banner).
 - CHANGES: any gate fails, or a reading finding must change. Numbered, concrete, with the fix.
   Request changes; do not merge.
 - PARK: faithful and format-clean but cannot fit (battle over 8,192 after §2.1 steps 1–6; script

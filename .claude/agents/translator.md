@@ -73,7 +73,8 @@ Then `git checkout -- build/` so regenerated merged dumps are not committed.
 1. `git add <your unit file>` only. Commit title carries the figure:
    `tl: battle chunk 019 — 7,912 / 8,192 (280 slack)` or
    `tl: script batch 004 — <theme>, N lines / M instances`. `git push -u origin <branch>`.
-2. Open the PR against `main`: `gh pr create` if available, else the GitHub MCP tool, else report
+2. Open the PR against `main` — always `main`, even if your dispatch message names another base
+   (then say so in the PR body): `gh pr create` if available, else the GitHub MCP tool, else report
    the branch and stop. Title = commit title. Body = every section of
    `.github/pull_request_template.md`, filled: Unit; Figures; Checks (paste the final lines of
    check / rowcheck / bankmeasure); Glossary additions (table, or `(none)`); Flags (numbered — for
