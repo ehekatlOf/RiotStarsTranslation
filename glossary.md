@@ -883,11 +883,11 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 |---|---|---|---|
 | `棚卸し` | `ｓｔｏｃｋｔａｋｉｎｇ` | **4 script / 0 battle.** Shipped twice: `batch_006.tsv:57`, `batch_011.tsv:8`. Wanted by **D333** | ⭐⭐ **PROMOTED FROM A NOTE CELL — not a new decision, an existing one made visible to gate 7.** `glossary.md:813` fixes the noro sign as `“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　ｓｔｏｃｋｔａｋｉｎｇ，　ｎｙｏｒｏ．”`. **D333 is the SAME SIGN WITHOUT THE NORO TIC** — use `ｓｔｏｃｋｔａｋｉｎｇ` byte-identically |
 | `仕入れ` (noun, on a shop sign) | `ｒｅｓｔｏｃｋｉｎｇ` | **3 script / 0 battle.** Wanted by **D338** | ⚠️ **SCOPE — A SECOND SENSE IS ALREADY SHIPPED AND MUST NOT BE COLLAPSED INTO THIS.** `batch_013.tsv:56` renders the **verb** `ネタを仕入れとくよ` as `Ｉ’ｌｌ　ｌａｙ　ｉｎ　ｓｏｍｅ　ｎｅｗｓ`. That is *to lay in*, a different sense from the sign's *restocking*. **Both stand.** A reviewer must not read this as an inconsistency |
-| `てーこく` / `てーこく軍` | `ｔｈｅ　Ｅｍｐｉｒｅ` / `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` — §2 and §20.4's settled forms, **unchanged** | **9 script (`てーこく*`) / 0 battle / 0 `tl/`.** Wanted by **D320**; ~6 further unique lines all currently BLOCKED | ⚠️ **A SOFT KANA SPELLING OF `帝国`, NOT A NEW TERM. D320 IS THE FIRST TO SHIP, SO IT SETS PRECEDENT.** ⚠️ **`帝国` and `帝国軍` are DISTINCT (§20.4) and wave 11 conflated them — do not repeat that.** **RECOMMENDED: do NOT misspell the English.** The kana softening marks the *speaker* (a child: D320 closes `あぶないよ`), not the *Empire*, and §3.1 gives no safe way to spell-shift full-width Latin. Carry the register in the surrounding syntax. **Alt, REJECTED unless you can defend it: an English misspelling** |
+| `てーこく` / `てーこく軍` | `ｔｈｅ　Ｅｍｐｉｒｅ` / `ｔｈｅ　Ｉｍｐｅｒｉａｌ　ａｒｍｙ` — §2 and §20.4's settled forms, **unchanged** | ⚠️ **THIS CELL WAS WRONG IN ALL THREE FIGURES — CORRECTED 2026-09-11 after `batch_020` pushed back. Measured: 16 unique lines / 20 script instances (my "9" was `てーこく軍`'s count alone, which my own `てーこく*` wildcard did not describe) · 1 BATTLE instance (`battle_dump.txt:234`, chunk 8 L14), not 0 · ALREADY SHIPPED TWICE in `tl/`, not 0** — `tl/battle/chunk_008.txt` L14 and `tl/script/batch_014.tsv:46`. 13 unique / 15 instances remain, all blocked | ⚠️ **A SOFT KANA SPELLING OF `帝国`, NOT A NEW TERM.** ⚠️ **"D320 IS THE FIRST TO SHIP, SO IT SETS PRECEDENT" WAS FALSE — the precedent was set in WAVE 2** (`chunk_008`, and `glossary.md` §29.6 already records that treatment). D320 **conforms** to a two-wave-old incumbent. **The recommendation below still stands; only my figures were wrong.** ⚠️ **`帝国` and `帝国軍` are DISTINCT (§20.4) and wave 11 conflated them — do not repeat that.** **RECOMMENDED: do NOT misspell the English.** The kana softening marks the *speaker* (a child: D320 closes `あぶないよ`), not the *Empire*, and §3.1 gives no safe way to spell-shift full-width Latin. Carry the register in the surrounding syntax. **Alt, REJECTED unless you can defend it: an English misspelling** |
 | `木漏れ日` | `ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered** (grepped, not assumed). Wanted by **D342** | New seed. D342 is a quiet empty-square scene description; §2's literal-then-tight applies. 18 columns — check it against the 24 limit in place |
 | `さえずり` | `ｂｉｒｄｓｏｎｇ` | **2 script / 0 battle / 0 `tl/` — genuinely unrendered.** Wanted by **D342** | New seed. `ｂｉｒｄｓｏｎｇ` is 9 columns against `ｔｗｉｔｔｅｒｉｎｇ ｏｆ ｓｍａｌｌ ｂｉｒｄｓ`; D342 is 40 JP chars and the tightest of the 21, so width is real. **Alt: `ｔｈｅ　ｓｏｎｇ　ｏｆ　ｓｍａｌｌ　ｂｉｒｄｓ`** |
 | `君子、あやうきにちかよらず` | `ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ　ｏｆ　ｈａｒｍ’ｓ　ｗａｙ` | **2 script / 0 battle / 0 `tl/`.** Wanted by **D340** | New seed. A proverb quoted colloquially (`〜ってやつよね`). ⚠️ **Do not import "discretion is the better part of valour"** — §2 bans inventing; the source names a 君子. Render the proverb, keep the speaker's casual frame |
-| `フラグ` | `Ｆｌａｇ` | **21 script / 0 battle / 0 `tl/`.** Wanted throughout **`batch_021`** | ⚠️ **DEVELOPER DEBUG TEXT.** `フラグ５５は、ＯＦＦです。` → `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. The source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — **keep them exactly, do not re-case** |
+| `フラグ` | `Ｆｌａｇ` | **21 script / 0 battle / 0 `tl/`.** ⚠️ **CORRECTED: I wrote "wanted throughout `batch_021`" — in fact 13 of the 21 instances are `batch_022`'s and only 8 are `batch_021`'s** | ⚠️ **DEVELOPER DEBUG TEXT.** `フラグ５５は、ＯＦＦです。` → `Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．`. The source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — **keep them exactly, do not re-case** |
 | `新曲` | `Ｎｅｗ　Ｔｒａｃｋ` | **15 script / 0 battle / 0 `tl/`.** `batch_021` + `batch_022` | Debug sound test. Title-case as a menu label |
 | `ザコ戦` / `ボス戦` | `ｍｏｂ　ｂａｔｔｌｅ` / `ｂｏｓｓ　ｂａｔｔｌｅ` | **3 / 3 script, 0 battle, 0 `tl/`.** `batch_022` D1048 | Debug sound test. In D1048 they sit inside `（…）` after `バトル`, so the parenthetical is the discriminator |
 | `任務失敗` | `Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ` | **3 script / 0 battle / 0 `tl/`.** `batch_022` D1047 | Debug label |
@@ -902,8 +902,8 @@ only** (`glossary.md:813` and `:3291`), with **0 first-column keys**, so a key-f
 |---|---|---|---|
 | `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `glossary.md:699` | **4 shipped.** ⚠️ **ROW STAYS LIVE — D333 and D338 are the 5th and 6th** |
 | `ジュエル` | `Ｊｅｗｅｌ` / `Ｊｅｗｅｌｓ` — **never "gem"** | `glossary.md:96` | **73.** D327, D331, D332 |
-| `インターミッション` | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12 cols) | `glossary.md:6815` | 2. `batch_021` D1005. ⚠️ `batch_022` D1043 abbreviates it `ＩＭ` — keep the abbreviation |
-| `魔族` | see `glossary.md:4525` | `glossary.md:4525` | 6. `batch_022` D1051 |
+| `インターミッション` | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12 cols) | **§53.1** (was cited `:6815`; ⚠️ **my own 65-line seed insert moved it to `:6880` — cite by SECTION, never by line**) | 2. `batch_021` D1005. ⚠️ `batch_022` D1043 abbreviates it `ＩＭ` — keep the abbreviation |
+| `魔族` | `ｄｅｍｏｎｓ` — **§40.1** (was cited `:4525`; ⚠️ **moved to `:4590` by my own seed insert — cite by SECTION**) | 6. `batch_022` D1051 |
 | `ノロ` | the hobbit tic, §5 / §18.1 | — | **155.** D318, D335 |
 
 ⭐⭐ **THREE NEAR-DUPLICATE TRAPS GATE 6 CANNOT SEE. READ THIS BEFORE TRANSLATING `batch_020`.**
@@ -924,6 +924,18 @@ byte-identical.** Verified by me at seed time:
    and differ in one word. ⚠️ **The source's indent differs between models: `batch_006.tsv:57`
    carries a TWO-space indent, D333/D338 carry a FOUR-space indent. PRESERVE EACH SOURCE'S OWN
    INDENT** — `glossary.md:3291` requires it, and it is not transferable between the two.
+
+⭐⭐ **GATE 7 HAS A THIRD FACE, FOUND BY `batch_022` THIS WAVE, AND NO NOTE-CELL HARVESTER REACHES IT.**
+`その他` has **0 mentions in `glossary.md` of ANY kind — 0 key cells AND 0 note cells — yet it ships
+**7 times in `batch_013`** as `　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ`. So the three faces of the hole are:
+**(a) key cells** · **(b) NOTE cells** (§AT1's `さ、`) · **(c) forms SHIPPED IN `tl/` THAT THE GLOSSARY
+NEVER RECORDED AT ALL.** ⚠️ **Face (c) is invisible to every glossary-side harvester, however good.**
+**Gate 7 needs a `tl/` COLUMN-2 PASS: harvest JP→EN pairs from the shipped TSVs themselves, not only
+from `glossary.md`.** Do that before claiming gate 7 clean.
+
+⚠️ **SIX "Where seen" CELLS ABOVE NAME ONLY `batch_022` AND OMIT `batch_021`'s OWN INSTANCE** —
+`任務失敗`, `ザコ戦`, `ボス戦`, `ゲームオーバー`, `宿敵`, `魔族`. **The counts are right; the
+attributions are one unit short.** Corrected here rather than silently, 2026-09-11.
 
 ⚠️ **`さ、` vs `さあ、` (§59.1) applies to any unit here.** They are held apart and `さ、` had
 **0 first-column keys** until wave 11 promoted it. Harvest `X` → `Y` pairs from **note cells**, not
