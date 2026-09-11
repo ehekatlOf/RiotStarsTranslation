@@ -54,11 +54,30 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
-| `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | ✅ **PR OPEN** — +6,144 B, bank 33 8,919→5,635, `check` green |
+| `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | 🔄 **ROUND 1 = CHANGES** (all 8 gates ✓; 1 finding on the file). Rework sent to the same translator |
 | `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **PR OPEN** — awaiting the barrier. −2,706 B (42: 9,647 free · 43: 8,943), `check` green |
 | `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: the REVIEWER.** ✅ **WAVE BARRIER MET 2026-09-11 — all three PRs open: #42 (017), #41 (018), #40 (019).** One reviewer at a time, foreground, unit order **017 → 018 → 019**.
+**Who acts next: `batch_017`'s TRANSLATOR (rework round 1), then the 017 reviewer again.** ✅ **BARRIER
+MET — all three PRs open: #42 (017), #41 (018), #40 (019).** One reviewer at a time, order 017 → 018 → 019.
+
+### Review log
+| Unit | PR | Round | Decision | Note |
+|---|---|---|---|---|
+| 017 | #42 | 1 | **CHANGES** | **All 8 gates PASSED** — merge-tree `01745f6`, `check` green, no bank negative, `rowcheck` all 17 pages inherited, 0 dupes, gate 7 **97 keys** of 1,246 distinct, 0 offending chars. Reviewer gated the **merged tree** via `git archive`, no working tree. **It independently re-derived all six of the PR's flagged claims and all six stand.** One finding on the file ⤵ |
+
+⭐ **THE 017 FINDING IS A REAL BUG AND SETS A PROJECT-WIDE PRECEDENT.** D1112 ships
+`Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｈｉｍ．` and D1138 `Ｈｅ　ｈａｓ　ｃｏｍｅ　ｂａｃｋ` for the **runtime unit-name
+insert `{FFEC}{=00}{=05}`** — but the roster has women (§1 fixes Cress FEMALE; Beatrice, Maya;
+§4's 女剣士/女魔術師), the Japanese has no pronoun, and the same unit keeps the referent ungendered
+at D1119/D1122/D1129/D1133. ⚠️ **`batch_017` is the ONLY file in `tl/` or `pending/` that renders
+this insert, so whatever it ships becomes the precedent for every future line carrying a unit name.**
+Fixes offered: `Ｉ　ｓｈａｌｌ　ｒａｉｓｅ　ｔｈｅｍ．` (19) / `…ｔｈａｔ　ｏｎｅ．` (23); `Ｔｈｅｙ　ｈａｖｅ　ｃｏｍｅ　ｂａｃｋ` (19).
+
+⚠️ **ONE REVIEWER FINDING CONTRADICTS THE PR AND THE TRANSLATOR WAS ASKED TO CHECK IT, NOT COMPLY.**
+The reviewer says PR Flag 11 is false — that D834 **is** shipped (`batch_016.tsv:62`) and `体力` is
+therefore EXHAUSTED, not live. If it holds, §57.1's row is struck at integration. **Three of wave 9's
+seven wrong figures were reviewers', so this is verified, not assumed.**
 ⛔ **Nothing is reviewed until all three are open** (CLAUDE.md §4 step 4). At 09:07Z both remaining
 translators were alive and 43–44 min in; wave 9's ran 52 min – 1 h 34 m, so this is normal, not a stall.
 
