@@ -12,46 +12,32 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ✅ **WAVE 9 IS CLOSED — 3 of 3 merged, 0 parked, `check` green at `2648372`. Script 59.7%.**
+> 🔴 **WAVE 10 IS RUNNING AND IT IS SELF-REVIEWING. CLAUDE.md §8's no-`Task` clause is in force.**
+> Wave 10's coordinator is an `orchestrator` **subagent** (the §7.2 fallback wave 9 took), and
+> **subagents cannot spawn subagents**, so it has **no `Task` tool, therefore no translator
+> subagents and no independent reviewer.** Tested explicitly at preflight, not assumed: the tool
+> surface offers `SendMessage`, `Monitor`, `TaskStop` and **no spawn tool of any kind**.
+> **Every unit wave 10 merges is marked SELF-REVIEWED and owes an independent audit — see below.**
 >
-> ⛔ **THE RECURSIVE-SESSION CHAIN CANNOT CONTINUE FROM HERE. A HUMAN MUST OPEN WAVE 10.**
-> `send_later` and `create_trigger` were both called from this session and both returned
-> `caller session is at lineage depth 8 (limit 8); cannot spawn or re-arm further child sessions`.
-> `create_session` uses the same mechanism. **Wave 9 is the 8th descendant and the last link this
-> design can produce.** Nothing is wrong with the repository, the tools or the translations.
->
-> **THE FIX, and it is one action:** open wave 10 as a **FRESH TOP-LEVEL SESSION** (any new Claude
+> ⛔ **WAVE 11 MUST BE OPENED BY A HUMAN. WAVE 10 CANNOT DO IT.** Wave 10 shares wave 9's session
+> lineage, so `create_session` fails for it with the identical
+> `caller session is at lineage depth 8 (limit 8)`. This is Blocked 0b and nothing else.
+> **THE FIX, and it is one action:** open wave 11 as a **FRESH TOP-LEVEL SESSION** (any new Claude
 > Code session, depth 0) on `https://github.com/ehekatlOf/RiotStarsTranslation`, `source_revision`
-> `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with the units in **Next up**.
-> That restores the chain **and** the three-role split, and costs nothing else.
+> `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with **Next up**.
+> That restores the depth, the chain **and** the three-role split at once.
 >
-> **THE §7.2 FALLBACK HAS BEEN TAKEN — an `orchestrator` subagent was spawned for wave 10 at
-> 2026-09-11**, because none of CLAUDE.md §8's four stop conditions holds (427 lines dispatchable,
-> `check` green, pushes working, no human stop) and §7.2 prescribes it when `create_session` fails.
-> `create_session` **was actually called and did fail** with the depth-8 error — not assumed.
->
-> ⚠️ **THE FALLBACK BUYS EXACTLY ONE WAVE AND DOES NOT REVIVE THE CHAIN.** A subagent shares this
-> session's lineage, so **wave 10's coordinator will hit the identical wall** when it tries to open
-> wave 11. **Only a human opening a fresh top-level session resets the depth.** Whatever wave 10
-> achieves, the ask above stands unchanged.
->
-> ⚠️ **AND IT MAY COST INDEPENDENCE.** If that subagent has no `Task` tool it cannot spawn a reviewer,
-> and the three-role split collapses into one agent that dispatches, judges and merges its own work
-> (wave 1's failure, four merges). **Wave 9 is direct evidence of what that costs: independent review
-> returned findings on 3 of 3 units** — a §2 drop, a false impossibility, and five terminology
-> failures — **none of which any gate caught.** Its dispatch therefore tells it to test for `Task`
-> first: **with** it, run the full three-role split; **without** it, run every §6 gate itself, mark
-> every unit **SELF-REVIEWED** here, and write the **independent post-merge audit** debt into this
-> line for whoever comes next.
->
-> ⚠️ **The run is NOT complete** — 427 lines / 450 instances stay bank-feasible, ~8–9 batches.
-> Do not report it complete. ⚠️ **Wave 10 is still SCRIPT-ONLY**: both battle blockers were re-tested
-> at wave 9's preflight and **both are still unfixed**.
+> ⚠️ **WAVE 10 IS SCRIPT-ONLY — both battle blockers were re-tested at wave 10 preflight and
+> BOTH ARE STILL UNFIXED.** Evidence, run 2026-09-11: `grep -n "FC70\|FCA8" tools/riotbattle.py`
+> returns **no hits**; `riotscript.tokenise_stream` still tests `is_sjis_lead` before the tag branch
+> with no argument-length table; `assemble.py:validate_body` (lines 88–114) still applies its
+> charset whitelist to every non-structural line with **no dump-identical exemption**. All 8
+> remaining battle chunks stay blocked.
 
 ## Last updated
-2026-09-11 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
-wave: **9 CLOSED — 3 of 3 merged, 0 parked, 0 lost, 0 re-dispatches** · queue: **recomputed at close;
-427 lines / 450 instances bank-feasible, ~8–9 batches**
+2026-09-11 · by: **wave-10 coordinator** (`orchestrator` subagent, **NO `Task` TOOL —
+SELF-REVIEWING**) · wave: **10 SURVEYED — script-only, batches 014/015/016 = DATA 707–856** ·
+queue: **recomputed at wave-10 preflight; 424 lines / 447 instances bank-feasible**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -68,9 +54,26 @@ in the game and is no longer comfortable. Banks 40 and 41 still have a spendable
 (free < the 500-byte reserve), so any line touching either remains blocked outright.
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
-## In flight
-**Nothing. Wave 9 is closed: 3 of 3 merged, 0 parked, 0 units lost, 0 re-dispatches.**
-No PR is open and no branch is unmerged.
+## In flight — WAVE 10 (script-only, 3 units, **ALL SELF-REVIEWED**)
+⚠️ **No translator subagents and no independent reviewer exist for this wave** — the coordinator has
+no `Task` tool (see NEXT ACTION). It translates, gates and merges each unit itself. Every row below
+is therefore **SELF-REVIEWED** and owes an independent post-merge audit of the *reading* review
+(the §6 mechanical gates are objective and their evidence is pasted in each PR; the reading is what
+self-review compromises).
+
+| Unit | DATA range | Lines / inst | Banks | Branch | State |
+|---|---|---|---|---|---|
+| `batch_014` | 707–756 | 50 / 50 | 18, 19, 20 | `tl/script-014` | surveyed, not yet dispatched |
+| `batch_015` | 757–806 | 50 / 50 | 20 | `tl/script-015` | surveyed, not yet dispatched |
+| `batch_016` | 807–856 | 50 / 50 | 20, 21, 22, 23 | `tl/script-016` | surveyed, not yet dispatched |
+
+**Feasibility measured at wave-10 preflight** (own script, not `queue.py`'s allocator), growth at
+2.10×, 500 B/bank reserve — **every bank comfortable, no tight bank touched at all**:
+`18: 1,025 / 10,333` · `19: 1,415 / 10,527` · `20: 4,005 / 29,489` · `21: 1,279 / 36,819` ·
+`22: 526 / 38,773` · `23: 262 / 33,385`. ⚠️ Banks **2, 5, 33, 40, 41** (the tight ones) are **not
+touched by any of the three units** — deliberate: DATA 707–856 is one contiguous town/shop/NPC
+scene continuing wave 9's `batch_011` (which ended at DATA 706) and it lives entirely in roomy banks.
+⚠️ **DATA 518/519/520 are set aside as briefed** (6,389 B of growth against bank 5's 1,135 spendable).
 
 ## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
 **Seed the glossary BEFORE dispatching.** Sections end at **glossary §54** and **FLAGS §AP** —
