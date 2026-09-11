@@ -7232,3 +7232,258 @@ self-authored PR it refuses `APPROVE` too — so the decision was posted as a **
 `DECISION:` on line 1. `gh` is not installed; the GitHub MCP tools were used throughout. A fresh
 container still clones **shallow with a stale local ref** of the integration branch, and
 `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` remains the fix.
+
+## AY. Wave 12 review — script batch 021 / PR #44, MERGED (2026-09-11, round 1)
+
+`tl/script/batch_021.tsv` — the **developer debug menu**: flag-state readouts and the sound test.
+DATA **997–1034**, **38 unique lines / 38 instances**, **bank 30 only**, **356 JP → 591 EN = 1.6601×**,
+**+456 bytes** (bank 30 **35,091 → 34,635 free**). **39 text runs, widest 23, none at 24**; `{FFFE}`
+**46 → 39, net −7**; `{FCC0}` untouched; non-`{FFFE}` tag stream **byte-identical on all 38 rows**;
+**max 2 text rows on any page** (source also 2). **Merged round 1, no must-change finding.** Squash
+**`b3ca8cb`**, PR head **`1e55d1b`**, base pinned **`f90f613`**, merge tree derived at review
+(**`f4bbc0e`**) rather than reused. Glossary **§63**.
+
+⚠️ **NOT PLAYER-FACING** — reachable only through a debug menu, no speaker, no voice. That changed the
+weighting of the review, not its standard: every §6 gate was run and pasted and every glossary ruling
+was applied.
+
+### AY1. Banks under 2,000 free — still FOUR, and `tightest:` hides BANK 2 again
+
+`40 → 75` · `41 → 353` · `5 → 1,595` · `2 → 1,607`. **None is this unit's** (bank 30 → 34,635).
+```
+tightest: bank 40 75 free, bank 41 353 free, bank 5 1595 free
+```
+**Bank 2 is invisible on that line on the current base** (bank 5 was, before PR #45). **Which bank the
+`tightest:` line hides is still not stable — read the 44-row table, never that line.** §AW1, §AX1 and
+§AV1 all said this; it is now four waves running.
+
+### AY2. ⭐⭐ A SECOND SCRIPT-SIDE `tokenise` ARTIFACT, ON A DIFFERENT BRANCH FROM §R4's AND §AP2's — Blocked 0 is wider again
+
+**Belongs beside §R4 and §AP2 and it changes what the fix has to be.** Found by the translator,
+verified at review **from the tool source rather than from the claim**, and it has **zero shipping
+impact, proved rather than asserted.**
+
+**D1003** (FILE 1008) carries `{FFF3}{=00}{FF00}{=14}` where its seven siblings carry
+`{FFF3}{=00}{=B4}{=00}{=12}` and the like. **`{FF00}` is not a real tag.** `tools/riotscript.py:38`
+reads
+
+```python
+def is_sjis_lead(b):
+    return 0x81 <= b <= 0x9f or 0xe0 <= b <= 0xef
+```
+
+so **`0xFF` is not an SJIS lead byte**. `tokenise_stream` (lines 55–83) has **no argument-length
+table**, so after emitting `{FFF3}` it re-enters its dispatch loop, meets `0xFF` in the
+`0xfb <= c <= 0xff` branch and emits the impossible control tag `{FF00}` **from an argument byte**
+(flag 255, `00 FF 00 14`).
+
+> ⚠️ **THIS IS NOT §R4's / §AP2's MECHANISM.** §AP2's script instance (DATA 367, `{FFED}{=03}閧{=A8}`)
+> fires on the **SJIS-lead branch** — `is_sjis_lead(0xE8)` tested *before* the tag branch, so two
+> argument bytes decoded as the kanji `閧`. **This one fires on the CONTROL-TAG branch.** A fix that
+> only reorders or widens the SJIS-lead test **leaves this one standing**. **One argument-length table
+> fixes both branches, in both `riotscript.py` and `riotbattle.py` — that is the fix to specify.**
+
+**Census re-run at source over all three dumps:** `{FF00}` = **1 in `script_unique.txt`** (D1003) ·
+**6 in `script_dump.txt`** (lines 43, 58, 3149, 6420, 6970, 7085) · **0 in `battle_dump.txt`**. All six
+are `{FFF3}{=00}{FF00}{=XX}` selector runs with the value `0xFF`: arguments `{=04}` ×2, `{=06}`,
+`{=0F}`, `{=14}`, `{=28}`. **So Blocked 0's "1 in the script dump" is now TWO script-unique lines by
+two distinct mechanisms.**
+
+**Zero shipping impact, and it follows from the encoder's own grammar** (`{XXXX}` → 2 bytes,
+`{=HH}` → 1): `{FFF3}{=00}{FF00}{=14}` and `{FFF3}{=00}{=FF}{=00}{=14}` both emit `ff f3 00 ff 00 14`.
+The unit reproduces the source's form **verbatim** and its tag stream is byte-identical, so nothing
+renders wrongly; `check` passes and `merge` prints no "never matched the dump".
+
+⛔ **NEVER patch `riotscript.py` to tidy this** — CLAUDE.md §3. It is a human's call, it needs a
+re-dump, and `tl/script/batch_021.tsv` must keep the `{FF00}` form for as long as the dump emits it.
+**HANDOFF Blocked 0 updated.**
+
+### AY3. ⭐⭐ RULING — DESCRIPTIVE labels take SENTENCE CASE; one ruling binds BOTH debug files
+
+Full reasoning in `glossary.md` **§63.1**. The short form:
+
+> **Descriptive title → sentence case** (initial capital on the row's first word, glossary-fixed
+> components byte-identical and lowercase below it). **Title case only for a NAMED thing or a §9-seeded
+> label form.** **0 columns, 0 bytes, 0 rows either way — but it must be ONE ruling across
+> `batch_021` and `batch_022`.**
+
+**It ratifies exactly what shipped, so none of the 30 shared titles moved and PR #46's 30/30 diff
+stands.** The decisive evidence is one the PR did not cite: **§56.2 ships eight gutter-prefixed MENU
+LABELS and every one is sentence case** (`　Ｙｏｕｎｇ　ｗｏｍａｎ　ｐａｓｓｉｎｇ　ｂｙ`, `　Ｂｅａｔ　ｈｉｍ`,
+`　Ｄｏ　ｎｏｔｈｉｎｇ`, …). Supported by §56.1's `戒厳令` row (*"ships sentence-initial as
+`Ｍａｒｔｉａｌ　ｌａｗ`"*), by §59.2's own split between named features (`Ｓｌｏｔ　Ｍａｃｈｉｎｅ`) and
+descriptive ones (`Ｄｉｒｅｃｔｉｏｎａｌ　ｂｕｔｔｏｎｓ`, `ｈｉｔ　ｒａｔｅ`), and by §9's `炎の雨` row
+(*"sentence-initial capital only"*).
+
+⚠️ **Title case would have reproduced §51.4's shipped gate-7 failure in three places at once.**
+`Ｗｅ　Ｈｏｂｂｉｔｓ` → `Ｗｅ　ｈｏｂｂｉｔｓ` was required because §17.1's lowercase-in-prose has *"no
+sentence-position carve-out"* — a **mid-phrase** capital on a lowercase-fixed term.
+`Ａｎｃｉｅｎｔ　Ｃｉｖｉｌｉｓａｔｉｏｎ` (§51.2), `Ｍｏｂ／Ｂｏｓｓ　Ｂａｔｔｌｅ` (§9.W12) and
+`Ｔａｌｋ　ｗｉｔｈ　Ｃｏｍｒａｄｅｓ` (§28.2) are that failure. **§17.1's "a label column is capitalised
+throughout or not at all" is about the CLASS-NAME table, whose entries name kinds**; §56.2 is the case
+that shows a descriptive label column is not.
+
+✅ **PR #46 had already withdrawn its title-case draft. This is the ruling it withdrew to.**
+
+### AY4. ⭐⭐ 30 ROWS NO GATE IN CLAUDE.md §6 CAN SEE — the twin pairing, verified 30/30 at review
+
+**`batch_021`'s D1005–D1034 and `batch_022`'s D1053–D1082 are the SAME 30 readable strings, differing
+only in the trailing `{FFF8}` jump argument.**
+
+```
+021 D1005 key: {FB01}０１：インターミッション{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=17}
+022 D1053 key: {FB01}０１：インターミッション{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=09}
+```
+
+**The whole-message keys are unequal, so gate 6 pairs NOTHING — it reported clean, correctly and
+uselessly — and a divergent English would have shipped undetected in two files at once.** Paired at
+review by readable text, resolving each `batch_022` row's DATA from its own JP key rather than by an
+offset: **`title mismatches: 0`, `EN readable identical INCLUDING the ＮＮ： prefix: 30 / 30`**, and
+**D1027 ↔ D1075 byte-identical including the break position.**
+
+⚠️ **The two forms differ by the CURSOR GUTTER: `　ＮＮ：` + title there, `ＮＮ：` + title here, so a title
+of 20 is 23 here and 24 there.** Re-measured on `batch_022`'s branch: its **D1048 runs `[23, 24, 23,
+15]` — one run at exactly 24**, legal at the hard limit and over the ≤23 preference; its **D1050
+abbreviates track 23** to `　２３：Ｌｅｇｅｎｄａｒｙ　ａｎｃｉｅｎｔｓ` (22), which the source licenses by
+abbreviating `インターミッション` to `ＩＭ` in the same menu. **Both are PR #46's to judge.**
+
+⚠️ **A relayed width figure is not a measurement.** The dispatch told PR #46 that track 20 lands at
+exactly 24 with zero slack; **it measured 22 and was right** (`Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ` = 18, `　２０：`
++ 18 = 22). The same dispatch then claimed this unit's table "said 23 for its own 21"; **it did not** —
+all 38 of the PR's per-row widths reproduce exactly.
+
+**METHOD, because nothing mechanical covers it:** `assemble.py` has no cross-file check, gate 6 keys on
+the whole message, and `tag_parity` is not even applied to the script store (§AU7). **A cross-PR
+pairing on readable text is the only thing that catches this class.** Fourth wave running in which a
+`{FFF6}` / `{FFF8}` / `{FC51}` argument difference hid a real pairing — §61.3's four traps, §42.5's
+forward-binding table, §9.W12's trap list.
+
+### AY5. ⚠️ `音楽` IS NOT EXHAUSTED AFTER WAVE 12 — D1169 remains in bank 40, and it carries a charset problem
+
+**The §60.4 / §AV4 shape again: a status asserted from a wave's own coverage.** `音楽` is **23 unique
+lines / 28 instances / 0 battle**; **9 in `batch_021`, 13 in `batch_022`, and the 23rd is D1169** —
+
+```
+D1169   count 1   bank 40   音楽のＯＮ・ＯＦＦを切り替えます        (untranslated)
+```
+
+**Bank 40 has 75 bytes free, so it is blocked behind §F2 / Blocked 2.** Two warnings for whoever
+unblocks it:
+
+1. It takes **this unit's `ｍｕｓｉｃ`** (§63.3) and **this unit's verbatim `ＯＮ`/`ＯＦＦ`** (§9.W12's
+   `フラグ` cell: *"the source already writes `ＯＮ`/`ＯＦＦ` in full-width Latin — keep them exactly, do
+   not re-case"*, honoured on all 8 rows here).
+2. ⚠️ **Its `・` is OUTSIDE `translation_prompt.md` §3.1 and has no glyph.** It needs the §45.7 /
+   §56.2 treatment — §45.7 handled `・` in the Latin incantations, §56.2 re-cast `→` as `−` (U+2212)
+   and flagged it as a guess. **`ＯＮ／ＯＦＦ` with the permitted `／` is the obvious candidate; it is not
+   decided here because no line needs it yet.**
+
+### AY6. ⭐ A new incumbent, found by reading segment 19 of a 29-segment pooled row
+
+**§62.3's trap in a new place, and the row it produced is in `glossary.md` §63.3.** The unit's
+`マップクリア` → `Ｍａｐ　ｃｌｅａｒｅｄ` cell cited two donors and missed the closest one:
+**`batch_013.tsv:86` (D978, bank 29) segment 19 ships `マップクリアー時に` → `ｗｈｅｎ　ｙｏｕ` / `ｃｌｅａｒ　ｔｈｅ
+ｍａｐ`** — the long-vowel spelling, in a `〜時に` temporal clause.
+
+**It is NOT a divergence and nothing is re-cut.** `マップクリアー` is §17.2's kana-lengthener variant of
+`マップクリア` (the `そーよね`/`そうよね` relation of §61.1, the `イチバン`/`一番` relation of §60.4); the
+source there is a clause and here a bare label; and **both take the one head word `ｃｌｅａｒ`, conjugated
+to each source's own shape**, which is §51.3's *"the row is not source-part-of-speech-locked"* and
+§27.1's *"voice and tense follow the source"*. **Written down because a later corrections unit would
+otherwise "fix" one into the other.**
+
+⚠️ **The general lesson, now paid for three times (§61.1's `そうなの`, §62.3's `品`, this):** **a pooled
+row must be read segment by segment. Judging one from its head fragment makes a true citation look
+false, and makes a false "0 shipped" look true.** D978 has **29 `{FFFE}` segments and 296 readable
+characters**.
+
+### AY7. Figure and citation corrections — nine, and not one touches a line of any file
+
+All written out in `glossary.md` §63.6. Summary:
+
+1. **The PR's absolute bank figures are stale by 28; its delta is not.** `35,119 → 34,663` in the body
+   is `35,091 → 34,635` post-#45 (PR #45 spent 28 bytes in bank 30). **+456 is correct on either base**
+   and is the figure the record carries. The dispatch's 782 was a 2.10× planning bound, not an error.
+2. **A dispatch error, not the unit's:** "the unit's table claimed 23 for its own 21" is false.
+3. **`ＯＰ`'s "1 battle" is a substring false positive** — the hit is inside `＞ＯＰＥＲＡＴＩＯＮ`. Corrected
+   to **3 script / 0 battle**. The unit diagnosed this class correctly for `ｍｏｂ` and missed it on its
+   own cell.
+4. **Five reach figures re-run:** `ｔｏｗｎ` 46 (not 39) · `ｃａｓｔｌｅ` 44 (not 38) · `ｖｉｌｌａｇｅ` 43 (not 46)
+   · `ｔａｌｋ` 17 (not 18) · `ｂａｔｔｌｅ` 19 (not 17).
+5. **`音楽`'s "23 script instances" is 23 unique LINES** (28 occurrences / 28 instances).
+6. **`音楽` is not exhausted — see §AY5.**
+7. **The `炎の雨` citation is `glossary.md` §9, not §60** (it was *ruled* at the §60 merge). Substance
+   verbatim correct.
+8. ✅ **`インターミッション`: the unit's "4 instances over 3 lines" and the dispatch's "2 in `tl/`" are BOTH
+   right at their own scope** — 3 unique lines / 4 occurrences (D978 ×2, D1005, D1053) and
+   `Ｉｎｔｅｒｍｉｓｓｉｏｎ` ×2 shipped at `batch_013.tsv:86`. `grep -c` counts lines, `str.count()` counts
+   instances. **The convention has to be stated, and the unit stated it.**
+9. ✅ **§9.W12's six "Where seen" corrections (coordinator, `6da4f95`) are present and right**,
+   re-derived cell by cell; not duplicated. ⚠️ **They are written collectively BELOW the table and the
+   six cells still read "`batch_022` D10xx"** — §4.3-compliant, but a reader of one cell in isolation is
+   still misled.
+
+### AY8. Gate 7's three faces on a unit that is almost entirely gate 7 — corpus stated
+
+- **(a) key cells:** **1,704 first-column CJK keys, 1,319 distinct**, over all **8,479 lines / 2,188
+  `|`-delimited table rows** of `glossary.md`.
+- **(b) every cell, note cells included:** **4,452 CJK runs of length ≥ 2, 2,261 distinct.**
+  **Three of the unit's source terms are note-cell-only and invisible to a key-first pass — `バトル`,
+  `伝説の`, `です`.** `バトル:892` fixes no English for the bare loanword; `伝説の:1638` is where §22.1's
+  `伝説の` → `ｌｅｇｅｎｄａｒｙ` actually lives; `です` is a harvester artifact.
+- **(c) ⭐ the `tl/` COLUMN-2 PASS: 4,075 aligned JP→EN segment pairs** from the 20 shipped
+  `tl/script` TSVs (segment-aligned where the `{FFFE}` counts match, whole-message otherwise).
+  **It earned its keep twice on this unit:** it confirmed `音楽` / `ｍｕｓｉｃ` genuinely free (**0
+  segments, and `ｍｕｓｉｃ`/`Ｍｕｓｉｃ` = 0 in all of `tl/`**), and it is what surfaced the `マップクリアー`
+  incumbent of §AY6. **Third wave running that face (c) produced a finding nothing else could reach**
+  (§AW2's `立ち寄る`/`ｄｒｏｐ　ｉｎ`, §9.W12's `その他`).
+- Controlled both ways: `フラグ` reported, `ゲロゲロ` and `棚卸し` correctly not.
+- ⚠️ **Corpus figures vary with splitter and struck-row handling — state yours.** PR #45's review got
+  1,293 keys + 2,048 note runs; #43's unit got 691 + 697; this review got 1,704 + 4,452 (all rows, no
+  backtick requirement — §AV7's lesson).
+- ⚠️ **`その他` is NOT in this unit** (0 occurrences); all 10 remaining are `batch_022`'s. The dispatch
+  asserted otherwise; **the measurement won.**
+
+### AY9. `インターミッション` STAYS OPEN against §Z1 / Blocked 7
+
+Used as settled (§53.1), **not re-decided**. **Nothing in DATA 997–1034 settles whether it names an
+on-screen menu label** — D1005 is a "now playing" box. `batch_022`'s D1043 abbreviating it to `ＩＭ` in
+a menu is the closest thing to evidence this wave produced and **still does not settle it**. The row
+stays live; **a human with the disc owns it.**
+
+### AY10. Three collision tests met, and one substring false positive retired
+
+- **`ｂｏｓｓ` has THREE disjoint senses.** `ｂｏｓｓ` lowercase = **2, both `batch_006.tsv`** (§34.1's
+  `親方`, script **bank 12**) · `Ｂｏｓｓ` = **5, all `chunk_020.txt`** (§32.1's `おかしら`, **battle only**)
+  · this unit's game-mechanic `ボス戦`/`大ボス` in script **bank 30** (+ `batch_022`'s bank 31).
+  **No chunk, no bank and no message holds two of the three.** §25.3 met on both axes.
+- **`ｍｏｂ` is a substring false positive — all five `tl/` hits read at review**: `chunk_008.txt:5`
+  and `:16` `ｍｏｂｉｌｉｔｙ`, `batch_001.tsv:20` `ｍｏｂｉｌｅ`, `:21` and `:26` `ｍｏｂｉｌｉｔｙ`, all §4's
+  `機動力` → *mobility*. **`ｍｏｂ` as a word is unspent.** Same class as §34.1's `品`, §35.2's reach
+  figures and §57.1's `動力`/`移動力`.
+- **`Ａｒｃｈ` = 0 in `tl/`** and the two capitalised `Ｅｎｅｍｙ` hits (`chunk_006`, `chunk_013`) are
+  sentence-initial `敵`-family words in the battle store. `Ａｒｃｈ‐Ｅｎｅｍｙ` collides with neither.
+
+### AY11. Still true, carried forward
+
+- ⚠️ **Branch deletion still returns HTTP 403 (§AQ9 / §AU9).** `git push origin --delete
+  tl/script-021` → `error: RPC failed; HTTP 403`. **A surviving branch proves nothing.** The signal is
+  the PR's `merged: true` plus the squash SHA **`b3ca8cb`** plus this integration commit.
+- ⚠️ **GitHub refuses `REQUEST_CHANGES` here (§AQ1), and refuses `APPROVE` on a self-authored PR.**
+  The decision was posted as a **`COMMENT`** review with `DECISION:` on line 1. **An absent
+  `REQUEST_CHANGES` is never approval.** `gh` is not installed; the GitHub MCP tools were used throughout.
+- ⚠️ **A fresh container clones SHALLOW with a STALE local ref of the integration branch.**
+  `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` remains the fix;
+  `git checkout <branch>` moves backwards and `git pull --ff-only` then aborts.
+- ⚠️ **`rowcheck.py:_script_cols` expands only `{FFEC}{=00}{=00}` and `{FC00}{=0000}` (to 7) and strips
+  every other insert to ZERO columns** (§AQ8, §AT2, §AU4, §AV5), so insert-bearing rows are **bounded,
+  not measured**. **This unit has 0 inserts**, so the class is vacuous here — checked, not assumed.
+- ⚠️ **A hand-rolled column check must split on `{FCC0|FC30|FC51|FC50|FFFF}` as well as `{FFFE}`**
+  (§AX7, `assemble.py:106`). All 38 widths here were measured on the full splitter.
+- ⚠️ **THREE citation conventions are live in `glossary.md`** (§AX6): project **DATA** = the 0-based
+  `script_unique.txt` body index + 1; `batch_NNN.tsv:n` and `chunk_NNN` numbers are **1-based FILE
+  lines**; §37.1's battle `L6`/`L4` citations are **1-based BODY indices**. **Every number in §63 and in
+  §AY states which it is.**
+- ⚠️ **`tl/battle/` holds no Japanese, so grepping it for a source term is a NULL CHECK** (§60.5,
+  §AW7). The battle side of gate 6 must be done **positionally against `dumps/battle_dump.txt`** — done
+  here, **0 of 38 messages and 0 of 46 segments**, so nothing to pair.

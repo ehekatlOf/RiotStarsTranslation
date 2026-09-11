@@ -20,24 +20,47 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > If this session died mid-wave: `ListAgents`, reconcile the open PRs below against **In flight**,
 > re-dispatch anything with no branch, and **re-arm the `send_later` watchdog**.
 >
-> ### ▶ 2 of 4 REVIEWED AND MERGED (#45 `5b6c212`, #43 `1134d2b`). NEXT: dispatch a `reviewer` for **PR #44 `batch_021`**, then **PR #46 `batch_022`**.
-> **`git pull --ff-only` FIRST** — #43's reviewer pushed an integration commit that edited five
-> `glossary.md` rows in place and appended **§62** / **§AX**. Then dispatch one reviewer,
-> `run_in_background: false`, one PR at a time.
-> ⚠️ **Tell #44's and #46's reviewers: every `glossary.md:NNNN` citation in their PR body is STALE**
-> (+12 to +26 from #45's integration, then shifted again by #43's). **Cite by section; verify a row
-> by its text.** ⚠️ **And that `glossary.md` now uses THREE citation conventions (§AX6): 0-based DATA
-> in §37.1's renumbered cell's history, 1-based DATA as the stated norm, and both 0- and 1-based BODY
-> indices for battle lines. State which one every number is.**
+> ### ▶ 3 of 4 REVIEWED AND MERGED (#45 `5b6c212`, #43 `1134d2b`, **#44 `b3ca8cb`**). NEXT: dispatch a `reviewer` for **PR #46 `batch_022`** — the last unit of the wave.
+> **`git pull --ff-only` FIRST** — #44's reviewer pushed an integration commit appending glossary
+> **§63** and FLAGS **§AY**. Then dispatch the last reviewer, `run_in_background: false`.
+> ⚠️ **Tell #46's reviewer: every `glossary.md:NNNN` citation in its PR body is STALE** (+12 to +26
+> from #45's integration, shifted again by #43's, and now by #63's 266 appended lines). **Cite by
+> section; verify a row by its text.** ⚠️ **And that `glossary.md` uses THREE citation conventions
+> (§AX6): project DATA = 0-based `script_unique.txt` body index + 1; `batch_NNN.tsv:n` and
+> `chunk_NNN` are 1-based FILE lines; §37.1's battle `L6`/`L4` are 1-based BODY indices. State which
+> one every number is.**
+>
+> ### ▶ TWO THINGS #46's REVIEWER INHERITS FROM #44, BOTH SETTLED — DO NOT RE-OPEN THEM
+> 1. ⭐⭐ **CASE POLICY IS RULED (glossary §63.1 / FLAGS §AY3): descriptive labels take SENTENCE CASE**
+>    — initial capital on the row's first word, glossary-fixed components byte-identical and lowercase
+>    below it; **title case only for a NAMED thing or a §9-seeded label form.** It ratifies what both
+>    files already shipped. **#46 must conform, not re-decide.** The decisive evidence is **§56.2's
+>    eight gutter-prefixed menu labels, every one sentence case.**
+> 2. ⭐⭐ **THE 30 SHARED TITLES ARE VERIFIED IDENTICAL AND NOTHING MOVED.** `batch_021` D1005–D1034 ↔
+>    `batch_022` D1053–D1082 are the same 30 readable strings, differing **only** in the trailing
+>    `{FFF8}` argument, so **gate 6 pairs NOTHING**. Paired at #44's review by readable text:
+>    **30 / 30 identical including the `ＮＮ：` prefix**, D1027 ↔ D1075 identical including the break.
+>    **#44 merged with no change to any of the 30, so #46's own 30/30 diff still stands — no re-diff
+>    needed.** #46 still owes its own pairing of the ABBREVIATED menu rows (D1043–D1052), which are
+>    **its own** and were not reviewed at #44: measured there, its **D1048 has a run at exactly 24**
+>    (`[23, 24, 23, 15]` — legal, over the ≤23 preference) and its **D1050 abbreviates track 23** to
+>    `　２３：Ｌｅｇｅｎｄａｒｙ　ａｎｃｉｅｎｔｓ` (22). ⚠️ **`その他` is entirely #46's — 0 occurrences in
+>    `batch_021`, 10 in `batch_022` — and it has 0 glossary mentions of any kind while shipping 7× in
+>    `batch_013` as `　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ`. That is gate 7's face (c) and #46 must run it.**
+> ⚠️ **#46 is the SECOND of the two debug twins to merge, so IT strikes the seven §9.W12 seed rows**
+> (`フラグ`, `新曲`, `任務失敗`, `ゲームオーバー` label, `宿敵`, `ザコ戦`, `ボス戦`) per the `ルート`
+> precedent (§29.1 / §30.1). #44 promoted them and **deliberately left every row LIVE** (§63.4 has the
+> per-DATA remaining counts). ⚠️ **But `音楽` does NOT become exhausted: D1169 remains in bank 40**
+> (§AY5), and it carries a `・` that is outside §3.1.
 
 ## Last updated
-2026-09-11 · by: the **wave-12 reviewer of PR #43** (the corrections unit), integration commit below ·
-wave: **12 REVIEWING — barrier met, 2 of 4 reviewed and MERGED (#45, #43); #44 and #46 still to review** ·
-**every figure in the Progress block and in both merged rows below was re-derived by its reviewer from
-the dumps + a fresh `merge`/`bankmeasure`/`rowcheck`, not inherited**
-⚠️ **glossary now ends §62, FLAGS now ends §AX** — both read off the file at commit time, never reserved.
-⚠️ **The four banks under 2,000 free are UNCHANGED by PR #43: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
-`bankmeasure`'s `tightest:` line now hides **bank 2** (it hid bank 5 before #45) — **which bank is
+2026-09-11 · by: the **wave-12 reviewer of PR #44** (`batch_021`), integration commit below ·
+wave: **12 REVIEWING — barrier met, 3 of 4 reviewed and MERGED (#45, #43, #44); only #46 left** ·
+**every figure in the Progress block and in all three merged rows below was re-derived by its reviewer
+from the dumps + a fresh `merge`/`bankmeasure`/`rowcheck`, not inherited**
+⚠️ **glossary now ends §63, FLAGS now ends §AY** — both read off the file at commit time, never reserved.
+⚠️ **The four banks under 2,000 free are UNCHANGED by PR #44: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
+`bankmeasure`'s `tightest:` line still hides **bank 2** (it hid bank 5 before #45) — **which bank is
 invisible is not stable, so never quote that line; read the 44-row table.**
 
 ## Progress (`python3 tools/assemble.py status`)
@@ -45,16 +68,16 @@ invisible is not stable, so never quote that line; read the 44-row table.**
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **969** | 1,430 | `tl/script/batch_001–020.tsv` (was 948) |
-| Script message instances | **5,085** | 7,931 | **64.1%** (was 63.6%) |
+| Script unique lines | **1,007** | 1,430 | `tl/script/batch_001–021.tsv` (was 969) |
+| Script message instances | **5,123** | 7,931 | **64.6%** (was 64.1%) |
 
-`check`: **All checks passed** on the integration branch after PR #45. glossary now ends **§61**,
-FLAGS now ends **§AW** — both re-read off the file at commit time, never reserved.
-⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** Bank 5 took the
-only hit (−40 of 1,635) and **has now dropped BELOW bank 2**.
-⚠️⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and after PR #45 it prints bank 5 INSTEAD
-OF bank 2 — so which bank is hidden has changed. The line is a sample, not a summary: read the full
-44-bank table.**
+`check`: **All checks passed** on the integration branch after PR #44 —
+`script lines replaced: 5123  (unique forms: 1007)`. glossary now ends **§63**, FLAGS now ends
+**§AY** — both re-read off the file at commit time, never reserved.
+⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** **PR #44 touched
+none of them** — bank 30 only, 35,091 → 34,635.
+⚠️⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and it currently hides BANK 2** (it hid bank
+5 before PR #45). The line is a sample, not a summary: **read the full 44-bank table.**
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight — WAVE 12, dispatched 2026-09-11
@@ -62,14 +85,16 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 |---|---|---|---|---|---|
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst**; 532 JP → 1,051 EN = **1.9756×**; widest run **23**, none at 24 | 21 banks, **+2,256 B**, max **410** (bank 18), bank 5 **realised 40** of 1,635 — all 21 deltas re-derived twice by the reviewer, by independent routes, and they agree bank for bank | ✅ **MERGED round 1, no must-change finding.** PR #45, squash **`5b6c212`**, gated at head `2b7e840` on base pinned `065e67b`. Integration commit: **`integrate: script batch 020 — glossary, flags, handoff`**, the commit that adds glossary §61 and FLAGS §AW. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` on the PR is the signal. Glossary **§61**, FLAGS **§AW** |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items — 3 fixed, 1 fixed after its citation was vindicated, 1 no defect** | chunk 0 **+0 (measured, both versions through `bytes_from_body`)**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 (31,431 → **31,425**, §AP7's predicted figure to the byte) | ✅ **MERGED round 1, no must-change finding.** PR #43, squash **`1134d2b`**, gated at head `fa03b4e` on base pinned **`3c6c579`** (merge-base `e9db558`, merge commit `c5aec14`, clean — the author's `merge-tree` was NOT reused). Integration commit: **`integrate: corrections wave 12 — glossary, flags, handoff`**, adding glossary **§62** and FLAGS **§AX**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: `Ｏ，　Ｏｉ，` stands (§62.4 / §AX3); §AQ5's `編成` row closed as a false positive of its own gate (§62.5 / §AX5).** **Discharged: §AJ3, §AP5 (merged work), §AP7, §AQ5's `batch_007` row.** **§37.1's `反乱` row stays LIVE for D1384 only.** Four glossary rows corrected in place (§23.2, §24.3, §34.1, §37.1) + a cross-reference added at §47.4 |
-| `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
+| `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst**; 356 JP → 591 EN = **1.6601×**; 39 text runs, widest **23** (D1021), **none at 24**, max **2** text rows on any page; `{FFFE}` **46 → 39, net −7**; `{FCC0}` untouched, non-`{FFFE}` tag stream byte-identical on all 38 | **bank 30 only — realised +456**, not the 782 planning bound. Bank 30 **35,091 → 34,635 free** (⚠️ **NOT** the PR body's 35,119 → 34,663 — PR #45 spent 28 bytes in bank 30 in between; the **delta** is 456 on either base). Measured by holding the file aside and diffing: **exactly one line over 44 banks**, and it closes on the text arithmetic `(591−356)×2 − 7×2 = 456` | ✅ **MERGED round 1, no must-change finding.** PR #44, squash **`b3ca8cb`**, gated at head `1e55d1b` on base pinned **`f90f613`** (merge-base `e9db558`, merge tree **`f4bbc0e`**, clean — the author's `merge-tree` was NOT reused). Integration commit: **`integrate: script batch 021 — glossary, flags, handoff`**, adding glossary **§63** and FLAGS **§AY**. Branch **NOT deleted** — HTTP 403 (§AQ9); `merged: true` plus the squash SHA is the signal. **Rulings: ⭐⭐ descriptive labels take SENTENCE CASE, one ruling for both debug files (§63.1 / §AY3) — it ratifies what shipped, so NONE of the 30 titles shared with #46 moved; `マップＯＰ` → `Ｍａｐ　ｏｐｅｎｉｎｇ` expansion ratified over the `Ｒ１`/`ＯＫ` counter-precedent; `ｂｏｓｓ`'s third sense passes §25.3 on both axes.** **New: a SECOND script-side `tokenise` artifact on a DIFFERENT branch from §R4's/§AP2's (§AY2) — `{FF00}` at D1003, control-tag branch not SJIS-lead, 1 unique / 6 dump / 0 battle, zero shipping impact, and it means the fix must be an ARGUMENT-LENGTH TABLE.** **Nine figure/citation corrections, none touching a line of any file (§63.6 / §AY7).** **Ten glossary rows (nine the PR's + `マップクリアー`, found at review in segment 19 of a 29-segment pooled row); seven §9.W12 seeds promoted and EVERY ROW LEFT LIVE for #46 to strike.** ⚠️ **`音楽` is NOT exhausted after wave 12 — D1169 remains in bank 40 (§AY5).** Glossary **§63**, FLAGS **§AY** |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | bank 31 only — **realised 1,724**, not my 2,185 bound | ✅ **PR #46 OPEN** |
 
-## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **2 of 4 DONE**.
+## ✅ WAVE BARRIER MET — ALL FOUR PRs OPEN. REVIEWING ONE AT A TIME; **3 of 4 DONE**.
 ~~**#45 `batch_020`**~~ ✅ **MERGED `5b6c212`, round 1** → ~~**#43 corrections**~~ ✅ **MERGED
-`1134d2b`, round 1, no must-change finding** → **#44 `batch_021` (NEXT)** → #46 `batch_022`
-(the two debug twins adjacent so the second reviewer can pair them). `reviewer` subagents,
-`run_in_background: false`.
+`1134d2b`, round 1, no must-change finding** → ~~**#44 `batch_021`**~~ ✅ **MERGED `b3ca8cb`,
+round 1, no must-change finding** → **#46 `batch_022` (NEXT, and the last unit of the wave)**
+(the two debug twins were kept adjacent so the second reviewer could pair them — **#44's reviewer
+did the pairing itself, 30/30, and nothing moved**). `reviewer` subagents, `run_in_background: false`.
+**Three units in a row merged at round 1.**
 ⚠️ **`git pull --ff-only` before dispatching the next reviewer — BOTH #45's and #43's reviewers
 pushed integration commits, and #43's edited five `glossary.md` rows in place.**
 ⚠️⚠️ **EVERY `glossary.md:NNNN` CITATION IN AN OPEN PR BODY IS NOW STALE.** #45's integration shifted
@@ -239,7 +264,21 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    `E8` is a valid SJIS lead so two argument bytes decoded as text). ⚠️ **The script instance has NO
    SHIPPING IMPACT** — both JP and EN re-encode to the identical byte prefix, so nothing renders
    wrongly; it is dump-representation only. **So fix `riotbattle` first — that is what unblocks 8
-   chunks — and `riotscript` alongside it, since it is the same three-line change.** The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte
+   chunks — and `riotscript` alongside it, since it is the same three-line change.**
+   ⚠️⚠️ **WIDENED AGAIN 2026-09-11 (PR #44 review, `FLAGS.md` §AY2): THE SCRIPT SIDE HAS A SECOND
+   INSTANCE ON A DIFFERENT BRANCH OF THE SAME FUNCTION, AND IT CHANGES WHAT THE FIX HAS TO BE.**
+   **DATA 1003** carries `{FFF3}{=00}{FF00}{=14}` — `{FF00}` is not a real tag. `riotscript.py:38`
+   `is_sjis_lead` is `0x81..0x9f or 0xe0..0xef`, so **`0xFF` is NOT a lead byte**; `tokenise_stream`,
+   having no argument-length table, meets `0xFF` in its **`0xfb <= c <= 0xff` CONTROL-TAG branch** and
+   emits a tag from an argument byte. **DATA 367 fires on the SJIS-LEAD branch; DATA 1003 on the
+   CONTROL-TAG branch.** ⭐ **A fix that only reorders or widens the SJIS-lead test leaves DATA 1003
+   standing. ONE ARGUMENT-LENGTH TABLE fixes both branches, in both tools — specify it that way.**
+   Census re-run at source: `{FF00}` = **1 in `script_unique.txt`, 6 in `script_dump.txt` (lines 43,
+   58, 3149, 6420, 6970, 7085), 0 in the battle dump**; all six are `{FFF3}` selector runs whose value
+   is `0xFF`. ⚠️ **Zero shipping impact, proved from the encoder's grammar** — `{FFF3}{=00}{FF00}{=14}`
+   and `{FFF3}{=00}{=FF}{=00}{=14}` both emit `ff f3 00 ff 00 14`, and `tl/script/batch_021.tsv`
+   reproduces the dump's form verbatim on both sides. **So the script dump now holds TWO artifact lines
+   by TWO mechanisms, not one.** The dumper prefers a Shift-JIS text run over a control tag whenever an argument byte
    is a valid lead byte, so an item id plus the *next tag's* lead byte decodes as a kanji.
    **24 occurrences across 10 chunks** — `{FC70}` in 5, 16, 17, 23, 39 and `{FCA8}` in 15, 27, 28,
    29, 32 — and each makes `check` unsatisfiable for that chunk: the dump form passes tag parity and
@@ -297,6 +336,69 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
+
+### ⭐⭐ WAVE 12 — PR #44 `batch_021` MERGED ROUND 1: THE CASE POLICY IS RULED FOR BOTH DEBUG FILES, AND A SECOND TOKENISER BRANCH IS NAMED
+**`DECISION: MERGE`, round 1, no must-change finding.** Squash **`b3ca8cb`**, gated at head `1e55d1b`
+on base pinned **`f90f613`**, merge tree **`f4bbc0e`** derived at review (the author's `merge-tree` was
+**not** reused — the base had moved through two merges, two integration commits and a seed correction
+since the PR was opened). Glossary **§63**, FLAGS **§AY**. 38 lines / 38 instances, DATA 997–1034,
+**bank 30 only, +456 bytes** (35,091 → 34,635 free), **1.6601×**, widest run 23, none at 24, max 2 text
+rows. **Findings: none that must change; nine figure/citation corrections, not one touching a line of
+any file.**
+
+1. ⭐⭐ **THE CASE POLICY IS RULED ONCE, FOR BOTH DEBUG FILES, AND IT RATIFIES WHAT SHIPPED (§63.1 /
+   §AY3).** **Descriptive labels take SENTENCE CASE** — initial capital on the row's first word, every
+   glossary-fixed component byte-identical and lowercase below it; **title case only for a NAMED thing
+   or a §9-seeded label form.** The PR argued this, recorded the counter-argument honestly, and shipped
+   the side the corpus supports. **The decisive evidence is one the PR did not cite: §56.2 ships EIGHT
+   gutter-prefixed MENU LABELS and every one is sentence case** (`　Ｙｏｕｎｇ　ｗｏｍａｎ　ｐａｓｓｉｎｇ　ｂｙ`,
+   `　Ｂｅａｔ　ｈｉｍ`, `　Ｄｏ　ｎｏｔｈｉｎｇ`, …) — so §17.1's "a label column is capitalised throughout or not
+   at all", which is written about the **class-name table**, does not reach a *descriptive* label
+   column. Title case would have reproduced §51.4's shipped `Ｗｅ　Ｈｏｂｂｉｔｓ` gate-7 failure in three
+   places at once. ⭐ **#46 inherits this and must conform, not re-decide.**
+2. ⭐⭐ **THE TWIN PAIRING WAS DONE AT THIS REVIEW, 30/30, AND NOTHING MOVED.** `batch_021`
+   D1005–D1034 ↔ `batch_022` D1053–D1082 are the same 30 readable strings differing **only** in the
+   trailing `{FFF8}` argument, so **gate 6 pairs nothing** (it reported clean — correctly and
+   uselessly). Paired by readable text, resolving each `batch_022` DATA from its own JP key rather
+   than by an offset: **`title mismatches: 0`, 30/30 identical including the `ＮＮ：` prefix**, D1027 ↔
+   D1075 identical including the break position. **Because no finding required a change, #46's own
+   30/30 diff still stands and no re-diff is needed.**
+3. ⭐⭐ **A SECOND SCRIPT-SIDE `tokenise` ARTIFACT, ON A DIFFERENT BRANCH FROM §R4's AND §AP2's, AND IT
+   CHANGES WHAT THE FIX MUST BE (§AY2).** `{FF00}` at **D1003**, verified **from the tool source**:
+   `riotscript.py:38` `is_sjis_lead` excludes `0xFF`, so `tokenise_stream` — which has **no
+   argument-length table** — meets `0xFF` in its `0xfb <= c <= 0xff` branch and emits a tag from an
+   **argument byte**. **§AP2's D367 fires on the SJIS-LEAD branch; this one on the CONTROL-TAG branch.
+   A lead-byte-only fix leaves it standing; one argument-length table fixes both, in both tools.**
+   Census re-run at source: **1 in `script_unique.txt`, 6 in `script_dump.txt` (lines 43, 58, 3149,
+   6420, 6970, 7085), 0 in the battle dump** — the PR's figures to the byte. **Zero shipping impact,
+   proved from the encoder's grammar**: `{FFF3}{=00}{FF00}{=14}` and `{FFF3}{=00}{=FF}{=00}{=14}` both
+   emit `ff f3 00 ff 00 14`. **Blocked 0 is now two script-unique lines by two distinct mechanisms.**
+4. ⚠️ **`音楽` IS NOT EXHAUSTED AFTER WAVE 12 — D1169 remains, in bank 40 (§AY5).** 23 unique lines;
+   9 here, 13 in `batch_022`, and the 23rd is `音楽のＯＮ・ＯＦＦを切り替えます` (count 1, bank 40, 75 bytes
+   free — blocked). It inherits this unit's `ｍｕｓｉｃ` and its **verbatim `ＯＮ`/`ＯＦＦ`**, and ⚠️ **its
+   `・` is outside §3.1 and needs the §45.7 / §56.2 treatment.** The §60.4 / §AV4 shape again: a status
+   asserted from a wave's own coverage.
+5. ⭐ **A NEW INCUMBENT, FOUND BY READING SEGMENT 19 OF A 29-SEGMENT POOLED ROW (§AY6).**
+   `batch_013.tsv:86` (D978) already ships `マップクリアー時に` → `ｗｈｅｎ　ｙｏｕ` / `ｃｌｅａｒ　ｔｈｅ　ｍａｐ`.
+   **Not a divergence from this unit's `Ｍａｐ　ｃｌｅａｒｅｄ`** — §17.2 kana-lengthener variant, clause vs
+   label, one head word conjugated to each source's shape (§51.3 / §27.1) — **but written down so a
+   later corrections unit cannot "fix" one into the other.** Third time a pooled row has had to be read
+   segment by segment (§61.1, §62.3, this).
+6. **Gate 7's three faces, corpus stated: 1,704 key cells (1,319 distinct) · 4,452 all-cell CJK runs
+   (2,261 distinct) · a face-(c) `tl/` COLUMN-2 PASS over 4,075 aligned JP→EN segment pairs.** Face (c)
+   paid for itself twice — it confirmed `音楽`/`ｍｕｓｉｃ` genuinely free (0 segments, 0 in all of `tl/`)
+   and it is what surfaced item 5. **Three of the unit's terms are note-cell-only** (`バトル`, `伝説の`,
+   `です`). ⚠️ **`その他` is NOT in this unit at all** — 0 occurrences; all 10 are `batch_022`'s, contrary
+   to the dispatch.
+7. **Verified rather than accepted:** `ｍｏｂ`'s five `tl/` hits are all `ｍｏｂｉｌｅ`/`ｍｏｂｉｌｉｔｙ` (read one
+   by one) · `ｂｏｓｓ`'s three senses are disjoint by store and bank · the battle side of gate 6 done
+   **positionally** against `dumps/battle_dump.txt` (0 of 38 messages, 0 of 46 segments) because
+   `tl/battle/` holds no Japanese · `rowcheck script`'s 19 warnings **attributed**, not trusted — none
+   in this unit's merged-dump range 6964–7002, and they sit in banks [0,5,12,13,14,22,25,29,33,41,42],
+   **no bank 30 and no bank 31**.
+8. ⚠️ **Two of my own dispatch claims were wrong and the measurement won**: "the unit's table claimed
+   23 for its own 21" (**it did not** — all 38 widths reproduce exactly) and "this unit's own `その他`
+   rendering depends on it" (**it has no `その他`**).
 
 ### ⭐⭐ WAVE 12 — PR #43 MERGED ROUND 1: FOUR FLAGS RETIRED, AND A TOOLING FINDING THAT CHANGES HOW WE HAND-MEASURE
 **`DECISION: MERGE`, round 1, no must-change finding.** Squash `1134d2b`, integration `173c197`,
@@ -499,7 +601,18 @@ Script **948 → 969 unique lines · 5,041 → 5,085 instances · 63.6% → 64.1
 2. ⚠️ **MY §9.W12 "Where seen" CELLS ARE ONE UNIT SHORT ON SIX ROWS.** `任務失敗`, `ザコ戦`, `ボス戦`,
    `ゲームオーバー`, `宿敵` and `魔族` name `batch_022` only and **omit `batch_021`'s own instance**.
    The counts are right; the attributions are wrong. One-line fix per row at promotion.
+   ✅ **VERIFIED CELL BY CELL AT PR #44's REVIEW and my `6da4f95` correction is RIGHT** — `任務失敗` 3 =
+   D1018 + D1047 + D1066 · `ザコ戦` 3 = D1020 + D1048 + D1068 · `ボス戦` 3 = D1021 + D1048 + D1069 ·
+   `ゲームオーバー` 4 = D1019 + D1047 + D1067 + D981 (the shipped prose sense, `batch_005.tsv:22`
+   segment 12) · `宿敵` 3 = D1026 + D1050 + D1074 · `魔族` 6 shipped in `tl/` plus D1029 + D1051 +
+   D1077. **Not duplicated at integration.** ⚠️ **But the correction is written collectively BELOW the
+   table and the six cells still read "`batch_022` D10xx"** — §4.3-compliant, and still able to mislead
+   a reader of one cell in isolation (§63.6 item 9).
 3. ⚠️ **`インターミッション` is 4 instances over 3 lines in `tl/`, not the 2 I stated.**
+   ✅ **BOTH FIGURES ARE RIGHT AT THEIR OWN SCOPE, verified at PR #44's review**: the SOURCE is 3 unique
+   lines / 4 occurrences (D978 ×2, D1005, D1053); the SHIPPED English `Ｉｎｔｅｒｍｉｓｓｉｏｎ` is **2 in
+   `tl/`**, both at `batch_013.tsv:86`. `grep -c` counts lines, `str.count()` counts instances.
+   **The convention has to be stated — the translator stated it, and that is the whole lesson.**
 4. ⭐⭐ **NEW TOOL FINDING — A SECOND `tokenise_stream` ARTIFACT, ON A DIFFERENT BRANCH FROM §R4's.**
    D1003 carries `{FFF3}{=00}{FF00}{=14}` where its seven siblings carry `{FFF3}{=00}{=B4}{=00}{=12}`.
    **`{FF00}` is not a real tag.** `tools/riotscript.py:55–90 tokenise_stream` has **no argument-length
@@ -514,13 +627,18 @@ Script **948 → 969 unique lines · 5,041 → 5,085 instances · 63.6% → 64.1
    `batch_021` D1005–D1034 and `batch_022` D1053–D1082 are the **same 30 readable strings**, differing
    only in the trailing `{FFF8}` argument — so **gate 6 pairs NOTHING** and a divergence would ship
    undetected. Two hard consequences for `batch_022`'s menu rows (which carry a `　` cursor gutter, so
-   +1 column over `batch_021`'s): **track 17 and track 20 land at exactly 24 — the hard limit, zero
-   slack** — and **track 23 `伝説の古代文明` is 30 columns and CANNOT FIT**, because a 4-option menu row
-   cannot be split without breaking the option↔`{FFF6}` mapping; it must be abbreviated, and
-   `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` alone is 20 and fixed at §42.1.
-   ⚠️ **THE REVIEWER MUST PAIR THESE 30 TITLES BY HAND at whichever PR lands second** — the full table
-   is in PR #44's Handoff section. **An open case-policy call spans both files** (sentence case for
-   descriptive titles, title case for seeded label forms): **rule it ONCE across both**, 0 bytes either way.
+   +1 column over `batch_021`'s): ~~**track 17 and track 20 land at exactly 24**~~ ⛔ **CORRECTED at
+   PR #44's review, 2026-09-11 — ONLY TRACK 17 DOES. Track 20 is 22** (`Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ` = 18,
+   `　２０：` + 18 = 22), which `batch_022` measured and was right about; re-measured on its branch, its
+   D1048 runs `[23, 24, 23, 15]` — **one run at 24, not two rows at 24** — and **my figure was a
+   RELAYED one, not a measurement** — and **track 23 `伝説の古代文明` is 30 columns and CANNOT FIT**,
+   because a 4-option menu row cannot be split without breaking the option↔`{FFF6}` mapping; it must be
+   abbreviated, and `ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ` alone is 20 and fixed at §42.1 / §51.2.
+   ✅ **THE 30-TITLE PAIRING IS DONE — PR #44's reviewer did it, 30/30 identical including the `ＮＮ：`
+   prefix, and NOTHING MOVED**, so #46's own 30/30 diff still stands (§AY4). ✅ **The case-policy call is
+   RULED: descriptive labels take SENTENCE CASE, title case only for named things and §9 seeds
+   (§63.1 / §AY3).** #46 conforms; it does not re-decide. ⚠️ **What #46 still owes is its OWN
+   abbreviated menu rows D1043–D1052, which PR #44 did not review.**
 6. ⚠️ **`ｂｏｓｓ` now carries three disjoint senses** — `ボス戦`/`大ボス` (script banks 30–31), `おかしら`
    → `Ｂｏｓｓ` (§32.1, battle chunk 20 only), `親方` → `ｔｈｅ　ｂｏｓｓ` (§34.1, script bank 12 only).
    §25.3's co-occurrence test **passes**: no chunk and no bank holds two of the three.
