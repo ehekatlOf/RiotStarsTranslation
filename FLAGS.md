@@ -5582,3 +5582,176 @@ touched by this unit, and the §F2 arithmetic is unaffected.
   (`town &amp; shop NPCs`) — an HTML-escaping artifact of the merge API call, cosmetic only, in
   `edd6d2d`'s subject line. Not worth rewriting history; noted so it is not read as a typo in the
   source data.
+
+## AO. Wave 9 review — script batch 013 / PR #36, MERGED (2026-09-11)
+
+Merged `08ae771` at review round 1, no findings requiring a change. Section letter taken by
+**reading `FLAGS.md` at commit time** — it ended at §AN; **PR #35 had not integrated.** Gated the
+**merge-result tree `784420b`** from `git merge-tree` (no working tree; worktree branch names
+collide across agents), with the bare integration head `a95ced1` archived separately as the
+measurement baseline, and provenance proved by `cmp` + `sha256`
+(`aa8ef6d1…2a8d1dcb`) against `git show d55846d:tl/script/batch_013.tsv`.
+
+### AO1. ⛔ NINE `{FFFE}` ADDED IN A TAG POSITION THE ENGINE'S OWN SCRIPT NEVER USES — NEEDS A HUMAN IN FRONT OF THE GAME
+
+**This is the column-side twin of §V7 and it is the one item in this unit that a playthrough must
+settle.** `assemble.py`'s column model splits on `{FFFE}` `{FCC0}` `{FC30}` `{FC50}` `{FC51}`
+`{FFFF}` but **not** on the menu tags `{FFFA}` `{FFF7}` `{FFF6}`, so the last option of a menu and
+whatever follows the dispatch are measured as **one row** — 19 and 15 columns in Japanese (passes),
+42 and 37 in English (`PROBLEMS (9)`). Nine breaks were added, at **DATA 958, 959, 960, 961, 962,
+963, 968, 969, 970**, each exactly one `{FFFE}` sitting at `{FB01}{FFFE}`.
+
+**The decision was right and was forced.** Omitting them fails gate 3 outright; the only other way
+to green is compressing two full menu labels into 24 columns, i.e. damaging real text to satisfy a
+measurement artifact — which is what §V7 says not to do. A 2-byte tag-only change that preserves
+every character is the correct response. Whole delta verified at review: **12 messages at +1
+`{FFFE}` (the nine plus deliberate re-flows at D941, D974, D976), 0 removed, and the non-`{FFFE}`
+tag stream byte-identical to source on all 58 messages.**
+
+⚠️ **THE ROW-SIDE FOOTPRINT IS VISIBLE IN `rowcheck` AND THE PR'S PASTE OMITTED IT.** The baseline
+carries 6 `~` lines; with this unit it carries **14**. The eight new ones — merged-dump lines
+**6921–6925 and 6930–6932** — are pages where the English is one row above the source, all
+classified `INHERITED` because the source already exceeded 4 (the same §V7 miscount, in the other
+dimension). The gate passes on its wording. The full output belongs in the record.
+
+### AO2. ⚠️ §AO1's SAFETY EVIDENCE DID NOT SURVIVE THE CHECK — the conclusion stands, two of its three legs do not
+
+The PR argued safety from `{FCC0}{FFFE}` being "the engine's own majority habit". **Measured at
+review, that leg does not transfer and its figures do not reproduce.**
+
+1. **The `{FCC0}` counts are wrong.** Measured: **545** `{FCC0}{FFFE}` and **405** `{FCC0}`-then-
+   anything-else, over **950** `{FCC0}` sites — a 57% habit, not the claimed 553 / 208 (73%). The
+   PR's denominator counted only `{FCC0}`-then-**text**, dropping the ~190 sites where another tag
+   follows.
+2. **`{FCC0}` is a page clear, not a menu dispatch, so the analogy does not carry.** Measuring the
+   actual construct, and separating menu-**open** `{FFFA}{=00}{=00}` from menu-**dispatch**
+   `{FFFA}{=00}{=05}` — a distinction nobody had drawn, and the one that decides this:
+
+   ```
+   {FFFE} before menu-OPEN     {FFFA}{=00}{=00}   :  96 of 157     <- common, well attested
+   {FFFE} before menu-DISPATCH {FFFA}{=00}{=05}   :   5 of 160
+   {FFFE} after  menu-DISPATCH (+ tables, {FB01}) :   0 of 160     <- the shape shipped here
+   dispatch -> {FB01} -> text, NO break            :  13 of 160     <- what the source does
+   ```
+
+   ⚠️ **The 98 `{FFFE}{FFFA}` instances across six merged files (`batch_006`, `007`, `008`, `009`,
+   `010`, `011`) are ALL the menu-OPEN shape and are NOT a precedent for this.** A first pass at
+   this review nearly turned them into a CHANGES finding by conflating the two arguments; sampling
+   the sites in context caught it. **This is §AG6's failure mode inside the review itself — one
+   regex, two different constructs — and it is recorded so the next reviewer does not repeat it.**
+3. **The jump-argument leg is TRUE and was independently verified** — see §AO3.
+
+**Consequence: both candidate placements are essentially unattested at the dispatch position.** The
+alternative was built and measured, not asserted: moving all nine to `{FFFE}{FFFA}{=00}{=05}` keeps
+`check` green, gives **byte-identical** bank figures (10,469 / 24,081) and an identical `rowcheck`
+report, at the same 2 bytes. It was **not** requested — swapping a 0-of-160 construct for a
+5-of-160 one is a coin-flip only the game can settle, and forcing a rework round on it would be
+manufacturing a finding. **Both options are on the record; the ready fix is one regex if the
+playthrough says the leading row is drawn.**
+
+### AO3. ✅ JUMP ARGUMENTS ARE MESSAGE INDICES WITHIN THE BANK, NOT BYTE OFFSETS — verified, and the PR's own index labels corrected
+
+The load-bearing claim under §AO1. Indexing bank 29's 68 messages 0-based and following D968/D969's
+own tables:
+
+| menu option | jump argument | bank-29 index | message actually there |
+|---|---|---|---|
+| 講座１：ジェム／育成 | `{FFF6}{=00}{=00}{=00}{=39}` | 0x39 | `『ジェム』があれば、パーティアタックで…` — the **Gems** lecture ✓ |
+| 講座２：戦闘の相性 | `{FFF6}{=00}{=01}{=00}{=3B}` | 0x3B | `キャラクターには、相性がある。犬猿の仲…` — **matchups** ✓ |
+| 講座３：ウエイト／回復 | `{FFF6}{=00}{=02}{=00}{=3C}` | 0x3C | `ユニットには、『ウエイト値』…「待ち時間」…` — **Wait** ✓ |
+| 講座４：包囲と支援 | `{FFF6}{=00}{=00}{=00}{=3E}` | 0x3E | `敵ユニットを…ＺＯＣ（支配地域）で囲むと…` — **encircling** ✓ |
+| 講座５：ゲストユニット | `{FFF6}{=00}{=01}{=00}{=40}` | 0x40 | `『ＧＵＥＳＴ　ＵＮＩＴ』と書かれたユニットは…` — **guest unit** ✓ |
+
+Five option→target pairs each land on exactly the lecture their label names. As **byte** offsets,
+0x39–0x40 would all fall inside the bank's first message and could not discriminate five
+destinations, so byte-offset is excluded. **Inserting bytes moves no jump target — the claim holds.**
+
+⚠️ **The PR's flag 2 mislabels three of the four indices it names** ("0x3C the matchups, 0x3E the
+HP lecture, 0x40 the front/rear line"). Correct: 0x3B matchups, 0x3C Wait, 0x3D HP, 0x3E
+encircling, 0x3F front/rear, 0x40 guest unit — **the last three are each off by one.** Likely
+caused by the near-duplicate pair at 0x38/0x39, which differ only past their first 46 characters.
+**The table above is the record; the flag's prose is not.** This is wave 9's **sixth** measured-one-
+side error (§AN1's class), and the fourth found by a reviewer rather than a translator.
+
+### AO4. ✅ THE CROSS-FILE ITEM-NAME GATE WORKS, AND IT SHOULD BE STANDING PRACTICE
+
+`batch_013` invented it after `『進化の木の実』` diverged and was caught only *after* `batch_011`
+merged. Re-run at review against the current `tl/` over **44 files (12 script + 32 battle)** — wider
+than the PR's script-only run:
+
+```
+quoted item names in the unit, unambiguously paired : 17
+shared with another file                            :  5   (PR reported 4; battle adds 火の水晶 <-> chunk_019)
+DIVERGENT item names                                :  0
+planted-divergence control fires                    :  True
+```
+
+**Why gate 6 cannot do this:** gate 6 pairs whole **messages** on exact Japanese, so two units
+coining different English for the same `『…』` inside differently-worded messages are structurally
+invisible to it. The method — pair every `『…』` in a message with the `“…”` spans in that same
+message, compare the pairings **across files** — costs one pass and catches the whole class.
+**Run it on every unit that carries quoted item names.**
+
+Cross-unit fix confirmed applied and **not re-litigated**: `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` occurs
+exactly once in `batch_011` and once in `batch_013`; `“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` is **0× anywhere in
+`tl/`**.
+
+### AO5. Rulings on the remaining flags, each measured on both sides
+
+- **`パワーストーン` unquoted here vs `chunk_000`'s `“Ｐｏｗｅｒ　Ｓｔｏｎｅ”` — CORRECT, the sources
+  genuinely differ.** `chunk_000`'s source is `『パワーストーン』` (5 quoted occurrences in
+  `battle_dump`, both `chunk_000` hits among them); D973/D974's is bare (`『パワーストーン』` = **0**
+  in `script_unique`, bare = **2**). Different Japanese, so §3's byte-identical rule is not engaged
+  and §12 licenses the split.
+- **Two menu-index compressions — both ACCEPTABLE, all alternatives reproduced.** `ＨＰ` for `回復`:
+  `／ｒｅｃｏｖｅｒｙ` = **24** (the hard limit), `／ｈｅａｌｉｎｇ` = **23** and would fit but
+  `ｈｅａｌｉｎｇ` is already bound to `ヒーリング` in three shipped `batch_003` rows (and occurs **0×**
+  here), shipped `／ＨＰ` = **18**. `ＺＯＣ` for `包囲`: shipped `ＺＯＣ／ｓｕｐｐｏｒｔ` = **22**;
+  `ｅｎｃｉｒｃｌｉｎｇ` = **21** but drops `支援` outright, a content loss;
+  `ｅｎｃｉｒｃｌｉｎｇ／ｓｕｐｐｏｒｔ` = **29**. `ＺＯＣ` is 0× in this source but is justified from
+  `batch_005`'s own tutorial, which ties `ＺＯＣ（支配地域）` to `包囲効果`. **Both keep the full form
+  in the lecture body**, so neither loses content outside the index row.
+- **The three Wait-forms — census VERIFIED.** Unquoted `Ｗａｉｔ　ｔｉｍｅ` ×2, `“Ｗａｉｔ　ｔｉｍｅ”` ×1
+  (D977's quoted source), `“ｗａｉｔｉｎｇ　ｔｉｍｅ”` ×1, `“Ｗａｉｔ”` ×**0** — and `待機` is **0×** in
+  this source, so the third form could not have collided. ⚠️ A bare substring count returns **3**
+  for `Ｗａｉｔ　ｔｉｍｅ` because the quoted instance contains it; the flag's "×2" is the unquoted
+  count and is right.
+- **`Ｉｎｔｅｒｍｉｓｓｉｏｎ` — flagged, not assumed.** Nothing in DATA 921–978 settles whether it
+  names an on-screen menu label. Stays open against §Z1 / Blocked 7.
+- **Register (§26.7) — VERIFIED BY READING, then confirmed mechanically.** Across D956–978 the old
+  tutor's only apostrophes are **possessives** (`ｕｎｉｔ’ｓ` ×3, `ｌｅａｄｅｒ’ｓ`, `ｃｈａｒａｃｔｅｒ’ｓ`) —
+  **zero verb contractions**, with `Ｈａｖｅ　ｙｏｕ　ａ　ｑｕｅｓｔｉｏｎ`, `ｙｏｕ　ｎｅｅｄ　ｎｏｔ　ｐａｙ`,
+  `ｔｈａｔ　ｉｓ　ｓｏｍｅｔｈｉｎｇ　ｙｏｕ　ｍａｙ　ｌｅａｒｎ` carrying `じゃ`/`のじゃ`/`じゃろ`. Korneff shows
+  **15** distinct contracted forms and the girls **10**. The split is real and consistent.
+- **Three greetings held apart exactly per glossary:** `よう、` → `Ｈｅｙ，`, `ねえ／ね、` → `Ｓａｙ，`,
+  and `おい、` → `Ｏｉ，` is not engaged (0× in source). `あら` → `Ｍｙ` ×4, as ratified.
+  `で、` → `Ｎｏｗ，` ×2 and `だから、` → `Ｓｏ，` ×1 are internally consistent, and **§52.3's bank-16
+  reasoning does not apply here** — `さあ、` is **0×** in this unit.
+- **`ホッジス` / `Ｈｏｄｇｅｓ` (the cross-unit item HANDOFF routed here) — does not touch this unit.**
+  `ホッジス` occurs **0×** in DATA 921–978 and `Ｈｏｄｇｅｓ` **0×** in the file. Nothing to reconcile;
+  `batch_012` owns that name alone.
+
+### AO6. Reading notes carried forward — non-blocking, for a later corrections unit
+
+1. **D947 drops the reciprocal `も`.** `{NAME}も、何か情報をつかんだら` → `{NAME}，　ｉｆ　ｙｏｕ　ｇｅｔ
+   ａｎｙ…`. The `も` marks reciprocity (Korneff has been giving information and asks for it back).
+   **Budget is not the reason** — the row is 8 columns and `{NAME}　ｔｏｏ，` would be 12, with 16,879
+   bytes free in bank 29. The shape (`{NAME}も、`) has **no precedent in shipped work either way**,
+   and the line's sense survives, so it was not made a finding. **Byte-negative; good candidate for
+   a corrections unit.**
+2. **`まあ、` → `Ｍｉｎｄ　ｙｏｕ，` against two shipped `Ｗｅｌｌ，`** — reasoning and the measured
+   incumbent are recorded at **glossary §53.3**, deliberately, so a later unit overturns it on
+   purpose or not at all.
+3. **Two coinages were absent from the PR's Glossary additions table** and are recorded at
+   integration: `おや、` → `Ｏｈ？`, and the bare `『してんこう』` taking the existing
+   `『してんこうせき』` row's form — which makes that row's "Hapax — 1 script" note **stale**
+   (two instances now, DATA 906 and DATA 943).
+
+### AO7. Gate-8 scoping — `{FFFF}` IS A BATTLE-STORE RULE AND MUST NOT BE CHECKED ON SCRIPT UNITS
+
+Recorded because it has produced false positives in dispatches. CLAUDE.md §6.8's "`{FFFF}` last on
+every message" and `translation_prompt.md` §7's checkbox describe the **battle** store.
+`dumps/script_unique.txt` contains **0** `{FFFF}` against `dumps/script_dump.txt`'s **8,760** — the
+unique keys omit the trailing one, per CLAUDE.md §4 step 1 — and `batch_003`/`004`/`005` each carry
+a comment saying so. This unit's keys and English carry **0** and **0**, which is **correct**. A
+`{FFFF}`-absence finding on a script batch is always a false positive.

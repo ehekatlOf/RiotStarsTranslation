@@ -62,7 +62,8 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `assemble.py:validate_body` still charset-checks preserved source text).
 
 ## Last updated
-2026-09-11 · by: **PR #34’s round-2 reviewer** (integration commit; the row below is mine) ·
+2026-09-11 · by: **PR #36’s reviewer** (integration commit; the `batch_013` row is mine) ·
+previously 2026-09-11 · by: **PR #34’s round-2 reviewer** ·
 previously 2026-09-10 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
 wave: **9 RUNNING — glossary seeded (`ff3295a`), 3 batches dispatched, awaiting the §4a barrier** ·
 queue: **recomputed this wave; my bank accounting reproduces `queue.py`'s 603/628 exactly**
@@ -72,8 +73,8 @@ queue: **recomputed this wave; my bank accounting reproduces `queue.py`'s 603/62
 |---|---|---|---|
 | Battle chunks | **32** | 44 | 0–4, 6–14, 18–22, 24, 25, 26, 30, 31, 33–35, **37**, **38**, 40, **41**, **42** |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** (was 56.5% at wave-8 start) |
-| Script unique lines | **521** | 1,430 | `tl/script/batch_001–011.tsv` (batch 011 merged, PR #34) |
-| Script message instances | **4,612** | 7,931 | **58.1%** (was 57.4% at wave-9 start) |
+| Script unique lines | **579** | 1,430 | `tl/script/batch_001–011.tsv` + `batch_013.tsv` (PR #34, #36 merged) |
+| Script message instances | **4,670** | 7,931 | **58.9%** (was 57.4% at wave-9 start) |
 
 `check`: **All checks passed** at `965ee18`. ⚠️ **Tightest banks after wave 8: 40 → 75, 41 → 353,
 5 → 1,635, 2 → 2,993.** ⚠️ **Bank 40 and bank 5 are effectively CLOSED to further item-table work** —
@@ -93,10 +94,11 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 ⚠️ **`FLAGS.md` §AN1 records the wave’s own dispatch-table false positive with its generic cause**, and **§AN2 records that this reviewer’s FIRST census of `で、` was itself a positional artifact that would have overwritten a correct record** — a “starts with” matcher returned zero where the substring sits mid-segment. The corrected record is at glossary **§52.3**: `で、` has **two** shipped Englishes, `Ｎｏｗ，` (bank 4, §42.1) and `Ｓｏ，` (**bank 3, `batch_007` L40/L50/L61, shipped since wave 5**), and `batch_011` takes the latter in bank 16 because §28.8’s `さあ、` → `Ｎｏｗ，` already occupies that bank inside the same message. **No `tl/` line moves.** PR #34’s Flag 3 claimed `Ｓｏ，` was spent “only on `ダカラ、` in chunk 26” and missed its own strongest evidence — which makes the choice **stronger**, not weaker.
 
 | `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` @ `84cd10d` | **[#35](https://github.com/ehekatlOf/RiotStarsTranslation/pull/35)** | **3 — LAST PERMITTED** | ⚠️ **ROUND 2 → CHANGES, 5 findings, round 3 sent 2026-09-11. §5's three-round cap is now reached: round 3 merges or the unit PARKS.** All 8 gates pass; the 5 are **gate-7 terminology**, net **+4 bytes**, no re-flow beyond one restored `{FFFE}` and one 3-row repack. The reviewer justified the round rather than asserting it: **each of the 5 has a merged precedent where the identical item was a review finding on another unit and was fixed** (§51.4 `Ｈｏｂｂｉｔ` capitalisation, §41.8 `そして、`, §48.2 `やはり`) — merging would hold this unit to a **lower** standard than three merged units. Gate 6 coverage **1,153 rows / 43 files incl. `batch_011`**; gate 7 **1,040 keys / 113 occurring / 196 pairs / 77 apparent → 5 genuine**. Round-1 finding 3 (`ベルナール教会`) **confirmed declined a second time — do not let it reappear.** |
-| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` @ `d55846d` | **[#36](https://github.com/ehekatlOf/RiotStarsTranslation/pull/36)** | 1 | ⏳ **CROSS-UNIT FIX APPLIED; first review dispatched 2026-09-11.** `『進化の木の実』` → `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` per merged §52.5; verified by me — byte-identical to `batch_011`'s instance, short form now **0× anywhere in `tl/`**, row 16 → 19 columns, **no re-flow**, bank 29 −6 (16,879 free). ⭐ **IT BUILT THE CHECK THAT WOULD HAVE CAUGHT THE DIVERGENCE** — see Decisions. Body figures re-verified mechanically: **22 forms, 21 literal in the file, 1 split across a `{FFFE}`, 0 unverified**; that pass found a **fifth** wrong figure (flag 8's rejected alt, 30 → **29**) in a part of the body no one was examining. |
+| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` @ `d55846d` | **[#36](https://github.com/ehekatlOf/RiotStarsTranslation/pull/36)** | 1 | ✅ **MERGED** `08ae771` · integrated by this commit (hash recorded by the coordinator) · **glossary §53, FLAGS §AO** · `check` green. 58/58 lines; bank 28 30,491 free (+246), bank 29 16,879 free (+8,710); banks 5/40/41 byte-for-byte untouched. **Round 1, no findings — none manufactured.** Gated the **merge-result tree `784420b`** (`merge-tree` + `git archive`, no working tree), baseline re-archived from `a95ced1` so every "before" figure is reproduced, provenance by `cmp` + sha256. Gate 6 **11 files / 521 keys**, controls both ways; cross-file item-name gate **17 names / 5 shared across 44 files / 0 divergences**; gate 7 **897 rulings / 35 applicable / 30 matched / 5 read / 0 violations**; §AG6 mirror over 1,121 aligned pairs. ⚠️ **Two PR-body evidence errors corrected at FLAGS §AO2–AO3** (the `{FCC0}` counts, and three of four jump-index labels off by one) — **the conclusions survive; the file was right and did not change.** ⛔ **Flag 1 → Blocked 8.** |
 
 ✅ **BARRIER MET — all 3 PRs open (#34, #35, #36), 0 units parked, 0 re-dispatches needed.**
-**Reviews: #34 ✅ MERGED. #35 → round 3, the LAST permitted (merges or parks). #36 in first review.**
+**Reviews: #34 ✅ MERGED. #36 ✅ MERGED (round 1, no findings). #35 → round 3, the LAST permitted (merges or parks) — the only unit still open.**
+⚠️ **#36's reviewer nearly raised a CHANGES finding on a conflated measurement and caught it by sampling** — `{FFFE}{FFFA}` looked like 101 engine precedents for the added break until menu-**open** `{FFFA}{=00}{=00}` was separated from menu-**dispatch** `{FFFA}{=00}{=05}`, at which point the real figures are 0/160 for the shipped shape and 5/160 for the alternative. **Recorded at FLAGS §AO2 as §AG6's failure mode occurring inside a review.** That would have been wave 9's fourth wrong correction.
 ⚠️ **WAVE 9 HAS NOW PRODUCED THREE WRONG CORRECTIONS, AND THE THIRD CAME FROM A REVIEWER**
 (`ベルナール教会`, declined with evidence by `batch_012`'s translator and verified by me). The
 standing lesson holds in **both** directions: a reviewer's finding is not privileged over a
@@ -171,6 +173,20 @@ bank-FEASIBLE now** — about **12 more batches**. So CLAUDE.md §8's "no dispat
 them are 21-instance item-table rows** held solely by bank 40.
 
 ## Blocked — needs a human
+8. 🎮 **NEW 2026-09-11 — NINE TUTORIAL SCREENS NEED EYES ON THE GAME (PR #36, FLAGS §AO1–AO3).**
+   `tl/script/batch_013.tsv` adds one `{FFFE}` to each of **DATA 958–963, 968, 969, 970** because
+   `assemble.py`'s column model does not split on the menu tags `{FFFA}`/`{FFF7}`/`{FFF6}`, so the last
+   menu option and the text after the dispatch are measured as one 42-column row and `check` fails. The
+   break sits at `{FB01}{FFFE}`, i.e. at the head of the fresh window. ⚠️ **The engine's own script never
+   uses that position — 0 of 160 dispatch sites** (the alternative, `{FFFE}` *before* the dispatch, is
+   5 of 160, so **neither placement is well attested** and the corpus cannot settle it). **What a human
+   must do: open the tavern tutor, walk lectures 1–6, and look for a blank first row or a misaligned
+   cursor gutter on those nine menu screens.** ✅ **Jump targets are NOT at risk** — verified at review:
+   `{FFF6}` arguments are **message indices within the bank**, not byte offsets (five option→target pairs
+   each land on exactly the lecture their label names), so inserting bytes moves nothing.
+   **If it looks wrong the fix is one regex and zero bytes**: move each `{FFFE}` from after the dispatch
+   to before it — measured at review to keep `check` green with byte-identical bank figures.
+   ⚠️ **Needs the disc and an emulator, nothing else. Does not block any further translation.**
 0b. ⛔ **NEW 2026-09-10 — THE RUN'S AUTOMATION IS OUT OF ROAD, AND THIS IS THE CHEAPEST FIX ON
    THIS LIST.** Every wave has run as a child session of the previous wave, and the platform caps
    that at **lineage depth 8**. Wave 9 is at the cap. `send_later` and `create_trigger` were both

@@ -657,18 +657,18 @@ catch it (gate 6 pairs whole messages, and these are different messages):
 | ディーラー | `ｄｅａｌｅｒ` (6) | script **DATA 355 (batch 012)** | Lowercase common noun (§17.1) — a role, not a name |
 | クーデター | `ｃｏｕｐ` (4) | script **DATA 390 (batch 012)**; DATA 863, 1373 (not in this wave) | Lowercase. ⚠️ `ｃｏｕｐ　ｄ’ｅｔａｔ` needs an accent the charset lacks — do not reach for it |
 | 町長 | `ｔｏｗｎ　ｅｌｄｅｒ` (10) | script **DATA 381, 386, 391 (all batch 012)**; DATA 1102 (not in this wave) | The head of a small port town (`こんな港町の町長`). Alt `ｍａｙｏｒ` (5) if a row is tight |
-| ウエイト / ウエイト値 / `『ウエイト値』` | `Ｗａｉｔ` (4) / `Ｗａｉｔ　ｔｉｍｅ` (9) / `“Ｗａｉｔ　ｔｉｍｅ”` (11) | script **DATA 960, 967, 968, 969, 970, 977 (all batch 013)**; DATA 833 (not in this wave) | ⚠️ **NOT A NEW FORM — THE INCUMBENT IS ALREADY SHIPPED AND MUST BE MATCHED.** `tl/battle/chunk_000.txt:5`, the battle tutorial, reads `ｕｎｉｔｓ　ａｃｔ　ｉｎ　ｏｒｄｅｒ，{FFFE}ｆｒｏｍ　ｔｈｅ　ｌｏｗｅｓｔ　Ｗａｉｔ{FFFE}ｔｉｍｅ．` **Batch 013 is the tactics-lecture NPC teaching that same system**, so it matches that wording rather than re-coining it (§AG6's mirror). Do **not** reach for *Delay*, *Speed* or *Initiative* |
-| 「待ち時間」 | `“ｗａｉｔｉｎｇ　ｔｉｍｅ”` (15) | script **DATA 977 (batch 013)** — the corpus's only instance | ⚠️ **DO NOT COLLAPSE THIS INTO `“Ｗａｉｔ”`.** DATA 977 glosses `『ウエイト値』` *with* 「待ち時間」 — the two must stay visibly different in English or the sentence explains a term with itself. ⚠️ **And `“Ｗａｉｔ”` is already taken**: §15.1 fixes the *menu label* `「待機」` → `“Ｗａｉｔ”`, a different source word (standby) — holding three things apart, not two |
-| 戦術講座（第Ｎ回） / 講座Ｎ | `ｔａｃｔｉｃｓ　ｌｅｃｔｕｒｅ` (15) / `Ｌｅｃｔｕｒｅ　Ｎ` (9) | script **DATA 958–963 (batch 013)**; `講座` alone runs to DATA 972 | The tavern NPC's numbered tutorial series — **the spine of batch 013**, so one form must serve the menu rows *and* the prose. Alt `ｔａｃｔｉｃｓ　ｃｌａｓｓ` (13), `ｌｅｓｓｏｎ` (6) if a menu row is tight |
-| `『妖精のケーキ』` | `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | script **DATA 932, 933, 934, 937 (all batch 013)** | `『…』` → `“…”` (§12). ⚠️ **The bare noun `妖精` stays lowercase `ｆａｉｒｙ` (§1)** — only the *named item* is capitalised, exactly the `ｇｅｍｓｔｏｎｅ` / `“Ｇｅｍｓｔｏｎｅ”` split at §51 |
-| `『北風のシロップ』` | `“Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ”` (18) | script **DATA 933, 934, 950, 951 (all batch 013)**; DATA 852 (not in this wave) | ⚠️ **The faithful `“Ｓｙｒｕｐ　ｏｆ　ｔｈｅ　Ｎｏｒｔｈ　Ｗｉｎｄ”` measures 25 and CANNOT FIT the 24-column box** — measured, not guessed. That is why the compound is proposed. Alt `“Ｎｏｒｔｈｗｉｎｄ　Ｓｙｒｕｐ”` (17) |
-| `『スーパージュエル』` | `“Ｓｕｐｅｒ　Ｊｅｗｅｌ”` (13) | script **DATA 945, 946 (batch 013)**; DATA 843, 849 (not in this wave) | Holds §3's `Ｊｅｗｅｌ`, not *Gem* |
-| バニシュジュエル | `Ｖａｎｉｓｈ　Ｊｅｗｅｌ` (12) | script **DATA 946 (batch 013)** | Same; unquoted in its source, so unquoted in English |
-| ゲストユニット | `ｇｕｅｓｔ　ｕｎｉｔ` (10) | script **DATA 962, 969, 970 (all batch 013)** | ⚠️ **A SCREEN LABEL FOR THIS IS ALREADY PROMOTED AND IS A DIFFERENT SOURCE STRING:** `『ＧＵＥＳＴ　ＵＮＩＴ』` → `“ＧＵＥＳＴ　ＵＮＩＴ”`, already full-width Latin in the source and **reproduced, not re-cased**. The katakana `ゲストユニット` is the *prose* form — lowercase common noun, on `ユニット` → `ｕｎｉｔ` (16× in `tl/`). **Keep the two apart and say which each row is** |
-| インターミッション | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12) | script **DATA 978 (batch 013)**; DATA 1005, 1053 (not in this wave) | The between-battle phase, capitalised as the screen's name. ⚠️ If it proves to name an on-screen menu, it falls under §Z1's open UI-label question (Blocked 7) — flag rather than assume |
-| パラメータ | `ｓｔａｔ` (4) | script **DATA 975 (batch 013)**; DATA 1225, 1229 (not in this wave) | `パラメータの個別アップ` = raising individual stats. Alt `ｐａｒａｍｅｔｅｒ` (9) — wide, and *stat* is the register the tutorial already uses |
-| ＳＳ技能 | `ＳＳ　ｓｋｉｌｌ` (8) | script **DATA 945 (batch 013)**; DATA 1258, 1259 (not in this wave) | Keep `ＳＳ` full-width as the source has it |
-| ローテーション | `ｒｏｔａｔｉｏｎ` (8) | script **DATA 978 (batch 013)** — the corpus's only instance | Lowercase system term |
+| ~~ウエイト / ウエイト値 / `『ウエイト値』`~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded; matches the `chunk_000` incumbent.  `Ｗａｉｔ` (4) / `Ｗａｉｔ　ｔｉｍｅ` (9) / `“Ｗａｉｔ　ｔｉｍｅ”` (11) | script **DATA 960, 967, 968, 969, 970, 977 (all batch 013)**; DATA 833 (not in this wave) | ⚠️ **NOT A NEW FORM — THE INCUMBENT IS ALREADY SHIPPED AND MUST BE MATCHED.** `tl/battle/chunk_000.txt:5`, the battle tutorial, reads `ｕｎｉｔｓ　ａｃｔ　ｉｎ　ｏｒｄｅｒ，{FFFE}ｆｒｏｍ　ｔｈｅ　ｌｏｗｅｓｔ　Ｗａｉｔ{FFFE}ｔｉｍｅ．` **Batch 013 is the tactics-lecture NPC teaching that same system**, so it matches that wording rather than re-coining it (§AG6's mirror). Do **not** reach for *Delay*, *Speed* or *Initiative* |
+| ~~「待ち時間」~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `“ｗａｉｔｉｎｇ　ｔｉｍｅ”` (15) | script **DATA 977 (batch 013)** — the corpus's only instance | ⚠️ **DO NOT COLLAPSE THIS INTO `“Ｗａｉｔ”`.** DATA 977 glosses `『ウエイト値』` *with* 「待ち時間」 — the two must stay visibly different in English or the sentence explains a term with itself. ⚠️ **And `“Ｗａｉｔ”` is already taken**: §15.1 fixes the *menu label* `「待機」` → `“Ｗａｉｔ”`, a different source word (standby) — holding three things apart, not two |
+| ~~戦術講座（第Ｎ回） / 講座Ｎ~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded; the Alt `ｌｅｓｓｏｎ` was not needed.  `ｔａｃｔｉｃｓ　ｌｅｃｔｕｒｅ` (15) / `Ｌｅｃｔｕｒｅ　Ｎ` (9) | script **DATA 958–963 (batch 013)**; `講座` alone runs to DATA 972 | The tavern NPC's numbered tutorial series — **the spine of batch 013**, so one form must serve the menu rows *and* the prose. Alt `ｔａｃｔｉｃｓ　ｃｌａｓｓ` (13), `ｌｅｓｓｏｎ` (6) if a menu row is tight |
+| ~~`『妖精のケーキ』`~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | script **DATA 932, 933, 934, 937 (all batch 013)** | `『…』` → `“…”` (§12). ⚠️ **The bare noun `妖精` stays lowercase `ｆａｉｒｙ` (§1)** — only the *named item* is capitalised, exactly the `ｇｅｍｓｔｏｎｅ` / `“Ｇｅｍｓｔｏｎｅ”` split at §51 |
+| ~~`『北風のシロップ』`~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded; the Alt was not needed.  `“Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ”` (18) | script **DATA 933, 934, 950, 951 (all batch 013)**; DATA 852 (not in this wave) | ⚠️ **The faithful `“Ｓｙｒｕｐ　ｏｆ　ｔｈｅ　Ｎｏｒｔｈ　Ｗｉｎｄ”` measures 25 and CANNOT FIT the 24-column box** — measured, not guessed. That is why the compound is proposed. Alt `“Ｎｏｒｔｈｗｉｎｄ　Ｓｙｒｕｐ”` (17) |
+| ~~`『スーパージュエル』`~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `“Ｓｕｐｅｒ　Ｊｅｗｅｌ”` (13) | script **DATA 945, 946 (batch 013)**; DATA 843, 849 (not in this wave) | Holds §3's `Ｊｅｗｅｌ`, not *Gem* |
+| ~~バニシュジュエル~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11) — AND CORRECTED, NOT SILENTLY: this seed was WRONG ON SUBSTANCE.** D946's source is `『バニシュジュエル』` — **quoted** — so §12 applies and the shipped form is `“Ｖａｎｉｓｈ　Ｊｅｗｅｌ”`. Widths `len()`-measured at review: bare **12**, quoted **14**. It is the corpus's only occurrence. The note below ("unquoted in its source") is the error, kept visible: | `Ｖａｎｉｓｈ　Ｊｅｗｅｌ` (12) | script **DATA 946 (batch 013)** | Same; unquoted in its source, so unquoted in English |
+| ~~ゲストユニット~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded; menu rows take the singular lemma.  `ｇｕｅｓｔ　ｕｎｉｔ` (10) | script **DATA 962, 969, 970 (all batch 013)** | ⚠️ **A SCREEN LABEL FOR THIS IS ALREADY PROMOTED AND IS A DIFFERENT SOURCE STRING:** `『ＧＵＥＳＴ　ＵＮＩＴ』` → `“ＧＵＥＳＴ　ＵＮＩＴ”`, already full-width Latin in the source and **reproduced, not re-cased**. The katakana `ゲストユニット` is the *prose* form — lowercase common noun, on `ユニット` → `ｕｎｉｔ` (16× in `tl/`). **Keep the two apart and say which each row is** |
+| ~~インターミッション~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded; **still open against §Z1 / Blocked 7**.  `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12) | script **DATA 978 (batch 013)**; DATA 1005, 1053 (not in this wave) | The between-battle phase, capitalised as the screen's name. ⚠️ If it proves to name an on-screen menu, it falls under §Z1's open UI-label question (Blocked 7) — flag rather than assume |
+| ~~パラメータ~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `ｓｔａｔ` (4) | script **DATA 975 (batch 013)**; DATA 1225, 1229 (not in this wave) | `パラメータの個別アップ` = raising individual stats. Alt `ｐａｒａｍｅｔｅｒ` (9) — wide, and *stat* is the register the tutorial already uses |
+| ~~ＳＳ技能~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `ＳＳ　ｓｋｉｌｌ` (8) | script **DATA 945 (batch 013)**; DATA 1258, 1259 (not in this wave) | Keep `ＳＳ` full-width as the source has it |
+| ~~ローテーション~~ | ✅ **PROMOTED to §53 and STRUCK (PR #36, merged 2026-09-11)** — used exactly as seeded.  `ｒｏｔａｔｉｏｎ` (8) | script **DATA 978 (batch 013)** — the corpus's only instance | Lowercase system term |
 
 ⚠️ **`素早さ` WAS DRAFTED AS A SEED AND IS DELIBERATELY NOT ONE.** A census puts it at DATA 4, 6, 9,
 35, 73 (**all already translated**), 830, 1236 — and **none of those is in wave 9's source**; batch
@@ -6583,3 +6583,69 @@ self-reference kept at D704 (`Ｔｈｉｎｋ　ｏｆ　ｉｔ　ａｓ　Ｍ�
 list credits `妖精` → `ｆａｉｒｙ` and a `ジェム`/`ジュエル` split this unit's source does not contain
 — measured at review, `妖精` 0, `ジェム` 0, `ｆａｉｒｙ` 0, `Ｇｅｍ` 0 — so neither is carried into this
 section.**
+
+## 53. Added by script batch 013 (PR #36, merged 2026-09-11)
+
+The port town's tavern (Korneff), the item shop and cake girl, and the old tutor's numbered
+`戦術講座` tactics-lecture series. DATA 921–978, banks 28 and 29. Section number taken by **reading
+`glossary.md` at commit time** — it ended at §52; **PR #35 had not integrated.**
+
+### 53.1 Promoted from §9 PROVISIONAL — all used exactly as seeded, except one corrected below
+
+| Japanese | English | Note |
+|---|---|---|
+| ウエイト / ウエイト値 / `『ウエイト値』` | `Ｗａｉｔ` (4) / `Ｗａｉｔ　ｔｉｍｅ` (9) / `“Ｗａｉｔ　ｔｉｍｅ”` (11) | Seeded form used as seeded, matching the incumbent at `tl/battle/chunk_000.txt:5`. Census verified at review: bare `ウエイト` 7×, `ウエイト値` 2×, unquoted `Ｗａｉｔ　ｔｉｍｅ` **2** (D960, D977), quoted `“Ｗａｉｔ　ｔｉｍｅ”` **1** (D977, whose source `『ウエイト値』` is quoted — §12 applied) |
+| 「待ち時間」 | `“ｗａｉｔｉｎｇ　ｔｉｍｅ”` (15) | 1×, D977, the corpus's only instance. Held apart from `Ｗａｉｔ　ｔｉｍｅ` in the same sentence, as the seed required |
+| 戦術講座（第Ｎ回） / 講座Ｎ | `ｔａｃｔｉｃｓ　ｌｅｃｔｕｒｅ` (15) / `Ｌｅｃｔｕｒｅ　Ｎ` (9) | One form serves prose (6×) and the menu index. The Alt `ｌｅｓｓｏｎ` was **not** needed — no menu row was tight; the widest lecture row is `　Ｌｅｃｔｕｒｅ　６：ｎｅｕｔｒａｌ　ｕｎｉｔ` at **23** |
+| `『妖精のケーキ』` | `“Ｆａｉｒｙ　Ｃａｋｅ”` (12) | D932–934, 937 |
+| `『北風のシロップ』` | `“Ｎｏｒｔｈ　Ｗｉｎｄ　Ｓｙｒｕｐ”` (18) | D933, 934, 950, 951. At D951 the name is split across a `{FFFE}` **exactly at the word space** — verified at review, one name, not two forms |
+| `『スーパージュエル』` | `“Ｓｕｐｅｒ　Ｊｅｗｅｌ”` (13) | D945, D946 |
+| ゲストユニット | `ｇｕｅｓｔ　ｕｎｉｔ` (10) | D962, 969, 970 — the prose form. Kept apart from the promoted screen label `『ＧＵＥＳＴ　ＵＮＩＴ』` → `“ＧＵＥＳＴ　ＵＮＩＴ”`, which D970's lecture body reproduces unchanged. Menu rows take the **singular lemma**: `　Ｌｅｃｔｕｒｅ　５：ｇｕｅｓｔ　ｕｎｉｔ` = 21 against 22 plural |
+| インターミッション | `Ｉｎｔｅｒｍｉｓｓｉｏｎ` (12) | D978 ×2, as a place/phase name. ⚠️ **Still open against §Z1 / Blocked 7** — nothing in DATA 921–978 settles whether it names an on-screen menu label. Flagged, not assumed; see FLAGS §AO5 |
+| パラメータ | `ｓｔａｔ` (4) | D975, `パラメータの個別アップ` → `ｒａｉｓｉｎｇ　ｓｉｎｇｌｅ　ｓｔａｔｓ` |
+| ＳＳ技能 | `ＳＳ　ｓｋｉｌｌ` (8) | D945, `ＳＳ` kept full-width as the source has it |
+| ローテーション | `ｒｏｔａｔｉｏｎ` (8) | D978, the corpus's only instance |
+
+⚠️ **`バニシュジュエル` — THE §9 SEED WAS WRONG ON SUBSTANCE AND IS CORRECTED HERE, NOT SILENTLY.**
+
+| Japanese | English | Note |
+|---|---|---|
+| `『バニシュジュエル』` | `“Ｖａｎｉｓｈ　Ｊｅｗｅｌ”` (14) | The §9 seed read "unquoted in its source, so unquoted in English" and gave the bare figure. **That is wrong.** D946's source is `『バニシュジュエル』` — **quoted**, and it is the only occurrence in the corpus (`『バニシュジュエル』` = 1, bare `バニシュジュエル` = 1, i.e. the same instance). §12 therefore applies. Both widths `len()`-measured at review: bare `Ｖａｎｉｓｈ　Ｊｅｗｅｌ` = **12**, quoted `“Ｖａｎｉｓｈ　Ｊｅｗｅｌ”` = **14**. The translator caught this against its own seed; the §9 row is corrected as well as struck |
+
+⚠️ **`『極上のワイン』` STAYS LIVE at §9 / §38.1.** That row is struck by whichever of PR #35 / #36
+merges **second**, and **#35 had not merged when this section was written** — verified against
+`git log` at commit time, not inferred from an agent's status. `batch_013` renders it
+`“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (14 quoted) at D934 and D939, exactly as the seed directs; `batch_012`
+(DATA 370–373) still has to. **Whoever integrates #35 strikes it.**
+
+### 53.2 New rows
+
+| Japanese | English | Note |
+|---|---|---|
+| 編成画面 | `Ｆｏｒｍａｔｉｏｎ　ｓｃｒｅｅｎ` (16) | D974. The **screen name**, capitalised as a named screen. Distinct from the existing `編成` → "form (your units)", the **verb** sense that `batch_005` already ships as *put ... on the front line*. `編成` occurs once in this unit and only inside `編成画面` — verified at review |
+| ナイト (as a class gloss) | `Ｋｎｉｇｈｔ` (in `Ｃａｖａｌｒｙ　（Ｋｎｉｇｈｔ）`, 16) | D976, `騎兵（ナイト）`. Capitalised on the `フリーナイト` → `Ｆｒｅｅ　Ｋｎｉｇｈｔ` convention, not the lowercase `ダークナイト` → dark knight one, because this glosses a named class. `騎兵` → `ｃａｖａｌｒｙ` matches the incumbent in `batch_001` and `chunk_002` |
+| `『こおりのゆびわ』` | `“Ｉｃｅ　Ｒｉｎｇ”` (10) | D924, D947. Re-measured at review: **10**, not 12 |
+| かぜ薬 | `ｃｏｌｄ　ｍｅｄｉｃｉｎｅ` (13) | D953. **Not a new form** — matches the incumbent already shipped in `batch_006`. Unquoted in its source, so unquoted here |
+| 材料 | `ｉｎｇｒｅｄｉｅｎｔｓ` (11) / `ｍａｔｅｒｉａｌｓ` | **Sense split.** Cake sense → `ｉｎｇｒｅｄｉｅｎｔｓ` (D950, 953, 954); weapon-crafting sense → `ｍａｔｅｒｉａｌｓ` (D936, shipped as `Ｗｅａｐｏｎ　ｍａｔｅｒｉａｌｓ`, 16), which matches what `batch_010` already ships for the same crafting sense |
+| `『貯まり』` | `“ｂｕｉｌｄ　ｕｐ”` (10) | D974. Quoted because the source is quoted; `batch_005` already ships `ｂｕｉｌｔ　ｕｐ` for the same mechanic |
+| 棚からぼた餅 | `Ａ　ｔｒｕｅ　ｗｉｎｄｆａｌｌ．` (16) | D978. Idiom for idiom, and the same image class (an unearned good thing falling to you), not an unrelated English idiom |
+| 犬猿の仲 | `Ｌｉｋｅ　ｃａｔｓ　ａｎｄ　ｄｏｇｓ` (18) | D976. The English idiom for the same relation. Split across a `{FFFE}` at the word space between `ｃａｔｓ` and `ａｎｄ` — confirmed at review |
+| 幻の | `ｆａｂｌｅｄ` (6) | D939, `あの幻の酒` → `Ｔｈａｔ　ｆａｂｌｅｄ　ｄｒｉｎｋ` |
+| 高くつく | `ｓｔｅｅｐ` (5) | D941 |
+| ふんだくる | `ｆｌｅｅｃｅ` (6) | D941 |
+| 鉄クズ | `ｓｃｒａｐ　ｉｒｏｎ` (10) | D921 |
+| 出撃 | `ｓｏｒｔｉｅ` (6) | D978, `１回出撃を休ませれば` → `ｒｅｓｔ　ｔｈｅｍ　ｆｏｒ　ｏｎｅ　ｓｏｒｔｉｅ` |
+| なあんだ | `Ｗｈｙ，` (4) | D951 |
+| おう、 | `Ｏｈ，` (3) | D937. 0 incumbents in shipped work — verified at review |
+| ん〜、 | `Ｈｍｍ，` (4) | D925, D948 |
+| ＡＧＬ | `ＡＧＬ` (3) | D977, kept full-width and unexpanded, as the source leaves it. `素早さ` is **0×** in this source and no stat name was coined for it |
+| − (U+2212) | matchup-chain separator | D976. The source's `→` arrows are outside the renderable charset. Rendered as a chain closed by repeating the first term (`Ｃａｖａｌｒｙ　（Ｋｎｉｇｈｔ）　−　ｓｗｏｒｄｓｍａｎ　−　ｍａｒｔｉａｌ　ａｒｔｉｓｔ　−　ｃａｖａｌｒｙ．`), with an explicit legend row `ｗｉｔｈ　ｅａｃｈ　ｂｅａｔｉｎｇ　ｔｈｅ　ｎｅｘｔ` so the **direction** the arrow carried is not lost. The legend is added text, and it is added **to compensate for a charset loss**, not to explain — that is the only ground on which §2 allows it |
+| ・ as a list **bullet** | `＊` | D972. §45.7 gives `・`-as-separator → a space; this is `・` at the head of a list item, and `・` is not renderable. The three separator `・` in this unit (`緑・赤・青`, `武器・防具`) take English list punctuation instead, per §45.7 |
+
+### 53.3 Recorded at review — the reviewer's rows, not the PR's
+
+| Japanese | English | Note |
+|---|---|---|
+| まあ、 | `Ｍｉｎｄ　ｙｏｕ，` (9) — **concessive sense only** | D939, D941. ⚠️ **THE INCUMBENT IS RECORDED HERE DELIBERATELY, because §AL1 says a new word must be weighed against what the source word already carries.** `まあ、` has **no glossary row**, and two shipped lines render it `Ｗｅｌｌ，` — `chunk_004` `まあ、いいわ。` and `chunk_038` `まあ、協力するといっても`. It was **not** changed at review, on measurement: `Ｗｅｌｌ，` is not `まあ、`'s dedicated form but a **many-to-one sink serving seven different Japanese heads** (`じゃ、しょうがな` ×3, `では、仕方がない` ×2, `そりゃ、よかった`, `ま、でも、`, `どうだ、シロン？`, and the two `まあ`), and `batch_013` has already spent `Ｗｅｌｌ，` / `Ｗｅｌｌ　ｔｈｅｎ，` **nine times** on other Japanese, so collapsing `まあ、` into it would increase the overloading rather than reduce it. **A later unit may overturn this — but deliberately, from this row, not by accident** |
+| おや、 | `Ｏｈ？` (3) | D956, the tutor's opener. **No prior row existed and the PR did not propose one** — recorded at integration. ⚠️ Note it renders a source **comma** as a question mark, which is what keeps it distinct from this unit's `おう、` → `Ｏｈ，` (§53.2). If a later unit needs `おや、` in a non-interrogative position, that distinction has to be re-made some other way |
+| `『してんこう』` (bare, without 石) | `“Ｓｈｉｔｅｎ　Ｏｒｅ”` (12) | D943. **Takes the existing `『してんこうせき』` row's form unchanged** — one mineral, one English, which is right. Recorded only because that row's note reads "**Hapax — 1 script, 0 battle**" and **that is now stale**: the corpus has two instances under two source spellings, DATA 906 (`してんこうせき`) and DATA 943 (`してんこう`) |
