@@ -6065,3 +6065,31 @@ Restricted to price rows `{FFEC}{=00}{=01}`: **27 rows, 7 ×1 / 8 ×26 — no ou
 corpus.** ⚠️ **§V1's ask is unchanged and still the highest-value disc item here: go to any shop,
 select the longest item name in the game, and read the price-confirm box.** That settles the bound
 for all 51 rows at once. Until then no unit should spend a `{FFFE}` on these rows.
+
+### AQ9. ⚠️ INFRASTRUCTURE — BRANCH DELETION FAILS FROM THE AGENT CONTAINER, AND IT ALWAYS HAS
+
+CLAUDE.md §5 ends "the reviewer merges with squash and **deletes the branch**". The squash merge
+works; **the deletion does not, from this container.** Both forms fail identically:
+
+```
+git push origin --delete tl/script-014
+git push origin :refs/heads/tl/script-014
+  -> send-pack: unexpected disconnect while reading sideband packet
+     fatal: the remote end hung up unexpectedly
+```
+
+**It is not a credentials or proxy fault** — the same remote accepted this reviewer's integration
+commit seconds earlier (`af11117..aa85e2a`), and `curl "$HTTPS_PROXY/__agentproxy/status"` reports
+`enabled: true`, `bundleCoversEveryHost: true`, `recentRelayFailures: []`. The zero-ref send-pack
+specifically does not survive the relay. `gh` is **not installed** in this container, and the GitHub
+MCP server exposes `create_branch` but **no delete-branch tool**, so there is no second route.
+
+✅ **Evidence it has never worked for anyone, not just this reviewer:** `git ls-remote --heads` shows
+**every merged script branch still present** — `tl/script-004` through `tl/script-013` are all merged
+and all still there. Ten previous reviewers hit this silently.
+
+> **Ruling: this is cosmetic and must NOT block or delay a merge, and a reviewer must not report a
+> merge as incomplete because of it.** Say the branch could not be deleted and move on. **What a
+> human can do in one action:** enable *Settings → General → Automatically delete head branches* on
+> the repository, which deletes them server-side on merge and clears the backlog going forward. No
+> disc, EXE or emulator needed.
