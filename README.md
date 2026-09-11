@@ -33,6 +33,8 @@ python3 tools/assemble.py check      validate translated files; builds nothing
 python3 tools/assemble.py merge      splice finished work into build/*_dump_merged.txt
 python3 tools/assemble.py build      merge, then reinsert into build/SCRIPT.BIN and build/HEXMAP.BIN
 python3 tools/assemble.py all        check + build + riotbattle checkedit
+python3 tools/assemble.py build --extended   tier-A chunks in appended 16 KB slots (tools/slots.py; needs the engine build)
+python3 tools/engine.py build        patched KOUSEI.EXE + SLPS_008.29 into build/ (font, renderer, slot stub, menus), simulated
 ```
 
 Then rebuild the disc image with the two files in `build/` and run it.

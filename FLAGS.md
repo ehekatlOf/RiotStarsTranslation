@@ -7796,3 +7796,97 @@ Regenerated with the new tool. `pending/README.md`'s "chunk 33 is missing" findi
 - Follow-up for a future byte census, not done here: rare control codes in the battle dump (`FF77`×2,
   `FFC8`, `FFD4`×2, `FFD7`×2, `FFD8`) and script (`FCFF`, `FFC3`–`FFC9`, `FFD8`–`FFDE`, `FFEE`, `FFFC`, all ≤3)
   were not examined; none is implicated by any artifact signature.
+
+## BC. Engine build 1 — KOUSEI/SLPS patches rebuilt from the retail EXEs, tier-A slot extension redesigned as APPENDED slots, built and simulated; NOT booted (2026-09-11, root session, Fable)
+
+Human's instruction: the engine work is done in this session, not by wave agents. Everything below
+is static: no emulator, no BIOS, no savestates exist in the container. **Nothing here has run in the
+game.** The boot test is Blocked 4/6 in HANDOFF and §5 of `pending/slot-extension.md`.
+
+### BC1. The old slot-extension plan would have overwritten map data in every large map
+
+`pending/slot-extension.md` (2026-08-05) put a 16 KB slot at `chunk+0x23000`, on the reading that
+the fourth read's consumers stop at `0x22F68`. Measured on the retail `HEXMAP.BIN` (every one of the
+44 map chunks): the map block at `+0x1F000` is an 8-byte header (`w` at +4, `h` at +5) and **three
+planes** — two bytes per cell (the `w*h/2`-word copy at `0x8006389C`) and then **one byte per cell,
+which that copy does not take**.
+
+| map | chunks | plane 2 ends | plane 3 ends | last non-zero below the slot |
+|---|---|---|---|---|
+| 104 × 78 = 8,112 cells | all but three | `0x22F68` | **`0x24F18`** | `0x24F18` |
+| 52 × 39 = 2,028 cells | 24, 28, 43 | `0x1FFE0` | `0x207CC` | `0x207CC` |
+
+So the plan was safe for chunk 43 only and would have destroyed the third plane of 5, 16 and 32.
+Whether the engine reads that plane in place (the staging buffer keeps it; xref shows no constant
+reference, which proves nothing for pointer-relative access) was NOT settled. No other in-chunk room:
+unit table last byte `0x28E78` in all 44 chunks, CLUT region to `0x2A708`, TIM slots 0x8220 of 0x8800
+each (1,504 dead bytes ×3, non-contiguous). Needs: chunk 5 8,679 B (8,697 with the pending
+corrections), 43 11,181 B; 16 and 32 a few hundred bytes over 8,192 at the 1.64× floor.
+
+### BC2. The design that shipped: one 16 KB slot per tier-A chunk, appended after the retail file
+
+`tools/slots.py` (one table for the EXE stub and the file tools): chunks 5, 16, 32, 43 → sectors
+3926, 3934, 3942, 3950 (file `0x7AB000`, `0x7AF000`, `0x7B3000`, `0x7B7000`); extended file
+8,105,984 bytes = 3,958 sectors. `read()` at `0x80064C48` adds the sector to the file's BCD start
+position with no size check, so appended sectors are read like any other as long as the rebuilt
+image stores HEXMAP.BIN contiguously. Nothing inside any chunk moves; the four retail slots stay
+byte-identical and are never read. The stub (132 B at `0x800F3ECC`, the execution-proven run)
+compares `idx*85` against the four keys, reads 8 sectors from the appended slot on a hit, and on the
+normal path **zeroes the staging buffer's second 8 KB** before the retail 4-sector read: the entry
+scanner at `0x8006559C` does not stop at zeros and, with the copy bound raised to `0x2000` halfwords,
+would otherwise record phantom `{FFFF}` entries from stale staging data on every normal map. The
+eight buffer/bound words (§3d of the plan) are unchanged from the August draft.
+
+### BC3. Tools
+
+- `tools/slots.py` — the layout; `tools/slotext.py apply|simulate|show` — assembles the stub from the
+  table, verifies every original word (`riotfont._apply_set`) and that the stub run is zero, writes,
+  `--revert` round-trips byte-identical to retail.
+- `riotbattle.py insert/checkedit --extended`; `assemble.py --extended` (budgets, takes the parked
+  `pending/chunk_NNN.txt` of the four chunks along, writes `build/battle_dump_merged.ext.txt`,
+  gitignored). `dump`/`verify`/`refresh` untouched: `verify` still ROUND TRIP OK, `refresh` still
+  byte-identical, default `check` unchanged.
+- `riotfont.py hookfont`: the size pre-check used the scattered layout's 3,252 bytes for every style
+  and refused the 1,176-byte run at `0x80105448` that the compact (`--style half`, 1,064 B) build has
+  shipped in since 2026-07-30 — fixed to compute the compact need. Also noted: the docstring still
+  advertises "auto scatters ~3 KB across 0x800F3E00–0x800F6000", which is the placement Appendix B
+  records as failure #2 (a 23-record CD path table); `detect_tables()` rejects it now. `--addr auto`
+  without a savestate refuses to place (correctly); the explicit address is the recorded one.
+- `tools/engine.py build|verify` — the whole chain: `hookfont --addr 0x80105448 --style half` →
+  `halfwidth --glyph-only` → `renderer` → `slotext apply` → `simcheck` + `slotext simulate`;
+  `namegrid` → `menutext` → `prompttext` → `slpsmap`. Outputs `build/KOUSEI.EXE`, `build/SLPS_008.29`
+  (gitignored). Then `assemble.py build --extended`.
+
+### BC4. What was verified, and how
+
+| Check | Result |
+|---|---|
+| retail EXEs in the upload | every documented "was" word matches (15/15), injection runs zero, `slpsmap` shows the stock grid/menu |
+| `slotext simulate`, retail EXE | all 46 maps call `read(record, idx*85+0x4A, 4)`; byte-swap to `0x80154F40`, 8,192 B, 27 entries of a 40-message synthetic slot |
+| `slotext simulate`, patched | 5/16/32/43 → `read(…, 3926/3934/3942/3950, 8)`, no zeroing; all others → retail read after exactly 2,048 zero-word stores to `0x801C2DDC..0x801C4DDC`; `sp` restored; 0 load-delay hazards; 0 stray writes; byte-swap to `0x80180000`, 16,384 B identical to the swapped source, all 40 entries inside the buffer |
+| `riotfont simcheck` on the final EXE | PASS (descriptor build + window geometry, hazards enforced) |
+| `slotext apply --revert` | byte-identical to retail |
+| `hookfont` | 781 B changed: font `0x80105448`, codes `0x80105708`, scratch `0x801057B8`, routine `0x801057D8`, ends `0x80105870` < run end `0x801058E0`; both `jal`s retargeted |
+| `halfwidth --glyph-only` / `renderer` | 2 words / 39 words, size preserved |
+| SLPS `namegrid`/`menutext`/`prompttext` | 324 bytes changed (matches §22) |
+| `assemble.py check --extended` | chunk 5 8,679 / 16,384, chunk 43 11,181 / 16,384, All checks passed |
+| `checkedit --extended` | retail region: 34 chunks differ, all inside retail slots, none of the four; the four retail slots pristine; appended slots 8,679 / 5,725 / 5,599 / 11,181 B |
+| independent decode of the appended slots | each tokenises to its merged body (5, 43 = pending files; 16, 32 = the pristine dump) |
+| `engine.py build` | reproduces `build/KOUSEI.EXE` sha256 `1498e327d629366d…` |
+
+### BC5. What the boot test must show (human, DuckStation)
+
+Disc rebuilt with `TACTICS/HEXMAP.BIN` as the last file. (1) The first battle (chunk 0, 8,163 / 8,192)
+plays with 24-column English — proves the font/renderer rebuild and the stub's normal path. (2) Chunk
+5's battle plays through — proves the appended read, the relocated 16 KB buffer and the entry table.
+(3) Chunk 43 when a late save exists. Plus one battle savestate and one name-entry savestate for
+`riotfont.py liveness` / `gridsim`. Until (1)+(2) pass: `--extended` stays opt-in, 5 and 43 stay in
+`pending/`, 16 and 32 stay blocked. After: move 5 and 43 into `tl/battle/`, make the layout the default,
+dispatch 16 and 32 at 16,384.
+
+### BC6. Open, not done here
+
+- Plane 3's consumer (BC1) — irrelevant to the appended design, still unknown for the record.
+- Font payload placement rests on the July savestate (§11 4b); re-run `liveness` with a new one.
+- The boot EXE's own half-width port (§11 #11) and the 7-character name cap (#10) are untouched.
+- `MAIN1.EXE`'s SCRIPT.BIN bank loader (§F2 repoint) is not traced; that is the next engine item.

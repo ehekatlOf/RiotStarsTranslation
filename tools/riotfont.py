@@ -736,6 +736,11 @@ def cmd_hookfont(path, out_path, addr_spec, site_sel, style, sav_paths, which, f
     codes = code_subset(which)
     n = len(codes)
     need = ROUTINE_LEN + 2 * n + 4 * n + 30 * n
+    if style == 'half':
+        # the compact layout (cmd_hookfont_compact): 8 B/glyph font, codes, 32 B scratch, 38-word
+        # routine. The scattered figure above refused the 1,176-byte run at 0x80105448 that the
+        # compact build has shipped in since 2026-07-30 (findings §14.3).
+        need = 8 * n + 2 * n + 32 + 4 * 38
 
     if addr_spec not in (None, 'auto'):
         runs = []

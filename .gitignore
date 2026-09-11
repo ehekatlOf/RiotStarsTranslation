@@ -1,8 +1,11 @@
 # game data — never commit, copyright and size
 original/
 
-# build outputs — regenerable from tools/assemble.py build
+# build outputs — regenerable from tools/assemble.py build / tools/engine.py
 build/*.BIN
+build/*.EXE
+build/SLPS_008.29
+build/*.ext.txt
 
 # python
 __pycache__/

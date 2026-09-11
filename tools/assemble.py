@@ -24,6 +24,8 @@ Usage:
     python3 tools/assemble.py build               merge, then reinsert into build/*.BIN
     python3 tools/assemble.py refresh             re-dump from original/ into dumps/
     python3 tools/assemble.py all                 check + build + checkedit
+    --extended                                    tier-A chunks (slots.EXTENDED) in appended 16 KB slots;
+                                                  their parked pending/ files ride along; needs slotext.py's KOUSEI.EXE
 
 Exit code is non-zero if anything failed, so this is safe to wire into a script.
 """
@@ -37,7 +39,9 @@ TLB    = os.path.join(ROOT, 'tl', 'battle')
 TLS    = os.path.join(ROOT, 'tl', 'script')
 BUILD  = os.path.join(ROOT, 'build')
 
-SCRIPT_SLOT = 8192          # battle chunk script slot, 0x25000..0x27000
+import slots
+SCRIPT_SLOT = slots.SCRIPT_SLOT   # battle chunk script slot, 0x25000..0x27000 (retail)
+EXTENDED = False                  # --extended: tier-A chunks budgeted at slots.EXT_SLOT in appended slots
 BANK        = 0xA000        # SCRIPT.BIN bank size
 NAME_COST   = 7             # {FC00}{=0000} occupies 7 columns on screen
 COLS        = 24
@@ -186,6 +190,17 @@ def load_battle_tl():
                 print('  !! %s declares CHUNK %s but is named %03d' % (fn, hm.group(1), idx))
             lines = lines[1:]
         out[idx] = lines
+    if EXTENDED:
+        # the parked tier-A translations ride along for the extended build only
+        for idx in slots.EXTENDED:
+            fn = os.path.join(ROOT, 'pending', 'chunk_%03d.txt' % idx)
+            if idx in out or not os.path.exists(fn):
+                continue
+            lines = read(fn).split('\n')
+            if lines and lines[0].startswith('=== CHUNK'):
+                lines = lines[1:]
+            out[idx] = lines
+            print('  -- extended: chunk %d taken from pending/' % idx)
     return out
 
 
@@ -211,10 +226,11 @@ def merge_battle(verbose=True):
         problems += tag_parity(old, new, 'chunk %d' % idx)
         problems += validate_body(new, 'chunk %d' % idx, src_lines=old)
         used = cost(''.join(l for l in new if not is_structural(l)))
-        report.append((idx, used, SCRIPT_SLOT - used))
-        if used > SCRIPT_SLOT:
+        budget = slots.slot_bytes(idx, EXTENDED)
+        report.append((idx, used, budget - used, budget))
+        if used > budget:
             problems.append('chunk %d: %d bytes, %d OVER the %d-byte slot'
-                            % (idx, used, used - SCRIPT_SLOT, SCRIPT_SLOT))
+                            % (idx, used, used - budget, budget))
         chunks[idx][1] = new + ['']
 
     out = list(pre)
@@ -227,9 +243,9 @@ def merge_battle(verbose=True):
 
     if verbose and report:
         print('  battle chunks translated: %d / %d' % (len(report), len(order)))
-        for idx, used, slack in sorted(report):
+        for idx, used, slack, budget in sorted(report):
             mark = '!!' if slack < 0 else ('~ ' if slack < 50 else '  ')
-            print('   %s chunk %2d  %5d / %d bytes   slack %5d' % (mark, idx, used, SCRIPT_SLOT, slack))
+            print('   %s chunk %2d  %5d / %d bytes   slack %5d' % (mark, idx, used, budget, slack))
     return merged, problems
 
 
@@ -360,8 +376,9 @@ def cmd_merge():
         print('\nRefusing to write: fix the errors above first.')
         return False
     if mb:
-        write(os.path.join(BUILD, 'battle_dump_merged.txt'), mb)
-        print('  -> build/battle_dump_merged.txt')
+        name = 'battle_dump_merged.ext.txt' if EXTENDED else 'battle_dump_merged.txt'
+        write(os.path.join(BUILD, name), mb)
+        print('  -> build/%s' % name)
     if ms:
         write(os.path.join(BUILD, 'script_dump_merged.txt'), ms)
         print('  -> build/script_dump_merged.txt')
@@ -372,7 +389,7 @@ def cmd_build():
     if not cmd_merge():
         return False
     ok = True
-    jobs = (('HEXMAP.BIN', 'riotbattle.py', 'battle_dump_merged.txt'),
+    jobs = (('HEXMAP.BIN', 'riotbattle.py', 'battle_dump_merged.ext.txt' if EXTENDED else 'battle_dump_merged.txt'),
             ('SCRIPT.BIN', 'riotscript.py', 'script_dump_merged.txt'))
     for binary, tool, merged in jobs:
         src = os.path.join(ORIG, binary)
@@ -381,10 +398,12 @@ def cmd_build():
             print('  -- skipping %s (original or merged dump missing)' % binary)
             continue
         out = os.path.join(BUILD, binary)
-        ok &= run([sys.executable, os.path.join(TOOLS, tool), 'insert', src, dump, out])
+        flag = ['--extended'] if (EXTENDED and binary == 'HEXMAP.BIN') else []
+        ok &= run([sys.executable, os.path.join(TOOLS, tool), 'insert', src, dump, out] + flag)
     if os.path.exists(os.path.join(BUILD, 'HEXMAP.BIN')):
+        flag = ['--extended'] if EXTENDED else []
         ok &= run([sys.executable, os.path.join(TOOLS, 'riotbattle.py'), 'checkedit',
-                   os.path.join(ORIG, 'HEXMAP.BIN'), os.path.join(BUILD, 'HEXMAP.BIN')])
+                   os.path.join(ORIG, 'HEXMAP.BIN'), os.path.join(BUILD, 'HEXMAP.BIN')] + flag)
     return ok
 
 
@@ -402,8 +421,9 @@ def cmd_status():
             if idx in tl:
                 done_j += ja
                 used = cost(''.join(l for l in tl[idx] if not is_structural(l)))
+                budget = slots.slot_bytes(idx, EXTENDED)
                 print('   [x] chunk %2d  %5d JP chars  ->  %5d / %d bytes, slack %d'
-                      % (idx, ja, used, SCRIPT_SLOT, SCRIPT_SLOT - used))
+                      % (idx, ja, used, budget, budget - used))
         print('   %d / %d Japanese characters translated (%.1f%%)'
               % (done_j, tot_j, 100.0 * done_j / tot_j if tot_j else 0))
     uni = os.path.join(DUMPS, 'script_unique.txt')
@@ -424,6 +444,9 @@ def cmd_status():
 
 
 def main(argv):
+    global EXTENDED
+    EXTENDED = '--extended' in argv
+    argv = [a for a in argv if a != '--extended']
     cmds = {'status': cmd_status, 'check': cmd_check, 'merge': cmd_merge,
             'build': cmd_build, 'refresh': cmd_refresh}
     if len(argv) < 2 or argv[1] not in cmds and argv[1] != 'all':

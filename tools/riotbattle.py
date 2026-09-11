@@ -28,9 +28,11 @@ Usage:
     python3 riotbattle.py verify HEXMAP.BIN
     python3 riotbattle.py checkedit HEXMAP.BIN HEXMAP_new.BIN   # ALWAYS run before building
     python3 riotbattle.py stats  HEXMAP.BIN
+    --extended on insert/checkedit: tier-A chunks in appended 16 KB slots (slots.py, slotext.py)
 """
 import sys, re
 from tagargs import ARG_LEN
+import slots
 
 CHUNK = 0x2A800
 # Each map chunk has a FIXED internal layout, verified across all 43 script-bearing chunks:
@@ -39,9 +41,12 @@ CHUNK = 0x2A800
 #   chunk + 0x27000  unit / deployment data  <- sector 78, FIXED OFFSET
 # The script may grow only within its slot. Anything at or after 0x27000 is read by the
 # engine at a fixed offset and MUST NOT move, or the map loads garbage units (black screen).
-SCRIPT_LO = 0x25000
-SCRIPT_HI = 0x27000
-SCRIPT_SLOT = SCRIPT_HI - SCRIPT_LO          # 8192 bytes
+SCRIPT_LO = slots.SCRIPT_LO                  # 0x25000
+SCRIPT_HI = slots.SCRIPT_HI                  # 0x27000
+SCRIPT_SLOT = slots.SCRIPT_SLOT              # 8192 bytes
+# --extended (slots.py): the four tier-A chunks get a 16,384-byte slot APPENDED after the retail
+# file, read there by the slotext.py stub in KOUSEI.EXE. dump/verify always use the retail layout.
+assert CHUNK == slots.CHUNK
 
 
 def is_lead(b):
@@ -195,9 +200,14 @@ def dump(path, out_path):
     return out_path
 
 
-def insert(path, dump_path, out_path):
+def insert(path, dump_path, out_path, extended=False):
     orig = open(path, 'rb').read()
     data = bytearray(orig)
+    if extended:
+        if len(orig) != slots.RETAIL_SIZE:
+            raise SystemExit('--extended needs the retail HEXMAP.BIN (%d bytes), got %d'
+                             % (slots.RETAIL_SIZE, len(orig)))
+        data += b'\x00' * (slots.ext_size() - len(orig))
     text = open(dump_path, 'r', encoding='utf-8').read()
     pre = {}; pad = {}; bodies = {}
     cur = None
@@ -222,17 +232,23 @@ def insert(path, dump_path, out_path):
         body = '\n'.join(bodies[idx])
         script = bytes_from_body(body, idx)
         base = idx * CHUNK
-        if len(script) > SCRIPT_SLOT:
-            overflow.append((idx, len(script), len(script) - SCRIPT_SLOT))
+        budget = slots.slot_bytes(idx, extended)
+        if len(script) > budget:
+            overflow.append((idx, len(script), len(script) - budget, budget))
+            continue
+        if extended and idx in slots.EXTENDED:
+            # appended slot; the chunk's retail slot stays byte-identical (the stub never reads it)
+            o = slots.ext_offset(idx)
+            data[o:o + slots.EXT_SLOT] = script + b'\x00' * (slots.EXT_SLOT - len(script))
             continue
         # write ONLY the script slot; everything before 0x25000 and at/after 0x27000 is untouched
         data[base+SCRIPT_LO:base+SCRIPT_HI] = script + b'\x00' * (SCRIPT_SLOT - len(script))
 
     if overflow:
         print('!! CHUNK OVERFLOW — reinsertion would corrupt the file:')
-        for idx, used, over in overflow:
+        for idx, used, over, budget in overflow:
             print('   chunk %d: script %d bytes, %d over the %d-byte slot'
-                  % (idx, used, over, SCRIPT_SLOT))
+                  % (idx, used, over, budget))
         print('   Shorten the translation in these chunks and retry.')
         raise SystemExit(2)
 
@@ -285,25 +301,39 @@ def stats(path):
     print('script headroom median : %d bytes' % sorted(frees)[len(frees)//2])
 
 
-def checkedit(orig_path, mod_path):
-    """Prove a modified HEXMAP only differs inside script slots. Run this before every build."""
+def checkedit(orig_path, mod_path, extended=False):
+    """Prove a modified HEXMAP only differs inside script slots. Run this before every build.
+    --extended: the file must be the retail file plus the appended slots (slots.py), the retail
+    slot of every extended chunk must be untouched, and only the appended region may differ."""
     a = open(orig_path, 'rb').read(); b = open(mod_path, 'rb').read()
-    if len(a) != len(b):
+    if extended:
+        if len(a) != slots.RETAIL_SIZE or len(b) != slots.ext_size():
+            print('FAIL: extended layout is %d -> %d bytes, got %d -> %d'
+                  % (slots.RETAIL_SIZE, slots.ext_size(), len(a), len(b))); return False
+    elif len(a) != len(b):
         print('FAIL: size changed %d -> %d' % (len(a), len(b))); return False
     bad = []
     for c in range((len(a) + CHUNK - 1)//CHUNK):
-        s0 = c*CHUNK; e0 = min(s0+CHUNK, len(a))
-        if a[s0:s0+SCRIPT_LO] != b[s0:s0+SCRIPT_LO]:
+        s0 = c*CHUNK; e0 = min(s0+CHUNK, len(a)); lo = min(s0+SCRIPT_LO, e0)
+        if a[s0:lo] != b[s0:lo]:
             bad.append((c, 'graphics prefix moved'))
         if e0 > s0+SCRIPT_HI and a[s0+SCRIPT_HI:e0] != b[s0+SCRIPT_HI:e0]:
             bad.append((c, 'unit/deployment data moved'))
+        if extended and c in slots.EXTENDED and a[s0+SCRIPT_LO:s0+SCRIPT_HI] != b[s0+SCRIPT_LO:s0+SCRIPT_HI]:
+            bad.append((c, 'retail slot of an extended chunk changed (it must stay pristine)'))
     if bad:
         print('FAIL — data outside the script slot changed. The map will not load:')
         for c, why in bad[:20]:
             print('   chunk %d: %s' % (c, why))
         return False
     n = sum(1 for i in range(len(a)) if a[i] != b[i])
-    print('OK — %d bytes changed, all inside script slots. Safe to build.' % n)
+    if extended:
+        used = ['chunk %d %d B' % (c, len(b[slots.ext_offset(c):slots.ext_offset(c) + slots.EXT_SLOT].rstrip(b'\x00')))
+                for c in slots.EXTENDED]
+        print('OK — %d bytes changed inside retail script slots; appended slots: %s. Safe to build.'
+              % (n, ', '.join(used)))
+    else:
+        print('OK — %d bytes changed, all inside script slots. Safe to build.' % n)
     return True
 
 
@@ -336,19 +366,21 @@ def unique(path, out_path):
 
 
 def main(argv):
+    extended = '--extended' in argv
+    argv = [a for a in argv if a != '--extended']
     if len(argv) < 3:
         print(__doc__); return 1
     cmd = argv[1]
     if cmd == 'dump':
         print('wrote', dump(argv[2], argv[3]))
     elif cmd == 'insert':
-        print('wrote', insert(argv[2], argv[3], argv[4]))
+        print('wrote', insert(argv[2], argv[3], argv[4], extended=extended))
     elif cmd == 'verify':
         return 0 if verify(argv[2]) else 1
     elif cmd == 'stats':
         stats(argv[2])
     elif cmd == 'checkedit':
-        return 0 if checkedit(argv[2], argv[3]) else 1
+        return 0 if checkedit(argv[2], argv[3], extended=extended) else 1
     elif cmd == 'unique':
         p, u, t = unique(argv[2], argv[3]); print('wrote %s: %d unique / %d total' % (p, u, t))
     else:

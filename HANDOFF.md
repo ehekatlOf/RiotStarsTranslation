@@ -32,11 +32,13 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-11 · by: **the root/runner session, on the human's instruction** · **THE GAME FILES ARE ON `main`
-(`riotstars.zip.001–003`, the human's upload). `python3 tools/unpack.py` rebuilds `original/`; `refresh`
-from the real binaries reproduced `dumps/` byte-for-byte, both files round-trip, `build` + real
-`checkedit` OK (FLAGS §BB4)** · chunks 17 and 36 shipped earlier today (§BB, §BA) · **6 battle chunks
-dispatchable — the run is OPEN** · figures below measured after the re-dump
+2026-09-11 · by: **the root/runner session (Fable), on the human's instruction: engine work** · **ENGINE
+BUILD 1 IS READY FOR ITS BOOT TEST (FLAGS §BC): `KOUSEI.EXE` = font hook + half-width + 24-column renderer
++ the tier-A slot extension, rebuilt from the retail EXE, `simcheck` and `slotext simulate` PASS;
+`HEXMAP.BIN` extended with chunks 5 and 43 in appended 16 KB slots, `checkedit --extended` OK;
+`SLPS_008.29` menus + name entry applied. NOT booted — see Blocked 4.** · the game files are on `main`
+(`unpack.py`, §BB4) · chunks 17 and 36 shipped earlier today · **6 battle chunks dispatchable — the
+translation run is OPEN** · figures below measured after the re-dump
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -124,11 +126,20 @@ preserved machine text — **unless it still holds two or more consecutive kana/
 untranslated line is still caught (tested both ways, §BA3). `git mv pending/chunk_036.txt
 tl/battle/chunk_036.txt`; `check` green; **2,887 / 8,192**. Battle 33 / 44, 66.6%.
 
-### 4. Tier-A battle chunks 5, 16, 32, 43 — needs EXE + disc + emulator
+### 4. Tier-A battle chunks 5, 16, 32, 43 — ENGINE BUILD 1 DONE, AWAITING THE BOOT TEST (2026-09-11)
 Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no faithful translation fits
-8,192 bytes. **5 and 43 are translated and parked.** Fix: the engine patch in
-`pending/slot-extension.md` (KOUSEI.EXE, eleven patched words, relocate the 8 KB RAM script buffer).
-**§B3 recommends settling KOUSEI.EXE first and confirming the floor on ONE of 16 or 32, not both.**
+8,192 bytes. **5 and 43 are translated and parked.** The fix is built: `pending/slot-extension.md`
+(revised — appended 16 KB slots, because every large map's data runs to +0x24F18 and the old in-chunk
+plan would have overwritten it, FLAGS §BC1), `tools/slots.py` + `tools/slotext.py`, `--extended` on
+`riotbattle.py`/`assemble.py`. `build/KOUSEI.EXE` (font hook + half-width + renderer + slot stub,
+`simcheck` PASS, `slotext simulate` PASS on all 46 maps) and `build/HEXMAP.BIN` (8,105,984 bytes,
+chunks 5 = 8,679 and 43 = 11,181 in their slots, `checkedit --extended` OK) were handed to the human.
+**What the human does (slot-extension.md §5):** rebuild the disc with `TACTICS/HEXMAP.BIN` as the
+LAST file (it grew 64 KB), boot: (1) first battle (chunk 0, tightest normal chunk) shows 24-column
+English; (2) chunk 5's battle plays through; (3) chunk 43 if a late save exists; capture one battle
+savestate and one name-entry savestate for `liveness`/`gridsim`. **Until (1)+(2) pass, `--extended`
+stays opt-in, 5 and 43 stay in `pending/`, and 16/32 stay blocked.** After they pass: move 5 and 43 to
+`tl/battle/`, make `--extended` the default, dispatch 16 and 32 with a 16,384-byte budget.
 
 ### 5. 🎮 Two in-game visits that settle four open questions between them
 - **The nine tutorial screens** (Blocked 8, §AO1–AO3). `batch_013.tsv` adds one `{FFFE}` to each of
@@ -152,13 +163,14 @@ Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no fait
   store: D518/D519/D520 are exactly such pooled rows** (1,184 / 745 / 850 JP chars, multi-scene, one
   opening with a ruler string).
 
-### 6. Disc rebuild and play-test — the binaries part is DONE 2026-09-11
-The game files are on `main` as `riotstars.zip.001–003` (the human's upload). `python3 tools/unpack.py`
-rebuilds `original/` in any clone (pinned sizes and sha256s; a bad part fails loudly), and
-`python3 tools/assemble.py build` then writes `build/HEXMAP.BIN` and `build/SCRIPT.BIN` and runs the real
-`checkedit` — it did: OK, 132,487 bytes changed, all inside script slots. **Left for the human: put the two
-built files back into the disc image and play-test.** `build/*.BIN` are gitignored; any session rebuilds
-them with `unpack.py` then `build`.
+### 6. Disc rebuild and play-test — ENGINE BUILD 1 delivered 2026-09-11, boot test pending
+The game files are on `main` as `riotstars.zip.001–003`; `python3 tools/unpack.py` rebuilds `original/`.
+The full file set for the first boot test was built and handed to the human: `build/KOUSEI.EXE`,
+`build/SLPS_008.29` (`python3 tools/engine.py build`, FLAGS §BC3), `build/HEXMAP.BIN`
+(extended, `assemble.py build --extended`) and `build/SCRIPT.BIN`. Any session rebuilds them: `unpack.py`,
+then `python3 tools/engine.py build`, then `python3 tools/assemble.py build --extended`.
+**Left for the human: the disc rebuild (HEXMAP.BIN last in the image) and the boot test in Blocked 4.**
+Still open from findings §11: the boot EXE's own half-width port (#11) and the 7-character name cap (#10).
 
 ### 7. Enable "Automatically delete head branches" — kills a permanent false signal
 Branch deletion returns **HTTP 403** from every agent container (§AQ9), so ~45 merged `tl/*` branches
@@ -302,9 +314,10 @@ Detail lives in `glossary.md` §61–§64 and `FLAGS.md` §AW–§AZ.
    the top of this file), then `python3 tools/assemble.py check`.
 2. **There IS dispatchable work: six battle chunks.** Run `/translate`, or open the wave-13 session with
    the SKILL.md §6a seed on `main`. Wave 13 = 15, 23, 27; wave 14 = 28, 29, 39 (Next up).
-3. **After wave 14, the work is the human list under "Blocked — needs a human", in this order:** the §F2
-   bank-40/41 repoint (2, unlocks 363 script lines / 2,748 instances), the tier-A slot extension (4,
-   unparks 5 and 43, unblocks 16 and 32), the two in-game visits (5), binaries and play-test (6).
+3. **After wave 14, the work is the human list under "Blocked — needs a human", in this order:** the
+   boot test of engine build 1 (4 and 6 — the files exist, only an emulator is missing), the §F2
+   bank-40/41 repoint (2, unlocks 363 script lines / 2,748 instances; MAIN1.EXE loader not yet traced),
+   the two in-game visits (5). Engine work is done in the root session by Fable, not by wave agents.
 4. **The game files are on `main`.** `python3 tools/unpack.py` rebuilds `original/` from
    `riotstars.zip.001–003` (pinned hashes; fails loudly on a bad part). `refresh` reproduced `dumps/`
    byte-for-byte on 2026-09-11 (FLAGS §BB4); if it ever does not, stop and look. `assemble.py build`
