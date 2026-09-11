@@ -697,7 +697,7 @@ reading, not as a fixed distinction.
 | ~~`館の中は静まりかっている・・・。`~~ | ✅ **EXHAUSTED and PROMOTED to §55.1 by `batch_014` (PR #37, merged 2026-09-11)** — 3 of 3 script instances rendered (D711, D714, D716), 0 battle, **0 remaining**. Shipped with the corrected dot counts (4 / 4 / **5**). Original seed note follows: `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
 | ~~`館の中は静寂に　包まれている・・。`~~ | ✅ **EXHAUSTED and RULED at §55.1 (PR #37)** — rendered `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．`, deliberately **parallel to but distinct from** the `静まりかっている` row above, as this row asked. 2 of 2 rendered (D717, D720), byte-identical, **0 remaining**. Original seed note follows: — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
 | `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
-| `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792, D793, D794 — five**, all in `batch_015`. Wave 10 takes the corpus from 1 rendered instance to 6, so this unit, not the incumbent, effectively fixes the term. Read D791 (`かつてのカーライン…`) and D794 (`親衛隊だか何だか知らねえが` — hostile, colloquial) before fixing on it. ⚠️ **FULL CENSUS, corrected 2026-09-11 (PR #39): 7 script-unique lines, 0 battle** — the five above (bank 20), **D898** (bank 28, shipped in `batch_010`), and **D1330 (bank 40)**. **Bank 40 has 75 bytes free**, i.e. a spendable budget of zero under §F2, so D1330 may never land without an engine-side fix. **This row therefore STAYS LIVE after wave 10 merges.** |
+| `親衛隊` | `ｇｕａｒｄ` (5), **lowercase** — ✅ **RULED and RENDERED 2026-09-11 (PR #39), but the row STAYS LIVE** | `batch_010` D898 (bank 28) + `batch_015` D789/D791/D792/D793/D794 (bank 20) — **6 of 7 rendered** | ⚠️ **D1330 REMAINS, and it is in BANK 40 — 75 bytes free, a spendable budget of ZERO under §F2.** Full census re-measured at review: **7 script-unique lines, 0 battle** — D789, D791, D792, D793, D794, D898, **D1330**. The wave-10 seed implied six; it is seven. One word covers all five of `batch_015`’s registers because **the contempt is never in the noun** — in D794 it sits in `だか何だか知らねえが` → `ｇｕａｒｄ　ｏｒ　ｗｈａｔｅｖｅｒ　ｔｈｅｙ　ａｒｅ`, in D793 in the flat `ちぇっ`. English “the guard” is exactly a ruler’s household corps and takes a plural verb (`Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ　ｌｏｒｄ　ｉｔ…`, `…ａｒｅ　ｓｔｒｏｎｇｅｒ　ｔｈａｎ…`). **Lowercase**, matching the one shipped instance and §17.1’s function-noun test. See `FLAGS.md` §B and §AR |
 | `素早さ` | lowercase `ｓｐｅｅｄ` / `ｓｗｉｆｔ` | `batch_001` ×3, `batch_003` — **five shipped rows** | **D830.** ⚠️ §9's wave-9 block **already names D830**. `Ａｇｉｌｉｔｙ` was that table's rejected first draft — do not revive it. |
 | `機械兵` | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` | 13 shipped messages (`batch_003/005/010/012`) | **D726, D739, D744** (`batch_014`) and **D835, D836** (`batch_016`) — 5 lines, **8 occurrences**. Cross-unit. |
 | `材料` | `ｍａｔｅｒｉａｌｓ` (weapon-crafting sense) | §54's sense-split row | **D726, D737, D744, D746** (`batch_014`) and **D807** (`batch_015`) — 5 lines, **8 occurrences**. Cross-unit. ⚠️ wave 10 adds a **third** sense (machine-soldier parts); §54 splits only cake vs weapon. Read before assuming. |
@@ -726,12 +726,12 @@ reading, not as a fixed distinction.
 | ~~`能力値`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded** and not the `ｓｔａｔｓ` alternative, 14 columns confirmed. **1 script + 0 battle — exhausted.** ⚠️ **The key is `能力値`, not `能力`** — the PR body's table drifted; the seed was right. Original seed note follows: `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` (14) | D758 | Alt `ｓｔａｔｓ` (5) if the row is tight |
 | `隠れ家` | `ｈｉｄｅｏｕｔ` (7) | D714, the pickpocket's | `スリ` → `ｐｉｃｋｐｏｃｋｅｔ` is **binding** (3 shipped, `batch_012`) |
 | ~~`「只今、研究開発中」`~~ | ✅ **PROMOTED to §55.2 (PR #37), used exactly as seeded**, 22 columns confirmed. **1 script + 0 battle — exhausted.** The §2.1 compression it carries is **ratified at §55.3**, with reasons. Original seed note follows: `“Ｒｅｓｅａｒｃｈ　ｉｎ　ｐｒｏｇｒｅｓｓ”` (22) | D724, the workshop's sign | The `貼り紙` row (§34) fixes the frame; only the sign text is open |
-| `戒厳令` | `ｍａｒｔｉａｌ　ｌａｗ` (11) | D787 | — |
-| `エクスカリバー` | `Ｅｘｃａｌｉｂｕｒ` (9) | D803, `伝説の剣` | — |
-| `ヘヴィメイル` | `Ｈｅａｖｙ　Ｍａｉｌ` (10) | D801, armour worn by an imperial soldier | Capitalised: a named item. Alt `ｈｅａｖｙ　ｍａｉｌ` |
-| `旅芸人の一座` | `ａ　ｔｒａｖｅｌｌｉｎｇ　ｔｒｏｕｐｅ` (19) | D760, D774 | British `‐ll‐`. Alt `ａ　ｔｒｏｕｐｅ　ｏｆ　ｐｌａｙｅｒｓ` (19) |
-| `幽霊` | `ｇｈｏｓｔｓ` (6) | D762 | ⚠️ **SEED CORRECTED 2026-09-11 (PR #39): my `ｇｈｏｓｔ` (5) was the wrong entry.** Merged `batch_008` already ships **`ｇｈｏｓｔｓ　ｗａｌｋ　ｓｏｕｔｈ　ｏｆ　Ｋｉｅｓａ`** for the *same rumour*; `幽霊が　出るらしい` is number-neutral idiom and the shipped English is plural. `batch_015`'s translator deviated from the seed and was right; the reviewer confirmed it on stronger grounds than either of us gave. |
-| `仙人` | `ｈｅｒｍｉｔ` (6) | **D756 and D782 — and the two are NOT the same construction** | ⚠️ **CORRECTED 2026-09-11 (PR #37). My seed asked for a compound `生き返りの仙人` at "D756, D782"; that compound is at neither, as written.** **D756** reads `死んだ人を　生き返らせる術を使う　仙人` — a *verb phrase* plus a bare `仙人`, not a compound. **D782** reads `生き返りの{FFFE}仙人さん` — the compound **is** in the readable text, but a `{FFFE}` sits inside it, so it is **0 hits on a raw grep of every dump** and invisible to any exact-key search. **That split is method note 1 in miniature**: the term is real, and only a Japanese-side sub-message sweep finds it. `ｈｅｒｍｉｔ` shipped at D756 (`batch_014`); **D782 belongs to `batch_015`** and must match. Alt `ｓａｇｅ` (4) |
+| ~~`戒厳令`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `ｍａｒｔｉａｌ　ｌａｗ` (11), **used exactly as seeded**. **1 script + 0 battle — 0 remaining.** Ships sentence-initial as `Ｍａｒｔｉａｌ　ｌａｗ`; a common-noun phrase (§17.1), not a named thing. Original seed note follows: `ｍａｒｔｉａｌ　ｌａｗ` (11) | D787 | — |
+| ~~`エクスカリバー`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `Ｅｘｃａｌｉｂｕｒ` (9), **used exactly as seeded**. **1 script + 0 battle — 0 remaining.** The swindler's bait, never an item the player holds. Original seed note follows: `Ｅｘｃａｌｉｂｕｒ` (9) | D803, `伝説の剣` | — |
+| ~~`ヘヴィメイル`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `Ｈｅａｖｙ　Ｍａｉｌ` (10), **used exactly as seeded**, capitals kept. **1 script + 0 battle — 0 remaining.** ⚠️ It is a **named item** and `ａｒｍｏｕｒ` is not in it, so §47's British-`ａｒｍｏｕｒ` rule is not engaged. Original seed note follows: capitalised, a named item. Alt `ｈｅａｖｙ　ｍａｉｌ` | D801, armour worn by an imperial soldier | — |
+| ~~`旅芸人の一座`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `ａ　ｔｒａｖｅｌｌｉｎｇ　ｔｒｏｕｐｅ` (19), **used exactly as seeded**, British `‐ll‐`. **2 script + 0 battle — 0 remaining.** Byte-identical on both lines. Original seed note follows: Alt `ａ　ｔｒｏｕｐｅ　ｏｆ　ｐｌａｙｅｒｓ` (19) | D760, D774 | — |
+| ~~`幽霊`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `ｇｈｏｓｔｓ` (6). **1 script + 0 battle — 0 remaining.** ⚠️ **SEED CORRECTED 2026-09-11 (PR #39): the seed's `ｇｈｏｓｔ` (5) was the wrong entry and the translator was right to decline it.** Merged `batch_008` already ships `ｇｈｏｓｔｓ　ｗａｌｋ　ｓｏｕｔｈ　ｏｆ　Ｋｉｅｓａ` for the same rumour, so the plural is the incumbent, not an inflection choice. `幽霊が出るらしい` is number-neutral and the natural English is plural | D762 | — |
+| ~~`仙人`~~ | ✅ **EXHAUSTED and PROMOTED to §56.1 by `batch_015` (PR #39, merged 2026-09-11, round 2)** — `ｈｅｒｍｉｔ` (6). **2 script (D756 `batch_014`, D782 `batch_015`) + 0 battle — 0 remaining.** The two are **NOT the same construction**: D756 is `生き返らせる…仙人`, D782 is `生き返りの{FFFE}仙人さん` across a `{FFFE}`, which is why a raw grep of either dump returns **0** hits for the compound. D782 ships `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` (21). ⚠️ The width is **6**, not the 7 a wave-10 correction asserted — measured with `len()` | D756 and D782 | — |
 | `アーマーナイト` | `Ａｒｍｏｕｒ　Ｋｎｉｇｈｔ` (13) | D828, a unit class | ⚠️ **British `ａｒｍｏｕｒ`** — the corpus ships `ａｒｍｏｕｒ` **10 times and `ａｒｍｏｒ` 0 times**. `Ａｒｍｏｒ　Ｋｎｉｇｈｔ` **REJECTED** on that count. Capitalised per §4's `フリーナイト` |
 | `腕力` | `ｓｔｒｅｎｇｔｈ` (8) | D829 | lowercase prose, like `attack power` / `speed`. Alt `ｐｏｗｅｒ` (5) — **rejected**: `パワー` already ships as `ｐｏｗｅｒ` (`batch_001`, `ｂｏｔｈ　ｐｏｗｅｒ　ａｎｄ　ｓｐｅｅｄ`), so reusing it here would merge two distinct source words |
 | `頑丈さ` | `ｔｏｕｇｈｎｅｓｓ` (9) | D831 | Alt `ｓｔｕｒｄｉｎｅｓｓ` (10) |
@@ -2214,7 +2214,7 @@ would reach), `Ｈｏｗｅｖｅｒ，` (§23.3), `Ｒｉｇｈｔ，` for `よ
 |---|---|---|
 | やれやれ、 | `Ｇｏｏｄ　ｇｒｉｅｆ，` | 12 columns. Weary exasperation. **Distinct** from §6's まったく → `Ｒｅａｌｌｙ，` (contempt), ふう → `Ｐｈｅｗ，` (relief) and ふっ / フンッ → `Ｈｍｐｈ` (scoff). Free across `tl/` |
 | くーっ、 / く〜っ、 | `Ｔｃｈｈ，` | 5 columns. The **lengthened** `くっ` → `Ｔｃｈ` (§11.5), the extra beat taking an extra letter as §26.5's ふーむ → `Ｈｍｍ` extends む → `Ｈｍ`. The two source spellings (`ー` and `〜`) take one English form per §17.2's 鬼 / オーガ; both are the same speaker, L10 and L14 |
-| うーん、 | `Ｈｍｍ，` | 4 columns. The musing hum. Shares §26.5's ふーむ → `Ｈｍｍ，` deliberately — same length, same act — and §25.3's test is met: `ふーむ` is in script bank 31, `うーん` in battle chunk 8, so no scene shows both |
+| うーん、 | `Ｈｍｍ，` | 4 columns. The musing hum. Shares §26.5’s ふーむ → `Ｈｍｍ，` deliberately — same length, same act. ⚠️ **BANK CITATION CORRECTED 2026-09-11 (§4.3 in-place correction, PR #39 review) — THE RULING IS UNCHANGED; only its stated reason was wrong.** This row read “§25.3’s test is met: `ふーむ` is in script bank 31, `うーん` in battle chunk 8, so no scene shows both”. Re-measured over both dumps: **`ふーむ` is in script banks 11 (D581), 30 (D988) and 33 (D1129), 0 battle — never bank 31**; **`うーん` is in script banks 2 (D425), 20 (D813), 29 (D940) and 40 (D1273, D1310), and battle chunks 8 AND 26.** (The “battle chunk 8” half was TRUE; the `ふーむ` half and the completeness were not.) The two still share no bank, so the old conclusion survives — **but the ruling no longer rests on separation at all**: merged `batch_013` ships `ん〜` (D925, D948) and `うーん` (D940) **all as `Ｈｍｍ，` together in bank 29**, so the corpus has already accepted the same-bank collapse. That is what licenses `batch_015`’s `フーム` (D807) → `Ｈｍｍ` beside `うーん` (D813) in bank 20. See §56.2 |
 | あの・・・ | `Ｕｍ．．．` | 5 columns. Seneca's hesitant opener, twice (L9, L15), byte-identical. Held apart from §24.3's すいません。 → `Ｅｘｃｕｓｅ　ｍｅ．` and ちょっと、 → `Ｈｏｌｄ　ｏｎ，`, exactly as §24.3 holds those two apart |
 | それに、 | `Ｂｅｓｉｄｅｓ，` | 9 columns. **Additive, not adversative**, and that is why it does not join the four already fixed: でも → `Ｂｕｔ`, それにしても → `Ｓｔｉｌｌ，` (§19.1), しかし / しかしながら → `Ｈｏｗｅｖｅｒ，` (§23.3), それでも → `Ｅｖｅｎ　ｓｏ，` (§25.2). Twice here, byte-identical. ⚠️ Note for duplicate checks: this chunk also contains `それでもいいかい？`, which is それ + でも and **not** §25.2's それでも — correctly not rendered `Ｅｖｅｎ　ｓｏ` |
 | うん、 | `Ｙｅｓ，` | 5 columns. Seneca's soft assent. ⚠️ **Recorded with the licence that actually applies, not the PR body's.** §18.3 freed `Ｙｅｓ` from `ああ` **only**; `Ｙｅｓ` already carries `ええ。` → `Ｙｅｓ．` (`chunk_007` L19), `そうだ、` → `Ｙｅｓ，` (`chunk_000` L3) and now `ははっ！` → `Ｙｅｓ，　ｓｉｒ！` (§28.3). What licenses a fourth is §25.3's co-occurrence test, counted across `battle_dump.txt` at this review: `うん` in chunks 8, 20, 43; `ええ` in 7, 19, 32; `そうだ、` in 0, 5, 24, 39; `ははっ` in 13, 16, 37, 38, 42 — **no chunk contains うん with any of the other three.** Distinct from §6's ああ → `Ｙｅａｈ`, which this chunk also carries three times |
@@ -7023,3 +7023,179 @@ Gate 6 cannot see either pair, because the messages are not byte-identical.
   Measured at review: D745 ships `Ｉ　ｌｅａｒｎ　ｍｕｃｈ　ｆｒｏｍ　ｉｔ．` and `ａｃｃｏｕｎｔ` is **×0** in the
   unit. The proposed row described a rendering the file does not contain, so it is **struck, not
   reworded**. §46.2's transitive `参考にする` is untouched.
+
+## 56. Added by script batch 015 (PR #39, merged 2026-09-11, round 2)
+
+Rendered in `tl/script/batch_015.tsv` — `script_unique.txt` **DATA 759–814** (FILE lines 764–819),
+**56 unique lines / 56 message instances**, **bank 20 only**, count 1 each. Town NPCs of a great
+trading port: war rumours and martial law, the wine merchant, the square narration, the Excalibur
+swindler and his stone, and a cornered imperial soldier.
+
+**Figures re-measured at review on the merged tree, not copied from the PR body** (which was never
+refreshed after the round-1 rework and still carries round-1 numbers): 3,161 JP → **6,746** EN =
+**2.1341×**; growth **+7,178 bytes**; bank 20 free **28,477 → 21,299**. The bank figure is a real
+before/after — the unit file was moved out of `tl/`, `merge` + `bankmeasure` re-run, restored and
+re-run — and the chain reconciles end to end: pre-wave **29,489** → after `batch_014` **28,477** →
+after this unit **21,299**. **372 text runs** (the translator's splitter counts 373; a D794
+definitional difference, settled, no action), widest **24**, **21 at exactly 24**, **351 at ≤ 23**,
+**no page over 4 text rows at all**. `{FFFE}` **+4 net** — **D771 4→5, D778 0→1, D783 6→7,
+D784 6→7** — `{FCC0}` **untouched**, and the non-`{FFFE}` tag stream **byte-identical on all 56
+lines**. Merged at round 2; all three round-1 findings verified applied on `3d60879`.
+
+Incumbents used unchanged, verified byte-for-byte at review: `Ｓｏｌｄｉｅｒｓ，` (§30),
+`Ｃｏｍｅ　ｔｏ　ｔｈｉｎｋ　ｏｆ　ｉｔ，` (§19.1), `Ｉ　ｓｅｅ．` (§38), `Ｒｅａｌｌｙ，` (§6),
+`Ｍｙ，` (§28), `Ｏｈ，` / `Ｏｈ？` (§6, §18.2), `Ａｈ！` (§6), `Ａｈｈ，` (§51), `Ｈｍｐｈ．` (§6),
+`Ｈｍ？` (§20.3), `Ｔｈｅｒｅ，` (§46), `Ｄａｍｎ，` (§50), `Ｗｅｌｌ　ｎｏｗ，` (§19.1),
+`Ｍｉｎｄ　ｙｏｕ，` (§53.3), `ｗｅｌｌ，　ｗｅｌｌ` (§34), `Ｒｉｇｈｔ，` / `Ｒｉｇｈｔ．` (§32, §24.3),
+`　Ｌｅａｖｅ　ｉｔ` / `　Ｓｅｌｌ　ｉｔ` / `　Ｙｅｓ` / `　Ｎｏ` (§34), `Ｍｅｒｉｔ` (§38.3),
+`ｍａｔｅｒｉａｌｓ` (§9), `ｐｅｄｌａｒ` / `ｗｏｒｋｓｈｏｐ` (§54), `ｄａｎｃｅｒ` / `ｒｅｔａｉｎｅｒｓ` (§41),
+`ｃａｓｉｎｏ` (§51), `Ｍａｒｖｅｌｌｏｕｓ` (§21), `Ｆａｔｈｅｒ　Ｂａｔｏｕ` (§36.1), `Ｂａｔｏｕ` (§26.1),
+`Ｒｏｙａｌ　Ａｒｍｙ` / `ｔｈｅ　Ｅｍｐｉｒｅ` / `Ｃａｒｌｉｎｅ` / `Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ` / `ｆｏｒｔｒｅｓｓ` /
+`９ｔｈ　Ａｒｍｙ` / `Ｆｒｅｅｌｏａｄｅｒｓ` (§2), `ｂａｓｉｌｉｓｋ` / `ｍａｒｔｉａｌ　ａｒｔｉｓｔ` (§4),
+`Ｊｅｗｅｌｓ` / `ｓｐｅｃｉａｌ　ａｔｔａｃｋ` (§3), `ｔｈｅ　Ｐｒｉｎｃｅ` / `ｔｈｅ　Ｐｒｉｎｃｅｓｓ` (§1, §39),
+`Ｈｅｌｆｅｒ` / `Ｆｅｒｉｓｌａｎｄ` (§11), `Ｋｉｅｓａ` / `ｂａｔｔｅｒｙ` / `ｆｉｎｅ` (§42), `ｈｏｍｅｌａｎｄ` (§43),
+`ｎｕｔ` (§52), `ｆａｂｌｅｄ` (§53), `Ｋｏｒｎｅｆｆ` (§21), `Ｌｅｖｅｒｋ` (§28), `Ａｒｉｅｓ` (§33),
+`Ｌｉｍｒｏｓｅ` (§38), `Ｓｈｉｒｏｎ` / `Ｓｅｎｅｃａ` / `Ａｒｔｅｍｉｓ` (§1), `ｇｕａｒｄ` (§9),
+`“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (§9), `ｈｅｒｍｉｔ` (§55/§9) and `ｒｅｂｅｌｌｉｏｎ` (§38.3).
+
+### 56.1 Six promotions out of §9 — every one exhausted by this unit
+
+| Japanese | English | Instances | Note |
+|---|---|---|---|
+| `戒厳令` | `ｍａｒｔｉａｌ　ｌａｗ` (11) | D787 — 1 script, 0 battle, **0 remaining** | Ships sentence-initial as `Ｍａｒｔｉａｌ　ｌａｗ`. A common-noun phrase (§17.1), not a named thing |
+| `エクスカリバー` | `Ｅｘｃａｌｉｂｕｒ` (9) | D803 — 1 script, 0 battle, **0 remaining** | The swindler's bait (`伝説の剣` → *the legendary sword*); never an item the player holds |
+| `ヘヴィメイル` | `Ｈｅａｖｙ　Ｍａｉｌ` (10) | D801 — 1 script, 0 battle, **0 remaining** | Capitalised: a **named item**. ⚠️ `ａｒｍｏｕｒ` does not occur in it, so §47's British‐`ａｒｍｏｕｒ` rule is not engaged |
+| `旅芸人の一座` | `ａ　ｔｒａｖｅｌｌｉｎｇ　ｔｒｏｕｐｅ` (19) | D760, D774 — 2 script, 0 battle, **0 remaining** | British `‐ll‐`; byte-identical on both lines |
+| `幽霊` | `ｇｈｏｓｔｓ` (6) | D762 — 1 script, 0 battle, **0 remaining** | **Plural is the INCUMBENT, not an inflection choice**: merged `batch_008` already ships `ｇｈｏｓｔｓ　ｗａｌｋ　ｓｏｕｔｈ　ｏｆ　Ｋｉｅｓａ` for the same rumour. The wave-10 seed's `ｇｈｏｓｔ` (5) was wrong and the translator was right to decline it |
+| `仙人` | `ｈｅｒｍｉｔ` (6) | D756 (`batch_014`), D782 — 2 script, 0 battle, **0 remaining** | D782 ships `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` (21). The two instances are **not** the same construction and the compound `生き返りの仙人` exists in neither dump — D782 splits it across a `{FFFE}`. Width is **6**, not the 7 a wave-10 correction asserted |
+
+⚠️ **`親衛隊` is NOT promoted and its §9 row STAYS LIVE** — `ｇｕａｒｄ` (5), lowercase, is ruled and
+rendered, but the census is **7 script-unique lines, 0 battle** and **D1330 remains, in BANK 40**
+(75 bytes free, a spendable budget of zero under §F2). See §B and §AR in `FLAGS.md`.
+
+### 56.2 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| `シロン様` | `Ｍａｓｔｅｒ　Ｓｈｉｒｏｎ` (13) | D769. The established `<name>様` → **station-title** pattern: §24.1 `ナコール様` → `Ｆａｔｈｅｒ　Ｎａｃｏｌ`, §33.1 `フェリクス様` → `Ｇｏｖｅｒｎｏｒ　Ｆｅｌｉｘ`, §1 `ヘルファー様` → `Ｌｏｒｄ　Ｈｅｌｆｅｒ`. §1 already calls Shiron "master of the Caucasus dojo", so `Ｍａｓｔｅｒ` is the station the glossary itself names. `Ｓｈｉｒｏｎ` (§1) is unchanged |
+| `フーム` | **`Ｈｍｍ`** (3) | D807. ⚠️ **This is the ROUND-2 form. PR #39's body still tabled `Ｈｍｍｍ` (4) and it must not be read from there** — round 1 required the collapse and round 2 applied it. A **fourth** kana spelling collapsing onto §26.5's hum; see §56.3 |
+| `なんと、` | `Ｇｏｏｄ　ｈｅａｖｅｎｓ，` (13) | D767, the keigo wine merchant. Held **distinct** from `何だ、` → `Ｗｈａｔ，` (shipped `batch_007`), which D793 takes in this same bank. Verified free across all of `tl/` |
+| `何！！` | `Ｗｈａｔ！！` (6) | D807, source punctuation kept per §5 |
+| `あわわわ、` | `Ａｗａｗａｗａ，` (8) | D794, the panicking gossip |
+| `ちぇっ、` | `Ｔｓｋ，` (4) | D793. Held distinct from §11's `くっ` → `Ｔｃｈ` |
+| `拠点` | `ｓｔｒｏｎｇｈｏｌｄｓ` (11) | D783. ⚠️ **LIVE — 5 further instances await translation: DATA 352, 1293, 1362, 1366, 1384** (re-counted at review; the PR's list is right) |
+| `アルテミスの石` | `Ｓｔｏｎｅ　ｏｆ　Ａｒｔｅｍｉｓ` (16) | D806. On the incumbent `Ａｒｔｅｍｉｓ` (§1), which `batch_003` already ships as *the goddess Ａｒｔｅｍｉｓ* on the bow's description row |
+| `アルテミスの弓` | `Ｂｏｗ　ｏｆ　Ａｒｔｅｍｉｓ` (14) | D810, same shape. ⚠️ The item table (`batch_003`) describes this weapon but does **not** name it, so there is no table form to match; if one is ever added it must match this |
+| `ボロ剣` | `ａ　ｒｕｓｔｙ　ｏｌｄ　ｂｌａｄｅ` (17) | D806, the swindler's "treasure" |
+| `宝物` | `ｔｒｅａｓｕｒｅ` (8) | D803, D806 |
+| `武器屋` | `ｗｅａｐｏｎ　ｓｈｏｐ` (11) | D776 |
+| `地震` | `ｅａｒｔｈｑｕａｋｅｓ` (11) | D777, plural for `多い` |
+| `玉座` | `ｔｈｅ　ｔｈｒｏｎｅ` (10) | D792 |
+| `商人` | `ｍｅｒｃｈａｎｔ` (8) | D770. Distinct from §54's `行商` → `ｐｅｄｌａｒ`, which D806 takes |
+| `おっちょこちょい` | `ｓｃａｔｔｅｒｂｒａｉｎ` (12) | D776 |
+| `おいしい話` | `ｓｗｅｅｔ　ｄｅａｌｓ` (11) | D808 |
+| `勘弁してくれ` | `ｌｅｔ　ｍｅ　ｏｆｆ` (10) | D810. `ｆｏｒｇｉｖｅ　ｍｅ` is the glossary's `申し訳ない` and is spent at D768 **in this same bank** |
+| `おばさん` (self-reference) | `ｔｈｉｓ　ｗｏｍａｎ’ｓ` (12) | D790. §34 drops the **vocative** `お客さん` ("carried by the second person"); this is the speaker naming herself, so it is carried. Matches this unit's own menu label `Ｗｏｍａｎ` |
+| `貸し切る` | `ｂｏｏｋ　ｔｈｅ　ｃａｓｉｎｏ` (15) | D812, on §51's lowercase `ｃａｓｉｎｏ` |
+| `はい、毎度！` | `Ｙｅｓ，　ｍａｎｙ　ｔｈａｎｋｓ！` (17) | D808. **Extends** the glossary's `毎度あり` → `Ｍａｎｙ　ｔｈａｎｋｓ` to a new source string |
+| `ガラクタ部隊` | `ｊｕｎｋ　ｓｑｕａｄ` (10) | D785. **Compositional, not a coinage** — §23 fixes `ガラクタ` → `ｊｕｎｋ` and §19 `部隊` → `ｓｑｕａｄ`; recorded so the compound cannot drift. Held distinct from §2's `穀潰し` → `Ｆｒｅｅｌｏａｄｅｒｓ`, which stands beside it in the same message |
+| `帝国軍兵士` | `Ｉｍｐｅｒｉａｌ　ｓｏｌｄｉｅｒ` (16) | D800, D801 — **both instances, byte-identical**. On §2's `帝国軍` → *the Imperial army*; the adjective, not `the Empire's men`, because the noun follows |
+| `神父様` (referential) | `ｔｈｅ　Ｆａｔｈｅｒ` (10) | D814. ⚠️ **A third form on §36.1's ladder, which already fixes `バトウ神父` → `Ｆａｔｈｅｒ　Ｂａｔｏｕ`, the bare vocative `神父、` → `Ｆａｔｈｅｒ，`, and the attributive `〜の神父` → §1's `ｐｒｉｅｓｔ`.** §24.1's `神父様` row is scoped **(vocative)** → `Ｆａｔｈｅｒ！`; D814 is `神父様なら` — *as for the Father* — which is neither vocative nor attributive. Definite article, capital `Ｆ` |
+| `勝ってカブトの・・・` | `Ａｆｔｅｒ　ｔｈｅ　ｗｉｎ，　ｙｏｕｒ` / `ｈｅｌｍｅｔ．．．` | D783. The speaker breaks off inside `勝って兜の緒を締めよ`, so the English breaks off inside the English shape of it. **No proverb row is coined** — the source never completes it. Three dots, matching the source's three `・` |
+| `→` (glyph) | `−` (U+2212) | D797's `「マーベラス→・・・」` → `“Ｍａｒｖｅｌｌｏｕｓ−．．．”` (14). `→` is outside §3.1 and `−` is the nearest permitted glyph. ⚠️ **A guess about authorial intent** — the arrow probably means *go there* — flagged, not assumed. See `FLAGS.md` §AR |
+
+Four menu labels, each keeping its leading full-width cursor gutter: `　通りすがりのおねーさん` →
+`　Ｙｏｕｎｇ　ｗｏｍａｎ　ｐａｓｓｉｎｇ　ｂｙ` (23), `　通りすがりのおにーさん` →
+`　Ｙｏｕｎｇ　ｍａｎ　ｐａｓｓｉｎｇ　ｂｙ` (21), `　おしゃべり中のおばさん` →
+`　Ｗｏｍａｎ　ｄｅｅｐ　ｉｎ　ｇｏｓｓｉｐ` (21), and four more at D799/D800: `　やっつける` →
+`　Ｂｅａｔ　ｈｉｍ` (9, on the shipped `ｂｅａｔ` of battle chunks 6 and 13), `　逃がしてやる` →
+`　Ｌｅｔ　ｈｉｍ　ｇｏ` (11), `　捕まえる` → `　Ｓｅｉｚｅ　ｈｉｍ` (10, on `batch_013`'s `ｓｅｉｚｅ　ｈｉｍ`),
+`　どうもしない` → `　Ｄｏ　ｎｏｔｈｉｎｇ` (11).
+
+### 56.3 RULING — `フーム` → `Ｈｍｍ`, and §25.3 is answered by shipped work, not by authority
+
+The unit put `フーム` (D807) and `うーん` (D813) **in one bank**, which is the configuration §26.5's
+co-occurrence note was written to avoid. Round 1 ruled the collapse and round 2 applied it. The
+ruling is **settled by merged precedent**, verified independently at this review:
+
+**`batch_013` already ships `ん〜` (D925, D948) and `うーん` (D940) — three lines, two kana
+spellings — all as `Ｈｍｍ，`, together in bank 29.** The corpus had therefore already accepted a
+same-bank collapse of this exact family before `batch_015` was written. `フーム` joining them in
+bank 20 changes nothing that bank 29 had not already settled.
+
+The alternative — a fourth English form `Ｈｍｍｍ` for a fourth kana spelling — would have been the
+only place in the corpus where the *length of a hum* carried meaning, and §10.6 has already
+rejected transliterating a grunt once (`Ｈｏｈ`).
+
+⚠️ **The stated reason in §26.5's `うーん、` row was wrong and is corrected in place** (§4.3, at
+glossary.md's `うーん、` entry): it cited banks that do not hold those words. The ruling never
+depended on it.
+
+### 56.4 RULING — `はあ、` at D792 is carried, not declared, and the rendering stands
+
+Round 1 found D792's `はあ、` unrendered. The translator answered by **rendering rather than
+declaring** — `いつのことかしら` became `Ｗｈｅｎ　ｗｉｌｌ　Ｐｒｉｎｃｅ　Ｈｏａｇ` /
+`ｅｖｅｒ　ｓｉｔ　ｕｐｏｎ　ｔｈｅ　ｔｈｒｏｎｅ` / … / `Ｉ　ｄｏ　ｗｏｎｄｅｒ．．．`, the sigh carried by
+`ｅｖｅｒ` (+10 bytes). **Approved, and preferred to a declared drop.**
+
+The collision argument was verified against the source, not taken on the report: `Ａｈｈ，` is §51's
+fixed form for `ああ、` and is **spent at D814**; `Ａｈ！` is §6's form for `あっ！` and is **spent at
+D810** — both in this unit, both in bank 20. §25.3 genuinely forbids an `Ａｈ`-form for `はあ、`
+here. §2 asks for register to be carried "in register and word choice, not in added words", and
+`ｅｖｅｒ` + `Ｉ　ｄｏ　ｗｏｎｄｅｒ` does exactly that.
+
+### 56.5 RULING — bare `極上のワイン` ships capitalised and unquoted
+
+D770 carries the item name **without** the source's `『』`. §12 converts *the source's own*
+brackets; it does not add them. So the corpus now holds three cases, and they are exact:
+bracketed `『極上のワイン』` → `“Ｆｉｎｅｓｔ　Ｗｉｎｅ”` (`batch_012` ×4, `batch_013` ×2, and D765 /
+D772 here); **bare `極上のワイン` → `Ｆｉｎｅｓｔ　Ｗｉｎｅ`, capitals without quotes (D770)**; bare
+`ワイン` → lowercase `ｗｉｎｅ` (§38.1). The capitals keep it identifiable as the quest item;
+the quotes are the source's to give.
+
+### 56.6 Two in-bank pairs of already-fixed forms — flagged, correctly not forked
+
+`Ｏｈ，` (`おお、` D766) beside `Ｏｈ？` (`おや？` D768), and `Ｒｉｇｈｔ，` (`ようし、` D803) beside
+`Ｒｉｇｈｔ．` (`ようし。` D804, `わかった。` D806). Both sides of both pairs are corpus-fixed and §4.3
+forbids forking either. **§29.4's reserve does not fire**: these are discourse particles inside one
+speaker's own turn, not terminology, and they are held apart by punctuation exactly as §6's
+`ほう / おや / おお / あ、` set already is. Flagging rather than fixing was the right call.
+
+### 56.7 Five `どう`-forms held apart in one bank, and one deliberate departure
+
+`どうだい、` (D759) → `Ｈｏｗ　ａｂｏｕｔ　ｉｔ？`; `どうする？` (D779, the party to itself) → the
+entrenched `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？` (§5's ch.34 form); **`どうする？` (D803, an NPC to the player)
+→ `Ｗｈａｔ　ｄｏ　ｙｏｕ　ｓａｙ？` (16) — a message-scoped departure from the entrenched form, and it
+is right**, because *we* is not available when the speaker is not in the party; `どうしますか？`
+(D799, D800) → `Ｗｈａｔ　ｗｉｌｌ　ｙｏｕ　ｄｏ？`; `どうだね？` (D807) → `Ｗｉｌｌ　ｔｈａｔ　ｄｏ？`.
+`嫌な世の中` (D787) and `ヤな世の中` (D789) are **one word in two spellings** (§17.2's 鬼/オーガ
+shape) and both carry `ｎａｓｔｙ　ｗｏｒｌｄ`.
+
+### 56.8 What the review confirmed rather than corrected
+
+- **Gate 7 run row-first over the whole file**: **1,248** table rows carrying a Japanese key
+  enumerated; **116** occur in this unit's source; each read against its row in both directions.
+  Clean. Four rows that a mechanical key-first pass would have misfired on were each checked and
+  each correctly did **not** fire, because the row is scoped: §55's `なあ、` (the *interjection*;
+  this unit has only sentence-final `なあ。`), §24's `ちょっと、(protest)`, §25's
+  `いや (deflection)`, and §41's `王子様 (vocative)` — whose own note says in terms that "the 8
+  script instances read REFERENTIAL and are NOT ruled here", which is exactly what D790/792/811/
+  812/813 are.
+- **`お客さん` at D765 is not a drop**: §34 already rules it *dropped; carried by the second
+  person*, which is what the line does.
+- **`反乱` → `ｒｅｂｅｌｌｉｏｎ` at D786 is mandatory, not a choice.** §37.1's row carries an explicit
+  scope note — *this row is the BATTLE store's form … a script batch reaching DATA 443/785/896/1383
+  must take §38.3's form, not this one* — and D786 is that list's "785" under its 0-based
+  numbering. Census: `ｒｅｖｏｌｔ` in chunks 22 / 38 / 43 (battle) and `batch_010` D897 (script — the
+  debt, see §AR); `ｒｅｂｅｌｌｉｏｎ` in `batch_007` and here.
+- **`功績` → `Ｍｅｒｉｔ` agrees with the unit merged hours earlier**: `batch_007` ships
+  `功績を積む` → `Ｍｅｒｉｔ　ｗｏｎ　ｉｎ　ｂａｔｔｌｅ`, `batch_014` ships `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` ×3, and
+  D769 ships `功績を積めば` → `ｉｆ　ｈｅ　ｗｉｎｓ　Ｍｅｒｉｔ` — same verb, same capital.
+- **`コイン` is NOT spent.** `ｃｏｉｎ` occurs nowhere in `tl/`; the word stays reserved for `コイン`
+  at DATA 1398 (bank 42) and DATA 1419 (bank 43), the casino medal counter, both untranslated.
+- **Ellipsis dot counts exact on all six runs**: D783 3, D792 3, D794 3, D796 3, D797 4 + 3,
+  D807 5 — including `・・・。` → 4 and `・・・・。` → 5, where the trailing `。` adds its own stop.
+- **The gate-blind insert class does not arise.** `rowcheck.py:_script_cols` strips every insert
+  except `{FFEC}{=00}{=00}` and `{FC00}{=0000}` to 0 columns; this unit's only `{FFEC}` form is
+  `{FFEC}{=00}{=00}` (D770), which the tool costs at 7 — measured run `Ｈｅｙ，　[NAME]．` = **13**.
+  Re-verified at this review rather than inherited from round 1.

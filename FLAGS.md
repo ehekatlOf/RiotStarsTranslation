@@ -382,6 +382,30 @@ Consequences, in order:
 4. Worth re-measuring with `tools/bankmeasure.py` (added this session) at the start of every
    script session. It is the only tool that reports the figure the inserter actually uses.
 
+
+#### F2a. ⚠️ The first NAMED casualty of bank 40 — `親衛隊` at DATA 1330 (added 2026-09-11, PR #39 review)
+
+F2 projected the shortfall in aggregate. Here is a concrete line it kills, recorded so the
+`MAIN1.EXE` repoint question has a face and not only a total:
+
+**DATA 1330, bank 40** —
+`ここの港に着いた品物は、ぜーんぶヘルファーの　親衛隊が持ってっちゃうんだって。ゆるせないよね！`
+
+47 readable JP characters; at the corpus's own 2.0–2.1x that is roughly **190 bytes**.
+**Bank 40 has 75 bytes free** (re-measured with `bankmeasure.py` this wave — note F2's table above
+says 1,771, which was true in August and is now stale; the bank has been filled since). Under F2's
+own reserve rule the spendable budget is **zero**.
+
+No amount of tightening fits 190 bytes into 75, so **this is not a translator problem and must not
+be dispatched as one.** `glossary.md` §9's `親衛隊` row is therefore deliberately **left LIVE**
+after PR #39 rendered six of its seven instances (D789, D791, D792, D793, D794 in bank 20;
+D898 in bank 28). The seventh has nowhere to go.
+
+⚠️ The same holds for every other untranslated line in banks **40, 41, 5 and 2**. When a wave
+surveys, a line in one of those banks should be marked **blocked**, not queued — §4 step 1 already
+says so, and F2a is the worked example.
+
+
 ### F3. Scope — the block is 101 lines, not 102
 
 The session prompt's count of "102 remaining unique lines ending `ジェムタイプ：<colour>`" includes
@@ -6093,3 +6117,142 @@ and all still there. Ten previous reviewers hit this silently.
 > human can do in one action:** enable *Settings → General → Automatically delete head branches* on
 > the repository, which deletes them server-side on merge and clears the backlog going forward. No
 > disc, EXE or emulator needed.
+
+## AR. Wave 10 review — script batch 015 / PR #39, MERGED (2026-09-11, round 2)
+
+Reviewer: a **fresh** agent at round 2 (round 1 was a different agent). Every gate re-run on
+`3d60879`; nothing inherited. **Tree gated:** `git merge-tree --write-tree` of `tl/script-015`
+onto the **current** integration head `8bb3b04` → tree `4994075`, reproduced exactly by a real
+`git merge`. The PR branched from `d6cec1f` and #37 landed in between, so the gated tree
+**contains `tl/script/batch_014.tsv`** and gate 6 ran against the post-#37 duplicate surface, not
+round 1's. Squash `8f66547`.
+
+```
+Gates: paths ✓  merge ✓  check ✓  figures ✓  rows ✓  banks ✓  dupes ✓  glossary ✓  structure ✓
+```
+
+`check` → `script lines replaced: 4841 (unique forms: 748)` / `All checks passed` (692 + 56 = 748).
+`merge` → **0** "never matched the dump"; all 56 keys resolve by exact match to `script_unique.txt`,
+DATA 759–814, contiguous. `rowcheck script` → `columns OK; no page over 4 text rows that the source
+did not already exceed`; 15 inherited pages, **none this unit's** — independently confirmed, the
+unit has **zero** pages over 4 rows.
+
+### AR1. ⚠️ Banks under 2,000 free — FOUR, not the three `bankmeasure` prints
+
+**bank 40 → 75 · bank 41 → 353 · bank 2 → 1,607 · bank 5 → 1,635.** `bankmeasure.py`'s
+`tightest:` line stops at three, so **bank 5 is invisible to anyone quoting the tool's last line**.
+Banks 40 and 41 have a spendable budget of **zero** under §F2. None is touched by this unit. No
+bank negative.
+
+### AR2. ⚠️ `親衛隊` → `ｇｕａｒｄ` — the row STAYS LIVE, and its last instance is in a dead bank (§B)
+
+Full census re-measured at review: **7 script-unique lines, 0 battle** — D789, D791, D792, D793,
+D794 (bank 20, all shipped here), **D898** (bank 28, shipped in `batch_010`), and **D1330**.
+
+**D1330 is in BANK 40, which has 75 bytes free.** Under §F2 that is a spendable budget of **zero**,
+so `ここの港に着いた品物は、ぜーんぶヘルファーの　親衛隊が持ってっちゃうんだって。ゆるせないよね！`
+— a 47-character line needing roughly 190 bytes — **may never land without an engine-side fix**.
+The glossary row is therefore **not** struck; it stays live in §9 pointing at D1330. **This is a
+§B entry, not a translator problem:** no amount of tightening fits 190 bytes into 75.
+
+The wave-10 seed implied six instances; it is seven. The translator caught this and it is verified.
+
+### AR3. ⚠️ 21 runs at exactly 24 columns, against a corpus norm of five — recorded, not sent back
+
+Measured across **every** shipped script batch:
+
+| | runs | at 24 |
+|---|---|---|
+| `batch_001` | 135 | 3 |
+| `batch_009` | 340 | 2 |
+| all twelve others | 3,448 | **0** |
+| **prior corpus** | **3,923** | **5 (0.13%)** |
+| **`batch_015`** | **372** | **21 (5.6%)** |
+
+`batch_014`, the same wave at a comparable ratio (2.02× vs 2.13×), shipped **0 of 348**. §3.2 asks
+for ≤ 23 precisely so that a later one-character fix — a changed name, an added apostrophe — needs
+no re-flow, and this chapter still has live rows (`親衛隊` D1330, `拠点` ×5).
+
+**Not sent back.** Nothing exceeds 24, so the geometry gate passes; bank 20 has 21,299 bytes free
+so there is no budget obstacle; and a 21-row re-flow at round 2 of 3 would put text already
+verified line by line back at risk for a preference, not a defect. **Future units in this chapter
+should hold to 23**, and `riotfont.py rewrap` can reach these if the main-script box is ever
+widened.
+
+### AR4. ⚠️ The PR body was never refreshed after the round-1 rework — and one row of it is now WRONG
+
+PR #39's body still carries round-1 figures: EN **6,742** (now 6,746), growth **+7,170 B** (now
++7,178), bank 20 **29,489 → 22,319** (true, post-#37: **28,477 → 21,299**), **20** runs at 24 (now
+21), and a `check` paste reading `4789 / 696`.
+
+The consequential one is in its **Glossary additions** table, which still reads
+`` `フーム` | `Ｈｍｍｍ` (4) `` — **the form round 2 removed.** Integrated as **`Ｈｍｍ` (3)**.
+⚠️ **This is the `ボンネット平原` shape from #37 one wave later: a PR body is a report, and after a
+rework it is a stale report. Integrate from the file and from your own measurements, never from the
+body's tables.**
+
+### AR5. Record corrections — #37's bank-20 figures, and a correction that was itself incomplete
+
+**(a) `batch_014`'s bank-20 figures in `HANDOFF.md` are wrong by small amounts.** Measured by
+removing and restoring files on the merged tree: bank 20 pre-wave **29,489** → after `batch_014`
+**28,477** → after `batch_015` **21,299**. HANDOFF records `batch_014` landing bank 20 at
+**28,469** (it is 28,477) and its bank-20 share as **1,259 B** (it is **1,012 B**). Combined
+wave-10 demand on bank 20 is **8,190 B**, not the 8,429 recorded at dispatch. **No conclusion
+changes** — bank capacity was never binding — and no rendering is affected.
+
+**(b) ⚠️ The wave-10 coordinator's correction to `glossary.md`'s `うーん、` row was itself
+incomplete — §AI6's shape, a third time.** The row claimed "§25.3's test is met: `ふーむ` is in
+script bank 31, `うーん` in battle chunk 8". The correction issued at dispatch said **both halves
+were wrong**. Re-measured over both dumps at this review:
+
+- `ふーむ` — script banks **11 (D581), 30 (D988), 33 (D1129)**; **0 battle**. Not bank 31 ✓ the
+  correction is right, **but it omits bank 33**.
+- `うーん` — script banks **2 (D425), 20 (D813), 29 (D940), 40 (D1273, D1310)**; battle chunks
+  **8 AND 26**. The correction omits banks 20 and 40 and chunk 26.
+- **"`うーん` in battle chunk 8" is TRUE.** Chunk 8 does contain it. Only the `ふーむ` half and the
+  completeness were defective, not "both".
+
+Corrected in place in `glossary.md` with the full census. **The ruling never depended on it** — see
+AR6 — so no rendering changes. *Verify a correction by measuring, including when the correcting
+agent has been right about everything else.*
+
+**(c) Pre-existing debt, unchanged and still owed:** `batch_010` D897 ships
+`ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ` for bare `反乱` against §38.3's script-store `ｒｅｂｅｌｌｉｏｎ` **and
+against §37.1's own scope note**, which directs script batches at DATA 443/785/896/1383 to §38.3's
+form. `batch_015` D786 is correct. §37.1's line list is **0-based throughout**; the true 1-based
+census is **DATA 444, 786, 897, 1384**. Also still open from #37: `batch_007` renders `編成` as
+**both** `Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ` and `Ｆｏｒｍａｔｉｏｎ` (§AQ5).
+
+### AR6. `フーム` → `Ｈｍｍ` is settled by MERGED PRECEDENT, not by authority
+
+`batch_013` ships `ん〜` (D925, D948) and `うーん` (D940) — three lines, two kana spellings —
+**all as `Ｈｍｍ，`, together in bank 29**. That is the same configuration `batch_015` has in bank 20
+(`フーム` D807 + `うーん` D813), so §25.3 was answered by shipped work before this unit existed.
+Verified independently at this review by reading `batch_013`. The row is closed.
+
+### AR7. `{FFFE}` changes, per line — absent from the PR body, recorded here
+
+**D771 4→5 · D778 0→1 · D783 6→7 · D784 6→7.** Net **+4** (8 bytes). `{FCC0}` **untouched**, and
+the non-`{FFFE}` tag stream is **byte-identical on all 56 lines**. All four added breaks are forced
+(the English clause will not fit 24 columns); none creates a page over 4 rows. The PR body gives
+only the net — translation_prompt §6 asks for the per-line before → after.
+
+### AR8. `→` at D797 is a glyph guess and needs a human eye in game
+
+`「マーベラス→・・・」`, the scrap of paper in the empty square, ships as `“Ｍａｒｖｅｌｌｏｕｓ−．．．”`
+(14). `→` is outside §3.1; `−` (U+2212) is the nearest permitted glyph. **What the arrow means is a
+guess** — most likely *→ [go there]*, i.e. a direction to the Marvellous square, which D806
+independently corroborates by sending the player there. If the in-game rendering reads wrong, the
+alternatives are `ｔｏ` or a bare `．．．`. Low risk, zero plot weight, but it is an authorial-intent
+guess and is recorded as one.
+
+### AR9. Rulings issued, for the record
+
+`フーム` → **`Ｈｍｍ`** (AR6) · bare `極上のワイン` → capitals **without** quotes (§56.5) · `幽霊` →
+**`ｇｈｏｓｔｓ`**, the `batch_008` incumbent, seed overruled (§56.1) · the two in-bank pairs of fixed
+forms → **flag, do not fork**, §29.4's reserve does not fire (§56.6) · D792's `はあ、` → **carried by
+`ｅｖｅｒ`, not declared as a drop** — verified that `Ａｈｈ，` (`ああ、` D814) and `Ａｈ！` (`あっ！`
+D810) are both spent in this same bank, so §25.3 genuinely forbids an `Ａｈ`-form (§56.4) ·
+`シロン様` → **`Ｍａｓｔｅｒ　Ｓｈｉｒｏｎ`** on the `<name>様` → station-title pattern (§56.2) ·
+Flag 15 **struck**, as the translator asked: the one remaining declared elision is D812 page 1's
+`らしい`.

@@ -33,21 +33,24 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > ⚠️ **The run is NOT complete** — ~250 lines stay bank-feasible after this wave, roughly 5–6 batches.
 
 ## Last updated
-2026-09-11 · by: **PR #37 reviewer** (integration commit) ·
-wave: **10 IN REVIEW — `batch_014` MERGED (PR #37, `af11117`); `batch_015` (#39) rework r1 pushed,
-awaiting re-review; `batch_016` (#38) unreviewed** · 1 of 3 units landed
+2026-09-11 · by: **PR #39 reviewer** (integration commit) ·
+wave: **10 IN REVIEW — `batch_014` MERGED (PR #37, `af11117`); `batch_015` MERGED (PR #39, squash
+`8f66547`); `batch_016` (#38) unreviewed** · **2 of 3 units landed**
 
-⚠️ **Coordinator: the reviewer slot is now FREE.** Next reviewer takes **PR #39 round 2**, then
-**PR #38 round 1**. One reviewer at a time (§4 step 4). `git pull --ff-only` before dispatching —
-this integration commit moved the branch.
+⚠️ **Coordinator: the reviewer slot is now FREE.** Next reviewer takes **PR #38 round 1** — the
+last unreviewed unit of the wave. One reviewer at a time (§4 step 4). `git pull --ff-only` before
+dispatching — this integration commit moved the branch.
+
+⚠️ **Do NOT write "branch deleted" for `tl/script-015`.** It is merged and it is still on origin;
+`git push --delete` fails from the agent container (§AQ9). No deletion was attempted.
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **692** | 1,430 | `tl/script/batch_001–014.tsv` — **+52 from `batch_014`** |
-| Script message instances | **4,785** | 7,931 | **60.3%** — first time past 60% |
+| Script unique lines | **748** | 1,430 | `tl/script/batch_001–015.tsv` — **+56 from `batch_015`** |
+| Script message instances | **4,841** | 7,931 | **61.0%** |
 
 `check`: **All checks passed** at `957d76a`, at the seed commit `566f94d`, and on the `batch_014`
 merge tree. glossary ends **§55**, FLAGS ends **§AQ** — both re-read at commit time, not inherited.
@@ -70,7 +73,7 @@ the branch's absence. One-action human fix: enable *Automatically delete head br
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
-| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | 🔁 **rework r1 PUSHED (`3d60879`)** — awaiting re-review |
+| `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #39, squash `8f66547`**, integration below. Read the row as **"great port town NPCs"** — the unit never names its own town |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ⏳ **PR #38 open — NO REVIEW YET**, next after #39 |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
@@ -396,6 +399,46 @@ The one remaining declared elision is D812's page-1 `らしい`.
 **Splitter disagreement: closed, no action.** After the rework the ≤ 23 counts coincide at 352, but that is
 arithmetic coincidence (D792's second row moved 19 → 24); the totals still differ 373 vs 372 on the D794
 definitional difference. Both sides agree it needs no action.
+
+### Review round 2 — PR #39 `batch_015`: **DECISION: MERGE** (2026-09-11) — squash `8f66547`
+A **fresh** reviewer; every gate re-run on `3d60879`, nothing inherited. Tree gated:
+`merge-tree --write-tree` onto the **current** head `8bb3b04` → `4994075`, reproduced by a real merge,
+so `batch_014` was in the tree and **gate 6 ran against the post-#37 duplicate surface**.
+`paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks ✓ dupes ✓ glossary ✓ structure ✓`.
+Gate 7 row-first: **1,248** glossary rows with a JP key enumerated, **116** occur, all adjudicated.
+All three round-1 findings verified applied. Integration commit below. **Glossary §56, FLAGS §AR + §F2a.**
+
+**Figures corrected — the PR body was never refreshed after the rework and still shows round 1's.**
+Measured: EN **6,746**, growth **+7,178 B**, bank 20 **28,477 → 21,299** (the round-1 pair 29,489 → 22,319
+is pre-#37). Chain: pre-wave 29,489 → after `batch_014` **28,477** → after `batch_015` **21,299**.
+⚠️ **Its Glossary-additions table still tables `フーム` → `Ｈｍｍｍ`, the form round 2 removed** — integrated
+as `Ｈｍｍ`. *Integrate from the file and your own measurements, never from a reworked PR's tables.*
+
+**Rulings:** `フーム` → `Ｈｍｍ` (settled by `batch_013`'s merged same-bank precedent, verified) · bare
+`極上のワイン` → capitals without quotes · `幽霊` → `ｇｈｏｓｔｓ` · the two in-bank pairs → flag, don't fork ·
+**D792's `はあ、` stays CARRIED by `ｅｖｅｒ`, not declared** (verified `Ａｈｈ，` D814 and `Ａｈ！` D810 are both
+spent in bank 20, so §25.3 really does forbid an `Ａｈ`-form) · `シロン様` → `Ｍａｓｔｅｒ　Ｓｈｉｒｏｎ` ·
+**Flag 15 struck**, as asked. `反乱` → `ｒｅｂｅｌｌｉｏｎ` at D786 confirmed **mandatory**: §37.1's scope note
+names DATA 785 (0-based) as a script line that must take §38.3's form.
+
+⚠️ **Recorded, NOT sent back: 21 runs at exactly 24 columns.** Corpus norm measured across every shipped
+batch is **5 in 3,923** (`batch_001` 3, `batch_009` 2, all twelve others **0**); `batch_014` shipped **0 of
+348** at a comparable ratio. §3.2 asks for ≤ 23 so a later one-character fix needs no re-flow. Nothing
+exceeds 24 and bank 20 has 21,299 free, so a 21-row re-flow at round 2 of 3 would risk verified text for a
+preference. **FLAGS §AR3. Future units in this chapter should hold to 23.**
+
+⚠️ **Two record corrections for the coordinator.** (a) **HANDOFF's `batch_014` bank-20 figures are wrong**:
+it lands at **28,477**, not 28,469, and its share is **1,012 B**, not 1,259 — so combined wave demand on
+bank 20 is **8,190 B**, not 8,429. No conclusion changes. (b) ⚠️ **Your `glossary.md:2217` correction was
+itself incomplete — §AI6's shape a third time.** Re-measured: `ふーむ` is in banks **11, 30, 33** (you omit
+33); `うーん` is in banks **2, 20, 29, 40** and battle chunks **8 AND 26** (you omit 20, 40 and chunk 26);
+and **the row's "battle chunk 8" claim is TRUE**, not wrong — only the `ふーむ` half was. Corrected in place
+with the full census; the ruling never depended on it.
+
+⚠️ **`親衛隊` row STAYS LIVE and its last instance is unshippable.** D1330 is in **bank 40, 75 bytes free**;
+the line needs ~190 B. Recorded as **FLAGS §F2a** — bank 40, not §B, is where a bank blocker belongs
+(§B is tier-A battle ratios). ⚠️ **F2's own table says bank 40 has 1,771 free; that is August's figure and
+is stale — it is 75.** Do not dispatch D1330 to a translator; it needs the `MAIN1.EXE` repoint.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
