@@ -318,7 +318,8 @@ against her otherwise uncontracted register (§14.6) — the one deliberate exce
 
 ### F1. The byte figure, measured the real way
 
-**Bank 40: 39,189 / 40,960 used — 1,771 bytes free.** Measured through
+**Bank 40: 39,189 / 40,960 used — 1,771 bytes free.** ⚠️ **STALE — the bank now has 75 free, not
+1,771 (`bankmeasure`, 2026-09-11). See §F2a and §AS1.** Measured through
 `riotscript._emit_bytes_from_body`, i.e. counting the 900-byte `{HDR:}` block that `assemble.py`'s
 `cost()` charges as 0. `check` will report this bank ~900 lighter; the figure above is the one the
 inserter sees, and it is the one that decides overflow.
@@ -327,7 +328,7 @@ Every bank, before → after this session:
 
 | Bank | before | after | free | note |
 |---|---|---|---|---|
-| **40** | 33,869 | **39,189** | **1,771** | the binding constraint, as predicted |
+| **40** | 33,869 | **39,189** | **1,771** | the binding constraint, as predicted ⚠️ **STALE — the bank now has 75 free, not 1,771 (`bankmeasure`, 2026-09-11). See §F2a and §AS1.** |
 | 5 | 30,959 | 36,279 | 4,681 | |
 | 2 | 26,835 | 32,155 | 8,805 | |
 | 41 | 40,607 | 40,607 | 353 | **untouched** — no description line lives in bank 41 |
@@ -336,7 +337,7 @@ Every bank, before → after this session:
 Growth is 5,320 bytes per bank: 5,130 from characters (EN 5,131 vs JP 2,530) and 190 from the
 95 added `{FFFE}` breaks. One line of the block lives in bank 29 alone, not in the 21.
 
-**Ratio hit: 2.03x.** The prompt asked for ≤ 1.8x and ~2,000 bytes of slack; I hit 2.03x and 1,771,
+**Ratio hit: 2.03x.** The prompt asked for ≤ 1.8x and ~2,000 bytes of slack; I hit 2.03x and 1,771, ⚠️ **STALE — the bank now has 75 free, not 1,771 (`bankmeasure`, 2026-09-11). See §F2a and §AS1.**
 and here is why 1.8 is not reachable on this material rather than an excuse:
 
 - The `Ｇｅｍ　Ｔｙｐｅ：<colour>` row is **fixed by §3 and unvarying**. It is 12–15 characters
@@ -357,7 +358,7 @@ This is the finding that matters, and it is not about this batch. I measured eve
 | Bank | free now | untranslated JP chars | growth needed @1.9x | verdict |
 |---|---|---|---|---|
 | **41** | 353 | 14,607 | 26,292 | **short by 25,939** |
-| **40** | 1,771 | 12,514 | 22,525 | **short by 20,754** |
+| **40** | 1,771 | 12,514 | 22,525 | **short by 20,754** ⚠️ **STALE — the bank now has 75 free, not 1,771 (`bankmeasure`, 2026-09-11). See §F2a and §AS1.** |
 | **5** | 4,681 | 9,573 | 17,231 | **short by 12,550** |
 | **2** | 8,805 | 8,657 | 15,582 | **short by 6,777** |
 | all other 40 banks | | | | fit, most with room to spare |
@@ -751,7 +752,7 @@ Measured before/after by removing `batch_004.tsv` and re-merging. Every affected
 
 | bank | before | after |
 |---|---|---|
-| **40** | 1,771 | **509** |
+| **40** | 1,771 | **509** ⚠️ **STALE — the bank now has 75 free, not 1,771 (`bankmeasure`, 2026-09-11). See §F2a and §AS1.** |
 | 5 | 4,681 | **3,419** |
 | 2 | 8,805 | 7,543 |
 | 33 | 10,615 | 9,353 |
@@ -6256,3 +6257,157 @@ D810) are both spent in this same bank, so §25.3 genuinely forbids an `Ａｈ`-
 `シロン様` → **`Ｍａｓｔｅｒ　Ｓｈｉｒｏｎ`** on the `<name>様` → station-title pattern (§56.2) ·
 Flag 15 **struck**, as the translator asked: the one remaining declared elision is D812 page 1's
 `らしい`.
+
+## AS. Wave 10 review — script batch 016 / PR #38, MERGED (2026-09-11, round 2)
+
+Reviewer: a **fresh** agent at round 2 (round 1 was a different agent). Every gate re-run on
+`43fa715`; nothing inherited. **Tree gated:** `git merge-tree --write-tree` of `tl/script-016` onto
+the **current** integration head `38cc606` → tree **`dc384c57`**, exported with `git archive` and
+gated there (§AK6 — no working tree needed). The PR had already been rebased onto `53afa23`, so the
+gated tree contains **both** `batch_014` and `batch_015` and every cross-unit gate ran against the
+full post-wave surface. Squash **`900d755`**.
+
+```
+Gates: paths ✓  merge ✓  check ✓  figures ✓  rows ✓  banks ✓  dupes ✓  glossary ✓  structure ✓
+```
+
+`check` → `script lines replaced: 4896 (unique forms: 803)` / `All checks passed` — **748 + 55 =
+803** exactly. `merge` → **0** "never matched the dump"; all 55 keys resolve by exact match to
+`script_unique.txt`, DATA 815–869, contiguous, count columns matching. `rowcheck script` →
+`columns OK; no page over 4 text rows that the source did not already exceed`; 16 inherited pages,
+**none this unit's**. **Decision: MERGE, no findings.**
+
+### AS1. ⚠️ Banks under 2,000 free — FOUR, and `bankmeasure` prints only THREE
+
+```
+~  bank  2   39353 / 40960 used   free   1607
+~  bank  5   39325 / 40960 used   free   1635
+~  bank 40   40885 / 40960 used   free     75
+~  bank 41   40607 / 40960 used   free    353
+tightest: bank 40 75 free, bank 41 353 free, bank 2 1607 free
+```
+
+**`bank 5` at 1,635 free does not appear on the `tightest:` line.** Anyone who quotes that line —
+as several dispatches and reviews this run have — will report three tight banks when there are
+four, and will not see bank 5 at all. **List every bank; do not quote `tightest:`.** None of the
+four is touched by this unit (it lands in 21/22/23/24, all above 28,000 free).
+
+**The stale bank-40 figure is now marked in place.** `1,771` appears at **FLAGS.md lines 321, 330,
+339, 360, 396 and 754**; §F2a (line 396) already said it was stale, but the other five were the
+figures a human would read when costing the bank-40/41 repoint, which is **Blocked item 2**. All
+five now carry an inline ⚠️ **STALE** marker pointing at §F2a and here. **The bank has 75 bytes
+free**, measured today.
+
+### AS2. For a human with the disc — neither blocks, both carried forward from the PR
+
+1. ⚠️ **Suspected source typo — D834's `うまく有利すること`.** `有利する` is not a verb; the intended
+   word is almost certainly `利用する`. Shipped as `Ｕｓｅ　ｔｈａｔ　ｗｅｌｌ．`, which reads correctly
+   on **either** reading, so nothing is blocked. Needs someone who can see the line in game.
+2. ⚠️ **D849 is an untagged seven-row single page in the SOURCE** — seven `{FFFE}` segments, no
+   `{FCC0}`, no `{FC30}`, no `{FFFF}`, no inserts at all. The English keeps the same seven rows, so
+   the over-4-row shape is **inherited**, not introduced. `お客様` is dropped per §34.1 and carried
+   by `Ｙｏｕｒ`, which leaves row 1 as a bare `Ｏｈ？` (3 columns) — correct by the rules, visually
+   thin. **Worth an in-game look, along with whether this line is reachable at all** (it may be an
+   unused or debug string).
+
+### AS3. Gate-blind class, re-verified — and last wave's misclassification stays corrected
+
+`rowcheck.py:_script_cols` strips the number inserts `{FFEC}{=00}{=01}` and `{=02}` to **0
+columns**, so rows carrying them are bounded, not measured. This unit's bounded rows are
+**D843 ×2 and D844 ×1**, headroom **13 / 10 / 16**:
+
+| Row | Measured text | Headroom |
+|---|---|---|
+| D843 run 4 | `　Ｊｅｗｅｌｓ　ａｎｄ` (11) | 13 |
+| D843 run 5 | `　Ｓｕｐｅｒ　Ｊｅｗｅｌｓ．` (14) | 10 |
+| D844 run 0 | `　Ｊｅｗｅｌｓ．` (8) | 16 |
+
+⚠️ **D849 is NOT a bounded row** — re-confirmed here by listing every tag in its source line:
+**six `{FFFE}` and nothing else**. It writes `＜個数＞` as **literal text**, rendered as literal
+`（ｎｕｍｂｅｒ）`, and the row is fully measured at **19**. A round-1 dispatch relayed the
+misclassification without checking it; it stays corrected.
+
+The player-name insert `{FFEC}{=00}{=00}` **is** costed at 7 by the tool and is inside the
+measurement. This unit carries **13** of them, across D838, D859, D862, D863, D865, D867.
+
+### AS4. Method — what actually caught things, and two traps
+
+- ⚠️ **Never pair a row's Japanese and English segments positionally when its `{FFFE}` count
+  changed.** `zip(jp.split('{FFFE}'), en.split('{FFFE}'))` shifts silently and manufactures
+  phantom divergences — it reported **78 "divergent" slots** in D863 and **34** in D865 on this
+  review before the error was spotted, all of them artefacts. Compare with the breaks removed,
+  then test containment. Both lifts are in fact **byte-exact**.
+- ⚠️ **`rowcheck` splits runs on `{FFFE}` AND on `{FCC0}|{FC30}|{FC51}|{FC50}|{FFFF}`.** A
+  `{FFFE}`-only measure reports phantom over-24 rows wherever a page break sits mid-segment —
+  D843 "32", D845 "26", D864 "37" here, all of which are two real rows under the tool's model
+  (D845's is `Ｐｌｅａｓｅ　ｕｎｄｅｒｓｔａｎｄ．` 19 + `Ｈａｖｅ　ｙｏｕ` 9). Under the real model:
+  **0 over 24, 0 at exactly 24, widest 23.**
+- ⭐ **The slot-level Japanese-side sweep is what carries a unit like this**, because gate 6 passed
+  clean and was worth nothing — not one of the 55 messages recurs anywhere. Donor index over
+  **16 script TSVs + 32 battle chunks**, 3,813 distinct JP slots / 4,369 pairings, pairing a row
+  only where its JP and EN break counts agree. **8 slot hits, all adjudicated, 0 real divergences.**
+- ⭐ **A shipped battle chunk holds no Japanese**, so grepping `tl/battle/` for a Japanese string is
+  a null check. Pair the chunk **positionally against `dumps/battle_dump.txt`**. That technique
+  found both D865's donor and the `chunk_003` precedent below.
+- **Census break-insensitively.** `終止符をうつ` is split across a `{FFFE}` in its only source line,
+  so a raw grep of either dump returns **0** for the phrase.
+- **State your corpus when you census.** The price census here is **5 of 5 keeping full-width
+  digits** *including* this unit's own D852; "4 of 4" is the same census excluding it. Both true;
+  say which.
+
+### AS5. Round 1's three findings — all applied, all verified
+
+1. **D852** now `Ｈｏｗ　ａｂｏｕｔ　２００　Ｊｅｗｅｌｓ？` (21) — digits kept, `でどうだ` restored.
+2. **D868** now `Ｗｅｌｌ　ｔｈｅｎ，` (10); D860 keeps `Ｒｉｇｈｔ，` for `よし、`.
+3. **PR body** carries the full 55-row `{FFFE}` table; Flag 10 corrected to D843 ×2 / D844 ×1.
+
+⭐ **The translator found a better precedent for finding 2 than round 1 had, and it is verified
+from the dump here, not relayed:** `tl/battle/chunk_003.txt` body line 3 ships
+`戦いたいノロ。よし、じゃあ、` → `…ｎｙｏｒｏ．Ｒｉｇｈｔ，　ｔｈｅｎ．` — `よし` = `Ｒｉｇｈｔ` and
+`じゃあ` = `ｔｈｅｎ` in **one shipped row**. A census of every slot whose Japanese is exactly
+`よし、` finds `Ｒｉｇｈｔ，` in **5 of 5**. Recorded at glossary **§57.2**; `じゃあ、` →
+`Ｒｉｇｈｔ　ｔｈｅｎ，` is **withdrawn and must never be recorded.**
+
+⭐ **And it found the root cause of the price error — a rule-scope gap, not carelessness.** §10.8
+reaches cardinals in prose and digits in fixed names and tables of numbers; **a price is neither**.
+⚠️ **The fix could not go in §10.8: glossary §36.6 states "§10.8 is CLOSED".** Recorded at
+**§57.3** instead: **a literal price keeps its full-width digits.**
+
+⚖️ **One consequential change was DECLINED and disclosed rather than made silently (its Flag 21),
+and is UPHELD at review:** D846 keeps `Ｔｈｅｎ　Ｉ　ｓｈａｌｌ　ｅｘｐｌａｉｎ　ｏｎｃｅ　ｍｏｒｅ．`
+rather than taking `Ｗｅｌｌ　ｔｈｅｎ，`, because the unit's other two instances of the particle are
+inside **byte-exact lifts that must not be touched** and forking it would put three forms in one
+unit. Reasoned in full at **§57.2**.
+
+### AS6. Ratified, do not reopen
+
+- **`バトウ` at D864 is `Ｂａｔｏｕ`** — §25.1 appositive `Ｉ，　Ｂａｔｏｕ，　ｗｉｌｌ`. Declined by the
+  translator against a dispatch, upheld at round 1, upheld again here.
+- **`おっと` takes two forms in this unit and both are shipped precedents** — §34.3 rules it a
+  clause head, not a fixed form. §25.3 checked and met.
+- **§9 strikes, each measured before striking:** `ピクシー` **exhausted** (D817 was the outstanding
+  instance) · `『獅子の勲章』` **exhausted** (D863 was its last) · **eight** of the eleven wave-10
+  Table B seeds struck. ⚠️ **THREE seeds are promoted but STAY LIVE — `腕力` (DATA 1234), `体力`
+  (DATA 1126), `慰霊金` (DATA 1351).** The PR asked for all eleven to be struck; the census says
+  otherwise, and a promotion is not a strike. ⚠️ Also still live: **`マーシュ`** (DATA 1325, 1374
+  + 1 battle) · **`クーデター`** (DATA 1373) · **`親衛隊`** (DATA 1330, bank 40) · **`命中率`**
+  (DATA 1237), a form first rendered here but not exhausted.
+
+### AS7. Carried debt — unchanged, not this unit's
+
+- `batch_007` renders `編成` as **both** `Ａｄｄ　ａ　Ｃｈａｒａｃｔｅｒ` and `Ｆｏｒｍａｔｉｏｎ` (§AQ5).
+  This unit's only `編成` is the compound `再編成` → `ｒｅｏｒｇａｎｉｓｅｄ` (D865, an army being
+  reorganised), a different sense; it does not touch the debt either way.
+- `batch_010` D897 ships `ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ` for bare `反乱` against §38.3. This unit
+  carries **no bare `反乱`** — its only instance is `反乱軍` → `ｔｈｅ　ｒｅｂｅｌｓ` (§26.4), correct.
+- ⚠️ **`ｃｏｉｎ` is still RESERVED** for `コイン` at DATA 1398 / 1419 (casino medal counter,
+  untranslated, wave-11 queue). Neither this unit nor §57 spends it.
+
+### AS8. ⚠️ "Branch gone = merged" is still INVALID, and no deletion was attempted
+
+`tl/script-016` **is still on origin** after the merge, exactly like every other merged
+`tl/script-*` branch (§AQ9). `git push --delete` fails from the agent container while ordinary
+pushes succeed; `gh` is absent and the GitHub MCP has no delete-branch tool. **Do not write "branch
+deleted" in `HANDOFF.md`** — PR #37's reviewer did and it was false. Use the integration commit and
+the PR's merged state as the signal. One-action human fix: enable *Automatically delete head
+branches* on the repo.

@@ -12,50 +12,71 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> ### ▶ WAVE 10 IS RUNNING. Coordinator: `riotstarstranslation-31` (top-level session, lineage depth 1).
-> Three units dispatched, script-only. **Nothing is reviewed until all three have an open PR**
-> (CLAUDE.md §4 step 4, the wave barrier). After the barrier: one `reviewer` subagent at a time,
-> foreground, in unit order 014 → 015 → 016.
+> ### ▶ WAVE 10 IS COMPLETE — 3 of 3 MERGED, 0 parked, 0 open PRs. Coordinator `riotstarstranslation-31`:
+> ### run the WAVE CLOSE (§4 step 6) and then OPEN WAVE 11's SESSION IN THE SAME TURN (§4 step 7).
+> The reviewer slot is free and there is nothing left to review. Literally:
+> 1. `git fetch && git reset --hard origin/claude/workflow-translation-iterate-uzlkns` (this
+>    integration commit moved the branch — **do not `git checkout` a stale local ref**).
+> 2. `check` on the integration branch — it passed here after integration; confirm it.
+> 3. `merge`, commit `build/*_dump_merged.txt` if changed; refresh the README status table from
+>    `status` (**803 / 1,430 lines · 4,896 / 7,931 instances · 61.7%**); prune worktrees.
+> 4. Collapse wave 10 to one line in Wave history; write wave 11's unit list into Next up.
+> 5. Commit and push `handoff: wave 10 closed`.
+> 6. **Then, in the same turn, `create_session`** — this environment, `source_revision` =
+>    `claude/workflow-translation-iterate-uzlkns`, prompt = wave 11 + its unit list + "read
+>    `HANDOFF.md` first" — and name that session here **before** you open it. Do not stop to
+>    summarise, do not ask permission. Ending the turn without opening it breaks the chain.
 >
-> **If this session is gone and the units are unreviewed:** `git fetch && git reset --hard
-> origin/claude/workflow-translation-iterate-uzlkns`, list open PRs, and resume at whichever step
-> In flight names. **If a wave-10 PR is merged but wave 11 was never opened, the chain broke — open
-> it yourself** (`create_session`, this environment, `source_revision` = the integration branch).
+> **If this session is gone:** `git fetch && git reset --hard
+> origin/claude/workflow-translation-iterate-uzlkns`, list open PRs (**there are none**), and do
+> steps 1–6 above yourself — the wave is closed in substance, only the bookkeeping and the next
+> session are outstanding.
 >
-> ✅ **The three-role split is INTACT this wave.** `Task`, `send_later` and `create_session` all
-> work here; wave 9's depth-8 cap does not apply. **No unit is SELF-REVIEWED and there is NO audit
-> debt outstanding** — wave 9 closed 3 of 3 with five separate reviewers, and its wave-10
-> `orchestrator` subagent was stood down having merged nothing (verified at this wave's preflight:
-> `git ls-remote` shows no `tl/script-014/015/016` branch predating this wave, and `8fb09ad`
-> touched `HANDOFF.md` only).
+> ✅ **The three-role split held for ALL THREE units.** `Task`, `send_later` and `create_session`
+> all work here; wave 9's depth-8 cap does not apply. **No unit is SELF-REVIEWED and there is NO
+> audit debt outstanding** — wave 10 closed 3 of 3, every unit reviewed by an agent that did not
+> translate it, and each of the three went to a **fresh** reviewer at round 2. Wave 9 likewise
+> closed 3 of 3 with five separate reviewers, and its wave-10 `orchestrator` subagent was stood
+> down having merged nothing.
 >
 > ⚠️ **WAVE 10 IS SCRIPT-ONLY.** All 8 remaining battle chunks stay blocked on Blocked 0 / 0a.
 > ⚠️ **The run is NOT complete** — ~250 lines stay bank-feasible after this wave, roughly 5–6 batches.
 
 ## Last updated
-2026-09-11 · by: **PR #39 reviewer** (integration commit) ·
-wave: **10 IN REVIEW — `batch_014` MERGED (PR #37, `af11117`); `batch_015` MERGED (PR #39, squash
-`8f66547`); `batch_016` (#38) unreviewed** · **2 of 3 units landed**
+2026-09-11 · by: **PR #38 reviewer** (integration commit) ·
+wave: **10 — ALL THREE UNITS MERGED. `batch_014` (PR #37, `af11117`); `batch_015` (PR #39, squash
+`8f66547`); `batch_016` (PR #38, squash `900d755`)** · **3 of 3 units landed, 0 parked, 0 open PRs**
 
-⚠️ **Coordinator: the reviewer slot is now FREE.** Next reviewer takes **PR #38 round 1** — the
-last unreviewed unit of the wave. One reviewer at a time (§4 step 4). `git pull --ff-only` before
-dispatching — this integration commit moved the branch.
+✅ **PR #38 decided MERGE at round 2, no findings.** All three round-1 findings verified applied on
+`43fa715`; every §6 gate re-run on the merge tree `dc384c57`; `check` green on the integration
+branch after integration. Review at `glossary.md` **§57** and `FLAGS.md` **§AS**.
 
-⚠️ **Do NOT write "branch deleted" for `tl/script-015`.** It is merged and it is still on origin;
-`git push --delete` fails from the agent container (§AQ9). No deletion was attempted.
+⚠️ **Coordinator: the wave is COMPLETE and the reviewer slot is free. This is step 6 → step 7** —
+run the wave close, then **open wave 11's session in the same turn** (CLAUDE.md §4 step 7). No unit
+is SELF-REVIEWED; the three-role split held for all three units, with five separate reviewer
+agents across the wave. `git pull --ff-only` before anything — this integration commit moved the
+branch.
+
+⚠️ **Do NOT write "branch deleted" for `tl/script-014`, `tl/script-015` or `tl/script-016`.** All
+three are merged and all three are still on origin; `git push --delete` fails from the agent
+container (§AQ9). **No deletion was attempted for `tl/script-016`.**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
 | Battle chunks | **32** | 44 | unchanged — battle is blocked, not idle |
 | Battle JP characters | **27,763** | 43,161 | **64.3%** |
-| Script unique lines | **748** | 1,430 | `tl/script/batch_001–015.tsv` — **+56 from `batch_015`** |
-| Script message instances | **4,841** | 7,931 | **61.0%** |
+| Script unique lines | **803** | 1,430 | `tl/script/batch_001–016.tsv` — **+55 from `batch_016`** |
+| Script message instances | **4,896** | 7,931 | **61.7%** |
 
-`check`: **All checks passed** at `957d76a`, at the seed commit `566f94d`, and on the `batch_014`
-merge tree. glossary ends **§55**, FLAGS ends **§AQ** — both re-read at commit time, not inherited.
-⚠️ **TIGHTEST BANKS, re-measured by `bankmeasure.py` this wave: 40 → 75, 41 → 353, 2 → 1,607,
-5 → 1,635.** Banks 40 and 41 have a spendable budget of **zero** (free < the 500-byte reserve).
+`check`: **All checks passed** on the `batch_016` merge tree `dc384c57` and again on this
+integration branch after the integration commit. glossary ends **§57**, FLAGS ends **§AS** — both
+re-read at commit time, not inherited or reserved.
+⚠️ **TIGHTEST BANKS, re-measured by `bankmeasure.py` after this merge: 40 → 75, 41 → 353,
+2 → 1,607, 5 → 1,635 — FOUR under 2,000, and `bankmeasure`'s `tightest:` line prints only THREE,
+so bank 5 is invisible to anyone quoting it (§AS1).** Banks 40 and 41 have a spendable budget of
+**zero** (free < the 500-byte reserve). Wave 10's own banks land at 18/19/20 → 8,473 / 7,803 /
+21,299 and 21/22/23/24 → 34,269 / 38,033 / 28,265 / 39,511.
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
 ## In flight
@@ -182,11 +203,36 @@ D844 ×1**.
 ✅ **All five of D863's and all three of D865's `{FFFE}` changes are inside the LIFTS** — the donor's own
 flow reproduced byte-for-byte, so those counts are `batch_012`'s and `chunk_037`'s, not this unit's.
 
+### Review round 2 — PR #38 `batch_016`: **DECISION: MERGE, no findings** (2026-09-11)
+Gates: `paths ✓ · merge ✓ · check ✓ · figures ✓ · rows ✓ · banks ✓ · dupes ✓ · glossary ✓ · structure ✓`.
+Fresh reviewer, everything re-run on `43fa715`, nothing inherited. Tree gated: `merge-tree --write-tree`
+of `43fa715` onto `38cc606` → **`dc384c57`** (`git archive`, §AK6). `check` = All checks passed,
+**803 unique forms = 748 + 55**. Squash **`900d755`**; integration commit below. Every PR figure
+re-derived and confirmed: ratio **2.0120×**, growth **+8,598 B**, banks **34,269 / 38,033 / 28,265 /
+39,511**, `{FFFE}` net **−3** on exactly the seven named messages. **Round 1's three findings all
+verified applied.** Widest run **23**, **0 at 24**, 0 over 24 under `rowcheck`'s own run model.
+
+⭐ **Both of the translator's discoveries corroborated from the dumps, not relayed.** `chunk_003` body
+line 3 does ship `よし、じゃあ、` → `Ｒｉｇｈｔ，　ｔｈｅｎ．` in one row, and a census of every slot whose
+Japanese is exactly `よし、` finds `Ｒｉｇｈｔ，` in **5 of 5** — `Ｒｉｇｈｔ` belongs to `よし` (§57.2).
+And glossary **§36.6 does say "§10.8 is CLOSED"**, so the prices rule went to **§57.3**, not §10.8.
+⚖️ **Flag 21's declined change at D846 is UPHELD** — reasoned in full at §57.2, so it is not reopened.
+
+⚠️ **THREE OF THE ELEVEN §9 SEEDS WERE NOT STRUCK, against the PR's request.** A promotion is not a
+strike: censused break-insensitively, **`腕力` (DATA 1234), `体力` (DATA 1126) and `慰霊金` (DATA 1351)
+still have untranslated instances** and stay LIVE. Eight are exhausted and struck, plus `ピクシー` and
+`『獅子の勲章』`. Also still live: `マーシュ` (D1325, D1374 + 1 battle), `クーデター` (D1373), `親衛隊`
+(D1330), and **`命中率` (D1237)** — a form first rendered here but not exhausted.
+⚠️ **Figure stated with its corpus:** the price census is **5 of 5 keeping full-width digits** *with*
+this unit's D852 counted; "4 of 4" is the same census without it. Both true — say which you counted.
+✅ **§F2's stale bank-40 `1,771` now carries an in-place ⚠️ STALE marker at all five remaining
+occurrences** (FLAGS.md lines 321, 330, 339, 360, 754); line 396 already said so. The bank has **75**.
+
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #37, squash `af11117`**, integration `aa85e2a` + `309e613` |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #39, squash `8f66547`**, integration below. Read the row as **"great port town NPCs"** — the unit never names its own town |
-| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | 🔁 **rework r1 PUSHED (`43fa715`)** — round 2 in review |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` (⚠️ **NOT deleted**) | ✅ **MERGED round 2 — PR #38, squash `900d755`**, integration below. Round 2 found **no findings**; all three round-1 findings verified applied |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
