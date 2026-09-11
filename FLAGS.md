@@ -7671,3 +7671,38 @@ added `{FFFE}` is a plain width split inside a one-option message, not a column-
 patched**, CLAUDE.md §3 honoured. **Open for a human, all pre-existing:** §Z1 / Blocked 7
 (`インターミッション` as a screen label), §I1 (quoted-token case), §AD (`Ｃｈｉｅｓａ`), §F2's bank-40 / 41
 ceiling, and §AZ7's `ＯＮ・ＯＦＦ` charset question.
+
+## BA. Tool fix — `assemble.validate_body` charset gate on PRESERVED SOURCE; chunk 36 shipped (2026-09-11)
+
+Done by the root/runner session on the human's explicit instruction (CLAUDE.md §3: a tool bug is a
+human's call; this is that call). Not a translation change: the translation is `pending/chunk_036.txt`
+exactly as PARKED at PR #25, moved with `git mv` and nothing else, as §AF1 prescribed.
+
+### BA1. What was wrong, restated from §AF1
+`validate_body` applied the charset whitelist to every text run of a translated line, including runs
+the translator never wrote — chunk 36's full-width MIPS listing, machine output and garbage block,
+preserved byte-for-byte from the dump. **38 problems, all charset, all on preserved runs; the pristine
+chunk itself raises 193.** No chunk 36 file could pass `check`.
+
+### BA2. The fix, and why it is not "widen `ALLOWED`"
+`validate_body(lines, label, jp_ok=False, src_lines=None)`. `merge_battle` now passes the pristine
+dump body as `src_lines`. **A text run byte-identical to a run in the corresponding source line is
+exempt from the whitelist** — it is preserved source, not the translator's text. **The exemption is
+refused if the run still contains a Japanese phrase, defined as two or more consecutive kana/kanji
+(`JP_PHRASE`).** That is the line §AF1 drew: an untranslated dialogue line is *also* byte-identical to
+its source, and the gate that catches it must keep firing. Chunk 36's two preserved kana are isolated
+singletons inside symbol garbage (`…ＤＦケＨＫＭ…`, `…ＧＦＥあ（`); the dialogue on the same line has a
+19-character Japanese run. Widening `ALLOWED` to admit kana would have silenced the gate for every
+chunk; this admits nothing the translator wrote.
+
+### BA3. Tested in an isolated temporary `tl/battle/`, then on the real tree
+| Test | Result |
+|---|---|
+| `pending/chunk_036.txt` placed in `tl/battle/` | **0 problems** (was 38) |
+| shipped chunk 0 with one English run swapped back to its Japanese source run (`ゲームがスタートすると、`) | **9 charset problems — the gate still fires** |
+| a synthetic preserved run `ＡＢケＣ` with `src_lines` given | 0 problems |
+| the same run with no `src_lines` (every other caller) | 1 problem — old behaviour unchanged |
+| real tree after `git mv pending/chunk_036.txt tl/battle/chunk_036.txt` | **All checks passed; chunk 36 = 2,887 / 8,192, slack 5,305** |
+
+**BATTLE 32 → 33 / 44 chunks, 27,763 → 28,749 JP characters (64.3% → 66.6%).** §AF1 closed;
+`pending/README.md` row removed; HANDOFF Blocked 3 resolved.

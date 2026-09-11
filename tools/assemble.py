@@ -85,22 +85,42 @@ def write(path, text):
 
 # ---------------------------------------------------------------- validation
 
-def validate_body(lines, label, jp_ok=False):
-    """Charset / column / row checks. Returns list of problem strings."""
+JP_PHRASE = re.compile(r'[぀-ヿ㐀-鿿]{2,}')   # two+ consecutive kana/kanji
+
+
+def validate_body(lines, label, jp_ok=False, src_lines=None):
+    """Charset / column / row checks. Returns list of problem strings.
+
+    src_lines: the pristine dump lines for the same unit (battle only). A text run in a
+    translated line that is byte-identical to a run in the corresponding source line is
+    PRESERVED source — machine text, symbol garbage, a MIPS listing (FLAGS §AF1) — and is
+    exempt from the charset whitelist, which exists to police what the translator WROTE.
+    The exemption is refused if the run still contains a Japanese phrase (2+ consecutive
+    kana/kanji): an untranslated line is also byte-identical to the source, and the gate
+    that catches it must keep firing. Isolated single kana inside symbol garbage pass.
+    """
     bad = []
     for i, line in enumerate(lines):
         if is_structural(line):
             continue
         # charset
-        for c in re.sub(r'\{[^}]*\}', '', line):
-            o = ord(c)
-            if 0xFF21 <= o <= 0xFF3A or 0xFF41 <= o <= 0xFF5A or 0xFF10 <= o <= 0xFF19:
+        src_runs = set()
+        if src_lines is not None and i < len(src_lines):
+            src_runs = set(r for r in re.split(r'\{[^}]*\}', src_lines[i]) if r)
+        for run in re.split(r'\{[^}]*\}', line):
+            if not run:
                 continue
-            if c in ALLOWED:
-                continue
-            if jp_ok and o > 0x2000:
-                continue            # untranslated Japanese, tolerated
-            bad.append('%s line %d: illegal char %r (U+%04X)' % (label, i, c, o))
+            if run in src_runs and not JP_PHRASE.search(run):
+                continue            # preserved source text, not the translator's (FLAGS §AF1)
+            for c in run:
+                o = ord(c)
+                if 0xFF21 <= o <= 0xFF3A or 0xFF41 <= o <= 0xFF5A or 0xFF10 <= o <= 0xFF19:
+                    continue
+                if c in ALLOWED:
+                    continue
+                if jp_ok and o > 0x2000:
+                    continue            # untranslated Japanese, tolerated
+                bad.append('%s line %d: illegal char %r (U+%04X)' % (label, i, c, o))
         # columns
         for seg in re.split(r'\{FFFE\}', line):
             for run in re.split(r'\{(?:FCC0|FC30|FC51|FC50|FFFF)\}', seg):
@@ -189,7 +209,7 @@ def merge_battle(verbose=True):
         while old and not old[-1].strip():
             old.pop()
         problems += tag_parity(old, new, 'chunk %d' % idx)
-        problems += validate_body(new, 'chunk %d' % idx)
+        problems += validate_body(new, 'chunk %d' % idx, src_lines=old)
         used = cost(''.join(l for l in new if not is_structural(l)))
         report.append((idx, used, SCRIPT_SLOT - used))
         if used > SCRIPT_SLOT:

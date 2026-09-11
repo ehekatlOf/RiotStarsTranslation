@@ -5,14 +5,13 @@ The directory name deliberately does not match `tl/battle/chunk_NNN.txt`, so `ch
 `build` ignore it and the patch stays buildable with those chapters falling through to Japanese
 (prompt §0.5).
 
-⚠️ **Nothing here is unfinished work, and there are now THREE reasons a file is parked.** Read the
+⚠️ **Nothing here is unfinished work, and there are now TWO reasons a file is parked.** Read the
 reason before assuming a file needs translating again:
 
 | Reason | Files | What lifts it |
 |---|---|---|
 | **Over the 8,192-byte slot** | `chunk_043.txt`, `chunk_043_abridged.txt`, `chunk_005.txt` | the slot extension (`pending/slot-extension.md`, `findings.md` §23) |
 | **Tooling — the `FLAGS.md` §D1 dump artifact** | **`chunk_017.txt`** (and `chunk_005.txt`, which has it *as well as* being over slot) | a `riotbattle.tokenise` fix + re-dump (`FLAGS.md` §R4) |
-| **Tooling — the `FLAGS.md` §AF1 charset gate on PRESERVED SOURCE** ⚠️ **NEW 2026-09-09, and NOT the same thing as §D1** | **`chunk_036.txt`** | **one function in `assemble.py`** — skip the charset check on runs byte-identical to the dump. **No disc, no EXE, no re-dump, no dumper change.** Then a `git mv` and nothing else (`FLAGS.md` §AF1) |
 
 Move a file into `tl/battle/` only once the constraint named in its row below has been lifted.
 
@@ -52,16 +51,9 @@ say which one a hit is in** (`FLAGS.md` §X3).
 | `chunk_005.txt` | 8,679 | 8,192 | faithful and fully compressed, 1.64x — 487 over. See `FLAGS.md` §2–4. Needs a slot extension, same as 43. **Also carries the §D1 artifact** (line 17), so it needs the dumper fix too. |
 | **`chunk_017.txt`** | **5,857** | 8,192 | ⚠️ **NOT a budget park — 2,335 bytes UNDER its slot.** PR #12, merged at round 2 (squash `2e0790d`), reviewed line by line and glossary-integrated at §30. **This is finished translation waiting on a tooling fix, not unfinished work.** 1,144 JP → 2,472 EN = 2.16x against a 3.19x ceiling; 154 rows, widest 23, none at 24; no page over 4 text rows; `{FCC0}` untouched. It is here **only** because message line 19's item-grant tail carries the `FLAGS.md` §D1 dump artifact (`{FC70}{=00}入{=A300020000}`, where `入` is item id `0x93` plus the next tag's `0xFC` lead byte decoded as Shift-JIS) and `assemble.py`'s charset and tag-parity gates cannot both be satisfied — all four candidate encodings emit the **byte-identical** stream, so nothing is lost by waiting. **`FLAGS.md` §R** has the proof, the 24-occurrence / 10-chunk scope and the fix. |
 
-| **`chunk_036.txt`** | **2,887** | 8,192 | ⚠️ **NOT a budget park — 5,305 bytes UNDER its slot, 31.4 % of budget spent.** PR #25, PARKED 2026-09-09 (squash `018af11`), reviewed line by line and glossary-integrated at **§44**. **This is finished translation waiting on a tooling fix, not unfinished work.** 986 JP → 1,213 EN against a 3.92× ceiling; widest run **22**, none at 23 or 24; **0 column problems**; no page over 4 text rows the source did not already exceed (45 and 33, both byte-identical to a pristine extraction, both already in `FLAGS.md` §D2); `{FCC0}` 2 → 2 untouched; `{FFFE}` 104 → 107, all three on body line 5. ⚠️ **The chunk is mostly NOT dialogue** — only **174 of 986** source characters are; the rest is a full-width MIPS assembly listing, English machine output and a garbage block, **all preserved byte-for-byte** (verified at review: 9 of 10 body lines byte-identical, 23 replaced runs on the tenth, every one Japanese on the source side, 1,154 characters carried through unchanged). It is here **only** because `assemble.py:validate_body` applies its charset whitelist to that preserved source: **38 illegal-char problems, not one on a translated run** (`＄`×14 `＞`×10 `＿`×4 `＃`×4 `｜`×3 `ケ` `あ` `「`), 0 tag-parity, 0 column, 0 byte. **The pristine chunk raises 193 — no chunk 36 file of any kind can pass `check` today.** ⚠️ **This is NOT §D1** — different function, no re-dump, no disc. **`FLAGS.md` §AF1** has the proof and the fix. |
 
 The chunk 43 pair passes every other `assemble.py check` rule: tag parity, charset, 24 columns,
 4 rows, line count and `{PAD}` identity. The byte budget is the only failure.
-
-⚠️ **`chunk_036.txt` passes every rule but one, and the one is not about its text.** Tag parity,
-columns, rows, line count, `{PAD}` identity and the byte budget are all green; the charset gate
-fails on 38 characters of **source machine text the unit was required to preserve**. Unparking is
-`git mv pending/chunk_036.txt tl/battle/chunk_036.txt` and nothing else — no re-translation, no
-re-cut, no re-dump. See `FLAGS.md` §AF1.
 
 `chunk_005.txt` passes tag parity, columns, line count and `{PAD}` identity, but has **two
 further defects that are not translation problems** and would need handling even at budget:

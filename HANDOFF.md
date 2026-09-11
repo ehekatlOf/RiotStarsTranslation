@@ -37,26 +37,26 @@ origin/main`, verify with `git log -1`.
 > one-instance story text).
 
 ## Last updated
-2026-09-11 · by: **wave-12 coordinator** (`session_01UMK4VSo7m2SaC6uqaJKCdX`, top-level) ·
-**wave 12 CLOSED — 4 of 4 merged (PRs #43, #44, #45, #46), all at round 1, 0 parked** ·
-**THIS IS THE RUN'S FINAL HANDOFF** · every figure below measured by me on the closed branch
+2026-09-11 · by: **the root/runner session, on the human's instruction** · **chunk 36 SHIPPED — the
+`validate_body` charset gate (Blocked 3 / FLAGS §AF1) is fixed, FLAGS §BA** · wave 12 closed earlier
+today (4 of 4 merged, PRs #43–#46, all round 1) · figures below re-measured after the move
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **32** | 44 | unchanged — **blocked, not idle**; 0 dispatchable |
-| Battle JP characters | **27,763** | 43,161 | **64.3%** |
+| Battle chunks | **33** | 44 | chunk 36 shipped 2026-09-11 (FLAGS §BA); the rest **blocked, not idle** |
+| Battle JP characters | **28,749** | 43,161 | **66.6%** |
 | Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 948) |
 | Script message instances | **5,180** | 7,931 | **65.3%** (was 63.6%) |
 
-`check`: **All checks passed** at `a19e7d2`. **glossary ends §64 · FLAGS ends §AZ** — ⚠️ **always take
+`check`: **All checks passed** with chunk 36 in `tl/battle/`. **glossary ends §64 · FLAGS ends §BA** — ⚠️ **always take
 the next number by READING both files at commit time, never by reserving.**
 `build/*_dump_merged.txt` regenerated at this close. README status table refreshed. **All worktrees
 pruned — `git worktree list` shows only the main checkout.** **No open PR, no live agent.**
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and WHICH ONE IT HIDES IS NOT STABLE** — it
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
-Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
+Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact).
 
 ## In flight
 **Nothing. The run is complete.** No open PR, no unmerged unit branch, no live agent, no worktree.
@@ -120,17 +120,11 @@ the arithmetic is not close.
   tag stream, **so gate 6 is blind to them** — reuse the shipped English byte-for-byte.
 - **§42.5's forward-binding table still holds two live rows: `505` → D535 and `506` → D403.**
 
-### 3. 🔧 `assemble.py:validate_body` CHARSET WHITELIST — chunk 36, repo-only
-`FLAGS.md` **§AF1**. The charset whitelist is applied to **preserved SOURCE machine text**. Chunk 36 is
-mostly a full-width MIPS listing, English machine output and a garbage block, all of which must survive
-byte-for-byte; **38 characters are rejected** (`＄`×14 `＞`×10 `＿`×4 `＃`×4 `｜`×3 `ケ` `あ` `「`) and **not
-one is on a translated run.** Measured at the PR #25 review: pristine chunk raises **193** problems, the
-delivered translation **38**, all charset, **0 tag-parity / 0 column / 0 byte**. `pending/chunk_036.txt`
-is finished and **5,305 bytes UNDER its slot**. Fix: **one function** — skip the charset check on runs
-byte-identical to the dump. ⚠️ **Widening `ALLOWED` alone is INSUFFICIENT — the garbage block contains
-kana** (`ケ`, `あ`), and blanket-allowing kana would disable the gate that catches untranslated Japanese.
-Afterwards, unparking is `git mv pending/chunk_036.txt tl/battle/chunk_036.txt` and nothing else.
-**986 JP characters — 2.3% of the battle script — are finished and waiting on it.**
+### 3. ✅ RESOLVED 2026-09-11 — `assemble.py:validate_body` charset whitelist; chunk 36 shipped
+`FLAGS.md` **§BA**. `validate_body` now exempts a text run byte-identical to the source line's run —
+preserved machine text — **unless it still holds two or more consecutive kana/kanji**, so an
+untranslated line is still caught (tested both ways, §BA3). `git mv pending/chunk_036.txt
+tl/battle/chunk_036.txt`; `check` green; **2,887 / 8,192**. Battle 33 / 44, 66.6%.
 
 ### 4. Tier-A battle chunks 5, 16, 32, 43 — needs EXE + disc + emulator
 Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no faithful translation fits
