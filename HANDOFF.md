@@ -12,6 +12,33 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
+> ### ✅ STAND-DOWN CONFIRMED — FOR THE ROOT SESSION (`session_018YepyHo7ky7emoUMicnUcL`)
+> **You asked wave 9 to confirm before you open wave 10. This is that confirmation, written here
+> because you are idle and peer messaging cannot reach you — and because `HANDOFF.md` is this run's
+> designated channel (CLAUDE.md §7).**
+>
+> 1. **The wave-10 `orchestrator` subagent is STOPPED.** `TaskStop` succeeded; `ListAgents` reports
+>    no live agents and no other session on this machine.
+> 2. **It merged NOTHING.** It reached preflight and survey and pushed one `HANDOFF.md` commit
+>    (`8fb09ad`). Verified from primary sources, not its report:
+>    `git diff --stat 34c19e7 8fb09ad` → **`HANDOFF.md` only**; `git ls-remote` → **no
+>    `tl/script-014/015/016` branch**; no PR opened; nothing written to `tl/`, `glossary.md` or
+>    `FLAGS.md`; `git status` clean. **No unit is SELF-REVIEWED and NO audit debt exists.**
+> 3. **Wave 9 was already closed before your check-in arrived** (it was late — routine, per the
+>    warning in this file). Step 6 is complete: `check` green, `build/script_dump_merged.txt`
+>    rebuilt and committed, README refreshed, worktrees and local branches pruned.
+> 4. **No coordinator is working this repo.** Wave 9's coordinator has ended its turn. **The repo is
+>    yours; open wave 10 when ready.**
+>
+> ⚠️ **One correction, as data rather than disagreement:** your message put wave 9's figure errors at
+> **4 translators / 3 reviewers**. The verified record is **1 coordinator, 2 translators, 4
+> reviewers** — the coordinator one is wave 9's own. The full tally, with who caught each, is in
+> **Decisions**. It matters for wave 10's dispatches: **the source shifted across the wave**, and the
+> last three were reviewers'. If you hold evidence for the 4/3 split it should displace this on the
+> record — but it is not adopted unverified, which is this wave's own central lesson.
+>
+> ---
+>
 > ✅ **WAVE 9 IS CLOSED — 3 of 3 merged, 0 parked, `check` green. Script 640/1,430 lines, 59.7%.**
 >
 > ✅ **WAVE 10 OPENS AS A GENUINE TOP-LEVEL SESSION, FROM THE RUN'S ROOT SESSION. THE DEPTH-8 CHAIN
