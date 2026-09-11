@@ -400,6 +400,60 @@ any file.**
    23 for its own 21" (**it did not** — all 38 widths reproduce exactly) and "this unit's own `その他`
    rendering depends on it" (**it has no `その他`**).
 
+### ⭐⭐ WAVE 12 — PR #44 MERGED ROUND 1: THE CASE-POLICY RULING, AND `音楽` IS *NOT* EXHAUSTED
+**`DECISION: MERGE`, round 1, no must-change finding.** Squash `b3ca8cb`, integration `21f4ba9`,
+glossary **§63**, FLAGS **§AY**. Base pinned `f90f613`, merge tree `f4bbc0e`, **author's `merge-tree`
+NOT reused**. Script **1,007 / 1,430 unique lines · 5,123 / 7,931 instances · 64.6%.**
+
+1. ⭐⭐ **THE CASE-POLICY RULING, ONE RULING BINDING BOTH DEBUG FILES (§63.1 / §AY3):**
+   **"Descriptive labels take SENTENCE CASE — initial capital on the row's first word, every
+   glossary-fixed component byte-identical and lowercase below it. Title case ONLY for a NAMED thing
+   or a §9-seeded label form."** ⭐ **The decisive evidence is one neither translator cited: §56.2
+   ships EIGHT gutter-prefixed MENU LABELS and every one is sentence case** (`　Ｙｏｕｎｇ　ｗｏｍａｎ
+   ｐａｓｓｉｎｇ　ｂｙ`, `　Ｂｅａｔ　ｈｉｍ`, `　Ｄｏ　ｎｏｔｈｉｎｇ`…). **So §17.1's "a label column is
+   capitalised throughout or not at all" was written about the CLASS-NAME table and does not reach a
+   descriptive one.** Title case would have reproduced §51.4's `Ｗｅ　Ｈｏｂｂｉｔｓ` failure in three
+   places. **It ratifies exactly what shipped, so #46 conforms rather than re-deciding.**
+2. ✅ **NONE OF THE 30 SHARED TITLES MOVED — #46 NEEDS NO RE-DIFF.** The reviewer paired them itself,
+   resolving each `batch_022` DATA from its own JP key: **30/30 identical including the `ＮＮ：`
+   prefix**, and **D1027 ↔ D1075 byte-identical including the break position**. ⚠️ **Gate 6 reported
+   clean and saw NOTHING** — the keys differ only in the trailing `{FFF8}` argument. **The twin trap
+   was real and it was handled.**
+3. ⭐⭐ **`音楽` IS *NOT* EXHAUSTED AFTER WAVE 12 — AND THE REMAINING LINE CARRIES A CHARSET PROBLEM.**
+   **D1169 `音楽のＯＮ・ＯＦＦを切り替えます` remains in bank 40**, and **its `・` is outside §3.1**.
+   Verified by me in `script_unique.txt`. **Whoever unblocks bank 40 must rule on that `・`** — it is
+   the first known case of forbidden source punctuation inside still-blocked text.
+4. ⭐ **THE TOKENISER FIX MUST BE AN ARGUMENT-LENGTH TABLE, NOT A LEAD-BYTE REORDER** — established
+   from `riotscript.py:38`, where `is_sjis_lead` **excludes `0xFF`**. §R4/§AP2's D367 is the
+   **SJIS-lead** branch; **D1003's `{FF00}` is the CONTROL-TAG branch** (1 unique / 6 dump / 0 battle,
+   census exact, **zero shipping impact proved from the encoder's grammar**). Recorded at §AY2 and
+   cross-referenced from Blocked 0. ⚠️ **This sharpens the run's top human task: ONE argument-length
+   table serves both branches in both tools — a lead-byte reorder would fix neither.**
+5. ⭐ **A THIRD SUBSTRING FALSE POSITIVE THIS WAVE — THIS IS NOW A NAMED PATTERN, NOT A ONE-OFF.**
+   `ＯＰ`'s claimed "1 battle" hit is inside **`＞ＯＰＥＲＡＴＩＯＮ`** (verified by me). Joining
+   §34.1's `品` (inflated by `商品`/`景品`/`作品`) and `ｍｏｂ` (inside `ｍｏｂｉｌｅ`/`ｍｏｂｉｌｉｔｙ`).
+   ⚠️ **EVERY REACH FIGURE IN THIS REPO SHOULD BE ASSUMED TO BE A RAW SUBSTRING COUNT UNTIL SHOWN
+   OTHERWISE.** Five further reach figures re-run and corrected: `ｔｏｗｎ` 46 (not 39) · `ｃａｓｔｌｅ`
+   44 (not 38) · `ｖｉｌｌａｇｅ` 43 (not 46) · `ｔａｌｋ` 17 (not 18) · `ｂａｔｔｌｅ` 19 (not 17).
+6. ⚠️ **ANOTHER RELAY ERROR OF MINE, AND THE PRECISE SHAPE IS WORTH KEEPING.** `batch_021`'s **return
+   message to me** said track 20 = 23; **its FILE and PR table say 21** (`D1024 [21]`). I relayed the
+   23 (as 24 with the gutter); **`batch_022` measured 22 from the file and was right.** ⚠️ **So an
+   agent's PROSE REPORT and its COMMITTED FILE can disagree, and the file is the authority. I relayed
+   the report. "A relayed measurement is not a measurement" now has a second, sharper form: a
+   reported measurement is not a measurement either.**
+7. ⚠️ **`その他` IS ENTIRELY #46's — 0 occurrences in `batch_021`, 10 in `batch_022`** — contrary to my
+   dispatch. ✅ **My `6da4f95` §9.W12 correction is present and right, re-derived cell by cell, not
+   duplicated.** **All ten glossary rows were promoted with EVERY ROW LEFT LIVE for #46 to strike**,
+   since #46 is the second twin to merge.
+8. ⚠️ **PR-BODY BANK FIGURES GO STALE BETWEEN MERGES:** the PR's `35,119 → 34,663` is really
+   `35,091 → 34,635` post-#45 — **PR #45 spent 28 bytes in bank 30 in between.** ✅ **The DELTA is 456
+   on either base**, measured by hold-aside/restore: exactly one line of `bankmeasure` diff over 44
+   banks. **Quote deltas, not absolutes, in a PR body that may sit through another merge.**
+9. ✅ **A new incumbent found at review, not a divergence:** `batch_013.tsv:86` **segment 19** ships
+   `マップクリアー時に` → `ｃｌｅａｒ　ｔｈｅ　ｍａｐ` — **found by reading all 29 segments of a pooled
+   row.** Recorded so nobody "fixes" one into the other. ⚠️ **That is the second time this wave that
+   reading every segment of a pooled row found something a head-read would miss.**
+
 ### ⭐⭐ WAVE 12 — PR #43 MERGED ROUND 1: FOUR FLAGS RETIRED, AND A TOOLING FINDING THAT CHANGES HOW WE HAND-MEASURE
 **`DECISION: MERGE`, round 1, no must-change finding.** Squash `1134d2b`, integration `173c197`,
 glossary **§62**, FLAGS **§AX**. Base pinned `3c6c579`, merge-base `e9db558`, **the author's
