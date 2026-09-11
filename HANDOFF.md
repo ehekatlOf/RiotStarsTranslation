@@ -59,7 +59,7 @@ have an open PR.**
 |---|---|---|---|---|---|---|
 | `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ✅ **PR #37 open** — awaiting barrier |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | dispatched |
-| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | dispatched |
+| `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
@@ -85,6 +85,37 @@ acceptance, not taken on the report:**
 key as **`ボンネット平原`**; the source at D745 is **`ボネット平原`** (no `ン`) — verified. The TSV itself
 must be right (`merge` reports no "never matched the dump"), so this is a report-only typo — but it
 must not enter `glossary.md` as written.
+
+**`batch_016` → PR #38** (2026-09-11). 55/55 lines, ratio **2.012×**, growth **8,596 B**; banks 21/22/23/24
+land at **34,269 / 38,033 / 28,269 / 39,509** free, every one **under** the projection. One `{FFFE}` added
+(D839, forced), **no `{FCC0}` change**. Both giants (D863 1,277 JP, D865 642) shipped without parking.
+
+⚠️ **IT DECLINED MY DISPATCH ON `バトウ`, AND IT WAS RIGHT. Verified against the source and the glossary:**
+- **D814 is `バトウ神父`** → §36.1 `Ｆａｔｈｅｒ　Ｂａｔｏｕ` (12). **D864 is `このバトウも`** — the bare name in
+  self-reference → §26.1 `Ｂａｔｏｕ` (6), shipped as `Ｉ，　Ｂａｔｏｕ，　…` on §25.1's `このマラナ、` appositive.
+- **My dispatch asserted both were `Ｆａｔｈｅｒ　Ｂａｔｏｕ` and cross-unit with `batch_015`.** They are two
+  different source strings with two separately fixed forms, and §26.1 warns in terms that the `様` and
+  bare patterns "must never be merged". **There is no cross-unit conflict.** I also mislabelled D814 as
+  `バトウ様`; it is `バトウ神父`. ✅ `batch_015`'s D814 output is unaffected — `Ｆａｔｈｅｒ　Ｂａｔｏｕ` is right
+  for it either way — so it was not interrupted a second time.
+- ⚠️ **Reviewer: do NOT "harmonise" D864 to `Ｆａｔｈｅｒ　Ｂａｔｏｕ` on the strength of my dispatch.**
+
+⚠️ **MY "FOUR NEAR-DUPLICATE PAIRS" WAS THREE.** Measured longest common substring: D859/D867 **10**,
+D860/D868 **10**, D861/D869 **17** — genuine twins. **D850/D866 share only `　兵隊さん` (5)** and have no
+clause in common; they are two different refusals by the same man. I over-claimed from a skim.
+
+✅ **An independent check that came back clean:** `batch_016` re-measured all ten of my corrected seed
+widths under `len()` and found **zero** errors — including `「本日休業」` → 14, where its own hand count
+said 15 and the seed was right. The widths are sound **after** the correction; it was the first draft
+that was wrong in all 45.
+
+**Open for `batch_016`'s reviewer:** (a) Flag 2, the `バトウ` ruling above; (b) Flag 7 — D834's
+`うまく有利すること` looks like a source typo for `利用`, English works on either reading, needs a human
+in-game; (c) Flag 14 — D849 is a seven-row source page with no `{FC30}`, possibly an unused string;
+(d) Flag 10 — three rows are **bounded, not measured**, because neither tool counts `{FFEC}{=00}{=01}`
+/ `{=02}` number inserts (all have ≥ 10 columns headroom); (e) the §9 strikes it lists — `ピクシー` is
+exhausted by D817, `『獅子の勲章』` by D863; `マーシュ` and `クーデター` **stay live** (FILE 1330/1379 and
+DATA 1373 remain).
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
