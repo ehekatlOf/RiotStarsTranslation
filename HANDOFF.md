@@ -44,7 +44,7 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 | Unit | Branch | DATA | Size | Bank cost (mine) | State |
 |---|---|---|---|---|---|
 | `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; tightest **bank 5 needs 94 of 1,635** | dispatched |
-| corrections | `tl/corrections-wave12` | §4.3 debt (see below) | ~6 cells | **+8 bytes**, bank 28 (30,491 free) | dispatched |
+| corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | **bank 30 only, 782 of 35,119** | dispatched |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | **bank 31 only, 2,185 of 34,745** | dispatched |
 
@@ -238,6 +238,49 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
+
+### ⚠️ WAVE 12 — THREE COORDINATOR ERRORS, ALL MINE, ALL CAUGHT BY THE CORRECTIONS TRANSLATOR
+**I "corrected" three inherited claims in my own dispatch and was WRONG ON ALL THREE. The inherited
+claims were right and my corrections were the error.** Each verified by me after the translator
+pushed back, with the command in the PR. **This is the same shape wave 11 recorded four times and
+that I explicitly warned all four translators about — asserting one side of a comparison without
+censusing the other properly. I then committed it while in the act of correcting someone else.**
+
+1. ⭐⭐ **`ｒｅｂｅｌｌｉｏｎ` IS 9 COLUMNS, NOT 10 — I MISCOUNTED A STRING LENGTH.** So D897's row
+   reaches **24, not 25**, which is legal, and **my "this needs a re-wrap" was false**. The translator
+   shipped `ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ　ｗａｓ` (**22**, +2 bytes, no `{FFFE}` moved), taking `ａ`
+   from **already-merged `batch_015.tsv:40` (D786)**, which renders the identical Japanese
+   `反乱を起こした` the same way. **That is better than either of my options** because it matches a
+   shipped sibling instead of inventing a third wording. Measured: `ｒｅｖｏｌｔ` 6 · `ｒｅｂｅｌｌｉｏｎ` 9.
+2. ⭐⭐ **MY `Ｈｅｙ，` GREP WAS CASE-SENSITIVE, SO I DECLARED `chunk_031` CLEAN WHEN IT IS THE DEFECT.**
+   It carries **`Ｈ，　ｈｅｙ，` — lowercase** — which `grep 'Ｈｅｙ，'` cannot see. **The inherited
+   citation naming `chunk_031` was RIGHT and my "correction" was the error.** Proper census
+   (case-insensitive, word-boundary, excluding `ｔｈｅｙ`): **13 occurrences in 9 files**, of which
+   **exactly 5 are defects, all battle**; the **8 non-defects all render `よう、`/`よっ、`/`よう！`**,
+   `Ｈｅｙ，`'s legitimate owner — including `chunk_006`, which is §32.3's own cited instance. **The
+   whole script store was clean.** ⚠️ **A case-sensitive gate 7 also fails to see the lowercase form.**
+3. ⭐ **`batch_012.tsv:53` IS DATA 376 AND DOES CONTAIN `品` — I JUDGED A POOLED LINE FROM ITS HEAD.**
+   DATA 376 is a **25-segment pooled multi-scene row**; the `品` sits in **segment 16**
+   (`奴の　盗んだ品が` → `Ｔｈｅ　ｇｏｏｄｓ　ｈｅ　ｓｔｏｌｅ　ａｒｅ`). I read the mayor's greeting at the
+   head, saw no `ｇｏｏｄｓ`, and wrote "the citation does not locate a real cell". **It does.**
+   ⚠️ **NEW RULE: never judge a `script_unique` row from its head — check every `{FFFE}` segment.**
+   §AP7's own prediction (21/20/14, +6 into bank 0) was confirmed exactly.
+
+⭐ **NEW METHOD FINDING — A LINE CITATION GOES STALE THE MOMENT YOU EDIT THE FILE ABOVE IT.**
+My `glossary.md:3883` citation was **correct when taken and wrong when read**: I then inserted the
+**65-line §9.W12 seed at line 866**, shifting every later line by 65. **3,883 + 65 = 3,948**, exactly
+where the translator found it. This is a third face of §AQ3's citation trap, and neither the 0-based
+/1-based rule nor "check it against the file" catches it. **Rule: cite a line number only for a file
+you are NOT about to edit, or re-derive every citation after editing — and prefer quoting the row's
+text, which does not move.**
+
+✅ **THE DISPATCH INSTRUCTION THAT SAVED THIS UNIT: "if a cell disagrees with what you measure,
+YOUR MEASUREMENT WINS — put it in the PR body with the command you ran."** All three of my errors
+came back with commands attached. **Keep that line in every dispatch.** The translator also reported
+that **two of its own scripts were wrong before they were right** (`ｈｅｙ` matching inside `ｔｈｅｙ`;
+a battle pairing off by one until the dump's trailing blank was dropped) — both would have produced
+a confident wrong census. **Nobody in this run is exempt from this failure mode.**
+
 
 ### ⭐ WAVE 11's LESSONS — three new method findings, all earned against real defects
 **Detail lives in `glossary.md` §58–§60 and `FLAGS.md` §AT–§AV, not here.**
