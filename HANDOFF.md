@@ -56,31 +56,40 @@ pruned — `git worktree list` shows only the main checkout.** **No open PR, no 
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
-## In flight — WAVE 13, dispatched 2026-09-11 ~21:50 UTC
-| Unit | Branch | Round | PR | State |
-|---|---|---|---|---|
-| battle chunk **15** | `tl/battle-015` | 1 | **#47** (base `main`, 1 file) | ✅ **PR OPEN — awaiting the barrier**, then review |
-| battle chunk **23** | `tl/battle-023` | 1 | — | translator alive at 33 min, still working |
-| battle chunk **27** | `tl/battle-027` | 1 | — | translator alive at 33 min, still working |
+## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
+| Unit | Branch | PR | Bytes / 8,192 | Slack | State |
+|---|---|---|---|---|---|
+| battle **15** | `tl/battle-015` | **#47** | 3,239 | 4,953 | ✅ PR open — **reviewer running** |
+| battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — queued (translator still finalising its report) |
+| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
-**The wave barrier is NOT met: 2 of 3 units have no PR. Nothing is reviewed yet** (CLAUDE.md §4 step 4).
-A translator still working is not a failure — wait, do not re-dispatch over a live agent. Two
-re-dispatches per unit, then park. Chunk 23 is the wave's largest (35 body lines) and tightest (2.80×).
+All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
+foreground, in unit order 15 → 23 → 27**; HANDOFF is pushed before each and pulled after (the reviewer
+pushes `integrate:main`). ⚠️ Each merge moves the base under the other two — expected; the reviewer
+re-checks mergeability against a pinned SHA and never reuses an author's `merge-tree`.
 
-**PR #47 — 3,239 / 8,192, 4,953 slack; realised 2.15× JP; worst column 23; 0 pages over the source's
-row count.** `check` green, `rowcheck 15` clean, gate 6 by positional pairing over 2,055 aligned JP→EN
-pairs plus a reverse EN→JP pass. **The reviewer owes four integrations on merge** (detail in the PR body):
-1. ⭐ **Close the wave-3 warning**: §9's `イフリート` row and §30.1 both say *"the gloss is in chunk 15 —
-   stays live for whoever takes chunk 15"*. **Delivered in L0.** Drop it from both.
-2. Promote the three §9.W13 seeds — `ウシャシャシャシャシャ`, `ニール`, `炎熱騎士団` — all used exactly as
-   seeded, all exhausted by this chunk.
-3. Record five incumbent forms the glossary never held (`そういうワケにはいかない`, `ねえ、` → `Ｓａｙ，`,
-   `あと一息`, `やめたほうがいい`, `カーライン軍`). ⚠️ **Two are SPELLING TWINS gate 6 cannot pair**
-   (`ワケ`/`訳`, `ほう`/`方`) — the §63.2 / §64.1 blind spot again, in the battle store.
-4. **`FLAGS.md`: the prompt and the tool disagree.** `translation_prompt.md` §3.2 tells a translator to
-   add a `{FCC0}` page break when four rows will not hold a page, but `assemble.py:tag_parity` drops
-   only `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). This chunk absorbed it by tightening at
-   6.14×; **a tier-B/C chunk with a 46-character page might not.**
+### Integration debts the reviewer must carry onto `main` (detail in each PR body)
+**PR #47 (chunk 15)** — ⭐ **close the wave-3 warning**: §9's `イフリート` row and §30.1 both say *"the
+gloss is in chunk 15 — stays live for whoever takes chunk 15"*; **L0 now delivers it**. Promote the three
+§9.W13 seeds (`ウシャシャシャシャシャ`, `ニール`, `炎熱騎士団` — all used as seeded, all exhausted).
+Record five incumbent forms the glossary never held (`そういうワケにはいかない`, `ねえ、` → `Ｓａｙ，`,
+`あと一息`, `やめたほうがいい`, `カーライン軍`); ⚠️ **two are SPELLING TWINS gate 6 cannot pair**
+(`ワケ`/`訳`, `ほう`/`方`).
+**PR #48 (chunk 27)** — nine glossary rows (`根城`, `坊や`, `袋のネズミ`, `間違いない`, `新手`, `ナメる`,
+`ふん、`, `あっけなかった`, `ひと汗かいた`). ⚠️ **§9.W13's `根城` row STAYS LIVE** — chunk 32 holds its
+fourth instance and 32 is blocked, so *that* unit strikes it, not this one. **§9.W13's `ダメージ` row is
+discharged for battle** (3 script instances remain). ⭐⭐ **Flag 12 is a real cross-wave defect and needs a
+RULING, not a re-cut: §30.4 reserves `ｕｎｄｅｒｅｓｔｉｍａｔｅ` for 甘く見る / 見くびる and claims it
+"verified unspent across `tl/`" — but 甘く見る IS already shipped, as `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`
+(`chunk_006` L21, wave 2, before §30.4 was written). Invisible to a `tl/` grep; found by positional
+pairing. The next unit reaching 見くびる (1 battle + 1 script) is the one that breaks.** This unit depends
+on neither form and avoided both.
+**Both PRs** — ⚠️ **`FLAGS.md`: the prompt and the tool disagree.** `translation_prompt.md` §3.2 tells a
+translator to add a `{FCC0}` page break when four rows will not hold a page, but `assemble.py:tag_parity`
+compares every tag except `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). **Both translators hit it
+independently and both absorbed it by re-flowing `{FFFE}` inside the source's own pages** — chunk 27 paid
+a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank + 4-row shape.
+A tier-B/C chunk with a dense page may not be able to absorb it.
 
 ⚠️ **Every `tl/*` branch from waves 1–12 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
