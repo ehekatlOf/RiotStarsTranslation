@@ -92,12 +92,11 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact, 
 
 ⚠️ **`FLAGS.md` §AN1 records the wave’s own dispatch-table false positive with its generic cause**, and **§AN2 records that this reviewer’s FIRST census of `で、` was itself a positional artifact that would have overwritten a correct record** — a “starts with” matcher returned zero where the substring sits mid-segment. The corrected record is at glossary **§52.3**: `で、` has **two** shipped Englishes, `Ｎｏｗ，` (bank 4, §42.1) and `Ｓｏ，` (**bank 3, `batch_007` L40/L50/L61, shipped since wave 5**), and `batch_011` takes the latter in bank 16 because §28.8’s `さあ、` → `Ｎｏｗ，` already occupies that bank inside the same message. **No `tl/` line moves.** PR #34’s Flag 3 claimed `Ｓｏ，` was spent “only on `ダカラ、` in chunk 26” and missed its own strongest evidence — which makes the choice **stronger**, not weaker.
 
-| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` @ `84cd10d` | **[#35](https://github.com/ehekatlOf/RiotStarsTranslation/pull/35)** | **2** | ⏳ **ROUND 2 PUSHED, awaiting re-review.** DATA 390 `いいことに` restored (23/18/22/22, 4 rows, +6 B); bank 1 26,203 → **26,197**, bank 2 **1,607 unchanged**, widest row **23**, 0 at 24. ⚠️ **It DECLINED the reviewer's finding 3 and is RIGHT — I verified both directions:** `ベルナール教会` is a **main-table row at `glossary.md:846` (§14.2), not a §9 PROVISIONAL row**, and is **already shipped** at `batch_010.tsv:61`, so §4.6 is not engaged and **there is no §9 row to strike**. **Integrating that finding would have written a fabricated promotion into `glossary.md`.** ⚠️ **Reviewer: confirm the decline; do NOT carry finding 3.** |
-| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` @ `553087f` | **[#36](https://github.com/ehekatlOf/RiotStarsTranslation/pull/36)** | 1 | ⏳ **NOT YET REVIEWED — but owes ONE cross-unit change already, sent to its translator 2026-09-11.** ⚠️ **`『進化の木の実』` DIVERGES ACROSS UNITS:** merged `batch_011` ships `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` (18); this unit's L52 ships `“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` (15). **Both verified by me directly in the files.** **§52.5 is MERGED and rules the long form** on the corpus's two decided `『Ｘの Ｙ』` precedents (§12 `“Ｂｏｏｋ　ｏｆ　Ｋｎｏｗｌｅｄｇｅ”`, §33.1 `“Ｃｒｙｓｔａｌ　ｏｆ　Ｆｉｒｅ”` where the short compound was weighed and **"never fired"**), and `batch_011` merged first — so **this unit changes**, one row, 15 → 18 columns, no re-flow, no tag change. ⚠️ Its own Glossary table calls that form "18 columns" — **it is 15**; another wrong figure to correct at integration. |
+| `batch_012` — main plot + casino, DATA 355–415 | `tl/script-012` @ `84cd10d` | **[#35](https://github.com/ehekatlOf/RiotStarsTranslation/pull/35)** | **3 — LAST PERMITTED** | ⚠️ **ROUND 2 → CHANGES, 5 findings, round 3 sent 2026-09-11. §5's three-round cap is now reached: round 3 merges or the unit PARKS.** All 8 gates pass; the 5 are **gate-7 terminology**, net **+4 bytes**, no re-flow beyond one restored `{FFFE}` and one 3-row repack. The reviewer justified the round rather than asserting it: **each of the 5 has a merged precedent where the identical item was a review finding on another unit and was fixed** (§51.4 `Ｈｏｂｂｉｔ` capitalisation, §41.8 `そして、`, §48.2 `やはり`) — merging would hold this unit to a **lower** standard than three merged units. Gate 6 coverage **1,153 rows / 43 files incl. `batch_011`**; gate 7 **1,040 keys / 113 occurring / 196 pairs / 77 apparent → 5 genuine**. Round-1 finding 3 (`ベルナール教会`) **confirmed declined a second time — do not let it reappear.** |
+| `batch_013` — tavern + tactics lectures, DATA 921–978 | `tl/script-013` @ `d55846d` | **[#36](https://github.com/ehekatlOf/RiotStarsTranslation/pull/36)** | 1 | ⏳ **CROSS-UNIT FIX APPLIED; first review dispatched 2026-09-11.** `『進化の木の実』` → `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` per merged §52.5; verified by me — byte-identical to `batch_011`'s instance, short form now **0× anywhere in `tl/`**, row 16 → 19 columns, **no re-flow**, bank 29 −6 (16,879 free). ⭐ **IT BUILT THE CHECK THAT WOULD HAVE CAUGHT THE DIVERGENCE** — see Decisions. Body figures re-verified mechanically: **22 forms, 21 literal in the file, 1 split across a `{FFFE}`, 0 unverified**; that pass found a **fifth** wrong figure (flag 8's rejected alt, 30 → **29**) in a part of the body no one was examining. |
 
 ✅ **BARRIER MET — all 3 PRs open (#34, #35, #36), 0 units parked, 0 re-dispatches needed.**
-**Reviews: #34 ✅ MERGED (`edd6d2d` / `2eff660`, glossary §52, FLAGS §AN). #35 round 2 pushed,
-re-review running. #36 awaiting its first review, with one cross-unit change already routed.**
+**Reviews: #34 ✅ MERGED. #35 → round 3, the LAST permitted (merges or parks). #36 in first review.**
 ⚠️ **WAVE 9 HAS NOW PRODUCED THREE WRONG CORRECTIONS, AND THE THIRD CAME FROM A REVIEWER**
 (`ベルナール教会`, declined with evidence by `batch_012`'s translator and verified by me). The
 standing lesson holds in **both** directions: a reviewer's finding is not privileged over a
@@ -294,6 +293,31 @@ shipped instance sits under a documented reserve will look like a fixed distinct
 ✅ **The mitigation worked** — every dispatch labelled the table "a LEAD TO VERIFY BY READING, never
 a ruling", and that is exactly what the translator did. **Keep that framing, and additionally mark
 any row backed by a SINGLE shipped instance as such.**
+
+⭐ **WAVE 9's BEST PROCESS ARTIFACT — A NEW GATE THAT CLOSES A REAL HOLE IN GATE 6. Put it in
+every future dispatch.** Gate 6 pairs whole messages on exact Japanese, so **two units coining
+different English for the same `『…』` item name are structurally invisible to it** — which is
+exactly how `『進化の木の実』` shipped as `“Ｎｕｔ　ｏｆ　Ｅｖｏｌｕｔｉｏｎ”` in `batch_011` and
+`“Ｅｖｏｌｕｔｉｏｎ　Ｎｕｔ”` in `batch_013`, caught only by a reviewer **after the first had merged**.
+`batch_013` then built the missing check: **pair every `『…』` in a message with the `“…”` spans in
+that same message, and compare those pairings ACROSS FILES.** On its own unit: 17 names, 4 shared
+with other files, 0 divergences. **Cheap, mechanical, and it would have caught this before delivery.**
+
+⚠️ **GATE 8's "`{FFFF}` last on every message" IS A BATTLE-STORE RULE AND DOES NOT APPLY TO SCRIPT
+UNITS** — my dispatches mis-scoped it onto all three. Verified: `dumps/script_unique.txt` contains
+**0** `{FFFF}` (the dump has 8,760; the unique keys omit the trailing one, per CLAUDE.md §4 step 1),
+and `batch_003`/`004`/`005` each carry the line *"Japanese keys are copied byte-for-byte from
+script_unique.txt, i.e. without `{FFFF}`"* — **the repo documents this in three places.** PR #35's
+reviewer caught it as its own instrument being wrong and said so rather than reporting a failure.
+
+⚠️ **ALL FIVE OF WAVE 9's WRONG FIGURES SHARE ONE SHAPE, AND IT IS NARROWER THAN "VERIFY BOTH
+DIRECTIONS": someone measured ONE SIDE of a comparison and inferred the other.** My clause table
+measured shipped English without counting how many instances backed it. The `で、` census matched
+one way. The `バニシュジュエル` correction re-measured the source but not the replacement string. The
+`こおりのゆびわ` correction re-measured the value it corrected *from*, not *to*. **The operational
+rule is mechanical: `len()` BOTH values and PRINT BOTH before asserting either is wrong.** It is not
+a counsel of care — I hand-counted `Ｌｅｃｔｕｒｅ` as 8 letters (it is 7) while checking a
+translator's figure, and only measuring stopped me adding a sixth error.
 
 **Method findings (wave 8, still binding — these are what the dispatches carry).**
 - ⚠️ **GATE 7 RUNS FROM THE GLOSSARY SIDE, KEY BY KEY**, with controls in **both** directions.
