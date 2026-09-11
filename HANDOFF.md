@@ -43,7 +43,7 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 ## In flight — WAVE 12, dispatched 2026-09-11
 | Unit | Branch | DATA | Size | Bank cost (mine) | State |
 |---|---|---|---|---|---|
-| `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; tightest **bank 5 needs 94 of 1,635** | dispatched |
+| `batch_020` | `tl/script-020` | 318, 320, 326–334, 336–345 | **21 lines / 44 inst** | 21 banks; bank 5 **realised 40**, not my 94 bound; max **410** (bank 18) | ✅ **PR #45 OPEN — awaiting barrier** |
 | corrections | `tl/corrections-wave12` | §4.3 debt (see below) | **5 files, 5 items** | chunk 0 **+0**, chunk 8 −2, chunk 31 −2; bank 28 −2, bank 0 −6 | ✅ **PR #43 OPEN — awaiting barrier** |
 | `batch_021` | `tl/script-021` | 997–1034 | **38 lines / 38 inst** | bank 30 only — **realised 456**, not my 782 planning bound | ✅ **PR #44 OPEN — awaiting barrier** |
 | `batch_022` | `tl/script-022` | 1043–1099 | **57 lines / 57 inst** | **bank 31 only, 2,185 of 34,745** | dispatched |
@@ -238,6 +238,70 @@ hardcoded **1.6**, and it knows **nothing** about §D1.
    translate the menu strings too. Glossary §9's UI-label row **stays live** until settled.
 
 ## Decisions this run
+
+### ⚠️ WAVE 12 — `batch_020` (PR #45): A FOURTH TRAP I MISSED, AND A SEED CELL WRONG IN ALL THREE FIGURES
+1. ⭐⭐ **THERE WAS A FOURTH NEAR-DUPLICATE TRAP AND THE GLOSSARY HAD ALREADY WRITTEN IT DOWN.**
+   I built the trap list at three and missed **D326**, which is **readable-identical** to
+   `batch_008.tsv:38` (D481) — same message, differing only by a leading `{FC51}`, so gate 6 reports
+   clean and a divergent English would ship undetected. ⚠️ **`glossary.md:5162` names the pair in
+   terms: `| **481** | そう。疲れたときはいつでもよってね。 | **DATA 326, count 2, untranslated** |`** —
+   verified by me after the fact. The translator found it independently and shipped byte-identically,
+   segment for segment. **My three traps were all correct; the fourth was sitting in §42.5's
+   FORWARD-BINDING table, which no gate reads and which I never opened.**
+   ⭐ **STANDING RULE FROM NOW ON: §42.5's forward-binding table is the FIRST place a script unit
+   looks.** It still holds **two live rows — `505` → D535 and `506` → D403**, both untranslated and
+   both in the blocked set; whoever unblocks them must reuse the bound English.
+2. ⭐⭐ **MY §9.W12 `てーこく` CELL WAS WRONG IN ALL THREE OF ITS FIGURES, AND THE VERDICT SURVIVED
+   ANYWAY.** I wrote "**9 script / 0 battle / 0 `tl/`**" and "D320 is the first to ship, so it sets
+   precedent". Measured by me after the translator's push-back:
+   - **16 unique lines / 20 script instances**, not 9. **9 is the instance count of `てーこく軍`
+     specifically** — my own `てーこく*` wildcard did not describe the number I put beside it.
+   - **1 battle, not 0** — `dumps/battle_dump.txt:234` (chunk 8 L14).
+   - **NOT 0 in `tl/`: already shipped twice** — `tl/battle/chunk_008.txt` L14 and
+     `tl/script/batch_014.tsv:46`. **So the precedent was set in WAVE 2, and D320 conforms to a
+     two-wave-old incumbent rather than setting anything.** `glossary.md:2470` (§29.6) already
+     recorded the chunk-8 treatment.
+   ⚖️ **The RECOMMENDATION was right** — do not misspell the English, carry the kana softening in
+   register, keep `帝国` → *the Empire* distinct from `帝国軍` → *the Imperial army* with its article.
+   **But I asserted a reach, a store and a status I had not checked, in the very cell whose header
+   tells the reader I had checked all three.** ⚠️ **This is the FOURTH error of this shape by me this
+   wave and it is the worst, because §9.W12's own preamble states the rule I broke: "census every
+   reach cell in BOTH spellings and BOTH stores, and mark unverified cells unverified."** 13 unique /
+   15 instances of `てーこく` remain, all blocked; they inherit this form.
+3. ⭐ **D320 HAS AN UNTRANSLATED READABLE-IDENTICAL SIBLING: D1332, IN BANK 40.** Nothing in my
+   dispatch or in `glossary.md` named it; the translator found it by visible-text pairing. Different
+   tag stream, so **gate 6 is blind**. **Whoever renders D1332 after the §F2 repoint must reuse
+   `batch_020`'s English byte-for-byte.**
+4. ⚠️ **§34.1's `品` REACH CELL IS A RAW SUBSTRING COUNT, NOT A CENSUS.** It reads "script **44
+   across 23 banks**"; the **bare noun is 8 instances across 5 banks — [0, 12, 13, 19, 40]**. The
+   44/23 is inflated by `商品`, `景品`, `作品` etc. **No rendering turns on it**, but it is the number
+   a future §25.3 co-occurrence test would use, and it would give the wrong answer. ⚠️ **Interacts
+   with PR #43**, whose `品` → `ａｒｔｉｃｌｅ` fix is at `batch_012` D376 (bank 0, a **bare** `品`);
+   `batch_020`'s new `商品` → `ｗａｒｅｓ` is a different noun in bank 20 and does not touch it.
+5. ⚠️ **REALISED vs PLANNING, AGAIN — AND MY PER-BANK RANGE WAS WRONG AT THE TOP END.** Bank 5 needed
+   **40**, not my 94 (unit realised **1.9756×** against the 2.10× plan). But the **maximum per-bank
+   cost was 410 (bank 18), ABOVE the "26–374" range I quoted** — bank 18 carries two of the three
+   longest lines at 2 occurrences each, where my 374 was bank 20's. Predicted and measured agree
+   bank-for-bank in the PR. **Quote a planning bound and a realised figure as two numbers, and do
+   not state a max without checking which bank actually carries the worst line.**
+6. ⭐ **`bankmeasure`'s `tightest:` LINE NOW PRINTS BANK 5 INSTEAD OF BANK 2 — the cleanest possible
+   proof it cannot be quoted.** Before: `40 · 41 · 2 (1,607)`. After: `40 · 41 · 5 (1,595)`. **Bank 2
+   became invisible because bank 5 dropped 40 bytes past it.** Four banks are under 2,000 either way.
+7. ⚠️ **NEW §4.3 DEBT, NOT CREATED BY THIS UNIT: `なるけど、いいかい？` HAS TWO SHIPPED ENGLISHES** —
+   `batch_011:54` `ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？` vs `batch_012:91` `ｂｕｔ　ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？`,
+   byte-identical source, banks 2 and 17. **For a future corrections unit.**
+8. ✅ **THE THREE TRAPS I DID NAME WERE ALL MET AND ASSERTED**: D329 = D330 and both byte-identical
+   to all 10 shipped copies of the recruit menu; D339 byte-identical to `batch_011`'s monster-shop
+   menu with **its own** `{FFF6}` args; D333/D338 differ in exactly one word, and **each source's own
+   indent was preserved (four spaces, NOT the two-space donor's)**. ⭐ **A refinement worth keeping:
+   D333/D338 correctly take NO closing full stop** — `batch_006:57`'s stop belongs to the `ノロ` tic,
+   and §57.1's `「本日休業」` → `“Ｃｌｏｓｅｄ　ｔｏｄａｙ”` is the real precedent. A reviewer reading the
+   donor alone would wrongly expect one.
+9. ✅ **AN EXEMPLARY METHOD DISCLOSURE, AND THE BOARD SHOULD ASK FOR IT EVERY TIME.** The translator
+   stated plainly that it did **not** read §27–§31, §35–§39, §41, §43–§46, §49–§54 linearly, covering
+   them instead by harvesting **1,333 first-column keys + 2,158 backticked runs across key AND note
+   cells** and reading all 94 rows that fired. **That is the §AT1-compliant harvester** — but it is
+   not the same as a linear read, and saying so is what lets a reviewer weigh it.
 
 ### WAVE 12 — `batch_021` (PR #44): a realised-vs-planning figure, and a NEW tool artifact
 1. ⚠️ **MY 782-BYTE BANK FIGURE WAS A PLANNING BOUND, NOT A PREDICTION — THE REALISED COST IS 456.**
