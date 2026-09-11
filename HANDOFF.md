@@ -54,11 +54,11 @@ Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact),
 
 | Unit | DATA lines | Lines / inst | JP chars | Banks | Branch | PR | State |
 |---|---|---|---|---|---|---|---|
-| `batch_017` | 1100–1159 | 60 / 60 | 2,834 | 31–39 | `tl/script-017` | — | translator dispatched |
+| `batch_017` | 1100–1159 | 60 / 60 | 3,275¹ | 31–39 | `tl/script-017` | **#42** | ✅ **PR OPEN** — +6,144 B, bank 33 8,919→5,635, `check` green |
 | `batch_018` | 1388–1413, 1415–1430 | 42 / 42 | 1,299¹ | 42, 43 | `tl/script-018` | **#41** | ✅ **PR OPEN** — awaiting the barrier. −2,706 B (42: 9,647 free · 43: 8,943), `check` green |
 | `batch_019` | 465–469, 521–533, 584–598, 870–879 | 43 / 43 | 960 | 3, 6, 7, 12, 25 | `tl/script-019` | **#40** | ✅ **PR OPEN** — awaiting the barrier. +2,272 B, no bank negative, `check` green |
 
-**Who acts next: the coordinator** — **2 of 3 PRs open (#41, #40).** Wait for `batch_017`, then reviewer 017 → 018 → 019.
+**Who acts next: the REVIEWER.** ✅ **WAVE BARRIER MET 2026-09-11 — all three PRs open: #42 (017), #41 (018), #40 (019).** One reviewer at a time, foreground, unit order **017 → 018 → 019**.
 ⛔ **Nothing is reviewed until all three are open** (CLAUDE.md §4 step 4). At 09:07Z both remaining
 translators were alive and 43–44 min in; wave 9's ran 52 min – 1 h 34 m, so this is normal, not a stall.
 
@@ -83,10 +83,23 @@ sources, both mine, and the reviewer must NOT re-report them as the translator's
    ⚠️ **HANDOFF's own inherited list names `命中率 (D1237)` as a live §9 row — i.e. script — and I
    wrote "different store" with that on the page in front of me.** Keep the rendering; the §9 row's
    stated reason must be replaced at integration.
-4. ✅ **`Ｘボタン` → `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` is settled by SHIPPED WORK, not by my §16 reasoning.**
+4. ⚠️ **My §9 `ほこら` seed states its reach WRONGLY IN BOTH DIRECTIONS — and would have struck a live
+   row.** I wrote *"3 unique, 0 battle — D1104, D1105 (batch 017) and D324"*. Re-derived by me:
+   **4 unique — D324, D1086, D1095, D1104 — and D1105 contains no `ほこら` at all.** I named a line
+   that does not have the word and missed two that do (D1086/D1095, debug-menu lines in bank 31).
+   `batch_017` renders **D1104 only**, so **three instances remain and the §9 row STAYS LIVE.**
+   Had the translator trusted the cell, the row would have been struck as exhausted.
+5. ✅ **`Ｘボタン` → `Ｃｒｏｓｓ　ｂｕｔｔｏｎ` is settled by SHIPPED WORK, not by my §16 reasoning.**
    **D1414 — already merged in `batch_002.tsv`, bank 43, same speaker, same scene — renders
    `×ボタンを押してね` as `Ｃｒｏｓｓ　ｂｕｔｔｏｎ`**, and D1393's `Ｘボタンよ` is the same instruction in
    the same words. My proposal was right; the corpus proof is stronger than the argument I gave.
+
+⚠️ **FOUR COORDINATOR ERRORS IN ONE WAVE, ALL IN SEEDS OR DISPATCHES, ALL CAUGHT BY TRANSLATORS, ALL
+THE SAME SHAPE: I asserted one side of a comparison without censusing the other.** Three of the four
+(`炎ノ雨`, `的中確率`, `ほこら`) would each have STRUCK OR MIS-JUSTIFIED A GLOSSARY ROW THAT MUST STAY
+LIVE. **The seeding step needs the same `len()`-both-sides / state-your-corpus discipline the
+translating step already has** — wave 12's coordinator should census every reach cell in BOTH
+spellings and BOTH stores before writing it, and mark any cell it did not verify as unverified.
 ⚠️ **No unit touches banks 2, 5, 40 or 41** (verified: the three bank-sets are disjoint from the
 four tight banks). Tightest bank touched is **33** — 8,919 free, ~4,415 projected demand.
 
