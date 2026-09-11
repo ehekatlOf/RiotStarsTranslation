@@ -25,7 +25,7 @@
 {FB00}{=01}{=77}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ，　ｇｏｏｄ　ｐｅｏｐｌｅ　ｏｆ　ｔｈｅ{FFFE}９ｔｈ　Ａｒｍｙ．　Ｔｈａｎｋ　ｙｏｕ{FFFE}ｖｅｒｙ　ｍｕｃｈ　ｆｏｒ　ｔｈｅ　ｏｔｈｅｒ{FFFE}ｄａｙ．{FCC0}{FFFE}Ｔｈｅ　ｎｅｗ　ａｍｕｓｅｍｅｎｔ　ｈａｌｌ{FFFE}ｉｓ　ｂｅｉｎｇ　ｂｕｉｌｔ　ｎｏｗ．　Ｄｏ{FFFE}ｗａｉｔ　ａ　ｌｉｔｔｌｅ　ｌｏｎｇｅｒ．{FC30}{FFFF}
 {FC30}{FFFF}
 {FB00}{=01}{=77}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ，　ｉｔ　ｉｓ　ｙｏｕ！！　Ｍｏｓｔ{FFFE}ｗｅｌｃｏｍｅ！！　Ｉ　ａｍ　ｔｈｅ{FFFE}ｍａｙｏｒ　ｏｆ　Ｃａｕｃａｓｕｓ．{FCC0}{FFFE}Ｔｈｉｓ　ｉｓ　ａ　ｔｏｗｎ　ｏｆ{FFFE}ｍａｒｔｉａｌ　ａｒｔｉｓｔｓ．　Ｎｏ{FFFE}ｌｏｖｅｒ　ｏｆ　ｉｔ　ｉｓ　ｂａｄ．　Ｄｏ{FFFE}ｒｅｓｔ　ｂｅｆｏｒｅ　ｙｏｕ　ｇｏ．{FC30}{FFFF}
-{FFE6}{FFF6}{=00}{=00}{=00}{=01}{FB00}{=01}{=76}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｇｏｏｄ　ｏｆ　ｙｏｕ　ｔｏ　ｃｏｍｅ！{FFFE}Ｍｅｎ　ｏｆ　ｔｈｅ　Ｒｏｙａｌ{FFFE}Ｄｅｆｅｎｃｅ　Ｆｏｒｃｅ．　Ｙｏｕ　ａｒｅ{FFFE}ｍｏｓｔ　ｗｅｌｃｏｍｅ！{FCC0}{FFFE}Ｗｈａｔ　ｗａｓ　ｔｈａｔ！？　Ｔｈｅ　９ｔｈ{FFFE}Ａｒｍｙ．．．．　Ｉ　ｓｅｅ．　Ｎｏ，　ｉｔ{FFFE}ｉｓ　ｎｏｔｈｉｎｇ．　Ｄｏ　ｒｅｓｔ{FFFE}ｂｅｆｏｒｅ　ｙｏｕ　ｇｏ．{FCC0}{FFFE}Ａｈ，　ｔｈａｔ　ｉｓ　ｒｉｇｈｔ．　Ａ{FFFE}ｎｏｔｅｄ　ｐｉｃｋｐｏｃｋｅｔ　ｗａｓ{FFFE}ｃａｕｇｈｔ　ｉｎ　ｔｈｅ　ｓｑｕａｒｅ　ｏｆ{FFFE}ｌａｔｅ．{FCC0}{FFFE}Ｈａｓ　ａｎｙｔｈｉｎｇ　ｂｅｅｎ　ｔａｋｅｎ{FFFE}ｆｒｏｍ　ｙｏｕ？　Ｔｈｅｙ　ｓａｙ　ｔｈｅ{FFFE}ｐｉｃｋｐｏｃｋｅｔ　ｐｒｅｙｅｄ　ｏｎ{FFFE}ｃａｒｅｌｅｓｓ　ｆｏｌｋ．{FCC0}{FFFE}Ｔｈｅ　ｇｏｏｄｓ　ｈｅ　ｓｔｏｌｅ　ａｒｅ{FFFE}ｈｅｒｅ，　ｓｏ　ｄｏ　ｌｏｏｋ　ａｎｄ{FFFE}ｍａｋｅ　ｓｕｒｅ．{FCC0}{FB01}{FFFA}{=00}{=00}　Ａ　ｇｏｌｄ　ｉｎｇｏｔ{FFFE}　Ａ　ｓｉｌｖｅｒ　ｉｎｇｏｔ{FFFE}　Ｓｃｒａｐ　ｉｒｏｎ{FFFE}　Ｎｏｔｈｉｎｇ　ｒｅａｌｌｙ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFF6}{=00}{=02}{=00}{=18}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｗｅｌｌ　ｔｈｅｎ，　ｄｏ　ｔａｋｅ　ｙｏｕｒ{FFFE}ｅａｓｅ．{FFFE}{FC30}{FFFF}
+{FFE6}{FFF6}{=00}{=00}{=00}{=01}{FB00}{=01}{=76}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｇｏｏｄ　ｏｆ　ｙｏｕ　ｔｏ　ｃｏｍｅ！{FFFE}Ｍｅｎ　ｏｆ　ｔｈｅ　Ｒｏｙａｌ{FFFE}Ｄｅｆｅｎｃｅ　Ｆｏｒｃｅ．　Ｙｏｕ　ａｒｅ{FFFE}ｍｏｓｔ　ｗｅｌｃｏｍｅ！{FCC0}{FFFE}Ｗｈａｔ　ｗａｓ　ｔｈａｔ！？　Ｔｈｅ　９ｔｈ{FFFE}Ａｒｍｙ．．．．　Ｉ　ｓｅｅ．　Ｎｏ，　ｉｔ{FFFE}ｉｓ　ｎｏｔｈｉｎｇ．　Ｄｏ　ｒｅｓｔ{FFFE}ｂｅｆｏｒｅ　ｙｏｕ　ｇｏ．{FCC0}{FFFE}Ａｈ，　ｔｈａｔ　ｉｓ　ｒｉｇｈｔ．　Ａ{FFFE}ｎｏｔｅｄ　ｐｉｃｋｐｏｃｋｅｔ　ｗａｓ{FFFE}ｃａｕｇｈｔ　ｉｎ　ｔｈｅ　ｓｑｕａｒｅ　ｏｆ{FFFE}ｌａｔｅ．{FCC0}{FFFE}Ｈａｓ　ａｎｙｔｈｉｎｇ　ｂｅｅｎ　ｔａｋｅｎ{FFFE}ｆｒｏｍ　ｙｏｕ？　Ｔｈｅｙ　ｓａｙ　ｔｈｅ{FFFE}ｐｉｃｋｐｏｃｋｅｔ　ｐｒｅｙｅｄ　ｏｎ{FFFE}ｃａｒｅｌｅｓｓ　ｆｏｌｋ．{FCC0}{FFFE}Ｔｈｅ　ａｒｔｉｃｌｅｓ　ｈｅ　ｓｔｏｌｅ{FFFE}ａｒｅ　ｈｅｒｅ，　ｓｏ　ｄｏ　ｌｏｏｋ{FFFE}ａｎｄ　ｍａｋｅ　ｓｕｒｅ．{FCC0}{FB01}{FFFA}{=00}{=00}　Ａ　ｇｏｌｄ　ｉｎｇｏｔ{FFFE}　Ａ　ｓｉｌｖｅｒ　ｉｎｇｏｔ{FFFE}　Ｓｃｒａｐ　ｉｒｏｎ{FFFE}　Ｎｏｔｈｉｎｇ　ｒｅａｌｌｙ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFF6}{=00}{=02}{=00}{=18}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｗｅｌｌ　ｔｈｅｎ，　ｄｏ　ｔａｋｅ　ｙｏｕｒ{FFFE}ｅａｓｅ．{FFFE}{FC30}{FFFF}
 {FB00}{=01}{=76}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ｈａｈａｈａ！　Ｄｏ　ｎｏｔ　ｔｅｌｌ　ｍｅ{FFFE}ｌｉｅｓ，　ｎｏｗ．{FCC0}{FFFE}Ｍｅｎ　ｏｆ　ｔｈｅ　９ｔｈ　Ａｒｍｙ{FFFE}ｃｏｕｌｄ　ｎｅｖｅｒ　ｂｅ　ｃａｒｒｙｉｎｇ{FFFE}ａ　ｇｏｌｄ　ｉｎｇｏｔ．{FFFE}{FFF2}{=00}{=47}{FC30}{FFFF}
 {FB00}{=01}{=76}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ｉ　ｈａｒｄｌｙ　ｔｈｉｎｋ　ｍｅｎ　ｏｆ{FFFE}ｔｈｅ　９ｔｈ　Ａｒｍｙ　ｗｏｕｌｄ{FFFE}ｃａｒｒｙ　ａ　ｓｉｌｖｅｒ　ｉｎｇｏｔ．{FCC0}{FFFE}Ｂｅｓｉｄｅｓ，　ａ　ｓｉｌｖｅｒ　ｉｎｇｏｔ{FFFE}ｉｓ　ｏｆ　ｎｏ　ｕｓｅ　ｔｏ{FFFE}ｓｏｌｄｉｅｒｓ　ｌｉｋｅ　ｙｏｕ．{FCC0}{FFFE}Ｌｅｔ　ｍｅ　ｇｉｖｅ　ｙｏｕ{FFFE}ｓｏｍｅｔｈｉｎｇ　ｍｏｒｅ　ｕｓｅｆｕｌ{FFFE}ｉｎｓｔｅａｄ．{FFFE}{FFDA}{=00}{=0D}{FFF2}{=00}{=47}{FC30}{FFFF}
 {FB00}{=01}{=76}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ｏｈ．　Ｔｈｅ　９ｔｈ　Ａｒｍｙ　ｏｆ　ｔｈｅ{FFFE}ｒｕｍｏｕｒｓ　ｉｓ　ｍｏｒｅ　ｈｏｎｅｓｔ{FFFE}ｔｈａｎ　Ｉ　ｔｈｏｕｇｈｔ．{FCC0}{FFFE}Ｈｏｗｅｖｅｒ，　ｓｃｒａｐ　ｉｒｏｎ{FFFE}ｌｉｋｅ　ｔｈｉｓ　ｉｓ　ｏｆ　ｎｏ　ｕｓｅ{FFFE}ｔｏ　ｓｏｌｄｉｅｒｓ　ｌｉｋｅ　ｙｏｕ．{FCC0}{FFFE}Ｉｆ　ｉｔ　ｉｓ　ａｌｌ　ｔｈｅ　ｓａｍｅ{FFFE}ｓｃｒａｐ，　ｔｈｉｓ　ｋｅｙ　ｔｈｅ{FFFE}ｐｉｃｋｐｏｃｋｅｔ　ｈａｄ　ｌｏｏｋｓ{FFFE}ｍｏｒｅ　ｕｓｅｆｕｌ　ｔｏ　ｍｅ．{FCC0}{FFFE}Ｎｏｗ　ｎｏｗ，　ｄｏ　ｎｏｔ　ｈｏｌｄ{FFFE}ｂａｃｋ．　Ｔａｋｅ　ｉｔ　ｗｉｔｈ　ｙｏｕ．{FFFE}Ｉｔ　ｉｓ　ｊｕｎｋ　ａｌｌ　ｔｈｅ{FFFE}ｓａｍｅ．{FFDA}{=00}{=AB}{FFF2}{=00}{=47}{FC30}{FFFF}
@@ -453,7 +453,7 @@
 {FB01}Ｈｍ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}Ｊｅｗｅｌｓ，　ｎｙｏｒｏ．{FFFE}Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ{FFFE}ｔｉｍｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=0B}{FFFF}
 {FB01}Ｈｍ？　Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ{FFFE}ｆｕｌｌ，　ｎｙｏｒｏ．{FFFE}Ｎｏ　ｒｏｏｍ　ｔｏ　ｒｅｃｒｕｉｔ{FFFE}ａｎｙ　ｍｏｒｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=0B}{FFFF}
 {FB01}Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FB01}そうノロか。{FFFE}また、{FFFE}立ち寄るが　いいノロ！{FFFE}いつでも　大歓迎ノロ！{FC30}{FFF5}{FFFF}
+{FB01}Ｉ　ｓｅｅ，　ｎｙｏｒｏ．{FFFE}Ｃａｌｌ　ｉｎ　ａｇａｉｎ，　ｎｙｏｒｏ！{FFFE}Ｙｏｕ　ａｒｅ　ａｌｗａｙｓ　ｍｏｓｔ{FFFE}ｗｅｌｃｏｍｅ　ｈｅｒｅ，　ｎｙｏｒｏ！{FC30}{FFF5}{FFFF}
 {FB00}{=01}{=7A}{=00}{=00}{FB00}{=00}{=02}{=00}{=01}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FFF3}{=00}{=69}{=00}{=25}{FFF2}{=00}{=69}{FC51}Ｏｈ！　Ｙｏｕ　ａｌｌ，{FFFE}ｗｅｒｅ　ｙｏｕ　ｓａｆｅ，　ｎｙｏｒｏ？{FCC0}{FFFE}Ｗｅｌｌ　ｎｏｗ，　Ｉ　ｈｅａｒｄ　ｙｏｕ{FFFE}ｐｌｏｔｔｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ{FFFE}ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ，　ｔｈａｔ{FFFE}ｉｔ　ｃａｍｅ　ｏｕｔ，　ｔｈａｔ　ｙｏｕ{FCC0}{FFFE}ｗｅｒｅ　ｃａｕｇｈｔ，　ａｎｄ　ｔｈｅｎ{FFFE}ｄｒａｇｇｅｄ　ｔｈｒｏｕｇｈ　ｔｈｅ{FFFE}ｓｔｒｅｅｔｓ　ｉｎ　ｐｕｎｉｓｈｍｅｎｔ．{FFFE}Ｉ　ｗｏｒｒｉｅｄ　ｓｏ，　ｎｙｏｒｏ．{FC30}{FCB0}{=00}{=01}{=00}{=01}{FB01}．．．Ｓｏｍｅｈｏｗ，{FFFE}ｔｈａｔ’ｓ　ｑｕｉｔｅ　ａ　ｓｔｏｒｙ．{FC30}{FCB0}{=00}{=00}{=00}{=01}{FB01}Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ{FFFE}ｔｏｄａｙ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=0E}{FFFF}
 {FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFFA}{=00}{=05}{FFF6}{=00}{=00}{=00}{=0F}{FFF6}{=00}{=02}{=00}{=18}{FFF3}{=00}{=1D}{=00}{=13}{FFF3}{=00}{=1B}{=00}{=14}{FFF8}{=00}{=13}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=16}{FB01}Ｗｈｉｃｈ　ｏｎｅ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=12}{FFD5}{=00}{=15}{FFF8}{=00}{=10}{FFFF}
@@ -465,7 +465,7 @@
 {FB01}Ｈｍ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}Ｊｅｗｅｌｓ，　ｎｙｏｒｏ．{FFFE}Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ{FFFE}ｔｉｍｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=17}{FFFF}
 {FB01}Ｈｍ？　Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ{FFFE}ｆｕｌｌ，　ｎｙｏｒｏ．{FFFE}Ｎｏ　ｒｏｏｍ　ｔｏ　ｒｅｃｒｕｉｔ{FFFE}ａｎｙ　ｍｏｒｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=17}{FFFF}
 {FB01}Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=0E}{FFFF}
-{FB01}そうノロか。{FFFE}また、{FFFE}立ち寄るが　いいノロ！{FFFE}いつでも　大歓迎ノロ！{FC30}{FFF5}{FFFF}
+{FB01}Ｉ　ｓｅｅ，　ｎｙｏｒｏ．{FFFE}Ｃａｌｌ　ｉｎ　ａｇａｉｎ，　ｎｙｏｒｏ！{FFFE}Ｙｏｕ　ａｒｅ　ａｌｗａｙｓ　ｍｏｓｔ{FFFE}ｗｅｌｃｏｍｅ　ｈｅｒｅ，　ｎｙｏｒｏ！{FC30}{FFF5}{FFFF}
 {FB00}{=01}{=7A}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｏｈ，　ａｌｌ　ｗｅｌｌ，　ｎｙｏｒｏ！！{FFFE}Ａｍｉｄ　ａｌｌ　ｔｈｉｓ　ｗａｒ，　Ｉ{FFFE}ａｌｗａｙｓ　ｗｏｒｒｙ　ｗｈｅｔｈｅｒ{FFFE}ｙｏｕ　ａｒｅ　ｓａｆｅ，　ｎｙｏｒｏ！{FCC0}{FB01}Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ{FFFE}ｔｏｄａｙ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=1A}{FFFF}
 {FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFFA}{=00}{=05}{FFF6}{=00}{=00}{=00}{=1B}{FFF6}{=00}{=02}{=00}{=24}{FFF3}{=00}{=1D}{=00}{=1F}{FFF3}{=00}{=1B}{=00}{=20}{FFF8}{=00}{=1F}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=22}{FB01}Ｗｈｉｃｈ　ｏｎｅ，　ｎｙｏｒｏ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=1E}{FFD5}{=00}{=21}{FFF8}{=00}{=1C}{FFFF}
@@ -477,7 +477,7 @@
 {FB01}Ｈｍ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}Ｊｅｗｅｌｓ，　ｎｙｏｒｏ．{FFFE}Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ{FFFE}ｔｉｍｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=23}{FFFF}
 {FB01}Ｈｍ？　Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ{FFFE}ｆｕｌｌ，　ｎｙｏｒｏ．{FFFE}Ｎｏ　ｒｏｏｍ　ｔｏ　ｒｅｃｒｕｉｔ{FFFE}ａｎｙ　ｍｏｒｅ，　ｎｙｏｒｏ．{FC30}{FFF8}{=00}{=23}{FFFF}
 {FB01}Ｎｏｔｈｉｎｇ　ｅｌｓｅ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=1A}{FFFF}
-{FB01}そうノロか。{FFFE}また、{FFFE}立ち寄るが　いいノロ！{FFFE}いつでも　大歓迎ノロ！{FC30}{FFF5}{FFFF}
+{FB01}Ｉ　ｓｅｅ，　ｎｙｏｒｏ．{FFFE}Ｃａｌｌ　ｉｎ　ａｇａｉｎ，　ｎｙｏｒｏ！{FFFE}Ｙｏｕ　ａｒｅ　ａｌｗａｙｓ　ｍｏｓｔ{FFFE}ｗｅｌｃｏｍｅ　ｈｅｒｅ，　ｎｙｏｒｏ！{FC30}{FFF5}{FFFF}
 {FC51}Ｔｈｉｎｇｓ　ｈａｖｅ　ｔｕｒｎｅｄ{FFFE}ｇｒａｖｅ，　ｎｙｏｒｏ．{FFFE}Ｂｕｔ，　ｗｅ　ａｒｅ{FFFE}ｙｏｕｒ　ａｌｌｉｅｓ，　ｎｙｏｒｏ！！{FCC0}{FB01}Ｓｏ，　ｗｈａｔ　ｃａｎ　Ｉ　ｄｏ{FFFE}ｔｏｄａｙ，　ｎｙｏｒｏ？{FFFE}{FFF8}{=00}{=0E}{FFFF}
 {FFF3}{=00}{=5B}{=00}{=01}{FB00}{=00}{=96}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ？{FFFE}Ｔｈｅ　ｖｉｌｌａｇｅ　ｃｈｉｅｆ　ｈａｓ{FFFE}ｇｏｎｅ　ｔｏ　Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ{FFFE}ｔｏ　ｍｅｅｔ　ｙｏｕ，　ｎｙｏｒｏ．{FCC0}{FFFE}Ｙｏｕ　ｍｉｓｓｅｄ　ｅａｃｈ{FFFE}ｏｔｈｅｒ，　ｎｙｏｒｏ．{FC30}{FFFF}
 {FFD7}{FFE1}{=00}{=03}{=00}{=28}{FFF8}{=00}{=29}{FFFF}
@@ -849,7 +849,7 @@
 {FB01}Ｍｙ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ{FFFE}ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｉ　ａｍ　ａｆｒａｉｄ，{FFFE}ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ．{FC30}{FFF8}{=00}{=15}{FFFF}
 {FB01}Ｍｙ？{FFFE}Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ．{FFFE}Ｉ　ｃａｎｎｏｔ　ｒｅｃｒｕｉｔ{FFFE}ａｎｙ　ｍｏｒｅ．{FC30}{FFF8}{=00}{=15}{FFFF}
 {FB01}Ｎｏｔｈｉｎｇ　ｅｌｓｅ？{FFFE}{FFF8}{=00}{=0D}{FFFF}
-{FB01}そう。{FFFE}疲れたときは{FFFE}いつでもよってね。{FFFE}{FC30}{FFF5}{FFFF}
+{FB01}Ｉ　ｓｅｅ．{FFFE}Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ{FFFE}ｙｏｕ　ａｒｅ　ｗｅａｒｙ．{FFFE}{FC30}{FFF5}{FFFF}
 {FB00}{=01}{=79}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｉｔ　ｓｅｅｍｓ　ｈａｒｄ　ｏｕｔｓｉｄｅ．{FFFE}Ｂｕｔ　ｔｈｅ　ｆｏｒｅｓｔ　ｉｓ　ｓａｆｅ．{FFFE}Ｉｔ　ｗｉｌｌ　ｓｕｒｅｌｙ　ｈｅａｌ{FFFE}ｙｏｕｒ　ｗｅａｒｉｎｅｓｓ．{FCC0}{FB01}Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？{FFFE}{FFF8}{=00}{=18}{FFFF}
 {FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFFA}{=00}{=05}{FFF6}{=00}{=00}{=00}{=19}{FFF6}{=00}{=01}{=00}{=1D}{FFF6}{=00}{=02}{=00}{=21}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=1F}{FB01}Ｗｈｉｃｈ　ｆａｉｒｙ　ｗｉｌｌ　ｉｔ　ｂｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=1C}{FFD5}{=00}{=1E}{FFF8}{=00}{=1A}{FFFF}
@@ -860,7 +860,7 @@
 {FB01}Ｍｙ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ{FFFE}ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｉ　ａｍ　ａｆｒａｉｄ，{FFFE}ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ　ｔｉｍｅ．{FC30}{FFF8}{=00}{=20}{FFFF}
 {FB01}Ｍｙ？{FFFE}Ｙｏｕｒ　ｒａｎｋｓ　ａｒｅ　ｆｕｌｌ．{FFFE}Ｉ　ｃａｎｎｏｔ　ｒｅｃｒｕｉｔ{FFFE}ａｎｙ　ｍｏｒｅ．{FC30}{FFF8}{=00}{=20}{FFFF}
 {FB01}Ｎｏｔｈｉｎｇ　ｅｌｓｅ？{FFFE}{FFF8}{=00}{=18}{FFFF}
-{FB01}そう。{FFFE}疲れたときは{FFFE}いつでもよってね。{FFFE}{FC30}{FFF5}{FFFF}
+{FB01}Ｉ　ｓｅｅ．{FFFE}Ｃａｌｌ　ｉｎ　ａｎｙ　ｔｉｍｅ{FFFE}ｙｏｕ　ａｒｅ　ｗｅａｒｙ．{FFFE}{FC30}{FFF5}{FFFF}
 {FFFF}
 {FFFF}
 {FFFF}
@@ -1217,12 +1217,12 @@
 {FFC2}{=00}{=02}{FB00}{=01}{=7B}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｉ　ａｍ　Ｋｉｎｇ　ｏｆ　Ｌｅｖｅｒｋ．{FFFE}Ｆｏｒ　ｙｏｕｒ　ｅｘｐｅｄｉｔｉｏｎ{FFFE}ｆｒｏｍ　Ｃａｒｌｉｎｅ，{FFFE}Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．{FCC0}{FFFE}Ｙｏｕｒ　ｅｒｒａｎｄ　ｔｏｄａｙ？{FFFE}{FFF8}{=00}{=02}{FFFF}
 {FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=0B}{FFF6}{=00}{=02}{=00}{=0A}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=08}{FB01}Ｗｈｉｃｈ　ｗｏｕｌｄ　ｓｕｉｔ　ｙｏｕ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=06}{FFD5}{=00}{=07}{FFF8}{=00}{=04}{FFFF}
-{FB01}{FFEC}{=00}{=04}で、{FFFE}よろしいかな？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルに{FFFE}なるが、よろしいかな？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
+{FB01}{FFEC}{=00}{=04}，{FFFE}ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FB01}{FFEB}{FFE4}{FFE3}Ｔｏ　ａｎ　ａｒｍｙ，　ｓｏｌｄｉｅｒｓ{FFFE}ａｒｅ　ａ　ｆｉｎｅ　ａｓｓｅｔ．{FFFE}Ｔｒｅａｔ　ｔｈｅｍ　ｗｅｌｌ．{FCC0}{FFF8}{=00}{=09}{FFFF}
 {FB01}Ｉ　ｓｅｅ．{FFFE}Ｙｏｕ　ｌｅａｖｅ　ｉｔ，　ｔｈｅｎ．{FFFE}{FCC0}{FFF8}{=00}{=09}{FFFF}
 {FB01}Ｈｏｗｅｖｅｒ，　ｙｏｕ　ｓｅｅｍ{FFFE}ｓｈｏｒｔ　ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｃｏｍｅ　ａｇａｉｎ{FFFE}ｏｎ　ａｎｏｔｈｅｒ　ｄａｙ．{FC30}{FFF8}{=00}{=09}{FFFF}
 {FB01}Ｈｏｗｅｖｅｒ，{FFFE}ｙｏｕｒ　ｓｑｕａｄ　ｓｅｅｍｓ{FFFE}ａｌｒｅａｄｙ　ｔｏ　ｈａｖｅ{FFFE}ｓｏｌｄｉｅｒｓ　ｅｎｏｕｇｈ．{FCC0}{FFFE}Ｙｏｕ　ｗｏｕｌｄ　ｄｏ　ｗｅｌｌ{FFFE}ｔｏ　ｆｏｒｇｏ　ｒｅｃｒｕｉｔｉｎｇ{FFFE}ｔｈｉｓ　ｔｉｍｅ．{FFFE}{FC30}{FFF8}{=00}{=09}{FFFF}
-{FB01}他にご用は　おありか？{FFFE}{FFF8}{=00}{=02}{FFFF}
+{FB01}Ａｎｏｔｈｅｒ　ｅｒｒａｎｄ？{FFFE}{FFF8}{=00}{=02}{FFFF}
 {FB01}Ｉ　ｓｅｅ．{FFFE}Ｗｅａｋ　ｔｈｏｕｇｈ　ｗｅ　ａｒｅ，{FFFE}ｗｅ　ｔｏｏ　ｗｉｌｌ　ｈｅｌｐ{FFFE}ａｌｌ　ｗｅ　ｃａｎ．　Ｃｏｍｅ　ａｇａｉｎ．{FC30}{FFF5}{FFC2}{=00}{=01}{FFFF}
 {FFD7}{FFE1}{=00}{=01}{=00}{=0C}{FFE1}{=00}{=03}{=00}{=0D}{FFE1}{=00}{=04}{=00}{=0E}{FFE1}{=00}{=05}{=00}{=0F}{FFE1}{=00}{=06}{=00}{=10}{FFF8}{=00}{=11}{FFFF}
 {FB01}Ｆｒｏｍ　ｔｈｅ　ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ{FFFE}ｎｏｒｔｈｗａｒｄ，　ｔｈｅ　Ｅｍｐｉｒｅ{FFFE}ｒｕｌｅｓ　ｔｈｅｓｅ　ｃｏｕｎｔｒｉｅｓ．{FFFE}{FCC0}Ｂｅｆｏｒｅ　ｙｏｕ　ｒｅａｃｈ　ｔｈｅ{FFFE}ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ　ｙｏｕ　ｍｕｓｔ{FFFE}ｆｉｇｈｔ　ｍａｎｙ　ｔｉｍｅｓ　ｏｖｅｒ．{FFFE}{FC30}{FFF8}{=00}{=09}{FFFF}
@@ -1601,7 +1601,7 @@
 {HDR:fffc00010001ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
 {FC51}Ｏｕｒ　Ｋｉｎｇ{FFFE}ｒｅｓｔｉｎｇ　ａｔ　ｐｒｅｓｅｎｔ．{FFFE}Ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ．{FFFE}Ｒｉｂｂｉｔ．{FC30}{FFFF}
 {FB00}{=01}{=7E}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｙｏｕ　ａｌｌ，　ｎｕｍｂｅｒ　ｏｎｅ．{FFFE}Ｎｕｍｂｅｒ　ｏｎｅ　ｓｔｒｏｎｇ　ｏｎｅｓ，{FFFE}Ｎｕｍｂｅｒ　ｏｎｅ　ｇｒｅａｔ．{FFFE}{FCC0}{FB01}Ｗｈａｔ　ｙｏｕ　ｓａｙ，　ｗｅ　ｄｏ．{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　兵士を　補充したい{FFFE}　情報を　聞きたい{FFFE}　何でもない{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=07}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
+{FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=07}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=09}{FB01}Ｗｈｉｃｈ　ｏｎｅ　ｙｏｕ　ｗａｎｔ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=06}{FFD5}{=00}{=08}{FFF8}{=00}{=04}{FFFF}
 {FB01}{FFEC}{=00}{=04}，{FFFE}Ａｌｌ　ｒｉｇｈｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}ＯＫ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FB01}{FFEB}{FFE4}{FFE3}Ｗｅ　ｌｉｋｅ　ｓｔｒｏｎｇ　ｏｎｅｓ．{FFFE}Ｓｔｒｏｎｇ　ｏｎｅｓ，　ｎｕｍｂｅｒ{FFFE}ｏｎｅ．　Ｔｈｅｓｅ　ｓｕｒｅｌｙ{FFFE}ｕｓｅｆｕｌ！　Ｒｉｂｂｉｔ．{FCC0}{FFF8}{=00}{=0A}{FFFF}
@@ -1987,15 +1987,15 @@
 {HDR:fffc00010004ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
 {FC51}Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ｏｕｔ{FFFE}ｈｕｎｔｉｎｇ　ａｔ　ｐｒｅｓｅｎｔ．{FFFE}Ｆｏｒｇｉｖｅ　ｍｅ，　ｂｕｔ{FFFE}ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ．{FC30}{FFFF}
 {FB00}{=01}{=7D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｏｈ，　{FFEC}{=00}{=00}．{FFFE}Ｗｅ　ｐｅｏｐｌｅ　ｏｆ　Ｌｅｃｌｅｒｃ{FFFE}ａｒｅ　ｏｎｅ　ａｎｄ　ａｌｌ{FFFE}ｇｒａｔｅｆｕｌ　ｔｏ　ｙｏｕ．{FCC0}{FFFE}Ｉｆ　ｙｏｕ　ｈａｖｅ　ａｎ　ｅｒｒａｎｄ，{FFFE}ｓｐｅａｋ　ｉｔ　ｆｒｅｅｌｙ．{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　兵士を　補充したい{FFFE}　情報を　聞きたい{FFFE}　何でもない{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=07}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
+{FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=07}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=09}{FB01}Ｗｈｉｃｈ　ｗｏｕｌｄ　ｓｕｉｔ　ｙｏｕ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=06}{FFD5}{=00}{=08}{FFF8}{=00}{=04}{FFFF}
-{FB01}{FFEC}{=00}{=04}で、{FFFE}よろしいかな？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルに{FFFE}なるが、よろしいかな？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
+{FB01}{FFEC}{=00}{=04}，{FFFE}ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｗｏｕｌｄ　ｔｈａｔ　ｓｕｉｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FB01}{FFEB}{FFE4}{FFE3}Ｔｈｅｓｅ　ｓｏｌｄｉｅｒｓ　ｗｅｒｅ{FFFE}ｒｅａｒｅｄ　ｉｎ　ｃｈｉｖａｌｒｙ．{FFFE}Ｔｈｅｙ　ｗｉｌｌ　ｗｉｔｈｏｕｔ　ｆａｉｌ{FFFE}ｂｅ　ｏｆ　ｈｅｌｐ　ｔｏ　ｙｏｕ！{FCC0}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｉ　ｓｅｅ．{FFFE}Ｙｏｕ　ｌｅａｖｅ　ｉｔ，　ｔｈｅｎ．{FFFE}{FCC0}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｆｏｒｇｉｖｅ　ｍｅ．　Ｗｅ　ｈａｖｅ{FFFE}ｏｎｌｙ　ｊｕｓｔ　ｗｏｎ　ｆｒｅｅ　ｏｆ{FFFE}ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｔｙｒａｎｎｙ．{FFFE}Ｌｉｔｔｌｅ　ｎｅｗｓ　ｒｅａｃｈｅｓ　ｕｓ．{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｈｍ？　Ｙｏｕ　ｓｅｅｍ　ａ　ｌｉｔｔｌｅ{FFFE}ｓｈｏｒｔ　ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｍｉｇｈｔ　ｙｏｕ　ｃｏｍｅ　ｂａｃｋ{FFFE}ａｎｏｔｈｅｒ　ｔｉｍｅ？{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｗｉｔｈ　ｔｈｉｓ　ｍａｎｙ，　ａｒｅ　ｙｏｕ{FFFE}ｎｏｔ　ｙｅｔ　ｃｏｎｔｅｎｔ？{FFFE}Ｈｏｗｅｖｅｒ，　ｔｈｅｒｅ　ｉｓ　ｎｏ{FFFE}ｒｏｏｍ　ｔｏ　ｒｅｃｒｕｉｔ　ｍｏｒｅ．{FC30}{FFF8}{=00}{=0A}{FFFF}
-{FB01}他にご用は　おありか？{FFFE}{FFF8}{=00}{=02}{FFFF}
+{FB01}Ａｎｏｔｈｅｒ　ｅｒｒａｎｄ？{FFFE}{FFF8}{=00}{=02}{FFFF}
 {FB01}Ｉ　ｓｅｅ．{FFFE}Ｄｏ　ｔａｋｅ　ｃａｒｅ，　ｔｈｅｎ！{FFFE}{FC30}{FFF5}{FFFF}
 {FFFF}
 {FFFF}
@@ -2374,12 +2374,12 @@
 {FFC2}{=00}{=02}{FB00}{=01}{=70}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅ　Ｋｉｎｇ　ｉｓ　ａｗａｙ{FFFE}ａｔ　ｐｒｅｓｅｎｔ．{FFFE}Ｃｏｍｅ　ａｇａｉｎ　ｌａｔｅｒ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFC2}{=00}{=02}{FB00}{=00}{=14}{=00}{=00}{FB00}{=00}{=00}{=00}{=01}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ，　{FFEC}{=00}{=00}．{FFFE}Ａｎｄ　ａｌｌ　ｔｈｅ　９ｔｈ　Ａｒｍｙ，{FFFE}ａｒｅ　ｙｏｕ　ｗｅｌｌ！！{FFFE}{FCC0}{FFF8}{=00}{=02}{FFFF}
 {FC51}{FB01}{FFF5}Ｎｏｗ，　ｗｈａｔ　ｉｓ　ｉｔ　ｔｏｄａｙ？{FFFE}{FFF8}{=00}{=03}{FFFF}
-{FFFA}{=00}{=00}　兵士を　補充したい{FFFE}　情報を　聞きたい{FFFE}　何でもない{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=04}{FFF6}{=00}{=01}{=00}{=0C}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
+{FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=04}{FFF6}{=00}{=01}{=00}{=0C}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=09}{FB01}Ｗｈｉｃｈ　ｄｏ　ｙｏｕ　ｗａｎｔ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=07}{FFD5}{=00}{=08}{FFF8}{=00}{=05}{FFFF}
-{FB01}{FFEC}{=00}{=04}だな？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルに{FFFE}なるが、いいか？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=06}{FFF6}{=00}{=01}{=00}{=07}{FFFF}
+{FB01}{FFEC}{=00}{=04}，　ｉｓ　ｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=06}{FFF6}{=00}{=01}{=00}{=07}{FFFF}
 {FB01}{FFEB}{FFE4}{FFE3}Ｔｈｉｓ　ｔｏｗｎ’ｓ　ｓｏｌｄｉｅｒｓ{FFFE}ｔｏｏ　ｂｕｒｎ　ｔｏ　ｏｖｅｒｔｈｒｏｗ{FFFE}Ｈｅｌｆｅｒ！！{FFFE}Ｔｈｅｙ　ｗｉｌｌ　ｓｕｒｅｌｙ　ｈｅｌｐ．{FCC0}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｗｈａｔ　ｉｓ　ｉｔ？{FFFE}Ｎｏｔ　ｔｏ　ｙｏｕｒ　ｌｉｋｉｎｇ？{FFFE}Ｗｅｌｌ，　ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0A}{FFFF}
-{FB01}おや？　ジュエルが{FFFE}足りない　ようだぞ。{FFFE}またの　機会に{FFFE}するがいい。{FC30}{FFF8}{=00}{=0A}{FFFF}
+{FB01}Ｏｈ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ{FFFE}ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ{FFFE}ｔｉｍｅ．{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｏｈ？　Ｙｏｕｒ　ｒａｎｋｓ{FFFE}ａｒｅ　ｆｕｌｌ．{FFFE}Ｔｈｅｒｅ　ｉｓ　ｎｏ　ｎｅｅｄ　ｔｏ{FFFE}ｒｅｃｒｕｉｔ　ａｎｙ　ｍｏｒｅ．{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FC51}{FB01}Ａｎｙ　ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=03}{FFFF}
 {FC51}{FB01}Ｉ　ｓｅｅ．　Ａｂｏｖｅ　ａｌｌ，{FFFE}ｄｏ　ｔａｋｅ　ｃａｒｅ！{FFFE}Ｉ　ａｗａｉｔ　ｇｏｏｄ　ｎｅｗｓ　ｏｆ{FFFE}Ｈｅｌｆｅｒ’ｓ　ｏｖｅｒｔｈｒｏｗ！{FC30}{FFF5}{FFC2}{=00}{=01}{FFFF}
@@ -2760,12 +2760,12 @@
 {FFFF}
 {FB00}{=01}{=7C}{=00}{=00}{FB00}{=00}{=00}{=00}{=01}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｌ　ｍｅｔ，　ｙｏｕｎｇ　ｏｎｅ．{FFFE}Ｔｈｉｓ　ｉｓ　ａｎ　ａｎｃｉｅｎｔ　ｔｏｗｎ{FFFE}ｇｕａｒｄｅｄ　ｂｙ　ｔｈｅ　ｇｏｄｓ{FFFE}ｏｆ　Ｒｅｅｓｅ．{FCC0}{FFF8}{=00}{=02}{FFFF}
 {FC51}{FB01}Ｎｏｗ，　ｙｏｕｒ　ｅｒｒａｎｄ？{FFFE}{FFF8}{=00}{=03}{FFFF}
-{FFFA}{=00}{=00}　兵士を　補充したい{FFFE}　情報を　聞きたい{FFFE}　何でもない{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=04}{FFF6}{=00}{=01}{=00}{=0C}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
+{FFFA}{=00}{=00}　Ｒｅｃｒｕｉｔ　ｓｏｌｄｉｅｒｓ{FFFE}　Ａｓｋ　ｆｏｒ　ｉｎｆｏｒｍａｔｉｏｎ{FFFE}　Ｎｏｔｈｉｎｇ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=04}{FFF6}{=00}{=01}{=00}{=0C}{FFF6}{=00}{=02}{=00}{=0B}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=09}{FB01}Ｗｈｉｃｈ　ｗｏｕｌｄ　ｂｅ　ｂｅｓｔ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=05}{FFF6}{=00}{=00}{=00}{=07}{FFD5}{=00}{=08}{FFF8}{=00}{=05}{FFFF}
-{FB01}{FFEC}{=00}{=04}だな？{FFFE}{FCC0}{FFEC}{=00}{=01}ジュエルに{FFFE}なるが、いいか？{FFFE}{FFFA}{=00}{=00}{FFE5}　はい{FFFE}　いいえ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=06}{FFF6}{=00}{=01}{=00}{=07}{FFFF}
+{FB01}{FFEC}{=00}{=04}，　ｉｓ　ｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=06}{FFF6}{=00}{=01}{=00}{=07}{FFFF}
 {FB01}{FFEB}{FFE4}{FFE3}Ｔｒｅａｔ　ｔｈｅｍ　ｗｅｌｌ．{FCC0}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｎｏｔ　ｔｏ　ｙｏｕｒ　ｌｉｋｉｎｇ？{FFFE}Ｗｅｌｌ，　ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0A}{FFFF}
-{FB01}おや？　ジュエルが{FFFE}足りない　ようだぞ。{FFFE}またの　機会に{FFFE}するがいい。{FC30}{FFF8}{=00}{=0A}{FFFF}
+{FB01}Ｏｈ？　Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ{FFFE}ｏｆ　Ｊｅｗｅｌｓ．{FFFE}Ｃｏｍｅ　ｂａｃｋ　ａｎｏｔｈｅｒ{FFFE}ｔｉｍｅ．{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FB01}Ｏｈ？　Ｙｏｕｒ　ｒａｎｋｓ{FFFE}ｓｅｅｍ　ｔｏ　ｂｅ　ｆｕｌｌ．{FFFE}Ｔｈｅｒｅ　ｉｓ　ｎｏ　ｎｅｅｄ　ｔｏ{FFFE}ｒｅｃｒｕｉｔ　ａｎｙ　ｍｏｒｅ．{FC30}{FFF8}{=00}{=0A}{FFFF}
 {FC51}{FB01}Ａｎｙ　ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=03}{FFFF}
 {FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｇｏｄｓ　ｏｆ　Ｒｅｅｓｅ，{FFFE}ｂｌｅｓｓ　ｔｈｅｓｅ　ｏｎｅｓ！{FFFE}Ｉ　ｔａｋｅ　ｍｙ　ｌｅａｖｅ，　ｔｈｅｎ．{FC30}{FFF5}{FFFF}
@@ -3165,20 +3165,20 @@
 
 === BANK 12 @ 0x078000  hdr=yes
 {HDR:fffc00020000000200010030ffffffff0034fffc0002000000020001ffffffffffff0022fffc0000000000020001ffffffffffff0002fffc0000000000030001ffffffffffff0002fffc00000000000d0001ffffffffffff0002fffc00000000000d0001ffffffffffff0002fffc00000000000b0001ffffffffffff0001fffc000000000010ffffffffffffffff0001fffc000000000011ffffffffffffffff0001fffc000000000012ffffffffffffffff0001fffc0000000000040001ffffffffffff0012fffc0000000000070001ffffffffffff0012fffc00000000000c0001ffffffffffff0012fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffc0002000000040001002bffffffff0012fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、棚卸しのため{FFFE}　　　　休業いたします」{FC30}{FFFF}
+{FC51}Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．{FCC0}{FB01}{FFFE}“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　　　ｓｔｏｃｋｔａｋｉｎｇ”{FC30}{FFFF}
 {FB00}{=01}{=55}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ！！{FFFE}{FCC0}{FB01}Ｗｈａｔ’ｓ　ｙｏｕｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=03}{FFFF}
 {FB00}{=01}{=53}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ！！{FFFE}{FCC0}{FB01}Ｗｈａｔ’ｓ　ｙｏｕｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=03}{FFFF}
 {FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=04}{FFF6}{=00}{=01}{=00}{=0A}{FFF6}{=00}{=02}{=00}{=11}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=09}{FC51}{FB01}Ｗｈｉｃｈ　ｏｎｅ　ｗｉｌｌ　ｉｔ　ｂｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFE0}{=00}{=00}{=00}{=10}{FFE0}{=00}{=70}{=00}{=32}{FFF8}{=00}{=05}{FFFF}
 {FFD5}{=00}{=08}{FC51}{FB01}{FFEC}{=00}{=03}，　ｔｈｅｎ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}Ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=06}{FFF6}{=00}{=01}{=00}{=07}{FFFF}
 {FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｍａｎｙ　ｔｈａｎｋｓ！！{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
-{FC51}{FB01}そうかい。{FFFE}そりゃ、残念だな。{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
 {FB01}Ｏｈ？{FFFE}Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}ｍｏｎｅｙ．{FCC0}{FFF8}{=00}{=10}{FFFF}
 {FB01}Ｏｈ？　Ｙｏｕｒ　ｐａｃｋ{FFFE}ｌｏｏｋｓ　ｆｕｌｌ．{FCC0}{FFFE}Ｓｅｌｌ　ｏｒ　ｄｉｓｃａｒｄ　ｗｈａｔ{FFFE}ｙｏｕ　ｄｏｎ’ｔ　ｎｅｅｄ，　ａｎｄ{FFFE}ｃｏｍｅ　ａｇａｉｎ，　ｗｉｌｌ　ｙｏｕ．{FFFE}{FC30}{FFF8}{=00}{=10}{FFFF}
 {FFE6}{FFF6}{=00}{=C8}{=00}{=0F}{FC51}{FB01}Ｗｈｉｃｈ　ａｒｔｉｃｌｅ　ｗｉｌｌ　ｙｏｕ{FFFE}ｓｅｌｌ　ｍｅ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=10}{FFC0}{=00}{=01}{=00}{=0E}{FFF8}{=00}{=0B}{FFFF}
 {FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｔｈａｔ　ｏｎｅ？{FFFE}{FCC0}Ｆｏｒ　ｔｈａｔ　ｏｎｅ，{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ　ｉｓ　ｗｈａｔ{FFFE}Ｉ’ｄ　ｇｉｖｅ．　Ｈｏｗ’ｓ　ｔｈａｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0C}{FFF6}{=00}{=01}{=00}{=0D}{FFFF}
 {FC51}{FB01}{FFE4}{FFE7}{FFEA}Ｍａｎｙ　ｔｈａｎｋｓ！！{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
-{FC51}{FB01}そうかい。{FFFE}そりゃ、残念だな。{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｔｈａｔ’ｓ　ａ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=10}{FFFF}
 {FC51}{FB01}Ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ　ｔｈａｔ{FFFE}ｏｎｅ，　Ｉ　ｒｅｃｋｏｎ．{FFFE}Ｌｅａｖｅ　ｉｔ　ａｌｏｎｅ．{FCC0}{FFF8}{=00}{=10}{FFFF}
 {FB01}Ｏｈ？{FFFE}Ｙｏｕ’ｖｅ　ｎｏｔｈｉｎｇ　ｔｏ　ｓｅｌｌ，{FFFE}ｉｔ　ｓｅｅｍｓ？{FCC0}{FFF8}{=00}{=10}{FFFF}
 {FC51}{FB01}Ａｎｙｔｈｉｎｇ　ｅｌｓｅ？{FFFE}{FFF8}{=00}{=03}{FFFF}
@@ -3943,13 +3943,13 @@
 {FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}Ｗｈｉｃｈ　ｏｎｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=01}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
 {FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｔｈａｔ　ｏｎｅ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}Ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｍａｎｙ　ｔｈａｎｋｓ，　Ｒｉｂｂｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}ソウカ。{FFFE}シカタナイナ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｒｉｂｂｉｔ？{FFFE}Ｙｏｕ　ｓｈｏｒｔ　ｏｆ　ｍｏｎｅｙ，{FFFE}ｉｔ　ｓｅｅｍｓ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｙｏｕ　ｅｘｔｒａｖａｇａｎｔ．{FFFE}Ｃａｒｒｙ　ｎｏ　ｍｏｒｅ．{FFFE}Ｒｉｂｂｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FFE6}{FFF6}{=00}{=C8}{=00}{=0E}{FC51}{FB01}Ｗｈａｔ　ｙｏｕ　ｓｅｌｌ　ｍｅ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=0F}{FFC0}{=00}{=01}{=00}{=0D}{FFF8}{=00}{=0A}{FFFF}
 {FC51}{FB01}{FFEC}{=00}{=03}，{FFFE}ｔｈａｔ　ｏｎｅ？{FFFE}{FCC0}Ｉｎ　ｔｈａｔ　ｃａｓｅ，{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FFFE}Ｉ　ｔａｋｅ　ｉｔ．　Ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0B}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
 {FC51}{FB01}{FFE4}{FFE7}{FFEA}Ｍａｎｙ　ｔｈａｎｋｓ，　Ｒｉｂｂｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}ソウカ。{FFFE}シカタナイナ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FC51}{FB01}Ｔｈａｔ　ｏｎｅ，　ｌｅａｖｅ　ｉｔ．{FFFE}Ｂｅｔｔｅｒ　ｎｏｔ　ｔｏ　ｓｅｌｌ．{FFFE}Ｒｉｂｂｉｔ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｒｉｂｂｉｔ？{FFFE}Ｎｏｔｈｉｎｇ　ｔｏ　ｓｅｌｌ．{FFFE}Ｒｉｂｂｉｔ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FC51}{FB01}Ｏｔｈｅｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=02}{FFFF}
@@ -4323,19 +4323,19 @@
 
 === BANK 15 @ 0x096000  hdr=yes
 {HDR:fffc00000000ffff0001ffff00b3ffff0001fffcffffffffffffffffffffffffffff0011fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、棚卸しのため{FFFE}　　　　休業いたします」{FC30}{FFFF}
+{FC51}Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．{FCC0}{FB01}{FFFE}“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　　　ｓｔｏｃｋｔａｋｉｎｇ”{FC30}{FFFF}
 {FB00}{=01}{=56}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ．{FFFE}{FCC0}{FB01}Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？{FFFE}{FFF8}{=00}{=02}{FFFF}
 {FFFA}{=00}{=00}　Ｂｕｙ　ａｎ　ｉｔｅｍ{FFFE}　Ｓｅｌｌ　ａｎ　ｉｔｅｍ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=03}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=09}{FFF6}{=00}{=02}{=00}{=10}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=08}{FC51}{FB01}Ｗｈｉｃｈ　ｏｎｅ　ｗｉｌｌ　ｉｔ　ｂｅ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0F}{FFF8}{=00}{=04}{FFFF}
 {FFD5}{=00}{=07}{FC51}{FB01}{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=06}{FFFF}
 {FC51}{FB01}{FFE4}{FFE8}{FFEB}Ｔｈａｎｋ　ｙｏｕ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}そうなの？{FFFE}残念だわ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉｓ　ｔｈａｔ　ｓｏ？{FFFE}Ｗｈａｔ　ａ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｍｙ？{FFFE}Ｙｏｕ　ｌｏｏｋ　ｓｈｏｒｔ　ｏｆ{FFFE}ｍｏｎｅｙ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｂｕｔ，　ｉｔ　ｌｏｏｋｓ　ｌｉｋｅ　ｙｏｕ{FFFE}ｃａｎ’ｔ　ｃａｒｒｙ　ａｎｙ　ｍｏｒｅ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FFE6}{FFF6}{=00}{=C8}{=00}{=0E}{FC51}{FB01}Ｗｈａｔ　ｗｉｌｌ　ｙｏｕ　ｓｅｌｌ　ｍｅ？{FFFE}{FFFA}{=00}{=00}{FFFA}{=00}{=05}{FFFB}{=00}{=07}{FFF6}{=00}{=00}{=00}{=0F}{FFC0}{=00}{=01}{=00}{=0D}{FFF8}{=00}{=0A}{FFFF}
 {FC51}{FB01}{FFEC}{=00}{=03}，　ｉｓ　ｉｔ？{FFFE}Ｅｒｍ，　ｉｎ　ｔｈａｔ　ｃａｓｅ{FFFE}Ｉ’ｌｌ　ｔａｋｅ　ｉｔ　ｆｏｒ{FFFE}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ．{FCC0}{FB01}Ｉｓ　ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=0B}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
 {FC51}{FB01}{FFE4}{FFE7}{FFEA}Ｔｈａｎｋ　ｙｏｕ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
-{FC51}{FB01}そうなの？{FFFE}残念だわ。{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
+{FC51}{FB01}Ｉｓ　ｔｈａｔ　ｓｏ？{FFFE}Ｗｈａｔ　ａ　ｓｈａｍｅ．{FFFE}{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FC51}{FB01}Ｉ’ｍ　ｓｏｒｒｙ．{FFFE}Ｗｅ　ｄｏｎ’ｔ　ｄｅａｌ　ｉｎ{FFFE}ｔｈａｔ　ｈｅｒｅ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FB01}Ｂｕｔ，　ｙｏｕ　ｄｏｎ’ｔ　ｓｅｅｍ{FFFE}ｔｏ　ｈａｖｅ　ａｎｙｔｈｉｎｇ{FFFE}Ｉ　ｃｏｕｌｄ　ｂｕｙ．{FCC0}{FFF8}{=00}{=0F}{FFFF}
 {FC51}{FB01}Ａｎｙｔｈｉｎｇ　ｅｌｓｅ？{FFFE}{FFF8}{=00}{=02}{FFFF}
@@ -4709,7 +4709,7 @@
 
 === BANK 16 @ 0x0A0000  hdr=yes
 {HDR:fffc00040000000400010049ffffffff0013fffc00020000000400010048ffffffff0012fffc0002000000040001ffff00a9ffff000ffffc00000000000d0001ffffffffffff0001fffc00000000ffff0001ffffffffffff0002fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、仕入れのため{FFFE}　　　　休業いたします」{FC30}{FFFF}
+{FC51}Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．{FCC0}{FB01}{FFFE}“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　　　ｒｅｓｔｏｃｋｉｎｇ”{FC30}{FFFF}
 {FB00}{=01}{=59}{=00}{=00}{FFF8}{=00}{=03}{FFFF}
 {FB00}{=01}{=5A}{=00}{=00}{FFF8}{=00}{=03}{FFFF}
 {FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ．{FFFE}Ｈｅｒｅ，{FFFE}ｗｅ　ｄｅａｌ　ｉｎ　ｃｕｔｅ{FFFE}ｍｏｎｓｔｅｒｓ．{FCC0}{FB01}Ｍａｙ　Ｉ　ａｓｋ　ｙｏｕｒ　ｅｒｒａｎｄ？{FFFE}{FFF8}{=00}{=04}{FFFF}
@@ -5095,9 +5095,9 @@
 
 === BANK 17 @ 0x0AA000  hdr=yes
 {HDR:fffc00000000ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}貼り紙がしてある・・・{FCC0}{FB01}{FFFE}「本日、仕入れのため{FFFE}　　　　休業いたします」{FC30}{FFFF}
+{FC51}Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．{FCC0}{FB01}{FFFE}“Ｃｌｏｓｅｄ　ｔｏｄａｙ　ｆｏｒ{FFFE}　　　　ｒｅｓｔｏｃｋｉｎｇ”{FC30}{FFFF}
 {FB00}{=01}{=59}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｗｅｌｃｏｍｅ！！{FFFE}{FCC0}{FB01}Ｗｈａｔ’ｓ　ｙｏｕｒ　ｂｕｓｉｎｅｓｓ？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　モンスターを買う{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａ　ｍｏｎｓｔｅｒ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=0B}{FC51}{FB01}Ｗｈｉｃｈ　ｏｎｅ　ｄｏ　ｙｏｕ　ｗａｎｔ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=03}{FFF6}{=00}{=00}{=00}{=09}{FFD5}{=00}{=0A}{FFF8}{=00}{=04}{FFFF}
 {FC51}{FB01}{FFEC}{=00}{=04}，　ｉｓ　ｉｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｔｈａｔ　ａｌｌ　ｒｉｇｈｔ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=08}{FFFF}
 {FFF8}{=00}{=07}{FFFF}
@@ -5483,7 +5483,7 @@
 {HDR:fffc00000000ffff0001000cffffffff0001fffc0001000000040002ffffffffffff0015fffc0002000000040001ffffffffffff001afffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
 {FFC2}{=00}{=16}{FC51}Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．{FFFE}{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFC2}{=00}{=16}{FB00}{=00}{=24}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FFF5}{FC51}Ｍｙ，　ｗｅｌｃｏｍｅ．{FFFE}Ｔｈｉｓ　ｉｓ　ａ　ｓｈｏｐ　ｓｅｌｌｉｎｇ{FFFE}ｄａｒｌｉｎｇ　ｕｎｄｅａｄ{FFFE}ｍｏｎｓｔｅｒｓ．{FCC0}{FB01}Ｗｈａｔ　ｉｓ　ｙｏｕｒ　ｎｅｅｄ？{FFFE}{FFF8}{=00}{=02}{FFFF}
-{FFFA}{=00}{=00}　モンスターを買う{FFFE}　店を出る{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
+{FFFA}{=00}{=00}　Ｂｕｙ　ａ　ｍｏｎｓｔｅｒ{FFFE}　Ｌｅａｖｅ　ｔｈｅ　ｓｈｏｐ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=0C}{FFFF}
 {FFDF}{FFE2}{=00}{=3B}{=00}{=0B}{FC51}{FB01}Ｗｈｉｃｈ　ｌｉｔｔｌｅ　ｏｎｅ　ｉｓ　ｉｔ？{FFFE}{FFFA}{=00}{=00}{FFFB}{=00}{=04}{FFF6}{=00}{=00}{=00}{=09}{FFD5}{=00}{=0A}{FFF8}{=00}{=04}{FFFF}
 {FC51}{FB01}{FFEC}{=00}{=04}，{FFFE}ａｌｌ　ｒｉｇｈｔ？{FFFE}{FCC0}{FFEC}{=00}{=01}　Ｊｅｗｅｌｓ，{FFFE}ｔｈｏｕｇｈ？{FFFE}{FFFA}{=00}{=00}{FFE5}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=05}{FFF6}{=00}{=01}{=00}{=08}{FFFF}
 {FFF8}{=00}{=07}{FFFF}
@@ -5503,15 +5503,15 @@
 {FFE6}{FFF6}{=00}{=00}{=00}{=1F}{FC51}{FB01}Ｓｏｍｅｔｈｉｎｇ　ｇｌｉｎｔｓ{FFFE}ｉｎ　ｔｈｅ　ｇｌｏｏｍ．{FCC0}{FFFE}Ｙｏｕ　ｈａｖｅ　ｆｏｕｎｄ　ａ{FFFE}“Ｄａｎｃｅｒ’ｓ　Ｒｉｎｇ”！！{FFFE}{FC30}{FFDA}{=00}{=95}{FFF2}{=00}{=2B}{FFFF}
 {FC51}Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．．{FFFE}Ｂｙ　ｔｈｅ　ｌｏｏｋ　ｏｆ　ｉｔ{FFFE}ｔｈｅｒｅ　ｉｓ　ｎｏｔｈｉｎｇ　ｈｅｒｅ．{FC30}{FFFF}
 {FFC2}{=00}{=16}{FB00}{=00}{=06}{=00}{=00}{FB00}{=00}{=EB}{=00}{=01}{FC51}Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．{FCC0}{FFF3}{=00}{=2B}{=00}{=19}{FB01}{FCB0}{=00}{=01}{=00}{=01}Ｓａｙ，　{FFEC}{=00}{=00}，{FFFE}ｔｈｉｓ　ｐｌａｃｅ　ｉｓ　ｒｅａｌｌｙ{FFFE}ｅｅｒｉｅ　ｓｏｍｅｈｏｗ．．．．{FFFE}{FCC0}Ｓｈａｌｌ　ｗｅ　ｔｕｒｎ　ｂａｃｋ？{FFFE}{FFFA}{=00}{=00}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFFF}
-{FCB0}{=00}{=00}{=00}{=01}{FB01}うんうん、そーよね。{FFFE}君子、あやうきに{FFFE}ちかよらずって{FFFE}やつよね。{FC30}{FFC2}{=00}{=01}{FFFF}
+{FCB0}{=00}{=00}{=00}{=01}{FB01}Ｙｅｓ，　ｙｅｓ，　ｔｈａｔ’ｓ　ｔｒｕｅ．{FFFE}Ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ{FFFE}ｏｆ　ｈａｒｍ’ｓ　ｗａｙ，　ｔｈａｔ’ｓ{FFFE}ｔｈｅ　ｓａｙｉｎｇ，　ｉｓｎ’ｔ　ｉｔ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=1F}{FB01}Ｕｇｈ．．．．{FFFE}Ｉ　ｈａｄ　ａ　ｆｅｅｌｉｎｇ　ｙｏｕ{FFFE}ｗｏｕｌｄ　ａｎｓｗｅｒ　ｔｈａｔ．．．．{FFFE}{FCC0}Ｃｏｍｒａｄｅｓ　ｗｉｔｈ　ｓｔｒｏｎｇ{FFFE}ｃｕｒｉｏｓｉｔｙ　ｂｒｉｎｇ　ｗｏｅ．{FCC0}{FB01}{FCB0}{=00}{=00}{=00}{=01}Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}Ｌｅｔ’ｓ　ｐｕｌｌ　ｏｕｒｓｅｌｖｅｓ{FFFE}ｔｏｇｅｔｈｅｒ　ａｎｄ　ｓｅａｒｃｈ．{FFFE}{FCC0}{FFFD}{FC51}{FFFA}{=00}{=04}．．．．．．．{FFFA}{=00}{=00}{FCC0}{FFF3}{=00}{=20}{=00}{=18}{FB01}{FCB0}{=00}{=01}{=00}{=01}Ｔｈｅｒｅ　ｄｏｅｓ　ｎｏｔ　ｓｅｅｍ{FFFE}ｔｏ　ｂｅ　ｍｕｃｈ　ｈｅｒｅ{FFFE}ｗｏｒｔｈ　ｈａｖｉｎｇ．{FFFE}{FCC0}Ｓｏ　ｍａｎｙ　ｄｏｏｒｓ　ａｒｅ{FFFE}ｌｏｃｋｅｄ　ｔｈａｔ　ｉｆ　ａｎｙｔｈｉｎｇ{FFFE}ｉｓ　ｈｅｒｅ，　Ｉ　ｔｈｉｎｋ{FFFE}ｉｔ’ｓ　ｂｅｈｉｎｄ　ｔｈｅｍ．{FCC0}{FFFE}Ｆｏｒ　ｎｏｗ，{FFFE}ｎｏｔｈｉｎｇ　ｃａｎ　ｂｅ　ｄｏｎｅ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FB01}{FFEC}{=00}{=00}，{FFFE}ａ　ｒｉｎｇ　ｗａｓ　ｌｙｉｎｇ　ｈｅｒｅ．{FFFE}{FCC0}Ｍｙ？　Ｔｈｉｓ　ｒｉｎｇ　ｈａｓ{FFFE}ａ　ｓｔａｒ　ｅｍｂｌｅｍ．．．．{FFFE}Ｔｈｉｓ　ｉｓ　ｓｕｒｅｌｙ　ａ{FFFE}ｄａｎｃｅｒ’ｓ　ｒｉｎｇ！{FCC0}{FFFE}Ｗｅ　ｍｕｓｔ　ｈｕｒｒｙ　ｔｏ{FFFE}Ｌｉｍｒｏｓｅ　ａｎｄ　ｒｅｔｕｒｎ　ｉｔ！{FC30}{FFDA}{=00}{=95}{FFF2}{=00}{=2B}{FB01}Ｎｏｔｅ：　ｔｈｉｓ　ｅｖｅｎｔ　ｄｏｅｓ{FFFE}　　ｎｏｔ　ｈａｎｇ　ｔｏｇｅｔｈｅｒ　ａｓ{FFFE}　　ｉｔ　ｓｔａｎｄｓ，　ｓｏ　ｗｅ{FFFE}　　ｓｈａｌｌ　ｆｉｘ　ｉｔ　ｓｈｏｒｔｌｙ．{FC30}{FFC2}{=00}{=01}{FFFF}
-{FB01}{FCB0}{=00}{=00}{=00}{=01}ここは、前に{FFFE}１度　しらべたから、{FFFE}何もないと思うな。{FFFE}戻りましょ。{FC30}{FFC2}{=00}{=01}{FFFF}
+{FB01}{FCB0}{=00}{=00}{=00}{=01}Ｗｅ　ｓｅａｒｃｈｅｄ　ｈｅｒｅ{FFFE}ｏｎｃｅ　ｂｅｆｏｒｅ，　ｓｏ　Ｉ　ｔｈｉｎｋ{FFFE}ｔｈｅｒｅ　ｉｓ　ｎｏｔｈｉｎｇ．{FFFE}Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFC2}{=00}{=16}{FB00}{=00}{=06}{=00}{=00}{FB00}{=00}{=EB}{=00}{=01}{FC51}Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｓｉｌｅｎｃｅ．．．{FCC0}{FFF3}{=00}{=2B}{=00}{=1E}{FB01}{FCB0}{=00}{=01}{=00}{=01}Ｓａｙ，　{FFEC}{=00}{=00}，{FFFE}ｔｈｉｓ　ｐｌａｃｅ　ｉｓ　ｒｅａｌｌｙ{FFFE}ｅｅｒｉｅ　ｓｏｍｅｈｏｗ．．．．{FFFE}{FCC0}Ｓｈａｌｌ　ｗｅ　ｔｕｒｎ　ｂａｃｋ？{FFFE}{FFFA}{=00}{=00}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=1B}{FFF6}{=00}{=01}{=00}{=1C}{FFFF}
-{FCB0}{=00}{=00}{=00}{=01}{FB01}うんうん、そーよね。{FFFE}君子、あやうきに{FFFE}ちかよらずって{FFFE}やつよね。{FC30}{FFC2}{=00}{=01}{FFFF}
+{FCB0}{=00}{=00}{=00}{=01}{FB01}Ｙｅｓ，　ｙｅｓ，　ｔｈａｔ’ｓ　ｔｒｕｅ．{FFFE}Ｔｈｅ　ｗｉｓｅ　ｍａｎ　ｋｅｅｐｓ　ｏｕｔ{FFFE}ｏｆ　ｈａｒｍ’ｓ　ｗａｙ，　ｔｈａｔ’ｓ{FFFE}ｔｈｅ　ｓａｙｉｎｇ，　ｉｓｎ’ｔ　ｉｔ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFE6}{FFF6}{=00}{=00}{=00}{=1F}{FB01}Ｕｇｈ．．．．{FFFE}Ｉ　ｈａｄ　ａ　ｆｅｅｌｉｎｇ　ｙｏｕ{FFFE}ｗｏｕｌｄ　ａｎｓｗｅｒ　ｔｈａｔ．．．．{FFFE}{FCC0}Ｃｏｍｒａｄｅｓ　ｗｉｔｈ　ｓｔｒｏｎｇ{FFFE}ｃｕｒｉｏｓｉｔｙ　ｂｒｉｎｇ　ｗｏｅ．{FCC0}{FB01}{FCB0}{=00}{=00}{=00}{=01}Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}Ｌｅｔ’ｓ　ｐｕｌｌ　ｏｕｒｓｅｌｖｅｓ{FFFE}ｔｏｇｅｔｈｅｒ　ａｎｄ　ｓｅａｒｃｈ．{FFFE}{FCC0}{FFFD}{FC51}{FFFA}{=00}{=04}．．．．．．．{FFFA}{=00}{=00}{FCC0}{FFF8}{=00}{=1D}{FB01}{FCB0}{=00}{=01}{=00}{=01}Ｔｈｅｒｅ　ｄｏｅｓ　ｎｏｔ　ｓｅｅｍ{FFFE}ｔｏ　ｂｅ　ｍｕｃｈ　ｈｅｒｅ{FFFE}ｗｏｒｔｈ　ｈａｖｉｎｇ．{FFFE}{FCC0}Ｓｏ　ｍａｎｙ　ｄｏｏｒｓ　ａｒｅ{FFFE}ｌｏｃｋｅｄ　ｔｈａｔ　ｉｆ　ａｎｙｔｈｉｎｇ{FFFE}ｉｓ　ｈｅｒｅ，　Ｉ　ｔｈｉｎｋ{FFFE}ｉｔ’ｓ　ｂｅｈｉｎｄ　ｔｈｅｍ．{FCC0}{FFFE}Ｆｏｒ　ｎｏｗ，{FFFE}ｎｏｔｈｉｎｇ　ｃａｎ　ｂｅ　ｄｏｎｅ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FB01}{FCB0}{=00}{=01}{=00}{=01}{FFEC}{=00}{=00}，{FFFE}ａ　ｒｉｎｇ　ｗａｓ　ｌｙｉｎｇ　ｈｅｒｅ．{FFFE}{FCC0}Ｉｔ’ｓ　ａ　“Ｄａｒｋ　Ｒｉｎｇ”．{FFFE}Ｌｅｔ’ｓ　ｔａｋｅ　ｉｔ．{FC30}{FFDA}{=00}{=85}{FFF2}{=00}{=2B}{FFC2}{=00}{=01}{FFFF}
-{FB01}{FCB0}{=00}{=00}{=00}{=01}ここは、前に{FFFE}１度　しらべたから、{FFFE}何もないと思うな。{FFFE}戻りましょ。{FC30}{FFC2}{=00}{=01}{FFFF}
+{FB01}{FCB0}{=00}{=00}{=00}{=01}Ｗｅ　ｓｅａｒｃｈｅｄ　ｈｅｒｅ{FFFE}ｏｎｃｅ　ｂｅｆｏｒｅ，　ｓｏ　Ｉ　ｔｈｉｎｋ{FFFE}ｔｈｅｒｅ　ｉｓ　ｎｏｔｈｉｎｇ．{FFFE}Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FB00}{=00}{=06}{=00}{=01}{FCB0}{=00}{=01}{=00}{=01}{FC51}{FB01}Ｍｙ，　ｙｏｕｒ　ｉｔｅｍｓ　ａｒｅ{FFFE}ｆｕｌｌ．{FFFE}Ｌｅｔ’ｓ　ｃｏｍｅ　ａｇａｉｎ　ｏｎｃｅ{FFFE}ｙｏｕ’ｖｅ　ｃｕｔ　ｔｈｅｍ　ｄｏｗｎ．{FC30}{FFC2}{=00}{=01}{FFFF}
 {FFFF}
 {FFFF}
@@ -6253,7 +6253,7 @@
 
 === BANK 20 @ 0x0C8000  hdr=yes
 {HDR:fffc00040000000e00010051ffffffff0036fffc00040000000e00010050ffffffff0058fffc00020000000e00010051ffffffff0024fffc00020000000e00010050ffffffff0057fffc00040000000e0001ffffffffffff0036fffc00040000000f0001ffffffffffff0036fffc00020000000e0001ffffffffffff0024fffc00020000000f0001ffffffffffff0024fffc0000000400010000ffffffffffff0054fffc0000000000010001ffffffffffff0001fffc00040000000200010054ffffffff0039fffc00040000000200010053ffffffff005afffc00020000000200010054ffffffff0028fffc00020000000200010053ffffffff0059fffc0004000000020001ffffffffffff0039fffc0002000000020001ffffffffffff0028fffc0000000000020001ffffffffffff0009fffc0004000000030001ffffffffffff003cfffc0002000300030001ffffffffffff004cfffc0002000000030001ffffffffffff002bfffc0000000000030001ffffffffffff000cfffc00040000000400010052ffffffff003ffffc00020000000400010052ffffffff0032fffc0002000000040001005100b5ffff0050fffc0004000000040001ffffffffffff003ffffc0002000000040001ffffffffffff0032fffc0000000000040001ffffffffffff0011fffc0001000000070001ffffffffffff0015fffc0001000000090001004dffffffff001ffffc00010004000900010039ffffffff0020fffc0001000400090001ffffffffffff001ffffc00010000000a0001ffffffffffff0021fffc00030000000b0001ffffffffffff0042fffc0003000000100001ffffffffffff0042fffc0003000000110001ffffffffffff0042fffc0003000000120001ffffffffffff0042fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}広場には　誰もいない。{FFFE}やわらかな　木漏れ日の中{FFFE}小鳥の　さえずりが{FFFE}響いている・・・{FC30}{FFFF}
+{FC51}Ｔｈｅ　ｓｑｕａｒｅ　ｉｓ　ｅｍｐｔｙ．{FFFE}Ａｍｉｄ　ｓｏｆｔ　ｄａｐｐｌｅｄ{FFFE}ｓｕｎｌｉｇｈｔ，　ｓｍａｌｌ　ｂｉｒｄｓ’{FFFE}ｓｏｎｇ　ｒｉｎｇｓ　ｏｕｔ．．．{FC30}{FFFF}
 {FFF3}{=00}{=40}{=00}{=06}{FFF8}{=00}{=02}{FFFF}
 {FB00}{=01}{=61}{=00}{=01}{FCB0}{=00}{=01}{=00}{=01}{FC51}Ｓａｙ，　ｈａｖｅ　ｙｏｕ　ｂｅｅｎ　ｔｏ{FFFE}ｔｈｉｓ　ｔｏｗｎ’ｓ　ｃａｓｉｎｏ　ｙｅｔ？{FFFE}{FFFA}{=00}{=00}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=03}{FFF6}{=00}{=01}{=00}{=04}{FFFF}
 {FB01}Ｉ　ｄｏ　ｗａｎｔ　ｔｈａｔ　ｐｒｉｚｅ，{FFFE}ｔｈｅ　“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”，{FFFE}ｂｕｔ　ｎｏ　ｍａｔｔｅｒ　ｗｈａｔ{FFFE}Ｉ　ｃａｎ’ｔ　ｗｉｎ　ｉｔ．{FC30}{FFF2}{=00}{=40}{FFFF}
@@ -6271,7 +6271,7 @@
 {FB00}{=01}{=67}{=00}{=02}{FCB0}{=00}{=02}{=00}{=01}{FC51}Ａｆｔｅｒ　ｔｅｎ　ｙｅａｒｓ{FFFE}ｗａｒ　ｈａｓ　ｂｅｇｕｎ{FFFE}ａｇａｉｎ，　ｔｈｅｙ　ｓａｙ．{FFFE}{FCC0}Ｂｕｔ，　ｔｈｉｓ　ｃａｓｔｌｅ　ｔｏｗｎ{FFFE}ｉｓ　ｇｕａｒｄｅｄ　ｂｙ{FFFE}Ｂａｕｅｒ’ｓ　ｆｏｒｔ，　ｓｏ{FFFE}ｉｔ　ｉｓ　ｓａｆｅ．{FC30}{FFF2}{=00}{=40}{FFFF}
 {FB00}{=01}{=64}{=00}{=03}{FCB0}{=00}{=03}{=00}{=01}{FC51}Ｂｅａｔ　ｅｎｅｍｙ　ｕｎｉｔｓ　ａｎｄ{FFFE}ｙｏｕｒ　“Ｍｅｒｉｔ　Ｌｅｖｅｌ”{FFFE}ｇｏｅｓ　ｕｐ．{FCC0}{FFFE}Ａｓ　ｙｏｕｒ　Ｍｅｒｉｔ　Ｌｅｖｅｌ{FFFE}ｒｉｓｅｓ，　ｓｐｅｃｉａｌ　ａｔｔａｃｋｓ{FFFE}ｃｏｍｅ　ｅａｓｉｅｒ，　ａｎｄ　ｓｏ{FFFE}ｄｏ　ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ．{FCC0}{FFFE}Ｓｏ，{FFFE}ｐｏｕｒｉｎｇ　Ｊｅｗｅｌｓ　ｉｎ{FFFE}ｔｏ　ｒａｉｓｅ　ｙｏｕｒ　ｌｅｖｅｌ{FFFE}ｍａｔｔｅｒｓ，　ｙｅｓ，{FCC0}{FFFE}ｂｕｔ　ｅａｒｎｉｎｇ　Ｍｅｒｉｔ　ｉｎ{FFFE}ｒｅａｌ　ｂａｔｔｌｅ　ｍａｔｔｅｒｓ{FFFE}ｊｕｓｔ　ａｓ　ｍｕｃｈ．{FFFE}{FC30}{FFF2}{=00}{=41}{FFFF}
 {FFF3}{=00}{=40}{=00}{=13}{FFF8}{=00}{=12}{FFFF}
-{FB00}{=01}{=67}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}この街の港には、{FFFE}あちこちの国から{FFFE}様々な商品が{FFFE}入って来るんじゃ。{FCC0}{FFFE}何か　珍しい物を{FFFE}探しているときは、{FFFE}立ち寄ってみると{FFFE}いいかもしれんぞ。{FC30}{FFF2}{=00}{=40}{FFFF}
+{FB00}{=01}{=67}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｉｎｔｏ　ｔｈｉｓ　ｔｏｗｎ’ｓ　ｐｏｒｔ{FFFE}ｃｏｍｅ　ｗａｒｅｓ　ｏｆ　ｅｖｅｒｙ{FFFE}ｋｉｎｄ　ｆｒｏｍ　ｃｏｕｎｔｒｉｅｓ{FFFE}ｆａｒ　ａｎｄ　ｗｉｄｅ．{FCC0}{FFFE}Ｉｆ　ｙｏｕ　ａｒｅ　ｌｏｏｋｉｎｇ　ｆｏｒ{FFFE}ｓｏｍｅ　ｒａｒｅ　ｔｈｉｎｇ，{FFFE}ｉｔ　ｍｉｇｈｔ　ｂｅ　ｗｅｌｌ{FFFE}ｔｏ　ｃａｌｌ　ｉｎ　ｔｈｅｒｅ．{FC30}{FFF2}{=00}{=40}{FFFF}
 {FFD7}{FB00}{=01}{=62}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｈｏｗ　ａｂｏｕｔ　ｉｔ？　Ｌｉｖｅｌｙ{FFFE}ｔｏｗｎ，　ｉｓｎ’ｔ　ｉｔ．　Ｔｈｅ{FFFE}Ｋｉｎｇｄｏｍ’ｓ　ｂｅｓｔ　ｔｒａｄｉｎｇ{FFFE}ｃｉｔｙ，　ａｎｄ　ｂｉｇｇｅｓｔ　ｐｏｒｔ．{FC30}{FFF1}{=00}{=40}{FFFF}
 {FB00}{=01}{=62}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｏｒｄ　ｉｓ　ａ　ｔｒａｖｅｌｌｉｎｇ{FFFE}ｔｒｏｕｐｅ　ｉｓ　ｉｎ　Ｌｉｍｒｏｓｅ{FFFE}ｎｏｗ．　Ｉ’ｄ　ｌｉｋｅ　ｔｏ　ｇｏ　ａｎｄ{FFFE}ｓｅｅ　ｔｈｅｍ　ｍｙｓｅｌｆ．{FC30}{FFF1}{=00}{=40}{FFFF}
 {FFD7}{FFF3}{=00}{=4D}{=00}{=1B}{FFE1}{=00}{=03}{=00}{=16}{FFE1}{=00}{=05}{=00}{=19}{FFF8}{=00}{=1A}{FFFF}
@@ -6304,7 +6304,7 @@
 {FFFD}{FCB0}{=00}{=02}{=00}{=01}{FC51}Ｓｏｌｄｉｅｒｓ，　ｙｏｕ’ｖｅ{FFFE}ａｌｒｅａｄｙ　ｃｒｕｓｈｅｄ　ｔｈｅ{FFFE}Ｅｍｐｉｒｅ’ｓ　ｓｔｒｏｎｇｈｏｌｄｓ，{FFFE}ｈａｖｅｎ’ｔ　ｙｏｕ？{FCC0}{FFFE}Ｂｕｔ　ｃａｓｔｌｅ　ａｎｄ　ｆｏｒｔ　ｓｅｅｍ{FFFE}ｖｅｒｙ　ｃｌｏｓｅｌｙ　ｗａｔｃｈｅｄ．{FFFE}Ａｆｔｅｒ　ｔｈｅ　ｗｉｎ，　ｙｏｕｒ{FFFE}ｈｅｌｍｅｔ．．．　ｉｓ　ｔｈａｔ　ｉｔ？{FC30}{FFF8}{=00}{=2C}{FFFF}
 {FFFD}{FCB0}{=00}{=03}{=00}{=01}{FC51}Ｍｙ，　ｈａｖｅ　ｙｏｕ　ｈｅａｒｄ？{FFFE}Ｔｈｅｙ　ｓａｙ　ｔｈｅ　Ｐｒｉｎｃｅｓｓ{FFFE}ｈａｓｎ’ｔ　ｓｈｏｗｎ　ｈｅｒｓｅｌｆ　ｉｎ{FFFE}ｔｈｅ　ｃａｓｔｌｅ　ｔｏｗｎ　ｌａｔｅｌｙ．{FCC0}{FFFE}Ｓｈｅ　ｕｓｅｄ　ｔｏ　ｓｌｉｐ　ｏｕｔ　ｏｆ{FFFE}ｔｈｅ　ｃａｓｔｌｅ　ｎｏｗ　ａｎｄ　ｔｈｅｎ．{FFFE}Ｉ　ｗｏｎｄｅｒ　ｉｆ　ｓｏｍｅｔｈｉｎｇ{FFFE}ｈａｓ　ｈａｐｐｅｎｅｄ．{FC30}{FFF8}{=00}{=2C}{FFFF}
 {FFF3}{=00}{=40}{=00}{=34}{FFF8}{=00}{=33}{FFFF}
-{FB00}{=01}{=67}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}この街の港には、{FFFE}あちこちの国から{FFFE}様々な商品が{FFFE}入って来るんじゃ。{FCC0}{FFFE}何か　珍しい物を{FFFE}探しているときは、{FFFE}立ち寄ってみると{FFFE}いいかもしれんぞ。{FC30}{FFF2}{=00}{=40}{FFFF}
+{FB00}{=01}{=67}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｉｎｔｏ　ｔｈｉｓ　ｔｏｗｎ’ｓ　ｐｏｒｔ{FFFE}ｃｏｍｅ　ｗａｒｅｓ　ｏｆ　ｅｖｅｒｙ{FFFE}ｋｉｎｄ　ｆｒｏｍ　ｃｏｕｎｔｒｉｅｓ{FFFE}ｆａｒ　ａｎｄ　ｗｉｄｅ．{FCC0}{FFFE}Ｉｆ　ｙｏｕ　ａｒｅ　ｌｏｏｋｉｎｇ　ｆｏｒ{FFFE}ｓｏｍｅ　ｒａｒｅ　ｔｈｉｎｇ，{FFFE}ｉｔ　ｍｉｇｈｔ　ｂｅ　ｗｅｌｌ{FFFE}ｔｏ　ｃａｌｌ　ｉｎ　ｔｈｅｒｅ．{FC30}{FFF2}{=00}{=40}{FFFF}
 {FFD7}{FFE2}{=00}{=02}{=00}{=35}{FB00}{=01}{=62}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｄｉｄ　ｙｏｕ　ｋｎｏｗ？　Ｗｏｒｄ　ｉｓ{FFFE}ｔｈｅ　ｏｎｅｓ　ｗｈｏ　ｃｒｕｓｈｅｄ　ｔｈｅ{FFFE}Ｅｍｐｉｒｅ’ｓ　ｆｏｒｔｒｅｓｓ　ｗｅｒｅ{FFFE}ｔｈｅ　９ｔｈ　Ａｒｍｙ．{FCC0}{FFFE}Ｆｒｅｅｌｏａｄｅｒｓ，　ｊｕｎｋ　ｓｑｕａｄ，{FFFE}Ｉ　ｎｅｖｅｒ　ｈｅａｒｄ　ａ　ｄｅｃｅｎｔ{FFFE}ｒｕｍｏｕｒ　ａｂｏｕｔ　ｔｈｅｍ，　ｂｕｔ{FFFE}ｔｈａｔ’ｓ　ｑｕｉｔｅ　ｓｏｍｅｔｈｉｎｇ．{FC30}{FFF1}{=00}{=40}{FFFF}
 {FB00}{=01}{=62}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｏｒｄ　ｉｓ　ｔｈｅ　９ｔｈ　Ａｒｍｙ{FFFE}ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ．{FCC0}{FFFE}Ｊｕｓｔ　ａｓ　ｔｈｅ　ｗａｒ　ｗａｓ{FFFE}ａｂｏｕｔ　ｔｏ　ｅｎｄ　ａｔ　ｌａｓｔ．{FFFE}Ｒｅａｌｌｙ，{FFFE}ｗｈａｔ　ａｒｅ　ｔｈｅｙ　ｔｈｉｎｋｉｎｇ．{FC30}{FFF1}{=00}{=40}{FFFF}
 {FFF3}{=00}{=40}{=00}{=38}{FFF8}{=00}{=37}{FFFF}
@@ -6350,7 +6350,7 @@
 
 === BANK 21 @ 0x0D2000  hdr=yes
 {HDR:fffc0004000000060001ffffffffffff0008fffc0002000000060001ffffffffffff0005fffc0000000000060001ffffffffffff0001fffc00040000000d0001ffffffffffff000efffc00030000000d00010022ffffffff001dfffc00030000000d0001ffffffffffff000bfffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FC51}広場には　誰もいない。{FFFE}やわらかな　木漏れ日の中{FFFE}小鳥の　さえずりが{FFFE}響いている・・・{FC30}{FFFF}
+{FC51}Ｔｈｅ　ｓｑｕａｒｅ　ｉｓ　ｅｍｐｔｙ．{FFFE}Ａｍｉｄ　ｓｏｆｔ　ｄａｐｐｌｅｄ{FFFE}ｓｕｎｌｉｇｈｔ，　ｓｍａｌｌ　ｂｉｒｄｓ’{FFFE}ｓｏｎｇ　ｒｉｎｇｓ　ｏｕｔ．．．{FC30}{FFFF}
 {FFF3}{=00}{=41}{=00}{=04}{FFF3}{=00}{=40}{=00}{=03}{FFF8}{=00}{=02}{FFFF}
 {FB00}{=01}{=6A}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈａｎｋ　ｙｏｕ　ｆｏｒ　ｔｈｅ　ｏｔｈｅｒ{FFFE}ｄａｙ！　Ｅｖｅｎ　ｉｆ　ｔｈｅｙ’ｒｅ{FFFE}ｈｕｍａｎｓ，　ｎｏｔ　ａｌｌ　ｏｆ　ｔｈｅｍ{FFFE}ａｒｅ　ｂａｄ，　ａｒｅ　ｔｈｅｙ．{FC30}{FFF2}{=00}{=40}{FFFF}
 {FB00}{=01}{=69}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｙｏｕ　ｓａｖｅｄ　ｕｓ　ｔｈｅ　ｏｔｈｅｒ{FFFE}ｄａｙ．　Ｂｕｔ，　ｗｅ　ｄｏ　ｎｏｔ{FFFE}ｙｅｔ　ｔｒｕｓｔ　ｙｏｕ　ｈｕｍａｎｓ．{FCC0}{FFFE}Ｉｆ　ｙｏｕ　ｄｏ　ａｎｙｔｈｉｎｇ{FFFE}ｔｈｅ　ｌｅａｓｔ　ｂｉｔ　ｓｔｒａｎｇｅ，{FFFE}ｗｅ　ｓｈａｌｌ　ｈａｖｅ　ｙｏｕ　ｌｅａｖｅ{FFFE}ｔｈｉｓ　ｐｌａｃｅ．{FC30}{FFF2}{=00}{=41}{FFFF}
@@ -6414,7 +6414,7 @@
 {FB00}{=01}{=5E}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｙｏｕ　ｌｏｔ　ａｒｅ　Ｒｏｙａｌ　Ａｒｍｙ{FFFE}ｓｏｌｄｉｅｒｓ，　ａｒｅｎ’ｔ　ｙｏｕ？{FFFE}Ｉ’ｖｅ　ｈｅａｒｄ　ｎｏｔｈｉｎｇ　ｏｆ{FFFE}ａｎｙ　ｅｘｐｅｄｉｔｉｏｎ．{FC30}{FFFF}
 {FB00}{=00}{=2D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｈｅｙ，{FFFE}{FFEC}{=00}{=00}！{FFFE}Ｔｈｅ　ｓｈｉｐ　ｃａｎ　ｓａｉｌ　ｎｏｗ．{FFFE}{FCC0}{FB01}Ｆｏｒ　Ｆｅｒｉｓｌａｎｄ，{FFFE}ｉｓ　ｉｔ？{FFFE}{FFFA}{=00}{=00}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=0A}{FFF6}{=00}{=01}{=00}{=0B}{FFFF}
 {FC51}{FB01}Ｒｉｇｈｔ，{FFFE}ａｂｏａｒｄ　ｗｉｔｈ　ｙｏｕ，　ｑｕｉｃｋ！{FFFE}{FC30}{FFF2}{=00}{=3E}{FFCD}{=00}{=00}{FFFF}
-{FC51}{FB01}そうかい。{FFFE}じゃ、またな！{FFFE}{FC30}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｓｅｅ　ｙｏｕ，　ｔｈｅｎ！{FFFE}{FC30}{FFFF}
 {FB00}{=00}{=2D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｎｏｗ，　ｗｅ’ｖｅ　ａｒｒｉｖｅｄ．{FFFE}Ｉ’ｌｌ　ｂｅ　ａｔ　ｔｈｉｓ　ｐｏｒｔ，{FFFE}ｓｏ　ｗｈｅｎ　ｙｏｕ　ｇｏ　ｂａｃｋ，{FFFE}ｇｉｖｅ　ｍｅ　ａ　ｓｈｏｕｔ　ａｇａｉｎ．{FFF1}{=00}{=3E}{FC30}{FFFF}
 {FFF3}{=00}{=3B}{=00}{=09}{FB00}{=00}{=2D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ａ　ｃａｐｔａｉｎ　ｗｈｏ　ｔａｋｅｓ　ｙｏｕ{FFFE}ｆｒｅｅ？　Ｙｏｕ’ｖｅ　ｇｏｔ　ｍｅ．{FFFE}Ｓｏ　ｔｈｅ　ｒｕｍｏｕｒ’ｓ　ｏｕｔ{FFFE}ａｌｒｅａｄｙ．　Ｔｈａｔ’ｓ　ｍｅ．{FCC0}{FFFE}Ｙｏｕ　ｓｅｅ，　ｗａｔｃｈｉｎｇ　ｔｈｅ{FFFE}ｆｏｌｋ　ｏｆ　Ｃａｒｌｉｎｅ，　ｎｏｗ{FFFE}ａｎｄ　ｔｈｅｎ　Ｉ　ｐｉｔｙ　ｔｈｅｍ．{FFFE}Ｉｔ’ｓ　ｗａｒ　ｕｐｏｎ　ｗａｒ．{FCC0}{FFFE}Ａｎｄ　ｓｏ　Ｉ　ｅｎｄ　ｕｐ　ｔａｋｉｎｇ{FFFE}ｔｈｅｍ　ａｂｏａｒｄ．{FCC0}{FFFE}{FFEC}{=00}{=00}’ｓ{FFFE}ａｃｑｕａｉｎｔａｎｃｅｓ？{FFFE}Ｎｏ　ｔｒｏｕｂｌｅ　ａｔ　ａｌｌ．{FFFE}Ｉ’ｌｌ　ｈｅｌｐ　ａｎｙ　ｔｉｍｅ．{FC30}{FFF2}{=00}{=3B}{FFFF}
 {FFF3}{=00}{FF00}{=0F}{FFF8}{=00}{=08}{FFFF}
@@ -6429,7 +6429,7 @@
 {FB00}{=01}{=5E}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｓｏｒｒｙ，　ｂｕｔ　Ｉ’ｖｅ　ｎｏ　ｓｈｉｐ{FFFE}ｔｏ　ｃａｒｒｙ　ｓｏｌｄｉｅｒｓ．{FFFE}Ｉ’ｍ　ｎｏｔ　ｒｅａｄｙ{FFFE}ｔｏ　ｄｉｅ　ｙｅｔ！{FFFE}{FC30}{FFFF}
 {FB00}{=00}{=2D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｈｅｙ！{FFFE}{FFEC}{=00}{=00}！{FFFE}{FCC0}{FB01}Ｂａｃｋ　ｔｏ　Ｃａｆｆｉ，{FFFE}ｉｓ　ｉｔ？{FFFE}{FFFA}{=00}{=00}　Ｙｅｓ{FFFE}　Ｎｏ{FFFA}{=00}{=05}{FFF7}{=00}{=02}{=00}{=00}{=00}{=02}{FFF6}{=00}{=00}{=00}{=02}{FFF6}{=00}{=01}{=00}{=03}{FFFF}
 {FC51}{FB01}Ｗｅｌｌ　ｔｈｅｎ，{FFFE}ａｂｏａｒｄ　ｗｉｔｈ　ｙｏｕ，　ｑｕｉｃｋ！{FFFE}{FC30}{FFF2}{=00}{=3E}{FFCD}{=00}{=01}{FFFF}
-{FC51}{FB01}そうかい。{FFFE}じゃ、またな！{FFFE}{FC30}{FFFF}
+{FC51}{FB01}Ｉ　ｓｅｅ．{FFFE}Ｓｅｅ　ｙｏｕ，　ｔｈｅｎ！{FFFE}{FC30}{FFFF}
 {FB00}{=00}{=2D}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｎｏｗ，　ｗｅ’ｖｅ　ａｒｒｉｖｅｄ．{FFFE}Ｗｈｅｎ　ｙｏｕ　ｇｏ　ｂａｃｋ，　ｇｉｖｅ{FFFE}ｍｅ　ａ　ｓｈｏｕｔ　ａｇａｉｎ．{FFFE}{FFF1}{=00}{=3E}{FC30}{FFFF}
 {=FF}
 {PAD 39699}
@@ -6845,7 +6845,7 @@
 {FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｓａｙ，　ｓａｙ，　ｄｉｄ　ｙｏｕ　ｋｎｏｗ？{FFFE}ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ’ｓ　１ｓｔ{FFFE}Ａｒｍｙ，　Ｃａｐｔａｉｎ　Ｌｅｏｎ．{FFFE}Ｈｅ’ｓ　ｓｏ　ｗｏｎｄｅｒｆｕｌ〜．{FCC0}{FFFE}Ｆｏｒ　ｔｈａｔ　ｍａｎ’ｓ　ｓａｋｅ{FFFE}ｔｈｅｒｅ　ａｒｅ　ｗｏｍｅｎ　ｗｈｏ’ｄ{FFFE}ｄｏ　ａｎｙｔｈｉｎｇ　ａｔ　ａｌｌ，{FFFE}ａｎｄ　ｐｌｅｎｔｙ　ｏｆ　ｔｈｅｍ！{FC30}{FFFF}
 {FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｒｅａｌｌｙ，　Ｌｏｒｄ　Ｌｅｏｎ　ｉｓ{FFFE}ａ　ｒｅｍａｒｋａｂｌｅ　ｍａｎ．{FFFE}Ｗｉｔｈ　ｈｉｍ　ｈｅｒｅ，　ｔｈｉｓ{FFFE}ｃｏｕｎｔｒｙ　ｉｓ　ｓｅｃｕｒｅ！！{FC30}{FFFF}
 {FFF3}{=00}{=7B}{=00}{=0A}{FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ａｈｈ，　ｅｖｅｎ　ｎｏｗ　Ｉ　ｃａｎｎｏｔ{FFFE}ｓｔｏｐ　ｇｒｉｅｖｉｎｇ　ｆｏｒ　Ｌｏｒｄ{FFFE}Ｌｅｏｎ’ｓ　ｄｅａｔｈ．{FFFE}Ｓｏｌｄｉｅｒｓ，　ａｖｅｎｇｅ　ｈｉｍ！！{FC30}{FFFF}
-{FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅｙ　ｓａｙ　ｔｈｅ　ｇａｎｇ　ｔｈａｔ{FFFE}ｒａｉｓｅｄ　ｔｈｅ　ｒｅｖｏｌｔ　ｗａｓ{FFFE}ｉｎｓｉｄｅ　ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ，{FFFE}ｂｕｔ　ｃａｎ　ｔｈａｔ　ｂｅ　ｔｒｕｅ？{FC30}{FFFF}
+{FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅｙ　ｓａｙ　ｔｈｅ　ｇａｎｇ　ｔｈａｔ{FFFE}ｒａｉｓｅｄ　ａ　ｒｅｂｅｌｌｉｏｎ　ｗａｓ{FFFE}ｉｎｓｉｄｅ　ｔｈｅ　Ｒｏｙａｌ　Ａｒｍｙ，{FFFE}ｂｕｔ　ｃａｎ　ｔｈａｔ　ｂｅ　ｔｒｕｅ？{FC30}{FFFF}
 {FB00}{=01}{=60}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｏｒｄ　ｉｓ　Ｌｏｒｄ　Ｌｅｏｎ{FFFE}ｉｓ　ｈｅｌｄ　ｂｙ　Ｈｅｌｆｅｒ’ｓ{FFFE}ｇｕａｒｄ，　ｉｎ　ｔｈｅ　ｆｏｒｔｒｅｓｓ{FFFE}ｄｕｎｇｅｏｎ．{FCC0}{FFFE}Ｓｏｌｄｉｅｒｓ，{FFFE}ｐｌｅａｓｅ　ｓａｖｅ{FFFE}Ｌｏｒｄ　Ｌｅｏｎ！{FFFE}{FC30}{FFFF}
 {FB00}{=01}{=63}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｉｆ　ｙｏｕ　ｗａｎｔ　ｓｏｍｅｗｈａｔ{FFFE}ｕｎｕｓｕａｌ　ｃｏｍｐａｎｉｏｎｓ，{FFFE}ｔｒｙ　ｔｈｅ　ｔｏｗｎ　ｏｆ{FFFE}Ｍａｒｖｅｌｌｏｕｓ．{FCC0}{FFFE}Ａｔ　ｔｈｅ　“Ｂｅａｓｔ　Ｓｈｏｐ”{FFFE}ｔｈｅｙ　ｓｅｌｌ　ｄｒａｇｏｎｓ　ａｎｄ{FFFE}ｇｏｌｅｍｓ　ａｎｄ　ｔｈｅ　ｌｉｋｅ．{FFFE}{FC30}{FFFF}
 {FB00}{=01}{=63}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｈａｔ　ｏｎ　ｅａｒｔｈ{FFFE}ｉｓ　ｇｏｉｎｇ　ｏｎ　ｈｅｒｅ？{FFFE}Ｔｈｅ　Ｐｒｉｎｃｅｓｓ　ｉｓ{FFFE}ｓａｆｅ，　ｉｓｎ’ｔ　ｓｈｅ！{FC30}{FFFF}
@@ -6961,46 +6961,46 @@
 {FFC2}{=00}{=13}{FB00}{=01}{=70}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅ　Ｃａｒｌｉｎｅ‐Ｅｍｐｉｒｅ{FFFE}ａｌｌｉａｎｃｅ　ｂａｎｑｕｅｔ　ｓｈｏｕｌｄ{FFFE}ｂｅ　ｕｎｄｅｒ　ｗａｙ　ａｔ　ｔｈｅ{FFFE}ｃａｓｔｌｅ　ｒｉｇｈｔ　ｎｏｗ．{FC30}{FFC2}{=00}{=00}{FFFF}
 {FFC2}{=00}{=13}{FB00}{=01}{=70}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｏｒｄ　ｉｓ　ｔｈｅ　ａｌｌｉａｎｃｅ{FFFE}ｗｉｔｈ　ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ{FFFE}Ｈｅｌｆｅｒ’ｓ　ｐｌｏｔ．{FFFE}{FCC0}Ａｌｌ　ｏｆ　ｕｓ　ｓｏｌｄｉｅｒｓ{FFFE}ｗｅｒｅ　ｔａｋｅｎ　ｉｎ　ｂｙ　ｈｉｍ，{FFFE}ｔｈｅｙ　ｓａｙ．{FFFE}{FC30}{FFC2}{=00}{=00}{FFFF}
 {FFC2}{=00}{=13}{FB00}{=01}{=73}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｙｏｕ　ｌｏｔ　ａｒｅ　ｔｈｅ　ｏｎｅｓ．．．{FFFE}Ｓｉｎｃｅ　Ｃａｒｌｉｎｅ　ｍａｄｅ　ｔｈｅ{FFFE}ａｌｌｉａｎｃｅ，　Ｉ’ｖｅ　ｂｅｅｎ　ｏｎ{FFFE}ｇｕａｒｄ　ｈｅｒｅ．{FCC0}{FFFE}Ｉ’ｌｌ　ｔｅｌｌ　ｙｏｕ　ｌｏｔ{FFFE}ｓｏｍｅｔｈｉｎｇ　ｇｏｏｄ．{FFFE}{FCC0}Ｉ　ｗｅｎｔ　ｔｏ　Ｆｅｒｉｓｌａｎｄ　ｏｎ{FFFE}ｔｈｅ　Ｅｍｐｉｒｅ’ｓ　ｏｒｄｅｒｓ，{FFFE}ｌｏｏｋｉｎｇ　ｆｏｒ　ｍａｃｈｉｎｅ{FFFE}ｓｏｌｄｉｅｒｓ．{FCC0}{FFFE}Ｔｈｅｒｅ　Ｉ　ｇｏｔ　ｔｏ　ｋｎｏｗ　ａ{FFFE}ｍａｎ　ｃａｌｌｅｄ　Ｋｏｒｎｅｆｆ，　ａｎ{FFFE}ａｄｖｅｎｔｕｒｅｒ．{FCC0}{FFFE}Ｒｉｇｈｔ　ｎｏｗ　ｈｅ　ｓｈｏｕｌｄ　ｂｅ{FFFE}ｉｎ　Ａｐｕｍｉｚｕ，　ａ　ｎｅｗｌｙ{FFFE}ｂｕｉｌｔ　ｔｏｗｎ．{FCC0}{FFFE}Ｈｅ　ｓａｉｄ　ｉｔ　ｗａｓ　ｔｏ　ｆｉｎｄ{FFFE}ａ　ｍｙｓｔｅｒｉｏｕｓ　ｔｅｍｐｌｅ，{FFFE}ｓｏ　ｔｈｅｒｅ’ｓ　ｂｏｕｎｄ　ｔｏ　ｂｅ{FFFE}ａ　ｇｏｏｄ　ｓｔｏｒｙ　ｉｎ　ｉｔ．{FC30}{FFC2}{=00}{=00}{FFFF}
-{FC51}{FFF3}{=00}{=37}{=00}{=0E}{FB01}フラグ５５は、{FFFE}ＯＦＦです。{FFFE}{FC30}{FFF8}{=00}{=0F}{FFFF}
-{FB01}フラグ５５は、{FFFE}ＯＮです。{FFFE}{FC30}{FFF8}{=00}{=0F}{FFFF}
-{FFF3}{=00}{=6F}{=00}{=10}{FB01}フラグ１１１は、{FFFE}ＯＦＦです。{FFFE}{FC30}{FFF8}{=00}{=11}{FFFF}
-{FB01}フラグ１１１は、{FFFE}ＯＮです。{FFFE}{FC30}{FFF8}{=00}{=11}{FFFF}
-{FFF3}{=00}{=B4}{=00}{=12}{FB01}フラグ１８０は、{FFFE}ＯＦＦです。{FFFE}{FC30}{FFF8}{=00}{=13}{FFFF}
-{FB01}フラグ１８０は、{FFFE}ＯＮです。{FFFE}{FC30}{FFF8}{=00}{=13}{FFFF}
-{FFF3}{=00}{FF00}{=14}{FB01}フラグ２５５は、{FFFE}ＯＦＦです。{FFFE}{FC30}{FFF8}{=00}{=15}{FFFF}
-{FB01}フラグ２５５は、{FFFE}ＯＮです。{FFFE}{FC30}{FFF8}{=00}{=15}{FFFF}
+{FC51}{FFF3}{=00}{=37}{=00}{=0E}{FB01}Ｆｌａｇ　５５　ｉｓ　ＯＦＦ．{FFFE}{FC30}{FFF8}{=00}{=0F}{FFFF}
+{FB01}Ｆｌａｇ　５５　ｉｓ　ＯＮ．{FFFE}{FC30}{FFF8}{=00}{=0F}{FFFF}
+{FFF3}{=00}{=6F}{=00}{=10}{FB01}Ｆｌａｇ　１１１　ｉｓ　ＯＦＦ．{FFFE}{FC30}{FFF8}{=00}{=11}{FFFF}
+{FB01}Ｆｌａｇ　１１１　ｉｓ　ＯＮ．{FFFE}{FC30}{FFF8}{=00}{=11}{FFFF}
+{FFF3}{=00}{=B4}{=00}{=12}{FB01}Ｆｌａｇ　１８０　ｉｓ　ＯＦＦ．{FFFE}{FC30}{FFF8}{=00}{=13}{FFFF}
+{FB01}Ｆｌａｇ　１８０　ｉｓ　ＯＮ．{FFFE}{FC30}{FFF8}{=00}{=13}{FFFF}
+{FFF3}{=00}{FF00}{=14}{FB01}Ｆｌａｇ　２５５　ｉｓ　ＯＦＦ．{FFFE}{FC30}{FFF8}{=00}{=15}{FFFF}
+{FB01}Ｆｌａｇ　２５５　ｉｓ　ＯＮ．{FFFE}{FC30}{FFF8}{=00}{=15}{FFFF}
 {FFFF}
-{FB01}０１：インターミッション{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=17}{FFFF}
-{FB01}０２：街の音楽{FFFE}{FFC2}{=00}{=01}{FC30}{FFF8}{=00}{=18}{FFFF}
-{FB01}０３：城の音楽{FFFE}{FFC2}{=00}{=02}{FC30}{FFF8}{=00}{=19}{FFFF}
-{FB01}０４：村の音楽{FFFE}{FFC2}{=00}{=03}{FC30}{FFF8}{=00}{=1A}{FFFF}
-{FB01}０５：カジノ{FFFE}{FFC2}{=00}{=04}{FC30}{FFF8}{=00}{=1B}{FFFF}
-{FB01}０６：マップＯＰ{FFFE}{FFC2}{=00}{=05}{FC30}{FFF8}{=00}{=1C}{FFFF}
-{FB01}０７：マップの音楽１{FFFE}{FFC2}{=00}{=06}{FC30}{FFF8}{=00}{=1D}{FFFF}
-{FB01}０８：マップの音楽２{FFFE}{FFC2}{=00}{=07}{FC30}{FFF8}{=00}{=1E}{FFFF}
-{FB01}０９：マップの音楽３{FFFE}{FFC2}{=00}{=08}{FC30}{FFF8}{=00}{=1F}{FFFF}
-{FB01}１０：マップの音楽４{FFFE}{FFC2}{=00}{=09}{FC30}{FFF8}{=00}{=20}{FFFF}
-{FB01}１１：マップの音楽５{FFFE}{FFC2}{=00}{=0A}{FC30}{FFF8}{=00}{=21}{FFFF}
-{FB01}１２：マップの音楽６{FFFE}{FFC2}{=00}{=0B}{FC30}{FFF8}{=00}{=22}{FFFF}
-{FB01}１３：マップクリア{FFFE}{FFC2}{=00}{=0C}{FC30}{FFF8}{=00}{=23}{FFFF}
-{FB01}１４：任務失敗{FFFE}{FFC2}{=00}{=0D}{FC30}{FFF8}{=00}{=24}{FFFF}
-{FB01}１５：ゲームオーバー{FFFE}{FFC2}{=00}{=0E}{FC30}{FFF8}{=00}{=25}{FFFF}
-{FB01}１６：バトル（ザコ戦）{FFFE}{FFC2}{=00}{=0F}{FC30}{FFF8}{=00}{=26}{FFFF}
-{FB01}１７：バトル（ボス戦）{FFFE}{FFC2}{=00}{=10}{FC30}{FFF8}{=00}{=27}{FFFF}
-{FB01}１８：バトル（大ボス）{FFFE}{FFC2}{=00}{=11}{FC30}{FFF8}{=00}{=28}{FFFF}
-{FB01}１９：村でのひととき{FFFE}{FFC2}{=00}{=12}{FC30}{FFF8}{=00}{=29}{FFFF}
-{FB01}２０：仲間との会話{FFFE}{FFC2}{=00}{=13}{FC30}{FFF8}{=00}{=2A}{FFFF}
-{FB01}２１：新しい仲間{FFFE}{FFC2}{=00}{=14}{FC30}{FFF8}{=00}{=2B}{FFFF}
-{FB01}２２：宿敵{FFFE}{FFC2}{=00}{=15}{FC30}{FFF8}{=00}{=2C}{FFFF}
-{FB01}２３：伝説の古代文明{FFFE}{FFC2}{=00}{=16}{FC30}{FFF8}{=00}{=2D}{FFFF}
-{FB01}２４：悲しい話{FFFE}{FFC2}{=00}{=17}{FC30}{FFF8}{=00}{=2E}{FFFF}
-{FB01}２５：魔族{FFFE}{FFC2}{=00}{=18}{FC30}{FFF8}{=00}{=2F}{FFFF}
-{FB01}５０：新曲１{FFFE}{FFC2}{=00}{=31}{FC30}{FFF8}{=00}{=30}{FFFF}
-{FB01}５１：新曲２{FFFE}{FFC2}{=00}{=32}{FC30}{FFF8}{=00}{=31}{FFFF}
-{FB01}５２：新曲３{FFFE}{FFC2}{=00}{=33}{FC30}{FFF8}{=00}{=32}{FFFF}
-{FB01}５３：新曲４{FFFE}{FFC2}{=00}{=34}{FC30}{FFF8}{=00}{=33}{FFFF}
-{FB01}５４：新曲５{FFFE}{FFC2}{=00}{=35}{FC30}{FFF8}{=00}{=34}{FFFF}
-{FB01}それでは、{FFFE}失礼致します。{FFFE}{FC30}{FFC2}{=00}{=00}{FFFF}
+{FB01}０１：Ｉｎｔｅｒｍｉｓｓｉｏｎ{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=17}{FFFF}
+{FB01}０２：Ｔｏｗｎ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=01}{FC30}{FFF8}{=00}{=18}{FFFF}
+{FB01}０３：Ｃａｓｔｌｅ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=02}{FC30}{FFF8}{=00}{=19}{FFFF}
+{FB01}０４：Ｖｉｌｌａｇｅ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=03}{FC30}{FFF8}{=00}{=1A}{FFFF}
+{FB01}０５：Ｃａｓｉｎｏ{FFFE}{FFC2}{=00}{=04}{FC30}{FFF8}{=00}{=1B}{FFFF}
+{FB01}０６：Ｍａｐ　ｏｐｅｎｉｎｇ{FFFE}{FFC2}{=00}{=05}{FC30}{FFF8}{=00}{=1C}{FFFF}
+{FB01}０７：Ｍａｐ　ｍｕｓｉｃ　１{FFFE}{FFC2}{=00}{=06}{FC30}{FFF8}{=00}{=1D}{FFFF}
+{FB01}０８：Ｍａｐ　ｍｕｓｉｃ　２{FFFE}{FFC2}{=00}{=07}{FC30}{FFF8}{=00}{=1E}{FFFF}
+{FB01}０９：Ｍａｐ　ｍｕｓｉｃ　３{FFFE}{FFC2}{=00}{=08}{FC30}{FFF8}{=00}{=1F}{FFFF}
+{FB01}１０：Ｍａｐ　ｍｕｓｉｃ　４{FFFE}{FFC2}{=00}{=09}{FC30}{FFF8}{=00}{=20}{FFFF}
+{FB01}１１：Ｍａｐ　ｍｕｓｉｃ　５{FFFE}{FFC2}{=00}{=0A}{FC30}{FFF8}{=00}{=21}{FFFF}
+{FB01}１２：Ｍａｐ　ｍｕｓｉｃ　６{FFFE}{FFC2}{=00}{=0B}{FC30}{FFF8}{=00}{=22}{FFFF}
+{FB01}１３：Ｍａｐ　ｃｌｅａｒｅｄ{FFFE}{FFC2}{=00}{=0C}{FC30}{FFF8}{=00}{=23}{FFFF}
+{FB01}１４：Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ{FFFE}{FFC2}{=00}{=0D}{FC30}{FFF8}{=00}{=24}{FFFF}
+{FB01}１５：Ｇａｍｅ　Ｏｖｅｒ{FFFE}{FFC2}{=00}{=0E}{FC30}{FFF8}{=00}{=25}{FFFF}
+{FB01}１６：Ｂａｔｔｌｅ　（ｍｏｂ　ｂａｔｔｌｅ）{FFFE}{FFC2}{=00}{=0F}{FC30}{FFF8}{=00}{=26}{FFFF}
+{FB01}１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）{FFFE}{FFC2}{=00}{=10}{FC30}{FFF8}{=00}{=27}{FFFF}
+{FB01}１８：Ｂａｔｔｌｅ　（ｇｒｅａｔ　ｂｏｓｓ）{FFFE}{FFC2}{=00}{=11}{FC30}{FFF8}{=00}{=28}{FFFF}
+{FB01}１９：Ａ　ｖｉｌｌａｇｅ　ｍｏｍｅｎｔ{FFFE}{FFC2}{=00}{=12}{FC30}{FFF8}{=00}{=29}{FFFF}
+{FB01}２０：Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ{FFFE}{FFC2}{=00}{=13}{FC30}{FFF8}{=00}{=2A}{FFFF}
+{FB01}２１：Ａ　ｎｅｗ　ｃｏｍｒａｄｅ{FFFE}{FFC2}{=00}{=14}{FC30}{FFF8}{=00}{=2B}{FFFF}
+{FB01}２２：Ａｒｃｈ‐Ｅｎｅｍｙ{FFFE}{FFC2}{=00}{=15}{FC30}{FFF8}{=00}{=2C}{FFFF}
+{FB01}２３：Ｌｅｇｅｎｄａｒｙ{FFFE}ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ{FFFE}{FFC2}{=00}{=16}{FC30}{FFF8}{=00}{=2D}{FFFF}
+{FB01}２４：Ａ　ｓａｄ　ｔａｌｅ{FFFE}{FFC2}{=00}{=17}{FC30}{FFF8}{=00}{=2E}{FFFF}
+{FB01}２５：Ｄｅｍｏｎｓ{FFFE}{FFC2}{=00}{=18}{FC30}{FFF8}{=00}{=2F}{FFFF}
+{FB01}５０：Ｎｅｗ　Ｔｒａｃｋ　１{FFFE}{FFC2}{=00}{=31}{FC30}{FFF8}{=00}{=30}{FFFF}
+{FB01}５１：Ｎｅｗ　Ｔｒａｃｋ　２{FFFE}{FFC2}{=00}{=32}{FC30}{FFF8}{=00}{=31}{FFFF}
+{FB01}５２：Ｎｅｗ　Ｔｒａｃｋ　３{FFFE}{FFC2}{=00}{=33}{FC30}{FFF8}{=00}{=32}{FFFF}
+{FB01}５３：Ｎｅｗ　Ｔｒａｃｋ　４{FFFE}{FFC2}{=00}{=34}{FC30}{FFF8}{=00}{=33}{FFFF}
+{FB01}５４：Ｎｅｗ　Ｔｒａｃｋ　５{FFFE}{FFC2}{=00}{=35}{FC30}{FFF8}{=00}{=34}{FFFF}
+{FB01}Ｗｅｌｌ　ｔｈｅｎ，{FFFE}Ｉ　ｔａｋｅ　ｍｙ　ｌｅａｖｅ．{FFFE}{FC30}{FFC2}{=00}{=00}{FFFF}
 {=FF}
 {PAD 36671}
 
@@ -7015,72 +7015,72 @@
 {FFC2}{=00}{=12}{FB00}{=01}{=6F}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅｙ　ｓａｙ　ｔｈｅ　ｒｅｂｕｉｌｄｉｎｇ{FFFE}ｏｆ　Ｆａｒｉｎａ　ｉｓ　ｗｅｌｌ　ａｌｏｎｇ{FFFE}ｔｏｏ，　ａｔ　ｏｕｒ　ｆｅｌｌｏｗｓ’{FFFE}ｈａｎｄｓ．{FCC0}{FFFE}Ｔｈｅ　ｒｅｓｔ　ｗｅ　ｌｅａｖｅ　ｔｏ{FFFE}ｔｈｅ　ｗｉｌｌ　ｏｆ　Ｇｏｄ．{FFFE}Ｈｏｗ　ｐｏｗｅｒｌｅｓｓ　ａ　ｔｈｉｎｇ{FFFE}ｍａｎ　ｉｓ．{FC30}{FFF8}{=00}{=08}{FFFF}
 {FFC2}{=00}{=12}{FB00}{=01}{=6F}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈｅｙ　ｓａｙ　ｄｏｃｕｍｅｎｔｓ{FFFE}ｐｒｏｖｉｎｇ　ｔｈｅ　ｌｅｇｅｎｄａｒｙ{FFFE}Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ{FFFE}ｗｅｒｅ　ｆｏｕｎｄ　ｉｎ　Ｆａｒｉｎａ．{FCC0}{FFFE}Ａｃｃｏｒｄｉｎｇ　ｔｏ　ｔｈｅｍ，　ｔｈｅ{FFFE}Ｒｅｅｓｅ　ｃｉｖｉｌｉｓａｔｉｏｎ{FFFE}ｐｅｒｉｓｈｅｄ　ｉｎ　ｗａｒ　ａｍｏｎｇ{FFFE}ｉｔｓ　ｏｗｎ　ｋｉｎｄ．{FCC0}{FFFE}Ｔｈｅｙ　ｓａｙ　Ｂｉｓｈｏｐ　Ｃｒｅｕｓ’{FFFE}ａｎｃｅｓｔｏｒｓ　ｇａｖｅ　ｔｈｅｉｒ{FFFE}ｌｉｖｅｓ　ｔｏ　ｓｈｉｅｌｄ　ｔｈｅ{FFFE}ｐｅｏｐｌｅ，　ｂｕｔ　ｉｎ　ｖａｉｎ．{FCC0}{FFFE}Ｈｉｓｔｏｒｙ　ｄｏｅｓ　ｒｅｐｅａｔ{FFFE}ｉｔｓｅｌｆ，　ｄｏｅｓ　ｉｔ　ｎｏｔ．{FFFE}{FC30}{FFF8}{=00}{=08}{FFFF}
 {FFC2}{=00}{=00}{FFFF}
-{FB01}{FFFA}{=00}{=00}　０１：ＩＭ{FFFE}　０２：街の音楽{FFFE}　０３：城の音楽{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=13}{FFF6}{=00}{=01}{=00}{=14}{FFF6}{=00}{=02}{=00}{=15}{FFF6}{=00}{=03}{=00}{=0A}{FFFF}
-{FB01}{FFFA}{=00}{=00}　０４：村の音楽{FFFE}　０５：カジノ{FFFE}　０６：マップＯＰ{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFF6}{=00}{=02}{=00}{=18}{FFF6}{=00}{=03}{=00}{=0B}{FFFF}
-{FB01}{FFFA}{=00}{=00}　０７：マップの音楽１{FFFE}　０８：マップの音楽２{FFFE}　０９：マップの音楽３{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=19}{FFF6}{=00}{=01}{=00}{=1A}{FFF6}{=00}{=02}{=00}{=1B}{FFF6}{=00}{=03}{=00}{=0C}{FFFF}
-{FB01}{FFFA}{=00}{=00}　１０：マップの音楽４{FFFE}　１１：マップの音楽５{FFFE}　１２：マップの音楽６{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=1C}{FFF6}{=00}{=01}{=00}{=1D}{FFF6}{=00}{=02}{=00}{=1E}{FFF6}{=00}{=03}{=00}{=0D}{FFFF}
-{FB01}{FFFA}{=00}{=00}　１３：マップクリア{FFFE}　１４：任務失敗{FFFE}　１５：ゲームオーバー{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=1F}{FFF6}{=00}{=01}{=00}{=20}{FFF6}{=00}{=02}{=00}{=21}{FFF6}{=00}{=03}{=00}{=0E}{FFFF}
-{FB01}{FFFA}{=00}{=00}　１６：バトル（ザコ戦）{FFFE}　１７：バトル（ボス戦）{FFFE}　１８：バトル（大ボス）{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=22}{FFF6}{=00}{=01}{=00}{=23}{FFF6}{=00}{=02}{=00}{=24}{FFF6}{=00}{=03}{=00}{=0F}{FFFF}
-{FB01}{FFFA}{=00}{=00}　１９：村でのひととき{FFFE}　２０：仲間との会話{FFFE}　２１：新しい仲間{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=25}{FFF6}{=00}{=01}{=00}{=26}{FFF6}{=00}{=02}{=00}{=27}{FFF6}{=00}{=03}{=00}{=10}{FFFF}
-{FB01}{FFFA}{=00}{=00}　２２：宿敵{FFFE}　２３：伝説の古代文明{FFFE}　２４：悲しい話{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=28}{FFF6}{=00}{=01}{=00}{=29}{FFF6}{=00}{=02}{=00}{=2A}{FFF6}{=00}{=03}{=00}{=11}{FFFF}
-{FB01}{FFFA}{=00}{=00}　２５：魔族{FFFE}　５０：新曲１{FFFE}　５１：新曲２{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=2B}{FFF6}{=00}{=01}{=00}{=2C}{FFF6}{=00}{=02}{=00}{=2D}{FFF6}{=00}{=03}{=00}{=12}{FFFF}
-{FB01}{FFFA}{=00}{=00}　５２：新曲３{FFFE}　５３：新曲４{FFFE}　５４：新曲５{FFFE}　鑑賞モードを抜ける{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=2E}{FFF6}{=00}{=01}{=00}{=2F}{FFF6}{=00}{=02}{=00}{=30}{FFF6}{=00}{=03}{=00}{=31}{FFFF}
-{FB01}０１：インターミッション{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=09}{FFFF}
-{FB01}０２：街の音楽{FFFE}{FFC2}{=00}{=01}{FC30}{FFF8}{=00}{=09}{FFFF}
-{FB01}０３：城の音楽{FFFE}{FFC2}{=00}{=02}{FC30}{FFF8}{=00}{=09}{FFFF}
-{FB01}０４：村の音楽{FFFE}{FFC2}{=00}{=03}{FC30}{FFF8}{=00}{=0A}{FFFF}
-{FB01}０５：カジノ{FFFE}{FFC2}{=00}{=04}{FC30}{FFF8}{=00}{=0A}{FFFF}
-{FB01}０６：マップＯＰ{FFFE}{FFC2}{=00}{=05}{FC30}{FFF8}{=00}{=0A}{FFFF}
-{FB01}０７：マップの音楽１{FFFE}{FFC2}{=00}{=06}{FC30}{FFF8}{=00}{=0B}{FFFF}
-{FB01}０８：マップの音楽２{FFFE}{FFC2}{=00}{=07}{FC30}{FFF8}{=00}{=0B}{FFFF}
-{FB01}０９：マップの音楽３{FFFE}{FFC2}{=00}{=08}{FC30}{FFF8}{=00}{=0B}{FFFF}
-{FB01}１０：マップの音楽４{FFFE}{FFC2}{=00}{=09}{FC30}{FFF8}{=00}{=0C}{FFFF}
-{FB01}１１：マップの音楽５{FFFE}{FFC2}{=00}{=0A}{FC30}{FFF8}{=00}{=0C}{FFFF}
-{FB01}１２：マップの音楽６{FFFE}{FFC2}{=00}{=0B}{FC30}{FFF8}{=00}{=0C}{FFFF}
-{FB01}１３：マップクリア{FFFE}{FFC2}{=00}{=0C}{FC30}{FFF8}{=00}{=0D}{FFFF}
-{FB01}１４：任務失敗{FFFE}{FFC2}{=00}{=0D}{FC30}{FFF8}{=00}{=0D}{FFFF}
-{FB01}１５：ゲームオーバー{FFFE}{FFC2}{=00}{=0E}{FC30}{FFF8}{=00}{=0D}{FFFF}
-{FB01}１６：バトル（ザコ戦）{FFFE}{FFC2}{=00}{=0F}{FC30}{FFF8}{=00}{=0E}{FFFF}
-{FB01}１７：バトル（ボス戦）{FFFE}{FFC2}{=00}{=10}{FC30}{FFF8}{=00}{=0E}{FFFF}
-{FB01}１８：バトル（大ボス）{FFFE}{FFC2}{=00}{=11}{FC30}{FFF8}{=00}{=0E}{FFFF}
-{FB01}１９：村でのひととき{FFFE}{FFC2}{=00}{=12}{FC30}{FFF8}{=00}{=0F}{FFFF}
-{FB01}２０：仲間との会話{FFFE}{FFC2}{=00}{=13}{FC30}{FFF8}{=00}{=0F}{FFFF}
-{FB01}２１：新しい仲間{FFFE}{FFC2}{=00}{=14}{FC30}{FFF8}{=00}{=0F}{FFFF}
-{FB01}２２：宿敵{FFFE}{FFC2}{=00}{=15}{FC30}{FFF8}{=00}{=10}{FFFF}
-{FB01}２３：伝説の古代文明{FFFE}{FFC2}{=00}{=16}{FC30}{FFF8}{=00}{=10}{FFFF}
-{FB01}２４：悲しい話{FFFE}{FFC2}{=00}{=17}{FC30}{FFF8}{=00}{=10}{FFFF}
-{FB01}２５：魔族{FFFE}{FFC2}{=00}{=18}{FC30}{FFF8}{=00}{=11}{FFFF}
-{FB01}５０：新曲１{FFFE}{FFC2}{=00}{=31}{FC30}{FFF8}{=00}{=11}{FFFF}
-{FB01}５１：新曲２{FFFE}{FFC2}{=00}{=32}{FC30}{FFF8}{=00}{=11}{FFFF}
-{FB01}５２：新曲３{FFFE}{FFC2}{=00}{=33}{FC30}{FFF8}{=00}{=12}{FFFF}
-{FB01}５３：新曲４{FFFE}{FFC2}{=00}{=34}{FC30}{FFF8}{=00}{=12}{FFFF}
-{FB01}５４：新曲５{FFFE}{FFC2}{=00}{=35}{FC30}{FFF8}{=00}{=12}{FFFF}
-{FB01}それでは、{FFFE}失礼致します。{FFFE}{FC30}{FFC2}{=00}{=00}{FFFF}
-{FB01}まだ　要りますか？{FFFE}　はい{FFFE}　いいえ{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=09}{FFFF}
-{FB00}{=00}{=23}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}どのフラグを{FFFE}操作しますか？{FFFE}{FCC0}{FFF8}{=00}{=34}{FFFF}
-{FB01}　４（キエーザクリア）{FFFE}　５（コーカサスクリア）{FFFE}　６（ルクレールクリア）{FFFE}　その他{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=36}{FFF6}{=00}{=01}{=00}{=38}{FFF6}{=00}{=02}{=00}{=3A}{FFF6}{=00}{=03}{=00}{=35}{FFFF}
-{FB01}　１２（マヤ逃がした）{FFFE}　２９（ほこら使用可能）{FFFE}　５４（アップミーズ）{FFFE}　操作しない{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=3C}{FFF6}{=00}{=01}{=00}{=3E}{FFF6}{=00}{=02}{=00}{=40}{FFF6}{=00}{=03}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=04}{=00}{=37}フラグ４をＯＮにします。{FFFE}２章でキエーザ城に{FFFE}入れるようになります。{FC30}{FFF2}{=00}{=04}{FFF8}{=00}{=42}{FFFF}
-フラグ４を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=04}{FFF8}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=05}{=00}{=39}フラグ５をＯＮにします。{FFFE}２章でコーカサスに{FFFE}入れるようになります。{FC30}{FC30}{FFF2}{=00}{=05}{FFF8}{=00}{=42}{FFFF}
-フラグ５を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=05}{FFF8}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=06}{=00}{=3B}フラグ６をＯＮにします。{FFFE}２章でルクレール城に{FFFE}入れるようになります。{FC30}{FFF2}{=00}{=06}{FFF8}{=00}{=42}{FFFF}
-フラグ６を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=06}{FFF8}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=0C}{=00}{=3D}フラグ１２をＯＮにします{FFFE}３章・マーベラスの街の{FFFE}「古びた館」でモンスター{FFFE}を買えるようになります。{FC30}{FFF2}{=00}{=0C}{FFF8}{=00}{=42}{FFFF}
-フラグ１２を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=0C}{FFF8}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=1D}{=00}{=3F}フラグ２９を{FFFE}ＯＮにします。{FFFE}「森のほこら」で生き返り{FFFE}が使えるようになります。{FC30}{FFF2}{=00}{=1D}{FFF8}{=00}{=42}{FFFF}
-フラグ２９を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=1D}{FFF8}{=00}{=42}{FFFF}
-{FB01}{FFF3}{=00}{=36}{=00}{=41}フラグ５４をＯＮにします{FFFE}４章で{FFFE}「アップミーズの街」が{FFFE}出現するようになります。{FC30}{FFF2}{=00}{=36}{FFF8}{=00}{=42}{FFFF}
-フラグ５４を{FFFE}ＯＦＦにします。{FC30}{FFF1}{=00}{=36}{FFF8}{=00}{=42}{FFFF}
-{FB01}他に用はありますか？{FFFE}　はい{FFFE}　いいえ{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=34}{FFF8}{=00}{=31}{FFFF}
+{FB01}{FFFA}{=00}{=00}　０１：ＩＭ{FFFE}　０２：Ｔｏｗｎ　ｍｕｓｉｃ{FFFE}　０３：Ｃａｓｔｌｅ　ｍｕｓｉｃ{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=13}{FFF6}{=00}{=01}{=00}{=14}{FFF6}{=00}{=02}{=00}{=15}{FFF6}{=00}{=03}{=00}{=0A}{FFFF}
+{FB01}{FFFA}{=00}{=00}　０４：Ｖｉｌｌａｇｅ　ｍｕｓｉｃ{FFFE}　０５：Ｃａｓｉｎｏ{FFFE}　０６：Ｍａｐ　ｏｐｅｎｉｎｇ{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=16}{FFF6}{=00}{=01}{=00}{=17}{FFF6}{=00}{=02}{=00}{=18}{FFF6}{=00}{=03}{=00}{=0B}{FFFF}
+{FB01}{FFFA}{=00}{=00}　０７：Ｍａｐ　ｍｕｓｉｃ　１{FFFE}　０８：Ｍａｐ　ｍｕｓｉｃ　２{FFFE}　０９：Ｍａｐ　ｍｕｓｉｃ　３{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=19}{FFF6}{=00}{=01}{=00}{=1A}{FFF6}{=00}{=02}{=00}{=1B}{FFF6}{=00}{=03}{=00}{=0C}{FFFF}
+{FB01}{FFFA}{=00}{=00}　１０：Ｍａｐ　ｍｕｓｉｃ　４{FFFE}　１１：Ｍａｐ　ｍｕｓｉｃ　５{FFFE}　１２：Ｍａｐ　ｍｕｓｉｃ　６{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=1C}{FFF6}{=00}{=01}{=00}{=1D}{FFF6}{=00}{=02}{=00}{=1E}{FFF6}{=00}{=03}{=00}{=0D}{FFFF}
+{FB01}{FFFA}{=00}{=00}　１３：Ｍａｐ　ｃｌｅａｒｅｄ{FFFE}　１４：Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ{FFFE}　１５：Ｇａｍｅ　Ｏｖｅｒ{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=1F}{FFF6}{=00}{=01}{=00}{=20}{FFF6}{=00}{=02}{=00}{=21}{FFF6}{=00}{=03}{=00}{=0E}{FFFF}
+{FB01}{FFFA}{=00}{=00}　１６：Ｂａｔｔｌｅ　（ｍｏｂ　ｂａｔｔｌｅ）{FFFE}　１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）{FFFE}　１８：Ｂａｔｔｌｅ　（ｇｒｅａｔ　ｂｏｓｓ）{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=22}{FFF6}{=00}{=01}{=00}{=23}{FFF6}{=00}{=02}{=00}{=24}{FFF6}{=00}{=03}{=00}{=0F}{FFFF}
+{FB01}{FFFA}{=00}{=00}　１９：Ａ　ｖｉｌｌａｇｅ　ｍｏｍｅｎｔ{FFFE}　２０：Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ{FFFE}　２１：Ａ　ｎｅｗ　ｃｏｍｒａｄｅ{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=25}{FFF6}{=00}{=01}{=00}{=26}{FFF6}{=00}{=02}{=00}{=27}{FFF6}{=00}{=03}{=00}{=10}{FFFF}
+{FB01}{FFFA}{=00}{=00}　２２：Ａｒｃｈ‐Ｅｎｅｍｙ{FFFE}　２３：Ｌｅｇｅｎｄａｒｙ　ａｎｃｉｅｎｔｓ{FFFE}　２４：Ａ　ｓａｄ　ｔａｌｅ{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=28}{FFF6}{=00}{=01}{=00}{=29}{FFF6}{=00}{=02}{=00}{=2A}{FFF6}{=00}{=03}{=00}{=11}{FFFF}
+{FB01}{FFFA}{=00}{=00}　２５：Ｄｅｍｏｎｓ{FFFE}　５０：Ｎｅｗ　Ｔｒａｃｋ　１{FFFE}　５１：Ｎｅｗ　Ｔｒａｃｋ　２{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=2B}{FFF6}{=00}{=01}{=00}{=2C}{FFF6}{=00}{=02}{=00}{=2D}{FFF6}{=00}{=03}{=00}{=12}{FFFF}
+{FB01}{FFFA}{=00}{=00}　５２：Ｎｅｗ　Ｔｒａｃｋ　３{FFFE}　５３：Ｎｅｗ　Ｔｒａｃｋ　４{FFFE}　５４：Ｎｅｗ　Ｔｒａｃｋ　５{FFFE}　Ｅｘｉｔ　Ｌｉｓｔｅｎ　ｍｏｄｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=2E}{FFF6}{=00}{=01}{=00}{=2F}{FFF6}{=00}{=02}{=00}{=30}{FFF6}{=00}{=03}{=00}{=31}{FFFF}
+{FB01}０１：Ｉｎｔｅｒｍｉｓｓｉｏｎ{FFFE}{FFC2}{=00}{=00}{FC30}{FFF8}{=00}{=09}{FFFF}
+{FB01}０２：Ｔｏｗｎ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=01}{FC30}{FFF8}{=00}{=09}{FFFF}
+{FB01}０３：Ｃａｓｔｌｅ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=02}{FC30}{FFF8}{=00}{=09}{FFFF}
+{FB01}０４：Ｖｉｌｌａｇｅ　ｍｕｓｉｃ{FFFE}{FFC2}{=00}{=03}{FC30}{FFF8}{=00}{=0A}{FFFF}
+{FB01}０５：Ｃａｓｉｎｏ{FFFE}{FFC2}{=00}{=04}{FC30}{FFF8}{=00}{=0A}{FFFF}
+{FB01}０６：Ｍａｐ　ｏｐｅｎｉｎｇ{FFFE}{FFC2}{=00}{=05}{FC30}{FFF8}{=00}{=0A}{FFFF}
+{FB01}０７：Ｍａｐ　ｍｕｓｉｃ　１{FFFE}{FFC2}{=00}{=06}{FC30}{FFF8}{=00}{=0B}{FFFF}
+{FB01}０８：Ｍａｐ　ｍｕｓｉｃ　２{FFFE}{FFC2}{=00}{=07}{FC30}{FFF8}{=00}{=0B}{FFFF}
+{FB01}０９：Ｍａｐ　ｍｕｓｉｃ　３{FFFE}{FFC2}{=00}{=08}{FC30}{FFF8}{=00}{=0B}{FFFF}
+{FB01}１０：Ｍａｐ　ｍｕｓｉｃ　４{FFFE}{FFC2}{=00}{=09}{FC30}{FFF8}{=00}{=0C}{FFFF}
+{FB01}１１：Ｍａｐ　ｍｕｓｉｃ　５{FFFE}{FFC2}{=00}{=0A}{FC30}{FFF8}{=00}{=0C}{FFFF}
+{FB01}１２：Ｍａｐ　ｍｕｓｉｃ　６{FFFE}{FFC2}{=00}{=0B}{FC30}{FFF8}{=00}{=0C}{FFFF}
+{FB01}１３：Ｍａｐ　ｃｌｅａｒｅｄ{FFFE}{FFC2}{=00}{=0C}{FC30}{FFF8}{=00}{=0D}{FFFF}
+{FB01}１４：Ｍｉｓｓｉｏｎ　Ｆａｉｌｅｄ{FFFE}{FFC2}{=00}{=0D}{FC30}{FFF8}{=00}{=0D}{FFFF}
+{FB01}１５：Ｇａｍｅ　Ｏｖｅｒ{FFFE}{FFC2}{=00}{=0E}{FC30}{FFF8}{=00}{=0D}{FFFF}
+{FB01}１６：Ｂａｔｔｌｅ　（ｍｏｂ　ｂａｔｔｌｅ）{FFFE}{FFC2}{=00}{=0F}{FC30}{FFF8}{=00}{=0E}{FFFF}
+{FB01}１７：Ｂａｔｔｌｅ　（ｂｏｓｓ　ｂａｔｔｌｅ）{FFFE}{FFC2}{=00}{=10}{FC30}{FFF8}{=00}{=0E}{FFFF}
+{FB01}１８：Ｂａｔｔｌｅ　（ｇｒｅａｔ　ｂｏｓｓ）{FFFE}{FFC2}{=00}{=11}{FC30}{FFF8}{=00}{=0E}{FFFF}
+{FB01}１９：Ａ　ｖｉｌｌａｇｅ　ｍｏｍｅｎｔ{FFFE}{FFC2}{=00}{=12}{FC30}{FFF8}{=00}{=0F}{FFFF}
+{FB01}２０：Ｔａｌｋ　ｗｉｔｈ　ｃｏｍｒａｄｅｓ{FFFE}{FFC2}{=00}{=13}{FC30}{FFF8}{=00}{=0F}{FFFF}
+{FB01}２１：Ａ　ｎｅｗ　ｃｏｍｒａｄｅ{FFFE}{FFC2}{=00}{=14}{FC30}{FFF8}{=00}{=0F}{FFFF}
+{FB01}２２：Ａｒｃｈ‐Ｅｎｅｍｙ{FFFE}{FFC2}{=00}{=15}{FC30}{FFF8}{=00}{=10}{FFFF}
+{FB01}２３：Ｌｅｇｅｎｄａｒｙ{FFFE}ａｎｃｉｅｎｔ　ｃｉｖｉｌｉｓａｔｉｏｎ{FFFE}{FFC2}{=00}{=16}{FC30}{FFF8}{=00}{=10}{FFFF}
+{FB01}２４：Ａ　ｓａｄ　ｔａｌｅ{FFFE}{FFC2}{=00}{=17}{FC30}{FFF8}{=00}{=10}{FFFF}
+{FB01}２５：Ｄｅｍｏｎｓ{FFFE}{FFC2}{=00}{=18}{FC30}{FFF8}{=00}{=11}{FFFF}
+{FB01}５０：Ｎｅｗ　Ｔｒａｃｋ　１{FFFE}{FFC2}{=00}{=31}{FC30}{FFF8}{=00}{=11}{FFFF}
+{FB01}５１：Ｎｅｗ　Ｔｒａｃｋ　２{FFFE}{FFC2}{=00}{=32}{FC30}{FFF8}{=00}{=11}{FFFF}
+{FB01}５２：Ｎｅｗ　Ｔｒａｃｋ　３{FFFE}{FFC2}{=00}{=33}{FC30}{FFF8}{=00}{=12}{FFFF}
+{FB01}５３：Ｎｅｗ　Ｔｒａｃｋ　４{FFFE}{FFC2}{=00}{=34}{FC30}{FFF8}{=00}{=12}{FFFF}
+{FB01}５４：Ｎｅｗ　Ｔｒａｃｋ　５{FFFE}{FFC2}{=00}{=35}{FC30}{FFF8}{=00}{=12}{FFFF}
+{FB01}Ｗｅｌｌ　ｔｈｅｎ，{FFFE}Ｉ　ｔａｋｅ　ｍｙ　ｌｅａｖｅ．{FFFE}{FC30}{FFC2}{=00}{=00}{FFFF}
+{FB01}Ｄｏ　ｙｏｕ　ｓｔｉｌｌ　ｎｅｅｄ　ｉｔ？{FFFE}　Ｙｅｓ{FFFE}　Ｎｏ{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=09}{FFFF}
+{FB00}{=00}{=23}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｈｉｃｈ　ｆｌａｇ　ｄｏ　ｙｏｕ{FFFE}ｗａｎｔ　ｔｏ　ｃｈａｎｇｅ？{FFFE}{FCC0}{FFF8}{=00}{=34}{FFFF}
+{FB01}　４（Ｋｉｅｓａ　ｃｌｅａｒｅｄ）{FFFE}　５（Ｃａｕｃａｓｕｓ　ｃｌｅａｒｅｄ）{FFFE}　６（Ｌｅｃｌｅｒｃ　ｃｌｅａｒｅｄ）{FFFE}　Ｓｏｍｅｔｈｉｎｇ　ｅｌｓｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=36}{FFF6}{=00}{=01}{=00}{=38}{FFF6}{=00}{=02}{=00}{=3A}{FFF6}{=00}{=03}{=00}{=35}{FFFF}
+{FB01}　１２（Ｍａｙａ　ｒｅｌｅａｓｅｄ）{FFFE}　２９（ｓｈｒｉｎｅ　ｕｓａｂｌｅ）{FFFE}　５４（Ａｐｕｍｉｚｕ）{FFFE}　Ｄｏ　ｎｏｔ　ｃｈａｎｇｅ{FFFA}{=00}{=05}{FFF7}{=00}{=04}{=00}{=00}{=00}{=00}{FFF6}{=00}{=00}{=00}{=3C}{FFF6}{=00}{=01}{=00}{=3E}{FFF6}{=00}{=02}{=00}{=40}{FFF6}{=00}{=03}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=04}{=00}{=37}Ｆｌａｇ　４　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ．{FFFE}Ｉｎ　Ｃｈａｐｔｅｒ　２　ｙｏｕ　ｃａｎ{FFFE}ｅｎｔｅｒ　Ｋｉｅｓａ　Ｃａｓｔｌｅ．{FC30}{FFF2}{=00}{=04}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　４{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=04}{FFF8}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=05}{=00}{=39}Ｆｌａｇ　５　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ．{FFFE}Ｉｎ　Ｃｈａｐｔｅｒ　２　ｙｏｕ　ｃａｎ{FFFE}ｅｎｔｅｒ　Ｃａｕｃａｓｕｓ．{FC30}{FC30}{FFF2}{=00}{=05}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　５{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=05}{FFF8}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=06}{=00}{=3B}Ｆｌａｇ　６　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ．{FFFE}Ｉｎ　Ｃｈａｐｔｅｒ　２　ｙｏｕ　ｃａｎ{FFFE}ｅｎｔｅｒ　Ｌｅｃｌｅｒｃ　Ｃａｓｔｌｅ．{FC30}{FFF2}{=00}{=06}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　６{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=06}{FFF8}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=0C}{=00}{=3D}Ｆｌａｇ　１２　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ{FFFE}Ｃｈａｐｔｅｒ　３，　Ｍａｒｖｅｌｌｏｕｓ{FFFE}ｔｏｗｎ’ｓ　“Ｏｌｄ　Ｍａｎｓｉｏｎ”{FFFE}ｌｅｔｓ　ｙｏｕ　ｂｕｙ　ｍｏｎｓｔｅｒｓ．{FC30}{FFF2}{=00}{=0C}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　１２{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=0C}{FFF8}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=1D}{=00}{=3F}Ｆｌａｇ　２９{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ．{FFFE}Ａｔ　ｔｈｅ　“Ｆｏｒｅｓｔ　Ｓｈｒｉｎｅ”{FFFE}ｙｏｕ　ｃａｎ　ｕｓｅ　ｒｅｖｉｖａｌ．{FC30}{FFF2}{=00}{=1D}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　２９{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=1D}{FFF8}{=00}{=42}{FFFF}
+{FB01}{FFF3}{=00}{=36}{=00}{=41}Ｆｌａｇ　５４　ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＮ{FFFE}Ｉｎ　Ｃｈａｐｔｅｒ　４，{FFFE}“ｔｈｅ　ｔｏｗｎ　ｏｆ　Ａｐｕｍｉｚｕ”{FFFE}ｗｉｌｌ　ａｐｐｅａｒ．{FC30}{FFF2}{=00}{=36}{FFF8}{=00}{=42}{FFFF}
+Ｆｌａｇ　５４{FFFE}ｗｉｌｌ　ｂｅ　ｓｅｔ　ＯＦＦ．{FC30}{FFF1}{=00}{=36}{FFF8}{=00}{=42}{FFFF}
+{FB01}Ｉｓ　ｔｈｅｒｅ　ａｎｙｔｈｉｎｇ　ｅｌｓｅ？{FFFE}　Ｙｅｓ{FFFE}　Ｎｏ{FFF7}{=00}{=02}{=00}{=00}{=00}{=01}{FFF6}{=00}{=00}{=00}{=34}{FFF8}{=00}{=31}{FFFF}
 {FFC2}{=00}{=12}{FB00}{=01}{=6F}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ？　Ａｒｅ　ｙｏｕ　ｏｆ　ｔｈｅ{FFFE}Ｒｏｙａｌ　Ａｒｍｙ？{FFFE}Ａｓ　ｆｏｒ　Ｆａｔｈｅｒ　Ｂａｔｏｕ，{FFFE}ｈｅ　ｉｓ　ｏｕｔ　ａｔ　ｐｒｅｓｅｎｔ．{FC30}{FFF8}{=00}{=08}{FFFF}
 {=FF}
 {PAD 35581}
 
 === BANK 32 @ 0x140000  hdr=yes
 {HDR:fffc00020003ffff0000ffffffffffff0003fffc00020001ffff0000ffffffffffff0002fffc00020000ffff0001ffffffffffff0005fffc00000000ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}そこは　てーこく軍に{FFFE}占領されてるから、{FFFE}近づくと　あぶないよ。{FC30}{FFFF}
-{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}そこは　てーこく軍に{FFFE}占領されてるから、{FFFE}近づくと　あぶないよ。{FC30}{FFFF}
+{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈａｔ　ｐｌａｃｅ　ｈａｓ　ｂｅｅｎ{FFFE}ｓｅｉｚｅｄ　ｂｙ　ｔｈｅ　Ｉｍｐｅｒｉａｌ{FFFE}ａｒｍｙ，　ｓｏ　ｉｔ’ｓ　ｄａｎｇｅｒｏｕｓ{FFFE}ｔｏ　ｇｏ　ｎｅａｒ．{FC30}{FFFF}
+{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈａｔ　ｐｌａｃｅ　ｈａｓ　ｂｅｅｎ{FFFE}ｓｅｉｚｅｄ　ｂｙ　ｔｈｅ　Ｉｍｐｅｒｉａｌ{FFFE}ａｒｍｙ，　ｓｏ　ｉｔ’ｓ　ｄａｎｇｅｒｏｕｓ{FFFE}ｔｏ　ｇｏ　ｎｅａｒ．{FC30}{FFFF}
 {FB00}{=00}{=17}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｏｈ，　{FFEC}{=00}{=00}．{FFFE}Ｔｈａｎｋｓ　ｔｏ　ｙｏｕ，{FFFE}Ｆａｒｉｎａ，　ｔｏｏ，　ｎｏｗ　ｈａｓ{FFFE}ｈｏｐｅ　ｏｆ　ｒｅｂｕｉｌｄｉｎｇ．{FCC0}{FFFE}Ａｌｌ　ｏｆ　ｔｈｉｓ　ｉｓ　ｂｅｃａｕｓｅ{FFFE}{FFEC}{=00}{=00}　ａｎｄ　ｙｏｕｒ　ｍｅｎ{FFFE}ｈｅｌｐｅｄ　ｕｓ{FFFE}ｔｈａｔ　ｄａｙ．{FCC0}{FFFE}Ｉ　ａｍ　ｔｒｕｌｙ　ｇｒａｔｅｆｕｌ．{FFFE}Ｉ，　Ｆｅｌｉｘ，　ｏｎ　ｂｅｈａｌｆ{FFFE}ｏｆ　ｔｈｅ　ｐｅｏｐｌｅ，{FFFE}ｇｉｖｅ　ｙｏｕ　ｏｕｒ　ｔｈａｎｋｓ．{FC30}{FFFF}
 {FFF3}{=00}{=6C}{=00}{=05}{FFF3}{=00}{FF00}{=04}{FFF8}{=00}{=05}{FFFF}
 {FFC2}{=00}{=17}{FB00}{=00}{=00}{=00}{=00}{FB00}{=00}{=02}{=00}{=01}{FB00}{=00}{=EB}{=00}{=02}{FB00}{=01}{=6D}{=00}{=03}{FB00}{=00}{=3B}{=00}{=04}{FB00}{=01}{=71}{=00}{=05}{FCB0}{=00}{=02}{=00}{=01}{FC51}．．．Ｗｈａｔ’ｓ　ｇｏｉｎｇ　ｏｎ？{FFFE}Ｔｈｅｒｅ’ｓ　ｎｏｂｏｄｙ　ｈｅｒｅ．{FFFE}{FC30}{FCB0}{=00}{=01}{=00}{=01}{FC51}{FB01}Ｉ’ｖｅ　ｇｏｔ　ａ　ｂａｄ{FFFE}ｆｅｅｌｉｎｇ　ａｂｏｕｔ　ｔｈｉｓ．{FCC0}{FFFE}{FFEC}{=00}{=00}，{FFFE}ｌｅｔ’ｓ　ｓｐｌｉｔ　ｕｐ．{FFFE}Ｗｅ　ｌｏｏｋ　ｆｏｒ　Ｆｅｌｉｘ{FFFE}ａｎｄ　ｔｈｅ　ｏｔｈｅｒｓ．{FC30}{FCB0}{=00}{=03}{=00}{=00}{FC50}{FB01}{FFEC}{=00}{=00}！{FFFE}{FC30}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ｎｏｒｍａｎ！{FFFE}Ｗｈａｔ　ｏｎ　ｅａｒｔｈ　ｈａｓ{FFFE}ｈａｐｐｅｎｅｄ　ｈｅｒｅ？{FFFE}Ｗｈａｔ　ｉｓ　ｔｈｉｓ　ｓｉｇｈｔ？{FC30}{FC50}{FB01}Ｓｏｌｄｉｅｒｓ　ｃａｍｅ{FFFE}ｕｐｏｎ　ｕｓ　ｓｕｄｄｅｎｌｙ，{FFFE}ａｎｄ　ｗｉｔｈｏｕｔ　ａ　ｗｏｒｄ{FFFE}ｔｈｅ　ｃａｓｔｌｅ’ｓ　ｐｅｏｐｌｅ．．．{FC30}{FC51}{FB01}Ａｎｄ　Ｆｅｌｉｘ？{FFFE}{FC30}{FC50}{FB01}．．．Ｈｅ　ｗａｓ　ｋｉｌｌｅｄ．{FFFE}{FC30}{FCB0}{=00}{=04}{=00}{=01}{FC51}{FB01}Ｅｈｈ！？{FFFE}{FC30}{FCB0}{=00}{=01}{=00}{=01}{FC51}{FB01}Ｗａｓ　ｉｔ　ｔｈｅ　Ｉｍｐｅｒｉａｌ{FFFE}ａｒｍｙ　ｔｈａｔ　ｃａｍｅ？{FFFE}{FC30}{FC50}{FB01}Ｔｈｅｙ　ａｌｌ　ｗｏｒｅ　ｈｅｌｍｅｔｓ，{FFFE}ｓｏ　Ｉ　ｃｏｕｌｄ　ｎｏｔ　ｔｅｌｌ．．．{FFFE}Ｔｈｅｙ　ｓｅｅｍｅｄ　ｔｏ　ｂｅ{FFFE}ｌｏｏｋｉｎｇ　ｆｏｒ　ｓｏｍｅ　ｍｅｄａｌ．{FC30}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ａ　ｍｅｄａｌ．．．．？{FFFE}{FC30}{FB00}{=00}{=06}{=00}{=04}{FCB0}{=00}{=04}{=00}{=00}{FC50}{FB01}{FFEC}{=00}{=00}，　ｌｏｏｋ．{FFFE}Ｓｏｍｅｏｎｅ’ｓ　ｃｏｍｉｎｇ{FFFE}ｔｈｉｓ　ｗａｙ．{FFFE}{FC30}{FCB0}{=00}{=05}{=00}{=00}{FC50}{FB01}Ｙｏｕ　ａｒｅ　ｃａｐｔａｉｎ　ｏｆ　ｔｈｅ{FFFE}９ｔｈ　Ａｒｍｙ，　{FFEC}{=00}{=00}，{FFFE}ａｒｅ　ｙｏｕ　ｎｏｔ？{FFFE}{FC30}{FC51}{FB01}Ｔｈａｔ’ｓ　ｒｉｇｈｔ．．．{FFFE}Ａｎｄ　ｙｏｕ　ａｒｅ？{FC30}{FC50}{FB01}Ｉ　ｃｏｍｅ　ａｓ　ｔｈｅ　ｅｎｖｏｙ{FFFE}ｏｆ　ａ　ｃｅｒｔａｉｎ　ｐｅｒｓｏｎ．{FCC0}{FFFE}Ｗｉｌｌ　ｙｏｕ　ｃｏｍｅ　ａｔ　ｏｎｃｅ{FFFE}ｔｏ　ｔｈｅ　ｔｏｗｎ　ｅｌｄｅｒ’ｓ{FFFE}ｍａｎｓｉｏｎ　ｉｎ　Ｃａｆｆｉ？{FFFE}{FC30}{FC51}{FB01}Ａ　ｃｅｒｔａｉｎ　ｐｅｒｓｏｎ？{FC30}{FC50}{FB01}Ｔｈａｔ　Ｉ　ｃａｎｎｏｔ　ｓａｙ{FFFE}ｈｅｒｅ．{FFFE}Ｈｏｗｅｖｅｒ，　ｂｅ　ａｔ　ｅａｓｅ．{FFFE}Ｉ　ａｍ　ｎｏ　ｅｎｅｍｙ．{FC30}{FCB0}{=00}{=01}{=00}{=01}{FC51}{FB01}Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ，{FFFE}{FFEC}{=00}{=00}？{FFFE}Ｉｔ　ｃｏｕｌｄ　ｂｅ　ａ　Ｒｏｙａｌ{FFFE}Ａｒｍｙ　ｔｒａｐ．{FC30}{FCB0}{=00}{=04}{=00}{=00}{FC50}{FB01}Ｗｅ’ｌｌ　ｆａｃｅ　ｔｈａｔ　ｔｈｅｎ．{FFFE}Ｒｉｇｈｔ　ｎｏｗ　ｗｅ　ｎｅｅｄ　ａｎｙ{FFFE}ｉｎｆｏｒｍａｔｉｏｎ　ｗｅ　ｃａｎ　ｇｅｔ．{FFFE}Ａｎｙｗａｙ，　ｓｈａｌｌ　ｗｅ　ｇｏ？{FC30}{FCB0}{=00}{=00}{=00}{=01}{FC51}{FB01}Ｔｒｕｌｙ，　ｒｕｎｎｉｎｇ　ａｗａｙ{FFFE}ｗｈｉｌｅ　ｉｔ　ｎａｇｓ　ｍｅ　ｌｉｋｅ{FFFE}ｔｈｉｓ　ｉｓ　ｈａｒｄ　ｔｏ　ｂｅａｒ．{FFFE}Ｌｅｔ’ｓ　ｇｏ　ａｎｄ　ｓｅｅ．{FC30}{FFC2}{=00}{=00}{FFF2}{=00}{=6C}{FFFF}
@@ -7476,7 +7476,7 @@
 
 === BANK 34 @ 0x154000  hdr=yes
 {HDR:fffc00010000ffff0001ffffffffffff0002fffc00010000ffff0001ffffffffffff0001fffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff}
-{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}そこは　てーこく軍に{FFFE}占領されてるから、{FFFE}近づくと　あぶないよ。{FC30}{FFFF}
+{FB00}{=00}{=06}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔｈａｔ　ｐｌａｃｅ　ｈａｓ　ｂｅｅｎ{FFFE}ｓｅｉｚｅｄ　ｂｙ　ｔｈｅ　Ｉｍｐｅｒｉａｌ{FFFE}ａｒｍｙ，　ｓｏ　ｉｔ’ｓ　ｄａｎｇｅｒｏｕｓ{FFFE}ｔｏ　ｇｏ　ｎｅａｒ．{FC30}{FFFF}
 {FFC2}{=00}{=13}{FB00}{=00}{=38}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｗｅ　ｏｆ　ｔｈｅ　７ｔｈ　Ａｒｍｙ{FFFE}ｗｉｌｌ　ｈｏｌｄ　ｈｅｒｅ．{FCC0}{FFFE}Ｙｏｕ　ｍｕｓｔ　ｍａｋｅ　ｈａｓｔｅ{FFFE}ｆｏｒ　ｔｈｅ　ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ{FFFE}ｏｆ　Ｗａｒｗｉｃｋ．{FFFE}Ｉ　ｐｒａｙ　ｙｏｕ　ｆｉｇｈｔ　ｗｅｌｌ．{FC30}{FFC2}{=00}{=00}{FFFF}
 {FFF3}{=00}{=76}{=00}{=01}{FFC2}{=00}{=13}{FB00}{=00}{=50}{=00}{=00}{FCB0}{=00}{=00}{=00}{=01}{FC51}Ｔａｋｉｎｇ　ｕｐ　ｔｈｅ　ｗｉｌｌ　ｏｆ{FFFE}Ｃａｐｔａｉｎ　Ａｌｆｒｅｄ，{FFFE}ｗｈｏ　ｉｓ　ｇｒａｖｅｌｙ　ｗｏｕｎｄｅｄ，{FFFE}ｗｅ　ｏｆ　ｔｈｅ　７ｔｈ　ｈｏｌｄ　ｈｅｒｅ．{FCC0}{FFFE}Ｙｏｕ　ｍｕｓｔ　ｍａｋｅ　ｈａｓｔｅ{FFFE}ｆｏｒ　ｔｈｅ　ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ{FFFE}ｏｆ　Ｗａｒｗｉｃｋ．{FFFE}Ｉ　ｐｒａｙ　ｙｏｕ　ｆｉｇｈｔ　ｗｅｌｌ．{FC30}{FFC2}{=00}{=00}{FFFF}
 {=FF}
