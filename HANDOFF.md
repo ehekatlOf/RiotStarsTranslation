@@ -57,7 +57,7 @@ one `reviewer` subagent at a time, foreground, in unit order 014 → 015 → 016
 
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
-| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ⛔ **CHANGES (PR #37)** — rework round 1 sent |
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | 🔁 **rework r1 PUSHED (`727146b`)** — awaiting re-review |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | ✅ **PR #39 open** |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | ✅ **PR #38 open** — awaiting barrier |
 
@@ -199,6 +199,41 @@ it: *"Can not request changes on your own pull request"* (single-account repo). 
 as a COMMENT review whose **first line is `DECISION: CHANGES`**, with an explicit do-not-merge note.
 **Every future reviewer inherits this — do not read an absent REQUEST_CHANGES state as approval.**
 Belongs in `FLAGS.md` at the next integration commit.
+
+### Rework round 1 — PR #37 `batch_014`: **all four findings applied, pushed as `727146b`** (2026-09-11)
+One commit, one file, `build/` restored. **Zero added tags, −2 bytes net.** Gates re-run on the pushed
+file: `check` passes · `merge` 0 unmatched · `bankmeasure` 18/19/20 free **8,473 / 7,803 / 28,477** ·
+`rowcheck script` 15 warnings, **0 of them this unit's** · gate 6 0 collisions, both internal duplicate
+pairs byte-identical · cross-file item-name gate 43 names, 0 divergences of its own. Figures now
+JP 2,742 → EN **5,539** = **2.0201×**, growth **5,594 B**; bank deltas close exactly against it.
+**All 27 price rows in the corpus now read 7×1 / 8×26 — no outlier left.**
+
+⭐ **THE TRANSLATOR FOUND A BETTER REASON FOR FINDING 4 THAN THE REVIEWER GAVE, AND IT RESERVES A WORD
+FOR A LATER WAVE.** The reviewer objected to `ｃｏｉｎ` because the game "lacks a coin". ✅ **Verified: the
+game HAS one** — `コイン` is at **DATA 1398 (bank 42)** and **DATA 1419 (bank 43)**, both **untranslated**,
+both the casino medal counter (`購入するコインの枚数を決めて…`). So spending `ｃｏｉｎ` on `全部` would have
+**pre-empted the word the casino's own interface needs, in the same scene domain**. Rendered
+`ａｌｌ　ｏｆ　ｔｈｅｍ，` instead. ⚠️ **WAVE 11+: `ｃｏｉｎ` IS RESERVED for `コイン` at D1398 / D1419** — and
+**both lines sit in the wave-11 feasible queue** (1388–1413 and 1415–1430). Do not spend it elsewhere.
+
+⚠️ **A "CORRECTION" THAT WAS A CONVENTION MISMATCH — NEITHER SIDE IS WRONG, AND NOBODY SHOULD "FIX" IT.**
+The translator reported finding 4's line number as off ("`全部` is at line 52, not 44; line 44 is D742").
+✅ **Measured in the pushed file: D750 is FILE line 52 AND data-line index 44; D742 is FILE line 44 and
+data-line index 36.** The reviewer counted data-lines, the translator counted file lines, **both point at
+D750, and "FILE 44 = D742" is also true.** This is exactly the **DATA-vs-FILE trap** already recorded in
+Decisions as having fired twice in wave 8. **Reviewer: do not act on this as an error in either
+direction** — state the convention instead.
+
+**One partial push-back, accepted, and it corrects BOTH earlier figures.** Flag 10's gutter census was
+reported by the translator as 20→28/eight and by the reviewer as 20→27/seven. The translator re-measured
+and both conflate two things: **true cursor gutters are 20 → 20, zero lost**, and there are separately
+**8 insert word-spaces** (6 price, 2 player-name). A row opening `{FFEC}…　` has readable text starting
+with a full-width space once tags are stripped, so a naive split counts it as a gutter. **It did not
+re-push for this** — the Flag wording is the reviewer's to fix at merge.
+
+🚫 **RE-REVIEW OF #37 IS BLOCKED UNTIL REVIEWER `a4c142b40cc5b30ae` RETURNS FROM PR #39** — one reviewer
+at a time (§4 step 4). This is round **1 of 3**; a third CHANGES means PARK with the measured reason or
+one fresh translator.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
