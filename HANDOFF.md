@@ -12,32 +12,50 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 `git log -1`. No work is lost; the stale local ref is a container artifact.
 
 ## NEXT ACTION — always current, always a literal instruction
-> 🔴 **WAVE 10 IS RUNNING AND IT IS SELF-REVIEWING. CLAUDE.md §8's no-`Task` clause is in force.**
-> Wave 10's coordinator is an `orchestrator` **subagent** (the §7.2 fallback wave 9 took), and
-> **subagents cannot spawn subagents**, so it has **no `Task` tool, therefore no translator
-> subagents and no independent reviewer.** Tested explicitly at preflight, not assumed: the tool
-> surface offers `SendMessage`, `Monitor`, `TaskStop` and **no spawn tool of any kind**.
-> **Every unit wave 10 merges is marked SELF-REVIEWED and owes an independent audit — see below.**
+> ✅ **WAVE 9 IS CLOSED — 3 of 3 merged, 0 parked, `check` green. Script 640/1,430 lines, 59.7%.**
 >
-> ⛔ **WAVE 11 MUST BE OPENED BY A HUMAN. WAVE 10 CANNOT DO IT.** Wave 10 shares wave 9's session
-> lineage, so `create_session` fails for it with the identical
-> `caller session is at lineage depth 8 (limit 8)`. This is Blocked 0b and nothing else.
-> **THE FIX, and it is one action:** open wave 11 as a **FRESH TOP-LEVEL SESSION** (any new Claude
-> Code session, depth 0) on `https://github.com/ehekatlOf/RiotStarsTranslation`, `source_revision`
-> `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with **Next up**.
-> That restores the depth, the chain **and** the three-role split at once.
+> ✅ **WAVE 10 OPENS AS A GENUINE TOP-LEVEL SESSION, FROM THE RUN'S ROOT SESSION. THE DEPTH-8 CHAIN
+> IS RETIRED.** `session_018YepyHo7ky7emoUMicnUcL` — the run's original runner, **lineage depth 0**,
+> outside the cap that stopped wave 9 — is opening it. Verified against the session record, not
+> taken on the message alone: web origin, **no parent session**, created 2026-09-08 before wave 1,
+> same environment and branch. A wave 10 opened from there is **depth 1**, so it has a full tool
+> surface: its own translators, its own **independent reviewer**, its own watchdog, and it can open
+> wave 11. **The three-role split is intact and no human action is required.**
 >
-> ⚠️ **WAVE 10 IS SCRIPT-ONLY — both battle blockers were re-tested at wave 10 preflight and
-> BOTH ARE STILL UNFIXED.** Evidence, run 2026-09-11: `grep -n "FC70\|FCA8" tools/riotbattle.py`
-> returns **no hits**; `riotscript.tokenise_stream` still tests `is_sjis_lead` before the tag branch
-> with no argument-length table; `assemble.py:validate_body` (lines 88–114) still applies its
-> charset whitelist to every non-structural line with **no dump-identical exemption**. All 8
-> remaining battle chunks stay blocked.
+> ⛔ **THE §7.2 SUBAGENT FALLBACK WAS STOOD DOWN, AND IT MERGED NOTHING.** Wave 9's coordinator
+> spawned an `orchestrator` subagent when `create_session` failed, then stopped it on the root
+> session's instruction. **It got as far as preflight and survey and pushed one `HANDOFF.md` commit
+> (`8fb09ad`); it created no branch, opened no PR, and wrote nothing to `tl/`, `glossary.md` or
+> `FLAGS.md`.** Verified from `git log`, `git status`, `git ls-remote` and `git diff --stat`, not
+> from the agent's own report. **Therefore NO unit is SELF-REVIEWED and NO audit debt exists.**
+> `check` is green at that commit.
+>
+> ⭐ **ONE FACT THAT SUBAGENT ESTABLISHED EMPIRICALLY, worth keeping: a subagent really does have NO
+> spawn tool.** It tested its own surface rather than assuming — `SendMessage`, `Monitor`, `TaskStop`
+> and **no `Task`**. CLAUDE.md's claim that "subagents cannot spawn subagents" is now verified rather
+> than inherited, which is exactly why the §7.2 fallback costs review independence and why a real
+> session is worth waiting for.
+>
+> **Wave 10's coordinator: compute your own units.** The stood-down subagent's survey proposed
+> batches **014/015/016 = DATA 707–856** and recomputed the feasible queue at **424 lines / 447
+> instances**. ⚠️ **That is a LEAD, NOT A QUEUE — re-derive it.** It is close to wave 9's own close
+> figure (427/450) but was measured by an agent that did not finish; and every dispatch in this run
+> warns against inheriting a line list.
+>
+> ⚠️ **WAVE 10 IS SCRIPT-ONLY.** Both battle blockers were re-tested **twice** on 2026-09-11 — at
+> wave 9's close and again at the subagent's preflight — and **both are still unfixed**:
+> `grep -n "FC70\|FCA8" tools/riotbattle.py` returns no hits; `riotscript.tokenise_stream` still
+> tests `is_sjis_lead` before the tag branch with no argument-length table; and
+> `assemble.py:validate_body` still applies its charset whitelist with no dump-identical exemption.
+> All 8 remaining battle chunks stay blocked.
+>
+> ⚠️ **The run is NOT complete** — ~424–427 lines stay bank-feasible, roughly 8–9 batches.
 
 ## Last updated
-2026-09-11 · by: **wave-10 coordinator** (`orchestrator` subagent, **NO `Task` TOOL —
-SELF-REVIEWING**) · wave: **10 SURVEYED — script-only, batches 014/015/016 = DATA 707–856** ·
-queue: **recomputed at wave-10 preflight; 424 lines / 447 instances bank-feasible**
+2026-09-11 · by: **wave-9 coordinator** (`session_01DFhp3iVua6qbKN4QhBJvPP`) ·
+wave: **9 CLOSED — 3 of 3 merged, 0 parked, 0 lost, 0 re-dispatches** ·
+**wave 10 handed to the ROOT session as a top-level spawn; the §7.2 subagent was stood down having
+merged nothing** · queue: **424–427 lines / 447–450 instances bank-feasible — re-derive, do not inherit**
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
@@ -54,26 +72,11 @@ in the game and is no longer comfortable. Banks 40 and 41 still have a spendable
 (free < the 500-byte reserve), so any line touching either remains blocked outright.
 Parked and translated: chunks **5, 43** (tier-A budget), **17** (dump artifact), **36** (charset gate).
 
-## In flight — WAVE 10 (script-only, 3 units, **ALL SELF-REVIEWED**)
-⚠️ **No translator subagents and no independent reviewer exist for this wave** — the coordinator has
-no `Task` tool (see NEXT ACTION). It translates, gates and merges each unit itself. Every row below
-is therefore **SELF-REVIEWED** and owes an independent post-merge audit of the *reading* review
-(the §6 mechanical gates are objective and their evidence is pasted in each PR; the reading is what
-self-review compromises).
-
-| Unit | DATA range | Lines / inst | Banks | Branch | State |
-|---|---|---|---|---|---|
-| `batch_014` | 707–756 | 50 / 50 | 18, 19, 20 | `tl/script-014` | surveyed, not yet dispatched |
-| `batch_015` | 757–806 | 50 / 50 | 20 | `tl/script-015` | surveyed, not yet dispatched |
-| `batch_016` | 807–856 | 50 / 50 | 20, 21, 22, 23 | `tl/script-016` | surveyed, not yet dispatched |
-
-**Feasibility measured at wave-10 preflight** (own script, not `queue.py`'s allocator), growth at
-2.10×, 500 B/bank reserve — **every bank comfortable, no tight bank touched at all**:
-`18: 1,025 / 10,333` · `19: 1,415 / 10,527` · `20: 4,005 / 29,489` · `21: 1,279 / 36,819` ·
-`22: 526 / 38,773` · `23: 262 / 33,385`. ⚠️ Banks **2, 5, 33, 40, 41** (the tight ones) are **not
-touched by any of the three units** — deliberate: DATA 707–856 is one contiguous town/shop/NPC
-scene continuing wave 9's `batch_011` (which ended at DATA 706) and it lives entirely in roomy banks.
-⚠️ **DATA 518/519/520 are set aside as briefed** (6,389 B of growth against bank 5's 1,135 spendable).
+## In flight
+**Nothing. Wave 9 is closed (3 of 3 merged, 0 parked) and wave 10 has not started.**
+No PR is open, no unit branch is unmerged, and no coordinator is working this repo.
+⚠️ **Exactly one coordinator works the repo at a time (CLAUDE.md §4).** Wave 9's coordinator has
+ended; wave 10's top-level session is the next and only writer.
 
 ## Next up — WAVE 10 (⚠️ STILL SCRIPT-ONLY unless a human clears Blocked 0 / 0a)
 **Seed the glossary BEFORE dispatching.** Sections end at **glossary §54** and **FLAGS §AP** —
@@ -286,14 +289,31 @@ and `batch_003`/`004`/`005` each carry the line *"Japanese keys are copied byte-
 script_unique.txt, i.e. without `{FFFF}`"* — **the repo documents this in three places.** PR #35's
 reviewer caught it as its own instrument being wrong and said so rather than reporting a failure.
 
-⚠️ **ALL FIVE OF WAVE 9's WRONG FIGURES SHARE ONE SHAPE, AND IT IS NARROWER THAN "VERIFY BOTH
-DIRECTIONS": someone measured ONE SIDE of a comparison and inferred the other.** My clause table
-measured shipped English without counting how many instances backed it. The `で、` census matched
-one way. The `バニシュジュエル` correction re-measured the source but not the replacement string. The
-`こおりのゆびわ` correction re-measured the value it corrected *from*, not *to*. **The operational
-rule is mechanical: `len()` BOTH values and PRINT BOTH before asserting either is wrong.** It is not
-a counsel of care — I hand-counted `Ｌｅｃｔｕｒｅ` as 8 letters (it is 7) while checking a
-translator's figure, and only measuring stopped me adding a sixth error.
+⚠️ **WAVE 9's SEVEN WRONG FIGURES — THE FULL TALLY, WITH ATTRIBUTION, EACH VERIFIED BY ME.**
+Recorded because a later summary of this run attributed them **4 translators / 3 reviewers**, and
+that is not what the record shows. The verified breakdown is **1 coordinator, 2 translators,
+4 reviewers**:
+| # | Figure | Source | Caught by |
+|---|---|---|---|
+| 1 | the `いらっしゃいませ！！` clause-alignment table (a rule inferred from a sample of one) | **coordinator (mine)** | the translator, by reading |
+| 2 | `バニシュジュエル` 13 / 15 (true: **12 / 14**) | translator | coordinator |
+| 3 | the `ベルナール教会` "promotion" — a row that was never provisional | **reviewer** | the translator, by declining |
+| 4 | `こおりのゆびわ` "corrected" 10 → 12 (true: **10**) | translator | coordinator |
+| 5 | the `で、` census run with a "starts with" matcher, returning the opposite of the truth | **reviewer** | itself, by re-censusing whole rows |
+| 6 | net "+4 bytes" (true: **+2**) | **reviewer** | the translator |
+| 7 | the stutter census "21 : 0" (true: **19 : 3**) | **reviewer** | the translator, by reading all 45 hits |
+⚠️ **The source shifted across the wave: the early errors were translators', the last three were
+reviewers'.** **Quality control here is NOT one-directional, and review dispatches must stop
+implying it is.** A reviewer's finding is not privileged over a translator's evidence — #3 would have
+written a fabricated entry into `glossary.md` had the translator complied instead of checking.
+
+⚠️ **ALL SEVEN SHARE ONE SHAPE: someone measured ONE SIDE of a comparison and inferred the other.**
+The clause table measured shipped English without counting how many instances backed it; the `で、`
+census matched one way; the `バニシュジュエル` fix re-measured the source but not the replacement;
+the `こおりのゆびわ` fix re-measured the value it corrected *from*, not *to*. **The operational rule
+is mechanical, not a counsel of care: `len()` BOTH values and PRINT BOTH before asserting either is
+wrong.** I hand-counted `Ｌｅｃｔｕｒｅ` as 8 letters (it is 7) while checking a translator's figure,
+and only measuring stopped an eighth error being mine.
 
 **Method findings (wave 8, still binding — these are what the dispatches carry).**
 - ⚠️ **GATE 7 RUNS FROM THE GLOSSARY SIDE, KEY BY KEY**, with controls in **both** directions.
