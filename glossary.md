@@ -694,7 +694,7 @@ reading, not as a fixed distinction.
 
 | Japanese | Shipped English — MATCH IT | Shipped where | Recurs in wave 10 at |
 |---|---|---|---|
-| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** |
+| `館の中は静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `batch_011` D700 (§52, `静まりかえる` row) | **D711, D714, D716** — ⚠️ the source spells it **`静まりかっている`** here and **`静まりかえっている`** at D700. **Not byte-identical, so gate 6 is blind to all three.** ⚠️ **DOT COUNT CORRECTED 2026-09-11 (PR #37): this row's single English string is right for D711 and D714 only.** Measured tails: **D711 `・・・。` = 4, D714 `・・・。` = 4, D716 `・・・。。` = 5** — D716 carries a **doubled 。**. §3.1 takes the source's count, so D716 ships **five** stops. Shipped that way in `batch_014`. |
 | `館の中は静寂に　包まれている・・。` | — **a THIRD variant, not yet rendered anywhere** | — | **D717, D720.** ⚠️ *The mansion is wrapped in silence* — a **different Japanese sentence** from the two above, not a spelling variant, so it may legitimately take different English; decide deliberately rather than by default. **D717 and D720 carry identical readable text** (their tags differ, which is why they are two unique rows) and **must take byte-identical English.** |
 | `貼り紙がしてある・・・` | `Ａ　ｎｏｔｉｃｅ　ｉｓ　ｐｏｓｔｅｄ．．．` | `batch_006` D633, `batch_011` D647 | **D724** (and D870, deferred to wave 11) |
 | `親衛隊` | `ｇｕａｒｄ` (in `Ｈｅｌｆｅｒ’ｓ　ｇｕａｒｄ`) | `batch_010` — ⚠️ **sample of one**, and **no glossary row exists** | **D789, D791, D792, D793, D794 — five**, all in `batch_015`. Wave 10 takes the corpus from 1 instance to 6, so this unit, not the incumbent, effectively fixes the term. Read D791 (`かつてのカーライン…`) and D794 (`親衛隊だか何だか知らねえが` — hostile, colloquial) before fixing on it. |
@@ -721,7 +721,7 @@ reading, not as a fixed distinction.
 | `ブラックボックス` | `ｂｌａｃｋ　ｂｏｘ` (9) | D744 | lowercase — a common noun, not a named part (§17.1) |
 | `ボネット平原` | `Ｂｏｎｎｅｔ　Ｐｌａｉｎ` (12) | D745, where the airship came down | A **place**. Alt `Ｂｏｎｎｅｔ　Ｐｌａｉｎｓ` (13) |
 | `『虹のドレス』` | `“Ｒａｉｎｂｏｗ　Ｄｒｅｓｓ”` (15) | D748, a casino prize | — |
-| `バウアーの砦` | `Ｆｏｒｔ　Ｂａｕｅｒ` (10) / `Ｂａｕｅｒ` (5) | D757 | A **place**, German reading per §14. Alt `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` (12) |
+| ~~`バウアーの砦`~~ | ⛔ **SEED WITHDRAWN 2026-09-11 (PR #37) — use the INCUMBENT `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` (12) / `Ｂａｕｅｒ` (5).** My `Ｆｏｒｔ　Ｂａｕｅｒ` would have split a shipped proper noun. | D757 (`batch_014`), **D1300 (a later wave inherits this)** | ⚠️ **Why the seed missed it: a KANA SPELLING VARIANT.** §2 has carried `バウワーの砦` → `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` since ch.40, and `tl/battle/chunk_040.txt` **ships** `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` and `Ｂａｕｅｒ`. Census: `バウアー` script **2** / battle **1**; `バウワー` script **0** / battle **1**. I searched the glossary for `バウアー`, found nothing, and never searched `バウワー` — **§AG6's mirror exactly: I measured the alternative and never looked for the incumbent.** An exact-key grep cannot see this and gate 6 cannot catch it. Caught by `batch_014`'s translator. |
 | `『功績レベル』` | `“Ｍｅｒｉｔ　Ｌｅｖｅｌ”` (13) | D758 ×2 | Built from the fixed `功績` → `Ｍｅｒｉｔ` and lowercase prose `ｌｅｖｅｌ` |
 | `能力値` | `ａｂｉｌｉｔｙ　ｓｃｏｒｅｓ` (14) | D758 | Alt `ｓｔａｔｓ` (5) if the row is tight |
 | `隠れ家` | `ｈｉｄｅｏｕｔ` (7) | D714, the pickpocket's | `スリ` → `ｐｉｃｋｐｏｃｋｅｔ` is **binding** (3 shipped, `batch_012`) |
@@ -731,7 +731,7 @@ reading, not as a fixed distinction.
 | `ヘヴィメイル` | `Ｈｅａｖｙ　Ｍａｉｌ` (10) | D801, armour worn by an imperial soldier | Capitalised: a named item. Alt `ｈｅａｖｙ　ｍａｉｌ` |
 | `旅芸人の一座` | `ａ　ｔｒａｖｅｌｌｉｎｇ　ｔｒｏｕｐｅ` (19) | D760, D774 | British `‐ll‐`. Alt `ａ　ｔｒｏｕｐｅ　ｏｆ　ｐｌａｙｅｒｓ` (19) |
 | `幽霊` | `ｇｈｏｓｔ` (5) | D762 | — |
-| `生き返りの仙人` | `ｔｈｅ　ｈｅｒｍｉｔ　ｏｆ　ｒｅｖｉｖａｌ` (21) | D756, D782 | Alt `ｔｈｅ　ｒｅｓｕｒｒｅｃｔｉｏｎ　ｓａｇｅ` (21) |
+| `仙人` | `ｈｅｒｍｉｔ` (7) | **D756 and D782 — and the two are NOT the same construction** | ⚠️ **CORRECTED 2026-09-11 (PR #37). My seed asked for a compound `生き返りの仙人` at "D756, D782"; that compound is at neither, as written.** **D756** reads `死んだ人を　生き返らせる術を使う　仙人` — a *verb phrase* plus a bare `仙人`, not a compound. **D782** reads `生き返りの{FFFE}仙人さん` — the compound **is** in the readable text, but a `{FFFE}` sits inside it, so it is **0 hits on a raw grep of every dump** and invisible to any exact-key search. **That split is method note 1 in miniature**: the term is real, and only a Japanese-side sub-message sweep finds it. `ｈｅｒｍｉｔ` shipped at D756 (`batch_014`); **D782 belongs to `batch_015`** and must match. Alt `ｓａｇｅ` (4) |
 | `アーマーナイト` | `Ａｒｍｏｕｒ　Ｋｎｉｇｈｔ` (13) | D828, a unit class | ⚠️ **British `ａｒｍｏｕｒ`** — the corpus ships `ａｒｍｏｕｒ` **10 times and `ａｒｍｏｒ` 0 times**. `Ａｒｍｏｒ　Ｋｎｉｇｈｔ` **REJECTED** on that count. Capitalised per §4's `フリーナイト` |
 | `腕力` | `ｓｔｒｅｎｇｔｈ` (8) | D829 | lowercase prose, like `attack power` / `speed`. Alt `ｐｏｗｅｒ` (5) — **rejected**: `パワー` already ships as `ｐｏｗｅｒ` (`batch_001`, `ｂｏｔｈ　ｐｏｗｅｒ　ａｎｄ　ｓｐｅｅｄ`), so reusing it here would merge two distinct source words |
 | `頑丈さ` | `ｔｏｕｇｈｎｅｓｓ` (9) | D831 | Alt `ｓｔｕｒｄｉｎｅｓｓ` (10) |

@@ -57,12 +57,34 @@ have an open PR.**
 
 | Unit | DATA | Lines / inst | JP chars | Banks | Branch | State |
 |---|---|---|---|---|---|---|
-| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | dispatched |
+| `batch_014` | 707–758 | 52 / 52 | 2,742 | 18, 19, 20 | `tl/script-014` | ✅ **PR #37 open** — awaiting barrier |
 | `batch_015` | 759–814 | 56 / 56 | 3,161 | 20 | `tl/script-015` | dispatched |
 | `batch_016` | 815–869 | 55 / 55 | 4,251 | 21, 22, 23, 24 | `tl/script-016` | dispatched |
 
 Combined growth demand never exceeds **30% of any bank's spendable budget** (worst: bank 19 at
 2,978 of 10,027). Bank-feasibility is not a risk in this wave; **terminology consistency is.**
+
+**`batch_014` → PR #37** (2026-09-11). 52/52 lines, ratio **2.0204×**, growth **5,596 B**; banks 18/19/20
+land at **8,473 / 7,809 / 28,469** free, all three **under** the projection. Widest row 23, **0 at 24**,
+no page over 4 rows. One `{FFFE}` added (D715, forced), **no `{FCC0}` change**. Gate 7 run key-first:
+**2,342 keys enumerated, 145 occurring, all adjudicated.**
+
+⚠️ **THE UNIT CAUGHT THREE ERRORS IN MY SEED. All three verified against primary sources before
+acceptance, not taken on the report:**
+1. **`バウアーの砦` — seed WITHDRAWN.** §2 has shipped `Ｂａｕｅｒ’ｓ　ｆｏｒｔ` since ch.40 under the
+   **kana variant `バウワーの砦`**; my `Ｆｏｒｔ　Ｂａｕｅｒ` would have split a shipped proper noun.
+   Census: `バウアー` script 2 / battle 1, `バウワー` script 0 / battle 1. **§AG6's mirror — I searched
+   one spelling and never the other.** ⚠️ **D1300 inherits this in a later wave.**
+2. **`生き返りの仙人` was a phantom compound.** Not at D756 (which has `生き返らせる…仙人`), and at D782
+   only across a `{FFFE}` — so **0 hits on a raw grep of every dump**. Row corrected to bare `仙人`
+   → `ｈｅｒｍｉｔ`. **D782 is `batch_015`'s; the correction was sent to that translator in flight.**
+3. **D716 carries a doubled `。`** (`・・・。。` = 5 stops vs D711/D714's 4), so Table A's single English
+   string was right for two of its three lines. §3.1 takes the source count; shipped with five.
+
+⚠️ **One error in the unit's own PR body, for the reviewer:** its Glossary-additions table writes the
+key as **`ボンネット平原`**; the source at D745 is **`ボネット平原`** (no `ン`) — verified. The TSV itself
+must be right (`merge` reports no "never matched the dump"), so this is a report-only typo — but it
+must not enter `glossary.md` as written.
 
 ## Next up — WAVE 11 (⚠️ still script-only unless a human clears Blocked 0 / 0a)
 **Re-derive it. Do not inherit this table** — bank figures move with every merge, and the line
