@@ -25,12 +25,24 @@ Fix: `git fetch && git reset --hard origin/claude/workflow-translation-iterate-u
 > `claude/workflow-translation-iterate-uzlkns`, seeded per SKILL.md §6a with the units in **Next up**.
 > That restores the chain **and** the three-role split, and costs nothing else.
 >
-> **If no human comes and you are an agent reading this:** `.claude/agents/orchestrator.md` §7.2's
-> fallback is an `orchestrator` **subagent** (`run_in_background: true`). ⚠️ **It is a REAL
-> DEGRADATION, not an equivalent** — a subagent has no `Task` tool, so it cannot spawn a reviewer and
-> the three-role split collapses into one agent that dispatches, judges and merges its own wave
-> (wave 1's failure, four merges). If that path is taken, CLAUDE.md §8 requires every unit it merges
-> to be marked **SELF-REVIEWED** in this file and to owe an **independent post-merge audit**.
+> **THE §7.2 FALLBACK HAS BEEN TAKEN — an `orchestrator` subagent was spawned for wave 10 at
+> 2026-09-11**, because none of CLAUDE.md §8's four stop conditions holds (427 lines dispatchable,
+> `check` green, pushes working, no human stop) and §7.2 prescribes it when `create_session` fails.
+> `create_session` **was actually called and did fail** with the depth-8 error — not assumed.
+>
+> ⚠️ **THE FALLBACK BUYS EXACTLY ONE WAVE AND DOES NOT REVIVE THE CHAIN.** A subagent shares this
+> session's lineage, so **wave 10's coordinator will hit the identical wall** when it tries to open
+> wave 11. **Only a human opening a fresh top-level session resets the depth.** Whatever wave 10
+> achieves, the ask above stands unchanged.
+>
+> ⚠️ **AND IT MAY COST INDEPENDENCE.** If that subagent has no `Task` tool it cannot spawn a reviewer,
+> and the three-role split collapses into one agent that dispatches, judges and merges its own work
+> (wave 1's failure, four merges). **Wave 9 is direct evidence of what that costs: independent review
+> returned findings on 3 of 3 units** — a §2 drop, a false impossibility, and five terminology
+> failures — **none of which any gate caught.** Its dispatch therefore tells it to test for `Task`
+> first: **with** it, run the full three-role split; **without** it, run every §6 gate itself, mark
+> every unit **SELF-REVIEWED** here, and write the **independent post-merge audit** debt into this
+> line for whoever comes next.
 >
 > ⚠️ **The run is NOT complete** — 427 lines / 450 instances stay bank-feasible, ~8–9 batches.
 > Do not report it complete. ⚠️ **Wave 10 is still SCRIPT-ONLY**: both battle blockers were re-tested
