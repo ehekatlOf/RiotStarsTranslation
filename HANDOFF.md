@@ -59,7 +59,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 ## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
-| battle **15** | `tl/battle-015` | **#47** | 3,239 | 4,953 | ⚠️ **CHANGES round 1** — 3 findings sent to the same translator |
+| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | 🔄 **rework r1 PUSHED (`20764d2`)** — all findings implemented; **queued for re-review** behind #49 |
 | battle **23** | `tl/battle-023` | **#49** | 6,281 | 1,911 | ✅ PR open — **reviewer running** |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
@@ -118,6 +118,40 @@ EN→JP pass was genuinely good and caught four real problems — **it structura
 Still owed at merge: the `{FCC0}` / `tag_parity` `FLAGS.md` entry, and three PR-body corrections
 (`巨大砲台` is not a new term; `ねえ、` → `Ｓａｙ，` is already §34.2; the `やめた方がいい` row over-reaches
 against `batch_007.tsv:30`'s shipped `Ｂｅｔｔｅｒ　ｎｏｔ．`).
+
+### ✅ PR #47 rework round 1 pushed (`20764d2`, 2026-09-11 ~23:35) — re-review QUEUED behind #49
+**3,275 / 8,192 (4,917 slack)**, +36 bytes. `check` green, `rowcheck` clean, `{FFFE}` still body[6] only,
+0 pages over 4 text rows. All three findings implemented; all three PR-body corrections accepted.
+- **Finding 1 `砲台` → `ｂａｔｔｅｒｙ`: done, 4 of 4** (`ｇｕｎ` count in the file is **0**).
+- ⭐⭐ **THE TRANSLATOR PUSHED BACK ON ONE POINT AND IT IS RIGHT — I VERIFIED ALL THREE OF ITS CLAIMS.**
+  §42.8's correction cleared `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` **on width**, but width cannot
+  settle this: **`batch_015.tsv:18` already ships `巨大な　砲台` → `ｇｉａｎｔ　ｂａｔｔｅｒｙ`** — a rumour
+  line about *this* battery guarding *this* fortress. **CONFIRMED by reading the row.** Taking `ｇｒｅａｔ`
+  would split a shipped compound — precisely the failure the withdrawn `Ｆｏｒｔ　Ｂａｕｅｒ` seed records.
+  **`ｇｒｅａｔ` is also spent 42× across `tl/` (whole-word scan, CONFIRMED)**, including `大要塞` →
+  `ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ`. **So `ｇｉａｎｔ　ｂａｔｔｅｒｙ` stands and §42.8's suggestion must not be
+  forced.** ⚠️ **A width-only clearance is not a gate-7 clearance** — worth a `FLAGS.md` line.
+- **Two rows now sit at 24 columns** (legal; ≤23 is the preference). The translator brute-forced **every
+  ≤4-row split of 26 phrasings** and reports 24 as the measured floor with every element kept; on the
+  second row nothing reached ≤24 with `ｄａｎｇｅｒｏｕｓ`, so 危険 → **`ｐｅｒｉｌｏｕｓ`** — **not an
+  invention: `batch_008.tsv:69` ships `危険な場所` → `ｐｅｒｉｌｏｕｓ` beside `:71`'s `ｄａｎｇｅｒｏｕｓ`
+  for the same phrase. CONFIRMED by reading both rows.** Nothing dropped, no `ｇｕｎ` retained.
+- **Finding 2 done** (`Ｉ　ａｍ　ｓａｖｅｄ．`, 11 cols). The adjacent `Ｉ’ｍ　Ｎｅｉｌ，` stays contracted
+  on c08 L8's own incumbent — two adjacent rows differing by design, each on its own fixed form.
+- **Finding 3 done on BOTH lines** (`Ｉ　ｌｏｓｅ．`, measured **13**, not the finding's 14 — one column
+  narrower, zero re-flow). body[11] verified a **byte-exact 292-char suffix** of body[10].
+- ⭐ **Correction 3 improved the file beyond the finding:** adopting `batch_007.tsv:30`'s shipped
+  `Ｂｅｔｔｅｒ　ｎｏｔ．` freed enough width to **restore `援軍` → `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` and retire the
+  `ａｉｄ` deviation entirely** (`ａｉｄ` count now 0). A finding aimed at consistency paid for a
+  faithfulness gain elsewhere.
+- **The translator withdrew its own `巨大砲台` glossary row** (not a new term) and accepted that
+  `ねえ、` → `Ｓａｙ，` is already keyed at §32.3 / §34.2, not an unrecorded form.
+- **It reports two more of its own round-1 hand counts wrong**, both found by `len()`. Every figure in
+  the rework is tool output.
+⚠️ **For the re-reviewer: the wave-3 Ifrit warning is now ARGUABLY discharged but that is the
+REVIEWER'S call, not the translator's** — L0 now reads `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ`, the same phrase
+the script store already uses for the object, so the gloss connects to both chunk 17's bare name and the
+rumour line. **Do not close §9 / §30.1 without checking that in the file.**
 
 ### PR #49 (chunk 23) — the translator's report is in, integration debts below
 **6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
