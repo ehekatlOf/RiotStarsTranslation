@@ -1016,6 +1016,63 @@ by a `glossary.md` key read at seed time, not by a reach census:
   **`Ｌａｄｙ　Ｒｉｍｕｌ`** (§1) · `ネズミども` → `ｒａｔｓ` (§2538, 4).
 ---
 
+### 9.W14 Wave-14 provisional seeds — battle chunks 28, 29, 39 (the LAST dispatchable battle wave)
+
+⚠️ **EVERY FIGURE BELOW WAS CENSUSED BY ME AT SEED TIME** — `glossary.md`, both dumps, `tl/script/*.tsv`
+on the Japanese side, and `tl/battle/*.txt` + `pending/` **by POSITIONAL PAIRING** (battle `tl/` holds no
+Japanese, so a grep there is a null check). English-side counts are **word-boundary** counts, not raw
+substring counts: raw substring gave me `ｄｅｎ` 29 and `ｎｅｓｔ` 23, and **both collapsed to 1 and 0**
+once full-width letters either side were excluded. **If a cell here disagrees with what you measure,
+YOUR MEASUREMENT WINS** — say so in the PR body with the command you ran.
+
+⭐⭐ **SEVEN OF THESE SEVENTEEN ROWS ARE "DO NOT DECIDE — REUSE", AND TWO OF THOSE ARE THE WHOLE POINT
+OF THE BLOCK.** `ａｉｒｓｈｉｐ` and `Ｆａｔｈｅｒ` are **already shipped for this wave's exact Japanese** —
+`飛行船` has **no glossary row at all** and is gate-7 face (c) (a form shipped in `tl/` the glossary never
+recorded), and `父さん` is named in §25.4's own forward note as recurring in **chunk 39**. Inventing either
+would split a shipped form. ⚠️ **And three obvious answers are already spent on OTHER Japanese:**
+`ｌａｉｒ` (根城), `ｄｅｎ` (`batch_014:12`) and `ｄｅｍｏｎ` (魔族).
+
+| Japanese | Proposed English | Where seen (censused at seed time) | Status / collision test |
+|---|---|---|---|
+| `亜空間` | `ｓｕｂｓｐａｃｅ` | **chunk 28 ×2** (L2 `亜空間に飲み込まれる`, `亜空間に吸収されて`) / 0 script | NEW. `ｓｕｂｓｐａｃｅ` **0** across `tl/` + `pending/` |
+| `空間融合の魔法` | `ｓｐａｃｅ‐ｆｕｓｉｏｎ　ｍａｇｉｃ` | **chunk 28 L2** (hapax) | NEW. `ｓｐａｃｅ` **0**, `ｆｕｓｉｏｎ` **0**. `‐` is U+2010 per §4398 |
+| `渓谷` (bare) | `ｇｏｒｇｅ` | **chunk 28 ×2** (L0, L2) | ⛔ **REUSE, do not re-decide** — inherits §46.2's `大渓谷` → `ｇｒｅａｔ　ｇｏｒｇｅ` (`batch_009` ×1) |
+| `タイムリミット` | `ｔｉｍｅ　ｌｉｍｉｔ` | **chunk 28 L2** | NEW. **0** across both stores |
+| `タイムアウト` | `ｔｉｍｅ’ｓ　ｕｐ` | **chunk 28 L18** | NEW. **0**. Seti's taunt register (§40.2-shaped) |
+| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | **chunk 28 L2** (idiom, hapax) | NEW. Rendered as idiom, not literally |
+| `巣窟` | **`ｎｅｓｔ`** | **chunk 29 L1** `オークの巣窟です。` (hapax) | ⚠️⚠️ **COLLISION TEST IS THE POINT.** **NOT `ｌａｉｒ`** — that is 根城, shipped **3× in `chunk_027`** (body[3], [4], [6], paired positionally). **NOT `ｄｅｎ`** — spent in `batch_014:12` on a speaker's own home. `ｎｅｓｔ` **0** at word boundary |
+| `飛行船` | **`ａｉｒｓｈｉｐ`** | **chunk 39 L4** `飛行船の研究をしよう` · 2 battle + 4 script in the dumps | ⛔⛔ **DO NOT DECIDE — ALREADY SHIPPED.** `tl/script/batch_014.tsv:47` renders `落ちた飛行船` with `ａｉｒｓｈｉｐ` (×3 in that file). **`glossary.md` has NO row for 飛行船 — gate-7 face (c).** Use it byte-identically |
+| `父さん` | **`Ｆａｔｈｅｒ`** (`父さん・・・・` → `Ｆａｔｈｅｒ．．．．`) | **chunk 39 L4 ×3** | ⛔⛔ **DO NOT DECIDE — §25.4 NAMES CHUNK 39 BY NUMBER** as where `父さん・・・・` recurs untranslated. Shipped in chunk 9 and `pending/chunk_005` L13. Seneca's actual parent — the speaker here is Seneca |
+| `悪魔` | `ｄｅｖｉｌ` | **chunk 39 L4** `最強の悪魔を動かす` (hapax) | ⚠️ **HELD DISTINCT from §40.1's `魔族` → `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` (lowercase).** `ｄｅｖｉｌ` occurs **1×**, `chunk_038` body[14], inside the multiword idiom `Ｙｏｕ　ｌｕｃｋｙ　ｄｅｖｉｌ！` for `悪運の強い奴め！` — a **different source word in a different message, multiword unit**: the §40.3 shape, **not** a §25.3 collapse |
+| `オリジナルエネルギー体` | `Ｏｒｉｇｉｎａｌ　ｅｎｅｒｇｙ　ｂｏｄｉｅｓ` | **chunk 39 L4** | Capital `Ｏ` inherits §17.2's `オリジナルＮ号機` → `Ｏｒｉｇｉｎａｌ　Ｕｎｉｔ　Ｎ`. `ｅｎｅｒｇｙ` **0** |
+| `４号` (bare, no 号機) | `Ｕｎｉｔ　４` | **chunk 39 L4** `最高性能を持つ４号` | ⛔ **REUSE** of §17.2's series (`Ｕｎｉｔ` 18× across 5 files, all that series). `４` full-width |
+| `エネルギー源` | `ｅｎｅｒｇｙ　ｓｏｕｒｃｅ` | **chunk 39 L4** | NEW. **0** across both stores |
+| `新型` (in `新型機械兵`) | `ｎｅｗ‐ｍｏｄｅｌ` | **chunk 39 L0, L2** | NEW, **0**. `機械兵` keeps §9's `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ`. `‐` is U+2010 |
+| `貯蔵できる装置` | `ｓｔｏｒａｇｅ　ｄｅｖｉｃｅ` | **chunk 39 L4** | ⛔ **REUSE, not a new word:** 装置 is **already** `ｄｅｖｉｃｅ` — `pending/chunk_043` renders `自爆装置` as `ａ　ｓｅｌｆ‐ｄｅｓｔｒｕｃｔ　ｄｅｖｉｃｅ` (§1096). `ｓｔｏｒａｇｅ` **0**. ⚠️ `ｓｔｏｒｅ` is spent (`chunk_001` ×2, `chunk_023` ×2) — do not use it |
+| `人智では計り知れぬ` | `ｂｅｙｏｎｄ　ｈｕｍａｎ　ｒｅｃｋｏｎｉｎｇ` | **chunk 39 L4** (hapax) | NEW. `ｒｅｃｋｏｎｉｎｇ` **0** |
+| `工場` (in `機械兵の工場`) | `ｐｌａｎｔ` | **chunk 39 L5** | ⛔ **REUSE** — §2462's `兵器工場` → `ｗｅａｐｏｎｓ　ｐｌａｎｔ`, shipped `chunk_008` ×1 |
+
+⚠️ **TWO INHERITED ROWS ARE LIVE INTO THIS WAVE AND BIND A NAMED LINE EACH. NEITHER MAY BE STRUCK
+UNTIL ITS UNIT SHIPS.**
+- **§67.2 `じゃあね、` → `Ｂｙｅ　ｔｈｅｎ，` binds chunk 28 L18.** ⚠️ **The source there is the BARE
+  `じゃあね。` with a FULL STOP, not the row's keyed `じゃあね、` with a comma** — the row already
+  censused this and rules it explicitly: **chunk 28 takes `Ｂｙｅ　ｔｈｅｎ．`**. Held apart from
+  `chunk_007` L22's `Ｆａｒｅｗｅｌｌ　ｆｏｒ　ｎｏｗ．` on register, deliberately. This is the wave-13
+  one-spelling lesson arriving pre-loaded: **the key and the source differ by one character.**
+- **§67.2 / §67.3 `１度` (adverbial) → `ｏｎｃｅ` binds chunk 29 L8** (`１度出直してきた方が`). Ruled at
+  PR #49 against the translator's reservation; 6 battle + 9 script, six of seven script rows take it.
+
+⚠️ **Names in this wave are ALL already fixed — none is a seed, and none may be re-derived:**
+`セティ` → `Ｓｅｔｉ` (§40.1) · `ユイティ` → `Ｙｕｉｔｉ` (§40.1) · `トレーズ` → `Ｔｒｅｉｚｅ` (§40.1) ·
+`ティミー` → `Ｔｉｍｍｙ` (§11.1) · `セネカ` → `Ｓｅｎｅｃａ` (§1) · `ヘルファー` → `Ｈｅｌｆｅｒ` (§1) ·
+`クリミア博士` → `Ｄｏｃｔｏｒ　Ｃｒｉｍｅａ`, `博士` → `Ｄｏｃｔｏｒ` (§25.1 — **a PERSON, not a place**) ·
+`魔族` → `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` lowercase (§40.1) · `オーク` → `ｏｒｃ` lowercase (§17.1 species test) ·
+`ダークエルフ` → `dark elf` (§17.2) · `反乱軍` → `ｔｈｅ　ｒｅｂｅｌｓ` / `ｔｈｅ　ｒｅｂｅｌ　ａｒｍｙ` (§26.4 —
+⚠️ **the BATTLE store's form; §38.3's `ｒｅｂｅｌｌｉｏｎ` is the SCRIPT store's and does not reach here**) ·
+`機械兵` → `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` (§9) · `隠れ里` → `ｈｉｄｄｅｎ　ｖｉｌｌａｇｅ` (§43.2) ·
+`兵隊さん` → `ｓｏｌｄｉｅｒｓ` (§30.2) · `海岸` → `ｃｏａｓｔ` (§46.2) · `洞窟` → `ｃａｖｅ` / `ｃａｖｅｓ` (§28.8) ·
+`追手` → `ｐｕｒｓｕｅｒｓ` (§41.1) · `餌食` → `ｐｒｅｙ` (§6067, the `〜のえじきになる` construction).
+
 ## 10. Open questions
 
 1. ~~**リオン — Lion or Leon.**~~ ✅ **RESOLVED 2026-09-08 (PR #7 review).** The character appears
