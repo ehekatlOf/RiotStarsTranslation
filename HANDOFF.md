@@ -77,7 +77,7 @@ table, never that line.
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
 | **battle chunk 29** | ~~`tl/battle-029`~~ | `tl/battle/chunk_029.txt` | **2** | **#51** | reviewed `6778615` | ✅ **MERGED — squash `104c1965`, integrated by `integrate: chunk 029 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `91ce177`. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; `{FFFE}` 68→69 on **one** declared line (L28), `{FCC0}` 10→10, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 31 lines, 80 runs widest 23 / 0 at 24, no page over 4 rows, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§69**, `FLAGS.md` **§BI**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols | **FINAL REVIEWER RUNNING (started 2026-09-12 ~05:35)** |
+| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | **2** | **#50** | **CHANGES — rework sent** | every gate passed and the reading found nothing; ONE geometric finding at 3 sites, **no text change**, −6 bytes → 3,161 / 8,192 |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
 open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
@@ -267,6 +267,31 @@ left in `FLAGS.md` alone.
   L8**. `根城` and `坊や` stay live for **blocked chunk 32**. Do not strike any of them early.
 
 ## Decisions this run
+### ⭐⭐ THE LAST UNIT'S FINDING IS ONE `rowcheck` STRUCTURALLY CANNOT SEE
+PR #50's translation is correct to the word — the reviewer found nothing wrong with the text. The
+finding is **geometric**: on the three pages whose source carries a **trailing blank**, the unit kept
+the blank **and added a text row**, giving those pages **five segments**. **`rowcheck` counts non-empty
+rows only, so all three read as 4 and PASS.** Remedy: delete the `{FFFE}` immediately before `{FC30}`
+on those three pages — no text changes, −6 bytes.
+⚠️ **I verified the decisive fact myself, and it does NOT depend on any shape census:** the PR's
+`{FFFE}` totals **exceed the source's** on exactly those lines — **L0 8 → 9, L4 43 → 45** — while the
+source's `{FFFE}{FC30}` trailing-blank structure is preserved (L0 ×1, L4 ×3, identical in both). The
+remedy restores the source's own counts **exactly** (8 and 43).
+⚠️ **HONEST DISCREPANCY, recorded rather than hidden: my own shape census did NOT reproduce the
+reviewer's figures.** It reported `.TTTT.` 0 / `TTTT.` 1 out of 1,850 pages; my cruder splitter gave
+**3 and 11 out of 867**. Mine counts barely half the pages, so I do **not** treat it as authoritative
+and did not overturn the finding on it — but **nobody should cite "0 attestations" as verified.** The
+finding stands on the break-count argument above, which is exact and reproducible. This is the
+standing "gate-7 counts vary with splitter — STATE YOUR CORPUS" rule biting on page shapes.
+
+### 📌 FOR WHENEVER CHUNK 16 UNBLOCKS — chunk 39 is its reference
+**Chunk 16 is a PARALLEL SCENE to chunk 39** (the same `新型(の)機械兵` / `敗れ去る` / `父さん・・・・` /
+`昔みたいに…飛行船の研究` beats), and is tier-A blocked at **1.59×**. Chunk 39 therefore becomes the
+reference text for all four forms the day chunk 16 is unblocked. **That needs a human (the slot
+extension), not a retranslation.** Rows that MUST stay live for it: `飛行船` (ch16 + script
+1307/1375/1376), `新型` (ch16 ×4), `４号`/`Ｕｎｉｔ　４` (ch32, ch43, 6 script lines), `敗れ去` (ch16, ch32).
+
+
 ### 📌 TWO STANDING ITEMS RAISED AT CHUNK 29's MERGE — neither is wave 14's to fix
 - **`FLAGS.md` §BI2 — a `main`-level defect in `tl/battle/chunk_000.txt`.** body[12] page 11 ships
   **`.TTTT.`, the ONLY instance of that zero-attestation shape in all of `tl/`**, with its two
