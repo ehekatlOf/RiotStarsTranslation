@@ -1,150 +1,62 @@
 ## Integration branch: `main`. Not configurable.
-Every PR bases on `main`; the reviewer merges into `main`; a wave is closed only when `origin/main`
-is at the close commit (`CLAUDE.md` top banner). **This block used to redirect the run to
-`claude/workflow-translation-iterate-uzlkns` and told every agent to read `main` as that branch —
-twelve waves merged there while `main` sat untouched and a human was told nothing had been done.**
-`main` was fast-forwarded to the branch tip on 2026-09-11 (284 commits, 54 translated units); the
-old branch is kept identical to `main` as a mirror and has no authority.
-
-⚠️ **A fresh container clones SHALLOW and may carry a STALE local ref of `main`.** If `git checkout
-main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && git reset --hard
-origin/main`, verify with `git log -1`.
+Every PR bases on `main`; the reviewer merges into `main`; a wave is closed only when `origin/main` is
+at the close commit (`CLAUDE.md` top banner). ⚠️ A fresh container clones SHALLOW and may carry a stale
+local ref: if `git checkout main` lands on an old commit, `git fetch && git reset --hard origin/main`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ ALL THREE WAVE-14 UNITS ARE MERGED. THE COORDINATOR OWES THE WAVE CLOSE AND THE FINAL HANDOFF.
-> Coordinator: `session_01AqZdsxo8W4fXcSnCUoawys` (its own session, Opus, three-role split intact —
-> it has `Task`, so **nothing this wave is SELF-REVIEWED**).
-> **Units: battle chunks 28 (`9c8e3e0`), 29 (`104c1965`), 39 (`68bbcc9`) — all merged, all round 2,
-> all no findings.** Seeds were committed at **`5bd458e`** (`glossary.md` §9.W14, 17 rows).
+> # ⛔⛔ THE RUN IS STOPPED. THERE IS NO WAVE 15, AND NONE SHOULD BE OPENED.
+> **Wave 14 closed with all three units merged. `CLAUDE.md` §8's FIRST stop condition — "no dispatchable
+> unit left" — now holds, and it is the reason the chain ended.** This was not a failure, a stall, or a
+> context limit: the coordinator ended the chain deliberately.
 >
-> **The literal next step is CLAUDE.md §4 step 6, and then STOP:** `git pull --ff-only` (three
-> integration commits landed), `check` on `main`, `merge` and commit `build/*_dump_merged.txt` if
-> changed, refresh the README status table from `status` (**battle 40 / 44, 79.8%**), prune worktrees,
-> write the wave summary **and the final handoff**, commit `handoff: wave 14 closed`, push, then
-> verify with `git fetch origin main && git rev-parse origin/main HEAD` (one hash twice) and
-> `git rev-list --count origin/main..HEAD` (`0`), pasting that output into the commit body.
+> **Nothing is dispatchable, and each reason is measured, not assumed:**
+> - **Battle 40 / 44 merged.** Chunks **16 (1.59×)** and **32 (1.61×)** sit below §B2's measured
+>   **1.64×** floor — no faithful translation fits 8,192 bytes. Chunks **5 (1.53×)** and **43 (1.23×)**
+>   are translated and **parked**. All four need the **tier-A slot extension**, which is BUILT and
+>   awaiting one human boot test (Blocked 2).
+> - **Script unchanged: 0 feasible lines.** **363 of the 366 remaining unique lines and 2,748 of the
+>   2,751 remaining instances — 99.9% — sit behind the §F2 bank-40/41 repoint** (Blocked 1).
+> ⚠️ **`queue.py battle` still prints "dispatchable" for chunk 32** — its cutoff is hardcoded 1.6, not
+> §B2's 1.64. **It is wrong. Do not dispatch 32 on its say-so.**
 >
-> **No translator or reviewer is live; nothing is in flight; there is nothing left to dispatch.**
->
-> ⚠️⚠️ **WAVE 14 IS THE LAST DISPATCHABLE BATTLE WAVE, AND THE CHAIN ENDS WITH IT.**
-> **DO NOT OPEN A WAVE-15 SESSION.** After this wave: 16 and 32 are blocked on the tier-A slot
-> extension, 5 and 43 are parked, and the script is unchanged at **0 feasible lines, 363 of 366 behind
-> the §F2 repoint** — so **CLAUDE.md §8's FIRST stop condition (no dispatchable unit left) holds.**
-> The wave-14 coordinator writes the **final handoff** instead: what is done, what is parked and why,
-> and exactly what the human must do next, in the priority order under "Blocked — needs a human".
->
-> ⚠️ Engine work (Blocked 2, 4, 6 — `tools/slots.py`, `slotext.py`, `banks.py`, `bankext.py`,
-> `engine.py`, `--extended`/`--layout`) belongs to the **root/runner session**. A wave never touches it.
-
-## Last updated
-2026-09-12 · by: **the wave-14 reviewer, at PR #50's integration commit** · ✅ **ALL THREE WAVE-14 UNITS
-ARE MERGED — 28 (`9c8e3e0`), 29 (`104c1965`), 39 (`68bbcc9`) — all round 2, all DECISION: MERGE with
-NO findings.** The wave barrier was met and re-checked on entry before any gate ran, each time.
-**Battle is now 40 / 44, 34,439 / 43,137 JP characters, 79.8%.** `glossary.md` **§70** and `FLAGS.md`
-**§BJ** were taken by READING both files at commit time (they ended §69 and §BI), never reserved —
-as §68/§BH and §69/§BI were.
-
-⚠️ **NOTHING DISPATCHABLE REMAINS. CLAUDE.md §8's FIRST stop condition now holds** — 16 and 32 are
-tier-A blocked, 5 and 43 are parked, and the script is unchanged at 0 feasible lines with 363 of 366
-behind the §F2 repoint. **The wave-14 coordinator owes the wave close and the FINAL handoff, and must
-NOT open a wave-15 session** (see NEXT ACTION). This was the run's last translated unit.
-
-⭐⭐ **THE MOST REUSABLE FINDING OF THE WAVE, now `FLAGS.md` §BJ2: `rowcheck` STRUCTURALLY CANNOT SEE
-a page that keeps a source trailing blank AND gains a text row** — `row_problems()` counts non-empty
-rows only, so such a page scores 4 and passes every mechanical gate while carrying a shape the source
-never uses (`.TTTT.` = 0 attestations in 1,854 pages). **The cheap detector is a line whose `{FFFE}`
-TOTAL went UP against the source, which `rowcheck` already prints**: filling a source trailing blank
-costs 0 breaks, so any unexplained increase is the defect. Round 1 of PR #50 read L0 8→9 and L4 43→45;
-round 2 restores 8 and 43. **A clean `rowcheck` is not evidence on this class.** If you census page
-shapes, use `rowcheck`'s own **five**-delimiter splitter — `{FCC0}` alone merges pages and finds half
-(the error withdrawn on `main` at `a309fee`).
-
-⚠️⚠️ **A GATE-6 PARSING TRAP THAT VOIDS HALF THE GATE SILENTLY (`FLAGS.md` §BJ3): `tl/script/*.tsv`
-rows are `<count>\t<JP>\t<EN>` — THE KEY IS COLUMN 2.** A script that does `split('\t', 1)` takes the
-instance count as the key, drops **the entire script store** from the duplicate gate, and still prints
-a clean result. Correcting it here raised the paired-run corpus from 1,714 to **3,754, of which 2,040
-are script**. Distrust any gate-6 result that does not state its script-side run count.
+> **▶ THE WORK IS NOW THE HUMAN LIST BELOW, IN ORDER. Two emulator sessions unblock everything.**
+> An agent session can still do useful work WITHOUT the human: the recorded repairs under Blocked 6.
 
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **40** | 44 | wave 13 added 15, 23, 27; **wave 14 added 28, 29 and 39 — all of it**; **16, 32 blocked** on the tier-A floor, **5, 43 parked**. 40 + 2 + 2 = 44: **nothing battle-side is left that is not blocked or parked** |
-| Battle JP characters | **34,439** | 43,137 | **79.8%** (was 75.2% at wave 14's start) |
-| Script unique lines | 1,064 | 1,430 | unchanged — no script batch was feasible this wave |
+| Battle chunks | **40** | 44 | wave 14 added 28, 29, 39; **16, 32 blocked**, **5, 43 parked** — all four on the tier-A floor |
+| Battle JP characters | **34,439** | 43,137 | **79.8%** (was 75.2% at the wave's start) |
+| Script unique lines | 1,064 | 1,430 | unchanged — 0 feasible lines this wave |
 | Script message instances | 5,180 | 7,931 | 65.3% |
 
+**40 merged + 2 blocked + 2 parked = 44. Nothing battle-side is left that is not blocked or parked.**
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
-⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and WHICH ONE IT HIDES IS NOT STABLE** — quote the
-table, never that line.
+⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and which one it hides is NOT stable** — quote
+the table, never that line.
 
-## In flight — WAVE 14, dispatched 2026-09-12
-| Unit | Branch | File | Round | PR | Translator | State |
-|---|---|---|---|---|---|---|
-| **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 29** | ~~`tl/battle-029`~~ | `tl/battle/chunk_029.txt` | **2** | **#51** | reviewed `6778615` | ✅ **MERGED — squash `104c1965`, integrated by `integrate: chunk 029 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `91ce177`. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; `{FFFE}` 68→69 on **one** declared line (L28), `{FCC0}` 10→10, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 31 lines, 80 runs widest 23 / 0 at 24, no page over 4 rows, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§69**, `FLAGS.md` **§BI**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 39** | ~~`tl/battle-039`~~ | `tl/battle/chunk_039.txt` | **2** | **#50** | reviewed `cbd50d8` | ✅ **MERGED — squash `68bbcc9`, integrated by `integrate: chunk 039 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `291f69e`. **3,161 / 8,192 (5,031 slack)** against a 6.21× ceiling; `{FFFE}` 64→66 on the **two gate-6 forced lines only** (L6, L8), `{FCC0}` 8→8, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 14 lines, 78 runs widest 23 / 0 at 24, 23 pages none over 4 rows, ellipsis runs exact on every line. **Round 1's finding verified fixed on the measurement `rowcheck` cannot make**: per-line `{FFFE}` totals back at the source's own L0 8 and L4 43; readable text byte-identical to round 1 (4,111 bytes both sides). Gate 6 by positional pairing over **both** stores (3,754 JP runs, 2,040 script): the **11**-instance stolen-item box byte-identical and **this is its last instance in the project**, the 9 `tl/` village-box instances byte-identical, **0 divergences attributable to chunk 39**. `glossary.md` **§70**, `FLAGS.md` **§BJ**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected; the PR's `merged: true` is the signal. **Nothing left on this unit** |
+## In flight
+**Nothing.** No open PR, no live agent, no worktree (`git worktree list` shows only the main checkout).
+⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
+from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
+the PR's `merged: true` and the squash SHA.**
 
-**Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
-open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
-translator returned/died with no PR → **one fresh translator for that unit** (two re-dispatches max,
-then park). A unit whose translator is still working → **wait, do not re-dispatch over a live agent.**
+## Next up
+⛔ **NOTHING. The dispatch queue is empty and will stay empty until a human unblocks it.** See NEXT ACTION.
 
-
-⚠️ **`list_pull_requests` NOW OVERFLOWS THE TOOL RESULT (~50 KB, PR bodies are long) — `minimal_output`
-does not help.** The result is saved to a file the error names; parse it instead:
-`python3 -c "import json;d=json.load(open(PATH));[print(x['number'],x['head']['ref']) for x in d]"`.
-
-⚠️ **Every `tl/*` branch from waves 1–13 is MERGED but still on origin** — deletion returns **HTTP 403**
-from the agent container (**FLAGS §AQ9**). **"Branch gone = merged" is an INVALID signal in this repo;
-use the PR's `merged: true` and the squash SHA in the committed record.**
-⚠️ **Never push while a reviewer runs** — a reviewer showing "running" may already have merged and be
-mid-integration (§BE6 / wave-13 lesson 6).
-
-## Next up — ⛔ NOTHING. THE QUEUE IS EMPTY (wave 14 was the last dispatchable battle wave)
-| Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Outcome |
-|---|---|---|---|---|---|---|---|
-| ~~14~~ | ~~28~~ | D | 770 | 5,807 | 4.77× | 3,673 | ✅ **MERGED `9c8e3e0`** — 3,953 / 8,192 |
-| ~~14~~ | ~~29~~ | D | 610 | 6,163 | 6.05× | 3,691 | ✅ **MERGED `104c1965`** — 3,403 / 8,192 |
-| ~~14~~ | ~~39~~ | D | 622 | 6,479 | 6.21× | 3,861 | ✅ **MERGED `68bbcc9`** — 3,161 / 8,192 |
-
-**Do not dispatch 16 (1.59×) or 32 (1.61×)** — both below §B2's measured 1.64× floor; `queue.py`'s cutoff
-is hardcoded 1.6 and is wrong about 32. **No script batch: 0 feasible lines.** **Nothing battle-side
-remains that is not blocked or parked, so CLAUDE.md §8's first stop condition holds and no wave-15
-session is opened.**
-
-## Remaining — 366 unique lines / 2,751 instances, and the binding constraint for every one
-**Battle: 0 dispatchable.** ~~28, 29, 39~~ are **merged** (`9c8e3e0`, `104c1965`, `68bbcc9`), as are
-~~15, 23, 27~~ (`8a08027`, `8a9aba8`, `f88434c`). **2 blocked** — 16 and 32, on the tier-A slot
-extension only (1.59× / 1.61× against §B2's 1.64×); **2 parked** — 5 and 43. §D1 applies to nothing any
-more (§BB). ⚠️ **Chunk 32 holds the last instance of four live glossary rows** (`根城`, `坊や`, and
-§25.2's neighbours) — see §BG4 — **and chunk 16 now holds the last instance of four more**: `新型`,
-`飛行船`, `敗れ去`, bare `オリジナル` (§70.8, §BJ6). ⭐ **Chunk 16 is a PARALLEL SCENE to chunk 39 and
-chunk 39 is its reference text** the day the slot extension unblocks it.
-⚠️ `queue.py battle` prints "dispatchable 7" because its tier-A cutoff is hardcoded 1.6, not 1.64 — it
-counts 32. Use this table, not that line.
-
-**Script: 366 unique lines / 2,751 instances**, and I measured the binding bank for each:
+## Remaining — 366 unique script lines / 2,751 instances, and the binding constraint for each
 | Binding bank | Lines | Instances | Free | Note |
 |---|---|---|---|---|
 | **bank 40** | **330** | **2,715** | **75** | the item/armour description tables, ~21 instances per line |
 | **bank 41** | **33** | **33** | **353** | unique 1355–1387, story text, bank 41 alone |
-| bank 5 | **3** | 3 | 1,595 | D518/D519/D520 — the pooled rows in NEXT ACTION's qualification |
+| bank 5 | **3** | 3 | 1,595 | D518/D519/D520 — the pooled rows |
 
-⭐ **So 363 of 366 lines and 2,748 of 2,751 instances — 99.9% of what is left — sit behind the ONE
-task at the top of the human list: the §F2 bank-40/41 repoint.** Everything else is rounding.
+⭐ **363 of 366 lines and 2,748 of 2,751 instances — 99.9% of everything left — sit behind ONE task:
+the §F2 bank-40/41 repoint.** Everything else is rounding.
+**Battle: 0 dispatchable.** 16 and 32 blocked on the tier-A floor; 5 and 43 parked.
 
 ## Blocked — needs a human, IN PRIORITY ORDER
-### 1. ✅ RESOLVED 2026-09-11 — the `tokenise` argument-length table; both dumps re-generated; chunk 17 shipped
-`FLAGS.md` **§BB**. `tools/tagargs.py` (`FC70` 2 · `FCA8` 2 · `FFED` 2 · `FFF3` 4 — **measured at byte level;
-§R4's "8" and §AP2's "4" were wrong**, §BB2) is imported by both tokenisers. Dumps re-generated without
-the binaries from their own lossless bytes and proven (§BB4): 18 battle + 7 script lines changed, all
-byte-identical, none in a shipped chunk; artifact signatures 24 → 0, `{FF00}` 6 → 0. **§AP2's "zero
-shipping impact" was wrong — `batch_012` D367 rendered a stray `お`; fixed (§BB3).** Chunk 17: `git mv`,
-5,857 / 8,192. **15, 23, 27, 28, 29, 39 dispatchable; 16, 32 on the tier-A floor only.**
-✅ **Confirmed against the real binaries the same day: `refresh` reproduced `dumps/` byte-for-byte,
-`verify` ROUND TRIP OK on both files, both unique lists identical, `build` + `checkedit` OK — 132,487 bytes
-changed, all inside script slots** (§BB4).
-### 2. ⭐⭐ THE BANK-40/41 REPOINT (§F2) — by far the biggest lever left
+### 1. ⭐⭐ THE BANK-40/41 REPOINT (§F2) — BY FAR THE BIGGEST LEVER LEFT, and it needs ONE input
 `FLAGS.md` **§F2**, figures refreshed **§Z6**. About **66 KB short**: bank 41 needs +30,534 with **353**
 free, bank 40 +20,924 with **75**, bank 5 +14,720 with **1,595**, bank 2 +12,798 with **1,607**, bank 33
 +11,492. **Unblocks 363 unique lines / 2,748 instances — 99.9% of everything still untranslated.**
@@ -172,13 +84,8 @@ its own story text (~25 instances). Reversible, but the arithmetic is not close.
   tag stream, **so gate 6 is blind to them** — reuse the shipped English byte-for-byte.
 - **§42.5's forward-binding table still holds two live rows: `505` → D535 and `506` → D403.**
 
-### 3. ✅ RESOLVED 2026-09-11 — `assemble.py:validate_body` charset whitelist; chunk 36 shipped
-`FLAGS.md` **§BA**. `validate_body` now exempts a text run byte-identical to the source line's run —
-preserved machine text — **unless it still holds two or more consecutive kana/kanji**, so an
-untranslated line is still caught (tested both ways, §BA3). `git mv pending/chunk_036.txt
-tl/battle/chunk_036.txt`; `check` green; **2,887 / 8,192**. Battle 33 / 44, 66.6%.
 
-### 4. Tier-A battle chunks 5, 16, 32, 43 — ENGINE BUILD 1 DONE, AWAITING THE BOOT TEST (2026-09-11)
+### 2. Tier-A battle chunks 5, 16, 32, 43 — ENGINE BUILD 1 DONE, AWAITING THE BOOT TEST
 Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no faithful translation fits
 8,192 bytes. **5 and 43 are translated and parked.** The fix is built: `pending/slot-extension.md`
 (revised — appended 16 KB slots, because every large map's data runs to +0x24F18 and the old in-chunk
@@ -202,7 +109,18 @@ they are applied at the unpark with the re-measure.** Chunks 5 and 43 were writt
 and thirty other entries existed: **each owes a full gate-6 and gate-7 pass against the glossary as it
 stands on the day it unparks, not as it stood when it was written.**
 
-### 5. 🎮 Two in-game visits that settle four open questions between them
+
+### 3. Disc rebuild and play-test — ENGINE BUILD 1 delivered, boot test pending
+The game files are on `main` as `riotstars.zip.001–003`; `python3 tools/unpack.py` rebuilds `original/`.
+The full file set for the first boot test was built and handed to the human: `build/KOUSEI.EXE`,
+`build/SLPS_008.29` (`python3 tools/engine.py build`, FLAGS §BC3), `build/HEXMAP.BIN`
+(extended, `assemble.py build --extended`) and `build/SCRIPT.BIN`. Any session rebuilds them: `unpack.py`,
+then `python3 tools/engine.py build`, then `python3 tools/assemble.py build --extended`.
+**Left for the human: the disc rebuild (HEXMAP.BIN last in the image) and the boot test in Blocked 4.**
+Still open from findings §11: the boot EXE's own half-width port (#11) and the 7-character name cap (#10).
+
+
+### 4. 🎮 Two in-game visits that settle four open questions between them
 - **The nine tutorial screens** (Blocked 8, §AO1–AO3). `batch_013.tsv` adds one `{FFFE}` to each of
   DATA 958–963, 968, 969, 970 because `assemble.py`'s column model does not split on `{FFFA}`/`{FFF7}`/
   `{FFF6}`. **Open the tavern tutor, walk lectures 1–6, look for a blank first row or a misaligned
@@ -224,299 +142,114 @@ stands on the day it unparks, not as it stood when it was written.**
   store: D518/D519/D520 are exactly such pooled rows** (1,184 / 745 / 850 JP chars, multi-scene, one
   opening with a ruler string).
 
-### 6. Disc rebuild and play-test — ENGINE BUILD 1 delivered 2026-09-11, boot test pending
-The game files are on `main` as `riotstars.zip.001–003`; `python3 tools/unpack.py` rebuilds `original/`.
-The full file set for the first boot test was built and handed to the human: `build/KOUSEI.EXE`,
-`build/SLPS_008.29` (`python3 tools/engine.py build`, FLAGS §BC3), `build/HEXMAP.BIN`
-(extended, `assemble.py build --extended`) and `build/SCRIPT.BIN`. Any session rebuilds them: `unpack.py`,
-then `python3 tools/engine.py build`, then `python3 tools/assemble.py build --extended`.
-**Left for the human: the disc rebuild (HEXMAP.BIN last in the image) and the boot test in Blocked 4.**
-Still open from findings §11: the boot EXE's own half-width port (#11) and the 7-character name cap (#10).
 
-### 7. Enable "Automatically delete head branches" — kills a permanent false signal
+### 5. Small, cheap, and each kills a standing false signal
 Branch deletion returns **HTTP 403** from every agent container (§AQ9), so ~45 merged `tl/*` branches
 linger and "branch still exists" has been a misleading signal for twelve waves.
 
-### 7b. 🖥️ The main-script text box is NOT yet widened (MAIN1.EXE) — a standing note, not a blocker
-Translate to **24 columns anyway**; `riotfont.py rewrap` re-flows later if the box is widened. This has
-been true and harmless for twelve waves; it is recorded so nobody "discovers" it as a defect.
+- **🖥️ The main-script text box is NOT yet widened (MAIN1.EXE) — a standing note, not a blocker.**
+  Translate to **24 columns anyway**; `riotfont.py rewrap` re-flows later if the box is widened. This has
+  been true and harmless for twelve waves; it is recorded so nobody "discovers" it as a defect.
 
-### 7c. ⚠️ If the run RESUMES, watch the session lineage cap — it killed the chain once
-`FLAGS.md` **§Z/Blocked 0b (waves 9–10).** Every wave ran as a child session of the previous one and the
-platform caps that at **lineage depth 8**. At the cap, `send_later`, `create_trigger` and `create_session`
-all return `caller session is at lineage depth 8 (limit 8)`, so that wave ran **without a watchdog and
-could not open its successor.** ✅ **Fixed by a human opening the next wave as a fresh TOP-LEVEL session**,
-which resets depth to 0. ⚠️ **The in-run fallback — an `orchestrator` subagent — WORKS BUT IS DEGRADED:
-subagents cannot spawn subagents, so such a coordinator has no reviewer and self-reviews its own merges
-(wave 1's failure, four merges).** **Prefer the human action; it is strictly better and nearly free.**
-**Wave 12 ran as a top-level session and hit none of this** — `Task`, `send_later` and `create_session`
-all worked, and the three-role split held for all four units.
+### 6. 📌 RECORDED REPAIRS — an agent can do these WITHOUT the human, disc, or emulator
+Each is 0-byte or near-0-byte and none was in scope for the wave that found it.
+- **`FLAGS.md` §BI2 — `tl/battle/chunk_000.txt` body[12] page 11 is the ONLY `.TTTT.` page in all of
+  `tl/`** (0 attestations in 1,854 source pages), with its two neighbours having given up rows to it.
+  **A 0-byte re-flow. ⚠️ Chunk 0's battle is test (1) of the Blocked-2 boot test — fix it BEFORE that
+  test**, or the human tests a page shape the game never uses.
+- **Six pre-existing `main`-level divergences**, none a defect in the unit that found it (`glossary.md`
+  §70.7): `君、すまない。` (`batch_012:63` vs `chunk_024` body[14]) · `それよりも` (`chunk_018` vs
+  chunks 22/37 and `batch_016`) · `納得がいく` (`chunk_021` vs chunk 29) · `この通り` (`batch_009:68`
+  vs `batch_017:42`) · `餌食` (`chunk_000` body[2] vs `ｐｒｅｙ` elsewhere) · `batch_013:31` and
+  `batch_017:39` (FLAGS §BF3/§BF4).
+- **`FLAGS.md` §BE4 — `pending/chunk_005.txt` body[17] and body[27] carry RETIRED wordings** (§27.2's
+  binding string; §32.3's ruling). **Harmless while parked, a CLAUDE.md §3 violation the moment chunk 5
+  unparks.** Apply at the tier-A unpark with the re-measure. **Chunks 5 and 43 were written before ~30
+  glossary entries existed: each owes a full gate-6 and gate-7 pass against the glossary AS IT STANDS
+  ON THE DAY IT UNPARKS.**
+- **`FLAGS.md` §BF5 — the §3.2 short-row-end preference is a PROJECT-WIDE SWEEP, not a per-unit
+  finding** (8.7% mean across all shipped chunks). ⚠️ **Do not relitigate it per chunk.**
+- **Glossary rows that must STAY LIVE** (all re-derived Japanese-side this wave): `飛行船` (chunk 16 +
+  script 1307/1375/1376) · `新型` (chunk 16 ×4) · `４号`/`Ｕｎｉｔ　４` (chunks 32, 43 + 5 script lines) ·
+  `敗れ去` (chunks 16, 32) · `巣窟` (523, 525) · `一巻の終わり` (1387) · bare `渓谷` (1292, 1381) ·
+  §46.2 `大渓谷` (1313) · `永遠`, `甘すぎ`, `勝ち目`, `まあいい`, `残念`, `つまらない` · `根城`, `坊や`
+  (chunk 32). ⭐ **Chunk 16 is a PARALLEL SCENE to chunk 39** — chunk 39 is its reference text for
+  `新型(の)機械兵`, `敗れ去る`, `父さん・・・・` and `昔みたいに…飛行船の研究` the day it unblocks.
 
-### 8. 📄 `SKILL.md` §3 edit (small)
-Scratch-file namespacing must bind **every** role, not just translators — a **reviewer's** script was
-overwritten mid-task in wave 4 and caught only because the output was visibly the wrong unit's data.
-Add: every agent namespaces every scratch file, and no agent trusts a scratch script it did not write
-in the same turn.
+### 7. ⚠️ IF THE RUN EVER RESUMES — the session lineage cap killed the chain once
+`FLAGS.md` **§Z / Blocked 0b (waves 9–10).** Waves ran as child sessions and the platform caps lineage
+at **depth 8**; at the cap `send_later`, `create_trigger` and `create_session` all fail, so that wave ran
+**without a watchdog and could not open its successor.** ✅ **Fixed by a human opening the next wave as a
+fresh TOP-LEVEL session** (resets depth to 0). ⚠️ The in-run fallback — an `orchestrator` subagent — is
+**degraded: subagents cannot spawn subagents, so it has no reviewer and self-reviews its own merges**
+(wave 1, four merges). **Prefer the human action.** Waves 12–14 ran top-level and hit none of this.
 
-### 9. 📌 Wave-13 standing debts — recorded, verified, and NOT this wave's to fix
-None blocks a dispatch; each arms itself at a specific later moment, so they are written here rather than
-left in `FLAGS.md` alone.
-- **FLAGS §BE4 — `pending/chunk_005.txt` body[17] carries the RETIRED wording of §27.2's binding string**
-  (8 shipped instances use the current one) and body[27] predates §32.3's ruling. **Harmless while parked;
-  a CLAUDE.md §3 violation the moment chunk 5 unparks.** Apply at the tier-A unpark with the re-measure
-  (+2 bytes on a budget-parked unit). Found by chunk 15's duplicate gate reaching outside its own unit.
-- **FLAGS §BF3 / §BF4 — two pre-existing script-store divergences:** `batch_013:31` renders a
-  byte-identical Japanese line differently from four other rows plus chunk 23, and `batch_017:39` diverges
-  from its incumbent. Neither was wave 13's to fix.
-- **FLAGS §BF5 — the §3.2 short-row-end preference is a PROJECT-WIDE SWEEP, not a per-unit finding.**
-  Measured corpus-wide: chunk 23 is 8.8% of non-final rows against an **8.7% mean across all 36 shipped
-  chunks**, and §27.2's own binding form is one such row. ⚠️ **Do not relitigate it per chunk** — a
-  wave-13 reviewer nearly raised 11 such rows as a finding and calibrating against the corpus stopped it.
-- **Two glossary rows are LIVE into wave 14:** `じゃあね、` binds **chunk 28 L18**, `１度` binds **chunk 29
-  L8**. `根城` and `坊や` stay live for **blocked chunk 32**. Do not strike any of them early.
+### 8. ✅ RESOLVED EARLIER, kept as one line each so nobody re-opens them
+- **`tokenise` argument-length table** — `FLAGS.md` §BB; `tools/tagargs.py`; both dumps re-generated and
+  proven byte-for-byte against the real binaries; chunk 17 shipped.
+- **`assemble.py:validate_body` charset whitelist** — `FLAGS.md` §BA; chunk 36 shipped, 2,887 / 8,192.
+- **The `main` redirect** — waves 1–12 merged onto a feature branch while `main` sat untouched; `main`
+  was fast-forwarded 2026-09-11 (284 commits, 54 units). **Every wave since has verified `origin/main`
+  at its close commit.** Do not reintroduce a "Run configuration" block naming another branch.
 
-## Decisions this run
-### ⭐⭐ THE LAST UNIT'S FINDING IS ONE `rowcheck` STRUCTURALLY CANNOT SEE
-PR #50's translation is correct to the word — the reviewer found nothing wrong with the text. The
-finding is **geometric**: on the three pages whose source carries a **trailing blank**, the unit kept
-the blank **and added a text row**, giving those pages **five segments**. **`rowcheck` counts non-empty
-rows only, so all three read as 4 and PASS.** Remedy: delete the `{FFFE}` immediately before `{FC30}`
-on those three pages — no text changes, −6 bytes.
-⚠️ **I verified the decisive fact myself, and it does NOT depend on any shape census:** the PR's
-`{FFFE}` totals **exceed the source's** on exactly those lines — **L0 8 → 9, L4 43 → 45** — while the
-source's `{FFFE}{FC30}` trailing-blank structure is preserved (L0 ×1, L4 ×3, identical in both). The
-remedy restores the source's own counts **exactly** (8 and 43).
-✅ **DISCREPANCY RAISED AND NOW RESOLVED — AGAINST ME. My shape census was the wrong one.** I reported
-`.TTTT.` 3 / `TTTT.` 11 over **867** pages against the review's 0 / 1 over 1,850, and refused to relay
-its figures as verified. **Cause found and confirmed in `tools/rowcheck.py:77`: a page is bounded by
-`{FCC0}`, `{FC30}`, `{FC51}`, `{FC50}` AND `{FFFF}` — five delimiters. I split on `{FCC0}` alone**, so I
-merged pages wholesale and found barely half of them, which inflates exactly the multi-row shapes at
-issue. The chunk-39 translator re-derived the census with `row_problems()`'s splitter copied verbatim
-and got **1,854 pages, `.TTTT.` = 0, `TTTT.` = 1** — the review's figures stand and **mine are
-withdrawn.** ⭐ Flagging the gap was still right (an unverified figure must not be laundered into the
-record), and the resolution is the useful part: **if you census page shapes, use `rowcheck.py`'s own
-five-delimiter splitter — anything less merges pages.** The break-count argument was independently
-decisive either way.
+## Decisions — wave 14 (detail in `glossary.md` §68–§70 and `FLAGS.md` §BH–§BJ)
+### ⭐⭐ THE WAVE'S ONE LESSON: A COUNT IS NOT EVIDENCE UNTIL IT IS RE-DERIVED
+**TEN "exhausted / hapax" claims were made this wave. NOT ONE survived re-derivation** — three were
+mine, seven came from agents, and one reached `main` and needed a §4.3 correction (§68.3 `つまらない`,
+fixed at `0c5bf2b`: 3 battle instances, not a hapax). **Every single bad claim was censused on the
+ENGLISH side, or over ONE SPELLING.** The corpus splits by **Japanese head** and by **kana/kanji
+variant**, so a one-spelling English census cannot see what it is counting.
+⭐ **The last unit broke the streak: all ten of PR #50's claims survived re-derivation** — the first
+clean sweep, and it was done Japanese-side across both spellings.
+**Rule, now proven eleven times over: re-derive every exhaustion claim on the Japanese side, across
+both spellings, before striking a glossary row.** A wrongly struck row is invisible until a later unit
+re-invents the word.
 
-### 📌 FOR WHENEVER CHUNK 16 UNBLOCKS — chunk 39 is its reference
-**Chunk 16 is a PARALLEL SCENE to chunk 39** (the same `新型(の)機械兵` / `敗れ去る` / `父さん・・・・` /
-`昔みたいに…飛行船の研究` beats), and is tier-A blocked at **1.59×**. Chunk 39 therefore becomes the
-reference text for all four forms the day chunk 16 is unblocked. **That needs a human (the slot
-extension), not a retranslation.** Rows that MUST stay live for it: `飛行船` (ch16 + script
-1307/1375/1376), `新型` (ch16 ×4), `４号`/`Ｕｎｉｔ　４` (ch32, ch43, 6 script lines), `敗れ去` (ch16, ch32).
+### ⭐⭐ TWO GATE BLIND SPOTS FOUND THIS WAVE — both recorded in `FLAGS.md` §BJ
+1. **`rowcheck` structurally cannot see the trailing-blank defect** (`row_problems()` counts non-empty
+   rows only), so a page carrying a spurious fifth segment PASSES. **The cheap detector is a line whose
+   `{FFFE}` total went UP against the source — which `rowcheck` already prints.** §BJ2. ⚠️ The suggested
+   `row_problems()` second pass is **recorded, not done**: CLAUDE.md §3 forbids touching the tools mid-run.
+2. **A gate-6 parsing trap that silently voids half the gate:** `tl/script/*.tsv` rows are
+   `<count>\t<JP>\t<EN>`, so **the key is COLUMN 2**. Splitting on the first tab takes the instance
+   count as the key, **drops the entire script store, and still prints a clean result.** Correcting it
+   took one reviewer's paired corpus from 1,714 runs to 3,754.
 
-
-### 📌 TWO STANDING ITEMS RAISED AT CHUNK 29's MERGE — neither is wave 14's to fix
-- **`FLAGS.md` §BI2 — a `main`-level defect in `tl/battle/chunk_000.txt`.** body[12] page 11 ships
-  **`.TTTT.`, the ONLY instance of that zero-attestation shape in all of `tl/`**, with its two
-  neighbours having given up rows to it. Chunk 0 predates §45.2; **the fix is a 0-byte re-flow.**
-  ⚠️ **Chunk 0's battle is test (1) of the Blocked-4 boot test**, so this is worth fixing before that
-  test rather than after.
-- **§4.3 correction to PR #51's body (not to the merged file):** its `ゆっくり` cell named
-  `pending/chunk_043` as the other battle instance; it is **`pending/chunk_005` L16**, and chunk 43's
-  source contains no `ゆっくり` at all (script count **8**, all rendered, not 7). Disposition unchanged
-  (LIVE via parked chunk 5) — but the wrong file would have sent the next auditor to the wrong place.
-
-
-### ⚠️ WAVE 14, COORDINATOR ERROR #1 — MINE, CAUGHT BY A TRANSLATOR, CORRECTED AT `a128ded`
-**§9.W14's `工場` seed row said `ｐｌａｎｔ`. It is `ｆａｃｔｏｒｙ`, and the chunk-39 translator was right.**
-I cited §29's `兵器工場` → `ｗｅａｐｏｎｓ　ｐｌａｎｔ` row as governing the **bare** word. That row's own last
-clause **excludes** it — it holds `兵器工場` *"distinct from bare `工場` → factory (`chunk_009.txt`,
-twice)"*. And §29 fixed `ｐｌａｎｔ` on **WIDTH** (`ａ　ｗｅａｐｏｎｓ　ｆａｃｔｏｒｙ　ｔｈｅｒｅ．` is exactly 24
-columns and was rejected), so I **read a width clearance as a word ruling** — `FLAGS.md` **§BE3**, the
-wave-13 lesson, reproduced one wave after it was written. Re-verified by **positional pairing**, not by
-citation: `chunk_008` body[8] → `ａ　ｗｅａｐｏｎｓ　ｐｌａｎｔ　ｔｈｅｒｅ．`; `chunk_009` body[1] and body[3] →
-`Ｔｈｅ　ｆａｃｔｏｒｙ` / `ｔｈｅ　ｆａｃｔｏｒｙ`. **`ｆａｃｔｏｒｉｅｓ` as shipped in PR #50 stands; the reviewer
-must NOT raise it against chunk 39.** ⭐ Bidirectional QC working as designed, third wave running.
-
-### ⚠️ WAVE 14, COORDINATOR ERROR #2 — MINE, THREE BAD CENSUS CLAIMS IN §9.W14, CORRECTED
-**I labelled two rows "hapax" and neither is one, and I stated a third count in the wrong unit.**
-- **`一巻の終わり` is 1 battle + 1 script** (`script_unique` **1387**, UNTRANSLATED, bank-41, behind §F2).
-  Caught by the **chunk-28 translator** (PR #52 flag 9). **ROW STAYS LIVE.**
-- **`巣窟` is 1 battle + 2 script** (`script_unique` **523**, **525**), **both UNTRANSLATED.** Found when I
-  re-censused every seed row rather than fixing only the one I was told about. ⚠️⚠️ **This also makes
-  PR #51's "1 battle + 0 script — EXHAUSTED" WRONG: the row must NOT be struck at that merge.** This is
-  the wave-13 lesson working — *re-derive "row is exhausted" claims before striking a glossary row* —
-  and it would otherwise have struck a row two untranslated script lines still need.
-- **`飛行船` "2 battle + 4 script"** was a **LINE** count; as **occurrences** it is **6**. Both are right
-  under their own convention, so the row now **states its corpus**, per the standing rule.
-⭐ **Lesson for the reviewer: three of my seventeen seed rows carried a wrong count, and TWO were caught
-by translators. Treat every figure in §9.W14 as a claim to re-derive, not as evidence.**
-
-### ⭐⭐ REVIEWER 1's CROSS-UNIT RULINGS (PR #52, CHANGES) — BINDING ON REVIEWERS 2 AND 3
-**Reviewer 1 merged nothing, so these are rulings, not incumbents-by-merge. Relay them forward.**
-- **A. `アイテムを奪われました。` → `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．`** ⭐ **The true
-  census is 11, not §21.3's SEVEN:** 7 with the source break (3, 9×3, 28, 29, 30) and **4 without
-  (38 L21, 39 L8, 41 L9, 41 L11)**. **Chunks 38 and 41 are shipped and already ADD the `{FFFE}` to the
-  no-break source**, so **PR #50's declared `{FFFE}` 0 → 1 is conformance with three precedents, not a
-  novelty — UPHOLD IT.** All three wave units ship the form byte-identically.
-- **B. `勝ち目はありません。` — chunks 28 and 29 MATCH** modulo sentence-initial capitalisation, which
-  their differing source frames require. **No change to either.** `勝ち目` is **NOT** exhausted (chunk 16
-  blocked, `script_unique` 523/525/1373 untranslated).
-- **C. `あのとおり` vs `あの通り` — the split is a DIVERGENCE and it is CHUNK 29's.** The corpus splits
-  by the Japanese head: `あのとおり` → `Ａｓ　ｙｏｕ　ｓａｗ` (`batch_012:67`, `batch_016:91`) vs
-  `ご覧のとおり` → `Ａｓ　ｙｏｕ　ｓｅｅ` (`chunk_037` L17). **Chunk 28 conforms; chunk 29's
-  `Ａｓ　ｙｏｕ　ｓｅｅ　ｔｈｅｒｅ，` diverges from its own lexeme, collides with what chunk 39 ships this wave
-  for different Japanese, AND adds a comma its source lacks (§44.2). REVIEWER 2 MUST RAISE IT.**
-- **D. `まあいい` — PR #51 IS RIGHT AND PR #52 IS WRONG.** **Reviewer 2: UPHOLD chunk 29's
-  `Ｎｏ　ｍａｔｔｅｒ．`**; do NOT conform it to chunk 28's `Ｏｈ　ｗｅｌｌ．`, which is being sent back.
-- **E. A FOURTH cross-unit item nobody had named — `どうせ`.** `chunk_027` L4 is shipped, is **Seti's own
-  line in the preceding chapter**, and uses `ａｌｌ　ｔｈｅ　ｓａｍｅ`; `batch_012:56` twice more. Chunk 28
-  conforms; **chunk 29 L19's `Ｗｈａｔｅｖｅｒ　ｔｈｅｙ　ｄｏ，` DIVERGES — REVIEWER 2 MUST RAISE IT.**
-- **F. For reviewer 3:** `最高` is in chunk 28 (L18) and chunk 39 (L4 `最高性能`) — different senses, no
-  conformance owed, but check chunk 39 does not reach for `ｍａｇｎｉｆｉｃｅｎｔ`. **My `工場` → `ｆａｃｔｏｒｙ`
-  correction is INDEPENDENTLY CONFIRMED by reviewer 1's own positional pairing; `ｆａｃｔｏｒｉｅｓ` stands.**
-
-⚠️ **More rows that must STAY LIVE (reviewer 1, verified):** `甘すぎ` (chunk 28 + **blocked chunk 16
-L14**) · `永遠` (same) · `渓谷` (2 battle + **2 untranslated script**, `script_unique` 1292, 1381 — PR
-#52's own "0 script — EXHAUSTED" claim is wrong) · `勝ち目` · `一巻の終わり` · `巣窟`.
-⭐⭐ **NINTH BAD CLAIM, AND THE FIRST TO REACH `main`: §68.3's `つまらない` cell — merged with chunk 28 — says
-**"EXHAUSTED — hapax"** and the family is **3 battle** (`chunk_000` attributive → `ｆｏｏｌｉｓｈ`; `chunk_028` L11;
-`chunk_029` L9 predicative). Two spellings, two shapes; a one-spelling census counted one of three. Found by
-the chunk-29 reviewer, verified by me, **corrected on `main` under §4.3**.
-⭐ **SEVENTH BAD CLAIM, found in the chunk-28 rework: §46.2's `大渓谷` row is ALSO live** — `script_unique`
-**1313** (`…走る大渓谷。`) is untranslated; only 579 is shipped (`batch_009:69`). **Do not strike it either.**
-⭐ **Pattern of the wave: SEVEN separate "EXHAUSTED / hapax" claims have now been wrong — three mine, three
-the translators'. Not one survived re-derivation. Re-derive every one before striking a row.**
-
-### ⚠️⚠️ A CROSS-UNIT GATE-6 CONSTRAINT BINDS ALL THREE WAVE-14 PRs — NO SINGLE REVIEW CAN SEE IT
-Raised by the chunk-29 translator (§21.3), **verified by me against the dump at 03:12**:
-| unit | source | note |
-|---|---|---|
-| chunk 28 body[6] | `アイテムを{FFFE}奪われました。` | break present in source |
-| chunk 29 body[14] | `アイテムを{FFFE}奪われました。` | break present in source |
-| chunk 39 body[8] | `アイテムを奪われました。` | **no break in source** — PR #50 declares it ADDED one (`{FFFE}` 0 → 1) so the rendering matches the shipped two-row form |
-
-**All three must ship BYTE-IDENTICAL English for this box, and chunk 39 also carries
-`村が襲われました。` (body[6]), whose nine `tl/` instances it conformed to.** Each reviewer sees only
-its own PR, so **the coordinator checks this ACROSS the three merged files at wave close** and the
-second and third reviewers are told the incumbent the first one merged. ⚠️ PR #50 additionally reports
-that **`pending/chunk_005` body[17] diverges** on `村が襲われました。` — parked, pre-existing, already
-logged as Blocked 9 / FLAGS §BE4; **not this wave's to fix.**
-
-### ⭐ TWO GATE-7 FACE-(c) GAPS ARE NOW TWO FILES DEEP AND STILL UNRECORDED — for the reviewer
-Reported by the chunk-39 translator and consistent with my own seed-time census:
-`飛行船` → `ａｉｒｓｈｉｐ` (`batch_014:47`) and bare `オリジナル` → `ｔｈｅ　Ｏｒｉｇｉｎａｌｓ` (`batch_014:40`)
-are **shipped in `tl/` with no `glossary.md` row at all**, so no glossary-side search can find them.
-Chunk 39 now uses both. **Close them in the integration commit.**
-
-
-### ⭐⭐ WAVE 13's LESSON — ONE FAILURE WITH TWO FACES, and it produced EVERY finding in the wave
-**Detail lives in `glossary.md` §65–§67 and `FLAGS.md` §BE–§BG, not here.**
-1. ⭐⭐ **A CENSUS OVER ONE SPELLING IS NOT A CENSUS, AND GATE 6 PAIRING WHOLE MESSAGES CANNOT SEE A
-   SUB-MESSAGE FORM.** Every gate-7 finding in all three units was one of these two, and they are the
-   same failure seen from two sides. **Five instances in one wave:** `ワケ`/`訳` and `ほう`/`方` (chunk
-   15) · `間違い`/`まちがい` (chunk 27) · `そうね。` bare vs `そうね。機械兵を` — a **sub-message** match
-   gate 6 cannot pair (chunk 27) · and **one of mine**: I "corrected" a reviewer's count of a shipped
-   form to 3 when the true figure was **6 rows across 5 files**, because I searched `よろしく頼む` and
-   missed `よろしく　頼む` **with a full-width space**. ⭐ **The chunk-27 translator then applied the
-   lesson UNPROMPTED** — censusing a term it had only been asked to *declare*, it found
-   `batch_015.tsv:67` shipping an identical frame with different English, and conformed all three of its
-   own instances.
-2. ⭐ **FLAGS §BE3 — "A WIDTH CLEARANCE IS NOT A WORD RULING."** §42.8 cleared a phrasing for chunk 15 on
-   **width**, and that was read as settling the **vocabulary**. It cost a review round. The translator
-   pushed back with a shipped compound (`batch_015.tsv:18`), the reviewer upheld it after reading the row
-   itself, and `ｇｉａｎｔ　ｂａｔｔｅｒｙ` stands.
-3. ⭐ **GATE-7 FACE (b) STRUCK AGAIN, AND IT WAS A CROSS-WAVE DEFECT:** §30.4 reserved a word and
-   asserted it "verified unspent across `tl/`" in wave 3 — **while the counter-evidence sat in §24.6's
-   own NOTE CELL**, from wave 2. Ruled and repaired in place as **§30.4.1** (the reserve narrows; the
-   wave-2 shipped form stands). Found by a translator, ruled by a reviewer, and it would have broken the
-   next unit to reach the term, not this one.
-4. ⚠️ **THREE COORDINATOR ERRORS, ALL MINE, ALL CAUGHT BY SUBORDINATE AGENTS.** (a) I read the
-   `砲台` → `ｂａｔｔｅｒｙ` row while seeding and then **omitted it from the chunk-15 dispatch while
-   listing four other keyed forms** — a seed that names four and silently drops a fifth reads as
-   exhaustive, and it cost that unit its first round. (b) The one-spelling census above. (c) I told
-   reviewers **five** rows must stay live; the chunk-27 reviewer re-derived them and found **four** —
-   my `そうね。` count was a *substring* match on an evidential, not the fixed form.
-5. ✅ **QUALITY CONTROL RAN IN BOTH DIRECTIONS, EVERY ROUND.** A translator overturned a reviewer's
-   word ruling on evidence (§BE3) · a translator asked for a ruling, **lost it, and accepted on the
-   evidence** (§23.4/§26.8) · a translator **withdrew its own challenge to my seed in full** after
-   re-measuring, having been right to challenge me on a different count · reviewers corrected five and
-   four figures respectively · a reviewer **recorded a near-miss against itself** (it nearly raised a
-   §3.2 finding and calibrated against the corpus first — every shipped chunk does the same thing at
-   2.6–12.0% of rows). **No finding in this wave was accepted on report; every one was re-verified.**
-6. **Process:** the PR body must be **rewritten on every rework push** — chunk 15's was left describing
-   its pre-rework text and its reviewer integrated from a corrected record instead (§65.7 / §BE6).
-   A reviewer that shows "running" may already have merged and be **mid-integration**: with two of the
-   three units the squash landed ~2 minutes before the integration commit. **Never push while a reviewer
-   runs.**
-
-### Wave 12's lessons — collapsed; full text in `glossary.md` §61–§64 and `FLAGS.md` §AW–§AZ
-**Gate 7 has three faces, all mandatory: (a) key cells · (b) NOTE cells · (c) forms shipped in `tl/` the
-glossary never recorded at all** — face (c) defeats any glossary-side harvester, so gate 7 needs a `tl/`
-column-2 pass. **Hand-measuring columns:** `assemble.py:106` splits runs on more than `{FFFE}`, so a
-`{FFFE}`-only split can overstate columns. **Assume every reach figure is a raw substring count until
-shown otherwise.** **Read every `{FFFE}` segment of a pooled row.** **Cite by section, not by line** —
-a line citation goes stale the moment the file above it is edited.
-
-**Standing (waves 4–13).** Integration branch is **`main`** — it was `claude/workflow-translation-iterate-uzlkns`
-with `main` untouched until 2026-09-11, which hid the whole run; see the top of this file and `CLAUDE.md`. Script growth for planning **2.10×**; ⚠️ **realised across wave 12 was 1.66×–1.98×, so quote
-the planning bound and the realised figure as TWO numbers, never one.** Seed the glossary **before**
-dispatching. A **parked unit still gets the full reading review**. Name script batches by **DATA line
-list**. A term is "in the glossary" only if a row **fixes an English form**. Section numbers are taken by
-**READING both files at commit time**, never reserved. **Runtime name/unit inserts take singular *they***
-(§58/§AT4). **Battle `tl/` holds NO Japanese, so grepping it is a null check** — pair the battle dump
-positionally (⚠️ **I made this mistake myself in wave 12 while checking a battle citation**). **Gate 6
-pairs whole messages on exact Japanese**, so a kana variant, a sub-message term or a sibling differing
-only in a tag argument is **structurally invisible** — wave 12's twin units shared **30 readable strings**
-differing only in a trailing `{FFF8}` argument and **gate 6 reported clean while seeing nothing.**
-**`{FCC0}` is forbidden by `assemble.py:tag_parity`, not `rowcheck.py`** (§Q2). **No gate needs a working
-tree**; **pin the merge base to an explicit SHA** and **never reuse an author's `merge-tree` result** —
-by wave 12's last review the base had moved through three merges. **Never infer merge state from an
-agent's status**: reviewers merge *and* push `integrate:` while still showing "running", and **branch
-deletion returns HTTP 403** (§AQ9). A rejected non-fast-forward push is the **mid-integration signal**:
-hold, re-fetch, re-apply, **never force**. **`build/*_dump_merged.txt` is committed at WAVE CLOSE only** —
-pushing it mid-review risks colliding with a reviewer's integration push. **GitHub REFUSES
-`REQUEST_CHANGES` in this repo** (§AQ1): reviewers post a COMMENT review with `DECISION:` on line 1, and
-an absent REQUEST_CHANGES is **never** approval. **Settled conventions, never findings:** DATA vs FILE ·
-0-based vs 1-based · the gutter census · §45.2's `.TTTT.` is BATTLE-scoped · **breaks vs segments** are
-two conventions over identical data · gate-7 key counts vary with splitter and struck-row handling —
-**state your corpus.**
+### ⭐ PROCESS THAT WORKED AND SHOULD CONTINUE
+Every finding was **verified before it was relayed**, and it changed something almost every round: a
+translator overturned nothing this wave but two had rulings go their way on evidence; **the coordinator
+was wrong four times and each was caught by a subordinate** (the `工場` seed, two bad hapax labels, and
+a page-shape census that used a one-delimiter splitter where `rowcheck.py:77` uses **five** — that last
+one is withdrawn at `a309fee`). **Cross-unit constraints that no single review can see were routed
+through `HANDOFF.md`, not through the coordinator's context** — the stolen-item box (11 instances) and
+three kana/kanji twins were caught that way.
+**Standing conventions:** PR bodies are **rewritten in full on every rework push** · never push while a
+reviewer runs · take glossary/FLAGS section numbers by **READING at commit time** · pin the merge base
+to an explicit SHA · battle `tl/` holds **no Japanese**, so pair the dump **positionally** · gate 6
+pairs whole messages, so kana twins and sub-message forms are **structurally invisible** to it ·
+GitHub **REFUSES `REQUEST_CHANGES`** here (§AQ1) — an absent REQUEST_CHANGES is never approval.
 
 ## Wave history
 | Wave | Units | Merged | Parked | Progress after |
 |---|---|---|---|---|
-| 1 | battle 1, 2, 3 + script 004 | **4** | 0 | battle 13/44 (20.1%); script 185 lines (50.6%) |
-| 2 | battle 4, 6, 9 + script 005 | **4** | 0 | battle 16/44 (26.3%); script 211 lines (50.9%) |
-| 3 | corrections + battle 8, 13, 17 | **3** | **1** | battle 18/44 (32.2%); script unchanged |
-| 4 | battle 18, 19, 20 + script 006 | **4** | 0 | battle 21/44 (39.4%); script 261 lines (51.6%) |
-| 5 | `あら` corrections + battle 21, 22 + script 007 | **4** | 0 | battle 23/44 (43.2%); script 311 (52.5%) |
-| 6 | battle 24, 25, 26 + script 008 | **4** | 0 | battle 26/44 (51.0%); script 358 (53.1%) |
-| 7 | battle 30, 31, 36 + script 009 | **3** | **1** | battle 28/44 (56.5%); script 408 (53.7%) |
-| 8 | battle 37, 38, 41, 42 + script 010 | **5** | 0 | battle **32/44 (64.3%)**; script 461 (57.4%) |
-| 9 | script 011, 012, 013 (**script-only — battle exhausted**) | **3** | 0 | battle 32/44; script 640 (59.7%) |
-| 10 | script 014, 015, 016 (DATA 707–869) | **3** | 0 | battle 32/44; script 803 (61.7%) |
-| 11 | script 017, 018, 019 (DATA 1100–1159, 1388–1430, 465–879) | **3** | 0 | battle 32/44; script 948 (63.6%) |
-| 12 | script 020, 021, 022 + corrections (DATA 318/320/326–345, 997–1034, 1043–1099) | **4** | **0** | battle 32/44 (64.3%); script **1,064 (65.3%)** — ⭐ **ALL FOUR MERGED AT ROUND 1; the run's feasible queue is now EMPTY** |
-| **13** | **battle 15, 23, 27** (first battle wave since wave 8) | **3** | **0** | battle **37/44 (75.2%)**; script unchanged — ⭐ **3/3 merged, 0 parked, 0 lost, 0 re-dispatches; all three at ROUND 2** |
+| 1–8 | battle 1–4, 6, 8, 9, 13, 17–22, 24–26, 30, 31, 36–38, 41, 42 + script 004–010 | 31 | 2 | battle 32/44 (64.3%); script 461 (57.4%) |
+| 9–12 | script 011–022 (battle exhausted at the time) | 13 | 0 | battle 32/44; script **1,064 (65.3%)** |
+| 13 | battle 15, 23, 27 | **3** | 0 | battle 37/44 (75.2%) — 3/3 merged, all at round 2 |
+| **14** | **battle 28, 29, 39** | **3** | **0** | battle **40/44 (79.8%)** — 3/3 merged, 0 parked, 0 lost, 0 re-dispatches; **all three at round 2** |
 
-**Wave 12 detail.** PRs #43–#46, 4 merged / 0 parked, all at round 1. Detail in `glossary.md` §61–§64
-and `FLAGS.md` §AW–§AZ.
-
-**Wave 13 detail.** PRs #47 (chunk 15), #49 (chunk 23), #48 (chunk 27) — **3 merged / 0 parked / 0 lost /
-0 re-dispatches**, every one at **round 2**: each took exactly one CHANGES round, and every finding in
-all three was a **gate-7** miss, never a gate 1–6 failure. Realised growth **2.03×–2.21×** against
-budgets of 2.80×–6.14×, so all three came in well under. Translators 27–53 min, reviewers 18–29 min,
-five separate reviewers with the three-role split intact throughout — **no unit is SELF-REVIEWED and
-there is no audit debt.** Detail lives in `glossary.md` §65–§67 and `FLAGS.md` §BE–§BG.
+**Wave 14 detail.** PRs #52 (chunk 28, 3,953/8,192), #51 (chunk 29, 3,403/8,192), #50 (chunk 39,
+3,161/8,192). Realised growth 2.01×–2.14× against ceilings of 4.77×–6.21×. Every unit took exactly one
+CHANGES round; **every finding was a conformance or geometry issue, never a mistranslation.** The
+three-role split held throughout — **nothing is SELF-REVIEWED and there is no audit debt.**
 
 ## How to resume
-1. `git fetch && git reset --hard origin/main` (a plain `checkout` can land on a stale shallow ref — see
-   the top of this file), then `python3 tools/assemble.py check`.
-2. **Dispatchable work: THREE battle chunks — 28, 29, 39 (wave 14, in Next up).** Open the wave-14 session
-   with the SKILL.md §6a seed on `main`, or run `/translate`. ⚠️ **Wave 14 is the LAST dispatchable battle
-   wave**; after it, 16 and 32 are blocked on the tier-A slot extension, 5 and 43 are parked, and the
-   script is unchanged at 0 feasible lines — **CLAUDE.md §8's stop condition holds again.**
-3. **After wave 14 the work is the human list under "Blocked — needs a human", in this order:** the boot
-   test of engine build 1 (4 and 6 — the files exist, only an emulator is missing), the §F2 bank-40/41
-   repoint (2 — unlocks 363 script lines / 2,748 instances, 99.9% of what is left; the loader is traced
-   and the tooling simulated, blocked on two savestates), the two in-game visits (5). **Engine work is
-   done in the root session, not by wave agents.**
-4. **The game files are on `main`.** `python3 tools/unpack.py` rebuilds `original/` from
-   `riotstars.zip.001–003` (pinned hashes; fails loudly on a bad part). `refresh` reproduced `dumps/`
-   byte-for-byte on 2026-09-11 (FLAGS §BB4); if it ever does not, stop and look. `assemble.py build`
-   runs the real `checkedit` anywhere now; the disc rebuild and play-test are still the human's.
-5. ⚠️ **Read Decisions → wave 13's lesson before translating or reviewing anything.** One failure with
-   two faces — a census over one spelling is not a census, and gate 6 pairing whole messages cannot see a
-   sub-message form — produced **every** gate-7 finding in wave 13, across all three units and one
-   coordinator miscount.
+1. `git fetch && git reset --hard origin/main`, then `python3 tools/assemble.py check` → All checks passed.
+2. ⛔ **Do NOT run `/translate` and do NOT open a wave session. The queue is empty** (NEXT ACTION).
+   `queue.py battle` will lie to you about chunk 32; §B2's floor is 1.64×, not the hardcoded 1.6.
+3. **The work is the human list under "Blocked — needs a human", in order.** Blocked 1 and 2 between
+   them unblock 100% of what is left, and both are waiting on an emulator, not on code.
+4. **An agent CAN still do Blocked 6 without a human** — the recorded repairs, all of them 0-byte or
+   near-0-byte, none requiring the disc.
+5. **The game files are on `main`** as `riotstars.zip.001–003`; `python3 tools/unpack.py` rebuilds
+   `original/` against pinned hashes. `refresh` reproduced `dumps/` byte-for-byte on 2026-09-11
+   (FLAGS §BB4); if it ever does not, stop and look.

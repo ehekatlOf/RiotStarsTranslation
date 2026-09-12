@@ -76,8 +76,8 @@ See `translation_prompt.md` §0 for the session schedule and §3 for the full fo
 
 | | Done | Total |
 |---|---|---|
-| Battle chunks | 37 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,30,31,33,34,35,36,37,38,40,41,42) | 44 |
-| Battle Japanese characters | 32,437 | 43,137 (75.2%) |
+| Battle chunks | 40 (0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35,36,37,38,39,40,41,42) | 44 |
+| Battle Japanese characters | 34,439 | 43,137 (79.8%) |
 | Script unique lines | 1,064 | 1,430 |
 | Script message instances | 5,180 | 7,931 (65.3%) |
 
