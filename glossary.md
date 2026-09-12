@@ -4654,7 +4654,12 @@ massacre is the one `tl/battle/chunk_021.txt` L10 already ships, and the vocabul
    measured. This is the §Y3 failure mode in its other direction: not stale, simply unchecked.
 3. **`ｍｙ　ａｐｏｌｏｇｉｅｓ．` ships lowercase.** The additions table capitalises it; the file has
    `{FC00}{=0000}，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．`, correctly, because it continues the sentence after
-   the vocative. 14 columns either way. Held apart from 申し訳ない → `ｆｏｒｇｉｖｅ　ｍｅ．` (§33.2),
+   the vocative. **13 columns either way.** ⚠️ **WIDTH CORRECTED IN PLACE 2026-09-12 (§4.3, PR #55
+   review) — this read “14 columns either way”.** `len('ｍｙ　ａｐｏｌｏｇｉｅｓ．')` = **13**;
+   `ａｐｏｌｏｇｉｅｓ` is **9** letters, not ten. **No rendering changes and no line needs
+   revisiting** — the form is unchanged and 13 is comfortably inside the 23-column preference.
+   §58.3's cell for the same string is corrected the same way at the same merge. Held apart from
+   申し訳ない → `ｆｏｒｇｉｖｅ　ｍｅ．` (§33.2),
    あいにく / ごめんね、 → `Ｓｏｒｒｙ，` (§28.3), ごめんね。 → `Ｉ’ｍ　ｓｏｒｒｙ．` (§30.3) and
    すみません。 → `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` (§27.1). §33.2 named it free and reserved it
    in terms. 2 battle (24, 39) + 5 script.
@@ -7812,7 +7817,7 @@ live — see §58.4.
 | `何じゃ？` | `Ｗｈａｔ　ｎｏｗ？` | **11.** ×3, all three in bank 33. Held apart from D1106's `どうした？` → `Ｗｈａｔ　ｉｓ　ｉｔ？` (byte-identical to `batch_012`'s shipped row) and from §23.2's 何だ！？ → `Ｗｈａｔ　ｉｓ　ｉｔ！？` |
 | `何じゃと。` | `Ｗｈａｔ　ｗａｓ　ｔｈａｔ．` | **18.** §6 fixes 何だと？ → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ？`; this is the same shape in じゃ dialect and only the stop differs, per §5's punctuation-follows-source |
 | `いやー、` | `Ｄｅａｒ　ｍｅ，` | **10.** ⚠️ **Not a coinage — a reuse, and the PR's first note was replaced at review with this stronger evidence.** `batch_012` L37 (`いやあ、`) and L42 (`いやはや、`) already ship `Ｄｅａｒ　ｍｅ，`, **both bank 0**; this is a third member of the same いや-elongation family in **bank 33**, so §25.3 is met by census (0 ∩ 33 = ∅). §6's row is separately scoped `いや (deflection)` → `Ｎｏ` and reaches none of the three: D1107 and D1113 carry the plain `いや、`, both keep §6's `Ｎｏ，`, and the two forms stand side by side in this file |
-| `すまんすまん。` | `ｍｙ　ａｐｏｌｏｇｉｅｓ．` | **15.** ⚠️ A deliberate, forced departure from `batch_015`'s すまない → `Ｓｏｒｒｙ，`, taking `chunk_024` L16's incumbent instead: bank 33 already spends `Ｓｏｒｒｙ` twice in this unit (both 悪い forms below) and a third would put three source words under one English head **inside one bank**. `すまん` reach: banks 20, 33, 41 |
+| `すまんすまん。` | `ｍｙ　ａｐｏｌｏｇｉｅｓ．` | **13.** ⚠️ **WIDTH CORRECTED IN PLACE 2026-09-12 (§4.3, PR #55 review) — this cell read “15”.** `len('ｍｙ　ａｐｏｌｏｇｉｅｓ．')` = **13** (`ａｐｏｌｏｇｉｅｓ` is 9 letters); §39.3 item 3's “14” for the same string is corrected at the same merge. **No rendering changes** — the row this cell governs, `batch_017:16`, ships `Ｄｅａｒ　ｍｅ，　ｍｙ　ａｐｏｌｏｇｉｅｓ．` at **22** columns and is untouched. A deliberate, forced departure from `batch_015`'s すまない → `Ｓｏｒｒｙ，`, taking `chunk_024` L16's incumbent instead: bank 33 already spends `Ｓｏｒｒｙ` twice in this unit (both 悪い forms below) and a third would put three source words under one English head **inside one bank**. `すまん` reach: banks 20, 33, 41 |
 | `悪いのう。` | `Ｓｏｒｒｙ　ｔｏ　ｔｒｏｕｂｌｅ　ｙｏｕ．` | **21.** D1105; `悪いのう` is in **bank 33 only**. ⚠️ **Also not a coinage** — `tl/battle/chunk_002.txt` **L14** already ships this exact string for `すみません。` (paired positionally against the pristine dump at review). **§25.3 proved by census rather than assumed: `すみません` occurs ZERO times in `script_dump.txt` and `script_unique.txt` and 4 times in `battle_dump.txt`** — it is battle-only, so the two can never share a bank |
 | `悪いが、` | `Ｓｏｒｒｙ，` | **6.** D1129. Same head word as 悪いのう — one source word, one English head, the complement following the source per §5. §28.3 fixes あいにく → `Ｓｏｒｒｙ，` too, and §25.3 is met by census: あいにく occurs in `script_dump.txt` zero times (battle chunk 13 only). ⚠️ `悪いが` also occurs in **bank 24, untranslated** — see `FLAGS.md` §AT |
 | `残念じゃが、` | `Ｉ　ａｍ　ａｆｒａｉｄ，` | **12.** ⚠️ Not a coinage — the project's existing prose rendering of the 残念 family: 残念だけど、→ `Ｉ　ａｍ　ａｆｒａｉｄ，` in `batch_008` ×3 and `batch_014`, 残念ですが → `Ｉ　ａｍ　ａｆｒａｉｄ．` in `batch_011`. Deliberately **not** §24.2's 残念ながら → `Ｉ　ａｍ　ｓｏｒｒｙ　ｔｏ　ｓａｙ`, which would put a third `sorry`-headed form in bank 33 |
@@ -10132,10 +10137,14 @@ Two rows close with this unit, both re‐derived:
 
 None is chunk 39's to fix and none blocks anything; each is written down so it is not rediscovered.
 
-- **`君、すまない。` has two shipped Englishes for one byte‐identical string** — `batch_012:63` →
+- ~~**`君、すまない。` has two shipped Englishes for one byte‐identical string** — `batch_012:63` →
   `Ｉ　ａｍ　ｓｏｒｒｙ．` against `chunk_024` body[14] → `ｍｙ　ａｐｏｌｏｇｉｅｓ．` A §4.3 case for
-  whoever rules it; chunk 39's own `すまない・・・・。` is a **different** source string and takes the
-  majority form `Ｉ　ａｍ　ｓｏｒｒｙ．．．．．`, which no ruling changes.
+  whoever rules it~~ ✅ **RESOLVED at the script batch 012 repair, PR #55, squash `30d45aa`
+  (2026-09-12). `batch_012:63` now ships `，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．`, byte-identical to
+  `chunk_024` body[14].** +4 bytes, bank 1 only. Full record at **§72**. — chunk 39's own
+  `すまない・・・・。` is a **different** source string and takes the
+  majority form `Ｉ　ａｍ　ｓｏｒｒｙ．．．．．`, which no ruling changes and which this repair
+  does not touch.
 - **`村が襲われました。`** — `pending/chunk_005` body[17] carries the retired wording (§70.2, FLAGS
   §BE4). Applies at the tier‐A unpark.
 - **`それよりも`, `納得がいく`, `この通り` (`batch_009:68` vs `batch_017:42`), `餌食` (`chunk_000`
@@ -10240,5 +10249,158 @@ is recorded here so the retraction outlives the HANDOFF board.
    `chunk_013`'s at row level and identically in substance at page level (`将軍` → General,
    `ギルフォード` → Guilford in both). A row-level gate-6 pairing flags it; a page-level pairing does
    not. **Not a defect and not a conformance anyone owes** — recorded so it is not re-raised.
+
+## 72. Added by the script batch 012 repair (PR #55, merged 2026-09-12)
+
+Squash `30d45aa`. **DECISION: MERGE, no findings.** A **repair unit**, not a translation: one
+sub-message run on one row of `tl/script/batch_012.tsv` (file line 63 = DATA 386, bank 1), +1/−1.
+**+4 bytes, bank 1 only** — 26,191 → 26,187 free, isolated by running `bankmeasure` on
+`origin/main`'s copy of the file and again on the branch's and diffing. No other bank moves; none
+of the four tight banks (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607) is touched.
+
+### 72.1 New entries: NONE. This adds no form and changes no ruling.
+
+`ｍｙ　ａｐｏｌｏｇｉｅｓ．` was already the incumbent in three places, every one verified at its line
+at this merge: **§39.3 item 3** (establishes the lowercase-after-insert form
+`{FC00}{=0000}，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．`, "because it continues the sentence after the
+vocative"), **§46's `すまねえ。` cell** ("**NOT** `chunk_024`'s すまない → `ｍｙ　ａｐｏｌｏｇｉｅｓ．`,
+far too formal for `ねぇ`"), and **§58.3's `すまんすまん。` cell**, which built a later unit on it
+("taking `chunk_024` L16's incumbent instead"). The repair brings the one dissenting site into line
+with all three.
+
+### 72.2 ⭐ The `すま` family, re-derived Japanese-side over ALL THREE dumps and BOTH spellings
+
+Censused on the Japanese side across `battle_dump.txt`, `script_unique.txt` and `script_dump.txt`,
+over `すまな` **and** `すまん` — the failure mode §BI3 names, and the one §BF3 fell into by
+censusing English. **Eleven sites. Exactly one pair engages CLAUDE.md §3, and this PR is it.**
+
+| Site | Japanese | Status |
+|---|---|---|
+| `battle_dump` 613 = **`chunk_024` body[14]** | `{FC00}{=0000}君、{FFFE}すまない。` | **the incumbent** |
+| `script_unique` 391 = DATA 386 = **`batch_012:63`** | `{FFEC}{=00}{=00}君、{FFFE}すまない。` | **repaired here** |
+| `battle_dump` 585 (`chunk_023`) | `サイクス！{FFFE}すまなかったな。` | different string |
+| `battle_dump` 947 (`chunk_039`) | `すまない・・・・。` | different string |
+| `script_unique` 427 (`batch_007:28`) | `申し遅れて　すまない。` | different string |
+| `script_unique` 749 (`batch_014`) | `手間をかけてすまない。` / `すまない、` | different strings |
+| `script_unique` 1116 (`batch_017`) | `いやー、すまんすまん。` | different string |
+| **`script_unique` 815** | `すまん、勘弁してくれ！` | ⚠️ **no earlier census had it** |
+| **`script_unique` 1360** (DATA 1355) | `お話中　すまないが、` | ⚠️ **no earlier census; bank-41 blocked** |
+| **`script_unique` 1377** (DATA 1372) | `リオン、すまん。` | ⚠️ **no earlier census; bank-41 blocked** |
+
+⭐ **The exact run `君、{FFFE}すまない。` occurs EXACTLY ONCE in each of the three dumps** —
+`battle_dump` 613, `script_dump` 44, `script_unique` 391 — verified independently at this merge.
+**So the pair is the whole of the §3 case and the family is now closed except for the two blocked
+sites.** FILE 1360 and 1377 are recorded at `FLAGS.md` §BL as owed a rendering after the §F2
+bank-40/41 repoint; nothing in this ruling binds them, since both are different source strings.
+
+### 72.3 ⭐⭐ Gate 6 is STRUCTURALLY BLIND to this class, and the check that is not
+
+Measured at this merge: the two sites share **zero** whole messages (`A4 cross-store whole-message
+overlap: 0`), so **gate 6 returns clean whether or not the defect is fixed**. What sees it is a
+**run-level pairing aligned on the non-`{FFFE}` tag stream** — slot *k*, the text between the *k*-th
+and (*k*+1)-th non-`{FFFE}` tag, is the same position in JP and EN because that stream is identical
+on both sides:
+
+```
+battle  tl/battle/chunk_024.txt body[14]   run at slot 21
+script  tl/script/batch_012.tsv line 63    run at slot 249
+shared JP run                       : 君、{FFFE}すまない。   (ends at a {FFFE} on both sides)
+chunk_024 EN for the run            : ，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．
+batch_012 EN starts with it AFTER   : True      BEFORE : False  (it read ，　Ｉ　ａｍ　ｓｏｒｒｙ．)
+```
+
+Per **§BK3**, the clean gate-6 result was only believed after asserting a non-zero pair count:
+**767 battle messages paired positionally against the pristine dump, 0 divergences**; 1,064 script
+keys, 0 keys with more than one English. The script half was keyed on **column 2** — the
+`<count>\t<JP>\t<EN>` trap of §BJ2, which returns a clean result while dropping the entire store.
+
+### 72.4 §4.3 corrections made by this merge — two cells, one string, no rendering affected
+
+`len('ｍｙ　ａｐｏｌｏｇｉｅｓ．')` = **13**. `ａｐｏｌｏｇｉｅｓ` is **9** letters, not ten.
+
+1. **§39.3 item 3** read "14 columns either way" — **corrected in place to 13.**
+2. **§58.3's `すまんすまん。` cell** read "**15**" — **corrected in place to 13.**
+
+Neither is an entry and neither changes a rendering: the form is unchanged, 13 is inside the
+23-column preference, and `batch_017:16`, the row §58.3 governs, ships the longer
+`Ｄｅａｒ　ｍｅ，　ｍｙ　ａｐｏｌｏｇｉｅｓ．` at **22** columns and is untouched.
+
+### 72.5 Page geometry — the repair RESTORES the source's own page shape
+
+| | row 0 | row 1 | row 2 | row 3 | row 4 | shape |
+|---|---|---|---|---|---|---|
+| JP source, page 68 | *(blank)* | `[NAME]君、` 9 | `すまない。` 5 | `すぐに城へ` 5 | `向かってくれないか。` 10 | `.TTTT` |
+| EN **before** | *(blank)* | `[NAME]，　Ｉ　ａｍ　ｓｏｒｒｙ．` 20 | `Ｗｉｌｌ…ｆｏｒ` 21 | `ｔｈｅ…ｏｎｃｅ？` 19 | — | `.TTT` |
+| EN **after** | *(blank)* | `[NAME]，` **8** | `ｍｙ　ａｐｏｌｏｇｉｅｓ．` **13** | `Ｗｉｌｌ…ｆｏｒ` **21** | `ｔｈｅ…ｏｎｃｅ？` **19** | `.TTTT` |
+
+Widest row 21, inside the ≤ 23 preference; shape **identical to this page's own source shape**;
+**no trailing blank**, so §3.2's leading-blank-*and*-trailing-blank-plus-four-rows shape is not
+created and this is **not** the `.TTTT.` defect §BI2 exists to remove. Exactly one page on the row
+changes shape; every other page is byte-identical. `rowcheck script` output is byte-identical
+before and after (19 inherited warnings either way, none of them this row).
+
+⚠️ **The insert is counted at 7 columns here.** `rowcheck.py`'s **`script` mode** substitutes
+`NAME_COST` for `{FFEC}{=00}{=00}` (`_script_cols`, `rowcheck.py:126-129`), as does
+`assemble.py:134`; it is the **battle**-mode `col_problems`/`row_problems` that handle
+`{FC00}{=0000}` only. At insert = 0 the same page reads `1 / 13 / 21 / 19`. Recorded because the
+dispatch for this unit asserted the opposite and predicted `1 / 14 / 22 / 22`, which is wrong on
+all four rows.
+
+### 72.6 ⭐⭐ Speaker — CONFIRMED at both sites, and the register trap that nearly produced a false finding
+
+Both sites are **Prince Hoag**, verified at the source rather than from the portrait id (§41.2):
+
+- `batch_012:63`, speech page 40 — two pages earlier the `{FC51}` channel says
+  `ホアグ王子・・・この勲章を見てもらえますか。` → `Ｐｒｉｎｃｅ　Ｈｏａｇ．．．　ｗｉｌｌ　ｙｏｕ　ｌｏｏｋ　ａｔ　ｔｈｉｓ　ｍｅｄａｌ？`,
+  and `{FC50}` answers from page 35 on.
+- `chunk_024` body[14] — the page before is `ヘルファー司令官、それに・・・ホアグ王子！！` and `{FC50}`
+  replies `君、すまない。`.
+
+**Same man, same speech act**: an apology, then a `〜くれないか` request to travel somewhere at once
+(`すぐに城へ向かってくれないか` / `カッフィの港に向かってくれないか`). Both candidate Englishes are
+contraction-free, so §54.4's ruling does not choose between them; it only confirms the incumbent is
+not wrong for a prince apologising to an officer for an imposition.
+
+⚠️ **THE TRAP, and it is worth writing down.** A register audit scoped to the `{FC50}` **channel**
+finds **three contractions in this same message** — `Ｉｔ’ｓ` and `ｗｅ’ｖｅ` (page 45), `ｗｏｎ’ｔ`
+(page 48) — which looks exactly like a violation of §54.4's contraction-free Hoag. **It is not.
+The channel is BORROWED**: page 47 says `こっちには王子様がいるんだから` ("we have the Prince with
+us"), so the Prince is a third party there, and page 51's `俺たち` is the party's voice. **Hoag's own
+pages in this scene are 39–43 and carry exactly two `’`, both possessives** (`Ｆｅｒｎａｎｄｏ’ｓ`,
+`Ｚｅｐｐｅｌｉ’ｓ`). §54.4 and §54.5 already record both halves — "the party's `{FC50}`/`{FC51}`
+voices (386‑388) do" contract, and D386 holds "a speaker who contracts three times in the same
+message". ⭐ **The borrow is marked by `{FB01}` only, never by `{FB00}`, so a `{FB00}`-scoped
+register audit misattributes those three contractions to Hoag.** Recorded at `FLAGS.md` §BL so the
+next auditor does not file the false finding this review nearly filed.
+
+### 72.7 Confirmed at review, not defects
+
+1. **`ａｐｏｌｏｇｉｅｓ` renders twice inside `batch_012` under two Englishes — §25.3 is MET.**
+   `batch_012:46` (`誠に失礼。`) → `Ｍｙ　ｓｉｎｃｅｒｅ　ａｐｏｌｏｇｉｅｓ．`, **1 instance, bank 0**;
+   `batch_012:63` (`君、すまない。`) → `ｍｙ　ａｐｏｌｏｇｉｅｓ．`, **1 instance, bank 1**. Measured at
+   this merge: **no bank carries both source strings and no dump message carries both.** Two
+   different source strings under two different English strings, held apart lexically by
+   `ｓｉｎｃｅｒｅ`. Nothing to change.
+2. **A fourth site of the head word the flag-6 census omits**: `batch_009:49` ships
+   `ｍｙ　ａｐｏｌｏｇｉｅｓ　ｆｏｒ　ａｓｋｉｎｇ` for a **third** source string, `忙しい時に　悪かった。`.
+   Not the bare form, so the PR's corpus sentence is literally accurate; recorded so the head-word
+   census is complete. Bare `ｍｙ　ａｐｏｌｏｇｉｅｓ．` as a run now stands at `chunk_024` L16,
+   `batch_017:16` and `batch_012:63` — one source string plus one ruled departure, not a collapse.
+3. **The `{FFFE}` count on the row goes 139 → 140, and §BJ2's detector is answered, not tripped.**
+   The added break is *internal* to page 68, the page's last segment carries text, and the English
+   total stays below the source's **153**. `{FCC0}` is 22 on all three of JP, EN-before and
+   EN-after: none added or moved.
+4. **The tag stream was compared by hand because `merge_script` applies NO `tag_parity`**
+   (`assemble.py:280`; the battle path calls it at `:228`), per §BK2. EN 445 → 446 tags, non-`{FFFE}`
+   stream identical and in order; the JP key's 459 tags unchanged and byte-identical to
+   `script_unique.txt` column 2; EN non-`{FFFE}` stream equals the JP's, 306 tags.
+
+### 72.8 Live rows and notes this merge leaves behind
+
+1. **§70.7's remaining bullets are untouched**: `村が襲われました。` at `pending/chunk_005` body[17]
+   (applies at the tier-A unpark, §BE4), `batch_018:12`'s extra `{FCC0}`, and the three divergences
+   the repairs session ruled **NO CHANGE** (`納得がいく`, `この通り`, `騒ぎ`).
+2. **The two bank-41 `すま` sites** (DATA 1355, 1372) need renderings after the §F2 repoint. §BL.
+3. **Nothing else in `batch_012` changed** and no other file was touched.
 
 ---

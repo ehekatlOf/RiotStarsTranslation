@@ -19,8 +19,8 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 > |---|---|---|---|---|
 > | 0 | `chunk_000` body[12] page 21 `.TTTT.` (FLAGS §BI2) | n/a | **RE-FLOW, 0 bytes** | `tl/battle/chunk_000.txt` |
 > | 5 | `餌食` → `ｐｒｅｙ` (`chunk_000` body[2]) | no — lemma | **CONFORM IF IT FITS** (27 bytes slack) | same file as #0 |
-> | 2 | `それよりも` (`chunk_018` body[4]) | no — lemma | **CONFORM** to `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，` | `tl/battle/chunk_018.txt` |
-> | 1 | `君、{FFFE}すまない。` (`batch_012:63`) | **YES** | **CONFORM** to `ｍｙ　ａｐｏｌｏｇｉｅｓ．` | `tl/script/batch_012.tsv` |
+> | 2 | `それよりも` (`chunk_018` body[4]) | no — lemma | ✅ **DONE** — #53, squash `dac2ee4` | `tl/battle/chunk_018.txt` |
+> | 1 | `君、{FFFE}すまない。` (`batch_012:63`) | **YES** | ✅ **DONE** — #55, squash `30d45aa` | `tl/script/batch_012.tsv` |
 > | 6a | `静まり返っている・・・。` (`batch_013:31`) | **YES** | **CONFORM** to `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `tl/script/batch_013.tsv` |
 > | 3 | `納得がいく` | no | ⛔ **NO CHANGE** — §69.5/§BI4's split is justified; re-derived | — |
 > | 4 | `この通り` | no | ⛔ **NO CHANGE** — conforming would WORSEN a §25.3 collapse | — |
@@ -76,12 +76,41 @@ the table, never that line.
 | Order | Unit | File | PR | Head | Cost | Review |
 |---|---|---|---|---|---|---|
 | 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | ✅ **MERGED, no findings** — squash `dac2ee4`, integration `integrate: chunk 018 repair` |
-| 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free | queued |
+| 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free (measured) | ✅ **MERGED, no findings** — squash `30d45aa`, integration `integrate: batch 012 repair` |
 | 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free | queued |
 | 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
 
 **Reviewed one at a time, in the foreground, in that order.** All four translators have returned;
-every head is stable.
+every head is stable. **Two merged, two to go: #54 then #56.**
+
+### ✅ #55 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
+Squash **`30d45aa`**, integration commit `integrate: batch 012 repair — glossary, flags, handoff`
+(`glossary.md` **§72** + three in-place corrections, `FLAGS.md` **§BL**, this row). All eight gates
+re-run in a checkout against **current** `origin/main` (`8e2b454`, which already carried #53) and
+pasted in the PR review: paths ✓ merge ✓ check ✓ figures n.a. rows ✓ (19 inherited, 0 introduced,
+output byte-identical before/after) banks ✓ dupes ✓ glossary ✓ structure ✓.
+**Reviewer-side confirmations the next agent does not need to redo:**
+1. **+4 bytes was ISOLATED, not quoted.** `bankmeasure` run on `origin/main`'s copy of the file and
+   again on the branch's, then diffed: **exactly one line differs**, bank 1 `26191 → 26187`. No
+   other bank moves; no tight bank is touched.
+2. **The run-level pairing gate 6 cannot do.** The two sites share **zero** whole messages, so gate
+   6 returns clean either way. Aligned on the non-`{FFFE}` tag stream, `chunk_024` body[14] slot 21
+   and `batch_012:63` slot 249 now both read `，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．` for
+   `君、{FFFE}すまない。`. **The exact run occurs once per dump**, so the §3 case is closed whole.
+   §BK3 assertion: 767 battle pairs, 1,064 script keys, 0 divergences — a non-zero base.
+3. **Page shape returns to the source's own `.TTTT`** at `8 / 13 / 21 / 19` columns, widest 21, **no
+   trailing blank** — so this is not the `.TTTT.` shape #56 exists to remove.
+4. **Prince Hoag confirmed at BOTH sites** from the vocatives (`ホアグ王子・・・` two pages earlier;
+   `ヘルファー司令官、それに・・・ホアグ王子！！` at `chunk_024`), same speech act both times.
+   ⚠️ **A `{FC50}`-scoped register audit of D386 finds three contractions and they are NOT Hoag's** —
+   the channel is borrowed from page 45 (`こっちには王子様がいるんだから`), and **the borrow is marked
+   by `{FB01}` only, never `{FB00}`**. Recorded at `FLAGS.md` **§BL3**; it nearly produced a false
+   finding at this review. §54.4 and §54.5 already record both halves and needed no correction.
+5. **⚠️ `rowcheck script` DOES cost `{FFEC}{=00}{=00}` at 7 columns** (`rowcheck.py:126-129`), as
+   does `assemble.py:134`. The dispatch said otherwise. Only **battle** mode is `{FC00}`-only.
+   `FLAGS.md` §BL4. **Say which rule you used when quoting a script column figure.**
+6. **⚠️ The "Bases:" line below was WRONG for #55** — corrected in place there. Measured branch
+   point is `c583bd7`, and `1644ff0` is **not an ancestor** of `fix/script-012`.
 
 ### ✅ #53 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
 Squash **`dac2ee4`**, integration commit `integrate: chunk 018 repair — glossary, flags, handoff`
@@ -114,8 +143,8 @@ pushes as `ehekatlOf`, so the decision is a `COMMENT` review with `DECISION:` on
 ⚠️ Branch deletion returned **HTTP 403** as §AQ9 predicts; `fix/battle-018` is still on origin and
 that is **not** a merge signal. `merged: true` + squash `dac2ee4` is the record.
 
-**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#55**
-(`tl/script/batch_012.tsv`) in the foreground. Three units remain: #55, #54, #56.
+**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#54**
+(`tl/script/batch_013.tsv`) in the foreground, then **#56** last. Two units remain: #54, #56.
 ✅ **`chunk_000` (#56) delivered BOTH repairs and came out 2 bytes CHEAPER.** R1 landed at **exactly
 0 bytes** — one `{FFFE}` dropped (−2) and one `　` added at a join (+2) — and page 21 is `.TTT.`
 again, so **`.TTTT.` goes to 0 across all of `tl/battle`** before the human's boot test, which is
@@ -125,10 +154,17 @@ what §BI2 asked for. R2 was **taken, not declined**: `Ｓｔａｙ，　ａｎ�
 `餌食` — "chunk 0 has 27 bytes of slack" — is re-measured and DOES NOT HOLD: the conformance is
 free and the file ends up cheaper.** Those cells should now say it is applied.
 
-Bases: #53/#54 on `c583bd7`, #55/#56 on `1644ff0`; `main` has advanced only by `handoff:` commits
-(`git diff --name-only c583bd7 origin/main` = `HANDOFF.md` alone), so **gate 2 holds for all four and
-no rebase is owed** — each reviewer re-runs it against current `origin/main` regardless.
+Bases: ⚠️ **CORRECTED at #55's merge — #53, #54 AND #55 are all on `c583bd7`; only #56 differs.**
+This line read "#55/#56 on `1644ff0`". Measured: `git merge-base origin/main origin/fix/script-012`
+= **`c583bd7`** and `1644ff0` is **not an ancestor** of that branch. PR #55's own Gate-2 paste was
+right and this board was wrong. **GitHub's API `base.sha` is not the merge-base — do not read it as
+one** (`FLAGS.md` §BL5 item 3). `main` has since advanced by #53's and #55's merges and integrations;
+**gate 2 was re-run against current `origin/main` at each merge and no rebase has been owed** — each
+reviewer re-runs it regardless, and **#56's reviewer must run it against `main` as it stands after
+this commit**, not against the tree either earlier PR was written on.
 No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607); only banks 1 and 29 move.
+✅ **Bank 1 has moved: 26,191 → 26,187 free, at #55's merge, measured by isolation.** Bank 29's
+16,879 → 16,869 is still #54's to make.
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
@@ -173,13 +209,22 @@ integrate on `main` at the merge that raises it.
 3. **§69.5's `それよりも` census is understated: 4 sites recorded, 12 rendered sites real** (7 `それよりも`
    + 5 bare `それより`, six Englishes). The **ruling is unaffected** and needs no §4.3 correction.
    Correct the census in place so it is not re-derived a sixth time.
-4. **Two stale width figures for one 13-column string, §4.3 in-place, no rendering affected:**
-   §39.3 item 3 says `ｍｙ　ａｐｏｌｏｇｉｅｓ．` is "14 columns either way"; §58.3's `すまんすまん。` cell
-   says "**15**". `len()` = **13** (`ａｐｏｌｏｇｉｅｓ` is 9 letters).
-5. **§70.7's `君、すまない。` bullet is struck as resolved** at #55's merge.
-6. **Three `すま` sites no census had**, none a §3 case: FILE 815 `すまん、勘弁してくれ！`, and FILE 1360 /
-   1377 (`お話中　すまないが、`, `リオン、すまん。`) — the last two **bank-41 blocked** behind the §F2
-   repoint, recorded for whoever renders them then.
+4. ✅ **DISCHARGED at #55's merge (`30d45aa`).** ~~Two stale width figures for one 13-column string,
+   §4.3 in-place, no rendering affected: §39.3 item 3 says `ｍｙ　ａｐｏｌｏｇｉｅｓ．` is "14 columns
+   either way"; §58.3's `すまんすまん。` cell says "**15**". `len()` = **13**.~~ **Both cells corrected
+   in place to 13**, each carrying the "WIDTH CORRECTED IN PLACE 2026-09-12 (§4.3, PR #55 review)"
+   note and the reason (`ａｐｏｌｏｇｉｅｓ` is 9 letters). **No rendering changed**; `batch_017:16`,
+   the row §58.3 governs, ships `Ｄｅａｒ　ｍｅ，　ｍｙ　ａｐｏｌｏｇｉｅｓ．` at 22 columns, untouched.
+   Recorded at `glossary.md` §72.4.
+5. ✅ **DISCHARGED at #55's merge (`30d45aa`).** ~~§70.7's `君、すまない。` bullet is struck as
+   resolved.~~ **Struck, naming the squash SHA**, with the full record at `glossary.md` **§72**.
+   §70.7's other bullets are untouched and still live.
+6. ✅ **DISCHARGED at #55's merge (`30d45aa`)** — recorded at `FLAGS.md` **§BL2** with the full
+   eleven-site family table at `glossary.md` **§72.2**. ~~Three `すま` sites no census had~~: FILE
+   815 `すまん、勘弁してくれ！` (translatable now), and FILE 1360 / 1377 (`お話中　すまないが、`,
+   `リオン、すまん。`) — the last two **bank-41 blocked** behind the §F2 repoint and **explicitly
+   flagged there as owed a rendering the day it lands**. None is a §3 case: all three are different
+   source strings, so `ｍｙ　ａｐｏｌｏｇｉｅｓ．` does not bind them.
 7. **§BI2's and my dispatch's page indices are both off for the `餌食` site: it is `body[2]` page
    **60**, not page 39** (page 39 is the empty `{FCB0}` page). §BI2's own "page 11" for the re-flow is
    `body[12]` page **21**. Both are `rowcheck.py:77` five-delimiter indices — §4.3 material.

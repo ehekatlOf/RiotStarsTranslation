@@ -8847,3 +8847,124 @@ with the `fields` parameter (`number`, `title`, `state`, `head`, `base`) avoids 
 Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
 5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
 which one it hides is not stable — quote the table, never that line.
+
+## BL. Repairs session review — script batch 012 repair / PR #55, MERGED (2026-09-12)
+
+Squash **`30d45aa`**, integration commit `integrate: batch 012 repair — glossary, flags, handoff`.
+**DECISION: MERGE, no findings.** One file, one row, +1/−1: `tl/script/batch_012.tsv` file line 63
+(DATA 386, bank 1) now renders `君、{FFFE}すまない。` as `，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．`,
+byte-identical to `tl/battle/chunk_024.txt` body[14]. `glossary.md` §70.7's first bullet — the
+CLAUDE.md §3 violation — is **struck as RESOLVED**; the full record is at **`glossary.md` §72**.
+
+### BL1. Byte figure — +4 bytes, bank 1 only, and it was ISOLATED rather than quoted
+
+`bankmeasure` was run with `origin/main`'s copy of the file in place and again with the branch's,
+and the two outputs diffed. **Exactly one line differs:**
+
+```
+<    bank  1   14769 / 40960 used   free  26191
+>    bank  1   14773 / 40960 used   free  26187
+```
+
+`cost()` on the changed run: `，　Ｉ　ａｍ　ｓｏｒｒｙ．` 26 → `，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．` 30.
+**No bank negative. None of the four tight banks is touched.**
+
+### BL2. ⚠️ THREE `すま` SITES NO CENSUS HAD — two of them BLOCKED and owed a rendering
+
+Re-derived Japanese-side across all three dumps and both the `すまな` and `すまん` spellings at this
+merge. Eleven sites; the full table is at `glossary.md` §72.2. Three were in no earlier census:
+
+| Site | Japanese | Owed |
+|---|---|---|
+| `script_unique` **815** | `すまん、勘弁してくれ！` | translatable now; different source string, nothing binds it |
+| `script_unique` **1360** (DATA 1355) | `お話中　すまないが、` | ⛔ **BANK-41 BLOCKED** behind the §F2 repoint |
+| `script_unique` **1377** (DATA 1372) | `リオン、すまん。` | ⛔ **BANK-41 BLOCKED** behind the §F2 repoint |
+
+⭐ **Whoever renders 1360 and 1377 after the bank-40/41 repoint should read `glossary.md` §72.2
+first.** Both are **different source strings** from `君、すまない。`, so the `ｍｙ　ａｐｏｌｏｇｉｅｓ．`
+incumbent does **not** bind them; the family's shape and the English forms already spent on it
+(`ｍｙ　ａｐｏｌｏｇｉｅｓ．`, `Ｓｏｒｒｙ．`, `Ｉ　ａｍ　ｓｏｒｒｙ．．．．．`, `ｆｏｒｇｉｖｅ　ｍｅ．`) are what
+they need. ⭐ **The exact run `君、{FFFE}すまない。` occurs exactly once per dump**, so the §3 case
+this PR closed is the whole of it and no other site is affected by the change.
+
+### BL3. ⭐⭐ A `{FC50}` CHANNEL IS NOT A PERSON, AND THE BORROW IS MARKED BY `{FB01}` ONLY
+
+**This nearly produced a false finding at this review, and it is the exact shape §BI3 warns about.**
+
+A register audit of D386 scoped to the `{FC50}` **channel** finds **three contractions** — `Ｉｔ’ｓ`
+and `ｗｅ’ｖｅ` (speech page 45), `ｗｏｎ’ｔ` (page 48) — in a message whose `{FC50}` speaker at page
+40 is **Prince Hoag**, whom §54.4 fixes as contraction-free. That looks like a live gate-7 violation.
+**It is not.** The channel is **borrowed** from page 45 on: page 47 says `こっちには王子様がいるんだから`
+("we have the Prince with us"), making the Prince a third party there, and page 51's `俺たち` is the
+party's voice. **Hoag's own pages in this scene are 39–43 and carry exactly two `’`, both
+possessives** (`Ｆｅｒｎａｎｄｏ’ｓ`, `Ｚｅｐｐｅｌｉ’ｓ`).
+
+⭐ **The borrow point carries `{FB01}` and NO `{FB00}`.** So a register audit that segments a pooled
+row on `{FB00}` portrait-set tags — the obvious way to do it — puts pages 45–52 in Hoag's scene and
+misattributes three contractions to him. **Segment on the vocatives and the pronouns, not on the
+tags.** `glossary.md` §54.4 and §54.5 already record both halves ("the party's `{FC50}`/`{FC51}`
+voices (386‑388) do" contract; D386 holds "a speaker who contracts three times in the same
+message"), so the ruling was already right — only the measurement method is the trap.
+
+### BL4. `rowcheck script` DOES cost the script name insert at 7 columns — a correction
+
+⚠️ **The dispatch for this unit asserted that `rowcheck` substitutes `NAME_COST` for
+`{FC00}{=0000}` only, and therefore measures `{FFEC}{=00}{=00}` as zero. That is false for
+`script` mode.** `rowcheck.py:126-129` (`_script_cols`) replaces `{FFEC}{=00}{=00}` with 7 columns,
+and so does `assemble.py:134` in `validate_body`. It is the **battle**-mode `col_problems` and
+`row_problems` (`rowcheck.py:63,78`) that handle `{FC00}{=0000}` only.
+
+Consequence for anyone quoting a script-side column figure: **say which rule you used.** This page
+reads `8 / 13 / 21 / 19` at insert = 7 and `1 / 13 / 21 / 19` at insert = 0. The dispatch's predicted
+`1 / 14 / 22 / 22` is wrong on all four rows under either rule.
+
+### BL5. Confirmed at review, not defects
+
+1. **`ａｐｏｌｏｇｉｅｓ` renders twice inside `batch_012` — §25.3 MET, measured.** `batch_012:46`
+   (`誠に失礼。` → `Ｍｙ　ｓｉｎｃｅｒｅ　ａｐｏｌｏｇｉｅｓ．`) is **1 instance, bank 0**; `batch_012:63`
+   (`君、すまない。` → `ｍｙ　ａｐｏｌｏｇｉｅｓ．`) is **1 instance, bank 1**. **No bank carries both
+   source strings and no dump message carries both.** Different source strings, different English
+   strings, held apart lexically by `ｓｉｎｃｅｒｅ`.
+2. **A fourth head-word site no census had**: `batch_009:49` ships
+   `ｍｙ　ａｐｏｌｏｇｉｅｓ　ｆｏｒ　ａｓｋｉｎｇ` for `忙しい時に　悪かった。` — a **third** source string.
+   Not the bare form, so no claim in PR #55 is wrong; recorded so the census is complete.
+3. **`HANDOFF.md`'s base-SHA line was wrong for #55.** It read "#53/#54 on `c583bd7`, #55/#56 on
+   `1644ff0`". Measured: `git merge-base origin/main origin/fix/script-012` = **`c583bd7`**, and
+   `1644ff0` is **not an ancestor** of the branch. The PR body's own Gate-2 paste was right.
+   Corrected in `HANDOFF.md` at this merge. GitHub's API `base.sha` is not the merge-base — do not
+   read it as one.
+4. **`build/battle_dump_merged.txt` on `main` is one line stale** relative to #53's merged
+   `chunk_018`. Expected: #53's integration commit did not regenerate `build/`. **The repairs
+   session's close step (CLAUDE.md §4 step 6) runs `merge` and commits `build/*_dump_merged.txt` if
+   changed** — this is that, not a defect, and it is left for the close so the two remaining units'
+   changes land in one regeneration.
+
+### BL6. Gate evidence that is the substance of this class of unit
+
+**Gate 6 is structurally blind to a sub-message run.** Measured here: the two sites share **zero**
+whole messages, so gate 6 returns clean whether or not the defect is fixed. What sees it is a
+**run-level pairing aligned on the non-`{FFFE}` tag stream** (slot *k* = the text between the *k*-th
+and (*k*+1)-th non-`{FFFE}` tag is the same position in JP and EN). Per **§BK3** the clean gate-6
+result was only believed after asserting a non-zero pair count: **767 battle messages paired
+positionally against the pristine dump, 0 divergences; 1,064 script keys, 0 with more than one
+English.** The script half was keyed on **column 2** (§BJ2's `<count>\t<JP>\t<EN>` trap).
+
+**`merge_script` applies NO `tag_parity`** (`assemble.py:280`; the battle path calls it at `:228`),
+so the tag streams were compared by hand per **§BK2**: EN 445 → 446 tags, non-`{FFFE}` stream
+identical and in order, the single delta being `{FFFE}` 139 → 140; the JP key's 459 tags unchanged
+and byte-identical to `script_unique.txt` column 2; `{FCC0}` 22 on all three of JP, EN-before and
+EN-after. The 43 merged-dump lines that do not end `{FFFF}` are `{HDR:}` blobs and `{=FF}` fillers
+and are **the same 43 lines in the pristine dump** — inherited, not this unit's.
+
+### BL7. Review mechanics, unchanged from §BK7
+
+GitHub refuses **both** `APPROVE` and `REQUEST_CHANGES` from this account, so the decision is a
+`COMMENT` review with `DECISION:` on line 1. ⚠️ Branch deletion returns **HTTP 403** (§AQ9) —
+`fix/script-012` is still on origin and that is **not** a signal about merge state; the PR's
+`merged: true` and squash **`30d45aa`** are the record.
+
+### BL8. Bank status at this merge
+
+**Bank 1: 26,191 → 26,187 free.** Every other bank byte-identical. **Four banks remain under 2,000
+free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only
+**three** of those four and which one it hides is not stable — quote the table, never that line.
