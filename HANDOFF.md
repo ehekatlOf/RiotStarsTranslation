@@ -277,12 +277,17 @@ on those three pages — no text changes, −6 bytes.
 `{FFFE}` totals **exceed the source's** on exactly those lines — **L0 8 → 9, L4 43 → 45** — while the
 source's `{FFFE}{FC30}` trailing-blank structure is preserved (L0 ×1, L4 ×3, identical in both). The
 remedy restores the source's own counts **exactly** (8 and 43).
-⚠️ **HONEST DISCREPANCY, recorded rather than hidden: my own shape census did NOT reproduce the
-reviewer's figures.** It reported `.TTTT.` 0 / `TTTT.` 1 out of 1,850 pages; my cruder splitter gave
-**3 and 11 out of 867**. Mine counts barely half the pages, so I do **not** treat it as authoritative
-and did not overturn the finding on it — but **nobody should cite "0 attestations" as verified.** The
-finding stands on the break-count argument above, which is exact and reproducible. This is the
-standing "gate-7 counts vary with splitter — STATE YOUR CORPUS" rule biting on page shapes.
+✅ **DISCREPANCY RAISED AND NOW RESOLVED — AGAINST ME. My shape census was the wrong one.** I reported
+`.TTTT.` 3 / `TTTT.` 11 over **867** pages against the review's 0 / 1 over 1,850, and refused to relay
+its figures as verified. **Cause found and confirmed in `tools/rowcheck.py:77`: a page is bounded by
+`{FCC0}`, `{FC30}`, `{FC51}`, `{FC50}` AND `{FFFF}` — five delimiters. I split on `{FCC0}` alone**, so I
+merged pages wholesale and found barely half of them, which inflates exactly the multi-row shapes at
+issue. The chunk-39 translator re-derived the census with `row_problems()`'s splitter copied verbatim
+and got **1,854 pages, `.TTTT.` = 0, `TTTT.` = 1** — the review's figures stand and **mine are
+withdrawn.** ⭐ Flagging the gap was still right (an unverified figure must not be laundered into the
+record), and the resolution is the useful part: **if you census page shapes, use `rowcheck.py`'s own
+five-delimiter splitter — anything less merges pages.** The break-count argument was independently
+decisive either way.
 
 ### 📌 FOR WHENEVER CHUNK 16 UNBLOCKS — chunk 39 is its reference
 **Chunk 16 is a PARALLEL SCENE to chunk 39** (the same `新型(の)機械兵` / `敗れ去る` / `父さん・・・・` /
