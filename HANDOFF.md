@@ -54,7 +54,7 @@ table, never that line.
 ## In flight — WAVE 14, dispatched 2026-09-12
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
-| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | — | dispatched | translating |
+| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | **#52** | returned | **awaiting review** — 3,949 / 8,192 (4,243 slack), realised 2.01× vs a 4.77× ceiling; 98 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | returned | **awaiting review** — 3,423 / 8,192 (4,769 slack), realised 2.14× vs a 6.05× ceiling; 79 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
@@ -256,6 +256,20 @@ wave-13 lesson, reproduced one wave after it was written. Re-verified by **posit
 citation: `chunk_008` body[8] → `ａ　ｗｅａｐｏｎｓ　ｐｌａｎｔ　ｔｈｅｒｅ．`; `chunk_009` body[1] and body[3] →
 `Ｔｈｅ　ｆａｃｔｏｒｙ` / `ｔｈｅ　ｆａｃｔｏｒｙ`. **`ｆａｃｔｏｒｉｅｓ` as shipped in PR #50 stands; the reviewer
 must NOT raise it against chunk 39.** ⭐ Bidirectional QC working as designed, third wave running.
+
+### ⚠️ WAVE 14, COORDINATOR ERROR #2 — MINE, THREE BAD CENSUS CLAIMS IN §9.W14, CORRECTED
+**I labelled two rows "hapax" and neither is one, and I stated a third count in the wrong unit.**
+- **`一巻の終わり` is 1 battle + 1 script** (`script_unique` **1387**, UNTRANSLATED, bank-41, behind §F2).
+  Caught by the **chunk-28 translator** (PR #52 flag 9). **ROW STAYS LIVE.**
+- **`巣窟` is 1 battle + 2 script** (`script_unique` **523**, **525**), **both UNTRANSLATED.** Found when I
+  re-censused every seed row rather than fixing only the one I was told about. ⚠️⚠️ **This also makes
+  PR #51's "1 battle + 0 script — EXHAUSTED" WRONG: the row must NOT be struck at that merge.** This is
+  the wave-13 lesson working — *re-derive "row is exhausted" claims before striking a glossary row* —
+  and it would otherwise have struck a row two untranslated script lines still need.
+- **`飛行船` "2 battle + 4 script"** was a **LINE** count; as **occurrences** it is **6**. Both are right
+  under their own convention, so the row now **states its corpus**, per the standing rule.
+⭐ **Lesson for the reviewer: three of my seventeen seed rows carried a wrong count, and TWO were caught
+by translators. Treat every figure in §9.W14 as a claim to re-derive, not as evidence.**
 
 ### ⚠️⚠️ A CROSS-UNIT GATE-6 CONSTRAINT BINDS ALL THREE WAVE-14 PRs — NO SINGLE REVIEW CAN SEE IT
 Raised by the chunk-29 translator (§21.3), **verified by me against the dump at 03:12**:

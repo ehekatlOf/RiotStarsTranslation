@@ -1027,7 +1027,7 @@ YOUR MEASUREMENT WINS** — say so in the PR body with the command you ran.
 
 ⭐⭐ **SEVEN OF THESE SEVENTEEN ROWS ARE "DO NOT DECIDE — REUSE", AND TWO OF THOSE ARE THE WHOLE POINT
 OF THE BLOCK.** `ａｉｒｓｈｉｐ` and `Ｆａｔｈｅｒ` are **already shipped for this wave's exact Japanese** —
-`飛行船` has **no glossary row at all** and is gate-7 face (c) (a form shipped in `tl/` the glossary never
+`飛行船` (**2 battle + 4 script LINES = 6 script OCCURRENCES**; stating the corpus because the two conventions differ) has **no glossary row at all** and is gate-7 face (c) (a form shipped in `tl/` the glossary never
 recorded), and `父さん` is named in §25.4's own forward note as recurring in **chunk 39**. Inventing either
 would split a shipped form. ⚠️ **And three obvious answers are already spent on OTHER Japanese:**
 `ｌａｉｒ` (根城), `ｄｅｎ` (`batch_014:12`) and `ｄｅｍｏｎ` (魔族).
@@ -1039,8 +1039,8 @@ would split a shipped form. ⚠️ **And three obvious answers are already spent
 | `渓谷` (bare) | `ｇｏｒｇｅ` | **chunk 28 ×2** (L0, L2) | ⛔ **REUSE, do not re-decide** — inherits §46.2's `大渓谷` → `ｇｒｅａｔ　ｇｏｒｇｅ` (`batch_009` ×1) |
 | `タイムリミット` | `ｔｉｍｅ　ｌｉｍｉｔ` | **chunk 28 L2** | NEW. **0** across both stores |
 | `タイムアウト` | `ｔｉｍｅ’ｓ　ｕｐ` | **chunk 28 L18** | NEW. **0**. Seti's taunt register (§40.2-shaped) |
-| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | **chunk 28 L2** (idiom, hapax) | NEW. Rendered as idiom, not literally |
-| `巣窟` | **`ｎｅｓｔ`** | **chunk 29 L1** `オークの巣窟です。` (hapax) | ⚠️⚠️ **COLLISION TEST IS THE POINT.** **NOT `ｌａｉｒ`** — that is 根城, shipped **3× in `chunk_027`** (body[3], [4], [6], paired positionally). **NOT `ｄｅｎ`** — spent in `batch_014:12` on a speaker's own home. `ｎｅｓｔ` **0** at word boundary |
+| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | **chunk 28 L2** | NEW. ⚠️⚠️ **CORRECTED 2026-09-12 (§4.3) — MY SEED SAID "hapax" AND IT IS NOT ONE. 1 battle + 1 script** (`script_unique.txt` **1387**, UNTRANSLATED, bank-41 story text behind §F2). **THE ROW STAYS LIVE — do not strike it at this merge.** Caught by the chunk-28 translator (PR #52 flag 9) and re-derived by me against both dumps |
+| `巣窟` | **`ｎｅｓｔ`** | **chunk 29 L1** `オークの巣窟です。` ⚠️⚠️ **CORRECTED 2026-09-12 (§4.3) — MY SEED SAID "hapax" AND IT IS NOT ONE, AND PR #51's "1 battle + 0 script — EXHAUSTED" IS WRONG WITH IT. 1 battle + 2 script occurrences** (`script_unique.txt` **523** and **525**), and **neither is rendered in any `tl/script/*.tsv` — both are UNTRANSLATED. THE ROW STAYS LIVE; DO NOT STRIKE IT AT THIS MERGE.** Found by re-deriving the exhaustion claim rather than accepting it — the wave-13 lesson (`HANDOFF` Decisions: *re-derive "row is exhausted" claims before striking a glossary row*) | ⚠️⚠️ **COLLISION TEST IS THE POINT.** **NOT `ｌａｉｒ`** — that is 根城, shipped **3× in `chunk_027`** (body[3], [4], [6], paired positionally). **NOT `ｄｅｎ`** — spent in `batch_014:12` on a speaker's own home. `ｎｅｓｔ` **0** at word boundary |
 | `飛行船` | **`ａｉｒｓｈｉｐ`** | **chunk 39 L4** `飛行船の研究をしよう` · 2 battle + 4 script in the dumps | ⛔⛔ **DO NOT DECIDE — ALREADY SHIPPED.** `tl/script/batch_014.tsv:47` renders `落ちた飛行船` with `ａｉｒｓｈｉｐ` (×3 in that file). **`glossary.md` has NO row for 飛行船 — gate-7 face (c).** Use it byte-identically |
 | `父さん` | **`Ｆａｔｈｅｒ`** (`父さん・・・・` → `Ｆａｔｈｅｒ．．．．`) | **chunk 39 L4 ×3** | ⛔⛔ **DO NOT DECIDE — §25.4 NAMES CHUNK 39 BY NUMBER** as where `父さん・・・・` recurs untranslated. Shipped in chunk 9 and `pending/chunk_005` L13. Seneca's actual parent — the speaker here is Seneca |
 | `悪魔` | `ｄｅｖｉｌ` | **chunk 39 L4** `最強の悪魔を動かす` (hapax) | ⚠️ **HELD DISTINCT from §40.1's `魔族` → `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ` (lowercase).** `ｄｅｖｉｌ` occurs **1×**, `chunk_038` body[14], inside the multiword idiom `Ｙｏｕ　ｌｕｃｋｙ　ｄｅｖｉｌ！` for `悪運の強い奴め！` — a **different source word in a different message, multiword unit**: the §40.3 shape, **not** a §25.3 collapse |
