@@ -74,12 +74,43 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
 | battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `8b55c59` |
-| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | 🔍 **REVIEWER RUNNING (round 1)** — the last unit of the wave |
+| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⚠️ **CHANGES round 1** — 4 findings sent; 2 rework rounds remain |
 
 **Verified, not taken on report:** PR #49 `merged: true`, squash **`8a9aba8`**; `origin/main` proof pasted
 into the integration commit body; `tl/battle/chunk_023.txt` present at 6,291 bytes; `check`
 **All checks passed** on the merged tree. Same for #47 earlier (`8a08027`, integrate `d11928f`).
 Branch deletion returned **HTTP 403** as always (§AQ9) — **not** a signal about merge state.
+
+### ⚠️ PR #48 — CHANGES, round 1 (2026-09-12 ~01:13). Not merged; no integration commit; `main` untouched.
+**Every mechanical gate passed except gate 7.** Format-perfect: 3,657/8,192 (4,535 slack), widest run 23
+with **none at 24**, no page over 4 text rows (the five 5-row pages are **inherited from the source**),
+`{FCC0}` unchanged per line, the three `{FFFE}` additions each solve a real 24–26 column overrun, 0
+characters outside §3.1, 5/5 ellipsis runs exact. Merge pinned to `785ad31` — **five commits newer than
+the PR's base** — and clean. Gate 6 over all 37 shipped chunks: **0 run-level divergences.**
+**I verified all four findings before relaying:**
+1. **`そうね。` → `Ｔｈａｔ’ｓ　ｔｒｕｅ．`** — §25.2 at `glossary.md:1996` fixes it (12 columns) and §30.6
+   names chunk 27. **CONFIRMED.** ⚠️ **Gate 6 is structurally blind: chunk 9's segment is `そうね。機械兵を`
+   and chunk 27's is bare `そうね。`** — the same sub-message-vs-whole-message hole as the wave's twins.
+   It took a reverse English-side census over **11,892 aligned pairs** to see it.
+2. **`間違いない` — the census missed the KANA TWIN `まちがいない。`**, shipped in `chunk_017` L6 as
+   `Ｎｏ　ｍｉｓｔａｋｅ．`. **CONFIRMED by positional pairing** (invisible to any `tl/` grep). The width that
+   justified departing is wrong: **`Ｎｏ，　ｔｈｅｒｅ’ｓ　ｎｏ　ｍｉｓｔａｋｅ．` = 23 and FITS** (I measured it).
+   ⚠️ The review's summary says "wrong by six columns" while its own parenthetical says "23, not 25" —
+   **the parenthetical is the verified figure.**
+3. Two undeclared new forms to declare (`じゃあね、`, `１度`) — PR body only.
+4. ⭐⭐ **`坊や` IS NOT EXHAUSTED — CONFIRMED: chunk 27 has 3 instances, chunk 32 has a 4th.** That row
+   must stay **LIVE**, exactly as `根城` does, and for the same reason: chunk 32 is blocked on the tier-A
+   slot extension. Also: progress figures in the PR body are stale (**37/44, 75.2%** on the merged tree).
+⭐⭐ **FLAG 12 IS RULED — it did NOT close with the wave.** The reviewer verified `chunk_006` body **L20**
+itself (`甘く見る` → `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`, wave 2) and found **§24.6's own register row already
+quoted that English** — so §30.4 asserted "verified unspent across `tl/`" in wave 3 **with the
+counter-evidence sitting in a note cell of the same file.** **RULING: §30.4's reserve narrows to
+`見くびる` alone; `甘く見る` keeps `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`; `ｕｎｄｅｒｅｓｔｉｍａｔｅ` stays free.**
+§25.3 met on a census over both dumps. **Nothing is re-cut.** ⚠️ **This is gate-7 face (b) — a form fixed
+in a NOTE CELL that no key-first sweep can see — the wave-12 lesson, in a new place.**
+**The other three rulings the translator asked for were also answered:** Flag 5 goes the translator's way
+(§29.4's reserve does not fire — chunk 27 carries no `了解`), **Flag 4's §2.1 trade STANDS and must not be
+re-cut**, and Flag 11's reading is upheld with one plot gloss corrected.
 
 ### ✅ PR #47 MERGED (round 2) — what its integration put on `main`
 **glossary §65** (7 subsections) and **FLAGS §BE** (6). ⭐⭐ **THE WAVE-3 IFRIT WARNING IS DISCHARGED** —
