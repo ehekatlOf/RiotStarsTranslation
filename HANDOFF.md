@@ -122,6 +122,8 @@ its own story text (~25 instances). Reversible, but the arithmetic is not close.
 
 
 ### 2. Tier-A battle chunks 5, 16, 32, 43 — ENGINE BUILD 1 DONE, AWAITING THE BOOT TEST
+✅ **Boot-test files rebuilt after the repairs (2026-09-12, see 3): chunk 0 is clean of `.TTTT.` in the set the human tests.**
+
 Ratios 1.53 / 1.59 / 1.61 / 1.23, all below the **1.64× floor** (§B2); no faithful translation fits
 8,192 bytes. **5 and 43 are translated and parked.** The fix is built: `pending/slot-extension.md`
 (revised — appended 16 KB slots, because every large map's data runs to +0x24F18 and the old in-chunk
@@ -147,6 +149,8 @@ stands on the day it unparks, not as it stood when it was written.**
 
 
 ### 3. Disc rebuild and play-test — ENGINE BUILD 1 delivered, boot test pending
+✅ **BOOT-TEST FILE SET REBUILT 2026-09-12 by the runner on `main` at `ec59ed7` (repairs closed) — test with THIS set, not the pre-repair one.** `python3 tools/engine.py build` + `python3 tools/assemble.py build --extended`; `engine.py verify` PASS (simcheck, slotext simulate, slpsmap); `checkedit --extended` OK (153,625 bytes changed inside retail script slots; appended slots 5 = 8,679 B, 16 = 5,725 B, 32 = 5,599 B, 43 = 11,181 B). sha256 (first 16 hex): `KOUSEI.EXE 1498e327d629366d` (unchanged) · `SLPS_008.29 24f7b2fa6fe23396` (unchanged) · `HEXMAP.BIN 1b0bf87c12539b67` (8,105,984 B) · `SCRIPT.BIN 8b7b5abc9b73d342` (1,900,544 B). Against a build of the wave-14 close tree (`f9b2488`), HEXMAP.BIN differs ONLY inside the chunk-0 and chunk-18 retail slots (0 bytes outside any script slot) and SCRIPT.BIN ONLY in banks 1 and 29 — exactly the four repairs, so test (1) (chunk 0) no longer carries the `.TTTT.` page. Any session reproduces the set: `unpack.py` → `engine.py build` → `assemble.py build --extended`.
+
 The game files are on `main` as `riotstars.zip.001–003`; `python3 tools/unpack.py` rebuilds `original/`.
 The full file set for the first boot test was built and handed to the human: `build/KOUSEI.EXE`,
 `build/SLPS_008.29` (`python3 tools/engine.py build`, FLAGS §BC3), `build/HEXMAP.BIN`
