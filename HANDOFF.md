@@ -33,46 +33,52 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-12 · by: **the wave-13 reviewer (PR #47 integration)** · ✅ **BATTLE CHUNK 15 MERGED at round 2**
-— squash `8a08027`, 3,275 / 8,192, slack 4,917. Every §6 gate re-run on the new head; nothing carried
-forward from round 1. Glossary **§65**, FLAGS **§BE**. ⭐ **The wave-3 Ifrit gloss warning is DISCHARGED
-in both §9 and §30.1** (it closed on `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ`, not on round 1's `ｇｉａｎｔ　ｇｕｎ` —
-a gloss discharges a gloss warning only in the word the corpus already uses). Three §9.W13 seeds
-promoted and struck, all exhausted. **Two rows ship at exactly 24 columns — the proven exhaustive
-floor, recorded in §BE1, not to be re-litigated.** · **#49 (chunk 23) and #48 (chunk 27) are still
-open — the wave is NOT closed.** · the game files are on `main` (`unpack.py`, §BB4) · engine build 1
-still awaits its boot test (Blocked 4/6, the runner's work, not this wave's)
+2026-09-12 · by: **the wave-13 reviewer (PR #49 integration)** · ✅ **BATTLE CHUNK 23 MERGED at round 2**
+— squash `8a9aba8`, 6,291 / 8,192, slack 1,901, realised 2.035× against a 2.798× budget. Every §6 gate
+re-run on the round-2 head `d917bb7`; nothing carried forward from round 1; **merge base pinned to the
+explicit SHA `1c13c33`**, not the author's `merge-tree`. Glossary **§66**, FLAGS **§BF**. All five
+round-1 findings implemented and independently re-verified. ⭐ **§41.4's `どうやら` register rule now
+predicts 11 of 11** and is extended to **a narration box against a character inside one file** (§66.4)
+— the within-file split is deliberate and must not be "repaired". ⭐ **Leon's register fixed for the
+first time in the project** (§14.6 officer column, §66.6), after verifying that `chunk_022`'s
+portrait 05 is **Cress**, not Leon — **portrait ids are per-chunk (§BF7)**. Two §9.W13 seeds struck
+(`駐留部隊`, `帝国がバックにいた`, both exhausted); **`イワン` and `ヒミコ` LEFT LIVE** — one script line
+each, per §29.1 / §30.1. One glossary figure corrected at integration (§66.3, `壊滅状態` reach is
+**2 battle, chunk 23 only**). · **#48 (chunk 27) is still open and has NEVER been reviewed — the wave
+is NOT closed.** · the game files are on `main` (`unpack.py`, §BB4) · engine build 1 still awaits its
+boot test (Blocked 4/6, the runner's work, not this wave's)
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **35** | 44 | **chunk 15 merged 2026-09-12 (PR #47, `8a08027`)**; 17 and 36 shipped 2026-09-11 (§BB, §BA); **5 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
-| Battle JP characters | **30,512** | 43,137 | **70.7%** (was 69.3% — chunk 15's 620 characters) |
+| Battle chunks | **36** | 44 | **chunk 23 merged 2026-09-12 (PR #49, `8a9aba8`)**; chunk 15 merged the same day (PR #47, `8a08027`); 17 and 36 shipped 2026-09-11 (§BB, §BA); **4 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
+| Battle JP characters | **31,769** | 43,137 | **73.6%** (was 70.7% — chunk 23's 1,257 characters) |
 | Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 948) |
 | Script message instances | **5,180** | 7,931 | **65.3%** (was 63.6%) |
 
-`check`: **All checks passed** at PR #47's integration commit. **glossary ends §65 · FLAGS ends §BE** — ⚠️ **always take
+`check`: **All checks passed** at PR #49's integration commit. **glossary ends §66 · FLAGS ends §BF** — ⚠️ **always take
 the next number by READING both files at commit time, never by reserving.**
 ⚠️ **The three lines that used to sit here — `build/*_dump_merged.txt` regenerated, README status table
 refreshed, all worktrees pruned, "no open PR, no live agent" — were the WAVE-12 CLOSE's state and are
-false now.** Wave 13 is mid-flight: **#49 and #48 are open**, `build/` has not been regenerated since
-chunk 15 merged, and the README table still shows 34 chunks. All three belong to the wave-13 close,
-not here. Corrected at PR #47's integration so a resuming session does not read "no open PR" and
-conclude the wave is done.
+false now.** Wave 13 is mid-flight: **#48 is open and unreviewed**, `build/` has not been regenerated
+since chunk 15 merged, and the README table still shows 34 chunks. All three belong to the wave-13
+close, not here. Corrected at PR #47's integration so a resuming session does not read "no open PR"
+and conclude the wave is done.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and WHICH ONE IT HIDES IS NOT STABLE** — it
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
-## In flight — WAVE 13. ✅ chunk 15 MERGED · 23 and 27 in review
+## In flight — WAVE 13. ✅ chunks 15 and 23 MERGED · **27 is all that is left**
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
-| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | 🔄 rework r1 pushed (`d917bb7`) — **round-2 reviewer RUNNING** |
-| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⏳ **QUEUED — never reviewed.** Next reviewer after #49 |
+| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `INTEGRATE_SHA` |
+| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⏳ **QUEUED — never reviewed. THE ONLY THING BETWEEN THIS WAVE AND ITS CLOSE.** Dispatch a reviewer now |
 
-**Verified, not taken on report:** `origin/main` == HEAD == `d11928f`, `git rev-list --count origin/main..HEAD` = 0,
-PR #47 `merged: true`, `tl/battle/chunk_015.txt` present, `check` **All checks passed** on the merged tree.
+**Verified, not taken on report:** PR #49 `merged: true`, squash **`8a9aba8`**; `origin/main` proof pasted
+into the integration commit body; `tl/battle/chunk_023.txt` present at 6,291 bytes; `check`
+**All checks passed** on the merged tree. Same for #47 earlier (`8a08027`, integrate `d11928f`).
 Branch deletion returned **HTTP 403** as always (§AQ9) — **not** a signal about merge state.
 
 ### ✅ PR #47 MERGED (round 2) — what its integration put on `main`
@@ -94,63 +100,43 @@ Open since wave 3, closed by a reviewer reading the file, not on the translator'
   The reviewer integrated from a corrected record rather than spending a third round on it.
   **Lesson for every unit: update the PR body on every rework push.**
 
-### ✅ PR #49 rework round 1 pushed (`d917bb7`, 2026-09-11 ~23:56) — re-review QUEUED behind #47
-**6,291 / 8,192 (1,901 slack)**, +10 bytes; realised 2.04×; `{FFFE}` 126 → 135; **`{FCC0}` 13 → 13**;
-**0 rows over 23**; max 4 text rows. `check` green, `rowcheck` clean, gate 6 re-run (11 hits, all
-byte-identical). **All five findings implemented.**
-- ⚠️⚠️ **FINDING 1's COUNT: THREE PARTIES, THREE NUMBERS, AND MINE WAS WRONG.** The review said "4×",
-  **I "corrected" it to 3 script rows, and the translator's census says 6 rows across 5 files. I
-  re-ran it: THE TRANSLATOR IS RIGHT.** My search used the bare spelling `よろしく頼む` only and **missed
-  `よろしく　頼む` WITH A FULL-WIDTH SPACE**, which is 3 more rows (`batch_007:28`, `batch_009:48`,
-  `batch_010:65`). Verified rows: `batch_007:28`, `batch_007:32`, `batch_009:48`, `batch_010:65`,
-  `batch_012:87`, `batch_014:46` — **all six ship the fixed form**, keying on **three** spellings
-  (`よろしく　頼む` ×3, `よろしく頼む` ×1, `よろしく頼むぞ` ×2). **The finding is STRENGTHENED: the fixed
-  form already spans the whole spelling family.** ⚠️ **This is the spelling-variant blind spot that has
-  bitten this run repeatedly (§63.2 / §64.1 twins; the `ワケ`/`訳` and `ほう`/`方` pairs in #47) — and I
-  walked into it while correcting someone else. A census over ONE spelling is not a census.**
-  **Coordinator error #2 this wave** (after omitting `砲台` → `ｂａｔｔｅｒｙ` from the chunk-15 seed).
-- **Finding 3: the translator asked for the ruling, it went against it, and it accepted on the evidence** —
-  §26.8 settles the plain form in words it had read but not applied. Both of the chunk's `助かった`
-  instances are now on the default side byte-identically, consistent with #47.
-- **Finding 4** supersedes round-1 Flag 9's last table row. The translator then ran the REVERSE direction
-  to bound the consequence: **exactly one English form in the file now renders two distinct Japanese, and
-  nothing else was flattened.** Likewise finding 2 left **exactly one divergent run** (`どうやら、`,
-  deliberate — narration box vs character) and it correctly did NOT "repair" it.
-- ⭐ **ROUND-1 FLAG 12 IS WITHDRAWN IN FULL AND MY SEED CELL WAS RIGHT:** `Ｈｉｍｉｋｏ’ｓ` is **8**, not 9;
-  `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = **14**. `Ｇｅｎｅｒａｌ　Ｉｖａｎ` 12 bare / 13 with comma — never a
-  disagreement. All five of finding 5's figures reproduce.
-- **New precedent worth recording at merge:** §41.4's register split applied for the first time to **a
-  narration box against a character inside one file**; §23.4 / §26.8's default confirmed for a plain
-  `助かったぞ` with an adjacent but out-of-sentence vocative.
+### ✅ PR #49 MERGED (round 2) — what its integration put on `main`
+Squash **`8a9aba8`**. **6,291 / 8,192, slack 1,901**; realised **2.035×** against a 2.798× budget;
+`{FFFE}` 126 → 135; **`{FCC0}` 13 → 13**; **0 rows over 23**; max 4 text rows. Glossary **§66**,
+FLAGS **§BF**. Every figure re-derived at review, merge base pinned to `1c13c33`. Gate 6 run by
+positional pairing across all **36** shipped chunks: 0 misaligned lines, 0 external divergences,
+**exactly one internal divergence and one reverse flattening, both intentional and both ruled**.
 
-### PR #49 (chunk 23) — the translator's report is in, integration debts below
-**6,281 / 8,192 (1,911 slack); realised 2.03× against a 2.80× budget; 0 rows over 23 columns; no page
-over 4 text rows.** ⭐ **The binding constraint was the 24×4 box, not the slot** — so there is no byte
-risk if a later fix adds a character. Eleven new glossary rows (`武器倉庫`, `納庫`, `壊滅状態`,
-`間抜けども`, `悪知恵`, `小悪党`, `交友関係`, `骨は拾ってやる`, `いい気味だ`, `おやすいご用です`,
-`塔が襲われました。`, plus a **scoped** `すごい` row).
-- ⚠️ **§9.W13's `イワン` and `ヒミコ` rows STAY LIVE** — each still has one script-store line unrendered;
-  only `駐留部隊` and `帝国がバックにいた` are exhausted (the §29.1 / §30.1 cross-unit procedure).
-- ⭐ **Flag 9 — the chunk's real hazard, and gate 6 is blind to it:** L21 and L22 are two mutually
-  exclusive codas sharing **seven readable strings verbatim** and differing in six others by register
-  alone. Gate 6 pairs whole messages and sees none of it. The translator ran a within-file run-granularity
-  pass: **11 repeated runs, 0 divergent.** The reviewer should re-run that pass, not trust it.
-- ⭐ **Flag 5 — a CROSS-STORE reuse no battle-side check could find:** the stock dungeon frame
-  `…の中は静まり返っている` already ships in `batch_011`/`batch_014`/`batch_017`; the keys differ only in
-  `館`/`ほこら`/`塔`, so the incumbent English was reused rather than forked.
-- ⚠️ **Flag 12 — I VERIFIED BOTH CLAIMED CORRECTIONS TO MY SEED AND ONE OF THEM IS WRONG.** `len()`:
-  `Ｇｅｎｅｒａｌ　Ｉｖａｎ` = **12** bare, **13** with the vocative comma — the translator measured the
-  shipped form and its own note agrees the bare form is 12, so **there is no disagreement here**.
-  `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = **14, NOT 15** — `Ｈｉｍｉｋｏ’ｓ` is **8, not 9**. **My seed cell was
-  right; do not integrate 15 into the glossary.** Nothing renders differently (both ship inside rows of
-  13 and 20) — but a wrong figure in the glossary propagates, and this run has already been bitten by
-  relayed figures (Decisions §7). **The translator was right to challenge and right about the principle;
-  this particular cell it got wrong.**
-- **Open question for the reviewer — Flag 14:** which side of §23.4 `助かったぞ。` falls on. The
-  translator took the active `Ｙｏｕ　ｓａｖｅｄ　ｍｅ．` and will take the default without argument
-  (14 → 13 columns, one row, no re-flow). **Rule on it; do not leave it unanswered.**
+- **§66.4** ⭐ **§41.4's `どうやら` register rule extended to a NARRATION BOX against a CHARACTER inside
+  one file**, and its tally goes **8 of 8 → 11 of 11**: `batch_013:31` was found at review already
+  shipping `Ｌｏｏｋｓ　ｌｉｋｅ` for a casual contracting speaker. **The within-file split is deliberate —
+  do not "repair" it.**
+- **§66.6** ⭐ **Leon's register fixed for the first time in the project** (§14.6 officer column, zero
+  contractions). ⚠️ **§BF7: portrait ids are PER-CHUNK.** `chunk_022`'s portrait 05 is **Cress**, not
+  Leon — checked before the claim was accepted. The file's two `ｌｅｔ’ｓ` belong to **portrait 00, the
+  player**, via `translation_prompt.md` §1's channel borrow.
+- **§66.5** §23.4 / §26.8's default confirmed for a plain `助かったぞ` under an **adjacent but
+  out-of-sentence** vocative; both instances byte-identical, matching merged chunk 15.
+- **§66.1** Two §9.W13 seeds struck (`駐留部隊`, `帝国がバックにいた` — exhausted, 1 of 1 each).
+  ⚠️ **`イワン` and `ヒミコ` deliberately LEFT LIVE** — one unrendered script line each, counts
+  re-measured before anything was struck (§29.1 / §30.1).
+- **§66.3** ⚠️ **One glossary figure corrected at integration**: `壊滅状態`'s reach is **2 battle, chunk
+  23 only**, not the PR's "3 battle (16 ×1, 23 ×2)" — chunk 16's is `壊滅させられた`, a different string
+  that needs its own decision when 16 unblocks. Corrected rather than bounced to round 3 (§BE6).
+- **§BF5** ⭐ **The "orphaned short row-end" preference was MEASURED corpus-wide and is a project-wide
+  question, not a per-unit finding**: chunk 23 is **8.8%** against a **8.7%** mean over all 36 shipped
+  chunks. **Do not relitigate it per chunk** — tightening it is a 224-row sweep.
+- **§BF6** ⚠️ **The census-over-one-spelling failure bit a REVIEWER this time.** §38.2's form ships in
+  **6 rows across 5 files**, over **three** spellings; the review's "4×" and the coordinator's "3 rows"
+  both searched only `よろしく頼む` and missed `よろしく　頼む` with a full-width space. **The translator
+  was right.** Count rows, not `grep` hits — one hit was a comment line.
+- **§BF3 / §BF4** ⚠️ **Two pre-existing SCRIPT-store debts recorded, neither chunk 23's to fix:**
+  `batch_013:31` renders byte-identical `静まり返っている・・・。` as `ｑｕｉｔｅ　ｓｉｌｅｎｔ` where four
+  other rows and chunk 23 ship `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ`; `batch_017:39` renders `騒ぎ` as `ｔｒｏｕｂｌｅ`
+  where `batch_010` and `chunk_030` take `ｕｐｒｏａｒ`. **Queued for a corrections unit.**
+- **§BF2** `{FCC0}` / `tag_parity`: chunk 23 hit it too — **§BE2 cites it, no second entry written.**
 - **Standing note, not a defect:** `ａｒｍｏｕｒｙ` contains `ａｒｍｏｕｒ` (§4's 防具), so any future
-  substring census of `ａｒｍｏｕｒ` false-positives on this chunk. Recorded so nobody re-discovers it.
+  substring census of `ａｒｍｏｕｒ` false-positives on this chunk.
 
 ⚠️ **Every `tl/*` branch from waves 1–12 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in

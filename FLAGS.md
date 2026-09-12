@@ -8132,3 +8132,126 @@ file does not contain. The accurate rework record exists only in `20764d2`'s com
 cap, and round 1 had already set the precedent of narrowing PR-body rows at integration. The
 withdrawn rows are named in glossary §65 so no later session integrates them. **But the next unit
 that does this should be told at round 1:** the body is what the reviewer integrates from.
+
+---
+
+## BF. Wave 13 review — battle chunk 023 / PR #49, MERGED (2026-09-12, round 2)
+
+Squash `8a9aba8`. Every §6 gate re-run on the round-2 head `d917bb7`, **nothing carried forward from
+round 1**, merge base pinned to the explicit SHA `1c13c33` rather than reusing the author's
+`merge-tree`. All five round-1 findings implemented and independently re-verified.
+
+### BF1. Byte figure
+
+**chunk 23: 6,291 / 8,192 — 1,901 bytes slack.** JP 1,257 → EN 2,558, **realised 2.035×** against a
+2.798× budget. `{FFFE}` 126 → 135 (+9, +18 bytes) on 9 lines, all 9 named in the PR's Flag 2 table.
+**`{FCC0}` 13 → 13, unchanged per line as well as in total.** Widest row **23**, **0 rows over 23**,
+**max 4 text rows** on any page (16 pages sit at exactly 4). ⭐ **The binding constraint was the
+24 × 4 box, not the slot.**
+
+### BF2. `{FCC0}` / `tag_parity` — see **§BE2**, no second entry
+
+Chunk 23's translator hit it too, at L2 (`ここの守備は頼んだぞ。` on a page already at four rows,
+resolved by the flagged modal shift to `Ｈｏｌｄ　ｔｈｅ　ｄｅｆｅｎｃｅ　ｈｅｒｅ．`). §BE2 already records
+the contradiction and already notes both wave-13 battle translators hit it independently. **Nothing
+new to add; this is the third unit to meet it and the entry stands as written.**
+
+### BF3. ⚠️ DEBT — `静まり返っている・・・。` has two shipped Englishes, and the divergent one is in the SCRIPT store
+
+`batch_013:31` ships `家の中は{FFFE}静まり返っている・・・。` → `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ｑｕｉｔｅ
+ｓｉｌｅｎｔ．．．．` The **byte-identical** Japanese run `静まり返っている・・・。` ships as
+`ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` everywhere else — `batch_011:61`, `batch_014:13/16/18`, `batch_017:9/61`, and
+now `tl/battle/chunk_023.txt` L5, which correctly reused the incumbent frame for `塔の中は…`.
+
+**This is not PR #49's to fix** — chunk 23 took the majority form and is on the right side of it.
+The debt is one `batch_013` row. ⚠️ **Found only by reading the script TSVs' Japanese column; no
+battle-side check could see it**, and gate 6 pairs whole messages so it is invisible there too.
+**Queued for a corrections unit.**
+
+### BF4. ⚠️ DEBT — `騒ぎ` likewise has two shipped Englishes
+
+`batch_017:39` renders `騒ぎを巻き起こしとる` as `Ｙｏｕ　ｓｔｉｒ　ｕｐ　ｔｒｏｕｂｌｅ`, while
+`batch_010:58`'s 大騒ぎ and `chunk_030` L5's 騒がしい both take **`ｕｐｒｏａｒ`**, as chunk 23 L3 now
+does for `この騒ぎ`. Source strings differ and no chunk or bank holds both, so **§25.3 is met and
+CLAUDE.md §3 is not engaged** — `ｓｔｉｒ　ｕｐ　ｕｐｒｏａｒ` would also be poor English for that idiom.
+**Not a defect and not this PR's to fix**, but recorded so no later unit "repairs" one of them into
+the other. ⚠️ PR #49's Flag 13 cited chunk_030 L5 for 騒ぎ; the precedent is real but it is
+**騒がしい** there, not the noun.
+
+### BF5. ⭐ MEASURED — the "orphaned short row-end" preference is a PROJECT-WIDE question, not a per-unit one
+
+`translation_prompt.md` §3.2 says *"Do not leave a line ending in a lone one- or two-letter word if
+it can be avoided."* Chunk 23 has **9 such rows in 102 non-final rows = 8.8%**. Measured across all
+36 shipped chunks at this review: **224 / 2,583 = 8.7%**, range **0% to 17.1%** (chunk 17 at 1.0%,
+chunk 10 at 17.1%, chunk 19 at 14.3%).
+
+**Chunk 23 is exactly on the shipped norm and better than 15 of the 36 chunks**, so holding it to a
+stricter standard would have been inconsistent, not rigorous. §27.2's binding
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` is itself one of these rows and cannot change.
+Chunk 23's L21 `ｗｅ　ｍａｋｅ　ａｔ` is additionally **forced**: the page is at four rows, `{FCC0}`
+cannot be added (§BE2), and no four-row split of that sentence avoids an orphan.
+
+> **Recorded so it is not relitigated per chunk.** If the project wants this tightened it is a
+> sweep over 224 rows, not a finding against whichever unit a reviewer happens to measure.
+
+### BF6. ⭐ The census-over-one-spelling failure, in its third distinct form — and it caught a reviewer this time
+
+Round 1's finding 1 said §38.2's fixed form was shipped **4×**; the coordinator "corrected" that to
+**3 rows**; the translator's census said **6 rows across 5 files**. **Re-run independently at this
+review: the translator is right.** Both earlier counts searched the bare spelling `よろしく頼む` and
+missed **`よろしく　頼む` with a full-width space** (`batch_007:28`, `batch_009:48`, `batch_010:65`).
+The six rows key on **three** spellings — `よろしく　頼む` ×3, `よろしく頼む` ×1, `よろしく頼むぞ` ×2 —
+and all six ship the form byte-identically, so the finding was **strengthened**, not weakened.
+
+⚠️ A seventh `grep` hit in `batch_012` is a **comment line**, not a data row — count rows, not hits.
+
+**This is the same blind spot as §724's `バウアー`/`バウワー`, §BE's `ワケ`/`訳` and `ほう`/`方`, and
+§9.W13's `オーケー`/`オッケー`.** What is new is that it bit **a reviewer correcting someone else's
+count**. **A census over one spelling is not a census** — and the party with the most confidence in
+the number was the one furthest from it.
+
+### BF7. ⭐ Portrait ids are PER-CHUNK, and a cross-chunk portrait match is not an identification
+
+Chunk 23 fixes **Leon's** register for the first time in the project (glossary §66.6). The obvious
+check misleads: `chunk_022` L4 has a **portrait-05** speaker, the same id Leon carries in chunk 23 —
+but chunk 22's portrait 05 is **Cress**, proved inside that chunk by `Ｃｒｅｓｓ，　ｔｈａｎｋ　ｙｏｕ．`
+and by Leon being named in the third person two turns earlier. Verified at review before accepting
+the PR's claim that no shipped line had carried Leon's speech. **§41.2 / §W5's rule — derive the
+speaker inside the chunk from the tag stream — is not a formality; a portrait id carried across
+chunks is a false friend.**
+
+The same reading is what licenses the file's two `ｌｅｔ’ｓ`: both closing turns carry an explicit
+`{FCB0}{=00000001}` portrait change onto the `{FC51}` channel and then address `サイクス、`, so the
+speaker is the **player** (portrait 00, §7 casual, contracts freely — confirmed in `chunk_022`),
+not Leon and not Sykes. `translation_prompt.md` §1's channel-borrow case.
+
+### BF8. Branch deletion — §AQ9 unchanged
+
+`git push origin --delete tl/battle-023` failed from the agent container again (sideband disconnect
+/ HTTP 403). **The branch survives on the remote and that is NOT a signal about merge state.** The
+merge is evidenced by the API's `merged: true` and the squash SHA **`8a9aba8`**, recorded here and in
+`HANDOFF.md`. GitHub still refuses `REQUEST_CHANGES` (§AQ1), so the decision was posted as a
+`COMMENT` review with `DECISION:` on line 1.
+
+### BF9. Process — the PR body WAS updated for the rework, and one figure was still corrected at integration
+
+Unlike PR #47 (§BE6), #49's body carries a full round-2 section with corrected figures, a re-run
+`check` block and a finding-by-finding account. **The §BE6 failure did not repeat.**
+
+One cell was still wrong and is corrected in glossary **§66.3**: the `壊滅状態` row's reach read
+*"3 battle (16 ×1, 23 ×2)"*; the exact key is **2 battle, chunk 23 only**, because chunk 16 L15
+carries `壊滅させられた` — the verb, a different string needing its own decision when chunk 16
+unblocks. Corrected rather than bounced to round 3, on §BE6's precedent: the file was right, three
+rounds is the cap, and **#48 had been waiting unreviewed throughout**. ⚠️ **A wrong reach figure is
+not cosmetic** — it tells the next unit that a row already binds it, which is §37.3 / §38.6's
+forward-only reach count in a new place.
+
+### BF10. ⭐ §41.4's register rule now predicts 11 of 11, and a script row nobody consulted agrees
+
+Glossary §66.4 extends §41.4 to a **narration box against a character inside one file** — chunk 23
+L5's `{FCA3}` box takes `Ｉｔ　ｓｅｅｍｓ` and L21's Sykes takes `Ｌｏｏｋｓ　ｌｉｋｅ`, and the
+within-file divergence is deliberate. Found at this review while chasing an unrelated debt:
+**`batch_013:31` already ships `どうやら、` → `Ｌｏｏｋｓ　ｌｉｋｅ` for a casual contracting speaker**
+(`留守みたいね` → `ｔｈｅｙ’ｒｅ　ｏｕｔ`). With it, the rule's tally goes from 8 of 8 to **11 of 11**,
+and the newest confirmation comes from a unit that had never heard of the question — the same shape
+as §41.4's own chunk-26 evidence.

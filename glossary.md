@@ -973,11 +973,11 @@ Japanese.**
 | ~~`ニール`~~ | ✅ **PROMOTED to §65.1 (PR #47, merged 2026-09-12)** — `Ｎｅｉｌ`, **used exactly as seeded**, rendered twice in `tl/battle/chunk_015.txt` L10 (`Ｉ’ｍ　Ｎｅｉｌ，　６ｔｈ　Ａｒｍｙ．` and the vocative `Ｎｅｉｌ，`); 4 columns confirmed. **EXHAUSTED — 2 of 2.** Original seed note follows | ~~**2 battle (chunk 15 L10, both in one pooled message) / 0 script / 0 `tl/`.** FREE~~ | **4 columns.** A 6th Army soldier who joins the party after the Ifrit fight. European reading per §11.4 / §14. Alts `Ｎｅａｌ` / `Ｎｉｌ` — `Ｎｅｉｌ` is the standard katakana and needs no defence |
 | ⛔ `オーケー` | **`Ｏｋａｙ`** — ALREADY KEYED, do not re-decide | **2 battle (chunk 15 L10, L11 — the same pooled message) / 0 script.** Incumbent: **`tl/battle/chunk_038.txt` L9 ships `オッケー！` → `Ｏｋａｙ！`**, found by positional pairing | **4 columns. USE BYTE-IDENTICALLY.** ⚠️⚠️ **GATE 6 IS DOUBLY BLIND HERE** — battle `tl/` holds no Japanese *and* the two spellings differ (`オーケー` vs `オッケー`), so even a Japanese-side grep would not pair them. This is §63.2 / §64.1's twin problem in a new place. ⚠️ **`ＯＫ` IS NOT A PRECEDENT:** chunk 36's `＞ＯＫ` is preserved machine text (§BA), not a rendering of this word. ⚠️ **`Ａｌｌ　ｒｉｇｈｔ` IS SPENT** on `イイカ？` (`batch_019.tsv`) — do not reach for it. Chunk 26 L15 also ships one `Ｏｋａｙ．` inside a pooled row, so the form is established, not free |
 | ~~`炎熱騎士団`~~ | ✅ **PROMOTED to §65.1 (PR #47, merged 2026-09-12)** — `Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ`, **used exactly as seeded**, rendered once in `tl/battle/chunk_015.txt` L2 as `Ｏｕｒ　Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ　ｈａｖｅ`; 13 columns confirmed. The seed's lowercase-`ｃｒｉｍｓｏｎ` warning was heeded exactly. **EXHAUSTED — a hapax, 1 of 1.** Original seed note follows | ~~**1 battle (chunk 15 L2) / 0 script / 0 `tl/` — a hapax.** FREE~~ | **13 columns.** Built on the settled family, **not invented**: `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§4, 15) and `黒の騎士団` → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§13, 13). Capitalised as a **named** imperial order; bare `騎士団` of a kingdom's own stays lowercase `ｋｎｉｇｈｔｓ` (§2253's row) — the §17.1 species test and §63.1's named-thing rule. Alt `Ｂｌａｚｉｎｇ　Ｋｎｉｇｈｔｓ` (15). ⚠️ **`紅蓮の炎` sits two sentences away in L0: if it takes `ｃｒｉｍｓｏｎ`, keep that LOWERCASE** — `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` is a different, capitalised proper noun, exactly the §64.2 `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split |
-| `イワン` | `Ｉｖａｎ` | **2 battle (chunk 23 L2) + 1 script unique line / 0 `tl/`.** FREE | **4 columns.** An imperial general on Fernando's side; `イワン将軍` → `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (12), title before name as §20 already does for the others. ⚠️ **L2's second instance is `イワンに罪をかぶせて` — he is the one they plan to frame**, so he is a *character*, not a place. Alt `Ｉｗａｎ`; `Ｉｖａｎ` is the standard katakana for the Slavic name and matches the European-reading convention |
-| `ヒミコ` | `Ｈｉｍｉｋｏ` | **1 battle (chunk 23 L0) + 1 script unique line / 0 `tl/`.** FREE | **6 columns.** ⚠️ **A JAPANESE name, so §11.4 / §14's European-reading convention does NOT apply** — it transliterates straight. `東のヒミコ分隊` → `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` (14), with `分隊` taking §4's **squad**; §61's `分隊長` → *squad captain* / *squad leader* is the **officer** row and is not this |
+| `イワン` ⚠️ **STAYS LIVE** | `Ｉｖａｎ` | ⚠️ **PARTLY RENDERED — DO NOT STRIKE.** Promoted to §66.1 at PR #49 (2026-09-12): both battle instances are shipped in `tl/battle/chunk_023.txt` as `Ｉｖａｎ` (4) and `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (12 bare / 13 with the vocative comma), **used exactly as seeded**. **1 script unique line is still unrendered** — re-measured at that review — so this row stays live for whoever takes it, per the §29.1 / §30.1 cross-unit procedure. Original: **2 battle (chunk 23 L2) + 1 script unique line / 0 `tl/`.** FREE | **4 columns.** An imperial general on Fernando's side; `イワン将軍` → `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (12), title before name as §20 already does for the others. ⚠️ **L2's second instance is `イワンに罪をかぶせて` — he is the one they plan to frame**, so he is a *character*, not a place. Alt `Ｉｗａｎ`; `Ｉｖａｎ` is the standard katakana for the Slavic name and matches the European-reading convention |
+| `ヒミコ` ⚠️ **STAYS LIVE** | `Ｈｉｍｉｋｏ` | ⚠️ **PARTLY RENDERED — DO NOT STRIKE.** Promoted to §66.1 at PR #49 (2026-09-12): the battle instance ships as `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ`, **used exactly as seeded, and the seed's 14 was RIGHT** — `Ｈｉｍｉｋｏ’ｓ` is **8**, not 9; the PR's round-1 challenge is withdrawn in full. **1 script unique line is still unrendered**, so this row stays live per §29.1 / §30.1. Original: **1 battle (chunk 23 L0) + 1 script unique line / 0 `tl/`.** FREE | **6 columns.** ⚠️ **A JAPANESE name, so §11.4 / §14's European-reading convention does NOT apply** — it transliterates straight. `東のヒミコ分隊` → `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` (14), with `分隊` taking §4's **squad**; §61's `分隊長` → *squad captain* / *squad leader* is the **officer** row and is not this |
 | `根城` | `ｌａｉｒ` | **4 battle (chunk 27 L3, L4, L6; chunk 32 L0) + 2 script unique lines / 0 `tl/`.** `ｌａｉｒ` verified FREE | **4 columns.** ⚠️⚠️ **THE TWO OBVIOUS FORMS ARE BOTH ALREADY SPENT ON DIFFERENT JAPANESE — this is the row to read twice.** `ｓｔｒｏｎｇｈｏｌｄ` renders **`拠点`** (`batch_015.tsv`) and `ｈｉｄｅｏｕｔ` renders **`隠れ家`** (`batch_014.tsv`). Taking either would collapse three distinct words into one English form and §25.3 would be breached in a way gate 6 cannot see. ⚠️ **BINDS CHUNK 32** (blocked, tier A): there `奴らの根城` is the *heroes* speaking of the demons' base, while chunk 27's three are the *demons* speaking of their own — **one English form must serve both points of view, and `ｌａｉｒ` does.** Alt, if you can defend it against those two incumbents: `ｂａｓｅ` |
-| ⛔ `駐留部隊` | **`ｇａｒｒｉｓｏｎ`** — REUSE THE INCUMBENT, not a new seed | **1 battle (chunk 23 L0) / 0 script.** Incumbent verified by positional pairing in **4 shipped chunks**: c0 L12/L16 (×3), c7 L2, c17 L2/L5, c19 L2/L5/L6/L18, plus `batch_005.tsv` | **8 columns.** `ｇａｒｒｉｓｏｎ` is the settled rendering of the **守備隊 / 駐屯** family. `駐留部隊` is the same concept — a force stationed in a place — so **§25.3 is not engaged and reuse is correct**, not a collapse. `せめて、もう少し城に駐留部隊を残しておけば・・・` → *had I only left a larger garrison at the castle．．．* |
-| `帝国がバックにいた` | `ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ　ｂｅｈｉｎｄ　ｉｔ` | **1 battle (chunk 23 L21) / 0 script / 0 `tl/`** | ⚠️ **NOT A NAME — do not transliterate.** `バック` here is the loanword in its idiomatic *backing* sense. Sykes and Leon are reading the escape ship: *the Empire was behind it after all*. The katakana sweep surfaces this row, which is exactly why a katakana sweep is not a seed list |
+| ~~⛔ `駐留部隊`~~ | ✅ **PROMOTED to §66.1 and STRUCK (PR #49, merged 2026-09-12)** — `ｇａｒｒｉｓｏｎ`, the incumbent reused exactly as the seed directed. **EXHAUSTED — 1 of 1**, re-measured at review. Original seed note follows | ~~**1 battle (chunk 23 L0) / 0 script.** Incumbent verified by positional pairing in **4 shipped chunks**: c0 L12/L16 (×3), c7 L2, c17 L2/L5, c19 L2/L5/L6/L18, plus `batch_005.tsv`~~ | **8 columns.** `ｇａｒｒｉｓｏｎ` is the settled rendering of the **守備隊 / 駐屯** family. `駐留部隊` is the same concept — a force stationed in a place — so **§25.3 is not engaged and reuse is correct**, not a collapse. `せめて、もう少し城に駐留部隊を残しておけば・・・` → *had I only left a larger garrison at the castle．．．* |
+| ~~`帝国がバックにいた`~~ | ✅ **PROMOTED to §66.1 and STRUCK (PR #49, merged 2026-09-12)** — `ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ　ｂｅｈｉｎｄ　ｉｔ`, **used exactly as seeded**, inside L21's `ｂｅｈｉｎｄ　ｉｔ　ａｆｔｅｒ　ａｌｌ．` — the `ａｆｔｅｒ　ａｌｌ` is **this note's own gloss**, so it is not an addition. **EXHAUSTED — 1 of 1.** Original seed note follows | ~~**1 battle (chunk 23 L21) / 0 script / 0 `tl/`**~~ | ⚠️ **NOT A NAME — do not transliterate.** `バック` here is the loanword in its idiomatic *backing* sense. Sykes and Leon are reading the escape ship: *the Empire was behind it after all*. The katakana sweep surfaces this row, which is exactly why a katakana sweep is not a seed list |
 | ⛔ `ダメージ` | **`ｄａｍａｇｅ`**, lowercase — ALREADY KEYED | **3 battle (chunk 0 L9 **SHIPPED**; chunk 27 L5, L6) + 3 script unique.** Shipped 3×: `batch_013.tsv` (×2), `batch_016.tsv`, and **chunk 0 L9 verified by POSITIONAL PAIRING** | **6 columns. USE BYTE-IDENTICALLY.** A common noun, so lowercase per §17.1 — and all four shipped instances already are. ⚠️ **The chunk-0 instance is invisible to every grep of `tl/battle/`**; it took a positional pair to find. `かなりのダメージを受けた` → *took ｑｕｉｔｅ ａ ｂｉｔ ｏｆ ｄａｍａｇｅ*, on `batch_016`'s shipped `ｄｅａｌ　ｂｉｇ　ｄａｍａｇｅ` |
 
 ⛔ **ALREADY KEYED ELSEWHERE — USE BYTE-IDENTICALLY, DO NOT RE-SEED AND DO NOT RE-DECIDE.** Verified
@@ -9203,3 +9203,161 @@ rework push.** The commit message is the right place for the *diff*; the body is
 round-2 pushback on `ｇｒｅａｔ` is what stopped a reviewer from splitting a shipped compound on the
 strength of a **width** clearance. **Read the clearance, not the sentence it sits in** — §42.1 says
 `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` *fits*, and fitting is not choosing.
+
+---
+
+## 66. Added by chunk 023 (PR #49, merged 2026-09-12, round 2)
+
+Rendered in `tl/battle/chunk_023.txt` — Fernando's coup at Carline Castle: the 9th Army runner's
+report, the village elder's gift, the tower and its two armouries, Leon's duel, the Empire's ship,
+and the two mutually exclusive codas L21 / L22. **14 translated body lines of 35.**
+
+Verified at review, re-derived rather than inherited: **6,291 / 8,192, slack 1,901**; JP 1,257,
+EN 2,558, **realised 2.035×** against a 2.798× budget; `{FFFE}` 126 → 135; **`{FCC0}` 13 → 13,
+unchanged per line as well as in total**; widest row **23**, **0 rows over 23**; **max 4 text rows**
+on any page (16 pages sit at exactly 4). ⭐ **The binding constraint was the 24 × 4 box, not the
+slot** — 1,901 bytes of slack remain, so a later one-character fix costs nothing.
+
+Gate 6 was run by **positional pairing against the dump across all 36 shipped chunks** (battle `tl/`
+holds no Japanese): **0 misaligned lines, 0 external divergences, exactly 1 internal divergence and
+exactly 1 reverse flattening, both intentional and both ruled** (§66.4, §66.6).
+
+### 66.1 Promoted out of §9.W13 — two rows struck, two deliberately left LIVE
+
+| Japanese | English | Status |
+|---|---|---|
+| `駐留部隊` | `ｇａｒｒｉｓｏｎ` (8) | **Incumbent reuse, not a new decision** — the settled rendering of the 守備隊 / 駐屯 family. **EXHAUSTED, 1 of 1** (1 battle, 0 script, measured at this review). **Struck from §9.W13** |
+| `帝国がバックにいた` | `ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ　ｂｅｈｉｎｄ　ｉｔ` | Used exactly as seeded, inside L21's `Ｌｏｏｋｓ　ｌｉｋｅ／ｔｈｅ　Ｅｍｐｉｒｅ　ｗａｓ／ｂｅｈｉｎｄ　ｉｔ　ａｆｔｅｒ　ａｌｌ．` — `ａｆｔｅｒ　ａｌｌ` renders どうやら…みたいだな and is **the seed's own gloss of the line**, not an addition. **EXHAUSTED, 1 of 1.** **Struck from §9.W13** |
+| `イワン` / `イワン将軍` | `Ｉｖａｎ` (4) / `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (**12 bare, 13 with the vocative comma**) | Used exactly as seeded, both battle instances rendered. ⚠️ **ROW STAYS LIVE — 1 script unique line is still unrendered**, measured at this review. The §29.1 / §30.1 cross-unit procedure: the later unit strikes it |
+| `ヒミコ` / `東のヒミコ分隊` | `Ｈｉｍｉｋｏ` (6) / `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` (**14**) | Used exactly as seeded. ⚠️ **ROW STAYS LIVE — 1 script unique line still unrendered.** ⭐ **The seed cell was RIGHT and the PR's round-1 challenge to it is withdrawn in full**: `Ｈｉｍｉｋｏ’ｓ` is **8**, not 9, so the compound is **14**, not 15. Measured independently three times across two review rounds |
+
+⚠️ **`Ｇｅｎｅｒａｌ　Ｉｖａｎ` was never in dispute** — 12 bare and 13 with the comma are two different
+strings, and the seed and the translator were each measuring one of them. Recorded because this run
+has been bitten by relayed figures before (Decisions §7, §BE6): **a width disagreement is not real
+until both sides name the string they measured.**
+
+### 66.2 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| 武器倉庫 | `ａｒｍｏｕｒｙ` | **7 columns. 4 battle, all chunk 23 / 0 script — a chunk-23 hapax.** ⚠️ **NOT a divergence from 倉庫 → `ｗａｒｅｈｏｕｓｅ`**: bare 倉庫 occurs **exactly once in the whole project** (`batch_016`, `こんな港の倉庫で`), verified at this review, and no chunk or bank holds both, so §25.3's test is met. `ｗｅａｐｏｎ　ｗａｒｅｈｏｕｓｅ` cannot fit the two menu rows. ⚠️ **Contains `ａｒｍｏｕｒ` (§4's 防具) as a substring, so a raw substring census of `ａｒｍｏｕｒ` false-positives on this chunk** |
+| 納庫 | `ｓｔｏｒｅ` | 5 columns. **2 battle (L6, L7) / 0 script.** The same building as 武器倉庫, named more briefly on the pickup lines, and held **apart** from it because the two co-occur in one scene (§25.3's co-occurrence practice). On `chunk_001`'s shipped `食料庫` → `ｆｏｏｄ　ｓｔｏｒｅ` — the same 〜庫 family, so this is incumbent reuse |
+| 壊滅状態 | `ｓｈａｔｔｅｒｅｄ` | **9 columns. 2 battle — chunk 23 only (L0, L2) — / 0 script.** ⚠️ **Figure corrected at integration: the PR body read "3 battle (16 ×1, 23 ×2)" — see §66.3.** Deliberately **NOT** `ｗｉｐｅｄ　ｏｕｔ`, the shipped incumbent for **全滅**. Measured at this review: 全滅 is live in chunks **2, 9, 15, 19, 32, 37, 38** and 壊滅 in **16, 23** — **no shared chunk**, so §25.3 is met and the two are held apart. `ｓｈａｔｔｅｒ` verified free across `tl/` |
+| 間抜けども | `ｄｏｌｔｓ` | 5 columns. **1 battle / 0 script — a hapax.** A **sixth** contempt word, held apart from 雑草ども → *weeds* (§11.5), ゴミ → *rubbish* (§14.4), 穀潰し → *freeloaders* (§2), ガラクタ → *junk* (§23.1), 野ネズミ → *field mice* / ネズミども → *rats* (§41.1), and from the whole バカ family → *fool* (§19.1, §20.3, §28.3). `ｄｏｌｔ` verified free |
+| 悪知恵 | `ｗｉｌｅｓ` | 5 columns. **2 battle (L21, L22) / 0 script.** Verified free |
+| 小悪党 | `ａ　ｐｅｔｔｙ　ｃｒｏｏｋ` | **13 columns. 2 battle (L21, L22) / 0 script.** `しょせん小悪党にすぎん。` → **`ａ　ｐｅｔｔｙ　ｃｒｏｏｋ，　ｎｏ　ｍｏｒｅ．`** (23), byte-identical in both codas. `ｐｅｔｔｙ` and `ｃｒｏｏｋ` both verified free |
+| 交友関係 | `ｔｈｅ　ｃｏｍｐａｎｙ　ｈｅ　ｋｅｅｐｓ` | 20 columns. **2 battle (L21, L22) / 0 script**, byte-identical in both codas. Verified free |
+| 骨は拾ってやる | `Ｉ　ｓｈａｌｌ　ｇａｔｈｅｒ{FFFE}ｙｏｕｒ　ｂｏｎｅｓ．` | 14 / 11 columns. **1 battle (L14) / 0 script — a hapax.** Leon's duel challenge; the literal image is kept rather than localised |
+| いい気味だ | `ｉｔ　ｓｅｒｖｅｓ　ｈｉｍ　ｒｉｇｈｔ．` | 20 columns. Hapax. Distinct from 気味わるい → `ｃｒｅｅｐｙ` (`chunk_011` L0) — a different word, verified positionally |
+| おやすいご用です | `Ｔｈａｔ　ｉｓ　ｅａｓｉｌｙ　ｄｏｎｅ．` | 20 columns. Hapax. Ivan's ですな / ですぞ register takes no contraction (§14.6's officer column) |
+| すごい **(of a weapon's power, THIS INSTANCE ONLY)** | `Ｆｅａｒｓｏｍｅ，` | **9 columns** with the comma. ⚠️⚠️ **SCOPED — NOT a global form for すごい**, which runs to 2 battle (5, 23) + 9 script lines and is context-dependent. `ｓｐｌｅｎｄｉｄ` was correctly refused: already spent on 素晴らしい (`chunk_007`). ⚠️ **`ｆｅａｒｓｏｍｅｌｙ` renders 恐ろしく in `chunk_026` L14** — measured at this review, 恐ろし is live in chunks **9, 16, 26** and すごい in **5, 23**, so **no chunk holds both** and §25.3's test is met. The scoping was verified real at round 1 and re-verified here |
+| 塔が襲われました。 | `Ｔｈｅ　ｔｏｗｅｒ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` | 12 / 13 columns. **1 battle (L8) / 0 script — a hapax.** The `{=FA1000300030}` tutorial box, so §7's personality-free register. Built as the **exact mirror** of §27.2's 13-instance `村が襲われました。` → `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`, which this chunk also carries at L4 and reproduces byte-for-byte |
+| まったくだ。 | `Ｉｎｄｅｅｄ．` | 8 columns. **2 battle, both in this chunk (L2 Fernando, L22 Leon), byte-identical.** ⚠️ **`chunk_002` L13 is a DIFFERENT source string** — `まったくだっ！` → `Ｉｎｄｅｅｄ　ｗｅ　ｈａｖｅ！`, an answer to a specific statement. Different strings, so CLAUDE.md §3 is not engaged; what the two share is the word `Ｉｎｄｅｅｄ`, which is the point |
+
+### 66.3 CORRECTION at integration — the `壊滅状態` reach cell, and why a wrong reach figure is not cosmetic
+
+PR #49's glossary table gave 壊滅状態 as **"3 battle (16 ×1, 23 ×2)"**. Measured over the dump at this
+review: the exact key `壊滅状態` is **2 battle, chunk 23 only**. Chunk 16 L15 carries
+`壊滅させられたんだ` — the **verb** 壊滅する in the passive, a different string that will need its own
+decision when chunk 16 unblocks, and one `ｓｈａｔｔｅｒｅｄ` may or may not fit as a passive.
+
+**The ruling is unaffected and correct; only the cell was wrong.** It is corrected here rather than
+bounced to a third round, on §BE6's precedent — the file was right, #48 was waiting unreviewed, and
+the reviewer is the one who writes this file. But the cell mattered enough to measure: a reach that
+claims chunk 16 tells chunk 16's translator the row already binds them, which is exactly how
+§37.3 / §38.6's forward-only reach counts went wrong.
+
+### 66.4 ⭐ NEW PRECEDENT — §41.4's register split applied to a NARRATION BOX against a CHARACTER, inside one file
+
+§41.4 rules that `どうやら、` splits on register: contraction-taking casual speakers take
+`Ｌｏｏｋｓ　ｌｉｋｅ　…`, contraction-free formal speakers take a `seem` clause. Until now every
+instance was one *character* against another. **Chunk 23 is the first file to carry both sides at
+once**, and the split runs between a character and a box:
+
+| where | speaker | evidence | English |
+|---|---|---|---|
+| L5 | the `{FCA3}` dungeon narration box | §7's personality-free register, no contractions anywhere | **`Ｉｔ　ｓｅｅｍｓ`** |
+| L21 | **Sykes**, portrait 01 on `{FC50}` | §21.4 blunt and needling; carries `ｈｅ’ｓ`, `ｔｈａｔ’ｓ`, `Ｅｍｐｉｒｅ’ｓ` in this very turn, and a plain `だな` | **`Ｌｏｏｋｓ　ｌｉｋｅ`** |
+
+> **Ruled: a narration or tutorial box is a contraction-free speaker for §41.4's purposes.** The
+> within-file divergence is **deliberate and must not be "repaired"** — §3 engages on the message,
+> and these are two different messages.
+
+⭐ **An instance nobody consulted lands on the same side.** `batch_013:31` already ships
+`どうやら、` → `Ｌｏｏｋｓ　ｌｉｋｅ` for a casual, contracting speaker (`留守みたいね` →
+`ｔｈｅｙ’ｒｅ　ｏｕｔ`) — found at this review by reading the script TSVs, not by any battle-side check.
+**With it and chunk 23's two, §41.4's register rule now predicts 11 of 11 with no exceptions.**
+
+### 66.5 §23.4 / §26.8 — the default holds under an ADJACENT BUT OUT-OF-SENTENCE vocative
+
+L22 reads `サイクス！{FFFE}すまなかったな。{FFFE}助かったぞ。` — a vocative, then an apology, then the
+plain form. §23.4's active `Ｙｏｕ　ｓａｖｅｄ　…` is licensed **only where the source turns** to
+address the rescuer *within the sentence* (chunk 12's `助かったぜ、あんちゃん！`).
+
+> **Ruled: a vocative two sentences away does not license the active.** `助かったぞ。` →
+> **`Ｉ　ａｍ　ｓａｖｅｄ．`** (11), on §26.8's explicit statement that the plain 助かった of one's own
+> condition keeps the default.
+
+Both of this chunk's instances are now on the default side byte-identically — L21's
+`うむ、助かった。` → `Ｈｍ，　Ｉ　ａｍ　ｓａｖｅｄ．` and L22's — **and this matches merged chunk 15**,
+which ships the same ruling for `助かったよ。`. ⭐ **The translator asked for this ruling, it went
+against it, and it accepted on the evidence** — §26.8 settled it in words it had read but not
+applied.
+
+### 66.6 Leon's register is fixed here, for the first time in the project — §14.6's officer column
+
+**No shipped line had ever carried Leon's own speech.** Verified at this review rather than taken on
+report, because the obvious check misleads: `chunk_022` L4 has a **portrait-05** speaker, the same id
+Leon carries in chunk 23 — but chunk 22's portrait 05 is **Cress** (she is thanked by name,
+`Ｃｒｅｓｓ，　ｔｈａｎｋ　ｙｏｕ．`, and Leon is spoken of in the third person,
+`ｓｕｐｐｏｒｔ　Ｇｅｎｅｒａｌ　Ｌｅｏｎ　ａｎｄ　Ａｌｆｒｅｄ`). **Portrait ids are per-chunk** (§41.2,
+`FLAGS.md` §W5), and a cross-chunk portrait match is not an identification.
+
+> **Ruled: Leon speaks in §14.6's officer column — zero contractions.** `Ｉ　ｍｉｓｒｅａｄ　ｉｔ．．．．`,
+> `Ｉ　ｌｅａｖｅ　ｔｈｅ　ｒｅｓｔ　ｔｏ　ｙｏｕ．．．`, `Ｉ　ｓｈａｌｌ　ｇａｔｈｅｒ　ｙｏｕｒ　ｂｏｎｅｓ．`,
+> `Ｉ　ａｍ　ｓａｖｅｄ．`, `Ｉ　ｈａｄ　ｎｏｔｅｄ　ｔｈｅ　ｕｎｒｅｓｔ`. Consistent with how the project
+> already writes captains (Cress in chunk 22, Beatrice in §7).
+
+He is `リオン将軍` → `Ｇｅｎｅｒａｌ　Ｌｅｏｎ` in chunk 22 and `リオン隊長` → `Ｃａｐｔａｉｎ　Ｌｅｏｎ，`
+(13) here — two source strings, two English forms, the §26.2 Fernando shape.
+
+⚠️ **The two `ｌｅｔ’ｓ` in this file are NOT Leon's, and finding 4 turned on that.** L21 and L22 both
+close with an explicit `{FCB0}{=00000001}` portrait change onto the `{FC51}` channel, and the turn
+then addresses `サイクス、` — so the speaker is neither Sykes (the other channel) nor Leon (portrait
+05). **Portrait 00 is the player character**, §7's casual register with free contractions, confirmed
+independently in `chunk_022` where portrait 00 ships `Ｙｏｕ’ｖｅ`, `Ｉ’ｍ`, `Ｉｔ’ｓ`. This is
+`translation_prompt.md` §1's "a third party borrows a channel mid-scene" case, read from the tag
+stream inside the chunk.
+
+**Consequence, bounded and accepted:** `王子を迎えにいこう。` (L21) and `王子を迎えにゆこう。` (L22)
+now share one English, `ｌｅｔ’ｓ　ｇｅｔ　ｔｈｅ　Ｐｒｉｎｃｅ．` A reverse EN→JP pass over the whole file
+confirms **this is the only flattening in it**. いこう / ゆこう is the orthographic-variant case §2
+already accepts for `ウエストバリー` / `ウェストバリー` → `Ｗｅｓｔｂｕｒｙ`, and the two codas stay
+distinguishable through their openers (`Ｒｉｇｈｔ．　Ｆｏｒ　ｎｏｗ` / `Ｓｙｋｅｓ，　ｆｏｒ　ｎｏｗ`).
+
+### 66.7 Terms reused rather than re-decided — all verified positionally at this review
+
+`将軍` → `Ｇｅｎｅｒａｌ` before the name · `守備` → `ｄｅｆｅｎｃｅ` (`chunk_018` L4) · `城内` →
+`ｉｎｓｉｄｅ　ｔｈｅ　ｃａｓｔｌｅ` (`chunk_017`) · `本国` → `ｔｈｅ　ｈｏｍｅｌａｎｄ` (`chunk_030`,
+`chunk_042`) · `主力部隊` → `ｔｈｅ　ｍａｉｎ　ｂｏｄｙ` (`chunk_002` L19) · `威力` → `ｍｉｇｈｔ`
+(`chunk_009` L6, the same `機械兵の威力` phrase) · `片づける` → `ｃｌｅａｒ` (`chunk_002` L19) ·
+`争いごと` → `ｓｔｒｉｆｅ` — a chunk-23 hapax taking the family word shipped for 争い in `chunk_024`
+L14 and `chunk_030` L22 · `ひどい` → `ｄｒｅａｄｆｕｌ` (`chunk_002`) · `剣を交える` →
+`ｃｒｏｓｓ　ｓｗｏｒｄｓ` (`chunk_021` L2) · `かかってくるがいい。` → `Ｙｏｕ　ｍａｙ　ｃｏｍｅ　ａｔ　ｍｅ．`
+(`chunk_018` L7, byte-identical) · `はっ！` → `Ｓｉｒ！` (7 shipped instances) · `はっ、わかりました！`
+→ `Ｓｉｒ，　Ｉ　ｕｎｄｅｒｓｔａｎｄ！` (`chunk_030` L11) · `そうか、` → `Ｉ　ｓｅｅ．` (`chunk_004` L9,
+and `batch_009:48` in the very row that also carries §38.2's form) · `とりあえず` → bare
+`Ｆｏｒ　ｎｏｗ`, **no comma, because the source has none** (§44.2, which names chunk 23's two
+instances) · `シナリオ` → `ｓｃｒｉｐｔ` (§31.5) · `作戦` → `ｐｌａｎ` (§19.2) · `ぬおっ` → `Ｎｗｏｈ`
+(§32.3) · `バカな・・・` → `ｉｍｐｏｓｓｉｂｌｅ．．．` (§19.1) · `よろしく頼む` →
+`Ｉ　ｓｈａｌｌ　ｃｏｕｎｔ　ｏｎ　ｙｏｕ．` (§38.2).
+
+⚠️ **`読みを誤った・・・。` → `Ｉ　ｍｉｓｒｅａｄ　ｉｔ．．．．` is a sibling reuse, not an exact one.**
+`読みを誤` occurs **only here**; what `chunk_017` L12 ships is `読みが甘かったか。` →
+`Ｉ　ｍｉｓｒｅａｄ　ｔｈｅｍ．` Different source strings, same verb, each taking its own object.
+Recorded so the pair is not later "aligned" into one form.
+
+⚠️ **`ｍｉｇｈｔ` appears in this file as both the noun (威力, L2) and the modal (`ｍｉｇｈｔ　ｂｅ　ｗｏｒｔｈ`,
+L21).** An English homograph is not a §25.3 collapse — that rule is about one English *form*
+rendering two Japanese *terms* — and the reverse pass confirms no run is shared. Recorded so it is
+not mistaken for one.
