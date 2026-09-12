@@ -8061,6 +8061,23 @@ parked for a reason the tools created.
    (Blocked 5) nobody can prove a spurious page break is harmless. **Prefer (1) until the boot test
    lands.**
 
+**⬛ ADDED 2026-09-12 at PR #48's merge — the cost is no longer nil, and it is now measurable.**
+Chunk 27 did not merely tighten: **it paid a text row on THREE pages** to stay legal. Bodies
+**L1 p7, L4 p7 and L5 p8** each carry the `{FCC0}{FFFE}` opener's leading blank **and** a trailing
+blank, which §3.2 says *"has never appeared in the source and may not fit"*, so all three are held
+to **3, 3 and 2** text rows where a fourth would otherwise have fitted the box. With `{FCC0}` barred
+by `tag_parity`, a translator facing a 5-row page has **no legal move at all**, and a translator
+facing a 4-row page on that shape has only the untested shape or a lost row. Chunk 27 chose the lost
+row three times, correctly, and measured **4,527 bytes of slack** while doing it — **the rows were
+not bought with bytes, they were forfeited to a documentation contradiction.**
+
+This makes the recurrence count **three translators in one wave** (15, 23, 27) and raises the
+question above from "which fix" to "which fix first". ⚠️ **The same three pages are the ones
+`glossary.md` §10 question 4 would free**: if the in-game check settles the leading-and-trailing
+blank shape as safe, chunk 27's three pages can be re-flowed at clause boundaries **at zero byte
+cost** — which is a concrete, already-measured payoff for a boot test that is otherwise hard to
+prioritise (Blocked 4 / 5 / 6).
+
 **Never "fix" this by editing `assemble.py` to make a check pass** — CLAUDE.md §3. It is a flag.
 
 ### BE3. ⚠️ A WIDTH CLEARANCE IS NOT A WORD RULING — §42.1 / §42.8's `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` cost a review round
@@ -8255,3 +8272,151 @@ within-file divergence is deliberate. Found at this review while chasing an unre
 (`留守みたいね` → `ｔｈｅｙ’ｒｅ　ｏｕｔ`). With it, the rule's tally goes from 8 of 8 to **11 of 11**,
 and the newest confirmation comes from a unit that had never heard of the question — the same shape
 as §41.4's own chunk-26 evidence.
+
+---
+
+## BG. Wave 13 review — battle chunk 027 / PR #48, MERGED (2026-09-12, round 2)
+
+Squash **`f88434c`**. Head reviewed **`50b84ac`**; merge pinned to the explicit SHA **`90caa94`**,
+**seven commits newer than the PR's recorded base `4ceb139`**, and clean. Every §6 gate re-run on
+the round-2 head; nothing carried forward from round 1. **The wave's last unit — wave 13 closes
+with this merge.**
+
+**3,665 / 8,192, slack 4,527.** JP 668 → EN 1,474 = **realised 2.21×** against a **5.60×** ceiling.
+`{FFFE}` 71 → 74 (bodies L0, L3, L5, +1 each); **`{FCC0}` unchanged per line**; non-`{FFFE}` tag
+stream **byte-identical on all 14 lines**; widest run **23**, **0 at 24**, **0 pages over 4 text
+rows**; 0 characters outside §3.1; ellipsis runs exact, measured per text segment. Gate 6 by
+positional pairing over both dumps: **0 run-level divergences**.
+
+### BG1. ⭐⭐ The wave's blind spot produced a FOURTH finding, and the translator found it unprompted
+
+Round 1's findings 1 and 2 were `そうね。` and `間違いない` — one defect with two faces, stated in
+`glossary.md` §67.4: **a census over one spelling is not a census, and gate 6 pairing whole messages
+cannot see a sub-message form.** Asked at round 1 only to **declare** a third form, the translator
+**censused it instead** and found `tl/script/batch_015.tsv:67` shipping the **identical**
+`１度、<place>に戻ろう` frame as `ｏｎｃｅ` — in the other store, where nothing mechanical would ever
+have paired it. It conformed all three instances **of its own accord** and logged a reservation for
+the reviewer to overrule.
+
+Verified at review, and the case is **stronger than the PR argued**: the script store ships **seven**
+`１度` rows and **six** take `ｏｎｃｅ`. **Ruled: the conformance stands** (`glossary.md` §67.3); the
+reservation is recorded rather than buried, which is the right way to lose an argument.
+
+⚠️ **Count for the run: four findings in three units this wave from one defect** (chunk 15's
+`ワケ`/`訳` and `ほう`/`方`; chunk 27's two), **plus one coordinator miscount and one reviewer
+prose error**. This is the single most productive defect class the project has found.
+
+### BG2. ⚠️ The MIRROR of the same defect — a substring census that sweeps in an unrelated construction
+
+Found at this review, in a **pre-existing glossary entry**, not in the PR. `glossary.md` §30.6 item 3
+states *"`そうね` is in battle chunks 9, 27 and 32"*. Counted over both dumps at review, the
+standalone agreement **`そうね。` is battle chunks 9 and 27 ONLY**. Chunk 32 L22's instance is
+`もう少し、自分の身を考えた方がよさそうね、坊や。` — the **evidential `〜そうね`**, the same class the PR's
+own note correctly excludes for the three script hits.
+
+Both the PR and the wave's dispatch inherited the error; the PR drew the right distinction and
+stopped one line short of applying it. **Consequence: §25.2's `そうね。` row is exhausted for battle
+with this merge**, not live for chunk 32. §25.2 is a pre-existing entry so it is **not struck** — the
+corrected census is written into `glossary.md` §67.4 and §30.6 item 3 is superseded there. **No
+rendering changes.**
+
+**The lesson generalises §67.4 in the opposite direction:** a census is wrong when it counts too
+*few* spellings **and** when it counts a substring that appears inside a different construction.
+Both failures look like a confident number.
+
+### BG3. ✅ Flag 12 — §30.4's `ｕｎｄｅｒｅｓｔｉｍａｔｅ` reserve NARROWED IN PLACE. The wave's one cross-wave repair.
+
+§30.4 (wave 3) reserved `ｕｎｄｅｒｅｓｔｉｍａｔｅ` for **甘く見る / 見くびる** and called it *"verified
+unspent across `tl/`"* — true of the English word, false of one of the two Japanese phrases.
+**`tl/battle/chunk_006.txt` body L20 had already shipped `甘く見ない方がいいぞ。` →
+`Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．` in wave 2**, verified line-by-line at this review.
+
+⚠️ **The counter-evidence was inside `glossary.md` the whole time**: §24.6's Ridge-and-Sykes register
+row quotes `Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．` verbatim. A reserve was written over a form a note
+cell four sections away was already displaying — the **gate-7 face** of BG1's rule: a key-first check
+never looks at what the file already says in prose.
+
+**Landed on `main` as `glossary.md` §30.4.1:** the reserve narrows to **`見くびる` alone**; `甘く見る`
+keeps `ｔａｋｅ … ｌｉｇｈｔｌｙ` and is **exhausted** (1 battle, shipped); `ｕｎｄｅｒｅｓｔｉｍａｔｅ` stays
+free. §25.3 met on a census run independently by translator and reviewer and agreeing exactly:
+`甘く見` 1 battle + 0 script (chunk 6), `見くび` 1 battle + 1 script (chunk 16). **Lines affected:
+none.** Chunk 27's `ナメる` → `ｌｏｏｋ　ｄｏｗｎ　ｏｎ` was right to avoid **both** forms.
+
+### BG4. Five glossary rows STAY LIVE after this merge — re-measured at review, and one was load-bearing
+
+| Row | Live for | Re-measured |
+|---|---|---|
+| `根城` → `ｌａｉｒ` | **chunk 32 L0** (blocked, tier A) | 4 battle (c27 L3, L4, L6 + c32 L0) + 2 script ✅ |
+| `坊や` → `ｂｏｙ` / `ｔｈｅ　ｂｏｙｓ` | **chunk 32 L22** (blocked) | 4 battle (c27 L2, c27 L4 ×2, c32 L22) + 0 script ✅ |
+| `じゃあね、` → `Ｂｙｅ　ｔｈｅｎ，` | **chunk 28 L18** (wave 14) | 3 battle (c7, c27, c28) + 0 script ✅ |
+| `１度` → `ｏｎｃｅ` | chunks 29, 33, 38 + 9 script | 6 battle + 9 script ✅ |
+| `イワン`, `ヒミコ` (§66.1) | 1 script line each | unchanged by this merge |
+
+⚠️⚠️ **`坊や` is the load-bearing one. PR #48's round-1 body called it "exhausted by this unit" and
+would have had the row struck while chunk 32 — blocked, and therefore years from being translated —
+still needs it.** The translator caught its own error at rework; the reviewer re-verified it by
+reading chunk 32 L22 itself rather than trusting either count. **A row struck early is invisible
+until the unit that needed it renders a divergent form, and by then the incumbent is shipped.**
+
+**`ダメージ` is DISCHARGED FOR BATTLE ONLY** — chunk 27's two instances were its last unrendered
+battle ones; **3 script instances keep the row live.** **§25.2's `そうね。` is exhausted for battle**
+(BG2). `袋のネズミ`, `新手`, `ナメる`, `ひと汗かいた`, `あっけなかった` are **exhausted** and need no
+live row.
+
+### BG5. Rulings carried in, not reopened
+
+- **§2.1 step 5 at body L1 page 4** (the truce offer, local ceiling **2.30×** against a global
+  5.60×) **STANDS** — measured off the merged file at **19 / 22 / 22 / 20**.
+- **§29.4's `Ａｇｒｅｅｄ．` reserve does not fire**: chunk 19 carries both `了解。` (L18) and
+  `・・・わかった。` (L23); **chunk 27 carries no 了解**, so `chunk_024`'s `．．．Ｒｉｇｈｔ．` is the right
+  incumbent. The `chunk_019` / `chunk_024` divergence is **pre-existing** and is not this unit's.
+- **§33.6 names chunk 27 in both of its `まさか` rows**, pre-authorising the two different Englishes.
+- **§BE3's generalisation holds**: a width clearance is not a word ruling.
+
+### BG6. Two record corrections made at integration — no text change, nothing reworked
+
+1. **Flag 3's merged-width figures are off by one on two of three rows.** Measured with `len()`:
+   L0's merge is **25**, not 26 (still > 24, still forced); L5's is **24** exactly, as stated
+   (forced under §3.2's *aim for ≤ 23*); **L3's is 23, not 24**, so that break is a style choice and
+   not a geometric necessity. **It stands** — isolating an interjection at the source's own comma is
+   §1-permitted and normal in shipped work (`chunk_010` L13 and `chunk_011` L8–L10 ship
+   `Ｒｉｇｈｔ，` / `Ｃａｕｃａｓｕｓ　ｉｓ　ｎｅｘｔ．` at merged 24; `chunk_001` L4 ships `Ｙｅａｈ．` /
+   `Ｓｔｉｌｌ，` at merged 12). Only the stated reason was wrong.
+2. **`無念だ`'s incumbent is `chunk_012` body L10**, not L11 as the PR's reuse list says. The form
+   (`ｈｏｗ　ｂｉｔｔｅｒ`) is right; the citation was one off — the same 0-based/1-based slip Flag 3
+   itself warns about and the PR's own finding 4 corrected elsewhere.
+3. **The PR's progress figures are misattributed by exactly one merge, and this is the third time
+   this unit's figures have moved.** The Handoff section says *"Battle store goes to **38 / 44**
+   with this merge (it is **37 / 44** and **32,437 / 43,137, 75.2 %** on the merged tree)"*. Run on
+   the merged tree at integration, `assemble.py status` prints **`BATTLE — 37 / 44 chunks`** and
+   **`32437 / 43137 Japanese characters translated (75.2%)`** — those are the figures **after** this
+   merge, not before it. The arithmetic confirms it: HANDOFF's post-chunk-23 state was 36 / 44 and
+   **31,769**, and 31,769 + chunk 27's **668** = **32,437** exactly. **Correct state: 37 / 44,
+   32,437 / 43,137, 75.2 %**, written into `HANDOFF.md` at this integration. The lesson is the one
+   the PR itself drew at finding 4: **a reported figure is not a measurement — run the tool on the
+   tree you are describing.**
+
+⚠️ **A reviewer near-miss, recorded because BG2's lesson cuts both ways.** This review nearly raised
+11 rows ending in a one- or two-letter word as a §3.2 finding. **Calibrated before charging it:**
+every shipped chunk in the project does this at **2.6 – 12.0 %** of rows (chunk 41 12.0 %, chunk 10
+11.8 %, chunk 19 9.0 %), chunk 27 sits at 12.9 %, and **`chunk_000` — the project's first and most
+reviewed chunk — ships the byte-identical break `，　ｔｈａｔ　ｂａｎｎｅｒ　ｉｓ` / `ｔｈｅ　Ｃｒｉｍｓｏｎ…`
+that chunk 27 uses**, while `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ` / `ｕｎｄｅｒ　ａｔｔａｃｋ．` is a stock line shipped
+in five chunks. **Measuring the corpus stopped a finding that would have invented a standard against
+37 merged units** — §AG6's rule and §BE3's, applied to the reviewer instead of the translator.
+
+### BG7. Bank state at this merge (battle unit — no script change; figures unchanged from PR #49)
+
+⚠️ **FOUR banks under 2,000 free: bank 40 → 75 · bank 41 → 353 · bank 5 → 1,595 · bank 2 → 1,607.**
+`bankmeasure`'s `tightest:` line prints only **three** and currently hides **bank 2** — quote the
+table, never that line. `rowcheck script`: columns OK, no non-inherited page over 4 text rows.
+`merge` prints no "never matched the dump".
+
+### BG8. Still open after this merge
+
+1. **`glossary.md` §10 question 4** — the leading-and-trailing-blank page shape. Costs chunk 27
+   three text rows right now (see §BE2's addendum); settling it frees them at zero byte cost.
+2. **Flag 11 — body L0's companion (id 0001) is unnamed anywhere in chunk 27.** Rendered on register
+   alone, with no identity asserted. **Whoever first names id 0001 should re-read L0 and L1.**
+3. **Chunk 32 is blocked and holds four live rows' last instances** (`根城`, `坊や`, and §25.2's
+   register neighbours). It unblocks only with the tier-A slot extension (Blocked 2).

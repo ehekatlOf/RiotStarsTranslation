@@ -11,9 +11,20 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ WAVE 13 IS RUNNING IN ITS OWN SESSION (opened 2026-09-11 ~21:48 UTC). DO NOT OPEN A SECOND ONE.
-> **Units: battle chunks 15, 23, 27.** Coordinator: the wave-13 session (Opus, top-level, `Task` present,
-> so the three-role split holds — translators and reviewer are its subagents).
+> # ▶ WAVE 13'S THREE UNITS ARE ALL MERGED. THE LITERAL NEXT ACTION IS THE WAVE-13 CLOSE, THEN THE WAVE-14 SESSION.
+> **Units: battle chunks 15 (`8a08027`), 23 (`8a9aba8`), 27 (`f88434c`) — all merged into `main`,
+> all at review round 2, all three integrations pushed.** Nothing is in flight and no wave-13 PR is
+> open. **The wave is COMPLETE but NOT CLOSED**: the reviewer does not close waves, and CLAUDE.md §4
+> step 6 is unrun — `check` on `main`, regenerate and commit `build/*_dump_merged.txt` (**three units
+> stale**), refresh the README status table (**it shows 34; the figure is 37**), prune worktrees,
+> write the wave-13 summary and wave 14 into HANDOFF, push, **prove `origin/main` is at the close
+> commit** and paste that proof into the `handoff: wave 13 closed` commit body. **Then, in the same
+> turn, open the wave-14 session** (§4 step 7) — **units: battle chunks 28, 29, 39.**
+> Coordinator: the wave-13 session (Opus, top-level, `Task` present, so the three-role split held —
+> translators and reviewer were its subagents; **no unit in this wave was self-reviewed**).
+> ⚠️ **Wave 14 inherits two live obligations from this wave:** `じゃあね、` → `Ｂｙｅ　ｔｈｅｎ，`
+> (§67.2) binds **chunk 28 body L18**, where the source is the bare `じゃあね。` and wants
+> `Ｂｙｅ　ｔｈｅｎ．`; `１度` → `ｏｎｃｅ` (§67.2, ruled at §67.3) binds **chunk 29 L8**.
 > **If you are a coordinator reading this:** `list_sessions` — if a wave-13 session other than yours is
 > alive, stop. The runner (Fable, root session) reconciles on its 15-minute watchdog and does not touch
 > the repository while a wave is alive. **The engine work (Blocked 2, 4, 6 — `tools/slots.py`,
@@ -33,110 +44,127 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-12 · by: **the wave-13 reviewer (PR #49 integration)** · ✅ **BATTLE CHUNK 23 MERGED at round 2**
-— squash `8a9aba8`, 6,291 / 8,192, slack 1,901, realised 2.035× against a 2.798× budget. Every §6 gate
-re-run on the round-2 head `d917bb7`; nothing carried forward from round 1; **merge base pinned to the
-explicit SHA `1c13c33`**, not the author's `merge-tree`. Glossary **§66**, FLAGS **§BF**. All five
-round-1 findings implemented and independently re-verified. ⭐ **§41.4's `どうやら` register rule now
-predicts 11 of 11** and is extended to **a narration box against a character inside one file** (§66.4)
-— the within-file split is deliberate and must not be "repaired". ⭐ **Leon's register fixed for the
-first time in the project** (§14.6 officer column, §66.6), after verifying that `chunk_022`'s
-portrait 05 is **Cress**, not Leon — **portrait ids are per-chunk (§BF7)**. Two §9.W13 seeds struck
-(`駐留部隊`, `帝国がバックにいた`, both exhausted); **`イワン` and `ヒミコ` LEFT LIVE** — one script line
-each, per §29.1 / §30.1. One glossary figure corrected at integration (§66.3, `壊滅状態` reach is
-**2 battle, chunk 23 only**). · **#48 (chunk 27) is still open and has NEVER been reviewed — the wave
-is NOT closed.** · the game files are on `main` (`unpack.py`, §BB4) · engine build 1 still awaits its
-boot test (Blocked 4/6, the runner's work, not this wave's)
+2026-09-12 · by: **the wave-13 reviewer (PR #48 integration)** · ✅ **BATTLE CHUNK 27 MERGED at
+round 2 — squash `f88434c`.** 3,665 / 8,192, slack 4,527, realised 2.21× against a 5.60× ceiling.
+Every §6 gate re-run on the round-2 head `50b84ac`; nothing carried forward from round 1; **merge
+pinned to the explicit SHA `90caa94`, seven commits newer than the PR's recorded base.** Glossary
+**§67**, FLAGS **§BG**. **All four round-1 findings implemented, none defended, and no new finding
+at round 2.** ⭐⭐ **The translator applied the wave's blind-spot lesson unprompted and found a
+FOURTH instance of it** — `tl/script/batch_015.tsv:67` ships the identical `１度、…に戻ろう` frame as
+`ｏｎｃｅ`, in the other store where nothing mechanical would have paired it; it conformed all three
+instances of its own accord and logged a reservation. **RULED at review: the conformance stands**
+(§67.3) — verified independently, and **6 of the 7 shipped script `１度` rows take `ｏｎｃｅ`**,
+stronger than the PR argued. ⚠️ **The mirror defect found at review, in a pre-existing entry:**
+`glossary.md` §30.6 item 3's *"`そうね` is in chunks 9, 27 and 32"* is a **substring** count —
+chunk 32 L22 is the evidential `よさそうね、`, so §25.2's row is **exhausted for battle**, not live
+(§67.4, §BG2). ✅ **Flag 12's §30.4 narrowing LANDED as §30.4.1** — the wave's one cross-wave
+repair: the `ｕｎｄｅｒｅｓｔｉｍａｔｅ` reserve is now `見くびる` alone, `甘く見る` keeps
+`ｔａｋｅ … ｌｉｇｈｔｌｙ` (shipped `chunk_006` L20, wave 2), and the counter-evidence had been sitting
+in §24.6's own note cell since wave 3. **FOUR rows left LIVE, re-measured at review and not struck**
+— `根城` (c32 L0), **`坊や` (c32 L22 — the load-bearing one: round 1 would have struck it while a
+blocked chunk still needs it)**, `じゃあね、` (c28 L18), `１度` (c29, c33, c38 + 9 script);
+**`ダメージ` discharged for BATTLE only**, 3 script instances remain. Three record corrections made
+at integration, none touching shipped text (§BG6). · **WAVE 13 IS COMPLETE — all three units merged;
+the wave close belongs to the wave-13 coordinator.** · the game files are on `main` (`unpack.py`,
+§BB4) · engine build 1 still awaits its boot test (Blocked 4/6, the runner's work, not this wave's)
 
-## Progress (`python3 tools/assemble.py status`)
+## Progress (`python3 tools/assemble.py status`, run on the merged tree at this integration)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **36** | 44 | **chunk 23 merged 2026-09-12 (PR #49, `8a9aba8`)**; chunk 15 merged the same day (PR #47, `8a08027`); 17 and 36 shipped 2026-09-11 (§BB, §BA); **4 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
-| Battle JP characters | **31,769** | 43,137 | **73.6%** (was 70.7% — chunk 23's 1,257 characters) |
-| Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 948) |
-| Script message instances | **5,180** | 7,931 | **65.3%** (was 63.6%) |
+| Battle chunks | **37** | 44 | **chunk 27 merged 2026-09-12 (PR #48, `f88434c`)**; 23 (PR #49, `8a9aba8`) and 15 (PR #47, `8a08027`) the same day; 17 and 36 shipped 2026-09-11 (§BB, §BA); **3 dispatchable — 28, 29, 39**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
+| Battle JP characters | **32,437** | 43,137 | **75.2%** (was 73.6% — chunk 27's 668 characters) |
+| Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` — unchanged, this was a battle unit |
+| Script message instances | **5,180** | 7,931 | **65.3%** — unchanged |
 
-`check`: **All checks passed** at PR #49's integration commit. **glossary ends §66 · FLAGS ends §BF** — ⚠️ **always take
+⚠️ **The PR body's "38 / 44" is wrong and its "37 / 44 … 75.2%" was the figure AFTER this merge, not
+before it** — corrected here from `status` run on the merged tree (§BG6 item 3). 31,769 + 668 =
+32,437 exactly.
+
+`check`: **All checks passed** at PR #48's integration commit. **glossary ends §67 · FLAGS ends §BG** — ⚠️ **always take
 the next number by READING both files at commit time, never by reserving.**
-⚠️ **The three lines that used to sit here — `build/*_dump_merged.txt` regenerated, README status table
-refreshed, all worktrees pruned, "no open PR, no live agent" — were the WAVE-12 CLOSE's state and are
-false now.** Wave 13 is mid-flight: **#48 is open and unreviewed**, `build/` has not been regenerated
-since chunk 15 merged, and the README table still shows 34 chunks. All three belong to the wave-13
-close, not here. Corrected at PR #47's integration so a resuming session does not read "no open PR"
-and conclude the wave is done.
+
+⚠️ **Three wave-close items are STILL OUTSTANDING and are the coordinator's, not the reviewer's.**
+`build/*_dump_merged.txt` has not been regenerated since **before chunk 15 merged** — it is now
+**three units stale**; the README status table still shows **34 chunks** when the figure is **37**;
+and the worktrees are unpruned. They were wrongly listed as done at the wave-12 close, corrected at
+PR #47's integration, and they remain undone: **all three belong to the wave-13 close** (CLAUDE.md
+§4 step 6). ✅ **"No open PR" is now TRUE** — #47, #48 and #49 are all merged and no wave-13 unit
+remains open.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and WHICH ONE IT HIDES IS NOT STABLE** — it
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
-## In flight — WAVE 13. ✅ chunks 15 and 23 MERGED · **27 is all that is left**
+## In flight — WAVE 13 IS COMPLETE. ✅ **ALL THREE UNITS MERGED.** Nothing is in flight.
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
 | battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `8b55c59` |
-| battle **27** | `tl/battle-027` | **#48** | **3,665** | 4,527 | 🔄 rework r1 pushed (`50b84ac`) — **round-2 reviewer RUNNING** |
+| battle **27** | `tl/battle-027` | **#48** | **3,665** | 4,527 | ✅ **MERGED round 2** — squash **`f88434c`**, integrate **`<this commit>`** |
 
-**Verified, not taken on report:** PR #49 `merged: true`, squash **`8a9aba8`**; `origin/main` proof pasted
-into the integration commit body; `tl/battle/chunk_023.txt` present at 6,291 bytes; `check`
-**All checks passed** on the merged tree. Same for #47 earlier (`8a08027`, integrate `d11928f`).
+**Verified, not taken on report:** PR #48 `merged: true`, squash **`f88434c`**, which is on
+`origin/main`; `tl/battle/chunk_027.txt` present at 3,665 bytes on the merged tree; `check`
+**All checks passed** there; `status` re-run on that tree gives **37 / 44** and **75.2 %**. Same for
+#49 (`8a9aba8`, integrate `8b55c59`) and #47 (`8a08027`, integrate `d11928f`) earlier.
 Branch deletion returned **HTTP 403** as always (§AQ9) — **not** a signal about merge state.
 
-### ✅ PR #48 rework round 1 pushed (`50b84ac`, 2026-09-12 ~01:26) — 4/4 implemented, 0 defended
-**3,665 / 8,192 (4,527 slack)**, net +8 bytes. `check` green, `rowcheck` clean, widest run **23** with
-none at 24, `{FFFE}` still 74 with the same three per-line deltas, non-`{FFFE}` tag stream byte-identical
-on all 14 lines, gate 6 re-run (0 run-level hits). **The PR body was fully rewritten** — the §65.7 / §BE6
-lesson applied.
-- ⭐⭐ **THE TRANSLATOR APPLIED THE WAVE'S BLIND-SPOT LESSON UNPROMPTED AND FOUND A THIRD INSTANCE OF IT.**
-  Censusing the term finding 3 asked it to *declare* turned up **`tl/script/batch_015.tsv:67`, which ships
-  the identical `１度、…に戻ろう` frame with a different English** — the same sub-message class as findings
-  1 and 2, in a place nobody had looked. **I VERIFIED IT: the row ships `Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ　ｏｎｃｅ
-  ｔｏ…`.** 4 of 6 shipped instances take that word; the translator's own draft form was spent 7× on other
-  Japanese. **It conformed all three instances of its own accord**, and recorded a reservation on the
-  record: it still thinks its draft read better, and conformed **because a shipped incumbent outranks its
-  judgement of the better English.** That is the right instinct and the right way to log it.
-- **Side benefit:** the conformance let one page return to the source's own clause boundaries
-  (23/19/22) where round 1 had broken mid-sentence.
-- **Finding 3's other form changed on evidence the finding did not have:** `じゃあね、` is **3 battle
-  (chunks 7, 27, 28), 0 script — I verified the census exactly** — so the row **stays live for chunk 28**;
-  the register split against the archaic farewell in `chunk_013` holds and §25.3 is met.
-- **Finding 2's arithmetic confirmed independently by the translator too:** the review's prose said
-  "wrong by six columns" against its own parenthetical "23, not 25"; the delta is **+2** and neither
-  figure is 25. Substance stood, and it implemented rather than defended.
-- ⚠️ **FIVE ROWS MUST STAY LIVE AFTER MERGE, NOT BE STRUCK:** `根城` (chunk 32 L0) · `坊や` (chunk 32
-  L22) · `じゃあね、` (chunk 28 L18) · `１度` (chunks 29, 33, 38 + 9 script) · §25.2's `そうね。`
-  (chunk 32 L22). **`ダメージ` is discharged for BATTLE only.** ⚠️ **Had round 1 merged as written, `坊や`
-  would have been struck while a blocked chunk still needed it.**
+> ### ▶ WHAT THE WAVE-13 COORDINATOR OWES NEXT — the wave is complete but NOT CLOSED
+> The reviewer does not close waves. **CLAUDE.md §4 step 6 is unrun:** `check` on `main`; `merge`
+> and commit `build/*_dump_merged.txt` (**stale since chunk 15 merged — three units behind**);
+> refresh the README status table from `status` (**still shows 34 chunks; it is 37**); prune
+> worktrees; write the wave-13 summary and wave 14 into HANDOFF; commit and push; **then prove
+> `origin/main` is at the close commit** (`git rev-parse origin/main HEAD` printing one hash twice,
+> `git rev-list --count origin/main..HEAD` printing 0) and paste that into the
+> `handoff: wave 13 closed` commit body. **Then open the wave-14 session** (§4 step 7).
+> ⚠️ **And collapse this file.** §7 caps HANDOFF at **~150 lines**; it is at **507**. The three
+> per-PR blocks below (#47, #48, #49) and the wave-13 detail are what the close turns into **one
+> line in Wave history** — the durable record already lives in `glossary.md` §65–§67 and
+> `FLAGS.md` §BE–§BG, which is where a later session should be sent, not here.
 
-### ⚠️ PR #48 — CHANGES, round 1 (2026-09-12 ~01:13). Not merged; no integration commit; `main` untouched.
-**Every mechanical gate passed except gate 7.** Format-perfect: 3,657/8,192 (4,535 slack), widest run 23
-with **none at 24**, no page over 4 text rows (the five 5-row pages are **inherited from the source**),
-`{FCC0}` unchanged per line, the three `{FFFE}` additions each solve a real 24–26 column overrun, 0
-characters outside §3.1, 5/5 ellipsis runs exact. Merge pinned to `785ad31` — **five commits newer than
-the PR's base** — and clean. Gate 6 over all 37 shipped chunks: **0 run-level divergences.**
-**I verified all four findings before relaying:**
-1. **`そうね。` → `Ｔｈａｔ’ｓ　ｔｒｕｅ．`** — §25.2 at `glossary.md:1996` fixes it (12 columns) and §30.6
-   names chunk 27. **CONFIRMED.** ⚠️ **Gate 6 is structurally blind: chunk 9's segment is `そうね。機械兵を`
-   and chunk 27's is bare `そうね。`** — the same sub-message-vs-whole-message hole as the wave's twins.
-   It took a reverse English-side census over **11,892 aligned pairs** to see it.
-2. **`間違いない` — the census missed the KANA TWIN `まちがいない。`**, shipped in `chunk_017` L6 as
-   `Ｎｏ　ｍｉｓｔａｋｅ．`. **CONFIRMED by positional pairing** (invisible to any `tl/` grep). The width that
-   justified departing is wrong: **`Ｎｏ，　ｔｈｅｒｅ’ｓ　ｎｏ　ｍｉｓｔａｋｅ．` = 23 and FITS** (I measured it).
-   ⚠️ The review's summary says "wrong by six columns" while its own parenthetical says "23, not 25" —
-   **the parenthetical is the verified figure.**
-3. Two undeclared new forms to declare (`じゃあね、`, `１度`) — PR body only.
-4. ⭐⭐ **`坊や` IS NOT EXHAUSTED — CONFIRMED: chunk 27 has 3 instances, chunk 32 has a 4th.** That row
-   must stay **LIVE**, exactly as `根城` does, and for the same reason: chunk 32 is blocked on the tier-A
-   slot extension. Also: progress figures in the PR body are stale (**37/44, 75.2%** on the merged tree).
-⭐⭐ **FLAG 12 IS RULED — it did NOT close with the wave.** The reviewer verified `chunk_006` body **L20**
-itself (`甘く見る` → `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`, wave 2) and found **§24.6's own register row already
-quoted that English** — so §30.4 asserted "verified unspent across `tl/`" in wave 3 **with the
-counter-evidence sitting in a note cell of the same file.** **RULING: §30.4's reserve narrows to
-`見くびる` alone; `甘く見る` keeps `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`; `ｕｎｄｅｒｅｓｔｉｍａｔｅ` stays free.**
-§25.3 met on a census over both dumps. **Nothing is re-cut.** ⚠️ **This is gate-7 face (b) — a form fixed
-in a NOTE CELL that no key-first sweep can see — the wave-12 lesson, in a new place.**
-**The other three rulings the translator asked for were also answered:** Flag 5 goes the translator's way
-(§29.4's reserve does not fire — chunk 27 carries no `了解`), **Flag 4's §2.1 trade STANDS and must not be
-re-cut**, and Flag 11's reading is upheld with one plot gloss corrected.
+### ✅ PR #48 MERGED at round 2 (`f88434c`, 2026-09-12) — 4/4 round-1 findings implemented, 0 defended, 0 new findings
+**3,665 / 8,192 (4,527 slack)**, realised **2.21×** against **5.60×**. Every §6 gate re-run on the
+round-2 head `50b84ac`, nothing carried forward; **merge pinned to `90caa94`**, seven commits newer
+than the PR's recorded base `4ceb139`. Glossary **§67**, FLAGS **§BG**.
+- ⭐⭐ **The translator applied the wave's blind-spot lesson unprompted and found a FOURTH instance
+  of it.** Asked only to *declare* a form, it censused the term instead and found
+  **`tl/script/batch_015.tsv:67` shipping the identical `１度、<place>に戻ろう` frame as `ｏｎｃｅ`** —
+  in the other store, where nothing mechanical would ever have paired it. It conformed all three
+  instances of its own accord and logged a reservation for the reviewer to overrule.
+  **RULED: the conformance STANDS** (§67.3). Verified independently at review, and the case is
+  **stronger than the PR argued — 6 of the 7 shipped script `１度` rows take `ｏｎｃｅ`**, not 4 of 6.
+  ✅ Side benefit confirmed at source: L4 p7 returns to the source's own clause boundaries at
+  **23 / 19 / 22**, where round 1 broke mid-sentence.
+- ⚠️ **The MIRROR of that defect, found at review in a PRE-EXISTING entry.** `glossary.md` §30.6
+  item 3 says *"`そうね` is in battle chunks 9, 27 and 32"* — a **substring** count. Chunk 32 L22 is
+  `考えた方がよさそうね、坊や。`, the **evidential `〜そうね`**, the same class the PR's own note
+  correctly excludes for its three script hits. **§25.2's `そうね。` row is therefore exhausted for
+  battle with this merge, not live for chunk 32** (§67.4, §BG2). A census is wrong when it counts
+  too few spellings **and** when it counts a substring inside a different construction; both look
+  like a confident number. **No rendering changes.**
+- ✅ **Flag 12's §30.4 narrowing LANDED as `glossary.md` §30.4.1** — the wave's one cross-wave
+  repair. The `ｕｎｄｅｒｅｓｔｉｍａｔｅ` reserve narrows to **`見くびる` alone**; **`甘く見る` keeps
+  `ｔａｋｅ … ｌｉｇｈｔｌｙ`**, shipped at `chunk_006` **L20** in wave 2, a wave *before* the reserve was
+  written — and the counter-evidence sat in **§24.6's own note cell**, which quotes that English
+  verbatim. **Lines affected: none.**
+- ⚠️ **FOUR rows LEFT LIVE, each re-measured at review over both dumps, none struck:** `根城`
+  (c32 L0) · **`坊や` (c32 L22)** · `じゃあね、` (c28 L18, wave 14) · `１度` (c29, c33, c38 + 9
+  script). **`坊や` is the load-bearing one — round 1's body called it exhausted and would have had
+  the row struck while chunk 32, which is BLOCKED, still needs it.** **`ダメージ` is discharged for
+  BATTLE only**; 3 script instances keep its row live.
+- **Three record corrections made at integration, none touching shipped text** (§BG6): Flag 3's
+  merged widths (L0 is **25** not 26; **L3 is 23 not 24**, so that break is a style choice — it
+  stands, only its stated reason was wrong); `無念だ`'s incumbent is `chunk_012` **L10** not L11;
+  and the PR's progress figures are **misattributed by one merge** — 37 / 44 and 32,437 (75.2 %) are
+  the figures **after** this merge, not before, and "38 / 44" is wrong.
+- ⚠️ **A reviewer near-miss, recorded because that lesson cuts both ways.** The review nearly raised
+  11 rows ending in a one- or two-letter word as a §3.2 finding. **Calibrating against the corpus
+  first stopped it:** every shipped chunk does this at 2.6–12.0 % of rows, and **`chunk_000` ships
+  the byte-identical break** `，　ｔｈａｔ　ｂａｎｎｅｒ　ｉｓ` / `ｔｈｅ　Ｃｒｉｍｓｏｎ…` that chunk 27 uses.
+  Measure before charging a departure — §AG6 and §BE3, applied to the reviewer.
+- **Still open on this unit:** body **L0's companion (id 0001) is unnamed anywhere in chunk 27** and
+  was rendered on register alone with no identity asserted — whoever first names id 0001 should
+  re-read L0 and L1. And `glossary.md` §10 question 4 still costs this chunk **three text rows**
+  (§BE2's addendum), recoverable at zero byte cost once the box shape is settled in-game.
 
 ### ✅ PR #47 MERGED (round 2) — what its integration put on `main`
 **glossary §65** (7 subsections) and **FLAGS §BE** (6). ⭐⭐ **THE WAVE-3 IFRIT WARNING IS DISCHARGED** —
@@ -202,11 +230,11 @@ this repo; use the PR's `merged: true` and the squash SHA in the committed recor
 ## Next up — WAVE 13, then WAVE 14 (battle; `queue.py battle` after the re-dump, 2026-09-11)
 | Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Note |
 |---|---|---|---|---|---|---|---|
-| **13** | **15** | D | 620 | 6,373 | 6.14× | 3,806 | |
-| **13** | **23** | C | 1,257 | 4,521 | 2.80× | 3,517 | the tightest of the six — tier C, write tight from the first draft |
-| **13** | **27** | D | 668 | 6,145 | 5.60× | 3,740 | |
-| **14** | **28** | D | 770 | 5,807 | 4.77× | 3,673 | |
-| **14** | **29** | D | 610 | 6,163 | 6.05× | 3,691 | |
+| ~~13~~ | ~~15~~ | D | 620 | 6,373 | 6.14× | 3,806 | ✅ **MERGED** `8a08027` — 3,275 / 8,192 |
+| ~~13~~ | ~~23~~ | C | 1,257 | 4,521 | 2.80× | 3,517 | ✅ **MERGED** `8a9aba8` — 6,291 / 8,192 |
+| ~~13~~ | ~~27~~ | D | 668 | 6,145 | 5.60× | 3,740 | ✅ **MERGED** `f88434c` — 3,665 / 8,192, realised 2.21× |
+| **14** | **28** | D | 770 | 5,807 | 4.77× | 3,673 | ⚠️ **body L18 carries `じゃあね。`** — §67.2's row is LIVE for it and wants `Ｂｙｅ　ｔｈｅｎ．` |
+| **14** | **29** | D | 610 | 6,163 | 6.05× | 3,691 | ⚠️ **body L8 carries `１度`** — §67.2 / §67.3 fix it as `ｏｎｃｅ` |
 | **14** | **39** | D | 622 | 6,479 | 6.21× | 3,861 | |
 
 **Do not dispatch 16 (A, 1.59×) or 32 (1.61×)** — both below §B2's 1.64× floor; `queue.py`'s 1.6 cutoff is
@@ -214,8 +242,10 @@ wrong about 32. **No script batch:** 0 feasible lines (Remaining). Start each un
 dump (CLAUDE.md §2) — these chunks' dump lines changed representation at the re-dump (§BB4).
 
 ## Remaining — 366 unique lines / 2,751 instances, and the binding constraint for every one
-**Battle: 6 dispatchable** — 15, 23, 27, 28, 29, 39 (Next up). **2 blocked** — 16 and 32, on the tier-A
-slot extension only (1.59× / 1.61× against §B2's 1.64×). §D1 applies to nothing any more (§BB).
+**Battle: 3 dispatchable** — **28, 29, 39** (wave 14). ~~15, 23, 27~~ are **merged** (`8a08027`,
+`8a9aba8`, `f88434c`). **2 blocked** — 16 and 32, on the tier-A slot extension only (1.59× / 1.61×
+against §B2's 1.64×). §D1 applies to nothing any more (§BB). ⚠️ **Chunk 32 holds the last instance
+of four live glossary rows** (`根城`, `坊や`, and §25.2's neighbours) — see §BG4.
 ⚠️ `queue.py battle` prints "dispatchable 7" because its tier-A cutoff is hardcoded 1.6, not 1.64 — it
 counts 32. Use this table, not that line.
 

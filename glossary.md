@@ -2654,14 +2654,50 @@ phrases genuinely mean *underestimate*:
 
 Spending *underestimate* on 読みが甘かった would collapse two distinct source words the moment the
 second of those is translated — the §25.3 / §29.4 trap this glossary keeps writing reserves to
-avoid. **`ｕｎｄｅｒｅｓｔｉｍａｔｅ` is therefore RESERVED for 甘く見る / 見くびる** and is verified
-unspent across `tl/`. `ｍｉｓｒｅａｄ` keeps 読み, which the source phrase is built on, is free across
+avoid. ~~**`ｕｎｄｅｒｅｓｔｉｍａｔｅ` is therefore RESERVED for 甘く見る / 見くびる** and is verified
+unspent across `tl/`.~~ ⚠️⚠️ **NARROWED IN PLACE 2026-09-12 (§4.3, PR #48 review) — READ §30.4.1
+BELOW BEFORE USING THIS RESERVE.** `ｍｉｓｒｅａｄ` keeps 読み, which the source phrase is built on, is free across
 `tl/`, and suits Rimul's contraction-free register; the *direction* of the error survives in her
 next row, `Ｈｏｗｅｖｅｒ，　ｔｈａｔ　ｔｈｅｉｒ{FFFE}ｐｏｗｅｒ　ｗａｓ　ｓｏ　ｇｒｅａｔ．．．`.
 
 Held **distinct** from §25.1's 甘くない (of an institution) → `ｈａｒｄｅｒ　ｔｈａｎ　…　ｔｈｉｎｋ`:
 different construction, different subject, and neither now claims to keep *soft*. **`ｓｏｆｔ` is free
 across `tl/` again.** −16 bytes; **lines this affects: none but this one.**
+
+### 30.4.1 CORRECTION to §30.4 (§4.3) — the reserve narrows to `見くびる` alone; `甘く見る` was already spent
+
+**Written in place 2026-09-12, PR #48 review (chunk 27). This is the wave's one cross-wave repair
+and it is load-bearing for every later unit that reaches either word.**
+
+§30.4 above says `ｕｎｄｅｒｅｓｔｉｍａｔｅ` is *"RESERVED for 甘く見る / 見くびる"* and *"verified unspent
+across `tl/`"*. **That is true of the English word and false of one of the two Japanese phrases.**
+`甘く見る` had already been rendered, by a different English, before §30.4 was written:
+
+> `tl/battle/chunk_006.txt` body **L20** ships `甘く見ない方がいいぞ。` → **`Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．`**
+
+merged in **wave 2**, one wave before §30.4 was written in wave 3. ⚠️ **The counter-evidence was
+inside this same file the whole time**: §24.6's Ridge-and-Sykes register row quotes
+`Ｄｏｎ’ｔ　ｔａｋｅ　ｈｉｍ　ｌｉｇｈｔｌｙ．` verbatim as an example of their voice. A reserve was written over
+a form that a note cell four sections away was already displaying — the **gate-7 face** of §67.4's
+rule: a key-first check that never looks at what the file already says in prose.
+
+**RULING, settled at PR #48's review and verified there against both dumps:**
+
+| | |
+|---|---|
+| `見くびる` | **keeps the `ｕｎｄｅｒｅｓｔｉｍａｔｅ` reserve.** 1 battle (chunk 16 L3) + 1 script, both unrendered |
+| `甘く見る` | **keeps `ｔａｋｅ … ｌｉｇｈｔｌｙ`.** 1 battle (chunk 6 L20, **shipped**) + 0 script — **exhausted**, so nothing can ever diverge from it |
+| `ｕｎｄｅｒｅｓｔｉｍａｔｅ` | **stays free and stays reserved**, now for one phrase instead of two |
+| `読みが甘い` | unchanged — `ｍｉｓｒｅａｄ` (§30.4) |
+| `見損なう` | unchanged — `ｍｉｓｊｕｄｇｅ` (§39, the *disappointment* sense) |
+
+**§25.3's co-occurrence test is met on a census over both dumps**, run independently by PR #48's
+translator and by its reviewer and agreeing exactly: `甘く見` **1 battle + 0 script**, `見くび`
+**1 battle + 1 script** — chunks 6 and 16 are disjoint and no bank holds both, so no player ever sees
+the two words in one scene.
+
+**Lines this affects: none.** Nothing is re-cut. Chunk 6 keeps what it shipped, and chunk 27's
+`ナメる` → `ｌｏｏｋ　ｄｏｗｎ　ｏｎ` (§67.2) was correct to avoid **both** forms rather than claim either.
 
 ### 30.5 The three sisters, and what the chunk actually settles
 
@@ -9361,3 +9397,174 @@ Recorded so the pair is not later "aligned" into one form.
 L21).** An English homograph is not a §25.3 collapse — that rule is about one English *form*
 rendering two Japanese *terms* — and the reverse pass confirms no run is shared. Recorded so it is
 not mistaken for one.
+
+---
+
+## 67. Added by chunk 027 (PR #48, merged 2026-09-12, round 2)
+
+Rendered in `tl/battle/chunk_027.txt` — chapter 27: a companion sights the Imperial army, Rimul is
+recognised, the party and Rimul strike a truce for the duration of the demon fight, **Rimul falls**,
+and the demon pair Seti and Yuiti withdraw to their lair in the aftermath of Treize's death
+(chunk 26). **14 body lines, 7 carrying readable text.**
+
+Verified at review, re-derived from the pristine dump rather than inherited: **3,665 / 8,192, slack
+4,527**; JP **668**, EN **1,474**, **realised 2.21×** against a **5.60×** ceiling; `{FFFE}` 71 → 74
+on bodies **L0 / L3 / L5**; **`{FCC0}` unchanged per line as well as in total** (L1 2, L2 1, L4 3,
+L5 1); **widest run 23, 0 rows at 24, 0 over**; **no page over 4 text rows**; ellipsis runs measured
+**per text segment** — 3/3, 3/3 + 3/3, 4/4, 4/4, 3/3 — all exact. ⭐ **The binding constraint was the
+24 × 4 box, not the slot**, exactly as `translation_prompt.md` §0.2 predicts above ratio 4.0.
+
+Gate 6 by **positional pairing over both dumps and every shipped chunk**, with `{FFFE}` normalised
+out so a re-flowed break cannot hide a divergence: **0 run-level divergences**; the internal
+duplicate `ふん、意外に{FFFE}あっけなかったな。` (L3, L4) byte-identical; three declared segment-level
+reuses, all byte-identical (§67.5).
+
+### 67.1 Promoted out of §9.W13 — one promoted, one discharged for battle only, none struck
+
+| Japanese | English | Status |
+|---|---|---|
+| `根城` | `ｌａｉｒ` (4) | **Promoted, used exactly as seeded.** ⚠️ **ROW STAYS LIVE.** Census confirmed at review over both dumps: **4 battle — chunk 27 L3, L4, L6 + chunk 32 L0 — plus 2 script.** Three of the four battle instances render here; **chunk 32 is blocked on the tier-A slot extension**, so the row is struck by *that* unit, not this one. The seed's own cell already read `L3, L4, L6`; the PR's round-1 `L3, L4 ×2` contradicted it and was corrected at rework. Both obvious alternatives remain spent on different Japanese — `ｓｔｒｏｎｇｈｏｌｄ` on 拠点 (`batch_015`), `ｈｉｄｅｏｕｔ` on 隠れ家 (`batch_014`) — and **this chunk ships 隠れ家 → `ｈｉｄｅｏｕｔ` at L4 itself**, four rows above its own 根城 |
+| ⛔ `ダメージ` | `ｄａｍａｇｅ`, lowercase | **DISCHARGED FOR BATTLE ONLY — do not strike the row.** Census at review: **3 battle (chunk 0 L9 shipped; chunk 27 L5, L6 — both rendered here) + 3 script unique.** Battle is now exhausted; **the 3 script instances keep the row live.** Used byte-identically and lowercase, per §17.1 |
+
+### 67.2 New entries
+
+| Japanese | English | Note |
+|---|---|---|
+| `坊や` / `坊やたち` | `ｂｏｙ` (3) / `ｔｈｅ　ｂｏｙｓ` (8) | Seti's contemptuous-affectionate name for the party. ⚠️⚠️ **ROW STAYS LIVE, and this is the wave's load-bearing correction.** Round 1 called the term *"exhausted by this unit"* and would have struck the row; re-counted at rework and **re-verified at this review by reading the line itself**, the census is **4 battle — chunk 27 L2, chunk 27 L4 ×2, and chunk 32 L22 — + 0 script**. Chunk 32 L22's is the vocative singular, in `もう少し、自分の身を{FFFE}考えた方がよさそうね、{FFFE}坊や。` — and **chunk 32 is blocked**. Held **distinct** from the five registered contempt words — ネズミども → *rats* (§30.1), 雑草ども → *weeds* (§11.5), ゴミ → *rubbish* (§14.4), ガラクタ → *junk* (§23.1), 穀潰し → *freeloaders* (§2) — because 坊や is **patronising, not disgusted**. `ｂｏｙ` as a bare word stands in `chunk_024`, `batch_012` and `batch_016`, never for 坊や, all different messages |
+| `袋のネズミ` | `ｒａｔｓ　ｉｎ　ａ　ｓａｃｋ` | **17 columns.** Hapax: **1 battle (chunk 27 L4) + 0 script**, censused on both the kanji and the kana spelling. Takes its head noun from §30.1's fixed ネズミども → `ｒａｔｓ` rather than forking the word. A genuine equivalent of the Japanese idiom — a trapped animal with nowhere to run — **not** a substituted English idiom, the §28.2 油を売る → `ｌｏａｆ` shape. **EXHAUSTED** |
+| `間違いない` | `ｔｈｅｒｅ’ｓ　ｎｏ　ｍｉｓｔａｋｅ` | Full row `Ｎｏ，　ｔｈｅｒｅ’ｓ　ｎｏ　ｍｉｓｔａｋｅ．` = **23 columns**. **Conforms to the impersonal `ｍｉｓｔａｋｅ` noun family already shipped twice**: the **kana twin** `まちがいない。` → `Ｎｏ　ｍｉｓｔａｋｅ．` (`chunk_017` L6, 11) and `間違いありません。` → `Ｔｈｅｒｅ　ｉｓ　ｎｏ　ｍｉｓｔａｋｅ．` (`chunk_030` L0, L3, 20). The contraction is this speaker's casual register; chunk 30's is uncontracted because Rendol is formal, chunk 17's elliptical. Census re-counted at review: **`間違い` 3 battle (c27 L0, c30 L0, c30 L3) + 4 script; `まちがい` 1 battle (c17 L6) + 0 script.** The round-1 form `Ｉ’ｍ　ｎｏｔ　ｍｉｓｔａｋｅｎ．` (21) is **withdrawn** |
+| `新手` | `Ｎｅｗ　ｏｎｅｓ　ｈａｖｅ　ｃｏｍｅ．` | **19 columns**, Yuiti's line, contraction-free per §40.2. Hapax: **1 battle + 0 script.** `ｆｒｅｓｈ` rejected — spent in `batch_015`; `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` is §2's fixed form for 援軍. **EXHAUSTED** |
+| `ナメる` (舐める) | `ｌｏｏｋ　ｄｏｗｎ　ｏｎ` | **14 columns**, verified free. ⚠️ **NOT a katakana name — it is 舐める, "to hold cheap".** Both obvious answers are unavailable: **§30.4 reserves `ｕｎｄｅｒｅｓｔｉｍａｔｅ`** (now narrowed — see §67.4) and **`ｔａｋｅ … ｌｉｇｈｔｌｙ` is already shipped for 甘く見る**. Census: `ナメ` **1 battle + 0 script**, `舐め` **0 + 0**. **EXHAUSTED** |
+| `ふん、` | `Ｈｍｐｈ，` | **6 columns. Not a new form** — §6 fixes ふっ / フンッ → `Ｈｍｐｈ`, and `tl/battle/chunk_002.txt` L19 already ships `ふん、主力部隊は、我々が` → `Ｈｍｐｈ，　ｉｔ　ｗａｓ　ｗｅ　ｗｈｏ`, verified at review. Recorded **only because §6's key cell lists the two other kana spellings**, so a key-first gate-7 check does not see `ふん` — the §17.2 one-word/several-spellings shape, and the same class as §67.4's two blind-spot findings. **3 battle (c2 L19 shipped, c27 L3, L4) + 1 script** |
+| `あっけなかった` | `ｗａｓ　ｏｖｅｒ　ｓｏｏｎｅｒ　ｔｈａｎ　Ｉ　ｔｈｏｕｇｈｔ` | **2 battle, both in chunk 27 (L3, L4), 0 script — and the two are the SAME message**, shipped byte-identically. `意外に` is carried by *sooner than I thought*, not added. **EXHAUSTED** |
+| `ひと汗かいた` | `ｗｏｒｋｅｄ　ｕｐ　ａ　ｓｗｅａｔ` | **20 columns**, `ｓｗｅａｔ` verified free. Hapax: 1 battle + 0 script. **EXHAUSTED** |
+| `じゃあね、` | `Ｂｙｅ　ｔｈｅｎ，` | **9 columns**, and `Ｂｙｅ` is free across `tl/` and `pending/` — 0 occurrences outside this file. ⚠️ **ROW STAYS LIVE.** Census verified at review: **`じゃあね` is 3 battle — `chunk_007` L22 (`それじゃあね。`, shipped `Ｆａｒｅｗｅｌｌ　ｆｏｒ　ｎｏｗ．`), chunk 27 L4, and chunk 28 L18 (`じゃあね。`, untranslated, wave 14) — + 0 script.** The split against `chunk_007` is **deliberate and held on register**: `Ｆａｒｅｗｅｌｌ` is spent on the archaic `さらば` (`chunk_013`'s `では、さらばだ。`) and on `batch_017`, and reads far too formal for a speaker §40.2 fixes by `あんた` / `〜の？` / `〜わけ？` / `〜ね` and free contractions. **§25.3's co-occurrence test is met**: chunks 7, 27, 28 are disjoint and there are 0 script instances, so no chunk and no bank holds both. Chunk 28's is the bare `じゃあね。` and wants `Ｂｙｅ　ｔｈｅｎ．` |
+| `１度` (adverbial) | `ｏｎｃｅ` | ⚠️ **ROW STAYS LIVE — 6 battle (chunk 27 L4, L5, L6; chunk 29 L8; chunk 33 L20; chunk 38 L15) + 9 script.** ⭐⭐ **The decisive evidence was found by the translator unprompted, in a store nobody had looked in, and verified independently at review: `tl/script/batch_015.tsv:67` ships the IDENTICAL `１度、<place>に戻ろう` frame** — `仕方ない。{FFFE}１度、カーライン城に{FFFE}戻ろうか。` → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．{FFFE}Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ　ｏｎｃｅ　ｔｏ{FFFE}Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ．`. **Counted at review the case is stronger than the PR argued: the script store ships SEVEN `１度` rows and SIX take `ｏｎｃｅ`** (`batch_010:32` `ｏｎｃｅ　ｍｏｒｅ`, `batch_013:45`, `batch_014:51`, `batch_015:26`, `batch_015:67`, `batch_020:22`); the seventh, `batch_017:38`'s `もう１度来てくれんか` → `ｃｏｍｅ … ａｇａｉｎ`, is a different construction. The translator's draft `ｆｏｒ　ｎｏｗ` is spent 7× on other Japanese (`chunk_007`, `chunk_013`, `chunk_019`, `batch_007`, `batch_017` ×2). **RULED AT REVIEW — see §67.3.** ⚠️ **§40.3 shared form, created by the conformance and recorded here:** `ｏｎｃｅ` also stands in this file inside `ａｔ　ｏｎｃｅ` (すぐに, L0) and `ｏｎｌｙ　ｔｈｉｓ　ｏｎｃｅ` (今回だけ, L1). Ordinary vocabulary in different messages, multiword units in both cases — not a §25.3 collapse |
+
+### 67.3 Ruling — the `１度` → `ｏｎｃｅ` conformance STANDS, and the translator's reservation is overruled on the record
+
+The translator conformed all three instances **of its own accord**, then logged a reservation: *"pull
+back once"* and *"Back to the lair once"* read more like a **count** than the Japanese's *for the
+time being*, which is why `ｆｏｒ　ｎｏｗ` was drafted; it conformed **because a shipped incumbent
+outranks its own judgement of the better English**, and offered to revert all three.
+
+**Ruled: the conformance stands.** The reservation is not wrong about the English — it is the better
+reading of the adverb in two of the three — but `ｆｏｒ　ｎｏｗ` is spent 7× on other Japanese, and
+forking one Japanese adverb across two English forms **inside one store, with a byte-identical frame
+already shipped**, is the §25.3 / §29.4 trap this glossary keeps writing reserves to avoid. Logging
+the disagreement instead of burying it is the right way to lose an argument, and it is recorded here
+so the next unit to reach `１度` does not re-derive it.
+
+✅ **Side benefit confirmed at source, not taken on report.** The conformance let body **L4 page 7**
+return to the source's own clause boundaries — `Ｒｕｓｈ　ｔｏ　ｆｉｎｉｓｈ　ｔｈｅｍ　ａｎｄ` /
+`ｔｈｅ　ｆｕｎ　ｏｎｌｙ　ｆａｄｅｓ．` / `Ｂａｃｋ　ｔｏ　ｔｈｅ　ｌａｉｒ　ｏｎｃｅ．`, measured **23 / 19 / 22** —
+where round 1 had to break mid-sentence at `．　Ｆｏｒ` / `ｎｏｗ，`.
+
+### 67.4 ⭐⭐ The wave's blind spot, both faces, and a THIRD instance nobody had looked for
+
+Round 1's two substantive findings and the rework's own discovery are **one defect with three faces**,
+and it has now produced findings in three separate units this wave (chunk 15's `ワケ`/`訳` and
+`ほう`/`方`; this unit's two). Stated as the rule:
+
+> **A census over one spelling is not a census, and gate 6 pairing whole messages cannot see a
+> sub-message form.** Together they let a term look free, hapax and unshipped while its English is
+> already fixed somewhere.
+
+| Face | What it hid | How it was caught |
+|---|---|---|
+| `そうね。` | chunk 9's segment is `そうね。機械兵を` and chunk 27's is a bare `そうね。` — **a sub-message match, and gate 6 pairs whole messages** | a reverse English-side census over 11,892 aligned pairs |
+| `間違いない` | `grep -c '間違い'` and nothing else. **The kana spelling `まちがい` is a different byte sequence**, so a one-spelling census reported *"1 battle, hapax"* when the truth is `間違い` 3 battle + 4 script and `まちがい` 1 battle + 0 script | positional pairing surfaced `chunk_017` L6 |
+| `１度` | asked only to **declare** a form, the translator censused the term instead and found `batch_015.tsv:67` shipping the identical frame **in the other store** | the translator applied the lesson unprompted |
+
+**What actually catches it:** census **every** kana/kanji spelling of a term before calling it free,
+and pair at **segment** level, not only run level, when checking a candidate rendering.
+
+⚠️ **And the mirror of the same defect, found at this review — a substring census that sweeps in an
+unrelated construction.** §30.6 item 3 states *"`そうね` is in battle chunks 9, 27 and 32"*, and both
+the PR and the wave's dispatch inherited it. **Counted over both dumps at this review, the standalone
+agreement `そうね。` is battle chunks 9 and 27 ONLY.** Chunk 32 L22's instance is
+`もう少し、自分の身を考えた方がよさそうね、坊や。` — the **evidential `〜そうね`** (`よさそう`, *seems
+good*), which is the same class the PR's own note correctly excludes for the three script hits
+(`続くそうね`, `結んだそうね`, `なさそうね`). The PR drew the distinction and stopped one line short of
+applying it to chunk 32.
+
+**Consequence:** §25.2's `そうね。` row is **exhausted for battle** with this merge, not left live for
+chunk 32. §25.2 is a pre-existing entry and is **not struck** — the corrected census is recorded here
+instead, and §30.6 item 3's count is **superseded by this paragraph**. **No rendering changes**: chunk
+27 uses §25.2's fixed `Ｔｈａｔ’ｓ　ｔｒｕｅ．` (12), which is right on either census. `坊や` is
+unaffected and **does** stay live — chunk 32 L22 carries it, verified by reading the line.
+
+### 67.5 Reuses recorded, not new forms — every one verified at source at this review
+
+`そうね。` → `Ｔｈａｔ’ｓ　ｔｒｕｅ．` (§25.2, `chunk_009` L8) · `間違い` → `ｍｉｓｔａｋｅ` (`chunk_017` L6,
+`chunk_030` L0/L3) · `１度` → `ｏｎｃｅ` (`batch_015:67`) · `手を組む` → `ｊｏｉｎ　ｈａｎｄｓ` (`chunk_013`
+L7; **`chunk_030` L1 renders the sibling 手を結ぶ the same way, and chunk 30 is this scene's own sequel
+— Rimul there quotes the pact made here**) · `隠れ里` → `ｈｉｄｄｅｎ　ｖｉｌｌａｇｅ` (§43, `chunk_030` L24)
+· `隠れ家` → `ｈｉｄｅｏｕｔ` (`batch_014`) · `魔族` → `ｄｅｍｏｎｓ` lowercase (§40.1) · `紅の騎士団` →
+`Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§2) · `旗印` → `ｂａｎｎｅｒ` (§2) · `おい、` → `Ｏｉ，` (§32.3) ·
+`いや、` → `Ｎｏ，` (§25.2) · `そうか。` → `Ｉ　ｓｅｅ．` (`chunk_007` L18, `chunk_030` L0) · `くっ` →
+`Ｔｃｈ` (§11.5) · `あら、` → `Ｍｙ，` (§32.4, `batch_017:46`) · `だが、` → `Ｂｕｔ` with no comma
+(`chunk_025` L11) · `いずれにしろ` → `Ｅｉｔｈｅｒ　ｗａｙ，` (§45, `chunk_000` L2) · `好きにしろ。` →
+`Ｄｏ　ａｓ　ｙｏｕ　ｌｉｋｅ．` (§43, `chunk_030` L16 and L25) · `どうする？` → `Ｗｈａｔ　ｄｏ　ｗｅ　ｄｏ？`
+(chunks 0, 4, 8, 19 + `batch_015:33`) · `無念だ` → `ｈｏｗ　ｂｉｔｔｅｒ` (`chunk_012` **L10**, not the
+PR's L11 — corrected here; the form is right) · `お前は・・・！` → `Ｙｏｕ　ａｒｅ．．．！` (§43.6,
+`chunk_030` L4 — **Rimul, the same speaker this ruling was written for**, and deliberately not
+`chunk_006` L8's `Ｙｏｕ’ｒｅ．．．`) · `大丈夫か、<name>？` → `Ａｒｅ　ｙｏｕ　ａｌｌ　ｒｉｇｈｔ，` /
+`<name>？` (`chunk_025` L11's exact two-row shape) · `ああ` (Yuiti) → `Ｙｅａｈ` (§40.2) · `王子` →
+`ｔｈｅ　Ｐｒｉｎｃｅ` (§41.6) · セティ / ユイティ / トレーズ / リムル → `Ｓｅｔｉ` / `Ｙｕｉｔｉ` /
+`Ｔｒｅｉｚｅ` / `Ｒｉｍｕｌ` (§1, §40.1).
+
+⚠️ **One cross-store reuse gate 6 structurally cannot see, declared by the translator and confirmed at
+review:** `よいな？` → `Ｉｓ　ｔｈａｔ　ａｇｒｅｅｄ？` ships in `tl/script/batch_012.tsv` (a shopkeeper
+sealing a price). Battle gate 6 pairs whole *messages* and this one is in the other store; grepped at
+review, the form stands in exactly two files — `batch_012.tsv` and this one — byte-identically. Near
+neighbours are spent: `Ｉｓ　ｔｈａｔ　ｃｌｅａｒ！` is §20.3's わかっておるな！ and `Ａｇｒｅｅｄ．` is
+§29.4's reserve.
+
+### 67.6 Rulings carried into this merge unchanged
+
+- **§2.1 step 5, body L1 page 4 (the truce offer) — STANDS, not re-cut.** 40 JP characters against
+  4 × 23 = 92 columns is a **local ceiling of 2.30×** on a chunk whose global ceiling is 5.60×.
+  Measured off the merged file at this review: **19 / 22 / 22 / 20** (round 1's 19/23/23/20 was
+  wrong and the translator corrected it). Carried by implication: `だけ` in `魔族にやられるだけだ`,
+  and the second `魔族` in `魔族を倒すまでの間` becoming `ｔｈｅｙ` because
+  `ｕｎｔｉｌ　ｔｈｅ　ｄｅｍｏｎｓ　ａｒｅ　ｄｅｓｔｒｏｙｅｄ` — **chunk 30 L1's own wording when Rimul later quotes
+  this pact** — is 33 columns. Both clauses, both sentences and the speaker turn are intact.
+- **§29.4's `Ａｇｒｅｅｄ．` reserve does not fire here.** `・・・わかった。` has **two** shipped
+  Englishes already — `chunk_019` L23 `．．．Ａｇｒｅｅｄ．` and `chunk_024` L15 `．．．Ｒｉｇｈｔ．` — and
+  the divergence is **pre-existing**. The reserve is for a わかった **standing beside 了解**: chunk 19
+  carries both (L18 ships `了解。` → `Ｕｎｄｅｒｓｔｏｏｄ．`, verified at review), **chunk 27 carries no
+  了解**, so §6's `Ｒｉｇｈｔ` applies and `chunk_024` is the right incumbent.
+- **§33.6 PRE-AUTHORISES this unit's two `まさか` renderings by naming chunk 27 in both of its rows**
+  (the incredulous row and the exclamative row). L0's bare `まさか。` → `Ｓｕｒｅｌｙ　ｎｏｔ．` on
+  `chunk_025` L11's shipped `まさか・・・・！？` → `Ｓｕｒｅｌｙ　ｎｏｔ．．．．！？`; L1's exclamative
+  `まさか{FFFE}こんな所で会うとはな。` → `ｂｕｔ　ｔｏ　ｔｈｉｎｋ　ｗｅ` / `ｍｅｅｔ　ｉｎ　ｓｕｃｈ　ａ　ｐｌａｃｅ．`
+  on `chunk_026` L14. Both verified.
+- **Case-only divergences, declared and correct.** `好きにしろ。` ships lowercase inside
+  `Ｙｅａｈ，　ｄｏ　ａｓ　ｙｏｕ　ｌｉｋｅ．` because the source's comma is renderable and what follows is an
+  imperative clause, not a second interjection (§31.4). `いずれにしろ` carries no source comma where
+  `chunk_000` L2's does; the English keeps `Ｅｉｔｈｅｒ　ｗａｙ，` because sentence-initial *Either way*
+  requires one.
+- **§40.3 shared English forms declared:** `ａｍｕｓｅ` (L4, `もう少し楽しませて`) also stands in
+  `chunk_011` for the unrelated `相手をしてあげなさい！`; `ｈｅａｖｙ` (L6, `かなりのダメージ`) also renders
+  重い / 重 in `chunk_002`, `chunk_003` and three script batches. Add **`ｏｎｃｅ`** — see §67.2's last row.
+
+### 67.7 Speakers, and the one reading left open
+
+Attributions taken from the `{FCB0}` id paired with the `{FC50}`/`{FC51}` channel per §41.2, **never
+from the prose**, and re-derived at review: **id 0003 · FC50 = Rimul** (addressed by name at L1; the
+same triple speaks `くっ、無念だ・・・。` at L3, so **Rimul is the one who falls here**); **id 0007 =
+Seti**, **id 0008 = Yuiti**, matching §40.2's chunk-26 table and confirmed from inside the chunk —
+0008 asks after `セティ` at L5 and 0007 answers with the feminine `わ`. ⚠️ **They swap channels between
+lines** (0007 on FC50 in L2/L5/L6, on FC51 in L3/L4) and at L6 **both speak on `{FC50}`**, the
+channel-borrowing §1 documents. Register holds throughout: **Seti contracts** (`ｉｓｎ’ｔ`,
+`Ｔｈｅｙ’ｒｅ`, `ｗｅ’ｒｅ`, `ｄｉｄｎ’ｔ`, `Ｉ’ｍ`, `ｙｏｕ’ｄ`, `Ｔｈａｔ’ｓ`) and **Yuiti takes none**
+(`Ｉ　ｗｉｌｌ`, `Ｉ　ａｍ`, `ｓｈａｌｌ　ｗｅ`, `Ｗｅ　ｇｏ`).
+
+⚠️ **Open, and correctly left open.** L0's and L1's speakers are **not** the demon pair: L0 is a
+casual `だぜ` companion (id 0001 · FC51) addressing the player by `{FC00}` name, answered by the
+player (id 0000 · FC50); L1 is Rimul and the player negotiating. **No name is spoken for id 0001
+anywhere in the chunk**, so the translator rendered the register (§7's Kain row) **without asserting
+an identity** — the right call. A later chunk that names id 0001 should re-read those two lines.
+L3's supplied `ｓｈｅ` in `Ｆｏｒ　ａ　ｈｕｍａｎ，　ｓｈｅ　ｄｉｄ　ｗｅｌｌ` is §2's pronoun supply and its
+referent is **Rimul, who falls two turns earlier in the same line** — checked at review.
