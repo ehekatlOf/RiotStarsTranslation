@@ -6126,7 +6126,7 @@ briefing on the Empire–Carline treaty, the townsman's parting gift, two tutori
 | 避難 | `ｓｈｅｌｔｅｒ` | `chunk_003` L4. **2 battle (3, 38) + 0 script — exhausted** |
 | 占拠 (passive — `占拠される`) | `ｔａｋｅｎ` | `chunk_022`. 3 battle (22, 37, 38) + 1 script. ⚠️ **SCOPE ADDED IN PLACE 2026-09-09 (§4.3, PR #29 review) — this row read a bare `占拠`, and the census it names includes chunk 37, which does NOT take `ｔａｋｅｎ`.** The two `ｔａｋｅｎ` instances are both **passive and punctual**, one place seized (`カーライン城が…占拠されました`, `この街もほぼ占拠された`); chunk 37's is **active, progressive and distributed** (`帝国兵が各地を占拠しているため`) and takes `ｏｃｃｕｐｙ` — see §48.4. **No line needs revisiting**: chunks 22 and 38 are both passive and keep `ｔａｋｅｎ`. The split is the §39.4 (`しまった`, split on position) and §48.1 (`始末`, split on sense) shape |
 | 全滅 | `ｗｉｐｅｄ　ｏｕｔ` | `chunk_019` (`全滅か。` → `ｗｉｐｅｄ　ｏｕｔ．`), and chunks 2 and 9. **The fixed form, ruled at PR #29's round 1** |
-| 餌食 | `ｐｒｅｙ` | The kanji spelling of §25.1's `えじき` → `ｐｒｅｙ` (`chunk_009`), same construction `〜のえじきになる`. §40.1 deliberately holds 獲物 → `ｑｕａｒｒｙ` apart. ⚠️ `chunk_000` renders 餌食 as a verb phrase (`Ｓｔａｙ，　ａｎｄ　ｔｈｅｙ　ｅａｔ　ｕｓ．`) — **recorded, not re-cut**: a different message, and chunk 0 has 27 bytes of slack (§18.3) |
+| 餌食 | `ｐｒｅｙ` | The kanji spelling of §25.1's `えじき` → `ｐｒｅｙ` (`chunk_009`), same construction `〜のえじきになる`. §40.1 deliberately holds 獲物 → `ｑｕａｒｒｙ` apart. ✅ **CONFORMANCE APPLIED 2026-09-12 — the chunk 0 repair, PR #56, squash `84e6b54`. `chunk_000` body[2] page 60 now ships `Ｓｔａｙ，　ａｎｄ　ｗｅ’ｒｅ　ｐｒｅｙ．` (21 columns) and the row is EXHAUSTED-AND-CONFORMANT.** ⚠️ **This cell's recorded reason for not re-cutting was BUDGETARY and is now re-measured and FALSE.** It read: "`chunk_000` renders 餌食 as a verb phrase (`Ｓｔａｙ，　ａｎｄ　ｔｈｅｙ　ｅａｔ　ｕｓ．`) — recorded, not re-cut: a different message, and chunk 0 has 27 bytes of slack (§18.3)". The conformance was not merely affordable, it was **free and then some**: 22 → 21 columns, **−2 bytes**, leaving chunk 0 *cheaper* than the non-conformant form (8,165 → 8,163 / 8,192, slack **27 → 29**). Verified at review by re-measurement, not taken from the PR. **The lesson is the one §BI2 also teaches: a "no room" reason recorded once must be re-measured before it is relied on again — the incumbent wording here was not even the shortest candidate.** Ruled at the same review, from an exhaustive 9-candidate measurement: `ｗｅ’ｒｅ　ｐｒｅｙ` is preferred over alt A `ｗｅ’ｒｅ　ｔｈｅｉｒ　ｐｒｅｙ` (23 cols, +2 B) because only it keeps the source's matched conditional pair `逃げれば…、／残れば…。` as `Ｆｌｅｅ，　ａｎｄ…／Ｓｔａｙ，　ａｎｄ…`, and because copula + bare noun mirrors the source's own bare-noun predicates `死罪、` / `餌食。`. See §74 |
 | 抑える | `ｈｏｌｄ　…　ｄｏｗｎ` | New here; **2 battle, both this chunk, 0 script — exhausted, and both instances share the word.** Deliberately **not** `ｐｕｔ　…　ｄｏｗｎ`, which §37.1 fixes for **鎮圧** (chunks 22, 43 — neither is this chunk, so §25.3 is met and that reserve stays with 鎮圧) |
 | 降伏 | `ｓｕｒｒｅｎｄｅｒ` | 10 columns, ×2 here, byte-identical in the verb and noun uses. Shares its English with **投降** → `ｓｕｒｒｅｎｄｅｒ` (`chunk_030`); §25.3 **met and counted**: 投降 is chunk 30 only, 降伏 is chunks 16 and 38 only, 0 script either way. The `ｃａｐｉｔｕｌａｔｅ` reserve is unspent |
 | 刃を向ける | `ｔｕｒｎ　ａ　ｂｌａｄｅ　ｏｎ　…` | ✅ **PR #30 (chunk 41) reached this independently**; tense follows each source (`Ｔｏ　ｔｕｒｎ` here, `ｔｕｒｎｅｄ` there). **2 battle (38, 41) + 0 script — exhausted by the two units.** ⚠️ `ｂｌａｄｅ` is **not** free — `batch_003` L96/L99 and `batch_004` L21 use it for a physical sword blade (妖刀 / 刀身 / 名刀); **§25.3 met**: those are script bank 21, this is battle chunk 38 |
@@ -10126,6 +10126,9 @@ census names chunk 39 ×2 in the incredulous/negative class, and both are here) 
 Two rows close with this unit, both re‐derived:
 
 - **`餌食` → `ｐｒｅｙ` (§47) is EXHAUSTED** — 3 battle (chunks 0, 38, 39), all shipped, 0 script.
+  ✅ **And as of 2026-09-12 all three are also CONFORMANT**: chunk 0 was the one instance that did
+  not render the fixed form, and the chunk 000 repair (PR #56, squash `84e6b54`) applied it. The
+  exhaustion count is unchanged — this closes the conformance half, not the census half. See §74.
 - **`ごらんのとおり` / `ご覧のとおり` → `Ａｓ　ｙｏｕ　ｓｅｅ` is EXHAUSTED as a family.** The kana
   spelling is a chunk‐39 hapax; the kanji spelling is `chunk_037` body[17] plus `script_unique` 870
   (`batch_016:93`), both shipped. ⛔ **Settled at round 1 and not reopened: this is REUSE of the
@@ -10147,8 +10150,19 @@ None is chunk 39's to fix and none blocks anything; each is written down so it i
   does not touch.
 - **`村が襲われました。`** — `pending/chunk_005` body[17] carries the retired wording (§70.2, FLAGS
   §BE4). Applies at the tier‐A unpark.
-- **`それよりも`, `納得がいく`, `この通り` (`batch_009:68` vs `batch_017:42`), `餌食` (`chunk_000`
-  body[2])** — carried forward from earlier waves, unchanged by this merge.
+- ~~**`それよりも`, `納得がいく`, `この通り` (`batch_009:68` vs `batch_017:42`), `餌食` (`chunk_000`
+  body[2])** — carried forward from earlier waves, unchanged by this merge.~~
+  **Updated 2026-09-12 at the scoped repairs session.** Two of these four are now RESOLVED and two
+  stand, each for its own reason:
+  - `それよりも` — ✅ **RESOLVED**, chunk 018 repair, PR #53, squash `dac2ee4`. Record at §71.
+  - `餌食` (`chunk_000` body[2]) — ✅ **RESOLVED**, chunk 000 repair, PR #56, squash `84e6b54`.
+    `Ｓｔａｙ，　ａｎｄ　ｗｅ’ｒｅ　ｐｒｅｙ．`, **−2 bytes**. ⚠️ **The reason recorded against it
+    here and at §47.3 — "chunk 0 has 27 bytes of slack" — was budgetary and did not survive
+    re-measurement**; conforming made the file cheaper, not dearer. Record at §74.
+  - `納得がいく` and `この通り` — ⛔ **NO CHANGE, and this is now a decision rather than a
+    deferral.** Both were re-derived Japanese-side before the repairs session dispatched:
+    §69.5 / §BI4's `納得がいく` split is justified by the `〜のも` complement, and conforming
+    `この通り` would **worsen** a §25.3 collapse. They are not pending work.
 - **`batch_018:12`** adds one `{FCC0}` on the English side that the Japanese does not have. `check`
   is green on it and it is a declared page break, not a defect; noted only because a run‐count
   pairing over the script store surfaces it and the next auditor should not re‐raise it.
@@ -10471,3 +10485,112 @@ columns**, both ≤ 23; 2 text rows, unchanged; no `{FFFE}` added or removed; 14
 2. **Nothing else in `batch_013` changed** and no other file was touched.
 
 ---
+
+---
+
+## 74. Added by the chunk 000 repair (PR #56, merged 2026-09-12)
+
+Squash `84e6b54`. **DECISION: MERGE, no findings.** A **repair unit**, not a translation: two
+surgical edits to the already-shipped `tl/battle/chunk_000.txt`, +1/−1 line. **Net −2 bytes**:
+8,165 → **8,163 / 8,192**, slack **27 → 29**. Ratio re-derived from the pristine dump at review
+(1,935 JP chars, headroom 2,827 → **1.73**), so gate 4's ≥ 50 slack floor is relaxed by its own
+terms and the PR flags it; the unit **raises** slack rather than spending it.
+
+### 74.1 New entries: NONE. R2 applies an existing row; R1 changes no wording at all.
+
+`餌食` → `ｐｒｅｙ` is §47.3, already fixed. R1 moved only `{FFFE}` positions. **This section exists
+for the three rulings below**, all of which a later reader needs and none of which is a new form.
+
+### 74.2 ⭐ R1 — the `.TTTT.` re-flow restored the page's OWN source shape, not merely an attested one
+
+`body[12]` page 21 shipped the only `.TTTT.` page in all of `tl/battle` — **0 of 1,854** pristine
+pages, the exact shape `translation_prompt.md` §3.2 warns "may not fit" (leading blank + trailing
+blank + four text rows). The repair returns it to `.TTT.` (**132** attestations) at **exactly 0
+bytes**: one `{FFFE}` dropped (−2) and one `　` added at the join (+2).
+
+⭐ **The point missed by every earlier record, and worth keeping:** the *source* page is itself
+`.TTT.` — three text rows. So this was never a question of picking a plausible shape; the original
+translation had **added a fourth row the Japanese did not have**, pushing text in from two
+neighbours that gave rows up (p17 `TTTT`→`TTT`, p20 `.TTTT`→`.TTT`). The repair restores the
+source's own row count segment for segment, which §3.2 says should normally be preserved anyway.
+
+Page 21 now reads, at 19 / 22 / 22 columns, wording untouched:
+
+```
+Ｔｈｉｓ　ｉｓ　ｆｏｒ　Ｄａｗｓｏｎ．{FFFE}Ａｓ　ｙｏｕ　ｗｉｓｈ，　Ｉ’ｌｌ　ｓｅｎｄ{FFFE}ｙｏｕ　ｔｏ　ｔｈｅ　ｎｅｘｔ　ｗｏｒｌｄ．
+```
+
+Re-enumerated independently at review: of **78** three-row splits of the fixed wording, **3** fit at
+≤ 24 columns, and this is **the only one that does not end a row on the two-letter `Ａｓ`** (§3.2).
+The other two are 22/19/22 and 22/23/18. The split is provably optimal given fixed wording.
+
+Verified at review across all 40 shipped files: **`.TTTT.` is now 0**, exactly one page changed
+shape, page count unchanged (94 → 94), and **no other shape in the file moved** — a fix that traded
+one unattested shape for another would not have been a fix.
+
+### 74.3 R2 — `Ｓｔａｙ，　ａｎｄ　ｗｅ’ｒｅ　ｐｒｅｙ．` over alt A, and why
+
+`body[2]` page 60. Source: `どうする？` / `逃げれば　死罪、` / `残れば　精鋭部隊の餌食。`
+
+| Candidate | Cols | Bytes | |
+|---|---|---|---|
+| incumbent `Ｓｔａｙ，　ａｎｄ　ｔｈｅｙ　ｅａｔ　ｕｓ．` | 22 | — | renders 餌食 as an active verb the Japanese does not have |
+| ✅ **`Ｓｔａｙ，　ａｎｄ　ｗｅ’ｒｅ　ｐｒｅｙ．`** | **21** | **−2** | **chosen** |
+| alt A `Ｓｔａｙ，　ｗｅ’ｒｅ　ｔｈｅｉｒ　ｐｒｅｙ．` | 23 | +2 | keeps the agent, drops the `ａｎｄ` |
+
+**Ruled for the chosen form on structure, not on bytes** (though the bytes agree): the source is a
+matched conditional pair, `逃げれば…、／残れば…。`, and only `Ｆｌｅｅ，　ａｎｄ…／Ｓｔａｙ，　ａｎｄ…`
+carries that parallelism — alt A leaves the pair half-syndetic. Copula + bare noun also mirrors the
+source's own bare-noun predicates (`死罪、`, `餌食。`); alt A's possessive `ｔｈｅｉｒ` adds a
+relation the row does not otherwise render. `ｗｅ’ｒｅ` matches `ｉｔ’ｓ` in the row above and the
+9th Army's §7 contraction-taking voice.
+
+⚠️ **The cost, stated plainly: `精鋭部隊の` is not rendered in that row** — §2.1 step 5, flagged.
+The incumbent did not render it either (it had `ｔｈｅｙ`). **The antecedent was verified at review
+and is explicit in the same message**: `body[2]` page 5 ships
+`Ｉｓ　ｉｔ　ｎｏｔ　ｔｈｅ　Ｅｍｐｉｒｅ’ｓ` / `ｏｗｎ　ｅｌｉｔｅ　ｃｏｒｐｓ！？`, honouring §2's
+`精鋭部隊` → `ｅｌｉｔｅ　ｃｏｒｐｓ`. Spelling it out again needs a 4th text row and +32 bytes —
+infeasible, measured.
+
+### 74.4 ⚖️ RULING — `あの世へ送ってやる。` across chunks 0 / 25 / 41: **RECORDED, NOT RE-CUT**
+
+Raised as a "seventh divergence" and referred to this review. **The framing was inverted and the
+ruling goes the other way.** Five findings, in the order that settles them:
+
+**(a) Attribution first, per `FLAGS.md` §BL3 — vocatives and pronouns, never channel tags.**
+`chunk_000` body[12] p21 sits in a `{FC51}` run with **`{FB01}`-since-portrait = 0**; the next
+`{FB01}` is at p24, *after* the page — so **no borrow**. From inside the message: `私` at p20 (same
+unbroken run), the reply at p23 is `・・・この女、強いぞ。` ("this **woman** is strong"), and p25 is
+the vocative `リムル様！`. **The speaker is Rimul.** The borrow `translation_prompt.md` §1 names for
+chunk 0 (Rendol on Rimul's channel) is p25–p30 and is marked by `{FB01}` exactly as §BL3 says.
+
+**(b) It is already ruled — twice — and `chunk_000` is the incumbent, not the outlier.**
+§41.3 (chunk 025's merge): Helfer's `あの世へ送ってやる。` *"**deliberately does not copy** shipped
+`chunk_000`'s `Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ` — different message, and the contraction is not his"*.
+§49 (chunk 041's merge): *"`chunk_000`'s contracted form is **correctly not copied** — §39.7's the
+fixed WORD is shared, the contraction follows the speaker"*. **§39.7 governs and is satisfied.**
+Conforming chunk 0 would silently invert two standing rulings on no new evidence (§4.3 forbids it).
+
+**(c) Gate 6 never engages: the three Japanese *messages* differ.** Only a verb phrase is shared.
+
+| Site | Japanese page | Speaker |
+|---|---|---|
+| `chunk_000` body[12] p21 | `ドースンの仇だ。望み通り、あの世へ送ってやる。` | Rimul |
+| `chunk_025` body[11] p48 | `王子もろともあの世へ送ってやる。` | Helfer (§11.6, uncontracted) |
+| `chunk_041` body[3] p1 | `おのれ、兄の仇！あの世へ送ってやるわ！` | the castle warden (§49.5, `私`, uncontracted) |
+
+**(d) ⚠️ The circulated cost was wrong.** Both the dispatch and the PR's Flag 5 state **+4 bytes →
+8,167, slack 25**. Measured at review on a constructed variant with `assemble.cost`:
+**+6 bytes → 8,169, slack 23** (`Ｉ’ｌｌ` 4 cols → `Ｉ　ｓｈａｌｌ` 7 cols = +3 chars; no break is
+recovered, both are 3 rows). Conforming would leave chunk 0 **below the 27 it shipped with**, on the
+file §3.3 names by name. Of **91** splits exactly **1** fits, and it **does** end row 1 on `Ａｓ`. A
+4th text row is unavailable — it re-creates `.TTTT.`, the defect this very PR removed.
+
+**(e) The real defect is larger than this line, and a partial fix worsens the file.** Rimul's §7
+contraction-free row is breached **four** times in this chunk — `ｃａｎ’ｔ` (p6), `ｄｏｎ’ｔ` (p19),
+`ｗｏｎ’ｔ` (p20), `Ｉ’ｌｌ` (p21) — all in her own channel, no `{FB01}` borrow anywhere among them.
+Changing only p21 leaves three contractions in the same voice two pages earlier. **That question is
+recorded as a scoped FLAGS item (§BN) for a future repair unit; it is not a one-row swap.**
+
+**Disposition: a §39.7-licensed, speaker-conditioned split — the third, consistent with §41.3 and
+§49. No line changes.**

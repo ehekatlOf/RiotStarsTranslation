@@ -8607,7 +8607,28 @@ section likewise: **§BI**.
 refill) and p5 `TT` → `TTT` (115 attestations). Verified by a full shape diff of every page of every
 line against the pristine chunk.
 
-### BI2. ⚠️ `tl/battle/chunk_000.txt` ships the only `.TTTT.` page in the corpus — a `main`-level defect, NOT chunk 29's
+### BI2. ✅ DISCHARGED — `tl/battle/chunk_000.txt` shipped the only `.TTTT.` page in the corpus — a `main`-level defect, NOT chunk 29's
+
+> ✅ **DISCHARGED 2026-09-12 by the chunk 000 repair, PR #56, squash `84e6b54`.** `body[12]` page 21
+> is `.TTT.` again — the page's **own source shape** — at exactly **0 bytes**, and **`.TTTT.` is now
+> 0 across all of `tl/battle`**. Verified at the merge: exactly one page changed shape, page count
+> unchanged (94 → 94), no other shape in the file moved.
+>
+> ⚠️ **Two corrections to the text below, made in place per §4.3 rather than silently:**
+> 1. **The page index is wrong.** This flag says "body[12] page **11**" and its neighbours "p8" and
+>    "p10". On `rowcheck.py:77`'s five delimiters (`{FCC0}`/`{FC30}`/`{FC51}`/`{FC50}`/`{FFFF}`)
+>    they are **page 21**, **p17** and **p20**. The `餌食` site in the same file, which the repairs
+>    dispatch put at "page 39", is **body[2] page 60**. Three page numberings were in circulation
+>    for one defect — **state the delimiter set with any page index in this repo.**
+> 2. **The bullet below asking the human to settle §3.2 at the boot test is now MOOT and must not be
+>    acted on.** The shape is gone from chunk 0, so whether `.TTTT.` renders is **unobserved and
+>    stays unobserved**. §3.2's warning about it remains **unproven, not disproven** — do not record
+>    it as validated, and do not re-introduce the shape to test it. The boot test (Blocked 2,
+>    test (1)) now exercises a **132-attestation** shape, which was the point of repairing it first.
+>
+> Full record at `glossary.md` §74.2 and §BN1 below. A **second** unattested shape, `.TT.` (0
+> pristine, 4 shipped), was found while re-deriving this one and is **open** at §BN2 — it is a
+> shrink, so it carries no fit risk.
 
 Found while re‐running §45.2's shape census over all 44 pristine chunks at this review (the census
 **reproduces §45.2's table exactly**: `TTTT` 389 · `TTT.` 276 · `.TTTT` 182 · `.TTT.` 132 · `TTT` 115 ·
@@ -9124,3 +9145,148 @@ commits checked for file overlap (none).
 **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** ⚠️
 `bankmeasure`'s `tightest:` line printed **40, 41, 5** at this merge and **hid bank 2** — quote the
 table, never that line.
+
+## BN. Repairs session review — battle chunk 000 repair / PR #56, MERGED (2026-09-12)
+
+Squash **`84e6b54`**. **DECISION: MERGE, no findings.** The **last** unit of the scoped repairs
+session. Two repairs in one file, **net −2 bytes**: 8,165 → **8,163 / 8,192**, slack **27 → 29**.
+All eight gates re-run in a checkout merged onto **current** `origin/main` (`a2853ad`, carrying
+#53, #55 and #54) and pasted in the PR review: paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks n.a.
+(battle unit) dupes ✓ glossary ✓ structure ✓. Glossary record at **§74**.
+
+### BN1. ✅ §BI2 IS DISCHARGED — and its page index was wrong, corrected here in place
+
+**`.TTTT.` is now 0 across all of `tl/battle`.** The only such page — `chunk_000` body[12] — is back
+to `.TTT.` at **exactly 0 bytes** (one `{FFFE}` dropped, one `　` added at the join).
+
+⚠️ **§BI2's page index is wrong and is corrected in place (§4.3), not silently.** §BI2 says
+"body[12] page **11**". On `rowcheck.py:77`'s five page delimiters
+(`{FCC0}`/`{FC30}`/`{FC51}`/`{FC50}`/`{FFFF}`) it is **body[12] page 21**, and its two neighbours
+are **p17** (`TTTT`→`TTT`) and **p20** (`.TTTT`→`.TTT`), not p8 and p10. The `餌食` site in the same
+file is **body[2] page 60** — the repairs-session dispatch said page 39, which is the **empty**
+`{FCB0}{=00000001}` page between `Ｏｉ，　ｙｏｕ！` and `Ｈｕｈ．．．．？`. Three different page
+numberings were in circulation for one defect; **all indices in this repo should state the delimiter
+set they were counted on.** Everything else in §BI2 reproduced exactly.
+
+⭐ **This clears §BI2 BEFORE the human's Blocked-2 boot test, whose test (1) is chunk 0's battle** —
+which was the point of doing it now. The human will be testing a shape with **132** source
+attestations instead of one with **0**. ⚠️ **The §3.2 question §BI2 hoped the boot test would settle
+is therefore NO LONGER TESTABLE on chunk 0**: whether `.TTTT.` actually renders is now unobserved and
+stays unobserved. That is the right trade — the game's first battle should not be the experiment —
+but it means §3.2's warning about that shape remains **unproven, not disproven**. Do not record it
+as validated.
+
+### BN2. ⭐ NEW — `.TT.` is a SECOND unattested page shape, 4 sites, and it is NOT this unit's to fix
+
+Re-derived at review over the pristine corpus: **`.TT.` has 0 attestations in the source and 4 in
+shipped work.**
+
+| Site | Source shape → shipped |
+|---|---|
+| `chunk_000` body[9] p3 | `.TTT.` → `.TT.` |
+| `chunk_002` body[13] p9 | `.TTT.` → `.TT.` |
+| `chunk_008` body[9] p18 | `.TTT.` → `.TT.` |
+| `chunk_030` body[4] p11 | `.TTT.` → `.TT.` |
+
+⭐ **Unlike `.TTTT.` these are all SHRINKS** (one text row *fewer* than the source), so they carry no
+four-row wall and **no fit risk** — the hazard §3.2 warns about is **growth**, not loss. A page that
+uses fewer rows than the box allows cannot overflow it. **Not fixed, and deliberately: 3 of the 4
+are other units' files** (`CLAUDE.md` §3 — a translator touches only its own unit), and the fourth
+would have widened this repair beyond its dispatch. **Priority: low.** Recorded so the next shape
+census does not re-raise it as a discovery.
+
+ℹ️ Two further shapes have 0 pristine attestations and are **not** defects of this class:
+`TTTTTTTTTTTT.` (`chunk_006` body[20] p0) and `TTTTTTTTTTTTTTTTTTTTT.` (`chunk_042` body[10] p0).
+Both are long tutorial/no-`{FCC0}` pages whose "shape" is an artifact of counting a many-row page as
+one unit; they are not leading-blank pages and carry no four-row question.
+
+### BN3. ⚖️ RULING — the "seventh divergence" `あの世へ送ってやる。`: RECORDED, NOT RE-CUT
+
+Referred to this review by the board, which framed `chunk_000` as a "lone outlier, 1 vs 2".
+**The framing is inverted.** Full derivation at `glossary.md` **§74.4**; the load-bearing points:
+
+1. **Attribution settled per §BL3** (vocatives and pronouns, never channel tags): p21 has
+   **`{FB01}`-since-portrait = 0** — no borrow; the next `{FB01}` is at p24. `私` at p20,
+   `・・・この女、強いぞ。` replying at p23, `リムル様！` at p25. **The speaker is Rimul.** ⭐ **§BL3's
+   trap was live here and was avoided**; the borrow `translation_prompt.md` §1 names for chunk 0
+   (Rendol on Rimul's channel) is p25–p30 and is `{FB01}`-marked exactly as §BL3 predicts.
+2. **Already ruled twice, the other way.** `glossary.md` §41.3 and §49 both record `chunk_000`'s
+   `Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ` as the **incumbent that chunks 025 and 041 deliberately did not
+   copy**, under §39.7 (*the fixed WORD is shared, the contraction follows the speaker*). Conforming
+   chunk 0 would silently invert two standing rulings on no new evidence — §4.3 forbids that.
+3. **Gate 6 never engages.** The three Japanese **messages** differ (`ドースンの仇だ。望み通り、…` /
+   `王子もろとも…` / `おのれ、兄の仇！…わ！`); only a verb phrase is shared, and three different
+   speakers say it. Gate 6 binds byte-identical *messages*.
+4. ⚠️ **The circulated cost figure was wrong.** Dispatch and PR Flag 5 both say **+4 bytes → 8,167,
+   slack 25**. Measured with `assemble.cost` on a constructed variant: **+6 bytes → 8,169, slack
+   23** — *below* the 27 the file shipped with. `Ｉ’ｌｌ` (4 cols) → `Ｉ　ｓｈａｌｌ` (7) is +3
+   chars and recovers no break (both splits are 3 rows). **Two independent documents carried the
+   same −2 error; re-measure before relying on a quoted byte delta.**
+
+### BN4. ⚠️ NEW AND SCOPED — Rimul ships FOUR contractions against §7, and #56 is not the place to fix it
+
+Found while settling BN3's attribution. `glossary.md` §7 fixes Rimul as *"formal, measured, **no
+contractions in her own lines**"*. `chunk_000` breaches it **four times**, all in her own `{FC51}`
+channel with **no `{FB01}` borrow** anywhere among them:
+
+| Page | Shipped |
+|---|---|
+| body[12] p6 | `Ｉｔ　ｃａｎ’ｔ　ｂｅ，` |
+| body[12] p19 | `Ｙｏｕ　ｄｏｎ’ｔ　ｓｅｅｍ` |
+| body[12] p20 | `Ｉｆ　ｙｏｕ　ｗｏｎ’ｔ　ｇｉｖｅ　ｕｐ` |
+| body[12] p21 | `Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ` |
+
+**This is the defect actually worth fixing, and it is a unit-wide register re-cut, not a one-row
+swap.** Changing only p21 (as the "seventh divergence" framing would have had it) leaves three
+contractions in the same voice two pages earlier and makes the file **less** internally consistent,
+not more. ⚠️ **Whoever takes it must budget it as a whole**: chunk 0 has **29 bytes** of slack at a
+**1.73** ratio, and every expansion (`ｃａｎ’ｔ`→`ｃａｎｎｏｔ` +2 B, `ｄｏｎ’ｔ`→`ｄｏ　ｎｏｔ`
++2 B, `ｗｏｎ’ｔ`→`ｗｉｌｌ　ｎｏｔ` +4 B, `Ｉ’ｌｌ`→`Ｉ　ｓｈａｌｌ` +6 B) is **+14 bytes
+together**, which does **not** fit — and each one re-flows its page against the 24-column box.
+**It is therefore probably infeasible in chunk 0 as it stands, and the honest options are (a) leave
+§7's row as describing her other chunks and note chunk 0 as an exception, or (b) unpick it only if
+the tier-A slot extension ever widens the budget.** Do not dispatch it as a quick conformance.
+
+### BN5. Gate-6 method note — a normalised JP key manufactures a false divergence
+
+At this review a positional pairing with the JP key **normalised** (`　` stripped) reported one
+page-level divergence, `村が襲われました。`, with two Englishes across 11 sites. **It is an
+artifact.** `chunk_006` body[13] p1 is `村が　襲われました。` — *with an internal full-width space* —
+a genuinely different source string from the ten `村が襲われました。` sites, and it correctly ships
+its own `Ａ　ｖｉｌｌａｇｅ　ｗａｓ　ａｔｔａｃｋｅｄ．` Under a **strict** key the corpus reports
+**0** divergences and PR #56's figure stands. ⚠️ **Add this to the §Y2 / §AC1 kana blind-spot
+family** (`ウエストバリー`/`ウェストバリー`, `ぬぬっ`/`ぬぬッ`): the trap runs **both** ways — a key
+too strict misses real pairs, a key too loose manufactures fake ones. **Per §BK3, assert a non-zero
+pair count; per this flag, also state which normalisation the count was taken under.** (1,495 pairs
+here, both keys.)
+
+### BN6. ⚠️ The board's base line was still wrong for #56 — all four units shared one base
+
+`HANDOFF.md` carried *"#53, #54 **AND** #55 are all on `c583bd7`; **only #56 differs**"* — a
+correction made at #55's merge that fixed three entries and left the fourth wrong in the opposite
+direction. Measured at this review:
+
+```
+$ git merge-base origin/main origin/fix/battle-000   ->  c583bd7
+$ git merge-base --is-ancestor 1644ff0d origin/fix/battle-000   ->  NOT an ancestor
+$ git merge-base --is-ancestor 1644ff0d origin/main             ->  IS an ancestor
+```
+
+**All four repair units branched from `c583bd7`.** PR #56's own body said so. Corrected in
+`HANDOFF.md` at this commit. ⚠️ **Third consecutive review at which the board's base figures were
+wrong** (§BL5 item 3, #54's re-confirmation, and now this) — the cause is the same each time:
+GitHub's API `base.sha` is the base *branch tip at PR creation*, **not** the merge-base. `main` had
+advanced by three merges and three integration commits since the branch point, and the only
+`tl/battle/` file touched among them was `chunk_018.txt`, which this unit does not touch — verified,
+so no rebase was owed and gate 2 merged clean.
+
+### BN7. Review mechanics, unchanged from §BK7 / §BL7 / §BM8
+
+Posted as a **`COMMENT`** review with `DECISION:` on line 1 — GitHub refuses both `APPROVE` and
+`REQUEST_CHANGES` from this account (§BK7). ⚠️ Branch deletion returns **HTTP 403** (§AQ9);
+`fix/battle-000` is still on origin and **that is not a signal about merge state** — use the PR's
+`merged: true` and the squash SHA `84e6b54`.
+
+ℹ️ **`build/*_dump_merged.txt` on `main` remains stale** by #53's and #56's chunks (§BM7). **Not
+this integration's job** — no `build/` is committed here; it belongs to the session close, which
+must now refresh it for **both** `chunk_018` and `chunk_000`.

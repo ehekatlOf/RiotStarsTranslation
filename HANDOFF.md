@@ -1,3 +1,8 @@
+**Last updated: 2026-09-12** — `integrate: chunk 000 repair` (PR #56 merged, squash `84e6b54`).
+✅ **All four scoped repair units are merged, every one with no findings.** What remains is the
+**session close only** (`check`, `merge` + `build/`, README table, restore NEXT ACTION, push the
+`origin/main` proof). No unit is in flight; nothing is dispatchable.
+
 ## Integration branch: `main`. Not configurable.
 Every PR bases on `main`; the reviewer merges into `main`; a wave is closed only when `origin/main` is
 at the close commit (`CLAUDE.md` top banner). ⚠️ A fresh container clones SHALLOW and may carry a stale
@@ -17,8 +22,8 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 >
 > | # | Item | §3 engaged? | Decision | Unit |
 > |---|---|---|---|---|
-> | 0 | `chunk_000` body[12] page 21 `.TTTT.` (FLAGS §BI2) | n/a | **RE-FLOW, 0 bytes** | `tl/battle/chunk_000.txt` |
-> | 5 | `餌食` → `ｐｒｅｙ` (`chunk_000` body[2]) | no — lemma | **CONFORM IF IT FITS** (27 bytes slack) | same file as #0 |
+> | 0 | `chunk_000` body[12] page 21 `.TTTT.` (FLAGS §BI2) | n/a | ✅ **DONE** — #56, squash `84e6b54`, 0 bytes | `tl/battle/chunk_000.txt` |
+> | 5 | `餌食` → `ｐｒｅｙ` (`chunk_000` body[2] **page 60**) | no — lemma | ✅ **DONE** — #56, squash `84e6b54`, **−2 bytes** | same file as #0 |
 > | 2 | `それよりも` (`chunk_018` body[4]) | no — lemma | ✅ **DONE** — #53, squash `dac2ee4` | `tl/battle/chunk_018.txt` |
 > | 1 | `君、{FFFE}すまない。` (`batch_012:63`) | **YES** | ✅ **DONE** — #55, squash `30d45aa` | `tl/script/batch_012.tsv` |
 > | 6a | `静まり返っている・・・。` (`batch_013:31`) | **YES** | ✅ **DONE** — #54, squash `a82e742` | `tl/script/batch_013.tsv` |
@@ -72,16 +77,42 @@ in the CLAUDE.md banner, and it passes.
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and which one it hides is NOT stable** — quote
 the table, never that line.
 
-## In flight — ✅ THE WAVE BARRIER IS MET: all four units have an open PR, base `main`
+## In flight — ✅ NOTHING IN FLIGHT: all four repair units are MERGED, all with no findings
 | Order | Unit | File | PR | Head | Cost | Review |
 |---|---|---|---|---|---|---|
 | 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | ✅ **MERGED, no findings** — squash `dac2ee4`, integration `integrate: chunk 018 repair` |
 | 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free (measured) | ✅ **MERGED, no findings** — squash `30d45aa`, integration `integrate: batch 012 repair` |
 | 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free (measured) | ✅ **MERGED, no findings** — squash `a82e742`, integration `integrate: batch 013 repair` |
-| 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
+| 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | ✅ **MERGED, no findings** — squash `84e6b54`, integration `integrate: chunk 000 repair` |
 
-**Reviewed one at a time, in the foreground, in that order.** All four translators have returned;
-every head is stable. **Three merged, one to go: #56.**
+**Reviewed one at a time, in the foreground, in that order.** All four translators returned; every
+head was stable. ✅ **ALL FOUR MERGED, every one with no findings. The repairs session's review
+work is COMPLETE.**
+
+### ✅ #56 IS MERGED — DECISION: MERGE, no findings (2026-09-12) — THE LAST UNIT
+Squash **`84e6b54`**, integration commit `integrate: chunk 000 repair — glossary, flags, handoff`
+(`glossary.md` **§47.3 + §70.6 + §70.7 updated to APPLIED** and new **§74**; `FLAGS.md` **§BI2
+DISCHARGED with its page index corrected in place** and new **§BN**; this row). All eight gates
+re-run in a checkout merged onto **current** `origin/main` (`a2853ad`, carrying #53, #55 and #54)
+and pasted in the PR review: paths ✓ merge ✓ check ✓ figures ✓ rows ✓ banks n.a. (battle unit)
+dupes ✓ glossary ✓ structure ✓.
+
+- **R1 — `.TTTT.` cleared at exactly 0 bytes.** ⭐ The re-flow restores the page's **own source
+  shape**: the source page is itself `.TTT.`, so the original translation had added a fourth row
+  the Japanese never had. `.TTTT.` is now **0** across `tl/battle`; exactly one page changed shape
+  and nothing else in the file moved. **§BI2 is discharged before the human's Blocked-2 boot
+  test** — its test (1) is chunk 0's battle, which is why this unit went last but mattered most.
+- **R2 — `餌食` → `ｐｒｅｙ` applied, and the recorded reason overturned.** `Ｓｔａｙ，　ａｎｄ
+  ｗｅ’ｒｅ　ｐｒｅｙ．` (21 cols, **−2 bytes**). §47.3's "chunk 0 has 27 bytes of slack" was a
+  **budgetary** reason and did not survive re-measurement — conforming made the file **cheaper**.
+  Ruled over alt A because only this form keeps the source's `逃げれば…／残れば…` parallelism.
+- Ratio re-derived at review from the dump: **1.73** (< 2.5), so gate 4's ≥ 50 slack floor is
+  relaxed by its own terms and the PR flags it. The unit **raises** slack, 27 → 29.
+
+⚠️ **Two figures in circulation were wrong and are corrected at `FLAGS.md` §BN3/§BN6:** the cost of
+conforming the `あの世へ送ってやる。` divergence is **+6 bytes → slack 23**, not the +4 → slack 25
+that both the dispatch and the PR stated; and **all four repair units branched from `c583bd7`** —
+the board's "only #56 differs" was wrong in the opposite direction from the error it fixed.
 
 ### ✅ #54 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
 Squash **`a82e742`**, integration commit `integrate: batch 013 repair — glossary, flags, handoff`
@@ -178,11 +209,15 @@ pushes as `ehekatlOf`, so the decision is a `COMMENT` review with `DECISION:` on
 ⚠️ Branch deletion returned **HTTP 403** as §AQ9 predicts; `fix/battle-018` is still on origin and
 that is **not** a merge signal. `merged: true` + squash `dac2ee4` is the record.
 
-**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#56**
-(`tl/battle/chunk_000.txt`) in the foreground, **the last unit**. One unit remains: #56.
-⚠️ **#56's reviewer must run gate 2 against `main` as it stands after #54's integration commit**,
-not against the tree #56 was written on — `main` has advanced by three merges and three
-integrations. **Compute the merge-base; do not read the API's `base.sha` as one.**
+**Who acts next:** ✅ **REVIEW IS DONE — all four units merged, none with findings.** The
+repairs-session coordinator now runs the **session close only**: `git pull --ff-only`, `check` green
+on `main`, **`merge` and commit `build/*_dump_merged.txt`** (⚠️ stale by **both** `chunk_018` and
+`chunk_000` — §BM7 / §BN7; the reviewer deliberately did not commit `build/`), refresh the README
+status table, restore NEXT ACTION to "THE RUN IS STOPPED", and push `handoff: repairs closed` with
+the `origin/main` proof. **It dispatches nothing and opens no successor session.**
+✅ Gate 2 was run for #56 against `main` as it stood after #54's integration (`a2853ad`), with the
+merge-base **computed** (`c583bd7`), not read from the API — clean, and the only `tl/battle/` file
+touched on `main` since the branch point was `chunk_018.txt`, which #56 does not touch.
 ✅ **`chunk_000` (#56) delivered BOTH repairs and came out 2 bytes CHEAPER.** R1 landed at **exactly
 0 bytes** — one `{FFFE}` dropped (−2) and one `　` added at a join (+2) — and page 21 is `.TTT.`
 again, so **`.TTTT.` goes to 0 across all of `tl/battle`** before the human's boot test, which is
@@ -192,7 +227,15 @@ what §BI2 asked for. R2 was **taken, not declined**: `Ｓｔａｙ，　ａｎ�
 `餌食` — "chunk 0 has 27 bytes of slack" — is re-measured and DOES NOT HOLD: the conformance is
 free and the file ends up cheaper.** Those cells should now say it is applied.
 
-Bases: ⚠️ **CORRECTED at #55's merge — #53, #54 AND #55 are all on `c583bd7`; only #56 differs.**
+Bases: ✅ **SETTLED at #56's merge — ALL FOUR units branched from `c583bd7`. There is no exception.**
+⚠️ This line previously read "#53, #54 AND #55 are all on `c583bd7`; **only #56 differs**" — a
+correction made at #55's merge that fixed three entries and left the fourth wrong in the *opposite*
+direction. Measured at #56's review: `git merge-base origin/main origin/fix/battle-000` =
+**`c583bd7`**, and `1644ff0` is **not an ancestor** of that branch (it *is* an ancestor of `main`,
+which is exactly why the API figure misleads). PR #56's own body said `c583bd7` too.
+**Third consecutive review at which this board's base figures were wrong** — see `FLAGS.md` §BN6.
+The superseded text follows, kept because the reasoning in it is still right:
+⚠️ ~~**CORRECTED at #55's merge — #53, #54 AND #55 are all on `c583bd7`; only #56 differs.**~~
 This line read "#55/#56 on `1644ff0`". Measured: `git merge-base origin/main origin/fix/script-012`
 = **`c583bd7`** and `1644ff0` is **not an ancestor** of that branch. PR #55's own Gate-2 paste was
 right and this board was wrong. **GitHub's API `base.sha` is not the merge-base — do not read it as
@@ -212,6 +255,33 @@ quote the table rows, never that line.
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
+
+### ⚖️ RULED AT #56's MERGE — the seventh divergence: **RECORDED, NOT RE-CUT.** No line changes.
+
+> **Ruling (2026-09-12, #56's review). The framing below is inverted and the ruling goes the other
+> way.** Derivation at `glossary.md` **§74.4**, summary at `FLAGS.md` **§BN3**:
+> 1. **Attribution settled first, per §BL3** — vocatives and pronouns, never channel tags. Page 21
+>    has **`{FB01}`-since-portrait = 0** (no borrow; the next `{FB01}` is at p24). `私` at p20,
+>    `・・・この女、強いぞ。` replying at p23, `リムル様！` at p25 → **the speaker is Rimul**. The
+>    borrow `translation_prompt.md` §1 names for chunk 0 is **Rendol at p25–p30**, `{FB01}`-marked
+>    exactly as §BL3 predicts — so §BL3's trap was live here and was avoided.
+> 2. **It is already ruled — twice, and the other way.** `glossary.md` §41.3 and §49 both record
+>    `chunk_000`'s `Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ` as the **incumbent chunks 025 and 041 deliberately
+>    did not copy**, under §39.7 (*the fixed WORD is shared, the contraction follows the speaker*).
+>    **`chunk_000` is not the outlier; it is the original.** Conforming it would silently invert two
+>    standing rulings on no new evidence — §4.3 forbids that.
+> 3. **Gate 6 never engages**: the three Japanese **messages** differ (`ドースンの仇だ。望み通り、…` /
+>    `王子もろとも…` / `おのれ、兄の仇！…わ！`). Only a verb phrase is shared, by three speakers.
+> 4. ⚠️ **The cost below is wrong.** Measured with `assemble.cost`: **+6 bytes → 8,169, slack 23**,
+>    not +4 → 8,167 → 25. That is *below* the 27 the file shipped with. The rest reproduces: 1 of 91
+>    splits fits, and it ends row 1 on `Ａｓ`.
+> 5. **The real defect is bigger.** Rimul ships **four** contractions against §7 in this chunk
+>    (`ｃａｎ’ｔ` p6, `ｄｏｎ’ｔ` p19, `ｗｏｎ’ｔ` p20, `Ｉ’ｌｌ` p21), all in her own channel.
+>    Fixing only p21 makes the file **less** consistent. Recorded as a scoped item at **§BN4**,
+>    where it is also measured as **+14 bytes together — probably infeasible in chunk 0 as it
+>    stands.** Do not dispatch it as a quick conformance.
+
+<details><summary>The original board entry, kept for the record</summary>
 
 ### ⚠️⚠️ A SEVENTH DIVERGENCE OF THE SAME CLASS, FOUND ON THE PAGE #56 RE-FLOWS — I VERIFIED IT
 **`あの世へ送ってやる。` is byte-identical in `chunk_000` body[12] page 21 and `chunk_025` body[11]
@@ -233,7 +303,13 @@ therefore possible but not clean, and not free, on the project's tightest file.
 **this same message already ships `ｗｏｎ’ｔ` at page 20**, so either the whole message's register is
 off or the attribution is. Whoever rules this should settle the attribution first.
 
-### ⭐ NEW — `.TTTT.` WAS NOT THE ONLY UNATTESTED PAGE SHAPE. `.TT.` IS A SECOND ONE, 4 SITES
+</details>
+
+✅ **The attribution was settled, and it was the third option: the register is off for the WHOLE
+speaker, not for one page, and not because of a borrow.** Four contractions, all Rimul's own —
+§BN4.
+
+### ⭐ `.TTTT.` WAS NOT THE ONLY UNATTESTED PAGE SHAPE. `.TT.` IS A SECOND ONE, 4 SITES — **still open**
 Re-derived over the same 1,850 pristine pages: **`.TT.` has 0 source attestations and 4 in shipped
 work** — `chunk_000` body[9] p3 · `chunk_002` body[13] p9 · `chunk_008` body[9] p18 · `chunk_030`
 body[4] p11. ⭐ **Unlike `.TTTT.` these are all SHRINKS** (source `.TTT.` → `.TT.`, one text row
