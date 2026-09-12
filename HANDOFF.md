@@ -22,6 +22,21 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 > **▶ THE WORK IS NOW THE HUMAN LIST BELOW, IN ORDER. Two emulator sessions unblock everything.**
 > An agent session can still do useful work WITHOUT the human: the recorded repairs under Blocked 6.
 
+## Wave-14 close proof (CLAUDE.md §4 step 6 — `origin/main` is AT the close commit)
+Close commit **`4890aec`**. Run immediately after pushing it:
+```
+$ git rev-parse origin/main HEAD
+4890aecd5a203f275d36640ed12aabe966d99a27
+4890aecd5a203f275d36640ed12aabe966d99a27
+$ git rev-list --count origin/main..HEAD
+0
+```
+**One hash twice, count 0 — the wave is closed and `main` carries it.** Recorded as a follow-up commit
+rather than an amend, because amending a pushed commit would mean force-pushing `main`; this is the
+same shape wave 13 used (`handoff: final origin/main proof for the wave-13 close`).
+⭐ **Someone who clones this repo and looks at `main` sees the whole run's progress.** That is the test
+in the CLAUDE.md banner, and it passes.
+
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
 |---|---|---|---|
