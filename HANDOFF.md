@@ -11,37 +11,33 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ WAVE 13 IS CLOSED. THE WAVE-14 SESSION IS OPEN: `session_01AqZdsxo8W4fXcSnCUoawys`.
-> **Wave 13: chunks 15, 23, 27 — 3 dispatched, 3 MERGED, 0 parked, 0 lost, 0 re-dispatches.**
-> Battle **37 / 44, 75.2%** (was 34 / 44, 69.3%).
+> # ▶ WAVE 14 IS RUNNING. THREE TRANSLATORS DISPATCHED (2026-09-12).
+> Coordinator: `session_01AqZdsxo8W4fXcSnCUoawys` (its own session, Opus, three-role split intact —
+> it has `Task`, so **nothing this wave is SELF-REVIEWED**).
+> **Units: battle chunks 28, 29, 39.** Seeds committed at **`5bd458e`** (`glossary.md` §9.W14, 17 rows).
 >
-> **Opened 2026-09-12 02:01 UTC by the wave-13 coordinator** — title **"Riot Stars — wave 14"**, tags
-> `riotstars-translation` + `wave-14`, `source_revision: main`, environment and model inherited (Opus).
-> **Units: battle chunks 28, 29, 39** (figures in Next up). **The wave-13 session has handed on and does
-> not touch this repository again.**
-> **If you are a coordinator reading this:** `list_sessions` — if a wave-14 session other than yours is
-> alive, stop. The runner reconciles on its 15-minute watchdog and does not touch the repository while a
-> wave is alive. Engine work (Blocked 2, 4, 6) belongs to the runner, not to waves.
+> **If you are resuming this wave:** preflight per CLAUDE.md §4 step 0, then go to In flight below and
+> reconcile it against the open PR list. **Do not re-dispatch over a live translator** — check
+> `ListAgents` first; a slow translator is not a failed one (§4a).
+> **Review only behind the wave barrier: all three units must have an open PR before ANY review starts.**
 >
-> ⚠️ **WAVE 14 IS THE LAST DISPATCHABLE BATTLE WAVE.** After it the battle store is exhausted short of the
-> tier-A slot extension (16, 32 blocked; 5, 43 parked) and the script is unchanged at **0 feasible lines,
-> 363 of 366 behind the §F2 repoint** — so CLAUDE.md §8's stop condition holds again and the run's next
-> move is the human list under "Blocked".
-> ⚠️ **Wave 14 inherits two LIVE glossary rows:** `じゃあね、` binds **chunk 28 L18** and `１度` binds
-> **chunk 29 L8**. Neither may be struck until those units ship.
-> ⚠️ Battle chunks are chapter-ordered and voices accumulate — read the shipped neighbours the dispatch
-> names. ⚠️ Battle `tl/` holds no Japanese; **gate 6 must pair the dump positionally**.
-> ⚠️ **`queue.py battle` still lists chunk 32 as dispatchable — it is NOT** (§B2's floor is 1.64×; 32 is
-> 1.61×, 16 is 1.59×). ⚠️ Start every unit from the pristine dump (CLAUDE.md §2), never from an old PR.
+> ⚠️⚠️ **WAVE 14 IS THE LAST DISPATCHABLE BATTLE WAVE, AND THE CHAIN ENDS WITH IT.**
+> **DO NOT OPEN A WAVE-15 SESSION.** After this wave: 16 and 32 are blocked on the tier-A slot
+> extension, 5 and 43 are parked, and the script is unchanged at **0 feasible lines, 363 of 366 behind
+> the §F2 repoint** — so **CLAUDE.md §8's FIRST stop condition (no dispatchable unit left) holds.**
+> The wave-14 coordinator writes the **final handoff** instead: what is done, what is parked and why,
+> and exactly what the human must do next, in the priority order under "Blocked — needs a human".
+>
+> ⚠️ Engine work (Blocked 2, 4, 6 — `tools/slots.py`, `slotext.py`, `banks.py`, `bankext.py`,
+> `engine.py`, `--extended`/`--layout`) belongs to the **root/runner session**. A wave never touches it.
 
 ## Last updated
-2026-09-12 · by: **the wave-13 coordinator (its own session), at wave close** · **WAVE 13 CLOSED: chunks
-15, 23 and 27 all MERGED — 3/3, 0 parked, 0 lost, 0 re-dispatches.** `check` **All checks passed** on
-`main`; `build/*_dump_merged.txt` regenerated and committed; README status table refreshed; **all
-worktrees pruned** (`git worktree list` shows only the main checkout); **no open PR, no live agent.**
-**glossary ends §67 · FLAGS ends §BG** — ⚠️ **always take the next number by READING both files at commit
-time, never by reserving.** The three-role split held for all three units; **nothing is SELF-REVIEWED and
-there is no audit debt.**
+2026-09-12 · by: **the wave-14 coordinator (its own session), at dispatch** · **WAVE 14 RUNNING: chunks
+28, 29, 39 dispatched, three translators live, wave barrier NOT yet met.** Preflight was clean: `check`
+**All checks passed** on `main`, **zero open PRs**, no stray worktree, and `list_sessions` showed no
+second wave-14 session. `glossary.md` §9.W14 seeded at **`5bd458e`** — **17 rows, seven of them REUSE
+rather than new words.** **glossary now ends §67 + §9.W14 · FLAGS ends §BG** — ⚠️ **take the next number
+by READING both files at commit time, never by reserving.**
 
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
@@ -55,12 +51,23 @@ there is no audit debt.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and WHICH ONE IT HIDES IS NOT STABLE** — quote the
 table, never that line.
 
-## In flight
-**Nothing. Wave 13 is closed and wave 14's session is being opened.** No open PR, no unmerged unit branch,
-no live agent, no worktree.
+## In flight — WAVE 14, dispatched 2026-09-12
+| Unit | Branch | File | Round | PR | Translator | State |
+|---|---|---|---|---|---|---|
+| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | — | dispatched | translating |
+| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | — | dispatched | translating |
+| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | — | dispatched | translating |
+
+**Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
+open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
+translator returned/died with no PR → **one fresh translator for that unit** (two re-dispatches max,
+then park). A unit whose translator is still working → **wait, do not re-dispatch over a live agent.**
+
 ⚠️ **Every `tl/*` branch from waves 1–13 is MERGED but still on origin** — deletion returns **HTTP 403**
-from the agent container (**FLAGS §AQ9**), every wave. **"Branch gone = merged" is an INVALID signal in
-this repo; use the PR's `merged: true` and the squash SHA in the committed record.**
+from the agent container (**FLAGS §AQ9**). **"Branch gone = merged" is an INVALID signal in this repo;
+use the PR's `merged: true` and the squash SHA in the committed record.**
+⚠️ **Never push while a reviewer runs** — a reviewer showing "running" may already have merged and be
+mid-integration (§BE6 / wave-13 lesson 6).
 
 ## Next up — WAVE 14, the LAST dispatchable battle wave (`queue.py battle`, figures re-measured 2026-09-11)
 | Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Note |
