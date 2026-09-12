@@ -64,133 +64,35 @@ conclude the wave is done.
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
 Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is parked.
 
-## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
+## In flight — WAVE 13. ✅ chunk 15 MERGED · 23 and 27 in review
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
-| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integration `integrate: chunk 015 — glossary §65, flags §BE, handoff` (the commit directly after `8a08027` on `main`). Glossary **§65**, FLAGS **§BE**. Nothing left on this unit |
-| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | 🔄 **rework r1 pushed (`d917bb7`)** — all 5 implemented; **queued for re-review** |
-| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
+| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
+| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | 🔄 rework r1 pushed (`d917bb7`) — **round-2 reviewer RUNNING** |
+| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⏳ **QUEUED — never reviewed.** Next reviewer after #49 |
 
-All three base on `main`, all three one file, 0 re-dispatches, 0 lost. Reviewers run **one at a time,
-foreground, in unit order 15 → 23 → 27**; HANDOFF is pushed before each and pulled after (the reviewer
-pushes `integrate:main`). ⚠️ Each merge moves the base under the other two — expected; the reviewer
-re-checks mergeability against a pinned SHA and never reuses an author's `merge-tree`.
+**Verified, not taken on report:** `origin/main` == HEAD == `d11928f`, `git rev-list --count origin/main..HEAD` = 0,
+PR #47 `merged: true`, `tl/battle/chunk_015.txt` present, `check` **All checks passed** on the merged tree.
+Branch deletion returned **HTTP 403** as always (§AQ9) — **not** a signal about merge state.
 
-### Integration debts the reviewer must carry onto `main` (detail in each PR body)
-**PR #47 (chunk 15)** — ✅ **ALL DISCHARGED 2026-09-12 at the merge.** The wave-3 Ifrit warning is closed
-in **both** §9 and §30.1; the three §9.W13 seeds are promoted to §65.1 and struck, all exhausted; the
-incumbent rows including both spelling twins (`ワケ`/`訳`, `ほう`/`方`) are written at §65.3. ⚠️ **`ねえ、`
-→ `Ｓａｙ，` was NOT an unheld incumbent — the glossary already fixes it at §32.3 / §34.2**; recorded as
-conformance, not as a new row. Additional rows the PR body did not list and the merge carries anyway:
-`巨大砲台` → `ｇｉａｎｔ　ｂａｔｔｅｒｙ`, `危険` → `ｐｅｒｉｌｏｕｓ`, `無茶` → `ｒｅｃｋｌｅｓｓ`, `６軍` →
-`６ｔｈ　Ａｒｍｙ`, `おもしろい` → `ｉｎｔｅｒｅｓｔｉｎｇ`, `帝国の技術の粋` → `Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ　ｃｒａｆｔ`.
-**PR #48 (chunk 27)** — nine glossary rows (`根城`, `坊や`, `袋のネズミ`, `間違いない`, `新手`, `ナメる`,
-`ふん、`, `あっけなかった`, `ひと汗かいた`). ⚠️ **§9.W13's `根城` row STAYS LIVE** — chunk 32 holds its
-fourth instance and 32 is blocked, so *that* unit strikes it, not this one. **§9.W13's `ダメージ` row is
-discharged for battle** (3 script instances remain). ⭐⭐ **Flag 12 is a real cross-wave defect and needs a
-RULING, not a re-cut: §30.4 reserves `ｕｎｄｅｒｅｓｔｉｍａｔｅ` for 甘く見る / 見くびる and claims it
-"verified unspent across `tl/`" — but 甘く見る IS already shipped, as `ｔａｋｅ　…　ｌｉｇｈｔｌｙ`
-(`chunk_006` L21, wave 2, before §30.4 was written). Invisible to a `tl/` grep; found by positional
-pairing. The next unit reaching 見くびる (1 battle + 1 script) is the one that breaks.** This unit depends
-on neither form and avoided both.
-**Both PRs** — ✅ **WRITTEN at PR #47's integration as `FLAGS.md` §BE2; #48's reviewer should cite it, not
-duplicate it.** `translation_prompt.md` §3.2 tells a translator to add a `{FCC0}` page break when four rows
-will not hold a page, but `assemble.py:tag_parity` compares every tag except `{FFFE}`, so an added
-`{FCC0}` fails `check` (§Q2). **Both translators hit it independently and both absorbed it by re-flowing
-`{FFFE}` inside the source's own pages** — chunk 15 by tightening to the 24-column floor (§BE1), chunk 27
-by paying a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank +
-4-row shape. A tier-B/C chunk with a dense page may not be able to absorb it. §BE2 names the two possible
-fixes and says why the tool-side one is not obviously safe before the boot test. **Neither is a
-translator's to apply** (CLAUDE.md §3).
-
-### ⚠️ PR #47 — CHANGES, round 1 (2026-09-11 ~23:15). Not merged; no integration commit; nothing pushed.
-Seven of eight gates passed; **gate 7 failed**. I re-verified all three findings myself before relaying:
-1. ⭐⭐ **`砲台` → `ｂａｔｔｅｒｙ`, not `ｇｕｎ` (4 places).** `glossary.md` §42.1 fixes `砲台 (prose)` →
-   `ｂａｔｔｅｒｙ`, and **§42.8's correction table was written for chunk 15 BY NAME**, re-measuring
-   `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` at 23 columns *specifically so chunk 15 would not be
-   steered off it*. **CONFIRMED by reading §42.1 at `glossary.md:5173`.**
-   ⚠️⚠️ **THIS ONE IS MINE.** My own §9.W13 census printed `砲台 … glossary:YES` and I read the
-   `砲台 (prose) → ｂａｔｔｅｒｙ` row during seeding — **and then left it out of the chunk-15 dispatch's
-   ALREADY KEYED list, where I did list `要塞`, `宮廷軍` and `焼き尽くす`.** The translator had no reason
-   to look for it. **A seed that lists four keyed forms and silently omits a fifth is worse than one that
-   lists none**, because it reads as exhaustive. Wave 12's Decisions §7 is now nine coordinator errors.
-2. **`助かったよ。` → `Ｉ　ａｍ　ｓａｖｅｄ．`** (§23.4's default; 11 columns vs 10, zero re-flow).
-   ⭐ **A CROSS-PR bind inside this wave: PR #49 already ships `Ｈｍ，　Ｉ　ａｍ　ｓａｖｅｄ．`**, so the
-   two must agree. **CONFIRMED at `glossary.md:1795`.**
-3. **`負けたよ。` → `Ｉ　ｌｏｓｅ．`, not `Ｙｏｕ　ｗｉｎ．`** (both instances, byte-identical, §40.3).
-   ⚠️ **I suspected this was a substring false positive of `ｗｉｎ` inside `ｗｉｎｅ`/`ｗｉｎｄ` — the
-   §3 trap — and CHECKED IT AS A WHOLE WORD. I was wrong and the reviewer is right:** `batch_015.tsv:57`
-   ships `俺の負けだ。` → `Ｉ　ｌｏｓｅ．` and `勝ったら` → `ｗｉｎ` **twice in that one message**, and
-   `chunk_037` renders 勝てる / 勝ち目 → `ｗｉｎ` twice more. `Ｙｏｕ　ｗｉｎ．` inverts an established
-   two-store mapping.
-⭐ **The wave-3 Ifrit warning is NOT discharged this round and stays live in §9 and §30.1** — the gloss
-landed on the wrong noun, and a gloss in the wrong noun does not connect for the player.
-**All three are FORWARD-direction misses** (what English this Japanese already has). The PR's reverse
-EN→JP pass was genuinely good and caught four real problems — **it structurally cannot see this half.**
-Still owed at merge: the `{FCC0}` / `tag_parity` `FLAGS.md` entry, and three PR-body corrections
-(`巨大砲台` is not a new term; `ねえ、` → `Ｓａｙ，` is already §34.2; the `やめた方がいい` row over-reaches
-against `batch_007.tsv:30`'s shipped `Ｂｅｔｔｅｒ　ｎｏｔ．`).
-
-### ✅ PR #47 rework round 1 pushed (`20764d2`, 2026-09-11 ~23:35) — re-review QUEUED behind #49
-**3,275 / 8,192 (4,917 slack)**, +36 bytes. `check` green, `rowcheck` clean, `{FFFE}` still body[6] only,
-0 pages over 4 text rows. All three findings implemented; all three PR-body corrections accepted.
-- **Finding 1 `砲台` → `ｂａｔｔｅｒｙ`: done, 4 of 4** (`ｇｕｎ` count in the file is **0**).
-- ⭐⭐ **THE TRANSLATOR PUSHED BACK ON ONE POINT AND IT IS RIGHT — I VERIFIED ALL THREE OF ITS CLAIMS.**
-  §42.8's correction cleared `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` **on width**, but width cannot
-  settle this: **`batch_015.tsv:18` already ships `巨大な　砲台` → `ｇｉａｎｔ　ｂａｔｔｅｒｙ`** — a rumour
-  line about *this* battery guarding *this* fortress. **CONFIRMED by reading the row.** Taking `ｇｒｅａｔ`
-  would split a shipped compound — precisely the failure the withdrawn `Ｆｏｒｔ　Ｂａｕｅｒ` seed records.
-  **`ｇｒｅａｔ` is also spent 42× across `tl/` (whole-word scan, CONFIRMED)**, including `大要塞` →
-  `ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ`. **So `ｇｉａｎｔ　ｂａｔｔｅｒｙ` stands and §42.8's suggestion must not be
-  forced.** ⚠️ **A width-only clearance is not a gate-7 clearance** — worth a `FLAGS.md` line.
-- **Two rows now sit at 24 columns** (legal; ≤23 is the preference). The translator brute-forced **every
-  ≤4-row split of 26 phrasings** and reports 24 as the measured floor with every element kept; on the
-  second row nothing reached ≤24 with `ｄａｎｇｅｒｏｕｓ`, so 危険 → **`ｐｅｒｉｌｏｕｓ`** — **not an
-  invention: `batch_008.tsv:69` ships `危険な場所` → `ｐｅｒｉｌｏｕｓ` beside `:71`'s `ｄａｎｇｅｒｏｕｓ`
-  for the same phrase. CONFIRMED by reading both rows.** Nothing dropped, no `ｇｕｎ` retained.
-- **Finding 2 done** (`Ｉ　ａｍ　ｓａｖｅｄ．`, 11 cols). The adjacent `Ｉ’ｍ　Ｎｅｉｌ，` stays contracted
-  on c08 L8's own incumbent — two adjacent rows differing by design, each on its own fixed form.
-- **Finding 3 done on BOTH lines** (`Ｉ　ｌｏｓｅ．`, measured **13**, not the finding's 14 — one column
-  narrower, zero re-flow). body[11] verified a **byte-exact 292-char suffix** of body[10].
-- ⭐ **Correction 3 improved the file beyond the finding:** adopting `batch_007.tsv:30`'s shipped
-  `Ｂｅｔｔｅｒ　ｎｏｔ．` freed enough width to **restore `援軍` → `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` and retire the
-  `ａｉｄ` deviation entirely** (`ａｉｄ` count now 0). A finding aimed at consistency paid for a
-  faithfulness gain elsewhere.
-- **The translator withdrew its own `巨大砲台` glossary row** (not a new term) and accepted that
-  `ねえ、` → `Ｓａｙ，` is already keyed at §32.3 / §34.2, not an unrecorded form.
-- **It reports two more of its own round-1 hand counts wrong**, both found by `len()`. Every figure in
-  the rework is tool output.
-⚠️ **For the re-reviewer: the wave-3 Ifrit warning is now ARGUABLY discharged but that is the
-REVIEWER'S call, not the translator's** — L0 now reads `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ`, the same phrase
-the script store already uses for the object, so the gloss connects to both chunk 17's bare name and the
-rumour line. **Do not close §9 / §30.1 without checking that in the file.**
-
-### ⚠️ PR #49 — CHANGES, round 1 (2026-09-11 ~23:45). Not merged; no integration commit; nothing pushed.
-**Eight of nine gates passed**; gate 7 failed on three already-fixed forms plus one register slip.
-Merge base pinned to `f20740a`; `main` moved to `e59ac01` mid-review (HANDOFF only, so no gate redone).
-Net of all fixes: **+12 bytes → 6,293 / 8,192, 1,899 slack**, one added `{FFFE}`, no re-flow.
-⭐ **ALL FOUR RE-RUNS I ASKED FOR CAME BACK INDEPENDENTLY CONFIRMED, AND ONE CORRECTED THE TRANSLATOR:**
-- **Twin codas: the reviewer found 10 repeated segments, 0 divergent** (translator said 11 — the extra is
-  an indexer artefact, checked by hand). ⭐ **It also ran the REVERSE direction the translator did not:
-  0 English forms shared between the two codas for different Japanese — nothing flattened.**
-- **Cross-store frame: pairing exact, no comma or dot drift.** ⚠️ **It found a LIVE DEBT that is not this
-  PR's: `batch_013.tsv:31` ships the byte-identical Japanese with a different English.** For FLAGS.
-- **My figure stands, independently: `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` = 14, `Ｈｉｍｉｋｏ’ｓ` = 8. 15 must not
-  reach the glossary.** `Ｇｅｎｅｒａｌ　Ｉｖａｎ` 12 bare / 13 with comma — a scope difference, not a defect.
-- **Flag 3's page shape: both claims hold** — the fill is attested **182× dump-wide** and the forbidden
-  shape is absent from the whole battle dump (0). `Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ａｌｆｒｅｄ` = 24 confirmed.
-⭐⭐ **THE CROSS-PR §23.4 BIND IS DISCHARGED CONSISTENTLY** (finding 3): chunk 23's `助かったぞ。` takes the
-**default** `Ｉ　ａｍ　ｓａｖｅｄ．`, same as #47's `助かったよ。` — よ and ぞ are the same particle class and
-no licensing feature separates them. **The two PRs now agree.**
-**I verified every finding before relaying:** §38.2 at `glossary.md:4327` is real and fixes the form
-(⚠️ shipped in **3** script rows — `batch_007:32`, `batch_012:87`, `batch_014:46` — the review's "4×"
-counts a different addressing convention; the finding is unaffected); §41.4 at `:4944` is real and is
-exactly the register split it cites; **all five of finding 5's column corrections reproduce exactly**
-(`ａｒｍｏｕｒｙ` 7, `ａ　ｐｅｔｔｙ　ｃｒｏｏｋ` 13, `ｓｈａｔｔｅｒｅｄ` 9, `Ｆｅａｒｓｏｍｅ，` 9,
-`Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` 14), and so do findings 2–4's (8→10, 13→11, 22→21).
-Still owed at merge: the eleven new rows, the **scoped** `すごい` row (scoping verified real), the
-`イワン`/`ヒミコ` stay-live instruction, `まったくだ。` → `Ｉｎｄｅｅｄ．`, and the `batch_013`/`batch_017`
-FLAGS debt.
+### ✅ PR #47 MERGED (round 2) — what its integration put on `main`
+**glossary §65** (7 subsections) and **FLAGS §BE** (6). ⭐⭐ **THE WAVE-3 IFRIT WARNING IS DISCHARGED** —
+§9's `イフリート` row and §30.1 both amended; L0 glosses Ifrit in the word the script store already uses.
+Open since wave 3, closed by a reviewer reading the file, not on the translator's say-so.
+- **§65.1** promotes the three §9.W13 seeds (all used exactly as seeded, all exhausted).
+- **§65.4** rules the **two 24-column rows are the EXHAUSTIVE floor and they ship** — the reviewer
+  re-brute-forced it independently and found `ｄａｎｇｅｒｏｕｓ` floors a page at **25**, over the hard limit.
+- **§BE3** ⭐ **"A WIDTH CLEARANCE IS NOT A WORD RULING"** — §42.1/§42.8's clearance cost a review round.
+  The translator's pushback was upheld: `ｇｉａｎｔ　ｂａｔｔｅｒｙ` stands.
+- **§BE2** ⭐ carries the **`{FCC0}` / `tag_parity` contradiction** both wave-13 battle translators hit.
+  ⚠️ **Chunk 27's reviewer must CITE §BE2, not write a second entry.**
+- **§BE4** ⚠️ **a cross-unit find that arms itself later: `pending/chunk_005.txt` body[17] carries the
+  RETIRED wording of §27.2's binding string** (8 shipped instances use the current one), and body[27]
+  predates §32.3's `ねえ、` ruling. **Recorded in Blocked 4 — apply at the tier-A unpark, +2 bytes on a
+  budget-parked unit.** Surfaced by chunk 15's duplicate gate reaching outside its own unit.
+- **§65.7 / §BE6** — the PR body was never updated for the rework, so it still described round-1 text.
+  The reviewer integrated from a corrected record rather than spending a third round on it.
+  **Lesson for every unit: update the PR body on every rework push.**
 
 ### ✅ PR #49 rework round 1 pushed (`d917bb7`, 2026-09-11 ~23:56) — re-review QUEUED behind #47
 **6,291 / 8,192 (1,901 slack)**, +10 bytes; realised 2.04×; `{FFFE}` 126 → 135; **`{FCC0}` 13 → 13**;
