@@ -54,7 +54,7 @@ table, never that line.
 ## In flight — WAVE 14, dispatched 2026-09-12
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
-| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | **#52** | returned | **awaiting review** — 3,949 / 8,192 (4,243 slack), realised 2.01× vs a 4.77× ceiling; 98 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
+| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | **2** | **#52** | **CHANGES — rework sent** | 3 findings; only #1 changes a byte (`まあいいわ。` → `Ｎｏ　ｍａｔｔｅｒ．`, +4 bytes). Every mechanical gate PASSED. Nothing merged; `origin/main` untouched at `5013bd5` |
 | **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | returned | **awaiting review** — 3,423 / 8,192 (4,769 slack), realised 2.14× vs a 6.05× ceiling; 79 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
@@ -270,6 +270,36 @@ must NOT raise it against chunk 39.** ⭐ Bidirectional QC working as designed, 
   under their own convention, so the row now **states its corpus**, per the standing rule.
 ⭐ **Lesson for the reviewer: three of my seventeen seed rows carried a wrong count, and TWO were caught
 by translators. Treat every figure in §9.W14 as a claim to re-derive, not as evidence.**
+
+### ⭐⭐ REVIEWER 1's CROSS-UNIT RULINGS (PR #52, CHANGES) — BINDING ON REVIEWERS 2 AND 3
+**Reviewer 1 merged nothing, so these are rulings, not incumbents-by-merge. Relay them forward.**
+- **A. `アイテムを奪われました。` → `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．`** ⭐ **The true
+  census is 11, not §21.3's SEVEN:** 7 with the source break (3, 9×3, 28, 29, 30) and **4 without
+  (38 L21, 39 L8, 41 L9, 41 L11)**. **Chunks 38 and 41 are shipped and already ADD the `{FFFE}` to the
+  no-break source**, so **PR #50's declared `{FFFE}` 0 → 1 is conformance with three precedents, not a
+  novelty — UPHOLD IT.** All three wave units ship the form byte-identically.
+- **B. `勝ち目はありません。` — chunks 28 and 29 MATCH** modulo sentence-initial capitalisation, which
+  their differing source frames require. **No change to either.** `勝ち目` is **NOT** exhausted (chunk 16
+  blocked, `script_unique` 523/525/1373 untranslated).
+- **C. `あのとおり` vs `あの通り` — the split is a DIVERGENCE and it is CHUNK 29's.** The corpus splits
+  by the Japanese head: `あのとおり` → `Ａｓ　ｙｏｕ　ｓａｗ` (`batch_012:67`, `batch_016:91`) vs
+  `ご覧のとおり` → `Ａｓ　ｙｏｕ　ｓｅｅ` (`chunk_037` L17). **Chunk 28 conforms; chunk 29's
+  `Ａｓ　ｙｏｕ　ｓｅｅ　ｔｈｅｒｅ，` diverges from its own lexeme, collides with what chunk 39 ships this wave
+  for different Japanese, AND adds a comma its source lacks (§44.2). REVIEWER 2 MUST RAISE IT.**
+- **D. `まあいい` — PR #51 IS RIGHT AND PR #52 IS WRONG.** **Reviewer 2: UPHOLD chunk 29's
+  `Ｎｏ　ｍａｔｔｅｒ．`**; do NOT conform it to chunk 28's `Ｏｈ　ｗｅｌｌ．`, which is being sent back.
+- **E. A FOURTH cross-unit item nobody had named — `どうせ`.** `chunk_027` L4 is shipped, is **Seti's own
+  line in the preceding chapter**, and uses `ａｌｌ　ｔｈｅ　ｓａｍｅ`; `batch_012:56` twice more. Chunk 28
+  conforms; **chunk 29 L19's `Ｗｈａｔｅｖｅｒ　ｔｈｅｙ　ｄｏ，` DIVERGES — REVIEWER 2 MUST RAISE IT.**
+- **F. For reviewer 3:** `最高` is in chunk 28 (L18) and chunk 39 (L4 `最高性能`) — different senses, no
+  conformance owed, but check chunk 39 does not reach for `ｍａｇｎｉｆｉｃｅｎｔ`. **My `工場` → `ｆａｃｔｏｒｙ`
+  correction is INDEPENDENTLY CONFIRMED by reviewer 1's own positional pairing; `ｆａｃｔｏｒｉｅｓ` stands.**
+
+⚠️ **More rows that must STAY LIVE (reviewer 1, verified):** `甘すぎ` (chunk 28 + **blocked chunk 16
+L14**) · `永遠` (same) · `渓谷` (2 battle + **2 untranslated script**, `script_unique` 1292, 1381 — PR
+#52's own "0 script — EXHAUSTED" claim is wrong) · `勝ち目` · `一巻の終わり` · `巣窟`.
+⭐ **Pattern of the wave: SIX separate "EXHAUSTED / hapax" claims have now been wrong — three mine, three
+the translators'. Not one survived re-derivation. Re-derive every one before striking a row.**
 
 ### ⚠️⚠️ A CROSS-UNIT GATE-6 CONSTRAINT BINDS ALL THREE WAVE-14 PRs — NO SINGLE REVIEW CAN SEE IT
 Raised by the chunk-29 translator (§21.3), **verified by me against the dump at 03:12**:
