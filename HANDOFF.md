@@ -72,18 +72,48 @@ in the CLAUDE.md banner, and it passes.
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and which one it hides is NOT stable** — quote
 the table, never that line.
 
-## In flight — the repairs session's four units, all dispatched 2026-09-12
-| Unit | File | Repair | Budget headroom | State |
-|---|---|---|---|---|
-| R0+R5 | `tl/battle/chunk_000.txt` | body[12] p21 `.TTTT.`→`.TTT.` (0 bytes, **mandatory**) + body[2] `餌食`→`ｐｒｅｙ` (**only if it fits**) | **slack 27 bytes** — the tightest normal chunk | translator dispatched |
-| R2 | `tl/battle/chunk_018.txt` | body[4] `それよりも、` → `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，` (+6 bytes) | slack 5,157 | translator dispatched |
-| R1 | `tl/script/batch_012.tsv` | line 63 → `，{FFFE}ｍｙ　ａｐｏｌｏｇｉｅｓ．` (+4 bytes, bank 1) | bank 1: 26,191 free | translator dispatched |
-| R6a | `tl/script/batch_013.tsv` | line 31 → `Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` (+12 bytes, bank 29) | bank 29: 16,879 free | translator dispatched |
+## In flight — the repairs session's four units (2 PRs open, 2 translators still working)
+| Unit | File | PR | State |
+|---|---|---|---|
+| R0+R5 | `tl/battle/chunk_000.txt` | — | translator working |
+| R2 | `tl/battle/chunk_018.txt` | **#53** `fix/battle-018` @ `a881998`, clean | **awaiting the wave barrier** |
+| R1 | `tl/script/batch_012.tsv` | — | translator working |
+| R6a | `tl/script/batch_013.tsv` | **#54** `fix/script-013` @ `588de7c`, clean | **awaiting the wave barrier** |
 
-**No tight bank is touched** (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607 all untouched).
+⛔ **Nothing is reviewed until all four units have a PR** (CLAUDE.md §4 step 4). No tight bank is touched
+(40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607 all untouched).
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
+
+### ⭐⭐ BOTH RETURNING TRANSLATORS CORRECTED THE COORDINATOR, AND BOTH WERE RIGHT
+**Two of my dispatch figures were wrong. Each was caught by the subordinate doing the work, verified by
+me against the corpus, and neither changed a decision.** Recorded because wave 14's §69 makes the same
+point and this is the fifth and sixth instance of it.
+1. **The `それよりも` family is 12 rendered sites, not 7 — I censused ONE spelling.** PR #53 re-derived it
+   across **both** spellings: **7 `それよりも` + 5 bare `それより`**, in six Englishes. My census, §69.5's
+   and the dispatch's all missed the bare form. Verified here: `chunk_000` body[12], `chunk_003`
+   body[15], `chunk_037` body[17], `pending/chunk_005` body[9] and a **second** instance inside
+   `batch_016:93` (unique 865 carries both spellings on one line). **The ruling is untouched and needs
+   no §4.3 correction** — `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` is **7 of 12** across four files and
+   `chunk_018`'s `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ` was a lone hapax — but §69.5's **census** is understated
+   and the integrator should correct it in place so it is not re-derived a sixth time.
+   ⚠️ **One counter-correction: PR #53's flag 6 cites the untranslated line as `script_unique` 1360. It
+   is 1355**, and its run is `ねえ、それより指輪は・・・・？` with **no `{FFFE}`** inside it. Blocked
+   behind the §F2 bank-40/41 repoint either way.
+2. **`batch_013:31` costs +10 bytes and 16/17 columns, not the +12 and 17/17 I dispatched.** `Ｉｎｓｉｄｅ`
+   is **6** characters, not 7; I miscounted and the error propagated into both script dispatches.
+   PR #54 caught it, and `bankmeasure` confirms independently — bank 29 free falls 16,879 → **16,869**.
+3. ⭐ **PR #54 found this was a gate-7 divergence as well as a §3 one, which §BF3 does not say.**
+   `glossary.md` **§58** already carries `静まり返っている` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` ("Three
+   spellings, one word, one English"), added by `batch_017`/PR #42 — **after** `batch_013`/PR #36 shipped.
+   So `ｑｕｉｔｅ　ｓｉｌｅｎｔ` contradicted a live glossary row, not only CLAUDE.md §3. It also
+   conformed the **frame** (`〜の中は` → `Ｉｎｓｉｄｅ　ｔｈｅ　Ｘ`, all 7 conforming sites), which is
+   what forced the divergence: `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ` cannot take `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` after it.
+4. **For the reviewer, at the #54 merge: `FLAGS §BF3` is DISCHARGED and its citation list must be
+   corrected, not just struck.** §BF3 names five sites as instances of the byte-identical string
+   `静まり返っている・・・。`; **none of the five is** — they are three spellings with three different dot
+   counts. PR #54's flag 2 table is the re-derived replacement.
 
 ## Next up
 ⛔ **NOTHING. The dispatch queue is empty and will stay empty until a human unblocks it.** See NEXT ACTION.
