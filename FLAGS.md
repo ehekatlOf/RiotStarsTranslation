@@ -8007,3 +8007,128 @@ unwritten; then `python3 tools/engine.py build --main1-buffer 0x…` builds and 
 banks 41, 40, 5, 2 and 33 gain 30,720 / 22,528 / 16,384 / 14,336 / 12,288 bytes respectively and the
 §4 step-1 survey rule ("a line is blocked if any of its banks cannot absorb its growth at 2.0×") is
 re-run against the new budgets. `bankmeasure.py`'s figure remains the only one that counts.
+
+---
+
+## BE. Wave 13 review — battle chunk 015 / PR #47, MERGED (2026-09-12, round 2)
+
+Squash `8a08027`, integration `integrate: chunk 015 — glossary §65, flags §BE, handoff` (the commit directly after `8a08027` on `main`). **3,275 / 8,192, slack 4,917.** Gates: paths, clean
+merge onto `602c406`, `check` All checks passed, `rowcheck 15` clean, banks n.a. and unchanged
+(40 → 75, 41 → 353, 5 → 1,595, **2 → 1,607**), duplicates by positional pairing, glossary, structure.
+Glossary additions integrated at **§65**; the wave-3 Ifrit warning is discharged in **both** §9 and
+§30.1.
+
+### BE1. ⚠️ TWO ROWS AT EXACTLY 24 COLUMNS — legal, proven to be the floor, and written down here so a later one-character fix finds them
+
+`translation_prompt.md` §3.2 permits 24 and prefers ≤ 23, on the ground that *"a line at exactly 24
+has no room for a later one-character fix — a changed name, an added apostrophe — without a
+re-flow."* Chunk 15 ships two:
+
+```
+tl/battle/chunk_015.txt body[0]  |ｂａｔｔｅｒｙ，　Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ|      24
+tl/battle/chunk_015.txt body[1]  |ｔｈｅ　ｂａｔｔｅｒｙ　ｉｓ　ｐｅｒｉｌｏｕｓ．|      24
+```
+
+**Both are the exhaustive floor**, brute-forced at review over every split at every space into ≤ 4
+rows, for the shipped wording and for six faithful rewordings that keep every element (floors 24, 24,
+26, 27, 25, 24, 25 — none reaches 23). On body[1] page D, `ｄａｎｇｅｒｏｕｓ` instead of `ｐｅｒｉｌｏｕｓ`
+floors the page at **25, over the hard limit**, so the word choice there is not a preference.
+**Do not re-litigate them**; glossary §65.4 has the tables. **If either page is ever touched — a
+renamed term, a new apostrophe — it needs a re-flow, not a word swap.**
+
+### BE2. ⭐ `translation_prompt.md` §3.2 tells translators to add a `{FCC0}`; `assemble.py:tag_parity` then rejects it — and BOTH wave-13 battle translators hit it independently
+
+§3.2: *"≤ 4 lines per page … If English needs a fifth line, insert a `{FCC0}` page break"*, and again
+*"Four rows is the wall. When four rows of 23 will not hold the page, add a `{FCC0}` rather than
+cutting sense."* But `assemble.py:tag_parity` drops **only** `{FFFE}` from the comparison, so an
+added `{FCC0}` fails `check` outright.
+
+**This is not a one-off.** Chunk 15's translator hit it and absorbed it by tightening to the 24-column
+floor above (which is *why* BE1 exists); **chunk 27's translator hit it independently in the same
+wave**. Two translators discovering the same contradiction at the gate, in one wave, is a
+documentation defect, not bad luck.
+
+**Cost so far:** nil in shipped quality — both units tightened instead. **Cost if it recurs on a
+tier-B or tier-C chunk:** a page that genuinely needs five rows has no legal move, and the unit gets
+parked for a reason the tools created.
+
+**The fix is one of two, and it is a human's call, not a translator's:**
+1. **Prompt side** — §3.2 gains a caveat: *the `{FCC0}` escape is not available; hold every page to
+   4 × 24 or restructure*, which is what has actually been true for 13 waves; or
+2. **Tool side** — `tag_parity` drops `{FCC0}` as well as `{FFFE}`, with a rule that `{FCC0}` may be
+   **added** but not removed or reordered. ⚠️ **Not obviously safe**: `{FCC0}` clears the box, so an
+   added one changes what the engine draws, and until the box behaviour is confirmed in-game
+   (Blocked 5) nobody can prove a spurious page break is harmless. **Prefer (1) until the boot test
+   lands.**
+
+**Never "fix" this by editing `assemble.py` to make a check pass** — CLAUDE.md §3. It is a flag.
+
+### BE3. ⚠️ A WIDTH CLEARANCE IS NOT A WORD RULING — §42.1 / §42.8's `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` cost a review round
+
+§42.1's `砲台` row and §42.8's correction table say, of chunk 15: *"the PR's row tells chunk 15's
+translator that `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` is 25 columns and does not fit. Measured with
+`len()` it is 23 … **It fits** … Chunk 15 is not steered away from the full form."*
+
+That corrects a **measurement**. PR #47's round-1 reviewer read it as fixing the **word** and asked
+for `ｇｒｅａｔ`. The translator pushed back, and the pushback was right: `tl/script/batch_015.tsv:18`
+already ships `巨大な　砲台` → **`ｇｉａｎｔ　ｂａｔｔｅｒｙ`** for this same battery guarding this same
+fortress, and `ｇｒｅａｔ` is independently spent on 大 by §2's `大要塞` → `ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ`.
+Taking `ｇｒｅａｔ` would have **split a shipped compound** — the exact failure the withdrawn
+`Ｆｏｒｔ　Ｂａｕｅｒ` seed (§724, withdrawn at PR #37) records — **and** collapsed 大 with 巨大.
+
+**The general rule, for every reviewer and every seed writer: a note that says a form *fits* has
+settled its width and nothing else.** Fixing a word takes a glossary row or a shipped incumbent. When
+a note does both jobs in one sentence, say which half is binding. §42.1's row has been amended in
+place (§4.3) and §65.2 carries the shipped-compound evidence.
+
+### BE4. ⚠️ `pending/chunk_005.txt` body[17] carries the RETIRED wording of the §27.2 binding string — a CLAUDE.md §3 violation that arms itself when chunk 5 unparks
+
+Surfaced by chunk 15's own duplicate gate. §27.2 binds `村が襲われました。` to
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` and reports *"1 divergent rendering before, 0 after —
+`tl/battle/` is free of divergent duplicate renderings for the first time in the project."* That is
+true of **`tl/`**. It is not true of `pending/`:
+
+```
+chunk 005 body[17]  pending/chunk_005.txt   Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．      <-- retired wording
+chunk 007 body[24]  tl/battle/chunk_007.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 007 body[25]  tl/battle/chunk_007.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 013 body[6]   tl/battle/chunk_013.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 015 body[6]   tl/battle/chunk_015.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 017 body[19]  tl/battle/chunk_017.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 021 body[9]   tl/battle/chunk_021.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 034 body[6]   tl/battle/chunk_034.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 038 body[19]  tl/battle/chunk_038.txt Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．
+chunk 016 body[5], body[7] · chunk 023 body[4] · chunk 039 body[6]   -- still untranslated
+```
+
+**It is invisible today and becomes a live §3 violation the moment Blocked 4's boot test passes and
+`git mv pending/chunk_005.txt tl/battle/chunk_005.txt` runs.** The fix is one line and **+2 bytes**
+(`ｉｓ　ａｔｔａｃｋｅｄ．` → `ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`, 14 and 13 columns), and chunk 5 is parked on
+**budget**, so the two bytes matter: apply it **at the unpark, together with the re-measure**, not
+before. ⚠️ **Also check `pending/chunk_043.txt` and `chunk_043_abridged.txt` at their unpark** — they
+were written under the same pre-§27.2 conventions and nobody has swept them since.
+
+⭐ **The general lesson: a "0 divergences" claim scoped to `tl/` is not a claim about the project.**
+Parked units are shipped work waiting for a gate to open, and every binding entry written after they
+were parked is a divergence armed and waiting. **Whoever unparks a chunk owes it a full gate-6 and
+gate-7 pass against the glossary as it stands that day, not as it stood when the chunk was written.**
+
+### BE5. `危険` now has two shipped Englishes, both correct
+
+`chunk_007` body[10] `ｄａｎｇｅｒｏｕｓ` · `chunk_015` body[1] `ｐｅｒｉｌｏｕｓ` · `batch_008:69`
+`ｐｅｒｉｌｏｕｓ` · `batch_008:71` `ｄａｎｇｅｒｏｕｓ`. Different chunks and different messages, so §25.3 is
+met and no player meets both in one scene. `ｄａｎｇｅｒｏｕｓ` is additionally the **fixed** form for
+`あぶない` (§62's D320 row), so `ｐｅｒｉｌｏｕｓ` is the side that narrows the collapse. Glossary §65.2
+carries the rule. **Not a defect; recorded so the next unit picks on purpose rather than by coin.**
+
+### BE6. Process — the PR body was not updated for the rework, and the reviewer integrated from a corrected record instead of bouncing the unit
+
+PR #47's body is round 1's throughout: stale title and byte figure (3,239 / 4,953 against the merged
+3,275 / 4,917), a stale `check` block, *"worst column run 23 (no row at 24)"* on a unit with two 24s,
+the withdrawn `巨大砲台` → `ｇｉａｎｔ　ｇｕｎ` glossary row, and Flags 2, 7, 8, 9 quoting text the merged
+file does not contain. The accurate rework record exists only in `20764d2`'s commit message.
+
+**Handled by correcting the record, not by a third round** — the file was right, three rounds is the
+cap, and round 1 had already set the precedent of narrowing PR-body rows at integration. The
+withdrawn rows are named in glossary §65 so no later session integrates them. **But the next unit
+that does this should be told at round 1:** the body is what the reviewer integrates from.

@@ -33,24 +33,32 @@ origin/main`, verify with `git log -1`.
 > After wave 14 the battle store is exhausted short of the slot extension, and the script is where it
 > was: **0 feasible lines, 363 of 366 behind the §F2 repoint.** Then §8's stop condition holds again.
 ## Last updated
-2026-09-11 · by: **the wave-13 coordinator (its own session)** · **WAVE 13 DISPATCHED — battle chunks
-15, 23, 27, three translators in parallel behind the wave barrier.** Glossary seeds committed as §9.W13
-(`d96d42f`). Preflight green: `check` All checks passed, `origin/main` == local, one worktree, **no open
-PR and no live agent at wave start**. · the game files are on `main` (`unpack.py`, §BB4) · engine build 1
+2026-09-12 · by: **the wave-13 reviewer (PR #47 integration)** · ✅ **BATTLE CHUNK 15 MERGED at round 2**
+— squash `8a08027`, 3,275 / 8,192, slack 4,917. Every §6 gate re-run on the new head; nothing carried
+forward from round 1. Glossary **§65**, FLAGS **§BE**. ⭐ **The wave-3 Ifrit gloss warning is DISCHARGED
+in both §9 and §30.1** (it closed on `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ`, not on round 1's `ｇｉａｎｔ　ｇｕｎ` —
+a gloss discharges a gloss warning only in the word the corpus already uses). Three §9.W13 seeds
+promoted and struck, all exhausted. **Two rows ship at exactly 24 columns — the proven exhaustive
+floor, recorded in §BE1, not to be re-litigated.** · **#49 (chunk 23) and #48 (chunk 27) are still
+open — the wave is NOT closed.** · the game files are on `main` (`unpack.py`, §BB4) · engine build 1
 still awaits its boot test (Blocked 4/6, the runner's work, not this wave's)
 
 ## Progress (`python3 tools/assemble.py status`)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **34** | 44 | 17 and 36 shipped 2026-09-11 (§BB, §BA); **6 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
-| Battle JP characters | **29,892** | 43,137 | **69.3%** — the total fell by 24: the artifact kanji had been counted as Japanese (§BB6) |
+| Battle chunks | **35** | 44 | **chunk 15 merged 2026-09-12 (PR #47, `8a08027`)**; 17 and 36 shipped 2026-09-11 (§BB, §BA); **5 dispatchable**; 16, 32 blocked and 5, 43 parked on the tier-A floor |
+| Battle JP characters | **30,512** | 43,137 | **70.7%** (was 69.3% — chunk 15's 620 characters) |
 | Script unique lines | **1,064** | 1,430 | `tl/script/batch_001–022.tsv` (was 948) |
 | Script message instances | **5,180** | 7,931 | **65.3%** (was 63.6%) |
 
-`check`: **All checks passed** at the tokenise-fix commit, chunks 17 and 36 in `tl/battle/`. **glossary ends §64 · FLAGS ends §BB** — ⚠️ **always take
+`check`: **All checks passed** at PR #47's integration commit. **glossary ends §65 · FLAGS ends §BE** — ⚠️ **always take
 the next number by READING both files at commit time, never by reserving.**
-`build/*_dump_merged.txt` regenerated at this close. README status table refreshed. **All worktrees
-pruned — `git worktree list` shows only the main checkout.** **No open PR, no live agent.**
+⚠️ **The three lines that used to sit here — `build/*_dump_merged.txt` regenerated, README status table
+refreshed, all worktrees pruned, "no open PR, no live agent" — were the WAVE-12 CLOSE's state and are
+false now.** Wave 13 is mid-flight: **#49 and #48 are open**, `build/` has not been regenerated since
+chunk 15 merged, and the README table still shows 34 chunks. All three belong to the wave-13 close,
+not here. Corrected at PR #47's integration so a resuming session does not read "no open PR" and
+conclude the wave is done.
 ⚠️ **FOUR banks are under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.**
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE, and WHICH ONE IT HIDES IS NOT STABLE** — it
 hid bank 5 before wave 12 and hides **bank 2** now. **Quote the table, never that line.**
@@ -59,7 +67,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 ## In flight — WAVE 13, ✅ BARRIER MET 2026-09-11 ~22:50 UTC, reviewing in unit order
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
-| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | 🔄 **rework r1 pushed (`20764d2`) — RE-REVIEWER RUNNING** |
+| battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integration `integrate: chunk 015 — glossary §65, flags §BE, handoff` (the commit directly after `8a08027` on `main`). Glossary **§65**, FLAGS **§BE**. Nothing left on this unit |
 | battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | 🔄 **rework r1 pushed (`d917bb7`)** — all 5 implemented; **queued for re-review** |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ✅ PR open — queued |
 
@@ -69,12 +77,13 @@ pushes `integrate:main`). ⚠️ Each merge moves the base under the other two �
 re-checks mergeability against a pinned SHA and never reuses an author's `merge-tree`.
 
 ### Integration debts the reviewer must carry onto `main` (detail in each PR body)
-**PR #47 (chunk 15)** — ⭐ **close the wave-3 warning**: §9's `イフリート` row and §30.1 both say *"the
-gloss is in chunk 15 — stays live for whoever takes chunk 15"*; **L0 now delivers it**. Promote the three
-§9.W13 seeds (`ウシャシャシャシャシャ`, `ニール`, `炎熱騎士団` — all used as seeded, all exhausted).
-Record five incumbent forms the glossary never held (`そういうワケにはいかない`, `ねえ、` → `Ｓａｙ，`,
-`あと一息`, `やめたほうがいい`, `カーライン軍`); ⚠️ **two are SPELLING TWINS gate 6 cannot pair**
-(`ワケ`/`訳`, `ほう`/`方`).
+**PR #47 (chunk 15)** — ✅ **ALL DISCHARGED 2026-09-12 at the merge.** The wave-3 Ifrit warning is closed
+in **both** §9 and §30.1; the three §9.W13 seeds are promoted to §65.1 and struck, all exhausted; the
+incumbent rows including both spelling twins (`ワケ`/`訳`, `ほう`/`方`) are written at §65.3. ⚠️ **`ねえ、`
+→ `Ｓａｙ，` was NOT an unheld incumbent — the glossary already fixes it at §32.3 / §34.2**; recorded as
+conformance, not as a new row. Additional rows the PR body did not list and the merge carries anyway:
+`巨大砲台` → `ｇｉａｎｔ　ｂａｔｔｅｒｙ`, `危険` → `ｐｅｒｉｌｏｕｓ`, `無茶` → `ｒｅｃｋｌｅｓｓ`, `６軍` →
+`６ｔｈ　Ａｒｍｙ`, `おもしろい` → `ｉｎｔｅｒｅｓｔｉｎｇ`, `帝国の技術の粋` → `Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ　ｃｒａｆｔ`.
 **PR #48 (chunk 27)** — nine glossary rows (`根城`, `坊や`, `袋のネズミ`, `間違いない`, `新手`, `ナメる`,
 `ふん、`, `あっけなかった`, `ひと汗かいた`). ⚠️ **§9.W13's `根城` row STAYS LIVE** — chunk 32 holds its
 fourth instance and 32 is blocked, so *that* unit strikes it, not this one. **§9.W13's `ダメージ` row is
@@ -84,12 +93,15 @@ RULING, not a re-cut: §30.4 reserves `ｕｎｄｅｒｅｓｔｉｍａｔｅ` 
 (`chunk_006` L21, wave 2, before §30.4 was written). Invisible to a `tl/` grep; found by positional
 pairing. The next unit reaching 見くびる (1 battle + 1 script) is the one that breaks.** This unit depends
 on neither form and avoided both.
-**Both PRs** — ⚠️ **`FLAGS.md`: the prompt and the tool disagree.** `translation_prompt.md` §3.2 tells a
-translator to add a `{FCC0}` page break when four rows will not hold a page, but `assemble.py:tag_parity`
-compares every tag except `{FFFE}`, so an added `{FCC0}` fails `check` (§Q2). **Both translators hit it
-independently and both absorbed it by re-flowing `{FFFE}` inside the source's own pages** — chunk 27 paid
-a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank + 4-row shape.
-A tier-B/C chunk with a dense page may not be able to absorb it.
+**Both PRs** — ✅ **WRITTEN at PR #47's integration as `FLAGS.md` §BE2; #48's reviewer should cite it, not
+duplicate it.** `translation_prompt.md` §3.2 tells a translator to add a `{FCC0}` page break when four rows
+will not hold a page, but `assemble.py:tag_parity` compares every tag except `{FFFE}`, so an added
+`{FCC0}` fails `check` (§Q2). **Both translators hit it independently and both absorbed it by re-flowing
+`{FFFE}` inside the source's own pages** — chunk 15 by tightening to the 24-column floor (§BE1), chunk 27
+by paying a text row on three pages to avoid §3.2 / §10-q4's untested leading-blank + trailing-blank +
+4-row shape. A tier-B/C chunk with a dense page may not be able to absorb it. §BE2 names the two possible
+fixes and says why the tool-side one is not obviously safe before the boot test. **Neither is a
+translator's to apply** (CLAUDE.md §3).
 
 ### ⚠️ PR #47 — CHANGES, round 1 (2026-09-11 ~23:15). Not merged; no integration commit; nothing pushed.
 Seven of eight gates passed; **gate 7 failed**. I re-verified all three findings myself before relaying:
@@ -331,6 +343,15 @@ English; (2) chunk 5's battle plays through; (3) chunk 43 if a late save exists;
 savestate and one name-entry savestate for `liveness`/`gridsim`. **Until (1)+(2) pass, `--extended`
 stays opt-in, 5 and 43 stay in `pending/`, and 16/32 stay blocked.** After they pass: move 5 and 43 to
 `tl/battle/`, make `--extended` the default, dispatch 16 and 32 with a 16,384-byte budget.
+⚠️ **THE UNPARK IS NOT A `git mv` — chunk 5 carries armed glossary divergences.** `FLAGS.md` **§BE4**
+(found at PR #47's duplicate gate): `pending/chunk_005.txt` body[17] still renders §27.2's binding
+string as the **retired** `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` against eight shipped
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．`, and body[27] renders `ねえ、あなたたち、` as
+`Ｙｏｕ　ｔｈｅｒｅ，` against §32.3's `ねえ、` → `Ｓａｙ，` (recorded at §34.2). Both are invisible while the
+chunk is parked and both become live the moment it is not. **+2 bytes on a unit parked for budget, so
+they are applied at the unpark with the re-measure.** Chunks 5 and 43 were written before §27.2, §32.3
+and thirty other entries existed: **each owes a full gate-6 and gate-7 pass against the glossary as it
+stands on the day it unparks, not as it stood when it was written.**
 
 ### 5. 🎮 Two in-game visits that settle four open questions between them
 - **The nine tutorial screens** (Blocked 8, §AO1–AO3). `batch_013.tsv` adds one `{FFFE}` to each of

@@ -296,7 +296,7 @@ the European-reading convention (§11.4, §14, §17.3) and the species test (§1
 | ~~スパイ~~ | ✅ **PROMOTED to §29.1** — `ｓｐｙ`, lowercase, rendered twice in `tl/battle/chunk_008.txt` (PR #11). **Used exactly as seeded** | battle chunk 8 | — |
 | ~~アーバイン様~~ | ✅ **PROMOTED to §28.1** — `Ｌｏｒｄ　Ｉｒｖｉｎｅ`, rendered in `tl/battle/chunk_013.txt` (PR #10). ⚠️ **This row's widths were both one too many** — `Ｉｒｖｉｎｅ` is **6** columns and `Ｌｏｒｄ　Ｉｒｖｉｎｅ` is **11**, not 7 and 12. The seed was mine and it was wrong; the translator caught it and I remeasured on the shipped row (`Ｌｏｒｄ　Ｉｒｖｉｎｅ！` = 12 with the mark). The rendering is unchanged | **Wave-3 seed** — an enemy commander (chunk 13 L2, `アーバイン様！敵襲です！！`), addressed 様 by a subordinate; masculine, authoritative register (`まあよい`, `叩き潰してやれ！！`). 様 → Lord on the `リムル` / `フィリス様` precedent (§14.1), **not** §21.2's さん rule. **1 battle + 0 script.** ~~7 columns bare, 12 with the title~~ | Ｕｒｂａｉｎ, Ｅｒｂｉｎｅ |
 | ~~バージェス~~ | ✅ **PROMOTED to §30.1** — `Ｂｕｒｇｅｓｓ` / `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ`, rendered in `pending/chunk_017.txt` (PR #12), used exactly as seeded. ⚠️ **This row's widths are both one too many** — `Ｂｕｒｇｅｓｓ` is **7** columns and `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` is **14**, not 8 and 15; remeasured at review. Rendering unchanged | ~~**Wave-3 seed** — a **PLACE**, on the §2 test: `バージェス峡谷か南の砂漠` (a route out, chunk 17 L4) and `バージェスからの定期連絡` (regular reports *from* it, chunk 17 L5). Capitalised as a place name on the `バジリスクの砂漠` → *the Basilisk Desert* precedent (§2). **2 battle (chunk 17) + 5 script.** 8 columns bare, 15 with Ｃａｎｙｏｎ | `Ｂｕｒｇｅｓｓ　Ｇｏｒｇｅ` also 15 — 峡谷 is literally a gorge; either fits. Rendered by chunk 17 — promote on merge |
-| ~~イフリート~~ | ✅ **PROMOTED to §30.1** — `Ｉｆｒｉｔ`, capitalised, rendered in `pending/chunk_017.txt` (PR #12), **used exactly as seeded**; 5 columns confirmed. ⚠️ **The chunk-15 gloss warning stays live for whoever takes chunk 15** | ~~**Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
+| ~~イフリート~~ | ✅ **PROMOTED to §30.1** — `Ｉｆｒｉｔ`, capitalised, rendered in `pending/chunk_017.txt` (PR #12), **used exactly as seeded**; 5 columns confirmed. ✅ **THE CHUNK-15 GLOSS WARNING IS DISCHARGED 2026-09-12 (PR #47).** This cell read *"stays live for whoever takes chunk 15"* for four waves; chunk 15 L0 now carries the gloss as `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ` plus the 紅蓮 fire line. **Struck in both places — here and at §30.1 — at the same merge.** See §65 | ~~**Wave-3 seed. A named FORTRESS GUN, not a monster and not a person** — so the §17.1 species test does **not** apply and it stays capitalised. ⚠️ **The gloss is in chunk 15, not in chunk 17**: chunk 15 L1 has `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！` (*this giant gun emplacement Ifrit*) and `紅蓮の炎で焼き尽くしてくれるわっ！` (the fire association the name carries). **Chunk 17 L5 renders only `・・・イフリートが落とされたか。`** — without this row its translator cannot tell what Ifrit is. **2 battle (ch15 L1, ch17 L5) + 3 script.** 5 columns | Ｅｆｒｅｅｔ, Ｉｆｒｅｅｔ. Rendered by chunk 17 — promote on merge |
 | ~~マムー~~ | ✅ **PROMOTED to §30.1** — `Ｍａｍｕ`, **with no `Ｌｏｒｄ`**, rendered in `pending/chunk_017.txt` (PR #12); 4 columns confirmed. The self-reference warning was heeded exactly. ✅ **The `マムー兄さん` note is DISCHARGED 2026-09-10: chunk 41 renders it `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` (PR #30), exactly as reserved** | ~~**Wave-3 seed** — a **PERSON**, male. ⚠️ **`このマムー様が` (chunk 17 L7) is boastful SELF-reference, not an honorific from a subordinate** — the `このクリミアに` pattern (§25.1) — so it takes **no** `Ｌｏｒｄ`; put the swagger in the verb (`ぜ`, §7), not in a title. `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` is **chunk 41's** line, not chunk 17's. **2 battle (ch17 L7, ch41 L5) + 0 script.** 4 columns | Ｍａｍｍｏｏ, Ｍａｍｕｕ. Rendered by chunk 17 — promote on merge |
 | ~~フェミナ~~ | ✅ **PROMOTED to §30.1** — `Ｆｅｍｉｎａ`, rendered in `pending/chunk_017.txt` (PR #12); 6 columns confirmed. **The relation this row asked to be confirmed IS confirmed from inside the chunk** — see §30.5 | ~~**Wave-3 seed** — a **PERSON**, female, already dead when named: `フェミナ、ごめんね。あんたの仇、とれなかったよ・・・` (chunk 17 L24 — *sorry, I could not avenge you*). Almost certainly the murdered sister of chunk 17 L6–7's `あんたの妹を殺した奴ら` / `カーライン第９軍・・・まちがいない`; chunk 17's translator should confirm the relation from the full chunk before leaning on it. **1 battle + 0 script.** 6 columns | Ｆｅｍｉｎａｈ. Rendered by chunk 17 — promote on merge |
 
@@ -969,10 +969,10 @@ Japanese.**
 
 | Japanese | Proposed English | Where seen (censused at seed time) | Status / promotion note |
 |---|---|---|---|
-| `ウシャシャシャシャシャ` | `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ` | **2 battle (chunk 15 L0, L2) / 0 script / 0 `tl/`.** `Ｕｓｈａｓｈａ` verified FREE across `tl/` and `pending/` | **16 columns.** The Ifrit commander's laugh. Kana beats tracked per §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ`, §14.5's `クックックッ`, §40.1 and §12.3: `ウ` + `シャ`×5 → `Ｕ` + `ｓｈａ`×5. Punctuation from the source per §5 — L0's `、` → `，`, L2's `！`. **Fits 24; no re-cut needed.** The beat rule is settled across six laughs, so this is mechanical, not a judgement call |
-| `ニール` | `Ｎｅｉｌ` | **2 battle (chunk 15 L10, both in one pooled message) / 0 script / 0 `tl/`.** FREE | **4 columns.** A 6th Army soldier who joins the party after the Ifrit fight. European reading per §11.4 / §14. Alts `Ｎｅａｌ` / `Ｎｉｌ` — `Ｎｅｉｌ` is the standard katakana and needs no defence |
+| ~~`ウシャシャシャシャシャ`~~ | ✅ **PROMOTED to §65.1 (PR #47, merged 2026-09-12)** — `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ`, **used exactly as seeded**, rendered twice in `tl/battle/chunk_015.txt` (L0 with the source's `，`, L2 with its `！`); 16 columns confirmed at review. **EXHAUSTED — 2 of 2.** Original seed note follows | ~~**2 battle (chunk 15 L0, L2) / 0 script / 0 `tl/`.** `Ｕｓｈａｓｈａ` verified FREE across `tl/` and `pending/`~~ | **16 columns.** The Ifrit commander's laugh. Kana beats tracked per §11.5's `フハハハ` → `Ｆｕｈａｈａｈａ`, §14.5's `クックックッ`, §40.1 and §12.3: `ウ` + `シャ`×5 → `Ｕ` + `ｓｈａ`×5. Punctuation from the source per §5 — L0's `、` → `，`, L2's `！`. **Fits 24; no re-cut needed.** The beat rule is settled across six laughs, so this is mechanical, not a judgement call |
+| ~~`ニール`~~ | ✅ **PROMOTED to §65.1 (PR #47, merged 2026-09-12)** — `Ｎｅｉｌ`, **used exactly as seeded**, rendered twice in `tl/battle/chunk_015.txt` L10 (`Ｉ’ｍ　Ｎｅｉｌ，　６ｔｈ　Ａｒｍｙ．` and the vocative `Ｎｅｉｌ，`); 4 columns confirmed. **EXHAUSTED — 2 of 2.** Original seed note follows | ~~**2 battle (chunk 15 L10, both in one pooled message) / 0 script / 0 `tl/`.** FREE~~ | **4 columns.** A 6th Army soldier who joins the party after the Ifrit fight. European reading per §11.4 / §14. Alts `Ｎｅａｌ` / `Ｎｉｌ` — `Ｎｅｉｌ` is the standard katakana and needs no defence |
 | ⛔ `オーケー` | **`Ｏｋａｙ`** — ALREADY KEYED, do not re-decide | **2 battle (chunk 15 L10, L11 — the same pooled message) / 0 script.** Incumbent: **`tl/battle/chunk_038.txt` L9 ships `オッケー！` → `Ｏｋａｙ！`**, found by positional pairing | **4 columns. USE BYTE-IDENTICALLY.** ⚠️⚠️ **GATE 6 IS DOUBLY BLIND HERE** — battle `tl/` holds no Japanese *and* the two spellings differ (`オーケー` vs `オッケー`), so even a Japanese-side grep would not pair them. This is §63.2 / §64.1's twin problem in a new place. ⚠️ **`ＯＫ` IS NOT A PRECEDENT:** chunk 36's `＞ＯＫ` is preserved machine text (§BA), not a rendering of this word. ⚠️ **`Ａｌｌ　ｒｉｇｈｔ` IS SPENT** on `イイカ？` (`batch_019.tsv`) — do not reach for it. Chunk 26 L15 also ships one `Ｏｋａｙ．` inside a pooled row, so the form is established, not free |
-| `炎熱騎士団` | `Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ` | **1 battle (chunk 15 L2) / 0 script / 0 `tl/` — a hapax.** FREE | **13 columns.** Built on the settled family, **not invented**: `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§4, 15) and `黒の騎士団` → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§13, 13). Capitalised as a **named** imperial order; bare `騎士団` of a kingdom's own stays lowercase `ｋｎｉｇｈｔｓ` (§2253's row) — the §17.1 species test and §63.1's named-thing rule. Alt `Ｂｌａｚｉｎｇ　Ｋｎｉｇｈｔｓ` (15). ⚠️ **`紅蓮の炎` sits two sentences away in L0: if it takes `ｃｒｉｍｓｏｎ`, keep that LOWERCASE** — `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` is a different, capitalised proper noun, exactly the §64.2 `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split |
+| ~~`炎熱騎士団`~~ | ✅ **PROMOTED to §65.1 (PR #47, merged 2026-09-12)** — `Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ`, **used exactly as seeded**, rendered once in `tl/battle/chunk_015.txt` L2 as `Ｏｕｒ　Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ　ｈａｖｅ`; 13 columns confirmed. The seed's lowercase-`ｃｒｉｍｓｏｎ` warning was heeded exactly. **EXHAUSTED — a hapax, 1 of 1.** Original seed note follows | ~~**1 battle (chunk 15 L2) / 0 script / 0 `tl/` — a hapax.** FREE~~ | **13 columns.** Built on the settled family, **not invented**: `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§4, 15) and `黒の騎士団` → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§13, 13). Capitalised as a **named** imperial order; bare `騎士団` of a kingdom's own stays lowercase `ｋｎｉｇｈｔｓ` (§2253's row) — the §17.1 species test and §63.1's named-thing rule. Alt `Ｂｌａｚｉｎｇ　Ｋｎｉｇｈｔｓ` (15). ⚠️ **`紅蓮の炎` sits two sentences away in L0: if it takes `ｃｒｉｍｓｏｎ`, keep that LOWERCASE** — `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` is a different, capitalised proper noun, exactly the §64.2 `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split |
 | `イワン` | `Ｉｖａｎ` | **2 battle (chunk 23 L2) + 1 script unique line / 0 `tl/`.** FREE | **4 columns.** An imperial general on Fernando's side; `イワン将軍` → `Ｇｅｎｅｒａｌ　Ｉｖａｎ` (12), title before name as §20 already does for the others. ⚠️ **L2's second instance is `イワンに罪をかぶせて` — he is the one they plan to frame**, so he is a *character*, not a place. Alt `Ｉｗａｎ`; `Ｉｖａｎ` is the standard katakana for the Slavic name and matches the European-reading convention |
 | `ヒミコ` | `Ｈｉｍｉｋｏ` | **1 battle (chunk 23 L0) + 1 script unique line / 0 `tl/`.** FREE | **6 columns.** ⚠️ **A JAPANESE name, so §11.4 / §14's European-reading convention does NOT apply** — it transliterates straight. `東のヒミコ分隊` → `Ｈｉｍｉｋｏ’ｓ　ｓｑｕａｄ` (14), with `分隊` taking §4's **squad**; §61's `分隊長` → *squad captain* / *squad leader* is the **officer** row and is not this |
 | `根城` | `ｌａｉｒ` | **4 battle (chunk 27 L3, L4, L6; chunk 32 L0) + 2 script unique lines / 0 `tl/`.** `ｌａｉｒ` verified FREE | **4 columns.** ⚠️⚠️ **THE TWO OBVIOUS FORMS ARE BOTH ALREADY SPENT ON DIFFERENT JAPANESE — this is the row to read twice.** `ｓｔｒｏｎｇｈｏｌｄ` renders **`拠点`** (`batch_015.tsv`) and `ｈｉｄｅｏｕｔ` renders **`隠れ家`** (`batch_014.tsv`). Taking either would collapse three distinct words into one English form and §25.3 would be breached in a way gate 6 cannot see. ⚠️ **BINDS CHUNK 32** (blocked, tier A): there `奴らの根城` is the *heroes* speaking of the demons' base, while chunk 27's three are the *demons* speaking of their own — **one English form must serve both points of view, and `ｌａｉｒ` does.** Alt, if you can defend it against those two incumbents: `ｂａｓｅ` |
@@ -988,13 +988,19 @@ by a `glossary.md` key read at seed time, not by a reach census:
   `宮廷軍` → `Ｒｏｙａｌ　Ａｒｍｙ` (§4 — kept distinct from `宮廷防衛軍` → *Royal Defence Force*) ·
   `焼き尽くす` → **`ｂｕｒｎ　…　ｔｏ　ａｓｈ`** (§2144's row; *burn to nothing*, **not** *burn up*) —
   **wanted by L0's `紅蓮の炎で焼き尽くしてくれるわっ！`.**
-- ⭐⭐ **CHUNK 15 — A WARNING THAT HAS BEEN WAITING SINCE WAVE 3 IS NOW DUE.** Both the §9 `イフリート`
+- ✅⭐⭐ **DISCHARGED 2026-09-12 (PR #47, merged). CHUNK 15 — A WARNING THAT HAD BEEN WAITING SINCE WAVE 3.** Both the §9 `イフリート`
   row and §30.1 carry, in terms, *"the gloss is in chunk 15, not in chunk 17 — this stays live for
   whoever takes chunk 15"*. **That is this wave.** Chunk 15 **L0** is the passage the warning names:
   `この巨大砲台イフリートの前には、カーライン軍など風の前の塵に同じ！！`. Chunk 17 rendered `Ｉｆｒｉｔ`
   with the *name only*; **L0 is where the thing is actually explained** (a 巨大砲台, and the 紅蓮 fire
   association that motivates the name). Render the gloss here and say so in the PR so the row can be
   closed at last.
+  ✅ **Done. The row is struck in BOTH places — §9's `イフリート` cell and §30.1's — at PR #47's merge.**
+  ⚠️ **It took two rounds, and the reason is worth keeping**: round 1's L0 glossed Ifrit a
+  `ｇｉａｎｔ　ｇｕｎ`, which delivers the warning's *substance* but not its *point* — a player who has
+  met `batch_008:71`'s "a battery raining fire" and `batch_015:18`'s "a giant battery" cannot connect
+  either to a "gun". **A gloss discharges a gloss warning only in the word the rest of the corpus
+  already uses.** Closed at round 2 on `ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ` (§42.1's 砲台 row). See §65.
 - **Chunk 23** — `リオン` → `Ｌｅｏｎ` (§1, decided PR #7) · `アルフレッド` → `Ａｌｆｒｅｄ`, and `少尉` →
   **`Ｓｅｃｏｎｄ　Ｌｉｅｕｔｅｎａｎｔ　Ａｌｆｒｅｄ`** (§1) · `フェルナンド` → `Ｆｅｒｎａｎｄｏ` (§1) ·
   `ギルフォード` → `Ｇｕｉｌｆｏｒｄ` (§1; **no contraction anywhere** in his register, §4881) ·
@@ -2587,7 +2593,7 @@ and `わかった` is confirmed absent from this chunk, so §29.4's `Ａｇｒ�
 | クロスリー | `Ｃｒｏｓｓｌｅｙ` | **Promoted from §9, used exactly as seeded.** 8 columns. A **place**, used only locationally here — 5 renderings, across message lines 3, 4 ×2 and 6 ×2. **8 battle + 2 script.** Alt *Crosley* rejected |
 | バージェス | `Ｂｕｒｇｅｓｓ` | **Promoted from §9, used exactly as seeded.** ⚠️ **7 columns, not §9's 8** — remeasured at review. **2 battle (this chunk) + 5 script** |
 | バージェス峡谷 | `Ｂｕｒｇｅｓｓ　Ｃａｎｙｏｎ` | **Promoted from §9.** ⚠️ **14 columns, not §9's 15.** §9 offered `Ｃａｎｙｏｎ` or `Ｇｏｒｇｅ`; the seed's own first form was taken, and the sole occurrence sits beside `ｔｈｅ　ｓｏｕｔｈｅｒｎ　ｄｅｓｅｒｔ` in a list of map routes, where the plainer map word reads better. **Both forms are 14, so this stays reversible at zero cost** while chunk 17 is the only unit rendering it — recorded rather than closed |
-| イフリート | `Ｉｆｒｉｔ` | **Promoted from §9, used exactly as seeded.** 5 columns, **capitalised** — a named fortress gun, so §17.1's species test does not apply. `・・・イフリートが落とされたか。` → `．．．Ｓｏ　Ｉｆｒｉｔ　ｈａｓ{FFFE}ｂｅｅｎ　ｂｒｏｕｇｈｔ　ｄｏｗｎ．`; 落とされた is passive, so *brought down*, not *fell*. ⚠️ **§9's warning that the gloss lives in chunk 15, not here, stays live for chunk 15's translator** |
+| イフリート | `Ｉｆｒｉｔ` | **Promoted from §9, used exactly as seeded.** 5 columns, **capitalised** — a named fortress gun, so §17.1's species test does not apply. `・・・イフリートが落とされたか。` → `．．．Ｓｏ　Ｉｆｒｉｔ　ｈａｓ{FFFE}ｂｅｅｎ　ｂｒｏｕｇｈｔ　ｄｏｗｎ．`; 落とされた is passive, so *brought down*, not *fell*. ✅ **THE GLOSS WARNING IS DISCHARGED 2026-09-12 (PR #47, chunk 15).** This row carried, since wave 3, *"§9's warning that the gloss lives in chunk 15, not here, stays live for chunk 15's translator"*. Chunk 15 L0 now ships `Ｂｅｆｏｒｅ　Ｉｆｒｉｔ，　ｔｈｅ　ｇｉａｎｔ{FFFE}ｂａｔｔｅｒｙ，　Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ{FFFE}ｃｒａｆｔ，　…` and, two segments on, `Ｉｎ　ｃｒｉｍｓｏｎ　ｆｌａｍｅ　ｓｈａｌｌ{FFFE}Ｉ　ｂｕｒｎ　ｙｏｕ　ｔｏ　ａｓｈ！` — **both halves the warning asked for: what the thing is, and the 紅蓮 fire association that motivates the name.** ⚠️ **It was held open one round longer than the text**: PR #47 round 1 glossed it `ｇｉａｎｔ　ｇｕｎ` and the warning was correctly *not* closed, because the gloss has to be in the word the script store already uses (§42.1's 砲台 → `ｂａｔｔｅｒｙ`, and `batch_008:71` / `batch_015:18` shipped). It closes now on `ｂａｔｔｅｒｙ`. **2 battle (ch15 L0, ch17 L5) + 3 script — the battle side is exhausted.** See §65 |
 | マムー | `Ｍａｍｕ` | **Promoted from §9, used exactly as seeded.** 4 columns, **no `Ｌｏｒｄ`**. `あんたの妹の仇は、このマムー様がとってやるぜ。` → `Ｉ，　Ｍａｍｕ，　ｗｉｌｌ　ａｖｅｎｇｅ{FFFE}ｙｏｕｒ　ｓｉｓｔｅｒ{FFFE}ｆｏｒ　ｙｏｕ．` — the **appositive** carries the `この…様が` self-aggrandisement, which is §25.1's `このクリミアに` pattern applied exactly. **2 battle (this chunk, ch41) + 0 script**; ✅ `マムー兄さん` → `Ｂｒｏｔｈｅｒ　Ｍａｍｕ` **is now rendered — chunk 41 (PR #30, 2026-09-10), 12 columns, the form this row reserved. The term is exhausted** |
 | フェミナ | `Ｆｅｍｉｎａ` | **Promoted from §9, used exactly as seeded.** 6 columns. A **person**, female, dead before the chunk opens. **1 battle + 0 script.** The relation §9 left open is settled at §30.5 |
 | ルート | `ｒｏｕｔｅ` | **§9 row STRUCK HERE.** Lowercase common noun per §17.1's species test, rendered twice — `敵は別のルートから` → `ｂｙ　ａｎｏｔｈｅｒ　ｒｏｕｔｅ`, `ここへ抜けるルートは、` → `Ｔｈｅ　ｒｏｕｔｅｓ　ｔｏ　ｈｅｒｅ`. 5 columns. ⚠️ **This is the cross-unit row §29.1 deliberately left live**: chunk 8 (PR #11) rendered it first and merged first, chunk 17 renders it second and merges second, and the rule is that the *second* merge strikes the row. Both units were re-checked at this review and both are lowercase. **The plural `ｒｏｕｔｅｓ` is not a variant** — Japanese does not mark number and that sentence lists two |
@@ -9061,3 +9067,139 @@ at exactly 24 (it is 22) — and the unit **fetched `batch_021`'s actual branch 
 working from the transcription, which is the only reason the 30 titles agree byte-for-byte. ⭐ **A
 relayed measurement is not a measurement, and a reported one is not either. Every figure in this
 section was re-derived at review, the reviewer's own dispatch included.**
+
+---
+
+## 65. Added by chunk 015 (PR #47, merged 2026-09-12, round 2)
+
+Chapter 15, the Ifrit battery. The imperial commander taunts the Carline army from behind the gun;
+the party spots a Royal Army soldier pinned in front of it and argues about a frontal approach; a
+village girl asks to come along to avenge her sister; and Neil of the 6th Army, the fight's only
+survivor, argues against going on and then joins. 15 body lines, 8 carrying readable text.
+**3,275 / 8,192 bytes, slack 4,917** — realised growth 2.15× against a 6.14× ceiling.
+**Worst column run 24, on exactly two rows** (see §65.4); everything else ≤ 23. No page over 4 text
+rows. One `{FFFE}` change in the whole unit, body[6] 0→1, **mandated by §27.2**.
+
+⚠️ **The PR body was never updated for the round-2 rework and is superseded by this section and by
+the squash commit message.** It still carries the round-1 byte figure (3,239 / 4,953), the claim
+"worst column run 23, no row at 24", the withdrawn `巨大砲台` → `ｇｉａｎｔ　ｇｕｎ` row, and Flags 2, 7,
+8 and 9 quoting text the merged file does not contain. **Withdrawn at this merge and recorded here so
+nobody integrates them later:** `巨大砲台` → `ｇｉａｎｔ　ｇｕｎ` · `援軍` → `ａｉｄ` · `助かったよ` →
+`Ｉ’ｍ　ｓａｖｅｄ．` · `負けたよ` → `Ｙｏｕ　ｗｉｎ．` · `やめた方がいい` → `Ｙｏｕ’ｄ　ｂｅｓｔ …`.
+
+`Ｉｆｒｉｔ` (§30.1) · `Ｃａｒｌｉｎｅ` / `ｔｈｅ　Ｃａｒｌｉｎｅ　ａｒｍｙ` / `Ｒｏｙａｌ　Ａｒｍｙ` / `ｆｏｒｔｒｅｓｓ` /
+`９ｔｈ　Ａｒｍｙ` / `ｔｈｅ　Ｅｍｐｉｒｅ` (§2) · `ほう、` → `Ｏｈ，` (§6, §24.4) · `ふう、` → `Ｐｈｅｗ，` (§6) ·
+`よし、` → `Ｒｉｇｈｔ，` (§24.3) · `さあ、` → `Ｎｏｗ，` (§28.8) · `それでも` → `Ｅｖｅｎ　ｓｏ，` ·
+`何だって！？` → `Ｗｈａｔ　ｗａｓ　ｔｈａｔ！？` (§6) · `行くぞ！！` → `Ｍｏｖｅ　ｏｕｔ！！` (§6) · `ねえ、` →
+`Ｓａｙ，` (§32.3, §34.2) · `全滅` → `ｗｉｐｅｄ　ｏｕｔ` (§60) · `焼き尽くす` → `ｂｕｒｎ　…　ｔｏ　ａｓｈ`
+(§27.1) · `大歓迎` → `ｍｏｓｔ　ｗｅｌｃｏｍｅ` (§40.3) · `オーケー` → `Ｏｋａｙ！` (§9.W13) ·
+`村が襲われました。` → §27.2's string **including its `{FFFE}`** · `助かったよ。` → `Ｉ　ａｍ　ｓａｖｅｄ．`
+(§23.4) are all used unchanged and were each re-verified in the merged tree at review, not taken
+from the PR's list.
+
+### 65.1 Promotions out of §9.W13 — three, all used exactly as seeded, all exhausted
+
+| Japanese | English | Note |
+|---|---|---|
+| ウシャシャシャシャシャ | `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ` | **Promoted from §9.W13, used exactly as seeded.** **16 columns** bare, 17 with a mark. The Ifrit commander's laugh; `ウ` + `シャ`×5 on §11.5 / §14.5's kana-beat rule. **The punctuation follows the source per §5** — L0's `、` → `，`, L2's `！` → `！` — so the two instances are deliberately *not* byte-identical and must stay that way. **2 battle + 0 script — EXHAUSTED** |
+| ニール | `Ｎｅｉｌ` | **Promoted from §9.W13, used exactly as seeded.** 4 columns. A 6th Army soldier, the only survivor of the Ifrit fight, who joins the party after losing the argument. Register: young and casual — `僕` / `〜さ` / `じゃ、` / `オーケー` — so he contracts (`Ｉ’ｍ`, `Ｙｏｕ’ｒｅ`, `Ｌｅｔ’ｓ`), and `僕は６軍のニール。` → **`Ｉ’ｍ　Ｎｅｉｌ，　６ｔｈ　Ａｒｍｙ．`** is `chunk_008` body[8]'s shipped frame for `僕は、セネカ。` → `Ｉ’ｍ　Ｓｅｎｅｃａ．`, not a free choice. See §65.5 for why the row above it is uncontracted. **2 battle + 0 script — EXHAUSTED** |
+| 炎熱騎士団 | `Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ` | **Promoted from §9.W13, used exactly as seeded.** **13 columns.** Capitalised as a **named** imperial order, on the settled family `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` (§2) and `黒の騎士団` → `Ｂｌａｃｋ　Ｋｎｉｇｈｔｓ` (§13). `我が炎熱騎士団` → `Ｏｕｒ　Ｆｌａｍｅ　Ｋｎｉｇｈｔｓ`, `我が` → `ｏｕｒ` in every shipped instance. ⚠️ **The seed's paired warning was heeded: `紅蓮の炎` two sentences away takes LOWERCASE `ｃｒｉｍｓｏｎ`** — see §65.2. **1 battle + 0 script, a hapax — EXHAUSTED** |
+
+### 65.2 Words and phrases first fixed here
+
+| Japanese | English | Note |
+|---|---|---|
+| 巨大砲台 / 巨大な砲台 | **`ｇｉａｎｔ　ｂａｔｔｅｒｙ`** | **14 columns.** ⚠️⚠️ **NOT a new decision — it is the SHIPPED compound, and this row exists because a width clearance was mistaken for a word ruling.** `tl/script/batch_015.tsv:18` already ships `巨大な　砲台に守られた要塞` → `ａ　ｆｏｒｔｒｅｓｓ　ｇｕａｒｄｅｄ　ｂｙ　ａ{FFFE}ｇｉａｎｔ　ｂａｔｔｅｒｙ，　ｔｈｅｙ　ｓａｙ．` — a rumour line about **this** battery guarding **this** fortress, read at review, not relayed. §42.1 / §42.8's note that `ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` is 23 and *fits* settles a **measurement**; it does not fix `ｇｒｅａｔ`, and PR #47 round 1 read it as if it did. **`ｇｒｅａｔ` is independently spent on 大** by §2's `大要塞` → `ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ`, so taking it would split a shipped compound **and** collapse 大 with 巨大. The bare noun keeps §42.1's `砲台` → `ｂａｔｔｅｒｙ`. ⚠️ **`ｇｉａｎｔ` now carries 巨大 (adjective, here and `batch_015`) and 巨人 (noun, `batch_003:15/16`, the §9 monster class).** §25.3 counted at review: different parts of speech, no shared message, and the fork shipped and was ratified at PR #46. **Recorded, not re-cut.** 4 instances in this chunk, all one object |
+| 危険 (predicative) | `ｐｅｒｉｌｏｕｓ` | 9 columns. `砲台に向かうのは危険だ。` → `ｔｈｅ　ｂａｔｔｅｒｙ　ｉｓ　ｐｅｒｉｌｏｕｓ．` The incumbent: `batch_008:69` ships `危険な場所` → `Ｂｏｔｈ　ｐｌａｃｅｓ　ａｒｅ` / `ｐｅｒｉｌｏｕｓ．` ⚠️⚠️ **危険 NOW HAS TWO SHIPPED ENGLISHES AND BOTH ARE CORRECT — do not "fix" either.** `chunk_007` body[10] ships `これ以上は危険だから` → `Ｉｔ　ｉｓ　ｔｏｏ　ｄａｎｇｅｒｏｕｓ！` and `batch_008:71` ships `危険な場所です` → `ｉｓ　ａ　ｄａｎｇｅｒｏｕｓ　ｏｎｅ，`. **`ｐｅｒｉｌｏｕｓ` is the safer side, not merely the shorter one**: `ｄａｎｇｅｒｏｕｓ` is the **fixed** form for `あぶない` (§62's D320 row, banks [32, 34, 40]), whose own note already records 危険 borrowing it as a documented §17.2 collapse. §25.3 counted at review: chunk 7 and chunk 15 are different chunks, so no player meets both in one scene. ⚠️ **And here it is not a preference at all — with `ｄａｎｇｅｒｏｕｓ` the page's exhaustive floor is 25 columns, over the hard limit** (§65.4) |
+| 紅蓮の炎 | `ｃｒｉｍｓｏｎ　ｆｌａｍｅ` | 14 columns, and **the lowercase is load-bearing.** `紅蓮の炎で焼き尽くしてくれるわっ！` → `Ｉｎ　ｃｒｉｍｓｏｎ　ｆｌａｍｅ　ｓｈａｌｌ{FFFE}Ｉ　ｂｕｒｎ　ｙｏｕ　ｔｏ　ａｓｈ！`. Capitalised `Ｃｒｉｍｓｏｎ` is spent on `紅の騎士団` → `Ｃｒｉｍｓｏｎ　Ｋｎｉｇｈｔｓ` in five shipped chunks; this is the §64.2 `Ｈｏｂｂｉｔ　Ｖｉｌｌａｇｅ` / `ｈｏｂｂｉｔ` split. The inversion (`Ｉｎ　ｃｒｉｍｓｏｎ　ｆｌａｍｅ　ｓｈａｌｌ　Ｉ　…`) keeps the source's clause order **and** puts the word where no capital is possible — the right way to protect a lowercase form, better than hoping a later re-flow never moves it to the head of a row |
+| 定石 | `ｔｈｅ　ｓｏｕｎｄ　ｍｏｖｅ` | 15 columns, verified free. A go term — the established, correct play. `ここは、敵をおびき出すのが定石だ。` → `Ｈｅｒｅ，　ｌｕｒｉｎｇ　ｔｈｅ　ｅｎｅｍｙ{FFFE}ｏｕｔ　ｉｓ　ｔｈｅ　ｓｏｕｎｄ　ｍｏｖｅ．` The register lift is the **source's own** — a rough `〜だぞ` / `〜ねえ` speaker reaching for a board-game word — so it is carried, not flattened |
+| おびき出す | `ｌｕｒｅ　…　ｏｕｔ` | `ｌｕｒｉｎｇ` verified free across `tl/` and `pending/` |
+| 敵は無い | `ｈａｖｅ　ｎｏ　ｅｑｕａｌ` | `ｎｏ　ｅｑｕａｌ` verified free |
+| 風の前の塵 | `ｄｕｓｔ　ｉｎ　ｔｈｅ　ｗｉｎｄ` | 21 columns with the source's `！！`. The same image as the literal *dust before the wind*, which measures 25 and puts the page over the hard limit; and the source repeats 前 twice in that sentence, which English should not. ⚠️ **`ｄｕｓｔ` is free — its one other hit in `tl/` is inside `ｉｎｄｕｓｔｒｙ`** (`batch_012:40`), a substring false positive of exactly the shape the standing note warns about. Re-verified at review |
+| 無茶 | `ｒｅｃｋｌｅｓｓ` | 9 columns. ⚠️ **NOT a coinage — `chunk_017` body[3] ships `無茶な作戦を考えるやつ` → `ｍｅｎ　ｗｈｏ` / `ｔｈｉｎｋ　ｕｐ　ｒｅｃｋｌｅｓｓ` / `ｐｌａｎｓ．`**, the same word, found by positional pairing. `無茶だよ！` → `Ｔｈａｔ’ｓ　ｒｅｃｋｌｅｓｓ！` reuses it. Held **distinct** from §24.2's `無鉄砲な` → `ｒａｓｈ`, which that row chose only because `ｒｅｃｋｌｅｓｓ` put its line at 26 — a width choice, so the two are **not** a ruled split and a later unit may merge them if it says so |
+| ６軍 | `６ｔｈ　Ａｒｍｙ` | 8 columns, `６` full-width. The §2 army-number series, and consistent with the shipped `batch_005:31` — `５軍と６軍が、反乱軍に全滅させられた` → `Ｗｏｒｄ　ｉｓ　ｔｈｅ　５ｔｈ　ａｎｄ　６ｔｈ` / `Ａｒｍｉｅｓ　ｆｅｌｌ　ｔｏ　…`. Censused at review: **2 battle (both this chunk) + 1 script (already shipped) — EXHAUSTED.** ⚠️ Note the two lines disagree about *who* destroyed the 6th Army (the rebels there, the battery here); that is the game's own text, not a rendering to reconcile |
+
+### 65.3 Incumbents the glossary never held — recorded, not decided; two are spelling twins gate 6 cannot pair
+
+Gate-7 face (c) finds: forms already shipped in `tl/` that no glossary row fixed, so the next
+translator to meet them had nothing to look up. **None of these is a new choice.**
+
+| Japanese | English | Incumbent, verified in the merged tree |
+|---|---|---|
+| そういうワケにはいかない / そういう訳にはいかない | `ｔｈａｔ　ｗｏｎ’ｔ　ｄｏ．` | ⚠️ **SPELLING TWINS — `ワケ` here, `訳` at `chunk_013` body[7], so gate 6 is structurally blind to the pair.** c13 ships `そういう訳にはいかない。俺たちは…` → `Ｔｈａｔ　ｗｏｎ’ｔ　ｄｏ．　Ｗｅ’ｒｅ…`; this chunk reuses the words byte-for-byte, lowercase only because they follow the vocative `Ｎｅｉｌ，`. The same English also renders `そうはいかねえな` (c07) and `そうはいかねえ` (c30) |
+| やめた方がいい / やめたほうがいい | `Ｂｅｔｔｅｒ　ｎｏｔ` (frame) | ⚠️ **SPELLING TWINS — `方` here and at `batch_007:30`, `ほう` at `chunk_009` body[11].** `batch_007:30` ships the **identical** spelling `やめた方がいい。` → `Ｂｅｔｔｅｒ　ｎｏｔ．`, so a plain grep of `tl/script/` finds it; c09's `やめたほうがいいぜ。` → `Ｙｏｕ’ｄ　ｂｅｓｔ　ｇｉｖｅ　ｉｔ　ｕｐ．` is the other frame. **Both are correct English for the act; take the one your row's own spelling has** — which is what this unit finally did, and it is what freed the columns to restore `援軍` → `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ`. `ここから先は　やめた方がいい。` → `Ｂｅｔｔｅｒ　ｎｏｔ{FFFE}ｇｏ　ｆｕｒｔｈｅｒ．`, the deixis carried by *further* |
+| 援軍 | `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` | §2's row offers `ｒｅｉｎｆｏｒｃｅｍｅｎｔｓ` / **`ａｉｄ`**, *"use aid only where 24 columns will not take the full word; flag each time"*. Round 1 shipped `ａｉｄ`; the round-2 re-flow took the full word at 19 columns. **`ａｉｄ` count in this file is 0.** Recorded because §2's conditional has now been resolved the right way and the reserve is reached for more often than the row intends |
+| カーライン軍 | `ｔｈｅ　Ｃａｒｌｉｎｅ　ａｒｍｙ` | 20 columns. 7 shipped instances (c07, c09 ×2, c12, c13, c17 ×2, c31). The unit's own draft had it two ways **inside one message** and caught it before pushing — §24.5's message-level rule does not excuse that, and the catch is the kind only a reverse EN→JP pass finds |
+| 帝国の技術の粋 | `Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ　ｃｒａｆｔ` | 23 columns. `chunk_009` body[6] ships `我が帝国の技術の結晶` → `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ，　ｏｕｒ` / `Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ　ｃｒａｆｔ！！`. ⚠️ **Worth recording because the round-1 review proposed `ｆｉｎｅｓｔ　ｏｆ　Ｉｍｐｅｒｉａｌ　ｃｒａｆｔ` and the rework was right to prefer the incumbent** — the reviewer's suggestion was the weaker of the two |
+| おもしろい | `ｉｎｔｅｒｅｓｔｉｎｇ` | 13 columns with `！！`. `chunk_025` body[11] ships `フフ・・、おもしろい。` → `Ｆｕｆｕ．．，　ｉｎｔｅｒｅｓｔｉｎｇ．` — the same word, **the same lowercase**, and the same rule that the stop follows the source. Here it follows `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ，` and keeps `！！` |
+| あと一息 | `ｏｎｅ　ｌａｓｔ　ｐｕｓｈ` | `batch_008:73` ships `大要塞までは、あと一息。` → `Ｏｎｅ　ｌａｓｔ　ｐｕｓｈ　ｔｏ　ｔｈｅ　ｇｒｅａｔ　ｆｏｒｔｒｅｓｓ．` Reused |
+| カーラインの兵隊さん | `Ｃａｒｌｉｎｅ　ｓｏｌｄｉｅｒｓ` | `chunk_017` body[18] ships the identical Japanese as `Ｃａｒｌｉｎｅ　ｓｏｌｄｉｅｒｓ？` |
+
+### 65.4 Ruling — the two 24-column rows are the EXHAUSTIVE floor, and they ship
+
+`translation_prompt.md` §3.2 prefers ≤ 23 and permits 24. This unit has **two rows at 24**, both in
+the Ifrit scene, and the preference was not simply abandoned — it was **brute-forced against every
+split at every space into ≤ 4 rows**, at review as well as by the unit:
+
+| page | best max-row over ALL ≤4-row splits |
+|---|---|
+| body[0] page 2 `Ｂｅｆｏｒｅ　Ｉｆｒｉｔ，　ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ，　Ｅｍｐｉｒｅ’ｓ　ｆｉｎｅｓｔ　ｃｒａｆｔ，　ｔｈｅ　Ｃａｒｌｉｎｅ　ａｒｍｙ　ｉｓ　ｄｕｓｔ　ｉｎ　ｔｈｅ　ｗｉｎｄ！！` | **24**, and the shipped 23/24/23/21 *is* one of the optima |
+| body[1] page D `Ｗａｉｔ！　…　ｔｈｅ　ｂａｔｔｅｒｙ　ｉｓ　ｐｅｒｉｌｏｕｓ．　…` | **24**, shipped 23/24/22/22, the optimum |
+| body[1] page D **with `ｄａｎｇｅｒｏｕｓ`** | **25 — over the hard limit** |
+
+Six faithful rewordings that keep every element were brute-forced too — gun-first
+(`Ｂｅｆｏｒｅ　ｔｈｅ　ｇｉａｎｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ，`), source clause order, `ｆｉｎｅｓｔ　ｏｆ　Ｉｍｐｅｒｉａｌ`,
+`ｂｅｓｔ　ｏｆ　Ｉｍｐｅｒｉａｌ`, `Ｃａｒｌｉｎｅ’ｓ　ａｒｍｙ`, `ｉｓ　ｂｕｔ　ｄｕｓｔ` — floors **24, 26, 27, 25, 24,
+25**. Not one reaches 23.
+
+**The one ≤ 23 route that exists was declined, and that is the ruling worth keeping.** `ｒｉｓｋｙ` for
+危険 floors page D at 23 — but `ｒｉｓｋｙ` occurs nowhere in `tl/`, while `ｐｅｒｉｌｏｕｓ` is the shipped
+incumbent. **A gate-7 incumbent outranks §3.2's ≤ 23 preference.** Trading a form the corpus already
+holds for a new word, to buy one column of future re-flow room, is the wrong trade; 24 is legal and
+the two rows are recorded in `FLAGS.md` §BE instead, where a later one-character fix will find them.
+
+### 65.5 Ruling — `Ｉ　ａｍ　ｓａｖｅｄ．` beside `Ｉ’ｍ　Ｎｅｉｌ，`: two adjacent rows differ by design
+
+body[10] opens `Ｉ　ａｍ　ｓａｖｅｄ．{FFFE}Ｉ’ｍ　Ｎｅｉｌ，　６ｔｈ　Ａｒｍｙ．` — one uncontracted row
+immediately above a contracted one, from one speaker in one breath. **This is correct and neither
+row should be moved.**
+
+- **`Ｉ　ａｍ　ｓａｖｅｄ` is a fixed phrase, not a side.** §23.4's cell writes it out with `ａｍ`, and
+  every shipped member is uncontracted — counted in the merged tree at this review: 3 ×
+  `Ｉ　ａｍ　ｓａｖｅｄ`, 3 × `Ｗｅ　ａｒｅ　ｓａｖｅｄ`, **0 contracted**.
+- **`Ｉ’ｍ　Ｎｅｉｌ，` is equally not a free choice**: `chunk_008` body[8] ships `僕は、セネカ。` →
+  `Ｉ’ｍ　Ｓｅｎｅｃａ．` for the identical frame from the identical `僕`-speaker voice.
+
+The two rows answer to two different fixed things. The §42.5 analogy (*"`ａｆｒａｉｄ` is the fixed WORD
+and the contraction follows the speaker"*) is the right shape but does not reach here, because there
+the fixed cell is one word and here it is three. ⭐ **Cross-PR: PR #49 ruled chunk 23's `助かったぞ。`
+the same way in the same wave, so `助かった` is now settled across both units of wave 13.**
+
+### 65.6 Recorded, not re-cut
+
+- **`伝令` → `ｒｕｎｎｅｒ`** in body[4], against §30.2's `ｍｅｓｓｅｎｇｅｒ`. **Inherited**: body[4] is a
+  byte-identical whole-message reuse of `chunk_014` body[9], which shipped before §30.2 existed, and
+  gate 6 forbids touching it. §30.2's row should be read as holding **both** forms until a
+  corrections unit picks one. Verified run by run at this review: all **ten** Japanese runs of
+  body[4] have byte-identical English in chunk 14.
+- **`よし、` → `Ｒｉｇｈｔ．`** (a full stop where the source has `、`) and **`だけど、` → `Ｂｕｔ　ｉｆ　…，`**
+  move the source's comma. §31.4 licenses it; body[4]'s is inherited anyway.
+- **`助け出そう` → `ｌｅｔ’ｓ　ｓａｖｅ　ｈｉｍ`** shares an English root with §23.4's `助かった` → `ｓａｖｅｄ`.
+  The Japanese shares 助 too, so this is faithfulness, not a collapse.
+- **`Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ，` and `Ｕｓｈａｓｈａｓｈａｓｈａｓｈａ！` are deliberately different.** A
+  future duplicate audit will pair them and must not "fix" one onto the other — §5 says the word is
+  fixed and the mark follows the source.
+
+### 65.7 The PR-body lesson, written down because it cost a round to notice
+
+The round-2 rework was pushed with an accurate commit message and a **stale PR body**. Everything
+that ships is in the file and the file was right; but the body is the record the reviewer integrates
+from, and a stale one makes a correct unit look like a wrong one — it advertised a withdrawn glossary
+row, a byte figure 36 short, and "no row at 24" on a unit with two. **Update the PR body on every
+rework push.** The commit message is the right place for the *diff*; the body is the record.
+
+⭐ **And the converse, which this unit earned twice:** its round-1 reverse EN→JP pass is what caught
+`カーライン軍` rendered two ways in one message and `Ｃｒｉｍｓｏｎ` already spent on 紅の騎士団; its
+round-2 pushback on `ｇｒｅａｔ` is what stopped a reviewer from splitting a shipped compound on the
+strength of a **width** clearance. **Read the clearance, not the sentence it sits in** — §42.1 says
+`ｔｈｅ　ｇｒｅａｔ　ｂａｔｔｅｒｙ　Ｉｆｒｉｔ` *fits*, and fitting is not choosing.
