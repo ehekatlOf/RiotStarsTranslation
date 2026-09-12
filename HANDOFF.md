@@ -80,11 +80,16 @@ the table, never that line.
 | 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free | queued |
 | 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
 
-**Reviewed one at a time, in the foreground, in that order.** #56 is taken last deliberately: its
-translator was still finishing its write-up when the barrier opened, and a reviewer must not read a
-moving head. ⚠️ **`chunk_000`'s re-flow GAINED 2 bytes** (slack 27 → 29) rather than spending any —
-the title reports the re-flow only, so **whether the conditional `餌食` → `ｐｒｅｙ` conformance was
-taken or measured-and-declined is for the reviewer to establish from the PR, not assumed here.**
+**Reviewed one at a time, in the foreground, in that order.** All four translators have returned;
+every head is stable.
+✅ **`chunk_000` (#56) delivered BOTH repairs and came out 2 bytes CHEAPER.** R1 landed at **exactly
+0 bytes** — one `{FFFE}` dropped (−2) and one `　` added at a join (+2) — and page 21 is `.TTT.`
+again, so **`.TTTT.` goes to 0 across all of `tl/battle`** before the human's boot test, which is
+what §BI2 asked for. R2 was **taken, not declined**: `Ｓｔａｙ，　ａｎｄ　ｔｈｅｙ　ｅａｔ　ｕｓ．` →
+**`Ｓｔａｙ，　ａｎｄ　ｗｅ’ｒｅ　ｐｒｅｙ．`** at 21 columns and **−2 bytes**, from an exhaustive
+9-candidate measurement. ⭐ **So `glossary.md` §47.3 / §70.7's recorded reason for not conforming
+`餌食` — "chunk 0 has 27 bytes of slack" — is re-measured and DOES NOT HOLD: the conformance is
+free and the file ends up cheaper.** Those cells should now say it is applied.
 
 Bases: #53/#54 on `c583bd7`, #55/#56 on `1644ff0`; `main` has advanced only by `handoff:` commits
 (`git diff --name-only c583bd7 origin/main` = `HANDOFF.md` alone), so **gate 2 holds for all four and
@@ -93,6 +98,34 @@ No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607)
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
+
+### ⚠️⚠️ A SEVENTH DIVERGENCE OF THE SAME CLASS, FOUND ON THE PAGE #56 RE-FLOWS — I VERIFIED IT
+**`あの世へ送ってやる。` is byte-identical in `chunk_000` body[12] page 21 and `chunk_025` body[11]
+page 48, and the Englishes differ. CLAUDE.md §3 IS engaged** — the strongest form of the defect the
+six in scope are made of. Re-derived here Japanese-side, row by row:
+| Site | Japanese row | English |
+|---|---|---|
+| `chunk_025` body[11] p48 | `あの世へ送ってやる。` | `Ｉ　ｓｈａｌｌ　ｓｅｎｄ　ｙｏｕ　ｔｏ{FFFE}ｔｈｅ　ｎｅｘｔ　ｗｏｒｌｄ．` |
+| `chunk_041` body[3] p1 | `あの世へ送ってやるわ！` (variant) | `Ｉ　ｓｈａｌｌ　ｓｅｎｄ　ｙｏｕ　ｔｏ{FFFE}ｔｈｅ　ｎｅｘｔ　ｗｏｒｌｄ！` |
+| **`chunk_000` body[12] p21** | **`あの世へ送ってやる。`** | **`Ｉ’ｌｌ　ｓｅｎｄ　ｙｏｕ　ｔｏ　ｔｈｅ{FFFE}ｎｅｘｔ　ｗｏｒｌｄ．`** ← lone outlier, 1 vs 2 |
+**It is NOT in this session's enumerated scope and #56 correctly did not force it** — my dispatch
+pinned the wording and only let the row breaks move. **It is recorded here, not buried, and the
+reviewer rules it.** The measurement, which #56 supplies and I have not re-run: `Ｉ　ｓｈａｌｌ` costs
+**+4 bytes** and leaves **exactly 1 of 91** three-row splits inside 24 columns, and that one ends row 1
+on the two-letter `Ａｓ` (a §3.2 dispreference). ⛔ **The page has a leading AND trailing blank, so a
+4th text row would re-create `.TTTT.` — the very defect #56 exists to remove.** Conforming is
+therefore possible but not clean, and not free, on the project's tightest file.
+⚠️ Register cuts the same way and is not decisive: the speaker's §7 line is "no contractions", but
+**this same message already ships `ｗｏｎ’ｔ` at page 20**, so either the whole message's register is
+off or the attribution is. Whoever rules this should settle the attribution first.
+
+### ⭐ NEW — `.TTTT.` WAS NOT THE ONLY UNATTESTED PAGE SHAPE. `.TT.` IS A SECOND ONE, 4 SITES
+Re-derived over the same 1,850 pristine pages: **`.TT.` has 0 source attestations and 4 in shipped
+work** — `chunk_000` body[9] p3 · `chunk_002` body[13] p9 · `chunk_008` body[9] p18 · `chunk_030`
+body[4] p11. ⭐ **Unlike `.TTTT.` these are all SHRINKS** (source `.TTT.` → `.TT.`, one text row
+fewer), so they carry no 4-row-wall and no fit risk — the hazard §3.2 warns about is growth, not loss.
+**Not fixed, deliberately: three of the four are other units' files (CLAUDE.md §3), and none is in
+this session's scope.** For `FLAGS.md`, beside §BI2.
 
 ### 📋 INTEGRATION DEBT THE REVIEWER MUST CARRY, collected from the four translators' reports
 The translators cannot write `glossary.md` or `FLAGS.md` (CLAUDE.md §3); each of these is theirs to
@@ -113,7 +146,10 @@ integrate on `main` at the merge that raises it.
 6. **Three `すま` sites no census had**, none a §3 case: FILE 815 `すまん、勘弁してくれ！`, and FILE 1360 /
    1377 (`お話中　すまないが、`, `リオン、すまん。`) — the last two **bank-41 blocked** behind the §F2
    repoint, recorded for whoever renders them then.
-7. **Five `それより` sites no census had**, all motivated departures, none to be "repaired":
+7. **§BI2's and my dispatch's page indices are both off for the `餌食` site: it is `body[2]` page
+   **60**, not page 39** (page 39 is the empty `{FCB0}` page). §BI2's own "page 11" for the re-flow is
+   `body[12]` page **21**. Both are `rowcheck.py:77` five-delimiter indices — §4.3 material.
+8. **Five `それより` sites no census had**, all motivated departures, none to be "repaired":
    `chunk_000` body[12], `chunk_003` body[15], `chunk_037` body[17], `batch_016:93`'s second instance,
    and **`pending/chunk_005` body[9]'s `Ｍｏｒｅ　ｕｒｇｅｎｔ，`** — a conformance the **tier-A unpark**
    owes alongside §BE4's retired wordings in that same parked file.
