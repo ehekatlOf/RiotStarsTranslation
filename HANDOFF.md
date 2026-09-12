@@ -11,13 +11,14 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ WAVE 13 IS CLOSED. OPENING THE WAVE-14 SESSION NOW (2026-09-12, ~02:00 UTC).
+> # ▶ WAVE 13 IS CLOSED. THE WAVE-14 SESSION IS OPEN: `session_01AqZdsxo8W4fXcSnCUoawys`.
 > **Wave 13: chunks 15, 23, 27 — 3 dispatched, 3 MERGED, 0 parked, 0 lost, 0 re-dispatches.**
 > Battle **37 / 44, 75.2%** (was 34 / 44, 69.3%).
 >
-> **The wave-13 coordinator is opening wave 14 in this same turn** — `create_session`, title
-> **"Riot Stars — wave 14"**, tags `riotstars-translation` + `wave-14`, `source_revision: main`,
-> environment and model inherited. **Units: battle chunks 28, 29, 39** (figures in Next up).
+> **Opened 2026-09-12 02:01 UTC by the wave-13 coordinator** — title **"Riot Stars — wave 14"**, tags
+> `riotstars-translation` + `wave-14`, `source_revision: main`, environment and model inherited (Opus).
+> **Units: battle chunks 28, 29, 39** (figures in Next up). **The wave-13 session has handed on and does
+> not touch this repository again.**
 > **If you are a coordinator reading this:** `list_sessions` — if a wave-14 session other than yours is
 > alive, stop. The runner reconciles on its 15-minute watchdog and does not touch the repository while a
 > wave is alive. Engine work (Blocked 2, 4, 6) belongs to the runner, not to waves.
