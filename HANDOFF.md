@@ -73,7 +73,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 | Unit | Branch | PR | Bytes / 8,192 | Slack | State |
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
-| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `INTEGRATE_SHA` |
+| battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `8b55c59` |
 | battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⏳ **QUEUED — never reviewed. THE ONLY THING BETWEEN THIS WAVE AND ITS CLOSE.** Dispatch a reviewer now |
 
 **Verified, not taken on report:** PR #49 `merged: true`, squash **`8a9aba8`**; `origin/main` proof pasted
