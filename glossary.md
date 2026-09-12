@@ -9977,3 +9977,168 @@ rather than chosen; every alternative arrangement runs to 26 or 27 columns.
    already carried a leading blank. Chunk 0 was translated before §45.2 existed. **It is the only
    `.TTTT.` in all of `tl/`.** Recorded at `FLAGS.md` §BI for a human and for whoever next touches
    chunk 0 — it is a one‐line re‐flow at 0 bytes, but it is not this PR's to make.
+
+---
+
+## 70. Added by chunk 039 (PR #50, merged 2026-09-12, round 2)
+
+Squash `68bbcc9`. **DECISION: MERGE, no findings.** Two rounds; round 1 carried exactly **one**
+finding, geometric, changing no text, and it is applied in full. Every §6 gate was re‐run on the
+round‐2 head `cbd50d8` and pinned to the explicit base `291f69e`: paths one file · clean merge
+(`ort`, 0 conflicts) · `check` **All checks passed** · **3,161 / 8,192, slack 5,031** against a
+6.21× ceiling · **78 text runs, widest 23 (×8), 0 at 24** · `{FFFE}` **64 → 66, the +1 on L6 and
+the +1 on L8 and nowhere else** · `{FCC0}` **8 → 8** · **non‐`{FFFE}`/`{FCC0}` tag stream
+byte‐identical on all 14 lines** · header, `{PAD 6479}` and the `{=FF}` terminator byte‐identical
+to the dump · `{FFFF}` last and once on all 11 message lines · charset census clean (full‐width
+alphanumerics plus `‐` U+2010, `’` U+2019, `　` U+3000, `！ ， ． ？` — **no `…`, no `・`, no `○`,
+no ASCII, no `'`**) · ellipsis runs **exact on every line** under §3.1's `・・・。` = four rule
+(L0 `[3]`, L2 `[5]`, L3 `[4,5]`, L4 `[4,5,4,3,4,5,5]`) · **23 pages, none over 4 text rows.**
+Banks n.a. **The run's last translated unit; battle closes at 40 / 44, 79.8%.**
+
+### 70.1 The round‐1 finding, and why `rowcheck` could not have caught it
+
+Three pages whose source ends `{FFFE}{FC30}` — a **trailing blank** — had kept the blank *and*
+gained a fourth text row, giving the `.TTTT.` / `TTTT.` shapes, attested **0** and **1** times in
+the source's 1,854 pages. Round 2 deletes the `{FFFE}` immediately before `{FC30}` at each site —
+L0 after `ｅｖｅｒｙ　ｌａｓｔ　ｏｎｅ！`, L4 after `ｗｉｔｈ　Ｓｅｎｅｃａ．`, L4 after
+`ｃａｖｅ　ｔｏ　ｔｈｅ　ｅａｓｔ．` — **2 insertions, 2 deletions, no readable text touched** (the whole
+file with every `{…}` stripped is **byte‐identical** to round 1, 4,111 bytes both sides, compared
+programmatically).
+
+⚠️ **`rowcheck` is structurally blind to this class and a clean `rowcheck` is not evidence on it.**
+`row_problems()` counts **non‐empty** rows only, so all three pages read as 4 and passed every
+mechanical gate in round 1. **The decisive measurement is the per‐line `{FFFE}` total against the
+pristine dump**: round 1 stood at **L0 8 → 9** and **L4 43 → 45** while the source's
+`{FFFE}{FC30}` structure was preserved identically (L0 ×1, L4 ×3); round 2 restores the source's
+own counts exactly, **L0 8 and L4 43**, and `rowcheck` now reports neither line. Verified here
+independently of any shape census. Recorded as a gate gap at `FLAGS.md` **§BJ2**.
+
+Post‐fix shapes, with `row_problems()`'s **five‐delimiter** splitter (`{FCC0}`, `{FC30}`, `{FC51}`,
+`{FC50}`, `{FFFF}` — splitting on `{FCC0}` alone merges pages and finds barely half of them, the
+error recorded on `main` at `a309fee`): the three pages are now `.TTTT`, `.TTTT`, `TTTT`, shapes
+the source uses **182** and **389** times, and the source's one surviving trailing blank on L4
+(`ｂｅ　ｓｅｔ　ｍｏｖｉｎｇ．{FFFE}{FC30}`) is preserved as `.TTT.`. `{FFFE}{FC30}` count L0 1 → 0,
+L4 3 → 1: three source trailing blanks filled, which is exactly what **§45.2** ratifies at 0 bytes.
+
+### 70.2 Gate 6 — 11 instances, and the run's last stolen‐item box
+
+By **positional pairing** over both stores — grep is a null check on battle files, which hold no
+Japanese — pairing 44 dump chunks against `tl/battle/` + `pending/`, and every `tl/script/*.tsv`
+row read as `<count>\t<JP>\t<EN>`. **3,754 paired Japanese runs, 2,040 of them from the script
+store.** ⚠️ **The TSV key is column 2, not column 1** — column 1 is the instance count, and a
+splitter that takes column 1 as the key silently drops the entire script store from the gate while
+still printing a clean result. Of chunk 39's 23 runs, two recur:
+
+| line | Japanese | instances | result |
+|---|---|---|---|
+| L8 | `アイテムを奪われました。` (**no internal break**) | **11** | all byte‐identical, this one included — `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` (§47) |
+| L6 | `村が襲われました。` | 10 | the 9 `tl/` instances and this one byte‐identical — `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ{FFFE}ｕｎｄｅｒ　ａｔｔａｃｋ．` (§27.2) |
+
+Both source messages are **single‐row**, so each costs **+1 `{FFFE}`** to reproduce the shipped
+two‐row form; those two are the only `{FFFE}` changes in the unit and they are **forced, not
+chosen**. **Chunk 39 L8 is the eleventh and last instance of the stolen‐item box in the project** —
+§69.2's hand‐on is discharged and the message is now complete everywhere it appears.
+
+The single divergence in the corpus is `pending/chunk_005.txt` L17, which renders `村が襲われました。`
+as the retired `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` — **pre‐existing, parked, already logged
+as FLAGS §BE4 / HANDOFF Blocked 9, and not this unit's to fix.** PR #50 correctly took the `tl/`
+form. **Divergences attributable to chunk 39: 0.**
+
+Sub‐message containment sweep over all 3,754 runs (the wave‐13 lesson: a census over one spelling
+is not a census, and whole‐message pairing cannot see a sub‐message form): the only substantive
+hits are `ありがとう。` — `batch_011:25` and `:30`, both `Ｔｈａｎｋ　ｙｏｕ．`, which chunk 39 matches —
+and `行くぞ！` — `chunk_014` L4, `Ｍｏｖｅ　ｏｕｔ！`, which chunk 39 matches while carrying the
+source's own doubled `！！`.
+
+### 70.3 Promoted out of §9.W14 — nine rows, four of which STAY LIVE
+
+⚠️ **Every exhaustion claim below was re‐derived at this merge on the JAPANESE side, over both
+dumps, with the TSV key read from column 2** — not accepted from the PR and not accepted from the
+seed block. **Ten "exhausted / hapax" claims were wrong in this wave alone; these are the first set
+to survive re‐derivation intact.**
+
+| Japanese | English | Note |
+|---|---|---|
+| `新型` (in `新型機械兵`) | `ｎｅｗ‐ｍｏｄｅｌ` | **LIVE — chunk 16 ×4, untranslated.** Promoted from §9.W14, used exactly as seeded. `‐` is U+2010. 9 columns, so `ｎｅｗ‐ｍｏｄｅｌ　ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒｓ` is 26 and **never** fits one row — split `ｎｅｗ‐ｍｏｄｅｌ　ｍａｃｈｉｎｅ` / `ｓｏｌｄｉｅｒｓ`, as L0 and L2 both do. A **fifth** model word beside §4's 量産型 / 試作機 / 改良型 / 最終型, and **distinct** from `chunk_038` L17's `新しい機械兵` → `ｎｅｗ　ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒｓ`. Corpus: **6 battle (chunk 16 ×4, chunk 39 ×2) + 0 script** |
+| `オリジナルエネルギー体` | `Ｏｒｉｇｉｎａｌ　ｅｎｅｒｇｙ　ｂｏｄｉｅｓ` | **EXHAUSTED** — 1 battle (chunk 39 L4) + 0 script, re‐derived. Promoted from §9.W14, used exactly as seeded. 22 columns. Capital `Ｏ` inherits §17.2's `オリジナルＮ号機` → `Ｏｒｉｇｉｎａｌ　Ｕｎｉｔ　Ｎ` |
+| `４号` (bare, no 号機) | `Ｕｎｉｔ　４` | **LIVE — chunk 32 ×2 untranslated, `pending/chunk_043` ×1 parked, and 4 untranslated script lines.** Promoted from §9.W14, used exactly as seeded. ⛔ REUSE of §17.2's series; `４` full‐width. ⚠️ **Corpus corrected at this merge: 4 battle + 5 script LINES / 10 script OCCURRENCES** (unique **898** rendered in `batch_014`; **1371** ×2, **1374** ×3, **1389**, **1391** ×3 untranslated) — the PR body and §9.W14 both said "6 script lines", which is neither the line count nor the occurrence count |
+| `エネルギー源` | `ｅｎｅｒｇｙ　ｓｏｕｒｃｅ` | **EXHAUSTED** — 1 battle + 0 script, re‐derived. Promoted from §9.W14, used exactly as seeded. 14 columns |
+| `貯蔵できる装置` | `ｓｔｏｒａｇｅ　ｄｅｖｉｃｅ` | **EXHAUSTED (`貯蔵`)** — 1 battle + 0 script, re‐derived. Promoted from §9.W14, used exactly as seeded, rendered `Ａｎ　ｅｎｅｒｇｙ` / `ｓｔｏｒａｇｅ　ｄｅｖｉｃｅ．` ⛔ 装置 → `ｄｅｖｉｃｅ` is the reuse (`pending/chunk_043`, `自爆装置` → `ａ　ｓｅｌｆ‐ｄｅｓｔｒｕｃｔ　ｄｅｖｉｃｅ`). `ｓｔｏｒｅ` is spent (`chunk_001` ×2, `chunk_023` ×2) |
+| `人智では計り知れぬ` | `ｂｅｙｏｎｄ　ｈｕｍａｎ　ｒｅｃｋｏｎｉｎｇ` | **EXHAUSTED** — hapax, 1 battle + 0 script, re‐derived. Promoted from §9.W14, used exactly as seeded. **22 columns bare, 23 with the stop** — it fills a row alone and cannot share one |
+| `悪魔` | `ｄｅｖｉｌ` | **EXHAUSTED** — hapax (`最強の悪魔を動かす`), 1 battle + 0 script, re‐derived. Promoted from §9.W14, used exactly as seeded. **HELD DISTINCT** from §40.1's `魔族` → `ｄｅｍｏｎ` / `ｄｅｍｏｎｓ`. `ｄｅｖｉｌ` occurs once elsewhere, `chunk_038` body[14], inside `Ｙｏｕ　ｌｕｃｋｙ　ｄｅｖｉｌ！` for `悪運の強い奴め！` — different source word, different message, multiword idiom: the §40.3 shape, not a §25.3 collapse |
+| `飛行船` | `ａｉｒｓｈｉｐ` | **LIVE — chunk 16 ×1 and `script_unique` 1307, 1375, 1376, all untranslated.** ⛔ **Not a decision of this unit's and not new here** — see §70.4; `batch_014:47` already ships it. ⚠️ **Corpus corrected at this merge: 2 battle + 6 script occurrences across 4 lines, of which unique 750 (×3) is ALREADY RENDERED in `batch_014`.** §9.W14 and the PR both named only 1307 / 1375 / 1376 and omitted 750 |
+| `父さん` | `Ｆａｔｈｅｒ` (`父さん・・・・` → `Ｆａｔｈｅｒ．．．．`) | **Discharged for chunk 39, and §25.4's forward note now points only at chunk 16.** Promoted from §9.W14, used exactly as seeded; both uses here are vocative and capitalised, and the referential uses elsewhere (`chunk_038` body[17], `pending/chunk_043` body[40], `batch_014:47`) stay lowercase and are undisturbed |
+| ~~`工場` (in `機械兵の工場`)~~ | — | ⛔ **Struck at seed time, not here.** The seed's `ｐｌａｎｔ` was the coordinator's error, corrected on `main` at `a128ded`; bare `工場` → `ｆａｃｔｏｒｙ` / `ｆａｃｔｏｒｉｅｓ`. See §70.5 |
+
+### 70.4 The two gate‐7 face‐(c) gaps, closed at last
+
+Both forms are **shipped in `tl/` and have never had a `glossary.md` row at all**, so no
+glossary‐side search could find them. Chunk 39 uses both, which makes each two files deep.
+Recorded now, as their own entries, beside §17.2's Original series:
+
+| Japanese | English | Note |
+|---|---|---|
+| `飛行船` | `ａｉｒｓｈｉｐ` | 8 columns. **Shipped since `batch_014:47`** (`落ちた飛行船`, ×3 in that file) with no glossary row — **gate‐7 face (c)**, open for a whole run. Chunk 39 L4 (`昔みたいに飛行船の研究をしよう` → `Ｌｉｋｅ　ｂｅｆｏｒｅ，　ｌｅｔ’ｓ　ｄｏ` / `ａｉｒｓｈｉｐ　ｒｅｓｅａｒｃｈ．`) uses it byte‐identically. **LIVE — see §70.3** |
+| `オリジナル` (bare, the group) | `ｔｈｅ　Ｏｒｉｇｉｎａｌｓ` | **Shipped since `batch_014:40`** (`オリジナルと同じ素材だ` → `ｔｈｅ　ｓａｍｅ　ｓｔｕｆｆ　ａｓ　ｔｈｅ　Ｏｒｉｇｉｎａｌｓ`) with no glossary row — the second face‐(c) gap. The **singular** is `ａｎ　Ｏｒｉｇｉｎａｌ` (`batch_010:58`); both are recorded here so the pair cannot drift. Chunk 39 uses the plural twice (L2 `ｅｖｅｎ　ｔｈｅ　Ｏｒｉｇｉｎａｌｓ．．．．．`, L4 `Ｏｆ　ｔｈｅ　ｆｏｕｒ　Ｏｒｉｇｉｎａｌｓ，`). ⚠️ **LIVE — chunk 16 ×1, untranslated**; the 7 script instances are all rendered. Capital `Ｏ` from §17.2 |
+
+### 70.5 New this unit — eight rows
+
+| Japanese | English | Note |
+|---|---|---|
+| `高性能` + `〜を越える` | `ｏｕｔｐｅｒｆｏｒｍ` | 11 columns. `オリジナルをも越える高性能` → `ｓｏｌｄｉｅｒｓ　ｏｕｔｐｅｒｆｏｒｍ` / `ｅｖｅｎ　ｔｈｅ　Ｏｒｉｇｉｎａｌｓ．．．．．` — one verb for the predicate 高性能 plus its relative 越える (§2.1 step 4; the literal predicate needs three rows on a page that also carries `もはや敵はいないわ！`). Keeps the *perform‐* root of 性能 inside the verb. **EXHAUSTED — 2 battle, both chunk 39, + 0 script** |
+| `最高性能` | `ｈｉｇｈｅｓｔ　ｉｎ　ｐｅｒｆｏｒｍａｎｃｅ` | Same *perform‐* root as the row above, deliberately, so the two 性能 lines read as one idea four pages apart. **EXHAUSTED — hapax.** ⚠️ **Correctly does NOT reach for §68's `最高だったわ` → `ｍａｇｎｉｆｉｃｅｎｔ`** — different sense, no conformance owed; reviewer 1's cross‐unit item F is discharged |
+| `活性化` | `ａｃｔｉｖａｔｉｏｎ` | 10 columns. **EXHAUSTED — hapax.** Sits with `起動` → `ａｃｔｉｖａｔｅ` (`chunk_017` body[5], `オリジナル１号機、起動準備！` → `ｐｒｅｐａｒｅ　ｔｏ　ａｃｔｉｖａｔｅ！`) |
+| `一人残らず` | `ｅｖｅｒｙ　ｌａｓｔ　ｏｎｅ` | 15 columns. **EXHAUSTED — hapax.** Pairs with §48's 始末 battle sense: `一人残らず始末してくれるわ！` → `Ｉ　ｓｈａｌｌ　ｆｉｎｉｓｈ　ｏｆｆ` / `ｅｖｅｒｙ　ｌａｓｔ　ｏｎｅ！` |
+| `おじさん` (vocative, older man) | `Ｍｉｓｔｅｒ` | 7 columns with `！`. **EXHAUSTED — a project hapax: 1 battle, this line, + 0 script, re‐derived.** ⚠️ Shares its English with `お兄ちゃん` → `Ｍｉｓｔｅｒ` (`chunk_013` body[5] and `batch_016:50`, **both shipped** — the PR's citation verified at this merge). **§25.3's co‐occurrence test is met**: the two strings cannot meet in one scene, both are stranger‐vocative kinship terms, and English has no age‐graded equivalent — the §17.2 鬼 / オーガ → *ogre* shape. `ｓｉｒ` was unavailable: §6 fixes はっ → `Ｓｉｒ` |
+| `機械兵の工場` (bare 工場) | `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ　ｆａｃｔｏｒｉｅｓ` | **EXHAUSTED — 4 battle (chunk 8 ×1 as `兵器工場`, chunk 9 ×2, chunk 39 ×1), all shipped, + 0 script.** ⚠️ **Bare 工場 → `ｆａｃｔｏｒｙ` / `ｆａｃｔｏｒｉｅｓ`, NOT `ｐｌａｎｔ`** — §29's `兵器工場` → `ｗｅａｐｏｎｓ　ｐｌａｎｔ` row excludes the bare word in its own last clause, and §29 fixed `ｐｌａｎｔ` on **width** (`ａ　ｗｅａｐｏｎｓ　ｆａｃｔｏｒｙ　ｔｈｅｒｅ．` is exactly 24 and was rejected), so reading it as a word ruling is the §BE3 failure. Verified by positional pairing: `chunk_008` body[8] → `ａ　ｗｅａｐｏｎｓ　ｐｌａｎｔ　ｔｈｅｒｅ．`; `chunk_009` body[1] and body[3] → `Ｔｈｅ　ｆａｃｔｏｒｙ` / `ｔｈｅ　ｆａｃｔｏｒｙ`. 26 columns, so it never fits one row |
+| `お、そうだ！` (sudden recollection) | `Ｏｈ，　ｔｈａｔ’ｓ　ｒｉｇｈｔ！` | **Held apart from `そうだ、` → `Ｙｅｓ，` by function and punctuation**, and both have shipped precedent: `そうだ、` matches `chunk_000` body[2] (`そうだ、お前だ。` → `Ｙｅｓ，　ｙｏｕ．`) and `chunk_024` body[15]; this one is built on `chunk_017` body[18]'s near‐twin `あ、そうそうこいつ、持ってきな。` → `Ａｈ，　ｔｈａｔ’ｓ　ｒｉｇｈｔ，　ｔａｋｅ　ｔｈｉｓ　ｗｉｔｈ　ｙｏｕ．` — whose `ｔａｋｅ　ｔｈｉｓ　ｗｉｔｈ　ｙｏｕ．` chunk 39 reuses for `こいつを持ってきな。`, capitalised because its frame starts a sentence. §6's `あ、` → `Ａｈ，` and `おお` → `Ｏｈ！` keep the interjections apart, and `お、` → `Ｏｈ，` is the incumbent in **eight** shipped files (chunks 6, 12, 15, 21, 23, 31, 35, 42). **§25.3's co‐occurrence test is met** — chunk 39 contains none of そうそう / そのとおり / そうよ / そうね |
+| `もう一息だ` | `ｏｎｅ　ｌａｓｔ　ｐｕｓｈ` | **A second source string on a form already shipped:** `chunk_015` body[10]/[11] render `さあ、あと一息だ！行くぞ！！` as `Ｎｏｗ，　ｏｎｅ　ｌａｓｔ　ｐｕｓｈ！` / `Ｍｏｖｅ　ｏｕｔ！！`; chunk 39's `よし、もう一息だ！行くぞ！！` takes `Ｒｉｇｈｔ，　ｏｎｅ　ｌａｓｔ　ｐｕｓｈ！` / `Ｍｏｖｅ　ｏｕｔ！！`. The **interjections stay distinct** (`さあ` → `Ｎｏｗ，` against §24.3's `よし、` → `Ｒｉｇｈｔ，`), so the pair is still visibly two lines. ⚠️ **The `一息` family is LIVE — `script_unique` 1295 and 1363 are untranslated** — even though `もう一息` itself is a hapax |
+
+### 70.6 Reused without re‐derivation, and two family rows that close
+
+`クリミア博士` → `Ｄｏｃｔｏｒ　Ｃｒｉｍｅａ` and `このクリミアの` → `Ｃｒｉｍｅａ’ｓ　ｏｗｎ` (§25.1, the
+§25.1 / §30.1 appositive in possessive form) · `セネカ` → `Ｓｅｎｅｃａ` · `ヘルファー` → `Ｈｅｌｆｅｒ`
+(bare, no 様, so §1's `Ｌｏｒｄ　Ｈｅｌｆｅｒ` does not apply) · `機械兵` → `ｍａｃｈｉｎｅ　ｓｏｌｄｉｅｒ` ·
+`反乱軍` → `ｔｈｅ　ｒｅｂｅｌ　ａｒｍｙ` (§26.4, the **battle** store's form) · `兵隊さん` → `ｓｏｌｄｉｅｒｓ`
+(§30.2) · `洞窟` → `ｃａｖｅ` (§28.8) · `戦闘態勢に入れ` → `ｔａｋｅ　ｂａｔｔｌｅ　ｓｔａｔｉｏｎｓ` (§25.1) ·
+`始末` battle sense → `ｆｉｎｉｓｈ　…　ｏｆｆ` (§48) · `まさか` → `Ｓｕｒｅｌｙ　ｎｏｔ` (§31; §33's own
+census names chunk 39 ×2 in the incredulous/negative class, and both are here) · `よし、` →
+`Ｒｉｇｈｔ，` (§24.3) · `行くぞ！！` → `Ｍｏｖｅ　ｏｕｔ！！` (§6) · `ありがとう` → `Ｔｈａｎｋ　ｙｏｕ`
+(§70.2) · `フフッ` → `Ｆｕｆｕ` (§12.3) · `大丈夫` → `ａｌｌ　ｒｉｇｈｔ` · `役に立つ` → `ｂｅ　ｏｆ　ｕｓｅ`.
+
+Two rows close with this unit, both re‐derived:
+
+- **`餌食` → `ｐｒｅｙ` (§47) is EXHAUSTED** — 3 battle (chunks 0, 38, 39), all shipped, 0 script.
+- **`ごらんのとおり` / `ご覧のとおり` → `Ａｓ　ｙｏｕ　ｓｅｅ` is EXHAUSTED as a family.** The kana
+  spelling is a chunk‐39 hapax; the kanji spelling is `chunk_037` body[17] plus `script_unique` 870
+  (`batch_016:93`), both shipped. ⛔ **Settled at round 1 and not reopened: this is REUSE of the
+  kanji twin, not invention, and it is correctly NOT `Ａｓ　ｙｏｕ　ｓａｗ`, which §68.4 / §69.4 spent
+  on `あのとおり` / `あの通り`.** The comma comes from `batch_016:93`, which likewise supplies one
+  from a comma‐less source (§44.2).
+
+### 70.7 Recorded, not fixed — pre‐existing `main`‐level splits
+
+None is chunk 39's to fix and none blocks anything; each is written down so it is not rediscovered.
+
+- **`君、すまない。` has two shipped Englishes for one byte‐identical string** — `batch_012:63` →
+  `Ｉ　ａｍ　ｓｏｒｒｙ．` against `chunk_024` body[14] → `ｍｙ　ａｐｏｌｏｇｉｅｓ．` A §4.3 case for
+  whoever rules it; chunk 39's own `すまない・・・・。` is a **different** source string and takes the
+  majority form `Ｉ　ａｍ　ｓｏｒｒｙ．．．．．`, which no ruling changes.
+- **`村が襲われました。`** — `pending/chunk_005` body[17] carries the retired wording (§70.2, FLAGS
+  §BE4). Applies at the tier‐A unpark.
+- **`それよりも`, `納得がいく`, `この通り` (`batch_009:68` vs `batch_017:42`), `餌食` (`chunk_000`
+  body[2])** — carried forward from earlier waves, unchanged by this merge.
+- **`batch_018:12`** adds one `{FCC0}` on the English side that the Japanese does not have. `check`
+  is green on it and it is a declared page break, not a defect; noted only because a run‐count
+  pairing over the script store surfaces it and the next auditor should not re‐raise it.
+
+### 70.8 For chunk 16, whenever the tier‐A slot extension unblocks it
+
+⭐ **Chunk 16 is a PARALLEL SCENE to chunk 39** — the same `新型(の)機械兵`, `敗れ去る`,
+`父さん・・・・` and `昔みたいに…飛行船の研究` beats — and is blocked at **1.59×** against §B2's
+1.64× floor. **Chunk 39 is therefore its reference text**, and four rows must stay live for it:
+`新型` (§70.3), `飛行船` (§70.3 / §70.4), `敗れ去` (2 battle untranslated, chunks 16 and 32 — the
+script instance, unique 519, is **already rendered** in `batch_008:71` as `ｆｅｌｌ`, so this lemma
+is **not** new and PR #50's row for it was correctly withdrawn), and bare `オリジナル` (§70.4).
+`４号` stays live for chunk 32 and the four untranslated script lines. **That needs a human, not a
+retranslation.**

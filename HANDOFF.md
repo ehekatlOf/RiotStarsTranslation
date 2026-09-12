@@ -11,15 +11,20 @@ main` lands you on an old commit or `git pull --ff-only` aborts: `git fetch && g
 origin/main`, verify with `git log -1`.
 
 ## NEXT ACTION — always current, always a literal instruction
-> # ▶ WAVE 14 IS RUNNING. THREE TRANSLATORS DISPATCHED (2026-09-12).
+> # ▶ ALL THREE WAVE-14 UNITS ARE MERGED. THE COORDINATOR OWES THE WAVE CLOSE AND THE FINAL HANDOFF.
 > Coordinator: `session_01AqZdsxo8W4fXcSnCUoawys` (its own session, Opus, three-role split intact —
 > it has `Task`, so **nothing this wave is SELF-REVIEWED**).
-> **Units: battle chunks 28, 29, 39.** Seeds committed at **`5bd458e`** (`glossary.md` §9.W14, 17 rows).
+> **Units: battle chunks 28 (`9c8e3e0`), 29 (`104c1965`), 39 (`68bbcc9`) — all merged, all round 2,
+> all no findings.** Seeds were committed at **`5bd458e`** (`glossary.md` §9.W14, 17 rows).
 >
-> **If you are resuming this wave:** preflight per CLAUDE.md §4 step 0, then go to In flight below and
-> reconcile it against the open PR list. **Do not re-dispatch over a live translator** — check
-> `ListAgents` first; a slow translator is not a failed one (§4a).
-> **Review only behind the wave barrier: all three units must have an open PR before ANY review starts.**
+> **The literal next step is CLAUDE.md §4 step 6, and then STOP:** `git pull --ff-only` (three
+> integration commits landed), `check` on `main`, `merge` and commit `build/*_dump_merged.txt` if
+> changed, refresh the README status table from `status` (**battle 40 / 44, 79.8%**), prune worktrees,
+> write the wave summary **and the final handoff**, commit `handoff: wave 14 closed`, push, then
+> verify with `git fetch origin main && git rev-parse origin/main HEAD` (one hash twice) and
+> `git rev-list --count origin/main..HEAD` (`0`), pasting that output into the commit body.
+>
+> **No translator or reviewer is live; nothing is in flight; there is nothing left to dispatch.**
 >
 > ⚠️⚠️ **WAVE 14 IS THE LAST DISPATCHABLE BATTLE WAVE, AND THE CHAIN ENDS WITH IT.**
 > **DO NOT OPEN A WAVE-15 SESSION.** After this wave: 16 and 32 are blocked on the tier-A slot
@@ -32,39 +37,39 @@ origin/main`, verify with `git log -1`.
 > `engine.py`, `--extended`/`--layout`) belongs to the **root/runner session**. A wave never touches it.
 
 ## Last updated
-2026-09-12 · by: **the wave-14 reviewer, at PR #51's integration commit** · **WAVE 14 RUNNING: chunks 28
-(`9c8e3e0`) and 29 (`104c1965`) MERGED, both round 2, both no findings; chunk 39 (#50) is the LAST unit
-of the wave and awaits review.** The **wave barrier was met** and re-checked on entry before any gate
-ran: all three units had an open PR, all based on `main`. Battle is now **39 / 44, 78.4%**.
-Dispatch-time note follows: **chunks 28, 29, 39 dispatched, three translators live.** Preflight was clean: `check`
-**All checks passed** on `main`, **zero open PRs**, no stray worktree, and `list_sessions` showed no
-second wave-14 session. `glossary.md` §9.W14 seeded at **`5bd458e`** — **17 rows, seven of them REUSE
-rather than new words.** **glossary now ends §69 + §9.W14 · FLAGS ends §BI** — ⚠️ **take the next number
-by READING both files at commit time, never by reserving.** (§68 / §BH and §69 / §BI were all taken
-that way, at PR #52's and PR #51's integrations, not reserved.)
+2026-09-12 · by: **the wave-14 reviewer, at PR #50's integration commit** · ✅ **ALL THREE WAVE-14 UNITS
+ARE MERGED — 28 (`9c8e3e0`), 29 (`104c1965`), 39 (`68bbcc9`) — all round 2, all DECISION: MERGE with
+NO findings.** The wave barrier was met and re-checked on entry before any gate ran, each time.
+**Battle is now 40 / 44, 34,439 / 43,137 JP characters, 79.8%.** `glossary.md` **§70** and `FLAGS.md`
+**§BJ** were taken by READING both files at commit time (they ended §69 and §BI), never reserved —
+as §68/§BH and §69/§BI were.
 
-⚠️⚠️ **FOR THE CHUNK-39 REVIEWER, from PR #51's merge — three things that bind or free your unit:**
-1. **`Ａｓ　ｙｏｕ　ｓａｗ` is now SPENT on `あのとおり` / `あの通り`** — `chunk_028` L25/L26 and `chunk_029`
-   L1, bare, plus `script_unique` 395 / 868 **with** the comma (§68.4, §69.4). It is **NOT free** for
-   `ご覧のとおり` or `この通り`; those need their own form, and §44.2 decides the comma from the source row.
-2. **§45.2's page-shape ruling is live and applies to any `TTT.` or `.TTT.` page in PR #50** — filling a
-   source-blank **trailing** segment is ratified at 0 bytes; **§3.2's warning is about `.TTTT.` (0
-   attestations) and a leading blank, and does not reach `TTTT` (389) or `.TTTT` (182).** This
-   distinction has now cost **two** PRs a review round (§45.2, §69.1). Check PR #50's page shapes
-   against the pristine chunk before requiring any compression.
-3. **`§9.W14`'s `工場` cell is a KNOWN SEED ERROR — do not raise `ｆａｃｔｏｒｉｅｓ` as a finding against
-   chunk 39.** The seed block says so in terms; bare `工場` takes `ｆａｃｔｏｒｙ` (`chunk_009` ×2) and
-   PR #50 is correct. Also inherited: `飛行船` → `ａｉｒｓｈｉｐ` (already shipped, `batch_014`:47, **no
-   glossary row** — gate-7 face (c)) and `父さん` → `Ｆａｔｈｅｒ` (§25.4 names chunk 39 by number).
-   ⚠️ **`chunk_039` L8 carries the stolen-item box** (`アイテムを奪われました。`, §21.3) — it must ship
-   `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` byte-identically; it is the tenth and last
-   instance, and the other nine all match.
+⚠️ **NOTHING DISPATCHABLE REMAINS. CLAUDE.md §8's FIRST stop condition now holds** — 16 and 32 are
+tier-A blocked, 5 and 43 are parked, and the script is unchanged at 0 feasible lines with 363 of 366
+behind the §F2 repoint. **The wave-14 coordinator owes the wave close and the FINAL handoff, and must
+NOT open a wave-15 session** (see NEXT ACTION). This was the run's last translated unit.
+
+⭐⭐ **THE MOST REUSABLE FINDING OF THE WAVE, now `FLAGS.md` §BJ2: `rowcheck` STRUCTURALLY CANNOT SEE
+a page that keeps a source trailing blank AND gains a text row** — `row_problems()` counts non-empty
+rows only, so such a page scores 4 and passes every mechanical gate while carrying a shape the source
+never uses (`.TTTT.` = 0 attestations in 1,854 pages). **The cheap detector is a line whose `{FFFE}`
+TOTAL went UP against the source, which `rowcheck` already prints**: filling a source trailing blank
+costs 0 breaks, so any unexplained increase is the defect. Round 1 of PR #50 read L0 8→9 and L4 43→45;
+round 2 restores 8 and 43. **A clean `rowcheck` is not evidence on this class.** If you census page
+shapes, use `rowcheck`'s own **five**-delimiter splitter — `{FCC0}` alone merges pages and finds half
+(the error withdrawn on `main` at `a309fee`).
+
+⚠️⚠️ **A GATE-6 PARSING TRAP THAT VOIDS HALF THE GATE SILENTLY (`FLAGS.md` §BJ3): `tl/script/*.tsv`
+rows are `<count>\t<JP>\t<EN>` — THE KEY IS COLUMN 2.** A script that does `split('\t', 1)` takes the
+instance count as the key, drops **the entire script store** from the duplicate gate, and still prints
+a clean result. Correcting it here raised the paired-run corpus from 1,714 to **3,754, of which 2,040
+are script**. Distrust any gate-6 result that does not state its script-side run count.
 
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **39** | 44 | wave 13 added 15, 23, 27; **wave 14 has added 28 and 29**; **16, 32 blocked** on the tier-A floor, **5, 43 parked** |
-| Battle JP characters | **33,817** | 43,137 | **78.4%** (was 75.2% at wave 14's start) |
+| Battle chunks | **40** | 44 | wave 13 added 15, 23, 27; **wave 14 added 28, 29 and 39 — all of it**; **16, 32 blocked** on the tier-A floor, **5, 43 parked**. 40 + 2 + 2 = 44: **nothing battle-side is left that is not blocked or parked** |
+| Battle JP characters | **34,439** | 43,137 | **79.8%** (was 75.2% at wave 14's start) |
 | Script unique lines | 1,064 | 1,430 | unchanged — no script batch was feasible this wave |
 | Script message instances | 5,180 | 7,931 | 65.3% |
 
@@ -77,7 +82,7 @@ table, never that line.
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
 | **battle chunk 29** | ~~`tl/battle-029`~~ | `tl/battle/chunk_029.txt` | **2** | **#51** | reviewed `6778615` | ✅ **MERGED — squash `104c1965`, integrated by `integrate: chunk 029 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `91ce177`. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; `{FFFE}` 68→69 on **one** declared line (L28), `{FCC0}` 10→10, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 31 lines, 80 runs widest 23 / 0 at 24, no page over 4 rows, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§69**, `FLAGS.md` **§BI**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | **2** | **#50** | **round 2 PUSHED at `cbd50d8`** | finding applied in full; readable text BYTE-IDENTICAL to round 1 (verified programmatically). **3,161 / 8,192 (5,031 slack)**, `{FFFE}` 64 → 66, `{FCC0}` 8 → 8. PR body rewritten. **Awaiting final re-review** |
+| **battle chunk 39** | ~~`tl/battle-039`~~ | `tl/battle/chunk_039.txt` | **2** | **#50** | reviewed `cbd50d8` | ✅ **MERGED — squash `68bbcc9`, integrated by `integrate: chunk 039 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `291f69e`. **3,161 / 8,192 (5,031 slack)** against a 6.21× ceiling; `{FFFE}` 64→66 on the **two gate-6 forced lines only** (L6, L8), `{FCC0}` 8→8, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 14 lines, 78 runs widest 23 / 0 at 24, 23 pages none over 4 rows, ellipsis runs exact on every line. **Round 1's finding verified fixed on the measurement `rowcheck` cannot make**: per-line `{FFFE}` totals back at the source's own L0 8 and L4 43; readable text byte-identical to round 1 (4,111 bytes both sides). Gate 6 by positional pairing over **both** stores (3,754 JP runs, 2,040 script): the **11**-instance stolen-item box byte-identical and **this is its last instance in the project**, the 9 `tl/` village-box instances byte-identical, **0 divergences attributable to chunk 39**. `glossary.md` **§70**, `FLAGS.md` **§BJ**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected; the PR's `merged: true` is the signal. **Nothing left on this unit** |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
 open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
@@ -95,22 +100,26 @@ use the PR's `merged: true` and the squash SHA in the committed record.**
 ⚠️ **Never push while a reviewer runs** — a reviewer showing "running" may already have merged and be
 mid-integration (§BE6 / wave-13 lesson 6).
 
-## Next up — WAVE 14, the LAST dispatchable battle wave (`queue.py battle`, figures re-measured 2026-09-11)
-| Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Note |
+## Next up — ⛔ NOTHING. THE QUEUE IS EMPTY (wave 14 was the last dispatchable battle wave)
+| Wave | Chunk | Tier | JP chars | Headroom | Ratio | EN budget (chars) | Outcome |
 |---|---|---|---|---|---|---|---|
-| **14** | **28** | D | 770 | 5,807 | 4.77× | 3,673 | ⚠️ `じゃあね、` binds **L18** — the row is LIVE |
-| **14** | **29** | D | 610 | 6,163 | 6.05× | 3,691 | ⚠️ `１度` binds **L8** — the row is LIVE |
-| **14** | **39** | D | 622 | 6,479 | 6.21× | 3,861 | |
+| ~~14~~ | ~~28~~ | D | 770 | 5,807 | 4.77× | 3,673 | ✅ **MERGED `9c8e3e0`** — 3,953 / 8,192 |
+| ~~14~~ | ~~29~~ | D | 610 | 6,163 | 6.05× | 3,691 | ✅ **MERGED `104c1965`** — 3,403 / 8,192 |
+| ~~14~~ | ~~39~~ | D | 622 | 6,479 | 6.21× | 3,861 | ✅ **MERGED `68bbcc9`** — 3,161 / 8,192 |
 
 **Do not dispatch 16 (1.59×) or 32 (1.61×)** — both below §B2's measured 1.64× floor; `queue.py`'s cutoff
-is hardcoded 1.6 and is wrong about 32. **No script batch: 0 feasible lines.** Start each unit from the
-pristine dump (CLAUDE.md §2). **After wave 14 nothing battle-side remains that is not blocked or parked.**
+is hardcoded 1.6 and is wrong about 32. **No script batch: 0 feasible lines.** **Nothing battle-side
+remains that is not blocked or parked, so CLAUDE.md §8's first stop condition holds and no wave-15
+session is opened.**
 
 ## Remaining — 366 unique lines / 2,751 instances, and the binding constraint for every one
-**Battle: 3 dispatchable** — **28, 29, 39** (wave 14). ~~15, 23, 27~~ are **merged** (`8a08027`,
-`8a9aba8`, `f88434c`). **2 blocked** — 16 and 32, on the tier-A slot extension only (1.59× / 1.61×
-against §B2's 1.64×). §D1 applies to nothing any more (§BB). ⚠️ **Chunk 32 holds the last instance
-of four live glossary rows** (`根城`, `坊や`, and §25.2's neighbours) — see §BG4.
+**Battle: 0 dispatchable.** ~~28, 29, 39~~ are **merged** (`9c8e3e0`, `104c1965`, `68bbcc9`), as are
+~~15, 23, 27~~ (`8a08027`, `8a9aba8`, `f88434c`). **2 blocked** — 16 and 32, on the tier-A slot
+extension only (1.59× / 1.61× against §B2's 1.64×); **2 parked** — 5 and 43. §D1 applies to nothing any
+more (§BB). ⚠️ **Chunk 32 holds the last instance of four live glossary rows** (`根城`, `坊や`, and
+§25.2's neighbours) — see §BG4 — **and chunk 16 now holds the last instance of four more**: `新型`,
+`飛行船`, `敗れ去`, bare `オリジナル` (§70.8, §BJ6). ⭐ **Chunk 16 is a PARALLEL SCENE to chunk 39 and
+chunk 39 is its reference text** the day the slot extension unblocks it.
 ⚠️ `queue.py battle` prints "dispatchable 7" because its tier-A cutoff is hardcoded 1.6, not 1.64 — it
 counts 32. Use this table, not that line.
 

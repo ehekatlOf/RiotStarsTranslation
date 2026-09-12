@@ -8610,3 +8610,124 @@ unrendered instance left**, so both splits are final unless someone revises the 
 Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
 5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
 which one it hides is not stable — quote the table, never that line.
+
+---
+
+## BJ. Wave 14 review — battle chunk 039 / PR #50, MERGED (2026-09-12, round 2)
+
+Squash `68bbcc9`, integration `integrate: chunk 039 — glossary, flags, handoff`. **DECISION: MERGE,
+no findings.** Glossary section **§70** (taken by reading `glossary.md` at commit time — it ended
+§69 — not reserved). **The run's last translated unit: battle closes at 40 / 44, 34,439 / 43,137 JP
+characters, 79.8%.**
+
+### BJ1. Gates, all re-run on the round-2 head and pinned to the explicit base
+
+Head `cbd50d8`, base `291f69e`. Paths: `tl/battle/chunk_039.txt` and nothing else, measured both
+against the explicit base and against the merged head. Merge: `ort`, 0 conflicts. `check`: **All
+checks passed**. **3,161 / 8,192, slack 5,031** against a 6.21× ceiling — the slot never bound and
+box geometry did. **78 text runs, widest 23 (×8), 0 at 24. 23 pages, none over 4 text rows.**
+`{FFFE}` **64 → 66**, the +1 on L6 and the +1 on L8 and nowhere else; `{FCC0}` **8 → 8**; the
+non-`{FFFE}`/`{FCC0}` tag stream is **byte-identical on all 14 lines**; header, `{PAD 6479}` and the
+`{=FF}` terminator byte-identical to the dump; `{FFFF}` last and once on all 11 message lines.
+Charset inventory of the whole body: full-width alphanumerics plus `‐` U+2010, `’` U+2019, `　`
+U+3000, `！ ， ． ？` — no `…`, no `・`, no `○`, no ASCII, no `'`. Ellipsis runs exact on every line
+under §3.1's `・・・。` = four rule. Banks n.a. (battle unit); recorded in passing, all **1,064**
+translated TSV keys match `dumps/script_unique.txt` exactly, 0 unmatched.
+
+### BJ2. ⭐⭐ THE WAVE'S MOST REUSABLE FINDING — a defect class `rowcheck` CANNOT SEE, and its one-line detector
+
+**`tools/rowcheck.py:70` `row_problems()` counts NON-EMPTY rows only.** A page that keeps a source
+**trailing blank** *and* gains a text row therefore scores 4 and passes every mechanical gate,
+while actually carrying a shape the source never uses. Round 1 of this PR shipped **two `.TTTT.`
+and one `TTTT.`** — attested **0** and **1** times in the source's 1,854 pages — and `check`,
+`rowcheck` and the column check were all green on it. This is the second PR in two waves to lose a
+round to the `.TTTT.` / `TTTT` distinction (§69.1, §45.2).
+
+⭐ **THE CHEAP DETECTOR, and `rowcheck` already prints it: a line whose `{FFFE}` TOTAL went UP
+against the source.** Filling a source trailing blank costs **0** breaks — the segment already
+exists — so a legitimate §45.2 fill leaves the per-line `{FFFE}` count unchanged. An *added* row
+costs one, and any increase that is not a declared gate-6 conformance is the defect. Round 1 read
+**L0 8 → 9** and **L4 43 → 45**; round 2 restores **8** and **43**, and `rowcheck`'s
+`{FFFE} changed:` line now names only L6 and L8, the two forced ones. **No shape census is needed
+to find this, and a clean `rowcheck` is not evidence against it.**
+
+⚠️ **If you do census page shapes, use `rowcheck`'s own FIVE-delimiter splitter** —
+`re.split(r'\{(?:FCC0|FC30|FC51|FC50|FFFF)\}', line)`. Splitting on `{FCC0}` alone merges pages and
+finds barely half of them (867 against 1,854), and it inflates exactly the multi-row shapes at
+issue. That error was made and withdrawn on `main` at `a309fee`.
+
+**Candidate fix for a human, not for a translator:** `row_problems()` could take a second pass that
+compares each line's segment count against the source's and reports any increase not matched by a
+declared conformance. `assemble.py`, `riotbattle.py` and `riotscript.py` are untouchable mid-run
+(CLAUDE.md §3), and `rowcheck` is the analyser rather than the gate, so this is recorded rather than
+done.
+
+### BJ3. Gate 6 — a parsing trap that silently voids the script half of the gate
+
+⚠️⚠️ **`tl/script/*.tsv` rows are `<count>\t<JP>\t<EN>` — the key is COLUMN 2.** `script_unique.txt`
+is `<count>\t<message>` for the same reason. A duplicate-gate script that does
+`jp, en = line.split('\t', 1)` takes the **instance count** as the Japanese key, matches nothing,
+drops **the entire script store** from the gate, and still prints a clean "no duplicates" result.
+This was caught here only because a re-run with the correct column raised the corpus from 1,714
+paired Japanese runs to **3,754**, of which **2,040 come from the script store**. Any gate-6 result
+that does not state its script-side run count should be distrusted.
+
+With the gate run correctly: chunk 39's 23 Japanese runs yield two recurring messages —
+`アイテムを奪われました。` at L8 (**11 instances, all byte-identical**, and **chunk 39 is the last
+instance in the project**) and `村が襲われました。` at L6 (**10 instances; the 9 in `tl/` and this one
+byte-identical**). The one divergence is `pending/chunk_005.txt` L17's retired wording, already
+logged at **§BE4** and Blocked 9 — parked, pre-existing, and not this unit's. **Divergences
+attributable to chunk 39: 0.** A sub-message containment sweep over all 3,754 runs found only
+`ありがとう。` (`batch_011:25`, `:30`) and `行くぞ！` (`chunk_014` L4), both matched.
+
+### BJ4. Census discipline — ten bad claims this wave, and the first clean sweep
+
+Ten "exhausted / hapax" claims were wrong in wave 14 — three the coordinator's, seven from agents —
+and one reached `main` and needed a §4.3 fix. **All ten of PR #50's EXHAUSTED claims were re-derived
+here on the JAPANESE side, over both dumps, and all ten hold**: `悪魔`, `エネルギー源`,
+`オリジナルエネルギー体`, `貯蔵`, `人智`, `活性化`, `一人残らず`, `おじさん`, bare `工場`, `戦闘態勢`.
+So do `高性能`, `最高性能`, `もう一息`, `ごらんのとおり` and `餌食`. All four LIVE claims hold too.
+
+**Three corpus figures are corrected in §70, none of which changes a decision** (every affected row
+stays LIVE either way), recorded so the next auditor is not sent to the wrong place:
+
+| row | as cited | as measured |
+|---|---|---|
+| `飛行船` | "chunk 16 + script 1307 / 1375 / 1376" | 2 battle + **6 script occurrences over 4 lines**; unique **750 ×3 is already rendered** in `batch_014:47`, and was omitted from every citation |
+| `敗れ去` | "chunks 16, 32" | correct for the battle side, and the script instance **unique 519 is SHIPPED** (`batch_008:71`, `ｆｅｌｌ`) — so the lemma is **not new**, PR #50's withdrawal of the row was right, and the row is live on chunks 16 and 32 alone |
+| `４号` | "chunks 32, 43 + **6** script lines" | 4 battle + **5 script lines / 10 occurrences** (898 rendered; 1371 ×2, 1374 ×3, 1389, 1391 ×3 untranslated) — "6" is neither the line count nor the occurrence count |
+
+### BJ5. Two gate-7 face-(c) gaps closed, after a full run open
+
+`飛行船` → `ａｉｒｓｈｉｐ` (`batch_014:47` ×3) and bare `オリジナル` → `ｔｈｅ　Ｏｒｉｇｉｎａｌｓ`
+(`batch_014:40`, with `batch_010:58`'s singular `ａｎ　Ｏｒｉｇｉｎａｌ` beside it) were **shipped in
+`tl/` with no `glossary.md` row at all** — the face-(c) shape, invisible to any glossary-side
+search. Chunk 39 uses both, which made each two files deep. **Both are now recorded at §70.4, and
+both are LIVE** (chunk 16 holds an instance of each). ⭐ **The general lesson: a term can be fixed
+by shipped work without ever entering the glossary, and only a `tl/`-side census finds those. Gate
+7 must be run from the translated files as well as from `glossary.md`.**
+
+### BJ6. Chunk 16 is a parallel scene to chunk 39 — chunk 39 is its reference text
+
+⭐ Chunk 16 carries the same `新型(の)機械兵`, `敗れ去る`, `父さん・・・・` and
+`昔みたいに…飛行船の研究` beats, and is tier-A blocked at **1.59×** against §B2's 1.64× floor.
+**When the slot extension unblocks it, chunk 39 is the text to conform to**, and four glossary rows
+are held live for exactly that: `新型`, `飛行船`, `敗れ去`, bare `オリジナル` (§70.8). `４号` stays
+live for chunk 32 and four untranslated script lines. **This needs the human's boot test
+(Blocked 4), not a retranslation.**
+
+### BJ7. Mechanics of the merge
+
+⚠️ Branch deletion returns **HTTP 403** from the agent container (§AQ9) — `tl/battle-039` is still
+on origin and that is **not** a signal about merge state. The PR's `merged: true` and the squash SHA
+`68bbcc9` are the record. ⚠️ `list_pull_requests` overflows the tool result with full PR bodies;
+the `fields` parameter (`number`, `title`, `state`, `head`, `base`) avoids it and is the cheaper fix
+than parsing the spill file. ⚠️ GitHub refuses `REQUEST_CHANGES` from this account (§AQ1), so every
+decision in this run is posted as a **COMMENT** review with `DECISION:` on line 1 — **an absent
+REQUEST_CHANGES is never approval.**
+
+### BJ8. Bank status at this merge
+
+Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
+5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
+which one it hides is not stable — quote the table, never that line.
