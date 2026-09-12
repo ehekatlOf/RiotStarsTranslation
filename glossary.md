@@ -9904,7 +9904,10 @@ not assumed**: `そうか` 0, `そうですか` 0 in this chunk's readable text,
 in this file, and `chunk_026` L14, the adjacent chapter and the same scene family, ships
 `Ｒｉｇｈｔ，　ａｎｙｗａｙ，{FFFE}ｌｅｔ’ｓ　ｇｏ　ｔｈｅｒｅ．` against this unit's `ａｎｙｗａｙ，　ｌｅｔ’ｓ
 ｈｕｒｒｙ{FFFE}ｔｏ　ｔｈｅ　ｖｉｌｌａｇｅ．` · `それよりも、` → `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`
-(`chunk_022` L4, `chunk_037` L14, `batch_016`:93 — the majority form; see §69.5) · `隠れ里` →
+(`chunk_022` L4, `chunk_037` L14, `batch_016`:93 — the majority form; see §69.5. ⚠️ **This
+list's SITE COUNT is understated and is corrected in place at §71.2: the family is 13 instances
+at 12 rendered sites across BOTH spellings, and this form ships at SEVEN of them, not three.**
+The *form* named here is unchanged and correct) · `隠れ里` →
 `ｈｉｄｄｅｎ　ｖｉｌｌａｇｅ` lowercase (§43.2) · `兵隊さん` → `ｓｏｌｄｉｅｒｓ` (§30.2) · `追手` →
 `ｐｕｒｓｕｅｒｓ` (§41.1) · `魔族` → `ｄｅｍｏｎ`/`ｄｅｍｏｎｓ` lowercase (§40.1) · `オーク` → `ｏｒｃ`/`ｏｒｃｓ`
 lowercase (§17.1) · `セティ`/`ユイティ`/`トレーズ` → `Ｓｅｔｉ`/`Ｙｕｉｔｉ`/`Ｔｒｅｉｚｅ`, **Yuiti male
@@ -9946,6 +9949,15 @@ genuinely unavailable.** Whoever consolidates these should decide the *other* fi
 **`それよりも` is a genuinely pre‐existing `main` split and this unit is on the majority side** —
 `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，` in `chunk_022`, `chunk_037` and `batch_016`, against `chunk_018`'s
 outlier. Not this unit's to fix, and recorded only so it is not rediscovered a fourth time.
+⚠️ **THE CENSUS IN THIS PARAGRAPH IS UNDERSTATED AND IS CORRECTED IN PLACE HERE 2026-09-12
+(PR #53 merge). THE RULING IS NOT TOUCHED AND NEEDS NO §4.3 CORRECTION.** The sites named are
+real, and the majority form and the outlier are exactly what this paragraph says they are. What
+was wrong is only the count, because the census read ONE spelling: the family is **13 instances
+at 12 rendered sites in six Englishes** — **7 `それよりも` + 6 bare `それより`** — and
+`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` was **7 of the 12 rendered**, not 3. **PR #53 has now
+conformed `chunk_018`'s lone hapax `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ，`, so the form is 8 of 12.**
+The full site list, and the four remaining Englishes that are each independently motivated and
+must NOT be "repaired", are at **§71.2**. Corrected here so it is not re-derived a sixth time.
 
 **Two non‐blocking notes, recorded rather than raised, so a later pass has them.** L4's
 `倒すつもりは{FFFE}ないのか？` → `ｗｉｌｌ　ｙｏｕ　ｎｏｔ{FFFE}ｂｅａｔ　ｍｅ　ｄｉｒｅｃｔｌｙ？` drops the
@@ -10142,3 +10154,91 @@ script instance, unique 519, is **already rendered** in `batch_008:71` as `ｆ�
 is **not** new and PR #50's row for it was correctly withdrawn), and bare `オリジナル` (§70.4).
 `４号` stays live for chunk 32 and the four untranslated script lines. **That needs a human, not a
 retranslation.**
+
+## 71. Added by the chunk 018 repair (PR #53, merged 2026-09-12)
+
+Squash `dac2ee4`. **DECISION: MERGE, no findings.** A **repair unit**, not a translation: one
+readable segment in an already-shipped file, `tl/battle/chunk_018.txt` `body[4]` page 12,
+`それよりも、すぐに` — `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ，` (15 columns) → **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`**
+(18 columns), +6 bytes, **3,035 → 3,041 / 8,192, slack 5,157 → 5,151**. Byte-identical to
+`chunk_022` `body[4]`, asserted before the write and re-asserted at review (36 SJIS bytes).
+
+### 71.1 New entries: NONE. This adds no form and changes no ruling.
+
+The change conforms an outlier to **§69.4**'s already-bound `それよりも、` →
+`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`, which **§69.5** had already identified `chunk_018` as standing
+against. The PR's Glossary additions section correctly reads `(none)`. Everything below is a
+**count** correction to two existing paragraphs, made in place, plus a record of what the
+re-derivation found — no entry's English moves, so §4.3's revisit-list machinery is not engaged.
+
+### 71.2 ⭐ The `それより` family, re-derived across BOTH spellings and BOTH dumps — 13 instances, 12 rendered, six Englishes
+
+The dispatch censused 7 sites / 4 Englishes; **§69.4 and §69.5 record 3–4**. All three were low for
+the same reason: they searched `それよりも` and missed bare `それより`. Re-derived Japanese-side at the
+PR and **independently re-derived again at this merge**, with every English read at its own file line
+rather than taken from a citation:
+
+| # | Site | Japanese | English |
+|---|---|---|---|
+| 1 | `chunk_000` body[12] | `それより、指輪のことだ。` | `Ｔｈｅ　ｒｉｎｇ，　ｔｈｏｕｇｈ．` — restructured |
+| 2 | `chunk_003` body[15] | `それよりこれから大丈夫？` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，　ｗｉｌｌ`** |
+| 3 | `pending/chunk_005` body[9] | `それより、早く村に戻って！` | `Ｍｏｒｅ　ｕｒｇｅｎｔ，` — **PARKED**, see §71.3 |
+| 4 | **`chunk_018` body[4]** | **`それよりも、すぐに`** | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，` — THIS REPAIR** (was `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ，`) |
+| 5 | `chunk_022` body[4] | `それよりも、頼む。` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`** |
+| 6 | `chunk_029` body[4] | `それよりも、トレーズを` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，　ｗｉｔｈ`** |
+| 7 | `chunk_037` body[14] | `それよりも・・・・ヘルファーを倒すのが` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ．．．．`** |
+| 8 | `chunk_037` body[17] | `それよりカーラインの状況は` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`** |
+| 9 | `batch_012:55` (unique 383) | `それよりも` | `…ｓｏｍｅｔｈｉｎｇ　ｍｏｒｅ　ｕｓｅｆｕｌ　ｉｎｓｔｅａｄ．` — restructured |
+| 10 | `batch_016:93` (unique 870) | `それよりも・・・・` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ．．．．`** |
+| 11 | `batch_016:93` (unique 870) | `それより` | **`Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，`** |
+| 12 | `batch_018:27` (unique 1413) | `それよりも、早く` | `Ｎｅｖｅｒ　ｍｉｎｄ　ｔｈａｔ．　Ｑｕｉｃｋ，` — dismissive |
+| 13 | `script_unique` **FILE 1360** | `ねえ、それより{FFFE}指輪は・・・・？` | **UNTRANSLATED — bank 41, §F2-blocked** |
+
+⭐ **`batch_016:93` carries BOTH spellings on one pooled row** — rows 10 and 11 above are the same TSV
+line — which is why an instance count and a site count differ here, and why a per-file census undercounts.
+
+**The ruling is strengthened, not weakened.** `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` was **7 of 12 rendered
+across four files**; with this repair it is **8 of 12**. The four remaining Englishes are each
+independently motivated and **none is to be "repaired"**: #1 restructures around `指輪のことだ`, #9
+restructures a bare row into the following clause, #12 is dismissive rather than topic-shifting (the
+very distinction `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` exists to preserve), and #3 is parked.
+
+**Sense, checked rather than assumed at the merge.** `chunk_018` `body[4]` runs on `{FC50}` =
+Guilford (he opens `Ｗａｉｔ，　Ｒｉｍｕｌ．`; `{FC51}` answers `Ｇｕｉｌｆｏｒｄ！`). Rimul objects that
+the defence here will suffer; he answers `ここは、私と１号機がいれば、何とかなる。` and then `それよりも、`
+moves her onto the Doctor. That is a **priority shift, not a dismissal** — the same act as #5 and #6,
+and the opposite of #12. Register holds: the whole chunk carries **zero contractions** (its only two
+`’` are the possessives `Ｅｍｐｉｒｅ’ｓ` and `Ｋｒｉｐｐｅｎ’ｓ`), and the new text adds none.
+
+### 71.3 `pending/chunk_005` body[9] — a conformance the tier-A unpark owes, alongside §BE4
+
+`Ｍｏｒｅ　ｕｒｇｅｎｔ，` for `それより、` is the family's fifth English and it sits in the **parked**
+tier-A file. Harmless while parked — `assemble.py` reads only `tl/` — and **correctly not fixed by
+PR #53**, which may touch one file (CLAUDE.md §5). It joins the two divergences `FLAGS.md` **§BE4**
+already arms against that same file (§27.2's retired `Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` and
+§32.3's `ねえ、` → `Ｓａｙ，`). **Chunk 5 owes a full gate-6 and gate-7 pass against the glossary as it
+stands on the day it unparks**; this is now the third item on that list.
+
+### 71.4 `script_unique` FILE 1360 — the citation is UPHELD, and the counter-correction is struck
+
+Verified directly at this merge, not taken from either side of the dispute: the raw run is
+`ねえ、それより{FFFE}指輪は・・・・？`, **`{FFFE}` present**, on **one pooled dump row carrying 14
+`{FCC0}` messages** — the same row that carries `お話中　すまないが、`, which is why PR #53 and PR #55
+cited "1360" for different text and **both were right**. The row is in **BANK 41** and appears in no
+`tl/script` file. `FILE = DATA + 5`, and `grep -n` prints FILE — the same convention `batch_NNN:k`
+uses. The correction pushed against PR #53 at `1644ff0` was wrong and was retracted at `eecd47e`; it
+is recorded here so the retraction outlives the HANDOFF board.
+
+### 71.5 Live rows and notes this merge leaves behind
+
+1. **The `それより` family stays live.** #13 (FILE 1360) is untranslated behind the §F2 bank-41
+   repoint and needs a rendering the day that lands; #3 is parked. Every other site is shipped.
+2. **§69.5's other two rows are untouched**: `納得がいく` and `出直す` stand exactly as §69.5 rules
+   them. The repairs session re-derived `納得がいく` independently and confirmed the split is
+   justified and needs **no change**.
+3. **`chunk_018` is otherwise unchanged.** Its `body[6]` `ギルフォード将軍に` reads differently from
+   `chunk_013`'s at row level and identically in substance at page level (`将軍` → General,
+   `ギルフォード` → Guilford in both). A row-level gate-6 pairing flags it; a page-level pairing does
+   not. **Not a defect and not a conformance anyone owes** — recorded so it is not re-raised.
+
+---

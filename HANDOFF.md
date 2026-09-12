@@ -75,13 +75,47 @@ the table, never that line.
 ## In flight — ✅ THE WAVE BARRIER IS MET: all four units have an open PR, base `main`
 | Order | Unit | File | PR | Head | Cost | Review |
 |---|---|---|---|---|---|---|
-| 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | **reviewer running** |
+| 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | ✅ **MERGED, no findings** — squash `dac2ee4`, integration `integrate: chunk 018 repair` |
 | 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free | queued |
 | 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free | queued |
 | 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
 
 **Reviewed one at a time, in the foreground, in that order.** All four translators have returned;
 every head is stable.
+
+### ✅ #53 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
+Squash **`dac2ee4`**, integration commit `integrate: chunk 018 repair — glossary, flags, handoff`
+(`glossary.md` §71, `FLAGS.md` §BK, this
+row). All eight gates re-run in a checkout and pasted in the PR review: paths ✓ merge ✓ check ✓
+figures ✓ (3,041 / 8,192, slack 5,151) rows ✓ (0 pages over 4, widest row 23) banks n.a. dupes ✓
+glossary ✓ structure ✓. **Reviewer-side confirmations the next agent does not need to redo:**
+1. **Exactly one readable segment moved.** Branch vs `main` over the FULL tag stream: 91 tags
+   identical, `{FFFE}` 33 → 33, `{FCC0}` 5 → 5, one segment 15 → 18 columns, +6 bytes. The
+   `rowcheck` line `line 7: 19->20` is **inherited from PR #13** and prints identically on
+   `origin/main`'s own copy. (`FLAGS.md` §BK2 records this as the gate every repair unit owes.)
+2. **The 7 + 6 census is confirmed a third time**, independently at the merge, with every English
+   read at its own file line: **13 instances, 12 rendered, six Englishes.**
+   `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` was **7 of 12**, now **8 of 12**. Corrected in place at
+   `glossary.md` §69.4 and §69.5 with the full table at **§71.2**; **the §69.5 ruling is
+   untouched** and needed no §4.3 correction. Integration debt item 3 is **DISCHARGED**.
+3. **`pending/chunk_005` body[9] `Ｍｏｒｅ　ｕｒｇｅｎｔ，` is recorded at `FLAGS.md` §BK5** as a
+   THIRD conformance the tier-A unpark owes, beside §BE4's two. Integration debt item 8 is
+   **DISCHARGED**.
+4. **`script_unique` FILE 1360 verified directly and PR #53's citation UPHELD** (§BK6, §71.4):
+   `ねえ、それより{FFFE}指輪は・・・・？`, `{FFFE}` present, one pooled row of 14 `{FCC0}` messages,
+   **BANK 41**, untranslated. The `1644ff0` counter-correction stays struck.
+5. **The gate-6 positional-pairing hazard is recorded at `FLAGS.md` §BK3** — assert a non-zero
+   pair count before believing a clean duplicate result. This review's counts: 47 / 2,192 rows,
+   28 / 1,467 pages, 968 script keys, **0 divergences**. Row-level vs page-level disagreement on
+   `ギルフォード将軍に` is a re-flow, not a defect.
+
+⚠️ **GitHub refuses `APPROVE` from this account as well as `REQUEST_CHANGES`** — every agent here
+pushes as `ehekatlOf`, so the decision is a `COMMENT` review with `DECISION:` on line 1 (§BK7).
+⚠️ Branch deletion returned **HTTP 403** as §AQ9 predicts; `fix/battle-018` is still on origin and
+that is **not** a merge signal. `merged: true` + squash `dac2ee4` is the record.
+
+**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#55**
+(`tl/script/batch_012.tsv`) in the foreground. Three units remain: #55, #54, #56.
 ✅ **`chunk_000` (#56) delivered BOTH repairs and came out 2 bytes CHEAPER.** R1 landed at **exactly
 0 bytes** — one `{FFFE}` dropped (−2) and one `　` added at a join (+2) — and page 21 is `.TTT.`
 again, so **`.TTTT.` goes to 0 across all of `tl/battle`** before the human's boot test, which is

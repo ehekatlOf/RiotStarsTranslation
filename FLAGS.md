@@ -8731,3 +8731,119 @@ REQUEST_CHANGES is never approval.**
 Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
 5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
 which one it hides is not stable — quote the table, never that line.
+
+## BK. Repairs session review — battle chunk 018 repair / PR #53, MERGED (2026-09-12)
+
+Squash `dac2ee4`, integration `integrate: chunk 018 repair — glossary, flags, handoff`. **DECISION:
+MERGE, no findings.** Glossary section **§71** (taken by reading `glossary.md` at commit time — it
+ended §70 — not reserved). **The first unit of the scoped repairs session, and the first REPAIR unit
+in the project**: no new text, one existing row conformed to a glossary-bound form.
+
+### BK1. Gates, all re-run in a checkout on the head merged with current `origin/main`
+
+Head `a881998`, base `main` at `c583bd7`, re-merged against `origin/main` at `0c71a18`. Paths:
+`tl/battle/chunk_018.txt` and nothing else, +1 / −1. Merge: `ort`, 0 conflicts;
+`git diff --name-only c583bd7 origin/main` = `HANDOFF.md` alone, so no rebase was owed. `check`:
+**All checks passed**. **3,041 / 8,192, slack 5,151** — the slot never bound (6.28× ratio).
+`rowcheck.py 18`: no `!!` line. **0 pages over 4 text rows, 0 rows over 24, 0 rows at exactly 24,
+widest 23.** Charset: full-width alphanumerics plus `’` U+2019, `　` U+3000, `！ ， ． ？` — no `…`,
+no `・`, no `○`, no ASCII, no `'`. `{FFFF}` last on all 12 message lines; header and `{PAD 6453}`
+byte-identical to the dump. Ellipsis runs exact on every line. Banks n.a. — battle unit, no bank
+moves; the four tight banks are unchanged at **40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607**.
+
+### BK2. ⭐ How a REPAIR unit is gated differently from a translation, and the check that makes it cheap
+
+A repair claims *"nothing but this one row moved"*. `rowcheck`'s tag parity **cannot confirm that**:
+it excludes `{FFFE}` by design, and it compares against the **dump**, not against `main`. The check
+that does confirm it is a three-line diff of the branch against `main` over the **full** tag stream:
+
+```
+line count  main 15  branch 15  SAME True
+lines differing: [5]
+  line 5: FULL tag stream identical (incl {FFFE}/{FCC0}): True  (91 tags)
+  line 5: {FFFE} 33 -> 33   {FCC0} 5 -> 5
+    seg 41: 'Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ，' -> 'Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ，'  (15 -> 18 cols)
+bytes: main 3035  branch 3041  delta +6
+```
+
+⭐ **One readable segment, 91 tags identical, every per-line `{FFFE}` and `{FCC0}` count identical.**
+That is the whole claim, proven in one command, and it subsumes the PR's Flags item 2. **Every future
+repair unit should be gated this way**, because the interesting failure mode of a repair is not an
+overflow, it is a second change nobody declared.
+
+⚠️ **`rowcheck`'s `{FFFE} changed:` line is against the DUMP and can be entirely inherited.** Chunk 18
+prints `line 7: 19->20` both before and after this edit — run `rowcheck` on
+`git show origin/main:<file>` and compare, or the inherited entry reads as the PR's.
+
+### BK3. ⚠️ A gate-6 hazard on the battle side — a positional pairing script's clean result can be NULL
+
+Battle `tl/` files hold **no Japanese**, so gate 6 there must pair the pristine dump against each
+shipped chunk **positionally**; a grep of `tl/` is a null check that returns "no duplicates" whatever
+shipped. PR #53 reports that **the first run of its own positional checker printed `0 Japanese rows
+paired` and "no duplicates"** — the dump's chunk slice ends in a blank separator line the `tl/` file
+lacks, so a line-count guard skipped **every** chunk silently. `tools/rowcheck.py:report` already
+strips that line (`src2 = [l for l in src if l != '']`).
+
+⭐ **The rule: assert the pair count is NON-ZERO before believing any duplicate-gate result.** This is
+the battle-side sibling of §BJ3 (the script-side `split('\t', 1)` trap that takes the instance count
+as the key and drops the whole script store while still printing clean). **Any gate-6 result that does
+not state its pair count should be distrusted.** This review's counts, stated: **row level, 47 chunk-18
+rows against 2,192 from 39 other files; page level, 28 against 1,467; script side, 968 keys loaded.
+0 divergences at every level.**
+
+⚠️ **Row-level and page-level pairing disagree, and the disagreement is informative, not a defect.**
+Row-level pairing cannot see across a within-page re-flow: `chunk_018` `body[6]`'s `ギルフォード将軍に`
+raises a row-level mismatch against `chunk_013` and is **not** one — at page level the two are
+different Japanese, and both honour `将軍` → General and `ギルフォード` → Guilford. Run both
+granularities; the page-level pass is what clears a row-level false positive.
+
+### BK4. The `それより` family — five sites no census had, and NONE of them is to be "repaired"
+
+The `それよりも` census in `glossary.md` §69.4 / §69.5 and in the session's own dispatch was
+understated because all three read **one spelling**. Re-derived across both spellings and both dumps,
+twice independently: **13 instances, 12 rendered sites, six Englishes.** The full table is at
+**`glossary.md` §71.2**, where the count is corrected in place; **the §69.5 RULING is untouched and
+needed no §4.3 correction** — the majority form and the outlier were exactly as recorded.
+
+The five sites neither census had: **`chunk_000` body[12]** (`Ｔｈｅ　ｒｉｎｇ，　ｔｈｏｕｇｈ．`,
+restructured) · **`chunk_003` body[15]** (already the majority form) · **`chunk_037` body[17]**
+(already the majority form) · **`batch_016:93`'s SECOND instance** — that one pooled row carries
+`それよりも` *and* bare `それより`, and renders both as the majority form · and
+**`pending/chunk_005` body[9]** (§BK5). ⚠️ **All are motivated departures or already conformant.
+Nothing here is a defect and nothing is to be changed.** `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` was **7 of
+12 rendered before this merge and is 8 of 12 after**.
+
+### BK5. ⚠️ `pending/chunk_005` body[9] `Ｍｏｒｅ　ｕｒｇｅｎｔ，` — a THIRD conformance the tier-A unpark owes
+
+`それより、早く村に戻って！` ships as `Ｍｏｒｅ　ｕｒｇｅｎｔ，` in the **parked** tier-A file. Invisible
+while parked (`assemble.py` reads only `tl/`), **live the moment chunk 5 unparks.** It joins the two
+divergences **§BE4** already arms against that same file — §27.2's retired
+`Ｔｈｅ　ｖｉｌｌａｇｅ　ｉｓ　ａｔｔａｃｋｅｄ．` and §32.3's `ねえ、` → `Ｓａｙ，`. **Chunk 5 now owes
+three glossary conformances at its unpark**, on top of the full gate-6 / gate-7 pass Blocked 2 already
+requires. Correctly **not** fixed by PR #53: one file per PR (CLAUDE.md §5).
+
+### BK6. `script_unique` FILE 1360 — PR #53's citation UPHELD, the counter-correction struck
+
+Verified at this merge rather than adjudicated from either side: the run is
+`ねえ、それより{FFFE}指輪は・・・・？`, **`{FFFE}` present**, on **one pooled dump row carrying 14
+`{FCC0}` messages** — the same row that carries `お話中　すまないが、`, which is why PR #53 and PR #55
+cited "1360" for different text and **both were right**. **BANK 41**, untranslated, `§F2`-blocked; it
+appears in no `tl/script` file. `FILE = DATA + 5` and `grep -n` prints FILE. The correction pushed
+against PR #53 at `1644ff0` was wrong and was retracted at `eecd47e`. Recorded here so the retraction
+outlives the HANDOFF board. See `glossary.md` §71.4.
+
+### BK7. Process notes
+
+⚠️ GitHub refuses **`APPROVE`** from this account as well as `REQUEST_CHANGES` (§AQ1) —
+`Can not approve your own pull request`, because translator, reviewer and orchestrator all push as
+the same account. **Every decision in this run is a `COMMENT` review with `DECISION:` on line 1;
+neither an absent APPROVE nor an absent REQUEST_CHANGES carries any meaning.** ⚠️ Branch deletion
+returns **HTTP 403** (§AQ9) — `fix/battle-018` is still on origin and that is **not** a signal about
+merge state; the PR's `merged: true` and squash `dac2ee4` are the record. ⚠️ `list_pull_requests`
+with the `fields` parameter (`number`, `title`, `state`, `head`, `base`) avoids the body spill.
+
+### BK8. Bank status at this merge
+
+Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
+5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
+which one it hides is not stable — quote the table, never that line.
