@@ -74,12 +74,38 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
 | battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `8b55c59` |
-| battle **27** | `tl/battle-027` | **#48** | 3,657 | 4,535 | ⚠️ **CHANGES round 1** — 4 findings sent; 2 rework rounds remain |
+| battle **27** | `tl/battle-027` | **#48** | **3,665** | 4,527 | 🔄 rework r1 pushed (`50b84ac`) — **round-2 reviewer RUNNING** |
 
 **Verified, not taken on report:** PR #49 `merged: true`, squash **`8a9aba8`**; `origin/main` proof pasted
 into the integration commit body; `tl/battle/chunk_023.txt` present at 6,291 bytes; `check`
 **All checks passed** on the merged tree. Same for #47 earlier (`8a08027`, integrate `d11928f`).
 Branch deletion returned **HTTP 403** as always (§AQ9) — **not** a signal about merge state.
+
+### ✅ PR #48 rework round 1 pushed (`50b84ac`, 2026-09-12 ~01:26) — 4/4 implemented, 0 defended
+**3,665 / 8,192 (4,527 slack)**, net +8 bytes. `check` green, `rowcheck` clean, widest run **23** with
+none at 24, `{FFFE}` still 74 with the same three per-line deltas, non-`{FFFE}` tag stream byte-identical
+on all 14 lines, gate 6 re-run (0 run-level hits). **The PR body was fully rewritten** — the §65.7 / §BE6
+lesson applied.
+- ⭐⭐ **THE TRANSLATOR APPLIED THE WAVE'S BLIND-SPOT LESSON UNPROMPTED AND FOUND A THIRD INSTANCE OF IT.**
+  Censusing the term finding 3 asked it to *declare* turned up **`tl/script/batch_015.tsv:67`, which ships
+  the identical `１度、…に戻ろう` frame with a different English** — the same sub-message class as findings
+  1 and 2, in a place nobody had looked. **I VERIFIED IT: the row ships `Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ　ｏｎｃｅ
+  ｔｏ…`.** 4 of 6 shipped instances take that word; the translator's own draft form was spent 7× on other
+  Japanese. **It conformed all three instances of its own accord**, and recorded a reservation on the
+  record: it still thinks its draft read better, and conformed **because a shipped incumbent outranks its
+  judgement of the better English.** That is the right instinct and the right way to log it.
+- **Side benefit:** the conformance let one page return to the source's own clause boundaries
+  (23/19/22) where round 1 had broken mid-sentence.
+- **Finding 3's other form changed on evidence the finding did not have:** `じゃあね、` is **3 battle
+  (chunks 7, 27, 28), 0 script — I verified the census exactly** — so the row **stays live for chunk 28**;
+  the register split against the archaic farewell in `chunk_013` holds and §25.3 is met.
+- **Finding 2's arithmetic confirmed independently by the translator too:** the review's prose said
+  "wrong by six columns" against its own parenthetical "23, not 25"; the delta is **+2** and neither
+  figure is 25. Substance stood, and it implemented rather than defended.
+- ⚠️ **FIVE ROWS MUST STAY LIVE AFTER MERGE, NOT BE STRUCK:** `根城` (chunk 32 L0) · `坊や` (chunk 32
+  L22) · `じゃあね、` (chunk 28 L18) · `１度` (chunks 29, 33, 38 + 9 script) · §25.2's `そうね。`
+  (chunk 32 L22). **`ダメージ` is discharged for BATTLE only.** ⚠️ **Had round 1 merged as written, `坊や`
+  would have been struck while a blocked chunk still needed it.**
 
 ### ⚠️ PR #48 — CHANGES, round 1 (2026-09-12 ~01:13). Not merged; no integration commit; `main` untouched.
 **Every mechanical gate passed except gate 7.** Format-perfect: 3,657/8,192 (4,535 slack), widest run 23
