@@ -32,7 +32,22 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 > ✅ **The Blocked-6 repairs are DONE (2026-09-12).** One scoped session, four units, all merged with
 > **no findings on any of them**. See "Repairs session" below. It opened no successor, by design.
 
-## Repairs-session close (CLAUDE.md §4 step 6) — `origin/main` proof is in the `handoff: repairs closed` commit body
+## Repairs-session close (CLAUDE.md §4 step 6 — `origin/main` IS AT the close commit)
+Close commit **`523818e`**. Run immediately after pushing it:
+```
+$ git rev-parse origin/main HEAD
+523818e7596a0a5c25cbab57907d8890adceefb0
+523818e7596a0a5c25cbab57907d8890adceefb0
+$ git rev-list --count origin/main..HEAD
+0
+$ python3 tools/assemble.py check
+All checks passed.
+```
+**One hash twice, count 0 — the session is closed and `main` carries it.** Recorded as a follow-up
+commit rather than an amend, because amending a pushed commit would mean force-pushing `main`; this is
+the same shape waves 13 and 14 used.
+⭐ **Someone who clones this repo and looks at `main` sees the run's progress.** That is the test in the
+CLAUDE.md banner, and it passes.
 Four units, four PRs, four squash merges, four `integrate:main` commits, `check` green throughout:
 | Unit | PR | Squash | Integration | Result |
 |---|---|---|---|---|
