@@ -72,22 +72,51 @@ in the CLAUDE.md banner, and it passes.
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and which one it hides is NOT stable** — quote
 the table, never that line.
 
-## In flight — the repairs session's four units (3 PRs open, 1 translator still working)
-| Unit | File | PR | State |
-|---|---|---|---|
-| R0+R5 | `tl/battle/chunk_000.txt` | — | translator working |
-| R2 | `tl/battle/chunk_018.txt` | **#53** `fix/battle-018` @ `a881998`, clean | **awaiting the wave barrier** |
-| R1 | `tl/script/batch_012.tsv` | **#55** `fix/script-012` @ `a452e94`, clean | **awaiting the wave barrier** |
-| R6a | `tl/script/batch_013.tsv` | **#54** `fix/script-013` @ `588de7c`, clean | **awaiting the wave barrier** |
+## In flight — ✅ THE WAVE BARRIER IS MET: all four units have an open PR, base `main`
+| Order | Unit | File | PR | Head | Cost | Review |
+|---|---|---|---|---|---|---|
+| 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | **reviewer running** |
+| 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free | queued |
+| 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free | queued |
+| 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
 
-⛔ **Nothing is reviewed until all four units have a PR** (CLAUDE.md §4 step 4). All three PRs base on
-`c583bd7`; `main` has advanced since only by `handoff:` commits (`git diff --name-only c583bd7
-origin/main` = `HANDOFF.md` alone), so **gate 2 holds and no rebase is owed** — the reviewer re-runs it
-against current `origin/main` anyway. No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 ·
-2 → 1,607 all untouched); only bank 1 (−4) and bank 29 (−10) move.
+**Reviewed one at a time, in the foreground, in that order.** #56 is taken last deliberately: its
+translator was still finishing its write-up when the barrier opened, and a reviewer must not read a
+moving head. ⚠️ **`chunk_000`'s re-flow GAINED 2 bytes** (slack 27 → 29) rather than spending any —
+the title reports the re-flow only, so **whether the conditional `餌食` → `ｐｒｅｙ` conformance was
+taken or measured-and-declined is for the reviewer to establish from the PR, not assumed here.**
+
+Bases: #53/#54 on `c583bd7`, #55/#56 on `1644ff0`; `main` has advanced only by `handoff:` commits
+(`git diff --name-only c583bd7 origin/main` = `HANDOFF.md` alone), so **gate 2 holds for all four and
+no rebase is owed** — each reviewer re-runs it against current `origin/main` regardless.
+No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607); only banks 1 and 29 move.
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
+
+### 📋 INTEGRATION DEBT THE REVIEWER MUST CARRY, collected from the four translators' reports
+The translators cannot write `glossary.md` or `FLAGS.md` (CLAUDE.md §3); each of these is theirs to
+integrate on `main` at the merge that raises it.
+1. **`FLAGS §BF3` is DISCHARGED at #54's merge — and its citation list must be CORRECTED, not merely
+   struck.** §BF3 names `batch_011:61`, `batch_014:13/16/18`, `batch_017:9/61` as sites of the
+   byte-identical `静まり返っている・・・。`; **none of the five is** (three spellings, three different dot
+   counts). PR #54's flag-2 table is the re-derived replacement.
+2. **`glossary.md` §58 was the live row `batch_013:31` actually violated** — a **gate-7** divergence,
+   not only a CLAUDE.md §3 one. §58 postdates `batch_013`/PR #36. §BF3 does not say this.
+3. **§69.5's `それよりも` census is understated: 4 sites recorded, 12 rendered sites real** (7 `それよりも`
+   + 5 bare `それより`, six Englishes). The **ruling is unaffected** and needs no §4.3 correction.
+   Correct the census in place so it is not re-derived a sixth time.
+4. **Two stale width figures for one 13-column string, §4.3 in-place, no rendering affected:**
+   §39.3 item 3 says `ｍｙ　ａｐｏｌｏｇｉｅｓ．` is "14 columns either way"; §58.3's `すまんすまん。` cell
+   says "**15**". `len()` = **13** (`ａｐｏｌｏｇｉｅｓ` is 9 letters).
+5. **§70.7's `君、すまない。` bullet is struck as resolved** at #55's merge.
+6. **Three `すま` sites no census had**, none a §3 case: FILE 815 `すまん、勘弁してくれ！`, and FILE 1360 /
+   1377 (`お話中　すまないが、`, `リオン、すまん。`) — the last two **bank-41 blocked** behind the §F2
+   repoint, recorded for whoever renders them then.
+7. **Five `それより` sites no census had**, all motivated departures, none to be "repaired":
+   `chunk_000` body[12], `chunk_003` body[15], `chunk_037` body[17], `batch_016:93`'s second instance,
+   and **`pending/chunk_005` body[9]'s `Ｍｏｒｅ　ｕｒｇｅｎｔ，`** — a conformance the **tier-A unpark**
+   owes alongside §BE4's retired wordings in that same parked file.
 
 ### ⭐⭐⭐ A THIRD NUMBERING CONVENTION, AND IT MADE *ME* FILE A FALSE CORRECTION
 ⛔ **`script_unique` citations are ambiguous in this repo and three agents used three readings of the
