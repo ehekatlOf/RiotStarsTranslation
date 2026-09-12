@@ -55,7 +55,7 @@ table, never that line.
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | — | dispatched | translating |
-| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | agent still live | **PR open, awaiting review** — 3,423 / 8,192 (4,769 slack). ⚠️ Its translator still shows *running*; do not review until it returns |
+| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | returned | **awaiting review** — 3,423 / 8,192 (4,769 slack), realised 2.14× vs a 6.05× ceiling; 79 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
@@ -256,6 +256,21 @@ wave-13 lesson, reproduced one wave after it was written. Re-verified by **posit
 citation: `chunk_008` body[8] → `ａ　ｗｅａｐｏｎｓ　ｐｌａｎｔ　ｔｈｅｒｅ．`; `chunk_009` body[1] and body[3] →
 `Ｔｈｅ　ｆａｃｔｏｒｙ` / `ｔｈｅ　ｆａｃｔｏｒｙ`. **`ｆａｃｔｏｒｉｅｓ` as shipped in PR #50 stands; the reviewer
 must NOT raise it against chunk 39.** ⭐ Bidirectional QC working as designed, third wave running.
+
+### ⚠️⚠️ A CROSS-UNIT GATE-6 CONSTRAINT BINDS ALL THREE WAVE-14 PRs — NO SINGLE REVIEW CAN SEE IT
+Raised by the chunk-29 translator (§21.3), **verified by me against the dump at 03:12**:
+| unit | source | note |
+|---|---|---|
+| chunk 28 body[6] | `アイテムを{FFFE}奪われました。` | break present in source |
+| chunk 29 body[14] | `アイテムを{FFFE}奪われました。` | break present in source |
+| chunk 39 body[8] | `アイテムを奪われました。` | **no break in source** — PR #50 declares it ADDED one (`{FFFE}` 0 → 1) so the rendering matches the shipped two-row form |
+
+**All three must ship BYTE-IDENTICAL English for this box, and chunk 39 also carries
+`村が襲われました。` (body[6]), whose nine `tl/` instances it conformed to.** Each reviewer sees only
+its own PR, so **the coordinator checks this ACROSS the three merged files at wave close** and the
+second and third reviewers are told the incumbent the first one merged. ⚠️ PR #50 additionally reports
+that **`pending/chunk_005` body[17] diverges** on `村が襲われました。` — parked, pre-existing, already
+logged as Blocked 9 / FLAGS §BE4; **not this wave's to fix.**
 
 ### ⭐ TWO GATE-7 FACE-(c) GAPS ARE NOW TWO FILES DEEP AND STILL UNRECORDED — for the reviewer
 Reported by the chunk-39 translator and consistent with my own seed-time census:
