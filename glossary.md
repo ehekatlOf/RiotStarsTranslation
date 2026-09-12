@@ -1034,12 +1034,12 @@ would split a shipped form. ⚠️ **And three obvious answers are already spent
 
 | Japanese | Proposed English | Where seen (censused at seed time) | Status / collision test |
 |---|---|---|---|
-| `亜空間` | `ｓｕｂｓｐａｃｅ` | **chunk 28 ×2** (L2 `亜空間に飲み込まれる`, `亜空間に吸収されて`) / 0 script | NEW. `ｓｕｂｓｐａｃｅ` **0** across `tl/` + `pending/` |
-| `空間融合の魔法` | `ｓｐａｃｅ‐ｆｕｓｉｏｎ　ｍａｇｉｃ` | **chunk 28 L2** (hapax) | NEW. `ｓｐａｃｅ` **0**, `ｆｕｓｉｏｎ` **0**. `‐` is U+2010 per §4398 |
-| `渓谷` (bare) | `ｇｏｒｇｅ` | **chunk 28 ×2** (L0, L2) | ⛔ **REUSE, do not re-decide** — inherits §46.2's `大渓谷` → `ｇｒｅａｔ　ｇｏｒｇｅ` (`batch_009` ×1) |
-| `タイムリミット` | `ｔｉｍｅ　ｌｉｍｉｔ` | **chunk 28 L2** | NEW. **0** across both stores |
-| `タイムアウト` | `ｔｉｍｅ’ｓ　ｕｐ` | **chunk 28 L18** | NEW. **0**. Seti's taunt register (§40.2-shaped) |
-| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | **chunk 28 L2** | NEW. ⚠️⚠️ **CORRECTED 2026-09-12 (§4.3) — MY SEED SAID "hapax" AND IT IS NOT ONE. 1 battle + 1 script** (`script_unique.txt` **1387**, UNTRANSLATED, bank-41 story text behind §F2). **THE ROW STAYS LIVE — do not strike it at this merge.** Caught by the chunk-28 translator (PR #52 flag 9) and re-derived by me against both dumps |
+| ~~`亜空間`~~ | ✅ **PROMOTED to §68.2 and STRUCK (PR #52, merged 2026-09-12)** — `ｓｕｂｓｐａｃｅ`, **used exactly as seeded**. **EXHAUSTED: 2 battle, both chunk 28 L2, + 0 script** — re-derived at review over both dumps, not accepted from the PR | **chunk 28 ×2** (L2 `亜空間に飲み込まれる`, `亜空間に吸収されて`) / 0 script | `ｓｕｂｓｐａｃｅ` **0** elsewhere at word boundary, re-measured at review |
+| ~~`空間融合の魔法`~~ | ✅ **PROMOTED to §68.2 and STRUCK (PR #52, merged 2026-09-12)** — `ｓｐａｃｅ‐ｆｕｓｉｏｎ　ｍａｇｉｃ`, **used exactly as seeded**, capitalised only because the segment is sentence-initial. **EXHAUSTED: hapax, chunk 28 L2, re-derived at review** | **chunk 28 L2** (hapax) | `ｓｐａｃｅ` **0**, `ｆｕｓｉｏｎ` **0**. `‐` is U+2010 per §4398 — verified as the file's only U+2010 |
+| `渓谷` (bare) | `ｇｏｒｇｅ` | **chunk 28 ×2** (L0, L2), rendered PR #52 | ⛔ **REUSE, do not re-decide** — inherits §46.2's `大渓谷` → `ｇｒｅａｔ　ｇｏｒｇｅ` (`batch_009` ×1). ⚠️⚠️ **ROW STAYS LIVE — NOT STRUCK AT PR #52's MERGE.** Re-derived by the integrator at that merge, independently of the PR: bare `渓谷` is **2 battle (both chunk 28, now shipped) + `script_unique` 1292 and 1381, BOTH UNTRANSLATED**; of the four script hits, 579 is rendered (`batch_009`:69) and 1313 is `大渓谷`. **§46.2's own `大渓谷` row is live with it — 1313 is untranslated.** Round 1 of PR #52 carried "2 battle + 0 script — EXHAUSTED" and it was wrong; the correction came from re-measuring the JAPANESE side, after the first pass measured the English (`ｇｏｒｇｅ` free) and took the seed's Japanese cell on trust |
+| ~~`タイムリミット`~~ | ✅ **PROMOTED to §68.2 and STRUCK (PR #52, merged 2026-09-12)** — `ｔｉｍｅ　ｌｉｍｉｔ`, **used exactly as seeded** (`Ｔｈｅ　ｔｉｍｅ　ｌｉｍｉｔ　ｉｓ`, 17). **EXHAUSTED: hapax, chunk 28 L2, re-derived at review** | **chunk 28 L2** | **0** across both stores |
+| ~~`タイムアウト`~~ | ✅ **PROMOTED to §68.2 and STRUCK (PR #52, merged 2026-09-12)** — `Ｔｉｍｅ’ｓ　ｕｐ．`, **used exactly as seeded**, capitalised sentence-initially. **EXHAUSTED: hapax, chunk 28 L18, re-derived at review** | **chunk 28 L18** | **0**. Seti's taunt register (§40.2-shaped) |
+| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | **chunk 28 L2** | NEW. ⚠️⚠️ **CORRECTED 2026-09-12 (§4.3) — MY SEED SAID "hapax" AND IT IS NOT ONE. 1 battle + 1 script** (`script_unique.txt` **1387**, UNTRANSLATED, bank-41 story text behind §F2). **THE ROW STAYS LIVE — do not strike it at this merge.** Caught by the chunk-28 translator (PR #52 flag 9) and re-derived by me against both dumps. ✅ **CONFIRMED AGAIN AND NOT STRUCK at PR #52's merge (2026-09-12)** — the integrator re-derived it a third time: 1 battle (chunk 28 L2, now shipped) + `script_unique` **1387 UNTRANSLATED**. The English `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` is now shipped and binds 1387 |
 | `巣窟` | **`ｎｅｓｔ`** | **chunk 29 L1** `オークの巣窟です。` ⚠️⚠️ **CORRECTED 2026-09-12 (§4.3) — MY SEED SAID "hapax" AND IT IS NOT ONE, AND PR #51's "1 battle + 0 script — EXHAUSTED" IS WRONG WITH IT. 1 battle + 2 script occurrences** (`script_unique.txt` **523** and **525**), and **neither is rendered in any `tl/script/*.tsv` — both are UNTRANSLATED. THE ROW STAYS LIVE; DO NOT STRIKE IT AT THIS MERGE.** Found by re-deriving the exhaustion claim rather than accepting it — the wave-13 lesson (`HANDOFF` Decisions: *re-derive "row is exhausted" claims before striking a glossary row*) | ⚠️⚠️ **COLLISION TEST IS THE POINT.** **NOT `ｌａｉｒ`** — that is 根城, shipped **3× in `chunk_027`** (body[3], [4], [6], paired positionally). **NOT `ｄｅｎ`** — spent in `batch_014:12` on a speaker's own home. `ｎｅｓｔ` **0** at word boundary |
 | `飛行船` | **`ａｉｒｓｈｉｐ`** | **chunk 39 L4** `飛行船の研究をしよう` · 2 battle + 4 script in the dumps | ⛔⛔ **DO NOT DECIDE — ALREADY SHIPPED.** `tl/script/batch_014.tsv:47` renders `落ちた飛行船` with `ａｉｒｓｈｉｐ` (×3 in that file). **`glossary.md` has NO row for 飛行船 — gate-7 face (c).** Use it byte-identically |
 | `父さん` | **`Ｆａｔｈｅｒ`** (`父さん・・・・` → `Ｆａｔｈｅｒ．．．．`) | **chunk 39 L4 ×3** | ⛔⛔ **DO NOT DECIDE — §25.4 NAMES CHUNK 39 BY NUMBER** as where `父さん・・・・` recurs untranslated. Shipped in chunk 9 and `pending/chunk_005` L13. Seneca's actual parent — the speaker here is Seneca |
@@ -9625,3 +9625,183 @@ anywhere in the chunk**, so the translator rendered the register (§7's Kain row
 an identity** — the right call. A later chunk that names id 0001 should re-read those two lines.
 L3's supplied `ｓｈｅ` in `Ｆｏｒ　ａ　ｈｕｍａｎ，　ｓｈｅ　ｄｉｄ　ｗｅｌｌ` is §2's pronoun supply and its
 referent is **Rimul, who falls two turns earlier in the same line** — checked at review.
+
+## 68. Added by chunk 028 (PR #52, merged 2026-09-12, round 2)
+
+Rendered in `tl/battle/chunk_028.txt` — chapter 28, the gorge. A guide tells the party the eastern
+coast lies beyond it; **Seti** appears, seals the gorge with space‐fusion magic and sets a two‐hour
+time limit; she joins in for the last hour; **Timmy** counts down; she taunts them at time‐out,
+withdraws when beaten, and shrugs when they get away. Three defeat variants close the chunk.
+**31 body lines, 12 carrying readable text.**
+
+Verified at review, re‐derived from the pristine dump rather than inherited: **3,953 / 8,192, slack
+4,239**; JP **770**, EN **1,552**, **realised 2.02×** against a **4.77×** ceiling; `{FFFE}` **85 → 87**
+on bodies **L2 (−1), L19, L25, L26 (+1 each)**; **`{FCC0}` unchanged per line as well as in total
+(10 → 10)** — none added, none moved; non‐`{FFFE}` tag stream **byte‐identical on all 31 lines**;
+header and `{PAD 5807}` identical; **98 text runs, widest 23, 0 at 24, 0 over**; **no page over 4 text
+rows the source did not already have** — the four pages that grew (L2 p11 → 4, L19/L25/L26 p1 → 3) are
+each blank‐free at their start; ellipsis runs measured **per text segment** — L0 3/3, L1 5/5
+(`・・・・。` is five per §3.1), L2 3/3 + 4/4 — all exact; charset census `U+2010 ×1, U+2019 ×27,
+U+3000 ×219, ！×7, ，×24, ．×54, ？×4`. ⭐ **The binding constraint was the 24 × 4 box, never the
+slot**, exactly as `translation_prompt.md` §0.2 predicts above ratio 4.0.
+
+Gate 6 by **positional pairing** — grep is a null check on battle files, which hold no Japanese — over
+both dumps, every shipped `tl/battle/*.txt` and `pending/chunk_*.txt`, and every `tl/script/*.tsv` by
+its Japanese key, at message level and at row level: **0 divergences, 0 internal divergences.** The
+three row‐level differences that surfaced are **boundary artifacts of declared re‐flows** (`ちょっと`
+at L23, the §2.1‐step‐6 reorder; `とりあえず、` at L25/26/27, where `Ｆｏｒ　ｎｏｗ，` is present and
+matches `chunk_004` L20 and `batch_013`:32 exactly), not divergences.
+
+### 68.1 ⭐⭐ The `まあ〜 いい / よい` family splits on PUNCTUATION — the substance of this merge
+
+**This is the row the corpus has been shipping for four chunks without anyone writing it down.** PR
+#52 round 1 rendered `まあいいわ。` as `Ｏｈ　ｗｅｌｌ．`, which split the family; round 2 corrected it,
+and the correction was re‐derived at review by positional pairing over **five** spellings before it
+was accepted. What follows is the rule, not the instance:
+
+| Source | Punctuation | Shipped English | Where |
+|---|---|---|---|
+| `まあよい、` | fused | **`Ｎｏ　ｍａｔｔｅｒ．`** | `chunk_013` L1 |
+| `まあよいわ。` | fused, bare | **`Ｎｏ　ｍａｔｔｅｒ．`** | `chunk_022` L0 |
+| `まあ、いいわ。` | **comma after `まあ`** | **`Ｗｅｌｌ，　ｎｏ　ｍａｔｔｅｒ．`** | `chunk_004` L12 |
+| `まあいいわ。` | fused, bare | **`Ｎｏ　ｍａｔｔｅｒ．`** | **chunk 28 L23 (this unit)** |
+
+**The leading `Ｗｅｌｌ，` is the SOURCE's comma, not a register choice.** Where `まあ` is fused to what
+follows, the English is fused; where the source separates it with `、`, the English separates it with
+`，`. This is §44.2's rule (*"the comma is the SOURCE's to give … adding a comma the source does not
+have would be the error"*), which chunk 28 applied correctly to `あのとおり` in the same file and
+missed here at round 1 — the same rule, the same unit, opposite directions.
+
+⚠️ **`まあいい` STAYS LIVE and was NOT struck at this merge.** Re‐derived by the integrator: **2 battle
+— chunk 28 L23 (shipped) and chunk 29 L19 (in flight, PR #51)** — plus `まあ、いい` at `script_unique`
+**1385, UNTRANSLATED**. §28's keyed row (`まあよい、` → `Ｎｏ　ｍａｔｔｅｒ．`) is unchanged and not
+superseded; this section records the punctuation split that row does not state.
+
+⚠️ **`Ｎｏ　ｍａｔｔｅｒ` is not spent elsewhere by this.** `chunk_024` L9 (`何がなんでも`) and `chunk_037`
+L17 (`敵がどれだけいようと`) carry the **multiword** `ｎｏ　ｍａｔｔｅｒ　ｗｈａｔ` / `ｎｏ　ｍａｔｔｅｒ　ｈｏｗ
+ｍａｎｙ` — §40.3's shape (different source word, different message, multiword unit), **not** a §25.3
+collapse.
+
+### 68.2 Promoted out of §9.W14 — four struck as exhausted, two kept LIVE
+
+All six seeds were used **exactly as seeded**. Every exhaustion claim was **re‐derived at the merge**
+against both dumps and against which chunks are actually shipped, parked or blocked — never accepted
+from the PR body, and never from the seed cell.
+
+| Japanese | English | Disposition |
+|---|---|---|
+| `亜空間` | `ｓｕｂｓｐａｃｅ` | 9 columns, ×2 (L2). **STRUCK — 2 battle (both here) + 0 script.** `ｓｕｂｓｐａｃｅ` 0 elsewhere at word boundary |
+| `空間融合の魔法` | `Ｓｐａｃｅ‐ｆｕｓｉｏｎ　ｍａｇｉｃ．` | 20 columns with the stop; `‐` is U+2010, the file's only one. Capitalised because the segment is sentence‐initial (§33's `申し訳ない。` row). The `よ` rides the bare nominal sentence, not an added copula. **STRUCK — hapax** |
+| `タイムリミット` | `ｔｉｍｅ　ｌｉｍｉｔ` | `Ｔｈｅ　ｔｉｍｅ　ｌｉｍｉｔ　ｉｓ` (17). **STRUCK — hapax** |
+| `タイムアウト` | `Ｔｉｍｅ’ｓ　ｕｐ．` | 10 columns, capitalised sentence‐initially. **STRUCK — hapax** |
+| `一巻の終わり` | `ｔｈａｔ’ｓ　ｔｈｅ　ｅｎｄ　ｏｆ　ｙｏｕ` | 21 columns, rendered as the idiom. ⚠️ **ROW STAYS LIVE — 1 battle (here) + `script_unique` 1387 `一巻の終わりですぞ。`, UNTRANSLATED**, bank‐41 story text behind §F2. The seed said "hapax" and was wrong; the translator caught it, and the integrator confirmed it a third time at the merge |
+| `渓谷` (bare) | `ｇｏｒｇｅ` | Reused as the seed directs, inheriting §46.2's `大渓谷` → `ｇｒｅａｔ　ｇｏｒｇｅ`. ×2 (L0, L2). ⚠️⚠️ **ROW STAYS LIVE — 2 battle (both here) + `script_unique` 1292 and 1381, BOTH UNTRANSLATED** (of four script hits, 579 is rendered and 1313 is `大渓谷`). ⚠️ **§46.2's `大渓谷` is live with it: 1313 untranslated, only 579 shipped** |
+
+### 68.3 New entries decided by this unit
+
+| Japanese | English | Note |
+|---|---|---|
+| `うふふふ。` | `Ｕｆｕｆｕｆｕ．` | 9 columns. Seti's laugh. **Not a new rule — §11.5 / §40.1's kana‐beat rule applied**: `chunk_031` ships `ふふふ、`→`Ｆｕｆｕｆｕ，`, `ふふふふ、`→`Ｆｕｆｕｆｕｆｕ，`, `ふふふふふ・・・・`→`Ｆｕｆｕｆｕｆｕｆｕ．．．．`, so う→`Ｕ`, ふ×3→`ｆｕ`×3. **EXHAUSTED** — 1 battle (here), 0 script; chunk 31's are the only other `ふふふ` and are shipped |
+| `ざぁーんねん、` | `Ｗｈａｔ　ａ　ｓｈａａａｍｅ，` | 16 columns. Keeps §34.1's `残念` head noun `ｓｈａｍｅ`; the drawn‐out `ざぁー` is two extra `ａ` under **§58's** kana‐beat pair (`とりゃああぁぁぁーっっ！`→`Ｔｏｒｙａａａａａａｈ！`, where *the stretch IS the word*, against `大失敗じゃあぁーーっっ！`→`Ａ　ｇｒｅａｔ　ｂｌｕｎｄｅｒ！`, where it sits on the copula and is dropped). Here it falls **inside the lexical word**, so it is kept. Held apart from `残念だわ。`→`Ｗｈａｔ　ａ　ｓｈａｍｅ．` (§61, `batch_020` D337) by the stretch alone. **EXHAUSTED — hapax.** ⚠️ **The plain `残念` family is NOT exhausted with it** — `script_unique` 1382 and 1389 are untranslated |
+| `あちゃ、` | `Ｗｈｏｏｐｓ，` | 7 columns, `Ｗｈｏｏｐｓ` **0** elsewhere. Dismay at one's own miscalculation — held distinct from the whole §6 grunt family (`ほう`/`おお`/`おや`→`Ｏｈ`, `あ、`→`Ａｈ，`, `む`→`Ｈｍ`, `まったく`→`Ｒｅａｌｌｙ，`, `ふう`→`Ｐｈｅｗ，`). ⚠️ **`Ｏｏｐｓ` is NOT free — §34.3 spends it on `おっと` (`batch_006`:629, :632), a row still live with instances to come.** `Ｗｈｏｏｐｓ` keeps the two apart. **EXHAUSTED — hapax** |
+| `いったん` (adverbial) | `ｏｎｃｅ` | **4 battle, all in this chunk (L19, L25, L26, L27); 0 script adverb** (`script_unique` 952 is `盗っていったんだが` = 持って行った + んだ, and is rendered). **STRUCK on this spelling and on `一旦`** (`chunk_013` L3, shipped). ⚠️ **§67.3's `ｏｎｃｅ` row itself STAYS LIVE — `１度` and `一度` still have untranslated instances.** See §68.5 for the divergence this leaves on `main` |
+| `つまらない` | `ｂｏｒｉｎｇ` | `ｂｏｒｉｎｇ` **0** elsewhere. Held apart from `退屈`→`ｂｏｒｅｄ` (`chunk_011`, `chunk_038`) and `暇な`→`ｄｕｌｌ　ｗｏｒｋ` (`batch_005`:25, `batch_009`) — three source words, three forms; §25.3 met. **EXHAUSTED — hapax** |
+| `勝ち目はありません。` | `ｔｈｅｒｅ　ｉｓ　ｎｏ　ｗａｙ{FFFE}ｗｅ　ｃａｎ　ｗｉｎ．` | Built on the shipped head: `chunk_037` L17 **and** `batch_016`:93 both render `とてもじゃないが{FFFE}勝ち目はない。` as `ｔｈｅｒｅ　ｉｓ　ｎｏ　ｗａｙ{FFFE}**ｔｈｅｙ**　ｃａｎ　ｗｉｎ．` — verified byte‐identical at review. `ｗｅ` here is the referent's, not a divergence: the speaker is a party member about the party. ⚠️ **ROW STAYS LIVE — see §68.6** |
+| `勝ち目はないわ。` | `ｔｈｅｒｅ’ｓ　ｎｏ　ｗａｙ{FFFE}ｗｅ　ｃａｎ　ｗｉｎ．` | The same frame, contracted. **The only difference from the row above is the source's own**: `ありません` is formal (portrait 04), `ないわ` casual‐feminine (portrait 05). Upheld at both review rounds |
+| `永遠の闇` | `ｅｔｅｒｎａｌ　ｄａｒｋｎｅｓｓ` | 17 columns. `ｅｔｅｒｎａｌ` **0**; `ｄａｒｋｎｅｓｓ` 1 (`batch_012`, a different source word in a different store). ⚠️ **ROW STAYS LIVE — `永遠` is 2 battle: here and chunk 16 L14, and chunk 16 is BLOCKED on the tier‐A floor** |
+| `条件` / `甘すぎた` | `ｔｅｒｍｓ` / `ｔｏｏ　ｓｏｆｔ` | `ｔｅｒｍｓ` **0**; `ｓｏｆｔ` 1 (`batch_020`'s `ｓｏｆｔ　ｄａｐｐｌｅｄ　ｓｕｎｌｉｇｈｔ`, different word, different store). ⚠️ **`甘すぎ` STAYS LIVE — also chunk 16 L14, blocked** |
+| `最高だったわ` | `ｙｏｕ　ｗｅｒｅ　ｍａｇｎｉｆｉｃｅｎｔ．` | 22 columns, `ｍａｇｎｉｆｉｃｅｎｔ` **0**. ⚠️ Drafted as `ｔｈｅ　ｂｅｓｔ．` and changed before the round‐1 commit: `ｄｏ　ｙｏｕｒ … ｂｅｓｔ` is `がんばる`'s shipped form (`chunk_017`) and **this chunk already uses it at L2** — `ｂｅｓｔ` would have rendered two source words inside one chunk |
+| `おかしいったらなかった` | `ｎｏｔｈｉｎｇ　ｗａｓ　ｆｕｎｎｉｅｒ．` | 20 columns, `ｆｕｎｎｉｅｒ` **0** at word boundary. `〜といったらなかった` is the **superlative** construction, so the English is a superlative, not an intensifier — read correctly |
+| `退散` | `ｗｉｔｈｄｒａｗ` | The corpus's general word for leaving a field: `ｗｉｔｈｄｒａｗ` already renders `引き上げる` (`chunk_000` L2, `chunk_030` ×2), `退き時` (`chunk_017` L7) and `下がるが　よい` (`batch_012`:74, :86). **§25.3 met, verified at the Japanese side: chunk 28's source contains 0 of `引き上げ`, `退き時`, `下がる`.** `ｒｅｔｒｅａｔ` is spent (`chunk_008`); `ｐｕｌｌ　ｂａｃｋ` is spent on `戻る` (`chunk_027` L5) |
+| `お眠りなさい、` | `Ｇｏ　ｔｏ　ｓｌｅｅｐ，` | 12 columns. The `お〜なさい` politeness is carried by **register**, not by an added adverb — `Ｓｌｅｅｐ　ｗｅｌｌ，` was rejected as adding a word the source does not have (§2) |
+| `突っ切ろう` / `崩れていく` / `飲み込まれる` / `吸収される` | `ｃｕｔ　ｔｈｒｏｕｇｈ` / `ｃｒｕｍｂｌｉｎｇ` / `ｓｗａｌｌｏｗｅｄ　ｕｐ` / `ａｂｓｏｒｂｅｄ` | All four **0** elsewhere at word boundary. The last two are **deliberately kept apart**: the source uses two different verbs for what subspace does, and collapsing them would flatten the escalation |
+
+### 68.4 Reuses recorded, not claimed as new — each verified at its file line at review
+
+`アイテムを{FFFE}奪われました。` → §21.3's fixed form, **byte‐identical to all eight shipped instances**.
+⚠️ **The census is 11, not §21.3's seven**: re‐derived at the Japanese side, `dumps/battle_dump.txt`
+carries **7 lines with the `{FFFE}` and 4 without, 0 script** — and `chunk_038` / `chunk_041` already
+add the break to a no‐break source, so the English is one form over both shapes ·
+`じゃあね。` → `Ｂｙｅ　ｔｈｅｎ．` (**§67.2's live row, in the bare full‐stop form that row rules for this
+exact line**; held apart from `chunk_007` L22's `それじゃあね。` → `Ｆａｒｅｗｅｌｌ　ｆｏｒ　ｎｏｗ．` on
+register) · `しかたない。` → `Ｎｏｔｈｉｎｇ　ｆｏｒ　ｉｔ．` (`batch_014`:20, :23) · `なんだ、` →
+`Ｗｈａｔ　ｉｓ　ｔｈｉｓ，` (§58, `batch_017`:55, capitalised sentence‐initially) · `とりあえず、` →
+`Ｆｏｒ　ｎｏｗ，` ×3 (§44.2; `chunk_004` L20) · `あのとおり` → `Ａｓ　ｙｏｕ　ｓａｗ` **without a comma —
+verified at review: the two shipped script instances (`script_unique` 395 and 868) are
+`あのとおり、` WITH the comma and ship `Ａｓ　ｙｏｕ　ｓａｗ，`; this unit's source is bare and ends its row
+with no mark, so §44.2 forbids adding one** · `どうせ` → `Ａｌｌ　ｔｈｅ　ｓａｍｅ，` (**`chunk_027` L4 ships
+`どうせ、こいつらは{FFFE}袋のネズミ。` as `Ｔｈｅｙ’ｒｅ　ｒａｔｓ　ｉｎ　ａ　ｓａｃｋ{FFFE}ａｌｌ　ｔｈｅ　ｓａｍｅ` —
+re‐flowed across rows, same form; Seti's own line in the preceding chapter**) · `楽しみ` → `ｆｕｎ`
+(`chunk_027` L4's `楽しみが減るだけだ。` → `ｔｈｅ　ｆｕｎ　ｏｎｌｙ　ｆａｄｅｓ．`) · `何？！` → `Ｗｈａｔ？！`
+(`chunk_007` L10) · `きゃっ！` → `Ｅｅｋ！` (`pending/chunk_043` L18 — parked, so §3 does not bind;
+conformed voluntarily so an unpark cannot split it) · `オーク`＋`うろつく` →
+`ｔｈｅ　ｏｒｃｓ　ａｒｅ　ｏｕｔ　ｐｒｏｗｌｉｎｇ` (`chunk_021` L0) · `東の海岸` → `ｔｈｅ　ｅａｓｔｅｒｎ　ｃｏａｓｔ` and
+the `抜けた所に…あります` frame → `Ｂｅｙｏｎｄ … ｌｉｅｓ` (**`batch_009`:69 — the scene immediately before
+this chunk, Dolgan giving the party these same directions**) · `トレーズを倒した` → `ｗｈｏ　ｂｅａｔ
+Ｔｒｅｉｚｅ` (`chunk_027` L2) · `分からない` → `ｗｅ　ｄｏｎ’ｔ　ｋｎｏｗ` (the kana twin at `chunk_000` L2,
+same rough `〜ぜ` speaker) · `がんばる` → `ｄｏ　ｙｏｕｒ … ｂｅｓｔ` (`chunk_017`) · `作戦を考える` →
+`ｔｈｉｎｋ　ｕｐ　ａ　ｐｌａｎ` (`chunk_017` body[3]) · `〜に帰ろう` → `ｇｏ　ｂａｃｋ　ｏｎｃｅ　ｔｏ …`
+(`batch_015`:67) · `逃げる` → `ｅｓｃａｐｅ` (`chunk_021` L4; **both** L23 occurrences take it) ·
+`ちょっと` → `ａ　ｌｉｔｔｌｅ` (`chunk_031` L16, `batch_014`:58) · `奮闘` → `ｓｔｒｕｇｇｌｅ` (§31.2's
+`ご奮闘`; §47's `苦戦する` row already records in an in‐place correction that chunk 28 carries the
+**bare** `奮闘ぶり`) · `魔族` → `ｄｅｍｏｎｓ` lowercase (§40.1) · `ダークエルフ` → `ｄａｒｋ　ｅｌｆ`
+lowercase (§17.2) · `オーク` → `ｏｒｃｓ` lowercase (§14 / §17.1) · `セティ` → `Ｓｅｔｉ`, `トレーズ` →
+`Ｔｒｅｉｚｅ` (§40.1) · `ティミー` → `Ｔｉｍｍｙ` (§11.1) · `よし、` → `Ｒｉｇｈｔ，` (§6) · `まずい` →
+`Ｂａｄ` (§47.5, with the source's own full stop) · `急ごう` → `Ｌｅｔ’ｓ　ｈｕｒｒｙ` (§6) · `島` →
+`ｉｓｌａｎｄ` (§40, `chunk_026`).
+
+### 68.5 ⚠️ One adverb, two shipped English forms — a `main`‐level record, not a defect in this unit
+
+`一旦` and `いったん` are the same adverb spelled two ways, and `tl/` now renders them differently:
+`chunk_013` L3 ships `とにかく{FFFE}私は、一旦、{FFFE}レバークへ戻る。` as `… Ｉ　ｓｈａｌｌ　ｒｅｔｕｒｎ　ｔｏ
+Ｌｅｖｅｒｋ　**ｆｏｒ　ｎｏｗ**．`, where chunk 28's `いったん村へ帰って` is `ｇｏ　ｂａｃｋ　**ｏｎｃｅ**　ｔｏ　ｔｈｅ
+ｖｉｌｌａｇｅ` — the identical "return to a named place for the time being" frame.
+
+**`ｏｎｃｅ` stands, and was upheld at both review rounds**, for three reasons that survive re‐derivation:
+(a) **§67.3 ruled the adverb to `ｏｎｃｅ`** on `１度`, whose 6 battle + 8 script instances dwarf `一旦`'s
+single one, and ruled it *against* a translator's reservation that preferred exactly the *for now*
+reading; (b) **`ｆｏｒ　ｎｏｗ` is unavailable inside these very messages** — §44.2 spends it on
+`とりあえず、`, which stands two rows above `いったん` in all three of L25, L26 and L27, so taking it
+would collide the chunk with itself; (c) `batch_015`:67 already ships the same frame **with `ｏｎｃｅ`**
+(`Ｌｅｔ’ｓ　ｇｏ　ｂａｃｋ　ｏｎｃｅ　ｔｏ　Ｃａｒｌｉｎｅ　Ｃａｓｔｌｅ．`) and chunk 28 reuses its wording.
+
+**The divergence is PRE‐EXISTING and belongs to `main`, not to chunk 28.** Family census over all four
+spellings, re‐derived at the merge: `一旦` **1 battle (c13, shipped) + 0 script** · `いったん` **4 battle
+(all c28) + 0 script adverb** · `１度` **6 battle + 8 script** · `一度` **2 battle + 5 script**, of which
+`chunk_038` L14 is the ordinal `一度目` → `ｔｈｅ　ｆｉｒｓｔ　ｔｉｍｅ` and out of the family. Whoever
+consolidates the `ｏｎｃｅ` row should decide chunk 13's line, not this one.
+
+⭐ **The method lesson, which is the third in three waves:** round 1's census was **one spelling wide**
+— the exact defect §67.4 names — and it hid both the `一旦` twin and, in the other direction, the
+`まあいい` family split. **A census over one spelling is not a census.**
+
+### 68.6 Live rows and open notes this merge leaves behind
+
+1. **NOT struck, each re‐derived at the merge:** `一巻の終わり` (`script_unique` 1387 untranslated) ·
+   bare `渓谷` (1292, 1381 untranslated) · **§46.2's `大渓谷`** (1313 untranslated; only 579 shipped) ·
+   `永遠` and `甘すぎ` (both also **chunk 16 L14, blocked**) · `勝ち目` (**chunk 16 blocked, chunk 29 in
+   flight**, `script_unique` 523 / 525 / 1373 untranslated) · `まあいい` (**chunk 29 L19 in flight**,
+   `まあ、いい` at 1385 untranslated) · the plain `残念` family (1382, 1389 untranslated) · §67.2's
+   `じゃあね、` and §67.3's `ｏｎｃｅ`.
+2. **Portraits 04 and 05 are deliberately NOT named.** 04 is formal (`勝ち目はありません。`), 05 polite
+   but feminine‐casual (`東の海岸です。` L0, `勝ち目はないわ。` L26). Chunk 26's mapping would make them
+   Prince Hoag and Annette and the geography line fits Annette the island guide exactly — **but §40.2
+   states the ids are scene‐local, and it fixes Annette as `です`/`ます` with no contraction anywhere,
+   which `ないわ` does not match.** No English depends on the answer. Recorded so no later unit
+   inherits a guess as a fact.
+3. **Two English words render two source words each inside this chunk, both multiword units:**
+   `ｌｉｔｔｌｅ` (`せいぜい` in `Ｄｏ　ｙｏｕｒ　ｌｉｔｔｌｅ　ｂｅｓｔ．` L2, `ちょっと` in `ａ　ｌｉｔｔｌｅ　ｔｏｏ
+   ｓｏｆｔ？` L23) and `ｏｕｔ` (`うろつく` L0, `抜け出す` L2). This is the shape §67.2 records for `ｏｎｃｅ`
+   inside `ａｔ　ｏｎｃｅ` / `ｏｎｌｙ　ｔｈｉｓ　ｏｎｃｅ` — ordinary vocabulary, different messages, multiword
+   units — **not** a §25.3 collapse.
+4. **`〜させてもらう` is rendered one way across all three of Seti's instances** — `Ｉ’ｌｌ　ｌｅｔ　ｍｙｓｅｌｆ
+   ｗａｔｃｈ．` (L2), `ｓｈａｌｌ　Ｉ　ｌｅｔ　ｍｙｓｅｌｆ{FFFE}ｊｏｉｎ　ｉｎ　ｔｏｏ．` (L11), `Ｓｈａｌｌ　Ｉ　ｌｅｔ
+   ｍｙｓｅｌｆ{FFFE}ｗｉｔｈｄｒａｗ　ｏｎｃｅ．` (L19). **No glossary row keys the construction** — §31.2 keys
+   `ご奮闘` and §37 keys `鎮圧`, both head verbs — so §31.2's contraction‐free
+   `Ｉ　ｓｈａｌｌ　ｂｅ　ｐｅｒｍｉｔｔｅｄ　ｔｏ　ｗａｔｃｈ` is an Imperial officer's register, not a fixed form
+   chunk 28 departs from. Checked explicitly at review.
+5. **Non‐blocking, recorded not raised:** L23's `とっておかなくっちゃね` sheds its deontic in
+   `Ｔｈｅ　ｆｕｎ　Ｉ’ｌｌ　ｓａｖｅ{FFFE}ｆｏｒ　ｌａｔｅｒ．` (`Ｉ　ｍｕｓｔ　ｓａｖｅ` would fit at 19 columns). Sense
+   and topic‐first order survive intact and a sentence‐final `ね` has no English form §2 would allow
+   adding, so it is not a defect and did not cost a round. Noted in case a later pass consolidates
+   Seti's self‐directed resolutions.

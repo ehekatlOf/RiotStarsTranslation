@@ -32,18 +32,21 @@ origin/main`, verify with `git log -1`.
 > `engine.py`, `--extended`/`--layout`) belongs to the **root/runner session**. A wave never touches it.
 
 ## Last updated
-2026-09-12 · by: **the wave-14 coordinator (its own session), at dispatch** · **WAVE 14 RUNNING: chunks
-28, 29, 39 dispatched, three translators live, wave barrier NOT yet met.** Preflight was clean: `check`
+2026-09-12 · by: **the wave-14 reviewer, at PR #52's integration commit** · **WAVE 14 RUNNING: chunk 28
+MERGED (`9c8e3e0`, round 2); chunks 29 (#51) and 39 (#50) awaiting review.** The **wave barrier was met**
+and re-checked by the reviewer before any gate ran: all three units had an open PR, all based on `main`.
+Dispatch-time note follows: **chunks 28, 29, 39 dispatched, three translators live.** Preflight was clean: `check`
 **All checks passed** on `main`, **zero open PRs**, no stray worktree, and `list_sessions` showed no
 second wave-14 session. `glossary.md` §9.W14 seeded at **`5bd458e`** — **17 rows, seven of them REUSE
-rather than new words.** **glossary now ends §67 + §9.W14 · FLAGS ends §BG** — ⚠️ **take the next number
-by READING both files at commit time, never by reserving.**
+rather than new words.** **glossary now ends §68 + §9.W14 · FLAGS ends §BH** — ⚠️ **take the next number
+by READING both files at commit time, never by reserving.** (§68 / §BH were taken that way at PR #52's
+integration, not reserved.)
 
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **37** | 44 | wave 13 added 15, 23, 27; **16, 32 blocked** on the tier-A floor, **5, 43 parked** |
-| Battle JP characters | **32,437** | 43,137 | **75.2%** (was 69.3% at the wave's start) |
+| Battle chunks | **38** | 44 | wave 13 added 15, 23, 27; **wave 14 has added 28**; **16, 32 blocked** on the tier-A floor, **5, 43 parked** |
+| Battle JP characters | **33,207** | 43,137 | **77.0%** (was 75.2% at wave 14's start) |
 | Script unique lines | 1,064 | 1,430 | unchanged — no script batch was feasible this wave |
 | Script message instances | 5,180 | 7,931 | 65.3% |
 
@@ -54,7 +57,7 @@ table, never that line.
 ## In flight — WAVE 14, dispatched 2026-09-12
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
-| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | **2** | **#52** | **round 2 PUSHED at `89bae1b`** | all 3 findings accepted; `Ｎｏ　ｍａｔｔｅｒ．` applied. **3,953 / 8,192 (4,239 slack)**, `check` green, gate 6 re-run → 0 divergences, PR body rewritten in full. **Awaiting re-review** |
+| **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
 | **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | returned | **awaiting review** — 3,423 / 8,192 (4,769 slack), realised 2.14× vs a 6.05× ceiling; 79 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 

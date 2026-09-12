@@ -8420,3 +8420,115 @@ table, never that line. `rowcheck script`: columns OK, no non-inherited page ove
    alone, with no identity asserted. **Whoever first names id 0001 should re-read L0 and L1.**
 3. **Chunk 32 is blocked and holds four live rows' last instances** (`根城`, `坊や`, and §25.2's
    register neighbours). It unblocks only with the tier-A slot extension (Blocked 2).
+
+## BH. Wave 14 review — battle chunk 028 / PR #52, MERGED (2026-09-12, round 2)
+
+Squash **`9c8e3e0`**. Head reviewed **`89bae1b`**; merge pinned to the explicit SHA **`5cc7348`** as
+dispatched (the base had moved repeatedly — the PR's own recorded base was `43b1259`), and clean.
+Every §6 gate re‐run on the round‐2 head; nothing carried forward from round 1. **Wave 14, unit 1 of
+3 — the wave barrier was re‐checked before any gate ran: all three units (28/#52, 29/#51, 39/#50) had
+an open PR, all based on `main`.**
+
+**3,953 / 8,192, slack 4,239.** JP 770 → EN 1,552 = **realised 2.02×** against a **4.77×** ceiling.
+`{FFFE}` **85 → 87** (bodies L2 −1, L19 +1, L25 +1, L26 +1); **`{FCC0}` unchanged per line as well as
+in total, 10 → 10**; non‐`{FFFE}` tag stream **byte‐identical on all 31 lines**; header and
+`{PAD 5807}` identical; line count 31 = 31; **98 text runs, widest 23, 0 at 24, 0 over**; **0 pages
+over 4 text rows that the source did not already exceed**; 0 characters outside §3.1 (census
+`U+2010 ×1, U+2019 ×27, U+3000 ×219, ！×7, ，×24, ．×54, ？×4`); ellipsis runs exact, measured per text
+segment (3/3, 5/5, 3/3 + 4/4). Gate 6 by positional pairing over both dumps, every shipped battle
+chunk, `pending/`, and every script TSV by its Japanese key: **0 divergences at message and row level,
+0 internal.** `rowcheck script` and `bankmeasure` re‐run as a regression check: unchanged, and `merge`
+printed **0** "never matched the dump".
+
+### BH1. ⭐⭐ The round‐1 finding was a one‐spelling census, and the rule it hid is now written down
+
+Round 1 was CHANGES on three findings; all three were accepted and round 2 corrected them. **The one
+that mattered changed four bytes and settled a rule the corpus had been following silently for four
+chunks:** `まあいいわ。` shipped as `Ｏｈ　ｗｅｌｌ．`, which split it from the `Ｎｏ　ｍａｔｔｅｒ` family.
+
+Re‐derived at review over **five** spellings by positional pairing, not accepted from the PR:
+
+| Source | Punctuation | Shipped English | Where |
+|---|---|---|---|
+| `まあよい、` | fused | `Ｎｏ　ｍａｔｔｅｒ．` | `chunk_013` L1 |
+| `まあよいわ。` | fused, bare | `Ｎｏ　ｍａｔｔｅｒ．` | `chunk_022` L0 |
+| `まあ、いいわ。` | **comma after `まあ`** | `Ｗｅｌｌ，　ｎｏ　ｍａｔｔｅｒ．` | `chunk_004` L12 |
+| `まあいいわ。` | fused, bare | **`Ｎｏ　ｍａｔｔｅｒ．`** | **chunk 28 L23** |
+
+**The leading `Ｗｅｌｌ，` is the SOURCE's comma, not a register choice** — §44.2's rule, which this same
+unit applied correctly to `あのとおり` in the same file and missed here. One rule, one file, opposite
+directions. Written up as `glossary.md` **§68.1**, because no row stated it before today.
+
+`Ｎｏ　ｍａｔｔｅｒ` is not thereby spent: `chunk_024` L9 (`何がなんでも`) and `chunk_037` L17
+(`敵がどれだけいようと`) carry the **multiword** `ｎｏ　ｍａｔｔｅｒ　ｗｈａｔ` / `ｎｏ　ｍａｔｔｅｒ　ｈｏｗ　ｍａｎｙ`
+— §40.3's shape, not a §25.3 collapse. Checked at the merge.
+
+### BH2. ⚠️⚠️ EIGHT bad exhaustion claims in this wave, and not one survived re‐derivation
+
+Seven were already on the board when this unit was dispatched. **Round 1 of PR #52 supplied the
+eighth** — its `渓谷` cell read "2 battle + 0 script — EXHAUSTED" and bare `渓谷` has **two untranslated
+script instances**. The translator found and corrected it in round 2, and the integrator re‐derived it
+a third time before deciding what to strike.
+
+**The failure mode is now identifiable in one sentence: the first pass measured the ENGLISH side
+(`ｇｏｒｇｅ` free elsewhere) and took the seed block's JAPANESE cell on trust.** Those are two different
+questions. An English‐side count answers *is this word spent?*; only a Japanese‐side count over both
+dumps, checked against which chunks are shipped / parked / blocked, answers *is this row exhausted?*
+
+**Every claim in this merge was re‐derived at the Japanese side.** Result:
+
+| Row | Verdict | Evidence |
+|---|---|---|
+| `一巻の終わり` | **LIVE** | 1 battle (c28, shipped) + `script_unique` **1387 UNTRANSLATED** |
+| `渓谷` (bare) | **LIVE** | 2 battle (both c28) + `script_unique` **1292, 1381 UNTRANSLATED** (579 rendered, 1313 is `大渓谷`) |
+| §46.2 `大渓谷` | **LIVE** | `script_unique` **1313 UNTRANSLATED**; only 579 shipped (`batch_009`:69) |
+| `永遠` · `甘すぎ` | **LIVE** | both also **chunk 16 L14 — BLOCKED** on the tier‐A floor |
+| `勝ち目` | **LIVE** | c16 blocked · **c29 in flight (PR #51)** · `script_unique` **523, 525, 1373 UNTRANSLATED** |
+| `まあいい` | **LIVE** | **c29 L19 in flight** + `まあ、いい` at `script_unique` **1385 UNTRANSLATED** |
+| `巣窟` | **LIVE** | c29 untranslated + `script_unique` **523, 525 UNTRANSLATED** — confirms §9.W14's own correction against PR #51's round‐1 claim |
+| plain `残念` | **LIVE** | `script_unique` **1382, 1389 UNTRANSLATED** — does **not** go with `ざぁーんねん` |
+| `亜空間` · `空間融合の魔法` · `タイムリミット` · `タイムアウト` · `うふふ` · `ざぁーんねん` · `あちゃ` · `つまらない` | **STRUCK** | each c28‐only, 0 script, verified chunk by chunk |
+| `いったん` / `一旦` | **STRUCK on both spellings** | c28 ×4 + c13 ×1, both shipped; `script_unique` 952 is `盗っていったんだが`, not the adverb, and is rendered. ⚠️ **§67.3's `ｏｎｃｅ` row itself stays live — `１度`, `一度` still have untranslated instances** |
+
+### BH3. One adverb, two shipped English forms on `main` — recorded, not fixed here
+
+`chunk_013` L3 ships `一旦` as `ｆｏｒ　ｎｏｗ`; chunk 28 ships `いったん` ×4 as `ｏｎｃｅ`, in the identical
+"return to a named place for the time being" frame. **`ｏｎｃｅ` stands and was upheld at both rounds**
+— §67.3 ruled the adverb on `１度` (6 battle + 8 script, against a translator's reservation that
+preferred *for now*); `ｆｏｒ　ｎｏｗ` is **unavailable inside these very messages**, since §44.2 spends it
+on `とりあえず、` two rows above `いったん` in all three of L25/L26/L27; and `batch_015`:67 already ships
+the frame with `ｏｎｃｅ`. **The divergence is pre‐existing and belongs to `main`.** Written up as
+`glossary.md` §68.5. **Whoever consolidates the `ｏｎｃｅ` row should decide chunk 13's line, not this
+one.** No action is owed before the bank‐40/41 repoint.
+
+### BH4. Bank state at this merge — unchanged, a battle unit touches no bank
+
+`bankmeasure` re‐run after `merge`: **bank 40 → 75 free · bank 41 → 353 · bank 5 → 1,595 · bank 2 →
+1,607.** Four banks under 2,000 free, as before. ⚠️ `bankmeasure`'s `tightest:` line printed only
+three and hid bank 2 — **quote the table, never that line** (§Z6's standing warning, observed again
+here).
+
+### BH5. For reviewers 2 and 3, this wave
+
+1. **Chunk 29 (PR #51) shares three forms with this unit, and chunk 28's are now merged and fixed.**
+   `勝ち目はありません。` — byte‐identical source in both; chunk 28 ships
+   `ｔｈｅｒｅ　ｉｓ　ｎｏ　ｗａｙ{FFFE}ｗｅ　ｃａｎ　ｗｉｎ．`, matching `chunk_037` L17 / `batch_016`:93's
+   `… ｔｈｅｙ　ｃａｎ　ｗｉｎ．` frame with the pronoun following the referent. `まあいい。` — chunk 28's
+   `まあいいわ。` now ships `Ｎｏ　ｍａｔｔｅｒ．`, giving chunk 29's line **three** shipped precedents plus
+   this one; chunk 29 L19 is portrait **08** on `{FC50}`, which §40.2 fixes as Yuiti (laconic, blunt,
+   no contractions), so the register argument is available but the family form is not open.
+   `あの通り` — chunk 29 L1 carries the **kanji** spelling of chunk 28's `あのとおり`. **Gate 6 cannot
+   pair them and a one‐spelling census will not see them.** Chunk 28 ships `Ａｓ　ｙｏｕ　ｓａｗ` **without
+   a comma**, because its source is bare; the two shipped script instances (395, 868) are
+   `あのとおり、` with the comma and ship `Ａｓ　ｙｏｕ　ｓａｗ，`. Check chunk 29's source punctuation before
+   ruling on its form.
+2. **`巣窟` is LIVE for chunk 29** — 1 battle + `script_unique` 523 and 525, both untranslated. PR #51's
+   round‐1 "1 battle + 0 script — EXHAUSTED" is wrong and §9.W14 already carries the correction.
+3. **Chunk 39 (PR #50): do not raise `工場` → `ｆａｃｔｏｒｉｅｓ` as a finding.** §9.W14's own struck row
+   records that the seed was wrong (it read §29's width clearance on `兵器工場` as a word ruling) and
+   that `ｆａｃｔｏｒｉｅｓ` as shipped is correct.
+4. **`ａｉｒｓｈｉｐ` and `Ｆａｔｈｅｒ` for chunk 39 are already shipped forms, not decisions** — `飛行船` has
+   no glossary row at all (gate‐7 face (c)) and `batch_014`:47 renders it; §25.4 names chunk 39 by
+   number for `父さん・・・・`.
+5. **Chunk 16 holds the last instance of `永遠`, `甘すぎ` and one `勝ち目`, and it is blocked.** Nothing
+   in wave 14 can strike those rows.
