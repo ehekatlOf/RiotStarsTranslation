@@ -8532,3 +8532,81 @@ here).
    number for `父さん・・・・`.
 5. **Chunk 16 holds the last instance of `永遠`, `甘すぎ` and one `勝ち目`, and it is blocked.** Nothing
    in wave 14 can strike those rows.
+
+## BI. Wave 14 review — battle chunk 029 / PR #51, MERGED (2026-09-12, round 2)
+
+**DECISION: MERGE, no findings.** Squash **`104c1965`**, integration commit below. Reviewed at head
+`6778615`, merge base pinned to the explicit **`91ce177`**. Round 2: all five of round 1's findings
+were applied, **no re‐flow, net −20 bytes**, and each was re‐derived against the tree before it was
+accepted here. Glossary section taken at commit time by reading, not reserving: **§69**. This FLAGS
+section likewise: **§BI**.
+
+### BI1. Gate evidence
+
+| Gate | Result |
+|---|---|
+| 1 paths | `git diff --name-only 91ce177...6778615` → `tl/battle/chunk_029.txt`, one new file |
+| 2 merge | `ort`, exit 0, **0 conflicts**; PR base ref is `main` |
+| 3 check | `chunk 29   3403 / 8192 bytes   slack  4789` … **All checks passed** |
+| 4 figures | **3,403 / 8,192, slack 4,789**; realised **2.12×** against a 6.05× ceiling; **80 text runs, widest 23, 0 at 24, 0 over**; no page over 4 text rows |
+| 4 tags | `{FFFE}` **68 → 69**, the +1 on body **L28 only**; `{FCC0}` **10 → 10 per line and in total**; **non‐`{FFFE}`/`{FCC0}` tag stream byte‐identical on all 31 lines**; header, `{PAD 6163}` and the `{=FF}` terminator byte‐identical to the dump |
+| 5 banks | n.a. — battle unit, no `tl/script/*.tsv` touched |
+| 6 dupes | positional pairing over both dumps, all shipped `tl/battle/*.txt`, `pending/` and `tl/script/*.tsv`: **one** recurring message, `アイテムを奪われました。` at L14 with **10 instances**, all nine translated ones byte‐identical. **0 divergences** |
+| 7 glossary | every term conforms; **§46.3, §68.1 and §36.2 preconditions each re‐derived, not assumed**; no existing entry changed |
+| 8 structure | `{FFFF}` last on every message line (L29's `{=FF}` is the source's own, inherited); L9's `　` cursor‐gutter row preserved; **no character outside §3.1, no `…`, no `・`, no `○`, no ASCII**; ellipsis runs **6 of 6 exact** |
+
+**Only two page shapes change anywhere in the file**, both on L28: p1 `TTT.` → `TTTT` (the §45.2
+refill) and p5 `TT` → `TTT` (115 attestations). Verified by a full shape diff of every page of every
+line against the pristine chunk.
+
+### BI2. ⚠️ `tl/battle/chunk_000.txt` ships the only `.TTTT.` page in the corpus — a `main`-level defect, NOT chunk 29's
+
+Found while re‐running §45.2's shape census over all 44 pristine chunks at this review (the census
+**reproduces §45.2's table exactly**: `TTTT` 389 · `TTT.` 276 · `.TTTT` 182 · `.TTT.` 132 · `TTT` 115 ·
+**`.TTTT.` 0**).
+
+**`tl/battle/chunk_000.txt` body[12] page 11 goes `.TTT.` → `.TTTT.`** — the one page shape with **zero**
+occurrences in the pristine dump, and the exact shape `translation_prompt.md` §3.2 warns "may not fit".
+Its two neighbours moved the other way in the same message (**p8 `TTTT` → `TTT`, p10 `.TTTT` → `.TTT`**),
+so text was redistributed **into** a page that already carried a leading blank — the direction §45.2
+expressly does not license. Chunk 0 was translated before §45.2 existed.
+
+- **It is the only `.TTTT.` in all of `tl/`** — verified by scanning every shipped battle file.
+- **Impact if the shape really does not fit:** one page of chunk 0, the game's first battle, drops or
+  overwrites a row. Chunk 0 is also the tightest normal chunk and the one the engine boot test uses.
+- **The fix is a re‐flow at 0 bytes** — move one row's text back into p8 or p10, restoring an attested
+  shape. It is not a byte‐budget problem.
+- **For the human:** this is worth one look during the boot test that Blocked 4 already schedules
+  (chunk 0's battle is test (1)). ⭐ **If the row renders correctly, §3.2's warning is disproved and
+  `.TTTT.` can be ruled attested‐in‐practice; if it does not, the re‐flow above is a one‐line change.**
+
+### BI3. Exhaustion claims — all re‐derived on the Japanese side at this merge
+
+**Nine exhaustion claims failed re‐derivation during wave 14 and one reached `main`** (§68.3's
+`つまらない`, corrected at `0c5bf2b`). Every cell in §69.3 was therefore counted here across all
+spellings of the family, against both dumps, with each script line's rendered status checked by exact
+key. Results: `問題ない`, `挑発`, `逃げ道`, `またとないチャンス`, `期待はずれ`, `しのぐ` — **exhausted,
+1 battle + 0 unrendered script each**. `巣窟` — **NOT exhausted**, 2 untranslated script lines.
+
+⚠️ **One correction to PR #51's body (§4.3), recorded at §69.3:** its `ゆっくり` cell names
+`pending/chunk_043` as the other battle instance. **It is `pending/chunk_005` L16 (`村で　ゆっくりと`);
+chunk 43's source contains no `ゆっくり` at all**, and the script count is **8 lines, all 8 rendered**,
+not 7. The row's disposition is unchanged — it stays LIVE via the parked chunk 5 — but the wrong file
+would have sent the next auditor to the wrong place. **Tenth wrong census cell of wave 14; the
+disposition happened not to turn on it.**
+
+### BI4. Two divergences made live by this merge, recorded and not required
+
+Both are in §69.5 with the derivation. `納得がいく` — `ｉｔ　ｆｉｔｓ．` (`chunk_021`) against
+`ｎｏ　ｗｏｎｄｅｒ` (here); the shipped form is unavailable because this instance takes a `〜のも`
+complement where the bare predicate does not. `出直す` — `Ｓｔａｒｔ　ａｇａｉｎ　ａｎｄ　ｒｅｔｕｒｎ．`
+(`chunk_033` ×2) against `ｄｒａｗ　ｂａｃｋ　ｏｎｃｅ　ａｎｄ　ｒｅｔｕｒｎ` (here); unavailable because
+**§67.3 binds `１度` → `ｏｎｃｅ` on this exact line** and *start again once* is not English, while
+`ｗｉｔｈｄｒａｗ` was spent on `退散` by `chunk_028` one chapter earlier (§68.3). **Neither family has an
+unrendered instance left**, so both splits are final unless someone revises the *other* file.
+
+### BI5. Bank status at this merge
+
+Unchanged — no script line was touched. **Four banks remain under 2,000 free: 40 → 75 · 41 → 353 ·
+5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only **three** of those four and
+which one it hides is not stable — quote the table, never that line.

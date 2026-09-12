@@ -32,21 +32,39 @@ origin/main`, verify with `git log -1`.
 > `engine.py`, `--extended`/`--layout`) belongs to the **root/runner session**. A wave never touches it.
 
 ## Last updated
-2026-09-12 · by: **the wave-14 reviewer, at PR #52's integration commit** · **WAVE 14 RUNNING: chunk 28
-MERGED (`9c8e3e0`, round 2); chunks 29 (#51) and 39 (#50) awaiting review.** The **wave barrier was met**
-and re-checked by the reviewer before any gate ran: all three units had an open PR, all based on `main`.
+2026-09-12 · by: **the wave-14 reviewer, at PR #51's integration commit** · **WAVE 14 RUNNING: chunks 28
+(`9c8e3e0`) and 29 (`104c1965`) MERGED, both round 2, both no findings; chunk 39 (#50) is the LAST unit
+of the wave and awaits review.** The **wave barrier was met** and re-checked on entry before any gate
+ran: all three units had an open PR, all based on `main`. Battle is now **39 / 44, 78.4%**.
 Dispatch-time note follows: **chunks 28, 29, 39 dispatched, three translators live.** Preflight was clean: `check`
 **All checks passed** on `main`, **zero open PRs**, no stray worktree, and `list_sessions` showed no
 second wave-14 session. `glossary.md` §9.W14 seeded at **`5bd458e`** — **17 rows, seven of them REUSE
-rather than new words.** **glossary now ends §68 + §9.W14 · FLAGS ends §BH** — ⚠️ **take the next number
-by READING both files at commit time, never by reserving.** (§68 / §BH were taken that way at PR #52's
-integration, not reserved.)
+rather than new words.** **glossary now ends §69 + §9.W14 · FLAGS ends §BI** — ⚠️ **take the next number
+by READING both files at commit time, never by reserving.** (§68 / §BH and §69 / §BI were all taken
+that way, at PR #52's and PR #51's integrations, not reserved.)
+
+⚠️⚠️ **FOR THE CHUNK-39 REVIEWER, from PR #51's merge — three things that bind or free your unit:**
+1. **`Ａｓ　ｙｏｕ　ｓａｗ` is now SPENT on `あのとおり` / `あの通り`** — `chunk_028` L25/L26 and `chunk_029`
+   L1, bare, plus `script_unique` 395 / 868 **with** the comma (§68.4, §69.4). It is **NOT free** for
+   `ご覧のとおり` or `この通り`; those need their own form, and §44.2 decides the comma from the source row.
+2. **§45.2's page-shape ruling is live and applies to any `TTT.` or `.TTT.` page in PR #50** — filling a
+   source-blank **trailing** segment is ratified at 0 bytes; **§3.2's warning is about `.TTTT.` (0
+   attestations) and a leading blank, and does not reach `TTTT` (389) or `.TTTT` (182).** This
+   distinction has now cost **two** PRs a review round (§45.2, §69.1). Check PR #50's page shapes
+   against the pristine chunk before requiring any compression.
+3. **`§9.W14`'s `工場` cell is a KNOWN SEED ERROR — do not raise `ｆａｃｔｏｒｉｅｓ` as a finding against
+   chunk 39.** The seed block says so in terms; bare `工場` takes `ｆａｃｔｏｒｙ` (`chunk_009` ×2) and
+   PR #50 is correct. Also inherited: `飛行船` → `ａｉｒｓｈｉｐ` (already shipped, `batch_014`:47, **no
+   glossary row** — gate-7 face (c)) and `父さん` → `Ｆａｔｈｅｒ` (§25.4 names chunk 39 by number).
+   ⚠️ **`chunk_039` L8 carries the stolen-item box** (`アイテムを奪われました。`, §21.3) — it must ship
+   `Ａｎ　ｉｔｅｍ　ｗａｓ{FFFE}ｓｔｏｌｅｎ　ｆｒｏｍ　ｙｏｕ．` byte-identically; it is the tenth and last
+   instance, and the other nine all match.
 
 ## Progress (`python3 tools/assemble.py status`, run on the merged tree at this close)
 | | Done | Total | |
 |---|---|---|---|
-| Battle chunks | **38** | 44 | wave 13 added 15, 23, 27; **wave 14 has added 28**; **16, 32 blocked** on the tier-A floor, **5, 43 parked** |
-| Battle JP characters | **33,207** | 43,137 | **77.0%** (was 75.2% at wave 14's start) |
+| Battle chunks | **39** | 44 | wave 13 added 15, 23, 27; **wave 14 has added 28 and 29**; **16, 32 blocked** on the tier-A floor, **5, 43 parked** |
+| Battle JP characters | **33,817** | 43,137 | **78.4%** (was 75.2% at wave 14's start) |
 | Script unique lines | 1,064 | 1,430 | unchanged — no script batch was feasible this wave |
 | Script message instances | 5,180 | 7,931 | 65.3% |
 
@@ -58,7 +76,7 @@ table, never that line.
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | **2** | **#51** | **round 2 PUSHED at `6778615`** | all 4 findings applied, no re-flow. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; 80 runs, widest 23, none at 24; `{FCC0}` 10 → 10. PR body rewritten. **Awaiting re-review** |
+| **battle chunk 29** | ~~`tl/battle-029`~~ | `tl/battle/chunk_029.txt` | **2** | **#51** | reviewed `6778615` | ✅ **MERGED — squash `104c1965`, integrated by `integrate: chunk 029 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `91ce177`. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; `{FFFE}` 68→69 on **one** declared line (L28), `{FCC0}` 10→10, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 31 lines, 80 runs widest 23 / 0 at 24, no page over 4 rows, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§69**, `FLAGS.md` **§BI**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
