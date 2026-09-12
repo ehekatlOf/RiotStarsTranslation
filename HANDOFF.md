@@ -72,48 +72,57 @@ in the CLAUDE.md banner, and it passes.
 ⚠️ **`bankmeasure`'s `tightest:` line prints only THREE and which one it hides is NOT stable** — quote
 the table, never that line.
 
-## In flight — the repairs session's four units (2 PRs open, 2 translators still working)
+## In flight — the repairs session's four units (3 PRs open, 1 translator still working)
 | Unit | File | PR | State |
 |---|---|---|---|
 | R0+R5 | `tl/battle/chunk_000.txt` | — | translator working |
 | R2 | `tl/battle/chunk_018.txt` | **#53** `fix/battle-018` @ `a881998`, clean | **awaiting the wave barrier** |
-| R1 | `tl/script/batch_012.tsv` | — | translator working |
+| R1 | `tl/script/batch_012.tsv` | **#55** `fix/script-012` @ `a452e94`, clean | **awaiting the wave barrier** |
 | R6a | `tl/script/batch_013.tsv` | **#54** `fix/script-013` @ `588de7c`, clean | **awaiting the wave barrier** |
 
-⛔ **Nothing is reviewed until all four units have a PR** (CLAUDE.md §4 step 4). No tight bank is touched
-(40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607 all untouched).
+⛔ **Nothing is reviewed until all four units have a PR** (CLAUDE.md §4 step 4). All three PRs base on
+`c583bd7`; `main` has advanced since only by `handoff:` commits (`git diff --name-only c583bd7
+origin/main` = `HANDOFF.md` alone), so **gate 2 holds and no rebase is owed** — the reviewer re-runs it
+against current `origin/main` anyway. No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 ·
+2 → 1,607 all untouched); only bank 1 (−4) and bank 29 (−10) move.
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
 
-### ⭐⭐ BOTH RETURNING TRANSLATORS CORRECTED THE COORDINATOR, AND BOTH WERE RIGHT
-**Two of my dispatch figures were wrong. Each was caught by the subordinate doing the work, verified by
-me against the corpus, and neither changed a decision.** Recorded because wave 14's §69 makes the same
-point and this is the fifth and sixth instance of it.
-1. **The `それよりも` family is 12 rendered sites, not 7 — I censused ONE spelling.** PR #53 re-derived it
-   across **both** spellings: **7 `それよりも` + 5 bare `それより`**, in six Englishes. My census, §69.5's
-   and the dispatch's all missed the bare form. Verified here: `chunk_000` body[12], `chunk_003`
-   body[15], `chunk_037` body[17], `pending/chunk_005` body[9] and a **second** instance inside
-   `batch_016:93` (unique 865 carries both spellings on one line). **The ruling is untouched and needs
-   no §4.3 correction** — `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` is **7 of 12** across four files and
-   `chunk_018`'s `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ` was a lone hapax — but §69.5's **census** is understated
-   and the integrator should correct it in place so it is not re-derived a sixth time.
-   ⚠️ **One counter-correction: PR #53's flag 6 cites the untranslated line as `script_unique` 1360. It
-   is 1355**, and its run is `ねえ、それより指輪は・・・・？` with **no `{FFFE}`** inside it. Blocked
-   behind the §F2 bank-40/41 repoint either way.
-2. **`batch_013:31` costs +10 bytes and 16/17 columns, not the +12 and 17/17 I dispatched.** `Ｉｎｓｉｄｅ`
-   is **6** characters, not 7; I miscounted and the error propagated into both script dispatches.
-   PR #54 caught it, and `bankmeasure` confirms independently — bank 29 free falls 16,879 → **16,869**.
-3. ⭐ **PR #54 found this was a gate-7 divergence as well as a §3 one, which §BF3 does not say.**
-   `glossary.md` **§58** already carries `静まり返っている` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` ("Three
-   spellings, one word, one English"), added by `batch_017`/PR #42 — **after** `batch_013`/PR #36 shipped.
-   So `ｑｕｉｔｅ　ｓｉｌｅｎｔ` contradicted a live glossary row, not only CLAUDE.md §3. It also
-   conformed the **frame** (`〜の中は` → `Ｉｎｓｉｄｅ　ｔｈｅ　Ｘ`, all 7 conforming sites), which is
-   what forced the divergence: `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ` cannot take `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` after it.
-4. **For the reviewer, at the #54 merge: `FLAGS §BF3` is DISCHARGED and its citation list must be
-   corrected, not just struck.** §BF3 names five sites as instances of the byte-identical string
-   `静まり返っている・・・。`; **none of the five is** — they are three spellings with three different dot
-   counts. PR #54's flag 2 table is the re-derived replacement.
+### ⭐⭐⭐ A THIRD NUMBERING CONVENTION, AND IT MADE *ME* FILE A FALSE CORRECTION
+⛔ **`script_unique` citations are ambiguous in this repo and three agents used three readings of the
+same line this session. Settle it before citing: `FILE = DATA + 5`** (the first data line is FILE 6;
+`grep -n` prints FILE). **FILE 1360 = DATA 1355**, and it is **one pooled row carrying 14 `{FCC0}`
+messages** — among them *both* `ねえ、それより{FFFE}指輪は・・・・？` *and* `お話中　すまないが、`, which is
+why two units citing "1360" for different text were **both right**.
+⚠️ **I retract the counter-correction I pushed at `1644ff0` against PR #53.** I claimed its
+`script_unique` 1360 was wrong and that the run carried no `{FFFE}`. **PR #53 was right on both
+counts** — 1360 is the FILE line (the same convention the project uses for `batch_NNN:k`), and the run
+is `ねえ、それより{FFFE}指輪は・・・・？`, `{FFFE}` included. I had read my own tag-stripped display output
+as if it were the raw string. **Nothing downstream depended on it**, but the false correction is the
+exact failure §BI3 was written about, so it is struck here rather than left on the board.
+
+### ⭐⭐ ALL THREE RETURNING TRANSLATORS CHECKED THE COORDINATOR'S FIGURES; TWO FOUND REAL ERRORS
+**Byte figures held 3 / 3. Column and character counts did not: two of three dispatches carried
+arithmetic slips of mine, both caught by the agent doing the work, neither changing a decision.**
+1. **PR #53 — `それよりも` is 12 rendered sites, not 7: I censused ONE spelling.** 7 `それよりも` + 5 bare
+   `それより`, six Englishes. Verified here. §69.5's census is understated the same way and the
+   integrator should correct it in place. **The ruling stands** — `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ` is
+   7 of 12 across four files; `chunk_018`'s `Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ` was a lone hapax. My byte and
+   column figures for this unit (15 → 18 cols, +6 bytes) were confirmed exactly.
+2. **PR #54 — `Ｉｎｓｉｄｅ` is 6 characters, not 7.** `batch_013:31` costs **+10 bytes at 16/17 columns**,
+   not the +12 at 17/17 I dispatched; `bankmeasure` confirms independently (bank 29: 16,879 → 16,869).
+3. **PR #55 — `ｍｙ　ａｐｏｌｏｇｉｅｓ．` is 13 columns.** `ａｐｏｌｏｇｉｅｓ` is 9 letters, not 10. My
+   predicted page widths `1 / 14 / 22 / 22` are all wrong; measured **`8 / 13 / 21 / 19`** (row 1's `1`
+   omits the 7-column name insert — ⚠️ note `rowcheck` substitutes `NAME_COST` for `{FC00}{=0000}`
+   **only**, so it measures the script store's `{FFEC}{=00}{=00}` insert as **zero**). +4 bytes was right.
+   ⚠️ **Two stale glossary figures for the same 13-column string, for the integrator as §4.3 in-place
+   corrections, no rendering affected:** §39.3 item 3 says "14 columns either way"; §58.3's
+   `すまんすまん。` cell says "**15**".
+4. **PR #55 also found three `すま`-family sites my table omitted**, none of them a §3 case: FILE 815
+   `すまん、勘弁してくれ！`, and FILE 1360 / 1377 (`お話中　すまないが、`, `リオン、すまん。`) which sit in
+   the **blocked bank-41 block** and will need renderings after the §F2 repoint. **The exact run
+   `君、{FFFE}すまない。` occurs exactly once per dump**, so the pair PR #55 repaired is the whole §3 case.
 
 ## Next up
 ⛔ **NOTHING. The dispatch queue is empty and will stay empty until a human unblocks it.** See NEXT ACTION.
