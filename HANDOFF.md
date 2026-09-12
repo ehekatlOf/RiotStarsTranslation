@@ -4,6 +4,27 @@ at the close commit (`CLAUDE.md` top banner). ⚠️ A fresh container clones SH
 local ref: if `git checkout main` lands on an old commit, `git fetch && git reset --hard origin/main`.
 
 ## NEXT ACTION — always current, always a literal instruction
+> # ▶ ONE SCOPED REPAIRS SESSION IS BEING OPENED BY THE RUNNER (2026-09-12). IT IS NOT WAVE 15.
+> The runner (root session) is opening a single coordinator session — id recorded in the next `handoff:`
+> commit — to do **only** the no-human items under **Blocked 6**, then stop. It dispatches no chunk, no
+> batch, and **opens no successor**. The run's stop condition below still holds; this is the repair work
+> that the final handoff itself names as doable without the human.
+> **Scope, exactly two items:**
+> 1. `tl/battle/chunk_000.txt` body[12] — restore an attested page shape (FLAGS §BI2: page 11 is the
+>    corpus's only `.TTTT.`; move one row's text back into p8 or p10). 0 bytes. This lands BEFORE the
+>    human's boot test, whose test (1) is chunk 0's battle, so the test cannot be confused by a page
+>    shape the game never uses.
+> 2. The six pre-existing `main`-level divergences under Blocked 6 (`glossary.md` §70.7, FLAGS §BF3/§BF4):
+>    for each, decide the correct rendering from `glossary.md` as it stands, then make identical Japanese
+>    byte-identical English on the losing side. Slack is ample in every file involved; re-measure anyway.
+> **Not in scope:** `pending/chunk_005.txt` (§BE4 applies at the tier-A unpark), chunks 16/32, anything
+> needing the disc or emulator, glossary relitigation, tool changes, the §BJ2 `rowcheck` second pass.
+> **Process unchanged:** one translator per file touched, own branch from `origin/main`, PR with base
+> `main`, one reviewer at a time with every §6 gate pasted, squash-merge into `main`, integrate commit.
+> Close: `check` green on `main`, `merge`, README table, `handoff: repairs closed` carrying the
+> `origin/main` proof, then restore this NEXT ACTION to "THE RUN IS STOPPED" below and end without
+> opening anything. After the close the runner rebuilds `build/HEXMAP.BIN` for the boot test.
+>
 > # ⛔⛔ THE RUN IS STOPPED. THERE IS NO WAVE 15, AND NONE SHOULD BE OPENED.
 > **Wave 14 closed with all three units merged. `CLAUDE.md` §8's FIRST stop condition — "no dispatchable
 > unit left" — now holds, and it is the reason the chain ended.** This was not a failure, a stall, or a
