@@ -77,7 +77,7 @@ table, never that line.
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
 | **battle chunk 29** | ~~`tl/battle-029`~~ | `tl/battle/chunk_029.txt` | **2** | **#51** | reviewed `6778615` | ✅ **MERGED — squash `104c1965`, integrated by `integrate: chunk 029 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `91ce177`. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; `{FFFE}` 68→69 on **one** declared line (L28), `{FCC0}` 10→10, non-`{FFFE}`/`{FCC0}` tag stream byte-identical on all 31 lines, 80 runs widest 23 / 0 at 24, no page over 4 rows, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§69**, `FLAGS.md` **§BI**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
+| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols | **FINAL REVIEWER RUNNING (started 2026-09-12 ~05:35)** |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
 open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
@@ -267,6 +267,18 @@ left in `FLAGS.md` alone.
   L8**. `根城` and `坊や` stay live for **blocked chunk 32**. Do not strike any of them early.
 
 ## Decisions this run
+### 📌 TWO STANDING ITEMS RAISED AT CHUNK 29's MERGE — neither is wave 14's to fix
+- **`FLAGS.md` §BI2 — a `main`-level defect in `tl/battle/chunk_000.txt`.** body[12] page 11 ships
+  **`.TTTT.`, the ONLY instance of that zero-attestation shape in all of `tl/`**, with its two
+  neighbours having given up rows to it. Chunk 0 predates §45.2; **the fix is a 0-byte re-flow.**
+  ⚠️ **Chunk 0's battle is test (1) of the Blocked-4 boot test**, so this is worth fixing before that
+  test rather than after.
+- **§4.3 correction to PR #51's body (not to the merged file):** its `ゆっくり` cell named
+  `pending/chunk_043` as the other battle instance; it is **`pending/chunk_005` L16**, and chunk 43's
+  source contains no `ゆっくり` at all (script count **8**, all rendered, not 7). Disposition unchanged
+  (LIVE via parked chunk 5) — but the wrong file would have sent the next auditor to the wrong place.
+
+
 ### ⚠️ WAVE 14, COORDINATOR ERROR #1 — MINE, CAUGHT BY A TRANSLATOR, CORRECTED AT `a128ded`
 **§9.W14's `工場` seed row said `ｐｌａｎｔ`. It is `ｆａｃｔｏｒｙ`, and the chunk-39 translator was right.**
 I cited §29's `兵器工場` → `ｗｅａｐｏｎｓ　ｐｌａｎｔ` row as governing the **bare** word. That row's own last
