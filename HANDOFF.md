@@ -55,13 +55,18 @@ table, never that line.
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | — | dispatched | translating |
-| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | — | dispatched | translating |
+| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | agent still live | **PR open, awaiting review** — 3,423 / 8,192 (4,769 slack). ⚠️ Its translator still shows *running*; do not review until it returns |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
 open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
 translator returned/died with no PR → **one fresh translator for that unit** (two re-dispatches max,
 then park). A unit whose translator is still working → **wait, do not re-dispatch over a live agent.**
+
+
+⚠️ **`list_pull_requests` NOW OVERFLOWS THE TOOL RESULT (~50 KB, PR bodies are long) — `minimal_output`
+does not help.** The result is saved to a file the error names; parse it instead:
+`python3 -c "import json;d=json.load(open(PATH));[print(x['number'],x['head']['ref']) for x in d]"`.
 
 ⚠️ **Every `tl/*` branch from waves 1–13 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (**FLAGS §AQ9**). **"Branch gone = merged" is an INVALID signal in this repo;
