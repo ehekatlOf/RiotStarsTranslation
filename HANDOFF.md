@@ -58,7 +58,7 @@ table, never that line.
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | ~~`tl/battle-028`~~ | `tl/battle/chunk_028.txt` | **2** | **#52** | reviewed `89bae1b` | ✅ **MERGED — squash `9c8e3e0`, integrated by `integrate: chunk 028 — glossary, flags, handoff`.** DECISION: MERGE, **no findings**; every §6 gate re-run on the round-2 head and pinned to the explicit base `5cc7348`. **3,953 / 8,192 (4,239 slack)**, `{FFFE}` 85→87 on four declared lines, `{FCC0}` 10→10, 98 runs widest 23 / 0 at 24, no page over 4 rows the source did not already have, gate 6 by positional pairing → **0 divergences**. `glossary.md` **§68**, `FLAGS.md` **§BH**. ⚠️ Branch deletion returns HTTP 403 here (§AQ9) — expected, the PR's `merged: true` is the signal. **Nothing left on this unit** |
-| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | **2** | **#51** | **CHANGES — rework sent** | mechanically flawless; 4 findings, all glossary conformance, **no re-flow, net −20 bytes** → 3,403 / 8,192 |
+| **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | **2** | **#51** | **round 2 PUSHED at `6778615`** | all 4 findings applied, no re-flow. **3,403 / 8,192 (4,789 slack)**, realised 2.12×; 80 runs, widest 23, none at 24; `{FCC0}` 10 → 10. PR body rewritten. **Awaiting re-review** |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
