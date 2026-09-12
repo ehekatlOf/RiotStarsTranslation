@@ -5,8 +5,8 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 
 ## NEXT ACTION — always current, always a literal instruction
 > # ▶ ONE SCOPED REPAIRS SESSION IS BEING OPENED BY THE RUNNER (2026-09-12). IT IS NOT WAVE 15.
-> The runner (root session) is opening a single coordinator session — id recorded in the next `handoff:`
-> commit — to do **only** the no-human items under **Blocked 6**, then stop. It dispatches no chunk, no
+> The runner (root session) opened a single coordinator session — **`session_01UuuxzfFxNMkah4YTPHdq5T`**
+> (Opus, its own session, has `Task`) — to do **only** the no-human items under **Blocked 6**, then stop. It dispatches no chunk, no
 > batch, and **opens no successor**. The run's stop condition below still holds; this is the repair work
 > that the final handoff itself names as doable without the human.
 > **Scope, exactly two items:**
