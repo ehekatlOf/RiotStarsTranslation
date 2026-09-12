@@ -56,7 +56,7 @@ table, never that line.
 |---|---|---|---|---|---|---|
 | **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | 1 | — | dispatched | translating |
 | **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | — | dispatched | translating |
-| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | — | dispatched | translating |
+| **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
 **Wave barrier (CLAUDE.md §4 step 4 / orchestrator §4a): NOTHING is reviewed until all three have an
 open PR.** On each translator return, re-list open PRs and re-check the whole wave. A unit whose
@@ -241,6 +241,24 @@ left in `FLAGS.md` alone.
   L8**. `根城` and `坊や` stay live for **blocked chunk 32**. Do not strike any of them early.
 
 ## Decisions this run
+### ⚠️ WAVE 14, COORDINATOR ERROR #1 — MINE, CAUGHT BY A TRANSLATOR, CORRECTED AT `a128ded`
+**§9.W14's `工場` seed row said `ｐｌａｎｔ`. It is `ｆａｃｔｏｒｙ`, and the chunk-39 translator was right.**
+I cited §29's `兵器工場` → `ｗｅａｐｏｎｓ　ｐｌａｎｔ` row as governing the **bare** word. That row's own last
+clause **excludes** it — it holds `兵器工場` *"distinct from bare `工場` → factory (`chunk_009.txt`,
+twice)"*. And §29 fixed `ｐｌａｎｔ` on **WIDTH** (`ａ　ｗｅａｐｏｎｓ　ｆａｃｔｏｒｙ　ｔｈｅｒｅ．` is exactly 24
+columns and was rejected), so I **read a width clearance as a word ruling** — `FLAGS.md` **§BE3**, the
+wave-13 lesson, reproduced one wave after it was written. Re-verified by **positional pairing**, not by
+citation: `chunk_008` body[8] → `ａ　ｗｅａｐｏｎｓ　ｐｌａｎｔ　ｔｈｅｒｅ．`; `chunk_009` body[1] and body[3] →
+`Ｔｈｅ　ｆａｃｔｏｒｙ` / `ｔｈｅ　ｆａｃｔｏｒｙ`. **`ｆａｃｔｏｒｉｅｓ` as shipped in PR #50 stands; the reviewer
+must NOT raise it against chunk 39.** ⭐ Bidirectional QC working as designed, third wave running.
+
+### ⭐ TWO GATE-7 FACE-(c) GAPS ARE NOW TWO FILES DEEP AND STILL UNRECORDED — for the reviewer
+Reported by the chunk-39 translator and consistent with my own seed-time census:
+`飛行船` → `ａｉｒｓｈｉｐ` (`batch_014:47`) and bare `オリジナル` → `ｔｈｅ　Ｏｒｉｇｉｎａｌｓ` (`batch_014:40`)
+are **shipped in `tl/` with no `glossary.md` row at all**, so no glossary-side search can find them.
+Chunk 39 now uses both. **Close them in the integration commit.**
+
+
 ### ⭐⭐ WAVE 13's LESSON — ONE FAILURE WITH TWO FACES, and it produced EVERY finding in the wave
 **Detail lives in `glossary.md` §65–§67 and `FLAGS.md` §BE–§BG, not here.**
 1. ⭐⭐ **A CENSUS OVER ONE SPELLING IS NOT A CENSUS, AND GATE 6 PAIRING WHOLE MESSAGES CANNOT SEE A
