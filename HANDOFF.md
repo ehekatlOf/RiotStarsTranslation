@@ -100,7 +100,7 @@ Parked and translated: chunks **5, 43** (tier-A budget) — nothing else is park
 |---|---|---|---|---|---|
 | battle **15** | `tl/battle-015` | **#47** | **3,275** | 4,917 | ✅ **MERGED round 2** — squash `8a08027`, integrate `d11928f` |
 | battle **23** | `tl/battle-023` | **#49** | **6,291** | 1,901 | ✅ **MERGED round 2** — squash `8a9aba8`, integrate `8b55c59` |
-| battle **27** | `tl/battle-027` | **#48** | **3,665** | 4,527 | ✅ **MERGED round 2** — squash **`f88434c`**, integrate **`<this commit>`** |
+| battle **27** | `tl/battle-027` | **#48** | **3,665** | 4,527 | ✅ **MERGED round 2** — squash **`f88434c`**, integrate **`0bcfc83`** |
 
 **Verified, not taken on report:** PR #48 `merged: true`, squash **`f88434c`**, which is on
 `origin/main`; `tl/battle/chunk_027.txt` present at 3,665 bytes on the merged tree; `check`
