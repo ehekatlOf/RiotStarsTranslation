@@ -54,7 +54,7 @@ table, never that line.
 ## In flight — WAVE 14, dispatched 2026-09-12
 | Unit | Branch | File | Round | PR | Translator | State |
 |---|---|---|---|---|---|---|
-| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | **2** | **#52** | **CHANGES — rework sent** | 3 findings; only #1 changes a byte (`まあいいわ。` → `Ｎｏ　ｍａｔｔｅｒ．`, +4 bytes). Every mechanical gate PASSED. Nothing merged; `origin/main` untouched at `5013bd5` |
+| **battle chunk 28** | `tl/battle-028` | `tl/battle/chunk_028.txt` | **2** | **#52** | **round 2 PUSHED at `89bae1b`** | all 3 findings accepted; `Ｎｏ　ｍａｔｔｅｒ．` applied. **3,953 / 8,192 (4,239 slack)**, `check` green, gate 6 re-run → 0 divergences, PR body rewritten in full. **Awaiting re-review** |
 | **battle chunk 29** | `tl/battle-029` | `tl/battle/chunk_029.txt` | 1 | **#51** | returned | **awaiting review** — 3,423 / 8,192 (4,769 slack), realised 2.14× vs a 6.05× ceiling; 79 runs, widest 23, none at 24; `{FCC0}` unchanged 10 → 10 |
 | **battle chunk 39** | `tl/battle-039` | `tl/battle/chunk_039.txt` | 1 | **#50** | returned | **awaiting review** — 3,167 / 8,192 (5,025 slack), ratio 6.21×, 23 pages all ≤ 4 rows, longest row 23 cols |
 
@@ -298,7 +298,9 @@ by translators. Treat every figure in §9.W14 as a claim to re-derive, not as ev
 ⚠️ **More rows that must STAY LIVE (reviewer 1, verified):** `甘すぎ` (chunk 28 + **blocked chunk 16
 L14**) · `永遠` (same) · `渓谷` (2 battle + **2 untranslated script**, `script_unique` 1292, 1381 — PR
 #52's own "0 script — EXHAUSTED" claim is wrong) · `勝ち目` · `一巻の終わり` · `巣窟`.
-⭐ **Pattern of the wave: SIX separate "EXHAUSTED / hapax" claims have now been wrong — three mine, three
+⭐ **SEVENTH BAD CLAIM, found in the chunk-28 rework: §46.2's `大渓谷` row is ALSO live** — `script_unique`
+**1313** (`…走る大渓谷。`) is untranslated; only 579 is shipped (`batch_009:69`). **Do not strike it either.**
+⭐ **Pattern of the wave: SEVEN separate "EXHAUSTED / hapax" claims have now been wrong — three mine, three
 the translators'. Not one survived re-derivation. Re-derive every one before striking a row.**
 
 ### ⚠️⚠️ A CROSS-UNIT GATE-6 CONSTRAINT BINDS ALL THREE WAVE-14 PRs — NO SINGLE REVIEW CAN SEE IT
