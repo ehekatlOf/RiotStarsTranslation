@@ -10404,3 +10404,70 @@ next auditor does not file the false finding this review nearly filed.
 3. **Nothing else in `batch_012` changed** and no other file was touched.
 
 ---
+
+## 73. Added by the script batch 013 repair (PR #54, merged 2026-09-12)
+
+Squash `a82e742`. **DECISION: MERGE, no findings.** A **repair unit**, not a translation: one
+sub-message run on one row of `tl/script/batch_013.tsv` (file line 31 = DATA 928, bank 29), +1/−1.
+**+10 bytes, bank 29 only** — 16,879 → 16,869 free, isolated by running `bankmeasure` on
+`origin/main`'s copy of the file and again on the branch's and diffing. Bank 28 untouched at 30,489;
+none of the four tight banks (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607) is touched.
+
+```
+Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ｑｕｉｔｅ　ｓｉｌｅｎｔ．．．．
+->  Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．
+```
+
+### 73.1 New entries: NONE. This adds no form and changes no ruling.
+
+**This is a conformance to §58, which needed no change and got none.** Recorded here because a
+reader arriving at §58 would otherwise have no way to learn that one site had been outside it.
+
+### 73.2 ⭐ §58 was a LIVE GATE-7 ROW, not only a CLAUDE.md §3 partner — and the flag never said so
+
+`FLAGS.md` §BF3 filed this debt as a §3 violation alone. It was **both**. **§58** (`Added by script
+batch 017 (PR #42)`) carries `静まり返っている` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ`, covering exactly this
+spelling and ruling *"Three spellings, one word, one English — the ウエストバリー / 鬼‐オーガ pattern
+(§2, §17.2)"*, each site keeping **its own** dot count.
+
+**§58 postdates the unit it governs**: `batch_013` shipped at **PR #36**, §58 was written at **PR
+#42**. So `ｑｕｉｔｅ　ｓｉｌｅｎｔ` did not defy the row when it was written — it was **left
+contradicting a live entry afterwards**, and nothing re-checked it.
+
+> **The transferable rule (`FLAGS.md` §BM2): a debt entry states the gate surface as it was known
+> when filed. A glossary row added later can convert a §3-only debt into a §3-plus-gate-7 one with
+> nothing touching the flag. Re-run gate 7 against TODAY's glossary when discharging any aged
+> debt — do not infer the gate surface from the flag's own framing.**
+
+### 73.3 The family is now uniform at 8 of 8 — and §BF3's old citation list was wrong
+
+The corrected census lives at **`FLAGS.md` §BF3**, replaced in place rather than struck. In short:
+**three spellings, four dot counts, eight sites.** §BF3 had named five sites as carrying the
+byte-identical run `静まり返っている・・・。`; **none of the five did** — `batch_011:61` is
+`静まりかえっている` (§52's row), `batch_014:13/16/18` are `静まりかっている` with the **`え` missing in
+the original game** (§55.1's row), `batch_017:9` has three dots and `:61` has one.
+
+**CLAUDE.md §3 bound exactly ONE pair**: `chunk_023` body[5] (file line 7) ↔ `batch_013:31`, the only
+two sites whose Japanese runs are byte-identical — proved at review by hex on both sides. The other
+six agree on the English by **conformance to §58, not by §3**. Conflating those two grounds is what
+produced the bad citation list.
+
+### 73.4 The FRAME conforms too, and that was forced, not discretionary
+
+All 8 sites render `〜の中は` as `Ｉｎｓｉｄｅ　ｔｈｅ　Ｘ`. `batch_013:31` alone had
+`Ｔｈｅ　ｈｏｕｓｅ　ｉｓ`, and **that frame is what had forced `ｑｕｉｔｅ　ｓｉｌｅｎｔ`**: a predicate
+adjective cannot follow `ａｌｌ　ｉｓ`, so repairing the predicate alone would have produced
+`Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．`. **No comma** after `ｈｏｕｓｅ` — the
+source is `家の中は` with no `、`; the single site that takes one, `batch_017:61`, has `館の中は、`.
+
+The break also improves: it now falls at the topic/comment seam matching `家の中は` /
+`静まり返っている・・・。`, where the old one split a copula from its complement mid-clause. **16 / 17
+columns**, both ≤ 23; 2 text rows, unchanged; no `{FFFE}` added or removed; 142 tags identical.
+
+### 73.5 Not done, deliberately
+
+1. **§58 is unaltered.** Its normative content and its own cross-references are correct — unlike
+   §BF3's, §58 attributes each spelling to the right sites — and it is now satisfied at 8 of 8.
+2. **Nothing else in `batch_013` changed** and no other file was touched.
+
+---

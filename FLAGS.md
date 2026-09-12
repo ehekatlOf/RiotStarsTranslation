@@ -8173,17 +8173,65 @@ resolved by the flagged modal shift to `Ｈｏｌｄ　ｔｈｅ　ｄｅｆｅ�
 the contradiction and already notes both wave-13 battle translators hit it independently. **Nothing
 new to add; this is the third unit to meet it and the entry stands as written.**
 
-### BF3. ⚠️ DEBT — `静まり返っている・・・。` has two shipped Englishes, and the divergent one is in the SCRIPT store
+### BF3. ✅ DISCHARGED 2026-09-12 — `静まり返っている・・・。` had two shipped Englishes, and the divergent one was in the SCRIPT store
 
-`batch_013:31` ships `家の中は{FFFE}静まり返っている・・・。` → `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ｑｕｉｔｅ
-ｓｉｌｅｎｔ．．．．` The **byte-identical** Japanese run `静まり返っている・・・。` ships as
-`ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` everywhere else — `batch_011:61`, `batch_014:13/16/18`, `batch_017:9/61`, and
-now `tl/battle/chunk_023.txt` L5, which correctly reused the incumbent frame for `塔の中は…`.
+✅ **DISCHARGED by PR #54 (squash `a82e742`, merged 2026-09-12).** `batch_013:31` now ships
+`Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．`, byte-identical in its
+`静まり返っている・・・。` run to `tl/battle/chunk_023.txt` body[5] (file line 7) — proved by hex
+comparison at review, both sides
+`efbd81efbd8cefbd8ce38080efbd89efbd93e38080efbd88efbd95efbd93efbd88efbd85efbd84efbc8e×4`. Cost
++5 characters = +10 bytes, isolated by running `bankmeasure` against each version of the file in
+turn; bank 29 free 16,879 → 16,869. **The `静まり返っている` family is now uniform at 8 of 8 sites.**
 
-**This is not PR #49's to fix** — chunk 23 took the majority form and is on the right side of it.
-The debt is one `batch_013` row. ⚠️ **Found only by reading the script TSVs' Japanese column; no
-battle-side check could see it**, and gate 6 pairs whole messages so it is invisible there too.
-**Queued for a corrections unit.**
+⚠️⚠️ **THIS ENTRY'S ORIGINAL CITATION LIST WAS WRONG AND IS CORRECTED IN PLACE BELOW.** It named
+`batch_011:61`, `batch_014:13/16/18` and `batch_017:9/61` as sites of the **byte-identical** run
+`静まり返っている・・・。`. **None of the five is.** The source has **three spellings** — one of them
+a typo in the original game — and **four different dot counts**. The error was re-derived
+independently by the PR #54 translator and by the reviewer, from `dumps/script_unique.txt` and
+`dumps/battle_dump.txt`, before either acted on it. Leaving a wrong citation in place is the §BI3
+failure this project has already paid for; this is the corrected census.
+
+**The family, re-derived — 8 sites, 3 spellings, 4 dot counts:**
+
+| Spelling | Site | Japanese run | English run | dots |
+|---|---|---|---|---|
+| `静まり返っている` | `chunk_023` body[5] (file L7) | `塔の中は` / `静まり返っている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｔｏｗｅｒ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | 4 / 4 |
+| `静まり返っている` | **`batch_013:31`** | `家の中は` / `静まり返っている・・・。` | **now** `Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | 4 / 4 |
+| `静まり返っている` | `batch_017:9` | `ほこらの中は` / `静まり返っている・・・` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｓｈｒｉｎｅ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．` | 3 / 3 |
+| `静まり返っている` | `batch_017:61` | `館の中は、` / `静まり返っている。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ，` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．` | 1 / 1 |
+| `静まりかえっている` (kana かえ) | `batch_011:61` | `館の中は` / `静まりかえっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | 4 / 4 |
+| `静まりかっている` (**the え is MISSING in the source**) | `batch_014:13`, `:16` | `館の中は` / `静まりかっている・・・。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | 4 / 4 |
+| `静まりかっている` | `batch_014:18` | `館の中は` / `静まりかっている・・・。。` | `Ｉｎｓｉｄｅ　ｔｈｅ　ｍａｎｓｉｏｎ` / `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．．` | 5 / 5 |
+
+Census over both dumps, confirming all 8 are accounted for: `静まり返っている` script 3 + battle 1;
+`静まりかえっている` 1 + 0; `静まりかっている` 3 + 0.
+
+**CLAUDE.md §3 was engaged by exactly ONE pair** — `chunk_023` body[5] ↔ `batch_013:31`, the only two
+sites whose Japanese runs are byte-identical. The other six differ in spelling or dot count, so §3
+never bound them; they agree on `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` by glossary conformance, not by §3. Each
+site keeps **its own** dot count, per §3.1.
+
+⭐ **It was also a GATE-7 divergence, which this entry originally failed to say.** `glossary.md`
+**§58** (line 7833, `Added by script batch 017 (PR #42)`) carries the row `静まり返っている` →
+`ａｌｌ　ｉｓ　ｈｕｓｈｅｄ`, covering exactly this spelling and noting *"Three spellings, one word,
+one English"*. **§58 postdates `batch_013`**: PR #36 shipped `batch_013` before PR #42 wrote the
+row, so `ｑｕｉｔｅ　ｓｉｌｅｎｔ` was left contradicting a live glossary entry rather than having
+defied one when written. A reviewer reading this entry alone would have filed it as §3-only debt and
+run no gate-7 check. **§58 itself needs no change** — its normative content is correct, its own
+cross-references are accurate, and it is now satisfied at 8 of 8 sites.
+
+**The frame was conformed as well as the predicate, necessarily.** All 8 sites render `〜の中は` as
+`Ｉｎｓｉｄｅ　ｔｈｅ　Ｘ`; `batch_013:31` alone had `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ`, which is what had
+forced `ｑｕｉｔｅ　ｓｉｌｅｎｔ` — a predicate adjective cannot follow `ａｌｌ　ｉｓ`. Repairing the
+predicate alone would have produced `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．`.
+**No comma** after `ｈｏｕｓｅ`: the source is `家の中は` with no `、`; the one site taking a comma,
+`batch_017:61`, has `館の中は、`.
+
+**Original ruling, which held:** chunk 23 took the majority form and was on the right side of it; the
+debt was one `batch_013` row. ⚠️ **Found only by reading the script TSVs' Japanese column; no
+battle-side check could see it**, and gate 6 pairs **whole messages** while this is a sub-message
+**run**, so gate 6 was structurally blind to it in both stores. The proof that discharged it was a
+direct run-level hex comparison, not a gate.
 
 ### BF4. ⚠️ DEBT — `騒ぎ` likewise has two shipped Englishes
 
@@ -8968,3 +9016,111 @@ GitHub refuses **both** `APPROVE` and `REQUEST_CHANGES` from this account, so th
 **Bank 1: 26,191 → 26,187 free.** Every other bank byte-identical. **Four banks remain under 2,000
 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** ⚠️ `bankmeasure`'s `tightest:` line prints only
 **three** of those four and which one it hides is not stable — quote the table, never that line.
+
+## BM. Repairs session review — script batch 013 repair / PR #54, MERGED (2026-09-12)
+
+Squash **`a82e742`**, integration commit `integrate: batch 013 repair — glossary, flags, handoff`.
+**DECISION: MERGE, no findings.** One file, one row, +1/−1: `tl/script/batch_013.tsv` file line 31
+(DATA 928, bank 29) now renders `家の中は{FFFE}静まり返っている・・・。` as
+`Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．`, byte-identical in its
+`静まり返っている・・・。` run to `tl/battle/chunk_023.txt` body[5] (file line 7). **§BF3 is
+DISCHARGED and its citation list is CORRECTED IN PLACE** — see that entry, which is now the
+authoritative census for this family.
+
+### BM1. Byte figure — +10 bytes, bank 29 only, ISOLATED rather than quoted
+
+`bankmeasure` run with `origin/main`'s copy of the file in place and again with the branch's:
+
+```
+with origin/main's batch_013:   bank 28 free 30489   bank 29 free 16879
+with branch's      batch_013:   bank 28 free 30489   bank 29 free 16869
+```
+
+**+5 characters = +10 bytes.** ⚠️ The dispatch estimated **+12 bytes at 17/17 columns and was
+wrong**; the translator corrected it to **+10 at 16/17** and the isolation confirms the translator.
+`Ｉｎｓｉｄｅ` is **6** characters, not 7 — the arithmetic slip that produced the bad estimate. No
+bank negative; no tight bank touched.
+
+### BM2. ⭐ A §3 REPAIR CAN ALSO BE A GATE-7 REPAIR, AND THE FLAG MAY NOT SAY SO
+
+§BF3 recorded this debt as a CLAUDE.md §3 violation only. It was **also a gate-7 divergence**:
+`glossary.md` §58 (line 7833) has carried `静まり返っている` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ` since PR
+#42, and `batch_013` shipped at PR #36 — **before the row existed**. So the row was not defied when
+written; it was left contradicting a live entry afterwards.
+
+> **The generalisable point: a debt entry is a snapshot of what was known when it was filed.** A
+> glossary row added later can convert a §3-only debt into a §3-plus-§7 one without anything
+> touching the flag. **Re-run gate 7 against today's glossary when discharging any aged debt**, and
+> do not infer the gate surface from the flag's own framing. Found by the PR #54 translator, not by
+> the dispatch and not by the flag.
+
+### BM3. ⚠️ §BF3's citation list was wrong in the way §BJ4/§BK4 predict — THREE spellings, FOUR dot counts
+
+§BF3 named five sites as carrying the **byte-identical** run `静まり返っている・・・。`. **None of the
+five did.** `batch_011:61` is `静まりかえっている`; `batch_014:13/16/18` are `静まりかっている` (the
+`え` is **missing in the original game** — a source typo); `batch_017:9` has three dots and `:61`
+has one. The corrected 8-site census now lives in **§BF3** itself.
+
+**CLAUDE.md §3 bound exactly one pair** — `chunk_023` body[5] ↔ `batch_013:31`. The other six sites
+agree on the English by **glossary conformance (§58), not by §3**. Collapsing those two grounds is
+what produced the bad citation list: a census run on one spelling, then written up as though the
+whole family were one string.
+
+### BM4. Gate 6 was blind here, and the zero it returned needed a positive control
+
+The repaired string is a **sub-message run**; gate 6 pairs **whole messages**. Both stores returned
+`0 pairs, 0 divergent` — the §BK3 hazard exactly. Two controls were run before believing it:
+identical-JP/different-EN **fired**, identical-JP/identical-EN **did not false-positive**. The zero
+is then explained structurally: **1,064 distinct JP keys across the whole script store, which is
+precisely the `unique forms: 1064` that `check` prints** — the store is keyed on unique forms, so
+cross-file whole-message duplicates cannot exist by construction.
+
+⭐ **Independent corroboration nobody had cited before:** `assemble.py:274` (`load_script_tl`) raises
+*"conflicting translation for the same source line"* on any divergent whole-message duplicate. **A
+green `check` is therefore already a mechanical gate-6 pass for the script store's whole messages** —
+what it cannot see is the sub-message run, which is the only thing that ever needed hand-proving.
+
+### BM5. `merge_script` applies NO `tag_parity` — confirmed in source, and it matters
+
+`assemble.py:228` calls `tag_parity(old, new, ...)` in **`merge_battle`**. **`merge_script` never
+does.** ⚠️ `translation_prompt.md` Appendix A says `check` performs tag parity "for every translated
+file" — **that is true of the battle path only** and overstates the script path. Nothing mechanical
+would catch a damaged script-store tag, so the stream was compared by hand: **142 tags (71 JP + 71
+EN), identical lists**, columns 1 and 2 byte-identical, `{FFFE}` count and position unchanged.
+
+### BM6. Confirmed at review, not defects
+
+- **Frame conformed with the predicate, necessarily.** `Ｔｈｅ　ｈｏｕｓｅ　ｉｓ{FFFE}ａｌｌ　ｉｓ
+  ｈｕｓｈｅｄ` is not English; the old frame is what had forced `ｑｕｉｔｅ　ｓｉｌｅｎｔ`. All 8
+  sites render `〜の中は` as `Ｉｎｓｉｄｅ　ｔｈｅ　Ｘ`. **No comma** — source `家の中は` has no `、`;
+  the one comma site, `batch_017:61`, has `館の中は、`.
+- **Geometry improved.** New break falls at the topic/comment seam matching `家の中は` /
+  `静まり返っている・・・。`; the old break split a copula from its complement mid-clause. 16 / 17
+  columns, both ≤ 23, 2 text rows unchanged, no `{FFFE}` added or removed.
+- **Dot counts** 4/4, 1/1, 4/4, 1/1 across the line. Four stops stayed four.
+- **`rowcheck script` warning set diffed against `origin/main`'s** — 19 lines each, `diff` empty. The
+  edit introduces no new row warning, and the edited row (dump line 6880) is in neither set.
+
+### BM7. ⚠️ `build/` ON `main` IS STALE — carried into wave close
+
+Regenerating `build/*_dump_merged.txt` on `main` produces changes belonging to **PR #53**
+(`Ｍｏｒｅ　ｔｈａｎ　ｔｈａｔ` → `Ｍｏｒｅ　ｔｏ　ｔｈｅ　ｐｏｉｎｔ`, `chunk_018`) and **PR #55**
+(`Ｉ　ａｍ　ｓｏｒｒｙ` → `Ｍｙ　ａｐｏｌｏｇｉｅｓ`, `batch_012`) — neither committed at their
+integrations. A script-only PR cannot touch `battle_dump_merged.txt`, so this is inherited, not
+#54's. **CLAUDE.md §4 step 6 commits `build/` at wave close; it must not be missed this time.**
+
+### BM8. Review mechanics, unchanged from §BK7 / §BL7
+
+`COMMENT` review with `DECISION:` on line 1 — GitHub refuses both `APPROVE` and `REQUEST_CHANGES`
+from this account. ⚠️ Branch deletion returns **HTTP 403** (§AQ9); `fix/script-013` is still on
+origin and that is **not** a signal about merge state. The PR's `merged: true` and squash
+**`a82e742`** are the record. ⚠️ The API's `base.sha` is **not** the merge-base — it was computed
+(`git merge-base origin/main origin/fix/script-013` → `c583bd7`) and the four intervening `main`
+commits checked for file overlap (none).
+
+### BM9. Bank status at this merge
+
+**Bank 29: 16,879 → 16,869 free.** Bank 28 unchanged at 30,489. Every other bank byte-identical.
+**Four banks remain under 2,000 free: 40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607.** ⚠️
+`bankmeasure`'s `tightest:` line printed **40, 41, 5** at this merge and **hid bank 2** — quote the
+table, never that line.

@@ -21,7 +21,7 @@ local ref: if `git checkout main` lands on an old commit, `git fetch && git rese
 > | 5 | `餌食` → `ｐｒｅｙ` (`chunk_000` body[2]) | no — lemma | **CONFORM IF IT FITS** (27 bytes slack) | same file as #0 |
 > | 2 | `それよりも` (`chunk_018` body[4]) | no — lemma | ✅ **DONE** — #53, squash `dac2ee4` | `tl/battle/chunk_018.txt` |
 > | 1 | `君、{FFFE}すまない。` (`batch_012:63`) | **YES** | ✅ **DONE** — #55, squash `30d45aa` | `tl/script/batch_012.tsv` |
-> | 6a | `静まり返っている・・・。` (`batch_013:31`) | **YES** | **CONFORM** to `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．` | `tl/script/batch_013.tsv` |
+> | 6a | `静まり返っている・・・。` (`batch_013:31`) | **YES** | ✅ **DONE** — #54, squash `a82e742` | `tl/script/batch_013.tsv` |
 > | 3 | `納得がいく` | no | ⛔ **NO CHANGE** — §69.5/§BI4's split is justified; re-derived | — |
 > | 4 | `この通り` | no | ⛔ **NO CHANGE** — conforming would WORSEN a §25.3 collapse | — |
 > | 6b | `騒ぎ` (`batch_017:39`) | no | ⛔ **NO CHANGE** — confirms §BF4; 8 distinct source strings | — |
@@ -77,11 +77,46 @@ the table, never that line.
 |---|---|---|---|---|---|---|
 | 1 | R2 | `tl/battle/chunk_018.txt` | **#53** | `a881998` | +6 B → 3,041 / 8,192 (5,151) | ✅ **MERGED, no findings** — squash `dac2ee4`, integration `integrate: chunk 018 repair` |
 | 2 | R1 | `tl/script/batch_012.tsv` | **#55** | `a452e94` | +4 B, bank 1 → 26,187 free (measured) | ✅ **MERGED, no findings** — squash `30d45aa`, integration `integrate: batch 012 repair` |
-| 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free | queued |
+| 3 | R6a | `tl/script/batch_013.tsv` | **#54** | `588de7c` | +10 B, bank 29 → 16,869 free (measured) | ✅ **MERGED, no findings** — squash `a82e742`, integration `integrate: batch 013 repair` |
 | 4 | R0+R5 | `tl/battle/chunk_000.txt` | **#56** | `f8308bb` | **−2 B → 8,163 / 8,192 (29 slack)** | queued **last** |
 
 **Reviewed one at a time, in the foreground, in that order.** All four translators have returned;
-every head is stable. **Two merged, two to go: #54 then #56.**
+every head is stable. **Three merged, one to go: #56.**
+
+### ✅ #54 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
+Squash **`a82e742`**, integration commit `integrate: batch 013 repair — glossary, flags, handoff`
+(`FLAGS.md` **§BF3 discharged AND its citation list corrected in place**, new **§BM**, this row).
+All eight gates re-run in a checkout against **current** `origin/main` (`deef0ab`, carrying #53 and
+#55) and pasted in the PR review: paths ✓ merge ✓ check ✓ figures n.a. (script unit) rows ✓ banks ✓
+dupes ✓ glossary ✓ structure ✓.
+
+`tl/script/batch_013.tsv` file line 31 now reads
+`Ｉｎｓｉｄｅ　ｔｈｅ　ｈｏｕｓｅ{FFFE}ａｌｌ　ｉｓ　ｈｕｓｈｅｄ．．．．`, **byte-identical in its
+`静まり返っている・・・。` run to `tl/battle/chunk_023.txt` body[5]** — proved by hex on both sides,
+not by a gate, because gate 6 pairs whole messages and this is a sub-message run.
+
+- **Both translator corrections upheld.** The dispatch's `+12 bytes at 17/17 columns` was wrong:
+  `Ｉｎｓｉｄｅ` is **6** characters, so it is **+10 bytes at 16/17**. Confirmed by **isolating** the
+  delta — `bankmeasure` run against each version of the file in turn — rather than quoting either
+  figure. Bank 29 free 16,879 → 16,869; bank 28 untouched.
+- ⭐ **The translator's gate-7 discovery is confirmed and is the wave's most reusable finding.**
+  `glossary.md` **§58** (line 7833) has carried `静まり返っている` → `ａｌｌ　ｉｓ　ｈｕｓｈｅｄ`
+  since PR #42; `batch_013` shipped at PR #36, **before the row existed**. So this was a **§3 *and*
+  gate-7 divergence**, which §BF3 never said. Generalised at **`FLAGS.md` §BM2**: an aged debt entry
+  is a snapshot of what was known when filed — **re-run gate 7 against today's glossary when
+  discharging one.** §58 itself needed no change and is now satisfied at **8 of 8 sites**.
+- **§BF3's citation list was wrong and is now corrected in place, not struck** — three spellings
+  (one a source typo, the `え` missing) and four dot counts; **none of its five named sites** carried
+  the byte-identical string. The corrected 8-site census lives in §BF3 itself.
+- **Gate 6 returned zero pairs** — the §BK3 hazard — so it was **positive-controlled** before being
+  believed, and the zero explained structurally (1,064 distinct keys = `check`'s `unique forms:
+  1064`). ⭐ New: `assemble.py:274` (`load_script_tl`) already raises *"conflicting translation for
+  the same source line"*, so **a green `check` is itself a mechanical gate-6 pass for whole
+  messages**; only the sub-message run ever needed hand-proving.
+- ⚠️ **`build/` on `main` is STALE** — regenerating produces #53's and #55's changes, neither
+  committed at their integrations. Not #54's doing (a script-only PR cannot touch
+  `battle_dump_merged.txt`). **Wave close must commit `build/` per CLAUDE.md §4 step 6** — `FLAGS.md`
+  §BM7.
 
 ### ✅ #55 IS MERGED — DECISION: MERGE, no findings (2026-09-12)
 Squash **`30d45aa`**, integration commit `integrate: batch 012 repair — glossary, flags, handoff`
@@ -143,8 +178,11 @@ pushes as `ehekatlOf`, so the decision is a `COMMENT` review with `DECISION:` on
 ⚠️ Branch deletion returned **HTTP 403** as §AQ9 predicts; `fix/battle-018` is still on origin and
 that is **not** a merge signal. `merged: true` + squash `dac2ee4` is the record.
 
-**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#54**
-(`tl/script/batch_013.tsv`) in the foreground, then **#56** last. Two units remain: #54, #56.
+**Who acts next:** the repairs-session coordinator — `git pull --ff-only`, then review **#56**
+(`tl/battle/chunk_000.txt`) in the foreground, **the last unit**. One unit remains: #56.
+⚠️ **#56's reviewer must run gate 2 against `main` as it stands after #54's integration commit**,
+not against the tree #56 was written on — `main` has advanced by three merges and three
+integrations. **Compute the merge-base; do not read the API's `base.sha` as one.**
 ✅ **`chunk_000` (#56) delivered BOTH repairs and came out 2 bytes CHEAPER.** R1 landed at **exactly
 0 bytes** — one `{FFFE}` dropped (−2) and one `　` added at a join (+2) — and page 21 is `.TTT.`
 again, so **`.TTTT.` goes to 0 across all of `tl/battle`** before the human's boot test, which is
@@ -158,13 +196,19 @@ Bases: ⚠️ **CORRECTED at #55's merge — #53, #54 AND #55 are all on `c583bd
 This line read "#55/#56 on `1644ff0`". Measured: `git merge-base origin/main origin/fix/script-012`
 = **`c583bd7`** and `1644ff0` is **not an ancestor** of that branch. PR #55's own Gate-2 paste was
 right and this board was wrong. **GitHub's API `base.sha` is not the merge-base — do not read it as
-one** (`FLAGS.md` §BL5 item 3). `main` has since advanced by #53's and #55's merges and integrations;
+one** (`FLAGS.md` §BL5 item 3). ✅ **Re-confirmed at #54's merge**: `git merge-base origin/main
+origin/fix/script-013` = **`c583bd7`**, computed rather than read from the API, and the intervening
+`main` commits checked for file overlap with `tl/script/batch_013.tsv` (**none**). `main` has since
+advanced by #53's, #55's and #54's merges and integrations;
 **gate 2 was re-run against current `origin/main` at each merge and no rebase has been owed** — each
 reviewer re-runs it regardless, and **#56's reviewer must run it against `main` as it stands after
 this commit**, not against the tree either earlier PR was written on.
 No tight bank is touched (40 → 75 · 41 → 353 · 5 → 1,595 · 2 → 1,607); only banks 1 and 29 move.
-✅ **Bank 1 has moved: 26,191 → 26,187 free, at #55's merge, measured by isolation.** Bank 29's
-16,879 → 16,869 is still #54's to make.
+✅ **Both script-bank moves are now made, each measured by isolation rather than quoted:** bank 1
+**26,191 → 26,187** free at #55's merge, bank 29 **16,879 → 16,869** at #54's. Bank 28 untouched at
+30,489. Every other bank byte-identical. **All four tight banks are unchanged and none was touched.**
+⚠️ `bankmeasure`'s `tightest:` line printed **40, 41, 5** at #54's merge and **hid bank 2** (1,607) —
+quote the table rows, never that line.
 ⚠️ **Every `tl/*` branch from waves 1–14 is MERGED but still on origin** — deletion returns **HTTP 403**
 from the agent container (FLAGS §AQ9). **"Branch gone = merged" is an INVALID signal in this repo; use
 the PR's `merged: true` and the squash SHA.**
@@ -200,12 +244,23 @@ this session's scope.** For `FLAGS.md`, beside §BI2.
 ### 📋 INTEGRATION DEBT THE REVIEWER MUST CARRY, collected from the four translators' reports
 The translators cannot write `glossary.md` or `FLAGS.md` (CLAUDE.md §3); each of these is theirs to
 integrate on `main` at the merge that raises it.
-1. **`FLAGS §BF3` is DISCHARGED at #54's merge — and its citation list must be CORRECTED, not merely
-   struck.** §BF3 names `batch_011:61`, `batch_014:13/16/18`, `batch_017:9/61` as sites of the
-   byte-identical `静まり返っている・・・。`; **none of the five is** (three spellings, three different dot
-   counts). PR #54's flag-2 table is the re-derived replacement.
-2. **`glossary.md` §58 was the live row `batch_013:31` actually violated** — a **gate-7** divergence,
-   not only a CLAUDE.md §3 one. §58 postdates `batch_013`/PR #36. §BF3 does not say this.
+1. ✅ **DISCHARGED at #54's merge (`a82e742`).** ~~`FLAGS §BF3` is discharged — and its citation list
+   must be CORRECTED, not merely struck. §BF3 names `batch_011:61`, `batch_014:13/16/18`,
+   `batch_017:9/61` as sites of the byte-identical `静まり返っている・・・。`; **none of the five is**.~~
+   **§BF3 is marked DISCHARGED, dated, naming the squash SHA, and its citation list is REPLACED IN
+   PLACE** by the re-derived 8-site / **three-spelling / four-dot-count** census (the `え` is missing
+   from the source in the `静まりかっている` spelling — a typo in the original game). §BF3 now also
+   records that **CLAUDE.md §3 bound exactly one pair**, `chunk_023` body[5] ↔ `batch_013:31`; the
+   other six agree by glossary conformance, not by §3. Conflating those two grounds is what produced
+   the bad list. Reviewer's write-up at `FLAGS.md` **§BM3**.
+2. ✅ **DISCHARGED at #54's merge (`a82e742`).** ~~`glossary.md` §58 was the live row `batch_013:31`
+   actually violated — a gate-7 divergence, not only a CLAUDE.md §3 one.~~ **Recorded in §BF3 itself
+   and generalised at `FLAGS.md` §BM2.** §58 (line 7833) was added by `batch_017`/**PR #42** and
+   `batch_013` shipped at **PR #36**, so the row did not exist when the unit was written — it was
+   left contradicting a live entry afterwards. **§58 itself needed no change**: its normative content
+   and its own cross-references are correct, and it is now satisfied at **8 of 8 sites**. The
+   transferable rule: **an aged debt entry states the gate surface as it was known when filed —
+   re-run gate 7 against today's glossary before discharging one.**
 3. **§69.5's `それよりも` census is understated: 4 sites recorded, 12 rendered sites real** (7 `それよりも`
    + 5 bare `それより`, six Englishes). The **ruling is unaffected** and needs no §4.3 correction.
    Correct the census in place so it is not re-derived a sixth time.
